@@ -214,6 +214,12 @@ modified: 2025-12-11T18:10:23.710Z
   - The all in one platform that you can quick view and search your turns in coding agent history.
   - [[开源分享] 7天, 8亿token, 更好地分析 coding agent会话记录  _202603](https://linux.do/t/topic/1770925)
 
+- https://github.com/RubyRose2001/claudeInsight /202603/ts/vue
+  - Claude AI 对话历史管理和分析工具，帮助开发者管理和回顾与 Claude 的对话历史
+  - [【开源分享】重复造轮子claudeInsight：本地Claude Code cli 对话历史管理和分析工具，帮助开发者管理和回顾与 Claude 的对话历史 - LINUX DO _202603](https://linux.do/t/topic/1794151)
+  - 完全本地化Claude AI 对话历史管理和分析工具
+  - 工作区管理 - 灵活的工作区配置
+
 - https://github.com/wesm/agentsview /444Star/MIT/202603/go/ts/svelte
   - https://agentsview.io/
   - A local web application for browsing, searching, and analyzing AI agent coding sessions. 

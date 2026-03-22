@@ -10,9 +10,10 @@ modified: 2022-11-11T11:04:29.007Z
 # guide
 
 - tips
-  - 标签管理通常作为产品的一个功能，而不是独立的产品
+  - 重内容和搜索, 轻标签和管理
+  - 标签管理 / clipper 通常作为产品的一个功能，而不是独立的产品
   - 主流的 CMS/多维表格 都提供了管理文章/链接的能力, 特别是搜索能力
-  - 偏向于 marking/cliper, 还是偏向于 archiving/crawler/归档为文件, 偏向于 read-it-later
+  - 偏向 marking/cliper, 还是偏向 archiving/crawler/归档为文件, 或偏向 read-it-later
 
 - tags vs folder
   - ❓ subpage 可以替代 nested-tags

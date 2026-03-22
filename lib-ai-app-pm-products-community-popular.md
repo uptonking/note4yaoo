@@ -247,7 +247,15 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## 微信官宣接入 openClaw，这波短期来看利好谁呢？
+- https://x.com/kasong2048/status/2035573575860760946
+  1. 自媒体
+  可以预见，会有一波“你超级个体 10x 高效的同龄人 + 龙虾”正在远远甩开你，再加一套卖课组合拳
+  1. 搞GEO的
+  以前训练语料投毒 只能影响你使用的各种 AI应用，龙虾的普及会把影响带到个人电脑
+  1. 搞安全的
+  - 除了 2 外，更直接的威胁来自“上下文投毒”。比如随便下了个来路不明的 Skill，这不就是手把手教龙虾做一些奇怪的事么
+  - 唯独不利好真正做事的。你要真靠 Agent 做到 10x效率提升，用飞书起码还能打通多维表格、文档，用微信这种封闭的 2C 平台作为龙虾载体，能干啥？在 幸福一家人 群里部署个 劝架龙虾 么？
 
 - ## [Openclaw… what are the use cases? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1ryw7kn/openclaw_what_are_the_use_cases/)
 - So far the common use case for the people on the hype train seems to be: summarize my day.
@@ -484,6 +492,14 @@ modified: 2026-02-20T17:36:40.796Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## Introducing the Readwise CLI. 
+- https://x.com/readwise/status/2034302848805241282
+  - Anything you've saved in Readwise (highlights, articles, PDFs, books, youtube, newsletters) is now instantly accessible from the terminal.
+  - The Readwise CLI/MCP work great on their own, but we've also created a readwise-skills repo that shares some powerful skills to use with them
+  - https://github.com/readwiseio/readwise-skills
 
 - ## 我发现vibe coding出来后，小东西多了很多，但是超大型软件还是很少，比如我没看到一个人vibe一个Office出来。难道超大型软件有什么护城河吗？
 - https://x.com/cherylnatsu/status/2033388509583860033

@@ -123,6 +123,10 @@ modified: 2022-11-07T10:26:22.510Z
   - win/linux/mac
   - 支持last.fm，支持播放列表保存到本地
   - 可手动添加歌词并显示在左侧面板
+  - 🌹
+    - 支持保持播放次数到文件, 但和 strawberry 不通用
+  - 🐛 
+    - 不支持拖动进度条来快速调整到某个位置
   - https://www.clementine-player.org/
     - https://github.com/clementine-player/clementine
     - GPLv3

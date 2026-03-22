@@ -326,7 +326,7 @@ modified: 2021-04-30T20:14:17.669Z
 
 - https://github.com/davidguttman/power-slides /js
   - Create powerful slideshows for talks and presentations. 
-  - Each "slide" is a JS function that can do *anything*.
+  - Each "slide" is a JS function that can do *anything* .
   - Let you jump to any slide by number in the url hash
 
 - https://github.com/rse/slideshow /MPLv2/202309/appleScript
@@ -402,6 +402,7 @@ modified: 2021-04-30T20:14:17.669Z
 
 - https://github.com/sligter/LandPPT /1.7kStar/apache2/202601/python/js
   - https://landppt.pages.dev/
+  - https://cloud.landppt.com/
   - 一个基于大语言模型（LLM）的智能演示文稿生成平台，能够自动将文档内容转换为专业的PPT演示文稿
   - 从主题到完整PPT，全程AI自动化处理
   - 🏠 三阶段工作流：需求确认 → 大纲生成 → PPT生成
@@ -426,6 +427,12 @@ modified: 2021-04-30T20:14:17.669Z
     - ollama测试一直失败，尝试修复了很久也没有成功，最后发现其实可以直接运行。
     - 我也是一直测试失败，跨域调了好久，结果发现配置好了可以直接运行。
   - [【LandPPT】耗时N天开发的开源 AIPPT 生成工具 _202507](https://linux.do/t/topic/767490)
+  - [首个AIPPT公益站来了！完全Free的AI PPT Studio, 让每个人都能PPT自由 _202603](https://linux.do/t/topic/1796104)
+    - 在开发 LandPPT 之前，试用过不少 AI PPT 相关工具，比如 Gamma、Kimi、Genspark、Skywork、Manus、NotebookLM 等等。它们里有些产品确实做得很好
+    - 为了适配不同能力层次的 LLM，并尽可能保证兼容性，LandPPT 采用了“三段式工作流”作为核心框架：需求 → 大纲 → 页面。
+    - 整个设计思路，就是围绕这三个关键节点进行 AI 赋能，同时尽量保留每个环节的灵活性，让用户既可以全自动生成，也可以在中间任意介入和调整。
+    - 采用的也是当前比较主流的方案：先由 AI 生成 HTML，再进行后处理与渲染。但它并不只是一个“PPT 生成器”，而是尽量把从内容准备到成品演示这一整条链路都串起来。
+    - 目前整个项目覆盖了： 需求调研 → 大纲生成 → 模板生成 → PPT 生成 → 讲稿生成 → 配音讲解 → 字幕演示 → 在线分享
 
 - https://github.com/YOOTeam/OpenPPT /1kStar/GPL/202509/ts/vue/dom/inactive
   - https://www.chatppt.cn/
@@ -579,7 +586,7 @@ modified: 2021-04-30T20:14:17.669Z
       - 图片内残留文字：MinerU 解析出来的图片里，经常还是会夹杂一些文字，没办法单独编辑，强迫症看着很难受。 
       - 换行算法不理想：原有的算法在处理文字换行的切分时不够友好，导致生成的 PPT 版面有时会有点乱，后期手动调整比较费劲。
     - 这次的 2.0 版本可以说是大换血，采用了和 1.0 完全不一样的底层逻辑：
-      - 核心引入 PaddleOCR：现在的文字切割和**文字识别（OCR）**全部交由强大的 PaddleOCR 来接管，识别精度和切分合理性大幅提升！
+      - 核心引入 PaddleOCR：现在的文字切割和 **文字识别（OCR）** 全部交由强大的 PaddleOCR 来接管，识别精度和切分合理性大幅提升！
       - MinerU 职责精简：MinerU 不再大包大揽，而是专注于它擅长的领域——主要负责图片切割和版面排版分析相关的基础工作。
   - [[开源] 手搓了个小工具，解决 NotebookLM 生成的 PPT 没法编辑的问题 _202602](https://linux.do/t/topic/1576291)
     - 有两个痛点实在忍不了：
@@ -753,7 +760,7 @@ modified: 2021-04-30T20:14:17.669Z
   - 轻松对比/回滚不同修改版本之间的差异
   - 基于XPath的精准删改查工具，效果好省token
   - 完全自定义drawio画布，修改其默认外观主题
-  - 不再需要描述“最右边的几个xxx”，直接鼠标框选，会话会自动解析画布元素到上下文中***
+  - 不再需要描述“最右边的几个xxx”，直接鼠标框选，会话会自动解析画布元素到上下文中 *** 
   - [AI DrawIO 流程图工具：AI编辑，版本管理/对比/回滚 _202512](https://linux.do/t/topic/1322324)
     - 基于XPath/Drawio元素ID的AI drawio编辑(理论上比直接操控XML更省token)
     - 版本对比/智能对比

@@ -182,9 +182,12 @@ modified: 2023-11-28T14:48:45.910Z
 
 ## inspirations ✨
 
+- 🧩 vibe-document/writing
+
 - willing-to-sponsor ❤️
-  - obsidian-bases
-  - citations: notebooklm doc search with citations
+  - 📌 obsidian-bases
+  - 📌 citations: notebooklm doc search with citations
+    - ❓ search/rag 如何做出竞争力与特色
   - https://github.com/PDFMathTranslate/PDFMathTranslate /保留排版的 PDF 文档全文双语翻译
     - [Granite Docling WebGPU: State-of-the-art document parsing 100% locally in your browser. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o0php3/granite_docling_webgpu_stateoftheart_document/)
     - ✨ 统一文本搜索高亮的双栏ux-pdf/docx/xlsx: 左侧是类似vscode的结果列表(非分页布局), 右侧是原文预览
@@ -193,8 +196,10 @@ modified: 2023-11-28T14:48:45.910Z
   - DeepAnalyze: automatic data analysis; + mermaid, 
   - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
   - [GoAmzAI - 个人、团队、企业私有化、运营的AIGC平台解决方案](https://d.goamzai.com/)
-  - realtime collab + resumable-stream
   - ⚖️ 支持中国知网的 caj 格式
+  - realtime collab + resumable-stream
+  - ❓ remote-control/openclaw 如何做出特色
+  - ❓ pdf/image-editing 如何做出特色
 
 - obsidian-open-rewrite 
   - compatible with obsidian plugins, 主流插件已达到百万下载

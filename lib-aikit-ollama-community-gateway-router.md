@@ -112,7 +112,7 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## [[Feature Request] Response API · Issue · MartialBE/one-hub _202511](https://github.com/MartialBE/one-hub/issues/868)
   - 提供对外的 Response API 接口。现在只能将上游的转为 ChatCompletions 接口。
-- 现在 Codex 中使用，报错如下： stream disconnected before completion: failed to parse ResponseCompleted: missing field `cached_tokens`
+- 现在 Codex 中使用，报错如下： stream disconnected before completion: failed to parse ResponseCompleted: missing field `cached_tokens` 
 
 - 最新版渠道设置最下面有相关设置
 
@@ -193,7 +193,7 @@ modified: 2026-01-21T04:22:29.956Z
   - 一旦形势危急了，掺点假，反正用户余额减少就是赚到，即使发生退款，少数可以接受（还能顺便树立点口碑），大量挤兑就可以找各种理由淡化，毕竟在商家眼里真正欠用户钱的是Claude和gpt，不关他事，不服可以报警，不过不一定有用
 
 - 确实，淘宝有一家纯血 claude，我看就 0.75 倍率，我测了几天都是纯血。原来离开 l 站，外面一片海阔天空
-  - 有没有可能你看分组倍率而没有看实际的模型定价，我是遇到过很多家分组倍率低，但是他把模型原本计费价格定高了。拿 opus 为例，1 倍率的情况下是模型计费是 5 和 25，那么 0.75 的倍率下，模型倍率应该就是 5*0.75=3.75 和 25*0.75=18.75，但是咸鱼或者淘宝有些是倍率 0.7 或者 0.8 的情况下，模型定价超过了 5 和 25。
+  - 有没有可能你看分组倍率而没有看实际的模型定价，我是遇到过很多家分组倍率低，但是他把模型原本计费价格定高了。拿 opus 为例，1 倍率的情况下是模型计费是 5 和 25，那么 0.75 的倍率下，模型倍率应该就是 5 *0.75=3.75 和 25* 0.75=18.75，但是咸鱼或者淘宝有些是倍率 0.7 或者 0.8 的情况下，模型定价超过了 5 和 25。
 
 - 刚才去闲鱼逛了逛，排名靠前的几个便宜的吓人，如果他们说的一刀和站内的一刀是一样的计量的话，那大概也就是 0.1-0.15 一刀的水平，写着纯血 max 但是我打开评价就看到了有人说是反重力 + kiro，就算如此那也比站内的 kiro 便宜许多…
 
@@ -447,6 +447,45 @@ modified: 2026-01-21T04:22:29.956Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Free Model List (API Keys) : r/LLMDevs _202603](https://www.reddit.com/r/LLMDevs/comments/1s020se/free_model_list_api_keys/)
+  - Here is a list with free models (API Keys) that you can use without paying. Only providers with permanent free tiers, no trial/temporal promo or credits. 
+  - Rate limits are detailed per provider (RPM: Requests Per Minute, RPD: Requets Oer Day).
+- Provider APIs
+
+Google Gemini 🇺🇸 Gemini 2.5 Pro, Flash, Flash-Lite +4 more. 10 RPM, 20 RPD
+
+Cohere 🇺🇸 Command A, Command R+, Aya Expanse 32B +9 more. 20 RPM, 1K req/mo
+
+Mistral AI 🇪🇺 Mistral Large 3, Small 3.1, Ministral 8B +3 more. 1 req/s, 1B tok/mo
+
+Zhipu AI 🇨🇳 GLM-4.7-Flash, GLM-4.5-Flash, GLM-4.6V-Flash. Limits undocumented
+
+- Inference Providers
+
+GitHub Models 🇺🇸 GPT-4o, Llama 3.3 70B, DeepSeek-R1 +more. 10–15 RPM, 50–150 RPD
+
+NVIDIA NIM 🇺🇸 Llama 3.3 70B, Mistral Large, Qwen3 235B +more. 40 RPM
+
+Groq 🇺🇸 Llama 3.3 70B, Llama 4 Scout, Kimi K2 +17 more. 30 RPM, 14, 400 RPD
+
+Cerebras 🇺🇸 Llama 3.3 70B, Qwen3 235B, GPT-OSS-120B +3 more. 30 RPM, 14, 400 RPD
+
+Cloudflare Workers AI 🇺🇸 Llama 3.3 70B, Qwen QwQ 32B +47 more. 10K neurons/day
+
+LLM7.io 🇬🇧 DeepSeek R1, Flash-Lite, Qwen2.5 Coder +27 more. 30 RPM (120 with token)
+
+Kluster AI 🇺🇸 DeepSeek-R1, Llama 4 Maverick, Qwen3-235B +2 more. Limits undocumented
+
+OpenRouter 🇺🇸 DeepSeek R1, Llama 3.3 70B, GPT-OSS-120B +29 more. 20 RPM, 50 RPD
+
+Hugging Face 🇺🇸 Llama 3.3 70B, Qwen2.5 72B, Mistral 7B +many more. $0.10/mo in free credits
+
+- The list is on GitHub https://github.com/mnfst/awesome-free-llm-apis
 
 - ## [Claude Code Max，Opus-4.6的所有渠道研究  _202603](https://linux.do/t/topic/1740014)
   - Claude Code + Max反代拼车方案
@@ -868,7 +907,7 @@ modified: 2026-01-21T04:22:29.956Z
   - 1 是通过类似 new api 进行转发的
   - 2 是直接提供官方账号的 sk 的
 
-- 通过类似 new api 进行转发的，本质上连接到 claude 或者 openai，都是同一出口，中间过了中转站站长的号池，这里会出现一个差别 ** 缓存命中 **，也就是说如果同一个人，短期内都用一个模型，模型会更加容易记住自己要做什么，效率更高，费用更低
+- 通过类似 new api 进行转发的，本质上连接到 claude 或者 openai，都是同一出口，中间过了中转站站长的号池，这里会出现一个差别 ** 缓存命中 ** ，也就是说如果同一个人，短期内都用一个模型，模型会更加容易记住自己要做什么，效率更高，费用更低
   - 改成多队列，按人分列, 提高了缓存的命中率，从而降低成本
 - claude的plus和max套餐，区别在于使用的tokens，那站长们除了提高缓存命中，减少tokens消耗之外，当然就要给你的账户限制额度啦，假设一个claude max一天可以瞪1000美刀，那么一般的站长就会超发，会拆成每个人100美刀，卖15个人左右，因此你会看到中转站大多数都是按月套餐，每日限额
 - 优势：轻度使用时，费用低，使用简单【不需要管节点和号池】

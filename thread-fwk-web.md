@@ -12,16 +12,63 @@ modified: 2021-01-08T17:13:53.965Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## React didn’t invent RSC, SSR, or Hydration, conceptually:
+- https://x.com/shuding/status/2035666444919468354
+- SSR is Express:
+
+```js
+app.get('/', (req, res) => {
+  res.render('index', { name: 'John' })
+})
+```
+
+- RSC is Pug:
+
+```js
+if name == "Bob"
+button(class = "btn") Hello Bob
+else
+  button(class = "btn") My name is #{
+    name
+  }
+```
+
+- Hydration is jQuery:
+
+```js
+$('.btn').click(...)
+```
+
+- That’s why there’s no `window` in SSR, and you can’t set `onClick` in RSC, and you have hydration errors in jQuery too (such as a typo of .btn) but with a less fancy name.
+- although onclick does work in pug no?
+  - Right but only serialized functions (strings) though, but you can’t do things like:
+
+```JS
+app.get('/', (req, res) => {
+  res.render('index', { onclick: () => {…} })
+})
+```
+
+- In theory RSC can allow it too: `<button onclick='js_string'>` but that’s not great.
+
+- This is way over my head but makes me wonder how much "new" tech is just old ideas with better marketing
+- we just repackage old ideas with better DX
+
 - ## 📡 There are two movements in the web space. Both are embracing streaming protocols and doing more work on the server to power the frontend.
 - https://x.com/devagrawal09/status/1934086338225270959
   - data/content (MPA, Server Components)
   - events (Sync Engines, Local First)
   - The architectural difference lies in what they stream.
-
 - Zerosync doesn’t stream events.
   - diffs to a table are conceptually events. the idea is that "data/content" is something that is replaced wholesale, and "event" is a mutation applied to client state
-
 - Are those different "movements" or different _usecases_? Both are equally valid, depending on what you actually want to show, right?
+
 # discuss-fwk-architecture
 - ## 
 
@@ -38,38 +85,31 @@ modified: 2021-01-08T17:13:53.965Z
   - It gets even blurrier once you bring in AbortController and start seeing how behavior can differ between browsers while your tests fail to catch it.
   - Fun times ahead. LLMs are almost no help in this no-man’s-land of engineering. 
   - Trust me, the Ripple team is in that problem space right now, and it’s deeply complicated.
-
 - How are AbortController and microtasks related? The abort call and listener notifications are synchronous.
   - We use microtasks to handle flushing updates. Co-ordinating aborts on event handlers needs to happen in the correct ordering for propagation
+
 # discuss
 - ## 
-
 - ## 
-
 - ## 🆚️ An awesome website for comparing component syntax 
 - https://twitter.com/localhost_5173/status/1784255350805549247
   - https://component-party.dev/
 - To reduce amount of line, you can also use v-text directive
-
 - ## 大佬提到飞冰 http://ice.work 了，同时又提到交给新同学负责后会好很多（之前是我负责），不确定是在喷飞冰还是在喷我（可能都是？）
 - https://twitter.com/imsobear/status/1763055473161535871
 - 
 - 
 - 
-
 - ## vice Worker Side Rendering (SWSR)
 - https://dev.to/thepassle/service-worker-side-rendering-swsr-cb1
-
 - ## there are some cool ideas in the air right now and this conf really brought them out
 - https://twitter.com/geoffreylitt/status/1520163910053023744
 - Few themes that really stuck out:
   - Discontent at the current full-stack web dev situation, managing the client-server boundary
   - Databases in the frontend
   - Datalog datalog datalog
-
 - What are people doing with Datalog?
   - A couple of interesting talks: Rubbing Datalog on UIs
-
 - ## URLs, a poll: trailing-slash vs no-trailing-slash
 - https://twitter.com/zachleat/status/1485010201937944578
 - 在浏览器控制台执行 new URL("https://google.com?foo=bar").toString()
@@ -81,25 +121,20 @@ modified: 2021-01-08T17:13:53.965Z
 - Firefox has given me trouble loading relative assets with an implicit index.html from a no-slash URL, while trailing-slash worked, so based on that single experience, my entire slash philosophy is absolutely yes to trailing slashes.
 - No trailing slash. Aesthetically I think of it as file path in file-explorer
 - I grew up on the Web that one of its beauties is that URLs can be anything. From that angle, trailing slash or not is preference, and there is no right or wrong
-
 - ## Introducing Dioxus v0.1
 - https://dioxuslabs.com/blog/introducing-dioxus/
   - New Rust framework inspired by React: hooks, VDOM, RSX...
   - Strongly typed, performant, cross-platform, web, SSR, mobile+desktop (Tauri)
-
 - ## one of my issues with single file components is that i find it troubling having to make a file for each component, no matter how minor it is
 - https://twitter.com/intrnl0/status/1439427883659784194
 - This has been one of mine as well. We have something for this in @MarkoDevTeam templates called the macro tag.
 - [rfc: Inline components for svelte](https://github.com/sveltejs/rfcs/pull/34)
-
 - ## HTML is the original single file component. 
 - https://twitter.com/devongovett/status/1436853348896935942
   - Big fan of using inline `<script>` and `<style>` elements, at least while prototyping.
-
 - ## More frameworks have been deprecated than HTML tags.
 - https://twitter.com/claviska/status/1436436571474038784
-  - yeah, show them your `<marquee>, <font> and <applet>`
-
+  - yeah, show them your `<marquee>, <font> and <applet>` 
 - ## Did someone tell you the Virtual DOM was slow?
 - https://twitter.com/RyanCarniato/status/1435721745344831494
 - Honestly great job by @GDebongnie to apply the template clone approach to VDOM. 
@@ -109,18 +144,15 @@ modified: 2021-01-08T17:13:53.965Z
   - Every modern framework does a pretty reasonable job only updating portions of the DOM through some sort of diffing. 
   - The trick here is mostly that it clones blocks of real DOM nodes rather than creation per element like most VDOM libraries.
   - Beyond that what you are seeing is pretty characteristic of top-down vs reactivity. Worse selection performance (independent nested updates are reactivity's strength) but slightly better create/remove due to lower memory overhead.
-
 - ## Although it's perfectly logical that once you append `DocumentFragment` with child nodes to the other parent node, children are moved from the fragment to the new parent node, I was surprised to discover that today for the first time
 - https://twitter.com/maxkoretskyi/status/1433810552560758785
 - What's the use case for DocumentFragment?
   - I usually use it as a container to build DOM tree, but as opposed to a DIV or other block node it allows appending multiple children in one operation, like multiple spans in my example above
-
 - ## Frontend development is essentially repeating "no for real, this framework is better than the last one" until you get promoted enough that it's not your problem anymore.
 - https://twitter.com/polotek/status/1433820890601385984
   - Life is basically just upgrading to new js frameworks/versions until you quit or the company goes out of business.
 - Web components advocacy is often talking to leads on teams during their Nth framework migration saying "but we don't really need interop since this is our last migration, for real" until they leave the team.
   - I've wondered about this. WCs don't remove frameworks. Use still need a lib. Given the speed large companies move, is this ultimately a way of loading all the frameworks on the page. Get started on the next migration before we finish the last since interopt is easier.
-
 - ## Is bun focused on Next.js apps first, or are you just making sure Next.js works properly with bun?
 - https://twitter.com/okikio_dev/status/1434306312976863238
 - Bun works with static apps and create-react-app. 
@@ -135,7 +167,6 @@ modified: 2021-01-08T17:13:53.965Z
   - The WASM stuff was the original plan but I'm not prioritizing that anymore. Web platform isn't good enough yet.
   - specifically: Filesystem Access API is impractical(不现实、不明智) for bundler-like usecases. Probably great for REPLs and things like that, but need a really comprehensive & fast & low friction filesystem API
 - I think the Web Container api is what you need, I'd suggest doing some research into it (it's what @stackblitz uses to emulate node in the browser)
-
 - ## Bun is a fast new:
 - https://twitter.com/jarredsumner/status/1434150145164079111
   - JSX/TS transpiler
@@ -143,27 +174,22 @@ modified: 2021-01-08T17:13:53.965Z
   - JS runtime environment (powered by JavaScriptCore, the engine used by Safari)
   - frontend dev server with hot reloading (and react fast refresh)
   - I’ve been working on it since April(202104-202109), or so.
-
 - bun uses 50x less memory to render the same Next.js page compared to "next dev".
 - https://twitter.com/jarredsumner/status/1434120049673990146
   - True for smaller Next.js apps too.
-
 - With Bun, Create React App starts 31x faster end-to-end.
 - https://twitter.com/jarredsumner/status/1434396683861782530
   - bun : cra(webpack+babel) = 133ms : 4184ms
-
 - ## I'm very impressed with the work @astrodotbuild has been doing to bring MPAs to the forefront. 
 - https://twitter.com/RyanCarniato/status/1430928984867368964 
   - They are doing a really good job of distilling the advantages and use cases.
 - Focusing on Static Generation and letting people ease into it has really helped.
 - But on the SPA side it's different. We sell wizardry. Portals, Time Travel, Suspense, Time Slicing, Quantum Atoms... Which are all great until you just want your website to load as fast as possible.
-
 - ## I find it slightly ironic that I see lots of complaints about Create React App being a "black box" and "all the config is hidden", and yet I see almost no such complaints about Next.js.
 - https://twitter.com/acemarke/status/1422304284083949569
   - Both are abstracted wrappers around complex Webpack config. Same principle, really.
   - I realize Next at least exposes a built-in way to modify the Webpack config from the Next config file, whereas CRA requires either ejecting or using a tool like Craco to override the config. Same result in the end: abstracted config, override points available.
 - t is about people's expectations. Next promises you a full-blown multipurpose framework, so it's expected it builds on abstracting things. That's a tradeoff. While CRA is what... just creates a new react app for you? Why would a boilerplate be so secretive about configuration?
-
 - ## an idea: we could add support to @blitz_js for deploying the frontend and backend separately.
 - https://twitter.com/leeerob/status/1415311384309551107
   - Because Vercel is frontend focused and is not recommend for deploying backend on.
@@ -175,7 +201,6 @@ modified: 2021-01-08T17:13:53.965Z
 - Is your platform API deployed via Vercel?
   - Parts of it, yes! Our REST API is standalone infra.
 - I think there’s a strong use case for Vercel / next / blitz APIs for getting spun up quickly, validating ideas, and (likely) going to market. Would be incredible to have transition documentation (or scripts!) for moving to standalone servers when the need arises.
-
 - ## Higher level UI frameworks like RN for Web/React GUI benefit from a renderer-agnostic API to build upon, so they can work with alternative renderers. 
 - https://twitter.com/trueadm/status/1413972672342528017
   - At the moment that kind of requires a Hooks API too. 
@@ -184,7 +209,6 @@ modified: 2021-01-08T17:13:53.965Z
   - If someone never writes a native element (lower case tag) we don't need to bring in any DOM APIs today. I think that bit can be refined a bit further. But also opens the questions of other types of "native" elements for other platforms.
 - I think one of the core things @necolas  and I have been exploring in the last few years are higher level event abstractions. Like `useFocusWithin` , or `usePress` etc; which are an accumulation of various native events to provide real-world interaction handlers.
   - Another is `useHover` . This one is hard to get right. The implementations tend to have different approaches that either break with touch, accessibility tools, or some other edge-case. Or `useFocusWithin` , to differentiate keyboard focus from normal focus. The list goes on.
-
 - ## I'm kind of getting fed up with frameworks prioritizing performance, data-fetching and server-side rendering capabilities over basic UX necessities. 
 - https://twitter.com/trueadm/status/1413995188876455939
   - 理性看待这种观点，开公司不是做公益，阅读器、辅助工具使用频率远不如动画感知性强
@@ -193,7 +217,6 @@ modified: 2021-01-08T17:13:53.965Z
   - A good example that we should fix focus management. If a keyboard user is using a web form and fills it in and tabs to "Submit" and press enter, if the form disappears and a spinner shows, please don't throw away focus when this happens.
 - Browsers could also do more to provide apis so apps can be agnostic to the users input type. PointerEvents is a good example, but was slow on being implemented.
   - Far too slow, and PointerEvents also don't play ball with accessibility tools like VoiceOver, NVDA, and JAWS. Surely, if you were to build a spec, you would include "screenreader" or something similar, nope, forgotten.
-
 - ## I've noticed @dai_shi and a couple others have been trying to figure out how to do this **atomic rendering** thing.
 - https://twitter.com/RyanCarniato/status/1411704881807691780
   - This probably can be applied to any reactive library.
@@ -206,7 +229,6 @@ modified: 2021-01-08T17:13:53.965Z
 - Looks nice for creating components. I wrote a reactive library earlier this year for Svelte https://formula.svelte.codes 
   - Under the hood its vanilla JS and Svelte stores, but that could be made more generic like RxJS (I wish the DOM has reactive Set and Map)
 - The real cool part of this approach is it is decoupled from the components which lets it scale apart from them. People are having fun playing around with reactivity right now, but this has profound architectural benefits.
-
 - ## Logux is a framework to build real-time web apps with:
 - https://twitter.com/sitnikcode/status/1395070650927169536
   - Collaboration and CRDT conflict resolutions
@@ -214,7 +236,6 @@ modified: 2021-01-08T17:13:53.965Z
   - Optimistic UI and Offline data editing
   - It hides all complexity by replacing the idea of request/response to background action log sync.
 - Our new Logux State state manager in 159 bytes (!) for React/Vue/Svelte which is great even outside Logux.
-
 - ## I think web framework's biggest sin might be coupling their template systems with their component models.
 - https://twitter.com/justinfagnani/status/1387788178333966337
   - Basically every framework works this way. The framework both creates components instances and runs their lifecycle, and renders their templates. Outside of web components, I'm not aware of one that decouples these.
@@ -223,17 +244,14 @@ modified: 2021-01-08T17:13:53.965Z
   - I would argue that certain types of components already empose restrictions. Only through controlling that can we look at ways to improve the system on the whole. I'm much more on the train of thought that components should be compiled out of our applications.
   - Rather than be embraced as an arbitrary boundary that adds overhead and restricts what we can do in the name of interoperability. I think for your purposes @justinfagnani you should consider frameworks as a templating language, and the fact they have components secondary.
 - 
-
 - ## Started an RFC around i18n and how it should be implemented in the core library.
 - https://twitter.com/shoelace_style/status/1383065846298337285
   - [RFC: i18n](https://github.com/shoelace-style/shoelace/issues/419)
-
 - ## component libraries that prioritize cross-framework compatibility (e.g. web components with compat layers) will always be beat out by framework-specific alternatives for any sufficiently popular framework.
 - https://twitter.com/aweary/status/1380567398160465921
   - compatibility always come at a cost and that cost is often going to be: performance, bundle size, and/or framework-integration ergonomics (e.g., how well it works with the framework as a whole).
   - In the majority of cases those things are going to be more important than compat.
   - and in the open source economy there will always be someone willing to do the work to build the fast, framework-optimized version.
-
 - ## What quality do you find the most attractive in your favorite JavaScript UI Framework?
 - https://twitter.com/RyanCarniato/status/1380351427868979200
 - For me it used to be performance, but these days I value a small bundle size and a clean syntax a lot more.
@@ -243,22 +261,18 @@ modified: 2021-01-08T17:13:53.965Z
   - but people didn't really care until we adopted the v3 syntax. 
   - It makes sense - perf and low level stuff are things you have to worry about once in a blue moon; 
   - syntax is what you have to deal with every day
-
 - ## I'm going with Postgres + Prisma (ORM) for the Remix Project Management/Trello demo app. 
 - https://twitter.com/ryanflorence/status/1379288404777607169
   - Nobody ever got fired for picking Postgres (but they maybe should get fired for using an ORM?)
 - The great thing about Prisma is that where the ORM fails it's really easy to pick it up with some SQL
-
 - ## Did a huge refactor of macos.now.sh, moved from Styled Components to plain old SCSS modules, threw out some stuff, and the size savings were 100kb
 - https://twitter.com/puruvjdev/status/1378294873384611840
   - Plus all the CSS now lives in a .css files, rather than injected by JS in runtime, so much more performant!!
-
 - ## Q for indie hackers, what’s your preferred stack?
 - https://twitter.com/AspynPalatnick/status/1376314834447429637
   - Right now I’m exploring React + NestJS + MongoDB for web dev but would be great to hear what others are using
 - Depends on the product. Node, Express, Mongo, Nuxt. Or Laravel, mySQL, Vue. For CSS it's always tailwind.
 - ReactJS, MongoDB and either MeteorJS (for near real-time client apps) or NextJS for static-ish sites. ChakraUI for styling. I'm going to look into NestJS now. I'd not heard of it.
-
 - ## The new vanguard charitable website has no real links on it. 
 - https://twitter.com/_developit/status/1212229704771653632
   - What's crazy is that everything you click changes the url, and direct links do work, but nothing is an `<a href>` , just React components and click handlers. 
@@ -271,7 +285,6 @@ modified: 2021-01-08T17:13:53.965Z
   - The library listens for all link clicks and tests if they can be handled by the available routes. If it can be handled, the default navigation is prevented and pushState routed on the client. Since this is only applied to simple clicks, all other link behaviours still work.
 - This sounds like a lot of code for testing this... I chose to ship hookrouter with a custom anchor component that pushes to history. Regular anchors just do their native thing.
   - Not sure how reducing API surface could increase testing needs - it's quite the opposite.
-
 - ## fetch() api? Eugh. You’re using “objects” to drive a protocol that’s all about text. 
 - https://twitter.com/pfrazee/status/1377640086435692547
   - They’ve played us for absolute fools.
@@ -282,14 +295,12 @@ modified: 2021-01-08T17:13:53.965Z
   - I did program extensively in tcl and it was a nice language, but today... I would like to see how it works with VSCode.
 - This is surprisingly a brilliant take on HTTP requests in JS
 - Add things like character encoding, form data, easier testing, binary payloads, debugging requests that are bigger than a simple json, etc. Please don't do that in production or anywhere else.
-
 - ## we added an oft-requested feature to the SvelteKit beta: SPA mode, aka 'no SSR
 - https://twitter.com/Rich_Harris/status/1376589240373493771
 - If hydrate is false on some pages, how is routing handled between hydrated and non-hydrated pages? 
   - Does the page request hit the server when navigating to or away from a “hydrate = false” page (instead of using the client side router)?
   - hydrate only affects the first page you hit, so as long as you don't specify `router=false` all subsequent navigations will be handled by the client-side router, even though the initial page isn't made interactive
   - this is something you only get if you use `<a>` elements for navigation rather than framework/router-specific `<Link>` components. remember to #usetheplatform
-
 - ## What's faster than a static HTML file?
 - https://twitter.com/mjackson/status/1376588198118232066
   - An HTML page with `Cache-Control: public, max-age=60` . Browsers can use a local cache instead of requesting the page again.
@@ -297,12 +308,11 @@ modified: 2021-01-08T17:13:53.965Z
   - It's a concession(妥协，让步) that jamstack has to make because it has no control over how the HTML page is served. So they try to frame "instant cache invalidation" as a good thing. But it's not.
   - With "instant cache invalidation" you don't have the option to cache HTML because it will have a `<script src="some-a23ef05.js">` in it.
   - It's ok to cache the .js (its name is unique) but not the HTML! So jamstack takes away the option.
-  - No cache for you! It's a *best practice*
+  - No cache for you! It's a *best practice* 
 - Am I missing something because it seems like when jamstack mentions instant cache invalidation, its about server cache instead of browser side cache? Are they actually referring to the same cache?
 - On storify.com back in the day we’d change the cache policy depending on whether you were logged in or not.
   - Instant updates for the author on publish but viewers would have to wait a minute or two. 
   - Instant gratification(满意，满足) but better cache hit rate.
-
 - ## Built an online playground for Vue 3 SFCs: https://sfc.vuejs.org
 - https://twitter.com/youyuxi/status/1376570861382213641
   - Uses actual @vue/compiler-sfc, bundled to run in the browser, deployed for every commit
@@ -314,13 +324,11 @@ modified: 2021-01-08T17:13:53.965Z
 - This project also includes an ad-hoc setup that rewrites a bunch of cross-importing esm source code and evaluate them as actual modules (without bundling) in a sandbox iframe.
   - Does require a JS parser, but the actual implementation is just a few hundred LOCs. Maybe useful to abstract into something reusable 
   - We use https://github.com/plnkr/runtime for this on the Mirage repl, did you happen to come across it?
-
 - ## I think the `@` for event handler was mostly popularized by Vue and later on by LitHtml. 
 - https://twitter.com/RyanCarniato/status/1375527347948941315
   - Any thoughts on why this syntax and not the `on:click` from Svelte for example?
 - We choose @ . and ? in lit-html so that we had 1 character prefixes and could check for them easily.
   - They're also not valid to use with setAttribute() so the chance of collision with a real world attribute is extremely low
-
 - ## I wonder how many people realize that React Hooks is really just disconnected, less declarative reactive programming.
 - https://twitter.com/BenLesh/status/1374755992378953730
 - Comments immediately go towards RxJS (Streams) but hooks syntactically more resemble MobX (Signals/Behaviors). In that light this description is dead on. I'd go as far as saying almost all JS UI Frameworks land here to anyone wanting to beat that tired React isn't reactive drum.
@@ -329,29 +337,24 @@ modified: 2021-01-08T17:13:53.965Z
   - I think they were a step in the right direction and there was reason to be excited about that. But there are caveats and a lot of people have been bitten by them. Hooks are essentially limited reactivity. The reactive part is awesome, but the limitations aren’t.
 - RxJS makes react much cleaner imho. In fact, imho RxJS (the reactive paradigm, really) makes working in an event driven env like the frontend of web apps much easier after the initial learning curve, results in much cleaner code, and encourages better data como/flow
   - RxJS was absolutely the worst thing I ever had to maintain.
-
 - ## To make nostalgie.dev's SSR pipeline extensible, I've been trying to figure out how to give plugins the ability to customize the wrapper markup.
 - https://twitter.com/filearts/status/1374342826318761992
   - "Why not give them a mutable HTML AST?", I thought. Then I wondered if npm.im/linkedom would be fast enough
   - Plugins will get a per-request, high-fidelity HTMLDocument instance that can be modified in an idiomatic way before being stringified and served.
 - If you think about doing SSR, the patterns for rendering the app itself are pretty solid; you call your framework's renderToString() equivalent and dump it in #root of your html template.
   - But what if Plugins want to customize that html template in a _general_ way?
-
 - ## Anyone know if Angular, Ember, or Svelte have a hooks or composition type API?
 - https://twitter.com/justinfagnani/status/1372967430025142272
   - Looking to enable reusable, stateful, reactive units of code across frameworks.
 - We're working on a decorators/class based API for providing the same reactive composition that hooks provides. 
   - I would say the result ends up being a bit less granular, but a bit more clear IMO
-
 - ## Very good picture, it's from @MarkoDevTeam , explaining streaming SSR.
 - https://twitter.com/dogetoge/status/1372440505200504833
 - I love this visual. I used to try to explain this with Chrome timelines. @mlrawlings nailed it with this one.
-
 - ## I’ve been talking lately how Vercel isn’t good for fullstack, but wow do I love the simplicity of their api/folder with regular node req/res handlers.
 - https://twitter.com/flybayer/status/1372007899418013697
   - So much nicer and more portable than the lambda event api
 - server codesharing DX. The lack of an arbitrarily nestable way to share layout was too painful so I use React Router and client-side render everything. It's been great.
-
 - ## Event bubbling causes so many problems. It breaks component encapsulation. Events shouldn't leak out of a component just like styles shouldn't.
 - https://twitter.com/devongovett/status/1371549410245640195
   - When you handle an event in a component, you should usually stop propagation so parent components don't also try to handle it.
@@ -369,7 +372,6 @@ modified: 2021-01-08T17:13:53.965Z
   - On the other hand, for native events, Vue has a nice syntaxis to stop event propagation
 - So much code (and people's mental models) assumes that events will bubble, that I've found this can lead to subtle, hard to find/debug problems. I use it sparingly and deliberately, but not universally for the above reason.
 - I've been toying with an Overrides pattern that allows controlled bubbling. Still need to experiment more, but the idea was you could always stopPropagation and then use overrides where needed.
-
 - ## Angular 的 NgModule 是为了解决什么问题？
 - https://www.zhihu.com/question/376817427
 - 像命名空间一样提供一种方式支持组件之间的引用。这个可以对比vue和react。
@@ -384,14 +386,12 @@ modified: 2021-01-08T17:13:53.965Z
   - vue有的是直接附着在了全局Vue对象上(如vue.router$)，也有采取js全局变量的。
   - react就不用说了，js怎么做react就怎么做。
   - 相比之下angular确实是要规范不少，不止是在代码上有更多约束，结构设计上也是有一定规划的。
-
 - ## Idea: a Next.js plugin that takes typed `api/` routes and codegens React hooks (with SWR / react-query) for reads/writes
 - https://twitter.com/rauchg/status/1368283797280550912
   - Never deal with `fetch` and `res.ok` and `body` and `.json()` and AbortControllers ever again in your life
 - I think @blitz_js is doing something like that
   - Yep! Plus tons of other awesome features and conventions that make you super productive for building fullstack apps
 - Tougher than it sounds. Codegen thrives when it can target a static schema-style language (like GraphQL). Any codegen that targets actual code will need to either actually run that code (horrible side effects possible) or enforce conventions on that code.
-
 - ## If we let go of the dream of running @blitz_js solely on lambdas, then we can fully embrace websockets and bake awesome real-time features into Blitz.
 - https://twitter.com/flybayer/status/1370463255429275654
   - Serverless is AWESOME for queues and background processing, but less awesome for user facing requests.
@@ -402,14 +402,12 @@ modified: 2021-01-08T17:13:53.965Z
 - You can use lambdas with websockets
   - Conceptually, how is that possible? Aren't Lambda's stateless? Isn't a web socket by definition a persistent http connection?
   - You can connect to lambda via socket a couple different ways. API gateway sockets, Appsync sockets, or older school MQTT sockets APIgateway/appsync are most common today
-
 - ## Svelte Kit is now open source
 - https://twitter.com/SvelteSociety/status/1370157702144348164
   - https://github.com/sveltejs/kit
 - Q: What's the big deal about SvelteKit? 
   - A: The official recommended way to build apps with @Sveltejs . 
   - Superfast development with @vite_js , deployed with static or serverless adapters.
-
 - ## Web platform support: Flutter or ReactNative? TLDR: React-Native for websites, Flutter for web-apps
 - https://twitter.com/sebastienlorber/status/1367424075619049474
 - Flutter 2 web has 2 possible backends:
@@ -464,21 +462,18 @@ modified: 2021-01-08T17:13:53.965Z
   - You're certainly entitled to that view! Pointing out it's a valid option that has been resonating with React devs. Especially if you want true web platform support and the standard react dev experience and compatibility with all the React libs used today
   - I want true web platform support AND true mobile platform support AND true desktop platform support, which RN brings to the table.
   - Using the web everywhere has its advantages but also its limits, until WebViews become as good as native
-
 - ## Flutter 2 announced last week to show off the cross platform power.
 - https://twitter.com/kudochien/status/1369491495892316160
   - However, for the web support, since it's based on skia. It should be difficult to use SSR or prerender for SEO.
   - For embedded Linux, we also has an ongoing plan by react-native-skia.
   - By react-native-skia, we could extend react-native to other platforms like Flutter.
   - Although I didn't have much time on this project, but people from NAGRA OpenTV invested a lot.
-
 - ## favorite coding trend lately: removing the code needed to connect frontend to backend (api calls)
 - https://twitter.com/chris__sev/status/1368283798518050830
   - [blitz.js](https://github.com/blitz-js/blitz)
   - [inertia.js](https://github.com/inertiajs/inertia)
   - [livewire](https://github.com/livewire/livewire)
   - [Alpine](https://github.com/alpinejs/alpine)
-
 - ## Hot @angular take: "core" and "shared" modules are bad practices
 - https://twitter.com/gc_psk/status/1368143538853191681
   - I dislike core and shared modules used in multiple places. Adds too much overlapping and leads to bloated bundles.
@@ -487,12 +482,10 @@ modified: 2021-01-08T17:13:53.965Z
   - The problem I see with SharedModule is that often you end up with lots of unused modules just for the convenience of using a few.
   - I mean the giant ones with just about everything (99% out there)
   - Smaller, local shared modules of things that are used often in combination are OK
-
 - ## Why does it take GTA online so long to to load? Great investigation, and the answer is… a JSON parser??
 - https://twitter.com/jaffathecake/status/1366275005185728512
   - [How I cut GTA Online loading times by 70%](https://nee.lv/2021/02/28/How-I-cut-GTA-Online-loading-times-by-70/)
 - I can imagine how this happened; 'simple' task given to a junior team member, and 7 years ago the list of items was a lot smaller than 10MB. Too busy to be reviewed properly as it 'works'.
-
 - ## JSX Lite is now the first and only framework you can edit visually right in your IDE 
 - https://twitter.com/Steve8708/status/1365356598441308162
 - At Vaadin we are working on something similar for those who prefer lit-html tagged literals to JSX.
@@ -502,7 +495,6 @@ modified: 2021-01-08T17:13:53.965Z
   - I'm stoked how JSX-Lite looked at common templating patterns--I'm biased since it basically reflects Solid's API--came up with something that should work regardless of top-down, reactive, or fine-grained rendering paradigms. As someone constantly fighting tooling it is refreshing
 - Solid's API was such a huge unlock and inspiration for JSX Lite, and the highest performing output target! 
   - Solid is such an amazing project on so many levels everyone should check out
-
 - ## Replace Type Component with Subcomponents. Tip: replace ReactNode by ComponentType
 - https://twitter.com/sebastienlorber/status/1363891104194699269
   - Describe a pattern I often use in React, where you have some kind of "router" component that dispatch to subcomponents by reading a "configuration map".
@@ -516,14 +508,12 @@ modified: 2021-01-08T17:13:53.965Z
 <InvoiceDetails invoice={invoice} theme={Theme.Simple} />
 <InvoiceDetails invoice={invoice} theme={Theme.Modern} />
 <InvoiceDetails invoice={invoice} theme={Theme.Classic} />
-
 // Into this 👇
 const Details: Record<Theme, ReactNode> = {
   [Theme.Simple]: <SimpleTheme invoice={invoice} />,
   [Theme.Modern]: <ModernTheme invoice={invoice} />,
   [Theme.Classic]: <ClassicTheme invoice={invoice} />,
 };
-
 ```
 
 - ## What is your favorite web server port?
@@ -531,7 +521,6 @@ const Details: Record<Theme, ReactNode> = {
 - 8000 of course, python -m http.server
 - Parcel’s 1234 always appealed to me.
 - also like Redwood's :8910
-
 - ## More and more I’m realizing that there are two very different ideas of the web. 
 - https://twitter.com/devongovett/status/1363194220635426817
   - One group thinks the web is for content sites, marketing pages, and mainly server rendered apps. 
@@ -552,14 +541,12 @@ const Details: Record<Theme, ReactNode> = {
   - Document context (light browser view for content - this is what Google is trying to do with AMP)
   - Application context (there are many things here, it treats the screen window as a canvas, we can mess things up and create a new API which is exactly to the benefit of building web applications)
   - Legacy Context (the current browser, which we will give up in 10 years, downgrading websites to the document model or upgrading them to the application model)
-
 - ## [I was impressed by @pmndrs valtio, so I decided to figure out how to implement a proxy state like valtio, using valtio's test cases.](https://twitter.com/lihautan/status/1361481299970592770)
   - Tips on get a deeper understanding of the library you are using
   - Try implement the library based on the public API and test cases, figure out how it might be implemented.
   - Peek into the source code if you are stucked.
   - https://www.youtube.com/watch?v=uZnO2G8pqn0
   - It's very interesting to see someone like you got interested in the vanilla version. I heard someone else is using it in vanilla. I had no idea if it's useful in vanilla when I started, as its goal was to implement an API that is compatible with React's useMutableSource.
-
 - ## Running web apps from archives (think cross-platform executables) would be an important complement to hosted PWAs.
 - https://twitter.com/rauschma/status/1362440337705365504 
   - Does anyone know why there is so little progress in this area (AFAICT)?
@@ -569,13 +556,11 @@ const Details: Record<Theme, ReactNode> = {
   - That breaks a lot of assumptions about security and privacy on the web. 
   - Still would be interested in seeing this developed though.
 - [Dynamic bundle serving with WebBundles](https://docs.google.com/document/d/11t4Ix2bvF1_ZCV9HKfafGfWu82zbOD7aUhZ_FyDAgmA/edit#)
-
 - ## When you set an `id` to an HTML element it... becomes a global JavaScript variable referencing that element
 - https://twitter.com/stackblitz/status/1359525093601382406
   - Beware of relying on globals!
 - always name your id with - in between，example layout-version
 - Global variables should not be here. They should be in a seperated js file that is used as global. And also not in any dom element.
-
 - ## creating framework-agnostic components with @stitchesjs core
 - https://twitter.com/peduarte/status/1358125279303065602
 - Im so happy with this API so far. One thing is spec'ing it and the other is actually using it.
@@ -584,15 +569,13 @@ const Details: Record<Theme, ReactNode> = {
   - Would be cool to have stitches dev tools to visualise components variants like that 
   - Question: Are there any limitations for variants? Obviously, I can't put variants inside variants. But besides that, is there anything else? Can I use pseudo selectors, media queries etc.?
   - No limitations like that apart from obvious stuff like you mentioned
-  - The cool thing about variants is that they can be “immutable”, meaning instead of changing its styles on different conditions (breakpoints), they can be *applied conditionally*
+  - The cool thing about variants is that they can be “immutable”, meaning instead of changing its styles on different conditions (breakpoints), they can be *applied conditionally* 
 - Framework-agnostic in 2019: React, Vue, Angular
   - Framework-agnostic in 2021: different flavors of React
   - stitches supports svelte too.
-
 - ## The existing history API (window.history, popstate, etc.) is bad for building web apps. We've been working on a proposal for a new history API, and would love your feedback
 - https://twitter.com/domenic/status/1356656668222885889
 - I think it should be possible to iterate on top of what window.history already provides, and just fix the problems with it instead of introducing something entirely new.
-
 - ## After all these years there really are still only 2 types of frontend JS UI Framework. Angular(React) and KnockoutJS. 
 - https://twitter.com/RyanCarniato/status/1356655576420282371
   - Work has gone into optimization, and borrowing the benefits of the other's approach, sometimes producing a hybrid. 
@@ -605,7 +588,6 @@ const Details: Record<Theme, ReactNode> = {
   - Having a framework designed with a push-based model from the ground-up feels so much "cleaner"
   - Yeah, Vue is another example of this. Their reactive system sits on top of a VDOM. The types of optimizations it does are not unlike Solid or Svelte, but uses them to generate VDOM nodes and then goes diff them.
 - 计算机研究的问题，很多都可以总结为经典问题，但具体业务的应用场景需要修改
-
 - ## What are folks using to split their CSS bundles to only load the CSS used by the current page?
 - https://twitter.com/rob_dodson/status/1355575341696204801
 - is there some system that creates shared chunks for css files? 
@@ -614,7 +596,6 @@ const Details: Record<Theme, ReactNode> = {
   - page specific styles as a file
 - MiniCssExtractPlugin seems to work OOTB if you lazyload / import() page JS, though that assumes your pages have JS
   - I use that for all my apps but only lazyload pages in big apps
-
 - ## Does any Node.js serverless function providers optimize cold start time with V8 heap snapshots?
 - https://twitter.com/youyuxi/status/1353853045520674817
 - Don’t think so, 
@@ -623,7 +604,6 @@ const Details: Record<Theme, ReactNode> = {
 - Cloudflare workers are your best bet if you want to minimize cold start (was they don’t have any) but they don’t run Node.js. 
   - They have a custom runtime that’s a thin layer atop v8.
 - Cloudflare is closest.
-
 - ## My Monday off has primarily gone towards a Babel/Webpack upgrade on a public sector code-base 
 - https://twitter.com/slightlylate/status/1351346159869050880
   - and my prior that all of this is suspect and complexity-for-promotion's sake has never been more strongly reinforced.
@@ -641,7 +621,6 @@ const Details: Record<Theme, ReactNode> = {
   - It's hewing a close line to the spec...the problem is its prevalence, rather than its qualities.
 - After almost a decade of using various js frameworks and acquiring transient knowledge that's superseded in a few years by whatever n framework(s), I've come to appreciate the value of learning standardised APIs. 
   - They won't last forever, but they will last much longer.
-
 - ## Maybe you don’t need that SPA
 - https://twitter.com/RyanCarniato/status/1334732629808009216
 - @_developit's Island Architecture keeps getting brought up as if it's this new thing, despite this being the default in Marko for over 5 years.  Maybe "Island" is just catchier?
@@ -659,7 +638,6 @@ const Details: Record<Theme, ReactNode> = {
   - People follow the projects based on the hype(促销广告、促销讨论). 
   - If a big company uses technology, everyone just blindly follows that. 
   - No one really notices the other better projects if they do not have enough hype around them.
-
 - ## Which frontend frameworks support UIs that mostly work without JS?
 - https://twitter.com/rauschma/status/1274737114794659842
 - E.g.: Initially, there is server-rendered HTML that links to other pages. JS is injected into that HTML, but the URLs remain. Benefit: You can open links in new tabs.

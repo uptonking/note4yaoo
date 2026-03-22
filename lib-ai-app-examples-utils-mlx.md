@@ -599,7 +599,7 @@ modified: 2025-11-01T10:54:26.044Z
   - [I need a feedback about an open-source CLI that scan AI models (Pickle, PyTorch, GGUF) for malware, verify HF hashes, and check licenses : r/LocalLLM _202601](https://www.reddit.com/r/LocalLLM/comments/1qcmc9v/i_need_a_feedback_about_an_opensource_cli_that/)
     - I've created a new CLI tool to secure AI pipelines. It scans models (Pickle, PyTorch, GGUF) for malware using stack emulation, verifies file integrity against the Hugging Face registry, and detects restrictive licenses (like CC-BY-NC). It also integrates with Sigstore for container signing.
 # mlx-benchmark
-- https://github.com/jundot/omlx /2.6kStar/apache2/202603/python
+- https://github.com/jundot/omlx /6.4kStar/apache2/202603/python
   - https://omlx.ai/
   - https://omlx.ai/benchmarks
   - LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar
@@ -613,3 +613,6 @@ modified: 2025-11-01T10:54:26.044Z
   - 70+ models have been optimized/verified on ipex-llm
   - [Run llama.cpp Portable Zip on Intel GPU with IPEX-LLM](https://github.com/intel/ipex-llm/blob/main/docs/mddocs/Quickstart/llamacpp_portable_zip_gpu_quickstart.md)
     - 需要下载并使用定制版llama.cpp
+
+- [MLX Studio — Chat, Code, Generate Images & More on Mac | Local AI with 20+ Tools](https://mlx.studio/)
+  - https://github.com/jjang-ai/mlxstudio /未开源

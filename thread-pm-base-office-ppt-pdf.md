@@ -188,6 +188,11 @@ modified: 2024-01-11T15:57:32.182Z
   - 过去我做复杂PPT时，会把每一页的核心内容写在一张张便利贴上，贴满一墙。这样逻辑结构一目了然，哪里不好就撕掉，顺序不对就调换，高效又直观。
   - 现在，我们把它做进了产品里。每一个页面，就是一张“数字便利贴”，让你看得清清楚楚，调得明明白白。
 
+- [[开源推广] PPT Agent ](https://linux.do/t/topic/1795869)
+  - 感谢Sandun佬友开源的思路和提示词, 项目为纯 Vibe Coding，发生了一些需求偏移，例如：AI Agent工作方式，智能推断和mcp，但是保证可以勉强使用
+
+- [基于 Sandun 的 PPT 方案，做了个开箱即用的 Skills - LINUX DO _202603](https://linux.do/t/topic/1790918)
+
 - [刚才看到佬的很牛逼的ppt思路分享，我让claude把这个做成了skill - LINUX DO _202603](https://linux.do/t/topic/1782574)
 
 - [不是，我不是很久以前就推荐过我做 ppt 的仓库了吗 ppt-master ，目前 2100 star，为什么还有纠结什么开源与否、skill 如何生成这些问题？ ](https://linux.do/t/topic/1785221/4)

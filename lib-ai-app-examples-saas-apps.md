@@ -382,6 +382,10 @@ modified: 2025-02-21T17:17:42.225Z
   - https://x.com/ImSh4yy/status/2013023687943860324
     - I forked this repo and had Opus 4.5 optimize the code and Gemini 3 to create more themes.
     - looks familiar to https://makemap.co/
+
+- https://github.com/THU-MAIC/OpenMAIC /10.7kStar/AGPL/202603/ts
+  - OpenMAIC (Open Multi-Agent Interactive Classroom) is an open-source AI platform that turns any topic or document into a rich, interactive classroom experience.
+  - [THU-MAIC/OpenMAIC 开源多智能体互动教室 - LINUX DO _202603](https://linux.do/t/topic/1765092)
 # ai-apps
 - https://github.com/iOfficeAI/AionUi /18.4kStar/apache2/202603/ts
   - https://www.aionui.com/

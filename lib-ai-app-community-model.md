@@ -1130,7 +1130,14 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [Cheap LLM vs Local LLM : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1s00zby/cheap_llm_vs_local_llm/)
+- Find the model you are thinking of running locally and subscribe to it with API calls. Compare if it is good enough. You likely will prefer the state of the art models.
+
+- Use cheap APIs for: orchestration / planning steps, anything that needs strong reasoning or large context. One bad step in an agent chain can waste all the previous steps, so it's worth paying for quality there.
+- Use local for: the repetitive subtasks - classification, extraction, reformatting, tool-call routing. A Qwen3 8B handles these fine and you get zero latency overhead, no rate limits, and no surprise bills when your agent accidentally loops.
+- The hybrid approach works best: frontier model as the "brain" that plans, local model as the "hands" that execute the simple stuff. You can cut API costs 60-70% this way while keeping quality where it matters.
+
+- 5070ti, Tried qwen 9b, moved to 27b. Usable but a lot of debugging because agents wouldn’t execute multi step tasks properly.
 
 - ## [Are local LLMs better at anything than the large commercial ones? : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rtpqqo/are_local_llms_better_at_anything_than_the_large/)
 - They are better at privacy. That is a thing.

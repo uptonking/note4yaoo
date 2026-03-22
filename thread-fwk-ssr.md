@@ -50,6 +50,48 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## 
 
+- ## React didn’t invent RSC, SSR, or Hydration, conceptually:
+- https://x.com/shuding/status/2035666444919468354
+- SSR is Express:
+
+```js
+app.get('/', (req, res) => {
+  res.render('index', { name: 'John' })
+})
+```
+
+- RSC is Pug:
+
+```js
+if name == "Bob"
+button(class = "btn") Hello Bob
+else
+  button(class = "btn") My name is #{
+    name
+  }
+```
+
+- Hydration is jQuery:
+
+```js
+$('.btn').click(...)
+```
+
+- That’s why there’s no `window` in SSR, and you can’t set `onClick` in RSC, and you have hydration errors in jQuery too (such as a typo of .btn) but with a less fancy name.
+- although onclick does work in pug no?
+  - Right but only serialized functions (strings) though, but you can’t do things like:
+
+```JS
+app.get('/', (req, res) => {
+  res.render('index', { onclick: () => {…} })
+})
+```
+
+- In theory RSC can allow it too: `<button onclick='js_string'>` but that’s not great.
+
+- This is way over my head but makes me wonder how much "new" tech is just old ideas with better marketing
+- we just repackage old ideas with better DX
+
 - ## The Laravel team is officially taking over my Inertia.js project. _202502
 - https://x.com/reinink/status/1886519391367598359
   - Almost exactly six years ago, I started a project inspired by Turbolinks that let developers using classic server-side frameworks like Laravel and Rails build rich client-side SPAs with libraries like React and Vue. That project became Inertia.js.

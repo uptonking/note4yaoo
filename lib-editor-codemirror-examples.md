@@ -13,7 +13,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - examples
   - 类似打字机动态输出文字, 多用于ai生成代码/文本
-    - **pausable**
+    - **pausable** 
     - multi-writer的效果
   - (diff)字符渐变的动画效果, 🤔 和时间旅行的回放过程有何区别
     - diff只需初始结束状态, 而时间旅行支持中间状态
@@ -737,7 +737,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://minditor.dev/
   - A plug-and-play, highly customizable block-based rich text editor. 
   - Supports block/inlineBlock development with any framework, including React/Vue.
-  - 未使用react/vue, ~~使用自研未开源的视图框架axii~~
+  - 未使用react/vue, ~~使用自研未开源的视图框架axii~~ 
   - 依赖codemirror6、highlight.js、eventemitter3、thememirror、@uppy/xhr-upload
   - 由 Zhenyu Hou 独立开发和维护
   - 不支持拖拽改变block顺序
@@ -1262,6 +1262,13 @@ modified: 2023-06-23T12:46:53.288Z
   - When enabled, clicking a line number will select that line. 
   - In addition to rendering standard Git diffs and patches, you can pass any two files in @pierre/diffs and get a diff between them. 
 
+- https://github.com/kamranahmedse/diffity /PolyForm/202603/ts
+  - an agent-agnostic, GitHub-style diff viewer and code review tool.
+  - It works with Claude Code, Cursor, Codex, and any AI coding agent. Install the skills for your coding agent (Claude Code, Cursor, Codex, etc.)
+  - The `--base/--compare` flags use the same terminology as GitHub PRs — base is what you're comparing against, compare is the branch with changes. 
+  - https://x.com/kamrify/status/2035701010048389187
+    - Introducing Diffity - GitHub style diff and code review tool built for developers and AI
+
 - https://github.com/BearToCode/mismerge /MIT/202402/ts/svelte
   - https://beartocode.github.io/mismerge/
   - Mismerge is a modern two-way and one-way merge editor for the web, built with Svelte
@@ -1695,7 +1702,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/qualified/lsps /MIT/202206/ts/inactive
   - Use Language Servers with in-browser editors. 
-  - Monorepo of **editor agnostic packages and CodeMirror5 client**.
+  - Monorepo of **editor agnostic packages and CodeMirror5 client** .
   - ✨ 支持多种编辑器，示例使用CodeMirror5
   - 示例使用 lsp-ws-proxy ， 可参考配置方法
   - See examples/rust-analyzer to run this locally.

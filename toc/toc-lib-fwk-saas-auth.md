@@ -478,4 +478,7 @@ modified: 2025-09-23T09:28:08.532Z
   - This module provides a minimalistic ACL implementation inspired by Zend_ACL.
   - When you develop a web site or application you will soon notice that sessions are not enough to protect all the available resources. Avoiding that malicious users access other users content proves a much more complicated task than anticipated. ACL can solve this problem in a flexible and elegant way.
   - Create roles and assign roles to users.
+# registeration
+- https://github.com/mskatoni/ni-mail /apache2/202603/js
+  - [ni-mail📬专属于佬友你的私人域名邮局，基于cloudflare worker+kv，原生支持无限别名，KV存件API收件，超轻量仅10KB，Deploy to Cloudflare一键部署  _202603](https://linux.do/t/topic/1797887)
 # more

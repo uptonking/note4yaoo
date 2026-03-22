@@ -62,6 +62,7 @@ https://meeting.tencent.com/p/9606972663
   - https://playground.liquid.ai/chat
   - https://huggingface.co/chat/
   - https://huggingface.co/playground
+  - https://github.com/marketplace/models/azure-openai/gpt-5-mini/playground
 
 - ai-deep-research
   - chat: openai, gemini, mistral, qwen, glm

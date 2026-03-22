@@ -24,6 +24,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 大模型可能的成本变化: 推广期token廉价, 等到工程师coding能力下降, token再涨价, 因为本地运行大模型成本太高
 
 - ai-dev-xp
+  - 🦞 openclaw带来的产品变化, 用户更能接受在本地电脑安装常驻app/进程, 然后通过im-app交流
   - 难复现好的效果，同样的prompt+context，有时输出的效果就是不好
   - agent框架的tool-use实现对最新llm的支持，llm-provider的部署 都会影响llm的效果
   - ai适合快速生成草稿文本或原型, 但修改难
@@ -296,11 +297,11 @@ modified: 2025-03-22T16:10:24.856Z
       - personal bench suite like FlowDown
     - acp for pdf/rich-editing: 参考 google-workspace-cli 实现 本地版
     - diff without git
-    - WebMCP for pdf/rich-editing
-    - obsidian for pdf
     - proofreading: 一键检查, 版本历史
       - chunking viz
-    - proofreading for word/excel/ppt
+      - proofreading for word/excel/ppt
+    - WebMCP for pdf/rich-editing
+    - obsidian for pdf
     - 还原图文混排
     - 提取 figure、表格
     - 👾 pdf-edit agent
@@ -772,7 +773,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 都是临时渠道，不开签到了，直接每天送 100 刀余额
   - [CM-API-公益站 _202603](https://api.chengmo.cc.cd/console/personal)
     - [【CM公益站】佬们，该蹬车了！GPT-5.4强势回归！0倍率+无限制 ](https://linux.do/t/topic/1777029)
-  - [52公益站 _202603](https://free.9e.nz/dashboard)
+  - [52公益站 _202603](https://free.9e.nz/dashboard), 无需签到
     - [[52公益站]既然天才程序员回归了，那各位爽蹬吧（支持5.4） ](https://linux.do/t/topic/1774352)
     - 倍率设置为0，为保证可用性并发默认5
     - 随时失效，不作保障性承诺
@@ -796,6 +797,13 @@ modified: 2025-03-22T16:10:24.856Z
     - [【Infinite API】全新公益站上线试运营 ](https://linux.do/t/topic/1622685)
     - 50 RPM， 25 个同时进行的请求
     - arrow-preview, QuiverAI API flagship SVG gen
+  - [真好记公益站](https://newapi.zhenhaoji.qzz.io/console/personal)
+    - https://fuli.zhenhaoji.qzz.io/
+    - 随便刷吧，可能刷崩了，我就关站了
+    - cc, opus 是cursor2api的 sonnet4.6
+    - 无codex
+    - 每日 3 次机会，随机获得 $30 ~ $100 余额， 余额超过 $1000 不可参与
+    - [真好记公益站 ](https://linux.do/t/topic/1795254)
   - [api-test](https://openai.api-test.us.ci/console/personal)
     - [开个小公益站测试一下 ](https://linux.do/t/topic/1414593)
     - [LDC Virtual Goods Shop](https://shop.api-test.us.ci/)
@@ -804,6 +812,9 @@ modified: 2025-03-22T16:10:24.856Z
     - 默认 RPM30，1 级可注册，不允许批量测活
   - [蒸蚌公益站 _202603](https://laoxi.ethan010203.online/console/personal), 签到50
     - gpt-5.2
+  - [marybrown API _202603](https://marybrown.dpdns.org/console/personal)
+    - [服务器小升级,grok-4.2无限用和gpt-5.4试用 _202603](https://linux.do/t/topic/1795512)
+    - 23公益站作者后续维护
   - [Codex - New API](https://codex.makeup/console/personal)
     - [又一个codex公益站，人手一个蹬  ](https://linux.do/t/topic/1645651)
     - gpt-5.4, gpt-5.3-codex
@@ -838,9 +849,6 @@ modified: 2025-03-22T16:10:24.856Z
     - [[爱你公益站]开站 ](https://linux.do/t/topic/1638562)
     - 暂时只有 gpt 系列，
   - [小辣椒 公益站～(～￣▽￣)～](https://yyds.215.im/console/topup)
-    - cc
-  - [真好记公益站](https://newapi.zhenhaoji.qzz.io/console/personal)
-    - 随便刷吧，可能刷崩了，我就关站了
     - cc
   - [纳米哈基米](https://free.nanohajimi.mom/console/personal), 签到
     - Gemini Imagen
