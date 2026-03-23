@@ -371,8 +371,11 @@ modified: 2022-11-11T11:04:29.007Z
 
 - https://github.com/prinsss/twitter-web-exporter /2.2kStar/MIT/202603/ts
   - Export tweets, bookmarks, lists and much more from Twitter(X) web app. (推文/书签/收藏/列表导出工具)
+  - 支持导出json数据，但不支持导入本地json数据
   - 🐛
     - 管理功能不够强大, 可参考dewey或twillot
+    - 数据保存在浏览器缓存, 容易被清理管家自动清除
+    - bookmarks页面需要手动滚动才能让动态加载的书签被捕获, 对于书签很多的情况很繁琐
     - 安装扩展后，一直捕获不到bookmarks, 过了几小时，突然就捕获到了, 奇怪
   - [Content-Security-Policy (CSP) Issues _202404](https://github.com/prinsss/twitter-web-exporter/issues/19)
   - [开启插件后刷不出帖子 _202403](https://github.com/prinsss/twitter-web-exporter/issues/8)

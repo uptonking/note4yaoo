@@ -290,6 +290,10 @@ VLLM_LOGGING_LEVEL=debug VLLM_CONFIGURE_LOGGING=1 vllm serve RUC-DataLab/DeepAna
 
 cd ~/Documents/opt/compiled/qdrant && ./qdrant
 
+# https://www.npmjs.com/package/@tencent-weixin/openclaw-weixin
+
+npx -y @tencent-weixin/openclaw-weixin-cli install
+
 ```
 
 ```sh /image
@@ -312,6 +316,31 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
   - ?
 - dev-log
   - ?
+
+## 0323
+
+- [Qwen3.5 no think? : r/ollama _202603](https://www.reddit.com/r/ollama/comments/1rk9fdt/qwen35_no_think/)
+  - It works in the Ollama CLI by `/set nothink` command
+
+- [[Bug]: bluebubbles plugin installation fails with `zod` dependency error · Issue · openclaw/openclaw _202603](https://github.com/openclaw/openclaw/issues/12067)
+  - The plugin installer needs to run dependency installation (pnpm install / npm install) in the extension directory after extracting the tarball, OR the plugin build process should bundle all dependencies (including zod) into the published package so no separate install step is needed. As a user workaround, manually running 'pnpm install' inside ~/.openclaw/extensions/bluebubbles/ resolves the missing zod dependency.
+  - 👷 可以打开 ~/.openclaw/extensions 然后删除名称异常的目录(这些目录可能是之前网络问题或其他问题导致安装未成功的), 然后重新执行安装就行了
+    - rm .openclaw-install-stage-eOx4vP
+    - rm .openclaw-install-backups
+
+```sh
+# User workaround:
+cd ~/.openclaw/extensions/bluebubbles
+npm install
+# Then restart openclaw
+
+# Maintainer fix (in the plugin installer logic, after tarball extraction):
+# After: extractTarball(tarballPath, extensionDir)
+# Add:   await execAsync('pnpm install --prod', { cwd: extensionDir })
+```
+
+- [看了下微信的openclaw 使用条款，只能说这很微信 - LINUX DO _202603](https://linux.do/t/topic/1796571)
+  - 有权对你的输入输出进行识别，采取拦截、阻断等安全措施
 
 ## 0320
 

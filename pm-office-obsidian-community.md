@@ -293,7 +293,12 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## 看大家都在推 Obsidian。但一翻比较后我选择了 @tryOctarine , 30MB 左右，相比 Obsidian 小了一个数量级。
+- https://x.com/1ronben/status/2035978760827322578
+  - 作者对性能要求严格，响应速度很快。
+  - 采用本地 md 保存，适合 Agent 利用。应用本身也还内置了智能对话功能。
+  - 多 Workspace，数据库模式，todo 模式，日记模式，模版，git 备份...
+  - 难得的是作者基本日更，坚持很长时间了，是一款非常有潜力的产品。
 
 - ## [Do you use Daily Notes in Obsidian? Is this something you would want? : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1q8zw78/do_you_use_daily_notes_in_obsidian_is_this/)
   - 热力图换成了背景图

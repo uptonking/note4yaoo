@@ -1681,6 +1681,14 @@ modified: 2025-08-23T11:43:35.904Z
 
 - https://github.com/dwrodri/ComfyUI-headless /202401/inactive
   - A fork of ComfyUI with better support for headless execution
+
+- https://github.com/Einzieg/comfyui2api /MIT/202603/python
+  - 将 ComfyUI 封装为 OpenAI 兼容 的 HTTP API 服务，让你可以像调用大型语言模型一样，无缝对接现有的 AI 应用和前端界面。
+  - 多模态支持：文生图 / 图生图 / 文生视频 / 图生视频（以 comfyui-api-workflows/*.json 为工作流来源）。
+  - 热加载支持：监听工作流目录变更，修改工作流后自动重新加载，无需重启服务
+  - 队列与状态管理：完善的任务生命周期（pending / queued / running / completed / failed）。
+  - 实时进度推送：桥接 ComfyUI 的 WebSocket 接口，将执行节点、进度、错误等事件透传给前端，轻松实现实时进度条。
+  - 兼容 New-Api 等聚合分发系统。
 # sd-ui/webapp
 - https://github.com/ImDarkTom/ComfyUIMini /288Star/AGPL/202501/ts/inactive
   - A mobile-friendly WebUI to run ComfyUI workflows.

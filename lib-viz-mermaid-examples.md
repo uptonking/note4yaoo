@@ -44,6 +44,21 @@ modified: 2025-11-19T17:59:15.580Z
     - The ASCII rendering engine is based on mermaid-ascii by Alexander Grooff. We ported it from Go to TypeScript
     - https://github.com/AlexanderGrooff/mermaid-ascii /MIT/202601/go
       - Render mermaid diagrams in your terminal
+
+- https://github.com/u14app/mindmap /apache2/202603/ts/svg/NoDeps
+  - https://mindmap.u14.app/
+  - A beautiful, interactive mind map component for React.
+  - Natively supports AI stream output with Markdown list syntax and iOS-style UI.
+  - [【开源】Open MindMap 更轻量级的思维导图，自创 Markdown-Like 语法，MindNode 风格  _202603](https://linux.do/t/topic/1800074)
+    - 原生 AI 支持，Markdown-Like 语法，好看的 UI，轻量级（gzip 16.8k）。
+    - 基于文本的思维导图，目前最主流的还是mermiad, 我觉得没必要另起炉灶自定义一套
+    - 并不是没考虑过，mermiad 大而全，但对于思维导图的支持存在以下几个问题：
+      - 1、思维导图语法过于生涩，用户不学习的情况下，无法直接编写
+      - 2、mermiad 的思维导图更像是知识图谱的样式，而非传统的思维导图
+      - 3、mermiad 适合展示，无法直接对思维导图进行图形界面的编辑
+      - 4、mermiad 太重了，不适合轻量级的 web app 使用
+      - 5、AI 其实对 mermiad 支持度一般，在输出语法时经常出错，之前做过的几个项目，我需要反复修改提示词才能勉强保住 AI 对 mermiad 输出可以被正常渲染
+      - 6、mermiad 没有天然的 AI 支持，勉强可以流式输出，但无内置 AI 输入框，需要额外开发。
 # examples
 - https://github.com/skovy/llm-markdown /MIT/202309/ts/inactive
   - https://llm-markdown.vercel.app/

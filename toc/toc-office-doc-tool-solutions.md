@@ -280,6 +280,8 @@ modified: 2021-07-21T18:07:43.056Z
   - 依赖Jinja2、Markdown、pathspec
   - Documentation source files are written in Markdown, and configured with a single YAML configuration file. 
   - Use Plugins and Markdown Extensions to enhance MkDocs.
+  - [The Slow Collapse of MkDocs : r/Python _202603](https://www.reddit.com/r/Python/comments/1s0gfyb/the_slow_collapse_of_mkdocs/)
+    - I recently moved from sphinx to docusaurus and have been quite happy. I found doing anything advanced in sphinx like custom hooks / plug-ins difficult since like nothing is documented and there aren't many examples.
 - https://github.com/squidfunk/mkdocs-material /26.3kStar/MIT/202603/python/ts
   - https://squidfunk.github.io/mkdocs-material/
   - Write your documentation in Markdown and create a professional static site for your Open Source or commercial project in minutes – searchable, customizable, more than 50 languages, for all devices.

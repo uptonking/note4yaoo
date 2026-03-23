@@ -558,6 +558,7 @@ modified: 2025-02-03T10:17:42.052Z
 - btw you can do this with chrome Dev MCP too with any cli/browser/client https://github.com/ychampion/chrome-for-agents
 
 - https://x.com/shao__meng/status/2035163988674454017
+- Browser Use CLI 2.0 发布
 - 新版本采用持久化后台守护进程架构，每条命令通过 Unix socket（或 Windows TCP）通信，响应延迟低至约 50ms。
 - 这与传统 Playwright 等框架形成鲜明对比——后者往往因抽象层导致启动慢、token 浪费和状态不稳定。
 - 无需 Chrome 扩展，即可与任何 CLI Agent 无缝集成，尤其擅长表单填写、数据提取等复杂交互。
@@ -566,6 +567,14 @@ modified: 2025-02-03T10:17:42.052Z
   - 本地托管无头 Chromium
   - 连接真实 Chrome（含现有登录与扩展）
   - 云浏览器（可选，通过 Cloud API）
+
+- https://x.com/sitinme/status/2035944377336439098
+- 以前你让 AI 帮你点网页，基本就三条路：要么看截图瞎猜，要么上 MCP 背一堆工具描述，要么老老实实写 Playwright/Python 脚本。不是不能做，但都很别扭。
+- Browser Use CLI 2.0 把这件事一下拉回到一个很顺手的状态：AI 直接在命令行里调浏览器，跟执行 ls、git 一样自然。这个体验上的变化，我觉得比“多了一个功能”重要得多。
+- 它不是靠截图让模型“看图猜按钮”，也不是把整页 HTML 一股脑塞给模型，而是把页面翻译成一份精简、可操作的元素清单。按钮、输入框、链接，全都编号
+- 现在如果能直接复用你本机 Chrome 的账号状态，那很多原来“理论可自动化、实际上懒得做”的事，就真的能交给 AI 去跑了。
+
+- 一直在用browser-use 2.0确实是质的飞跃 之前截图识别太慢了 现在DOM直接操作 配合Claude Code的skill系统 浏览器自动化终于不再是玩具了
 
 - ## WebMCP 反过来：让网页应用主动告诉 AI「我能做什么」，AI 直接调用。不用模拟键鼠，不用找 DOM，一步到位。
 - https://x.com/runes_leo/status/2033479932601565464

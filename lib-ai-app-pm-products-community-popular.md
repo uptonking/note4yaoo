@@ -493,7 +493,12 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## [What’s with the hype using Obsidian and Claude Code : r/ClaudeCode _202603](https://www.reddit.com/r/ClaudeCode/comments/1s0m3rf/whats_with_the_hype_using_obsidian_and_claude_code/)
+- Code is files, obsidian is files. Same thing 
+
+- Claude Code works best when it has structured context about your project — conventions, architecture decisions, what's already been tried. Obsidian gives you an easy way to build and maintain that knowledge base as markdown files. It's less about Obsidian specifically and more about having a system for context that survives across sessions.
+
+- Unnecessary, I created a file called handoff, updates twice a day, and a command for Claude to read it first when we start working.
 
 - ## Introducing the Readwise CLI. 
 - https://x.com/readwise/status/2034302848805241282

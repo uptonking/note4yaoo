@@ -112,6 +112,7 @@ modified: 2021-05-06T09:39:53.522Z
   - infographics 信息图
 - graphics-by-text: 
   - mermaid-editor
+  - mermaid streaming by node/group
   - drawio-xml
   - mermaid-text + drawio-editor
   - chart-viz

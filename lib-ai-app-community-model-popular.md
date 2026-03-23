@@ -328,6 +328,27 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Qwen3.5 Model Series - Thinking On/OFF: Does it Matter? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1riyfg2/qwen35_model_series_thinking_onoff_does_it_matter/)
+- 27B definitely needs thinking on to manage long context retrieval. With NoLiMa at 32k it drops from 76% to 30%
+  - 4bit-AWQ, thinking on: 96% @ 250, 85% @ 16k, 76% @ 32k
+  - 4bit-AWQ, no thinking: 75% @ 250, 34% @ 16k, 30% @ 32k
+
+- how did you enable or disable thinking mode in LM Studio?
+  - Just hard code the jinja template to `<think>\n\n</think>`
+- Under "Prompt Template, " you can add `{% set enable_thinking = false %}` to the top of the Jinja template.
+
+- disagree. thinking affect the quality alot for 27B and 35B. in my recent tests I tried translation of poet and some complex texts. thinking was dramatically increasing quality of output in the targeted language.
+  - my tests applied both on unsloth Q4 and Bartowski Q4 and 2 more different quantizations. all shows exactly same behavior
+  - I found that 35B moe with thinking is the best balance of speed and quality and much better than 27B with no thinking
+
+- Thinking is very important, it's "stolen" from Gemini and with it the quality of answers is on a whole other level
+  - How did they steal it from Gemini? It's simple: under certain conditions, raw thoughts leak out in their pure form, and there's no model that summarizes these thoughts and displays them in a condensed form.
+  - I've had such cases myself, but that's purely because I'm a daily user of Gemini.
+
 - ## [How come Qwen is getting popular with such amazing options in the open source LLM category? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1oziszl/how_come_qwen_is_getting_popular_with_such/)
 - I think that Qwen will remain on top of opensource purely because of their small model sizes, almost all of their models can be run on consumer grade hardware (1 graphics card, under 16gb vram) and even when quants are needed it's usually higher than Q4 leading to less intelligence falloff.
   - I think another reason Qwen is doing so well is because they understand what the community needs, people don't want a 1trillion parameter model that *might* perform well but not be runnable on 99.8% of user hardware, they understand that most people will only be able to run
@@ -658,8 +679,6 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
   - {% set enable_thinking = false %}
 
 - 其实 glm 国外平台 api 也能达到这个效果
-
-
 
 - ## [Missing a Qwen3.5 model between the 9B and the 27B? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rp1t9n/missing_a_qwen35_model_between_the_9b_and_the_27b/)
 - 35B-A3B is roughly the new "14B" and runs on almost any PC with >=32GB RAM. But I believe 35B-A3B easily lose to 27B for anything except world knowledge, unlike Qwen3-30B-A3B-2507 vs Qwen3-32B.

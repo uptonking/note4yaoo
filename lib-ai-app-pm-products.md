@@ -29,6 +29,9 @@ modified: 2025-03-22T16:10:24.856Z
   - agent框架的tool-use实现对最新llm的支持，llm-provider的部署 都会影响llm的效果
   - ai适合快速生成草稿文本或原型, 但修改难
 
+- ai-ux
+  - 在浏览器cdp成熟后, 通过cdp直接打开浏览器操作web ui似乎比electron app更强大
+
 - ai相对于搜索引擎的优势 🌹
   - ai能推理和计算, 分析复杂问题，给出更准确的方案
   - ai能拆分复杂任务为多步任务，能通过多轮来执行任务，同时支持one-shot和multi-steps
@@ -780,7 +783,13 @@ modified: 2025-03-22T16:10:24.856Z
   - [QuicklyAPI _202603](https://sub.jlypx.de/dashboard)
     - 直接注册就可以无限用，默认10并发
     - [gpt-5.4无限蹬，今日依旧正常，24小时各位佬友们蹬了500亿token ](https://linux.do/t/topic/1781875)
+  - [DGB 公益站](https://freeapi.dgbmc.top/console/personal)
+    - [【DGB 公益站】降低了Codex的倍率，趁现在能蹬赶紧蹬吧 _202603](https://linux.do/t/topic/1801858)
+    - 下调了Codedx的倍率，现在倍率只有0.1了
   - [hotaru Codex Distributor _202603](https://codex.mqc.me/)
+  - [APIKey - Subscription Automation](https://gpt.apikey.uk/subscribe), 注册机
+    - [【APIKey公益站】速蹬！全新协议注册+绑卡自动化注册机  _202603](https://linux.do/t/topic/1802338)
+    - 内置了大概100条号吧，还有七八张卡吧，内置四条ip，美英韩日
   - [YAO API _202603](https://yybbwan.xyz/console/personal)
     - [YAO](http://154.37.220.66:3000/console/personal) , legacy
     - [[Yao公益站]codex注册200刀，可能随时倒闭  ](https://linux.do/t/topic/1683788)
@@ -820,6 +829,12 @@ modified: 2025-03-22T16:10:24.856Z
     - gpt-5.4, gpt-5.3-codex
     - [上线claude-sonnet-4.6模型（不稳定版），爱来自cursor  _202603](https://linux.do/t/topic/1739712)
   - [鱼汤公益站 _202603](https://ai.zhansi.top/console/personal)
+  - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
+    - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
+    - 反代 kiro
+  - [SakuraCode _202603](https://codex.sakurapy.de/dashboard), 计算pow
+    - https://codesign.sakurapy.de/
+    - 5.4
   - [GGBOOM公益站](https://ai.qaq.al/dashboard)
     - [签到控制台](https://sign.qaq.al/app)
     - [【GGBOOM公益站】签到站上线啦 ](https://linux.do/t/topic/1517772)
@@ -833,18 +848,12 @@ modified: 2025-03-22T16:10:24.856Z
     - 5.4
   - [LogosAPI _202603](https://api.777114.xyz/console/personal), 签到10
     - 5.4
-  - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
-    - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
-    - 反代 kiro
-  - [NPC API](https://npcodex.kiroxubei.tech/console/personal)
-    - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)
-  - [SakuraCode _202603](https://codex.sakurapy.de/dashboard), 计算pow
-    - https://codesign.sakurapy.de/
-    - 5.4
   - [zenscaleai](https://lc.zenscaleai.com/console/personal), 签到少
     - 5.4
   - [520 API](https://520.wcgio.com/console/personal)
     - gpt-5.3-codex 
+  - [NPC API](https://npcodex.kiroxubei.tech/console/personal)
+    - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)
   - [爱你公益站](https://x.ainiaini.xyz/console/personal)
     - [[爱你公益站]开站 ](https://linux.do/t/topic/1638562)
     - 暂时只有 gpt 系列，

@@ -194,12 +194,12 @@ modified: 2024-05-12T17:20:03.132Z
 - 你把模拟和虚拟混淆掉，OS级别和软件级别也混淆了，当然傻傻分不清了。
 - Docker不存在模拟，也不存在虚拟。
   - 它是隔离工具，需要运行特定的image，就是你想运行的软件大集合。不同image帮你隔离开互相不可见。 
-  - 这一切让你误以为是OS级别，**其实是软件级别**。
-- **Wine也是软件级别的模拟**，只模拟windows，让Linux也能运行win程序，
+  - 这一切让你误以为是OS级别， **其实是软件级别** 。
+- **Wine也是软件级别的模拟** ，只模拟windows，让Linux也能运行win程序，
   - 这个和微软提供WSL提供windows上模拟Linux道理是一样的，只是正好相反。
 - KVM是虚拟硬件的，非常底层。但是它是内核的一部分，所以强绑Linux平台。
   - Qemu在中层配合KVM使用。上层的客户OS可以完全不知道自己在哪，是谁。
-- **KVM和Qemu都是用在OS级别的模拟或者虚拟**。他们都支持。 到底是哪个，决定在于你怎么使用他们。
+- **KVM和Qemu都是用在OS级别的模拟或者虚拟** 。他们都支持。 到底是哪个，决定在于你怎么使用他们。
   - 你可以单独使用Qemu进行OS模拟。这个时候就无所谓底层是什么操作系统了。但是实现不了完全虚拟化。
 - 👉🏻 Linux系列，kvm负责cpu虚拟化+内存虚拟化，实现了cpu和内存的虚拟化，但kvm不能模拟其他设备；qemu是模拟IO设备（网卡，磁盘），kvm加上qemu之后就能实现真正意义上服务器虚拟化。因为用到了上面两个东西，所以一般都称之为qemu-kvm。
   - libvirt则是调用kvm虚拟化技术的接口用于管理的，用libvirt管理方便，直接用qemu-kvm的接口太繁琐。
@@ -840,7 +840,14 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
-- ## 
+- ## 用 Rust 做了个两层的 sandbox。
+- https://x.com/blackanger/status/2035781112900002182
+  - 基于 wasmtime 和 zeroboot （基于 kvm和firecraker），普通计算用 wasmtime，带网络/io 的复杂任务用 zeroboot（dev 用 orbstack 跑 和  linux生产环境）
+  - 准确来说是“双轨”或“两档”，但需要网络的任务是需要再加一档，或者让zeroboot异步attach 网络模块。
+  - 一档：0.01ms  / Wasm    / 纯计算，零 I/O
+  - 二档：0.8ms   / Zeroboot  / 需要 FS/FFI/多语言
+  - 三档：~150ms  / Firecraker / 需要网络
+- wasmtime 跑纯计算 + firecracker 兜底有网络的场景，这个分层思路很实用。3000 行就搞定说明抽象做对了
 
 - ## 🤔 people don't realize how slow s3 is. the difference between daytona and e2b in this report is about a single call to s3.
 - https://x.com/jhleath/status/2027844067691008354

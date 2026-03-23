@@ -50,6 +50,8 @@ modified: 2025-12-13T18:38:27.763Z
 
 - aionui-cli: general cli wrapper for coding agents, like lms-cli
 
+- 在浏览器cdp成熟后, 通过cdp直接打开浏览器操作web ui似乎比electron app更强大
+
 - models
   - 根据不同任务，使用不同模型，类似claude-sonnet/opus/haiku, 能优化成本，也能改善toolcall
 

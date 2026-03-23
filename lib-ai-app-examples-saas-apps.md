@@ -677,6 +677,14 @@ modified: 2025-02-21T17:17:42.225Z
     - 配置: 建议 4 核 8G 内存 (4H8G)，带宽别太小（毕竟要传桌面画面）。
     - 验证码墙：通过 “AI 执行 + 人工协助” 解决自动化登录死角。
 
+- https://github.com/0xranx/golembot /MIT/202603/ts
+  - https://0xranx.github.io/golembot/
+  - Any Agent × Any Provider × Anywhere
+  - Compatible with 13, 000+ OpenClaw community skills
+  - [【开源推广】让 Claude Code、Codex、Cursor、OpenCode 也支持接入微信/飞书/（甚至自己的产品） _202603](https://linux.do/t/topic/1802351)
+    - Claude Code 前两天出了 Channels，可以把 Agent 挂到 Telegram 和 Discord 上，论坛里讨论也不少。
+    - 我之前做了个开源项目 GolemBot，做的事情差不多，但覆盖面更广一些——不只是 Claude Code，Cursor、Codex、OpenCode 也都能接；通道这边除了 Telegram 和 Discord，还支持微信、飞书、钉钉、企业微信、Slack。 最近刚把个人微信也接上了
+
 ## office
 
 - https://github.com/zhu1090093659/minister /apache2/202603/ts

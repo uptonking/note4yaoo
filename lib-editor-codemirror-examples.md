@@ -1268,6 +1268,15 @@ modified: 2023-06-23T12:46:53.288Z
   - The `--base/--compare` flags use the same terminology as GitHub PRs — base is what you're comparing against, compare is the branch with changes. 
   - https://x.com/kamrify/status/2035701010048389187
     - Introducing Diffity - GitHub style diff and code review tool built for developers and AI
+  - how is it different from regular GitHub diff view, adding comments to that and telling the agent to resolve the comments by providing the PR link?
+    - This is all on your local and works with un-committed changes, branch comparisons etc. No need to push to GitHub or create branches.
+    - Plus, take a look at the skills, you can ask AI to review your changes and leave comments on the diff in browser.
+  - What are the advantages over difit?
+    - Didn't know of that but automatic comments resolution, the agentic review of diffs (with diffity, agent can comment directly on the diff), github integration (pulling/pushing comments to github) is missing in that. 
+
+- https://github.com/yoshiko-pg/difit /2.3kStar/MIT/202603/ts
+  - difit is a CLI tool that lets you view and review local git diffs with a GitHub-style viewer
+  - command-line tool that spins up a local web server to display Git commit diffs in a GitHub-like Files changed view
 
 - https://github.com/BearToCode/mismerge /MIT/202402/ts/svelte
   - https://beartocode.github.io/mismerge/

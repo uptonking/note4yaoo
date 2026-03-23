@@ -274,7 +274,7 @@ modified: 2025-10-10T02:45:45.941Z
   - https://github.com/OmmyPatalonian/proggtagentless
     - Add ground truth testing functionality as a replacement for synthetic tests
 
-- https://github.com/yoshiko-pg/difit /1.5kStar/MIT/202511/ts
+- https://github.com/yoshiko-pg/difit /2.3kStar/MIT/202603/ts
   - difit is a CLI tool that lets you view and review local git diffs with a GitHub-style viewer
   - command-line tool that spins up a local web server to display Git commit diffs in a GitHub-like Files changed view
 - https://github.com/255BITS/gptdiff /MIT/202508/python
@@ -342,14 +342,14 @@ modified: 2025-10-10T02:45:45.941Z
   - They indicated significant training effort for GPT-4.1 on this format, contributing to its effective use within the Codex CLI ecosystem.
 
 ```diff
-*** Begin Patch
-*** [Operation] File: [filepath]
+ *** Begin Patch
+ *** [Operation] File: [filepath]
 @@ [text matching a line near the change]
   [context line (unchanged, starts with space)]
 - [line to remove (starts with -)]
 + [line to add (starts with +)]
   [another context line]
-*** End Patch
+ *** End Patch
 ```
 
 - `@@`: Followed by text content from a line near the edit (e.g., function/class definition) used for locating the change. Crucially, this avoids direct reliance on line numbers.
@@ -392,13 +392,13 @@ file.py
 - OpenAI Patch Format
 
 ```diff
-*** Begin Patch
-*** Update File: file.py
+ *** Begin Patch
+ *** Update File: file.py
 @@ class MyClass:
     def some_function():
 -        return "old"
 +        return "new"
-*** End Patch
+ *** End Patch
 ```
 
 - Additional Formats:
