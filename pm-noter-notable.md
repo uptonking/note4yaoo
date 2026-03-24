@@ -188,6 +188,8 @@ modified: 2023-11-28T14:48:45.910Z
   - 📌 obsidian-bases
   - 📌 citations: notebooklm doc search with citations
     - ❓ search/rag 如何做出竞争力与特色
+  - 📌 ocr router like openrouter/mineru/paddleocr/new-api
+  - obsidian for pdf/ocr
   - https://github.com/PDFMathTranslate/PDFMathTranslate /保留排版的 PDF 文档全文双语翻译
     - [Granite Docling WebGPU: State-of-the-art document parsing 100% locally in your browser. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o0php3/granite_docling_webgpu_stateoftheart_document/)
     - ✨ 统一文本搜索高亮的双栏ux-pdf/docx/xlsx: 左侧是类似vscode的结果列表(非分页布局), 右侧是原文预览

@@ -295,6 +295,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 中文rag需要优化
     - rag db支持浏览空间占用、手动删除文件索引
   - 🌐 pdf edit
+    - ocr router like openrouter/mineru/paddleocr/new-api/ccswitch
+    - obsidian for pdf/ocr
     - pdf ocr one-click eval like FlowDown
       - ui for popular ocr benchmark
       - personal bench suite like FlowDown
@@ -799,6 +801,12 @@ modified: 2025-03-22T16:10:24.856Z
     - 公益站有无限codex(目前限制500并发)，无限grok(程序默认限制50并发)。glm系列目前不保证可用性。还有一些杂七杂八的模型。
   - [Hello AI _202603](https://hello.xhyun.eu.cc/console/personal)
     - [「XH AI Center/Hello AI 」重新出发 _202603](https://linux.do/t/topic/1759449)
+  - [dudu公益站 _202603](https://wududu.edu.kg/console/personal)
+    - [【dudu公益站】gpt价格0.01，gpt号池持续补号，grok3000+账号，还有十几个国产模型。（不限制nsfw） - LINUX DO _202603](https://linux.do/t/topic/1808197)
+    - gpt和grok的速率限制是60。国产模型速率限制40rpm
+    - grok和gpt价格都是0.001/ 1M Tokens，基本无限，gpt号池还在不断补充
+  - [晚霞公益站 API _202603](https://newapi.431128hys.site/console/personal)
+    - [【晚霞公益站】开放注册 _202603](https://linux.do/t/topic/1706993)
   - [codexapi福利 API](https://ai.xingyungept.cn/console/personal)
     - 注册500刀，签到1-100刀
   - [Infinite API](https://infiniteai.cc/checkin)
@@ -824,7 +832,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [marybrown API _202603](https://marybrown.dpdns.org/console/personal)
     - [服务器小升级,grok-4.2无限用和gpt-5.4试用 _202603](https://linux.do/t/topic/1795512)
     - 23公益站作者后续维护
-  - [Codex - New API](https://codex.makeup/console/personal)
+  - [Codex - New API](https://codex.makeup/console/personal), 无法注册
     - [又一个codex公益站，人手一个蹬  ](https://linux.do/t/topic/1645651)
     - gpt-5.4, gpt-5.3-codex
     - [上线claude-sonnet-4.6模型（不稳定版），爱来自cursor  _202603](https://linux.do/t/topic/1739712)

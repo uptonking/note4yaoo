@@ -407,7 +407,12 @@ modified: 2025-12-11T18:10:23.710Z
     - Native integration with Claude Code's experimental Agent Teams feature for spawning and coordinating multiple Claude instances.
   - Extensible Plugin System - Add custom capabilities with the plugin SDK. Create workers, hooks, providers, and security modules. Share plugins via the decentralized IPFS marketplace.
 
-### clude-plugins
+### claude-plugins
+
+- https://github.com/tokenRollAI/acplugin /MIT/202603/ts
+  - Convert Claude Code plugins to Codex CLI, OpenCode, Cursor, and Google Antigravity formats.
+  - [[开源] acplugin: 一键迁移 claude code plugin 到 codex / opencode / cursor / antigravity - LINUX DO _202603](https://linux.do/t/topic/1806765)
+    - Agents Skills / Agents 的定义大同小异, 本质上只是一些字段的同步和修改
 
 - https://github.com/thedotmack/claude-mem /30.1kStar/AGPL/202602/ts
   - https://claude-mem.ai/
@@ -666,6 +671,11 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/Microck/opencode-studio /112Star/MIT/202601/ts
   - a local gui for managing opencode configurations. 
   - toggle mcp servers, edit skills, manage plugins, handle auth - no json editing required.
+
+- https://github.com/panyw5/opencode /MIT/202603/ts
+  - [【开源分享】OpenCode Studio: 超级加强 opencode 桌面版 + 内置 GUI 配置面板  - LINUX DO _202603](https://linux.do/t/topic/1803771)
+    - 下载了 opencode desktop 用起来还行，但总觉得少了很多方便的功能。于是自己动手丰衣足食，fork 了 opencode 桌面版 二次开发。
+    - 主要改进如下 (cli 内核没怎么动过，时不时会跟源仓库更新一下)。
 
 - https://github.com/itlackey/openpalm /MPL/202603/ts/svelte
   - Personal AI assistant(s) powered by OpenCode
@@ -999,14 +1009,30 @@ modified: 2025-12-11T18:10:23.710Z
   - supports MCP servers to extend its capabilities with additional tools
   - conversation checkpointing, allowing you to save snapshots of your coding sessions and restore them later. 
   - Extensible architecture: Plugin-style system for adding new capabilities
+  - 支持 /compact 压缩context
+  - 已支持_202509 [Feature request: Support for non tool calling models ](https://github.com/Nano-Collective/nanocoder/issues/21)
+    - non-tool-calling models now work a lot better than before with little instances of looping and re-prompting as of Release 1.11.0.
+  - pr已合并 [Feature Request: Skills Support - Modular Capabilities with Progressive Disclosure _202511](https://github.com/Nano-Collective/nanocoder/issues/91)
   - 📡 
-    - 没有ACP相关代码
-    - pr已合并 [Feature Request: Skills Support - Modular Capabilities with Progressive Disclosure _202511](https://github.com/Nano-Collective/nanocoder/issues/91)
+  - [[Feature] Add Agent Client Protocol (ACP) Support _202603](https://github.com/Nano-Collective/nanocoder/issues/401)
+    - Implement Agent Client Protocol support so nanocoder can be used as a coding agent inside any ACP-compatible editor 
+    - Nanocoder already has the core primitives ACP needs. The gap is a transport layer — nanocoder needs a JSON-RPC stdin/stdout entry point and ACP method handlers.
+  - [[Feature] Small Model Mode _202603](https://github.com/Nano-Collective/nanocoder/issues/391)
+    - Nanocoder is local-first, but many of its defaults (prompt size, tool count, context management) are tuned for larger models. When using small local models (1B-8B parameters via Ollama), several things break
+    - Create a drastically reduced prompt (~200-300 words instead of ~2,000). Strip out philosophy, examples, and edge-case guidance.
+    - Instead of giving the model all 36+ tools, provide a focused subset. 
+    - Force the model to call one tool at a time instead of attempting to chain multiple calls in one response. Small models are much more reliable when focused on one action per turn.
+    - Simplified Tool Schemas
+    - Instead of open-ended "figure it out" prompting, provide step-by-step scaffolding
+    - Use a frontier model (via OpenRouter or other provider) for planning and a local small model for execution
+    - Task-Specific Micro-Agents
     - [[Feature] Enable mode-specific model and provider configuration for optimized performance _202601](https://github.com/Nano-Collective/nanocoder/issues/277)
       - Currently, Nanocoder uses a single provider and model configuration across all development modes (normal, auto-accept, plan). 
       - I propose implementing mode-specific model and provider configuration that allows users to define different AI models for different development modes
       - Planning Phase: Use powerful, sophisticated models
       - Execution Phase: Use efficient local models (20B-30B range) for faster, cost-effective implementation
+    - [Feature Request: Subagent System for Specialized Task Delegation _202511](https://github.com/Nano-Collective/nanocoder/issues/97)
+      - a subagent system that allows nanocoder to delegate specialized tasks to focused AI agents with specific expertise, tools, and capabilities. 
     - [Feature Request: Plugin System & Marketplace for Extensible Capabilities ](https://github.com/Nano-Collective/nanocoder/issues/92)
       - Current Limitations:
       - No dynamic extension system beyond custom commands
@@ -2138,6 +2164,14 @@ modified: 2025-12-11T18:10:23.710Z
     - Agent Skills for local RAG (Retrieval-Augmented Generation) using memvid-sdk.
     - These skills follow the Agent Skills specification so they can be used by any skills-compatible agent, including Claude Code and Codex CLI.
     - 未实现Incremental indexing 
+
+- https://github.com/catlog22/codexlens-search /MIT/202603/python
+  - Lightweight semantic code search engine — 2-stage vector + FTS + RRF fusion + MCP server for Claude Code
+  - [[开源] Codexlens --轻量多阶段向量搜索工具，支持本地模型及api，性能接近ace 90% - LINUX DO _202603](https://linux.do/t/topic/1803734)
+    - 方法上与现有绝大数向量搜索有点点区别。项目原先集成在CCW(claude-code-workflow)中，在CCW(7.X)版本后独立出来，并做了方法精简和重构，方便大家使用。
+    - 支持本地模型和api接口
+    - 多通道并行检索 + 融合 + 重排序。
+    - Query → 意图检测 → 查询扩展(仅NL)
 
 - https://github.com/mufasadb/code-grapher /202508/python/inactive
   - MCP server that provides a service for graph-ify-ing the codebase then retrieving from it to help feed perfect amount of context.

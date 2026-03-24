@@ -390,6 +390,13 @@ modified: 2025-02-21T18:20:42.624Z
   - 后端	Go 1.25.7, Gin, Ent, PostgreSQL, Redis
   - 前端	Vue 3.4+, Vite 5+, TailwindCSS
 
+- https://github.com/0reki/cocodex /MIT/2020603/ts
+  - https://cocodex.app/
+  - Get the most out of Codex in the way that fits you best.
+  - [【开源】Infinite API同款管理平台，集成注册机 _202603](https://linux.do/t/topic/1802807)
+    - 开源的不是Infinite API本体，而是我后面重构后的
+    - 邮箱的配置来自 cloud-mail 项目，如果需要配置其他邮箱也很好操作，新建一个包即可，交给ai很快就能完成。
+
 - https://github.com/peva3/SmarterRouter /MIT/202602/python
   - LLM gateway and VRAM-aware router for Ollama, llama.cpp, and OpenAI. 
   - Features semantic caching, model profiling, and automatic failover for local AI labs.
@@ -572,6 +579,14 @@ modified: 2025-02-21T18:20:42.624Z
   - 基于 FastAPI 和 httpx 的全异步实现
   - 支持将图片上传到 S3 兼容存储（AWS S3、MinIO、阿里云 OSS 等）
   - 碰到了有相同想法的佬友；之前我也做了一个，不过我只做了一个魔搭，但是支持了图生图
+
+- https://github.com/capybara-zy/xiaoye-ai /AGPL/202603/go/vue
+  - https://xiaoye.io/
+  - 开源多模态 AI 内容创作平台，支持 Google Gemini、火山引擎 Seedream/Seedance 等模型进行图像和视频生成。
+  - [【已盈利，完全开源】小野AI—开源多模态 AI 内容创作平台，支持 Nanobanana / Seedance图像视频生成 _202603](https://linux.do/t/topic/1802932)
+    - 图像生成 — Google Gemini、火山引擎(Nanobanan2、SeedStream)支持文生图、图生图
+    - 反向提示词 — 上传图片，提取生成提示词
+    - 灵感广场 — 社区作品展示、点赞、Remix、审核机制
 
 ## model-router
 

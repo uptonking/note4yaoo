@@ -20,7 +20,15 @@ modified: 2020-12-08T13:27:56.600Z
 # discuss-author
 - ## 
 
-- ## 
+- ## Async in frameworks happens in 4 phases:
+- https://x.com/RyanCarniato/status/2036117577177678215
+1. create
+2. consume
+3. block
+4. read
+- The problem? Most fuse 2 & 3. Consumption triggers blocking. This puts DX (coloration) at odds with UX (blocking). 
+- Solid 2.0 snaps them to the poles. Colorless logic. Non-blocking UI.
+- 👀 不要被词汇混淆, 分析逻辑原理更重要
 
 - ## One design mistake in Solid 1.0 was supporting multiple ways to write props in JSX types. _202502
 - https://x.com/RyanCarniato/status/1888008017171644777
@@ -60,7 +68,7 @@ modified: 2020-12-08T13:27:56.600Z
 - https://discord.com/channels/722131463138705510/722131463889223772/1138208971426123896
   - We will be sharing our progress there in the next few weeks and people can start playing with that. And we can go from there. 
   - Right now we are sort of vetting the approach, so haven't wanted to put it out there yet. 
-  - And because this is a **reactivity rewrite**, while the **API is basically unchanged**, it is basically a different version so it won't play with Solid's current reactivity. 
+  - And because this is a **reactivity rewrite**, while the **API is basically unchanged** , it is basically a different version so it won't play with Solid's current reactivity. 
 
 - ## So in summary, there are only really 2 things going on right now on R&D. Start and Solid 2.0._20230802
 - https://discord.com/channels/722131463138705510/780502110772658196/1136004394899488941

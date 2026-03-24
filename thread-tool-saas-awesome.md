@@ -17,6 +17,22 @@ modified: 2026-02-01T17:09:23.954Z
 - ## 
 
 - ## 
+# discuss-db
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 想给 TinyShip 即将上线的 Tanstack 版本做一个CF 上的 demo 站点，数据库服务商放弃了 Supabase，free plan 自动暂停挺恶心的，还需要配置一个 github action 隔一段时间激活一下，
+- https://x.com/vikingmute/status/2036419949649109187
+  - 收费又太贵，它们做的东西太多了，我只是想要一个简单的 PostgreSQL 数据库而已，而且 Supabase RLS 是关闭的，最近有太多因为 Vibe Coding 连接字符串写在前端，然后直接泄露了数据。
+  - 查了 AI，推荐了 Neon，真正 scale-to-zero，闲置 5 分钟后 compute 自动挂起，不计费也不暂停，免费额度：每个项目 0.5GB 存储 + 100 compute-hours/月，够大多数 side project / MVP 用。足够我做 Demo 用了，先试用一下看看怎么样。
+  - 很多人推荐 D1，我目前是要用 PostgreSQL，针对 D1 的兼容会在未来完成
+
+- 过两天收到neon的500美元账单, Neon branching
+
+- cloudflare全家桶方案试试 
 # discuss-devops
 - ## 
 

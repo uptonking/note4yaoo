@@ -43,8 +43,17 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## 
 
- 
+- ## 
 
+- ## 
+
+- ## 🆚 Readers spotted that compression was not applied consistently in our React SSR benchmarks. 
+- https://x.com/matteocollina/status/2036502852642713922
+  - We disabled compression everywhere and re-ran the tests. Here are the corrected results.
+  - https://github.com/platformatic/k8s-watt-performance-demo/tree/ecommerce
+  - [SSR Benchmarks v2: Corrected Results and Real Performance _202603](https://blog.platformatic.dev/ssr-framework-benchmarks-v2-corrected-results)
+
+- These benchmarks suggest that Next.js performs poorly. However, it is not really intended for self hosting. if you choose Next.js, it’s better to simply go with Vercel
 # discuss-ssr-architecture
 - ## 
 

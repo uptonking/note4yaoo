@@ -371,7 +371,20 @@ Today, Turso is in beta with early customers working toward production deploymen
 
 - ## 
 
-- ## 
+- ## introducing hf-mount: attach any storage bucket, model or dataset from @huggingface as a local filesystem. _202603
+- https://x.com/ClementDelangue/status/2036452081750409383
+  - it allows you to attach remote storage that is 100x bigger than your local machine's disk.  This is also perfect for Agentic storage!! 
+- https://github.com/huggingface/hf-mount /apache2/202603/rust
+  - Mount Hugging Face Buckets and repos as local filesystems. No download, no copy, no waiting.
+
+- Storage bandwidth ≠ compute locality. Attaching 100x more remote storage doesn't help if your GPU spends 80% of cycles waiting on PCIe. The real game changer is when model weights fit in HBM, not when they fit on disk.
+
+- I built AgentVault (https://github.com/harishkotra/hf-agentvault) today. It gives local AI agents ( @ollama ) a distributed "brain" using @huggingface Buckets. Now your local agents can remember context across any machine. Local privacy + Cloud persistence.
+
+- This is great! Something else that'd be really nice for the Local AI ecosystem: creating a local unified GPU layer from all the hardware available at home - laptop, smartphones, etc - to extend the reach of local AI beyond what's possible on a single device.
+
+- MacFUSE is not great, FsKit it better and doesn't require SIP disablement. WinFSP for windows.
+  - You might want to look at for modern OS mounts (+ plan9  fs access by agents) https://github.com/DeanoC/Spiderweb
 
 - ## 🚀 Introducing TigerFS - a filesystem backed by PostgreSQL, and a filesystem interface to PostgreSQL. ——202603
 - https://x.com/michaelfreedman/status/2034291102346326416

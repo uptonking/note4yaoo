@@ -304,6 +304,21 @@ modified: 2025-10-10T02:44:49.634Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Paddle OCR识别表格不行，还有什么推荐小模型 - LINUX DO _202603](https://linux.do/t/topic/1804908)
+- 这个模型不行，佬换个模型呢，paddle structure v3，专门干表格的，自用亲测最强表格识别模型
+
+- 你要是数据够多可以微调的，如果没有数据那就用mineru docling这些
+
+- 试试 https://github.com/RapidAI/TableStructureRec 本地cpu可跑，硬件要求不高，我去年测试是比paddle的表格识别要强的
+
+- 我在信息抽取方面使用的是Qwen3-4B-vl 效果非常好， 我把图表的内容抽取成json ， 3万张突破的识别率在93% ，汉字的正确率在85%左右。使用VLLM部署，效率和正确率都能达到我的预期， 后面考虑升级到qwen3.5看看。
+
 - ## [[D] Why is table extraction still not solved by modern multimodal models? : r/MachineLearning _202503](https://www.reddit.com/r/MachineLearning/comments/1jnjfaq/d_why_is_table_extraction_still_not_solved_by/)
 - These tasks (and other precise image-based tasks) are a pretty common problem:
   - Text has a lower information density per character compared to numerical data. In the encoding stage LLMs/VLMs do well with text or general images as semantic meaning is still retained even with somewhat incorrect representations given by the Text/Vision encoder. The same cannot be said for numerical values, where a single incorrectly interpreted digit can drastically change meaning.

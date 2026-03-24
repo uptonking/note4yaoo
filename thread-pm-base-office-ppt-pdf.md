@@ -179,7 +179,23 @@ modified: 2024-01-11T15:57:32.182Z
 
 - ## 
 
-- ## 
+- ## [【开源】AionUi V1.9.0：一句话生成可直接编辑的PPT+动画，给AI打造最浪漫的叙事舞台  _202603](https://linux.do/t/topic/1808568)
+  - 众所周知，LLM们苦OpenXML（Office三件套的格式） 已久，让Agent能做好 Office 三件套一直都是一个难事。因此，市面上在生成 PPT/Word/Excel 的方案上纷纷都绕开 Openxml 来实现：HTML方案、python方案、生图方案。
+  - OfficeCLI: 一个命令行工具，让AI像说话一样轻松做出可编辑的 PPT/Word/Excel。原来Agent来操作一个openxml文档，也能如此简单。
+  - 最初，OfficeCLI的能力创建出来的文档，也就是等同于人类也能做到的复杂度。
+  - 一个叫Morph动画的能力，深深的吸引了我！！这个能力，能让AI做出的PPT动起来，并且极具感染力。
+  - 我兴奋得睡不着，上周熬了一整个周末，把这个能力带到了AionUi的助手里。
+  - 在AionUi中，通过Morph PPT 助手，一句话生成的PPT动画
+  - OfficeCLI的使用指南已全面内置到AionUi中，在AionUi上使用的“任意Agent”都可以调用OfficeCLI生成一个PPT/Word/Excel。
+  - AionUi上线了“Morph PPT”助手 —— 基于OfficeCLI深度定制的PPT专题动画助手。
+  - 可以DIY Skills：AionUi的助手之所以能做出morph PPT的效果，是对Agent喂了一 本叫做《如何做好morph动画》的说明书（skill）。。。但是瓦砾并不擅长做PPT，如果大家对内置skill “morph-ppt” 不满意，请大家随意调试skills，做出更有趣的动画。（其实PPT还有非常非常多的能力，不止是Morph，欢迎大家直接用Agent进行探索探索）
+
+- 感觉和 PPT 切换里的平滑，或者是 keynote 里的神奇移动很像
+  - 一个小小的建议，可以让 agent 设计好一页 ppt 的动画库，让 agent 以动画刷的方式添加到 ppt 的各个元素中。平滑还是有点局限，无法很好的适配演示中需要强调的部分。
+- 动画库估计是要考虑，再好的颗粒度拆解，LLM都需要模版的参考和学习
+
+- 此刻让我想起 remotion skills 出来大家觉得原来 agent 还能写视频好酷
+- Morph PPT 让我感觉到惊艳，agent 能用动画来表达自己的 ppt 主题！
 
 - ## [应该是目前最强的PPT Agent，附上完整思路分享 - LINUX DO _202603](https://linux.do/t/topic/1782304)
   - 自己跑完从需求调研 → 资料搜集 → 大纲策划 → 生成策划稿 → 生成设计稿的全流程。

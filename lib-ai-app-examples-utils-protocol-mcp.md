@@ -200,6 +200,10 @@ modified: 2026-01-19T05:01:00.055Z
     - You cannot always read DOM as text and understand page layout.
     - that's just moving the complexity from the backend to the client side, now you have to worry about browser compatibility and cross site scripting.
     - At the moment it seems to be able to navigate a single page and use dropdowns, but does not know how to use a search functionality.
+
+- https://github.com/Yuzc-001/grasp /MIT/202603/js
+  - Grasp runs locally, keeps a dedicated chrome-grasp profile, and gives agents a browser session they can reuse instead of restarting from scratch every time.
+  - [Grasp v0.5：完全重塑，从浏览器运行时到 AI 浏览器网关  - LINUX DO _202603](https://linux.do/t/topic/1803722)
 # computer/container-use
 - https://github.com/bytedance/UI-TARS-desktop /28.8kStar/apache2/202603/ts
   - https://agent-tars.com/

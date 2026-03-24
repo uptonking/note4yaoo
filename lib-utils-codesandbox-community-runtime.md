@@ -838,7 +838,18 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
-- ## 
+- ## Introducing the Agent Virtual Machine (AVM)
+- https://x.com/varun_mathur/status/2036140875991097356
+  - AI agents are currently running on your computer with no unified security, no resource limits, and no visibility into what data they're sending out. Every agent framework builds its own security model, its own sandboxing, its own permission system. You configure each one separately. You audit each one separately. You hope you didn't miss anything in any of them.
+  - The AVM changes this. 
+  - It's a single runtime daemon (avmd) that sits between every agent framework and your operating system. Install it once, configure one policy file, and every agent on your machine runs inside it - regardless of which framework built it. 
+  - The architectural model is V8 for agents. Chrome, Node.js, and Deno are different products but they share V8 as their execution engine. Agent frameworks bring the UX. The AVM brings the trust. 
+  - Sandbox execution: Real code execution in isolated process sandboxes (rlimits, env sanitization) or Docker containers (--cap-drop ALL, --network none, --read-only). AVM auto-selects the tier - agents never choose their own sandbox.
+  - Approval flow: Dangerous operations (file writes, shell commands, network requests) trigger interactive approval prompts. 5-minute timeout auto-denies. Every decision logged.
+  - CLI dashboard: hyperspace-avm top shows all running agents, resource usage, gas budgets, security events, and privacy stats in one live-updating screen.
+  - Node.js SDK: Zero-dependency hyperspace/avm package. AVM.tryConnect() for graceful fallback - if avmd isn't running, the agent framework uses its own execution path. OpenClaw adapter example included.
+
+- V8 analogy is spot on but agent frameworks have totally different trust models. one AVM policy sounds clean until you realize one size fits nobody. how do you handle a research agent needing web access vs a health-check agent locked to localhost? that's the real challenge
 
 - ## 用 Rust 做了个两层的 sandbox。
 - https://x.com/blackanger/status/2035781112900002182

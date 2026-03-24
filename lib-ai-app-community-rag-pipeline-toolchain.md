@@ -14,6 +14,27 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
+- ## [How to deal with constant stream of data. : r/Rag _202603](https://www.reddit.com/r/Rag/comments/1s1mzhd/how_to_deal_with_constant_stream_of_data/)
+  - I dont know if RAG is the solution here or not. Basically the situation is the need to ingest security logs into the vector database to allow an agent to query. 
+  - I am familiar with RAG where the data is fairly static but security logs can come in thick and fast. Hundreds of thousands of events every hour. Is chunking this up and embedding the correct approach?
+- The answer is - as so often - it depends. On lots of factors. In fact, you probably should sit down and more thoroughly specify the requirements of your task.
+  - For example, you are not telling us how fresh the data has to be given user's need. You're also not saying what sort of data it is: structured, unstructured, semi-structured, hybrid? You're also not telling us why you are considering RAG and not e.g. simply information retrieval on structured data as the goal. I mean, RAG is cool, but it is most powerful when you need a semantic search engine. Is that your need? Then there are questions on whether you need to optimize for recall or precision, that's yet another open question. And so on.
+
+- Yes is still RAG is the right solution, you need to also filter by metadata. In my finance rag, I use metadata filtering to double down on the year/quarter/document/ticker being referred to in the question. Feel free to have a look: https://github.com/kamathhrishi
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 - ## Your embeddings might be 32× larger than it needs to be!
 - https://x.com/_jphwang/status/2034595497764126921
   - Binary quantization compresses each embedding dimension from a (32-bit) float to a single bit. 
@@ -82,6 +103,17 @@ modified: 2026-02-18T04:15:19.228Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [How do you get web search on your Ollama running local on pc? : r/ollama _202603](https://www.reddit.com/r/ollama/comments/1s1eizt/how_do_you_get_web_search_on_your_ollama_running/)
+- I am using combination of serpapi, duckduckgo search along with wikipedia search modules
+
+- I setup Searxng in a docker container and it's been working great.
+
+- this is exactly why MCP (model context protocol) is such a game changer for local setups. instead of baking web search into the model itself you just give it tools it can call - web search, file access, whatever you want. i've been building a desktop agent in Swift that hooks into MCP tools and it makes the model way more useful than just raw chat
 
 - ## File search + grep is all you need
 - https://x.com/jerryjliu0/status/2029726062670967019

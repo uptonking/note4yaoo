@@ -392,6 +392,10 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## [Codex 5.3 优化 ：工作并行加速 + 回答简洁轻快 ](https://linux.do/t/topic/1603762)
 
+- [Codex app Agents team如何优化？ - LINUX DO _202603](https://linux.do/t/topic/1808203)
+  - 慢了就催或者干脆直接不等，那我开你这agents team的意义何在，浪费我的token吗
+- 我已回归CLI同时参考了这位佬的设定 目前感觉良好
+
 - ## [codex污染这么严重吗？  _202602](https://linux.do/t/topic/1585312)
 - OpenAI 老问题了，语料污染非常严重
 - 每次就是泰文 + 什么彩票中大奖这些

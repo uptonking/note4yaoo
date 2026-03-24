@@ -59,6 +59,10 @@ modified: 2026-01-15T15:44:10.647Z
   - If the context grows incrementally or is only altered slightly, it only needs to process the changes, and prompt processing times are low. But yes, prompt processing is painfully slow for cache misses.
   - I'd be happy to be proven wrong and pointed to a setup / software stack that improves this on Strix Halo, but as far as I understand, this is just the state of the ROCm & Vulkan backends on the platform right now. I'm not sure if it's just all the hardware has got, or could be optimized over time.
 
+- [Strix Halo / Ryzen AI Max+ 395 on Ollama: Vulkan or ROCm, which is actually better? : r/ollama _202603](https://www.reddit.com/r/ollama/comments/1s2ao8y/strix_halo_ryzen_ai_max_395_on_ollama_vulkan_or/)
+- Rocm is more headache for me. Vulkan just works. Just like vllm has technically given me better performance than llama.cpp, as a personal user, I find more value in this simplicity of llama.cpp. And like you said, Rocm doesn't seem to have a full across the board benefit but vllm probably does. But gguf doesn't need either and gguf is push button so.... I gguf with Vulkan personally lol.
+- I think llama.cpp may have nightly that do better than ollama but I think the landscape is still Vulcan unless fiddler of tools
+
 - ## [Anybody using Vulkan on NVIDIA now in 2026 already? : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r6z3d4/anybody_using_vulkan_on_nvidia_now_in_2026_already/)
 - Vulkan is faster than rocm for my rx7900xt for whatever that’s worth
   - Same on my RX7900XTX.

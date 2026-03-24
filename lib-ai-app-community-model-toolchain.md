@@ -1421,7 +1421,15 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## [FlashAttention-4: 1613 TFLOPs/s, 2.7x faster than Triton, written in Python. What it means for inference. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s1yw23/flashattention4_1613_tflopss_27x_faster_than/)
+  - TL; DR for inference:
+  - BF16 forward: 1, 613 TFLOPs/s on B200 (71% utilization). Attention is basically at matmul speed now.
+  - 2.1-2.7x faster than Triton, up to 1.3x faster than cuDNN 9.13
+  - GQA and MQA fully supported (Llama, Mistral, Qwen, Gemma all work)
+- 🐛 FA-4 is Hopper + Blackwell only. Works on H100/H800 and B200/B100. Not on A100 or consumer cards. The optimizations exploit specific Blackwell hardware features (TMEM, 2-CTA MMA, async TMA) that don't exist on older GPUs.
+  - If you're on A100: stay on FA-2.
+  - If you're on H100: FA-4 is supported but gains are smaller than on Blackwell. Worth testing.
+  - If you're on B200: just update vLLM and you're good.
 
 - ## 🤔 [Has increasing the number of experts used in MoE models ever meaningfully helped? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1runn9v/has_increasing_the_number_of_experts_used_in_moe/)
 - Tried bumping Qwen3-30B-A3B to A6B a few months back. The first commenter is right that without retraining, you're activating experts that were trained to be dormant for that input - basically adding noise.

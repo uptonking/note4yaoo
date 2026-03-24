@@ -2154,7 +2154,49 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [The current state of the Chinese LLMs scene : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s1gm9z/the_current_state_of_the_chinese_llms_scene/)
+
+- The Big Boys:
+
+ByteDance: dola-seed (aka doubao) is the current market leader in proprietary LLM. It plays a role like OpenAI. They have an Seed OSS 36B model that is a solid dense model but seems like no one is talking about it. They have a proprietary Seedance T2V model that is now the most popular video gen app for lay people.
+
+Alibaba - Not many people uses its properitary model Qwen Max. It is the strongest in its open weight offering especially the small models. It is also strongest in T2I and T2V scene but this is off topic.
+
+Tencent - Hunyuan is their proprietary model but not many people use. Their T2I, T2V effort is second to Alibaba. They are the leader in 3D mesh generation with Hunyuan 3D but this model is only open weight up to 2.1.
+
+Baidu - Ernie is proprietary but not many people use. Baidu is stronger in the autonomous driving scene but that's off topic here.
+
+Xiaomi - Mimo V2 Pro is their proprietary model while the Mimo V2 Flash 309B-A15B is their open weight model.
+
+Ant Group - Ling 2.5 1T is their flagship open weight model. Seems to be outperformed by Kimi K2.5, so not many people are talking about it. It introduces something called Lightning LinearAttention, does anyone know the paper describing it?
+
+RedNote - Flagship open weight model is dots.vlm1 which is a derivative of DeepSeek with vision. They also have a smaller vanilla MoE called dots.llm1 which is 142B-A14B. Seems like the performance of their models are not that impressive, so not many people are using it.
+
+Kuaishou - The lesser known domestic competitor to ByteDance in the short video space. Their focus is in coding models. Flagship is proprietary KAT-Coder-Pro-V1. They also have a 72B open weight coding model called KAT-Dev-72B-Exp. Don't know why no one is talking about it here.
+
+Meituan - LongCat-Flash-Chat is an open weight 562B model with dynamic MoE that activates 18.6B~31.3B. It also has a lite version that is 65B-A3B. Attention mechanism is MLA. Seems like they are the most aggressive open weight player now but they are more like the Middle Boy instead of Big.
+
+Deepseek - a side project from an algorithmic trading firm. Current usage in China is a close second to ByteDance's doubao with half of the users. Interestingly, it is the most innovative among all Chinese LLM companies as it invented MLA, , DSA, GRPO, etc. Please let me know if there are other non-obvious tech that is used in actual product that is developed by other Chinese companies. Their business model might be similar to the Six Small Tigers but it seems to me this project is more for attracting investments to the investment arm and gaining access to President Xi.
+
+- The Six AI Small Tigers: (business models are highly similar. Release big open weight model to gain recognition and provide cheap inference service. Not sure if any of them is viable for the long term.)
+
+Zhipu - IPOed in HK. Current GLM-5 is a derivate of DeepSeek.
+
+Minimax - IPOed in HK. They have a MiniMax 2.7 proprietary model. MiniMax 2.5 is their open weight model which is a vanilla MoE 229B-A10B. So its inference cost is significantly lower than the others.
+
+Moonshot - Kimi open weight model which is a derivative of DeepSeek
+
+Stepfun - Step 3.5 flash is their open weight model that is a mixture of full attn and sliding window attention (SWA) layers at 1:3. It is 196B-A11B. Similar business model to Minimax but their model is not as good.
+
+Baichuan - Their Baichuan-M3 235B is a medical enhanced open weight model based on Qwen3Moe.
+
+01 AI - Yi-34B is their last open weight model published in Nov 2024. They seem to focus on Enterprise AI agent system now, so they are becoming irrelevant to people here.
+
+- Government Funded:
+
+Beijing Academy of AI (BAAI) - most famous for its bge embedding model. Recently started to release a DeepSeek derivative called OpenSeek-Small-v1. In general, they are not an LLM focused lab.
+
+Shanghai AI Lab - The original team was from a big facial recognition company called Sense Time. Since their LLM project was burning too much money, Sense Time founder managed to find the Chinese government to setup Shanghai AI Lab with a lot of governmental funding for the team. Their flagship is the open weight InterLM-S1-Pro. They seem to have a bad rep at Zhihu (the Chinese quora). Not many people talk about it here. Are their models any good?
 
 - ## [What good are 128k+ context windows for <40b Parameter models? : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qryr2e/what_good_are_128k_context_windows_for_40b/)
 - The original Qwen3-30B-A3B was able to accurately answer extraction questions when I dropped 50-100k dumps on it. Summarization was mostly okay too.

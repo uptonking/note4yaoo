@@ -597,6 +597,9 @@ Hugging Face 🇺🇸 Llama 3.3 70B, Qwen2.5 72B, Mistral 7B +many more. $0.10/m
 - 可以自己跑一个，这个并发不高的话不怎么占用资源，可以先试试bge系列的(2.5 cpu 就能跑，也有现成的onnx格式的，java，python跑起来都很方便)，如果效果不好可以试试千问的(这个用gpu好一些)
 - https://ai.gitee.com 这个估计有可能最符合你要求 大部分向量模型都是免费, 其他模型每天免费100次
 
+- [哪里有高并发的嵌入模型？ - LINUX DO _202603](https://linux.do/t/topic/1805477)
+  - 硅基流动的速率限制RPM和TPM有点不太够用，然后在论坛里找发现了魔力方舟，结果这个更黑，说是不限速率，但是运行了程序，还没轨迹流动的时间跑得长就给报错了, 关键是它提醒我要买资源包我想着用的量有点大，还是老老实实买了吧
+
 - ## [OpenCode 反代断流问题解决方案 - 解决Antigravity\2api\反代\断流\回复一半不回\莫名奇妙中断  ](https://linux.do/t/topic/1487267)
   - 使用 OpenCode + Antigravity Tools API 反代时，经常出现以下问题：
   - 回复到一半就不回了
