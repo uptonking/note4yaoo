@@ -34,7 +34,7 @@ modified: 2024-01-07T05:09:14.413Z
 - 
 - 
 
-- ## I asked why not have the LLM stream terminate at *server*, then write response to DB when complete? 
+- ## I asked why not have the LLM stream terminate at *server* , then write response to DB when complete? 
 - https://x.com/aboodman/status/1903041915865665957
   - You could then rely on a sync engine to send DB state to client. 
   - This would be nice because you don't even need to deal with sockets and state - sync engine does that.
@@ -166,6 +166,16 @@ modified: 2024-01-07T05:09:14.413Z
   - We imagine that it will be free/oss to self-host. We'll have a SaaS version roughly comparable to what you might pay for database hosting. And we'll offer white-glove help to large enterprises to run Zero within their own VPC.
 # discuss-news
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🎯 Zero to 1.0  _202603
+- https://x.com/aboodman/status/2036579771921080482
+  - This does not mean that Zero is perfect or done. There is still so much to do. What it does mean is that we fully support Zero for appropriate workloads without caveat.
 
 - ## I can't wait to implement aggregates for Zero.
 - https://x.com/aboodman/status/1921648617330475070
@@ -373,7 +383,7 @@ modified: 2024-01-07T05:09:14.413Z
   - Of course that kind of sucks for the common case of doing a query, navigating, then pressing “back”. Ideally we want that back nav to be fast.
   - 🎯✨ To address this Zero 0.17 adds background queries. You can add a ttl to a query and it will keep running and syncing in the background.
   - This is much different than normal caching because this data stays up to date.
-  - If you make the same query again, the results will be *instantly* available *and already up to date with server*. If you make a different query the data from the background query is used client-side to answer the new query instantly if possible.
+  - If you make the same query again, the results will be *instantly* available *and already up to date with server* . If you make a different query the data from the background query is used client-side to answer the new query instantly if possible.
   - This all happens completely automatically. Just by adding the ttl flag.
 
 - ## We have a streaming query engine called ZQL that uses Incremental View Maintenance to maintain live queries.
@@ -432,7 +442,7 @@ modified: 2024-01-07T05:09:14.413Z
   - But sync engines are designed to do this efficiently.
 - nah I'm pro preloading, was just poking at the idea one could "pretend" to be fast – this is how everyone does it. local first diverges dramatically on the mutation story but for data fetching. it's just different degrees of "fetch before you need it"
 
-- With a sync engine, the client is a (partial) *replica*. With classic web architecture, the client is a *cache*. These are two different things and it's important to internalize the differences.
+- With a sync engine, the client is a (partial) *replica*. With classic web architecture, the client is a *cache* . These are two different things and it's important to internalize the differences.
 
 - ## Replicache is closer to a db than you’d think. 
 - https://twitter.com/aboodman/status/1743829055827546152
@@ -534,26 +544,26 @@ modified: 2024-01-07T05:09:14.413Z
   - And your app has much more than mouse motion: Users can move things, resize things, rotate things, group things. All these interactions would have to be interpolated.
   - And every single time you add a new interaction, you’ll have to interpolate that too.
 
-- ### **2/ Built-in Persistence.**
+- ### **2/ Built-in Persistence.** 
   - Reflect isn't just ephemeral(短暂的；瞬息的) sync. Changes are continuously and automatically saved on our cloud service too.
   - You don’t need to wire anything together, copy data from ephemeral to persistent storage, or worry about how often to save.
   - Just write changes as they happen (yes, every mouse movement) and they are automatically saved and replicated to peers.
 
-- ### **3/ Server Authority**
-  - 💡 People are often surprised to learn that **Reflect isn’t a CRDT**. 
+- ### **3/ Server Authority** 
+  - 💡 People are often surprised to learn that **Reflect isn’t a CRDT** . 
   - Although lovely computer science, CRDTs have a number of disadvantages for web apps:
     - There’s no good way to validate or enforce data constraints. In pithy terms: CRDTs converge, but to what??
     - For the same reason, fine-grained auth is difficult. It would be hard to implement inline comments that only the author can edit using a CRDT for example.
     - They turn every problem into a distributed systems problem. In the development of real world apps you often find places where it’s convenient to run code on a central server. Common examples are wanting to initialize data once, migrating data, or choosing a leader.
-  - 👉🏻 Instead of CRDTs, Reflect uses a more flexible technique from the video game world known as **Server Reconciliation**
+  - 👉🏻 Instead of CRDTs, Reflect uses a more flexible technique from the video game world known as **Server Reconciliation** 
   - [Client-Side Prediction and Server Reconciliation - Gabriel Gambetta](https://www.gabrielgambetta.com/client-side-prediction-server-reconciliation.html)
   - This is a lot harder way to build sync, but it solves the above problems:
     - Validation is built-right in. It’s impossible for clients to make invalid changes.
     - Fine-grained auth comes for free. Write auth in plain JS, consulting any backend systems you want.
     - You get a server! You can run server-only code to coordinate clients whenever you want to.
-  - At the same time, it's entirely **possible to run a CRDT inside Reflect**, and we even recommend this for text editing — where well developed libraries exist and do an amazing job.
+  - At the same time, it's entirely **possible to run a CRDT inside Reflect** , and we even recommend this for text editing — where well developed libraries exist and do an amazing job.
 
-- ### **4/ On-”Prem”**
+- ### **4/ On-”Prem”** 
   - Finally, and maybe most important, we offer the option to run Reflect within your own Cloudflare account.
   - Although customers do not usually want to build, scale, and maintain multiplayer servers, larger customers do often need control of the code and data.
   - We have carefully designed Reflect to enable this. You give us limited permissions to your Cloudflare account and we run Reflect for you.
@@ -564,7 +574,7 @@ modified: 2024-01-07T05:09:14.413Z
   - Everything you need to forget about sync and focus on your product.
 
 - 🤔 How is it different from FluidFramework ?
-  - Reflect is **server authoritative**, enabling easy validation and fine-grained authorization
+  - Reflect is **server authoritative** , enabling easy validation and fine-grained authorization
   - Reflect has a **single general data model** (a map of key-value pairs), rather than specialized data structures for different problems.
   - Reflect has (will have) first-class support for running on-"prem".
   - Reflect provides 60 FPS sync so you don't need to interpolate

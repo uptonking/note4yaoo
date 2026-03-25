@@ -718,7 +718,7 @@ modified: 2025-03-22T16:10:24.856Z
     - Gemini 的模型是支持三种格式的： Gemini 格式（带原生和搜索）, OpenAI 格式, Claude 格式（能 CC？）
     - 反重力和veterx逆向的锅，claude对open ai格式调用问题，用cline系的产品吧，比如roo或者kilo
     - [请问薄荷怎么才能用Claude Code ](https://linux.do/t/topic/1304580)
-  - [WONG公益站](https://wzw.pp.ua/console/topup), 每日签到
+  - 📌 [WONG公益站](https://wzw.pp.ua/console/topup), 每日签到
     - [WONG公益站](https://wzw.de5.net/console)
     - [WONG公益站](https://newapi.netlib.re/)
     - rpm为30
@@ -814,7 +814,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [【Infinite API】全新公益站上线试运营 ](https://linux.do/t/topic/1622685)
     - 50 RPM， 25 个同时进行的请求
     - arrow-preview, QuiverAI API flagship SVG gen
-  - [真好记公益站](https://newapi.zhenhaoji.qzz.io/console/personal)
+  - 🗑️ [真好记公益站](https://newapi.zhenhaoji.qzz.io/console/personal)
     - https://fuli.zhenhaoji.qzz.io/
     - 随便刷吧，可能刷崩了，我就关站了
     - cc, opus 是cursor2api的 sonnet4.6
@@ -832,10 +832,6 @@ modified: 2025-03-22T16:10:24.856Z
   - [marybrown API _202603](https://marybrown.dpdns.org/console/personal)
     - [服务器小升级,grok-4.2无限用和gpt-5.4试用 _202603](https://linux.do/t/topic/1795512)
     - 23公益站作者后续维护
-  - [Codex - New API](https://codex.makeup/console/personal), 无法注册
-    - [又一个codex公益站，人手一个蹬  ](https://linux.do/t/topic/1645651)
-    - gpt-5.4, gpt-5.3-codex
-    - [上线claude-sonnet-4.6模型（不稳定版），爱来自cursor  _202603](https://linux.do/t/topic/1739712)
   - [鱼汤公益站 _202603](https://ai.zhansi.top/console/personal)
   - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
     - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
@@ -862,6 +858,10 @@ modified: 2025-03-22T16:10:24.856Z
     - gpt-5.3-codex 
   - [NPC API](https://npcodex.kiroxubei.tech/console/personal)
     - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)
+  - [Codex - New API](https://codex.makeup/console/personal), 无法签到
+    - [又一个codex公益站，人手一个蹬  ](https://linux.do/t/topic/1645651)
+    - gpt-5.4, gpt-5.3-codex
+    - [上线claude-sonnet-4.6模型（不稳定版），爱来自cursor  _202603](https://linux.do/t/topic/1739712)
   - [爱你公益站](https://x.ainiaini.xyz/console/personal)
     - [[爱你公益站]开站 ](https://linux.do/t/topic/1638562)
     - 暂时只有 gpt 系列，

@@ -40,7 +40,12 @@ modified: 2024-02-12T03:22:23.769Z
 
 - ## 
 
-- ## 
+- ## 🚀 Announcing Durable Transports for your AI SDK
+- https://x.com/ElectricSQL/status/2036548969728467282
+  - Multi-user, multi-agent collaboration for your @tan_stack AI and @aisdk apps.
+  - Built on @DurableStreams . With turnkey hosting on @ElectricSQL Cloud
+  - Since launching @DurableStreams releasing adapters for the main AI SDKs that implement our Durable Sessions pattern for collaborative AI been our most requested feature.
+  - https://electric-sql.com/blog/2026/01/12/durable-sessions-for-collaborative-ai 
 
 - ## ⛓️ Introducing Durable Sessions — the key pattern for collaborative AI.
 - https://x.com/thruflo/status/2010826574002536905

@@ -793,6 +793,25 @@ modified: 2025-02-21T17:17:42.225Z
   - 语音	edge-tts-universal（三级缓存）
   - [【开源自荐】拾语：外刊、外文原版书精读利器  - LINUX DO _202603](https://linux.do/t/topic/1786244)
 
+### office-skills
+
+- https://github.com/MiniMax-AI/skills /MIT/202603/csharp
+  - Development skills for AI coding agents. Plug into your favorite AI coding tool and get structured, production-quality guidance for frontend, fullstack, Android, iOS, and shader development.
+  - [白领福音？MiniMax 开源 Office Skills：生产级办公文档引擎，覆盖 Word/Excel/PDF/PPT - LINUX DO _202603](https://linux.do/t/topic/1810907)
+    - 3月25日，MiniMax 正式开源一整套 Office Skills，覆盖 Word（docx）、Excel（xlsx）、PDF、PPT（pptx）四种格式的文档生成与编辑能力
+    - MiniMax-docx：选择 .NET OpenXML SDK（微软官方库）而非 python-docx，牺牲部署便利性换取对 Word 文档结构更完整的控制力。覆盖从零生成、在已有文档上编辑、模板套用三种场景
+    - MiniMax-xlsx：绕开所有 Python Excel 库，直接在 XML 层面操作（解压→修改目标 XML 节点→重新打包），确保样式、图表、宏原封不动保留。开发了 13 个独立 Python 工具脚本 + 34,000 字金融格式化标准文档
+    - MiniMax-pdf：封面用 HTML+CSS 通过 Playwright 渲染，正文用 ReportLab 排版，最后合并。为 15 种文档类型设计了独立视觉语言
+    - PPTX-generator：基于 PptxGenJS，定义 5 种标准页面类型（封面/目录/章节分割/内容/总结）和 4 套视觉配方（Sharp/Soft/Rounded/Pill）
+    - 前些天刷到佬友发的适用于wps的一套skill
+
+## reader
+
+- https://github.com/codedogQBY/ReadAny /GPL/2026t03/ts
+  - https://codedogqby.github.io/ReadAny/
+  - An AI-powered e-book reader with semantic search, intelligent chat, and knowledge management
+  - [【开源自荐】ReadAny：一款与AI 深度结合的开源跨端电子书阅读器  - LINUX DO _202603](https://linux.do/t/topic/1809537)
+
 ## research
 
 - https://github.com/Agents2AgentsAI/ata /apache2/202602/rust/ts
@@ -845,6 +864,13 @@ modified: 2025-02-21T17:17:42.225Z
   - 亚马逊选品 之 Listing全维度穿透分析报告 加上 全品类分析 ，关键词分析，差评分析 等等。claude code agent skill, amazon sorftime research MCP 智能体skill. 
   - 基于 Sorftime MCP 服务和 Claude Skills 的亚马逊竞品分析工具集。
   - [【公益推广】周末加班-完成了跨境电商amazon选品分析之差评分析-6维痛点分析框架  _202603](https://linux.do/t/topic/1759097)
+
+## social
+
+- https://github.com/dreammis/social-auto-upload /MIT/202603/python/js/vue
+  - https://sap-doc.nasdaddy.com/
+  - 自动化上传视频到社交媒体：抖音、小红书、视频号、tiktok、youtube、bilibili
+  - [[开源自荐]  [social-auto-upload] 社交媒体自动化发布 - LINUX DO _202603](https://linux.do/t/topic/1809328)
 
 ## openclaw
 

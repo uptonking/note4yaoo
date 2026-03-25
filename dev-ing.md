@@ -317,6 +317,15 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0325
+
+- i want to develop a cms that features document relationships. what's the most popular graph database for this? give me some solutions and tips
+  - Neo4j — best default choice if relationships are the core feature. Neo4j uses a property graph model with nodes, relationships, and properties, and it has a broad ecosystem of tools and libraries.
+  - ArangoDB — best if your CMS is already document-first. ArangoDB stores JSON documents and natively supports graphs, so you can keep content and relationships in one database. Its docs also describe a single database core for graph, document, key-value, search, and vector needs.
+  - Amazon Neptune — best if you want a fully managed AWS service. AWS describes Neptune as a fully managed graph database, and it supports Gremlin, openCypher, and SPARQL.
+  - JanusGraph — best if you expect very large graphs and are comfortable with more operational complexity. Its docs emphasize scale beyond a single machine and real-time traversals.
+  - PostgreSQL (with Apache AGE): You can store document content in JSONB columns, handle basic hierarchies with recursive CTEs or the ltree extension, and if you need true graph capabilities, you can install Apache AGE (an extension that gives Postgres Neo4j-like graph capabilities using OpenCypher).
+
 ## 0323
 
 - [Qwen3.5 no think? : r/ollama _202603](https://www.reddit.com/r/ollama/comments/1rk9fdt/qwen35_no_think/)

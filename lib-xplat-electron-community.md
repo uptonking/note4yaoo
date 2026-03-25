@@ -63,7 +63,16 @@ modified: 2023-01-02T10:30:19.459Z
 
 - That’s exactly what electrobun does. You set bundleCEF to true and can also change the chromium version whenever you want.
 
-- ## we have a tedious task of moving off of bun file apis _202602
+- ## Why is @opencode web so much more pleasant than the desktop app
+- https://x.com/yetone/status/2036541201005027600
+- Because WebKit is assssss. Moving to Electron very soon.
+- i am already using the electron app from gh
+
+- I see t3 code and then we have opencode too planning to move to Electron
+
+- WebKit在桌面端确实是个大坑，跨平台渲染一致性根本没法保证。Electron虽然重，但至少Chromium的行为是可预测的。Tauri的理想很美好，现实很残酷。
+
+- ## 🤔 we have a tedious task of moving off of bun file apis _202602
 - https://x.com/thdxr/status/2024147745024495794
   - we had opencode analyze all usage and come up with a plan for how things should be mapped
   - and now it's running in a loop opening one PR per file - each of which can be reviewed and safely merged independently
@@ -92,7 +101,7 @@ modified: 2023-01-02T10:30:19.459Z
 
 - My experience as someone who just built a little runtime-agnostic library is that Deno’s nAPI compatibility for file operations still isn’t quite there, so watch out for that.
 
-- isn't oc desktop app is on tauri?
+- 🤔 isn't oc desktop app is on tauri?
   - it's moving to electron
 - we're moving off from tauri specifically for performance reasons too lol
   - The limit of what you can with Tauri’s webview was going to eventually lure you to Electron. Tauri just ain’t it for in app browser views.
@@ -148,15 +157,12 @@ modified: 2023-01-02T10:30:19.459Z
 
 - GitHub Release 就好…
 - 直接使用expo好了
-
 # discuss-bundler/compiler
 - ## 
 
 - ## 
 
 - ## 
-
-
 
 - ## 🌰🍎 aionui打包 - [三天三夜，三更半夜 踩坑实录 _202602](https://linux.do/t/topic/1573468)
   - 本文记录了我在开源项目 AionUi（一个统一 AI Agent 图形界面）中遭遇的一次 Electron 打包白屏事故。从发现问题到最终定位根因，历时三天三夜。
@@ -310,7 +316,7 @@ modified: 2023-01-02T10:30:19.459Z
 - ## 
 
 - ## [Bindings not found error · Issue · vitejs/vite-plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc/issues/74)
-- We have fixed the problem with running this command: `npm i -D @swc/cli @swc/core`
+- We have fixed the problem with running this command: `npm i -D @swc/cli @swc/core` 
 
 # discuss-internal-nodejs
 - ## 
@@ -410,7 +416,7 @@ modified: 2023-01-02T10:30:19.459Z
 - Try building the React parts on top of Electron first, and then replace Electron once you’ve got the abstractions in the right spot — and you’re sure Electron is the problem
 - This is a good place for a POC, but really I wanna avoid shipping chromium. This just seems silly to me
 - Building an app framework that can do the native things Electron can across multiple platforms sounds like not much challenge, but a lot of work.
-- 👉🏻 I think the issue with Electron apps is primarily the Javascript in the render process and multi-process architecture **without shared memory**, not the webview engine. Getting bytes from native-land into any webview involves annoyingly expensive copying.
+- 👉🏻 I think the issue with Electron apps is primarily the Javascript in the render process and multi-process architecture **without shared memory** , not the webview engine. Getting bytes from native-land into any webview involves annoyingly expensive copying.
 - What use cases are blocked or hindered because of that copying across processes?
 - The example I hit recently building a screenshot editing app:
   1. Trigger screenshot using global shortcut in main process

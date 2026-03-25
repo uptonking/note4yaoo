@@ -763,6 +763,9 @@ modified: 2025-12-11T18:10:23.710Z
     - Built to scale horizontally when needed
     - 待确定, 是否支持区分不同用户的不同客户端
     - How It Works: Your Claude Code clients generate encryption keys locally and use Happy Server as a secure relay. Messages are end-to-end encrypted before leaving your device. The server's job is simple: store encrypted blobs and sync them between your devices in real-time.
+- https://github.com/ZgDaniel/cc-web /202603/js
+  - Claude Code / Codex 轻量级 Web 远程工具 — 在浏览器中与本机 CLI Agent 交互。
+  - [[开源推广]手机远程控制CC/codex的超轻量化工具 - LINUX DO _202603](https://linux.do/t/topic/1810124)
 
 - https://github.com/tiann/hapi /2.4kStar/AGPL/202603/ts
   - https://hapi.run/

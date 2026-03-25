@@ -88,6 +88,7 @@ modified: 2021-05-13T03:08:52.583Z
 # draft
 - nativefier(archived): webpage wrapper for electron
   - 可以复用pake的打包逻辑但产物为electron
+- electron + chrome-mcp/WebMCP
 
 - 编辑器/笔记/llm-api的客户端都需要便捷的ui
 

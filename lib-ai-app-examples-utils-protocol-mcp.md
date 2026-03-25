@@ -430,6 +430,10 @@ modified: 2026-01-19T05:01:00.055Z
   - Input: raw text, article, outline, bullet points
   - Extract key points → Choose layout → Write prompt → Generate image
   - Output: 4:3 sketch-note, white background, black ink, color accents
+
+- https://github.com/Fokkyp/claude-skills /202603
+  - 自建的产品经理可用的 Claude skills 仓库，Skills 均已在商业环境下测试。竞品分析Skill、需求文档Skill ……
+  - [作为产品经理，竞品分析还在苦恼怎么写吗？我的竞品分析Skills分享给大家 - LINUX DO _202603](https://linux.do/t/topic/1810126)
 # utils
 - https://github.com/mksglu/claude-context-mode /2.2kStar/MIT/202603/ts
   - https://cc-context-mode.mksg.lu/
