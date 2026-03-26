@@ -236,6 +236,9 @@ modified: 2025-03-22T16:10:24.856Z
 - 
 
 # draft
+- 2b-ai
+  - 企业需要支持快速集成现有系统、权限、日志审计
+
 - rewrite open-canvas with langgraph
 # 💎🚀 aichorage - local llm with joy, 提供模型API、rag可靠性、pdf文本操作
 - selling-points
@@ -739,7 +742,7 @@ modified: 2025-03-22T16:10:24.856Z
     - docs 指的是这是 claude 的文档 ai，不破限只会回答文档相关的内容
   - [NihaoAPI _202603](https://nih.cc/console/personal)
     - cc
-  - [Pond Hub 反重力号池 _202603](https://code.claudex.us.ci/panel/profile)
+  - [Pond Hub 反重力号池 _202603](https://code.claudex.us.ci/panel/profile), 签到
     - [【公益站】Code公益站-反重力号池 重回更名为Pond Hub ](https://linux.do/t/topic/1785656)
   - [ThatAPI](https://gyapi.zxiaoruan.cn/console/personal), 签到
     - 有多个cc分组，IP限制严格(无需gfw)
@@ -762,6 +765,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
     - https://codex.mqc.me/
   - [KFC API](https://kfc-api.sxxe.net/console/personal), 签到
+    - https://kfc-api.kyx03.de/
     - Claude和gpt 暂时不支持工具调用, gemini模型没有pro
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
     - 别玩至尊场，1000积分一次警告扣16x，风险太高; 高级场的高积分也可以获得高收益
@@ -807,7 +811,7 @@ modified: 2025-03-22T16:10:24.856Z
     - grok和gpt价格都是0.001/ 1M Tokens，基本无限，gpt号池还在不断补充
   - [晚霞公益站 API _202603](https://newapi.431128hys.site/console/personal)
     - [【晚霞公益站】开放注册 _202603](https://linux.do/t/topic/1706993)
-  - [codexapi福利 API](https://ai.xingyungept.cn/console/personal)
+  - [codexapi福利 API](https://ai.xingyungept.cn/console/personal), 关闭
     - 注册500刀，签到1-100刀
   - [Infinite API](https://infiniteai.cc/checkin)
     - dark-mode 水平方向逐渐变化的动画效果很好
@@ -845,6 +849,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 本站点为codex中转站，不包含其他模型
     - sub2api的openai api仅支持 openai-responses API协议。不要选老版本的哦
     - [【GGBOOM公益站】 全面支持gpt-5.3-codex ](https://linux.do/t/topic/1581803)
+  - [97公益站 _202603](https://free.9977.me/purchase), 每天20
+    - [【97公益站】上线签到功能，下调倍率至0.1 - LINUX DO _202603](https://linux.do/t/topic/1814962)
   - [Einzieg API](https://api.einzieg.site/console/personal), 签到
     - 仅提供codex模型
     - [【Einzieg公益站】再次启动 ](https://linux.do/t/topic/1569418)
@@ -852,6 +858,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 5.4
   - [LogosAPI _202603](https://api.777114.xyz/console/personal), 签到10
     - 5.4
+  - [AnAnAPI _202603](https://www.ananapi.com/home)
+    - [【AnAnAPI】codex公益站，免費gpt-5.4  _202603](https://linux.do/t/topic/1828940)
   - [zenscaleai](https://lc.zenscaleai.com/console/personal), 签到少
     - 5.4
   - [520 API](https://520.wcgio.com/console/personal)

@@ -784,6 +784,30 @@ It amazes me how people default to LLM calls when you can do it in a simple, fre
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🚀 We’re open sourcing ArrowJS 1.0: the first UI framework for coding agents.
+- https://x.com/jpschroeder/status/2036078689754992886
+  - Imagine React/Vue, but with no compiler, build process, or JSX transformer. It’s just TS/JS so LLMs are already *great* at it.
+  - 🤔 ai的训练数据大多包含react, 是否有必要用纯ts方案, react-live的预览方案也好用
+  - AND run generated code securely w/ sandbox pkg.
+  - The sandbox works by parsing the TS AST for our html calls, then replacing the reactive portions with identifiers. It then spins up a new JS environment inside WASM using QuickJS and links the internal virtual DOM to the external references, events occurring externally are safely transmitted to the internal representation where full JavaScript and arrow runs.
+  - DOM changes are restricted to these “owned” html blocks and are send back via message. This means llm generated JS is never exposed to the window, cookies, DOM etc - only to the DOM nodes it defined. Those are then mounted inside a web component with shadow DOM enabled (by default) to allow style isolation, if you want it, if you don’t it can disable the shadow DOM.
+
+- compatible with Vue or only react?
+  - It’s neither. It’s straight TypeScript!
+
+- does this mean agent can generate typescript with no server side compilation to JavaScript prior to browser execution?
+  - yes
+
+- Can the LLM generated js make http requests?
+  - yes
+
+- why is this any better than iframes?
+  - Make a dropdown component in an iframe that feels native on the page and get back to us.
+
 - ## 我现在越来越不担心 Vibe Coding 或者 AI 可以抢走高级程序员的工作了。
 - https://x.com/brucexu_eth/status/2016481007286002067
   - 比如遇到一个富文本编辑器的光标拖拽不见了的 bug，AI 只会不停的调整 drop cursor 得 CSS，加上 zIndex 和 !important，但就是不出现。

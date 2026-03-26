@@ -79,6 +79,20 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Cloudflare 发布了一个 AI 沙箱工具 Dynamic Worker Loader，用 V8 isolate 替代容器：
+- https://x.com/xiaohu/status/2036616677115441307
+  - 无并发上限，百万级请求随便扛 
+  - 同机同线程执行，零网络延迟
+  - 配套三个库也一起发了：代码执行（codemode）、自动打包（worker-bundler）、虚拟文件系统（shell）。
+
+- 不支持 python、cli 安装和存储记忆，到头来还得是 e2b
+
+- 这类‘同机同线程 + isolate’路线确实很适合 agent 跑短任务。对我来说更关键的是 TS 接口直接定义 API 这点，既省 token，又让工具调用和实现约束天然对齐。
+
 - ## zeroboot — 用 Firecracker 快照 + CoW fork 做亚毫秒级 AI agent VM 沙箱
 - https://x.com/QingQ77/status/2034580389742944576
   - 它是直接把 Firecracker 快照当母体，再用 CoW fork 出新的 KVM VM，目标就一个，让 agent 跑代码的时候，既别太慢，也别太像在裸奔。

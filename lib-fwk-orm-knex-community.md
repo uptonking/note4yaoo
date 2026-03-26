@@ -73,7 +73,7 @@ modified: 2023-01-22T19:52:09.270Z
 - How do you do read/write splitting directly with node-mysql driver? Do you have separate IP where to send reads and other for writes or does mysql know how to route queries correctly from any of the nodes?
   - Sounds like you need to create 2 knex instances, one for master and one for slave and select by hand each query where to send them... What happens if master goes down? Is one of the slaves promoted to master automatically? How the client code gets information about that? Is there list of IPs in slave configuration? Sorry, I don't know exactly how mysql clustering works and I don't have time to look into it right now, so I might not be much of help.
 
-- ## [Read Replication · Issue · knex/knex _202209](https://github.com/knex/knex/issues/5322)
+- ## 🔄 [Read Replication · Issue · knex/knex _202209](https://github.com/knex/knex/issues/5322)
 - This is indeed a duplicate of the long-standing issue #2253, which has been tracking read/write replica support since 2017.
   - The good news is that while Knex doesn't provide built-in read replica support, there are several proven workarounds that the community has developed over the years, and there's now active discussion about adding official support for this feature.
 - 💡 The most popular approach, which has been battle-tested in production for years, was shared by @Frolanta in #2253. 
@@ -85,7 +85,7 @@ modified: 2023-01-22T19:52:09.270Z
   - This proposal includes a resolver function approach that would allow developers to implement custom connection selection logic, support for dynamic addition/removal of connections (important for auto-scaling), and access to pool information for intelligent load balancing.
   - For now, I'd recommend implementing one of the proven community workarounds mentioned above, particularly @Frolanta's wrapper approach if you want automatic query routing, or the separate read/write Knex instances approach if you prefer explicit control over which operations go where.
 
-- ## 🤔 [Customize connection pool and/or queries for cluster instances _201710](https://github.com/knex/knex/issues/2253)
+- ## 🔄🤔 [Customize connection pool and/or queries for cluster instances _201710](https://github.com/knex/knex/issues/2253)
 
 - Currently not supported. I wrote a quick (and dirty) work around that just juggles Knex instances until Knex can be updated with specific functionality.
 

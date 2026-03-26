@@ -516,7 +516,30 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## Browser Use 在 Online-Mind2Web 取得 97% 的最高成绩，团队采用了 Karpathy 的 Auto-Research 方案
+- https://x.com/shao__meng/status/2036978751834042524
+1. Browser Agent 框架升级为 Coding Agent
+传统 Browser Agent 仅依赖有限的工具（如 click、type、scroll），在数据提取和边缘场景中极易卡住。Browser Use 的核心创新是将 Agent 框架升级为 Coding Agent：
+· Claude Code 直接改造了 Browser Agent 的 harness，新增 Python 代码执行能力。
+· Agent 不再局限于预定义动作，而是可以实时编写并执行 Python 代码，直接在浏览器上下文中解析 HTML、提取结构化数据。
+
+2. 基础设施优化：最隐蔽浏览器环境 + 真实用户日常任务训练信号
+单纯算法优化不够，Browser Use 同步对底层执行环境进行了极致打磨：
+· 最隐蔽的浏览器基础设施：他们从真实生产数据构建了一个专属的 stealth benchmark，对市面上所有主流云浏览器进行全面测试，最终选用了隐蔽性最强的方案。
+· 真实用户日常任务作为训练信号：每天将 power users 在生产环境中提出的新任务和修复需求，直接纳入 Auto-Research 循环的训练/优化信号。
+
+3. 评判器升级：从截图 Judge 到基于 Claude Agent SDK 的 Agentic Judge
+整个 Auto-Research 闭环能够高效运转的最关键一环。
+· 传统截图 Judge 的失效：早期评测依赖截图比对，但新一代代理大量使用代码执行、API 调用、提取数千条数据，这些行为在截图中完全不可见或被误判为“幻觉”。
+· 新 Agentic Judge：完全基于 Claude Agent SDK 重新构建，让 Judge 本身也成为一个具备 agentic 能力的智能体。
+· 对齐机制：通过精心设计，已与人类专家评判高度一致。
+
+- 这三项与 Auto-Research 形成闭环：
+· Coding Agent 提供探索空间；
+· 隐蔽基础设施 + 真实任务提供高质量信号；
+· Agentic Judge 提供可靠评估。
+
+- Auto-Research这个思路厉害 让agent自己跑eval循环改进产品 比人手动调参数快太多
 
 - ## 🎯 Introducing: Browser Use CLI 2.0
 - https://x.com/browser_use/status/2035081807209931153

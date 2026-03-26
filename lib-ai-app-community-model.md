@@ -287,6 +287,25 @@ modified: 2023-10-30T07:34:03.602Z
   - 对比 GLM 4.5 系列： 总专家数：160 个 路由专家（Routed Experts） + 1 个 共享专家 上下文能力：128K
   - 估算 GLM5 模型大小在 700-800B 之间，激活参数不变
 
+# discuss-llm-routing
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 阿里最新论文「SkillRouter」
+- https://x.com/shao__meng/status/2036975150500057570
+  - AI Agent 生态中 Skills 已达数万规模，上下文窗口无法容纳全部，导致 “Skill Routing” 成为瓶颈。现有框架采用“渐进披露”设计，仅向 Agent 暴露 Skill 名称+描述，隐含假设“元数据足以选择”。
+  - 论文首次在大规模基准（≈80K Skills、75 个专家验证查询）上系统验证该假设，结果彻底推翻：Skill 主体（body，即完整实现代码）是决定性信号。移除 body 后，所有检索方法准确率下降 29–44 个百分点；交叉编码器注意力分析显示 91.7% 注意力集中在 body 上，描述仅占 1.0%。Skills 池中功能高度重叠，进一步放大 body 的区分价值。
+  - 提出方法：SkillRouter 两阶段 retrieve-and-rerank 流水线，总参数仅 1.2B（0.6B 编码器 + 0.6B 重排序器），专为消费级硬件设计。
+  - 第一阶段（SR-Emb-0.6B）：双编码器，用完整 Skills 文本（name+desc+body）预编码 Skills 池，ANN 检索 Top-20 候选。采用精心负例挖掘 + 三层假阴性过滤 + In-batch InfoNCE 对比学习。
+  - 第二阶段（SR-Rank-0.6B）：交叉编码器，逐对处理 query 与候选的完整文本，采用 listwise 交叉熵损失（LW），迫使模型在同质 Skills 间进行相对排序。
+  - 训练数据：37, 979 对查询-Skills 样本（GPT-4o-mini 合成，训练/测试完全 disjoint）。
+
+- body比description重要这个发现很对 我把skill description改成trigger condition格式后匹配率明显提高
 # discuss-llm-architecture
 - ## 
 

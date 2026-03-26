@@ -871,6 +871,24 @@ def slugify(text):
 - Qwen 4B finetune for text to SQL exists
 
 - I do use them for that, primarily to generate datasets for charts. Before every prompt I inject the entire schema, the version and type of the RDBMS and 3-4 example queries with good generated SQLs. I then use a read-only connection to test if it even runs (syntax correctness and verifies it returns more than 0 rows) and voila.
+# discuss-models-autocompletion/fim
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Zeta2 is here. 30% better acceptance rate than Zeta1. 
+- https://x.com/zeddotdev/status/2036861758686519471
+  - 200x more training data, LSP-powered context, faster predictions, open weights. Try it now in Zed.
+  - [We Rebuilt Zeta from the Training Data Up — Zed's Blog _202603](https://zed.dev/blog/zeta2)
+  - inetuned from ByteDance-Seed/Seed-Coder-8B-Base
+- The training data quality matters more than quantity though. 200x sounds impressive until you realize most code completion scenarios are variations of the same patterns. Curious how much of that data is actually unique problem domains vs repetitive boilerplate.
+
 # discuss-models-hot-coding
 - ## 
 

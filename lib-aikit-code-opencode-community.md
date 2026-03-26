@@ -56,6 +56,30 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🧊 james has achieved distributed opencode
+- https://x.com/thdxr/status/2036925457417822299
+  - agents can run on your laptop, on a remote server, in a cloud sandbox provider
+  - shut your laptop and things keep running
+  - open it back up and all the data syncs
+  - delete the sandbox nothing is lost
+
+- are you making opensandbox or using some existing provider?
+  - it's pluggable, we support anything that provides the concept of running an agent - sandbox (e2b, daytona, cloudflare, vercel, etc) - local git worktree - docker - etc
+
+- https://x.com/jlongster/status/2036924361379037224
+  - OpenCode is about to get more powerful with remote sandboxes
+
+- we can sync sqlite databases for you, just saying wink wink
+  - our needs are extremely simplistic, the big one being that we only need to allow one writer. it's very basic event-sourcing style with a sequence id per session
+  - we have users who also desire to control where the data lives, so they could stream these in and persist to something like postgres
+  - so this solve the immediate pain point, but it could change in the future if we need more powerful syncing
+
+- the edge case handling is what separates a demo from a real product. been dealing with similar issues — what happens when the sandbox dies mid-task and you have uncommitted state? curious how you're persisting session state across sandbox restarts
+
 - ## 🌰🎯 [Kilo built on OpenCode server : r/RooCode _202603](https://www.reddit.com/r/RooCode/comments/1rsgtes/kilo_built_on_opencode_server/)
   - [We've completely rebuilt the Kilo Code extension for VS Code. Join the beta test. _202603](https://blog.kilo.ai/p/we-completely-rebuilt-the-kilo-vs-code-extension)
   - Last month, we shipped a renewed Kilo CLI built on OpenCode server—a portable, open-source core that isn’t tied to any single editor. The VS Code extension was always going to be next. Today it’s here.
@@ -163,7 +187,12 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## Features in OpenCode itself will be internal plugins and can be activated/deactivated at runtime. Same as external plugins. 
+- https://x.com/thdxr/status/2036954434727555095
+  - This will allow for reloading plugins at runtime. 
+  - Trying to tweak the DX a little more. Almost ready to go.
+
+- I think you guys will have a powerful agent platform not just for coding if you make everything modular with a good plugin SDK. Built in support switching between group of plugins would be nice.
 
 - ## 🔍 we've taken the first steps in eliminating opencode's ripgrep dependency 
 - https://x.com/thdxr/status/2021422750385176905

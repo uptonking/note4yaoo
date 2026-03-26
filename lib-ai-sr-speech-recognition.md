@@ -20,6 +20,12 @@ modified: 2023-02-07T09:22:03.120Z
 # speech-to-text
 - [用Python 搭配OpenAI 的GPT、Whisper API 取得Youtube 影片摘](https://medium.com/dean-lin/%E7%94%A8-python-%E6%90%AD%E9%85%8D-openai-%E7%9A%84-gpt-whisper-api-%E5%8F%96%E5%BE%97-youtube-%E5%BD%B1%E7%89%87%E6%91%98%E8%A6%81-4ceb57828732)
 
+- https://github.com/joewongjc/type4me /MIT/202603/swift/c
+  - MacOS语音输入工具，实时识别、大模型文本优化、全本地存储
+  - https://x.com/dotey/status/2037195123394584818
+    - macOS 语音输入工具，本地/云端双引擎识别，大模型文本优化，数据全部存在本地。
+    - 它基于 SherpaOnnx 引擎做本地语音识别，不需要 API Key、不需要联网，在 Apple Silicon 机型上跑得很快。如果你更看重准确率，也可以接云端引擎（目前支持火山引擎和 Deepgram）。
+
 ## Whisper
 
 - https://github.com/openai/whisper /MIT/py/jupyter

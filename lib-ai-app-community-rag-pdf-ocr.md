@@ -95,7 +95,14 @@ modified: 2026-01-25T17:23:01.510Z
 
 - ## 
 
-- ## 
+- ## If you're building a PDF RAG pipeline: Should you be using OCR and 𝘁𝗲𝘅𝘁-𝗯𝗮𝘀𝗲𝗱 𝗿𝗲𝘁𝗿𝗶𝗲𝘃𝗮𝗹 methods, or just 𝗲𝗺𝗯𝗲𝗱 𝗶𝗺𝗮𝗴𝗲𝘀 𝗱𝗶𝗿𝗲𝗰𝘁𝗹𝘆 using late interaction models?
+- https://x.com/victorialslocum/status/2037113651174199778
+  - This paper says the answer might actually be 𝘣𝘰𝘵𝘩.
+  - My colleagues at Weaviate released IRPAPERS, a benchmark comparing 𝗶𝗺𝗮𝗴𝗲-𝗯𝗮𝘀𝗲𝗱 and 𝘁𝗲𝘅𝘁-𝗯𝗮𝘀𝗲𝗱 retrieval over 3, 230 pages from 166 scientific papers.
+  - text and image based methods actually fail on 𝘥𝘪𝘧𝘧𝘦𝘳𝘦𝘯𝘁 𝘲𝘶𝘦𝘳𝘪𝘦𝘴.
+  - This complementarity is what makes 𝗠𝘂𝗹𝘁𝗶𝗺𝗼𝗱𝗮𝗹 𝗛𝘆𝗯𝗿𝗶𝗱 𝗦𝗲𝗮𝗿𝗰𝗵 work. 
+
+- Have you tried CLIP ( @OpenAI ). They Built something in this space whereby using contrastive method both images and text can be converted to embedding and stored until when retrieved later.. What do your think?
 
 - ## [Best way to extract data from PDF invoices to Excel? : r/excel _202603](https://www.reddit.com/r/excel/comments/1rwpxn8/best_way_to_extract_data_from_pdf_invoices_to/)
 - In my experience, the best option is to ask the vendor to provide the invoices in Excel format or to provide a summary file with all of the invoice data.

@@ -358,6 +358,17 @@ modified: 2026-01-19T05:01:00.055Z
   - Run colin run. Colin fetches the Linear issues, resolves the reference to your weekly notes, extracts blockers via LLM, and writes the compiled skill. Run it again tomorrow—if nothing changed upstream, nothing rebuilds. The expires: 1d ensures time-sensitive content stays fresh.
   - [We built Colin, a context engine that can keep agent skills fresh : r/AI_Agents _202601](https://www.reddit.com/r/AI_Agents/comments/1qnns7n/we_built_colin_a_context_engine_that_can_keep/)
 
+- https://github.com/chrlsio/agent-skills /MIT/202603/ts/rust
+  - [【开源】AgentSkills — 轻量高性能跨平台 AI Agent Skills 管理工具（支持 Claude Code / Cursor / Codex 等）  - LINUX DO _202603](https://linux.do/t/topic/1827290)
+    - 在用 Claude Code 的时候积累了不少好用的 skills，想同步到 Cursor 和 Gemini CLI 上用，发现要手动复制、改格式，非常麻烦。于是做了这个工具来统一管理。
+    - 已支持 13 个 AI 工具：Claude Code、Cursor、Codex、Gemini CLI、GitHub Copilot CLI、Kiro、OpenCode、Antigravity、CodeBuddy、OpenClaw、Trae、Windsurf、Cline。
+    - 仪表盘 — 一眼看到装了哪些 AI 工具，每个工具有多少 skills
+    - 技能管理 — 查看、编辑、卸载，支持搜索和筛选
+    - 技能市场 — 从 skills.sh 和 ClawHub 浏览安装
+    - 导入技能 — 支持从 Git 仓库或本地目录导入
+    - 实时监听 — 技能文件在磁盘上变化时自动刷新
+    - 跨工具同步 — 一键同步到 Cursor、Gemini CLI 等所有其他工具
+
 - https://github.com/ConardLi/rag-skill /202602/python
   - 专为本地知识库智能检索设计的 AI Skill 演示仓库，展示如何通过分层索引和渐进式检索实现高效的多格式文件问答系统。
   - 分层索引 - 通过 data_structure.md 实现智能目录导航

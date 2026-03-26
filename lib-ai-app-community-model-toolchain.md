@@ -1125,6 +1125,49 @@ PP Speed: Q3 GGUF: 50 t/s
 - ## 
 
 - ## [(Llama.cpp) In case people are struggling with prompt processing on larger models like Qwen 27B, here's what helped me out : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rnrxsv/llamacpp_in_case_people_are_struggling_with/)
+  - ~~TLDR: I put the --ubatch-size to my GPU's L3 cache is (in MB).~~ 
+- mechanism is vram overflow, not L3 cache size (tokens ≠ MB, the correlation is coincidence). but the empirical sweep is the right approach: llama-bench -ub 4, 8, 16, 32, 64, 128, 256 and look where t/s drops. different models hit the overflow point at different values on the same gpu , sweet spot for Qwen 27B won't be the same as a 7B on identical hardware.
+
+- ## [Ways to improve prompt processing when offloading to RAM : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rgkmd7/ways_to_improve_prompt_processing_when_offloading/)
+- For me increasing ubatch size was the key to get much higher PP speeds. The llama.cpp default 512 is pretty low. If you increase it above 2048 you will also need to adjust batch size up.
+  - This will eat some VRAM so you will need to offload more experts to CPU, thus tg speed may suffer. It's a tradeoff.
+
+- ## [Question about prompt-processing speed on CPU (+ GPU offloading) : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nsxsp0/question_about_promptprocessing_speed_on_cpu_gpu/)
+- vanilla llama.cpp with all layers on GPU and some/all experts on CPU is the way to go. ik_llama optimizes for CPU inference but may be behind in other regards. With all layers on GPU it should go fast because preprocessing doesn't use the experts.
+
+- I have an AMD 9700x CPU (no GPU) and get 28t/s 150pp t/s running with llama.cpp and qwen3-30B-A3B. So you should be getting better results than that. I switched to ik_llama and the bench went up to 30 and 299pp
+
+- yes, this is unsually slow. you need to increase the batch size (1024, 2048 or even 4096 might be optiomal) and load all layers onto gpu and only load the expert layers onto cpu. this way, all the context is on the gpu and you will get much better speed.
+  - personally i haven't heard much good about ollama. I'm using kobold.cpp, which is based on llama.cpp and works very well for hybrid cpu+gpu setups.
+
+- In general you don't want to put any layers on system ram if you can. So using like a gguf model then offloading all layers to the GPU, move the slider all the way to the right or set it to 999
+
+- ## [[TEST] Prompt Processing VS Inferense Speed VS GPU layers : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1itfg77/test_prompt_processing_vs_inferense_speed_vs_gpu/)
+- Did a quick test to demonstrate how GPU helps with prompt processing, even if not helping with tokens per second. Prompt processing speeds up in linear progression, even if generation itself is still slow.
+  - Mistral Nemo 12B Q8 GGUF, 40 layers total. 32k context / 31k prompt.
+  - UPD: this was done in llama.cpp CUDA build to demonstrate that GPU presence is helpful even if not for t/s speed. With CPU-only build, prompt processing takes 1565.61s (26 minutes). 
+
+- It appears to me that it still uses GPU for prompt processing, even at GPU layers 0, as prompt processing purely on cpu ridiculously slow. It should take like 1000 sec on cpu only.
+- took me a while to make sense of this graphic but yeah, i guess the message we all knew. offloading to the cpu sucks...
+
+- Definitely consistent with my experience. I've been using koboldcpp recently and it defaults to 30/43 layers when I open it which was killing my inference speed, and setting it to 43/43 made inference wayyy faster.
+  - In the latest KoboldCpp, you can use -1  for GPU layers and allow KoboldCpp to guess how many layers it should offload, though this might often be not the best.
+
+- ## [Is there a way to speed up prompt processing with some layers on CPU with qwen-3-coder-next or similar MoEs? : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r9kxum/is_there_a_way_to_speed_up_prompt_processing_with/)
+- What speeds your GPU ports are? Anything lower than x4 PCIe4 will lower PP speed drastically. I swapped to single GPU as I run one at Pcie3 x1 and speeds were sad. Moe models with CPU offload need very high bandwidth on Pcie lanes.
+
+- What kind of prompt?  Have you actually benched it to get the pp speed?  What context are you using and how many layers are you offloading to the CPU?  What GPU and what CPU/memory?  Are you sure that entire minute was prompt processing and not just loading model weights off of disk?
+
+- I also notice that the MoE CPU offloading option reduces prompt processing speed proportionally.
+
+- ## [How to maximise Prompt processing speed for long context usage? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mhbp73/how_to_maximise_prompt_processing_speed_for_long/)
+- This is the single biggest problem facing local LLM setups. It wont matter how smart these local models get if they fall apart after 8192 tokens or it takes 5 minutes to process 120000 tokens, and still forget half of it.
+
+- If the context is really long, it’s likely relatively stable. In that case, the main focus should probably be on smart context management and caching (e.g., https://github.com/LMCache/LMCache).
+
+- Tweaking ubatch sizes up will help with long prompts, but generally this operation is compute bound.. better GPU, faster prompt progressing. I don't know anything about AMD, is that a "good" GPU? 3090 can pump 3-5k tok/sec of prompt.
+
+- ## [(Llama.cpp) In case people are struggling with prompt processing on larger models like Qwen 27B, here's what helped me out : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rnrxsv/llamacpp_in_case_people_are_struggling_with/)
   - TLDR: I put the --ubatch-size to my GPU's L3 cache is (in MB).
   - My GPU is 9070xt, and when I put it to --ubatch-size 64 (as the GPU has 64MB of L3 cache) my prompt processing jumped in speed where it was actually usable for Claude code invocation.
 
@@ -1419,7 +1462,21 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## [When should we expect TurboQuant? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s3y1oc/when_should_we_expect_turboquant/)
+
+- The reason this matters specifically for local inference: weight quantization has basically been a solved problem since exl2/GGUF. 
+  - Everyone is already running 4-bit. KV cache is the bottleneck that hasn't been cracked at the same quality level. On long context tasks that cache can eat more memory than the weights. 
+  - If TurboQuant delivers lossless or near-lossless KV compression at significant ratios, that unlocks context lengths that were previously only viable on 80GB machines.
+  - The Qwen3.5 + GQA point above is real though. GQA already collapses the KV cache heads, so the baseline is smaller. The relative gain may be less dramatic than on models with full MHA. The unlock is more about 70B+ models on 24GB hardware, or running 32K context without context swapping on mid-tier machines.
+
+- I wonder how well Qwen3.5 would work with it. Considering its KV cache is small as-is thanks to GDN. If it's lossless, Qwen3.5's KV cache would weight like nothing at full context length lol
+  - That depends on which model. Qwen 27b has an attention kv cache of 16GB at full context. 122b is 6GB at full context. Deltanet ssm/conv1d cache is 147MB for both models at any context size. So 27b will shrink to roughly 3.5GB of kv cache at full context.
+- What people seem to be missing is that cloud inference will be cheaper because of this as well.
+
+- reading more into some of the forks, it looks like most of them are not solving the prefill which means you may still need a larger VRAM for the initial loading, wonder if it can be off-loaded to RAM and then squeezed back into VRAM...
+
+- Nvidia's technique is better, but requires per model calibration. Worth it. 
+  - KV Cache Transform Coding for Compact Storage in LLM Inference is the newest https://arxiv.org/abs/2511.01815 but they have a bunch https://github.com/NVIDIA/kvpress
 
 - ## [FlashAttention-4: 1613 TFLOPs/s, 2.7x faster than Triton, written in Python. What it means for inference. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s1yw23/flashattention4_1613_tflopss_27x_faster_than/)
   - TL; DR for inference:

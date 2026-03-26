@@ -491,7 +491,11 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## Codex App Server is 100% Open Source _202603
+- https://x.com/reach_vb/status/2036904822641676716
+  - It allows you to build on codex and build richer experiences all with ChatGPT Auth
+
+- 🤔 codex的api及风控政策经常调整, 一定要添加备选方案
 
 - ## [What’s with the hype using Obsidian and Claude Code : r/ClaudeCode _202603](https://www.reddit.com/r/ClaudeCode/comments/1s0m3rf/whats_with_the_hype_using_obsidian_and_claude_code/)
 - Code is files, obsidian is files. Same thing 

@@ -386,6 +386,9 @@ Today, Turso is in beta with early customers working toward production deploymen
 - MacFUSE is not great, FsKit it better and doesn't require SIP disablement. WinFSP for windows.
   - You might want to look at for modern OS mounts (+ plan9  fs access by agents) https://github.com/DeanoC/Spiderweb
 
+- https://x.com/victormustar/status/2036476453370380416
+- Dropping the init container in k8s pods is huge.
+
 - ## 🚀 Introducing TigerFS - a filesystem backed by PostgreSQL, and a filesystem interface to PostgreSQL. ——202603
 - https://x.com/michaelfreedman/status/2034291102346326416
   - Idea is simple: Agents don't need fancy APIs or SDKs, they love the file system. ls, cat, find, grep. Pipelined UNIX tools. So let’s make files transactional and concurrent by backing them with a real database.

@@ -259,7 +259,8 @@ modified: 2026-01-14T18:57:51.174Z
 
 - ## 
 
-- ## 
+- ## [How to change models folder for Studio (tutorial) : r/unsloth _202603](https://www.reddit.com/r/unsloth/comments/1s3vq8x/how_to_change_models_folder_for_studio_tutorial/)
+- By default, Unsloth Studio will check Hugging Face d/l folders. So if you can edit the environment variables for the HF cache, then US will use that env to follow to your folder.
 
 - ## [Unsloth announces Unsloth Studio - a competitor to LMStudio? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rwa0f7/unsloth_announces_unsloth_studio_a_competitor_to/)
 - It's not a competitor for LM Studio, this one has emphasis on nvidia and training, LM Studio has emphasis on MCP support and good built-in api server.

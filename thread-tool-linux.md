@@ -37,6 +37,23 @@ modified: 2024-01-06T13:48:42.969Z
   - The "Inbox" version of sudo is available for Windows 11 builds 26045 and later.
   - This project is not a fork of the Unix/Linux sudo project, nor is it a port of that sudo project. Instead, Sudo for Windows is a Windows-specific implementation of the sudo concept.
 
+# discuss-terminal/shell
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## IM NOT AFRAID (of closing my terminal) ANYMORE.
+- https://x.com/jpschroeder/status/2037188194257580061
+  1. dmux uses tmux
+  2. tmux is background server
+  3. terminal closing doesn't kill tmux
+  4. your coding agent keeps working
+  5. type `dmux` and you're right back where you were.
+
 # discuss
 - ## 
 

@@ -10,7 +10,7 @@ modified: 2026-01-14T19:05:15.969Z
 # guide
 
 - pros
-  - ?
+  - 支持gguf和mlx
 
 - cons
   - ? 不支持直接使用已有的.safetensors文件
@@ -23,6 +23,7 @@ modified: 2026-01-14T19:05:15.969Z
   - janai: rust/tauri + ui
   - llamafarm: lemonade(cpp) + ui
   - transformerlab-app: backend-plugins + ui
+  - omlx: mlx-lm + ui(PyObjC)
 # draft
 - janai-cli like ollama-cli, lms-cli
   - skills for janai-cli

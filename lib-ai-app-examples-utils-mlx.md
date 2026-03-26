@@ -604,6 +604,19 @@ modified: 2025-11-01T10:54:26.044Z
   - https://omlx.ai/benchmarks
   - LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar
   - Continuous batching and tiered KV caching, managed directly from your menu bar.
+  - The server discovers LLMs, VLMs, embedding models, and rerankers from subdirectories automatically.
+    - Point `--model-dir` at a directory containing MLX-format model subdirectories.
+    - Models are auto-detected by type: llm/vlm/ocr
+  - Supports text LLMs, vision-language models (VLM), OCR models, embeddings, and rerankers on Apple Silicon.
+  - Web UI at /admin for real-time monitoring, model management, chat, benchmark, and per-model settings.
+    - Search and download MLX models from HuggingFace directly in the admin dashboard.
+  - Multi-Model Serving: Load LLMs, VLMs, embedding models, and rerankers within the same server
+  - macOS Menubar App: Native PyObjC menubar app (not Electron). 
+  - FastAPI Server (OpenAI / Anthropic API): CLI Server
+  - [Unable to find the gguf model  _202603](https://github.com/jundot/omlx/issues/180)
+    - oMLX uses mlx-lm as its backend, so GGUF models are not supported. 
+  - [I input LM Studio's downloaded models dir doesn't work _202603](https://github.com/jundot/omlx/issues/149)
+    - you need to set the parent directory instead of the model directory itself, and it will discover all models inside. @TipKnuckle has also submitted a PR to make it work when pointing directly to a model directory, so i'll review and merge that soon!
   - [Built oMLX.ai/benchmarks - One place to compare Apple Silicon inference across chips and models : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1ro646t/built_omlxaibenchmarks_one_place_to_compare_apple/)
 # more
 - https://github.com/intel/ipex-llm /apache2/202510/python/inactive

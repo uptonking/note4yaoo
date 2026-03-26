@@ -940,6 +940,11 @@ modified: 2025-12-11T18:10:23.710Z
   - [I built a fully self-hosted and open-source Claude Code UI for desktop and mobile : r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1r8rqnv/i_built_a_fully_selfhosted_and_opensource_claude/)
     - Git worktree management for running agents in parallel, Git operations so you don't have to leave the app, integrated terminal, it also comes with fully local voice mode and dictation
 
+- https://github.com/SakuraByteCore/codexmate /apache2/202603/js
+  - https://sakurabytecore.github.io/codexmate/
+  - Codex / Claude Code / OpenClaw 的本地配置与会话管理工具
+  - [[开源]CodexMate：Codex / Claude Code / OpenClaw 的本地配置与会话管理工具 - LINUX DO _202603](https://linux.do/t/topic/1827928)
+
 - https://github.com/kbwo/ccmanager /MIT/202602/ts
   - a CLI application for managing multiple AI coding assistant sessions (Claude Code, Gemini CLI, Codex CLI, Cursor Agent, Copilot CLI, Cline CLI, OpenCode, Kimi CLI) across Git worktrees and projects.
 

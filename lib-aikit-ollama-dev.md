@@ -12,12 +12,17 @@ modified: 2026-01-14T18:57:01.673Z
 - tips-ai-tools
   - lm studio底层用的也是llama.cpp, 不必寻找替代，深入底层更容易替代和扩展
 
-- mlx
+- mlx-pros
   - mlx的优点之一是方便支持在iphone上运行
+  - mlx模型的生成速度更快
+
+- mlx-cons
+  - 有些冷门模型未提供mlx格式，需要手动转换
+  - mlx-4bit 的精度比 gguf-Q4_K_XL 要低
 
 - ollama-pros
   - stable and rich models
-  - 对 embedding 模型额支持更好
+  - 对 embedding/vlm 模型的支持更好
 
 - ollama-cons
   - 很多模型推理速度比 llama.cpp 慢
@@ -25,12 +30,19 @@ modified: 2026-01-14T18:57:01.673Z
 
 - lmstudio-pros
   - ui操作体验友好
+  - 支持 parallel requests
 
 - lmstudio-cons
   - ~~不提供api来支持 remote control~~ 2603已支持
-  - 对mlx格式的 embedding 模型额支持有问题, gguf格式模型支持好
+  - 对mlx格式的 embedding 模型额支持有问题, gguf格式embed模型支持好
   - lmstudio官方格式支持在ui上开关thinking, 其他的量化版模型缺少快捷方式
   - 不支持直接使用本地已有的模型，如 `~/.cache/huggingface` 或 ollama 的模型, 而msty/transformerlab支持导入
+
+- llama.cpp-pros
+  - 官方提供 cli/server/web-ui, 功能丰富
+
+- llama.cpp-cons
+  - 对vlm的支持度不够高
 # draft
 - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
   - 支持类似 roocode 的 model profile 切换

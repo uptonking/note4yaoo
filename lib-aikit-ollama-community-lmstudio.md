@@ -13,6 +13,7 @@ modified: 2026-01-14T18:58:32.523Z
   - janai: rust/tauri + ui
   - llamafarm: lemonade(cpp) + ui
   - transformerlab-app: backend-plugins + ui
+  - omlx: mlx-lm + ui(PyObjC)
 # draft
 - 在lmstudio支持服务端headless模式后, 将ollama wrapper替换为lmstudio wrapper
   - 💰 谨慎封装lmstudio, 因为之前lmstudio连免费工作使用都不支持
@@ -40,11 +41,11 @@ modified: 2026-01-14T18:58:32.523Z
 
 - 支持通过ui快速在提示词末尾添加`/non_think`的开关
 
-- ~~lm studio 在对包含很长的代码或文本的聊天内容生成标题或摘要时，容易因为prompt processing速度慢，导致 app卡住，内容太多时还会占用大量内存导致系统卡住~~
+- ~~lm studio 在对包含很长的代码或文本的聊天内容生成标题或摘要时，容易因为prompt processing速度慢，导致 app卡住，内容太多时还会占用大量内存导致系统卡住~~ 
   - 似乎不是此原因, 但也要处理内容过长时本地计算不友好的场景
 # xp-lmstudio
 - issues
-  - ~~聊天内搜索~~
+  - ~~聊天内搜索~~ 
   - 标题名搜索，便于查看包含某关键字的chats
 
 - mlx-engine
@@ -315,9 +316,8 @@ modified: 2026-01-14T18:58:32.523Z
 
 - ## 
 
-- ## can lm studio use  existing huggingface models from local cache like `~/.cache/huggingface`, i want to reuse existing local models
+- ## can lm studio use  existing huggingface models from local cache like `~/.cache/huggingface` , i want to reuse existing local models
 - The easy, reliable ways are (A) use LM Studio’s `lms import` (it can create symbolic links so you don’t duplicate files) or (B) create symlinks yourself
-
 
 - To reuse your .gguf models from the Hugging Face cache without copying them and wasting disk space, you should use Symbolic Links (Symlinks).
 # discuss

@@ -275,6 +275,57 @@ modified: 2026-01-15T15:33:18.008Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Intel launches Arc Pro B70 and B65 with 32GB GDDR6 : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s3bb3y/intel_launches_arc_pro_b70_and_b65_with_32gb_gddr6/)
+- 32GB at $949 puts this right in the price-per-GB sweet spot where local inference gets practical for 70B models.
+
+- I was about to start crapping on Intel’s shitty vLLM fork, but it turns out Intel and vLLM collaborated to bring B-series support into mainline vLLM!
+
+- Am i wrong or does this seem like a much better deal than Radeon AI Pro R9700?
+  - R9700 actually has really good prompt processing and can use ROCm for inference.
+  - In reality I feel like this is a closer competitor to used w6800's (I say that without having seen it's performance).
+- W6800 is still fully supported in ROCm too, so you can run normal torch and stuff. I think this competes more with used V100's or MI50's.
+
+- Similar in class to AMD R9700, but slightly slower and slightly cheaper, with worst software support. Not really but bringing much new to market.
+
+- I bought, some time ago, from someone two B580 (mage or war or something is the name) à 12gb for 200€ together because the person couldn't figure out how to make them run well. Honestly, the oneAPI/SYCL shit and how convoluted it is to set them up (and make them perform well), I can only recommend them for hobby projects. It's really time consuming. Regardless, they run fine. Right now, I am trying to build (while using them) an open source project that will translate/classify/etc. Mangas/Manhwas/Manhuas.
+
+- [Intel Arc B70 32GB GDDR6 announced at a price of 949 : r/hardware _202603](https://www.reddit.com/r/hardware/comments/1s3h9ib/intel_arc_b70_32gb_gddr6_announced_at_a_price_of/)
+- The Radeon AI PRO R9700 is notably faster, and you can easily get them for around $1300-1400. If pricing for the B70 floats up a bit more, why wouldn't you just buy the AMD?
+  - The R9700 isn't that much faster. It has better floating point performance numbers but the integer performance is on-par with the B70. R9700 has only a tiny advantage in memory throughput, too.
+  - R9700 at 300W power rating (vs 230W for B70) and $300-400 more than a B70? I'd say competition in the marketplace is working!
+- You can powercap R9700 to 230W with one command. You can undervolt it too.
+
+- After playing with my B50 for the last 6-ish months (bought at release), I think I'd pay for AMD over Intel even. The software ecosystem for Intel is in such sad state and isn't improving quick enough.
+
+- For AI they seem to only have fp8/fp16. No int8, int4 or nvfp4?
+  - Err, I am pretty sure the performance claims they give are all for int8...
+
+- [Intel Arc Pro B70 Outclasses NVIDIA’s RTX Pro 4000 In AI At Half The Cost, 33% More Memory : r/IntelArc _202603](https://www.reddit.com/r/IntelArc/comments/1s3di1w/intel_arc_pro_b70_outclasses_nvidias_rtx_pro_4000/)
+  - The cards look interesting, but they are not much cheaper than than R9700 and that has FP8 support.
+
+- [Intel will sell a cheap GPU with 32GB VRAM next week : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s3e8bd/intel_will_sell_a_cheap_gpu_with_32gb_vram_next/)
+  - Arc Pro B70 32GB: 608 GB/s ($949)
+  - It seems Intel will release a GPU with 32 GB of VRAM on March 31, which they would sell directly for $949.
+  - Bandwidth would be 608 GB/s (a little less than an NVIDIA 5070), and wattage would be 290W.
+
+- I got the R9700 AI PRO with 32GB VRAM for my SFF server build and I am pretty satisfied with 640 GB/s. The speed is acceptable for my needs and llama.cpp built for vulkan works flawlessly plus it takes 300W max
+
+- The only other consumer GPU with 32GB is the RTX 5090, and that goes for 2, 200+. So yes, 949 for 32GB is genuinely cheap in that context.
+- VRAM capacity is only half the story for inference. Bandwidth determines your tok/s.
+  - RTX 4060 Ti 16GB: 288 GB/s ($449)
+  - RTX 4070 Ti Super 16GB: 672 GB/s ($779)
+  - Arc Pro B70 32GB: 608 GB/s ($949)
+  - RTX 3090 24GB: 936 GB/s (~$900 used)
+  - RTX 5080 16GB: 960 GB/s ($1, 099)
+  - RTX 5090 32GB: 1, 792 GB/s ($2, 199)
+- The B70 lands in the same bandwidth class as the RTX 4070 Ti Super. On a model that fits both cards, like Qwen 3.5 27B at Q4_K_M (needs about 16GB), you'd expect roughly similar tok/s. 
+  - Versus a used 3090 at about the same price: the 3090 has 54% more bandwidth (936 vs 608) with full CUDA support, so it will be meaningfully faster on anything that fits 24GB. But the B70 gives you 8GB more VRAM for models and quant levels the 3090 can't touch.
+- The risk nobody in this thread is talking about enough is software. This is not CUDA. You're on SYCL/oneAPI or Vulkan through llama.cpp. One commenter above is running an R9700 AI PRO on Vulkan and says it works, but another says ROCm gave 8x the tok/s on the same AMD hardware. Vulkan leaves a lot on the table. How Intel's SYCL stack actually performs for LLM inference is the open question, and there are zero B70 benchmarks to answer it yet.
+
+- They are literally problematic on the software level and not hardware. Pixel errors and texture issues
 # discuss-nvidia
 - ## 
 

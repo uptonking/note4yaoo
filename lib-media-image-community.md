@@ -75,7 +75,7 @@ modified: 2024-09-16T11:11:14.989Z
 - ## 🤔 [Support for iframe capture · Issue · niklasvh/html2canvas _202109](https://github.com/niklasvh/html2canvas/issues/2692)
 - is there any plan to support iframe capture in the same origin?
   - It's definitely supported. Try setting a height and width on the iframe.
-  - Iframe element must set width and height through attributes. eg: `<iframe src="./child.html" width="400" height="400"></iframe>` . Because html2canvas iframe clone initialize by `iframe.width and iframe.height`
+  - Iframe element must set width and height through attributes. eg: `<iframe src="./child.html" width="400" height="400"></iframe>` . Because html2canvas iframe clone initialize by `iframe.width and iframe.height` 
 
 - ## [html2canvas failing when trying to capture embedded SVG · niklasvh/html2canvas · Discussion _202204](https://github.com/niklasvh/html2canvas/discussions/2855)
 - I think you can't capture an iframe from a different origin without running into CORS problems unless you use a CORS proxy. If you aren't already using some kind of CORS proxy I would suggest it because html2canvas by itself does not bypass CORS restrictions. In the html2canvas documentation it suggest using the html2canvas-proxy.
@@ -252,6 +252,21 @@ modified: 2024-09-16T11:11:14.989Z
 
 - The problem with server side is you're limited to things that are not behind a login.
   - BugMuncher founder/developer here - BugMuncher takes the entire DOM tree from the client and recreates it for the screenshot, so as long as any external CSS/images aren't behind authentication, it works fine on authenticated pages. In fact, most of our users use BugMuncher specifically on auth protected areas.
+# discuss-image-storage
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Best practice for generating QR codes dynamically in a Django ticketing app (without storing images)? : r/django _202603](https://www.reddit.com/r/django/comments/1s38tj7/best_practice_for_generating_qr_codes_dynamically/)
+- Use a qr code js library and generate it in the frontend directly. There is no need to use python for this
+
+- Django QR Code can generate QR codes on the fly in views. https://pypi.org/project/django-qr-code/
+
+- The comments not taking into account that you want to create a dynamic qr code. Create a short link that redirects to the target, then generate a qr code from the short link. Example : app.com/shortlink/[id] --> redirects to the target link (url, social media ...) And you generate a qr code from the short link in client side using a library, it will be the same all time which means the the same qr code generated for the same short link , that redirects to the actual target you want.
 # discuss
 - ## 
 

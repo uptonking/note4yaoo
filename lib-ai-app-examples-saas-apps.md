@@ -444,6 +444,17 @@ modified: 2025-02-21T17:17:42.225Z
     - it's fully integrated with Claude Skills.
     - What's the security boundary here - there's no mention of a VM or anything to isolate the agent from the file system?
 
+- https://github.com/cortask/cortask /MIT/202603/ts
+  - https://www.cortask.com/
+  - a self-hosted AI orchestration platform
+  - It connects to multiple LLM providers, extends functionality through a skill system, and runs as a web app, desktop app, CLI, or Docker container. All data stays on your machine.
+  - Channels — Connect to Telegram, Discord, and WhatsApp as a bot
+  - [I built Cortask - an open source desktop app to orchestrate AI agents locally, with native Ollama support [MIT] : r/ollama _202603](https://www.reddit.com/r/ollama/comments/1s397v1/i_built_cortask_an_open_source_desktop_app_to/)
+  - How did you route the LLM to different activities based on user inputs? when I say "create a blogpost on my website about birds" how the LLM knows what to do next? (for example what tools to use, what credentials, ...?)
+    - The system prompt of the agent contains a list of all tools/skills available (but not like an mcp where the whole context of the tool/skill is pumped into the system prompt). Just the Name and Short description of the tool/skill is inside the system prompt. The agent then decides what skill fits the prompt of the user. Then looking up the skill in detail and work with this context. This saves a lot of tokens and is equally good from the output. 
+  - So there is only 1 persistent agent? All others are ephemeral "task" agents?
+    - Correct. However, I am currently testing a multi agent solution where you can create dedicated agents with their own personalities, similar to building a team within a company.
+
 - https://github.com/DevAgentForge/Claude-Cowork /MIT/202601/ts
   - A desktop AI assistant that helps you with programming, file management, and any task you can describe.
   - fully compatible with the exact same configuration as Claude Code, which means you can run it with any Anthropic-compatible large language model.

@@ -362,6 +362,18 @@ modified: 2025-02-21T18:20:42.624Z
   - Automatic Fallbacks - Seamless failover between providers and models with zero downtime
   - Multimodal Support - Support for text, images, audio, and streaming, all behind a common interface.
 
+- https://github.com/mozilla-ai/any-llm /1.8kStar/apache2/202603/python
+  - https://mozilla-ai.github.io/any-llm/
+  - Communicate with an LLM provider using a single interface
+  - any-llm-gateway is an optional FastAPI-based proxy server that adds enterprise-grade features on top of the core library
+    - API Key Management - Issue, revoke, and monitor virtual API keys without exposing provider credentials
+    - Usage Analytics - Track every request with full token counts, costs, and metadata
+    - Multi-tenant Support - Manage access and budgets across users and teams
+  - Coming from LiteLLM? Your API keys and environment variables carry over unchanged. Install the SDK with extras for the providers you need, then update your import and model strings
+  - Stays framework-agnostic so it can be used across different projects and use cases
+  - Battle-tested - Powers our own production tools (any-agent)
+  - https://github.com/mozilla-ai/any-agent
+
 - https://github.com/Dominic-Shirazi/ConductorAPI /MIT/202512/python/js
   - a powerful organization layer for your local AI API traffic. 
   - A single OpenAI-compatible endpoint that routes AI API requests and spins local models up or down to manage VRAM
