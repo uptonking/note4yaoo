@@ -16,7 +16,14 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
-- ## 
+- ## @LandingAI 指出 GPT-5.4、Gemini 和 Opus 等主流 LLM 在文档处理时的问题：视觉定位/可追溯定位能力弱。
+- https://x.com/shao__meng/status/2037097008087839005
+  - 它们能提取文档中的数值或信息，却无法指出该数值在原始页面上的确切位置（bounding box、页码、坐标等）。一旦要求“把你提取的这个值在原文档里标出来”，模型就搞不定了。
+  - 视觉 grounding 的定义与价值： 指将提取结果与源文档的空间位置严格绑定，提供“证据链”。 这是合规、审计、受监管行业（金融、法律、医疗、财报等）的硬性要求。合规团队需核验数据来源，财务团队需审计每笔数字出处，任何文档自动化流程都依赖可追溯性。
+  - LLM 的根本局限： 它们把文档“压扁”成 token 序列，只保留文本语义，丢失了页面布局、空间关系和视觉结构。因此提取结果本质上是“黑箱”，无法提供位置证明。
+  - ADE 的差异化优势： 采用 Agentic Document Extraction 技术，每一条提取结果都原生携带精确空间坐标（bounding boxes、页码、位置信息）。表格、文本块、表单字段全部实现视觉 grounding，使整个提取过程可审计、可验证、可追溯。
+  - [Agentic Document Extraction: API-first Agentic Document Intelligence platform built for accuracy, reliability, and governance at scale. - LandingAI](https://landing.ai/)
+  - https://landing.ai/ade
 
 - ## llamaindex: We built LobsterX, an @openclaw specialized for document work on your computer.
 - https://x.com/jerryjliu0/status/2021021110721265979
@@ -301,7 +308,7 @@ modified: 2021-08-22T07:29:34.045Z
   - Instead, the renderer should be able to put any React component on the page. Most of the current shapes will return SVG elements, but shapes like Text wouldn’t have to.
   - The biggest trade off here is auto-sizing `<g>` elements, which are awesome. Since SVG elements are basically `overflow:hidden` , we’ll need to pad the shapes more based on the zoom level.
 - My one concern would be files will tend to stop being SVG compatible as the files gets laden with non SVG components. So no clean export. I want non-SVG components though too. Perhaps being able to have constrained parent objects that only allow SVG children so people can intent.
-  - **SVG export is more of a “app level” feature vs a “renderer level” feature**, so it’s really up to what you do with it. No reason we can’t still have good SVG export in the tldraw app.
+  - **SVG export is more of a “app level” feature vs a “renderer level” feature** , so it’s really up to what you do with it. No reason we can’t still have good SVG export in the tldraw app.
   - For example, if I had a post-it component that I rendered in HTML, in order to make it easier to edit on the page, I could still write my export code to create an SVG shape from its data.
 - Is `foreignObject` not an option? I was hoping that we can start using it in projects that don’t need to support IE (which I’m assume TLDraw doesn’t).
 - I'm basically doing something similar to this for the visual editor. It's still one big SVG, but also a `foreignElement` that positions HTML elements (single one for perf reasons)

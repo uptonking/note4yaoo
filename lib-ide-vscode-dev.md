@@ -71,6 +71,8 @@ modified: 2024-08-24T16:15:11.456Z
   - version-history for wiki/editor with ai commits messages
   - github-like search for vscode
 
+- roadmap-ai
+  - acp
 - roadmap
   - file/data-provider, 还可参考社区提供的另一种思路editor+mock-vscode-api
   - ripgrep for database
@@ -122,7 +124,7 @@ modified: 2024-08-24T16:15:11.456Z
   - obsidian-bases
 
 - gitLens pro
-  - gitLens for data/docs, **without vscode**
+  - gitLens for data/docs, **without vscode** 
 
 - github repo的insights统计可实现为vscode扩展，如contributor/LOC-by-lang
   - 🔍 可在 git graph 的基础上实现，提供表格快速filter/group/合并author

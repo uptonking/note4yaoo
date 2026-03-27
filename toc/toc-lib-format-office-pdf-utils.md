@@ -89,7 +89,7 @@ modified: 2022-11-11T10:46:41.519Z
   - Client-based: the document and data filled in does not leave the browser
   - The library is a simple wrapper around an Iframe that loads SimplePDF on-demand (whenever the user clicks the wrapped link), as such the footprint for this "opening an Iframe" mechanism is very tiny
   - As for the editor itself, it's not open-source
-    - The generation part is done using **PDF-lib**
+    - The generation part is done using **PDF-lib** 
   - [I made a free PDF editor that works in your browser](https://www.reddit.com/r/InternetIsBeautiful/comments/zxdz3e/i_made_a_free_pdf_editor_that_works_in_your/)
     - The PDF editor is completely free and does not require an account to be used.
     - I want to keep it for free for individuals, but there's a paid service for companies
@@ -147,6 +147,17 @@ modified: 2022-11-11T10:46:41.519Z
     - open source PDF viewer called EmbedPDF, based on PDFium (the same rendering engine used in Chrome) compiled to WebAssembly.
     - It’s meant to be an alternative to PDF.js, with a focus on rendering accuracy and customizability. You can use it with a full UI out of the box, or headless for full control.
     - It’s MIT-licensed and framework-agnostic.
+- https://github.com/pypdfium2-team/pypdfium2 /745Star/BSD/202603/python
+  - https://pypdfium2.readthedocs.io/
+  - an ABI-level Python 3 binding to PDFium, a powerful and liberal-licensed library for PDF rendering, inspection, manipulation and creation
+  - It is built with ctypesgen and external PDFium binaries. The custom setup infrastructure provides a seamless packaging and installation process. A wide range of platforms is supported with pre-built packages.
+  - pypdfium2 includes helpers to simplify common use cases, while the raw PDFium API (ctypes) remains accessible as well.
+  - pypdfium2 and its ctypesgen fork are developed in sync, i.e. each pypdfium2 commit ought to be coupled with the then HEAD of pypdfium2-ctypesgen.
+  - pypdfium2 itself is available by the terms and conditions of Apache-2.0 / BSD-3-Clause. Documentation and examples of pypdfium2 are licensed under CC-BY-4.0.
+  - limitations
+    - PDFium is inherently not thread-safe. 
+    - PDFium's public interface does not provide access to the raw PDF data structure. It does not expose APIs to read/write PDF dictionaries, streams, name/number trees, etc. Instead, it merely offers a predefined set of abstracted functions. This considerably limits the library's potential, compared to other products such as `pikepdf`.
+    - PDFium's non-public backend would provide extended capabilities, including raw access, but it is written in C++, which (unlike pure C) does not result in a stable ABI, so we cannot use it with ctypes. This means it's out of scope for this project.
 
 - https://github.com/tradle/pdf-parse /js
   - Pure javascript cross-platform module to extract texts from PDFs.

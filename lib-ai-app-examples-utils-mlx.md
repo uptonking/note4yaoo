@@ -618,6 +618,14 @@ modified: 2025-11-01T10:54:26.044Z
   - [I input LM Studio's downloaded models dir doesn't work _202603](https://github.com/jundot/omlx/issues/149)
     - you need to set the parent directory instead of the model directory itself, and it will discover all models inside. @TipKnuckle has also submitted a PR to make it work when pointing directly to a model directory, so i'll review and merge that soon!
   - [Built oMLX.ai/benchmarks - One place to compare Apple Silicon inference across chips and models : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1ro646t/built_omlxaibenchmarks_one_place_to_compare_apple/)
+# llm-cpu/ram
+- https://github.com/e1n00r/tinyserve /MIT/202603/python
+  - Run 20B-400B+ MoE models on 8GB consumer GPUs. 
+  - 3-tier expert caching (SSD→RAM→GPU), native MXFP4/GGUF Q4_K compute, SDPA Flash attention, CPU KV cache for unlimited context. Pure Python.
+  - [TinyServe - run large MoE models on consumer hardware : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s54zdo/tinyserve_run_large_moe_models_on_consumer/)
+  - Not enough VRAM? We keep only hot experts and offload the rest to RAM.
+  - Not enough RAM? We have a second tier of caching logic with prefetch from SSD and performance hacks.
+  - This project is a PoC to push these features in vLLM and llama.cpp, but as i started I kept piling features into it and I intend to get to it to be at least as good as llama.cpp on all popular models.
 # more
 - https://github.com/intel/ipex-llm /apache2/202510/python/inactive
   - an LLM acceleration library for Intel GPU (e.g., local PC with iGPU, discrete GPU such as Arc, Flex and Max), NPU and CPU

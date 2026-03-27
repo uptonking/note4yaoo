@@ -19,8 +19,11 @@ modified: 2023-02-08T10:24:11.422Z
 - tips
   - 👾 可让ai实现一些扩展
 
+- zhihu
+  - 去掉通知私信红点
+  - 去掉html标题中的 (2条新消息 )
 - reddit
-  - 新ui显示绝对时间
+  - ✅ 新ui显示绝对时间
 # popular
 - https://github.com/JasonGrass/auto-extension-manager /APGLv3/202411/js
   - https://ext.jgrass.cc/docs/intro

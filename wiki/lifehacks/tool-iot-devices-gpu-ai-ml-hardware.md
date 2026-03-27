@@ -77,7 +77,23 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
-- ## 
+- ## 🆚 [Dual DGX Sparks vs Mac Studio M3 Ultra 512GB: Running Qwen3.5 397B locally on both. Here's what I found. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s4lmep/dual_dgx_sparks_vs_mac_studio_m3_ultra_512gb/)
+  - Bought both a dual DGX Spark setup and a Mac Studio M3 Ultra 512GB, each cost me about $10K after taxes. Same price, completely different machines. Here is what I learned running Qwen3.5 397B A17B on both.
+  - The Mac Studio: MLX 6 bit quantization, 323GB model loaded into 512GB unified memory. 30 to 40 tok/s generation. The biggest selling point is memory bandwidth at roughly 800 GB/s. Setup was easy. Install mlx vlm, point it at the model, done. The weakness is raw compute. Prefill is slow (30+ seconds on a big system prompt with tool definitions) and if you want to do batch embedding alongside inference, you are going to feel it. I also had to write a 500 line async proxy because mlx vlm does not parse tool calls or strip thinking tokens natively.
+  - The Dual Sparks: INT4 AutoRound quantization, 98GB per node loaded across two 128GB nodes via vLLM TP=2. 27 to 28 tok/s generation. The biggest selling point is processing speed. CUDA tensor cores, vLLM kernels, tensor parallelism. Prefill is noticeably faster than the Mac Studio. Batch embedding that takes days on MLX finishes in hours on CUDA. The entire open source GPU ecosystem just works. The weakness is memory bandwidth at roughly 273 GB/s per node, which is why generation tops out lower than the Mac Studio
+  - I am building a RAG pipeline with Qwen3 Embedding 8B and Qwen3 Reranker 8B for a personal knowledge base. On the Mac Studio, those models would compete with the main model for the same 512GB memory pool. On the Sparks, they get dedicated CUDA and never touch inference memory.
+  - So the architecture ended up being: Mac Studio handles inference only (full 512GB for the model and KV cache). Sparks handle RAG, embedding, reranking, and everything else. They talk over Tailscale.
+  - The Mac Studio gives you 80% of the experience with 20% of the effort. The Sparks give you more capability but they extract a real cost in setup time.
+
+- Try vllm with a NVFP4 based model and you will see the DGX Spark shine. Also make sure if you are testing with concurrent connections because single chat dont show what the DGX can do.
+
+- The support for dgx is trash on the Nvidia side
+  - It is bad but if Nvidia support is bad then AMD is non-existent
+
+- Some people have reported faster inference speed with tensor parallelism across two units. Is this your experience as well?
+  - Yes so far that’s been mine but most of my testing has been on models that can’t fit on one alone
+
+- mlx-openai-server on Github has a bunch of tool parsers supported for the popular models, qwen3.5 included
 
 - ## [Strix Halo（或者Medusa Halo）是否可以改造为PCIe的计算卡 _202602](https://www.chiphell.com/forum.php?mod=viewthread&tid=2779354&highlight=strix%2Bhalo)
   - 最近看到Strix Halo的主板，不得不说Strix Halo的主板面积确实很小，也就和显卡差不多大，所以就会想如果把Strix Halo单独拿出来，是否可以做成PCIe接口的计算卡，用于AI的推理。
@@ -231,7 +247,19 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
-- ## 
+- ## [What's everyone doing with their CPU? : r/StrixHalo _202603](https://www.reddit.com/r/StrixHalo/comments/1s4dqyr/whats_everyone_doing_with_their_cpu/)
+  - We've got 16 cores and 32 threads of some of the hottest CPU power AMD has released for consumers and for me anyway this power is largely going unused besides some occasional video rendering and mundane server tasks.
+
+- Video encoding with Handbrake! Super fast, high quality CPU encoding
+  - Immich-machine-learning on CPU because it's fast enough and the ROCm image is janky.
+  - TTS (kokoro-v1 through lemonade server) is quite fast as well.
+  - Sunshine server for game streaming (used GPU too of course, but benefits from CPU).
+
+- You can run tts on the cpu. There are quite a few models that sound pretty well and run on cpu. But they do not need the cpus full power
+
+- I run Whisper (STT) and Qwen3.5-4B (as a model that writes chat titles, follow-up questions etc in Open-WebUI) on NPU.
+
+- Running xmrig mining and 8. dockers for home automation, Comfyui, LLM qwen and couple other ones, NPU uses for Frigate camera detection.
 
 - ## [Anyone making use of the NPU in Linux? : r/StrixHalo _202602](https://www.reddit.com/r/StrixHalo/comments/1rcygx8/anyone_making_use_of_the_npu_in_linux/)
   - All the inference is going to the gpu cores, and the NPU seems to be idle. I'm using Resources app to monitor, LMStudio for my inference server.

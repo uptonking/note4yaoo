@@ -755,6 +755,7 @@ modified: 2025-03-22T16:10:24.856Z
     - rpm 为 25，还是老样子小容器部署，服务稳定性未知，随时可能因为账号短缺、高并发而死掉
     - 仅支持 sonnet 和 haiku，等 kiro 恢复 free 用户的 opus 使用权后会上 opus
   - [小呆API](https://api.daiju.live/console/personal), 签到，api不稳定
+    - https://china.184772.xyz
     - [小呆API](https://new.184772.xyz/)
     - cc支持
     - [农场](https://game.daiju.live/)
@@ -776,10 +777,13 @@ modified: 2025-03-22T16:10:24.856Z
     - 很多openrouter渠道的模型
     - cc不支持tool, **cc渠道经常上架下架** 
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
-  - [OAI-FREE](https://newapi.zhx47.xyz/pricing), 每日100
+  - [OAI-FREE](https://newapi.zhx47.xyz/pricing), 每天100, 需手动领取
     - [LinuxDo 社区福利活动](https://campaign.zhx47.xyz/)
     - [OAI-FREE 签到发送订阅 ](https://linux.do/t/topic/1632349)
     - 都是临时渠道，不开签到了，直接每天送 100 刀余额
+  - [Super Codex _202603](https://supercodex.space/dashboard), 每天100, 自动发放
+    - [Codex公益站，三网优化，每天100刀 - LINUX DO _202603](https://linux.do/t/topic/1833285)
+    - 并发限制35
   - [CM-API-公益站 _202603](https://api.chengmo.cc.cd/console/personal)
     - [【CM公益站】佬们，该蹬车了！GPT-5.4强势回归！0倍率+无限制 ](https://linux.do/t/topic/1777029)
   - [52公益站 _202603](https://free.9e.nz/dashboard), 无需签到
@@ -811,14 +815,14 @@ modified: 2025-03-22T16:10:24.856Z
     - grok和gpt价格都是0.001/ 1M Tokens，基本无限，gpt号池还在不断补充
   - [晚霞公益站 API _202603](https://newapi.431128hys.site/console/personal)
     - [【晚霞公益站】开放注册 _202603](https://linux.do/t/topic/1706993)
-  - [codexapi福利 API](https://ai.xingyungept.cn/console/personal), 关闭
+  - 🗑️ [codexapi福利 API](https://ai.xingyungept.cn/console/personal), 关闭
     - 注册500刀，签到1-100刀
   - [Infinite API](https://infiniteai.cc/checkin)
     - dark-mode 水平方向逐渐变化的动画效果很好
     - [【Infinite API】全新公益站上线试运营 ](https://linux.do/t/topic/1622685)
     - 50 RPM， 25 个同时进行的请求
     - arrow-preview, QuiverAI API flagship SVG gen
-  - 🗑️ [真好记公益站](https://newapi.zhenhaoji.qzz.io/console/personal)
+  - [真好记公益站](https://api.zhenhaoji.qzz.io/console/personal)
     - https://fuli.zhenhaoji.qzz.io/
     - 随便刷吧，可能刷崩了，我就关站了
     - cc, opus 是cursor2api的 sonnet4.6

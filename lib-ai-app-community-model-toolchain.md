@@ -1313,12 +1313,19 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
   - 各种内存泄漏，oom，crash，代码规模不大，就开始屎山堆屎，生产别用，也别追更，merge master基本的回归测试都会直接跳过的。做开源的，就这
 
 - vllm 仅支持 NVIDIA GPU、部署复杂、显存需求大
-# discuss-cpu-llm
+# discuss-CPU/RAM
 - ## 
 
 - ## 
 
-- ## 
+- ## [TinyServe - run large MoE models on consumer hardware : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s54zdo/tinyserve_run_large_moe_models_on_consumer/)
+  - Not enough VRAM? We keep only hot experts and offload the rest to RAM.
+  - Not enough RAM? We have a second tier of caching logic with prefetch from SSD and performance hacks.
+  - This project is a PoC to push these features in vLLM and llama.cpp, but as i started I kept piling features into it and I intend to get to it to be at least as good as llama.cpp on all popular models.
+
+- Question: Working on adding split moe models to vllm for distributed experts, this sounds like exactly the kind of thing that works with that perfectly, you agree?
+  - You mean expert parallelism?
+- Yeah, the point is I thought prefetching would be helpful too, also having multiple copies of the same expert at different complexity levels, and you use the lower res one while the complex one loads, etc. The model needs to be setup for it, but with a segmented model you can run a massive model so long as it reuses the same experts for the same query. I have an early poc for vllm but it needs more work, the tooling to split experts is easier.
 
 - ## [llama.cpp and llama-server VULKAN using CPU : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ooyr6r/llamacpp_and_llamaserver_vulkan_using_cpu/)
   - llama.cpp and llama-server VULKAN appears to be using CPU. I only noticed when i went back to LM Studio and got double the speed and my Computer didnt sound like it was about to take off.

@@ -99,6 +99,38 @@ modified: 2026-02-18T04:15:19.228Z
 - I used promptfoo (open source) to write evals that include llm as a judge like others have already mentioned. One thing I found critical is to actually understand you data so you will be able to identify the small mistakes llms can make.
 
 - ended up just using confident-ai.com and honestly should have started there. does what you're describing, checks retrieval, checks if the model stayed grounded, gives you a score. the main thing for me was being able to see trends over time so when we changed our chunking strategy we could actually tell if it made things better or worse
+# discuss-search-web
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Introducing Chroma Context-1, a 20B parameter search agent. _202603
+- https://x.com/trychroma/status/2037243681988894950
+  - Apache 2.0, open-source
+  - Context-1 is trained on agentic search tasks using RL starting from gpt-oss-20b. Given a user query, it decomposes it into subqueries, searches iteratively, and returns a ranked set of supporting documents to a downstream reasoning model.
+  - It separates search from generation, each model performs the task it's best suited for.
+  - One key technique the models harness leverages is self-editing context. As the agent searches, its context window fills with documents, many of which are irrelevant. Context-1 is trained to selectively prune its own context mid-search, freeing space for further exploration.
+  - We are releasing Context-1 as an open weights model, along with the full data generation pipeline used to train it.
+  - [Chroma Context-1: Training a Self-Editing Search Agent·|·Chroma _202603](https://www.trychroma.com/research/context-1)
+
+- https://x.com/jeffreyhuber/status/2037247377275576380
+- every search product company (Algolia, Elastic, Pinecone) built their business on proprietary ranking logic. a 20B open-source model that matches frontier quality turns that into a commodity overnight.
+
+- https://x.com/maxrumpf/status/2037365748973384154
+  - Chroma's "new" model sure seems familiar. A story.
+  - 6 months ago, Chroma's CEO @jeffreyhuber asked us about our research. 4 months ago, we proudly shared SID-1's tech report with him.
+  - Today, they released a report heavily "inspired" by ours. Charts, datasets, methods, and the whole model itself. Down to the toggle for Figure 1 and our 4x RRF rollouts.
+  - They never reached out to benchmark our model. Their claims of "pareto-optimality" ring hollow. They provable knew there was another model.
+  - Our tech report, released in early December: [SID-1 Technical Report: Test-Time Compute for Retrieval | SID AI _202603](https://www.sid.ai/research/sid-1-technical-report)
+
+- ## [How do you get web search on your Ollama running local on pc? : r/ollama _202603](https://www.reddit.com/r/ollama/comments/1s1eizt/how_do_you_get_web_search_on_your_ollama_running/)
+- I am using combination of serpapi, duckduckgo search along with wikipedia search modules
+
+- I setup Searxng in a docker container and it's been working great.
+
+- this is exactly why MCP (model context protocol) is such a game changer for local setups. instead of baking web search into the model itself you just give it tools it can call - web search, file access, whatever you want. i've been building a desktop agent in Swift that hooks into MCP tools and it makes the model way more useful than just raw chat
 # discuss-search-grep
 - ## 
 
@@ -107,13 +139,6 @@ modified: 2026-02-18T04:15:19.228Z
 - ## 
 
 - ## 
-
-- ## [How do you get web search on your Ollama running local on pc? : r/ollama _202603](https://www.reddit.com/r/ollama/comments/1s1eizt/how_do_you_get_web_search_on_your_ollama_running/)
-- I am using combination of serpapi, duckduckgo search along with wikipedia search modules
-
-- I setup Searxng in a docker container and it's been working great.
-
-- this is exactly why MCP (model context protocol) is such a game changer for local setups. instead of baking web search into the model itself you just give it tools it can call - web search, file access, whatever you want. i've been building a desktop agent in Swift that hooks into MCP tools and it makes the model way more useful than just raw chat
 
 - ## File search + grep is all you need
 - https://x.com/jerryjliu0/status/2029726062670967019

@@ -574,6 +574,20 @@ modified: 2023-09-02T09:17:22.992Z
 - https://github.com/agent-infra/sandbox /1.7kStar/apache2/202512/python/ts/字节/docker
   - https://sandbox.agent-infra.com/
   - All-in-One Sandbox for AI Agents that combines Browser, Shell, File, MCP and VSCode Server in a single Docker container.
+  - https://x.com/ByteDanceOSS/status/2037355958897369167
+    - AIO Sandbox ships a complete, pre-wired environment in a single Docker container.
+    - The AIO (All-in-One) Sandbox is a containerized environment designed for both human developers and AI agents. 
+    - Its architecture is built around a "Batteries-Included" philosophy, providing a full Linux desktop-like environment inside a single Docker container.
+    - Unified Environment: One Docker container with shared filesystem. Files downloaded in the browser are instantly accessible in Terminal and VSCode.
+    - Out of the Box: Built‑in VNC browser, VS Code, Jupyter, file manager, and terminal—accessible directly via API/SDK.
+
+- https://github.com/alibaba/OpenSandbox /3.8kStar/apache2/202603/python/go
+  - https://open-sandbox.ai/zh/
+  - 面向 AI 应用场景设计的「通用沙箱平台」，为LLM相关的能力（命令执行、文件操作、代码执行、浏览器操作、Agent 运行等）提供 多语言 SDK、沙箱接口协议和沙箱运行时。
+  - 沙箱协议：定义了沙箱生命周期管理 API 和沙箱执行 API。你可以通过这些沙箱协议扩展自己的沙箱运行时。
+  - 沙箱运行时：沙箱全生命周期管理，支持 Docker 和自研高性能 Kubernetes 运行时，实现本地运行、企业级大规模分布式沙箱调度。
+  - 沙箱环境：内置 Command、Filesystem、Code Interpreter 实现。并提供 Coding Agent（Claude Code 等）、浏览器自动化（Chrome、Playwright）和桌面环境（VNC、VS Code）等示例。
+  - 网络策略：提供统一的 Ingress Gateway 实现，并支持多种路由策略；提供单实例级别的沙箱出口网络限制。
 
 - https://github.com/boxlite-ai/boxlite /apache2/202601/rust
   - https://boxlite-ai.github.io/website/
@@ -584,14 +598,6 @@ modified: 2023-09-02T09:17:22.992Z
   - Embeddable: link a library; no root; no background service to manage.
   - OCI compatible: use Docker/OCI images (python:slim, node:alpine, alpine:latest).
   - Async-first: run many boxes concurrently; stream stdout/stderr.
-
-- https://github.com/alibaba/OpenSandbox /3.8kStar/apache2/202603/python/go
-  - https://open-sandbox.ai/zh/
-  - 面向 AI 应用场景设计的「通用沙箱平台」，为LLM相关的能力（命令执行、文件操作、代码执行、浏览器操作、Agent 运行等）提供 多语言 SDK、沙箱接口协议和沙箱运行时。
-  - 沙箱协议：定义了沙箱生命周期管理 API 和沙箱执行 API。你可以通过这些沙箱协议扩展自己的沙箱运行时。
-  - 沙箱运行时：沙箱全生命周期管理，支持 Docker 和自研高性能 Kubernetes 运行时，实现本地运行、企业级大规模分布式沙箱调度。
-  - 沙箱环境：内置 Command、Filesystem、Code Interpreter 实现。并提供 Coding Agent（Claude Code 等）、浏览器自动化（Chrome、Playwright）和桌面环境（VNC、VS Code）等示例。
-  - 网络策略：提供统一的 Ingress Gateway 实现，并支持多种路由策略；提供单实例级别的沙箱出口网络限制。
 
 - https://github.com/CelestoAI/SmolVM /apache2/202603/python
   - fast, secure microVM runtime designed for high-density isolation. It provides AI agents and tools with a safe, hardware-virtualized environment to execute untrusted code without risking the host system.

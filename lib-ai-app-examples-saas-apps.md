@@ -444,6 +444,10 @@ modified: 2025-02-21T17:17:42.225Z
     - it's fully integrated with Claude Skills.
     - What's the security boundary here - there's no mention of a VM or anything to isolate the agent from the file system?
 
+- https://github.com/CoWork-OS/CoWork-OS /MIT/202603/ts
+  - Operating System for your personal AI Agents with Security-first approach. 
+  - Multi-channel (WhatsApp, Telegram, Discord, Slack, iMessage), multi-provider (Claude, GPT, Gemini, Ollama), fully self-hosted.
+
 - https://github.com/cortask/cortask /MIT/202603/ts
   - https://www.cortask.com/
   - a self-hosted AI orchestration platform

@@ -1149,6 +1149,19 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Small model (8B parameters or lower) : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1s4zhlx/small_model_8b_parameters_or_lower/)
+- So decompose your problem first into clear, small, steps, then automate everything with code that you can, only call the model when you need it, and only with the exact context and tools that it needs for a step.
+
+- Scraping HTML - works great - but takes some trial and error to get it to work but cheaaaapp, can run beautifully without quantization on 5060ti 16gb (run schematron 8b)
+
+- I'm currently filtering a huge 6.8mill dataset of scraped roleplay forum posts and a specialized 8B model is plenty to do fast batched checks of "is this post in-character", 46 posts per seconds on 2x3090.
+
+- I've mostly seen small models work best for lightweight stuff, summaries, quick Q&A, basic doc/image analysis, and simple local assistants. They’re surprisingly decent, but consistency and deeper reasoning usually start to fall off once context gets longer or tasks get more layered
+
 - ## [Cheap LLM vs Local LLM : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1s00zby/cheap_llm_vs_local_llm/)
 - Find the model you are thinking of running locally and subscribe to it with API calls. Compare if it is good enough. You likely will prefer the state of the art models.
 

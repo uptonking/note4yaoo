@@ -762,7 +762,7 @@ modified: 2021-01-04T17:26:43.784Z
   - Transform PDF to JSON or Markdown with ease and speed
   - Parsing of multiple document formats incl. PDF, DOCX, PPTX, XLSX, HTML, WAV, MP3, images (PNG, TIFF, JPEG, ...), and more
   - 模块化设计，集成 Unstructured、LayoutParser 等库，支持本地化处理
-  - ~~需 CUDA 环境，部分功能依赖商业模型~~
+  - ~~需 CUDA 环境，部分功能依赖商业模型~~ 
   - Advanced PDF understanding incl. page layout, reading order, table structure, code, formulas, image classification, and more
   - Unified, expressive DoclingDocument representation format
   - export formats: Markdown, HTML, DocTags and lossless JSON
@@ -1122,7 +1122,14 @@ modified: 2021-01-04T17:26:43.784Z
   - OCR & Document Extraction using vision models
   - Convert that file into a series of images, Pass each image to GPT and ask nicely for Markdown
   - [Research: Add bounding boxes to response _202407](https://github.com/getomni-ai/zerox/issues/7)
-    -  I would love to have some bounding boxes come back with the text response. Primarily for highlighting locations in the original document where the text got pulled. Not sure exactly how I would proceed with this one
+    - I would love to have some bounding boxes come back with the text response. Primarily for highlighting locations in the original document where the text got pulled. Not sure exactly how I would proceed with this one
+
+- https://github.com/landing-ai/vision-agent /5.3kStar/apache2/202508/python/deprecated
+  - VisionAgent is the Visual AI pilot from LandingAI. Give it a prompt and an image, and it automatically picks the right vision models and outputs ready‑to‑run code—letting you build vision‑enabled apps in minutes. 
+  - The VisionAgent library includes a set of tools, which are standalone models or functions that complete specific tasks. When you prompt VisionAgent, VisionAgent selects one or more of these tools to complete the tasks outlined in your prompt.
+  - This tool has been deprecated. Use Agentic Document Extraction instead.
+  - https://github.com/landing-ai/ade-python
+    - A Python library for interacting with the LandingAI Agentic Document Extraction REST API, designed for flexibility, reliability, clarity, and performance.
 # pdf-video
 - [PDF to Brainrot | MemenomeLM](https://www.memenome.gg/)
   - 把 PDF 转化为易上瘾的视频

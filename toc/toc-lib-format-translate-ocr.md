@@ -1349,6 +1349,14 @@ modified: 2025-12-19T12:43:21.150Z
   - Efficiently processes documents with maximum parallelism
   - Large Document Support: Handles PDFs of any size through automatic chunking and reassembly
 
+- https://github.com/populationgenomics/groundmark /MIT/202603/python
+  - PDF to Markdown conversion and quote-to-bbox resolution.
+  - Convert: Send PDF pages to a vision-capable LLM (via Pydantic AI) to produce clean Markdown with `<!--page-->` markers between pages.
+  - Resolve: Given verbatim quote strings, locate them in the source PDF and return bounding box coordinates. 
+  - Uses `pypdfium2` for per-character bbox extraction and `seq-smith` for Smith-Waterman alignment.
+  - https://github.com/folded/gemini-ocr
+    - gemini-ocr provides anchorite provider plugins that convert PDFs to traceable Markdown using Google Cloud APIs.
+
 - https://github.com/google/langextract /apache2/202511/python/可参考ux/提交少
   - A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.
   - Precise Source Grounding: Maps every extraction to its exact location in the source text, enabling visual highlighting for easy traceability and verification.

@@ -60,6 +60,38 @@ modified: 2024-03-13T14:26:26.220Z
 - https://x.com/criccomini/status/1886490144049651867
   - Clone an existing DB's data to a new location. Clones reference the data from the old bucket rather than copying. Writes to the clone update the new location. Compaction merges old data into new directory.
 
+# discuss-s3-alternatives
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [S3 Storage Benchmark Round 3: MinIO vs SeaweedFS vs Garage vs HS5 vs RustFS : r/selfhosted _202603](https://www.reddit.com/r/selfhosted/comments/1s4z2ux/s3_storage_benchmark_round_3_minio_vs_seaweedfs/)
+  - Server: Ryzen7 5700x3d, 32 GB RAM, 1.8 TB NVMe
+  - Workload: JP stock filing scraper storing EDINET/TDnet files in S3
+  - Dataset: 746 real documents, about 600 MB total
+  - Access pattern: Write once, occasional reads
+  - Method: Python boto3 direct measurement, fresh volume per backend
+  - Workers: Sequential (1) and concurrent (5)
+  - All backends were configured with no durability features where possible. MinIO still fsyncs, which is important context for write comparisons.
+  - Storage Efficiency: Garage-zstd_0.2x, SeaweedFS_0.36×
+  - Sequential Write: only MinIO fsyncs
+  - Concurrent Read: all is fast
+  - Garage-zstd traded CPU for storage savings and low memory. That trade works for my machine.
+- Notes
+  - If you need durability by default, MinIO is the safest baseline in this comparison.
+  - If your data is already compressed, Garage-zstd will likely be much less impressive.
+  - If you are memory-constrained, SeaweedFS was hard to justify on this setup.
+  - If you care about LIST performance, RustFS had a weak result in my full report. 
+
+- Why Minio is even considered as a solution for anyone in selfhosted sub?
+- You need to establish a baseline and that's what everyone used for a long time and is familiar with
+- We need to compare what we are losing to what we want next.
 # discuss-s3-tools
 - ## 
 

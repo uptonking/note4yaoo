@@ -216,6 +216,12 @@ modified: 2024-09-08T18:57:12.231Z
 
 - ## 
 
+- ## 
+
+- ## [how to turn notebook LM into an advanced prompt generator. : r/notebooklm _202603](https://www.reddit.com/r/notebooklm/comments/1s1c654/how_to_turn_notebook_lm_into_an_advanced_prompt/)
+  - This method: → uses real structures + examples + refinement
+  - Just follow the steps: search → generate → improve → save
+
 - ## [I think I made the best general use System Prompt for Qwen 3.5 (OpenWebUI + Web search) : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rxudf2/i_think_i_made_the_best_general_use_system_prompt/)
   - This prompt will execute a web search, then think, then continue the search until it has enough information to give you a detailed answer. It prioritizes searching latest information when needed. I'm running this with 131K context but you should be able to get away with less. I do not use an embedding or re ranking model. I feed full context to the model. Be sure to enable Native tool use in OWUI.
   - here is the prompt:

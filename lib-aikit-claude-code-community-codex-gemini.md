@@ -12,7 +12,16 @@ modified: 2025-12-18T12:27:14.982Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [ClaudeCode里用Codex模型会表现更好还是更差？ - LINUX DO _202603](https://linux.do/t/topic/1837816)
+- 体感上差别不大，但是估计还是 codex 用 GPT 模型更好吧。毕竟自家模型，训练的时候有针对性。
+
+- codex在CC中除了速度慢，没觉得比Opus4.6差什么。
+
+- 两个都用，还是用了cc，个人感觉更强些
+
+- 并没有多好，你可以同一个问题，一个问cc(映射到codex), 一个直接问codex，模型gpt-5.3-codex（xhigh）, 得出来的答案相似，但是codex 会慢一些，且方案更细致一些。
+
+- 感觉相差不大，不过确实接入不如claude，而且每次都中断对话和我确认需求
 
 - ## We need to find tools which can exchange contexts between the tools like Claude Code, CoWork, Codex App, Gemini CLI, Antigravity, Cursor, VSC. 
 - https://x.com/sabrishsurender/status/2018525743425474606

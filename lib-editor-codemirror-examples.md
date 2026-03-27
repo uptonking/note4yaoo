@@ -2385,6 +2385,19 @@ modified: 2023-06-23T12:46:53.288Z
   - https://enibook.github.io/enibook/
   - Collection of educational components in the form of custom HTML elements
 # examples
+- https://github.com/rbbydotdev/opal /MIT/202603/ts
+  - https://opaledx.com/
+  - A git enabled local-first browser-first markdown workspace wysiwyg editor and publisher. 
+  - Built with mdx-editor, code mirror 6, react, shadcn and typescript
+  - WYSIWYG & raw markdown editing with CodeMirror
+  - Local-first storage (IndexedDB, OPFS, or mounted filesystem)
+  - no-server-required with service workers
+  - Image support with automatic WebP conversion
+  - Full Git integration with GitHub support
+  - One-click publishing to Netlify, Vercel, Cloudflare Pages, GitHub Pages, or S3
+  - Template-based static site generation
+  - Cross-workspace search and file navigation
+
 - https://github.com/ralismark/ibis-wiki /202406/ts
   - http://www.ralismark.xyz/ibis-wiki/
   - personal wiki, built to fit a personal niche, inspired by the likes of TiddlyWiki and Logseq

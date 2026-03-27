@@ -34,11 +34,22 @@ modified: 2024-02-12T03:22:23.769Z
   - yjs deltas + sequence + periodic compaction with snapshots
 
 # discuss-durable-stream/state
-- ## 
+- tips
+  - 🤔 durable stream/db 存在创造名词的问题, 包装逻辑概念, 甚至lock in公司产品
 
 - ## 
 
 - ## 
+
+- ## StreamDB - a reactive database in a Durable Stream. Designed for AI apps and agentic session state.
+- https://x.com/ElectricSQL/status/2037534799238455443
+  - [StreamDB — a reactive database in a Durable Stream | Electric _202603](https://electric-sql.com/blog/2026/03/26/stream-db)
+  - You give it a Standard Schema. You get type-safe, multiplexed data sync into @tan_stack DB.
+  - StreamDB does just that -- wrapping a Durable Stream with a Standard Schema to give you typed, reactive agent state.
+  - You define your entity types — messages, presence, agents, whatever your session needs — as Standard Schema objects.
+  - StreamDB routes events into TanStack DB collections, with end-to-end type-safety.
+  - Multiplexing is built in. It's reactive by design. It's durable by design.
+  - Everything is multi-user, multi-tab, multi-device and multi-agent out of the box. All reading and writing to the same stream.
 
 - ## 🚀 Announcing Durable Transports for your AI SDK
 - https://x.com/ElectricSQL/status/2036548969728467282

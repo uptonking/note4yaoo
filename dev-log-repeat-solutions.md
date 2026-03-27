@@ -76,7 +76,7 @@ modified: 2021-07-20T13:50:23.433Z
 
 - 技术细节(editor): virtualized, draggable, table(eav)
 - 技术产品(reuse):  cm-devtools, noseditor, collab-hocuspocus
-  - 做合并功能如claude自己做plugins/skills, vsocode内置部分插件, 或者做闭源功能的开放版
+  - 做合并功能如llm支持vlm/asr/tts, claude自己做plugins/skills, vsocode内置部分插件, 或者做闭源功能的开放版
 - 技术方向js: 协作/ver-`gitdb`/partial-sync, 编辑器/ide, 多维表格/excel; scaling/HA-socket; dnd, floating; 前端版/流式版/oplog; 
   - 纯前端/客户端的产品其实商业化的能力不强，付费特性一般是存储(回放)、计算(后台、并发、自动化)
 - 技术扩展js/py: 可拖拽的页面编辑器/lowcode, Excel/kanban, 图表

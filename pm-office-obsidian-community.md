@@ -375,6 +375,31 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Should I move to Obsidian Bases or Datacore, as a Dataview user? : r/ObsidianMD _202603](https://www.reddit.com/r/ObsidianMD/comments/1s3i73c/should_i_move_to_obsidian_bases_or_datacore_as_a/)
+- In priority of preference
+- Obsidian Bases
+  - Why? Core Plugin, LTS
+  - Why Not? Still missing some advanced features
+- Obsidian Dataview
+  - Why? 3.8 million downloads, lots of community support
+  - Why Not? Not dynamic in live view
+- Obsidian DataCore
+  Why? You like complex scripts to setup a database
+  Why Not? It's a Niche plugin that you either love or hate
+
+- I use both because Bases have a fatal flaw which devs aren’t planning to mitigate: there’s no way to change cell size and adjust it to fit the contents. If you want accurate tables, use Datacore.
+
+- It depends on how you've been doing things. I found I could replace most of my dataview tables with bases and it's way better/more streamlined, however I'm also using a lot of inline properties in my daily notes, which bases cannot pickup on, so I still have to use dataview for those tables.
+
+- Data(View/Core) is obviously more flexible and powerful, but much harder to learn.
+- Datacore uses a different syntax from Dataview. But will largely have the same features.
+
+- Dataview has good documentation and there's a bunch of pre-made queries online. LLMs are somewhat trained on it at this point, so especially for dataviewjs queries, you can prompt your way there pretty easily. 
+
 - ## [What are the best plugins in relation to bases already created for Obsidian so far? : r/ObsidianMD _202512](https://www.reddit.com/r/ObsidianMD/comments/1pp25ul/what_are_the_best_plugins_in_relation_to_bases/)
 - Virtual Content. You can add specific base views to files based on their property values without actually typing them in the note. It's great because if you want to change something in that base view, you can do it through the plugin settings tab and the change will happen in every file. Also, it doesn't alter the Markdown files.
 
