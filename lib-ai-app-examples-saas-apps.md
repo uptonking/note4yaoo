@@ -919,6 +919,10 @@ modified: 2025-02-21T17:17:42.225Z
     - LobsterAI has GUI for mac and windows. So no terminal skills are needed for the user.
   - https://x.com/dotey/status/2024337839916286380
     - LobsterAI has GUI for mac and windows. So no terminal skills are needed for the user.技术上基于 Electron + React + TypeScript 构建，采⽤严格的进程隔离架构，任务⽀持本地执⾏和沙箱 VM（QEMU + Alpine Linux）两种模式。数据层使⽤ SQLite 实现全本地化存储，IM ⽹关层通过钉钉 Stream、⻜书 SDK 等对接各平台。
+
+- https://github.com/Lianues/Iris /GPL/202603/ts/vue
+  - 一个面向多平台的智能代理程序。支持 Console、Web、Discord、Telegram、微信、企业微信、飞书、QQ 等平台，支持工具调用、会话存储、图片输入、OCR 回退、Computer Use、MCP 和记忆能力。
+  - [IrisAgent，将coding，claw，web，mcp，skill，多agent，computer use等全部集成的agent项目，支持飞书，vx，终端，网页等多个平台同时使用，支持一键安装，替代openclaw  - LINUX DO _202603](https://linux.do/t/topic/1839669)
 # cv
 - https://github.com/IDEA-Research/Rex-Omni /1kStar/IDAE/202512/python/华人作者
   - https://rex-omni.github.io/

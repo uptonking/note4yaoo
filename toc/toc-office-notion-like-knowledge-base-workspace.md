@@ -918,6 +918,13 @@ modified: 2022-06-03T21:34:54.893Z
     - Powered by Microsoft MarkItDown, this tool converts various file formats to clean, structured Markdown for easy analysis and indexing.
     - https://x.com/mattppal/status/1867703377888784880
       - If you're wondering how I did this so fast, it was Agent + Assistant + deploy on Replit
+- https://github.com/Michaelliv/markit /MIT/202603/ts
+  - Convert anything to markdown. PDF, DOCX, PPTX, XLSX, HTML, EPUB, Jupyter, RSS, images, audio, URLs, and more. Pluggable converters, built-in LLM providers for image description and audio transcription. 
+  - Works as a CLI and as a library.
+  - https://x.com/micLivs/status/2037226476727140410
+    - markit stays under 325ms on everything. markitdown crosses 3 seconds on a 404KB pdf.
+    - 5-10x faster than markitdown. same output. better tables.
+    - the gap is structural, bun vs python startup + runtime. markitdown can't close this.
 
 - https://github.com/getmaxun/maxun /AGPL/202503/ts
   - https://www.maxun.dev/

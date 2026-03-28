@@ -286,6 +286,7 @@ modified: 2025-03-22T16:10:24.856Z
     - local/cloud agentfs-sandbox: agentfs impl for worktree
     - 参考 google-workspace-cli 实现 本地版
     - agentfs + history
+    - human-in-the-loop: ocr视觉/ui方面的内容验收标准难以确定， 更需要人工反馈
   - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴, 产品价值参考context7
     - 目前cli的搜索体验太差, 可针对 context/search-engine 结合 coding-agent 开发类似notebooklm的搜索体验
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
@@ -784,6 +785,10 @@ modified: 2025-03-22T16:10:24.856Z
   - [Super Codex _202603](https://supercodex.space/dashboard), 每天100, 自动发放
     - [Codex公益站，三网优化，每天100刀 - LINUX DO _202603](https://linux.do/t/topic/1833285)
     - 并发限制35
+  - [冰のCodex _202603](https://ice.v.ua/dashboard)
+    - 签到每日一次；当余额低于 20 刀时可申请重置到 200 刀。
+    - [【开放】【冰の公益站】纯GPT站点 支持5.3 5.4 ](https://linux.do/t/topic/1795246)
+    - 清理首批不活跃用户信息（默认条件：注册超过 48 小时，且无 usage、无签到、无重置、API Key 从未使用）
   - [CM-API-公益站 _202603](https://api.chengmo.cc.cd/console/personal)
     - [【CM公益站】佬们，该蹬车了！GPT-5.4强势回归！0倍率+无限制 ](https://linux.do/t/topic/1777029)
   - [52公益站 _202603](https://free.9e.nz/dashboard), 无需签到
@@ -822,6 +827,8 @@ modified: 2025-03-22T16:10:24.856Z
     - [【Infinite API】全新公益站上线试运营 ](https://linux.do/t/topic/1622685)
     - 50 RPM， 25 个同时进行的请求
     - arrow-preview, QuiverAI API flagship SVG gen
+  - [955code _202603](https://955code.top/console/personal)
+    - [【955code】codex公益站，上线试运营 _202603](https://linux.do/t/topic/1840889)
   - [真好记公益站](https://api.zhenhaoji.qzz.io/console/personal)
     - https://fuli.zhenhaoji.qzz.io/
     - 随便刷吧，可能刷崩了，我就关站了
@@ -874,11 +881,11 @@ modified: 2025-03-22T16:10:24.856Z
     - [又一个codex公益站，人手一个蹬  ](https://linux.do/t/topic/1645651)
     - gpt-5.4, gpt-5.3-codex
     - [上线claude-sonnet-4.6模型（不稳定版），爱来自cursor  _202603](https://linux.do/t/topic/1739712)
+  - [小辣椒 公益站 ](https://yyds.215.im/console/topup), 签到
+    - cc
   - [爱你公益站](https://x.ainiaini.xyz/console/personal)
     - [[爱你公益站]开站 ](https://linux.do/t/topic/1638562)
     - 暂时只有 gpt 系列，
-  - [小辣椒 公益站～(～￣▽￣)～](https://yyds.215.im/console/topup)
-    - cc
   - [纳米哈基米](https://free.nanohajimi.mom/console/personal), 签到
     - Gemini Imagen
     - [【纳米哈基米 · 公益站】 支持香蕉Pro画图，Veo视频，Gemini全系模型 ](https://linux.do/t/topic/1512770)

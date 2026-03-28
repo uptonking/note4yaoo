@@ -34,6 +34,31 @@ modified: 2025-11-01T10:54:26.044Z
 - https://github.com/Blaizzy/mlx-vlm /1.8kStar/MIT/202511/python
   - a package for inference and fine-tuning of Vision Language Models (VLMs) and Omni Models (VLMs with audio and video support) on your Mac using MLX
 
+- https://github.com/jundot/omlx /6.4kStar/apache2/202603/python
+  - https://omlx.ai/
+  - https://omlx.ai/benchmarks
+  - LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar
+  - Continuous batching and tiered KV caching, managed directly from your menu bar.
+  - The server discovers LLMs, VLMs, embedding models, and rerankers from subdirectories automatically.
+    - Point `--model-dir` at a directory containing MLX-format model subdirectories.
+    - Models are auto-detected by type: llm/vlm/ocr
+  - Supports text LLMs, vision-language models (VLM), OCR models, embeddings, and rerankers on Apple Silicon.
+  - oMLX provides both OpenAI-compatible (/v1/chat/completions) and Anthropic-compatible (/v1/messages) API endpoints.
+  - Web UI at /admin for real-time monitoring, model management, chat, benchmark, and per-model settings.
+    - Search and download MLX models from HuggingFace directly in the admin dashboard.
+  - Multi-Model Serving: Load LLMs, VLMs, embedding models, and rerankers within the same server
+  - macOS Menubar App: Native PyObjC menubar app (not Electron). 
+  - FastAPI Server (OpenAI / Anthropic API): CLI Server
+  - 🆚 How is oMLX different from Ollama or LM Studio?
+    - Ollama and LM Studio cache the KV state in memory, but when the context shifts mid-session — which happens constantly with coding agents — the entire cache gets invalidated and recomputed from scratch. oMLX persists every KV cache block to SSD, so previously cached portions are always recoverable. TTFT drops from 30–90 seconds to under 5 seconds on long contexts.
+  - 📡 
+    - [Is there a way to use the huggingface cache? _202603](https://github.com/jundot/omlx/discussions/211)
+  - [Unable to find the gguf model  _202603](https://github.com/jundot/omlx/issues/180)
+    - oMLX uses mlx-lm as its backend, so GGUF models are not supported. 
+  - [I input LM Studio's downloaded models dir doesn't work _202603](https://github.com/jundot/omlx/issues/149)
+    - you need to set the parent directory instead of the model directory itself, and it will discover all models inside. @TipKnuckle has also submitted a PR to make it work when pointing directly to a model directory, so i'll review and merge that soon!
+  - [Built oMLX.ai/benchmarks - One place to compare Apple Silicon inference across chips and models : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1ro646t/built_omlxaibenchmarks_one_place_to_compare_apple/)
+
 - https://github.com/RamboRogers/mlx-gui /GPL/202601/python/tkinter
   - https://mlxgui.com/
   - A lightweight Inference Server for Apple's MLX engine with a GUI.
@@ -122,6 +147,10 @@ modified: 2025-11-01T10:54:26.044Z
     - No. The main Unsloth package is still licensed under Apache 2.0. Only certain optional components, such as the Unsloth Studio UI, are under the AGPL-3.0 open-source license.
     - Unsloth now has dual-licensing where some parts of the codebase are licensed Apache 2.0, while others are licensed AGPL-3.0. This structure helps support ongoing Unsloth development
   - [Unsloth Studio vs Llama.cpp vs LlamaFactory : r/unsloth _202603](https://www.reddit.com/r/unsloth/comments/1rx8tzi/unsloth_studio_vs_llamacpp_vs_llamafactory/)
+    - I think everyone is misunderstanding the purpose of Unsloth Studio. It’s a UI for Unsloth. Unsloth is a popular framework for training, finetuning and RL for almost all model architectures. It isn’t designed to be your primary tool for inference. It’s meant to provide a UI and eventual API for model training and dataset creation.
+    - Actually our chat feature is now highly sophiscated with toolcalling, code execution in python and bash. We intend to also support APIs very soon
+  - [I'd be nice if Unsloth Studio was stand alone : r/unsloth _202603](https://www.reddit.com/r/unsloth/comments/1s5v6g9/id_be_nice_if_unsloth_studio_was_stand_alone/)
+    - It's coming. It's already nearly finished. Will be out next month 
 
 - https://github.com/llama-farm/llamafarm /760Star/apache2/202601/python/go/ts/electron
   - https://llamafarm.dev/
@@ -599,25 +628,7 @@ modified: 2025-11-01T10:54:26.044Z
   - [I need a feedback about an open-source CLI that scan AI models (Pickle, PyTorch, GGUF) for malware, verify HF hashes, and check licenses : r/LocalLLM _202601](https://www.reddit.com/r/LocalLLM/comments/1qcmc9v/i_need_a_feedback_about_an_opensource_cli_that/)
     - I've created a new CLI tool to secure AI pipelines. It scans models (Pickle, PyTorch, GGUF) for malware using stack emulation, verifies file integrity against the Hugging Face registry, and detects restrictive licenses (like CC-BY-NC). It also integrates with Sigstore for container signing.
 # mlx-benchmark
-- https://github.com/jundot/omlx /6.4kStar/apache2/202603/python
-  - https://omlx.ai/
-  - https://omlx.ai/benchmarks
-  - LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar
-  - Continuous batching and tiered KV caching, managed directly from your menu bar.
-  - The server discovers LLMs, VLMs, embedding models, and rerankers from subdirectories automatically.
-    - Point `--model-dir` at a directory containing MLX-format model subdirectories.
-    - Models are auto-detected by type: llm/vlm/ocr
-  - Supports text LLMs, vision-language models (VLM), OCR models, embeddings, and rerankers on Apple Silicon.
-  - Web UI at /admin for real-time monitoring, model management, chat, benchmark, and per-model settings.
-    - Search and download MLX models from HuggingFace directly in the admin dashboard.
-  - Multi-Model Serving: Load LLMs, VLMs, embedding models, and rerankers within the same server
-  - macOS Menubar App: Native PyObjC menubar app (not Electron). 
-  - FastAPI Server (OpenAI / Anthropic API): CLI Server
-  - [Unable to find the gguf model  _202603](https://github.com/jundot/omlx/issues/180)
-    - oMLX uses mlx-lm as its backend, so GGUF models are not supported. 
-  - [I input LM Studio's downloaded models dir doesn't work _202603](https://github.com/jundot/omlx/issues/149)
-    - you need to set the parent directory instead of the model directory itself, and it will discover all models inside. @TipKnuckle has also submitted a PR to make it work when pointing directly to a model directory, so i'll review and merge that soon!
-  - [Built oMLX.ai/benchmarks - One place to compare Apple Silicon inference across chips and models : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1ro646t/built_omlxaibenchmarks_one_place_to_compare_apple/)
+
 # llm-cpu/ram
 - https://github.com/e1n00r/tinyserve /MIT/202603/python
   - Run 20B-400B+ MoE models on 8GB consumer GPUs. 
@@ -637,3 +648,6 @@ modified: 2025-11-01T10:54:26.044Z
 
 - [MLX Studio — Chat, Code, Generate Images & More on Mac | Local AI with 20+ Tools](https://mlx.studio/)
   - https://github.com/jjang-ai/mlxstudio /未开源
+  - MLX Studio is the app — the chat UI, agentic tools, model browser, and settings interface you interact with. 
+  - vMLX Engine is the inference backend that powers it — the caching, batching, model loading, and API layer. Think of it like LM Studio and llama.cpp.
+  - Any Mac with Apple Silicon (M1 or later) running macOS 26 (Tahoe). 8 GB RAM minimum, 16 GB+ recommended. Remote endpoints work on macOS 14+.

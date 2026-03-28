@@ -37,6 +37,8 @@ modified: 2026-01-17T22:40:27.013Z
 - gui-cons
   - 不容易实现 multi-agents
 # draft
+- 或许复用并增强opencode-webui的逻辑如改造底层支持codex-cli/claude-code-cli 的架构更适合cowork/app
+
 - obsidian-cli by opencode-cli
 # dev-xp
 - 基于coding-cli封装/二次开发app的缺点, coding场景内置大量system prompt, 本地小模型效果很差

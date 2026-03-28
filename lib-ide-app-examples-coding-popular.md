@@ -23,6 +23,7 @@ modified: 2025-12-11T18:10:23.710Z
     - files: pdf/docs
   - external sources
     - integartions: slack, google-docs
+  - 除了支持search/query, 还要支持 indexing, 因为用户可能选择当前目录外的文件夹，甚至选择任意文件夹
 # popular
 - https://github.com/oraios/serena /19.6kStar/MIT/202602/python
   - https://oraios.github.io/serena
@@ -2061,6 +2062,12 @@ modified: 2025-12-11T18:10:23.710Z
   - ContextWeaver 是一个基于 MCP 协议、利用 Tree-sitter 和向量搜索为大语言模型提供本地代码库智能上下文编织与检索的工具。
   - 这里 Embedding 和 Reranker 模型用的硅基流动免费的模型，用 Qwen/Qwen3-Embedding-8B 和 Qwen/Qwen3-Reranker-8B，效果好一些，但是速度会慢一点
   - 似乎支持的语言不多?
+  - [[开源] ContextWeaver 本地代码库语义检索工具，目标是ace平替 _202512](https://linux.do/t/topic/1373618)
+  - https://github.com/GowayLee/ContextWeaver
+    - [【开源自荐】Context Weaver 又一 Fork: 努力做 ACE 平替, 完全本地的语义检索方案 _202603](https://linux.do/t/topic/1840318)
+    - 更精细明确的显式索引范围配置, 与索引前范围确认
+    - MCP 模式改为 SKILL 模式 (现阶段包含两个Skill)
+    - 在使用过程中归纳发现语义检索的使用概率其实并不高, 往往只有在 Task 起步阶段才会使用, 得到源文件目录后基本上不会再次使用. 所以 CW 作为 MCP 长期占据上下文并不优雅. 因此将 MCP 的形式改为了 SKILL+脚本. 而且 SKILL 拥有更多自定义说明空间, 可以更好地引导大模型使用 CW, 也为后续提升 CW 复杂度铺路
 
 - https://github.com/johnhuang316/code-index-mcp /731Star/MIT/202601/python/未实现rag
   - MCP server that helps large language models index, search, and analyze code repositories with minimal setup
@@ -2406,6 +2413,13 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/cbcoutinho/nextcloud-mcp-server /AGPL/202602/python
   - MCP server that connects AI assistants to your Nextcloud instance.
   - This is a dedicated standalone MCP server designed for external MCP clients like Claude Code and IDEs. It runs independently of Nextcloud (Docker, VM, Kubernetes, or local) and provides deep CRUD operations across Nextcloud apps.
+
+- https://github.com/spool-lab/spool /MIT/202603/ts
+  - https://spool.pro/
+  - The missing search engine for your own data.
+  - Search your Claude Code sessions, GitHub stars, Twitter bookmarks - all indexed locally, instantly.
+  - https://x.com/ewind_dev/status/2037712463723135089
+    - 基于 @jakevin7 的 OpenCLI，跑通了一个本地版的个人 Google！ 直接用本地的 claude / codex 搜索各大平台上收藏的推文、GitHub 点赞等信息，还能聚合搜索和它们的聊天 session，这不就是面向个人的本地搜索引擎吗！
 
 ## memory
 

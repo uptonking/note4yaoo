@@ -110,6 +110,26 @@ modified: 2026-01-15T15:43:25.456Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [M5 Max vs M3 Max Inference Benchmarks (Qwen3.5, oMLX, 128GB, 40 GPU cores) : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s5np41/m5_max_vs_m3_max_inference_benchmarks_qwen35_omlx/)
+  - Ran identical benchmarks on both 16” MacBook Pros with 40 GPU cores and 128GB unified memory across three Qwen 3.5 models (122B-A10B MoE, 35B-A3B MoE, 27B dense) using oMLX v0.2.23.
+  - Quick numbers at pp1024/tg128:
+  - 35B-A3B: 134.5 vs 80.3 tg tok/s (1.7x)
+  - 122B-A10B: 65.3 vs 46.1 tg tok/s (1.4x)
+  - 27B dense: 32.8 vs 23.0 tg tok/s (1.4x)
+  - The gap widens at longer contexts. At 65K, the 27B dense drops to 6.8 tg tok/s on M3 Max vs 19.6 on M5 Max (2.9x). 
+  - Prefill advantages are even larger, up to 4x at long context, driven by the M5 Max’s GPU Neural Accelerators.
+  - Batching matters most for agentic workloads. M5 Max scales to 2.54x throughput at 4x batch on the 35B-A3B, while M3 Max batching on dense models degrades (0.80x at 2x batch on the 122B). The 614 GB/s vs 400 GB/s bandwidth gap is significant for multi-step agent loops or parallel tool calls.
+  - [M5 Max vs M3 Max: LLM Inference Benchmarks | Claude _202603](https://claude.ai/public/artifacts/c9fba245-e734-4b3b-be44-a6cabdec6f8f)
+
+- There has to be more at play here than higher memory bandwidth ... must be because of MLX / software optimizations. 35A3B pp speeds and tg speeds are way higher than my Radeon AI Pro R9700 - but memory bandwidth is actually lower than the R9700 (640 GB/s)
+  - Yeah they’re shipping Transformer-optimized MatMul cores in the new M5 chips. By all data I’ve seen they’re the absolute best token/Joule chip ever built. 
+- Same reaction same card. Really goes to show how much ROCm and Vulkan leave on the table
+  - Wait until you try to run VLLM on R9700, then you really leave stuff on the table, lol
 # discuss-issues
 - ## 
 

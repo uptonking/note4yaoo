@@ -128,6 +128,24 @@ modified: 2026-01-14T19:05:15.969Z
 - ## 
 
 - ## 
+# discuss-dev-log
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## error while handling argument "--flash-attn": error: unknown value for --flash-attn: '--parallel'
+- In older versions of llama.cpp, --flash-attn (or -fa) was a simple boolean flag; you just included it in your command to turn it on.
+  - Recently, llama.cpp updated this argument so that it now requires a specific value: on, off, or auto.
+  - Because your launch command or configuration is still passing --flash-attn without a value, the llama.cpp argument parser is grabbing the very next word in your command (which happens to be --parallel) and trying to use it as the value. Since --parallel is not on, off, or auto, the process crashes.
+
+- --flash-attn on --parallel ...
+  - Alternatively, you can just use the short flag: -fa on
 # discuss
 - ## 
 

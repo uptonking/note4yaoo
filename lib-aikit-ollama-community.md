@@ -128,7 +128,15 @@ modified: 2026-01-14T18:57:51.174Z
 
 - ## 
 
-- ## 
+- ## ⚡️ [Breaking change in llama-server? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s62el8/breaking_change_in_llamaserver/)
+  - Migrating cache to HuggingFace cache directory
+  - Old cache: /home/user/.cache/llama.cpp/
+  - New cache: /home/user/GEN-AI/hf_cache/hub
+  - And all of my .gguf models were moved and converted into blobs. That means that my launch scripts all fail since the models are no longer where they were supposed to be...
+
+- The gguf reference is still there. It links to the blob.
+
+- My .cache directory is a symlink to an NFS volume shared by multiple hosts. So no, it's not fine at all, to move all the models off my NFS share to the local host
 
 - ## 🆚 [Ik_llama vs llamacpp : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rsyo23/ik_llama_vs_llamacpp/)
 - Its good, I get a decent speed improvement on ik_llama.cpp though regular llama.cpp seems to have better overall support. Speed improvements are usually in the range of 15-20%, which is always appreciated. 

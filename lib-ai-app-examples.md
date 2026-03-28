@@ -38,6 +38,21 @@ modified: 2023-02-08T07:20:48.475Z
   - please analyze the project architecture and related code. explain the core architecture and data flow for the extensible architecture to support local models in different formats. write your result to dev-arch-gguf-mlx.md. 
   - there are different approaches to run local models. is it possible to write a extensible module to make the logic of running swift mlx server swappable. i want to use python mlx-server implementation to replace the swift implementation.
 
+- https://github.com/AtomicBot-ai/Atomic-Chat /apache2/202603/ts/rust/tauri
+  - https://atomic.chat/
+  - Open-source ChatGPT alternative. Run local LLMs or connect cloud models — with full control and privacy.
+  - Llama.cpp
+  - ❓ a fork of janai
+  - [Google TurboQuant running Qwen Locally on MacAir : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s5kdu0/google_turboquant_running_qwen_locally_on_macair/)
+    - We patched llama.cpp with Google’s new TurboQuant compression method and then ran Qwen 3.5–9B on a regular MacBook Air (M4, 16 GB) with 20000 tokens context.
+  - Compression is only for context or also the model?
+    - context only
+  - Model compression already exists, it's called quantization (the q4, q8, etc that we generally run on our local systems).
+  - TurboQuant essentially takes that idea and applies it to context (data that constantly changes, unlike the model weights that are all already there, also known as the kv cache).
+  - The KV context quantization also already existed before TurboQuant. You can set up llamacpp using -ctk or -ctv q8_0, q5_0, q4_0, etc. 
+  - TurboQuant is an optimization of what llama.cpp KV cache quantization does. Llama.cpp KV cache uses a block based quantization, meaning each block of values requires storing a full-precision scale constant to restore the approximate original value. This scale constant was an overhead because of which the compression was not as efficient. TurboQuant uses a polar quant method which stores data in angles instead of coordinates (which is a technique already used in model weights quantization by, for example, GGUF format), essentially removing the need of those scale constants to be stored. It also implements some kind of 1-bit error correction step
+  - [Google TurboQuant running Qwen Locally on MacAir : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1s5k9n7/google_turboquant_running_qwen_locally_on_macair/)
+
 - https://github.com/Doriandarko/maestro /202406/python
   - ⛓️ A framework for Claude Opus to intelligently orchestrate subagents.
   - This Python script demonstrates an AI-assisted task breakdown and execution workflow using the Anthropic API. 

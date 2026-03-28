@@ -1485,6 +1485,16 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 - Nvidia's technique is better, but requires per model calibration. Worth it. 
   - KV Cache Transform Coding for Compact Storage in LLM Inference is the newest https://arxiv.org/abs/2511.01815 but they have a bunch https://github.com/NVIDIA/kvpress
 
+- ### [A simple explanation of the key idea behind TurboQuant : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s62g5v/a_simple_explanation_of_the_key_idea_behind/)
+  - The most important part has nothing to do with polar coordinates (although they are emphasized in Google's blog post, so the confusion is understandable).
+  - TurboQuant is a vector quantization algorithm. It turns a vector of numbers into another vector of numbers that takes up less memory.
+  - at its core, quantization always involves reducing coefficient precision.
+  - Here is the key idea behind TurboQuant: Before quantizing a vector, we randomly rotate it in the n-dimensional space it resides in. The corresponding counter-rotation is applied during dequantization.
+  - Surely the rotation can't be completely random? Maybe it's sampled from a particular distribution, or somehow input-dependent? Or perhaps there is another operation that goes hand in hand with it? Nope. I didn't leave anything out. Just applying a random rotation to the vector dramatically improves quantization performance.
+  - But why? Because the magnitudes of the coefficients of state vectors in language models aren't distributed uniformly among the vector dimensions.
+  - What matters for the purposes of this explanation is: Vectors with this type of quasi-sparse structure are terrible targets for component quantization. Reducing precision in such a vector effectively turns the massive component into 1 (assuming the vector is normalized), and all other components into 0. That is, quantization "snaps" the vector to its nearest cardinal direction. This collapses the information content of the vector, as identifying a cardinal direction takes only log2(2n) bits, whereas the quantized vector can hold kn bits (assuming k bits per component).
+  - And that's where the random rotation comes in! Since most directions aren't near a cardinal direction (and this only becomes more true as the number of dimensions increases), a random rotation almost surely results in a vector that distributes the coefficient weight evenly across all components, meaning that quantization doesn't cause information loss beyond that expected from precision reduction.
+
 - ## [FlashAttention-4: 1613 TFLOPs/s, 2.7x faster than Triton, written in Python. What it means for inference. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s1yw23/flashattention4_1613_tflopss_27x_faster_than/)
   - TL; DR for inference:
   - BF16 forward: 1, 613 TFLOPs/s on B200 (71% utilization). Attention is basically at matmul speed now.

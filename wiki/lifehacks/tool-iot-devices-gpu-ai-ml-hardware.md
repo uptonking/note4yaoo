@@ -95,6 +95,10 @@ modified: 2026-01-15T15:44:10.647Z
 
 - mlx-openai-server on Github has a bunch of tool parsers supported for the popular models, qwen3.5 included
 
+- ### [I spent 96 hours setting up dual DGX Sparks and a Mac Studio M3 Ultra for the same 397B model. Neither won. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s5lba0/i_spent_96_hours_setting_up_dual_dgx_sparks_and_a/)
+  - Mac Studio = pure inference appliance, full 512GB for the model. 
+  - Sparks = always on RAG engine running embedding and reranking in the background. Query comes in, Sparks retrieve and rerank, send chunks to the Mac, Mac generates at 29 tok/s. The architecture was not designed. It was discovered through failure.
+
 - ## [Strix Halo（或者Medusa Halo）是否可以改造为PCIe的计算卡 _202602](https://www.chiphell.com/forum.php?mod=viewthread&tid=2779354&highlight=strix%2Bhalo)
   - 最近看到Strix Halo的主板，不得不说Strix Halo的主板面积确实很小，也就和显卡差不多大，所以就会想如果把Strix Halo单独拿出来，是否可以做成PCIe接口的计算卡，用于AI的推理。
   - 由于Strix Halo的PCIE为4+4+4+4，因此如果做成计算卡，和主机CPU相连接的带宽只有PCIE4.0*4，因此PCIE是否可以这样配置

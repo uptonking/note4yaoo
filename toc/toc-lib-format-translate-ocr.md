@@ -1012,6 +1012,21 @@ modified: 2025-12-19T12:43:21.150Z
     - 出于身边同学对论文翻译的需求，所以开发了这个项目，除了论文我也用来对一些AI教程文档进行翻译
     - 灵感来自于MinerU, PDF格式还支持对照翻译
 
+- https://github.com/ZiChuanLan/PDF2PPT /MIT/202603/python/ts
+  - https://ppt.015201314.xyz/
+  - 将扫描版 PDF、课件截图和图片型文档转换为尽量高保真、尽量可编辑的 PPTX。
+  - PDF2PPT 的目标不是“把 PDF 贴进 PPT”，而是尽量把页面重建为可编辑文本、独立图片区域和页面底图，在保留原稿观感的同时提高后续编辑能力。
+  - 不只是截图式导出，而是尽量把页面重建为文本层、图片块和页面底图
+  - 不只适合单机试用，也适合部署成 Web、API、Worker 的完整服务
+  - 可以在本地 OCR、远程 OCR 和文档解析链路之间切换
+    - 支持本地 OCR、远程 OCR、百度文档解析、MinerU 等多种链路
+  - [【开源】PDF2PPT: 将PDF转为可编辑的PPT。支持MCP的调用，支持OPENAI兼容VLM视觉模型，MINERU，百度AI和本地OCR。支持页脚清除，图片可编辑等功能。 - 开发调优 - LINUX DO _202603](https://linux.do/t/topic/1840954)
+    - 允许自定义提示词让AI（deepseek-ocr）直出bbox和文字
+  - limitations
+    - 本地OCR中的Paddleocr未测验，可能有BUG。
+    - Mineru由于远程额度够用，故没在本地OCR中加入。
+    - 不支持批量
+
 - https://github.com/blacksamuraiiii/pdf2ppt /MIT/202601/python
   - 将 AI 生成的 PDF 文稿（如 Google NotebookLM 导出的内容）或其他标准 PDF 文档，通过智能解析转换为可编辑的 PowerPoint (PPTX) 演示文稿。
   - 提供 基于 CustomTkinter 的现代化界面 (app.py) 和 cli

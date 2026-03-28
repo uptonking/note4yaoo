@@ -29,6 +29,24 @@ modified: 2025-09-16T13:29:11.327Z
 
 - ## 
 
+- ## 
+
+- ## [Programming languages and tech the LLMs are not good at : r/LLMDevs _202603](https://www.reddit.com/r/LLMDevs/comments/1s5i8x3/programming_languages_and_tech_the_llms_are_not/)
+- anything with rapidly evolving APIs. terraform providers, cloud SDKs that update quarterly, new framework versions. the training data is always 6-12 months behind so the model confidently generates code for APIs that no longer exist.
+  - also anything requiring hardware-specific knowledge. CUDA kernel optimization, FPGA synthesis, embedded systems with specific chip constraints. the model knows the general patterns but not the specific timing/memory constraints of your actual hardware.
+- Very much a context problem. With rapidly evolving APIs, it's pretty trivial to have the AI look up the docs and use those. Same with hardware. Literally just feed it the constraints of your actual hardware.
+
+- swift and macOS native APIs are rough. ScreenCaptureKit, accessibility APIs (AXUIElement), anything involving CoreML or Vision framework. claude is decent at basic SwiftUI but the moment you need low-level macOS frameworks it starts hallucinating method signatures that don't exist. the docs exist but they're spread across Apple's developer site in a way that doesn't seem to make it into training data well.
+- But this issue is easily fixed by adding the latest API docs to your agent's context.
+  - in theory yes, but the apple docs for things like ScreenCaptureKit and AXUIElement are notoriously incomplete. half the behavior is undocumented or only discoverable through header files. you can dump the entire doc page into context and the model still hallucinates parameters that don't exist because the docs themselves are missing critical details.
+
+- Almost every agent nowadays can not code for Android except for gemini because google pulled the rug* by updating gradle to version 10 and training gemini on it. Other agents are just not trained on gradle 10 yet
+  - yeah this is a perfect example of the training data lag problem. google has the advantage of training on their own ecosystem's latest changes before anyone else. same thing happens with AWS SDKs, the models are always a version behind because the training data doesn't include the latest release. the workaround that works for us is pasting the relevant docs/changelog directly into the context. tedious but it gets around the training cutoff issue.
+
+- While JavaScript/TS is HUGE, any front-end framework outside of React & Vue & maybe jQuery is hard to get LLMs to be good at.
+
+- Visual Basic on Mech. Design Software (like solidworks, NX, Catia..), to analyze and generate 3D models on a whim. Good luck training an LLM on dozens of GBs of VB API references.
+
 - ## [Why can't we have small SOTA-like models for coding? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rsv70y/why_cant_we_have_small_sotalike_models_for_coding/)
 - People tried to do this in the beginning. As it turns out, all the "off-topic" training on other programming languages, science, humanities, reddit conversations, other human languages, etc. etc. is actually necessary to train a model that is good at programming.
   - Because it needs to know language and all sorts of concepts to correctly interpret instructions and all sorts of different prompting styles people might use, I'd imagine.
@@ -662,6 +680,8 @@ def slugify(text):
   - Run original tests to see if the generation was correct
   - Percentage of the tests passed is a score
   - I've started evaluating them to find specific models and workflows that performed the best in my specific tasks. I built harbor bench to aid myself in that (as a simpler alternative to lm evaluation harness)
+
+- [魔方题终于有国内模型能做对了， GLM 5.1 - LINUX DO _202603](https://linux.do/t/topic/1837967)
 
 - ## 🆚🛢️ [【Wiki】语言模型区分题库：从文本到多模态 _202602](https://linux.do/t/topic/286836)
   - 题库都是中文提示词

@@ -140,6 +140,8 @@ modified: 2025-03-22T18:49:15.634Z
     - Model must be in the latest GGUF format
     - Model should be compatible with latest `llama.cpp`.
     - 👀 注意没找到llama.cpp相关的代码
+  - [AnythingLLM Desktop works across your entire OS with local models : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r8biu3/anythingllm_desktop_works_across_your_entire_os/)
+    - Now with a simple customized keybind you can open an overlay that instantly has access to your open apps and screen.
 
 - https://github.com/huggingface/chat-ui /9.2kStar/apache2/202510/ts/svelte
   - https://huggingface.co/chat/

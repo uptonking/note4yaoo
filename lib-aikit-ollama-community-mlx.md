@@ -19,6 +19,21 @@ modified: 2026-01-14T18:59:01.949Z
 
 - ## 
 
+- ## 
+
+- ## 原来 mlx 上的量化不如 unsloth 的 gguf 是这个原因
+- https://x.com/wey_gu/status/2037547112859365495
+
+- https://x.com/terrywang/status/2037720685112697171
+  - MLX 社区转换格式很随意：用基于 mlx-lm mlx-vlm 的脚本转换，根本去考虑量化的细节。
+  - 补充：根本原因是 MLX 用统一量化（偷懒）；而 Unsloth 用 per-tensor mixed-bit quant 说人话：根据每个权重张量的敏感性分配不同的精度。
+  - 一刀切对混合架构模型（不同层对精度敏感度差异巨大）来说是毁灭性的。可表现为：长输出会直接崩掉。
+
+- MLX 也有 mixed precision quantization，不过不能用官方的 runtime
+  - [JANG — 397B on a 128 GB Mac | The GGUF for MLX _202603](https://jangq.ai/)
+  - https://github.com/jjang-ai/jangq /202603/python
+  - MLX Studio has full native JANG support. oMLX has added JANG integration (PR #364). LM Studio, Ollama, and Inferencer do not support JANG yet — ask your favorite app's creators to add support, or use pip install "jang[mlx]".
+
 - ## 🧩🔧 [Open source LLM compiler for models on Huggingface. 152 tok/s. 11.3W. 5.3B CPU instructions. mlx-lm: 113 tok/s. 14.1W. 31.4B CPU instructions on macbook M1 Pro. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rspblk/open_source_llm_compiler_for_models_on/)
 - https://github.com/pacifio/unc /MIT/202603/cpp/metal
   - HuggingFace transformer compiler for optimised native inference binaries

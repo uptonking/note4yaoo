@@ -12,7 +12,20 @@ modified: 2026-02-20T17:36:40.796Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 软件没有稀缺性了。就像现在各种平台上发小说，发视频的，爱干不干，只能靠流量再自己想办法变现，或者以后大公司按你的用户消耗了多少token给你提成，就像视频播放量一样。
+- https://x.com/MinLiBuilds/status/2037720336771457393
+- 这种商业模式毫无价值，现在广告这一套之所以有用。是因为生产大于消费。而，后面大模型取代扩大部分岗位，生产减小，压根没有多余资金消费。而，广告纯粹是奶头乐文化，对经济半身毫无价值
+
+- 我总有个疑问，如果大模型大厂下场做，小厂的机会是不是瞬间就没了？就像去年 9 月，国内外 80 多家做 AI PPT 的，现在基本都死透了。AI 感觉就是赢者通吃，没第二名什么事。
+  - 有一些场景是，本地部署类的， 例如，医院，不愿意把病历完整传给云端 AI 厂家。 这些大模型厂很难进来。 如果要进来，一家一家和企业谈定制和隐私， 对于股价和商业模式又变得不性感了。
+
+- 不能这么想吧。做搜索引擎的都是聚合搜索别人的资源。他们当然有资源和技术能把别人的平台资源都做一遍！但钱是赚不完的，总有他涉猎不到的领域。要不然在传统互联网时代，所有网站都被Google 百度做完了
+
+- 我觉得得做垂直领域细分的，一个是大厂偏向于通用场景，细分模块没那么好做，一个就是数据没那么好获取/清洗
+  - 大厂可以收集小厂清洗好的数据，坐享其成
+- 是啊，一个愿意付费调用api的数据胜过90%免费用户了，这种高质量的数据集谁不喜欢
+
+- 足够细分，在一个领域研究的足够透，和客户绑定, 就没大厂什么事了, 大厂照顾不到的地方太多了
 
 - ## 🤔 [What actually convinces you to reach for OpenClaw instead of Claude Code? : r/openclaw _202603](https://www.reddit.com/r/openclaw/comments/1rxx2q9/what_actually_convinces_you_to_reach_for_openclaw/)
   - OpenClaw's multi-agent setup, the cron jobs, the channel integrations — all that stuff seems cool in theory. But none of it has made me think "oh damn, I NEED to use this for coding tasks."
@@ -103,7 +116,34 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## 现在似乎没有人提起poe、chatwise、cherry studio等等了，也少有人提及n8n、dify，模型能力升级过程中已经淹没了一大堆产品，细数一下：
+- https://x.com/wquguru/status/2037886289907982654
+  - Poe：曾经最方便的多模型聊天聚合平台
+  - Chatwise：高性能桌面AI聊天客户端，支持多LLM、本地化隐私
+  - Cherry Studio：跨平台AI生产力工作室
+  - n8n：开源工作流自动化神器
+  - Dify：AI应用低代码构建平台，快速做RAG和Agent的利器
+  - 还有Flowise、Langflow、AutoGPT、BabyAGI这些早期可视化/自主代理工具，都在o1/Claude 3.5/GPT-4o等模型狂飙中逐渐淡出视线
+- n8n和Dify的企业MRR早赚麻了。你看不见只是因为那些营销号去蹭别的了
+- 哈哈哈就像前几天我还疑惑 perplexity、midjourney 这些产品是不是死了，其实存量用户就已经够吃好几年了，过了某个阶段之后，只是不再有那么大的hype，但用户总归是留存下来了（如果真的是好产品的话）
+  - 挺有道理的，用户基数足够，产品迭代顺利，又能够解决相当的痛点，还是能活的滋润
+
+- 这里面有些跟模型能力没啥关系，例如dify就是被其过低的复杂度上限淘汰的。用多了意识到用起来吃力就没人用了。cherry studio作为一个调试工具，与其说被模型能力淘汰不如说被cli界面淘汰。
+  - dify被agent sdk取代
+
+- codex app出来之后我就把chatwise卸载了
+- 感觉未来都是应用层的了，你要好好的，怎么让用户一句话就去赚钱。
+
+- poe主要是api对别的支持不好，如果claude code之类的有对应接入方案，感觉发展就完全不一样
+- AI刚出来的时候，我天天用POE, 因为可以免费用各种模型。但现在强的模型就只有那么几个，而且每个模型的官网都推出了一系列特色功能，就没有再用 POE 了。
+
+- n8n 集成做的不错，有时候有些接口懒得搞 skill 了就往 n8n 里面一塞
+
+- 
+- 
+- 
+- 
+- 
 
 - ## [Claude Code使用之后，有点焦虑 - LINUX DO _202603](https://linux.do/t/topic/1767554)
   - 深度使用了一段时间 Claude Code，说实话，被震撼到了。

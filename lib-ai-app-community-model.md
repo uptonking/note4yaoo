@@ -1151,7 +1151,11 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [Do 2B models have practical use cases, or are they just toys for now? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s5bztk/do_2b_models_have_practical_use_cases_or_are_they/)
+- The 2B size is practical for: classification, routing, summarization of small inputs, function calling with well-defined schemas, and anything where the output format is constrained.
+  - They are genuinely useful for structured tasks.
+
+- As everyone put it, 2B is great for recognizing patterns, but what makes them amazing is also the fine-tuning capabilities! If you want to standardize something, then a team of 2B models with specific fine-tuned goals will outperform any generalized model in efficiency, where you can tune up the accuracy.
 
 - ## [Small model (8B parameters or lower) : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1s4zhlx/small_model_8b_parameters_or_lower/)
 - So decompose your problem first into clear, small, steps, then automate everything with code that you can, only call the model when you need it, and only with the exact context and tools that it needs for a step.

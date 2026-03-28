@@ -49,6 +49,10 @@ modified: 2025-12-13T18:38:27.763Z
 ## draft-office
 
 - aionui-cli: general cli wrapper for coding agents, like lms-cli
+- 或许复用并增强opencode-webui的逻辑如改造底层支持codex-cli/claude-code-cli 的架构更适合cowork/app
+
+- rag
+  - 除了支持search/query, 还要支持 indexing, 因为用户可能选择当前目录外的文件夹，甚至选择任意文件夹
 
 - 在浏览器cdp成熟后, 通过cdp直接打开浏览器操作web ui似乎比electron app更强大
 

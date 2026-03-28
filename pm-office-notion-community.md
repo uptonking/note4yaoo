@@ -147,7 +147,7 @@ modified: 2023-11-28T14:48:45.910Z
   - The logical schema of both systems is a very ordinary relational schema that could have been implemented directly on the database, with much better performance. 
   - I wonder if the Notion developers made a serious attempt to build on top of a more conventional structured schema, and found it really was unworkable?
 - 👷🏻 jitl: I actually think Notion's data model is much more conventional than the data stores behind document editors like Google Docs or Figma. Blocks are "just" rows in Postgres.
-  - We **use JSON for properties for flexibility and for user-defined property schemas**.
+  - We **use JSON for properties for flexibility and for user-defined property schemas** .
   - We could use an `entity-attribute-value` table as you describe for that, but such a table would complicate our caching techniques. It would also be enormous, but, it might be time for another think about that since we finished sharding.
 - I was thinking more along the lines of, specific tables for different classes of entity, with a schema that’s as fixed as possible, so you get the most compact and indexable representation.
 - I'm curious if Notion has any plans to make the "type" property user-extensible. Given the current data-structure, which decouples the block data from the way its rendered through the type property, a user has to define only one template for rendering arrangements of UI components (boxes, bullets, etc), titles and children. 
@@ -192,7 +192,7 @@ modified: 2023-11-28T14:48:45.910Z
   - We do lean very heavily on the TypeScript type system and try to make invalid states unrepresentable.
 
 - 🆚️ Am I the only one who thinks the data model is very complex? How does it compare to a document based data model? What are the pros and cons of each?
-- The **major issue with the document model is storage**. 
+- The **major issue with the document model is storage** . 
   - How big can a document grow? How do you persist it, and make small changes inside it? How do you handle "hot" documents that are very popular? 
   - Moving data between documents or having part of a document reference part of another document are complex. Complexity comes from building derived data that looks at slices of a document.
   - With a block-oriented model, your records are much more manageably sized. It's easier to reference or move data between documents, but in turn, you need to do these kinds of recursive shenanigans because your individual records are smaller in scope. Complexity comes from derived data that composes blocks together into a document.
@@ -559,7 +559,11 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
-- ## 
+- ## ✨ notion tabs（可简单理解为浏览器 tabs） _202603
+- https://x.com/howie_serious/status/2037850552659492905
+  - notion 新引入的一个block类型，之前仅限 notion 团队内部使用。非常好理解，就是类似 chrome 浏览器的 tabs，把 notion page 也引入了 tabs 概念。
+  - notion page 的内容结构之前非常受限，只能用不同层级的 heading 来组织内容，内容多了只能放到子页面（subpage）
+  - 有了 tabs之后，notion page 的内容结构迎来了颠覆：平行结构、流程结构、分步结构、分类结构……都可以用 tabs 轻松实现
 
 - ## Now you can build apps with @Replit (frontend) and host all the content in Notion (backend) _202505
 - https://x.com/NotionHQ/status/1920892584987074908
@@ -703,4 +707,4 @@ modified: 2023-11-28T14:48:45.910Z
 - https://twitter.com/NotionHQ/status/1697660535704322514
   - 页面渲染多个分类，效果类似看板
 - How does Notion at Notion deal with unbearable database speeds once you have too many relations  and rollups? Notion is a dream of a software and one of the most important in my life, but the performance is just so annoying
-  - I just had a conversation with our infra team about it yesterday. It can be a little annoying, but rest assured they are thinking about this *all the time*. 
+  - I just had a conversation with our infra team about it yesterday. It can be a little annoying, but rest assured they are thinking about this *all the time* . 

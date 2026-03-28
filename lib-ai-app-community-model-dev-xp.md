@@ -196,6 +196,13 @@ modified: 2025-11-18T13:22:22.078Z
 - [zed-industries/zeta · Hugging Face](https://huggingface.co/zed-industries/zeta)
   - a fine-tuned version of Qwen2.5-Coder-7B to support edit prediction in Zed.
 
+### autocompletion
+
+- [zed-industries/zeta-2 · Hugging Face _202603](https://huggingface.co/zed-industries/zeta-2)
+  - Zeta 2 is a code edit prediction (also known as next-edit suggestion) model finetuned from ByteDance-Seed/Seed-Coder-8B-Base.
+  - https://x.com/0xSero/status/2037693094754213897
+    - Using git-merge-style markers for the suffix-prefix-middle prompt is actually a really clever way to handle edit prediction. 
+
 ## data-viz/charting 📊
 
 - 生成图表的方案(分析需求: 偏前端展示/偏数据分析)

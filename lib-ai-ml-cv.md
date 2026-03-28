@@ -37,6 +37,22 @@ modified: 2026-02-19T14:38:28.823Z
 
 - i would recommend a research on "cell segmentation" models. From top view it indeed looks a lot like cell seg problem, and instance segmentation is a necessity in this area exactly because cells tend to form dense blobs.
   - The short answer is: It's hard as hell. The way i solved this in my masters was create a diffusion map for each individual cell from the segmentations ground truth, and teach the model this diffusion map instead of regular segmentation. Each difusion peak turned into a singular instance and watershed segmentation to separate the masks.
+# discuss-solutions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Roboflow 把多目标追踪彻底开源
+- https://x.com/berryxia/status/2037755337537982923
+  - 任意检测器即插即用（YOLO / RF-DETR / 随便接）
+- https://github.com/roboflow/trackers /3.2kStar/apache2/202603/python
+  - https://trackers.roboflow.com/
+  - Plug-and-play multi-object tracking for any detection model.
+
 # discuss
 - ## 
 
