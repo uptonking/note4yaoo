@@ -268,6 +268,12 @@ modified: 2023-01-09T11:04:13.958Z
 # excel-utils
 - https://github.com/hxj9102/table2excel
   - text and image save to excel
+
+- https://github.com/productdevbook/hucre /MIT/202603/ts/NoDeps
+  - https://hucre.productdevbook.com/
+  - Zero-dependency spreadsheet engine. Read & write XLSX, CSV, ODS. 
+  - Read & write XLSX, CSV, ODS. Schema validation, streaming, round-trip preservation. 
+  - Pure TypeScript, works everywhere.
 # excel-db
 - https://github.com/vkareh/spreaddb /201406/js
   - SpreadDB is a spreadsheet-oriented database server. 

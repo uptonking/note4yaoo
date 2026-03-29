@@ -26,7 +26,7 @@ modified: 2021-01-01T20:52:42.088Z
 - 2021
   - ssr
   - cjs to esm
-  - ~~renderer using sika like flutter~~
+  - ~~renderer using sika like flutter~~ 
   - 华为鸿蒙os的app开发基于js
   - [Technology Preview: Jetpack Compose for Web](https://blog.jetbrains.com/kotlin/2021/05/technology-preview-jetpack-compose-for-web/)
   - [Airbnb’s Server-Driven UI System](https://t.co/XXSpXaztL8?amp=1)
@@ -122,7 +122,36 @@ modified: 2021-01-01T20:52:42.088Z
 - natto
   - https://natto.dev/
   - a canvas for JavaScript
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Other hard problems in web development seeking extreme engineers:
+- https://x.com/steveruizok/status/2038272919399190849
+  - rich text editing
+  - efficient drop shadows for svg paths
+  - distinguishing between a scroll-wheel and a trackpad in mousewheel events
+  - unfurling urls to access social metadata
+  - bottom navbars
+
+- Sticky bottom navbar on mobile indistinguishable from native, actually impossible?
+
+- Been following expiring and now public domain patents to implement SVG rendering with effects for pmndrs/uikit. Could rasterize/convolve the SVG after tessellation, but that brings discretization artifacts unsuitable for infinite zoom/canvas or 3D UIs (games and VR).
+- What’s Rive doing for their rendering?
+  - Based on this I think it's all meshes and SDFs
+  - SDFs like Nabla, which they break down at Vulkanized. WebGL doesn't have FSIL, which is needed for fast/robust rendering there. Much prior art, like Pathfinder v1-v2, for inspo. Alternatively, you could tile, which localizes cost. Pathfinder v3 does this.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## techs to look out for in the javascript world in 2021
 - https://twitter.com/KerryRitter/status/1344039489123934209
   - @stenciljs - web components compiler
@@ -141,6 +170,7 @@ modified: 2021-01-01T20:52:42.088Z
   - React Table/Grid Pro
   - Hopes: Physically attend a JS/React conference
   - There's a good chance this year that I will reimplement React-Charts with airbnb/visx
+
     - and a slightly smaller chance that React Charts goes away all together.
     - I need more chart types @nozzleio, and not enough time to build essentially what visx has already built.
 
@@ -152,7 +182,9 @@ modified: 2021-01-01T20:52:42.088Z
   - API-first development
   - Parallax animation
   - Glass and Neumorphism
+
     - 也称为soft ui，是一种类似于浮雕的效果，有的人说这是新的拟物风格（New Skeuomorphism）
+
   - Abstract art compositions
   - 3D visuals
 
@@ -160,22 +192,33 @@ modified: 2021-01-01T20:52:42.088Z
   - 2021 will be the peak of JavaScript frameworks & compilers. 
   - In 2022, tools like Turbo, Laravel Livewire, . NET Blazor Pages and Alpine JS that allow interactivity with little custom JavaScript will become serious alternatives to React & friends.
   - Developers gravitate towards tools that let them build things fast, even if it means letting go of some control. 
+
     - Bootstrap and Tailwind caught on because they let developers build real apps without tediously writing their own CSS.
     - The same thing will happen to JavaScript.
+
   - Modern JavaScript is complicated. 
+
     - Webpack is a challenge for even experienced JS developers.
     - Tools like Create React App ease this pain, but they can force you to put your JS app in a different repo & on a different server, complicating development & deployment.
+
   - JavaScript is a challenging language. 
+
     - The "this" keyword, functions vs arrow functions, prototypical inheritance, bind vs call, and immediately-invoked function expressions can be hard to understand.
     - Developers coming from other languages would often rather not learn these.
+
   - JavaScript's ecosystem has an overwhelming number of choices.
+
     - React? Vue? Ember? Angular? Svelte?
     - Styled Components? CSS Modules? Emotion?
     - Redux? MobX? XState?
     - JavaScript fatigue can kick in before you write a single line of code. This slows down development.
+
   - I believe developers will begin to recognize the productivity benefits of writing less custom JavaScript, 
+
     - and developers with no JavaScript experience will be able to create meaningful interactive/real time web applications.
+
   - If you are a JavaScript developer and this sounds scary, let me reassure you: there will always be work for JavaScript developers. 
+
     - However, the tent of web development will become much bigger.
     - Here's to a democratized web
 
@@ -216,7 +259,7 @@ modified: 2021-01-01T20:52:42.088Z
 - 函数，往大了说可以是一个应用的main函数，往小了说也可以是一个简单的加法函数
   - 如同一个单体应用可以按业务模块拆分成多个微服务，一个微服务也可以按使用场景拆分成多个函数。
   - 比如一个广告微服务，至少可以拆分出实时竞价、展示计数、报表查询等多个函数。也就是说，FaaS中的函数和微服务中的API是同一粒度的。
-  - 但不同于API，**在Serverless架构下，每个函数都是独立部署，按需执行**
+  - 但不同于API， **在Serverless架构下，每个函数都是独立部署，按需执行** 
 - 和其他架构相比，Serverless有以下4个特点
   - 运行成本更低
     - 无论是过去的IDC，还是如今的云主机，本质上都是一种包月计费模式
@@ -243,15 +286,15 @@ modified: 2021-01-01T20:52:42.088Z
   - uniApp / Taro
 
 - https://www.zhihu.com/question/398940598/answer/1269685808
-01.   建立 开发规范，最重要的就是 git 分支使用规范，至少有个 release 分支对应生产环境，pre 对应预发，qa 对应测试环境
-02.   建立统一的项目模版，比如单页，多页，后台管理，组件开发，小程序，Nodejs 项目，然后通过 cli 来选择 项目模版，模版选择后，直接生成项目，然后把调用 gitlab 的 api， 在 gitlab 上创建项目，push项目，这样就收拢了大家创建项目的方式， 自动统一了代码规范
-03.   基于上面这个，就可以做基于 gitlab ci/cd，阿里云 oss 的持续集成，完成 push => 构建 => 上传oss（或者静态资源服务器,自动绑定域名，接 cdn，这样一条龙的服务，人手够的话也可以把 2，3结合一起做成基于 GUI 网页的创建，因为这里接管了大家发布代码的规范，后面就可以干很多事了
-04.   把内部的 npm 私服搭建起来，做一套内网的 npm 组件开发构建  publish 一条龙服务，建一个组件展示平台，这样人多了，大家接可以互相用起来，方便的很
-05.   因为有了上面 3 的收拢，我们就可以上线代码风格校验，检测线上发布是否包含了 sourcemap文件，接着人手够，老板支持的话，可以统计每个项目的依赖，存储到数据库，这样某天某个第三方出了问题（比方包含了挖矿脚本），就能立马找到那个项目依赖了，对于内部 npm 组件，谁使用了，也是很清晰，这样组件更新了，也可以企微，钉钉，邮件的方式自动通知到使用方，再大胆些，还可以每次发布前通过  puppeteer  跑下项目，统计了 性能数据，和之前的数据对比下，偏差太大也可以通知到对应负责人，让他检查下
-06.   建立监控体系，监控体系可以简单，可以复杂，看领导的支持度，最基础的功能是，做 pageLoader 监控，意思是页面加载成功后上报下数据，表明当前页面是正常的，这样每次上线后，就通过消息通知到开发去观察 pageLoader 曲线的变化，这样就不会发布后， 2 眼一抹黑，也不知道线上是个什么情况，出了问题，也可以通过 gitlab ci/cd 立马回滚代码，这个是个很强的需求，基本上老板肯定是支持的，那线上出了错也不知道是啥子错，咋办，那我们把 线上错误上报上来，就很直观了，还可以结合 sourcemap 把错误和打包前的文件映射起来，便于定位问题，没人手就用开源的有 sentry，有人手的就自己开发
-07.   监控建立起来了，是不是得做个报警机制啊，比方某个桥接更新了，和之前的不兼容，之前运行好好的的页面一直报错，错误上报达到一定量就报警起来，那就去把上报的数据捞起来做个统计分析，还可以结合 prometheus，做个好看展示曲线
-08.   既然错误监控都做了，那把页面性能监控也做了吧
-09.   哎，咋监控后性能数据这么差，是哪里出了问题，哦，打包文件太大，那 Webpack  得好好学习下，怎么拆分，啊，发现 http 请求时间太常，是不是 CDN 哪里出了问题，是不是资源没开启压缩，那这个链路还不熟，得好好学习下什么
+01.    建立 开发规范，最重要的就是 git 分支使用规范，至少有个 release 分支对应生产环境，pre 对应预发，qa 对应测试环境
+02.    建立统一的项目模版，比如单页，多页，后台管理，组件开发，小程序，Nodejs 项目，然后通过 cli 来选择 项目模版，模版选择后，直接生成项目，然后把调用 gitlab 的 api， 在 gitlab 上创建项目，push项目，这样就收拢了大家创建项目的方式， 自动统一了代码规范
+03.    基于上面这个，就可以做基于 gitlab ci/cd，阿里云 oss 的持续集成，完成 push => 构建 => 上传oss（或者静态资源服务器,自动绑定域名，接 cdn，这样一条龙的服务，人手够的话也可以把 2，3结合一起做成基于 GUI 网页的创建，因为这里接管了大家发布代码的规范，后面就可以干很多事了
+04.    把内部的 npm 私服搭建起来，做一套内网的 npm 组件开发构建  publish 一条龙服务，建一个组件展示平台，这样人多了，大家接可以互相用起来，方便的很
+05.    因为有了上面 3 的收拢，我们就可以上线代码风格校验，检测线上发布是否包含了 sourcemap文件，接着人手够，老板支持的话，可以统计每个项目的依赖，存储到数据库，这样某天某个第三方出了问题（比方包含了挖矿脚本），就能立马找到那个项目依赖了，对于内部 npm 组件，谁使用了，也是很清晰，这样组件更新了，也可以企微，钉钉，邮件的方式自动通知到使用方，再大胆些，还可以每次发布前通过  puppeteer  跑下项目，统计了 性能数据，和之前的数据对比下，偏差太大也可以通知到对应负责人，让他检查下
+06.    建立监控体系，监控体系可以简单，可以复杂，看领导的支持度，最基础的功能是，做 pageLoader 监控，意思是页面加载成功后上报下数据，表明当前页面是正常的，这样每次上线后，就通过消息通知到开发去观察 pageLoader 曲线的变化，这样就不会发布后， 2 眼一抹黑，也不知道线上是个什么情况，出了问题，也可以通过 gitlab ci/cd 立马回滚代码，这个是个很强的需求，基本上老板肯定是支持的，那线上出了错也不知道是啥子错，咋办，那我们把 线上错误上报上来，就很直观了，还可以结合 sourcemap 把错误和打包前的文件映射起来，便于定位问题，没人手就用开源的有 sentry，有人手的就自己开发
+07.    监控建立起来了，是不是得做个报警机制啊，比方某个桥接更新了，和之前的不兼容，之前运行好好的的页面一直报错，错误上报达到一定量就报警起来，那就去把上报的数据捞起来做个统计分析，还可以结合 prometheus，做个好看展示曲线
+08.    既然错误监控都做了，那把页面性能监控也做了吧
+09.    哎，咋监控后性能数据这么差，是哪里出了问题，哦，打包文件太大，那 Webpack  得好好学习下，怎么拆分，啊，发现 http 请求时间太常，是不是 CDN 哪里出了问题，是不是资源没开启压缩，那这个链路还不熟，得好好学习下什么
 10. 前端的监控都给做了，能不能协助下客户端的同学，把他们的 crash 上报，冷启监控都给做下
 11. 要做上面这些，至少需要会门后端语言，会数据库啊，我擦，刚好上手 Egg.js Mysql 开发啊，之前不是学习 Node.js 没有场景使用么，一下子这么多场景来了，刚好带薪学习
 12. 我擦，接了前端，客户端上报，请求数量一下子上来了，随手写的垃圾 Egg 代码，性能跟不上了，加班优化吧，不然不被骂死，还不行，加机器吧，加机器要做负载均衡啊，这个不会啊，赶紧学习去，是不是还需要做缓存，那还得学习下 Redis

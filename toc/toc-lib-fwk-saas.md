@@ -142,6 +142,26 @@ modified: 2021-05-25T09:41:29.066Z
   - It includes network scanning, service discovery, certificate management, and automated backup functionality for challenge clients.
   - it is part of the Safebox platform. For full functionality, it also requires the safebox/web-installer image.
   - [Safebox: Open-source platform for self-hosted apps : r/selfhosted _202510](https://www.reddit.com/r/selfhosted/comments/1o13qo7/safebox_opensource_platform_for_selfhosted_apps/)
+# starter/boilerplate
+- https://github.com/wasp-lang/open-saas /13.7kStar/MIT/202603/ts
+  - https://opensaas.sh/
+  - A 100% free modern JS SaaS boilerplate (React, NodeJS, Prisma). Full-featured: Auth (email, google, github, slack, MS), Email sending, Background jobs, Landing page, Payments (Stripe, Polar.sh), Shadcn UI, S3 file upload. AI-ready with tailored AGENTS.md, skills, and Claude Code plugin. 
+  - One cmd deploy. Powered by Wasp full-stack framework.
+
+- https://github.com/ixartz/SaaS-Boilerplate /6.9kStar/MIT/202602/ts
+  - https://react-saas.com/
+  - SaaS Boilerplate built with Next.js + Tailwind CSS + Shadcn UI + TypeScript.
+  - Full-stack React application with Auth, Multi-tenancy, Roles & Permissions, i18n, Landing Page, DB, Logging, Testing
+
+- https://github.com/boxyhq/saas-starter-kit /4.8kStar/apache2/202603/ts
+  - https://boxyhq.com/blog/enterprise-ready-saas-starter-kit
+  - The Open Source Next.js SaaS boilerplate for Enterprise SaaS app development.
+  - Prisma 
+
+- https://github.com/apptension/saas-boilerplate /2.9kStar/MIT/202603/python/ts
+  - https://apptension.com/saas-boilerplate
+  - SaaS Boilerplate - Open Source and free SaaS stack that lets you build SaaS products faster in React, Django and AWS. 
+  - A complete SaaS starter kit based on a battle-tested stack with out-of-the-box features every SaaS should have
 # more
 - https://github.com/yazz/yazz /js
   - Yazz is a both an IDE for building small web applications and a decentralised app store. 

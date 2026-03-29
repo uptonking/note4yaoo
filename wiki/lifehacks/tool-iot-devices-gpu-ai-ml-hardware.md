@@ -12,7 +12,20 @@ modified: 2026-01-15T15:44:10.647Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🆚 [Unified vs vRam, which is more future proof? : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1s6srra/unified_vs_vram_which_is_more_future_proof/)
+  - VRAM: Higher bandwidth (speed), limited capacity.
+  - Unified Memory: Massive capacity, lower bandwidth.
+- GPUs can be swapped, at least in desktop PCs... Unified ram cannot be swapped. The future will benefit greatly from future custom hardware instructions that are not built yet. Id argue something you can upgrade is gonna perform better in 3-5 years. Also gpus, can do video and audio inference as well.
+- Unified cannot be future proof, full stop period end of discussion. The reason is obvious. It can't be unplugged and upgraded.
+
+- I would guess that the future of local AI is going to be unified memory with more efficient models.
+  - More power efficient, and it’s the only architecture offering sufficient memory for models at consumer prices.
+  - GPUs are going to be outdated before long, it’s a vestigial technology built primarily for video games and rendering. Dedicated accelerator chips will still be used for datacenters, but for consumer hardware unified memory makes a lot more sense.
+- There are two big sectors of application for LLM usage.
+  - (1) A lot of small prompts which have nothing todo with another and do not have a performance optimisation when using cached conversations. For that you can use much cheaper unified memory hardware, because the bandwidth isnt that important when you arent running 100k single response prompts
+  - (2) Long running chat conversations with big contexts for like e.g. ai coding agents. These need a ton of bandwidth. Here the unified memory would be too slow, but until you are able to run such stuff locally you need to invest 10-50x the amount compared to (1)
+
+- There is no reason that UMA has to have lower bandwidth. Remember in the age of the 3090/4090 the Mac Ultra had comparable bandwidth. The M5 Ultra should go a long way to catching up with the 5090.
 
 - ## [Any decent alternatives to M3 Ultra, : r/LocalLLM _202505](https://www.reddit.com/r/LocalLLM/comments/1kv4gjn/any_decent_alternatives_to_m3_ultra/)
 - viable alternatives:
@@ -41,6 +54,22 @@ modified: 2026-01-15T15:44:10.647Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Taalas rumoured to etch Qwen 3.5 27B into silicon. Which price would you buy their PCIe card for? : r/singularity _202603](https://www.reddit.com/r/singularity/comments/1s6bs6r/taalas_rumoured_to_etch_qwen_35_27b_into_silicon/)
+- This is the thing, you don't need a fully up to date model necessarily, you just need one that is good at reasoning and making tool calls. It can spawn subagents through API to answer more difficult questions and use tools to source new information (much like openclaw). The speed and cost is amazing. 
+
+- Why not use an FPGA?
+  - Density. Their 8B demonstrator chip was already fairly big - and if I remember correctly it was on a 6nm node, so nothing too ancient.
+- An FPGA with that many gates/logic units would be wildly expensive. And big.
+- FPGAs are very efficient, but even small ones cost hundreds of dollars.
+
+- GPT OSS is still relevant 8 months later (See OpenRouter leaderboard). Qwen3.5 27b is way better and a VLM. At 10k tps it will be relevant.
 # discuss-vulkan
 - ## 
 
@@ -320,6 +349,29 @@ modified: 2026-01-15T15:44:10.647Z
 
 - My personal experience with the Radeon 780m iGPU with 96gb RAM on the Framework 16, I got 0.5 TPS PP in and ~3 TPS out with IQ3-XXS Minimax 2.5 - a Sonnet 4.5 equivalent model.
   - The fastest models on this setup worth using are Qwen3vl 30b a3b and GPT OSS 20b which both get around ~30 TPS TG out, I dont remember the PP speed off the top of my head but its somewhere in the ~200 TPS range.
+# discuss-os-linux/win
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Friendly reminder inference is WAY faster on Linux vs windows : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s6hb1h/friendly_reminder_inference_is_way_faster_on/)
+  - I have a simple home lab pc: 64gb ddr4, RTX 8000 48gb (Turing architecture) and core i9 9900k cpu. I use Linux Ubuntu 22.04 LTS. Before using this pc as a home lab it ran Windows 10. Over this weekend I reinstalled my Windows 10 ssd to check out my old projects. I updated Ollama to the latest version and tokens per second was way slower than when I was running Linux. I know Linux performs better but I didn’t think it would be twice as fast.
+  - QWEN Code Next, q4, ctx length: 6k
+  - Windows: 18 t/s
+  - Linux: 31 t/s (+72%)
+  - QWEN 3 30B A3B, Q4, ctx 6k
+  - Windows: 48 t/s
+  - Linux: 105 t/s (+118%)
+
+- Seriously wsl + llama.cpp is equally fast w Nvidia GPUs
+- Why wsl? I compile llama.cpp (and ik_llama) in W10 just fine
+  - Because sadly windows has worse memory management and at least if you use MoE models split across GPU and CPU performance is worse. Didn’t try WSL, but running dual boot arch Linux & windows 11. For example: Qwen3 coder next 80B Q4 got 25 t/s on windows vs 35 t/s on Linux on the same hardware for me.
+
+- cuda and the drivers are 10% faster on linux (Nvidia's at least) because everyone builds and backends off linux...
 # discuss-ai/ml-hardware
 - ## 
 

@@ -14,6 +14,22 @@ modified: 2024-11-16T08:23:40.617Z
   - latex
   - pdf
 # popular
+- https://github.com/samwillis/premirror /MIT/202603/ts
+  - https://samwillis.uk/premirror/
+  - Premirror is a library for building Word-class page-layout editors on the web. 
+  - It layers deterministic pagination and composition on top of ProseMirror, giving you paper-style page breaks, widow/orphan control, and fragment-level text positioning — all while keeping ProseMirror as the single source of truth for document content and editing.
+  - ProseMirror owns the document model and all editing operations. Premirror's composer takes a measured snapshot of the document and produces a deterministic layout: pages, frames, line boxes, and placed runs. A React rendering layer then projects those fragments into absolute positions inside page-chrome viewports, producing a word-processor-style paged view with a single contenteditable surface.
+  - Text measurement is handled by @chenglou/pretext, which provides segment-aware width calculation and line fitting.
+  - https://x.com/samwillis/status/2038209756268048771
+    - Document layout with page breaks
+
+- https://github.com/chenglou/pretext /5.5kStar/MIT/202603/ts
+  - https://chenglou.me/pretext/
+  - Pure JavaScript/TypeScript library for multiline text measurement & layout. 
+  - Fast, accurate & supports all the languages you didn't even know about. 
+  - Allows rendering to DOM, Canvas, SVG and soon, server-side.
+  - Pretext side-steps the need for DOM measurements (e.g. getBoundingClientRect, offsetHeight), which trigger layout reflow, one of the most expensive operations in the browser. It implements its own text measurement logic, using the browsers' own font engine as ground truth (very AI-friendly iteration method).
+
 - https://github.com/alerque/polytype /202408
   - https://polytype.dev/
   - A Rosetta stone for typesetting engines.
@@ -58,7 +74,7 @@ modified: 2024-11-16T08:23:40.617Z
 # typesetting-layout
 - https://github.com/chearon/dropflow /MIT/202412/ts
   - https://chearon.github.io/dropflow/
-  - Dropflow is a CSS layout engine created to explore the reaches of the foundational CSS standards (that is: inlines, blocks, floats, positioning and eventually tables, **but not flexbox or grid**).
+  - Dropflow is a CSS layout engine created to explore the reaches of the foundational CSS standards (that is: inlines, blocks, floats, positioning and eventually tables, **but not flexbox or grid** ).
   - You can use it to generate PDFs or images on the backend with Node and node-canvas or render rich, wrapped text to a canvas in the browser.
   - 🧐 最后渲染的元素是canvas
   - Bidirectional and RTL text

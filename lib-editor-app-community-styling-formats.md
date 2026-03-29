@@ -9,6 +9,14 @@ modified: 2023-11-01T12:33:20.763Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # discuss-formats-comments 💬
 - ## 
 
@@ -46,7 +54,7 @@ modified: 2023-11-01T12:33:20.763Z
   - Would be nice to have a tad(少量；一点儿) more control over border-radius, bg image, borders and gradients - squiggly lines is a use case
   - Also interesting to note, this is one of the first browser APIs that use a Map as the basis for it's API. The get/set/clear/delete API you already know works on setting custom highlights
 - Text decorations, filters and background-images definitely. And I can imagine outline should be possible in ::highlight() as well. But not border, unless it will be changed in some strange way so it would not affect the layout.
-- Little pain it doesn't inherit custom properties defined on `:root`
+- Little pain it doesn't inherit custom properties defined on `:root` 
 
 - does it support regex?
   - it supports start and stop numbers, how you find those numbers if up to you. Here I wrote a little loop that used `string.indexOf` to find them all

@@ -308,10 +308,12 @@ modified: 2025-03-22T16:10:24.856Z
     - diff without git
     - proofreading: 一键检查, 版本历史
       - chunking viz
+      - 基于最新 pertext 还原布局
       - proofreading for word/excel/ppt
     - WebMCP for pdf/rich-editing
     - obsidian for pdf
-    - 还原图文混排
+    - 还原图文混排: 基于最新 pertext 还原复杂布局
+      - 对于还原和提取都很有用
     - 提取 figure、表格
     - 👾 pdf-edit agent
     - ✨ 翻译场景的多种布局一键切换: 双栏对比布局, 仅译文布局, 富文本页面布局
@@ -706,7 +708,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 模型不稳定，经常异常再恢复再异常
     - [【nhh公益站】介绍贴及主贴  ](https://linux.do/t/topic/1370326)
     - [模型中转状态检测](https://status.123nhh.xyz/)
-  - [Wind Hub](https://windhub.cc/panel/model_price), 农场
+  - [Wind Hub](https://windhub.cc/console/personal), 农场
     - https://api.224442.xyz/panel  /legacy
     - [福利站](https://wcdk.224442.xyz/)
     - 提供了free分组，包含deepseek-v3.2, gpt-4.1-mini
@@ -873,7 +875,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [【AnAnAPI】codex公益站，免費gpt-5.4  _202603](https://linux.do/t/topic/1828940)
   - [zenscaleai](https://lc.zenscaleai.com/console/personal), 签到少
     - 5.4
-  - [520 API](https://520.wcgio.com/console/personal)
+  - 🗑️ [520 API](https://520.wcgio.com/console/personal)
     - gpt-5.3-codex 
   - [NPC API](https://npcodex.kiroxubei.tech/console/personal)
     - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)

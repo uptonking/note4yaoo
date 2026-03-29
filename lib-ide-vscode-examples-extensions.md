@@ -29,9 +29,9 @@ modified: 2024-08-24T16:17:26.715Z
 
 - [Custom Editor API](https://code.visualstudio.com/api/extension-guides/custom-editors)
   - There are two parts to a custom editor: the view that users interact with and the document model that your extension uses to interact with the underlying resource.
-  - The view side of a custom editor is implemented using a **webview**
+  - The view side of a custom editor is implemented using a **webview** 
   - Webviews cannot access the VS Code API directly but they can talk with extensions by passing messages back and forth.
-  - The other part of a custom editor is the **document model**.
+  - The other part of a custom editor is the **document model** .
   - A CustomTextEditorProvider uses VS Code's standard TextDocument as its document model and all changes to the file are expressed using VS Code's standard text editing APIs.
   - A CustomTextEditorProvider uses VS Code's standard TextDocument as its document model and all changes to the file are expressed using VS Code's standard text editing APIs, for example split-view
   - There are two classes of custom editors: custom text editors and custom editors. 
@@ -535,6 +535,9 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/sumnow/markdown-formatter /202306/ts
   - https://marketplace.visualstudio.com/items?itemName=mervin.markdown-formatter
   - This is a tool to improve the writing efficiency of markdown, not only provides a relatively uniform format for the markdown user, but also provides some snippets.
+  - 🐛 
+    - 会自动在点号后，大写英文字母前加空格，这会破坏代码中的调用，如React. Component
+
 ## ext-git
 
 - https://github.com/lostintangent/gitdoc /MIT/202412/ts
@@ -739,7 +742,7 @@ modified: 2024-08-24T16:17:26.715Z
   - Fast, keyboard-driven search popup for VS Code
   - Inspired by Neovim Telescope and JetBrains Search Everywhere
   - Full-text search with live preview
-  - Glob filter — limit search to specific file patterns (*.ts, !*.test.ts)
+  - Glob filter — limit search to specific file patterns ( *.ts, !* .test.ts)
 
 - https://github.com/tkim90/fff-extension /MIT/202603/rust/ts
   - IntelliJ-like CMD+Shift+F in Cursor / VSCode.

@@ -159,6 +159,11 @@ modified: 2021-05-06T09:39:53.522Z
   - migrate prosemirror-dev-toolkit features to prosemirror-devtools
   - rewrite prosemirror-devtools in tanstack-devtools style
 
+- typesetting
+  - 还原图文混排: 基于最新 pertext 还原复杂布局
+    - 对于还原和提取都很有用
+    - 注意前端功能大多够用就好, 语义话的普通段落就够用了, 完全还原布局复杂度如果太高，可考虑实现hover普通段落时自动高亮对应对应布局位置
+
 ## 👾 ai-editing
 
 > ai时代的人工编辑, 可设计为特殊的human-in-the-loop

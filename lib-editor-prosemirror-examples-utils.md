@@ -37,6 +37,15 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/vueditor/tiptap-extension-handle /MIT/202409/ts
   - A tiptap extension to support drag handle and custom view
 
+- https://github.com/samwillis/premirror /MIT/202603/ts
+  - https://samwillis.uk/premirror/
+  - Premirror is a library for building Word-class page-layout editors on the web. 
+  - It layers deterministic pagination and composition on top of ProseMirror, giving you paper-style page breaks, widow/orphan control, and fragment-level text positioning — all while keeping ProseMirror as the single source of truth for document content and editing.
+  - ProseMirror owns the document model and all editing operations. Premirror's composer takes a measured snapshot of the document and produces a deterministic layout: pages, frames, line boxes, and placed runs. A React rendering layer then projects those fragments into absolute positions inside page-chrome viewports, producing a word-processor-style paged view with a single contenteditable surface.
+  - Text measurement is handled by @chenglou/pretext, which provides segment-aware width calculation and line fitting.
+  - https://x.com/samwillis/status/2038209756268048771
+    - Document layout with page breaks
+
 - https://github.com/todorstoev/prosemirror-pagination /88Star/MIT/202412/ts/inactive
   - Plugin for ProseMirror emulating A4 pages
 

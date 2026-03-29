@@ -573,6 +573,9 @@ modified: 2025-11-01T10:54:26.044Z
   - llama-swap works with any OpenAI and Anthropic API compatible server 
   - Built in Go for performance and simplicity, llama-swap has zero dependencies and is incredibly easy to set up. 
   - [Add a Playground to the UI _202601](https://github.com/mostlygeek/llama-swap/issues/481)
+  - 🍴 forks
+  - https://github.com/kooshi/llama-swappo
+    - A fork of llama-swap with a minimally implemented ollama compatible api grafted onto it
 - https://github.com/bjodah/llm-multi-backend-container /BSD/202602/python
   - Docker/podman container for llama.cpp/vllm/exllamav{2, 3} orchestrated using llama-swap
   - This repo is my working config, it's mainly used on a 16 core Ryzen machine with 64 GiB RAM and a single RTX 3090.

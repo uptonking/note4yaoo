@@ -51,6 +51,13 @@ modified: 2023-02-03T05:55:22.102Z
   - https://ogimage.click/
   - Create beautiful OG images, Twitter/X Header Images & more for free, in simple clicks.
   - https://github.com/FadyMak/imgsrc-app
+
+- https://github.com/microlinkhq/metascraper /MIT/202603/js
+  - https://metascraper.js.org/
+  - A library to easily extract unified metadata from websites using Open Graph, Microdata, RDFa, Twitter Cards, JSON-LD, HTML, and more.
+  - Get unified metadata from websites using Open Graph, Microdata, RDFa, Twitter Cards, JSON-LD, HTML, and more.
+  - metascraper requires two inputs: The target URL and the HTML markup behind that URL.
+  - There are multiple ways to retrieve the HTML markup, but it needs to be as accurate as possible. For that reason, we developed html-get, which uses a headless browser to retrieve HTML in a way that works seamlessly with metascraper.
 # blogs
 
 ## [A framework for building Open Graph images | The GitHub Blog_202106](https://github.blog/2021-06-22-framework-building-open-graph-images/)
@@ -95,7 +102,7 @@ modified: 2023-02-03T05:55:22.102Z
 
 - 很多 corner case 比较难处理吧，这一看感觉是那种做到 80分很容易，但是做到99分甚至95分，就不那么容易的需求，千奇百怪的各类页面结构，不标准的网页代码，各种视频，图片，音频，Canvas 什么的
   - 感慨大部分需求总是越讨论越复杂的，所以以我多年的交付经验而言，最好的完美解决方案只有一个，那就是：怼回去。实在不行，不管是美人计帅哥计美食计攻心计，搞定客户，然后温柔的怼回去
-- 真的不难吗？感觉第一个要*做好*就已经非常复杂了，preview 到底什么时候截取呢？observer 观察 dom 没有变化为止？经过一定时间？什么分辨率渲染？未登录跳转？cookie 弹窗？广告？这个列表可以非常非常长。
+- 真的不难吗？感觉第一个要 *做好* 就已经非常复杂了，preview 到底什么时候截取呢？observer 观察 dom 没有变化为止？经过一定时间？什么分辨率渲染？未登录跳转？cookie 弹窗？广告？这个列表可以非常非常长。
   - 至于第二个，由于页面排版的不可确定性，首先什么是“干净全文”就值得商榷
 
 - [开一个 thread 记录一下可能的方案](https://twitter.com/beihuo/status/1727926571082875382)

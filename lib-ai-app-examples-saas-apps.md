@@ -237,6 +237,20 @@ modified: 2025-02-21T17:17:42.225Z
   - Supabase Database: Connect production PostgreSQL with authentication ready to use
   - Desktop App: Available as Electron desktop application for Mac, Windows, and Linux
 
+- https://github.com/donghaxkim/react-rewrite /MIT/202603/ts
+  - react-rewrite lets you edit a React app visually while it is running locally, then automatically writes those changes back to the source files in your project.
+  - It is built for local development and works by opening a proxy in front of your dev server and injecting an overlay into the page.
+  - Select an element and inspect its component name, file path, and line number
+    - Edit supported Tailwind-based layout, spacing, size, typography, and color properties
+    - Undo in-progress canvas changes and review applied changes in the changelog
+  - https://x.com/imdonghakim/status/2038230475894899119
+    - how it works
+      - reads your fiber react tree to find the element
+      - parses your source file's AST
+      - finds the JSX node and rewrites the className
+      - deterministic AST transforms
+      - no AI
+
 ## ai-webapp
 
 - https://huggingface.co/spaces/enzostvs/deepsite/tree/main
