@@ -107,6 +107,33 @@ modified: 2025-08-11T20:15:18.297Z
     - Chained execution = fewer tokens. Inspired by Anthropic’s “Code Execution with MCP” pattern, 1mcp runs whole tool chains in a single capsule, so you see the same ~96% token reduction without hand-wiring Cloudflare Workers or Vercel Functions per call.
     - Session-scoped policies. Each agent session gets strict network, filesystem, and runtime limits, rather than the global project settings Cloudflare/Vercel/Daytona enforce.
     - run inside the client’s browser worker via SSE, letting you save server-side compute
+
+- https://github.com/vercel/streamdown /4.9kStar/apache2/202509/ts
+  - https://streamdown.ai/
+  - A drop-in replacement for react-markdown, designed for AI-powered streaming.
+  - Streamdown powers the AI Elements Response component but can be installed as a standalone package for your own streaming needs.
+  - Drop-in replacement for react-markdown: It supports all of the same props
+  - Streaming-optimized - Handles incomplete Markdown gracefully
+  - 基于redis实现中断与恢复
+  - GitHub Flavored Markdown - Tables, task lists, and strikethrough support
+  - Unterminated block parsing - Styles incomplete bold, italic, code, links, and headings
+  - Math rendering - LaTeX equations via KaTeX
+  - Mermaid diagrams - Render Mermaid diagrams as code blocks with a button to render them
+  - Code syntax highlighting - Beautiful code blocks with Shiki
+  - Security-first - Built on harden-react-markdown for safe rendering
+  - [Introducing Streamdown: Open source Markdown for AI streaming - Vercel _202508](https://vercel.com/changelog/introducing-streamdown)
+  - 🍴 forks
+  - https://github.com/phaserjs/streamdown-lite
+    - A lightweight drop-in replacement for react-markdown, designed for AI-powered streaming with code highlighting.
+- https://github.com/zirkelc/ai-resumable-stream /MIT/202603/ts
+  - This library provides resumable streaming for UI message streams created by streamText() in the AI SDK. 
+  - It uses `Redis` to store streaming chunks, allowing clients to resume interrupted streams or stop active streams from anywhere.
+  - https://x.com/zirkelc_/status/2022276897149776299
+    - Fully tested against `streamText` and a locally running Redis database
+    - A simple API with just three functions: start, resume, stop
+  - how would you compare this to resumable-stream?
+    - It’s built on resumable-stream, but focused on AI SDK with automatic conversion of UI chunks to SSE and back, and extended with stop mechanism.
+    - I'm using `redis-memory-server` for the tests, works perfectly!
 # starter
 - https://github.com/vercel-labs/ai-sdk-reasoning-starter /202507/ts
   - https://ai-sdk-reasoning.vercel.app/

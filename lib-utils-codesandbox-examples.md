@@ -196,9 +196,6 @@ modified: 2023-09-02T09:17:22.992Z
   - Standard ECMAScript features are implemented and not delegated to the underlying engine.
   - https://github.com/danielduarte/es-eval-playground /202409/js
 
-- https://github.com/boxlite-labs/boxlite-mcp /apache2/202512/python
-  - embeddable sandbox with hardware-level isolation and no daemon. The SQLite of sandbox, coming soon as open source
-
 ## iframe-sandbox
 
 - https://github.com/dabbott/javascript-playgrounds /1.4kStar/BSD/202411/ts/inactive
@@ -610,6 +607,17 @@ modified: 2023-09-02T09:17:22.992Z
   - Custom Images: Build specialized Debian-based rootfs images with your own tools.
   - MicroVM-based Security: Unlike containers that share the host kernel, SmolVM uses KVM-backed microVMs. This provides a significantly smaller attack surface and stronger hardware-level isolation.
   - Agent-First Design: SmolVM abstracts away the complexity of microVM networking, storage, and TAP devices into a simple, pythonic API.
+
+- https://github.com/boxlite-labs/boxlite-mcp /apache2/202512/python
+  - embeddable sandbox with hardware-level isolation and no daemon. The SQLite of sandbox, coming soon as open source
+
+- https://github.com/Coooolfan/onlyboxes /AGPL/202603/go
+  - a self-hosted code execution sandbox platform for individuals and small teams.
+  - [[开源-OnlyBoxes]面向个人与小型团队的自托管代码执行沙箱平台｜一键部署｜私有化｜Docker｜MCP｜开箱即用  - LINUX DO _202603](https://linux.do/t/topic/1849666)
+    - 自托管所有组件：控制节点（console）+ 执行节点（worker）
+    - 系统采用控制面（console ）与执行面（worker ）分离架构。执行面提供多个运行时，适用于不同部署场景。
+    - worker-docker	runc	Docker 容器	常见的云服务器场景，更好的兼容性
+    - worker-boxlite	KVM	boxlite	内核级隔离
 # playground
 - https://github.com/nalgeon/codapi /1.2kStar/apache2/202411/go
   - https://codapi.org/

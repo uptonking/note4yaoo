@@ -226,6 +226,14 @@ redis-cli shutdown
   - 某一软件难免费，可以尝试寻找其他热门软件 或 开源替代
     - 还可以在站点交流群里面寻求帮助
 
+- cleaner
+  - https://github.com/tw93/Mole /MIT/202603/go
+    - Deep clean and optimize your Mac.
+    - All-in-one toolkit: Combines CleanMyMac, AppCleaner, DaisyDisk, and iStat Menus in a single binary
+  - https://github.com/alienator88/Pearcleaner /NonCommercial/202601/swift
+    - free, source-available and fair-code licensed Mac app cleaner inspired by Freemacsoft's AppCleaner 
+    - For now, I just legitimately don't have any spare time to work on my open-source apps.
+
 - git
   - [UGit - 让每个人都可以轻松使用Git](https://ugit.qq.com/zh/) 从这个带/zh的url进去才能下载
     - 内置LFS模版，腾讯众多大型项目LFS管理经验沉淀，尤其是游戏项目
@@ -557,6 +565,8 @@ listen_addresses = '*'
 host    all             all             0.0.0.0/0               md5
 
 ```
+
+
 
 ```sql
 -- set pass

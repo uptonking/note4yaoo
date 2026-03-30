@@ -681,6 +681,13 @@ modified: 2025-03-22T16:10:24.856Z
     - [DuckCoding](https://www.duckcoding.ai/console/personal)
     - [DuckCoding Az-CC，单独开启公益站，只允许L站注册 ](https://linux.do/t/topic/1308120)
     - [status](https://status.duckcoding.com/status/duckcoding)
+  - [Compute Token](https://computetoken.ai/console/personal)
+    - [【正式上线】Compute Token —— 是大家推着我们走到这里 _202603](https://linux.do/t/topic/1772654)
+    - 正式上线付费版，但公益的精神不丢。每天签到送额度
+  - [君の的公益](https://muyuan.do/console/personal), 签到额度少
+    - [『高级推广』『君の公益』Claude渠道恢复  ](https://linux.do/t/topic/1853293)
+    - 仅支持Claude Code
+    - [「慕鸢の公益站」](https://newapi.linuxdo.edu.rs/console/personal)
   - 📌 [Any Router](https://anyrouter.top/), 每日签到获取$25
     - 仅支持coding工具，不支持使用api聊天
     - 本站直接接入官方 Claude Code 转发，无法转发非 Claude Code 的 API 流量
@@ -688,9 +695,8 @@ modified: 2025-03-22T16:10:24.856Z
     - tg群讨论的内容看，作者似乎精力不在anyrouter而在开发商用产品
     - 用户较多，有提供vscode插件无法使用的解决方案
   - [Agent Router](https://agentrouter.org/console), 每日签到
-    - 转向商业
-    - 模型支持 Claude Code、Codex、RooCode、Qwen Code、Gemini Cli 等多款工具
-    - 仅支持coding工具，不支持使用api聊天
+    - 转向商业了
+    - 模型支持 Claude Code、Codex、RooCode、Qwen Code、Gemini Cli 等多款工具， 仅支持coding工具，不支持使用api聊天
     - > 签到功能在哪里呀？ 退出登录重新登陆就好了. 
     - [AgentRouter 问题汇总 · Issue · millylee/anyrouter-check-in](https://github.com/millylee/anyrouter-check-in/issues/48)
       - agent 是在登录的时候签到的，并没有额外的 sign_in 接口，是在登录的那个接口是返回了一个check_in 的字段判断的，所以才把cookie 时间给调短了，就是让重新登录签到才有效
@@ -735,7 +741,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [随时跑路福利站](https://fuli.hxi.me/wheel)
     - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
     - RPM 暂时定为 5，之后看情况调整
-  - [Elysiver](https://elysiver.h-e.top/console/personal), 站内签到
+  - 📌 [Elysiver](https://elysiver.h-e.top/console/personal), 站内签到
     - 支持embedding model
     - [模型健康度监控](https://elysiver.h-e.top/model-health)
     - [Elysiver 添加 Nanobanana Pro 啦 _202601](https://linux.do/t/topic/1506018/16)
@@ -750,7 +756,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [ThatAPI](https://gyapi.zxiaoruan.cn/console/personal), 签到
     - 有多个cc分组，IP限制严格(无需gfw)
     - 免费提供 glm flash
-  - [太子公益 API](https://api.codeme.me/console/personal), 签到
+  - 🗑️ [太子公益 API](https://api.codeme.me/console/personal), 签到
     - cc支持
   - [Old API](https://sakuradori.dpdns.org/console/personal), 签到
     - [Old API](https://oldai.zeabur.app/console/personal)
@@ -787,11 +793,12 @@ modified: 2025-03-22T16:10:24.856Z
   - [Super Codex _202603](https://supercodex.space/dashboard), 每天100, 自动发放
     - [Codex公益站，三网优化，每天100刀 - LINUX DO _202603](https://linux.do/t/topic/1833285)
     - 并发限制35
-  - [冰のCodex _202603](https://ice.v.ua/dashboard)
-    - 签到每日一次；当余额低于 20 刀时可申请重置到 200 刀。
+    - 注册看见余额是0不需要管，注册就有每日100u的套餐
+  - [冰のCodex _202603](https://ice.v.ua/dashboard), 签到
+    - 当余额低于 20 刀时可申请重置到 200 刀。
     - [【开放】【冰の公益站】纯GPT站点 支持5.3 5.4 ](https://linux.do/t/topic/1795246)
     - 清理首批不活跃用户信息（默认条件：注册超过 48 小时，且无 usage、无签到、无重置、API Key 从未使用）
-  - [CM-API-公益站 _202603](https://api.chengmo.cc.cd/console/personal)
+  - [CM-API-公益站 _202603](https://api.chengmo.cc.cd/console/personal), 无签到
     - [【CM公益站】佬们，该蹬车了！GPT-5.4强势回归！0倍率+无限制 ](https://linux.do/t/topic/1777029)
   - [52公益站 _202603](https://free.9e.nz/dashboard), 无需签到
     - [[52公益站]既然天才程序员回归了，那各位爽蹬吧（支持5.4） ](https://linux.do/t/topic/1774352)
@@ -803,6 +810,9 @@ modified: 2025-03-22T16:10:24.856Z
   - [DGB 公益站](https://freeapi.dgbmc.top/console/personal)
     - [【DGB 公益站】降低了Codex的倍率，趁现在能蹬赶紧蹬吧 _202603](https://linux.do/t/topic/1801858)
     - 下调了Codedx的倍率，现在倍率只有0.1了
+  - [I'm snake _202603](https://imsnake.dart.us.ci/pricing), 无需签到无限用
+    - [【I'm Snake公益站】GPT（包括5.4/5.3）系列恢复 _202603](https://linux.do/t/topic/1774170)
+    - 无限用无需余额
   - [hotaru Codex Distributor _202603](https://codex.mqc.me/)
   - [APIKey - Subscription Automation](https://gpt.apikey.uk/subscribe), 注册机
     - [【APIKey公益站】速蹬！全新协议注册+绑卡自动化注册机  _202603](https://linux.do/t/topic/1802338)
@@ -820,23 +830,21 @@ modified: 2025-03-22T16:10:24.856Z
     - [【dudu公益站】gpt价格0.01，gpt号池持续补号，grok3000+账号，还有十几个国产模型。（不限制nsfw） - LINUX DO _202603](https://linux.do/t/topic/1808197)
     - gpt和grok的速率限制是60。国产模型速率限制40rpm
     - grok和gpt价格都是0.001/ 1M Tokens，基本无限，gpt号池还在不断补充
+  - [XuYa公益站 _202603](https://openai.xuya.dev/dashboard), 无签到
+    - 余额9999
   - [晚霞公益站 API _202603](https://newapi.431128hys.site/console/personal)
     - [【晚霞公益站】开放注册 _202603](https://linux.do/t/topic/1706993)
-  - 🗑️ [codexapi福利 API](https://ai.xingyungept.cn/console/personal), 关闭
-    - 注册500刀，签到1-100刀
-  - [Infinite API](https://infiniteai.cc/checkin)
+  - 📌 [Infinite API](https://infiniteai.cc/checkin)
     - dark-mode 水平方向逐渐变化的动画效果很好
     - [【Infinite API】全新公益站上线试运营 ](https://linux.do/t/topic/1622685)
     - 50 RPM， 25 个同时进行的请求
     - arrow-preview, QuiverAI API flagship SVG gen
-  - [955code _202603](https://955code.top/console/personal)
+  - [955code _202603](https://955code.top/console/personal), 无签到
     - [【955code】codex公益站，上线试运营 _202603](https://linux.do/t/topic/1840889)
   - [真好记公益站](https://api.zhenhaoji.qzz.io/console/personal)
     - https://fuli.zhenhaoji.qzz.io/
     - 随便刷吧，可能刷崩了，我就关站了
     - cc, opus 是cursor2api的 sonnet4.6
-    - 无codex
-    - 每日 3 次机会，随机获得 $30 ~ $100 余额， 余额超过 $1000 不可参与
     - [真好记公益站 ](https://linux.do/t/topic/1795254)
   - [api-test](https://openai.api-test.us.ci/console/personal)
     - [开个小公益站测试一下 ](https://linux.do/t/topic/1414593)
@@ -844,8 +852,14 @@ modified: 2025-03-22T16:10:24.856Z
     - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex
     - 有claude, 无opus
     - 默认 RPM30，1 级可注册，不允许批量测活
+  - 📌 [小辣椒 公益站 ](https://yyds.215.im/console/topup), 签到类似wong
+    - cc
   - [蒸蚌公益站 _202603](https://laoxi.ethan010203.online/console/personal), 签到50
     - gpt-5.2
+  - [六万 购曼公益 _202603](https://ai.dogaltman.us.ci/console/personal)， 签到
+    - [六万公益站复活，改名【购曼公益】 ](https://linux.do/t/topic/1855060)
+  - [无邪公益站 _202603](https://wuxiexiexie.us.ci/console/personal)
+    - [【公益站】仅限Linuxdo注册 回馈佬友 随时跑路 _202603](https://linux.do/t/topic/1853752)
   - [marybrown API _202603](https://marybrown.dpdns.org/console/personal)
     - [服务器小升级,grok-4.2无限用和gpt-5.4试用 _202603](https://linux.do/t/topic/1795512)
     - 23公益站作者后续维护
@@ -853,7 +867,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
     - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
     - 反代 kiro
-  - [SakuraCode _202603](https://codex.sakurapy.de/dashboard), 计算pow
+  - 📌 [SakuraCode _202603](https://codex.sakurapy.de/dashboard), 计算pow
     - https://codesign.sakurapy.de/
     - 5.4
   - [GGBOOM公益站](https://ai.qaq.al/dashboard)
@@ -871,23 +885,20 @@ modified: 2025-03-22T16:10:24.856Z
     - 5.4
   - [LogosAPI _202603](https://api.777114.xyz/console/personal), 签到10
     - 5.4
-  - [AnAnAPI _202603](https://www.ananapi.com/home)
+  - [AnAnAPI _202603](https://www.ananapi.com/dashboard), 无签到
     - [【AnAnAPI】codex公益站，免費gpt-5.4  _202603](https://linux.do/t/topic/1828940)
   - [zenscaleai](https://lc.zenscaleai.com/console/personal), 签到少
     - 5.4
-  - 🗑️ [520 API](https://520.wcgio.com/console/personal)
+  - [520 API](https://520.wcgio.com/console/personal), 签到10
     - gpt-5.3-codex 
-  - [NPC API](https://npcodex.kiroxubei.tech/console/personal)
+  - [NPC API](https://codex.hyw.me/console/personal)
+    - [NPC API](https://npcodex.kiroxubei.tech/console/personal), legacy
     - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)
-  - [Codex - New API](https://codex.makeup/console/personal), 无法签到
+  - [Codex - New API](https://codex.makeup/console/personal), 无签到
     - [又一个codex公益站，人手一个蹬  ](https://linux.do/t/topic/1645651)
     - gpt-5.4, gpt-5.3-codex
     - [上线claude-sonnet-4.6模型（不稳定版），爱来自cursor  _202603](https://linux.do/t/topic/1739712)
-  - [小辣椒 公益站 ](https://yyds.215.im/console/topup), 签到
-    - cc
-  - [爱你公益站](https://x.ainiaini.xyz/console/personal)
-    - [[爱你公益站]开站 ](https://linux.do/t/topic/1638562)
-    - 暂时只有 gpt 系列，
+  - [小天公益站 _202603](https://new-api.xt-url.com/pricing), 无签到
   - [纳米哈基米](https://free.nanohajimi.mom/console/personal), 签到
     - Gemini Imagen
     - [【纳米哈基米 · 公益站】 支持香蕉Pro画图，Veo视频，Gemini全系模型 ](https://linux.do/t/topic/1512770)
@@ -896,10 +907,13 @@ modified: 2025-03-22T16:10:24.856Z
   - [sorai API](https://newapi.sorai.me/console/personal)
     - [codex公益站启动 _202601](https://linux.do/t/topic/1524003)
     - 只有 codex 模型
-  - [lucky codex](https://codex-lucky.zeabur.app/console/personal), 签到 1-4 刀
+  - [lucky API _202603](https://lucky-sub2api.zeabur.app/dashboard), 签到iframe
+    - 10的并发
+    - [[lucky codex公益站]清理一批账号了，开放注册 ](https://linux.do/t/topic/1851203)
+    - [lucky codex](https://codex-lucky.zeabur.app/console/personal),gone
     - [【lucky公益站】codex公益站  ](https://linux.do/t/topic/1616313)
     - 目前只有 10 个 team 号，所以可能随时跑路
-  - [云端API](https://cloudapi.wdyu.eu.cc/console/personal), 签到, 生图
+  - 📌 [云端API](https://cloudapi.wdyu.eu.cc/console/personal), 签到, 生图
     - grok-imagine-1.0
   - [Neb 公益站](https://ai.zzhdsgsss.xyz/console/personal), 签到
     - 采用按量计费，每次0.01，注册送2000次，因为该阶段的初衷就是最大化利用这些将要过期的key。
@@ -928,7 +942,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 依旧免费提供稳定的 Kiro 逆向、Codex、KIMI 以及适用于 Codebase 的嵌入模型
   - [GLM 仪表板](https://pureai.shop/dashboard.html)
     - glm + qwen
-  - [FovtAPI](https://api.voct.top/console)
+  - 🗑️ [FovtAPI](https://api.voct.top/console)
     - 模型旧，模型少
     - [NewAPI签到系统](https://gift.voct.top/dashboard/checkin), ~~已失效~~ 
   - [FKAI](https://orchids.fuckai.me/dashboard), 无需签到
@@ -941,11 +955,11 @@ modified: 2025-03-22T16:10:24.856Z
   - [Mu. API 2026](https://demo.awa1.fun/console/personal)
     - cc支持
     - [「公益站」最终还是换成了 New-API _202509](https://linux.do/t/topic/927953)
-  - [轻 API](https://lightllm.online/console/personal), 签到
+  - 🗑️ [轻 API](https://lightllm.online/console/personal), 签到
     - cc支持
   - [DEV88公益](https://api.dev88.tech/console/personal), 签到-0.01
     - cc支持
-  - [曼波API](https://ai.dik3.cn/console/personal), 签到
+  - 🗑️ [曼波API](https://ai.dik3.cn/console/personal), 签到
   - [ICAT公益站](https://icat.pp.ua/console/personal), 签到
     - [【公益站】ICAT公益站上线了 _202601](https://linux.do/t/topic/1461073)
     - 目前仅支持Claude Code相关模型，其他模型视情况再接入
@@ -957,8 +971,6 @@ modified: 2025-03-22T16:10:24.856Z
     - [CLI Proxy API Management Center](https://cpamc2.jonwinters.pw/management.html#/quota-public)
   - [Luckin 公益API](https://api.oaiapi.online/console/personal)
     - 所有模型均支持 沉浸式翻译
-  - [a__i__d__r__o__u ](https://linux.do/t/topic/1513815), 无余额, 购买积分, 待删除, qzz, io
-    - 到2.14可用，不可以使用opus和all,应该可以用于cc了（不会有莫名其妙报错）
   - [香草API](https://ai.xiangcao.de/pricing), 文生图
   - [六哥公益站](https://api.crisxie.top/), 文生图
   - [佬友API](https://lyclaude.site/console/personal)
@@ -977,7 +989,6 @@ modified: 2025-03-22T16:10:24.856Z
   - [mmkg API](https://api.mmkg.cloud/)
     - 仅在每周五下午 18:00 至 21:00 开放，每周限量 100 人
     - 支持claude,gemini, 不支持gpt
-  - [【公测开启】Kiro账号托管平台  ](https://linux.do/t/topic/1227895)
   - [莹のAPI](https://api.wpgzs.top/pricing)，模型贵
     - rpm15
     - [莹のapi 加油站](https://quota.wpgzs.top/), 鸡你太美，每天可转100刀到公益站

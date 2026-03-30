@@ -7,7 +7,48 @@ modified: 2021-05-13T07:52:46.653Z
 
 # lib-xplat-kotlin-compose-community
 
+# guide
+
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-swift
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Swift 6.3 发布，正式支持 Android  _202603
+- https://x.com/jaywcjlove/status/2038520042241810496
+  - 现在可以用 Swift 构建 Android 应用，还能跨平台共享逻辑。
+
+- 那是用Android Studio还是Xcode开发？
+  - Android Studio 和 xcode 都需要安装
+
+- 看了一下预览，感觉安卓那边变成iOS风格了，不像是安卓原生的应用。
+
+- 有的选谁会用swift？底层用native+业务层用前端语言才是未来。
+
+- UI 沒法跨平台的話依舊沒競爭力，只是對 iOS 開發者想雙棲帶來便利性
+
+- Swift 怎么好意思说要支持安卓平台的，一个连模块化都不完整的蹩脚语言，连不同目录文件同名都不允许，成员没有 public private机制，非要用 extension 分隔，这种现代语言中的“怪物”，跨平台 工程化，不如先把自身的反人类非现代特性做到 ts、C#、rust、go一样好用的级别再谈别的
+  - kotlin又好到哪里去呢 更别提那个android studio了…. 那个gradle更是重量级 如果说语言是设计问题 有点难改，gradle是为何 ai时代 不必太纠结语言问题，生态才是关键 很显然 安卓这边差苹果太远了（体验）
+- 怎么被你说的这么不堪，你确认成员没有public private机制么
+
+- 好像不是Apple官方搞的哈。Skip是什么来头？
+- 这个skip没出swift 6.3之前也能用吧
 # discuss
+- ## 
+
+- ## 
+
+- ## 
 
 - ## 
 

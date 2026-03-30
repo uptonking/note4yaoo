@@ -1469,6 +1469,17 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Why exactly can't we use the techniques in TurboQuant on the model's quantizations themselves? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s72up8/why_exactly_cant_we_use_the_techniques_in/)
+- You can. Someone already did it. https://github.com/cksac/turboquant-model
+  - Tried that. Degraded the model outputs by a lot! But yea, memory usage was lower!
+- It's not TurboQuant at all. Whoever vibecoded that clearly didn't read the paper. They didn't implement the QJL transform, which is literally half of what TurboQuant is. Of course, they don't apply the QJL transform because it would make the output even worse, but that's because the whole of TurboQuant is awful for weights.
+
+- Check this out, I found it interesting. Lighter faster LM Head. https://arxiv.org/html/2603.14591v1
+
 - ## [When should we expect TurboQuant? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s3y1oc/when_should_we_expect_turboquant/)
 
 - The reason this matters specifically for local inference: weight quantization has basically been a solved problem since exl2/GGUF. 

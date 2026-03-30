@@ -16,7 +16,55 @@ modified: 2026-03-29T13:03:35.455Z
 
 - ## 
 
-- ## 
+- ## [Pretext: TypeScript library for multiline text measurement and layout | Hacker News _202603](https://news.ycombinator.com/item?id=47556290)
+- The problem it solves is efficiently calculating the height of some wrapped text on a web page, without actually rendering that text to the page first (very expensive).
+  - It does that by pre-calculating the width/height of individual segments - think words - and caching those. Then it implements the full algorithm for how browsers construct text strings by line-wrapping those segments using custom code.
+  - This is absurdly hard because of the many different types of wrapping and characters (hyphenation, emoji, Chinese, etc) that need to be taken into account - plus the fact that different browsers (in particular Safari) have slight differences in their rendering algorithms.
+  - It tests the resulting library against real browsers using a wide variety of long text documents
+
+- Some details on how it works from a code comment:
+  - Problem: DOM-based text measurement (getBoundingClientRect, offsetHeight) forces synchronous layout reflow. When components independently measure text, each measurement triggers a reflow of the entire document. This creates read/write interleaving that can cost 30ms+ per frame for 500 text blocks.
+  - Solution: two-phase measurement centered around canvas measureText.
+  - prepare(text, font) — segments text via Intl. Segmenter, measures each word via canvas, caches widths, and does one cached DOM calibration read per font when emoji correction is needed. Call once when text first appears.
+  - layout(prepared, maxWidth, lineHeight) — walks cached word widths with pure arithmetic to count lines and compute height. Call on every resize. ~0.0002ms per text.
+
+- i wrote something similar for this purpose, but much simpler and in 2kb, without AI, about a year ago.
+  - [Show HN: uWrap.js – A faster and more accurate text wrapping util in < 2KB | Hacker News _202504](https://news.ycombinator.com/item?id=43583478)
+  - https://github.com/leeoniya/uWrap /MIT/202508/ts
+  - A 10x faster and more accurate text wrapping util in < 2KB (min)
+- Looks like uWrap only handles latin characters and doesn't deal with things like soft hyphens or emoji correction, plus uWrap only handles `white-space: pre-line` while Pretext doesn't handle pre-line but does handle both normal and pre-wrap.
+  - correct, it was meant for estimating row height for virtualizing a 100k row table with a latin-ish LTR charset (no emoji handling, etc). its scope is much narrower. still, the difference in perf is significant, which i have found to be true in general of AI-generated geenfield code.
+- I've worked with text and in my experience all of these things (soft hyphens, emoji correction, non-latin languages, etc) are not exceptions you can easily incorporate later, but rather the rules that end up foundational parts of the codebase. That is to say, I wouldn't be so quick to call a library that only handles latin characters comparable to one that handles all this breath of things, and I also wouldn't be so quick to blame the performance delta on the assumption of greenfield AI-generated code.
+  - no disagreement. i never claimed uWrap did anything more than it does. it was not meant for typography/text-layout but for line count estimation.however, for the use case of virtualization of data tables -- a use case pretext is also targeted at -- and in the common case of latin alphabets, right now pretext is significantly slower. 
+- uWrap demo has text extending beyond text boxes all other the place on Safari, is that the price of simplicity?
+  - Chrome is no different, for example, "RobertDowneyjr" is out of the box, so does "enthusiastic" in a couple of places.
+
+- prepare uses measure text, if it is in a for loop, it won't be fast. This library is meant to do prepare once and then layout many times. layout calls should be sub-1 ms.
+
+- It's a library that allows to "do stuff" before the browser renders the actual text, but by still having the browser render, eventually, the actual text?
+  - Yes the browser still renders the text at the end - but you can now do fancy calculations in advance to decide where you're going to ask the browser to draw it.
+- I suspect exposing the browser's text layout measurer is going to become a Web API in the future, much like exposing the HTML parser via setHTML().
+
+- Previously if you want to layout text on the web, you have to use canvas.measureText API and implement line-breaking / segmentation / RTL yourself.
+  - Pretext makes this easier. Just pass the text and text properties (font, color, size, etc) into a pure JS API and it layouts the content into given viewport dimension.
+- I have one question though: how is this different from Skia-wasm / Canvaskit? Skia already has sophisticated API to layout multiline text and it also is a pure algorithmic API.
+  - It’s not wasm?
+
+- the demos all render wrong on my system (Fedora, Firefox). The torus for example is completely distorted.
+  - I think it goes to show, if you try to make something like this you'll be chasing a long tail of edge cases ~forever.
+
+- The FontMetrics API solves this, hopefully browsers will ship it someday. https://drafts.css-houdini.org/font-metrics-api-1/
+
+- Yeah, that's definitely needed. That's why I've added `Graphics.Text` (https://docs.sciter.com/docs/Graphics/Text) in Sciter. Graphics. Text is basically a detached `<p>` element that can be rendered on canvas with all CSS bells and whistles.
+
+- Has someone ever found a good solution for long / infinite lists / grids virtualization not breaking browsers native text search?
+  - Native search only sees the DOM. Once you virtualize a list or grid, offscreen rows do not exist as nodes, so Ctrl-F cannot match them unless you keep enough hidden text around to erase most of the win from virtualization.
+  - A browser API could help, but it would need to hook into selection, focus, scroll position, and match navigation across content the page has not rendered yet. That is a much bigger contract than 'search this string', and I would not bet on sites using it consistently.
+
+- This is awesome! I had this problem when building a datagrid where cells would dynamically render textarea. IIRC I ended up doing a simple canvas measurement, but I had all the text and font properties static, and even then it was hellish to get it right.
+
+- I get the feeling this is an AI hallucination. It uses the canvas to render the text to be measured, which doesn't bypass the browser layouting. The only potential performance to be gained here is rendering straight to a canvas instead of building a dom node, but it's not clear that it's actually faster.
+  - What you're missing is that each segment (typically a word) only needs to be measured once, in the setup phase. The canvas gets thrown away after that, and subsequent layout passes all reuse the cached measurements. If you only perform layout once, it doesn't save any work. If you need to reflow many times, it saves a lot.
 
 - ## 🚀👷 pertext: Fast, accurate and comprehensive userland text measurement algorithm in pure TypeScript, usable for laying out entire web pages without CSS, bypassing DOM measurements and reflow
 - https://x.com/_chenglou/status/2037713766205608234
@@ -34,6 +82,10 @@ modified: 2026-03-29T13:03:35.455Z
   - https://x.com/_chenglou/status/2037964564072210899
   - here's the standard rich text demo! But ofc, manually laid out, with full awareness of box height, so you can do occlusion (virtualization) easily without observers and other mess
 
+- https://x.com/_chenglou/status/2038486958708851074
+  - just a parser and a cache
+- the edge cases with bidi, grapheme clusters, etc. are enough to make anyone go insane
+
 - In pure typescript? Why? Do you parse ttfs on your own? Or using canvas? If latter it’s completely obsolete, because parsing ttf from wasm is incredibly cheap and then kerning is also solved
   - Those don’t have line breaking & segmentation heuristics, nor cross-browser line break differences (the calculated measurements would be wrong)
   - Also, licensing and payload issues
@@ -41,6 +93,18 @@ modified: 2026-03-29T13:03:35.455Z
 
 - Bold approach. Reminds me of canvas-based UIs challenging DOM assumptions. Key question: consistent cross-browser results?
   - It currently has two sets of APIs. One that accurately calculates multiline text on the big 3 browser engines (they lay out text differently), and one that instead lets you manually lay out each line and bypass native layout. So either way you can get consistency
+
+- https://x.com/_chenglou/status/2038505059923968014
+  - It's time to use Pretext's expressive controls to improve text readability.
+  - @Somnai_dreams implemented the Knuth-Plass algorithm to reduce reading churn on long paragraphs of text
+- This is actual Knuth-Plass (global optimization, not greedy) running in the browser? 
+  - It is! It's not the full TeX impl with glue/penalty, but the core is DP
+  - TeX’s full line-breaking system includes extra concepts like glue and penalties. But the part being used here is the core Knuth-Plass algorithm, which is a dynamic programming (DP) method for choosing the best line breaks globally instead of greedily line by line.
+  - Standard web browsers use a "greedy" algorithm for text: they fit as many words as possible on line 1, break the line, fit as many as possible on line 2, and so on. This often results in rivers of white space and ugly typography.
+  - Dynamic Programming (DP), on the other hand, evaluates the entire paragraph at once. It calculates the mathematical cost of thousands of different possible line breaks, balancing the spacing of line 1 against line 2, line 3, etc., to find the absolute mathematically optimal layout for the whole paragraph.
+- KaTeX already does its own DOM-free rendering (it outputs static HTML/CSS, no reflow needed). If Pretext could consume KaTeX's output dimensions as pre-measured inline boxes, we'd essentially have a full DOM-free document layout engine for scientific content. Is that the direction you're thinking, or is the LaTeX connection more limited?
+  - It's whichever direction you wanna code up! I'm only trying to give control back to userland
+- That's the right mindset. Giving control back to userland is exactly what frontend has been missing.
 
 - This is really cool! I'm working on a library to render TSX on GPU using shaders. I'd love to port this to Rust+WGSL as the layout engine.
   - Pretext only does layout, not rendering, though yes it has enough layout heuristics that you should just extract all that!
@@ -87,6 +151,12 @@ modified: 2026-03-29T13:03:35.455Z
 - The reason the web doesn’t use this style it’s because it’s not the best layout for reading in screens.
   - Someone reinvented the wheel, available 25+ years before but forgot that everyone uses adaptive layouts so that the page will be rendered ok on both mobile and desktop. 2 text columns on a smartphone screen will make me cringe.
 
+- https://x.com/yisibl/status/2038475725465071922
+  - Pretext’s enthusiasm is unusual. Text wrap in CSS is nothing new(CSS Exclusions)—Adobe even implemented it in Chrome, but it was later removed over differences in vision. 
+  - The fact that browsers never kept pushing it suggests there is very little real demand for this feature.
+
+- 
+- 
 - 
 - 
 
@@ -128,6 +198,32 @@ modified: 2026-03-29T13:03:35.455Z
 - https://x.com/geniusvczh/status/2038191870195757359
   - Chrome在windows下用的direct write ，也不是自己做的，而是每个平台用最好的方法做一次。决定文字大小最终是看native api的实现方式，而这个结果在不同的渲染器+不同的系统下面肯定是会变得不确定。所以对于实现layout的这么个具体的事情，反正不可能去用他的
 
+- https://x.com/xicilion/status/2038507745067077636
+  - 需要精确布局的场景是不能容忍这种误差的，稍不留神就换行了。
+  - 它的核心逻辑是先分词，只要保证“不在不应该断开的地方断开”即可，这里用的是浏览器提供的分词api。分词完了就把分词作为一个簇去排版，每个簇都是最小的布局单位，中间不换行，用测量api去算宽度。 这个误差大概 1~2 像素。
+  - 最后就是巨大的特殊情况列表。标点不在开头，各种语言特例等等。
+
+- https://x.com/winter_cn/status/2038290733204201863
+  - 这不是对measureText的简单封装，而是基于这个API写的一个排版引擎
+  - 往多了说，也就做到了10%的css文本排版能力，却碰瓷css搞宣传，这让我觉得非常不真诚
+  - 排版这个事情的难度其实是随着特性增加指数级增长的，把别的特性砍光多做个环绕排版并不能说明技术有多强
+  - 环绕排版在css中迟迟不能推进，一方面是实现难，另一方面真的是用的场景太窄，大概也就能“把网页变得更有趣”了
+
+- ### [I dug into Pretext codebase. Lessons we can learn. _202603](https://tigerabrodi.blog/i-dug-into-pretext-codebase-lessons-we-can-learn)
+1. Separate what you know once from what changes
+2. Canvas measureText as a cheap side door
+3. Binary search over a cheap function
+4. Parallel arrays instead of arrays of objects
+5. Collect platform quirks into a profile object.(Pretext puts all platform differences in one typed object, computed once at startup. The rest of the code reads engineProfile.lineFitEpsilon. It does not know which browser it is on. The algorithm is clean. The quirks are in one place.)
+6. Measure the error once. Correct for it forever.
+7. Answer questions about results without building the results(Build a cheap path that answers questions about output without producing the output. Offer both paths. Let the caller choose.)
+8. Check if already solved(Instead of reimplementing Unicode word boundary rules, it lets the browser handle that and applies its own merging and splitting on top.)
+
+- ### 其实几年前有个库用 wasm 实现了一个类似 flexbox 的布局系统。
+- https://x.com/unixzii/status/2038458974501314951
+  - 仍然使用 DOM 渲染（就像 pretext 的 shaping 和 rasterizing 仍然还在用浏览器能力），但绕过了 CSS 布局计算，性能好很多。
+  - https://github.com/nicbarker/clay /zlib/202603/cpp
+
 - ### 我整理了 8 个非常炸裂的脑洞大开的案例
 - https://x.com/axiaisacat/status/2038233070709436617
 
@@ -138,6 +234,14 @@ modified: 2026-03-29T13:03:35.455Z
 - https://x.com/lucas__crespo/status/2038312815249817653
   - intercepts pinch-to-zoom and resizes text instead of the page. Only two lines of code built on top of @_chenglou ’s pretext.
   - https://pinch-type.surge.sh/
+
+- ### besides all the cool typography demos i have seen on here, one of the real-world use cases is unrestricted generative ui with dynamic spatial awareness
+- https://x.com/_proteuss_/status/2038424238214824198
+  - so i made a small demo comparing traditional DOM based generative ui vs pretext based rendering
+  - traditional: render the streaming text inside a standard div with a fixed width. use getBoundingClientRect() inside a useEffect on every new token to calculate the current height of the text block so the 'whiteboard' can auto-expand and push other ui elements out of the way
+  - pretext: use the pretext library. use prepare() and layout() to calculate the exact height of the incoming text stream in pure js (arithmetic) as tokens arrive. adjust the whiteboard container height based on these calculations without ever touching the DOM for measurements
+  - https://github.com/protimroy/spatial-ai-lab
+  - http://www.protimroy.com/spatial-ai-lab/
 
 - ### Pretext快速而且精准的文本测量算法，可以实现类似报纸的动态图文环绕效果。
 - https://x.com/op7418/status/2038095651234627600
@@ -155,7 +259,7 @@ modified: 2026-03-29T13:03:35.455Z
 
 - ### A Midjourney engineer finally just fixed it. It’s called Pretext
 - https://x.com/JoshKale/status/2037900758750761053
-- we have had this with `shape-outside`.
+- we have had this with `shape-outside` .
 - been in chrome since 2014, safari 2017 & firefox 2018
 
 - apparently, this can wrap text around randomly positioned objects on the screen, but i never had any instance where i needed that. either you have a picture at a certain position in text or you don't, you don't wrap text around random objects on screen...
@@ -200,6 +304,33 @@ modified: 2026-03-29T13:03:35.455Z
   - font-size: clamp(35px, (100vw - 32px) / var(--text-width), 55px)
   - You have perfectly scaling text no matter the viewport size. 
 
+# discuss-solutions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Show HN: uWrap.js – A faster and more accurate text wrapping util in < 2KB | Hacker News _202504](https://news.ycombinator.com/item?id=43583478)
+- https://github.com/leeoniya/uWrap /MIT/202508/ts
+  - A 10x faster and more accurate text wrapping util in < 2KB (min)
+
+- Looks like uWrap only handles latin characters and doesn't deal with things like soft hyphens or emoji correction, plus uWrap only handles `white-space: pre-line` while Pretext doesn't handle pre-line but does handle both normal and pre-wrap.
+  - correct, it was meant for estimating row height for virtualizing a 100k row table with a latin-ish LTR charset (no emoji handling, etc). its scope is much narrower. still, the difference in perf is significant, which i have found to be true in general of AI-generated geenfield code.
+- I've worked with text and in my experience all of these things (soft hyphens, emoji correction, non-latin languages, etc) are not exceptions you can easily incorporate later, but rather the rules that end up foundational parts of the codebase. That is to say, I wouldn't be so quick to call a library that only handles latin characters comparable to one that handles all this breath of things, and I also wouldn't be so quick to blame the performance delta on the assumption of greenfield AI-generated code.
+  - no disagreement. i never claimed uWrap did anything more than it does. it was not meant for typography/text-layout but for line count estimation.however, for the use case of virtualization of data tables -- a use case pretext is also targeted at -- and in the common case of latin alphabets, right now pretext is significantly slower. 
+- uWrap demo has text extending beyond text boxes all other the place on Safari, is that the price of simplicity?
+  - Chrome is no different, for example, "RobertDowneyjr" is out of the box, so does "enthusiastic" in a couple of places.
+
+- I plan to use this tool to pre-calculate the letter size ratios for all my fonts, then bake those into my non-JS server code as constants and use a similar wrapping algorithm. Now there's no runtime canvassing. Thanks for this code
+  - You'd need more than just letter widths because of kerning and ligatures, for 100% accuracy. Anyway, fontkit can work on the server and can get individual glyph metrics as well as metrics for a run of glyphs.
+- yep, uWrap internally builds a lookup table for char pairs that differ significantly in width together from just adding their raw widths.
+
+- the use case of this is anything where I have lots of text on a canvas? Like, a canvas based game with thought bubbles or something like that?
+  - it's where you need to know the wrap points of some text given a width of the container. since Canvas does not offer text wrapping, that is one use case, because you have to wrap manually.
+  - my use case is determining the height of a table cell given a specific column width and text that needs to be rendered inside.
+
+- we needed something like this for virtualization of the Table panel, data-heavy dropdowns, and long list views in Grafana. so i guess that's a three-in-one?
 # discuss-examples
 - ## 
 

@@ -50,7 +50,7 @@ modified: 2021-01-04T17:26:25.032Z
   - Markdoc extends Markdown with a custom syntax for tags and annotations
   - Markdoc uses `markdown-it` as a tokenizer, building an Abstract Syntax Tree (AST) from the array of tokens emitted by markdown-it.
     - The logic that parses the tag syntax is generated from a `peg.js` grammar.
-  - **Markdoc has its own dedicated rendering architecture rather than relying on markdown-it to generate its output**. 
+  - **Markdoc has its own dedicated rendering architecture rather than relying on markdown-it to generate its output** . 
     - Developing an independent rendering system was necessary in order to handle Markdoc's custom tags and support multiple output formats.
 
 - https://github.com/jackyzha0/quartz /MIT/202401/ts
@@ -95,7 +95,7 @@ modified: 2021-01-04T17:26:25.032Z
   - works in a browser, on a server, or from a command line interface (CLI)
   - Marked can be extended using custom extensions. This is a list of extensions that can be used with `marked.use(extension)`.
   - Warning: Marked does not sanitize the output HTML
-  - `const html = marked.parse('# Marked in Node.js\n\nRendered by **marked**.');`; 
+  - `const html = marked.parse('# Marked in Node.js\n\nRendered by **marked** .');`; 
   - `marked-highlight`语法高亮基于highlightjs实现
 
 - markdown-it /16.8kStar/MIT/202401/js
@@ -212,12 +212,13 @@ modified: 2021-01-04T17:26:25.032Z
   - 智能识别 Markdown 表格，一键粘贴到 Excel
   - 智能识别 HTML富文本，方便直接复制网页上的ai回复，一键粘贴到 Word/WPS
 # streaming
-- https://github.com/vercel/streamdown /2.7kStar/apache2/202509/ts
+- https://github.com/vercel/streamdown /4.9kStar/apache2/202509/ts
   - https://streamdown.ai/
   - A drop-in replacement for react-markdown, designed for AI-powered streaming.
   - Streamdown powers the AI Elements Response component but can be installed as a standalone package for your own streaming needs.
-  - Drop-in replacement for react-markdown
+  - Drop-in replacement for react-markdown: It supports all of the same props
   - Streaming-optimized - Handles incomplete Markdown gracefully
+  - 基于redis实现中断与恢复
   - GitHub Flavored Markdown - Tables, task lists, and strikethrough support
   - Unterminated block parsing - Styles incomplete bold, italic, code, links, and headings
   - Math rendering - LaTeX equations via KaTeX

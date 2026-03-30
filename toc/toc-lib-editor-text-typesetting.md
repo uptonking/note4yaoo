@@ -24,11 +24,40 @@ modified: 2024-11-16T08:23:40.617Z
     - Document layout with page breaks
 
 - https://github.com/chenglou/pretext /5.5kStar/MIT/202603/ts
+  - https://pretextbreaker.com/
   - https://chenglou.me/pretext/
+  - https://somnai-dreams.github.io/pretext-demos/
   - Pure JavaScript/TypeScript library for multiline text measurement & layout. 
   - Fast, accurate & supports all the languages you didn't even know about. 
   - Allows rendering to DOM, Canvas, SVG and soon, server-side.
   - Pretext side-steps the need for DOM measurements (e.g. getBoundingClientRect, offsetHeight), which trigger layout reflow, one of the most expensive operations in the browser. It implements its own text measurement logic, using the browsers' own font engine as ground truth (very AI-friendly iteration method).
+  - [Pretext — Under the Hood _202603](https://tools.simonwillison.net/pretext-explainer)
+    - An interactive exploration of how pure-JS text measurement works using a simplified version of Pretext — from raw string to pixel-accurate line heights, without ever touching the DOM.
+
+- https://github.com/BaselAshraf81/layout-sans /MIT/202603/ts
+  - Pure TypeScript 2D layout engine powered by Pretext. 
+  - CSS Flex/Grid layout without the browser. No DOM. No WASM bloat.
+  - Flex, Grid, Magazine multi-column, and Absolute layouts — with zero DOM and zero WASM bloat. 
+  - Pretext measures text. LayoutSans positions everything. 
+    - LayoutSans is designed as the natural next layer after Pretext.
+  - Give it a tree of boxes with flex/grid rules; get back exact pixel positions for every box. 
+  - Works everywhere: Browser, Node, Bun, Deno, Workers. The natural next primitive after Pretext.
+  - yoga flexbox engine that inspired LayoutSans's API design. Yoga's WASM approach informed what we decided not to do.
+  - https://x.com/Basel_Ashraf812/status/2038466644842791100
+
+- https://github.com/razroo/textura /MIT/202603/ts
+  - https://razroo.github.io/textura
+  - DOM-free layout engine for the web
+  - Combines Yoga (flexbox) with Pretext (text measurement) to compute complete UI geometry — positions, sizes, and text line breaks — without ever touching the DOM.
+    - Yoga solves box layout (flexbox) in pure JS/WASM, but punts on text — it requires you to supply a MeasureFunction callback externally. 
+    - Pretext solves text measurement with canvas measureText, but doesn't do box layout. 
+    - Textura joins them: declare a tree of flex containers and text nodes, get back exact pixel geometry for everything.
+  - Worker-thread UI layout — compute layout off the main thread, send only coordinates for painting
+  - Zero-estimation virtualization — know exact heights for 100K items before mounting a single DOM node
+  - Canvas/WebGL/SVG rendering — full layout engine for non-DOM renderers
+  - Server-side layout — generate pixel positions server-side (once Pretext gets server canvas)
+  - https://x.com/charliegreenman/status/2038382414037123438
+    - Could it support orphan text?  Alas text-wrap: pretty/balance;
 
 - https://github.com/alerque/polytype /202408
   - https://polytype.dev/

@@ -15,8 +15,13 @@ modified: 2026-01-15T15:44:10.647Z
 - ## 🆚 [Unified vs vRam, which is more future proof? : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1s6srra/unified_vs_vram_which_is_more_future_proof/)
   - VRAM: Higher bandwidth (speed), limited capacity.
   - Unified Memory: Massive capacity, lower bandwidth.
+
+- future in this industry is 1 year, whatever you buy now will be junk in 3 years
+
 - GPUs can be swapped, at least in desktop PCs... Unified ram cannot be swapped. The future will benefit greatly from future custom hardware instructions that are not built yet. Id argue something you can upgrade is gonna perform better in 3-5 years. Also gpus, can do video and audio inference as well.
 - Unified cannot be future proof, full stop period end of discussion. The reason is obvious. It can't be unplugged and upgraded.
+- its not like new vram is seamless on upgrade. sometimes it requires new cpu, sometimes new motherboard.
+  - Inherently by design standard ram has a similar limitation. You will not be running ddr6 / 7 / 69 ram in your current machine because of the slots bandwidth on the motherboard so the debates a moot point
 
 - I would guess that the future of local AI is going to be unified memory with more efficient models.
   - More power efficient, and it’s the only architecture offering sufficient memory for models at consumer prices.
@@ -26,6 +31,10 @@ modified: 2026-01-15T15:44:10.647Z
   - (2) Long running chat conversations with big contexts for like e.g. ai coding agents. These need a ton of bandwidth. Here the unified memory would be too slow, but until you are able to run such stuff locally you need to invest 10-50x the amount compared to (1)
 
 - There is no reason that UMA has to have lower bandwidth. Remember in the age of the 3090/4090 the Mac Ultra had comparable bandwidth. The M5 Ultra should go a long way to catching up with the 5090.
+- M3 Ultra has so much bandwidth of 800gb/s, but why is it NOT popular for image/video generation like comfyui ?
+  - Because image/video gen is more about compute than memory bandwidth. And the M3 was not exactly a compute monster. The M5 changes all that. Macs historically had more memory bandwidth than the compute could even use.
+
+- If you plan to train or finetune at all, unified memory will not help you much there
 
 - ## [Any decent alternatives to M3 Ultra, : r/LocalLLM _202505](https://www.reddit.com/r/LocalLLM/comments/1kv4gjn/any_decent_alternatives_to_m3_ultra/)
 - viable alternatives:

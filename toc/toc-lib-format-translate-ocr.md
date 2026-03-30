@@ -100,6 +100,7 @@ modified: 2025-12-19T12:43:21.150Z
   - It provides high-quality spatial text parsing with bounding boxes, without proprietary LLM features or cloud dependencies.
   - Everything runs locally on your machine.
   - Fast Text Parsing: Spatial text parsing using PDF.js
+    - use a typescript wrapper called `pdfium` to simplify pdf.js integration
   - Flexible OCR System:
     - Built-in: Tesseract.js (zero setup, works out of the box!)
     - HTTP Servers: Plug in any OCR server (EasyOCR, PaddleOCR, custom)

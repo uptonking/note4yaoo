@@ -14,7 +14,7 @@ modified: 2023-09-01T10:16:03.555Z
   - team-work
 
 - cons
-  - 与同团队的loro/pretext定位相同，前景不明确
+  - 与同团队的loro/peritext定位相同，前景不明确
   - 使用案例不如yjs多
 
 - features

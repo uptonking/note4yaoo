@@ -17,6 +17,9 @@ modified: 2022-08-24T10:49:48.139Z
   - [How does windowing work?](https://bvaughn.github.io/forward-js-2017/#/12/5)
   - [List Virtualization](https://www.patterns.dev/posts/virtual-lists/)
   - [如何实现一个高度自适应的虚拟列表 - 知乎](https://zhuanlan.zhihu.com/p/366416646)
+# dev-xp
+- Native search only sees the DOM. Once you virtualize a list or grid, offscreen rows do not exist as nodes, so Ctrl-F cannot match them unless you keep enough hidden text around to erase most of the win from virtualization.
+  - A browser API could help, but it would need to hook into selection, focus, scroll position, and match navigation across content the page has not rendered yet. That is a much bigger contract than 'search this string', and I would not bet on sites using it consistently.
 # virtualized-blog
 
 ## [长列表优化之虚拟列表 - 知乎](https://zhuanlan.zhihu.com/p/444778554)
