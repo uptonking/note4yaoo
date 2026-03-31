@@ -13,6 +13,17 @@ modified: 2025-09-16T12:36:12.968Z
 
 - models-config
   - 大模型的测试经常需要修改参数，支持一键恢复默认配置更好
+# local-models
+- local-model
+  - [GPU Poor LLM Arena - a Hugging Face Space by k-mktr](https://huggingface.co/spaces/k-mktr/gpu-poor-llm-arena)
+
+- https://github.com/fiveoutofnine/whatcanirun /202603/ts
+  - https://whatcani.run/
+  - Find the best local models based on real data
+  - https://x.com/fiveoutofnine/status/2038728823861367233
+    - whatcani.run is based on real runs submitted by people
+    - canirun.ai provides estimates across a wider variety of models and devices
+    - it filters all submissions by CPU + GPU + RAM, and so far that's the only model that has any benchmark data submitted for it
 # discuss-stars
 - ## 
 
@@ -399,6 +410,16 @@ PP Speed: Q3 GGUF: 50 t/s
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Is Q4_K_M the best practical quantization method : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s88x5g/is_q4_k_m_the_best_practical_quantization_method/)
+- It depends....on MAC 100% not, because MLX allows mixed grouping and there is an outfit (MINT-UI) that takes advantage of that to give you better quality models.
+
+- Q4_K_M using 6bit for scales and mins. Q4_K_L is better, using 8bit.
+  - But for myself I use only IQ4_XS, as for generally 4.25bpw is the lowest 4bit available with fastest pp and tg and large margin of extra space for long context. On a 24gb card can extend Qwen3.5-35B-A3B to full 262k.
+
+- Unsloth's K_XL is per tensor. GGUF supports mixed tensor sizes since it's inception. Each tensor can have it's own quantization, and that's what Unsloth have been exploring since they introduced their dynamic quants.
 
 - ## 🆚 [Qwen3.5-35B-A3B Q4 Quantization Comparison : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rfds1h/qwen3535ba3b_q4_quantization_comparison/)
   - The goal is to give people a data-driven basis for picking a file rather than just grabbing whatever is available.
@@ -1471,7 +1492,16 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## [TurboQuant isn’t just for KV: Qwen3.5-27B at near-Q4_0 quality, about 10% smaller, and finally fitting on my 16GB 5060 Ti : r/Qwen_AI _202603](https://www.reddit.com/r/Qwen_AI/comments/1s8489c/turboquant_isnt_just_for_kv_qwen3527b_at_nearq4_0/)
+  - When the TurboQuant paper came out, and when some shows memory can be saved in KV, I started wondering whether the same style of idea could help on weights, not just KV/ cache.
+  - After many long nights (until 2am) after work, that turned into a llama.cpp fork with a 3.5-bit weight format I’m calling TQ3_1S:
+  - This work is inspired by the broader transform-based quantization line, especially RaBitQ-style Walsh-Hadamard rotation ideas and the recent TurboQuant result (Tom). The thing I wanted to test was whether that same geometry could help on weights, not just KV/cache.
+  - So TQ3_1S is about 10% smaller while staying near Q4_0 quality.
+
+- Nice attempt but i dont see the point. You are comparing against q4_0! The world has moved to dynamic quants(from Unsloth/Bartowski)
+  - Weights are grouped and quantized to different precisions based on perplexity. So some weights are more sensitive and need to stay at 6 or 8 bits but others can go down to 3 or even 2 bits and doesn’t affect perplexity at all. It recovers accuracy better and potentially unlocks smaller quants.
+
+- Random rotations for weights is already done by SpinQuant, QuaRot or Quip#, it's not a new idea. All are using Hadamard-Welsch. And same for quant, both ik-llama and Exllamav3 allowed KV-cache quantization via random rotations
 
 - ## [Why exactly can't we use the techniques in TurboQuant on the model's quantizations themselves? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s72up8/why_exactly_cant_we_use_the_techniques_in/)
 - You can. Someone already did it. https://github.com/cksac/turboquant-model

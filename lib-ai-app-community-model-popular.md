@@ -43,7 +43,6 @@ modified: 2025-09-16T19:59:57.856Z
   - [EQ-Bench 3 Leaderboard](https://eqbench.com/)
   - [UGI Leaderboard - Uncensored General Intelligence](https://huggingface.co/spaces/DontPlanToEnd/UGI-Leaderboard)
   - https://github.com/vectara/hallucination-leaderboard
-  - [GPU Poor LLM Arena - a Hugging Face Space by k-mktr](https://huggingface.co/spaces/k-mktr/gpu-poor-llm-arena)
 
 - leaderboard-tool-call
   - [Berkeley Function Calling Leaderboard (BFCL)](https://gorilla.cs.berkeley.edu/leaderboard.html)

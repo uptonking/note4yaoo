@@ -78,7 +78,14 @@ modified: 2025-11-05T19:04:50.350Z
 
 - ## 
 
-- ## 
+- ## [How I implemented 3-layer memory for LLM agents (semantic + episodic + procedural) : r/LLMDevs _202604](https://www.reddit.com/r/LLMDevs/comments/1s8njqy/how_i_implemented_3layer_memory_for_llm_agents/)
+  - Three memory types
+  - 1. Semantic memory — facts and knowledge: Retrieval pipeline: Vector (HNSW) → BM25 (ts_rank_cd) → RRF fusion → Graph expansion → Recency+MMR → Reranking
+  - 2. Episodic memory — events with outcomes: Events are extracted from conversations with temporal metadata, participants, and crucially — outcomes (success/failure/pending). This lets the agent learn from past experiences, not just recall facts.
+  - 3. Procedural memory — workflows that evolve: This is the part I haven't seen elsewhere. Procedures are multi-step workflows extracted from conversations. When a procedure fails, it evolves
+  - Stack: Python, PostgreSQL + pgvector (HNSW), OpenAI embeddings, BM25 via tsvector. Works with any LLM for extraction (tested with Llama 3.1 8B+ locally via Ollama).
+  - https://github.com/alibaizhanov/mengram  /apache2
+- the episodic → procedural link is the part i haven't seen anywhere else. most memory systems stop at 'here's what went wrong' without capturing the evolution
 
 - ## [Rethinking agent memory: markdown files as source of truth vs databases : r/aiagents](https://www.reddit.com/r/aiagents/comments/1r3i91t/rethinking_agent_memory_markdown_files_as_source/)
 - The real win here isn't markdown vs database. It's "Human Debuggability."

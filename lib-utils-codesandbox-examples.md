@@ -547,6 +547,62 @@ modified: 2023-09-02T09:17:22.992Z
     - It was essentially entirely written by Opus 4.5. Coding agents love bash and they are good at reproducing it. They are also great at text-book recursive descent parsers and AST tweet-walk interpreters. 
     - It has cURL already
 
+- https://github.com/rivet-dev/agent-os /1.4kStar/apache2/202604/ts/rust
+  - https://www.rivet.dev/agent-os
+  - A portable open-source operating system for agents. 
+  - Powered by WebAssembly and V8 isolates.
+  - Near-zero cold starts (~6 ms), up to 32x cheaper than sandboxes.
+  - Supports Pi, Claude Code *, Codex*, Amp*, and OpenCode* 
+  - Runs inside your process: No VMs to boot, no containers to pull. Agents start in milliseconds with minimal memory overhead.
+  - Embeds in your backend: Agents call your functions directly via host tools. No network hops, no complex auth between services.
+  - Granular security: Deny-by-default permissions for filesystem, network, and process access. The same isolation technology trusted by browsers worldwide.
+  - Deploy anywhere: Just an npm package. Works on your laptop, Rivet Cloud, Railway, Vercel, Kubernetes, or any container platform.
+  - agentOS is a lightweight VM that runs inside your process. Sandboxes are full Linux environments. 
+  - You don't have to choose: agentOS works with sandboxes through the sandbox extension, spinning up a full sandbox on demand and mounting the sandbox's file system when the workload needs it.
+  - agentOS mounts anything as a familiar directory tree: - S3 buckets - SQLite databases - Google Drive - Host file system
+  - agentOS is built on an in-process operating system kernel written in JavaScript. Three runtimes mount into the kernel:
+    - WebAssembly: POSIX utilities (coreutils, grep, sed, etc.) compiled to WASM
+    - V8 isolates: JavaScript/TypeScript agent code runs in sandboxed V8 contexts
+    - The kernel manages a virtual filesystem, process table, pipes, PTYs, and a virtual network stack. Everything runs inside the kernel -- nothing executes on the host.
+    - runs anywhere: Your laptop. Railway. Vercel. Kubernetes. ECS. Lambda. Cloud Run. A Raspberry Pi.
+  - https://x.com/rivet_dev/status/2039015678959853678
+    - A portable open-source OS built just for agents. Powered by WASM & V8 isolates.
+    - Embedded in your backend
+    - Mount anything as a file system (S3, SQLite, …)
+  - Why WebAssembly + V8? 
+    - Traditional sandboxes boot entire VMs or containers. agentOS runs agents inside lightweight VMs within your own process. Same isolation technology behind Google Chrome. Battle-tested
+    - No VMs. No containers. No Docker images to pull. Just fast, secure execution.
+  - How is this different from Anthropic's srt?
+    - With wasm capabilities are additive so rather than starting with attack surface area and progressively securing it you begin with security and add who you want.
+    - Different layers:
+      - agentOS: Zero shared syscall surface, fully portable, runs everywhere including browsers
+      - srt/bubblewrap: Policy enforcement on real processes. Great for interactive coding agents where a human is in the loop. Not suitable for production deployments (security is a spectrum, full thoughts will not fit in this tweet.)
+      - gVisor: Reimplements Linux syscalls in userspace. Strong isolation but wide attack surface. Linux-only, needs elevated privileges on most managed platforms.
+      - 👀 srt has ~100% Linux support, agentOS is an entirely new OS, so not everything works out of the box.
+      - Highly recommend reading about our sandbox extensions too
+
+- https://github.com/rivet-dev/sandbox-agent /536Star/apache2/202602/rust/ts
+  - https://sandboxagent.dev/
+  - Introducing Sandbox Agent SDK: A universal API for automatic coding agents in sandboxes
+  - Universal Session Schema: Standardized schema that normalizes all agent event formats for storage and replay
+  - Human-in-the-Loop: Approve or deny tool executions and answer agent questions remotely over HTTP
+  - Runs Inside Any Sandbox: Lightweight static Rust binary. One curl command to install inside E2B, Daytona, Vercel Sandboxes, or Docker
+  - Server or SDK Mode: Run as an HTTP server or embed with the TypeScript SDK
+  - The Sandbox Agent acts as a universal adapter between your client application and various coding agents. 
+  - Embedded Mode: Runs agents locally as subprocesses
+  - Server Mode: Runs as HTTP server from any sandbox provider, Rust daemon (sandbox-agent server) exposing the HTTP + SSE AP
+  - https://x.com/rivet_dev/status/2016548084696727842 _202601
+    - Claude Code, Codex, OpenCode, Amp all have different APIs. Sandbox Agent SDK unifies them.
+    - 100% open-source
+    - Universal session schema means no more parsing five different formats.
+    - Pairs with Rivet Actors for automatic transcript persistence, real-time streaming to clients, and full session replay.
+  - https://github.com/rivet-dev/sandbox-agent/tree/main/gigacode
+    - https://x.com/NathanFlurry/status/2019759962482725149
+    - Introducing Gigacode: Use @opencode 's UI with any coding agent
+    - Supports Claude Code, Codex, & Amp harness
+    - Not a fork (opencode attach)
+    - Powered by Sandbox Agent SDK ( @rivet_dev )
+
 - https://github.com/ColeMurray/background-agents /MIT/202601/python/ts
   - https://backgroundagents.dev/
   - open-source background coding agent system inspired by Ramp's Inspect.

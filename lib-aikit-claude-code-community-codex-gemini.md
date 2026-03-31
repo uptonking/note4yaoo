@@ -12,6 +12,27 @@ modified: 2025-12-18T12:27:14.982Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 [Now that both are open source, time for a Claude Code vs Codex : r/codex _202603](https://www.reddit.com/r/codex/comments/1s8oskb/now_that_both_are_open_source_time_for_a_claude/)
+  - The most interesting comparison point is not “which one is better.” It is that the two repos seem to encode different theories of what a coding agent should feel like.
+  - Claude Code reads like a product trying to create initiative while Codex reads like a product trying to prevent drift. That is obviously an oversimplification, but it is a useful one.
+- Claude’s prompt layer is repeatedly pushing toward initiative, inference, and volunteered judgment.
+  - That helps explain why Claude often feels more volunteer-like. It is being coached to notice adjacent bugs, infer intent, propose next steps, and keep moving under ambiguity. The upside is obvious: the system can feel unusually alive, unusually helpful, and sometimes impressively ahead of the user. The downside is just as obvious: a model trained to volunteer judgment will sometimes volunteer the wrong judgment.
+- Codex’s local repo tells a different story. Its top-level prompt starts with: “You are a coding agent running in the Codex CLI … You are expected to be precise, safe, and helpful.”
+  - Its execute-mode template is even blunter
+  - Its personality stack pushes in the same direction. The `pragmatic` template explicitly avoids “cheerleading” and “artificial reassurance, ” which is about as direct a textual explanation for the colder feel as you could ask for.
+  - Codex does not read like a product that wants to improvise its way into usefulness. It reads like a system that wants to be governed, mode-aware, and legible. Even the review prompt follows that pattern. It asks for discrete, provable bugs, insists on a matter-of-fact tone, bans “Great job, ” and requires exact JSON output with priorities and code locations. That is part of why Codex can feel colder. 
+- Also one of the most striking differences is how Codex treats mode and scope.
+  - In Claude Code, a lot of product character lives inside the prompt layer and product copy. In Codex, a lot of product character lives in rule systems. Codex’s root AGENTS.md and its mode system are hierarchical and explicitly law-like. Collaboration modes are explicit protocol states. Plan mode insists on exact tags and non-mutating exploration. Permission prompts are parser-driven and segmented by shell operators. never approval mode is absolute:
+- My conclusion is not that one is warm and one is cold in some essential way. It is that they place their design emphasis in different places. Claude emphasizes initiative. Codex emphasizes control.
+
+- So would it make sense to use CC for planning and designing edge cases and validation workflows, and codex for actual implementation and writing code?
+
 - ## [ClaudeCode里用Codex模型会表现更好还是更差？ - LINUX DO _202603](https://linux.do/t/topic/1837816)
 - 体感上差别不大，但是估计还是 codex 用 GPT 模型更好吧。毕竟自家模型，训练的时候有针对性。
 

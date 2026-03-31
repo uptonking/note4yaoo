@@ -122,9 +122,8 @@ modified: 2025-02-21T17:17:42.225Z
     - AI 代码生成其实有很多中实现方案，比如像 manus 那样在项目中通过任务的形式一步步执行，也可以通过 tool call 让 AI 自己选择工具进行操作。我在项目中采用了第二种方案。项目的核心代码位于 src/lib/generator.ts，本质上是利用 tool call 让 AI 自主选择工具，对代码进行项目初始化、管理项目依赖、列出所有项目文件、批量读取文件内容、创建或覆写文件、精确搜索替换文件内容、删除文件、全局搜索文件内容，以及可选的联网搜索与网页内容读取。这些操作可以让 AI 精准的操作虚拟文件系统中的项目文件，实现云端项目生成。
     - 本项目无后端架构，是一个静态页面，因此您可以将此项目部署到任何服务器上。所有的项目参数都保存在本地，因此您也无需担心数据泄漏的问题。由于是无后端的架构模式，您可能无法与朋友共享此项目。
 
-- https://github.com/ZSeven-W/openpencil /477Star/MIT/202603/ts
+- https://github.com/ZSeven-W/openpencil /1.9kStar/MIT/202603/ts
   - https://op.zseven.tech/
-  - https://openpencil.dev/
   - first open-source AI-native vector design tool and the first to feature concurrent Agent Teams. Design-as-Code. 
   - Turn prompts into UI directly on the live canvas.
   - OpenPencil is built around AI from the ground up — not as a plugin, but as a core workflow.
@@ -142,8 +141,21 @@ modified: 2025-02-21T17:17:42.225Z
     - 自然语言生成设计稿，支持 Claude Code/Codex/OpenCode 等主流CLI
     - 支持 MCP 实时操作画布，可局部修改元素
     - 支持 Agent Team，多Agent并发完成设计
-    - 兼容 .pen，支持 .fig 导入，还原度相当高
+    - 兼容 .pen，支持 .fig 导入，还原度相当高， .fig 由于结构化过于混乱，还没有完美适配
     - 一键导出React/Vue等8种原生代码，还原度接近100%
+
+- https://github.com/open-pencil/open-pencil /3.8kStar/MIT/202603/ts/vue/tauri
+  - https://openpencil.dev/
+  - AI-native design editor. Open-source Figma alternative.
+  - Open-source design editor. Opens .fig and .pen design files, includes built-in AI, and ships as a programmable toolkit with a headless Vue SDK for building custom editors.
+  - core依赖 canvaskit-wasm、diff、svgpath、yoga-layout、sucrase、fflate、fontoxpath
+  - Note: There is another open-source project with the same name — OpenPencil by ZSeven-W, focused on AI-native design-to-code workflows. This project focuses on Figma-compatible visual design with real-time collaboration.
+  - Opens .fig and .pen files — read and write native Figma files, open Pencil documents, copy & paste nodes between apps
+  - Fully programmable — headless CLI, Figma Plugin API via eval, MCP server for AI agents
+  - Real-time collaboration — P2P via WebRTC, no server, no account. Cursors, presence, follow mode
+  - Auto layout & CSS Grid — flex and grid layout via `Yoga` WASM, with gap, padding, alignment, track sizing
+  - Tailwind CSS export — export any selection as HTML with Tailwind v4 utility classes
+  - ~7 MB desktop app — Tauri v2 for macOS, Windows, Linux. Also runs in the browser as a PWA
 
 - https://github.com/TesslateAI/Studio /apache2/202510/python/ts
   - Open Source Locally Hosted Lovable with Full Stack Support

@@ -814,9 +814,12 @@ modified: 2025-03-22T16:10:24.856Z
     - [【I'm Snake公益站】GPT（包括5.4/5.3）系列恢复 _202603](https://linux.do/t/topic/1774170)
     - 无限用无需余额
   - [hotaru Codex Distributor _202603](https://codex.mqc.me/)
+    - hotaru作者
   - [APIKey - Subscription Automation](https://gpt.apikey.uk/subscribe), 注册机
     - [【APIKey公益站】速蹬！全新协议注册+绑卡自动化注册机  _202603](https://linux.do/t/topic/1802338)
     - 内置了大概100条号吧，还有七八张卡吧，内置四条ip，美英韩日
+  - [vvcode _202603](https://vvcode.cc/dashboard), 无额度
+    - [Codex 公益站  _202603](https://linux.do/t/topic/1859392)
   - [YAO API _202603](https://yybbwan.xyz/console/personal)
     - [YAO](http://154.37.220.66:3000/console/personal) , legacy
     - [[Yao公益站]codex注册200刀，可能随时倒闭  ](https://linux.do/t/topic/1683788)
@@ -839,8 +842,6 @@ modified: 2025-03-22T16:10:24.856Z
     - [【Infinite API】全新公益站上线试运营 ](https://linux.do/t/topic/1622685)
     - 50 RPM， 25 个同时进行的请求
     - arrow-preview, QuiverAI API flagship SVG gen
-  - [955code _202603](https://955code.top/console/personal), 无签到
-    - [【955code】codex公益站，上线试运营 _202603](https://linux.do/t/topic/1840889)
   - [真好记公益站](https://api.zhenhaoji.qzz.io/console/personal)
     - https://fuli.zhenhaoji.qzz.io/
     - 随便刷吧，可能刷崩了，我就关站了
@@ -863,6 +864,10 @@ modified: 2025-03-22T16:10:24.856Z
   - [marybrown API _202603](https://marybrown.dpdns.org/console/personal)
     - [服务器小升级,grok-4.2无限用和gpt-5.4试用 _202603](https://linux.do/t/topic/1795512)
     - 23公益站作者后续维护
+  - [Joverna _202603](https://jiuuij.de5.net/console/personal)
+    - 余额超过100时无法签到
+  - [955code _202603](https://955code.top/console/personal), 无签到
+    - [【955code】codex公益站，上线试运营 _202603](https://linux.do/t/topic/1840889)
   - [鱼汤公益站 _202603](https://ai.zhansi.top/console/personal)
   - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
     - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
@@ -878,13 +883,15 @@ modified: 2025-03-22T16:10:24.856Z
     - [【GGBOOM公益站】 全面支持gpt-5.3-codex ](https://linux.do/t/topic/1581803)
   - [97公益站 _202603](https://free.9977.me/purchase), 每天20
     - [【97公益站】上线签到功能，下调倍率至0.1 - LINUX DO _202603](https://linux.do/t/topic/1814962)
-  - [Einzieg API](https://api.einzieg.site/console/personal), 签到
+  - 🗑️ [Einzieg API](https://api.einzieg.site/console/personal), 签到
     - 仅提供codex模型
-    - [【Einzieg公益站】再次启动 ](https://linux.do/t/topic/1569418)
   - [不可明说 API _202603](https://1.cnmz.de/console/personal)
     - 5.4
   - [LogosAPI _202603](https://api.777114.xyz/console/personal), 签到10
     - 5.4
+  - [Acmio _202604](https://ai.acmi.run/dashboard)，无签到
+    - [【AcMio 公益站】上线试运营 codex公益站 ](https://linux.do/t/topic/1870102)
+    - 注册送200刀。暂未扩展签到功能
   - [AnAnAPI _202603](https://www.ananapi.com/dashboard), 无签到
     - [【AnAnAPI】codex公益站，免費gpt-5.4  _202603](https://linux.do/t/topic/1828940)
   - [zenscaleai](https://lc.zenscaleai.com/console/personal), 签到少

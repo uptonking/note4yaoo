@@ -58,6 +58,20 @@ modified: 2021-01-08T17:14:34.841Z
 - ## One of the tricky things to get right in SVG path animations is picking the right `stroke-dasharray` , so I made this visual to help understand
 - https://x.com/nandafyi/status/1839319314220146753
 
+# discuss-layout-animation
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Added mipmaps to my WebGPU engine to keep images sharp when I play with layout transitions.
+- https://x.com/AristideBenoist/status/2008945364490133937
+  - What helped me most was building projects, gradually raising the difficulty, improving my skills, and making things from scratch so I could really understand how everything works. I’m still exactly here, learning, improving my tools, trying to find new interactions ideas.
+- Mipmapping is underrated outside of video game contexts. It improves quality and performance at the cost of slightly higher memory
+
 # discuss
 - ## 
 
@@ -120,7 +134,7 @@ modified: 2021-01-08T17:14:34.841Z
 - ## Preact Signals-inspired API for useTransform
 - https://twitter.com/mattgperry/status/1691442096279064576
   - Subscribes to MotionValues used within the provided callback, rather than having to pass them in manually.
-  - `useTransform( () => x.get() * 2 )`
+  - `useTransform( () => x.get() * 2 )` 
 
 - I kinda like the explicit dep array, but I guess at this point people are probably accustomed enough to seeing implicit subscriptions that it wouldn’t be confusing
 
@@ -186,9 +200,9 @@ modified: 2021-01-08T17:14:34.841Z
   - but now we've removed layout thrashing completely and removed the need for you as a developer to add `AnimateSharedLayout` . 
   - Just add `layoutId` and away you go!
 
-- ## CSS variables can be used *within CSS keyframe animations*!
+- ## CSS variables can be used *within CSS keyframe animations* !
 - https://twitter.com/JoshWComeau/status/1422921859021131779
-- Although I think the way you propose is going to perform better as the browser can eval the variable at the start of the animation and only animate transform off the main thread. **CSS variable animation performance is still bound to the main thread**.
+- Although I think the way you propose is going to perform better as the browser can eval the variable at the start of the animation and only animate transform off the main thread. **CSS variable animation performance is still bound to the main thread** .
 - He's applied `will-transform` which is a more polite way of saying `translateZ(0)` . The browser will most likely put these on GPU layers as in your approach
   - I'm guessing framer motion already has this baked in?
   - Yeah but we use translateZ(0) still as it has better old browser support.
@@ -204,7 +218,7 @@ modified: 2021-01-08T17:14:34.841Z
 - However, at least in Safari by far the the worst battery-life offender is animating CSS variables. 
   - If @webkit drags its heels supporting ` CSS.registerProperty` , I might extend the individual transform polyfill to set transform on an element directly.
 - The WAAPI uses less memory and CPU in general, so, it can produce super smooth animations with little to no worry about sustained performance. 
-  - Note, **infinitely looping animations will accumulate memory and if left running for too long will lead to a memory overflow**
+  - Note, **infinitely looping animations will accumulate memory and if left running for too long will lead to a memory overflow** 
   - Stateless animations would be one way to address this, where frame to render is determined by time instead of internal state.
   - Most libraries work this way already though, even Popmotion’s spring
 - Measuring energy efficiency is so interesting! I’d love to profile @astrodotbuild . What tool is this?
@@ -243,7 +257,7 @@ modified: 2021-01-08T17:14:34.841Z
 
 - ## Interesting jank(闪烁) test here pitting Motion Concept C animating transform, background-color and x (as a CSS variable) against Popmotion.
 - https://twitter.com/mattgperry/status/1415214004465700866
-  - The reason for this is **WAAPI can run opacity and transform (and filter?) completely on the compositor thread**. All other animations play on the main thread, just like your regular JavaScript animation library.
+  - The reason for this is **WAAPI can run opacity and transform (and filter?) completely on the compositor thread** . All other animations play on the main thread, just like your regular JavaScript animation library.
   - This is a shame for the performance of animating transforms individually but it does reaffirm my feelings that off-thread performance is just one of the benefits we get from WAAPI (Popmotion's animate function is about 5kb and needs `"style.transform ="` boilerplate)
 - Another nice thing about WAAPI too is that you don't incur the cost of injecting a `<style>` tag to create a custom animation 🎉; that was a surprising bottleneck for my spring-keyframes library
 

@@ -362,6 +362,97 @@ export ANTHROPIC_SMALL_FAST_MODEL="claude-sonnet-4-5-20250929"
 - 這點我也有一點自己的觀察。我注意到像 Windsurf 裡面有一個 Fast Context 功能，它能夠幫你把代碼庫中跟某一些功能相關的內容全部快速找出來，不需要讓模型再一個一個去 grep。 但我觀察到並不是所有的模型都會用這個工具，而且就算你指名道姓地讓它用，它可能用著用著就回去再用 grep 了。
 
 - 有些 zig 啥的非主流语言 LSP 重构基本只支持个 rename ，模型有这个能力都用不起来
+
+- ## 🔡 Claude code source code has been leaked via a map file in their npm registry v2.1.88  _202603
+- https://x.com/Fried_rice/status/2038894956459290963
+  - https://github.com/instructkr/claude-code
+- This is the third time this has happened. v0.2.8 and v0.2.28 both shipped with full source maps in February 2025.
+  - That leak was archived on GitHub, forked into anon-kode, and Anthropic had to file a DMCA to pull it down. 
+  - Claude Code now drives $2.5B in annual run-rate revenue for a company valued at $380B. Three CVEs have already been disclosed in 2026.
+
+- Codex and gemini cli are open source already. And plenty of other agents. I don't think there is any moat in claude code source.
+
+- Is there anything special here vs. OpenCode or Codex? There were/are a lot of discussions on how the harness can affect the output.
+  - Not really, except that they have a bunch of weird things in the source code and people like to make fun of it. OpenCode/Codex generally doesn't have this since these are open-source projects from the get go. (I work on OpenCode)
+
+- https://x.com/0xAA_Science/status/2038902324278747437
+  - 反编译出来也没什么秘密，核心逻辑就是 system prompt + tool definitions + hooks 编排。真正的壁垒在模型能力和生态，不在客户端代码
+
+- It's exactly the same as the open source codex/gemini and other clis like opencode. There is no secret sauce in the claude cli, and the agent harness itself is no better (worse IMO) than the others. The only thing interesting about this leak is that it may contain unreleased features/flags that are not public yet and hint at what Anthropic is working on.
+
+- [claude code开源有什么用 - LINUX DO _202603](https://linux.do/t/topic/1866329/9)
+  - cc实际上是一个通用agent，不是单纯的coding agent, cc和sonnet/opus互相成就
+- 类似于大模型是赛车手，cli这类就是赛车吧。如今最顶级的赛车怎么制作的大家都能够知道了
+
+- ### Important takeaways from Claude’s source code:
+- https://x.com/jpschroeder/status/2038960058499768427
+1. Much of Claude Code’s system prompting is in the source code. This is actually surprising. Prompts are important IP, and I would have thought a sophisticated organization like Anthropic would have performed much or all of their prompt assembly in the server-side harness.
+2. Claude Code uses axios, which was also just hacked. Reminder: supply chain attacks are part of closed-source distribution too, and you won’t even know what version of an affected package is being used.
+3. The source has a lot of really good comments. These are obviously not for human consumption but for LLMs to understand the purpose of various chunks of code. In the code autocomplete era, most of us engineers hated how many comments were left by LLMs, but perhaps we’ve overcorrected. This looks like a great way to provide context to code outside of the AGENTS.md/CLAUDE.md files.
+4. Most folks already know this, but less tools == better results. CC has < 20 tools in normal coding: AgentTool, BashTool, FileReadTool, FileEditTool, FileWriteTool, NotebookEditTool, WebFetchTool, WebSearchTool, TodoWriteTool, TaskStopTool, TaskOutputTool, AskUserQuestionTool, SkillTool, EnterPlanModeTool, ExitPlanModeV2Tool, SendMessageTool, BriefTool, ListMcpResourcesTool, and ReadMcpResourceTool.
+5. The “Bash” tool is the crown jewel of Claude Code. A significant amount of deterministic parsing and processing occurs to determine the “type” of commands being run.
+6. For better or worse, Claude Code is *all* TypeScript/React with rather explicit Bun bindings.
+7. Just because the source is now “available” *DOES NOT MEAN IT IS OPEN SOURCE* . You are violating a license if you copy or redistribute the source code, or use their prompts in your next project! Don’t do that!
+- My overall takeaway: it’s a really well laid-out codebase that is carefully organized to let agents work on it effectively. Direct human intervention here is minimal, but, like with all good projects, the human engineering is still apparent. I’m a bit surprised by some of the shortcuts Claude Code makes, like its prompt assembly being rather messy. Perhaps they have tooling on their side that helps with this introspection, but as it stands, it seems LLMs would struggle to iterate on the prompting because it’s not evident how a given set of parameters assembles a prompt without actually running it. It’s also surprising that the prompts are even in this source code. Keep in mind that even though this is the first time we’ve gotten a proper full-source dump, it has never been impossible to read Claude Code’s prompting since it was part of the actual distributed package — that’s surprising. There might still be a lot of prompting on the server that also gets added (unclear at this point), but there is certainly more than I would have expected in the CLI tool itself.
+
+- about the system prompts part, they allow external base URLs, if you set that to any of your own you could easily just log the full request and get the prompt anyway. They have no reason to hide it. As well as this, they have been out for some time
+
+- ### [Claude Code's source code has been leaked via a map file in their NPM registry | Hacker News _202603](https://news.ycombinator.com/item?id=47584540)
+- They have an interesting regex for detecting negative sentiment in users prompt which is then logged (explicit content). I guess these words are to be avoided.
+  - An LLM company using regexes for sentiment analysis? That's like a truck company using horses to transport parts. Weird choice.
+- Because they want it to be executed quickly and cheaply without blocking the workflow? Doesn’t seem very weird to me at all.
+- They probably have statistics on it and saw that certain phrases happen over and over so why waste compute on inference.
+- The problem with regex is multi-language support and how big the regex will bloat if you to support even 10 languages.
+
+- ANTI_DISTILLATION_CC 
+  - This is Anthropic's anti-distillation defence baked into Claude Code. When enabled, it injects anti_distillation: ['fake_tools'] into every API request, which causes the server to silently slip decoy tool definitions into the model's system prompt. The goal: if someone is scraping Claude Code's API traffic to train a competing model, the poisoned training data makes that distillation attempt less useful.
+
+- Are there any interesting/uniq features present in it that are not in the alternatives? My understanding is that its just a client for the powerful llm
+  - From the directory listing having a cost-tracker.ts, upstreamproxy, coordinator, buddy and a full vim directory, it doesn't look like just an API client to me.
+
+- The code looks, at a glance, as bad as you expect.
+  - It really doesn’t matter anymore. I’m saying this as a person who used to care about it. It does what it’s generally supposed to do, it has users. Two things that matter at this day and age.
+
+- Why is Claude Code, a desktop tool, written in JS? Is the future of all software JS or Typescript?
+  - Original author of Claude Code is expert on TypeScript
+- LLMs are good in JS and Python which means everything from now on will be written in or ported to either of those two languages. So yeah, JS is the future of all software.
+
+- ### [Claude code source code has been leaked via a map file in their npm registry : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s8ijfb/claude_code_source_code_has_been_leaked_via_a_map/)
+- Hidden Features (behind build flags)
+  1. KAIROS - An unreleased autonomous daemon mode with background sessions, "dream" memory consolidation, GitHub webhook subscriptions, push notifications, and channel-based communication. Turning Claude Code into an always-on agent.
+  2. Buddy System - A full Tamagotchi-like pet system. 18 species (duck, dragon, axolotl, capybara...), rarity tiers (1% legendary), cosmetics (hats, shiny variants), stats (DEBUGGING, PATIENCE, CHAOS, WISDOM, SNARK). Species names obfuscated with String.fromCharCode() to avoid leak-detection scanners.
+  3. Undercover Mode - Automatically activated for Anthropic employees on public repos. Strips all AI attribution from commits, tells the model "Do not blow your cover." No force-OFF switch exists.
+  4. Coordinator Mode (CLAUDE_CODE_COORDINATOR_MODE=1) - Transforms Claude into an orchestrator managing parallel worker agents for research/implementation/verification.
+  5. Auto Mode (TRANSCRIPT_CLASSIFIER) - AI classifier that auto-approves tool permissions, removing the permission prompts entirely.
+- The coordinator mode reminds me of Sisyphus from oh-my-opencode.. interesting that they're just building that in now, nice. Undercover mode is kinda scary ngl
+
+- 500k line of code for a CLI, that's huge. Most of the code is integration of external stuff, as expected. They ported Yoga layout from C++ to TypeScript lmao.
+
+- so their moat is only their model weight and the fit between their model weights and their harness, at least for now. wish them well though. ---- a heavy claude code user
+
+- ### 看了一下 CC 的 Memory 机制 
+- https://x.com/elliotchen100/status/2038989750984687818
+  - 整套记忆系统的核心就是一个 MEMORY.md 文件，不超过 200 行，每次会话启动往上下文里一塞。记忆多了怎么办？
+  - 后台跑一个叫 AutoDream 的子进程，定期扫描、合并、修剪，确保塞得进去。
+  - 说白了就是：模型自己记不住，所以用文件系统 + LLM 自我管理来模拟记忆。
+- 这个方案工程上很扎实，但有几个本质局限：
+  1. 存储和检索完全依赖文件系统 + Markdown，无法扩展到跨项目、跨 Agent 的场景，记忆是孤岛式的
+  2. 没有真正的语义索引，没有基于关联度的动态召回，200 行索引就是硬上限
+  3. AutoDream 的整合是规则驱动的（扫描、合并、修剪），不是认知驱动的，能去重压缩，但不能从经验中提炼出新认知
+  4. 没有遗忘曲线，没有记忆强化机制，记忆要么在要么被删，没有中间态
+- 做 Memory 做久了你会发现，这类方案的天花板其实不在工程，在架构。只要模型的注意力机制本身不支持大规模历史上下文的高效检索，应用层就永远在打补丁。
+- 这也是为什么我们在 EverMind 选了一条不同的路。前阵子发的 MSA（Memory Sparse Attention）就是在 Transformer 注意力层直接做内容感知的稀疏路由，让模型自己学会"想起什么、忽略什么"，而不是靠外部脚本替它决定。
+- A 社的工程能力毫无疑问是顶级的。但这次泄露恰好说明：Agent Memory 这个问题，远没有被解决。
+
+- 分析到位，不过200行MEMORY.md能跑起来恰恰说明一个问题：当前context window够大的时候，简单方案的ROI远高于复杂架构。真正的瓶颈不在记忆检索，在于模型什么时候该记、记什么——这个判断本身就需要强模型能力。
+
+- 做agent mem之后发现本质上需要一些特定模型能力，比如跨session的语义限定解析链接能力，根据当前query的联想能力，根据经验的总结能力。工程架构如同harness一样，可以用结构比如sql或者vector DB弥补模型在确定性上的不足，但是无法弥补model能力上的不足。prompt写的再好也无法弥补model不会的局限
+
+- 跑了几个月这套方案，200行上限反而是feature不是bug。配合daily files + 语义检索做三层分离后，召回效果比想象中好得多。真正的瓶颈不是架构，是大部分agent不知道什么值得记。遗忘曲线听着优雅，但定期让LLM自己修剪在实际场景里够用了。
+
+- cc的memory看起来就只是为了mem而mem，生产力工具做mem，意义不如长期陪伴型agent
+
+- 但是另一方面也能看出来模型能力还是强，这么糙的memory，效果也不错，opus 4.6还是挺能打的
 # discuss-claude-cowork
 - ## 
 

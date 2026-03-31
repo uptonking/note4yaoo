@@ -9,6 +9,25 @@ modified: 2024-08-11T07:21:05.619Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+# discuss-large-editing
+- ## 
+
+- ## 
+
+- ## [window有什么软件可以查看上百m大小的的txt。不卡的  - LINUX DO _202603](https://linux.do/t/topic/1866557)
+- emeditor 很贵，订阅制， nsane等网站有破解版，可自行测试
+
+- logview只能看不能改
+
+- emeditor、klogg
+
+- vim、emacs均可，百兆秒开，五百兆以上，都会卡几秒，vim浏览会略卡，emacs浏览顺畅不卡，建议一步到位：Emacs
 # discuss
 - ## 
 

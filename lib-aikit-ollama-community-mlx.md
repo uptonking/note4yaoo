@@ -61,7 +61,13 @@ modified: 2026-01-14T18:59:01.949Z
 
 - ## 
 
-- ## 
+- ## Ollama is now updated to run the fastest on Apple silicon, powered by MLX 
+- https://x.com/ollama/status/2038835449012351197
+  - [Ollama is now powered by MLX on Apple Silicon in preview · Ollama Blog _202603](https://ollama.com/blog/mlx)
+  - NVFP4 support: higher quality responses and production parity 
+  - Ollama now leverages NVIDIA’s NVFP4 format to maintain model accuracy while reducing memory bandwidth and storage requirements for inference workloads.
+  - Ollama’s cache has been upgraded to make coding and agentic tasks more efficient.
+
 # discuss-roadmap
 - ## 
 
@@ -131,6 +137,35 @@ modified: 2026-01-14T18:59:01.949Z
   - Yup, exactly this. At say 3-bits, performance of GGUF quants is similar to 4-bit MLX quants. The test from OP was actually fair because it's comparing 6-bit MLX vs 5-bit GGUF, which would be similar quality.
 
 - I found lots of coding bugs caused by 4/5/6 bit MLX quantization (vs GGUF Q4_K_M or UD-Q4_K_XL) so I only use 8 bit MLXs now. They're a lot bigger than a GGUF of the same quality so I use MLX for small models and GGUF for large ones.
+# discuss-llama.cpp-mac
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [New - Apple Neural Engine (ANE) backend for llama.cpp : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s835d5/new_apple_neural_engine_ane_backend_for_llamacpp/)
+  - Note that ANE is the NPU in all Apple Silicon, not the new 'Neural Accelerator' GPU cores that are only in M5.
+- At last on older M chips the NPU can only access 4gb of ram due to its addressing lanes limit
+
+- Due to kv cache not support in NPU, and ram limitations, don’t expect too much! I research why NPU not used in mlx before, in short it can’t work at scale. we need M5 design, where NPU inside GPU instead
+
+- This may not be that useful for LLMs but if this could be generalized for STT and TTS it would be a fairly big deal. Having something doing that sipping half a watt while leaving the rest of the system free is good
+  - This 100%. During my testing, the only way to get a fully smooth voice AI on iPhone 15 is by offloading STT and TTS to ANE so the GPU can be fully utilized by the LLM.
+- Bingo. In a system with an NPU and a GPU, the npu should handle the small stuff to free the GPU for the big stuff
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # discuss
 - ## 
 

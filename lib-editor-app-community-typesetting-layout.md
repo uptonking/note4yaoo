@@ -227,6 +227,18 @@ modified: 2026-03-29T13:03:35.455Z
 - ### 我整理了 8 个非常炸裂的脑洞大开的案例
 - https://x.com/axiaisacat/status/2038233070709436617
 
+- ### 🌰 cursor now truncates file paths in the middle w pretext
+- https://x.com/fredrikalindh/status/2039009480625754409
+- middle truncation with pretext is such a small detail and such a big quality of life fix for anyone who lives in cursor all day
+
+- this doesnt require pretext lol
+
+- this is easily doable without pretext or canvas ??? what do you gain by adding that
+
+- [javascript - Ellipsis in the middle of a text (Mac style) - Stack Overflow _202604](https://stackoverflow.com/questions/831552/ellipsis-in-the-middle-of-a-text-mac-style)
+  - 很多js方案
+  - 纯css方案: https://codepen.io/editor/uptonking/pen/019d4539-8f59-7fc4-be14-077eba66cc42
+
 - ### 🌰 was playing with a similar idea a week ago. 
 - https://x.com/vamsibatchuk/status/2037924109049311702
   - link/image元素在点击时, 通过环绕的布局展示图片/卡片

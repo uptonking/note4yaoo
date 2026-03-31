@@ -169,6 +169,8 @@ modified: 2025-12-11T18:10:23.710Z
 ## claude-cli
 
 - https://github.com/anthropics/claude-code /202506/NonOpen
+  - https://www.npmjs.com/package/@anthropic-ai/claude-code/v/2.1.88?activeTab=code
+    - v2.1.88提供了 cli.js.map文件(59.8 MB)
   - https://docs.anthropic.com/s/claude-code
   - 📌 an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster
   - [open source? _202502](https://github.com/anthropics/claude-code/issues/59)
@@ -176,6 +178,43 @@ modified: 2025-12-11T18:10:23.710Z
   - [[DOCS] Open Source Licensing ](https://github.com/anthropics/claude-code/issues/8517)
     - The Claude Code binaries distributed by Anthropic contain Open Source software.
     - Some of that software is made available to Anthropic under the terms of the Apache-2.0 license, however there does not appear to be a notice of this in the distributed files, nor on the Claude Code documentation website
+  - 🍴 forks
+  - https://github.com/oboard/claude-code-rev
+    - Runnable ClaudeCode source code
+  - https://github.com/iammaimai/claude-code-fixed
+    - [claude code 可编译版  - LINUX DO _202603](https://linux.do/t/topic/1868025)
+  - https://github.com/xtherk/open-claude-code
+    - [【开源】Open-Claude-Code CLI 源码 - LINUX DO _202603](https://linux.do/t/topic/1868730)
+    - 初衷是为了搭建一个可以编译运行的环境用于学习，后续估计会继续让codex进行修复（这何尝不是一种ntr）,但不会基于本仓库二开
+  - https://github.com/chatgptprojects/claude-code
+- https://github.com/instructkr/claw-code /202603/python
+  - https://github.com/instructkr/claude-code
+  - Better Harness Tools, not merely storing the archive of leaked Claude Code but also make shit things done.
+  - Rust port is now in progress on the dev/rust branch
+  - https://x.com/realsigridjin/status/2038993516848873718
+    - we decided not to store the archive of claude code to avoid potential trouble, so renamed to clawd-code
+
+- https://github.com/shipany-ai/open-agent-sdk /MIT/202603/ts
+  - Open Agent SDK is an open-source Agent SDK inspired by @anthropic-ai/claude-agent-sdk. Build autonomous AI agents that can understand codebases, edit files, run commands, search the web, and execute complex multi-step workflows.
+  - Unlike the official @anthropic-ai/claude-agent-sdk which requires a local Claude Code CLI process, Open Agent SDK runs the full agent loop in-process — deploy anywhere: cloud servers, serverless functions, Docker containers, CI/CD pipelines.
+  - https://x.com/idoubicc/status/2039006326882546141
+    - 让 Claude Code 分析了一遍  claude-code-sourcemap 源码，把逻辑全部抽离出来，写了个 open-agent-sdk，用于替代 claude-agent-sdk
+    - 使用 claude-agent-sdk 做过 Agent 产品的都知道，其本质是在 claude code 的基础上套了一层壳，做成 sdk 给第三方接入，可以加速 Agent 产品的开发，
+    - 但是弊端也很明显：
+      - claude-agent-sdk 依赖 claude code，而 claude code 是不开源的，一切都是黑盒调用，出了问题你没法修; 
+      - claude-agent-sdk 接到的 query，需要创建 claude code 进程去处理，开销很大，不适合云端规模化调用
+    - 在 Claude Code 源码基础上实现的 open-agent-sdk
+      - 完全兼容 claude-agent-sdk 的接口形式，只需换个包名即可快速替换
+      - 函数调用，不依赖本地 cli 进程，没有额外的开销，云端 Agent 高并发不愁
+
+- https://github.com/paoloanzn/free-code /202604/ts
+  - The free build of Claude Code. All telemetry stripped. All injected security-prompt guardrails removed. All experimental features unlocked. One binary, zero callbacks home.
+  - https://x.com/paoloanzn/status/2039022418698907949
+    - claude code source code fully recompiled, telemetry stripped, security guardrails prompts stripped, all working experimental features enabled
+    - including ultraplan mode - a new async agentic planning mode where claude starts a multi-agent research session in the browser lasting between 10 and 30 minutes
+
+- https://github.com/claude-code-best/claude-code /202604/ts
+  - Claude Code 可运行版; Typescript 类型全修复; 企业级可靠性; 安全无毒, lock 文件保真, 可直接 bun i; bun run dev 启动
 
 - https://github.com/lukilabs/craft-agents-oss /3.2kStar/apache2/202603/ts
   - https://agents.craft.do/

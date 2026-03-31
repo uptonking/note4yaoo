@@ -15,6 +15,7 @@ modified: 2024-09-08T20:08:16.088Z
 
 - cons-rag
   - extra infra like vectordb/retrive-api
+  - rag侧重于解决semantic search的问题, 对于超长文本的非search问题如summary/toc仍是挑战
 
 - who is using #PGVector
   - SurfSense
@@ -70,6 +71,12 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 
 
 - ## 
+
+- ## 💡 [Any local LLMs that can read 500 page books? : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1s7yow5/any_local_llms_that_can_read_500_page_books/)
+- Assistant_Pepe_8B was built on nVidia's Ultralong Nemotron, so 1 million context and a very good long context capability in general
+
+- RAG only retrieves isolated snippets and misses the connective arc. Similarly, long context windows often suffer from "lost in the middle" syndrome where the model prioritizes the beginning and end of the file but misses the crucial pivot points buried in the middle hundreds of pages.
+  - The real solution is usually a layered, hierarchical breakdown of the book. This involves the LLM processing the book in chunks to create summaries and then using those summaries to build a map of the narrative. When you ask a complex question, the model uses that map to navigate back to the specific raw text it needs. RAG acts like a search index and long context acts like short-term memory, but true synthesis requires a structured reasoning process that treats the book as a cohesive architecture rather than just a massive pile of data.
 
 - ## [Hybrid search + reranking in prod, what's actually worth the complexity? : r/Rag _202601](https://www.reddit.com/r/Rag/comments/1q683tf/hybrid_search_reranking_in_prod_whats_actually/)
   - Building a RAG system for internal docs (50k+ documents, multi tenant, sub 2s latency requirement) and I'm going in circles on whether hybrid search + reranking is worth it vs just dense embeddings.
@@ -787,6 +794,10 @@ modified: 2024-09-08T20:08:16.088Z
   - TruLens specializes in feedback functions for iterative testing.
   - Langfuse offers open-source observability with comprehensive tracing.
 # discuss-rag-tips/tricks
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

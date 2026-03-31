@@ -274,6 +274,10 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 launchctl stop com.donehub && launchctl start com.donehub
 
+# auto checkin
+
+cd ~/Documents/repos/ai-ml-llm/metapi && npm start
+
 ollama run --verbose gemma3:4b
 OLLAMA_DEBUG=2 ollama serve gemma3:4b
 

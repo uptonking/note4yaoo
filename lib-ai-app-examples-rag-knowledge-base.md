@@ -17,6 +17,7 @@ modified: 2025-11-30T17:27:16.720Z
   - 没有持久化vector embeddings的示例都是demo, 每次启动都要将大文件index一遍
   - 基于文件系统，还是基于数据库 来实现和优化rag
   - rag是很多产品都需要的基础能力之一, 可替代text-search, 可参考成功的产品或针对场景/codebase/local优化的产品
+  - rag侧重于解决semantic search的问题, 对于超长文本的非search问题如summary/toc仍是挑战
 
 - tech-stack
   - 很多rag方案对中文的支持很差

@@ -59,6 +59,22 @@ modified: 2024-11-16T08:23:40.617Z
   - https://x.com/charliegreenman/status/2038382414037123438
     - Could it support orphan text?  Alas text-wrap: pretty/balance;
 
+- https://github.com/razroo/geometra /MIT/202603/ts
+  - https://razroo.github.io/geometra
+  - The Singularity Frontend Framework
+  - Geometra is a DOM-free frontend framework built on the Textura layout engine where client and server are interchangeable — the same JSON geometry protocol powers both.
+  - No browser layout engine. No DOM. Just computed geometry piped straight to render targets.
+  - AI agents interact with the server directly via the same JSON protocol the client uses — no browser middleman, no scraping, no hacks. 
+  - Traditional:  HTML → CSS Parser → DOM → Layout → Paint → Composite
+  - Geometra:     Declarative Tree → Yoga WASM → Computed Geometry → Render Target
+  - https://x.com/charliegreenman/status/2038800784549159344
+    - Geometra text input is now live in a DOM-free stack
+    - Layout + text metrics: Textura (Yoga WASM + Pretext)
+    - Editing model: custom core primitives (insert, delete, caret move, selection)
+    - IME pipeline: composition start/update/end (local + server/client protocol)
+    - Undo/redo history helpers + Cmd/Ctrl shortcuts
+    - Canvas a11y mirror + server-computed responsive geometry protocol
+
 - https://github.com/alerque/polytype /202408
   - https://polytype.dev/
   - A Rosetta stone for typesetting engines.
@@ -164,4 +180,17 @@ modified: 2024-11-16T08:23:40.617Z
     - 一键环境配置，自动下载管理 LaTeX，开箱即用。
     - 原生 Git 集成：侧边栏直接可视化管理版本控制。
     - 我想要的是，可以在本地跟着代码一起写，做事实核查，可以在vscode，cursor里面写的，这样就能用deep research或者任何github整的skills，还可以随时同步云端的overleaf，how can we achieve this
+# canvas-layouting
+- https://github.com/polotno-project/render-tag /MIT/202604/ts
+  - https://polotno.com/render-tag/
+  - Render HTML rich text onto canvas with the 2D API. 
+  - No SVG, no foreignObject — just fillText, measureText, and drawing primitives.
+  - When you need rich text as part of a canvas — design editors, image export, canvas-based apps — the standard SVG foreignObject approach is slow (~100ms per render). 
+    - render-tag parses your HTML, resolves styles via getComputedStyle, then lays out and draws everything with pure canvas 2D calls. It's 10-60x faster than SVG-based approaches.
+  - By design, render-tag focuses on rich text only — paragraphs, headings, lists, tables, inline formatting. It is not designed for interactive elements (buttons, inputs, iframes) or complex HTML layouts. This focus is what makes it fast.
+  - https://x.com/lavrton/status/2038978115196645409
+    - Built this to solve my biggest pain point working on a web design editor. 
+    - Added an accurancy benchmark with HUGE amount of test cases comparing canvas output vs svg+foreighObject render
+  - Is there any hope for supporting text-selection?
+    - There is always a hope... What is the use case for you? My end goals is to have have a smooth rich text editing experience in the canvas. So for now view on canvas, edit in real DOM. All with a smooth switch between modes. But maybe full canvas will be there one day.
 # more

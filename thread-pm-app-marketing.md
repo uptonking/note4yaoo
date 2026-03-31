@@ -70,8 +70,8 @@ modified: 2021-10-29T15:06:33.422Z
   - > 对于创作表现力强的视频，成本和门槛相对于基于图文的微博又如何？
 
 - 抖音和微博，两者都可以制造热点，都具有媒体属性，但抖音不具备社交属性。
-  - 抖音的传播与分发是强平台中心化的，内容的分发和传播**几乎完全基于平台的算法推荐**。在抖音上，是没有基于“转发”的传播链的。这也就意味着，抖音平台对媒体内容的话语权是几乎无限的，内容的热度，并非靠大众发酵，而是更多靠平台赐予。
-  - 而微博的核心动作其实是“转发”。转发直接造成传播，进而造成热度。所以微博虽然也已经很中心化，但不是平台中心化，而是**大V中心化**，信息还是基于社交的逻辑来分发和传播。
+  - 抖音的传播与分发是强平台中心化的，内容的分发和传播 **几乎完全基于平台的算法推荐** 。在抖音上，是没有基于“转发”的传播链的。这也就意味着，抖音平台对媒体内容的话语权是几乎无限的，内容的热度，并非靠大众发酵，而是更多靠平台赐予。
+  - 而微博的核心动作其实是“转发”。转发直接造成传播，进而造成热度。所以微博虽然也已经很中心化，但不是平台中心化，而是 **大V中心化** ，信息还是基于社交的逻辑来分发和传播。
 - 微博作为互联网时代之后最重要的“舆论阵地”，这个结论目前仍然难以推翻——即便它早已经不是最大的流量聚集地。
   - 而任何有机会形成舆论阵地属性的平台，面临的监视和控制也一定是最严密的。
   - 如今的微博不复当年之勇，不一定只是用户选择和外部竞争的产物，而是当互联网监管日趋成熟和严格时，并不能存在一个强大的微博。
@@ -123,6 +123,25 @@ modified: 2021-10-29T15:06:33.422Z
 
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 为什么字节跳动能够连续在： 今日头条、抖音（tiktok）、豆包、飞书等产品中轻松战胜传统的中国互联网巨头 BAT，连赢四次？
+- https://x.com/siantgirl/status/2038970593782190472
+- 他家产品绝对是有高人的，豆包，番茄，红果，剪映，飞书，抖音成功时偶然，但是其他成功绝对是有底子能力在的，b站也做剪辑然后谁知道呢，现在还有一个生成视频的即梦，还有汽水音乐。它已经无敌人，中国公司都不是它的对手。
+
+- 主要是钱多，没有old web2 那些老牌对手的官僚僵硬气质，迭代快，给钱到位
+
+- 实话讲，内部赛马，卷一个是一个。
+
+- 就是数据 快速迭代
+
+- 他家的东西成功率都很高，但是西瓜视频没有干死b站 
+  - 西瓜视频被抖音分离后彻底落寞了
 
 - ## AI编程流量第一名又换人了… Lovable目前上线短短2个月，实现月访问量650w (日访问量已经超越了Bolt new)，
 - https://x.com/oran_ge/status/1887643689461420368
@@ -243,7 +262,7 @@ modified: 2021-10-29T15:06:33.422Z
 - https://twitter.com/bandanjot/status/1718477808307986807
   - As of Sept 2023, Google developed 550+ products. 
   - Here's more amazing statistics on how Google kills its own products
-  - 👉🏻 Out of 550+ products built till date, Google has killed 250+ and this brings average lifetime of a Google Product to **just ~4 years**.
+  - 👉🏻 Out of 550+ products built till date, Google has killed 250+ and this brings average lifetime of a Google Product to **just ~4 years** .
 - Some most popular ones include Google Hangouts, Google Plus, Google Reader. 
   - Products with shortest lifespan include Google Spaces 
   - Whereas most expensive killed product is Google Fiber (Billions invested in its infrastructure)
