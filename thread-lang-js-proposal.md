@@ -32,7 +32,7 @@ modified: 2023-11-10T08:05:25.474Z
 - ## A concise example of why I really don't like decorators that much.
 - https://twitter.com/BenLesh/status/1750560391682294159
   - IMO, decorators should have been metadata only. We already have enough ways to duck-punch JavaScript into oblivion(遗忘)
-  - Let me tell you about the other thing I don't like, `@defaultExports`
+  - Let me tell you about the other thing I don't like, `@defaultExports` 
 
 - Where is the problem exactly?
   - Basic: Any given developer reading the code needs to know what a decorator might change.
@@ -85,6 +85,16 @@ modified: 2023-11-10T08:05:25.474Z
 - Sad they skipped the F# pipe.
 # discuss-js-proposals
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Source maps are Recently standardized! (one year ago)
+- https://x.com/robpalmer2/status/2039247787376681464
+  - New features imminent: Scopes & Range Maps
 
 - ## Here's why the Records and Tuples proposal died, and how Composites might solve it.
 - https://x.com/mattpocockuk/status/1920480843195150677

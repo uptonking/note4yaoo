@@ -230,14 +230,33 @@ modified: 2026-03-29T13:03:35.455Z
 - ### 🌰 cursor now truncates file paths in the middle w pretext
 - https://x.com/fredrikalindh/status/2039009480625754409
 - middle truncation with pretext is such a small detail and such a big quality of life fix for anyone who lives in cursor all day
-
 - this doesnt require pretext lol
-
 - this is easily doable without pretext or canvas ??? what do you gain by adding that
-
 - [javascript - Ellipsis in the middle of a text (Mac style) - Stack Overflow _202604](https://stackoverflow.com/questions/831552/ellipsis-in-the-middle-of-a-text-mac-style)
   - 很多js方案
   - 纯css方案: https://codepen.io/editor/uptonking/pen/019d4539-8f59-7fc4-be14-077eba66cc42
+- https://x.com/pqoqubbw/status/2039034994581000700
+- just curious, why couldn't you just use CSS with 2 spans? the first span contains the trancated text, and a second span contains the last part of the text that you want to always stay visible
+  - once you see the inconsistent gaps in standard middle-truncation, you can’t unsee them
+- both versions fully functional and work properly, if you don’t want to do all of this just to remove odd spaces - all good, just use css
+- https://github.com/Todomir/trunky /202604/ts
+  - Truncation utils for JS/React
+  - Grapheme-accurate rich-text truncation.
+  - Model content as a recursive tree of text, break, and mark nodes
+  - Measure line count for the full text using @chenglou/pretext (canvas measureText, no DOM layout)
+  - If overflow: binary-search the grapheme cut point that maximizes visible content within the line budget
+  - Two strategies: end (prefix + ellipsis) and middle (prefix + ellipsis + tail, e.g. file paths).
+- https://x.com/birch_js/status/2039165649029849289
+  - Please use idiomatic CSS before reaching for pretext
+  - CSS except for the +1, +2, +3 counters
+  - Not in the exact middle, no. But it can truncate at path segments (which is what I was responding to) if you set it up correctly.
+- This misses the point of pretext and middle truncation. CSS can't do it. The point of pretext is that you don't have to measure with clientWidth or getBoundingClientRect() … and that it just works in CJK, Thai, multiline, etc.
+
+- https://x.com/JohannesMutter/status/2039344502138114237
+  - Yes, you can achieve middle truncation with CSS alone, but this method does not cover all edge cases. 
+  - Pretext is the best of the four methods: it handles emojis, different languages and short file names, and offers the best overall readability.
+- yes, those are exactly the kind of overfit cleverness pretext tries to obsolete. Cheap, tiny api, fast, avoids another DOM node, generalizable, better for a11y, better for end user, and doesn't require re-tweaking on the slightest requirement change. CSS has great uses elsewhere but using it here isn't considerate imo
+  - My somewhat irrational belief is that we as an industry would have been better off getting the code golfing tendencies out of our system through shaders instead of CSS. Let the DSL shine as the DSL and don't force it
 
 - ### 🌰 was playing with a similar idea a week ago. 
 - https://x.com/vamsibatchuk/status/2037924109049311702
@@ -359,3 +378,13 @@ modified: 2026-03-29T13:03:35.455Z
 - ## 
 
 - ## 
+
+- ## One line of code to prevent layout shift on scrollbar visibility change 
+- https://x.com/codewithshripal/status/2038984058546663751
+
+```CSS
+.scrolling {
+  scrollbar-gutter: stable;
+  / * overflow-y: scroll * /
+}
+```

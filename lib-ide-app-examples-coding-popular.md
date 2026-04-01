@@ -194,7 +194,8 @@ modified: 2025-12-11T18:10:23.710Z
   - https://x.com/realsigridjin/status/2038993516848873718
     - we decided not to store the archive of claude code to avoid potential trouble, so renamed to clawd-code
 
-- https://github.com/shipany-ai/open-agent-sdk /MIT/202603/ts
+- https://github.com/codeany-ai/open-agent-sdk-typescript /MIT/202603/ts
+  - https://github.com/shipany-ai/open-agent-sdk /renamed
   - Open Agent SDK is an open-source Agent SDK inspired by @anthropic-ai/claude-agent-sdk. Build autonomous AI agents that can understand codebases, edit files, run commands, search the web, and execute complex multi-step workflows.
   - Unlike the official @anthropic-ai/claude-agent-sdk which requires a local Claude Code CLI process, Open Agent SDK runs the full agent loop in-process — deploy anywhere: cloud servers, serverless functions, Docker containers, CI/CD pipelines.
   - https://x.com/idoubicc/status/2039006326882546141
@@ -206,6 +207,15 @@ modified: 2025-12-11T18:10:23.710Z
     - 在 Claude Code 源码基础上实现的 open-agent-sdk
       - 完全兼容 claude-agent-sdk 的接口形式，只需换个包名即可快速替换
       - 函数调用，不依赖本地 cli 进程，没有额外的开销，云端 Agent 高并发不愁
+  - variants
+  - https://github.com/codeany-ai/open-agent-sdk-python
+  - https://github.com/codeany-ai/open-agent-sdk-rust
+- https://github.com/codeany-ai/open-agent-sdk-go /MIT/202604/go
+  - A lightweight, open-source Go SDK for building AI agents. 
+  - Run the full agent loop in-process — no CLI or subprocess required. Deploy anywhere: cloud, serverless, Docker, CI/CD.
+  - https://x.com/idoubicc/status/2039340338566066340
+    - 已发布 ts 重写版本， 复刻了 claude code 最核心的功能，移除了对 cli 的依赖，保持 SDK 的独立性和易用性
+    - 同时也发布了 go 版本
 
 - https://github.com/paoloanzn/free-code /202604/ts
   - The free build of Claude Code. All telemetry stripped. All injected security-prompt guardrails removed. All experimental features unlocked. One binary, zero callbacks home.
@@ -979,6 +989,7 @@ modified: 2025-12-11T18:10:23.710Z
   - Connect from phone, desktop, or web.
   - [I built a fully self-hosted and open-source Claude Code UI for desktop and mobile : r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1r8rqnv/i_built_a_fully_selfhosted_and_opensource_claude/)
     - Git worktree management for running agents in parallel, Git operations so you don't have to leave the app, integrated terminal, it also comes with fully local voice mode and dictation
+  - [I built an open source mobile and desktop app for OpenCode : r/opencodeCLI _202604](https://www.reddit.com/r/opencodeCLI/comments/1s9d7u6/i_built_an_open_source_mobile_and_desktop_app_for/)
 
 - https://github.com/SakuraByteCore/codexmate /apache2/202603/js
   - https://sakurabytecore.github.io/codexmate/

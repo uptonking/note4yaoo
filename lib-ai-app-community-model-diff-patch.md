@@ -274,6 +274,11 @@ modified: 2025-10-10T02:45:45.941Z
   - https://github.com/OmmyPatalonian/proggtagentless
     - Add ground truth testing functionality as a replacement for synthetic tests
 
+- https://github.com/batrachianai/textual-diff-view /AGPL/202604/python
+  - The Diff View used in Toad
+  - https://x.com/willmcgugan/status/2039281849852432401
+    - Add a beautiful diff display to your TUI!
+
 - https://github.com/yoshiko-pg/difit /2.3kStar/MIT/202603/ts
   - difit is a CLI tool that lets you view and review local git diffs with a GitHub-style viewer
   - command-line tool that spins up a local web server to display Git commit diffs in a GitHub-like Files changed view

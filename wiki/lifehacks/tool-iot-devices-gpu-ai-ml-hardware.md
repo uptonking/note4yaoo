@@ -12,6 +12,25 @@ modified: 2026-01-15T15:44:10.647Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Anyone tried models created by AMD? : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1s8wios/anyone_tried_models_created_by_amd/)
+  - I had question that why AMD is not creating models like how NVIDIA doing it. NVIDIA's Nemotron models are so popular(Ex: Nemotron-3-Nano-30B-A3B, Llama-3_3-Nemotron-Super-49B & recent Nemotron-3-Super-120B-A12B).
+
+- ROCm 7.2.1 does deliver improved hipBLASLt performance for MXFP8 and MXFP4 GEMM kernels, JAX 0.8.2 support, discontinuing of the ROCm Offline Installer Creator, GPU board and baseboard temperature sensor support with the amd-smi monitor command, and various bug fixes to the different ROCm libraries
+- an important thing to note is that only AMD Instinct MI350/355 GPUs (CDNA4) have hardware support for actual fp4/fp6 operations. MXFP4 and MXFP6 quants are probably really nice if you're using those but they're less relevant to civilians.
+
+- They are quantizing and building model to run on AMD GPU/NPU as optimized as possible to run via their Lemonade AI Engine which allows you to run NPU/GPU/CPU models for the AMD Stack, that is why they have so many models.
+  - Nemotron by NVIDIA are basically fine-tunes or greenfield models they do full training on, but not the same thing as the models in that HF repo
+
+- Lemonade is just a wrapper like Ollama or LM Studio. It uses other packages to do the real work. For most things that's llama.cpp. For NPU on Linux that's FastFlowLM. You can run llama.cpp and FastFlowLM on your own without Lemonade. That's what I do. I run them pure and unwrapped.
+  - Yeah, the lemonade wrapper around that also packages llamacpp, SDcpp, Ryzen AI, FastFlow and I think even more.
+  - You can run them independent if you want. Dont know why you would when you can use it to manage the engine runner and run more models since each provider has gaps.
+
 - ## 🆚 [Unified vs vRam, which is more future proof? : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1s6srra/unified_vs_vram_which_is_more_future_proof/)
   - VRAM: Higher bandwidth (speed), limited capacity.
   - Unified Memory: Massive capacity, lower bandwidth.

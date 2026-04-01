@@ -79,8 +79,7 @@ modified: 2024-08-11T07:59:35.617Z
 - S1
 
 ```CSS
-/* Option 1 - 注意highlight.js/styles/a11y-light末尾不要带.css*/
-@use "sass:meta";
+/ * Option 1 - 注意highlight.js/styles/a11y-light末尾不要带.css* / @use "sass:meta";
 
 html[data-theme="light"] {
   @include meta.load-css("highlight.js/styles/a11y-light");
@@ -90,8 +89,7 @@ html[data-theme="dark"] {
   @include meta.load-css("highlight.js/styles/a11y-dark");
 }
 
-/* Option 2 */
-@import url('/styles/base16/solarized-dark.css') screen and (prefers-color-scheme: dark);
+/ * Option 2 * / @import url('/styles/base16/solarized-dark.css') screen and (prefers-color-scheme: dark);
 @import url('/styles/base16/solarized-light.css') screen and (prefers-color-scheme: light);
 ```
 
@@ -115,6 +113,19 @@ html[data-theme="dark"] {
 - You can set an inline script at the head. That script could read the actual cookie and set the appropriate style based on that value.
   - The first approach can also generate some Flash of unstyled content. In the process of solving this, you may deal with some blank pages until the styles are loaded, which is better but does not solve the entire problem.
   - I think the second approach is the best by default, because it's rare to have very extensive theme definitions.
+# discuss-css-highlight
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## The CSS Custom Highlight API lets you highlight search results — Without affecting the DOM structure.
+- https://x.com/KaraBharat/status/2039362336792986075
+- That’s really useful. Not perfect, as its just a pseudo-element, so complex styling are not possible. But for a simple highlighting it’s much easier than having a dynamic complex js feature
+
 # discuss-lint
 - ## 
 

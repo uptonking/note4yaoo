@@ -293,6 +293,28 @@ modified: 2026-02-20T17:36:40.796Z
 
 - Problem of SaaS is not cloning. Their problem is that now I do not need many SaaS at all. I can just build things for myself or as internal tools for the company way cheaper than it was before
   - The reason people pay for SaaS is not just because of the effort of development
+# discuss-ai-pm-search
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🎞️ SentrySearch：用自然语言搜索视频内容的开源工具
+- https://x.com/dotey/status/2039147493355634989
+  - 在几个小时的行车记录仪视频里找到"一辆红色卡车闯了停牌"那个画面，SentrySearch 能让你像搜文字一样搜视频，输入描述，直接导出对应片段。
+  - 这个开源命令行工具的原理并不复杂：把视频切成带重叠的片段，用 Google Gemini Embedding API 或本地的 Qwen3-VL 模型把每个片段编码成向量，存进本地向量数据库 ChromaDB。搜索时，文字查询被编码到同一个向量空间里做匹配，命中的片段自动从原文件中裁剪出来。分块是因为一次没法太多，重叠是因为避免切分不好把内容从中间强行分开了
+  - 关键在于，整个过程没有转录、没有逐帧生成文字描述，视频像素直接和文字查询在向量层面比较。这是 Gemini Embedding 2 和 Qwen3-VL-Embedding 这类多模态嵌入模型带来的能力，让对海量视频的语义搜索变得可行。
+  - 想用云端 API，一小时视频的索引成本大约 2.84 美元。想完全离线也行，装上本地 Qwen3-VL 模型就不需要任何 API 密钥，24GB 以上显存或内存的 Mac 和 NVIDIA GPU 都能跑。它还专门做了特斯拉行车记录仪的适配，能在裁剪出来的片段上叠加车速、GPS 位置和时间信息。
+
+- https://github.com/ssrajadh/sentrysearch /2kStar/MIT/202603/python
+  - Semantic search over videos using Gemini Embedding 2 or Qwen3-VL.
+
+- 做过类似的东西, Gemini embedding表现挺一般的，同样做多语言图片搜索，换成jina的clip v2也不错 开源且可直接本机跑
+
+- 这个方向适合先把视频片段找出来。但要做到视频问答，就不只是存视频向量，还得存文本描述。不然后面很容易变成“片段找到了，答案你自己看”。
+
+- 这玩意儿听起来挺酷的，终于不用一帧一帧地翻视频了。
 # discuss-ai-pm-computer-use/openclaw
 - ## 
 

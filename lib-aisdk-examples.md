@@ -125,6 +125,7 @@ modified: 2025-08-11T20:15:18.297Z
   - 🍴 forks
   - https://github.com/phaserjs/streamdown-lite
     - A lightweight drop-in replacement for react-markdown, designed for AI-powered streaming with code highlighting.
+
 - https://github.com/zirkelc/ai-resumable-stream /MIT/202603/ts
   - This library provides resumable streaming for UI message streams created by streamText() in the AI SDK. 
   - It uses `Redis` to store streaming chunks, allowing clients to resume interrupted streams or stop active streams from anywhere.
@@ -134,6 +135,18 @@ modified: 2025-08-11T20:15:18.297Z
   - how would you compare this to resumable-stream?
     - It’s built on resumable-stream, but focused on AI SDK with automatic conversion of UI chunks to SSE and back, and extended with stop mechanism.
     - I'm using `redis-memory-server` for the tests, works perfectly!
+- https://github.com/zirkelc/resumable-streaming-examples /MIT/202603/ts
+  - A collection of examples demonstrating streaming and resumable streaming patterns with tRPC, TanStack Query and AI SDK.
+  - https://x.com/zirkelc_/status/2039339244179640645
+    - New example: resumable streaming without Redis
+    - server starts `streamText`, saves chunks (throttled) to the database
+    - Polling replaces Redis pub/sub in two places:
+    - clients that resume a stream poll for new chunks until the stream has finished
+    - server polls the database for a cancelled flag as long as the stream is running
+    - The database reads are throttled and happen every N seconds
+    - 1st client starts stream 
+    - 2nd client resumes mid-stream, replays previous chunks, then polls (throttled) for new
+    - 3rd client stops stream for all clients
 # starter
 - https://github.com/vercel-labs/ai-sdk-reasoning-starter /202507/ts
   - https://ai-sdk-reasoning.vercel.app/

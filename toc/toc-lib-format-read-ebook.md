@@ -211,6 +211,15 @@ modified: 2023-09-19T07:26:04.103Z
   - https://x.com/grgerwcwetwet/status/2002361413998919813
     - 它专门用于制作中文古籍刻本风格的直排电子书，而且是免费开源。
 
+- https://github.com/ethereal-squirrel/devourer-reader-server /202603/go
+  - https://devourer.dev/
+  - A library server providing a highly performant system to archive, scan and catalog your books, manga and comics.
+  - V2 is a fundamental rebuild of the server architecture and tooling, moving from Node.js to Go in order to get around... far too many packaging issues.
+  - https://github.com/ethereal-squirrel/devourer-reader-client /MIT/202604/ts
+    - A manga, comic and book reader for desktop and mobile.
+  - [Devourer 2.0 - A self hosted client / server combination for books, manga and comics. : r/selfhosted _202604](https://www.reddit.com/r/selfhosted/comments/1s83f0b/devourer_20_a_self_hosted_client_server/)
+    - what happened to Booklore... happened... and I decided to clean up my little project and publish a new version.
+
 ## epub
 
 - https://github.com/futurepress/epub.js /bsd/202305/js/inactive

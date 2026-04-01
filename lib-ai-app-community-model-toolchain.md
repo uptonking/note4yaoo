@@ -13,17 +13,6 @@ modified: 2025-09-16T12:36:12.968Z
 
 - models-config
   - 大模型的测试经常需要修改参数，支持一键恢复默认配置更好
-# local-models
-- local-model
-  - [GPU Poor LLM Arena - a Hugging Face Space by k-mktr](https://huggingface.co/spaces/k-mktr/gpu-poor-llm-arena)
-
-- https://github.com/fiveoutofnine/whatcanirun /202603/ts
-  - https://whatcani.run/
-  - Find the best local models based on real data
-  - https://x.com/fiveoutofnine/status/2038728823861367233
-    - whatcani.run is based on real runs submitted by people
-    - canirun.ai provides estimates across a wider variety of models and devices
-    - it filters all submissions by CPU + GPU + RAM, and so far that's the only model that has any benchmark data submitted for it
 # discuss-stars
 - ## 
 
@@ -406,6 +395,104 @@ PP Speed: Q3 GGUF: 50 t/s
 - M3 Ultra, 512 GB RAM, 32/80-core variant.
   - I have a script processing files roughly 30-50k tokens in length, which I cache, and then ask subsequent questions of. I just fired it up on GLM4.5 4 bit MLX quant. For a 35000 token document, prompt processing took ~247 seconds. In subsequent turns of conversation generation speed was 10 tokens per second roughly speaking.
   - GLM4.5 Air, same document was ~104 seconds for prompt processing, and then generation is at 30 tokens per second or so.
+# discuss-quant-solutions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I've just released APEX (Adaptive Precision for EXpert Models): a novel MoE quantization technique that outperforms @UnslothAI Dynamic 2.0 on accuracy while being 2x smaller for MoE architectures.
+- https://x.com/mudler_it/status/2039364812463853708
+  - Benchmarked on Qwen3.5-35B-A3B, but the method applies to any MoE model.
+  - How? Three insights from 25+ experiments: 1. MoE expert layers tolerate lower precision (only 8/256 active per token) 2. First and last 5 transformer layers are 10x more sensitive than the middle 3. A diverse imatrix (chat, code, tools -- no Wikipedia) improves real-world accuracy over raw perplexity We call this the "layer-wise precision gradient."
+  - Bonus: pair APEX with @no_stp_on_snek TurboQuant KV cache compression implementation
+  - Brought to you by the @LocalAI_API team!
+  - We want to apply APEX to every MoE model out there! But we need GPU time to run the benchmarks (each model takes 6-8 hours of eval across all metrics).
+
+- ## [PrismML — Announcing 1-bit Bonsai: The First Commercially Viable 1-bit LLMs : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1s90wo4/prismml_announcing_1bit_bonsai_the_first/)
+- Is it a binary QAT (-1, +1), not ternary (-1, 0, +1)? 
+  - Just binary, it seems.
+
+- ## [1-bit llms on device?! : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1s951bw/1bit_llms_on_device/)
+- this is the commit that adds the two 1-bit group types and the kernels.  also says that the 1-bit kernels are adapted from Q4_0, and while i can't really read AVX code without stopping to look up basically every instruction, it seems plausible: https://github.com/PrismML-Eng/llama.cpp/commit/59f2b84857fd67bc99096413003dde73ca469222
+
+- ## [You guys seen this? 1-bit model with an MMLU-R of 65.7, 8B params : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1s91jxl/you_guys_seen_this_1bit_model_with_an_mmlur_of/)
+- Kind of reminds me of the Microsoft "1-bit" models. 
+  - Technically the MS versions are 1.58 bit, because they encode -1, 0, and 1, unlike Bonsai, which is just -1 and 1. The video I linked to explains why having at least 3 values is better than just 2.
+  - So, this sort of thing seems to have been done before, but it looks like prism-ml is picking up the torch that MS dropped.
+
+- I tried to load it in LM Studio but I got an error:
+  - In hugging face they have the link to their llamacpp fork that is compatible
+
+- The whitepaper is deliberately vague on the actual compression method - they call it “proprietary Caltech IP” and “mathematically grounded advances” without publishing the technique. So you can use the models but you can’t reproduce the compression pipeline. No native 1-bit hardware exists yet, so the speed gains come purely from software kernel optimizations on standard GPUs.​​​​​​​​​​​​​​​​
+
+- I don’t get the hype, their own huggingface has the 8B barely better than Qwen3 1.7B
+
+- ## [TurboQuant isn’t just for KV: Qwen3.5-27B at near-Q4_0 quality, about 10% smaller, and finally fitting on my 16GB 5060 Ti : r/Qwen_AI _202603](https://www.reddit.com/r/Qwen_AI/comments/1s8489c/turboquant_isnt_just_for_kv_qwen3527b_at_nearq4_0/)
+  - When the TurboQuant paper came out, and when some shows memory can be saved in KV, I started wondering whether the same style of idea could help on weights, not just KV/ cache.
+  - After many long nights (until 2am) after work, that turned into a llama.cpp fork with a 3.5-bit weight format I’m calling TQ3_1S:
+  - This work is inspired by the broader transform-based quantization line, especially RaBitQ-style Walsh-Hadamard rotation ideas and the recent TurboQuant result (Tom). The thing I wanted to test was whether that same geometry could help on weights, not just KV/cache.
+  - So TQ3_1S is about 10% smaller while staying near Q4_0 quality.
+
+- Nice attempt but i dont see the point. You are comparing against q4_0! The world has moved to dynamic quants(from Unsloth/Bartowski)
+  - Weights are grouped and quantized to different precisions based on perplexity. So some weights are more sensitive and need to stay at 6 or 8 bits but others can go down to 3 or even 2 bits and doesn’t affect perplexity at all. It recovers accuracy better and potentially unlocks smaller quants.
+
+- Random rotations for weights is already done by SpinQuant, QuaRot or Quip#, it's not a new idea. All are using Hadamard-Welsch. And same for quant, both ik-llama and Exllamav3 allowed KV-cache quantization via random rotations
+
+- ## [Why exactly can't we use the techniques in TurboQuant on the model's quantizations themselves? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s72up8/why_exactly_cant_we_use_the_techniques_in/)
+- You can. Someone already did it. https://github.com/cksac/turboquant-model
+  - Tried that. Degraded the model outputs by a lot! But yea, memory usage was lower!
+- It's not TurboQuant at all. Whoever vibecoded that clearly didn't read the paper. They didn't implement the QJL transform, which is literally half of what TurboQuant is. Of course, they don't apply the QJL transform because it would make the output even worse, but that's because the whole of TurboQuant is awful for weights.
+
+- Check this out, I found it interesting. Lighter faster LM Head. https://arxiv.org/html/2603.14591v1
+
+- ## [When should we expect TurboQuant? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s3y1oc/when_should_we_expect_turboquant/)
+
+- The reason this matters specifically for local inference: weight quantization has basically been a solved problem since exl2/GGUF. 
+  - Everyone is already running 4-bit. KV cache is the bottleneck that hasn't been cracked at the same quality level. On long context tasks that cache can eat more memory than the weights. 
+  - If TurboQuant delivers lossless or near-lossless KV compression at significant ratios, that unlocks context lengths that were previously only viable on 80GB machines.
+  - The Qwen3.5 + GQA point above is real though. GQA already collapses the KV cache heads, so the baseline is smaller. The relative gain may be less dramatic than on models with full MHA. The unlock is more about 70B+ models on 24GB hardware, or running 32K context without context swapping on mid-tier machines.
+
+- I wonder how well Qwen3.5 would work with it. Considering its KV cache is small as-is thanks to GDN. If it's lossless, Qwen3.5's KV cache would weight like nothing at full context length lol
+  - That depends on which model. Qwen 27b has an attention kv cache of 16GB at full context. 122b is 6GB at full context. Deltanet ssm/conv1d cache is 147MB for both models at any context size. So 27b will shrink to roughly 3.5GB of kv cache at full context.
+- What people seem to be missing is that cloud inference will be cheaper because of this as well.
+
+- reading more into some of the forks, it looks like most of them are not solving the prefill which means you may still need a larger VRAM for the initial loading, wonder if it can be off-loaded to RAM and then squeezed back into VRAM...
+
+- Nvidia's technique is better, but requires per model calibration. Worth it. 
+  - KV Cache Transform Coding for Compact Storage in LLM Inference is the newest https://arxiv.org/abs/2511.01815 but they have a bunch https://github.com/NVIDIA/kvpress
+
+- ### [A simple explanation of the key idea behind TurboQuant : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s62g5v/a_simple_explanation_of_the_key_idea_behind/)
+  - The most important part has nothing to do with polar coordinates (although they are emphasized in Google's blog post, so the confusion is understandable).
+  - TurboQuant is a vector quantization algorithm. It turns a vector of numbers into another vector of numbers that takes up less memory.
+  - at its core, quantization always involves reducing coefficient precision.
+  - Here is the key idea behind TurboQuant: Before quantizing a vector, we randomly rotate it in the n-dimensional space it resides in. The corresponding counter-rotation is applied during dequantization.
+  - Surely the rotation can't be completely random? Maybe it's sampled from a particular distribution, or somehow input-dependent? Or perhaps there is another operation that goes hand in hand with it? Nope. I didn't leave anything out. Just applying a random rotation to the vector dramatically improves quantization performance.
+  - But why? Because the magnitudes of the coefficients of state vectors in language models aren't distributed uniformly among the vector dimensions.
+  - What matters for the purposes of this explanation is: Vectors with this type of quasi-sparse structure are terrible targets for component quantization. Reducing precision in such a vector effectively turns the massive component into 1 (assuming the vector is normalized), and all other components into 0. That is, quantization "snaps" the vector to its nearest cardinal direction. This collapses the information content of the vector, as identifying a cardinal direction takes only log2(2n) bits, whereas the quantized vector can hold kn bits (assuming k bits per component).
+  - And that's where the random rotation comes in! Since most directions aren't near a cardinal direction (and this only becomes more true as the number of dimensions increases), a random rotation almost surely results in a vector that distributes the coefficient weight evenly across all components, meaning that quantization doesn't cause information loss beyond that expected from precision reduction.
+# discuss-quant-mlx
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Has anyone tried NVFP4 on mlx? : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1ry5gm3/has_anyone_tried_nvfp4_on_mlx/)
+- NVFP4 is only supported on Blackwell gpu right ? So I assume that if you run those models on Mac (mlx), it would just revert back to FP4 ?
+  - yeah Blackwell gpus have a specific chip for NVFP4 but im pretty sure mlx just converts it to fp16 on the fly for inference, so even tho you arent getting the speeds like blackwell does it would still be useful to use it since its similar to fp16/fp8.
+
+- I benchmarked it against 4bit on mlx and it has worse perplexity, same with mxfp4 at the moment. I don't think nvfp4 has been fully implemented yet on mlx, as it should perform better than a standard 4bit.
+  - Here's the results for reference, when running mlx evaluate - this is my testing of Qwen 3.5 35b
+- How were the speeds nvfp4 - 4bit?
+  - I think it was about the same as the normal 4 bit quant in terms of speed, in that the tests took about the same amount of time to run on the 4 bit quants vs the others which took longer.
 # discuss-quantized
 - ## 
 
@@ -527,7 +614,7 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - The reason is that most llama.cpp users are memory capacity bound on model and memory bandwidth bound on inference speed. All that matters for the one-user-per-gpu domain is quantization accuracy per bit. The llama.cpp k quants are significantly better than microscaled floats in that regard because they offer a scale and offset per block instead of just a scale. Mxfp8 and nvfp8 are jointly optimized to balance precision and ease of hardware acceleration which doesn’t matter if you have boatloads of unused compute laying about because you’re memory bound. Switching from the gguf 8 bit format to mxfp8 or nvfp8 could probably make prefill faster but it wouldn’t realistically improve tok/s during generation and would would make the models less accurate approximations of the unquantized weights. It only makes sense if you’re serving huge batches and everyone that’s doing that uses vLLM which has prioritized microscaled float support. For everyone else it’s fine to just dequantize the gguf k quant weights to fp16 on the gpu during inference
 
-- ## [What are the cons of MXFP4? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pgoezb/what_are_the_cons_of_mxfp4/)
+- ## 🤔 [What are the cons of MXFP4? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pgoezb/what_are_the_cons_of_mxfp4/)
   - Considering that we can make the model FP16 and fine-tune it and then quantize to MXFP4 again, and the model will be robust because it was trained with QAT, what would be the cons? 
   - MXFP4 is (almost) virtually lossless, not FP16 but near-lossless, and it cuts training cost into the half compared to FP16? (FP8 won't be exactly the half because some layers will be kept in FP16 or FP32, so usually like 30% less) while MXFP4 still uses layers that are in higher precision the MoE layers are almost always in 4-bit and that's where the bulk of the computation go, so why it's not the new route? Especially it's standardized so it's verified to be in production and we have seen that with GPT-OSS, I found that MXFP4 gets much less loss even when they get upscaled to FP16 and then quantized to something like INT4 (which has wide compatibility with all types of hardware) compared to model that are trained in FP16.
 
@@ -1490,51 +1577,11 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
-
-- ## [TurboQuant isn’t just for KV: Qwen3.5-27B at near-Q4_0 quality, about 10% smaller, and finally fitting on my 16GB 5060 Ti : r/Qwen_AI _202603](https://www.reddit.com/r/Qwen_AI/comments/1s8489c/turboquant_isnt_just_for_kv_qwen3527b_at_nearq4_0/)
-  - When the TurboQuant paper came out, and when some shows memory can be saved in KV, I started wondering whether the same style of idea could help on weights, not just KV/ cache.
-  - After many long nights (until 2am) after work, that turned into a llama.cpp fork with a 3.5-bit weight format I’m calling TQ3_1S:
-  - This work is inspired by the broader transform-based quantization line, especially RaBitQ-style Walsh-Hadamard rotation ideas and the recent TurboQuant result (Tom). The thing I wanted to test was whether that same geometry could help on weights, not just KV/cache.
-  - So TQ3_1S is about 10% smaller while staying near Q4_0 quality.
-
-- Nice attempt but i dont see the point. You are comparing against q4_0! The world has moved to dynamic quants(from Unsloth/Bartowski)
-  - Weights are grouped and quantized to different precisions based on perplexity. So some weights are more sensitive and need to stay at 6 or 8 bits but others can go down to 3 or even 2 bits and doesn’t affect perplexity at all. It recovers accuracy better and potentially unlocks smaller quants.
-
-- Random rotations for weights is already done by SpinQuant, QuaRot or Quip#, it's not a new idea. All are using Hadamard-Welsch. And same for quant, both ik-llama and Exllamav3 allowed KV-cache quantization via random rotations
-
-- ## [Why exactly can't we use the techniques in TurboQuant on the model's quantizations themselves? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s72up8/why_exactly_cant_we_use_the_techniques_in/)
-- You can. Someone already did it. https://github.com/cksac/turboquant-model
-  - Tried that. Degraded the model outputs by a lot! But yea, memory usage was lower!
-- It's not TurboQuant at all. Whoever vibecoded that clearly didn't read the paper. They didn't implement the QJL transform, which is literally half of what TurboQuant is. Of course, they don't apply the QJL transform because it would make the output even worse, but that's because the whole of TurboQuant is awful for weights.
-
-- Check this out, I found it interesting. Lighter faster LM Head. https://arxiv.org/html/2603.14591v1
-
-- ## [When should we expect TurboQuant? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s3y1oc/when_should_we_expect_turboquant/)
-
-- The reason this matters specifically for local inference: weight quantization has basically been a solved problem since exl2/GGUF. 
-  - Everyone is already running 4-bit. KV cache is the bottleneck that hasn't been cracked at the same quality level. On long context tasks that cache can eat more memory than the weights. 
-  - If TurboQuant delivers lossless or near-lossless KV compression at significant ratios, that unlocks context lengths that were previously only viable on 80GB machines.
-  - The Qwen3.5 + GQA point above is real though. GQA already collapses the KV cache heads, so the baseline is smaller. The relative gain may be less dramatic than on models with full MHA. The unlock is more about 70B+ models on 24GB hardware, or running 32K context without context swapping on mid-tier machines.
-
-- I wonder how well Qwen3.5 would work with it. Considering its KV cache is small as-is thanks to GDN. If it's lossless, Qwen3.5's KV cache would weight like nothing at full context length lol
-  - That depends on which model. Qwen 27b has an attention kv cache of 16GB at full context. 122b is 6GB at full context. Deltanet ssm/conv1d cache is 147MB for both models at any context size. So 27b will shrink to roughly 3.5GB of kv cache at full context.
-- What people seem to be missing is that cloud inference will be cheaper because of this as well.
-
-- reading more into some of the forks, it looks like most of them are not solving the prefill which means you may still need a larger VRAM for the initial loading, wonder if it can be off-loaded to RAM and then squeezed back into VRAM...
-
-- Nvidia's technique is better, but requires per model calibration. Worth it. 
-  - KV Cache Transform Coding for Compact Storage in LLM Inference is the newest https://arxiv.org/abs/2511.01815 but they have a bunch https://github.com/NVIDIA/kvpress
-
-- ### [A simple explanation of the key idea behind TurboQuant : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s62g5v/a_simple_explanation_of_the_key_idea_behind/)
-  - The most important part has nothing to do with polar coordinates (although they are emphasized in Google's blog post, so the confusion is understandable).
-  - TurboQuant is a vector quantization algorithm. It turns a vector of numbers into another vector of numbers that takes up less memory.
-  - at its core, quantization always involves reducing coefficient precision.
-  - Here is the key idea behind TurboQuant: Before quantizing a vector, we randomly rotate it in the n-dimensional space it resides in. The corresponding counter-rotation is applied during dequantization.
-  - Surely the rotation can't be completely random? Maybe it's sampled from a particular distribution, or somehow input-dependent? Or perhaps there is another operation that goes hand in hand with it? Nope. I didn't leave anything out. Just applying a random rotation to the vector dramatically improves quantization performance.
-  - But why? Because the magnitudes of the coefficients of state vectors in language models aren't distributed uniformly among the vector dimensions.
-  - What matters for the purposes of this explanation is: Vectors with this type of quasi-sparse structure are terrible targets for component quantization. Reducing precision in such a vector effectively turns the massive component into 1 (assuming the vector is normalized), and all other components into 0. That is, quantization "snaps" the vector to its nearest cardinal direction. This collapses the information content of the vector, as identifying a cardinal direction takes only log2(2n) bits, whereas the quantized vector can hold kn bits (assuming k bits per component).
-  - And that's where the random rotation comes in! Since most directions aren't near a cardinal direction (and this only becomes more true as the number of dimensions increases), a random rotation almost surely results in a vector that distributes the coefficient weight evenly across all components, meaning that quantization doesn't cause information loss beyond that expected from precision reduction.
+- ## Understanding LLMs by Building One: We use large language models every day, but what actually happens inside them?
+- https://x.com/danilop/status/2039265823907283048
+  - [Understanding LLMs by Building One ](https://danilop.github.io/micro-gpt-and-beyond/)
+  - Some the internals explain the behavior (and issues) we observe. That’s why I build these online labs, initially inspired by Andrej Karpathy's microGPT, to help explore simple code bases that train, fine-tune, and explore present and future grands of LLMs.
+  - https://github.com/danilop/walk-the-code
 
 - ## [FlashAttention-4: 1613 TFLOPs/s, 2.7x faster than Triton, written in Python. What it means for inference. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s1yw23/flashattention4_1613_tflopss_27x_faster_than/)
   - TL; DR for inference:

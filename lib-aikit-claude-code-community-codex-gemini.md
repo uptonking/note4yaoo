@@ -33,6 +33,14 @@ modified: 2025-12-18T12:27:14.982Z
 
 - So would it make sense to use CC for planning and designing edge cases and validation workflows, and codex for actual implementation and writing code?
 
+- ### [Now that it's open source we can see why Claude Code and Codex feel so different : r/ClaudeCode _202604](https://www.reddit.com/r/ClaudeCode/comments/1s8ower/now_that_its_open_source_we_can_see_why_claude/)
+- You don’t need to read the prompts to realise this. This is exactly how it feels when you use both of them. Personally, I prefer Codex approach, it creates less anxiety and it feels more mature. I’ve been using it to supervise Claude’s work and it’s impressive how many flaws it finds in Claude’s plans before implementing something. Claude will always claim all is done and ready, while Codex will flag it and say “no, there is this and this and this that still need to be fixed”. But neither is perfect and you need both, for tricky bugs it’s good to have both.
+  - It goes both ways. Claude also finds flaws in plans written by codex. 
+
+- The system prompts actually make very little difference in model behavior. I run a home-rolled LLM-agnostic harness and frequently switch between GPT and Claude; they both get the exact same system prompt, but their behavior wildly diverges anyway. In general: GPT is anal(anal- retentive 吹毛求疵的) about the instructions in the system prompt to a fault, while Claude takes them as more of a helpful suggestion than a hard rulebook. Honestly, I'm pretty sure the focus on stuffing as many behavioral rules as possible into system prompts is starting to get a little overrated. The RLHF is basically baking it into the weights by definition.
+
+- opinionated tl; dr: Claude code better for vibe coding when you have no idea what you’re doing; Codex better for experienced software engineers that are using AI to speed up the programming they could otherwise do themselves
+
 - ## [ClaudeCode里用Codex模型会表现更好还是更差？ - LINUX DO _202603](https://linux.do/t/topic/1837816)
 - 体感上差别不大，但是估计还是 codex 用 GPT 模型更好吧。毕竟自家模型，训练的时候有针对性。
 

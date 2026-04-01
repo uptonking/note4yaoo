@@ -19,6 +19,14 @@ modified: 2023-06-16T02:53:00.115Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## ✨ Document.caretPositionFromPoint() is Newly Available  _202604
+- https://x.com/MozDevNet/status/2039221281326059984
+  - Give it an (x, y) coordinate and get back the exact DOM node and character offset. Perfect for click-to-edit interfaces.
+
 - ## 🌰 How I built this cursor
 - https://twitter.com/moonriseTK/status/1714542054498603090
   - The green one is the selection, the black is hover haha. Probably unclear in the video, mb. 

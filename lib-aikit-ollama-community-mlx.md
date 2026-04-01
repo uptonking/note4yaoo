@@ -19,7 +19,30 @@ modified: 2026-01-14T18:59:01.949Z
 
 - ## 
 
-- ## 
+- ## [Whats up with MLX? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rvy3nk/whats_up_with_mlx/)
+  - I am a Mac Mini user and initially when I started self-hosting local models it felt like MLX was an amazing thing. It still is performance-wise, but recently it feels like not quality-wise.
+  - from what I see GGUF community seem to be very active: they update templates, fix quants, compare quantitation and improve it; however in MLX nothing like this seem to happen - I copy template fixes from GGUF repos
+  - you open Qwen 3.5 collection in mlx-community and see only 4 biggest models; there are more converted by the community, but nobody seems to "maintain" this collection
+
+- The main thing i would like from mlx is a robust non-python inference option
+
+- From my benchmarks on M4 Pro 64GB with Qwen3.5 35B A3B, MLX still has a real performance edge for generation on short context: ~80 tok/s (LM Studio MLX) vs ~30 tok/s (Ollama GGUF).
+  - But MLX falls apart on large contexts. Prefill TTFT on context fills: ~14s for MLX vs ~4s for GGUF - that's 3x slower. And MLX token generation degrades as context grows, while llama.cpp stays stable.
+  - So the raw engine performance is still there for MLX, but I agree with the general sentiment: the ecosystem around GGUF (quant quality, community maintenance, template fixes) is way ahead. For daily coding work with large contexts, I'd recommend switching to GGUF.
+
+- I'm not sure why the updates from mlx-community or lmstudio-community are so slow for the Qwen3.5 models. I think my main concern is the realization that MLX quantization is way worse than the state of the art GGUF, to the extent that you're better off running a smaller GGUF model. This undoes a lot of the supposed speed benefit from MLX. Also, the most advanced quantizations like DWQ don't seem to support the new Qwen architecture.
+  - I currently mostly use MLX and they are a lot faster and better than GGUF. Especially MXFP4 quants. The only problem MLX had for a long time was a bad kv cache strategy which often led to reprocessing the full prompt. But MLX has improved and oMLX is far ahead of llama.cpp - at the price of longer TTFT but you can deactivate the SSD cache.
+- If you say MLX quants are better than GGUF, that just tells me you haven't tested them seriously or probably not at all. You need a 4 or 5-bit MLX to get similar quality as an IQ3_XXS, very roughly. MLX can't use imatrix or any of the dynamic quant tricks people do with GGUF. DWQ changes things, but it's not supported for Qwen3.5, as already said.
+
+- Some people benchmarked mlx and gguf equivalent models (Qwen-3.5 specifically) running on a Mac, and unfortunately for agentic coding at least the gguf versions were superior on successful tool calling in multiple-round interactions.
+  - For some reason, mlx performance deteriorates after multiple rounds while llama.cpp remains consistent.
+
+- Qwen3.5 working much better on llama.cpp than mlx. I recently changed and the prompt processing is amazing
+
+- Qwen3.5 Hybrid attention is seems to be problematic too. I cam to the same conclusion. oMLX is impressive in raw generation speed for benchmark scenarios. In real-world use cases it plummets. There are many issues. I slowly come to the conclusion myself, that GGUF is still the way to go after a lot of testing.
+  - Prompt caching is currently also broken for Qwen3.5 multimodal models in the MLX runtime. Ram filling, stability and quality seems to be a problem too.
+
+- MLX is super useful for things other than LLMs too. I have local STT (nemotron) and TTS (chatterbox) and it runs faster than real time.
 
 - ## 原来 mlx 上的量化不如 unsloth 的 gguf 是这个原因
 - https://x.com/wey_gu/status/2037547112859365495
@@ -61,13 +84,21 @@ modified: 2026-01-14T18:59:01.949Z
 
 - ## 
 
-- ## Ollama is now updated to run the fastest on Apple silicon, powered by MLX 
+- ## Ollama is now updated to run the fastest on Apple silicon, powered by MLX _202603
 - https://x.com/ollama/status/2038835449012351197
   - [Ollama is now powered by MLX on Apple Silicon in preview · Ollama Blog _202603](https://ollama.com/blog/mlx)
   - NVFP4 support: higher quality responses and production parity 
   - Ollama now leverages NVIDIA’s NVFP4 format to maintain model accuracy while reducing memory bandwidth and storage requirements for inference workloads.
   - Ollama’s cache has been upgraded to make coding and agentic tasks more efficient.
 
+- ### [Ollama added support to MLX : r/ollama _202604](https://www.reddit.com/r/ollama/comments/1s8wk20/ollama_added_support_to_mlx/)
+- Just wanted to share some quick benchmark results I got testing the new Ollama 0.19 preview with the MLX backend. 
+  - Hardware: MacBook Pro M3 Max
+  - Standard Backend (qwen3.5:35b) 
+    - Prompt Eval (TTFT): 0.69 seconds,  Generation Speed: 31.98 tokens/second
+  - MLX + NVFP4 Backend (qwen3.5:35b-a3b-coding-nvfp4)
+    - Prompt Eval (TTFT): 2.57 seconds, Generation Speed: 71.45 tokens/second
+  - The combination of Apple's MLX framework (avoiding CPU/GPU memory copying), the NVFP4 quantization, and the model's sparse Mixture-of-Experts architecture is incredibly efficient on Apple's unified memory.
 # discuss-roadmap
 - ## 
 

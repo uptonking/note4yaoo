@@ -9,6 +9,22 @@ modified: 2026-01-23T13:10:20.291Z
 
 # guide
 
+# local-models
+- local-model
+  - [GPU Poor LLM Arena - a Hugging Face Space by k-mktr](https://huggingface.co/spaces/k-mktr/gpu-poor-llm-arena)
+
+- https://github.com/fiveoutofnine/whatcanirun /202603/ts
+  - https://whatcani.run/
+  - Find the best local models based on real data
+  - https://x.com/fiveoutofnine/status/2038728823861367233
+    - whatcani.run is based on real runs submitted by people
+    - canirun.ai provides estimates across a wider variety of models and devices
+    - it filters all submissions by CPU + GPU + RAM, and so far that's the only model that has any benchmark data submitted for it
+
+- https://github.com/AlexsJones/llmfit /MIT/202603/rust/ts
+  - Hundreds of models & providers. One command to find what runs on your hardware.
+  - A terminal tool that right-sizes LLM models to your system's RAM, CPU, and GPU. Detects your hardware, scores each model across quality, speed, fit, and context dimensions, and tells you which ones will actually run well on your machine.
+  - Ships with an interactive TUI (default) and a classic CLI mode. Supports multi-GPU setups, MoE architectures, dynamic quantization selection, speed estimation, and local runtime providers (Ollama, llama.cpp, MLX, Docker Model Runner).
 # discuss-stars
 - ## 
 

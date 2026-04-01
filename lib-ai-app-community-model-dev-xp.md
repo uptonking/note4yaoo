@@ -60,6 +60,11 @@ modified: 2025-11-18T13:22:22.078Z
 - 
 
 # custom-model-tuning
+- docs
+  - mermaid
+  - typst, latex
+  - katex
+
 - https://github.com/tobi/qmd
   - Query Expansion: Original query (×2 for weighting) + 1 LLM variation
   - qmd-query-expansion-1.7B-q4_k_m: Qwen3, Used for generating query variations via LlamaChatSession.

@@ -21,11 +21,6 @@ modified: 2025-09-16T19:59:57.856Z
     - 可以通过一个API路由（比如New-API：链接 ），来轮流使用这些免费模型，额度耗尽就自动切换下一家
     - 对Agent应用来说，获得一个模型的参数，比如上下文大小，可以作为程序决策的依据
 
-- https://github.com/AlexsJones/llmfit /MIT/202603/rust/ts
-  - Hundreds of models & providers. One command to find what runs on your hardware.
-  - A terminal tool that right-sizes LLM models to your system's RAM, CPU, and GPU. Detects your hardware, scores each model across quality, speed, fit, and context dimensions, and tells you which ones will actually run well on your machine.
-  - Ships with an interactive TUI (default) and a classic CLI mode. Supports multi-GPU setups, MoE architectures, dynamic quantization selection, speed estimation, and local runtime providers (Ollama, llama.cpp, MLX, Docker Model Runner).
-
 - awesome-models
   - [LLM Explorer: A Curated LLM List ](https://llm-explorer.com/)
 

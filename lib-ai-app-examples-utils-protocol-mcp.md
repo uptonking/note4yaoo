@@ -351,6 +351,12 @@ modified: 2026-01-19T05:01:00.055Z
   - A protocol for connecting any editor to any agent
   - [Bring Your Own Agent to Zed — Featuring Gemini CLI — Zed's Blog _202508](https://zed.dev/blog/bring-your-own-agent-to-zed)
 # skills
+- resources
+  - [ClawHub, the skill dock for sharp agents.](https://clawhub.ai/)
+  - [ClawHub 中国官方镜像站](https://cn.clawhub-mirror.com/)
+  - [clawskills.sh — Curated OpenClaw Skill Discovery](https://clawskills.sh/)
+  - [SkillHub-专为中国用户优化的Skills社区 ](https://skillhub.tencent.com/)
+
 - https://github.com/PrefectHQ/colin /202602/python
   - https://colin.prefect.io/
   - A context engine that treats skills as software.

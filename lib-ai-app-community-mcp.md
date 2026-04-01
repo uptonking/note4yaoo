@@ -354,6 +354,14 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
+- ## 
+
+- ## [What's your "must-have" MCP server that you use daily? : r/mcp _202604](https://www.reddit.com/r/mcp/comments/1s94a85/whats_your_musthave_mcp_server_that_you_use_daily/)
+- We have our documentation platform integrated via MCP: Claude or ChatGPT. You can ”talk” to it like it’s a team member: make edits, updates, add back links, ask about view metrics and more.
+  - I have been doing this with Atlassian MCP for Confluence. I built a bunch of agents after reinforcing its context with the code for our product. It’s quite amazing how well it understands the code base and how concise it documented it. It’s pretty wild and a must have
+
+- Serena, context 7, firecrawl, jcodemunch, jdocmunch
+
 - ## [MCP’s biggest missing piece just got an open framework : r/mcp](https://www.reddit.com/r/mcp/comments/1rm6plf/mcps_biggest_missing_piece_just_got_an_open/)
   - If you've been building with MCP you've probably hit the same realization we did. It's incredible at connecting agents to real systems, but it has absolutely no concept of identity.
   - There's no way to say "This agent is acting on behalf of John from accounting, and John explicitly authorized it to book travel under $300." No way to blame and fire John.

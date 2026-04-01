@@ -110,7 +110,11 @@ modified: 2023-04-11T13:29:56.273Z
 
 - ## 
 
-- ## 
+- ##  `Promise.withResolvers()` returns { promise, resolve, reject }
+- https://x.com/MozDevNet/status/2039070273463623824
+  - No more wrapping logic inside the constructor.
+- withResolvers is already supported in all major browsers! It's often overlooked because most examples only show niche use cases. However, you can use this API to replace bulky `new Promise(...)` blocks, helping you avoid nesting and unlocking better refactoring options.
+  - Nodejs v22 开始支持
 
 - ## Your API needs to process huge JSON payloads (5–20 MB) from clients. How do you design it so parsing alone doesn’t choke your CPU?
 - https://x.com/SumitM_X/status/1999107796131094714
@@ -146,4 +150,4 @@ modified: 2023-04-11T13:29:56.273Z
   - In fact, all the convenience body reading methods like `.arrayBuffer(), .json(), .formData()` , etc. are wrappers around consuming the `ReadableStream` , which is `response.body` .
 - That's how some high-frequency trading code works. You don't parse a JSON response because it takes time; you go directly to the offset where the number you're looking for will likely be
 - In Node, reading the whole body is important to avoid memory leaks.
-- Does the reader not implement async iterator? Then you could replace the `while(true)` with `for await (...)`
+- Does the reader not implement async iterator? Then you could replace the `while(true)` with `for await (...)` 

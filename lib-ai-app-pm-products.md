@@ -737,7 +737,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 高效连接 Claude Code CLI
     - [【WONG公益站】弄个主贴 ](https://linux.do/t/topic/1179964)
     - 不要对模型进行测试，测试失败不是因为服务不可用，是我禁掉了测试
-  - [随时跑路公益](https://runanytime.hxi.me/console/personal), 每天签到
+  - 📌 [随时跑路公益](https://runanytime.hxi.me/console/personal), 每天签到
     - [随时跑路福利站](https://fuli.hxi.me/wheel)
     - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
     - RPM 暂时定为 5，之后看情况调整
@@ -749,7 +749,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [『Elysiver公益站主贴』 ](https://linux.do/t/topic/1175087)
     - 2cx 指接入 Codex 使用
     - docs 指的是这是 claude 的文档 ai，不破限只会回答文档相关的内容
-  - [NihaoAPI _202603](https://nih.cc/console/personal)
+  - 🗑️ [NihaoAPI _202603](https://nih.cc/console/personal)
     - cc
   - [Pond Hub 反重力号池 _202603](https://code.claudex.us.ci/panel/profile), 签到
     - [【公益站】Code公益站-反重力号池 重回更名为Pond Hub ](https://linux.do/t/topic/1785656)
@@ -827,6 +827,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [Rosmontis](https://ai.rosmontis.de/console/personal)
     - [[迷迭香公益站]  ](https://linux.do/t/topic/1694922)
     - 公益站有无限codex(目前限制500并发)，无限grok(程序默认限制50并发)。glm系列目前不保证可用性。还有一些杂七杂八的模型。
+  - [荷塘AI _202604](https://hetang.lyvideo.top/console/personal)
+    - [【荷塘公益站】仅支持GPT5.4  ](https://linux.do/t/topic/1875698)
   - [Hello AI _202603](https://hello.xhyun.eu.cc/console/personal)
     - [「XH AI Center/Hello AI 」重新出发 _202603](https://linux.do/t/topic/1759449)
   - [dudu公益站 _202603](https://wududu.edu.kg/console/personal)
@@ -842,8 +844,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [【Infinite API】全新公益站上线试运营 ](https://linux.do/t/topic/1622685)
     - 50 RPM， 25 个同时进行的请求
     - arrow-preview, QuiverAI API flagship SVG gen
-  - [真好记公益站](https://api.zhenhaoji.qzz.io/console/personal)
-    - https://fuli.zhenhaoji.qzz.io/
+  - 🗑️ [真好记公益站](https://api.zhenhaoji.qzz.io/console/personal)
     - 随便刷吧，可能刷崩了，我就关站了
     - cc, opus 是cursor2api的 sonnet4.6
     - [真好记公益站 ](https://linux.do/t/topic/1795254)

@@ -9,6 +9,8 @@ modified: 2025-12-18T12:26:08.445Z
 
 # guide
 
+# draft
+- 自定义 open claude-agent-sdk, 紧跟着官方版进行维护和升级
 # 📌 claude-code-xp
 - claude-code-cli 使用ollama本地模型时，可能提示 
   - "qwen3-vl:4b-instruct" does not support thinking
@@ -312,6 +314,16 @@ export ANTHROPIC_SMALL_FAST_MODEL="claude-sonnet-4-5-20250929"
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 有人拿泄露的源码丢给 OpenAI 的 Codex 分析，竟然找到了 Claude Code 疯狂消耗 token 的元凶——autoCompact（自动上下文压缩）机制在失败后会无限重试，完全没有上限。据源码注释记录，曾有会话连续失败高达 3272 次。
+- https://x.com/imyouhu/status/2039191460256612770
+  - 修复方法简单到离谱：加一个 MAX_CONSECUTIVE_AUTOCOMPACT_FAILURES = 3 的限制，连续失败 3 次就停止重试。三行代码，搞定。
+
+- 另外一个发现是在桌面端使用的cowork工作，token消耗惊人的可怕，说个你好，2%的额度都没了，我写了一段文字，三天的额度都给我干没了
+
 - ## Anthropic 工程师复盘了 Claude Code 一年的工具设计演变，三个细节值得细想： _202602
 - https://x.com/runes_leo/status/2027737298914160853
   - 1. 待办列表被砍了。早期用 TodoWrite 盯模型干活，每 5 轮插一次提醒。模型变强后，提醒反而成了枷锁——它觉得必须严格执行列表，不敢灵活调整。
@@ -383,6 +395,10 @@ export ANTHROPIC_SMALL_FAST_MODEL="claude-sonnet-4-5-20250929"
 - [claude code开源有什么用 - LINUX DO _202603](https://linux.do/t/topic/1866329/9)
   - cc实际上是一个通用agent，不是单纯的coding agent, cc和sonnet/opus互相成就
 - 类似于大模型是赛车手，cli这类就是赛车吧。如今最顶级的赛车怎么制作的大家都能够知道了
+
+- ### [Every prompt Claude Code uses , studied from the source, rewritten, open-sourced : r/LLMDevs _202604](https://www.reddit.com/r/LLMDevs/comments/1s9egwq/every_prompt_claude_code_uses_studied_from_the/)
+  - Claude Code's source was briefly public on npm. I studied the complete prompting architecture and then used Claude to help independently rewrite every prompt from scratch.
+  - https://github.com/repowise-dev/claude-code-prompts
 
 - ### Important takeaways from Claude’s source code:
 - https://x.com/jpschroeder/status/2038960058499768427

@@ -701,6 +701,12 @@ modified: 2025-02-21T18:20:42.624Z
   - A FUSE virtual filesystem for AI Agents, integrating memory, RAG & local data access with flexible MCP/tool chaining and a scalable plugin system
   - ToolFS is a specialized virtual filesystem framework designed for Large Language Model (LLM) agents. It unifies disparate interfaces—files, persistent memory, semantic search (RAG), and code execution (WASM skills)—into a single, POSIX-compliant /toolfs namespace.
   - Unified Skill API: Register and execute WASM-based or native skills with context-aware documentation that helps agents understand when and how to use them.
+# packaging/toolchain
+- https://github.com/microsoft/apm /809Star/MIT/202604/python
+  - https://microsoft.github.io/apm/
+  - An open-source, community-driven dependency manager for AI agents.
+  - Think package.json, requirements.txt, or Cargo.toml — but for AI agent configuration.
+  - GitHub Copilot · Claude Code · Cursor · OpenCode · Codex
 # utils
 - https://github.com/Olow304/memvid /MIT/202506/python
   - https://pypi.org/project/memvid/

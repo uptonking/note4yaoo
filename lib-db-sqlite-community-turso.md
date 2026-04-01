@@ -330,7 +330,17 @@ Today, Turso is in beta with early customers working toward production deploymen
 
 - ## 
 
-- ## 
+- ## 💡 Running AI-generated code can be dangerous and slow. Running code on the language runtime directly on the host exposes a lot of API surface for agents to exploit. 
+- https://x.com/penberg/status/2039232057805541505
+  - And while Docker and Firecracker, for example, provide strong isolation, they're not ideal for rapid agent feedback loops.
+  - Two projects I've recently started watching take a different approach. They aim to provide minimal, safe, fast sandboxes:
+  - Monty for Python
+  - ZapCode for TypeScript
+- What do you think about https://github.com/everruns/bashkit
+  - I wonder if bashkit should support Python and JavaScript via the crates I mentioned, similar to just-bash does?
+- It already has experimental Monty support. The main problem at this moment is that none of these crates (including bashkit) has a definitive proof of security, and taking more dependencies is a huge increase in attack surface.
+
+- Is secure exec from @rivet_dev relevant here?
 
 - ## opencode: we've been experimenting with getting rid of the bash tool
 - https://x.com/thdxr/status/2034364283413283224

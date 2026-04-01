@@ -321,6 +321,64 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0401
+
+- mac m4 ollama test simple
+
+- qwen3.5:4b-q4_K_M  3.4GB
+
+```
+total duration:       2m35.794602583s
+load duration:        111.727375ms
+prompt eval count:    18 token(s)
+prompt eval duration: 323.14ms
+prompt eval rate:     55.70 tokens/s
+eval count:           2771 token(s)
+eval duration:        2m34.614017634s
+eval rate:            17.92 tokens/s
+```
+
+
+
+```
+total duration:       9.83627225s
+load duration:        103.945834ms
+prompt eval count:    15 token(s)
+prompt eval duration: 270.228875ms
+prompt eval rate:     55.51 tokens/s
+eval count:           167 token(s)
+eval duration:        9.418482123s
+eval rate:            17.73 tokens/s
+```
+
+- qwen3.5:4b-nvfp4  4.0GB
+
+```
+total duration:       33.366493667s
+load duration:        40.022ms
+prompt eval count:    18 token(s)
+prompt eval duration: 1.140746542s
+prompt eval rate:     15.78 tokens/s
+eval count:           847 token(s)
+eval duration:        32.184634208s
+eval rate:            26.32 tokens/s
+```
+
+
+
+```
+total duration:       9.009692792s
+load duration:        37.448417ms
+prompt eval count:    15 token(s)
+prompt eval duration: 221.004458ms
+prompt eval rate:     67.87 tokens/s
+eval count:           228 token(s)
+eval duration:        8.749817833s
+eval rate:            26.06 tokens/s
+```
+
+# dev-03
+
 ## 0325
 
 - i want to develop a cms that features document relationships. what's the most popular graph database for this? give me some solutions and tips

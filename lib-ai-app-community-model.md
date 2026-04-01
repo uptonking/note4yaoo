@@ -311,6 +311,15 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [autoloop — run overnight optimization experiments with your local Ollama model on anything (prompts, SQL, strategies) : r/ollama _202604](https://www.reddit.com/r/ollama/comments/1s9i09f/autoloop_run_overnight_optimization_experiments/)
+  - Built a library that applies Karpathy's autoresearch loop to any optimization task, not just ML training. Works fully local with Ollama, zero API cost.
+  - https://github.com/menonpg/autoloop /MIT
+  - FYI - it also works with cloud APIs if you prefer — just swap the backend
+
 - ## [Gallery of LLM Architecture Visualizations : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1ruek0h/gallery_of_llm_architecture_visualizations/)
 
 - ## OpenClaw 既不涉及大模型研发，也没有新的算法突破，技术创新主要体现在工程整合层。

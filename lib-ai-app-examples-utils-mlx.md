@@ -11,6 +11,16 @@ modified: 2025-11-01T10:54:26.044Z
 
 - tips
   - 不必执着于lmstudio的替代, 采用client/server架构后, 普通后端都可以支持定制前端
+# dev-xp
+- mlx-4bit 模型通常比 gguf-Q4_K_XL 速度快，但质量更差
+- mlx模型的fixes/updates通常无人维护, 连lmstudio社区的模型都很少维护， 远不如gguf
+
+- 
+- 
+- 
+- 
+- 
+
 # popular
 - https://github.com/ml-explore/mlx-lm /2.7kStar/MIT/202511/python
   - a Python package for generating text and fine-tuning large language models on Apple silicon with MLX.
@@ -582,6 +592,10 @@ modified: 2025-11-01T10:54:26.044Z
 - https://github.com/pkeffect/llama-swap-sync /MIT/202511/python/inactive
   - production-ready Python toolkit to automate the synchronization between a directory of .gguf model files and a llama-swap config.yaml file. 
   - This project provides utilities for downloading models from Hugging Face, verifying their integrity, and automatically maintaining your llama-swap configuration.
+
+- https://github.com/yousefjan/rais /MIT/202603/cpp
+  - A scheduling runtime for concurrent inference on Apple Metal
+  - [I built a priority scheduler that cuts TTFT 3.4x when running concurrent mlx-lm requests : r/mlxAI _202604](https://www.reddit.com/r/mlxAI/comments/1s7kpn7/i_built_a_priority_scheduler_that_cuts_ttft_34x/)
 # llm-apps
 - https://github.com/eclaire-labs/eclaire /MIT/202510/ts
   - Local-first, open-source AI assistant for your data. Unify tasks, notes, docs, photos, and bookmarks. Private, self-hosted, and extensible via APIs.
