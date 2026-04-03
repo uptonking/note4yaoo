@@ -145,6 +145,13 @@ modified: 2022-11-06T11:21:27.612Z
   - A framework-agnostic syncing solution that auto-connects any DB/API with your local data store and has optimistic-UI built in
   - Magnetar has 2-way sync database integration for Google Firestore (and others coming). You do not need to learn to work with the database SDK.
 # db-client
+- https://github.com/Rohithgilla12/data-peek /1.6kStar/MIT/202604/ts
+  - https://www.datapeek.dev/
+  - A minimal, fast, database client desktop application. 
+  - minimal, fast SQL client desktop application with AI-powered querying.
+  - Supports PostgreSQL, MySQL, Microsoft SQL Server, and SQLite.
+  - SSH Tunnels - Connect securely through bastion hosts with password or key auth
+
 - https://github.com/outerbase/studio /AGPLv3/202412/ts
   - https://studio.outerbase.com/
   - A lightweight Database GUI in your browser. 

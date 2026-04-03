@@ -49,6 +49,9 @@ modified: 2025-07-17T14:39:41.606Z
   - doc-api-for-ai, 参考notion的实现方式
   - 参考切换chat的ux和逻辑，来优化切换docs的体验
 
+- pm
+  - 同事的文档分身, 同事在与不在都能回答问题
+
 - docs-editor  + image-gen
   - comfyui: text-to-image
   - svg图片

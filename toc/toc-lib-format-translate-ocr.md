@@ -784,6 +784,14 @@ modified: 2025-12-19T12:43:21.150Z
   - 基于mineru网页端，抓包分析后将核心的上传及转换功能集成为api，供其他服务调用
   - [[开源]两个比较有意义的docker项目吧，一个是mineru-api，另一个是微信和T的音频转换api ](https://linux.do/t/topic/975584)
 
+- https://github.com/yuzi-ska/OCR-Finder /MIT/202604/python
+  - 本地离线 OCR 图片搜索工具，递归扫描文件夹，查找包含目标文本的图片。
+  - 本地离线运行 - 使用 RapidOCR ONNX Runtime，无需联网
+  - 环境要求 Python 3.10+ Windows
+  - [【开源自荐】OCR Finder 递归扫描本地离线的 OCR 图片搜索工具 - LINUX DO _202604](https://linux.do/t/topic/1884459)
+    - 和OCR原作用一样，提取图片中的文字信息，关键词是想要在图片中找到的字
+    - 使用的本地模型是PaddleOCR的v4版本，结合性能需求等综合下来的识别率算挺高的了，PP模型对手写体也有做优化，我测试下来基本只要不是非常奇怪的手写体大多都能识别
+
 ## utils-ocr
 
 - https://github.com/yigitkonur/llm-based-ocr /AGPL/202511/python

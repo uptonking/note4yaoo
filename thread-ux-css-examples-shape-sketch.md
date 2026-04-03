@@ -14,7 +14,9 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
-- ## 
+- ## 常见的为 DOM 设置平滑圆角的方案大多使用的 mask，我来分享一种利用 superellipse 并在数学上对齐顶点，并支持多重方案低成本使用 
+- https://x.com/xiaolinbythesea/status/2039644145044824305
+- chrome 不久前实现了border shape，任意形状的边框都可以了
 
 - ## 你现在可以轻松用纯 css 实现小米 logo 的圆角，gemini logo，以及曾经让你头疼的优惠券挖凹角效果
 - https://x.com/dongnaebi/status/1988794318539354505

@@ -291,7 +291,8 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## [Can Obsidian do something like this? (Notion dashboard) : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1salt9e/can_obsidian_do_something_like_this_notion/)
+- There’s a very useful CSS snippet called MCL that lets you build multi-column pages like this. Most other things on here can be done with bases or dataviews.
 
 - ## 看大家都在推 Obsidian。但一翻比较后我选择了 @tryOctarine , 30MB 左右，相比 Obsidian 小了一个数量级。
 - https://x.com/1ronben/status/2035978760827322578

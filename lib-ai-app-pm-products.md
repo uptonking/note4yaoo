@@ -751,7 +751,7 @@ modified: 2025-03-22T16:10:24.856Z
     - docs 指的是这是 claude 的文档 ai，不破限只会回答文档相关的内容
   - 🗑️ [NihaoAPI _202603](https://nih.cc/console/personal)
     - cc
-  - [Pond Hub 反重力号池 _202603](https://code.claudex.us.ci/panel/profile), 签到
+  - 📌 [Pond Hub 反重力号池 _202603](https://code.claudex.us.ci/panel/profile), 签到
     - [【公益站】Code公益站-反重力号池 重回更名为Pond Hub ](https://linux.do/t/topic/1785656)
   - [ThatAPI](https://gyapi.zxiaoruan.cn/console/personal), 签到
     - 有多个cc分组，IP限制严格(无需gfw)
@@ -763,7 +763,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [【old API公益站】公益站上线（已恢复？） ](https://linux.do/t/topic/1541085)
     - rpm 为 25，还是老样子小容器部署，服务稳定性未知，随时可能因为账号短缺、高并发而死掉
     - 仅支持 sonnet 和 haiku，等 kiro 恢复 free 用户的 opus 使用权后会上 opus
-  - [小呆API](https://api.daiju.live/console/personal), 签到，api不稳定
+  - 📌 [小呆API](https://api.daiju.live/console/personal), 签到，api不稳定
     - https://china.184772.xyz
     - [小呆API](https://new.184772.xyz/)
     - cc支持
@@ -790,7 +790,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [LinuxDo 社区福利活动](https://campaign.zhx47.xyz/)
     - [OAI-FREE 签到发送订阅 ](https://linux.do/t/topic/1632349)
     - 都是临时渠道，不开签到了，直接每天送 100 刀余额
-  - [Super Codex _202603](https://supercodex.space/dashboard), 每天100, 自动发放
+  - [Super Codex _202603](https://supercodex.lol/dashboard), 每天100, 自动发放
     - [Codex公益站，三网优化，每天100刀 - LINUX DO _202603](https://linux.do/t/topic/1833285)
     - 并发限制35
     - 注册看见余额是0不需要管，注册就有每日100u的套餐
@@ -798,6 +798,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 当余额低于 20 刀时可申请重置到 200 刀。
     - [【开放】【冰の公益站】纯GPT站点 支持5.3 5.4 ](https://linux.do/t/topic/1795246)
     - 清理首批不活跃用户信息（默认条件：注册超过 48 小时，且无 usage、无签到、无重置、API Key 从未使用）
+  - [Joverna _202603](https://jiuuij.de5.net/console/personal)
+    - 余额超过100时无法签到
   - [CM-API-公益站 _202603](https://api.chengmo.cc.cd/console/personal), 无签到
     - [【CM公益站】佬们，该蹬车了！GPT-5.4强势回归！0倍率+无限制 ](https://linux.do/t/topic/1777029)
   - [52公益站 _202603](https://free.9e.nz/dashboard), 无需签到
@@ -849,15 +851,18 @@ modified: 2025-03-22T16:10:24.856Z
     - cc, opus 是cursor2api的 sonnet4.6
     - [真好记公益站 ](https://linux.do/t/topic/1795254)
   - [api-test](https://openai.api-test.us.ci/console/personal)
-    - [开个小公益站测试一下 ](https://linux.do/t/topic/1414593)
     - [LDC Virtual Goods Shop](https://shop.api-test.us.ci/)
+    - https://cdk.api-test.us.ci/
     - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex
     - 有claude, 无opus
     - 默认 RPM30，1 级可注册，不允许批量测活
+    - [开个小公益站测试一下 ](https://linux.do/t/topic/1414593)
   - 📌 [小辣椒 公益站 ](https://yyds.215.im/console/topup), 签到类似wong
     - cc
   - [蒸蚌公益站 _202603](https://laoxi.ethan010203.online/console/personal), 签到50
     - gpt-5.2
+  - 📌 [Dooong AI ](https://ai.dooo.ng/console/personal), 签到需过盾
+    - 后台有加权风控分系统，T+1和不定时封禁违规账号
   - [六万 购曼公益 _202603](https://ai.dogaltman.us.ci/console/personal)， 签到
     - [六万公益站复活，改名【购曼公益】 ](https://linux.do/t/topic/1855060)
   - [无邪公益站 _202603](https://wuxiexiexie.us.ci/console/personal)
@@ -865,10 +870,10 @@ modified: 2025-03-22T16:10:24.856Z
   - [marybrown API _202603](https://marybrown.dpdns.org/console/personal)
     - [服务器小升级,grok-4.2无限用和gpt-5.4试用 _202603](https://linux.do/t/topic/1795512)
     - 23公益站作者后续维护
-  - [Joverna _202603](https://jiuuij.de5.net/console/personal)
-    - 余额超过100时无法签到
   - [955code _202603](https://955code.top/console/personal), 无签到
     - [【955code】codex公益站，上线试运营 _202603](https://linux.do/t/topic/1840889)
+  - [意念公益站 _202604](https://yinian.564779.xyz/dashboard), 无签到
+    - [［意念公益站］正式运营啦 ](https://linux.do/t/topic/1886962)
   - [鱼汤公益站 _202603](https://ai.zhansi.top/console/personal)
   - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
     - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
@@ -906,7 +911,9 @@ modified: 2025-03-22T16:10:24.856Z
     - [又一个codex公益站，人手一个蹬  ](https://linux.do/t/topic/1645651)
     - gpt-5.4, gpt-5.3-codex
     - [上线claude-sonnet-4.6模型（不稳定版），爱来自cursor  _202603](https://linux.do/t/topic/1739712)
-  - [小天公益站 _202603](https://new-api.xt-url.com/pricing), 无签到
+  - [小天公益站 _202603](https://new-api.xt-url.com/pricing)
+    - https://checkin.new-api.xt-url.com/
+    - 医疗健康大模型 2api, 对话模型，不支持工具调用
   - [纳米哈基米](https://free.nanohajimi.mom/console/personal), 签到
     - Gemini Imagen
     - [【纳米哈基米 · 公益站】 支持香蕉Pro画图，Veo视频，Gemini全系模型 ](https://linux.do/t/topic/1512770)

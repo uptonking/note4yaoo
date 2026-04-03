@@ -19,7 +19,7 @@ modified: 2025-09-21T13:58:46.548Z
   - Transform PDF to JSON or Markdown with ease and speed
   - Parsing of multiple document formats incl. PDF, DOCX, PPTX, XLSX, HTML, WAV, MP3, images (PNG, TIFF, JPEG, ...), and more
   - 模块化设计，集成 Unstructured、LayoutParser 等库，支持本地化处理
-  - ~~需 CUDA 环境，部分功能依赖商业模型~~
+  - ~~需 CUDA 环境，部分功能依赖商业模型~~ 
   - Advanced PDF understanding incl. page layout, reading order, table structure, code, formulas, image classification, and more
   - Unified, expressive DoclingDocument representation format
   - export formats: Markdown, HTML, DocTags and lossless JSON
@@ -374,4 +374,9 @@ modified: 2025-09-21T13:58:46.548Z
 - https://github.com/whyhow-ai/knowledge-table /MIT/202411/python/ts/inactive
   - open-source package designed to simplify extracting and exploring structured data from unstructured documents. 
   - It enables the creation of structured knowledge representations, such as tables and graphs, using a natural language query interface. 
+# resources
+- https://github.com/PSPDFKit/pdf-to-markdown /cli/NonOpen
+  - Standalone CLI wrapper and docs for Nutrient's PDF-to-Markdown extractor
+  - https://x.com/jdrhyne/status/2039750394587591150
+    - We are shipping it as a closed source, free to use for up to 1,000 documents per month, no license key required, and your documents stay completely local. 
 # more

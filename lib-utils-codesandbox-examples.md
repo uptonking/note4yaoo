@@ -580,6 +580,13 @@ modified: 2023-09-02T09:17:22.992Z
       - gVisor: Reimplements Linux syscalls in userspace. Strong isolation but wide attack surface. Linux-only, needs elevated privileges on most managed platforms.
       - 👀 srt has ~100% Linux support, agentOS is an entirely new OS, so not everything works out of the box.
       - Highly recommend reading about our sandbox extensions too
+  - https://x.com/NathanFlurry/status/2039428265283391581
+    - Memory of coding harnesses in agentOS (portable WASM OS for agents): 🥇 Codex (WASM): 122 MB, 🥈 Pi (V8): 153 MB, 🥉 Claude Code (V8): 316 MB
+    - This is the memory for the *entire* VM, including bash, Node.js, Python, git fully loaded
+    - This is Python / Node.js fully loaded without any libraries, correct? Also what do you mean by "Python fully loaded"? Isn't CPython quite sizable in memory usage when you actually use it
+      - Not loaded in memory, it's just on disk. Emphasizing that agentOS is POSIX-compliant in contrast with the memory overhead of a heavier-weight VM
+    - I wonder how you got Claude Code running here
+      - Little bit of http://secureexec.dev magic, lotta bit of API shims
 
 - https://github.com/rivet-dev/sandbox-agent /536Star/apache2/202602/rust/ts
   - https://sandboxagent.dev/

@@ -91,6 +91,10 @@ modified: 2026-01-19T05:01:00.055Z
   - A Claude Code skill that generates native .drawio files, with optional export to PNG, SVG, or PDF (with embedded XML so the exported file remains editable in draw.io). No MCP setup required.
   - Generate draw.io XML for your requested diagram; Write it to a `.drawio` file in your current directory
   - If you requested an export format, export using the draw.io desktop CLI
+  - https://x.com/drawio/status/2039422442339233816  _202604
+    - draw.io diagrams now stream into Claude as they're generated. Shape by shape, edge by edge.
+    - How does the agent handle partial updates?
+    - Get the partial XML, make it valid, merge it
 
 - https://github.com/magicyuan876/mineru-tianshu /apache2/202601/python/ts/vue
   - 天枢 - 企业级 AI 数据预处理平台，将非结构化数据转换为 AI 可用的结构化格式
@@ -190,7 +194,7 @@ modified: 2026-01-19T05:01:00.055Z
   - Helps to avoid Cloudflare and DataDome CAPTCHA pages. 
   - Easy to patch/unpatch, can be enabled/disabled on demand.
 
-- https://github.com/alibaba/page-agent /MIT/202603/ts
+- https://github.com/alibaba/page-agent /15kStar/MIT/202604/ts
   - https://alibaba.github.io/page-agent/
   - The GUI Agent Living in Your Webpage. Control web interfaces with natural language.
   - No Selenium. No Puppeteer. No Chrome extension. No Python backend. Just one script tag.

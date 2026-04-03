@@ -83,10 +83,20 @@ modified: 2023-11-23T18:01:59.304Z
 - https://github.com/charlzyx/da
   - https://charlzyx.github.io/da/
 
-- https://github.com/formkit/formkit /4.6kStar/MIT/202411/ts/inactive
+- https://github.com/formkit/formkit /4.7kStar/MIT/202604/ts
   - https://formkit.com/
-  - FormKit is a form-authoring framework for Vue
+  - FormKit is a form-authoring framework ~~for Vue~~ 
   - supports its whole feature set for native HTML inputs (like select, checkbox, and textarea) 
+  - https://x.com/jpschroeder/status/2039754919133974622 _202604
+    - announcing FormKit for React.
+    - We (the creators of FormKit) thought form libraries were no longer necessary, given the trajectory of coding agents. It turns out we were wrong, and we learned this the hard way. Need repeating conditional fields nested 3 layers deep inside a dynamic component, with accessibility, validation, internationalization, and backend error placement? Turns out coding agents aren’t great at that. It’s table stakes for FormKit.
+    - ⚖️🐛 Schema. FormKit’s own inputs are not written using Vue or React — instead, FormKit has its own render schema — think of it like an AST for the DOM — and you can modify it on the fly. It’s not very human-friendly to write, but it turns out most models are already pretty well trained on FormKit’s schema.
+    - Single component.  This was done to provide a better DX to human engineers.  It turns out this matters even more to coding agents than humans. No matter where your coding agent is, whenever it sees “FormKit” it immediately knows “oh, that’s part of the form’s data”.
+    - No plumbing. FormKit doesn’t require any manual data collection, event listening, or state tracking. It does all this for you on a heavily tested, framework agnostic, self-assembling graph. 
+    - FormKit, unlike most form frameworks in React, renders the actual DOM. 
+    - Plugins. FormKit leans into the unstructured tree graph hard. The graph doesn’t just collect data, it also passes down configuration and plugins. 
+  - do you support  standard-schema, it seems popular and futuristic
+    - No, we have our own well established one at this point: [FormKit Schema ](https://formkit.com/essentials/schema)
 
 - https://github.com/heyform/heyform /AGPLv3/202407/ts
   - https://heyform.net/

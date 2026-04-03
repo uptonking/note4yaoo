@@ -312,6 +312,18 @@ modified: 2021-01-04T17:26:25.032Z
   - minimal Markdown Editor desktop app built on top of Electron.
   - Sync Scrolling
 # import/export
+- https://github.com/liyown/marknative /MIT/202604/ts
+  - A Markdown rendering engine that generates paginated PNG and SVG output — no browser, no Chromium, no DOM.
+  - Most Markdown rendering pipelines go through a browser: Markdown → HTML → DOM/CSS → browser layout → screenshot
+  - marknative takes a different path. It parses Markdown directly into a typed document model, runs its own block and inline layout engine, paginates the result into fixed-size pages, and paints each page using a native 2D canvas API.
+  - The result is deterministic, server-renderable, and completely headless.
+  - https://x.com/axiaisacat/status/2039561953358565679
+    - 服务端直接跑，零浏览器依赖; 
+    - 分页结果完全确定性，每次输出一模一样; 
+    - 批量渲染，速度快到飞起
+  - Markdown是支持插入HTML的，它支持？
+    - 支持的呀，你试试看
+
 - https://github.com/mark-magic/mark-magic /MIT/202402/ts
   - 一个基于 markdown 的数据连接与转换工具，解决不同工具之间数据转换以及部分常用工具之间的协调。
   - joplin => hugo 生成 blog

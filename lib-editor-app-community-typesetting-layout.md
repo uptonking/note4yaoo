@@ -252,6 +252,11 @@ modified: 2026-03-29T13:03:35.455Z
   - Not in the exact middle, no. But it can truncate at path segments (which is what I was responding to) if you set it up correctly.
 - This misses the point of pretext and middle truncation. CSS can't do it. The point of pretext is that you don't have to measure with clientWidth or getBoundingClientRect() … and that it just works in CJK, Thai, multiline, etc.
 
+- https://x.com/iamncdai/status/2039391752906559617
+  - Built a Middle Truncation component inspired by @pqoqubbw
+  - Uses Canvas API for text measurement with 3 truncation strategies: fixed end, flexible minimum, or even split.
+  - [Middle Truncation ](https://chanhdai.com/components/middle-truncation)
+
 - https://x.com/JohannesMutter/status/2039344502138114237
   - Yes, you can achieve middle truncation with CSS alone, but this method does not cover all edge cases. 
   - Pretext is the best of the four methods: it handles emojis, different languages and short file names, and offers the best overall readability.

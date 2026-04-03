@@ -52,6 +52,18 @@ modified: 2023-12-15T18:02:01.825Z
 # discuss-news
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## You can now embed Dives in your applications, no BI license required. _202604
+- https://x.com/motherduck/status/2039736782296592822
+  - [Introducing Embedded Dives _202604](https://motherduck.com/blog/introducing-embedded-dives/)
+  - 🐛 似乎未开源
+  - Today, we're releasing embedding for Dives, allowing developers to build fast, interactive data experiences in their own applications. Embedding is included with Business plans on MotherDuck at no additional cost.
+
 - ## Handle datasets larger than RAM with DuckDB's automatic spillover 
 - https://x.com/KhuyenTran16/status/1996958049437626556
   - When datasets exceed available RAM, most tools crash mid-operation.
@@ -100,7 +112,7 @@ modified: 2023-12-15T18:02:01.825Z
   - This means that now every operator in DuckDB can handle larger than memory intermediates.
   - So the max data a single node can handle is the size of your SSD, not RAM!
   - There is future work planned around better coordination across operators when memory is constrained, but this is still a major step forward. 
-  - And check out the benchmark in the PR - **perf only declines by 20% when RAM is shrunk by 90%**! The single node keeps getting more powerful!
+  - And check out the benchmark in the PR - **perf only declines by 20% when RAM is shrunk by 90%** ! The single node keeps getting more powerful!
 
 - ## Hot take: once @DuckDB 's native file format becomes stable, it will be on its path to becoming the new CSV.
 - https://twitter.com/ghalimi/status/1620641265955270657

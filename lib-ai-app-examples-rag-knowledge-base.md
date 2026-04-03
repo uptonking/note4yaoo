@@ -1981,6 +1981,10 @@ modified: 2025-11-30T17:27:16.720Z
   - [Experiment: turning YouTube channels into RAG-ready datasets (transcripts → chunks → embeddings) : r/Rag](https://www.reddit.com/r/Rag/comments/1rm7cxi/experiment_turning_youtube_channels_into_ragready/)
     - Youtube is a great source of knowledge as long as a human can select which channels should be chunked. I can see the value of this as an actual webapp, where you would create a Topic, add channels and then have a knowledge base (directly as a cloud vector db) which you can use for agentic work.
     - I think it might make it useful to apply a re-write step after pulling the transcripts. Maybe even compress them (smtg like compresr.ai)
+
+- https://github.com/nuelkoya/yc-rag-search /202604/python
+  - This project implements a Retrieval-Augmented Generation (RAG) system combined with metadata filtering to search across a Y Combinator (YC) startup dataset.
+  - [YC Dataset Search (RAG + Metadata Filtering) : r/Rag _202604](https://www.reddit.com/r/Rag/comments/1s9unol/yc_dataset_search_rag_metadata_filtering/)
 # data-rag
 - https://github.com/statespace-tech/toolfront /801Star/MIT/202512/python
   - https://docs.toolfront.ai/

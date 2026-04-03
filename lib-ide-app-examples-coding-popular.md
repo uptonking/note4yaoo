@@ -178,6 +178,10 @@ modified: 2025-12-11T18:10:23.710Z
   - [[DOCS] Open Source Licensing ](https://github.com/anthropics/claude-code/issues/8517)
     - The Claude Code binaries distributed by Anthropic contain Open Source software.
     - Some of that software is made available to Anthropic under the terms of the Apache-2.0 license, however there does not appear to be a notice of this in the distributed files, nor on the Claude Code documentation website
+  - https://github.com/lintsinghua/claude-code-book
+    - [佬们好卷，Harness教程一天干到1千星  _202604](https://linux.do/t/topic/1881008)
+    - 其实这次撰写没有用到skills，全程都是人机交互，用的CC+opus4.6（用CC拆解CC，奇怪的递归达成了）（btw 51w行代码写42w多中文字符烧了我不少token$ ）
+    - prompt输入-> CC输出 → 人工审查-> prompt输入…
   - 🍴 forks
   - https://github.com/oboard/claude-code-rev
     - Runnable ClaudeCode source code
@@ -187,7 +191,11 @@ modified: 2025-12-11T18:10:23.710Z
     - [【开源】Open-Claude-Code CLI 源码 - LINUX DO _202603](https://linux.do/t/topic/1868730)
     - 初衷是为了搭建一个可以编译运行的环境用于学习，后续估计会继续让codex进行修复（这何尝不是一种ntr）,但不会基于本仓库二开
   - https://github.com/chatgptprojects/claude-code
-- https://github.com/instructkr/claw-code /202603/python
+  - https://github.com/LinYsssss/NekoCode
+  - https://gitlawb.com/node/repos/z6MkqDnb/openclaude
+    - https://x.com/gitlawb/status/2039063488468000835
+    - We forked the leaked Claude Code source and made it work with ANY LLM: GPT, DeepSeek, Gemini, Llama, MiniMax. Open source.
+- https://github.com/instructkr/claw-code /202603/python>rust
   - https://github.com/instructkr/claude-code
   - Better Harness Tools, not merely storing the archive of leaked Claude Code but also make shit things done.
   - Rust port is now in progress on the dev/rust branch
@@ -216,6 +224,8 @@ modified: 2025-12-11T18:10:23.710Z
   - https://x.com/idoubicc/status/2039340338566066340
     - 已发布 ts 重写版本， 复刻了 claude code 最核心的功能，移除了对 cli 的依赖，保持 SDK 的独立性和易用性
     - 同时也发布了 go 版本
+- https://github.com/soongenwong/claudecode  /rust
+  - [Claude Code got leaked. So I rebuilt it in Rust. It’s faster and open-source. : r/openclaw _202604](https://www.reddit.com/r/openclaw/comments/1s9zhqz/claude_code_got_leaked_so_i_rebuilt_it_in_rust/)
 
 - https://github.com/paoloanzn/free-code /202604/ts
   - The free build of Claude Code. All telemetry stripped. All injected security-prompt guardrails removed. All experimental features unlocked. One binary, zero callbacks home.

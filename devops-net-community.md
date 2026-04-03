@@ -86,7 +86,25 @@ modified: 2024-11-16T16:58:32.628Z
 
 - ## 
 
-- ## 
+- ## Latency Numbers Every Programmer Should Know (2026)
+- https://x.com/NathanFlurry/status/2039725805354324393
+- Sandbox:
+  - Coldstart: ~200ms
+  - Network RTT: ~15ms
+  - Tool (external): ~20ms
+- LLMs time-to-token:
+  - Cheap models: ~500ms
+  - Expensive models: ~1s
+  - LLM gateways add significant latency
+- Significance of each of these –
+  - Coldstarts → Impacts your initial load time.
+  - Network RTT → Minimum latency for any interaction with what's running in the sandbox (e.g. preview deployments, browser use, etc)
+  - Tool (external) → If running agent outside of the sandbox, this adds to you latency. 15 ms is negligible compared to inference.
+  - Time-to-token → How long before your agent can start doing something. Larges contributor to latency.
+  - OpenRouter -> LLM gateways are required if you're passing an LLM token to a sandbox in order to enable per-tenant billing. This latency difference is brutal.
+  - Be weary of LLM gateways.
+- highly recommend reading the original Latency Numbers Every Programmer Should Know: 
+  - [Numbers Every Programmer Should Know By Year ](https://colin-scott.github.io/personal_website/research/interactive_latency.html)
 
 - ## 发现一个Tailscale服务端的开源替代品，Headscale，可以用它自建Tailscale服务，客户端还是Tailscale，但是可以完全掌控在自己手里，不限制用户数和设备数
 - https://x.com/ShouChen_/status/1868228852449005735

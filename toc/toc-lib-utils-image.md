@@ -453,6 +453,13 @@ modified: 2023-04-04T22:39:45.442Z
 
 - https://github.com/iyadahmed/AwesomeImageEditor3 /python
   - open-source, user friendly and high-performance image editor made from scratch with Python and Qt
+
+## ps-utils
+
+- https://github.com/pangxiaobin/apple-matting /GPL/202604/ts/rust/tauri
+  - https://matting.lingxiangtools.top/
+  - A local macOS desktop matting tool built with Tauri, Vue, and Rust.
+  - [不到8兆的mac抠图软件，整理了下开源了 - LINUX DO _202604](https://linux.do/t/topic/1880344)
 # image-tiles/lod
 - https://github.com/EddieMachete/em-ui-quadrant
   - Quadrant is a tile based, JavaScript web component which allows viewing an image in different levels of detail while optimizing the download process. 

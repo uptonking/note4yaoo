@@ -9,6 +9,16 @@ modified: 2025-12-25T19:53:44.941Z
 
 # guide
 
+- pros
+  - ?
+
+- cons
+  - 对数学公式的支持度不如latex
+  - 对animation动画的支持不好，因为不是主要设计目标
+
+- features
+  - ?
+
 - pm-markdown-typst
 # draft
 - viewers

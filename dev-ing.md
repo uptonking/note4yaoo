@@ -321,6 +321,22 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0402
+
+- [google/gemma-4-E4B-it · Hugging Face _202604](https://huggingface.co/google/gemma-4-E4B-it)
+  - The "E" in E2B and E4B stands for "effective" parameters. The smaller models incorporate Per-Layer Embeddings (PLE) to maximize parameter efficiency in on-device deployments. Rather than adding more layers or parameters to the model, PLE gives each decoder layer its own small embedding for every token. These embedding tables are large but are only used for quick lookups, which is why the effective parameter count is much smaller than the total.
+
+```sh
+brew install llama.cpp --HEAD
+
+llama-server -hf ggml-org/gemma-4-26B-A4B-it-GGUF:Q4_K_M
+```
+
+- what's the differences between https://huggingface.co/google/gemma-3-27b-it and https://huggingface.co/google/gemma-3-27b-pt ?
+  - gemma-3-27b-it (Instruction Tuned)
+  - gemma-3-27b-pt (Pre-Trained / Base Model)
+  - -it is tuned from -pt
+
 ## 0401
 
 - mac m4 ollama test simple

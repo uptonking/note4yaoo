@@ -846,6 +846,16 @@ modified: 2025-02-21T17:17:42.225Z
     - PPTX-generator：基于 PptxGenJS，定义 5 种标准页面类型（封面/目录/章节分割/内容/总结）和 4 套视觉配方（Sharp/Soft/Rounded/Pill）
     - 前些天刷到佬友发的适用于wps的一套skill
 
+- https://github.com/sunbigfly/ppt-agent-skills /MIT/202604/python
+  - PPT Agent 以严格的状态机驱动多 Agent 协作，将一句话需求输出为专业级 PPTX 文件，从根源解决传统大模型生成的幻觉、重叠与布局混乱问题。
+  - 双引擎 PPTX 导出：PNG 光栅流保证跨平台 100% 视觉还原；SVG 矢量流保留字体可独立编辑。
+  - Subagent 阶段隔离：Research / Outline / Style / Planning 四大阶段各自运行独立的子代理，Context 不互染。
+    - 优先使用带有subagent 功能的CLI：Codex / Claude code
+  - 数据层与渲染层隔离：每页先生成并由 planning_validator.py 通过校验的 JSON 合同，再驱动 HTML 渲染。写入前校验拦截所有结构错误，不进入渲染流程。
+  - Visual QA 闭环：每页 HTML 构建后自动截图，由大模型进行视觉审计。检测到布局溢出后，子代理以 DOM + CSS 结构重写的方式消除冲突，而非依赖间距微调。
+  - 无状态断点恢复：全流程不依赖任何进度状态文件。中断后通过扫描磁盘上已存在的产物文件（outline.txt / style.json / slide-N.png 等）自动推断恢复点。
+  - [pptx agent skills 完全重构版（harness agent），佬友们所期待的 SKILL 终于完成了 - LINUX DO _202604](https://linux.do/t/topic/1882610)
+
 ## reader
 
 - https://github.com/codedogQBY/ReadAny /GPL/2026t03/ts
@@ -912,6 +922,15 @@ modified: 2025-02-21T17:17:42.225Z
   - https://sap-doc.nasdaddy.com/
   - 自动化上传视频到社交媒体：抖音、小红书、视频号、tiktok、youtube、bilibili
   - [[开源自荐]  [social-auto-upload] 社交媒体自动化发布 - LINUX DO _202603](https://linux.do/t/topic/1809328)
+
+## data
+
+- https://github.com/Rohithgilla12/data-peek /1.6kStar/MIT/202604/ts
+  - https://www.datapeek.dev/
+  - A minimal, fast, database client desktop application. 
+  - minimal, fast SQL client desktop application with AI-powered querying.
+  - Supports PostgreSQL, MySQL, Microsoft SQL Server, and SQLite.
+  - SSH Tunnels - Connect securely through bastion hosts with password or key auth
 
 ## openclaw
 

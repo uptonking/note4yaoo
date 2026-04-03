@@ -86,20 +86,6 @@ modified: 2025-02-21T18:20:42.624Z
   - First-class streaming support. With token-by-token streaming and streaming of intermediate steps, LangGraph gives users clear visibility into agent reasoning and actions as they unfold in real time
   - LangGraph is inspired by Pregel and Apache Beam. The public interface draws inspiration from NetworkX.
 
-- https://github.com/langfuse/langfuse /14.8kStar/MIT+EE/202508/ts
-  - https://langfuse.com/docs
-  - Langfuse is an open source LLM engineering platform. 
-  - It helps teams collaboratively develop, monitor, evaluate, and debug AI applications. 
-  - 系统元数据存储在pg, 观测数据存储在clickhouse，附件存储在s3
-  - Observability: tracking LLM calls and other relevant logic in your app such as retrieval, embedding, or agent actions
-  - Prompt Management 
-  - Evaluations: supports LLM-as-a-judge, user feedback collection
-  - Datasets enable test sets and benchmarks for evaluating your LLM applications
-  - LLM Playground is a tool for testing and iterating on your prompts and model configurations
-  - [All Langfuse Product Features now Free Open-Source : r/LangChain _202506](https://www.reddit.com/r/LangChain/comments/1l36tte/all_langfuse_product_features_now_free_opensource/)
-    - 💡 Langfuse is an open-source LangSmith alternative that helps teams collaboratively build, debug, and improve their LLM applications
-  - [Self-host Langfuse (Open Source LLM Observability)](https://langfuse.com/self-hosting)
-
 - https://github.com/github/copilot-sdk /5.9kStar/MIT/202601/ts
   - Embed Copilot's agentic workflows in your application—now available in Technical preview as a programmable SDK for Python, TypeScript, Go, and . NET.
   - The GitHub Copilot SDK exposes the same engine behind Copilot CLI: a production-tested agent runtime you can invoke programmatically. No need to build your own orchestration—you define agent behavior, Copilot handles planning, tool invocation, file edits, and more.
@@ -861,6 +847,25 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/3615-computer/workunit-benchmarks /202602/python
   - Benchmarks for local and cloud LLM performance on real MCP tool calling.
   - [I benchmarked 17 local LLMs on real MCP tool calling — single-shot AND agentic loop. The difference is massive. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rcjepp/i_benchmarked_17_local_llms_on_real_mcp_tool/)
+# observability/tracing
+- https://github.com/langfuse/langfuse /14.8kStar/MIT+EE/202508/ts
+  - https://langfuse.com/docs
+  - Langfuse is an open source LLM engineering platform. 
+  - It helps teams collaboratively develop, monitor, evaluate, and debug AI applications. 
+  - 系统元数据存储在pg, 观测数据存储在clickhouse，附件存储在s3
+  - Observability: tracking LLM calls and other relevant logic in your app such as retrieval, embedding, or agent actions
+  - Prompt Management 
+  - Evaluations: supports LLM-as-a-judge, user feedback collection
+  - Datasets enable test sets and benchmarks for evaluating your LLM applications
+  - LLM Playground is a tool for testing and iterating on your prompts and model configurations
+  - [All Langfuse Product Features now Free Open-Source : r/LangChain _202506](https://www.reddit.com/r/LangChain/comments/1l36tte/all_langfuse_product_features_now_free_opensource/)
+    - 💡 Langfuse is an open-source LangSmith alternative that helps teams collaboratively build, debug, and improve their LLM applications
+  - [Self-host Langfuse (Open Source LLM Observability)](https://langfuse.com/self-hosting)
+
+- https://github.com/silent-night-no-trace/traceforge /MIT/202604/ts
+  - Open-source replay and regression testing for AI agents.
+  - [Traceforge ：面向 AI Agent 的开源重放与回归测试工具 - LINUX DO _202604](https://linux.do/t/topic/1885756)
+    - Traceforge 的目标是让 Agent 的运行过程可复现。 它会记录终端（terminal）、MCP 和浏览器（browser）工具里真实发生过的事情， 把一次运行打包成可移植的 trace 包（trace bundle），帮助你定位失败边界
 # model-proxy
 - https://github.com/lymanzhao/Ollama-serve /202503/python
   - 一个 Ollama转发代理，用于为原生 Ollama 服务添加 API 密钥认证功能。

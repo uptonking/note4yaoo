@@ -15,7 +15,7 @@ modified: 2020-11-13T07:28:27.824Z
 
 - 支持多种前端框架的参考实现
   - tanstack-table/virtual
-  - formisch
+  - formisch, formkit
   - slate-editor, wangEditor, editablejs
   - tiptap-editor, prosekit
   - ark-ui

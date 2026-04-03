@@ -412,7 +412,23 @@ PP Speed: Q3 GGUF: 50 t/s
   - Brought to you by the @LocalAI_API team!
   - We want to apply APEX to every MoE model out there! But we need GPU time to run the benchmarks (each model takes 6-8 hours of eval across all metrics).
 
-- ## [PrismML — Announcing 1-bit Bonsai: The First Commercially Viable 1-bit LLMs : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1s90wo4/prismml_announcing_1bit_bonsai_the_first/)
+- https://x.com/mudler_it/status/2039652844601487557
+- apex is apllicable also for qwen3.5 27b, ? or only for moe arch?
+  -APEX it's targeting MoEs architectures specifically, but we have in our roadmap to explore applications to Dense models as well!
+
+- ## [The Bonsai 1-bit models are very good : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1s9zumi/the_bonsai_1bit_models_are_very_good/)
+- bonsai vs qwen3.5 based on my benchmark: https://github.com/ArmanJR/PrismML-Bonsai-vs-Qwen3.5-Benchmark
+  - Bonsai-8B trades accuracy for speed — 1-bit quantization delivers 46.5 tok/s but costs 17 points of accuracy vs. the 27B. Still outperforms the dense Qwen3.5-2B despite radical compression.
+  - Sub-2B models struggle on reasoning and math — Qwen3.5-2B drops to 31% on math and 57% on logic. The 0.8B collapses to 12% on math and 37% on logic. These are usable only for simple factual or conversational tasks.
+  - Coding survives compression best — Bonsai-8B scores 100%, and even larger Qwen models are 89%+. The 0.8B still manages 44%. Code generation is the most quantization-resilient capability.
+
+- Do I understand correctly that even if "Intelligence per 1GB" metric would not be better in 1bit models, this is still big news, because those models can be accelerated by specialized hardware in the future to be much more faster and efficient?
+  - Correct, there is no 1-bit hardware. Everything is limited to Kernel optimizations because of that. The idea I think is ASICs/FPGAs or something like that
+- It sounds like an xnor net from what I read in https://huggingface.co/prism-ml/Bonsai-8B-gguf. That would mean it already is near optimal for normal hardware.
+
+- i just think its unfortunate that the method is proprietary and not open source
+
+- [PrismML — Announcing 1-bit Bonsai: The First Commercially Viable 1-bit LLMs : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1s90wo4/prismml_announcing_1bit_bonsai_the_first/)
 - Is it a binary QAT (-1, +1), not ternary (-1, 0, +1)? 
   - Just binary, it seems.
 
@@ -493,7 +509,7 @@ PP Speed: Q3 GGUF: 50 t/s
   - Here's the results for reference, when running mlx evaluate - this is my testing of Qwen 3.5 35b
 - How were the speeds nvfp4 - 4bit?
   - I think it was about the same as the normal 4 bit quant in terms of speed, in that the tests took about the same amount of time to run on the 4 bit quants vs the others which took longer.
-# discuss-quantized
+# discuss-quantized-models
 - ## 
 
 - ## 
@@ -646,6 +662,9 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - From this message  https://www.reddit.com/r/LocalLLaMA/comments/1rfds1h/qwen3535ba3b_q4_quantization_comparison/  it is better to use KLD instead of PPL.
   - KLD (KL Divergence): "Faithfulness." It shows how much the quantized model's probability distribution drifts from a baseline (the probability distribution of the original weights). Lower = closer.
+
+- ## [Is MXFP4_MOE a thing? : r/StrixHalo _202604](https://www.reddit.com/r/StrixHalo/comments/1saee4c/is_mxfp4_moe_a_thing/)
+- MXFP4 has been shown by the Unsloth team (and others) to be pretty bad at maintaining inferencing stability as context grows. As a result, Unsloth have stated that will no longer create new MXFP4 quantizations for models.
 
 - ## 🤔 [I found that MXFP4 has lower perplexity than Q4_K_M and Q4_K_XL. : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qrzyaz/i_found_that_mxfp4_has_lower_perplexity_than_q4_k/)
   - I am currently serving LLM models using a Tesla P40 and llama.cpp. When running models in the 30–32B range, I usually rely on 4-bit quantization. 

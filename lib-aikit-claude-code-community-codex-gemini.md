@@ -16,7 +16,25 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
-- ## 
+- ## [claude code 相比 opencode 到底有哪些优势，能量化吗？  _202604](https://linux.do/t/topic/1881349)
+- 我目前是分不出高低，看习惯了，我之前比较喜欢用cc，后来自己vibe了webui之后就用oc了，个人感觉只是使用习惯的差别，然后就是oc能自定义渠道sdk，对接api方便点，而且适配也好一点吧，比如说同样都是edit功能gpt模型用的是patch，claude模型用的是新旧文本替换
+- 这就好比特斯拉和其他电车，iPhone和安卓手机。一个全是自家的东西，另一个主要靠组装
+
+- 只会有工程上的优化 具体执行任务的效果应该差距不大 pi作者的对比
+
+- 挺多的, 
+  - 例如对skill的支持(我记得之前的oc对skill支持是没有cc完善的, 也可能是cc的skill有私货)
+  - 然后是command, cc的可以使用例如superpowers:code-review(也就是文件结构的, 用: 分开, 但是oc就不支持, 只能code-review的), 好像是这个, 我也忘了, 然后你用superpowers就能感觉到他对code-review的调用存在问题, 因为缺少了superpowers的前缀, 经常是调用general替代reviewer. (这部分我记不清楚了, 大概是这个情况, 最终我修改了superpowers的skill, 给oc添加了一个superpowers-code-review解决了问题)
+  - 子代理, cc是支持异步子代理的, 包括还有异步运行的命令, 但是oc不支持.
+  - 上下文压缩, 这个你可以看看oc的上下文压缩提示词, 写的很不好, 导致压缩后信息损失特别严重, 但是cc的不仅压缩后细节多, cc的还可以直接保留文件在上下文中, 压缩后不需要再次读取了(我记得是这个), 其他还有一些上下文压缩策略, oc做的比较糙
+  - memory, 这个oc没有, cc压缩后, 还可以阅读memory, 即使压缩上下文后, 用的也很顺手.
+  - 好像cc是可以让agent去调用/command的, 然后最近的体验是, cc自己在plan和build中切换也挺舒服的.
+  - oc的其他各种小bug, 这个是真的比较多, 还有各种可能卡死会话的情况, 之前cc也很多bug, 但是现在我重新体验, 感觉好很多了.
+  - 对于模型, 那不确定了, 最近一直在用gpt, 两家对gpt的支持都不会很好的, 因为最近gpt5.3开始就可以使用phase字段, cc不支持是情有可原, 但是oc目前来看还没有支持计划, 尽管这个可能和上游的ai-sdk不支持有关, 感觉oc的功能更新也不怎么行.
+- 但是oc也可以发挥一些优势的: 这个主要是用omo这个项目, 我之前用oc, 你可以把omo项目中的agent, hook等停用(如果你不喜欢使用omo的话), 然后保留他的异步子代理, claude兼容(这个就可以支持类似cc的: 命令格式), 还有agent的使用/command命令(这部分我只看过, 没用过), 还有session_read(类似cc的memory的能力)等其他的基本cc有的功能, 他都做了很多.
+  - 另一方面的是oc的对于权限的控制要比cc精细的多, 插件也好做, 如果自己定义插件的话, 要自由很多, 但是oc的hook有的地方有坑.cc的没研究过hook
+
+- CC开源了, 我感觉OC会越来越牛
 
 - ## 🆚 [Now that both are open source, time for a Claude Code vs Codex : r/codex _202603](https://www.reddit.com/r/codex/comments/1s8oskb/now_that_both_are_open_source_time_for_a_claude/)
   - The most interesting comparison point is not “which one is better.” It is that the two repos seem to encode different theories of what a coding agent should feel like.

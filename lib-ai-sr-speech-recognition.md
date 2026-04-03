@@ -134,6 +134,17 @@ modified: 2023-02-07T09:22:03.120Z
   - [离线语音识别的解决方案](https://github.com/PaddlePaddle/PaddleSpeech/issues/2622)
   - [这个 demo 是一个启动离线语音服务和访问服务的实现](https://github.com/PaddlePaddle/PaddleSpeech/blob/develop/demos/speech_server/README_cn.md)
 
+- https://github.com/k2-fsa/OmniVoice /apache2/202604/python
+  - zero-shot multilingual TTS model supporting more than 600 languages. 
+  - Built on a novel diffusion language model architecture, it generates high-quality speech with superior inference speed, supporting voice cloning and voice design.
+  - https://x.com/FeitengLi/status/2039639771912515584
+    - Kaldi 之父 Daniel Povey 的新作，小米团队出品。
+    - 单阶段架构，文本直接映射到声学 token，不走两阶段流水线。结构极简但效果反超 MaskGCT、F5-TTS 这些 NAR 前辈
+    - 用 Qwen3-0.6B 初始化 backbone，NAR TTS 里第一个成功吃到 LLM 红利的。WER 直接从 2.5% 降到 1.3%
+    - 0.8B 参数，8 张 H800 训 10 天。性价比离谱
+    - 24 语言评测，平均 WER 2.85，speaker similarity 0.83。纯开源数据训练，打赢了 ElevenLabs v2 和 MiniMax-Speech
+    - 581k 小时多语言数据全部来自开源社区，代码模型也开源了。Povey 当年用 Kaldi 改变了语音识别的游戏规则，这次能否在 TTS 上再来一次。
+
 - https://github.com/coqui-ai/TTS /MPL/python
   - http://coqui.ai/
   - a deep learning toolkit for Text-to-Speech

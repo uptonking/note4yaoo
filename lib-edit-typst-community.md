@@ -15,6 +15,23 @@ modified: 2025-12-25T19:54:56.482Z
 - ## 
 
 - ## 
+# discuss-layout
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Text adapting to image : r/typst _202604](https://www.reddit.com/r/typst/comments/1s9uuy1/text_adapting_to_image/)
+  - can pretext be done in typst ?
+  - is the html experimental capable of doing this kind of animation for webpages?
+
+- No that's not possible for the html output you'll have to process the compiled result you get from typst to adjust layout.
+  - Animations are especially not within scope of what typst provides for html output (structured, rich text content)
+
+- as the other fellow said, animation is not the main go of typst. But if you want a static non animated version of this, another post here in this subreddit had text adapting to image.
 # discuss-spec/format
 - ## 
 

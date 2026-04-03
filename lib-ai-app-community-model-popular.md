@@ -669,6 +669,36 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## [Gemma 4 and Qwen3.5 on shared benchmarks : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1saoyj7/gemma_4_and_qwen35_on_shared_benchmarks/)
+- To be fair, Qwen releases a model every two weeks or so, no chance for Gemma to catch up in benchmarks, but it doesn't have to. Real world use cases are much more important and we know where Gemma will take the clear lead - multilingual and writing capabilities.
+  - Tool usage is becoming increasingly more useful (especially for enriching writing with sources using RAG, and having the agent be able to query different parts of the query automatically), so seeing the tool usage be so poor for the Gemma models is a bit disappointing. More testing will be required ofc.
+- These benches does not matter. Gemmas language skills are unbeatable. Qwen sucks with different languages.
+
+- Gemma 4 is a reasoning model. Don't expect the quick answers you were used to in Gemma 3.
+
+- ## google gemma 4 architecture is very interesting and every model has some subtle differences, here is a recap:
+- https://x.com/eliebakouch/status/2039751171556954531
+  - per layer embedding only on the small variant 
+  - no attention scale (usually you divide qk^T by sqrt(d), they don't) 
+  - they do QK norm + V norm as well 
+  - they share K and V for the large variant 
+  - they do quite aggressive KV cache sharing on the small variant 
+  - sliding window (512 and 1024) is bigger than gpt-oss 128 and they don't use sinks! 
+  - softcapping 
+  - rope only on part of the dimensions + different rope theta for the local/global layer
+
+- Looks like no one uses sinks now, it’s too cumbersome and the benefit is small
+  - I think it’s pretty popular if you look at the last release with swa or some variant solving the same problem like gating attention
+
+- for the attention scale it’s defo merged into the qk norm weights. I’ve always liked this idea
+
+- Pure transformer ? I thought we have already shown that hybrid is the way to go 
+
+- ## [In anticipation of Gemma 4's release, how was your experience with previous gemma models (at their times) : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sagulj/in_anticipation_of_gemma_4s_release_how_was_your/)
+- I use Qwen27b 4bit and Gemma27b 4bit for classifying German (political) texts and the F1 Score (measure of precision) is ALWAYS lower with Gemma. Can really not recommend Gemma anymore.
+
+- Gemma3 is still the best we've found to serve EU clients for simple tasks (like shop assistant, faqs, etc). It's "smart enough", understands and can reply in most languages, and is "safe" enough that it doesn't start spewing hate randomly. It's a perfect fit. Oh, and the clients love it because it doesn't randomly output chinese characters (it's insane how many clients have literally asked about that)
+
 - ## [只能说Qwen3.5 35b太强大了，未经审查版-更炸裂！！！ - LINUX DO _202603](https://linux.do/t/topic/1773045)
   - {% set enable_thinking = false %}
 
