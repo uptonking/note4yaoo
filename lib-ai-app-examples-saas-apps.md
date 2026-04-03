@@ -909,6 +909,17 @@ modified: 2025-02-21T17:17:42.225Z
   - runs locally. Your strategies, trading logs, API keys, and analysis results stay on your machine. No vendor lock-in
   - [【开源自荐】目前全网最全市场的AI量化工具【QuantDinger】，全面开源 ](https://linux.do/t/topic/1507020)
 
+- https://github.com/IUnlimit/opennews /MIT/202604/python/vue
+  - https://opennews.top/
+  - Real-time financial news knowledge graph and impact scoring system.
+  - a LangGraph-based pipeline for financial news analysis. It ingests multi-source news, runs NLP and impact scoring, then persists results to PostgreSQL and Neo4j, with a built-in web dashboard for real-time filtering and inspection.
+  - Multi-source ingestion (NewsNow API + JSONL seeds)
+  - FinBERT embedding + online topic clustering
+  - DeBERTa zero-shot classification
+  - DK-CoT impact score (0-100)
+  - Redis temporal memory (rolling window)
+  - [[开源]实时金融新闻影响评分网站（带一键分享api）  - LINUX DO _202604](https://linux.do/t/topic/1890565)
+
 ## ecommerce
 
 - https://github.com/liangdabiao/amazon-sorftime-research-MCP-skill /MIT/202603/python

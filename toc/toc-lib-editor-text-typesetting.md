@@ -33,6 +33,19 @@ modified: 2024-11-16T08:23:40.617Z
   - Pretext side-steps the need for DOM measurements (e.g. getBoundingClientRect, offsetHeight), which trigger layout reflow, one of the most expensive operations in the browser. It implements its own text measurement logic, using the browsers' own font engine as ground truth (very AI-friendly iteration method).
   - [Pretext — Under the Hood _202603](https://tools.simonwillison.net/pretext-explainer)
     - An interactive exploration of how pure-JS text measurement works using a simplified version of Pretext — from raw string to pixel-accurate line heights, without ever touching the DOM.
+- https://github.com/tornikegomareli/swift-pretextkit /MIT/202604/swift
+  - Swift port of chenglou/pretext, arithmetic text measurement for Apple platforms
+  - https://x.com/tornikegomareli/status/2039516374788124865
+    - Ported Cheng Lou's Pretext to Swift. Faster than CoreText, TextKit, and UILabel - 2x less CPU, 2x less battery on redraws.
+- https://github.com/MaTriXy/mobile-pretext /MIT/202603/swift/kotlin
+  - Native iOS & Android ports of pretext — pure-arithmetic text measurement & layout without triggering native layout passes.
+  - iOS — Swift Package, measures with CoreText, segments words with NLTokenizer
+  - Android — Kotlin library, measures with TextPaint, segments words with ICU BreakIterator, integrates with Jetpack Compose
+  - https://x.com/elkriefy/status/2038575686453960796
+    - Ported @_chenglou 's pretext to native Mobile.
+    - Pure-arithmetic text layout. prepare() once, layout() instantly on every resize.
+    - pretext splits it: measure once (19ms), then layout is pure math (~0.0002ms per text).
+    - Every line break computed by pretext native in real time. 
 
 - https://github.com/BaselAshraf81/layout-sans /MIT/202603/ts
   - Pure TypeScript 2D layout engine powered by Pretext. 

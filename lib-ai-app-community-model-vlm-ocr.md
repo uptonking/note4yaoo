@@ -59,7 +59,7 @@ modified: 2025-11-06T18:49:13.977Z
 
 - llama.cpp
   - 已支持: LightOnOCR-1B
-  - 暂不支持(20260106): deepseek-ocr, dots.ocr, PaddleOCR, hunyuanocr, chandra, nanotes
+  - 暂不支持(20260106): deepseek-ocr, dots.ocr, PaddleOCR, hunyuanocr, chandra, nanonets
 
 - ollama
   - 支持: deepseek-ocr, qwen3vl
@@ -101,6 +101,10 @@ modified: 2025-11-06T18:49:13.977Z
   - 能正确识别页眉页脚
   - 能识别图文混排元素，输出内容时能提供方位，如插图旁边是...
   - 能识别表格，但 表格行内容有时会错位而在中间插入空行
+  - [Nanonets-OCR2: An Open-Source Image-to-Markdown Model with LaTeX, Tables, flowcharts, handwritten docs, checkboxes & More : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o5nlli/nanonetsocr2_an_opensource_imagetomarkdown_model/)
+    - Can you tell me what are the exact advances over nanonets-ocr-s ? Specifically the 3B model.
+    - We have scaled our datasets by a lot (close to 3 million documents). New model should work better on multilingual, handwritten data, flowcharts, financial complex tables. This time we have added Visual Question Answering support. Fixed some of the edge-cases where model used to give infinite generation for empty tables and stuff. 
+    - Also you should be able to change the prompt based on your use case. Nanonets-ocr-s does not work if you change the prompt much.
 
 - deepseek-ocr-3b
   - 适合识别文档，对于普通图片文本的识别有时需要特别的prompt，实测 `extact text` 会导致模型乱回复, 而 `extact text in image` 可以准确回复图片中的文本
@@ -832,7 +836,6 @@ modified: 2025-11-06T18:49:13.977Z
 - Are dots.mocr weights the same as the previous dots.ocr 1.5?
   - I got my answer: both of the safetensors have the same hash.
 - Yes they decided to rename the model
-
 
 - ## 🆚 [Benchmark Paper: Vision-Language Models vs Traditional OCR in Videos : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1ioi4lm/benchmark_paper_visionlanguage_models_vs/)
   - A new benchmark paper just dropped evaluating how well Vision-Language Models (VLMs) perform compared to traditional OCR tools in dynamic video environments.

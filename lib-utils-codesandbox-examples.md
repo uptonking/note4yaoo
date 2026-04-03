@@ -587,6 +587,13 @@ modified: 2023-09-02T09:17:22.992Z
       - Not loaded in memory, it's just on disk. Emphasizing that agentOS is POSIX-compliant in contrast with the memory overhead of a heavier-weight VM
     - I wonder how you got Claude Code running here
       - Little bit of http://secureexec.dev magic, lotta bit of API shims
+  - https://x.com/NathanFlurry/status/2039802278904053799
+    - Why we built Rivet agentOS with WebAssembly:
+    - Agents need file systems on S3
+    - Agents expect Linux tools to work with the file system
+    - Virtual machines require a lot of memory
+    - agentOS uses WASM with a fraction of the RAM
+    - Most importantly, agentOS supports Sandbox Mounting in order to use a VM in use cases where it makes sense, such as: Heavy-weight workloads, Computer/Browser Use
 
 - https://github.com/rivet-dev/sandbox-agent /536Star/apache2/202602/rust/ts
   - https://sandboxagent.dev/

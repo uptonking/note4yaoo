@@ -822,13 +822,13 @@ modified: 2025-03-22T16:10:24.856Z
     - 内置了大概100条号吧，还有七八张卡吧，内置四条ip，美英韩日
   - [vvcode _202603](https://vvcode.cc/dashboard), 无额度
     - [Codex 公益站  _202603](https://linux.do/t/topic/1859392)
+  - [Rosmontis](https://ai.rosmontis.de/console/personal)
+    - [[迷迭香公益站]  ](https://linux.do/t/topic/1694922)
+    - 公益站有无限codex(目前限制500并发)，无限grok(程序默认限制50并发)。glm系列目前不保证可用性。还有一些杂七杂八的模型。
   - [YAO API _202603](https://yybbwan.xyz/console/personal)
     - [YAO](http://154.37.220.66:3000/console/personal) , legacy
     - [[Yao公益站]codex注册200刀，可能随时倒闭  ](https://linux.do/t/topic/1683788)
     - claude-sonnet-4-5-20250929
-  - [Rosmontis](https://ai.rosmontis.de/console/personal)
-    - [[迷迭香公益站]  ](https://linux.do/t/topic/1694922)
-    - 公益站有无限codex(目前限制500并发)，无限grok(程序默认限制50并发)。glm系列目前不保证可用性。还有一些杂七杂八的模型。
   - [荷塘AI _202604](https://hetang.lyvideo.top/console/personal)
     - [【荷塘公益站】仅支持GPT5.4  ](https://linux.do/t/topic/1875698)
   - [Hello AI _202603](https://hello.xhyun.eu.cc/console/personal)
@@ -872,9 +872,9 @@ modified: 2025-03-22T16:10:24.856Z
     - 23公益站作者后续维护
   - [955code _202603](https://955code.top/console/personal), 无签到
     - [【955code】codex公益站，上线试运营 _202603](https://linux.do/t/topic/1840889)
-  - [意念公益站 _202604](https://yinian.564779.xyz/dashboard), 无签到
+  - 🗑️ [意念公益站 _202604](https://yinian.564779.xyz/dashboard), 无签到
     - [［意念公益站］正式运营啦 ](https://linux.do/t/topic/1886962)
-  - [鱼汤公益站 _202603](https://ai.zhansi.top/console/personal)
+  - 🗑️ [鱼汤公益站 _202603](https://ai.zhansi.top/console/personal)
   - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
     - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
     - 反代 kiro
@@ -914,7 +914,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [小天公益站 _202603](https://new-api.xt-url.com/pricing)
     - https://checkin.new-api.xt-url.com/
     - 医疗健康大模型 2api, 对话模型，不支持工具调用
-  - [纳米哈基米](https://free.nanohajimi.mom/console/personal), 签到
+  - 🗑️ [纳米哈基米](https://free.nanohajimi.mom/console/personal), 签到
     - Gemini Imagen
     - [【纳米哈基米 · 公益站】 支持香蕉Pro画图，Veo视频，Gemini全系模型 ](https://linux.do/t/topic/1512770)
   - [玩票 API](https://api.361888.xyz/console/personal)
@@ -1450,6 +1450,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [KAT-Coder开发工具接入指南-快手万擎-StreamLake](https://www.streamlake.com/document/WANQING/me6ymdjrqv8lp4iq0o9)
   - tldr: rphour-20~30
+  - 免费已取消
   - ✅ [KAT-Coder-Air V1 模型免费使用规则 ](https://www.streamlake.com/document/WANQING/mh1g9y6knewv5sft54k)
   - 非高峰时段: 02:00-08:00 每6小时内您将可以发起200次对话请求，超过此请求数后，您可能会经历更长的排队等待时间或更严格的速率限制
   - 高峰时段: 08:00-02:00（次日） 每6小时内您将可以发起120次对话请求。在此时段，KAT-Coder-Air V1 的请求优先级可能会降低。您可能会经历更长的排队等待时间或更严格的速率限制。
@@ -1462,6 +1463,9 @@ modified: 2025-03-22T16:10:24.856Z
   - 免费额度将于每日凌晨（北京时间）自动刷新
   - 输入和输出Tokens均计入消耗, 流式接口和段式接口消耗相同
   - 单次请求限制 输出文本：最大8K Tokens
+  - LongCat-Flash-Lite 模型(non-thinking 68.5B-A3B MoE)，每个账号每天自动获得 50, 000, 000 Tokens 免费额度
+  - https://api.longcat.chat/openai
+  - https://api.longcat.chat/anthropic
 
 - [腾讯混元大模型 混元生文计费概述 ](https://cloud.tencent.com/document/product/1729/97731)
   - Hunyuan-lite 免费使用

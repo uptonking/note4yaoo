@@ -379,7 +379,17 @@ Today, Turso is in beta with early customers working toward production deploymen
 
 - ## 
 
-- ## 
+- ## We built a virtual filesystem that translates UNIX commands into queries against our database. We call it Chroma FS. 
+- https://x.com/cdxker/status/2039776981362110608
+  - Output quality remained the same while completely removing a sandbox.
+  - We killed RAG, We killed Sandboxes, We gave our Assistant a virtual filesystem and dropped latency to 10ms
+  - We first tried putting the agent in a sandbox and found responses to be better, however sandbox startup time was ~46 seconds and would cost us at least $70k/year. Sandboxes didn't work.
+  - What we realized was the agent doesn't need a real sandbox. It just needs to think its in a sandbox.
+  - ChromaFs now powers the docs assistant across 30, 000+ conversations a day across all our users.
+  - No containers. No VMs. No session cleanup. Just Chroma queries behind a bash interface.
+  - [ "Building a Virtual Filesystem for Mintlify's AI Assistant"  _202604](https://x.com/densumesh/status/2039765361533637016)
+
+- Is not similar to AgentFS? 
 
 - ## introducing hf-mount: attach any storage bucket, model or dataset from @huggingface as a local filesystem. _202603
 - https://x.com/ClementDelangue/status/2036452081750409383

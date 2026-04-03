@@ -95,6 +95,8 @@ modified: 2026-01-19T05:01:00.055Z
     - draw.io diagrams now stream into Claude as they're generated. Shape by shape, edge by edge.
     - How does the agent handle partial updates?
     - Get the partial XML, make it valid, merge it
+  - https://x.com/drawio/status/2039807042865504621
+    - search_shapes lets your LLM search 10,000+ specialized shapes — AWS, Azure, GCP, Kubernetes, Cisco, P&ID, electrical, BPMN and more — and use them directly when generating diagrams
 
 - https://github.com/magicyuan876/mineru-tianshu /apache2/202601/python/ts/vue
   - 天枢 - 企业级 AI 数据预处理平台，将非结构化数据转换为 AI 可用的结构化格式

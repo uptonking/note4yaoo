@@ -10,9 +10,11 @@ modified: 2026-01-14T19:05:15.969Z
 # guide
 
 - pros
-  - 支持gguf和mlx
+  - 支持多种格式的模型: gguf, mlx
+  - llama.cpp后端支持自定义从本地文件安装最新llama.cpp版本
 
 - cons
+  - mlx后端不支持自定义安装最新mlx-lm/mlx-vlm版本
   - ? 不支持直接使用已有的.safetensors文件
 
 - features
@@ -30,6 +32,7 @@ modified: 2026-01-14T19:05:15.969Z
   - 直接兼容 lms-cli, 使用已下载的model
 
 - model-manager
+  - mlx后端不支持自定义安装最新mlx-lm/mlx-vlm版本
   - 参考msty，能统一管理 local/ollama/lmstudio/huggingface 的模型，释放空间
 
 - search in chat

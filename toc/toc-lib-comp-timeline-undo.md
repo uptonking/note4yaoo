@@ -341,6 +341,15 @@ modified: 2023-11-24T18:41:26.906Z
     - SDKs for PageSpy
     - SDKs collects information and HuolalaTech/page-spy-web consumes and filters, organizes, and converts information into a standardized format, which is then showed on the page.
 
+- https://github.com/skye-z/ActionCap /MIT/202604/ts
+  - A browser activity recording tool for Edge / Chrome. 
+  - Captures page network requests and user actions during browsing, with built-in session replay powered by rrweb.
+  - Across Tabs — Record all tabs in the current window.
+  - All Windows — Record all tabs across every browser window.
+  - [ActionCap 支持回放的浏览器网络活动与用户操作录制工具 - LINUX DO _202604](https://linux.do/t/topic/1891006)
+    - 这是一个浏览器录制工具, 可以录制浏览器中网页的元素变化、网络请求响应和用户所做的操作
+    - 主要用途: 用户操作记录、故障排查诊断
+
 - https://github.com/open-source-labs/reactime /2.1kStar/MIT/202310/ts
   - https://www.reacti.me/
   - an open-source Chrome developer tool for time travel debugging and performance monitoring in React applications. 

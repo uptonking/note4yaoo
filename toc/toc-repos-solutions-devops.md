@@ -56,6 +56,11 @@ modified: 2020-12-12T19:01:56.749Z
   - It has a goal of deployment simplicity and minimal dependencies, to reduce friction of systematic troubleshooting. 
   - No need to install kernel modules or heavy monitoring frameworks.
   - 0x.tools allow you to measure individual thread level activity, like executed code, sleep states, system calls and wait locations - by tracking (not tracing) and then sampling the right events at the right time.
+
+- https://github.com/nicolargo/glances /32.3kStar/LGPL/202603/python/vue
+  - open-source system cross-platform monitoring tool. 
+  - It allows real-time monitoring of various aspects of your system such as CPU, memory, disk, network usage etc. 
+  - It also allows monitoring of running processes, logged in users, temperatures, voltages, fan speeds etc.
 # ci/cd
 - https://github.com/intuit/auto /MIT/202502/ts
   - Generate releases based on semantic version labels on pull requests.

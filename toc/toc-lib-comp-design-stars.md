@@ -34,7 +34,7 @@ modified: 2021-01-12T18:48:52.713Z
   - 毛玻璃风格
   - These props come in many flavors: CSS, PostCSS, JSON, or Javascript.
   - [A json source for style dictionary](https://github.com/argyleink/open-props/issues/288)
-    - one of the reasons I dont ship Style Dictionary format is because there's **so many props that wouldnt convert to other platforms**. 
+    - one of the reasons I dont ship Style Dictionary format is because there's **so many props that wouldnt convert to other platforms** . 
 
 - https://github.com/mantinedev/mantine
   - https://mantine.dev/
@@ -105,6 +105,13 @@ modified: 2021-01-12T18:48:52.713Z
   - containers: A component here should never embed HTML or CSS. Only connection to the store and behavior should be done. All the state should be synchronised with redux using react-cmf API.
   - presenters: A set of stateless components. We want to avoid {children} for leaf as much as possible. 
   - react-cmf: a framework to build configurable React App using redux/redux-saga.
+# loading/placeholder
+- https://github.com/0xGF/boneyard /MIT/202604/ts
+  - https://boneyard.vercel.app/
+  - Pixel-perfect skeleton loading screens, extracted from your real DOM. No manual measurement, no hand-tuned placeholders.
+  - 方案原理 ?
+  - https://x.com/0xGoodfuture/status/2039818750568878245
+    - wrap your component with `<Skeleton>`, run `npx boneyard-js build`, playwright visits your app at different viewports and calls `getBoundingClientRect()` on every visible element. real positions, real dimensions, real border-radius no guessing. no measuring. just math
 # amazing
 - Denali Design /Verizon Media
   - /69Star/MIT/202012/scss

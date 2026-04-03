@@ -341,6 +341,11 @@ modified: 2023-06-07T14:19:18.719Z
   - https://github.com/x1ah/gena /202210/go/inactive
     - 导航网站生成器(Start page generator)
 
+- https://github.com/DEKVIW/book-nav /MIT/202604/python
+  - https://nav.yilancn.top/
+  - [导航站更新图标管理功能 - LINUX DO _202604](https://linux.do/t/topic/1891924)
+  - 使用 Flask 构建的、可通过 Docker 轻松部署的个人导航网站项目
+
 - https://github.com/electron/apps /MIT/202310/js/无详情页
   - https://www.electronjs.org/apps
   - A collection of apps built on Electron

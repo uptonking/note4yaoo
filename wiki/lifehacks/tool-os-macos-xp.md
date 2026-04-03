@@ -323,7 +323,26 @@ redis-cli shutdown
   - `brew install --cask productdevbook/tap/portkiller`
   - https://x.com/productdevbook/status/2001594478524572124
     - With Cloudflare tunnels via PortKiller, you can open any port you want with a single click.
+# discuss-macos-apps/tools
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [写了一个更好用的 macOS「打开方式」统一管理工具 _202604](https://linux.do/t/topic/1889505)
+  - 传统的 macOS 上的方式非常繁琐：右键文件 → Get Info → 选择应用 → 再点 “Apply to all”，而且一次只能改一种文件类型，也完全没有全局管理面板。 你甚至很难知道，比如“.json 现在到底是哪个应用在打开”，或者为什么某些应用会“抢走”和"污染"大量文件的默认打开方式，卸载后还会留下混乱状态。
+  - 花了一下午写了一个小工具 OpenWith，提供一个终端界面TUI，可以集中查看所有文件关联关系，并快速修改默认应用。 你可以一眼看到系统当前状态，不需要反复点击，也不用记复杂的 bundle ID。
+- https://github.com/ColeMei/openwith /MIT/202604/rust
+  - 可尝试开发ui
+
 # discuss-macos-tricks
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 👤🔒 [对于注册Apple ID也许你们都错了  _202603](https://linux.do/t/topic/1767331)

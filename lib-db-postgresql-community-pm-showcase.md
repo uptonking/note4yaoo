@@ -39,7 +39,31 @@ modified: 2024-08-11T07:21:48.172Z
   - v86 is an interesting choice, I wonder why they couldn't compile Postgres itself with Emscripten (AFAIK it's all C code).
   - I'm assuming there are too many details like syscalls and file system specific APIs that they needed a lower level virtualization?
 
+# discuss-tools/apps
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What's the best PostgreSQL GUI setup in 2026? : r/PostgreSQL _202604](https://www.reddit.com/r/PostgreSQL/comments/1sbmi9f/whats_the_best_postgresql_gui_setup_in_2026/)
+- Personally I use DBeaver because:
+  - While mostly work with PostgreSQL, I need to work with Oracle and SQLIte occasionally. Sometimes I need to do ad hoc data transfers from e DB to another. DBeaver does this well enough for me!
+  - I mainly do GIS work. Being able to view query results on a map is very handy. I know PGAdmin can do this as well, but my experience with viewing spatial data in DBeaver has been better.
+
+- Datagrip is awesome. They just released a community edition
+  - [DataGrip Is Now Free for Non-Commercial Use | The DataGrip Blog _202510](https://blog.jetbrains.com/datagrip/2025/10/01/datagrip-is-now-free-for-non-commercial-use/)
+  - Which features are included under the free license?
+  - All the features of the commercial version are available, including AI-powered code completion, an intelligent query console, an Excel-like data editor, Git integration, and support for multiple databases. 
+
+- pgAdmin is pretty lightweight. Uses about 400 MB here on a Macbook.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## Two projects in Postgres ecosystem I am excited about:

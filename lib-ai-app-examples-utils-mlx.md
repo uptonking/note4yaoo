@@ -288,6 +288,15 @@ modified: 2025-11-01T10:54:26.044Z
     - lemonade is a local ai sever that does LLMs, image, and audio. Similar to Ollama or LM Studio but it’s open source and sponsored by AMD to make sure it’s optimized for their GPUs and NPUs.
     - Lemonade is 100% open source. It’s sponsored by AMD, which only makes money if you buy a computer. The idea is that if local AI gets increasingly awesome then more people will buy computers, so there’s no need for lemonade itself to have revenue/profits.
     - llama.cpp has had server routing for models for months now. You can literally mount and unmount models on the fly. lemonade literally copied and pasted the relevant snippets into their code base. They did do some other stuff in there, Ill give them that at the very least. But the only thing special about it is that its optimized for AMD hardware. Thats really it.
+
+- https://github.com/jjang-ai/vmlx /apache2/202604/python/ts
+  - https://vmlx.net/
+  - vMLX - Home of JANG_Q - Cont Batch, Prefix, Paged, KV Cache Quant, VL - Powers MLX Studio. Image gen/edit, OpenAI/Anth
+  - [MLX Studio — Chat, Code, Generate Images & More on Mac | Local AI with 20+ Tools](https://mlx.studio/)
+    - https://github.com/jjang-ai/mlxstudio /未开源
+    - MLX Studio is the app — the chat UI, agentic tools, model browser, and settings interface you interact with. 
+    - vMLX Engine is the inference backend that powers it — the caching, batching, model loading, and API layer. Think of it like LM Studio and llama.cpp.
+    - Any Mac with Apple Silicon (M1 or later) running macOS 26 (Tahoe). 8 GB RAM minimum, 16 GB+ recommended. Remote endpoints work on macOS 14+.
 # mlx/llama.cpp-server/wrapper
 - https://github.com/HazyResearch/minions /1.2kStar/MIT/202601/python
   - Big & Small LLMs working together
@@ -667,9 +676,3 @@ modified: 2025-11-01T10:54:26.044Z
   - 70+ models have been optimized/verified on ipex-llm
   - [Run llama.cpp Portable Zip on Intel GPU with IPEX-LLM](https://github.com/intel/ipex-llm/blob/main/docs/mddocs/Quickstart/llamacpp_portable_zip_gpu_quickstart.md)
     - 需要下载并使用定制版llama.cpp
-
-- [MLX Studio — Chat, Code, Generate Images & More on Mac | Local AI with 20+ Tools](https://mlx.studio/)
-  - https://github.com/jjang-ai/mlxstudio /未开源
-  - MLX Studio is the app — the chat UI, agentic tools, model browser, and settings interface you interact with. 
-  - vMLX Engine is the inference backend that powers it — the caching, batching, model loading, and API layer. Think of it like LM Studio and llama.cpp.
-  - Any Mac with Apple Silicon (M1 or later) running macOS 26 (Tahoe). 8 GB RAM minimum, 16 GB+ recommended. Remote endpoints work on macOS 14+.

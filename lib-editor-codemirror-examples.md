@@ -574,6 +574,13 @@ modified: 2023-06-23T12:46:53.288Z
   - Multi-line input: Each lines item can contain \n to render visual line breaks
   - Server-rendered: SVG is fully rendered server-side — fonts are inlined so consumers don't need to load fonts on the client.
 
+- https://github.com/RobinL/letterpaths /MIT/202604/ts
+  - https://www.robinlinacre.com/letterpaths/
+  - https://www.robinlinacre.com/letterpaths/editor.html
+  - a cursive writing typescript library capable of powering educational apps.  
+  - https://x.com/RobinLinacre/status/2040070730130374777
+    - WIP/still rough edges and a bit more work needed on geometry.  No capitals/punctuation etc. yet, and no support for precursive/cursive distinction.  But prob good enough to be useful
+
 ### typewriter-css-only
 
 - https://github.com/Mikulew/css-typewriter-effect /202112/css
