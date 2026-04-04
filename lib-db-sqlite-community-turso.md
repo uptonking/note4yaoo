@@ -379,6 +379,32 @@ Today, Turso is in beta with early customers working toward production deploymen
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Virtual filesystem is the way: S3 is a filesystem, so is Postgres, so is Notion, so is Box
+- https://x.com/Vtrivedy10/status/2040166655355941303
+  - Abstract any storage primitive by exposing a filesystem like interface + Agents stay in their data distribution of rocking at fs-ops
+
+- try grepping over s3 my friend. you just described chromafs
+- with chroma you can 
+  - index any data (including connecting an s3 bucket with Chroma Sync)
+  - sparse search, dense search, grep (regex search)
+  - and now use Context-1 for fast and accurate agentic search tool 
+  - put all of it behind "grep" if you want to!
+
+- Precisely. The ChromaFs approach shows how virtualizing storage eliminates sandbox overhead while enforcing strict RBAC. My work in secure AI confirms this pattern drastically reduces attack surface.
+
+- MCP resources was an attempt towards this direction but it was the wrong implementation.
+  -  i think it’s just that models know how to be smarter with filesystem, mcp is just overengineered. imo mcp’s moat is mainly auth.
+
+- I don’t know. Humans invented databases and hyper-scalable blob storage because filesystems were not enough for indexing, querying, scaling beyond a single hard drive, and delegating data security. I understand agents feel at home with filesystems because LLMs are text-processing machines and the terminal is a natural interface to them, but that doesn’t invalidate decades of progress in data management. If we dismiss all of that to come back to the filesystem abstraction and force everything else to follow this tree with text content structure, it will work at small scale, but we may end up reinventing everything again when we face scalability and indexing limitations. Wouldn’t it be better to build nicer interfaces for agents to use the existing tools?
+
+- Have you checked out http://lifo.sh?
+
+- Why not just write 2/3 tools that let the ai query the db directly?
+
 - ## We built a virtual filesystem that translates UNIX commands into queries against our database. We call it Chroma FS. 
 - https://x.com/cdxker/status/2039776981362110608
   - Output quality remained the same while completely removing a sandbox.
@@ -390,6 +416,17 @@ Today, Turso is in beta with early customers working toward production deploymen
   - [ "Building a Virtual Filesystem for Mintlify's AI Assistant"  _202604](https://x.com/densumesh/status/2039765361533637016)
 
 - Is not similar to AgentFS? 
+
+- ### Database + virtual filesystem abstraction + grep is all you need
+- https://x.com/jerryjliu0/status/2040154840228323468
+- check out http://db9.ai, sql+fs+serverless
+
+- the correction from "filesystems + grep" to "database + virtual filesystem + grep" is the whole lesson. RAG's real failure mode isn't retrieval quality. it's that chunks destroy navigability. an agent can't say "show me the page above this one" or "what links here" because embeddings don't preserve topology. virtual filesystems fix that because file paths ARE topology. the agent already knows how to cd, ls, grep. you're not teaching it a new retrieval API, you're giving it back spatial reasoning it already has. the abstraction that matters isn't "how do I find relevant text." it's "how do I move through this knowledge base like it's a codebase."
+  - the metadata approach works, and that's what the virtual filesystem layer in the article does well. the key insight is that you're basically rebuilding topology that the original docs already had, then RAG threw it away during chunking. the question becomes: why chunk at all if your retrieval layer can preserve structure?
+
+- The abstraction layer matters more than the implementation. Virtual FS gives agents a consistent API across any data source — that's the real unlock, not just "grep beats RAG"
+
+- spent months helping clients debug RAG retrieval before realizing the problem was structure, not the embedding model. the filesystem metaphor clicks for them in a way vector similarity never does. structure first, retrieval second.
 
 - ## introducing hf-mount: attach any storage bucket, model or dataset from @huggingface as a local filesystem. _202603
 - https://x.com/ClementDelangue/status/2036452081750409383

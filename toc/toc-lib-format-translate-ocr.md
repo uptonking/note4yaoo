@@ -96,6 +96,7 @@ modified: 2025-12-19T12:43:21.150Z
 # popular
 - https://github.com/run-llama/liteparse /686Star/apache2/202603/python/ts
   - https://developers.llamaindex.ai/liteparse/
+  - https://github.com/jerryjliu/liteparse_samples
   - LiteParse is a standalone OSS PDF parsing tool focused exclusively on fast and light parsing. 
   - It provides high-quality spatial text parsing with bounding boxes, without proprietary LLM features or cloud dependencies.
   - Everything runs locally on your machine.
@@ -115,6 +116,8 @@ modified: 2025-12-19T12:43:21.150Z
     - Python wrapper for LiteParse 
   - https://x.com/jerryjliu0/status/2034665976428724267
     - Introducing LiteParse - the best model-free document parsing tool for AI agents 
+  - [PDF Parsing With Bounding Boxes: The Step That Takes Document AI From Demo to Production  _202604](https://themindfulai.dev/articles/parsing-pdfs-with-bounding-boxes)
+    - [Draw bounding box highlights on PDF page screenshots. Visualize LiteParse textItem positions with colored rectangles.](https://gist.github.com/satish860/fc7fc5665d864f9f6f0267006a750652)
 
 - https://github.com/xunbu/docutranslate /747Star/MPLv2/202601/python
   - 文档（小说、论文、字幕）翻译工具（支持 pdf/word/excel/json/epub/srt...）
@@ -636,7 +639,7 @@ modified: 2025-12-19T12:43:21.150Z
   - Document tagging and categorization
   - OIDC Setup - Single Sign-On integration
 
-- https://github.com/fabriziosalmi/pdf-ocr /MIT/202508/python/inactive
+- https://github.com/fabriziosalmi/pdf-ocr /MIT/202602/python/inactive
   - web-based application built with Flask to convert PDF documents into editable formats (DOCX, TXT, Markdown, HTML) using Optical Character Recognition (OCR).
   - 支持image preprocessing
   - ocr支持tesseract/EasyOCR/pyocr
@@ -791,6 +794,9 @@ modified: 2025-12-19T12:43:21.150Z
   - [【开源自荐】OCR Finder 递归扫描本地离线的 OCR 图片搜索工具 - LINUX DO _202604](https://linux.do/t/topic/1884459)
     - 和OCR原作用一样，提取图片中的文字信息，关键词是想要在图片中找到的字
     - 使用的本地模型是PaddleOCR的v4版本，结合性能需求等综合下来的识别率算挺高的了，PP模型对手写体也有做优化，我测试下来基本只要不是非常奇怪的手写体大多都能识别
+
+- https://github.com/ikantkode/exaOCR /202601/python
+  - simple CPU only OCR for pdf/images/word/excel to markdown. With streamlit.
 
 ## utils-ocr
 
@@ -950,6 +956,14 @@ modified: 2025-12-19T12:43:21.150Z
   - OCR, Archive, Index and Search: Implementation agnostic OCR framework.
   - Unified interface to google vision, aws textract, azure, tesseract and other OCR tools
   - The core objective of ocrpy is to let users perform OCR, archive, index and search any document with ease, providing an intuitive interface and a powerful Pipeline API to solve common OCR-based tasks.
+
+- https://github.com/yuanjua/PaperStructure /apache2/202602/python
+  - Convert scientific publications in PDF to structured Markdown via only lightweight ONNX OCR models
+  - a lightweight CLI tool designed to transform academic papers into clean, structured Markdown.
+  - Layout Detection -- YOLOX detects titles, sections, paragraphs, formulas, tables, figures
+  - Text Recognition -- PP-OCRv5 ONNX pipeline
+  - Formula Recognition -- Encoder-decoder LaTeX OCR
+  - Parallel Processing -- multi-threaded PDF page processing
 
 ## tesseract
 

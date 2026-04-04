@@ -63,6 +63,19 @@ modified: 2022-12-16T01:52:33.729Z
 - [tinymce table](https://www.tiny.cloud/docs/tinymce/6/full-featured-premium-demo/)
   - 光标在表格内时会显示表格悬浮工具条，如行列操作
   - 支持拖拽修改列宽度
+# text-table
+- text-table-formats
+  - csv: 不支持styling
+  - yaml
+  - json
+  - code-block
+
+- https://github.com/Datastripes/DataSheetStandard /CC-BY-4/202603/python/js
+  - The Data Sheet Standard (DSS) is a text-based, human-readable data format designed to represent multi-sheet spreadsheet data. 
+  - Unlike CSV, it supports multiple tabs and sparse data placement via an anchor-based system. 
+  - Unlike XLSX, it is non-binary, non-XML, and fully compatible with version control systems (Git-friendly).
+  - Sparse Data Support: Only populated cells are stored. No "padding" with empty commas is required to reach a specific coordinate.
+  - Multi-Sheet: A single file can contain multiple named sheets.
 
 ## table-products
 

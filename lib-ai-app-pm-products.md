@@ -29,8 +29,9 @@ modified: 2025-03-22T16:10:24.856Z
   - agent框架的tool-use实现对最新llm的支持，llm-provider的部署 都会影响llm的效果
   - ai适合快速生成草稿文本或原型, 但修改难
 
-- ai-ux
+- ai-ux/visiual
   - 在浏览器cdp成熟后, 通过cdp直接打开浏览器操作web ui似乎比electron app更强大
+  - 输入或输出包含visual内容的产品需要human-in-the-loop, 如ocr/image
 
 - ai相对于搜索引擎的优势 🌹
   - ai能推理和计算, 分析复杂问题，给出更准确的方案
@@ -246,6 +247,8 @@ modified: 2025-03-22T16:10:24.856Z
   - 易用性: 模型推荐 + 场景优化的提示词 + 多模型/多版本对比
     - llm ux: natural language as interface
     - 对同一场景, 如翻译/ocr, 针对不同模型内置合理的参数且支持配置
+    - pdf: ocr, editing, rag(citation/extract)
+    - pm: notebooklm-citation, llamaparse-extract, cowork(doc/db/ilovepdf)
     - roadmap: 
       - agentic场景优化: ocr-vlm/pipeline, translation
       - citation, backlinks: 提升rag的准确度, 优化搜索结果中的code/text/image
@@ -279,7 +282,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 允许分享文档/插画中的模型配置/运行日志, 将prompt放入git-commit，还是直接放入图片?
     - ❓ 如何一键切换到cloud版
     - https://github.com/tc-mb/llama.cpp-omni is the first Omni multimodal inference engine built on llama.cpp.
-  - local agent
+  - 👾 local agent
+    - skills for local model
     - openclaw比manus更火的原因，是支持在本地自动化执行任务，而不是云端
     - 支持同一个任务选择不同agent如claude-code/codex-cli来实现多个版本
     - 支持不同的cli来交叉验证
@@ -300,10 +304,7 @@ modified: 2025-03-22T16:10:24.856Z
     - rag db支持浏览空间占用、手动删除文件索引
   - 🌐 pdf edit
     - ocr router like openrouter/mineru/paddleocr/new-api/ccswitch
-    - obsidian for pdf/ocr
-    - pdf ocr one-click eval like FlowDown
-      - ui for popular ocr benchmark
-      - personal bench suite like FlowDown
+    - obsidian for pdf/ocr: ilovepdf/stirling-pdf
     - acp for pdf/rich-editing: 参考 google-workspace-cli 实现 本地版
     - diff without git
     - proofreading: 一键检查, 版本历史
@@ -327,6 +328,9 @@ modified: 2025-03-22T16:10:24.856Z
     - pdf体验尽量与docs一致，包括view/edit
     - 统一 文本pdf 和 图片pdf 的体验，代码实现可以不同
     - ocr bench by claude-code
+    - pdf ocr one-click eval like FlowDown
+      - ui for popular ocr benchmark
+      - personal bench suite like FlowDown
   - extraction
     - https://x.com/jerryjliu0/status/2026032764131451334
       - llamaindex: We built an AI agent that lets you vibe-code document 

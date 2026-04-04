@@ -81,7 +81,19 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
-- ## 
+- ## Coolest thing about agentOS: Sandbox Mounting
+- https://x.com/NathanFlurry/status/2040097109865533688
+  - Start a lightweight Linux-like OS as a WebAssembly VM (~22 MB RAM)
+  - Agent hits a task that needs a real Linux sandbox
+  - Mounts it at /𝚜𝚊𝚗𝚍𝚋𝚘𝚡  with SSH access
+  - Lightweight by default + full sandbox only when needed
+
+- We're building agentOS as a lightweight WebAssembly VM:
+  - Low memory overhead
+  - Works with native Linux tools compiled to WASM (git, Node.js, Python, bash, npm)
+  - S3-based file systems
+  - No orchestration needed, runs everywhere (Railway, Vercel, K8S)
+  - Dead simple on-prem
 
 - ## Cloudflare 发布了一个 AI 沙箱工具 Dynamic Worker Loader，用 V8 isolate 替代容器：
 - https://x.com/xiaohu/status/2036616677115441307

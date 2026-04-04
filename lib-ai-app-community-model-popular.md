@@ -706,6 +706,8 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
   - You can see it in GPQA Diamond (Scientific Reasoning) benchmarks or humanities last exam where it performs no different from the gemma 3 4b model or even slightly worse because it likely does not have "adjustments" saved for those situations but instead for more common use cases.
 
 - ## [Gemma 4 and Qwen3.5 on shared benchmarks : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1saoyj7/gemma_4_and_qwen35_on_shared_benchmarks/)
+  - [Gemma 4 vs Qwen 3.5 Benchmark Comparison : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sbp8ny/gemma_4_vs_qwen_35_benchmark_comparison/)
+
 - To be fair, Qwen releases a model every two weeks or so, no chance for Gemma to catch up in benchmarks, but it doesn't have to. Real world use cases are much more important and we know where Gemma will take the clear lead - multilingual and writing capabilities.
   - Tool usage is becoming increasingly more useful (especially for enriching writing with sources using RAG, and having the agent be able to query different parts of the query automatically), so seeing the tool usage be so poor for the Gemma models is a bit disappointing. More testing will be required ofc.
 - These benches does not matter. Gemmas language skills are unbeatable. Qwen sucks with different languages.

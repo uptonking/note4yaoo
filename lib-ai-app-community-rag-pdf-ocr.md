@@ -29,6 +29,8 @@ modified: 2026-01-25T17:23:01.510Z
   - Cheaper and easier-to-use than Textract when you are dealing with a variety of different doc layouts.
   - Less post-processing. You can get structured data from documents directly in your own required schema, where the outputs are precise, type-safe, and thus ready to use in downstream tasks.
 
+- [Is LLM/VLM based OCR better than ML based OCR for document RAG : r/Rag _202603](https://www.reddit.com/r/Rag/comments/1rx4746/is_llmvlm_based_ocr_better_than_ml_based_ocr_for/)
+
 - ### [LLM-based OCR is significantly outperforming traditional ML-based OCR, especially for downstream LLM tasks : r/LLMDevs _202603](https://www.reddit.com/r/LLMDevs/comments/1rx6qnk/llmbased_ocr_is_significantly_outperforming/)
 - I've been using LLM vision for screen OCR in a desktop automation context and the accuracy difference is night and day compared to traditional OCR. the contextual understanding is the killer feature - when my agent reads a dialog box it doesn't just see text, it understands that "Cancel" and "OK" are buttons and "Are you sure?" is a prompt. traditional OCR gives you a flat string with no semantic structure.
   - for live screen content, the combo of accessibility APIs + LLM vision is stronger than either alone. the accessibility tree gives you structure and element types for free, vision fills in the visual context that the tree misses.

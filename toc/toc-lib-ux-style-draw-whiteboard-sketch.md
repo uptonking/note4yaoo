@@ -161,6 +161,10 @@ modified: 2025-03-22T18:23:37.602Z
 - https://github.com/mohitkumartoshniwal/whiteboard-konva-react /202402/js
   - Code for the Youtube video on building excalidraw clone using React and Konva.js
   - [Excalidraw or Figma Clone using React and Konva - YouTube](https://www.youtube.com/watch?v=LXlE1y5PQsk)
+
+- https://github.com/SarthakRawat-1/sketchbook-ui /MIT/202604/ts
+  - https://sarthakrawat-1.github.io/sketchbook-ui/
+  - A hand-drawn React component library with a sketchy, notebook aesthetic.
 # canvas-drawing
 - https://github.com/ZimengXiong/ExcaliDash /AGPL/202511/ts
   - A self-hosted dashboard and organizer for Excalidraw with live collaboration features.

@@ -67,6 +67,15 @@ modified: 2020-11-03T06:54:59.051Z
   - create amazing illustrations by using hand-drawn sketch components. 
   - We proudly offer a cool selection of 5 gradients and the ability to use ai., svg. or png. formats. 
 # amazing-tools
+- https://github.com/gchq/CyberChef /34.5kStar/apache2/202604/js
+  - https://gchq.github.io/CyberChef
+  - a web app for encryption, encoding, compression and data analysis
+  - web app for carrying out all manner of "cyber" operations within a web browser. These operations include simple encoding like XOR and Base64, more complex encryption like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data
+  - 交互设计支持multi-step顺序执行
+  - The tool is designed to enable both technical and non-technical analysts to manipulate data in complex ways without having to deal with complex tools or algorithms.
+  - CyberChef is entirely client-side
+    - all processing is carried out within your browser, on your own computer.
+
 - https://github.com/aarondail/react-zoomable-ui /202301/ts/类似画板缩放
   - https://aarondail.github.io/react-zoomable-ui/example/
   - Make your HTML elements and React components zoomable, and build interesting zoomable UIs. 

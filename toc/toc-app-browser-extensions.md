@@ -268,11 +268,15 @@ modified: 2023-02-08T10:24:11.422Z
 
 - https://github.com/ngti/svg-grabber /MIT/201803/js/inactive
   - Open source chrome extension to quickly preview, download or copy inline or embedded SVG images from a website
-# userscripts
+# userscripts/tampermonkey
 - registry/sources
   - 不要在userscripts管理器上花费过多时间, 支持新特性的管理器也许对safari/firefox的支持不好, 建议用最流行的
   - 有些扩展需要配置 csp等, 不同管理器的实现不同， 建议用最流行的
   - [Greasy Fork - safe and useful user scripts](https://greasyfork.org/en)
+
+- tampermonkey
+  - 有时刚安装的script会立即自动删除, 原因是启用了auto browser sync同步脚本, 因为某种原因本地和远程脚本不一致了
+    - 解决方法, 先点击reset来停止browser sync，再点击run sync将本地脚本同步到远程
 
 - https://github.com/violentmonkey/violentmonkey /8kStar/MIT/202603/js/vue
   - https://violentmonkey.github.io/

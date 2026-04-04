@@ -152,7 +152,7 @@ modified: 2021-01-04T17:26:43.784Z
   - Templates are JSON data that is easy to understand
   - pdfme will always remain open source. The cloud service is an optional offering for those who prefer a managed solution.
 
-- https://github.com/agentcooper/react-pdf-highlighter /1.2kStar/MIT/202409/ts
+- https://github.com/agentcooper/react-pdf-highlighter /1.4kStar/MIT/202409/ts/inactive
   - https://agentcooper.github.io/react-pdf-highlighter
   - a React library that provides annotation experience for PDF documents on web.
   - built on top of PDF.js by Mozilla. 
@@ -421,6 +421,7 @@ modified: 2021-01-04T17:26:43.784Z
   - [Editor needs a LOT of work _202512](https://github.com/Stirling-Tools/Stirling-PDF/discussions/5222)
     - It messes up the fonts...puts random spaces in between words, it drops paragraphs on top of each other, and you can't scroll the whole document - you have to click on each page at the top (?) On a 300+ page book, this is impossible. The UI is horrible.
     - we are working in it! As you mention it's not even beta but an alpha release as a concept to build on. We will get this improved! This is a top priority for us
+  - [Browser-based PDF Editor and PDF Toobox Stirling-PDF : r/selfhosted _202305](https://www.reddit.com/r/selfhosted/comments/13glhyr/browserbased_pdf_editor_and_pdf_toobox_stirlingpdf/)
 
 - https://github.com/TheWebDevel/electron-pdf-conversion-article-proj /js
   - [Converting an Electron view content to PDF - DEV Community](https://dev.to/sathish/converting-an-electron-view-content-to-pdf-caa)
@@ -637,13 +638,18 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/surveyjs/survey-pdf
   - Supplementary component to the SurveyJS Form Library to download surveys as PDF files and generate editable PDF forms.
 
-- https://github.com/seanpedrick-case/doc_redaction /34Star/AGPL/202512/python
+- https://github.com/seanpedrick-case/doc_redaction /34Star/AGPL/202603/python
+  - https://seanpedrick-case.github.io/doc_redaction/
   - https://huggingface.co/spaces/seanpedrickcase/document_redaction_vlm
   - Redact PDF/image-based documents, Word, or CSV/XLSX files using a graphical user interface.
   - To extract text from documents, the 'Local' options are `PikePDF` for PDFs with selectable text, and OCR with Tesseract. 
     - Use AWS Textract to extract more complex elements e.g. handwriting, signatures, or unclear text. 
     - `PaddleOCR` and VLM support is also provided 
   - For PII(personally identifiable information) identification, 'Local' (based on `spaCy`) gives good results if you are looking for common names or terms, or a custom list of terms to redact 
+  - sudo apt-get install -y tesseract-ocr poppler-utils
+  - 依赖gradio、pdfminer.six、pymupdf、pikepdf、pdf2image、opencv、presidio-image-redactor
+  - [Local VLMs (Qwen 3 VL) for document OCR with bounding box detection for PII detection/redaction workflows (blog post and open source app) : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r8smbk/local_vlms_qwen_3_vl_for_document_ocr_with/)
+    - I have now implemented OCR with bounding box detection into the Document redaction app 
 
 - https://github.com/leedrake5/unredact /GPL/202512/python
   - This repository contains a Python utility for extracting selectable (but visually redacted) text from PDF files and presenting it in a clear, human-readable format while preserving pagination and layout as closely as possible.
@@ -725,6 +731,9 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/yfedoseev/pdf_oxide /MIT/202603/rust/ts
   - https://oxide.fyi/
   - The fastest PDF library for Python and Rust. 
+  - written in Rust with Python bindings
+  - [Open-source PDF text extraction library (100% pass rate on 3, 830 test documents, MIT licensed) : r/pdf _202602](https://www.reddit.com/r/pdf/comments/1rdhuae/opensource_pdf_text_extraction_library_100_pass/)
+    - I tested this against 3,830 PDFs across three major suites: veraPDF (conformance), Mozilla pdf.js (real-world), and DARPA SafeDocs (adversarial/broken files).
   - [PDF Oxide -- Fast PDF library for Python with engine in Rust (0.8ms mean, MIT/Apache license) : r/Python](https://www.reddit.com/r/Python/comments/1rjsq84/pdf_oxide_fast_pdf_library_for_python_with_engine/)
 
 - OpenViewerFX  /LGPL/

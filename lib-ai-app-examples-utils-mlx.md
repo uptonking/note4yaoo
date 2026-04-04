@@ -605,6 +605,18 @@ modified: 2025-11-01T10:54:26.044Z
 - https://github.com/yousefjan/rais /MIT/202603/cpp
   - A scheduling runtime for concurrent inference on Apple Metal
   - [I built a priority scheduler that cuts TTFT 3.4x when running concurrent mlx-lm requests : r/mlxAI _202604](https://www.reddit.com/r/mlxAI/comments/1s7kpn7/i_built_a_priority_scheduler_that_cuts_ttft_34x/)
+
+- https://github.com/raketenkater/llm-server /MIT/202604/python
+  - Smart launcher for ik_llama.cpp and llama.cpp. Auto-detects your hardware, figures out the optimal configuration, and launches the server — no manual flag tuning required.
+  - Running llama.cpp on multi-GPU setups means juggling dozens of flags. llm-server figures it all out.
+  - Supports Linux (NVIDIA CUDA), macOS (Apple Silicon Metal), and Windows (via WSL2).
+
+- https://github.com/PurpleDirective/purple-directive-cli /MIT/202603/python
+  - https://purpledirective.com/
+  - A local AI agent with native inference + MCP tool calling. ~3800 lines of Python across 5 core files. 
+  - No frameworks, no OpenAI shims, no abstractions between you and the model.
+  - Dual inference backends: Ollama (/api/chat) for GGUF models, vllm-mlx (/v1/chat) for Apple Metal (auto-detected at startup)
+  - Unified brain server -- Memory, knowledge, web search, and teaching in one MCP server (8 tools). Replaces separate memory + knowledge servers.
 # llm-apps
 - https://github.com/eclaire-labs/eclaire /MIT/202510/ts
   - Local-first, open-source AI assistant for your data. Unify tasks, notes, docs, photos, and bookmarks. Private, self-hosted, and extensible via APIs.
@@ -651,6 +663,12 @@ modified: 2025-11-01T10:54:26.044Z
   - a CLI tool written in Go that benchmarks how well Large Language Models (LLMs) run on your specific hardware. 
   - It measures real-world performance metrics via Ollama and tells you whether your "rig" is ready for AI workloads.
   - [I built a small CLI tool to help beginners see if their hardware can actually handle local LLMs : r/ollama](https://www.reddit.com/r/ollama/comments/1r8rgg8/i_built_a_small_cli_tool_to_help_beginners_see_if/)
+# llm-server
+- https://github.com/danveloper/flash-moe /202603/oc
+  - Running a big model on a small laptop
+  - Pure C/Metal inference engine that runs Qwen3.5-397B-A17B (a 397 billion parameter Mixture-of-Experts model) on a MacBook Pro with 48GB RAM at 4.4+ tokens/second with production-quality output including tool calling.
+  - The entire 209GB model streams from SSD through a custom Metal compute pipeline.
+  -  No Python. No frameworks. Just C, Objective-C, and hand-tuned Metal shaders.
 # llm-provider
 - https://github.com/ArseniiBrazhnyk/Veritensor /apache2/202601/python
   - https://www.veritensor.com/

@@ -322,6 +322,13 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0404
+
+- Error rendering prompt with jinja template: "Cannot call something that is not a function: got UndefinedValue". This is usually an issue with the model's prompt template. If you are using a popular model, you can try to search the model under lmstudio-community, which will have fixed prompt templates. If you cannot find one, you are welcome to post this issue to our discord or issue tracker on GitHub. Alternatively, if you know how to write jinja templates, you can override the prompt template in My Models > model settings > Prompt Template.
+  - The original Hugging Face tokenizer_config.json for the IBM Granite Vision model contains a very complex Jinja template. It includes Python-like functions, macros (like raise_exception()), or multi-modal list iterators to handle images and function calling.
+  - LM Studio uses a lightweight, stripped-down Jinja renderer that does not support these advanced, Hugging Face-specific functions. When LM Studio tries to read the Granite template and hits an unsupported function, it throws the UndefinedValue error.
+- the original chat template is https://huggingface.co/ibm-granite/granite-4.0-3b-vision/raw/main/chat_template.jinja . can you improve and provide a usable chat template in lm studio without advanced jinja features while keeping major semantics and features of original chat template? i want to copy-paste your improved chat template to lm studio and test it.  please also give a good prompt  that conforms to the model prompt requirement
+
 ## 0403
 
 - 🤔 i am using my m4 macbook now. From both clashx pro network monitor and NetSpeedMonitor.app, it shows download speed is 2.9~10.1 MB/s, it keeps showing this network speed for hours. please find which processes/apps are downloading and eating my network. the reason may not be chrome browser, because when i close chrome, it still showed the download speed. from both clashx pro network monitor and NetSpeedMonitor.app, now it is showing download speed is 2.9~10.1 MB/s. please analyze the root cause and tell me how to fix it step by step.

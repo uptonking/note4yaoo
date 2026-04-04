@@ -391,10 +391,14 @@ modified: 2023-04-04T22:39:45.442Z
   - powerful framework agnostic headless library to zoom images on the web
   - Examples are written with Preact, React, Svelte, Vanilla JS and Vue.
 # codec
-- https://github.com/GoogleChromeLabs/squoosh /apache2/202401/ts
+- https://github.com/GoogleChromeLabs/squoosh /25kStar/apache2/202408/ts/inactive
   - https://squoosh.app/
+  - https://squoosh.app/editor
   - Make images smaller using best-in-class codecs, right in the browser.
   - Squoosh does not send your image to a server. All image compression processes locally.
+  - 未提供编辑面板， 只提供了简单操作
+  - https://github.com/hellodk34/squoosh
+    - docker image. Support amd64, arm64 and arm v7 arch.
 
 - https://github.com/addyosmani/squish /MIT/202501/ts
   - https://squish.addy.ie/
@@ -595,6 +599,21 @@ modified: 2023-04-04T22:39:45.442Z
   - 允许用户在图片上框选特定区域，利用 Google Gemini 或 OpenAI (及兼容接口) 的多模态能力，根据文本提示词对该区域进行修改、增强或替换，并自动将生成的补丁无缝合成回原图。
   - 无论是去除水印、修改细节、批量编辑，还是通过局部框选绕过 AI 模型的安全过滤实现漫画翻译，这个工具都能轻松胜任。
   - [开源一个可以用banana pro翻译涩图的项目 _202601](https://linux.do/t/topic/1510546)
+
+- https://github.com/BarathwajAnandan/EasyEdit /MIT/202502/python/inactive
+  - https://easyedit-bhl5hydyqiozrmfqjy3ict.streamlit.app/
+  - an interactive image processing and analysis platform that lets you edit images using natural language. 
+  - Built with Python, it combines Streamlit's user interface with OpenCV and NumPy for image manipulation, powered by AI agents that understand your intent and execute the appropriate operations.
+  - Image Editing: Resize, blur, draw shapes, add text, and more
+  - Image Analysis: Get dimensions, pixel values, and other properties
+  - AI agents translate your requests into precise OpenCV/NumPy operations
+  - Easy EdIT uses a pipeline of specialized AI agents to: 
+    - Parse your natural language query 
+    - Determine the appropriate image processing operations 
+    - Execute the operations using OpenCV/NumPy 
+    - Provide human-friendly feedback
+  - Version control system for your edits (similar to git)
+  - [I made an LLM/ AI app to make image editing stupidly simple—check out EasyEdit - Do basic edits by describing what you want in English! : r/SideProject _202502](https://www.reddit.com/r/SideProject/comments/1iha4vy/i_made_an_llm_ai_app_to_make_image_editing/)
 # more
 - https://github.com/ascorbic/unpic-img
   - This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. 

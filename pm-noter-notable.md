@@ -13,6 +13,8 @@ modified: 2023-11-28T14:48:45.910Z
 # guide(for notable/noter/paper(create+search+collab))
 - features
   - 💰 market: lowcode(editor/automation), playground(preview+code+pdf)
+    - pdf: ocr, editing, rag(citation/extract)
+    - pm: notebooklm-citation, llamaparse-extract, cowork(doc/db/ilovepdf)
   - ⏳ versioning and branching (reproducible/traceable): git-timeline, diff, draft/public
     - replay
     - 基于oplog/events的方案

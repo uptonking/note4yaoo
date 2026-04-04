@@ -1158,6 +1158,15 @@ Don’t want/can’t have external dependencies?
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Skill 开发踩坑：相对路径解析问题 - LINUX DO _202604](https://linux.do/t/topic/1894042)
+  - Claude Code 和 Qoder Cli 中，Skill 无法感知自身目录，导致 Skill 脚本的第一次调用都会出错，然后才会搜索正确目录，影响 scripts/ 和 reference/ 的使用。
+  - 不管 Skill 在用户级目录 (~/.agents/skills/xxx/scripts) 还是项目目录都会出现问题。
+  - 解决思路: 在 Skill 调用时，注入 Skill 目录的绝对路径，如 “Base directory for this skill: /xxx/xxx/”。 注入方法通过 PreToolUse Hook 实现。
+
 - ## Introducing @tan_stack Intent (alpha) _202603
 - https://x.com/tan_stack/status/2029973163455766769
   - Ship agent-readable "skills" inside npm packages

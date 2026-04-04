@@ -134,7 +134,7 @@ modified: 2025-08-16T14:12:24.416Z
 
 - 🧩 ControlNet
   - ControlNet is a conditional control generation model based on diffusion models, first proposed by Lvmin Zhang et al. in 2023 in the paper Adding Conditional Control to Text-to-Image Diffusion Models.
-  - ControlNet models significantly enhance the controllability of image generation and the ability to reproduce details **by introducing multimodal input conditions, such as edge detection maps, depth maps, and pose keypoints**.
+  - ControlNet models significantly enhance the controllability of image generation and the ability to reproduce details **by introducing multimodal input conditions, such as edge detection maps, depth maps, and pose keypoints** .
   - Before ControlNet, we could only rely on the model to generate images repeatedly until we were satisfied with the results, which involved a lot of randomness.
   - With the advent of ControlNet, we can control image generation by introducing additional conditions. For example, we can use a simple sketch to guide the image generation process, producing images that closely align with our sketch.
 
@@ -1171,7 +1171,7 @@ modified: 2025-08-16T14:12:24.416Z
 
 - [For those that use Z-Image Turbo in Comfy with 8gb VRAM, how long do your generations take? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p87j2s/for_those_that_use_zimage_turbo_in_comfy_with_8gb/)
 
-- ## [I just got b***hslapped by Z-Image-Turbo : r/comfyui](https://www.reddit.com/r/comfyui/comments/1p7j7mi/i_just_got_bhslapped_by_zimageturbo/)
+- ## [I just got b *** hslapped by Z-Image-Turbo : r/comfyui](https://www.reddit.com/r/comfyui/comments/1p7j7mi/i_just_got_bhslapped_by_zimageturbo/)
   - prompt
   - Photorealistic candid snapshot of four people standing side by side holding a fifth person in their arms. The fifth person is laying down in their arms which they have stretched out before them. A: Blonde slim young woman, wearing a white summer dress and red high heels shoes. B: Punk rocker with a blue mohawk, a jeans jacket with spikes, ripped jeans and Dr. Martens shoesC. Gray haired doctor with whit doctors attire, stetoscope and a pencil in his chest pocket. D. Teenage mutant ninja turtle.
   - Comfy just released an update today and an example workflow.
@@ -1812,7 +1812,7 @@ Q8（8 位）	    16GB+	   接近原始版本
 
 - ## ⚡️ [ComfyUI_提升图片生成速度 - 知乎 _202408](https://zhuanlan.zhihu.com/p/695820264)
 - LCM 的模型并不多见，原因之一是其质量不太理想，之二是它刚出来没几天就有更好的 Turbo 问世。为普通模型添加 LCM Lora 模型，可以明显提升出图速度。
-  - 采样器需为 `LCM` ， Scheduler 建议 `sgm_uniform。`
+  - 采样器需为 `LCM` ， Scheduler 建议 `sgm_uniform。` 
 
   - SDXL 模型不建议使用 LCM，因为有更快更好的 Lightning、Hyper 可用。
 
@@ -1900,7 +1900,10 @@ Q8（8 位）	    16GB+	   接近原始版本
 
 - ## 
 
-- ## 
+- ## [Semantic Image Disassembler (SID) is a VLM-based tool for prompt extraction, semantic style transfer and re-composing (de-summarization). : r/StableDiffusion _202512](https://www.reddit.com/r/StableDiffusion/comments/1py4bxf/semantic_image_disassembler_sid_is_a_vlmbased/)
+  - I (in collaboration with Gemini) made Semantic Image Disassembler (SID) which is a VLM-based tool that works with LM Studio (via local API) using Qwen3-VL-8B-Instruct or any similar vision-capable VLM. 
+  - SID performs prompt extraction, semantic style transfer, and image re-composition (de-summarization).
+  - SID analyzes inputs using a structured analysis stage that separates content (wireframe / skeleton) from style (visual physics) in JSON form. This allows different processing modes to operate on the same analysis without re-interpreting the input.
 
 - ## [Z-Image Day-0 support in ComfyUI: Non-distilled, Flexible, High-Quality Image Generation : r/comfyui _202601](https://www.reddit.com/r/comfyui/comments/1qojov0/zimage_day0_support_in_comfyui_nondistilled/)
   - 冷色系油画风格
@@ -1987,6 +1990,6 @@ Q8（8 位）	    16GB+	   接近原始版本
   - 一旦这个模型产生，机器就可以通过“噪点”来预测图形，所以，整个绘画的过程就是用一组随机数（随机的噪点）来预测会是一个什么样的画。很令人惊讶吧，AI就是从一堆乱七八糟的随机数中来画画的。这种个算法很机器，就是以大力出奇迹，但牛逼的地方是，可以产生清晰度和细节度巨高无比的图片
 - 这个过程需要依赖于几个事，一个是训练的图片，一个初始化的随机噪点，还有就是 Prompt 的预测路径，整个过程非常地机械，而且这个模型也不保证能生成让人觉得舒服的图片，所以需要各种人为的调参，并需要人通过在生成的图片中选择自己喜欢的图片后再度生成，类似于ChatGPT用上下文来调整内容
 - 💡 所以，像Midjourney这种通过聊天机器人来让人选择最喜欢的图片，其实就是让人来告诉机器哪些随机数，哪些预测路径，哪些Prompt更靠谱可生成更好的图片，在用户生成图片的同时让用户来反哺了AI 模型，而生成出来的图片又可以成为下一轮的图片训练集，于是，AI以后就再也不需要使用人类的图片
-- 再说一下 **Prompt**，这是一种Transformer语言模型，它接受文本提示并产生Token，
+- 再说一下 **Prompt** ，这是一种Transformer语言模型，它接受文本提示并产生Token，
   - Stable Diffusion 以前使用的是 OpenAI的CLIP，但去年11月切到了OpenCLIP，使用了3.5亿的参数，而CLIP只有6千万的参数，
   - Prompt对高质量的图片的生成有非常大的影响因素，我认为这是一种未来的更接近自然语言的编程语言

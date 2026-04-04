@@ -378,6 +378,7 @@ modified: 2025-11-30T17:27:16.720Z
     - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
     - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
     - Currently, it supports: docling pymupdf4llm markitdown marker
+  - [Built a unified PDF extraction & benchmarking tool for RAG — PDFstract (Web UI • CLI • API) : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pxom6i/opensource_pip_built_a_unified_pdf_extraction/)
 
 - https://github.com/signerlabs/klee /1.7kStar/MIT/202511/ts/inactive
   - a modern desktop application that combines AI-powered chat, knowledge base management, and note-taking capabilities.
@@ -754,7 +755,7 @@ modified: 2025-11-30T17:27:16.720Z
 
 - https://github.com/ikantkode/pdfLLM /MIT/202509/python/inactive
   - open source, proof of concept RAG app.
-  - uses PostgreSQL for session management, Qdrant for vector storage, Dgraph for graph-based indexing, and Celery for asynchronous task processing.
+  - uses PostgreSQL for session management, Qdrant for vector storage,  `Dgraph` for graph-based indexing, and Celery for asynchronous task processing.
 
 - https://github.com/pega2077/ai_file_manager /MIT/202601/ts/Electron
   - file manager powered by AI. It automatically classifies your imported files into the most suitable folders and tags them intelligently based on their content, making future search and retrieval easy.
@@ -1262,6 +1263,7 @@ modified: 2025-11-30T17:27:16.720Z
 
 - https://github.com/run-llama/liteparse /686Star/apache2/202603/python/ts
   - https://developers.llamaindex.ai/liteparse/
+  - https://github.com/jerryjliu/liteparse_samples
   - LiteParse is a standalone OSS PDF parsing tool focused exclusively on fast and light parsing. 
   - It provides high-quality spatial text parsing with bounding boxes, without proprietary LLM features or cloud dependencies.
   - Everything runs locally on your machine.
@@ -1985,6 +1987,11 @@ modified: 2025-11-30T17:27:16.720Z
 - https://github.com/nuelkoya/yc-rag-search /202604/python
   - This project implements a Retrieval-Augmented Generation (RAG) system combined with metadata filtering to search across a Y Combinator (YC) startup dataset.
   - [YC Dataset Search (RAG + Metadata Filtering) : r/Rag _202604](https://www.reddit.com/r/Rag/comments/1s9unol/yc_dataset_search_rag_metadata_filtering/)
+
+- https://github.com/hyperfield/ai-file-sorter /AGPL/202603/cpp/qt6
+  - https://filesorter.app/
+  - Cross-platform desktop application for content-aware file organization and renaming. 
+  - Supports local and remote LLMs, preview-based workflows, and fully user-controlled changes.
 # data-rag
 - https://github.com/statespace-tech/toolfront /801Star/MIT/202512/python
   - https://docs.toolfront.ai/
