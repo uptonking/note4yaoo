@@ -1,11 +1,11 @@
 ---
-title: spec-office-excel
-tags: [excel, format, office]
+title: spec-office-excel-sheets-xlsx
+tags: [excel, format, office, spreadsheet, xlsx]
 created: 2019-12-24T12:54:32.612Z
-modified: 2021-09-30T07:44:25.136Z
+modified: 2026-04-05T18:30:09.932Z
 ---
 
-# spec-office-excel
+# spec-office-excel-sheets-xlsx
 
 # spec
 
@@ -31,43 +31,6 @@ modified: 2021-09-30T07:44:25.136Z
   - Join our Excel courses, improve your knowledge and skills
   - [ExcelChamp | Solving Everyday Problems With Excel](https://www.excelchamp.net/)
     -  Excel Tips and Tricks, Formulas and shortcuts
-# more
-
-# discuss
-- ## a standard that extends CSV files to have formulas, 
-- https://twitter.com/andrestaltz/status/1344320355960299520 
-  - and to slice huge CSVs into multiple files so to allow scalability, 
-  - and then an ecosystem of tools to read/write them. 
-  - Alternative to Excel.
-- Why tho. Grid spreadsheets suck, something like @InflexHQ is the way
-  - All the excel and google spreadsheet users disagree with you, so no, it doesn't suck
-  - excel users routinely use CSV
-- There are open-source alternatives to Excel. 
-  - Yes, they have bunch of bells and whistles, much more than needed for just formulas, 
-    - but you still want another ???:xls = rtf:doc?
-  - I want an ecosystem of tools. 
-    - Not a monolith program like LibreOffice Calc, but more like an ecosystem of plugins. 
-    - Think Webpack plugins or Callbag operators
-  - If we have web word processors with plugins (both CKEditor and tinyMCE are nice in that respect), there should be some spreadsheet tables as well.
-- the thing is that CSV files are mostly static. 
-  - Formulas are intended to work with dynamic data IMHO.
-    - The standard would work on things like line-breaks, dot vs comma in numbers, currencies, etc
-  - In the file, the formulas would obviously be static, 
-    - but any renderer that can read this extended format would automatically calculate the formulas
-- What about just files with key-value pairs (or the KV pairs could be in databases or HTTP APIs) 
-  - and then you can compute on these, create new KV pairs with formulas, 
-    - and finally there could be GUIs that would display these values in customized combinations lines and columns.
-  - I think the easiness of reading and writing CSV is appealing and good to preserve
-- Maybe not actually CSV though. 
-  - Maybe some other delimiter or something slightly more structured. 
-    - Alternatively, be very rigid in the format specification for this CSV variant.
-    - I can see quoting in formulas getting really complicated really fast.
-  - Also fun fact: Excel will parse and execute formulas from a CSV file.
-- Is this distributed excel?
-  - not directly. But you could put these CSVs in a hyperdrive and there you go
-- Sounds similar to using SQLite files where the formulas are functions in a language with a SQLite C FFI
-
-- I do wonder, how far with justabusing sqlite would get you:  https://sqlite.org/csv.html
 # solutions
 
 ## [Inflex](https ://inflex.io/)
@@ -122,3 +85,66 @@ modified: 2021-09-30T07:44:25.136Z
 - Frictionless Data is a progressive, incrementally adoptable open-source toolkit 
   - that brings simplicity and gracefulness to the data experience
   - whether you're wrangling a CSV or engineering complex pipelines with gigabytes.
+# discuss-tools/conversions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## a standard that extends CSV files to have formulas, 
+- https://twitter.com/andrestaltz/status/1344320355960299520 
+  - and to slice huge CSVs into multiple files so to allow scalability, 
+  - and then an ecosystem of tools to read/write them. 
+  - Alternative to Excel.
+- Why tho. Grid spreadsheets suck, something like @InflexHQ is the way
+  - All the excel and google spreadsheet users disagree with you, so no, it doesn't suck
+  - excel users routinely use CSV
+- There are open-source alternatives to Excel. 
+  - Yes, they have bunch of bells and whistles, much more than needed for just formulas, 
+
+    - but you still want another ???:xls = rtf:doc?
+
+  - I want an ecosystem of tools. 
+
+    - Not a monolith program like LibreOffice Calc, but more like an ecosystem of plugins. 
+    - Think Webpack plugins or Callbag operators
+
+  - If we have web word processors with plugins (both CKEditor and tinyMCE are nice in that respect), there should be some spreadsheet tables as well.
+- the thing is that CSV files are mostly static. 
+  - Formulas are intended to work with dynamic data IMHO.
+
+    - The standard would work on things like line-breaks, dot vs comma in numbers, currencies, etc
+
+  - In the file, the formulas would obviously be static, 
+
+    - but any renderer that can read this extended format would automatically calculate the formulas
+
+- What about just files with key-value pairs (or the KV pairs could be in databases or HTTP APIs) 
+  - and then you can compute on these, create new KV pairs with formulas, 
+
+    - and finally there could be GUIs that would display these values in customized combinations lines and columns.
+
+  - I think the easiness of reading and writing CSV is appealing and good to preserve
+- Maybe not actually CSV though. 
+  - Maybe some other delimiter or something slightly more structured. 
+
+    - Alternatively, be very rigid in the format specification for this CSV variant.
+    - I can see quoting in formulas getting really complicated really fast.
+
+  - Also fun fact: Excel will parse and execute formulas from a CSV file.
+- Is this distributed excel?
+  - not directly. But you could put these CSVs in a hyperdrive and there you go
+- Sounds similar to using SQLite files where the formulas are functions in a language with a SQLite C FFI
+
+- I do wonder, how far with justabusing sqlite would get you:  https://sqlite.org/csv.html

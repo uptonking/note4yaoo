@@ -170,6 +170,10 @@ const CountingComponent = () => {
     - In addition to the basic Handlebars features such as helpers, Glimmer also comes with built-in support for a very flexible and powerful primitive called "Components" and a set of low-level hooks which the host environment can use to build other high-level, user-facing features.
     - The key insight of Glimmer is that templates represent a declarative programming language for building and updating DOM. By structuring web UI around templates as the central abstraction, we can use advanced techniques from programming languages and compilers to significantly boost the performance of web applications in practice.
     - Because of this, Glimmer's architecture has more in common with compiler toolchains like clang/LLVM or javac/JVM than traditional JavaScript libraries.
+# fwk-bench
+- https://github.com/joshpuckett/dialkit /MIT/202604/ts
+  - A library to help you dial in interface parameters of any kind
+  - Real-time parameter tweaking for React, Solid, Svelte, and Vue, created by Josh Puckett.
 # more-web-framework
 - https://github.com/gimenete/ui-state-sync
   - DIY modern JavaScript framework based on Virtual DOM

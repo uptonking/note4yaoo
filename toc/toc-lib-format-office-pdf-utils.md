@@ -260,6 +260,13 @@ modified: 2022-11-11T10:46:41.519Z
   - https://github.com/HarvestProfit/DocFlux-PDFs
     - Allows you to create pdfMake pdfs using DocFlux.
     - 依赖pdfmake
+
+- https://github.com/febbyRG/pdf-decomposer /NonCommercial/202601/ts
+  - A powerful TypeScript library for comprehensive PDF processing and content extraction. 
+  - Optimized for production use with universal browser and Node.js support.
+  - Progress Tracking - Observable pattern with real-time progress callbacks
+  - Memory Efficient - Built-in memory management and cleanup
+  - Works in Node.js 16+ and all modern browsers
 # extension-superset
 
 # converters

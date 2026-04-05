@@ -54,9 +54,9 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/diegomura/react-pdf /16.2kStar/MIT/202509/ts
   - https://react-pdf.org/repl /示例渲染的页面内容为dom元素
     - 示例效果是左边是react jsx代码， 右边是pdf预览， 感觉不如markdown/typst的预览
+  - This package is used to create PDFs using React. 
   - React renderer for creating PDF files on the browser and server
   - 使用了 pdfkit
-  - This package is used to create PDFs using React. 
     - If you wish to display existing PDFs, you may be looking for https://github.com/wojtekmaj/react-pdf
   - https://github.com/ag-media/react-pdf-table /MIT/202501/ts
     - a declarative table generator for @react-pdf/renderer
@@ -71,7 +71,16 @@ modified: 2021-01-04T17:26:43.784Z
     - If you've installed pdfjs-dist as a direct dependency and the version is not matching the pdfjs-dist that react-pdf depends on, you may get an error
     - In this case I have this "pdfjs-dist": "3.7.107" in my package.json, but react-pdf depends on "pdfjs-dist": "3.6.172". To solve this, make sure to use the worker provided by the pdfjs-dist version that react-pdf specifically depends on
     - Unfortunately you have to change this back to "pdfjs-dist/build/pdf.worker.min.js" if the direct dependency version matches react-pdf's version
+  - [Highlighting by rectangle bounds and not text _202204](https://github.com/wojtekmaj/react-pdf/discussions/980)
+    - I've tried the recipe for highlighting text here. It works fairly well, but it does not work with multiple lines. Lets say I know the bounds of a rectangle on a specified page (or I know multiple bounds), Is there a way to highlight by these bounds instead of matching text?
+    - You can use `canvasRef` prop to draw whatever you want on a given canvas. Here's an example with watermark added dynamically
   - https://x.com/xiaohanyu1988/status/1905077853785567258 🆚️
+  - https://github.com/allenai/pdf-component-library /apache2/202310/ts
+    - https://www.semanticscholar.org/reader/13497bd108d4412d02050e646235f456568cf822
+    - built on top of the React-PDF library, with some added components to help with creating an interactive reading experience. 
+    - built with research papers in mind, and aims at providing researchers with helpful tools to help their reading experienc
+  - https://github.com/allenai/scholar-reader-pdfjs /202009/js/inactive
+    - Fork of pdf.js for the Scholar Reader
 
 - https://github.com/Alpovka/EasyPDF-React /24Star/MIT/202501/ts/inactive
   - https://easypdf.vercel.app/
@@ -105,10 +114,10 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/cantoo-scribe/pdf-lib
     - This fork adds the support for svg to the pdf-lib project.
 
-- https://github.com/LibPDF-js/core /440Star/MIT/202601/ts
+- https://github.com/LibPDF-js/core /1.7kStar/MIT/202603/ts
   - https://libpdf.dev/
   - modern PDF library for TypeScript. Parse, modify, and generate PDFs with a clean, intuitive API
-  - LibPDF was born from frustration at Documenso
+  - LibPDF was born from frustration at `Documenso`.
     - PDF.js is excellent for rendering and even has annotation editing — but it requires a browser
     - pdf-lib has a great API, but chokes on slightly malformed documents
     - pdfkit only generates, no parsing at all
@@ -423,6 +432,11 @@ modified: 2021-01-04T17:26:43.784Z
     - we are working in it! As you mention it's not even beta but an alpha release as a concept to build on. We will get this improved! This is a top priority for us
   - [Browser-based PDF Editor and PDF Toobox Stirling-PDF : r/selfhosted _202305](https://www.reddit.com/r/selfhosted/comments/13glhyr/browserbased_pdf_editor_and_pdf_toobox_stirlingpdf/)
 
+- https://github.com/stephanrauh/ngx-extended-pdf-viewer /apache2/202604/ts
+  - https://pdfviewer.net/
+  - A full-blown PDF viewer for Angular 16, 17, and beyond
+  - Bringing Mozilla's pdf.js to the Angular world. That's not only the core PDF viewer, but also the UI.
+
 - https://github.com/TheWebDevel/electron-pdf-conversion-article-proj /js
   - [Converting an Electron view content to PDF - DEV Community](https://dev.to/sathish/converting-an-electron-view-content-to-pdf-caa)
   - simple electron app to demonstrate the conversion of view into PDF.
@@ -572,7 +586,7 @@ modified: 2021-01-04T17:26:43.784Z
   - PDF Arranger is a fork of Konstantinos Poulios’s PDF-Shuffler
   - https://github.com/pikepdf/pikepdf /MPL/202502/cpp/python
     - https://pikepdf.readthedocs.io/
-    - A Python library for reading and writing PDF, powered by QPDF
+    - A Python library for reading and writing PDF, powered by `QPDF`
 
 - https://github.com/hkdb/Densify /python
   - A GTK+ GUI Application written in Python that simplifies compressing PDF files with Ghostscript
@@ -613,6 +627,11 @@ modified: 2021-01-04T17:26:43.784Z
   - 主要思路是把PDF分页后用大香蕉:banana: 重新生成一个一样但是无文字的图片，然后再拼成PPT/PDF，后续自己把文字拼上去。
   - 后来想加入文字识别，用了tesseract + AI 合并文字块 + 坐标映射，但是有伪文字不太好识别，基本上搞出来的文字最后都得重新编辑==。实在没办法了，丢上来看哪位大佬有兴趣的话解决一下 
   - [一个没啥用的PDF去文字工具  ](https://linux.do/t/topic/1257896)
+
+- https://github.com/MenschMachine/pdfdancer-client-typescript /apache2/202604/ts
+  - the official TypeScript SDK for the PDFDancer API, and the same object model is also available for Python and Java.
+  - Works in both Node.js and browser environments.
+  - Requires Node.js 20+ (or a modern browser) and a PDFDancer API token.
 # examples
 - https://github.com/AnsellMaximilian/electron-excel-to-pdf-invoice-generator /ts
   - A desktop invoice generator that turns excel files (with a specifically formatted workbook) into pdf invoices for every customer.
@@ -938,18 +957,18 @@ modified: 2021-01-04T17:26:43.784Z
   - Table Extraction: Identifies and exports tables from PDFs into separate files
   - Text Extraction: Extracts plain text content from PDFs with preserved formatting
   - YOLO-based Detection: Utilizes DocLayout-YOLO model for accurate document layout analysis
-  - https://github.com/huridocs/pdf-document-layout-analysis /1.1kStar/apache2/202601/python
-    - A Docker-powered microservice for intelligent PDF document layout analysis, OCR, and content extraction
-    - The service offers both a user-friendly Gradio web interface for interactive use and a comprehensive REST API
-    - Export to JSON, Markdown, HTML, and visualize PDF segmentations
-    - Extract tables as HTML and formulas as LaTeX
-    - Apply OCR to scanned documents: uses Tesseract OCR with support for 150+ languages
-    - Visual & Fast Models - Choose between VGT (Vision Grid Transformer) for accuracy or LightGBM for speed
-    - Translate documents to multiple languages using Ollama models
-  - https://github.com/huridocs/pdf-table-of-contents-extractor
-    - extract Table of Contents (TOC) information from PDF files using the outputs generated by the pdf-document-layout-analysis service
-  - https://github.com/huridocs/pdf-text-extraction
-    - extract text from PDF files
+- https://github.com/huridocs/pdf-document-layout-analysis /1.1kStar/apache2/202601/python
+  - A Docker-powered microservice for intelligent PDF document layout analysis, OCR, and content extraction
+  - The service offers both a user-friendly Gradio web interface for interactive use and a comprehensive REST API
+  - Export to JSON, Markdown, HTML, and visualize PDF segmentations
+  - Extract tables as HTML and formulas as LaTeX
+  - Apply OCR to scanned documents: uses Tesseract OCR with support for 150+ languages
+  - Visual & Fast Models - Choose between VGT (Vision Grid Transformer) for accuracy or LightGBM for speed
+  - Translate documents to multiple languages using Ollama models
+- https://github.com/huridocs/pdf-table-of-contents-extractor
+  - extract Table of Contents (TOC) information from PDF files using the outputs generated by the pdf-document-layout-analysis service
+- https://github.com/huridocs/pdf-text-extraction
+  - extract text from PDF files
 
 - https://github.com/Flopsky/MarkThat /MIT/202601/python
   - A Python library for converting images and PDFs to Markdown or generating rich image descriptions using state-of-the-art multimodal LLMs.

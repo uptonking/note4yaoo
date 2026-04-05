@@ -76,6 +76,14 @@ modified: 2023-02-08T10:25:14.173Z
 - https://github.com/drwpow/openapi-typescript
   - Generate TypeScript types from OpenAPI 3 specs
 # mock-api
+- https://github.com/vercel-labs/emulate /apache2/202604/ts
+  - https://emulate.dev/
+  - Local API emulation for CI and no-network sandboxes
+  - https://x.com/vikingmute/status/2040771098741022954
+    - 在代码中会连比较多的第三方服务，有一些比如 CI/CD、无网络沙盒甚至是本地开发时，无法调用外部云服务 API。
+    - emulate 有点像一个高级 mock，是真正有状态、生产级逼真的本地替代服务，和原始服务做到高保真。你启动后，它就像一台本地服务器，真实响应 API 请求，还会记住你之前的操作。
+    - 支持非常多的第三方服务： Vercel / GitHub / Google / Slack / Apple Microsoft / AWS
+
 - https://github.com/mwinteringham/restful-booker /GPLv3/202312/js
   - https://automationintesting.com/training/apitesting/
   - https://restful-booker.herokuapp.com/

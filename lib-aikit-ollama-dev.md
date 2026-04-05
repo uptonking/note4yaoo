@@ -20,6 +20,13 @@ modified: 2026-01-14T18:57:01.673Z
   - 有些冷门模型未提供mlx格式，需要手动转换
   - mlx-4bit 的精度比 gguf-Q4_K_XL 要低
 
+- llama.cpp-pros
+  - 对最新模型的支持又快又多，项目开发和维护活跃度高
+  - 官方提供 cli/server/web-ui, 功能丰富
+
+- llama.cpp-cons
+  - 对vlm的支持度不够高
+
 - ollama-pros
   - stable and rich models
   - 对 embedding/vlm 模型的支持更好
@@ -37,12 +44,6 @@ modified: 2026-01-14T18:57:01.673Z
   - 对mlx格式的 embedding 模型额支持有问题, gguf格式embed模型支持好
   - lmstudio官方格式支持在ui上开关thinking, 其他的量化版模型缺少快捷方式
   - 不支持直接使用本地已有的模型，如 `~/.cache/huggingface` 或 ollama 的模型, 而msty/transformerlab支持导入
-
-- llama.cpp-pros
-  - 官方提供 cli/server/web-ui, 功能丰富
-
-- llama.cpp-cons
-  - 对vlm的支持度不够高
 # draft
 - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
   - 支持类似 roocode 的 model profile 切换

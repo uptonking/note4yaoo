@@ -1,11 +1,11 @@
 ---
-title: spec-office-math
-tags: [format, math, office, spec]
+title: spec-office-math-formula-latex
+tags: [format, formula, latex, math, office, spec]
 created: 2020-12-16T12:41:16.245Z
-modified: 2021-09-30T07:44:28.907Z
+modified: 2026-04-05T18:43:05.552Z
 ---
 
-# spec-office-math
+# spec-office-math-formula-latex
 
 # spec
 

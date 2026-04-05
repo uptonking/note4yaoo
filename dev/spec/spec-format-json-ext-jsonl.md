@@ -1,11 +1,11 @@
 ---
-title: spec-format-protobuf-dev
-tags: [format, protobuf]
-created: 2024-11-17T10:17:37.325Z
-modified: 2024-11-17T10:22:36.421Z
+title: spec-format-json-ext-jsonl
+tags: [format, json, jsonl, ndjson]
+created: 2026-04-05T18:15:06.018Z
+modified: 2026-04-05T18:15:36.109Z
 ---
 
-# spec-format-protobuf-dev
+# spec-format-json-ext-jsonl
 
 # guide
 

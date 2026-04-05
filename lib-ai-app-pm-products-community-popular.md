@@ -14,7 +14,19 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## Linear, PostHog, Attio - all shipped the same thing in the last few weeks. Homepage is a chat bar - not a dashboard.
+- https://x.com/rabi_guha/status/2040082295563169852
+  - This is the SaaS industry quietly admitting that traditional UI doesn't work anymore. Every user is different. One homepage can't serve them all.
+  - The playbook is shifting: → expose your core APIs → connect an agentic layer → let users use software the way they want
+  - SaaS became chat. Chat will become Generative UI - the agent won't just reply in text, it will compose the interface itself.
+
+- Looks like infinite personalization. Acts like massive cognitive load. I learned this the hard way.
+
+- https://x.com/DavidKPiano/status/2040491100285059293
+  - Hot take: an empty chat box as the primary UI is the exact *opposite* of intelligence in a product. It's like saying "I have no idea what you want to do here, tell me"
+
+- https://x.com/threepointone/status/2040720964451754464
+  - this is simply evolution. the next step; the sections right under the chat box will become contextual/smarter about their suggestions, based on the user/org. 
 
 - ## 🔀 非常有意思的人 & agent 协作 UX 探索！但如果为了实时看见 agent 改动而「实时更新磁盘版本」，会有两个问题：
 - https://x.com/ewind_dev/status/2038275182180315379
@@ -126,6 +138,20 @@ modified: 2026-02-20T17:36:40.796Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 价值总是来自于稀缺性。 过去写代码是一个稀缺的能力，只被少数拥有资源的人掌握，所以软件捕获了大量的价值。 
+- https://x.com/jiayuan_jy/status/2040687176544047422
+  - 现在 coding 已经被完全商品化了，不管是开源还是非开源的软件，可防御能力都是极低的。 
+  - 壁垒应建立在代码之外。
+- 代码本身越来越像基础设施，真正的壁垒开始往场景、数据、分发和执行效率上转移
+
+- 真正的壁垒是业务理解、产品思维、解决实际问题的能力，这些AI一时半会儿还解决不了。技术永远是商业的最不重要的一环。
+
+- 太高估代码在软件业的重要性了
 
 - ## 现在似乎没有人提起poe、chatwise、cherry studio等等了，也少有人提及n8n、dify，模型能力升级过程中已经淹没了一大堆产品，细数一下：
 - https://x.com/wquguru/status/2037886289907982654
@@ -319,6 +345,16 @@ modified: 2026-02-20T17:36:40.796Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [[开源分享] ClaudeChrome - 在浏览器中启动 Claude/Codex，实现通用智能交互体验 - LINUX DO _202604](https://linux.do/t/topic/1903375)
+  - 项目 idea 很简单：把 Claude / Codex / Shell 放进 Chrome 侧边栏（Shell 其实现在还没啥用，因为主要靠自行实现的 MCP Server 实现自动页面交互，主要是给未来一些插件脚本手动调用浏览器接口留空），并把每个 session 绑定到一个真实标签页（使用过程中也可以 rebind 标签页）。这样 Agent 看到的就不再只是你手动贴过去的一点信息，而是当前标签页的页面文本、HTML、请求、console 等浏览器上下文。
+  - 在 Chrome side panel 中直接运行 Claude / Codex / Shell
+  - 读取页面内容、HTML、网络请求、控制台、执行 JS 代码、运行 click, scroll 等交互
+  - 多 workspace / 多 pane 组织视图
 
 - ## 微信官宣接入 openClaw，这波短期来看利好谁呢？
 - https://x.com/kasong2048/status/2035573575860760946

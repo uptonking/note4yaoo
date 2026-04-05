@@ -157,7 +157,44 @@ modified: 2023-03-13T08:05:09.453Z
 - Web提供的能力和文档编辑的能力需求重合度不高
   - Figma 和 Flutter Web 的出现给未来的 Web 应用指出了一个新的道路，既然 DOM 不适合画出来那就全部自己来画。
   - 至于说是不是弯路，我觉得不是，只是一个更合适的解决方案而已。乐观点，历史总是螺旋上升的，如果未来哪年标准完善+性能过剩到 Web 技术栈能随便写出一个所见即所得的编辑器，我也不会觉得现在的 canvas 是一个弯路的。
+# discuss-canvas-dev
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Nice to see excitement around the proposed html-in-canvas feature, but remember you can already put canvas behind/atop HTML elements.
+- https://x.com/jaffathecake/status/2040365428338303225
+- The benefits of this new feature are:
+  - Readbacks (eg sending to a VideoEncoder)
+  - Showing HTML on non-planar shapes
+  - Using shaders on HTML
+- 🐛 There are a number of optimisations the browser cannot do if you render html to a canvas, such as partial painting, optional painting, texture size management… so you should only do it if there's good reason.
+- partial painting is the one that hurts most at scale — a small DOM change triggers a full canvas repaint. 
+  - but the deeper issue is accessibility: canvas has no accessibility tree, so anything rendered into it becomes invisible to screen readers regardless of how faithful the visual output looks. 
+  - the layering approach you mentioned works precisely because it preserves those separate compositing contexts. 
+  - html-in-canvas seems like a unified model but it's actually trading away the optimizations that make both systems fast in order to get a feature that layering already handles.
+
+- I'm watching people rediscover Flash in real time and I have many mixed feelings.
+
+- I thought the whole excitement was mainly because of the whole shaders-on-html thing? Maybe you could make a podcast ep with Surma on this as a follow-up for the "Canvas-based Web Apps" episode? Excited to see the performance and accessibility gains that come out of this !
+
+- https://x.com/shuding/status/2040446529623015743
+  - These are real WebGL shaders on top of interactive DOM elements without the HTML-in-Canvas API (works in Safari too). There’re rough edges still but worth sharing
+
+- https://x.com/CantBeFaraz/status/1599096000777318401  _202212
+  - Another stab at correctly occluded interactive HTML inside of @threejs with R3F 
+  - A fully interactive instance of @tldraw behaving like a normal plane with shadows at 60fps on iOS
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 
@@ -252,7 +289,7 @@ modified: 2023-03-13T08:05:09.453Z
   - Getting my editor layout to play well with the iOS onscreen keyboard HAS been a nightmare (even with the new visualViewport APIs), and I’m still not completely happy with it, so I can see the temptation to just bypass it all and do it in WebGL
 - Is this a standard thing in Apple web apps? Why this way? What could they not accomplish in HTML? How do they even convince the onscreen keyboard to open when the canvas is tapped? (The onscreen keyboard is not easy to manipulate or interrogate) Where is text input sent??
   - Oh god it looks like… they create an invisible `contenteditable` div that they update to always contain the text of the line you are working on, and that has the focus and is where text input is sent.
-  - This looks like a similar method to what the Google Docs suite uses. **Sheets is rendered in a canvas, Docs in regular HTML, and Slides in SVG**, or at least they were when I last checked.
+  - This looks like a similar method to what the Google Docs suite uses. **Sheets is rendered in a canvas, Docs in regular HTML, and Slides in SVG** , or at least they were when I last checked.
   - That’s kind of how pdfjs works for viewing PDFs on the web - draw a picture in a canvas of what the text should really look like and then put invisible divs behind it so you can select it.
   - All modern editors work like this — CKEditor 5, Quill, prosemirror, slateJS - internal model, contenteditable just for input
   - I have had my fair share of struggles with WebGL text

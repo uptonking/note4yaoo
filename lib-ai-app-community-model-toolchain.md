@@ -1440,6 +1440,24 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
   - 各种内存泄漏，oom，crash，代码规模不大，就开始屎山堆屎，生产别用，也别追更，merge master基本的回归测试都会直接跳过的。做开源的，就这
 
 - vllm 仅支持 NVIDIA GPU、部署复杂、显存需求大
+# discuss-vulkan
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Vulkan is almost as fast as CUDA and uses less VRAM, why isn't it more popular? : r/LocalLLM _202604](https://www.reddit.com/r/LocalLLM/comments/1sd4ujg/vulkan_is_almost_as_fast_as_cuda_and_uses_less/)
+  - In my own tests, on llama.cpp + 5090 with Fedora, with the same Qwen3.5 27B Q4 model, Vulkan is barely slower than CUDA, both output ~60TPS, maybe Vulkan is 2-4TPS slower but I can't feel it at all. Prefilling is also similar. 
+  - However, Vulkan uses 5GB less VRAM! The extra VRAM allows me to run another TTS model for my current project 
+- Vulkan is my life savior. I have two AMD GPUs on Windows system and ROCm barely supports multi-GPUs
+  - But I don't have two X16 PCIe lanes, just X16 + X4…… Vulkan allows me to use two AMD GPUs, thank you Vulkan!
+
+- Vulkan is designed for rendering triangles in game. It doesn't have the load bearing sophistication Cuda has so its a blunt instrument. You will have better accuracy with tool calling with ROCm for AMD or Cuda with Nvidia. This is my experience and many factors are at play that can make something break or not be efficient. I would be shocked that a 5090 isn't working better with Cuda over Vulkan
+
+- Does vulkan support nvfp4 and nvfp8? Without that, I am highly skeptical that vulkan can get even close to the speed of a properly configured 5090 cuda setup
 # discuss-CPU/RAM
 - ## 
 

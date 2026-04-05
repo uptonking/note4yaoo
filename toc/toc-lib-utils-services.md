@@ -23,6 +23,11 @@ modified: 2025-12-26T08:56:31.035Z
 # middlewares
 
 # toolbox
+- https://github.com/microsoft/PowerToys /131kStar/MIT/202604/csharp/cpp
+  - Microsoft PowerToys is a collection of utilities that help you customize Windows and streamline everyday tasks.
+  - 📡
+    - 可尝试开发mac/linux版
+
 - https://github.com/iib0011/omni-tools /9kStar/MIT/202604/ts
   - https://omnitools.app/
   - a self-hosted web app offering a variety of online tools to simplify everyday tasks. 

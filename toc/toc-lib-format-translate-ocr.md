@@ -511,6 +511,14 @@ modified: 2025-12-19T12:43:21.150Z
     - However, I've noticed an inefficiency in this approach since both Surya OCR and OCRmyPDF perform PDF to image conversion and preprocessing. 
     - The goal is to perform the PDF to image conversion only once throughout the entire workflow.
     - You could create a OCRmyPDF plugin that uses Surya as its OCR engine instead of Tesseract for example. There's an `OCRmyPDF-EasyOCR` that demonstrates how this could be done (although the more current approach would be to render to hOCR).
+  - https://github.com/clefru/ocrmypdf-paddleocr /MPL/202603/python
+    - A PaddleOCR plugin for OCRmyPDF, enabling the use of PaddleOCR as an alternative OCR engine to Tesseract.
+    - Optimized bounding boxes for accurate text selection in PDF output
+    - Maps OCRmyPDF/Tesseract language codes to PaddleOCR codes
+    - Converts PaddleOCR output to hOCR format for OCRmyPDF to overlay on PDFs, which OCRmyPDF uses to create a searchable PDF.
+    - The plugin uses PaddleOCR 3.x's native return_word_box=True parameter to get accurate word-level bounding boxes directly from the OCR engine
+    - [feat: add PaddleOCR-VL engine support via --paddle-engine vl · clefru/ocrmypdf-paddleocr@46fd027 _202603](https://github.com/clefru/ocrmypdf-paddleocr/commit/46fd027feb69de08ab831be27e337f97086ff2f0)
+      - Adds a second OCR engine backed by the PaddleOCR-VL 0.9B VLM
   - https://github.com/ocrmypdf/OCRmyPDF-EasyOCR /MIT/python
     - This is plugin to run OCRmyPDF with the EasyOCR engine instead of Tesseract OCR, the default OCR engine for OCRmyPDF. 
   - [OCRmyPDF: Add an OCR text layer to scanned PDF file | Hacker News _202207](https://news.ycombinator.com/item?id=32028752)
@@ -568,7 +576,7 @@ modified: 2025-12-19T12:43:21.150Z
   - Our model weights use a modified AI Pubs Open Rail-M license (free for research, personal use, and startups under $2M funding/revenue) and our code is GPL. 
   - I've included a streamlit app that lets you interactively try Surya on images or PDF files. 
 
-- https://github.com/JaidedAI/EasyOCR /28.6kStar/apahce2/202409/python/cpp/inactive
+- https://github.com/JaidedAI/EasyOCR /28.6kStar/apache2/202409/python/cpp/inactive
   - https://www.jaided.ai/
   - Ready-to-use OCR with 80+ supported languages and all popular writing scripts including: Latin, Chinese, Arabic, Devanagari, Cyrillic, etc.
   - In case you do not have a GPU, or your GPU has low memory, you can run the model in CPU-only mode by adding gpu=False.
@@ -672,7 +680,7 @@ modified: 2025-12-19T12:43:21.150Z
   - 后端并发优化 - 使用 ThreadPoolExecutor 实现非阻塞推理
   - 可视化 OCR 进度和队列管理 - 实时队列状态和位置追踪
   - 与 Knowledge-Base-Self-Hosting-Kit/streamdown 示例ui类似
-  - https://github.com/neosun100/HunyuanOCR-WebUI /apahce2/python
+  - https://github.com/neosun100/HunyuanOCR-WebUI /apache2/python
     - 基于腾讯混元OCR的完整Web界面解决方案
 
 - https://github.com/rdumasia303/deepseek_ocr_app /1.5kStar/MIT/202511/python/js/inactive
@@ -755,7 +763,7 @@ modified: 2025-12-19T12:43:21.150Z
 
 - https://github.com/ikantkode/hunyuan-1b-ocr-app /202511/python
   - [HunyuanOCR-1B - Dockerized Streamlit OCR App - Quite Amazing. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p6wios/hunyuanocr1b_dockerized_streamlit_ocr_app_quite/)
-  - https://github.com/neosun100/HunyuanOCR-WebUI /apahce2/python
+  - https://github.com/neosun100/HunyuanOCR-WebUI /apache2/python
     - 基于腾讯混元OCR的完整Web界面解决方案
     - This project uses Gradio to build the web interface and supports one-click Docker deployment
   - https://github.com/PRITHIVSAKTHIUR/HunyuanOCR-Demo /apache2
@@ -1017,6 +1025,14 @@ modified: 2025-12-19T12:43:21.150Z
 - https://github.com/bhimrazy/receipt-ocr /MIT/202601/python
   - An efficient OCR engine for receipt image processing.
   - featuring both a dedicated Tesseract OCR module and a general receipt processing package using LLMs
+
+- https://github.com/manisandro/gImageReader /GPL/202601/cpp
+  - a simple Gtk/Qt front-end to tesseract-ocr.
+  - Import PDF documents and images from disk, scanning devices, clipboard and screenshots
+  - Process multiple images and documents in one go
+  - Recognize to plain text or to hOCR documents
+  - Generate PDF documents from hOCR documents
+  - 支持win/linux, 不支持mac
 
 ## paddleocr
 
@@ -1375,6 +1391,28 @@ modified: 2025-12-19T12:43:21.150Z
 # ocr-visual-grounding 🆚
 - [Docling Visual grounding](https://docling-project.github.io/docling/examples/visual_grounding/)  
   - [Visual Grounding from Docling _202504](https://alain-airom.medium.com/visual-grounding-from-docling-74a0ee078981)
+
+- https://github.com/hypothesis/pdf.js-hypothes.is /403Star/bsd/202501/js/专注于标注/inactive
+  - https://web.hypothes.is/
+  - This is a copy of Mozilla's PDF.js viewer with Hypothesis annotation tools added.
+  - https://github.com/hypothesis/h /3.1kStar/bsd/202604/python
+    - h is the web app that serves most of the https://hypothes.is/ website, including the web annotations API at https://hypothes.is/api/. 
+  - https://github.com/hypothesis/client /bsd/202604/ts/mustache
+    - The Hypothesis client is a browser-based annotator that is a client for h's API.
+    - It’s used by the Hypothesis browser extension, and can also be embedded directly into web pages.
+
+- https://github.com/allenai/pawls /apache2/202302/python/ts
+  - https://pawls.apps.allenai.org/
+  - https://www.youtube.com/watch?v=TB4kzh2H9og
+  - PDF Annotations with Labels and Structure is software that makes it easy to collect a series of annotations associated with a PDF document. 
+  - It was written specifically for annotating academic papers within the Semantic Scholar corpus, but can be used with any collection of PDF documents.
+  - the ui, which renders the user interface that PAWLS uses
+  - the api, which serves PDFs and saves/recieves annotations
+  - 支持自动选中bbox及自由绘制bbox, 然后添加标注信息
+  - you'll need to use the PAWLS CLI to preprocess and assign the PDFs you want to serve. 
+    - ensure that the papers are pre-processed with grobid so that they have token information.
+  - https://github.com/allenai/pdffigures2 /scala
+    - Given a scholarly PDF, extract figures, tables, captions, and section titles.
 
 - https://github.com/QwenLM/Qwen3-VL /17.4kStar/apache2/202511/jupyter
   - [Qwen3-VL 发布 _20250923](https://qwen.ai/blog?id=qwen3-vl)

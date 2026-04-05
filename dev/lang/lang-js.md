@@ -21,7 +21,7 @@ modified: 2020-07-14T09:26:50.808Z
   - coding: gemini-cli, opencode
   - db: nedb, 
   - web: dnd, floating-layer, satori-2svg(MPL)
-  - utils: persistent-data-structure
+  - utils: persistent-data-structure, turfjs(gis)
   - saas: logto(MPL), firefox-send
   - more: wasm, json-parser, tree, kanban
 
@@ -58,7 +58,7 @@ modified: 2020-07-14T09:26:50.808Z
   - 把命令操作函数化
   - Proxy支持
 
-- `Object.getOwnPropertyDescriptor`,                                                    `Object.keys`等方法对应的就是强类型语言的反射，它们分散各自类型的静态方法上并不合适，ES6收敛到Reflect上是对语言的进一步规范化。
+- `Object.getOwnPropertyDescriptor`,                                                     `Object.keys`等方法对应的就是强类型语言的反射，它们分散各自类型的静态方法上并不合适，ES6收敛到Reflect上是对语言的进一步规范化。
 
 - 对象上定义了14种接口，比如访问属性`[[GET]]`之类的，这些接口是内部C++使用的，我们代码访问不到。但是通过其他方式，比如js中的元老级对象Object，它的一些属性就可以间接调用这些接口。
   - 为什么要Reflect呢？因为Object这个函数上的属性太杂了，大概有20种左右，虽然其中包含了对象接口。但是这不太好，我们需要一个专门的对象来做这个事情。显然不可能重新设计Object，毕竟兼容性才是大哥。
@@ -96,7 +96,7 @@ modified: 2020-07-14T09:26:50.808Z
   - Object.assign修改属性值的性能 ???
   - [Object spread vs. Object.assign](https://stackoverflow.com/questions/32925460)
 
-## `new Date()` vs `performance.timing`
+## `new Date()` vs `performance.timing` 
 
 - Navigation Timing API gives us a more accurate measure
 
@@ -243,7 +243,7 @@ var s = Boolean(myString); // initial value of true
 - 赋值运算符
 - yield
 - yield *
-- comma of sequence `, `
+- comma of sequence `,`
 
 ## 函数参数
 
@@ -287,7 +287,7 @@ f1(10);
   - In arrow functions, this retains the value of the enclosing lexical context's this
 - In most cases, the value of `this` is determined by how a function is called (runtime binding). 
   - It can't be set by assignment during execution, and it may be different each time the function is called.
-- **When a function is called as a method of an object, its `this` is set to the object the method is called on**.
+- **When a function is called as a method of an object, its `this` is set to the object the method is called on** .
 
 - globalThis
   - Historically, accessing the global object has required different syntax in different JavaScript environments. 
@@ -301,12 +301,12 @@ f1(10);
     - but in web browsers, due to iframe and cross-window security considerations, it references a Proxy around the actual global object (which you can't directly access). 
     - This distinction is rarely relevant in common usage, but important to be aware of.
 
-## `Object()`
+## `Object()` 
 
 - The Object constructor creates an object wrapper for the given value
 - If the value is `null` or `undefined`, it will create and return an empty object
 - Otherwise, it will return an object of a Type that corresponds to the given value.
-- If the **value is an object already**, it will return the value.
+- If the **value is an object already** , it will return the value.
 - When called in a non-constructor context `Object` behaves identically to `new Object()`.
 
 ```js
@@ -355,7 +355,8 @@ f1(10);
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout
   - https://www.jeffjade.com/2016/01/10/2016-01-10-javacript-setTimeout/
-- `var timeoutID = scope.setTimeout(function[, delay, arg1, arg2, ...]); `
+- `var timeoutID = scope.setTimeout(function[, delay, arg1, arg2, ...]);`
+
 - `setTimeout()` method of the WindowOrWorkerGlobalScope mixin (and successor to Window.setTimeout()) sets a timer which executes a function or specified piece of code once the timer expires.
 - The returned timeoutID is a *positive integer value* which identifies the timer created by the call to setTimeout()
 - use cases
@@ -369,7 +370,7 @@ f1(10);
   - 当线程中没有执行任何同步代码的前提下才会执行异步代码，setTimeout是异步代码，所以setTimeout只能等js空闲才会执行。若主线程有个死循环，死循环是永远不会空闲的，所以setTimeout也永远不会执行
 - setTimeout(0) vs window.postMessage vs MessagePort.postMessage
   - using window.postMessage is a preferred way
-  -  While setTimeout is waiting to invoke it's callback, it's *non-blocking*. 
+  -  While setTimeout is waiting to invoke it's callback, it's *non-blocking* . 
   - The call is simply added to a queue. At some point in the future the callback fires and the call is removed from that queue.
   - setTimeout callback is within a closure. As soon as setTimeout invokes the callback, it becomes eligible for garbage collection.
   - using a 15 minutes timeout function might be problematic for debugging and maintaining.
@@ -403,7 +404,7 @@ f1(10);
   - setInterval每隔100ms往队列中添加一个事件；100ms后，添加T1定时器代码至队列中，主线程中还有任务在执行，所以等待，some event执行结束后执行T1定时器代码；又过了100ms，T2定时器被添加到队列中，主线程还在执行T1代码，所以等待；又过了100ms，理论上又要往队列里推一个定时器代码，但由于此时T2还在队列中，所以T3不会被添加，结果就是此时被跳过；这里我们可以看到，T1定时器执行结束后马上执行了T2代码，所以并没有达到定时器的效果
   - 使用setInterval时，某些间隔会被跳过，可能多个定时器会连续执行
   - 每个setTimeout产生的任务会直接push到任务队列中；而setInterval在每次把任务push到任务队列前，都要进行一下判断(看上次的任务是否仍在队列中)
-  - 可以**用setTimeout模拟setInterval**来规避掉上面的缺点
+  - 可以 **用setTimeout模拟setInterval** 来规避掉上面的缺点
   - 示例：一秒后立即输出5个5
 
 ```js
@@ -427,7 +428,7 @@ f1(10);
 - `window.requestAnimationFrame()` method tells the browser that you wish to perform an animation and requests that the browser calls a specified function to update an animation before the next repaint.
 - The method takes a callback as an argument to be invoked before the repaint.
 - Your callback routine must itself call requestAnimationFrame() if you want to animate another frame at the next repaint.
-- The number of callbacks is usually *60 times per second*, but will generally match the display refresh rate in most web browsers as per W3C recommendation
+- The number of callbacks is usually *60 times per second* , but will generally match the display refresh rate in most web browsers as per W3C recommendation
 - requestAnimationFrame() calls are paused in most browsers when running in background tabs or hidden <iframe>s in order to improve performance and battery life
 - The callback method is passed a single argument, a `DOMHighResTimeStamp` , which indicates the current time (based on the number of milliseconds since time origin)
 
@@ -466,21 +467,21 @@ Point === Point.prototype.constructor // true
 ```
 
 - 一个类必须有constructor方法，若没有显式定义，一个空的constructor()会被默认添加
-- **constructor方法默认返回实例对象**，即this
+- **constructor方法默认返回实例对象** ，即this
 - 类的所有实例共享一个原型对象
 - 实例的属性除非显式定义在其本身（即定义在this对象上），否则都是定义在原型上（即定义在class上）
 - 类的方法内部如果含有this，它默认指向类的实例
 - 类相当于实例的原型，所有在类中定义的方法，都会被实例继承。如果在一个方法前，加上static关键字，就表示该方法不会被实例继承，而是直接通过类来调用，这就称为 `静态方法`
 - 如果在实例上调用静态方法，会抛出一个错误，表示不存在该方法
-- **如果静态方法包含this关键字**，这个this指的是类，而不是实例
+- **如果静态方法包含this关键字** ，这个this指的是类，而不是实例
 - 父类的静态方法，可以被子类继承
 - 实例属性除了定义在constructor()方法里面的this上面，也可以定义在类的最顶层
 - 利用new.target可以写出不能独立使用、必须继承后才能使用的类
-- 子类**可继承**父类的实例属性、实例方法、静态属性、静态方法
+- 子类 **可继承** 父类的实例属性、实例方法、静态属性、静态方法
   - 当静态属性是引用类型时，子类和父类指向的同一个地址，父类如果变化子类也会变化
   - es5和es6实现继承的方式是不同的, 前者通过原型链实现对父类原型方法、原型属性的继承，通过构造函数的调用实现对实例方法、实例属性的调用，后者通过extends关键字实现继承
   - es5中静态方法、静态属性是无法通过继承下来的，只能通过赋值传递，但es6可以
-- 子类必须在constructor()中调用super()， 否则新建实例时会报错。这是因为**子类没有自己的this对象**，而是继承父类的this对象，然后对其进行加工。如果不调用super方法，子类就得不到this对象
+- 子类必须在constructor()中调用super()， 否则新建实例时会报错。这是因为 **子类没有自己的this对象** ，而是继承父类的this对象，然后对其进行加工。如果不调用super方法，子类就得不到this对象
 - ES5继承
   - 实质是先创造子类的实例对象this，然后再将父类的方法添加到this, 类似 `Parent.apply(this)`
 - ES6继承
@@ -517,7 +518,8 @@ Point === Point.prototype.constructor // true
   - `arr1.slice()`
   - `arr1.concat()`
   - `Array.from(arr1)`
-  - `Array.prototype.push.apply(arr2, arr1); `
+  - `Array.prototype.push.apply(arr2, arr1);`
+
   - 使用数组遍历赋值
 
 ```js
@@ -541,16 +543,17 @@ Point === Point.prototype.constructor // true
 ```
 
   - 深拷贝
-  - `arr2=JSON.parse(JSON.stringify(array1)); `
+  - `arr2=JSON.parse(JSON.stringify(array1));`
+
       - 数组中的项如果是undefined，那么转换后将变为null
       - 如果数组的项为对象，则对象之间不可相互引用。若存在循环引用，则无法JSON序列化
 - js遍历对象属性几种方法的区别
   - `for-in` 是es3中就存在的最早用来遍历对象（集合）的方法
-      - 会输出自身以及原型链上**可枚举**的属性
+      - 会输出自身以及原型链上 **可枚举** 的属性
       - 不同的浏览器对for in属性输出的顺序可能不同
       - 如果仅想输出自身的属性可以借助hasOwnProperty滤掉原型链上的属性
   - `Object.keys(obj)`
-      - 用来获取对象自身**可枚举**的属性键
+      - 用来获取对象自身 **可枚举** 的属性键
       - Object.keys的效果和for in+hasOwnProperty的效果是一样的
   - `Object.getOwnPropertyNames(obj)`
       - 可以获取所有的键值，包括不可枚举的属性
@@ -708,7 +711,7 @@ Point === Point.prototype.constructor // true
    - 射击游戏中的mousedown、keydown事件
    - 文字输入、自动完成的keyup事件
 
-  - 实际上对于window的resize事件，实际需求大多为**停止改变大小n毫秒后再执行**后续处理；而其他事件大多的需求是**以一定的频率执行**后续处理。针对这两种需求就出现了debounce和throttle两种解决办法
+  - 实际上对于window的resize事件，实际需求大多为 **停止改变大小n毫秒后再执行**后续处理；而其他事件大多的需求是**以一定的频率执行** 后续处理。针对这两种需求就出现了debounce和throttle两种解决办法
 - js debounce 去抖
   - 当调用动作n毫秒后，才会执行该动作，若在这n毫秒内又调用此动作则将重新计算执行时间
   - 示例
@@ -817,35 +820,35 @@ define(['jquery'], function($) { return myFunc; });
 
 ```js
   // 下面2个括弧()都会立即执行
-  (function() { /* code */ }()); // 推荐使用这个  
-  (function() { /* code */ })(); // 但是这个也是可以用的  
+  (function() { / * code * / }()); // 推荐使用这个  
+  (function() { / * code * / })(); // 但是这个也是可以用的  
 
   // 由于括弧()和JS的&&，异或，逗号等操作符是在函数表达式和函数声明上消除歧义的
   // 所以一旦解析器知道其中一个已经是表达式了，其它的也都默认为表达式了
   // 不过，请注意下一章节的内容解释
   var i = function() { return 10; }();
-  true && function() { /* code */ }();
+  true && function() { / * code * / }();
   0,
-  function() { /* code */ }();
+  function() { / * code * / }();
 
   // 如果你不在意返回值，或者不怕难以阅读
   // 你甚至可以在function前面加一元操作符号
-  ! function() { /* code */ }();
-  ~ function() { /* code */ }(); -
-  function() { /* code */ }(); +
-  function() { /* code */ }();
+  ! function() { / * code * / }();
+  ~ function() { / * code * / }(); -
+  function() { / * code * / }(); +
+  function() { / * code * / }();
 
   // 还有一个情况，使用new关键字, 也可以用，但我不确定它的效率
-  new function() { /* code */ }
-  new function() { /* code */ }() // 如果需要传递参数，只需要加上括弧()
+  new function() { / * code * / }
+  new function() { / * code * / }() // 如果需要传递参数，只需要加上括弧()
 ```
 
 - core-js：为es5、es6提供polyfill   
 # react
 - 优点
-  - React的理念是界面**组件化**，在桌面开发中叫控件，可复用性强，开发效率高
+  - React的理念是界面 **组件化** ，在桌面开发中叫控件，可复用性强，开发效率高
   - 但这个组件的含义与Web Components并无明显联系，Web Components是底层标准，而上层框架的实现是足可以抹平这个差异的
-  - **Virtual DOM**让组件的渲染输出不局限于浏览器，能实现服务端渲染
+  - **Virtual DOM** 让组件的渲染输出不局限于浏览器，能实现服务端渲染
       - vdom的性能只能说不低，现在vue和angular都引入了vdom
   - 自上而下的单向数据流，方便追踪状态数据和定位问题
   - react架构设计开放，组件生态丰富
@@ -894,7 +897,7 @@ const Header = (props) => {
   return (
     <div>
 
-    {/* 直接看 jsx，看不出来 Wrapper 的原始标签是 div */}
+    {/ * 直接看 jsx，看不出来 Wrapper 的原始标签是 div * /}
     <Wrapper color="#000">使用 styled-component </Wrapper>
     <div className={styles.Wrapper}>使用 CSS Modules</div>
 

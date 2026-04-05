@@ -185,7 +185,8 @@ modified: 2023-11-28T14:48:45.910Z
 
 ## inspirations ✨
 
-- 🧩 vibe-document/writing
+- 🧩 vibe-writing/document/building/creating
+  - proof-writing/reading: 支持添加额外的元数据，交互实现上可隐藏或末尾文献
 
 - willing-to-sponsor ❤️
   - 📌 obsidian-bases

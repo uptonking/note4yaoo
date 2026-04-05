@@ -220,7 +220,7 @@ modified: 2021-08-23T05:27:08.068Z
   - React-Explorer is fully localized using .json files. Right now, English and French are available.
   - React-Explorer has been written so that it can easily be extended using plugins
   - 🔌 Plugin-based filesystem support
-    - ~~Plugin-based: local supported for now, ftp in the works~~
+    - ~~Plugin-based: local supported for now, ftp in the works~~ 
     - React-Explorer has been written so that it can easily be extended using plugins. As a starting point you may use the `FsGeneric` skeleton.
     - 🛢️ it's highly feasible to create an S3/MinIO plugin
     - Clean `FsApi` interface with ~20 methods to implement
@@ -404,6 +404,13 @@ modified: 2021-08-23T05:27:08.068Z
 
 - https://github.com/ncisrc/cookies-storage
   - It's like localStorage or sessionStorage but with cookies.
+# file-viewer
+- https://github.com/box/box-content-preview /boxLic/202603/ts
+  - https://developer.box.com/docs/box-content-preview
+  - JavaScript library for rendering files stored on Box
+  - allows developers to easily embed high quality and interactive previews of Box files in desktop and mobile web applications. 
+  - Box Content Preview also allows previews of multiple files to be loaded in the same container and exposes arrows to navigate between those files.
+  - This library powers Preview in the main Box web application as well as the 'Get Embed Link' Box API endpoint.
 # more-files-manager
 - https://github.com/imshubhamsingh/file-system-react
   - 依赖redux、styled-components、formik

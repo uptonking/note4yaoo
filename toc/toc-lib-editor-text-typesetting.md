@@ -206,4 +206,29 @@ modified: 2024-11-16T08:23:40.617Z
     - Added an accurancy benchmark with HUGE amount of test cases comparing canvas output vs svg+foreighObject render
   - Is there any hope for supporting text-selection?
     - There is always a hope... What is the use case for you? My end goals is to have have a smooth rich text editing experience in the canvas. So for now view on canvas, edit in real DOM. All with a smooth switch between modes. But maybe full canvas will be there one day.
+# fonts/typography
+- https://github.com/diegomura/react-pdf/tree/master/packages/textkit /MIT
+  - text layout engine for react-pdf. 
+  - Handles complex text rendering including bidirectional text, line breaking, hyphenation, justification, font substitution, and text decoration.
+  - https://github.com/foliojs/textkit /201912/js/inactive
+    - Text layout framework
+
+- https://github.com/foliojs/fontkit /MIT/202408/js/inactive
+  - advanced font engine for Node and the browser, used by `PDFKit`. 
+  - It supports many font formats, advanced glyph substitution and layout features, glyph path extraction, color emoji glyphs, font subsetting, and more.
+  - 🍴 forks
+  - https://github.com/Hopding/fontkit
+    - fork for use in for use in https://github.com/Hopding/pdf-lib.
+    - Store binary data as compressed base64 JSON so the fs module isn't needed to read it back
+    - Bundle Node dependencies (stream, util, Buffer) into UMD and ES modules so consumers of this lib don't have to deal with them
+    - Update to Babel 7
+    - Accept Uint8Array objects for font data instead of Buffer objects, so consumers can stick to plain JS regardless of their environment
+    - Remove calls to new Function() to allow usage on CSP sites
+
+- https://github.com/plotdb/wrap-svg-text /MIT/202511/js
+  - http://plotdb.github.io/wrap-svg-text/
+  - Generate multiline svg texts directly through a text string and a set of css style.  
+  - Wrap long texts into multiple svg text in multiple lines. CJK ready. 
+  - 调整浏览器宽度时, svg容器宽度需要保持不变， 否则in-place模式下上下两层文本会错位导致视觉混乱
+  - in place mode: texts can also be layouted directly from an existing div with content. original content in red, and svg text in blue.
 # more

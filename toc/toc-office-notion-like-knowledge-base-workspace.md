@@ -959,7 +959,7 @@ modified: 2022-06-03T21:34:54.893Z
   - OCRed text overlay (you can download document with OCRed text overlay)
   - Full Text Search of the scanned documents
   - Dual panel mode
-  - https://github.com/ciur/papermerge /2.8kStar/apahce2/202110/legacy
+  - https://github.com/ciur/papermerge /2.8kStar/apache2/202110/legacy
 
 - https://github.com/Mozzo1000/booklogr /435Star/apache2/202511/python/js
   - https://booklogr.app/

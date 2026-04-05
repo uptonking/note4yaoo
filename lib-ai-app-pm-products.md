@@ -32,6 +32,7 @@ modified: 2025-03-22T16:10:24.856Z
 - ai-ux/visiual
   - 在浏览器cdp成熟后, 通过cdp直接打开浏览器操作web ui似乎比electron app更强大
   - 输入或输出包含visual内容的产品需要human-in-the-loop, 如ocr/image
+  - 很多产品以chat作为入口, 有用户觉得不够直观, 可采用类似浏览器经典的搜索/聊天框+快捷方式
 
 - ai相对于搜索引擎的优势 🌹
   - ai能推理和计算, 分析复杂问题，给出更准确的方案
@@ -247,8 +248,8 @@ modified: 2025-03-22T16:10:24.856Z
   - 易用性: 模型推荐 + 场景优化的提示词 + 多模型/多版本对比
     - llm ux: natural language as interface
     - 对同一场景, 如翻译/ocr, 针对不同模型内置合理的参数且支持配置
-    - pdf: ocr, editing, rag(citation/extract)
-    - pm: notebooklm-citation, llamaparse-extract, cowork(doc/db/ilovepdf)
+    - pdf: ocr(提取table/chart), editing(还原布局), rag(citation)
+    - pm: llamaparse-extract, cowork(doc/databases/ilovepdf), notebooklm
     - roadmap: 
       - agentic场景优化: ocr-vlm/pipeline, translation
       - citation, backlinks: 提升rag的准确度, 优化搜索结果中的code/text/image
@@ -270,7 +271,7 @@ modified: 2025-03-22T16:10:24.856Z
       - ai是基于现有数据和成功训练, 所以现阶段未解决的问题, ai大多未解决, ai更多时候是在加速解决已解决过得问题，而很多业务开发就是在重复解决已解决过的问题
   - ✈️ local models support: mlx, lmstudio-alternative
     - 模型库: text模型, ocr模型, 翻译模型, t2i生图模型, tts, stt,  lmstudio在模型分类上做的不够好
-    - 较少免费api的模型: ocr, stt
+    - affordable, 较少免费api的模型: ocr, stt
     - modes config for coding/ocr/translation/rag like cline-plan/act/ask
       - 内置场景化提示词
       - 内置场景参数, 支持disable thinking(qwen/nemotron)

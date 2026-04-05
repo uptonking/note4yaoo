@@ -354,7 +354,17 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## 每个 MCP 都要在用户本地跑一个 Node 进程，内存占用不说，光是进程启动和通信的延迟就非常明显，这是设计的问题
+- https://x.com/Jiaxi_Cui/status/2040800132073967631
+  - 所以只有 Figma、工业软件这类本身就很重的大型应用，MCP 才有可能长期活下去。
+  - 另一种思路是把 MCP 进程放到服务器上，虽然延迟还是会增加，但起码不污染用户本地环境。我通过这样的方案部署了 Remote MCP 的 Cerul， 单次请求延迟多了大概 200ms，高并发状态还容易报错
+  - MCP 的核心优势在于调用稳定，适合参数复杂的服务。用 MCP 包装后，模型调用更可靠
+  - 但如果参数简单，还是 Skill 更合适。
+
+- CLI 目前其实也是局限的，CLI 现在操作大部分是单个操作，每次执行一个 command 用完就没了。 
+  - CLI 对于service 形态的服务，实现起来感觉并不好。还是需要类似MCP的形态。就看以后怎么发展了
+
+- 我曾经探索过 在 AI  agent 和操作的对象之间建立一个简单的观测和动词协议 并两者独立维护状态, 至少在保留 cli 的简洁性和 MCP 的状态性上得到同时提升
 
 - ## [What's your "must-have" MCP server that you use daily? : r/mcp _202604](https://www.reddit.com/r/mcp/comments/1s94a85/whats_your_musthave_mcp_server_that_you_use_daily/)
 - We have our documentation platform integrated via MCP: Claude or ChatGPT. You can ”talk” to it like it’s a team member: make edits, updates, add back links, ask about view metrics and more.

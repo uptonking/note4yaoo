@@ -82,12 +82,18 @@ modified: 2023-11-03T17:43:01.518Z
     - Data annotation toolbox supports image, audio and video data.
     - Universality: Supports exporting to various data formats, including JSON, COCO, MASK.
 
-- https://github.com/hypothesis/pdf.js-hypothes.is /403Star/bsd/202208/js/专注于标注
+- https://github.com/hypothesis/pdf.js-hypothes.is /403Star/bsd/202501/js/专注于标注/inactive
   - https://web.hypothes.is/
   - This is a copy of Mozilla's PDF.js viewer with Hypothesis annotation tools added.
-  - https://github.com/hypothesis/h /2.8kStar/bsd/202311/python
-    - h is the web app that serves most of the https://hypothes.is/ website, including the web annotations API 
+  - 🐛 似乎不支持bbox
+  - https://github.com/hypothesis/h /3.1kStar/bsd/202604/python
+    - h is the web app that serves most of the https://hypothes.is/ website, including the web annotations API at https://hypothes.is/api/. 
+  - https://github.com/hypothesis/client /bsd/202604/ts/mustache
     - The Hypothesis client is a browser-based annotator that is a client for h's API.
+    - It’s used by the Hypothesis browser extension, and can also be embedded directly into web pages.
+    - [Capture page number and bounding box of selection for PDF annotations _202109](https://github.com/hypothesis/client/issues/3720)
+      - 202401: Page numbers are now captured. Bounding boxes are not.
+
 - https://github.com/instructure/pdf-annotate.js /MIT/201812/js/archived
   - Annotation layer for pdf.js (no longer maintained)
 
@@ -126,7 +132,7 @@ modified: 2023-11-03T17:43:01.518Z
   - https://github.com/UniversalDataTool/react-image-annotate /MIT/202201/js/inactive
     - Create image annotations. Classify, tag images with polygons, bounding boxes or points.
   - 未支持 [OCR Annotation Support ](https://github.com/UniversalDataTool/universal-data-tool/issues/532)
-  - [Feature: PDF Image Annotation _202004](https://github.com/UniversalDataTool/universal-data-tool/issues/49)
+  - 未支持 [Feature: PDF Image Annotation _202004](https://github.com/UniversalDataTool/universal-data-tool/issues/49)
     - Been working with PDF in the past and, imo, the best is to convert everything to JPG using a lib like `pdf2image` or something similar. That allows control over the DPI for the image creation that should not be overlooked when comes the time to do inference. 
     - If we want to make something that is not well supported by other annotation tools or lib, something like PDF2text with a 2D mapping between the raw text and the original PDF would be insane. 
     - This is not easy to do, in Python I use pdfminer and pypdf2 to extract text. pdfminer can return coords of each letter/words while pypdf2 can't. 
@@ -142,6 +148,17 @@ modified: 2023-11-03T17:43:01.518Z
   - https://github.com/osuresearch/electron-example
     - Electron React Boilerplate uses Electron, React, React Router, Webpack and React Fast Refresh.
 # labelling-image/pdf
+- https://github.com/highkite/pdfAnnotate /MIT/202201/ts/inactive
+  - pdfAnnotate allows to annotate PDF documents in javascript. 
+  - It works in a browser, as well as, in a nodejs
+  - The idea is to provide a simple interface to annotate PDF documents. The annotated PDF document can be easily downloaded or further processed.
+  - Note: pdAnnotate is no PDF viewer/ renderer. It provides an API to create different types of PDF annotations. For implementing a web-based PDF editor we recommend to use it in combination with PDF.js or a similar renderer.
+
+- https://github.com/MathiasMeuleman/react-pdf-selection /MIT/202102/ts/inactive
+  - This library provides text and rectangular area selections for PDF documents. It is built on top of PDF.js by Mozilla. 
+  - Selection position data is independent of the current viewport, to make it suitable for resizing documents and permanent storage. 
+  - PDF pages are virtualized to prevent too many page renders and make rendering of large documents more smoothly.
+
 - https://github.com/annotorious/annotorious /809Star/BSD/202512/ts/vanillajs
   - http://annotorious.dev/
   - Add image annotation functionality to any web page with a few lines of JavaScript.
@@ -156,10 +173,41 @@ modified: 2023-11-03T17:43:01.518Z
   - 统计与可视化：标签词频、置信度直方图、置信度排序曲线（ranked confidence）、并支持将图导出为图片。
   - 导出功能：标准 JSONL（每行一条）、可选扩展字段、TXT 报告（统计）及图表导出。
 
+- https://github.com/UniversalDataTool/react-image-annotate /MIT/202201/js/inactive
+  - https://universaldatatool.github.io/react-image-annotate/
+  - Create image annotations. Classify, tag images with polygons, bounding boxes or points.
+  - The best image/video annotation tool ever.
+  - Bounding Box, Point and Polygon Annotation
+
 - https://github.com/ZitySpace/react-annotate /ts
   - https://react-annotate-demo.vercel.app/
   - React component for computer vision dataset annotation
   - 依赖fabric、react-draggable、use-gesture
+
+- https://github.com/dansreis/react-canvas-annotator /MIT/202411/ts/inactive
+  - https://dansreis.github.io/react-canvas-annotator/
+  - Image/Document Annotator Component for React Applications
+  - Powered by FabricJS canvas at its core, this component empowers users to seamlessly integrate annotations such as bounding boxes, polygons, and points onto images or documents. 
+
+- https://github.com/alx/react-bounding-box /MIT/202507/ts
+  - https://alx.github.io/react-bounding-box/
+  - displays bounding boxes on an image inside an HTML Canvas.
+  - Responsive design
+
+- https://github.com/younesZdDz/react-bbox-annotator /MIT/202511/ts/inactive
+  - https://bbox-annotator.netlify.app/
+  - A lightweight and customizable image bounding box annotation component for React.
+  - Automatically scales the image to its parent container
+  - Bounding box coordinates remain in reference to the original image size
+  - Select and move existing boxes (drag to reposition)
+  - Resize boxes with 8 handles (corners and edges)
+  - Edit labels on existing boxes (double‑click a box)
+  - If you're building an image labeling platform, dataset creation tool, or computer vision annotation UI, this component saves you from: handling mouse interactions, scaling images
+
+- https://github.com/veraPDF/verapdf-js-viewer /MPL/202603/ts
+  - PDF preview based on pdf.js
+  - Display PDF with an option to highlight a collection of rectangles on top of page rendering. 
+  - Used by veraPDF web application to visualize locations of validation errors
 
 - https://github.com/labelflow/labelflow /ts
   - https://labelflow.ai/
@@ -170,6 +218,12 @@ modified: 2023-11-03T17:43:01.518Z
   - A web based tool to label images for objects that can be used to train dlib or other object detectors.
   - https://github.com/rachelcao277/LabelImage
     - 一款用于深度学习分割模型训练的图像标注工具（生成.json文件）
+
+- https://github.com/shoumikchow/bbox-visualizer /MIT/202601/python
+  - https://bbox-visualizer.readthedocs.io/
+  - This package helps users draw bounding boxes around objects, without doing the clumsy math that you'd need to do for positioning the labels
+  - The bounding box points are expected in the format: (xmin, ymin, xmax, ymax)
+  - There are optional functions that can draw multiple bounding boxes and/or write multiple labels on the same image
 # anno-server
 - https://github.com/jankaszel/simple-annotation-server /MIT/202007/js/inactive
   - simple annotation server intended for testing purposes, implementing both the Web Annotation Protocol as well as the Web Annotation Data Model with simple REST-based user management. 

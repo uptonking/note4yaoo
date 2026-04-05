@@ -97,6 +97,16 @@ modified: 2026-01-25T17:23:01.510Z
 
 - ## 
 
+- ## 
+
+- ## [What OCR Actually Is (and Why It’s More Useful Than Most People Think) : u/docpose-cloud-team _202604](https://www.reddit.com/user/docpose-cloud-team/comments/1rpcmlk/what_ocr_actually_is_and_why_its_more_useful_than/)
+  - OCR converts text inside images or scanned documents into real, editable text.
+  - So instead of looking at a scanned PDF or a screenshot as just a picture, OCR can detect the characters and turn them into text you can: edit, search, copy, analyze, export to other formats
+
+- I mostly use OCR to make old PDFs searchable; once you try it, going back to non-searchable docs feels painful.
+
+- OCR combined with document conversion tools makes handling scanned files way easier. For developers, OCR APIs open a lot of possibilities for document automation workflows.
+
 - ## If you're building a PDF RAG pipeline: Should you be using OCR and 𝘁𝗲𝘅𝘁-𝗯𝗮𝘀𝗲𝗱 𝗿𝗲𝘁𝗿𝗶𝗲𝘃𝗮𝗹 methods, or just 𝗲𝗺𝗯𝗲𝗱 𝗶𝗺𝗮𝗴𝗲𝘀 𝗱𝗶𝗿𝗲𝗰𝘁𝗹𝘆 using late interaction models?
 - https://x.com/victorialslocum/status/2037113651174199778
   - This paper says the answer might actually be 𝘣𝘰𝘵𝘩.

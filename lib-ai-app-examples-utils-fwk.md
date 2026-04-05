@@ -668,6 +668,19 @@ modified: 2025-02-21T18:20:42.624Z
   - https://github.com/oldshensheep/sqlitefs /MIT/202604/rust
     - sqlitefs is an experimental SQLite-backed FUSE filesystem with snapshots, chunk-level deduplication, and configurable compression.
 
+- https://github.com/ZeroZ-lab/vkfs /202604/go
+  - Unix-like filesystem commands over vector databases, built for AI agents.
+  - https://x.com/ZeroZ_JQ/status/2040468390549311996
+    - VKFS 是一个给 AI agent 用的“文件系统”，把向量数据库包装成 Unix 风格接口。
+    - agent 不需要理解 embedding、向量检索、metadata filter，只要会 ls / cat / grep / find / search，就能像查本地文件一样查知 识库。
+
+- https://github.com/AndrewIngram/tupl /MIT/202603/ts
+  - tupl lets you expose a controlled SQL facade over one or more underlying data systems.
+  - tupl is a provider-first query runtime: 
+    - You define one or more providers (Drizzle/Kysely/Objection/custom). 
+    - Providers expose normalized entities that represent physical sources. You build an executable logical SQL-facing schema from those entities.
+    - tupl plans query fragments across providers and local logical operators.
+
 - https://github.com/openrundev/openrun /808Star/apache2/202603/go
   - https://openrun.dev/
   - App deployment simplified. 

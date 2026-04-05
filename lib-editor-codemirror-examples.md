@@ -580,6 +580,8 @@ modified: 2023-06-23T12:46:53.288Z
   - a cursive writing typescript library capable of powering educational apps.  
   - https://x.com/RobinLinacre/status/2040070730130374777
     - WIP/still rough edges and a bit more work needed on geometry.  No capitals/punctuation etc. yet, and no support for precursive/cursive distinction.  But prob good enough to be useful
+  - https://x.com/iamncdai/status/2040674488355110913
+    - [Apple Hello Effect ](https://chanhdai.com/components/apple-hello-effect)
 
 ### typewriter-css-only
 

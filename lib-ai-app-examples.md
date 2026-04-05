@@ -548,6 +548,10 @@ modified: 2023-02-08T07:20:48.475Z
   - Run Transformers directly in your browser, with no need for a server!
   - Transformers.js is designed to be functionally equivalent to Hugging Face's transformers python library
   - Transformers.js uses ONNX Runtime to run models in the browser. The best part about it, is that you can easily convert your pretrained PyTorch, TensorFlow, or JAX models to ONNX using Optimum.
+  - https://github.com/NakliTechie/LocalMind
+    - A private AI research agent that runs entirely inside your browser. Tool calling, persistent memory, web search, multimodal input — all on-device via WebGPU. No server, no API keys required, no data leaving your device.
+    - Models download once, are cached locally, and run offline
+    - Runs on Chrome, Edge & Firefox.
 
 - https://github.com/ml5js/ml5-library /js
   - provides access to machine learning algorithms and models in the browser, building on top of TensorFlow.js
