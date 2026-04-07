@@ -134,6 +134,9 @@ modified: 2025-11-06T18:49:13.977Z
 
 - MonkeyOCR-pro-1.2b
   - MonkeyOCR-3b
+  - https://github.com/Yuliang-Liu/MonkeyOCR
+    - 2025.07.10  🚀 We release MonkeyOCR-pro-1.2B,
+    - 2026.03.15  🚀 We release dots.mocr Multimodal OC
 
 - chandra
 
@@ -185,7 +188,11 @@ modified: 2025-11-06T18:49:13.977Z
     - The model integrates the CogViT visual encoder pre-trained on large-scale image–text data, a lightweight cross-modal connector with efficient token downsampling, and a GLM-0.5B language decoder
     - Combined with a two-stage pipeline of layout analysis and parallel recognition based on PP-DocLayout-V3, GLM-OCR delivers robust and high-quality OCR performance across diverse document layouts.
 
-- 
+- https://github.com/stanford-oval/Churro
+  - CHURRO is an OCR toolkit for historical document transcription, built to make handwritten and printed sources readable at high accuracy and lower cost.
+  - It works with all major OCR proividers and vision-language models, and provides first-party support for the CHURRO 3B model and CHURRO-DS dataset.
+  - CHURRO 3B exceeds the accuracy of Gemini 2.5 Pro at 15.5x lower cost.
+
 - 
 - 
 - 

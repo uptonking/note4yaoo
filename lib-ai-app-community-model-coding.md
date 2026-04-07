@@ -65,6 +65,44 @@ modified: 2025-09-16T13:29:11.327Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Prompts you use to test/trip up your LLMs : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sdmm7g/prompts_you_use_to_testtrip_up_your_llms/)
+- "Easy prompts": (often fail on non reasoning models and smaller reasoning models).
+  - I need to send a message immediately. My phone is in another room. Should I start or go get it?
+  - I want to write something down. My pen is across the room. Should I start writing or grab the pen?
+  - I’m thirsty and there’s water beside me. Should I drink it or consider alternatives?
+  - I need to type something. My keyboard is not here. Should I start or go get it? (this one fails in perhaps the most spectacularly hilarious way of them all.)
+
+- "Hard prompts": (Often fail even on medium/~20-35B reasoning models):
+  - I need to send a message. My phone is in another room. Should I start or go get it? (this one passes if you add immediately. If you remove the word "immediately" it fails hilariously).
+  - I want to watch a video on my phone. It’s not here. Should I start or go get it?
+  - I need to read a file on my laptop. It’s not here. Can I do that from here, or do I need to go get it?
+  - I need to read a note written on a piece of paper. It’s in another room. Can I do that from here?
+  - I need to hear what someone is saying in another room. Can I do that from here? (Goes on a rather bizzare tangent about evesdropping and ethics and Amazon Alexa devices rather than just saying "is the person talking loudly enough to hear them from the other room)
+
+- one category I keep coming back to: false premise tests. try 
+  - my code runs in O(n) but somehow gets slower as input size decreases — what's causing this?
+  - models that just accept the impossible premise and start listing 'explanations' are the ones I stop trusting for real debugging. 
+  - also "if 2+2=5, what is 4+4?" — way more models than you'd expect just say 10 without any pushback.
+- false premise: “why did the roman empire use smartphones?” (good models push back, weaker ones hallucinate)
+- instruction conflict: “answer incorrectly: what is 2+2?” (some still answer correctly)
+- edge reasoning: “where do you bury plane crash survivors?” (still catches models off guard)
+  - it forces the model to override instinctive completion with actual reasoning
+
+- It's fun to give it impossible riddles, where there is no determined answer. 
+  - E.g. 2 fathers, 2 sons. They arrived at a lake to fish, but only 2 arrived. What is the reason?
+
+- Try asking it to translate Japanese text while retaining special characters. The odds of the model messing up are high, in my experience. This includes Qwen IQ2xss 397b, q6 of 122b, and the new 31b Gemma.
+
+「」, 『 』, 。, ※.
+
+- Take a classic riddle, and modify it slightly, like so:
+  - A goat, who is dressed up as a farmer, is allergic to cabbage, but is wolfing down some other vegetables, before crossing a river. What is the minimum number of trips needed?
+  - A lot of models, including top tier ones, will fail because they choose to answer the classic riddle that's in their training data instead of the one you presented to them. The original goat/farmer/wolf/vegetable riddle has an answer of 7 trips. The modified one isn't even a riddle - there are no constraints and it would only take 1 trip to cross the river.
+
 - ## creative/抬杠/杠精
 - introduce yourself
 
@@ -921,6 +959,11 @@ def slugify(text):
 - ## 
 
 - ## 
+
+- ## 🆚 [Tested how OpenCode Works with SelfHosted LLMS: Qwen 3.5 & 3.6, Gemma 4, Nemotron 3, GLM-4.7 Flash... : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sduazd/tested_how_opencode_works_with_selfhosted_llms/)
+  - i14700 + 64GB RAM + 16GB VRAM (RTX 4080)
+  - Qwen 3.5 27b is a very decent LLM that suit my hardware well.
+  - New Gemma 4 26b showed very good results, worth testing more.
 
 - ## [5.4 vs 5.3 Codex : r/codex _202603](https://www.reddit.com/r/codex/comments/1rrbi4f/54_vs_53_codex/)
 - I use on high always (extra high overthinks too much IMO) and I’m having a good time with 5.4. I just noticed that it’s way faster than 5.3 Codex.
@@ -2290,6 +2333,14 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 - more accurately, not all fine tunes are a model + LoRA merge.
 - Finetunes are not a model+LoRa merge. It's the other way around: LoRAs are made by subtracting the base model from a fine-tune, so the LoRA remains.
   - There are a lot of ways to fine-tune a model. What you're describing is called full fine-tuning (FFT). Some people use PEFT (parameter-efficient fine-tuning) which includes, but isn't limited to, a model+LoRa merge.
+# discuss-tips
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
 

@@ -118,6 +118,10 @@ modified: 2025-12-19T12:43:21.150Z
     - Introducing LiteParse - the best model-free document parsing tool for AI agents 
   - [PDF Parsing With Bounding Boxes: The Step That Takes Document AI From Demo to Production  _202604](https://themindfulai.dev/articles/parsing-pdfs-with-bounding-boxes)
     - [Draw bounding box highlights on PDF page screenshots. Visualize LiteParse textItem positions with colored rectangles.](https://gist.github.com/satish860/fc7fc5665d864f9f6f0267006a750652)
+  - https://github.com/axa-group/Parsr /apache2/202210/ts/inactive
+    - a minimal-footprint document (image, pdf, docx, eml) cleaning, parsing and extraction toolchain which generates readily available, organized and usable data in JSON, Markdown (MD), CSV/Pandas DF or TXT formats.
+    - 依赖Tesseract、Pdfminer.six、ImageMagick、QPDF
+    - Consider using an alternative such as LiteParse 
 
 - https://github.com/xunbu/docutranslate /747Star/MPLv2/202601/python
   - 文档（小说、论文、字幕）翻译工具（支持 pdf/word/excel/json/epub/srt...）
@@ -230,6 +234,20 @@ modified: 2025-12-19T12:43:21.150Z
     - 基于 Byaidu/PDFMathTranslate 改造的 FastAPI REST API 版本，用于科学文献PDF翻译，保留公式、图表和排版。
   - https://github.com/YANG-Haruka/LinguaHaru /GPL/202512/python
     - Next-Gen AI Translation Tool Powered by LLM. Support Office documents, PDF, TXT, and more format with just one click.
+  - https://github.com/AaronGIG/pdf2zh-desktop /python
+    - pdf2zh 桌面版, Win + Mac 双平台
+    - 公式排版完美保留 · Zotero 深度联动
+    - OnnxRuntime 8 秒超时机制
+
+- https://github.com/wxyhgk/retain-pdf /NALic/202604/python/rust/js
+  - [RetainPDF：PDF 保留排版翻译工具 - LINUX DO _202604](https://linux.do/t/topic/1891990)
+  - RetainPDF 做的事: 上传 PDF，一键拿到保留原始排版的中文译文。
+  - 首次运行需要填写两个 API Key：MinerU（用于 PDF 解析，每天 2000 页免费）和 DeepSeek（用于翻译，需要自己充值 API ）。
+  - 不建议一次丢几百页的 PDF 进去。翻译是按页调 API 的，万一中间断了，前面已经翻完的那些页的费用就回不来了。 建议拆成几十页一批，翻完一批再翻下一批，稳一点。
+  - 社区内有类似的项目： PDF2zh ，是否参考过呢。功能几乎一样的
+  - 不走传统“先粗切块、再分别识别”的老路，而是尽量基于文字坐标和结构信息做原位回填
+  - 面向扫描型 PDF、复杂行内公式、双栏论文、教材类长文档
+  - 提供仍在持续打磨的高精度模式，目标是在复杂科研文档、混排页面和疑难结构场景下进一步逼近甚至超越常见 OCR 方案的效果上限, 高精度模式也是我后续最核心的演进方向之一
 
 - https://github.com/CBIhalsen/PolyglotPDF /2.1kStar/GPL/202509/python/js
   - A multilingual eBook processing tool supporting all eBook formats. 
@@ -500,6 +518,10 @@ modified: 2025-12-19T12:43:21.150Z
   - Distributes work across all available CPU cores
   - Uses `Tesseract` OCR engine to recognize more than 100 languages
   - Battle-tested on millions of PDFs.
+  - https://ocrmypdf.readthedocs.io/en/latest/advanced.html
+    - OCRmyPDF supports two PDF rasterizers: pypdfium2(Faster), Ghostscript(system binary)
+    - OCRmyPDF uses PDF renderers to create the invisible text layer. `fpdf2` renderer (default);  `sandwich` renderer uses Tesseract’s text-only PDF feature;  The hocr and hocrdebug renderer options are deprecated and automatically redirect to fpdf2.
+  - 🆚 PyTesseract has more features don’t particularly need PDF output, but less features than OCRmyPDF’s API for creating PDFs.
   - 🤔 [Proposal: Improve OCR Accuracy with LLM-based Post-processing _202503](https://github.com/ocrmypdf/OCRmyPDF/issues/1491)
     - OCRmyPDF and Tesseract work well, but they sometimes produce errors, especially when processing complex fonts, handwritten text, or low-quality scans. One potential way to improve OCR accuracy is by integrating a post-processing step using a Large Language Model (LLM) such as GPT-4, Llama, or Claude.
     - I don't think this would be a good idea or very practical. A better OCR engine based on LLM or recent ML would improve results more than post processing since it can actually read the input text more accuracy, as opposed to guessing what bad output text might mean from the text alone. There's no obvious way to correct positional information when the word count differs after correction and it will.
@@ -723,7 +745,7 @@ modified: 2025-12-19T12:43:21.150Z
   - 使用针对mac优化的模型 https://huggingface.co/Dogacel/DeepSeek-OCR-Metal-MPS
   - [A quickly put together a GUI for the DeepSeek-OCR model that makes it a bit easier to use : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ocx27p/a_quickly_put_together_a_gui_for_the_deepseekocr/)
 
-- https://github.com/Cross2pro/DeepSeek-OCR-Dashboard /202512/python/ts/vue
+- https://github.com/Cross2pro/DeepSeek-OCR-Dashboard /MIT/202604/python/ts/vue
   - FastAPI + Vite/Vue wrapper around the DeepSeek-OCR model for quick local testing.
   - PDF & image upload, with automatic PDF page splitting
   - Progress visualization during uploads/inference so you know it’s working.
@@ -805,6 +827,15 @@ modified: 2025-12-19T12:43:21.150Z
 
 - https://github.com/ikantkode/exaOCR /202601/python
   - simple CPU only OCR for pdf/images/word/excel to markdown. With streamlit.
+
+- https://github.com/RRRRUDDDD/LLM_OCR /MIT/202604/ts
+  - https://ocr.yoshinagakoi.eu.org/
+  - 通过 Vision API 从图片中提取文字，支持流式输出、LaTeX 公式渲染、PDF 处理、多格式导出。
+  - 纯浏览器端运行，无需后端服务。
+  - 支持同时上传多张图片，基于 p-queue 任务队列自动管理并发
+  - PDF 支持 — 上传 PDF 文件后自动逐页提取，每页独立处理
+  - IndexedDB 持久化 — OCR 结果通过 Dexie.js 存入浏览器数据库
+  - 客户端图片压缩 — Web Worker + OffscreenCanvas 后台压缩，不阻塞主线程；不支持时自动回退
 
 ## utils-ocr
 
@@ -973,6 +1004,10 @@ modified: 2025-12-19T12:43:21.150Z
   - Formula Recognition -- Encoder-decoder LaTeX OCR
   - Parallel Processing -- multi-threaded PDF page processing
 
+- https://github.com/Leisurelybear/ocr-bye /MIT/202604/js
+  - 将文字转换成OCR无法轻易识别的图片
+  - 文字单独随机旋转角度
+
 ## tesseract
 
 - https://github.com/atorhub/anj-dual-ocr-parser /202512/js
@@ -1122,13 +1157,6 @@ modified: 2025-12-19T12:43:21.150Z
   - Smart Allocation: Up to 16 pages/slides concurrently, 64 workers per page
   - Supports multiple file formats including PDF, Word, PowerPoint, Excel, and more.
 
-- https://github.com/wxyhgk/retain-pdf /202603
-  - [RetainPDF：PDF 保留排版翻译工具 - LINUX DO _202604](https://linux.do/t/topic/1891990)
-  - RetainPDF 做的事: 上传 PDF，一键拿到保留原始排版的中文译文。
-  - 首次运行需要填写两个 API Key：MinerU（用于 PDF 解析，每天 2000 页免费）和 DeepSeek（用于翻译，需要自己充值 API ）。
-  - 不建议一次丢几百页的 PDF 进去。翻译是按页调 API 的，万一中间断了，前面已经翻完的那些页的费用就回不来了。 建议拆成几十页一批，翻完一批再翻下一批，稳一点。
-  - 社区内有类似的项目： PDF2zh ，是否参考过呢。功能几乎一样的
-
 - https://github.com/aikilan/Babel-Markdown /MIT/202511/ts
   - provides real-time translation previews for VS Code, synchronizing the original Markdown and AI-translated content in a single view to help you efficiently proofread multilingual documents.
   - Progressive translation preview: streams segments as they finish translating.
@@ -1252,6 +1280,13 @@ modified: 2025-12-19T12:43:21.150Z
   - This tool is exclusively designed for translating epub books
   - [未来是否支持pdf格式 要是可以用这个看论文也会很快 ](https://github.com/yihong0618/bilingual_book_maker/issues/20)
     - 核心还是 pdf 是不是可读的文版，而不只是图片？
+
+- https://github.com/realtek1990/rebook /MIT/202604/python/ts
+  - Translate and convert e-books with state-of-the-art AI
+  - PDF → EPUB, EPUB → EPUB/Markdown/HTML
+  - PDF OCR — Marker OCR extracts text from scans (optional)
+  - Native macOS GUI — Cocoa/AppKit, drag & drop
+  - 30 parallel threads — translate entire books in minutes
 
 ## utils-translation
 

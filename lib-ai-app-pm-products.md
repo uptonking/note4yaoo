@@ -22,6 +22,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 一切通知/消息，都可以设计为 ai的chat+自动化工具
   - 之前的软件设计是面向用户、开发者，现在不得不重新设计，以大模型为使用者。 WebMCP的推进会让产品api快速发展
   - 大模型可能的成本变化: 推广期token廉价, 等到工程师coding能力下降, token再涨价, 因为本地运行大模型成本太高
+  - 需要清理ai工作的中间物缓存、代码缓存、npm/uv缓存
 
 - ai-dev-xp
   - 🦞 openclaw带来的产品变化, 用户更能接受在本地电脑安装常驻app/进程, 然后通过im-app交流
@@ -33,6 +34,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 在浏览器cdp成熟后, 通过cdp直接打开浏览器操作web ui似乎比electron app更强大
   - 输入或输出包含visual内容的产品需要human-in-the-loop, 如ocr/image
   - 很多产品以chat作为入口, 有用户觉得不够直观, 可采用类似浏览器经典的搜索/聊天框+快捷方式
+  - app-store 向 skills-hub 迁移, 可参考 aionui的assistant, 可以在app中设置默认或推荐的model、提示词
 
 - ai相对于搜索引擎的优势 🌹
   - ai能推理和计算, 分析复杂问题，给出更准确的方案
@@ -249,7 +251,7 @@ modified: 2025-03-22T16:10:24.856Z
     - llm ux: natural language as interface
     - 对同一场景, 如翻译/ocr, 针对不同模型内置合理的参数且支持配置
     - pdf: ocr(提取table/chart), editing(还原布局), rag(citation)
-    - pm: llamaparse-extract, cowork(doc/databases/ilovepdf), notebooklm
+    - pm: llamaparse-extract, cowork(docx-xml/databases/ilovepdf), notebooklm, Image, Audio, 翻译, 多维表格, pretext-edit, GPU硬件
     - roadmap: 
       - agentic场景优化: ocr-vlm/pipeline, translation
       - citation, backlinks: 提升rag的准确度, 优化搜索结果中的code/text/image
@@ -297,6 +299,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
     - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
     - wikipedia zim 自动翻译为中文
+    - web-search
     - vector-marketplace, 支持用户选择任意数量的pdf文档创建embeddings, 并发布, 可作为一种变通方案解决数据隐私问题
     - 行业应用: law, medical
     - sources: docs, emails
@@ -305,7 +308,7 @@ modified: 2025-03-22T16:10:24.856Z
     - rag db支持浏览空间占用、手动删除文件索引
   - 🌐 pdf edit
     - ocr router like openrouter/mineru/paddleocr/new-api/ccswitch
-    - obsidian for pdf/ocr: ilovepdf/stirling-pdf
+    - obsidian for pdf/ocr: ilovepdf/stirling-pdf/stirling-image
     - acp for pdf/rich-editing: 参考 google-workspace-cli 实现 本地版
     - diff without git
     - proofreading: 一键检查, 版本历史
@@ -774,7 +777,7 @@ modified: 2025-03-22T16:10:24.856Z
     - cc支持
     - [农场](https://game.daiju.live/)
     - [小呆公益站 要不要claude模型这件事 ](https://linux.do/t/topic/1424755)
-  - [Hotaru API](https://hotaruapi.com/console/personal)，签到, 不定期清理
+  - [Hotaru API](https://hotaruapi.com/console/personal)，签到
     - https://api.hotaruapi.top/console/personal
     - codex
     - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
@@ -825,6 +828,12 @@ modified: 2025-03-22T16:10:24.856Z
   - [APIKey - Subscription Automation](https://gpt.apikey.uk/subscribe), 注册机
     - [【APIKey公益站】速蹬！全新协议注册+绑卡自动化注册机  _202603](https://linux.do/t/topic/1802338)
     - 内置了大概100条号吧，还有七八张卡吧，内置四条ip，美英韩日
+  - 📌 [CRWorld API _202604](https://api.crworld.site/console/personal), 签到-需手动
+    - [CRWorld公益站  ](https://linux.do/t/topic/1906259)
+    - 提供GPT Grok Gemini Claude
+    - 自用，但不保证可用性
+  - [【深夜 100】【章鱼小站】给站内的公益站分担点压力 _202604](https://linux.do/t/topic/1897365), 无签到
+    - 不定期兑换码
   - [vvcode _202603](https://vvcode.cc/dashboard), 无额度
     - [Codex 公益站  _202603](https://linux.do/t/topic/1859392)
   - [Rosmontis](https://ai.rosmontis.de/console/personal)
@@ -1634,6 +1643,10 @@ modified: 2025-03-22T16:10:24.856Z
     - 评分结果与L站评分基本一致
     - 提供了很多折扣码
 
+- latest
+  - [现在的claude中转站有什么推荐的吗  _202603](https://linux.do/t/topic/1868009/5)
+    - neko, right, 星宸, 慕鸢
+
 - [Claude中转渠道有哪些 ](https://linux.do/t/topic/1491876/10)
   - 目前用的站内 IKunCode 的中转比较有性价比，如果每个月 token 消耗量不大，像我这样半自动编程的话，还是比较推荐的。量再大就得另找路子了
   - 测试的话，刚刚刷帖，有测试词，好像这个不会回复，或者一串异常字符 
@@ -1685,6 +1698,7 @@ modified: 2025-03-22T16:10:24.856Z
     - ¥75/mon: 90-d, 2700-mon
   - L站用户注册就送小小股东, $5/mon
     - right code 也是站内的一家主要做codex的中转站
+  - o2a基本没有缓存?
 
 - [IKunCode](https://api.ikuncode.cc/pricing)
   - [LinuxDo商家评价平台](https://rate.linux.do/merchant/15)
@@ -1773,7 +1787,16 @@ modified: 2025-03-22T16:10:24.856Z
 - [Ai Go Code - AI编程助手 | 接入Claude等先进AI模型](https://www.aigocode.com/)
   - ¥400/4weeks
 
+- [整数云 model router](https://model.zhengshuyun.net/pricing)
+  - 月卡49
+  - 套餐倍率0.17(计算后就是right.code的价格)，按量倍率0.3
+
+- [codex-for.me ](https://codex-for.me/)
+  - 日卡-5
+  - 月卡-59
+
 - [兔小店](https://store.tu-zi.com/)
+  - 特别贵, 199+
 
 - [UUcode - API 中转管理平台](https://www.uucode.org/)
   - [【致敬开源】与其打硬广，不如给佬友们的代码“供电”，寻找L站开源作者，UUcode送商业级API额度 ](https://linux.do/t/topic/1370667)

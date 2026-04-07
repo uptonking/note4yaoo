@@ -657,6 +657,14 @@ modified: 2025-02-21T17:17:42.225Z
     - 因为用户电脑不一定有代码执行环境，比如 node、python，引入沙箱可以跑脚本处理一些简单的任务。
     - 现在没有内置浏览器，在考虑用沙盒跑 browser-use，还是直接用本地的浏览器。
 
+- https://github.com/holaboss-ai/holaboss-ai /MIT/202604/ts
+  - https://holaboss.ai/
+  - OSS core runtime and desktop workspace stack for Holaboss
+  - Holaboss enables you to build AI workspaces that go beyond one-off task execution. Each workspace packages instructions, tools, apps, memory, and runtime state for sustained long-horizon operation. 
+  - You can manage multiple workspaces in parallel, and because workspaces and workspace templates are portable, they can be packaged, shared, resumed, and reused across the Holaboss ecosystem.
+  - At its core, Holaboss is built to support long-horizon agent operation. The design target is not isolated task execution, but role-holding work that has to persist across many runs inside the same workspace.
+  - [I wanted Ollama to hold a job, not just answer prompts, so I built this : r/ollama _202604](https://www.reddit.com/r/ollama/comments/1sdzjy9/i_wanted_ollama_to_hold_a_job_not_just_answer/)
+
 - https://github.com/fastaistack/OpenChat /MIT/202508/python/inactive
   - https://fastaistack.github.io/OpenChat/
   - 跨平台本地客户端，集成多模型聊天、网络检索、知识库与文档对话，开箱即用、稳定高效。
@@ -776,14 +784,6 @@ modified: 2025-02-21T17:17:42.225Z
   - Tauri 打包，体积小（~50MB），启动快（<1s）
   - [【开源分享】为实施人员打造的轻量级 AI 工具，专注文档生成、演示准备和知识管理 _202603](https://linux.do/t/topic/1681661)
 
-- https://github.com/hewliyang/office-agents /MIT/202603/ts
-  - Office Agents is a monorepo of Microsoft Office Add-ins with integrated AI chat panels. Each add-in connects to major LLM providers using your own credentials (BYOK) and can read/write documents through built-in tools, a sandboxed shell, and a virtual filesystem.
-  - https://x.com/hewliyang/status/2033176726663249959
-    - OpenWord v0.0.1 is out. it is competent at most text editing operations, can insert images into your doc, has vision, can add & reply to comments, and even works with Track Changes (redlining)
-  - https://x.com/hewliyang/status/2030648851603087392
-    - i've also renamed the open-excel repo into office-agents.
-    - the SDK, which contains the agent loop, IndexedDB storage logic, etc is published to NPM. so you can build your own plugins.
-    - fwiw, powerpoint is only ~2.5k LoC excluding the system prompt and the officejs .d.ts file
 - https://github.com/tdimino/dabarat /MIT/202603/python/js
   - AI-native markdown previewer with annotations, bookmarks, and live reload. Zero dependencies.
   - 5 annotation types — Comment, Question, Suggestion, Important, Bookmark
@@ -845,6 +845,21 @@ modified: 2025-02-21T17:17:42.225Z
     - MiniMax-pdf：封面用 HTML+CSS 通过 Playwright 渲染，正文用 ReportLab 排版，最后合并。为 15 种文档类型设计了独立视觉语言
     - PPTX-generator：基于 PptxGenJS，定义 5 种标准页面类型（封面/目录/章节分割/内容/总结）和 4 套视觉配方（Sharp/Soft/Rounded/Pill）
     - 前些天刷到佬友发的适用于wps的一套skill
+
+- https://github.com/hewliyang/office-agents /MIT/202603/ts
+  - Office Agents is a monorepo of Microsoft Office Add-ins with integrated AI chat panels. Each add-in connects to major LLM providers using your own credentials (BYOK) and can read/write documents through built-in tools, a sandboxed shell, and a virtual filesystem.
+  - https://x.com/hewliyang/status/2033176726663249959
+    - OpenWord v0.0.1 is out. it is competent at most text editing operations, can insert images into your doc, has vision, can add & reply to comments, and even works with Track Changes (redlining)
+  - https://x.com/hewliyang/status/2030648851603087392
+    - i've also renamed the open-excel repo into office-agents.
+    - the SDK, which contains the agent loop, IndexedDB storage logic, etc is published to NPM. so you can build your own plugins.
+    - fwiw, powerpoint is only ~2.5k LoC excluding the system prompt and the officejs .d.ts file
+
+- https://github.com/GongRzhe/Office-Word-MCP-Server /1.8kStar/MIT/202512/python/archived
+  - MCP server for creating, reading, and manipulating Microsoft Word documents. 
+  - expose Word document operations as tools and resources. It serves as a bridge between AI assistants and Microsoft Word documents, allowing for document creation, content addition, formatting, and analysis.
+  - [vibe coding 很爽，那么 vibe WORD 最好实践是什么？  - LINUX DO _202604](https://linux.do/t/topic/1903403)
+    - 用 AionUi 也能渲染出 word 来，可惜似乎 word 的缺陷，编辑带锁，少一点即时预览的安全感
 
 - https://github.com/sunbigfly/ppt-agent-skills /MIT/202604/python
   - PPT Agent 以严格的状态机驱动多 Agent 协作，将一句话需求输出为专业级 PPTX 文件，从根源解决传统大模型生成的幻觉、重叠与布局混乱问题。

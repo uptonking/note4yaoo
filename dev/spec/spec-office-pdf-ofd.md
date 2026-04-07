@@ -83,7 +83,28 @@ modified: 2026-04-05T18:34:12.403Z
 
 - ## 
 
-- ## 
+- ## [How do you manage your documents, such as PDFs? : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1sdcd54/how_do_you_manage_your_documents_such_as_pdfs/)
+- Zotero and the Zotero Connector for your browser, this can then connect to Obsidian.
+  - Another vote for Zotero. Its PDF annotation tools are first rate.
+
+- If you're simply downloading and not taking notes about them, I wouldn't put them in my Obsidian vault.
+  - If you're talking notes about them, then to me they're like any other attachment and I'd manage them that way.
+- For my part, the documents I download are for study purposes, so they are linked to notes and canvas that I have created.
+
+- all documents (Epub, JPEG, PNG, PDF) are stored in /assets folder , inside that folder i have a folder for attachments (JPEG/PNG) another folder for books library which include only books (epub/pdf) organized automatically using calibre , when i'm looking for some book i just use the seach menu (ctrl+O) and open it and take notes. 
+
+- I use three different tools for three different "levels" of information.
+  - 1st level - all daily writing : Drafts
+  - 2nd level - documentation and capture of all project-related information and action-able assets : Obsidian
+  - 3rd level - all long-term reference information that is curated as source material for projects : DEVONthink
+  - Text created in Drafts may migrate to Obsidian. And notes and clippings in Obsidian may migrate to DEVONthink. But DEVONthink information and assets never migrate back to Obsidian or Drafts unless it is copied text or a URL to a document.
+  - Use Obsidian for what it is good at (markdown files).
+- Second this. Keep your documents in Devonthink. Use Obsidian for its native purpose - Markdown. I also use Calibre for my library, which is on my local network. Once I mark a book, I tend to keep it in Devonthink. Otherwise, just copied text in a note and a link to the book in Calibre.
+
+- Images are in the vault if they are part of a note, as are a small number of PDFs (medical and insurance related mostly).
+
+- I create a markdown with front matter metadata about the document, save the PDF itself to the attachments folder and embed it into the markdown. That gives me queryable properties and I can make notes before and after the document content.
+  - Same here. I manage several thousand PDF files, including technical documentation, how-to, patch reports, software notices aso. Using a Python script to convert the PDF to MD. Additionally, space is added at the beginning of the MD for metadata and a section for personal notes. The original PDF are automatically moved to the NAS. Next step will be connecting to an LLM for semantic search.
 
 - ## [So you want to parse a PDF? | Hacker News _202508](https://news.ycombinator.com/item?id=44780353)
   - The author of the blog works on PdfPig, a framework to parse PDFs. For its document understanding APIs, it uses a hybrid approach that combines basic image understanding algorithms with PDF metadata .  https://github.com/UglyToad/PdfPig/wiki/Document-Layout-Analysis

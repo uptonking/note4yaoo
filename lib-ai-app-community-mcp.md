@@ -196,7 +196,33 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## [CLI 替代 MCP 的技术实践分析以及好用的CLI+Skill分享 - LINUX DO _202604](https://linux.do/t/topic/1907405)
+- MCP（Model Context Protocol）本质上是把工具调用标准化成 JSON Schema + RPC 式的协议。早期（2024-2025 年）被很多 Agent 框架采用，看起来规范、类型安全。但实际运行中暴露了几个硬伤：
+  - 工具描述必须完整塞进上下文，导致 Token 占用膨胀（社区实测 4-32 倍不等）；
+  - 模型每次规划都要重新解析 Schema，复杂任务时容易出现幻觉或参数错误；
+  - 配置门槛高，小白容易在 Schema 编写和维护上翻车。
+- CLI（Command Line Interface）则完全相反。它利用 Agent 天生对 Shell 命令的理解（训练数据里命令行内容占比极高），让模型直接生成可执行的 Shell 语句，通过 exec 类工具交给系统运行。优点是：
+  - 上下文干净，按需加载 --help 或参考文档即可；
+  - Token 效率高，链式操作（管道、脚本）更自然；
+  - 调试直观，输出实时可见，失败后可直接在终端复现。
+- 以下这些工具在 OpenClaw 中都有成熟的 bundled skills，安装后重启 gateway 或执行 openclaw skills reload 即可自动识别：
+  - git：仓库克隆、提交、推送、分支管理等基础操作；
+  - gh（GitHub CLI）：issues、PR、仓库列表、认证等；
+  - pandoc：Markdown 与 DOCX、PDF、HTML 等格式转换；
+  - jq：JSON 解析、过滤、格式化；
+  - curl / wget：API 调用、文件下载；
+  - docker / docker-compose：容器启动、镜像管理；
+  - ffmpeg：音视频转码、剪辑；
+  - npm / pnpm / yarn：Node.js 包管理；
+  - 以及 ripgrep（rg）、fd、tar、unzip 等系统级搜索和压缩工具。
+  - 这些工具的 Skill 描述由官方或社区维护，稳定性较高。实际使用时，只需在对话中明确说明“用 gh CLI 列出我的仓库”或“用 pandoc 把当前 README.md 转为 PDF”，Agent 就会自动调用。
+- Claude Code 同样支持直接运行 Shell 命令，但机制上没有 OpenClaw 那样完善的自动检测 + bundled skills。它依赖内置的 run command 能力，简单任务可直接描述命令执行。但要达到稳定可用，通常需要补充一个简短的 Skill（或直接复用 OpenClaw 的 SKILL.md 文件，稍作修改放入 ~/.claude/skills/）。
+- 个人当前做法是分层使用：OpenClaw 负责整体规划和多工具协调，Claude Code 专注精细的代码/文档编辑任务。两者都走 CLI 路线后，整体成功率比纯 MCP 高出不少。
+
+- 提醒
+  - 任何涉及 exec 的操作都建议保持审批机制，尤其 git push、rm、docker 等高风险命令；
+  - 从 gh、pandoc、git、jq 这四个工具开始练手，够覆盖日常 80% 的文档和代码场景；
+  - 需要扩展时再用 CLI-Anything 生成新 Skill，避免一开始就堆太多工具占用上下文；
 
 - ## CLI 这波热点，是流量逻辑。因为 for agents 的述事成了硅谷的吹捧，同时确实有 agents 想通过 CLI 来调用工具，
 - https://x.com/lifesinger/status/2035010592981852213

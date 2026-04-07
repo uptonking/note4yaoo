@@ -49,6 +49,8 @@ modified: 2025-12-13T18:38:27.763Z
 ## draft-office
 
 - aionui-cli: general cli wrapper for coding agents, like lms-cli
+  - janai-cli like obsidian-cli, ollama-cli, lms-cli
+
 - 或许复用并增强opencode-webui的逻辑如改造底层支持codex-cli/claude-code-cli 的架构更适合cowork/app
 
 - rag

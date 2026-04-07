@@ -112,6 +112,8 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
+- ## 
+
 - ## 搞了半天才知道，CC 有这么一个模式：/model opusplan
 - https://x.com/JinsFavorites/status/2031634804844933485
   - 规划阶段用 Opus，执行阶段自动切回 Sonnet
@@ -317,6 +319,30 @@ export ANTHROPIC_SMALL_FAST_MODEL="claude-sonnet-4-5-20250929"
 - ## 
 
 - ## 
+
+- ## [Claude Code记忆层加载顺序总结  - LINUX DO _202604](https://linux.do/t/topic/1907664)
+  - 按照cc官方文档 ，Claude Code的记忆分为CLAUDE.md files、Auto Memory两个互补的部分，并且都在会话开始时被加载。
+  - CLAUDE.md 大家比较熟悉，可以存在用户目录、项目目录的各个层级。
+  - Auto Memory 的位置则在 `~/.claude/projects/<project>/memory/` 。
+  - 当在cc中输入/memory，可以看到比较直观的看到这三个记忆文件（夹），然而在使用过程中，会发现存在rules、不同层级的CLAUDE.md 等复杂情况。
+- 从cc的源码来看，不同级别的CLAUDE.md 与 Auto memory 的整体加载顺序，应如下：
+
+```
+1. Managed Memory    (/etc/claude-code/CLAUDE.md)     - 全局管理指令
+2. User Memory       (~/.claude/CLAUDE.md)            - 用户级别的全局指令
+3. Project Memory    (从根目录到当前工作目录（CWD)，自下而上遍历，自上而下加载）
+    ├── CLAUDE.md     (项目根目录中的)
+    ├── .claude/CLAUDE.md
+    └── .claude/rules/*.md (按字母顺序)
+4. Local Memory      (CLAUDE.local.md，也在项目中)        - 项目本地指令
+
+5. Auto Memory (源码中的@memdir)  ~/.claude/projects/<project>/memory/MEMORY.md
+6. Team Memory       (共享团队记忆，如启用。)
+```
+
+- 自动记忆加载过程中会通过语义查询，比如"哪些记忆与xx功能相关？“
+- Auto memory存在记忆年龄这个概念，加入上下文时会添加诸如This memory is 2 days old. 的新鲜度警告。
+- 会话开始时MEMORY.md 只会加载前200行，而CLAUDE.md 文件无论长度如何都能完整加载。
 
 - ## 有人拿泄露的源码丢给 OpenAI 的 Codex 分析，竟然找到了 Claude Code 疯狂消耗 token 的元凶——autoCompact（自动上下文压缩）机制在失败后会无限重试，完全没有上限。据源码注释记录，曾有会话连续失败高达 3272 次。
 - https://x.com/imyouhu/status/2039191460256612770

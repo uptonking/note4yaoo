@@ -105,6 +105,12 @@ modified: 2025-09-21T13:58:46.548Z
     - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
     - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
     - Currently, it supports: docling pymupdf4llm markitdown marker
+
+- https://github.com/DCC-BS/docling-glm-ocr /MIT/202604/python
+  - https://dcc-bs.github.io/documentation/
+  - A docling OCR plugin that delegates text recognition to a remote GLM-OCR model served by vLLM.
+  - a docling plugin that replaces the built-in OCR stage with a call to a remote GLM-OCR model hosted on a vLLM server.
+  - Each page crop is sent to the vLLM OpenAI-compatible chat completion endpoint as a base64-encoded image. The model returns Markdown-formatted text which docling merges back into the document structure.
 # examples
 - https://github.com/mozilla-ai/document-to-markdown /MIT/202506/python/inactive
   - Convert unstructured documents to markdown using the Docling.

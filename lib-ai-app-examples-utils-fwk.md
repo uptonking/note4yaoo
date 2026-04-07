@@ -702,6 +702,11 @@ modified: 2025-02-21T18:20:42.624Z
   - A FUSE virtual filesystem for AI Agents, integrating memory, RAG & local data access with flexible MCP/tool chaining and a scalable plugin system
   - ToolFS is a specialized virtual filesystem framework designed for Large Language Model (LLM) agents. It unifies disparate interfaces—files, persistent memory, semantic search (RAG), and code execution (WASM skills)—into a single, POSIX-compliant /toolfs namespace.
   - Unified Skill API: Register and execute WASM-based or native skills with context-aware documentation that helps agents understand when and how to use them.
+
+- https://github.com/c4pt0r/agfs /apache2/202603/go/cpp
+  - Aggregated File System (Agent FS) - Everything is a file, in RESTful APIs. A tribute to Plan9.
+  - When coordinating multiple AI Agents in a distributed environment, agents need access to various backend services: message queues, databases, object storage, KV stores, and more. The traditional approach requires writing specialized API calls for each service, meaning agents must understand many different interfaces.
+  - The core idea of AGFS is simple: unify all services as file system operations.
 # packaging/toolchain
 - https://github.com/microsoft/apm /809Star/MIT/202604/python
   - https://microsoft.github.io/apm/

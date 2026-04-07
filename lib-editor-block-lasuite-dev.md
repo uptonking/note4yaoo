@@ -32,6 +32,10 @@ modified: 2025-07-17T14:39:41.606Z
   - doc-toc
   - 产品设计未采用多tab
 
+- alternatives
+  - outline: backlinks
+  - colanode: all-in-one - 📈 database + 💬 chat + 📝 doc + 📁 files
+
 - editor-pros 🌹
   - slash-menu /
   - toggle list

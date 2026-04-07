@@ -32,8 +32,53 @@ modified: 2021-09-09T18:31:39.852Z
   - v0.60.0_202111, NA202511, ✨🔀 支持collab
   - v0.61.0_202111, NA202511, Move to Typescript
   - v0.62.1-202203, NA202603, Move editor into codebase
+  - v0.63.0-202204, NA202604, editor now supports file attachments
+    - added search to publicly shared documents
+    - Empty documents are now cleaned up automatically 
+  - v0.64.0-202205, NA202605, New TLDraw, Otter.ai, Gliffy, JSFiddle, and Scribe embed
+    - improvements for large documents with collaborative editing enabled
+  - v0.65.0-202207, NA202607, full support for outgoing Webhooks so you can integrate Outline with other tools
+    - Mermaid diagrams in the editor
+    - ability to setup multiple authentication providers
+  - v0.66.0-202209, NA202609, possible to subscribe to a document without editing it
+    - Added support for Grist embeds
+    - Viewers can now be upgraded to editors on individual collections or groups
+  - v0.67.0-202211, NA202611, As of this release all documents edits are sent through the collaborative process using websockets
+    - Add HTML export 
+    - Show diff when navigating revision history
+  - v0.68.0-202302, NA202702, New document publish flow allows choosing a location after creating a draft 
+    - Duplicated docs are now created as unpublished drafts 
+    - Added import/export of documents as JSON
+  - v0.69.0-202304, NA202704, Commenting and mentions
+    - Database migrations are now run automatically
+    - Image resize operations can now now be undone
+  - v0.70.0-202307, NA202707, Allow embeds to be used inside tables
+    - Commenting outside of edit mode is now possible
+    - Use `umzug` to autorun migrations 
+  - v0.71.0-202308, NA202708, Find and replace now available
+    - Added support for rich hover cards for external links using Iframely
+    - Added support self hosted Grist
+  - v0.72.0-202310, NA202710, Local file system storage is now available as an alternative to Minio/S3
+    - emoji picker
+    - Embedding videos is now possible 
+    - [File storage ](https://docs.getoutline.com/s/hosting/doc/file-storage-N4M0T6Ypu7)
+      - If you would like to store file uploads on the same server that Outline is running from then you can do so using the local file system storage option.
+  - v0.75.0-202402, NA202802, a rebuild of the internal permissions in order to support inviting users to individual documents, a complete redesign of the Share menu on documents
+    - introduced AI Answers in cloud-hosted Outline
+    - Embeds are now rendered within HTML and PDF exports
+    - include drafts in search results
+    - possible to replace a file attachment inline
+  - v0.77.0-202404, NA202804, changes how documents are rendered, allowing the introduction of new editor functionality and attributes
+    - big improvements to tables: Column resizing, Toggleable headers, scroll horizontally
+  - v0.78.0-202409, NA202809, add groups directly to documents, all members of the group will receive access to the document
+  - v0.82.0-202502, NA202902, Editor embeds are now vertically resizable
+  - v1.0.0-202510, NA202910, 
+    - https://github.com/outline/outline/releases/tag/v1.0.0
+    - image lightbox has improved again with added support for zooming and panning of images.
+    - A new display mode for URL's in documents, which shows a mention-style chip instead of a full URL preview. 
+    - mention groups in documents and comments 
+    - Permanent deletion of documents is now restricted to admins only
 
-- 
 - 
 - 
 - 

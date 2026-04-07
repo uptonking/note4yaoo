@@ -176,6 +176,12 @@ modified: 2023-04-05T19:35:14.347Z
   - https://github.com/vercel/serve-handler /MIT/202410/js
     - This package represents the core of serve. It can be plugged into any HTTP server and is responsible for routing requests and handling responses.
 
+- https://github.com/9001/copyparty /44.1kStar/MIT/202604/python/js
+  - Portable file server with accelerated resumable uploads, dedup, WebDAV, SFTP, FTP, TFTP, zeroconf, media indexer, thumbnails++ all in one file
+  - server only needs Python (2 or 3), all dependencies optional
+  - protocols: http(s) // webdav // sftp // ftp(s) // tftp // smb/cifs
+  - android app // iPhone shortcuts
+
 - https://github.com/http-party/http-server /js
   - a simple zero-configuration command-line http server
 
@@ -229,7 +235,7 @@ modified: 2023-04-05T19:35:14.347Z
     - use `chokidar` to watch the files
   - I am generally not a fan of nodemon as a workflow for basically this reason.
     - If I'm in a sandbox usually fine to 'hot load' and run whatever code on save.
-    - If I'm in node, I always want manual control over *what* changes run and *when*.
+    - If I'm in node, I always want manual control over *what* changes run and *when* .
   - In fact I don't even use nodemon on my machine.
     - It always leaves zombie processes running on my machine.
     - I have to kill them manually by looking them up by opened port.
@@ -315,7 +321,7 @@ modified: 2023-04-05T19:35:14.347Z
   - https://github.com/fs-utils/fs-readdir-recursive
 
 - https://github.com/mysticatea/cpx
-  - cpx "src/**/*.{html, png, jpg}" dist --watch
+  - cpx "src/ **/* .{html, png, jpg}" dist --watch
   - Whenever the files are changed, copy them.
   - 在原目录的修改和重命名操作会同步到新目录，在新目录操作不影响原目录
 

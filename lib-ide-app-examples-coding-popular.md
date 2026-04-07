@@ -1086,7 +1086,7 @@ modified: 2025-12-11T18:10:23.710Z
   - [[Feature] Add Agent Client Protocol (ACP) Support _202603](https://github.com/Nano-Collective/nanocoder/issues/401)
     - Implement Agent Client Protocol support so nanocoder can be used as a coding agent inside any ACP-compatible editor 
     - Nanocoder already has the core primitives ACP needs. The gap is a transport layer — nanocoder needs a JSON-RPC stdin/stdout entry point and ACP method handlers.
-  - [[Feature] Small Model Mode _202603](https://github.com/Nano-Collective/nanocoder/issues/391)
+  - 已合并 [[Feature] Small Model Mode _202603](https://github.com/Nano-Collective/nanocoder/issues/391)
     - Nanocoder is local-first, but many of its defaults (prompt size, tool count, context management) are tuned for larger models. When using small local models (1B-8B parameters via Ollama), several things break
     - Create a drastically reduced prompt (~200-300 words instead of ~2,000). Strip out philosophy, examples, and edge-case guidance.
     - Instead of giving the model all 36+ tools, provide a focused subset. 
@@ -1100,7 +1100,7 @@ modified: 2025-12-11T18:10:23.710Z
       - I propose implementing mode-specific model and provider configuration that allows users to define different AI models for different development modes
       - Planning Phase: Use powerful, sophisticated models
       - Execution Phase: Use efficient local models (20B-30B range) for faster, cost-effective implementation
-    - [Feature Request: Subagent System for Specialized Task Delegation _202511](https://github.com/Nano-Collective/nanocoder/issues/97)
+    - 已合并 [Feature Request: Subagent System for Specialized Task Delegation _202511](https://github.com/Nano-Collective/nanocoder/issues/97)
       - a subagent system that allows nanocoder to delegate specialized tasks to focused AI agents with specific expertise, tools, and capabilities. 
     - [Feature Request: Plugin System & Marketplace for Extensible Capabilities ](https://github.com/Nano-Collective/nanocoder/issues/92)
       - Current Limitations:

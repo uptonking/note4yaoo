@@ -60,6 +60,13 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
+- ## 
+
+- ## [desktop: multi-window support in electron _202603](https://github.com/anomalyco/opencode/pull/17155)
+
+- ## [feat(windows): add arm64 release targets for cli and desktop  _202603](https://github.com/anomalyco/opencode/pull/16696)
+  - add Windows ARM64 release targets for the CLI, Tauri desktop app, Electron desktop app, and ripgrep asset resolution
+
 - ## 🧊 james has achieved distributed opencode
 - https://x.com/thdxr/status/2036925457417822299
   - agents can run on your laptop, on a remote server, in a cloud sandbox provider

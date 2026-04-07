@@ -81,6 +81,19 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
+- ## 
+
+- ## boxsh — a sandboxed POSIX shell for AI agents. Single static binary. No Docker, no root.
+- https://x.com/xicilion/status/2041075667954258116
+  - Overlay COW keeps your files untouched. JSON RPC for parallel execution. Branch sessions to compare two approaches.
+  - Built for Linux. Fast and secure.
+  - 在这个方案之前，我写过好几个实现，把 agent 放进 docker；提取 agent，把 tools 放进 docker；引入 just-bash，把 exec 留在 docker；用 unshare+namespace 替换 docker。 拼凑到最后忍无可忍，干脆写了一个专用的。 完整 shell，完整 sandbox，完整 linux 命令，零成本目录分叉，json rpc 通信。
+
+- 为什么不用已有的沙箱服务？比如 e2b
+  - 为了一个 read 启动一个 vm 太重了，并且还有会话快速分叉的需求，很多会话是不修改文件，或者很少修改文件的，每次会话复制一次目录也是不能忍受的。
+- 我们当前是一个全局沙箱，提前预热的方案, 主要 vm 中有 skills、workspace，放内存中不太现实
+  - agent 大量场景是围绕当前工作区操作，agent 认为当前工作区就是真实环境。boxsh 也是围绕这个目标设计的。
+
 - ## Coolest thing about agentOS: Sandbox Mounting
 - https://x.com/NathanFlurry/status/2040097109865533688
   - Start a lightweight Linux-like OS as a WebAssembly VM (~22 MB RAM)

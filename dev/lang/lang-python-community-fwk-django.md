@@ -81,7 +81,11 @@ modified: 2026-03-05T19:32:00.353Z
 
 - ## 
 
-- ## 
+- ## [Fork of django-silk with a rebuilt UI - N+1 detection, analytics dashboard, multi-select filters : r/django _202604](https://www.reddit.com/r/django/comments/1se127g/fork_of_djangosilk_with_a_rebuilt_ui_n1_detection/)
+  - Been using django-silk for a while. The profiling is great but I kept hitting the same UI papercuts: single-value filter dropdowns, a drawer that eats half your screen, no real pagination.
+  - Built a fork called django-silky.
+  - The part I'm most happy with is N+1 detection. Silk already captures every SQL query so I added a fingerprinting pass per request. If the same structural query fires 3+ times you get an orange banner on the SQL tab showing the pattern, count badge, total ms cost, and the offending rows highlighted in the table. There's a filter toggle to show only N+1 requests across the board.
+  - http://github.com/VaishnavGhenge/django-silky
 
 - ## [I've been exploring PostgreSQL Row-Level Security for Django multitenancy — curious what others think : r/django _202603](https://www.reddit.com/r/django/comments/1rup8bv/ive_been_exploring_postgresql_rowlevel_security/)
 

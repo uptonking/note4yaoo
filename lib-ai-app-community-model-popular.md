@@ -687,6 +687,8 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
   - The PLE solution: PLE adds a parallel, smaller side channel that delivers a fresh, dedicated vector to each layer individually.  
 - The vision encoder in Gemma 4 takes in images and converts them into tokens that the text decoder can understand. It uses learned 2D positional embeddings and multidimensional RoPE to understand spatial relationships in images.
 
+- [Per-Layer Embeddings: A simple explanation of the magic behind the small Gemma 4 models : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sd5utm/perlayer_embeddings_a_simple_explanation_of_the/)
+
 - [[D] Memory demand of per-layer-embeddings/how would one train a model with it? : r/MachineLearning _202506](https://www.reddit.com/r/MachineLearning/comments/1ldkj1a/d_memory_demand_of_perlayerembeddingshow_would/)
   - During inference, you can stream embeddings from ram (or nvme) to vram. 
   - If you don't have enough vram anyways, it should be faster than MoE because with MoE, you have to synchronize with gpu at each expert router. 

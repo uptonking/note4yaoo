@@ -220,7 +220,11 @@ modified: 2022-01-05T14:36:28.057Z
 # discuss
 - ## 
 
-- ## 
+- ## [You Don't Need Zustand: useSyncExternalStore Is All You Need : r/reactjs _202604](https://www.reddit.com/r/reactjs/comments/1se4355/you_dont_need_zustand_usesyncexternalstore_is_all/)
+  - [You Don't Need Zustand: useSyncExternalStore Is All You Need — Maryan Mats _202604](https://maryanmats.com/blog/you-dont-need-zustand/)
+  - The React team first built useMutableSource — it had critical flaws, they scrapped it entirely. The replacement is useSyncExternalStore. 
+  - The trade-off is in the name: sync. When an external store changes, React renders synchronously. You lose concurrent rendering for store updates, but every component sees the same snapshot. No tearing.
+  - `localStorage` has no subscription mechanism — except the `storage` event, which fires in other tabs. Combined with useSyncExternalStore, you get cross-tab reactive state for free
 
 - ## We have three state management libraries at Poimandres. What's in common is they prefer simpler APIs
 - https://twitter.com/dai_shi/status/1681514924173037569

@@ -382,6 +382,14 @@ modified: 2022-11-11T11:04:29.007Z
     - 原来Tampermonkey不行， 换了violentmonkey,可以正常刷出帖子
   - [Doesn’t work with Orion anymore ](https://github.com/prinsss/twitter-web-exporter/issues/98)
     - caused by a known issue about Twitter's CSP not allowing us to inject random userscripts.
+- https://github.com/afar1/fieldtheory-cli /MIT/202604/ts
+  - https://fieldtheory.dev/cli
+  - Sync and locally store all of your X/Twitter bookmarks. 
+  - Free and open source CLI for Mac.
+  - On first run, ft sync extracts your X session from Chrome and downloads your bookmarks into ~/.ft-bookmarks/.
+  - Your data stays local. No telemetry, no analytics, nothing phoned home. The CLI only makes network requests to X's API during sync.
+  - Chrome session sync reads cookies from Chrome's local database, uses them for the sync request, and discards them. Cookies are never stored separately.
+  - The default sync uses X's internal GraphQL API, the same API that x.com uses in your browser. For the official v2 API, use ft auth + ft sync --api.
 
 - https://github.com/viperrcrypto/Siftly /1.5kStar/MIT/202603/ts
   - Local Twitter/X bookmark organizer with AI categorization and mindmap visualization

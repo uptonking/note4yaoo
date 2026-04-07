@@ -16,31 +16,10 @@ modified: 2024-01-23T02:52:23.932Z
 
 - features
   - ?
-# examples
-- https://github.com/slimhk45/awesome-obsidian-alternatives /md
-  - free and open-source Obsidian clones and the technologies used to build them.
-  - [I made an awesome list of FOSS apps compatible with the Obsidian vault format : r/PKMS](https://www.reddit.com/r/PKMS/comments/1ro31d0/i_made_an_awesome_list_of_foss_apps_compatible/)
-    - I’ve been tracking tools that are compatible with the Obsidian vault format.
-    - The idea is to identify FOSS applications that can work with the same vault structure so our notes stay truly portable and future-proof.
-# examples-plugins
-- https://github.com/bgarciamoura/obsidian-notion-bases-plugin /GPL/202603/ts
-  - Turn any folder in your vault into a powerful database — right inside Obsidian.
-  - [I built a Notion-like database plugin for Obsidian — 6 views, fully local, no external tools : r/ObsidianMD _202603](https://www.reddit.com/r/ObsidianMD/comments/1rtwcja/i_built_a_notionlike_database_plugin_for_obsidian/)
+# draft
 
-- https://github.com/TfTHacker/group-enhancer-for-bases /MIT/202603/ts
-  - Enhances the base functionality of bases group features
-  - https://x.com/TfTHacker/status/2035123231628087726
-    - group collapsing in Obsidian Bases
+# dev-xp
 
-- https://github.com/PlayerMiller109/obsidian-sheets-basic /202408/js
-  - merge markdown table cells after Obsidian v1.5.0
-  - [小插件 Sheets Basic：合并 Markdown 表格单元格 - Obsidian 中文论坛 _202405](https://forum-zh.obsidian.md/t/topic/35091)
-
-- https://github.com/tmcw/obsidian-freeform /MIT/202405/js
-  - Obsidian freeform plugin. This lets you write arbitrary JavaScript, including importing ESM modules, injecting styles, and much more
-  - This brings a taste of Observable to Obsidian. 
-  - give you an @observablehq -like experience with editable code blocks that run in isolated iframes.
-  - Based on iframes: Everything you write is run within a sandboxed iframe, making it safer to do more creative coding within Obsidian without affecting the surrounding page.
 # discuss-stars
 - ## 
 
@@ -378,7 +357,19 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## [Bases : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1sd4zfa/bases/)
+  - Trying to understand how people are actually using Bases in Obsidian.
+
+- Once I realized you can embed them in notes and scope them to pull data from the note they are embedded in to do queries and such, I was able to completely replace Dataview.
+
+- I have a dynamic base that, when embedded into a note, reads the first tag of the note and then show a table of all notes with that tag.
+
+- Right now I exclusively use tags + bases to organize my vault. Its really simple, but it works and is low friction. I tag my notes and have one base per tag which I usually embed into my home page for quick access.
+
+- Each folder contains a "bases" file with the same name as the folder. This file typically displays all the notes from that folder in a list format. For notes about games, books, movies, and TV shows, they are displayed in a gallery format with covers.
+
+- 
+- 
 
 - ## [Should I move to Obsidian Bases or Datacore, as a Dataview user? : r/ObsidianMD _202603](https://www.reddit.com/r/ObsidianMD/comments/1s3i73c/should_i_move_to_obsidian_bases_or_datacore_as_a/)
 - In priority of preference

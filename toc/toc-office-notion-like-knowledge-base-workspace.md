@@ -1005,6 +1005,9 @@ modified: 2022-06-03T21:34:54.893Z
   - https://clusterzx.github.io/paperless-ai/
   - an AI-powered extension for Paperless-ngx that brings automatic document classification, smart tagging, and semantic search using OpenAI-compatible APIs and Ollama.
   - [Paperless-AI: Now including a RAG Chat for all of your documents : r/selfhosted _202505](https://www.reddit.com/r/selfhosted/comments/1kqbouu/paperlessai_now_including_a_rag_chat_for_all_of/)
+  - https://github.com/admonstrator/paperless-ai-next /MIT
+    - fork of Paperless-AI for Paperless-ngx, improving AI/OCR reliability with an OCR rescue queue (Mistral), a permanent-failure queue, and ignore filters.
+    - Adds history + one-click rescan, MFA, better setup, restore-original-metadata, and Date/Boolean custom fields support
 
 - https://github.com/papra-hq/papra /2.4kStar/AGPL/202509/ts
   - https://demo.papra.app/

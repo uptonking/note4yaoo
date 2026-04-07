@@ -194,6 +194,28 @@ modified: 2024-11-16T08:23:40.617Z
     - 原生 Git 集成：侧边栏直接可视化管理版本控制。
     - 我想要的是，可以在本地跟着代码一起写，做事实核查，可以在vscode，cursor里面写的，这样就能用deep research或者任何github整的skills，还可以随时同步云端的overleaf，how can we achieve this
 # canvas-layouting
+- https://github.com/seanghay/sone /apahce2/202604/ts
+  - https://sone-editor.vercel.app/
+  - Declarative Canvas layout engine for JavaScript with advanced rich text support.
+  - Flex Layout & CSS Grid
+  - Multi-Page PDF — automatic page breaking, repeating headers & footers, margins
+  - Rich Text — spans, justification, tab stops, tab leaders, text orientation (0°/90°/180°/270°)
+  - Bidirectional text — RTL support for Arabic, Hebrew, and mixed LTR/RTL paragraphs
+  - Balanced line wrapping — evenly distributed line lengths via .textWrap("balance")
+  - Syntax Highlighting — via sone/shiki (Shiki integration)
+  - Output as SVG, PDF, PNG, JPG, WebP
+  - YOLO / COCO Dataset Export
+  - All features from `skia-canvas`.
+  - 🛝
+    - pretext支持渲染为dom或canvas
+  - Inspired by Flutter and SwiftUI, Sone lets you focus on designing instead of calculating positions manually.
+    - Describe your layout as a tree of composable nodes — Column, Row, Text, Photo — and Sone figures out where everything goes.
+    - Sone does not use JSX or HTML. JSX requires a build step and transpiler config. HTML requires a full CSS parser 
+    - Flexbox for layout. Powered by yoga-layout — the same engine behind React Native
+    - Rich text as a first-class citizen. Mixed-style spans, justification, tab stops, decorations, drop shadows,
+    - Pages are just layout. pageHeight slices the same node tree into pages. 
+    - Performance. No browser, no Puppeteer, no CDP. Rendering goes directly through skia-canvas — a native Skia binding for Node.js
+
 - https://github.com/polotno-project/render-tag /MIT/202604/ts
   - https://polotno.com/render-tag/
   - Render HTML rich text onto canvas with the 2D API. 
@@ -204,7 +226,7 @@ modified: 2024-11-16T08:23:40.617Z
   - https://x.com/lavrton/status/2038978115196645409
     - Built this to solve my biggest pain point working on a web design editor. 
     - Added an accurancy benchmark with HUGE amount of test cases comparing canvas output vs svg+foreighObject render
-  - Is there any hope for supporting text-selection?
+  - 🐛 Is there any hope for supporting text-selection?
     - There is always a hope... What is the use case for you? My end goals is to have have a smooth rich text editing experience in the canvas. So for now view on canvas, edit in real DOM. All with a smooth switch between modes. But maybe full canvas will be there one day.
 # fonts/typography
 - https://github.com/diegomura/react-pdf/tree/master/packages/textkit /MIT

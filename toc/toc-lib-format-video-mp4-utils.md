@@ -106,4 +106,13 @@ modified: 2024-04-14T12:19:52.096Z
   - a self-hosted webapp written in Go which organizes and serves your diverse content collection, catering to both your SFW and NSFW needs.
   - supports a wide variety of both video and image formats.
   - statistics about performers, tags, studios and more.
+# iot
+- https://github.com/Jstudner/jcorp-nomad /CC-NC/202604/js/cpp
+  - http://nomad.jcorptech.net/
+  - An extremely compact offline media server for Movies, Shows, Books, and Music.
+  - A portable, offline media server powered by the ESP32-S3 in a thumbdrive form factor.
+  - Stream movies, music, books, and shows anywhere - no internet required.
+  - [Nomad Mk3: Offline, Open-source, low-power self-hosted media server : r/selfhosted _202604](https://www.reddit.com/r/selfhosted/comments/1sdd5ny/nomad_mk3_offline_opensource_lowpower_selfhosted/)
+    - The love concept! As others have stated I'd have some concerns about bandwidth limiting quality but especially as an initial project, this rocks! I wonder what options you have down the line to throw something more powerful in there to support high bitrate 1080p. Kudos on keeping it open source
+    - With the current setup you can typically get 1-2 1080p 60fps streams going without buffering, though that does assume you like in the woods with no interference lol. That being tested with the big buck bunny demo files. 4k is still off the table though, one stream almost works, but still has to buffer as it can't quite keep up.
 # more

@@ -969,6 +969,20 @@ modified: 2025-11-30T17:27:16.720Z
   - 功能强大的智能体平台，融合了 RAG 知识库与知识图谱技术，基于 LangGraph v1 + Vue.js + FastAPI + LightRAG 架构构建
   - 集成主流大模型、LightRAG、MinerU、PP-Structure、Neo4j 、联网检索、工具调用。
 
+- https://github.com/ENDEVSOLS/LongParser /MIT/202604/python
+  - https://endevsols.github.io/LongParser/
+  - Privacy-first document intelligence engine for production RAG pipelines.
+  - parse PDFs, DOCX, PPTX, XLSX & CSV into AI-ready chunks for RAG pipelines. 
+    - `Docling` converts PDF/DOCX/etc. into structured Block objects
+  - Includes HITL review, 3-layer memory chat, and a production FastAPI server.
+  - LangGraph HITL
+  - 3-layer memory	Short-term turns + rolling summary + long-term facts
+  - Multi-backend vectors	Chroma, FAISS, Qdrant
+  - Async-first API	FastAPI + Motor (MongoDB) + ARQ (Redis)
+  - LangChain adapters	Drop-in BaseRetriever and LlamaIndex QueryEngine
+  - Privacy-first	All processing runs locally
+  - Chat — LCEL chain with 3-layer memory and citation validation
+
 - https://github.com/SciPhi-AI/R2R /7.5kStar/MIT/202511/python
   - an advanced AI retrieval system supporting RAG
   - Built around a RESTful API, R2R offers multimodal content ingestion, hybrid search, knowledge graphs, and comprehensive document management.
@@ -1956,6 +1970,12 @@ modified: 2025-11-30T17:27:16.720Z
 
 - citation-examples
   - [Bluebook Citation Generator - Instant Legal Citations & OCR](https://bluebookcitationgenerator.com/)
+
+- https://github.com/DeepCitation/deepcitation /MIT/202604/ts
+  - https://deepcitation.com/
+  - The citation verification API. 
+  - Show proof for every AI citation.
+  - React components to help you build production-ready attribution systems. 
 # examples/apps
 - https://github.com/dmayboroda/minima /MPL/202512/python/ts
   - On-premises conversational RAG with configurable containers

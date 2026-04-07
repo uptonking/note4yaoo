@@ -120,6 +120,21 @@ modified: 2024-03-31T17:45:16.789Z
     - I think it should be possible to also encrypt the S3 buckets, independently from OpenCloud, as a feature of the storage
     - OpenCloud however does not yet support client side S3 encryption.
 
+- https://github.com/zmeyer44/Locker /MIT/202604/ts
+  - https://locker.dev/
+  - Open-source file storage platform. A self-hostable alternative to Dropbox and Google Drive.
+  - Storage Provider Agnostic — Swap between Local, AWS S3, Cloudflare R2, or Vercel Blob via a single env var
+  - Storage Quotas — Per-user storage limits with usage tracking
+  - Virtual Bash Filesystem (beta) — Traverse workspace files with ls, cd, find, cat, grep, etc. via just-bash
+  - 依赖Next.js、tRPC、Drizzle、pg、BetterAuth、Radix UI
+  - File Explorer — Upload, organize, rename, move, and delete files and folders
+  - Share Links — Generate shareable links with optional password protection, expiration, and download limits
+  - Upload Links — Let others upload files to your storage without an account
+  - https://x.com/zachmeyer/status/2040891640101966102
+    - Plugins also allow extending the functionality for your needs. The first plug-in is for @tobi 's QMD search
+    - can we also have in build notebookLM kind of things on all our files? 
+      - We could add it as a plugin!
+
 - https://github.com/DrizzleTime/Foxel /1kStar/MIT/202602/python/ts
   - https://foxel.cc/
   - https://demo.foxel.cc/

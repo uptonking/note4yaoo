@@ -403,6 +403,18 @@ modified: 2021-05-06T09:58:23.803Z
   - Built with @sveltejs & @tailwindcss
   - All svgs provides the link to the product or company that owns it, please contact them if you are going to use their logo. If you are the owner of an svg and do not want it to appear here, please create an issue on Github.
 
+- https://github.com/xandemon/developer-icons /MIT/202603/ts
+  - https://xandemon.github.io/developer-icons/
+  - https://xandemon.github.io/developer-icons/icons/All/
+  - A collection of well-optimized SVG tech logos for developers and designers—customizable, scalable, and free.
+  - https://x.com/heygurisingh/status/2041073938114191492
+    - It's a fully-typed React component library with customizable, perfectly scalable SVGs for every major framework, language, and tool you actually use.
+    - Every icon ships as a typed React component (HtmlIcon, JavascriptIcon, ReactIcon, etc.)
+    - Customize size, color, stroke width, and style with standard SVG props
+    - Optimized with SVGO so file sizes stay microscopic without losing quality
+    - Light mode, dark mode, and wordmark variants built in for every brand
+    - Works in React, Next.js, Astro, or download raw SVGs for Figma
+
 - https://github.com/preetsuthar17/loftlyy /MIT/202603/ts
   - https://loftlyy.com/
   - A brand identity reference site — discover and explore brand colors, typography, logos, and design systems. Like Mobbin, but for branding.

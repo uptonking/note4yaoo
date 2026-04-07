@@ -27,7 +27,7 @@ modified: 2026-01-14T19:05:15.969Z
   - transformerlab-app: backend-plugins + ui
   - omlx: mlx-lm + ui(PyObjC)
 # draft
-- janai-cli like ollama-cli, lms-cli
+- janai-cli like obsidian-cli, ollama-cli, lms-cli
   - skills for janai-cli
   - 直接兼容 lms-cli, 使用已下载的model
 

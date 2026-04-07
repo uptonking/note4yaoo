@@ -175,6 +175,18 @@ modified: 2024-08-24T16:30:20.218Z
 - https://github.com/adobe/brackets /MIT/202003/js/archived
   - http://brackets.io/
   - a modern open-source code editor for HTML, CSS and JavaScript that's built in HTML, CSS and JavaScript.
+
+- https://github.com/stablyai/orca /MIT/202604/ts
+  - https://onorca.dev/
+  - Orca is the next-gen IDE for building with coding agents
+  - Available for macOS, Windows, and Linux.
+  - Whether it's Claude Code, Codex, or OpenCode, Orca makes coordinating multiple features across multiple repos effortless.
+  - Worktree Management: Spin up, manage, and switch between multiple Git worktrees instantly. 
+  - Agent-Ready Terminals: Robust support for multiple terminals, tabs, and panes. Run Claude Code, Codex, OpenCode, or your own agents side-by-side.
+  - Smart Notifications & Status Tracking: See exactly which worktrees have active agents. 
+  - Deep GitHub Integration
+  - https://x.com/orca_build/status/2040147412002697617
+    - Orca now has Notion-style markdown editing.
 # codebase-utils
 - https://github.com/yamadashy/repomix /20.4kStar/MIT/202511/ts/vue
   - https://repomix.com/
@@ -489,6 +501,7 @@ modified: 2024-08-24T16:30:20.218Z
   - nice-to-have, 非必须流程, 需要可跳过
 
 - https://github.com/qodo-ai/pr-agent /10.2kStar/AGPL/202602/python
+  - https://github.com/Codium-ai/pr-agent /renamed
   - https://qodo-merge-docs.qodo.ai/installation/locally/
   - https://qodo-merge-docs.qodo.ai/
   - PR Agent - The Original Open-Source PR Reviewer, This repo is not the Qodo free tier

@@ -322,6 +322,20 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0406
+
+- 🤔 一台主服务器用来存放峰值记录和可视化（不要求计费），其他都是 我试过GoEdge，这个工具不太行，没有现成的记录95峰值，而且之后的版本还收费
+  - “95峰值”（通常称为 95th Percentile 或 95计费法）是网络带宽、服务器流量监控中非常经典且常用的一个统计学指标。
+  - 95峰值是指：在一段时间内（比如一个月），将所有的带宽/流量采样点按从大到小排序，去掉最高的 5% 的数据，剩下的数据中最大的那个值。
+  - 一般监控系统（如阿里云）会每 5分钟 对服务器的带宽采集一次数据。
+  - 总采样点： 1个月 = 30天 = 720小时 = 43200分钟。每5分钟一个点，一个月总共有 8640个 采样点。  将这 8640 个带宽数值从大到小排列。 削掉前 5% 的最高值。即 8640 × 5% = 432个 点。排名第 433 大的那个带宽数值，就是这一个月的“95峰值”。
+  - 在真实的网络环境中，流量往往是不平稳的。可能会因为以下情况出现短暂的极高波动： 遭受到短时间的 DDoS 攻击； 某天搞活动，用户突然激增了几小时； 运维人员临时拉取了一个超大文件
+  - 如果看**“最大峰值”，你可能会因为这仅仅几分钟或几小时的异常流量，被拉高了整体的评估标准
+  - 而使用“95峰值”，相当于允许你每个月有 36个小时（432个点 × 5分钟）的流量可以“肆无忌惮”地冲高。只要你剩下的时间的流量相对平稳，那么你的 95峰值 就会是一个非常客观、能反映你服务器真实常态高负载**的数据。
+
+- Error running remote compact task: unexpected status 503 Service Unavailable: No available channel for model gpt-5.4-openai-compact under group codex 
+  - 这个是远程压缩，据说比本地压缩效果好
+
 ## 0404
 
 - Error rendering prompt with jinja template: "Cannot call something that is not a function: got UndefinedValue". This is usually an issue with the model's prompt template. If you are using a popular model, you can try to search the model under lmstudio-community, which will have fixed prompt templates. If you cannot find one, you are welcome to post this issue to our discord or issue tracker on GitHub. Alternatively, if you know how to write jinja templates, you can override the prompt template in My Models > model settings > Prompt Template.

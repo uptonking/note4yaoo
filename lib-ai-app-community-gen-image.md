@@ -876,7 +876,17 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
-- ## 
+- ## [What are the best models everyone is using right now? : r/StableDiffusion _202604](https://www.reddit.com/r/StableDiffusion/comments/1scuftr/what_are_the_best_models_everyone_is_using_right/)
+- Video = Wan 2.2 & 2.1(i2v, animate, vace, SVI), Ltx2.3 (Talking head only)
+  - Anime = ILL
+  - Realistic, = Klein 9B and Zimage turbo.
+  - Image Edit = Klein 9B
+
+- I use Wan 2.1. It can do stand-alone images as well as videos. The quality is great and I've built up a stash of fun Loras.
+
+- Chroma as my get go. Flux klein for edit, Anima and Illustrious for anime.
+
+- I always use Illustrious XL. I tried Anima and I'm waiting for the full model to be released so I can compare. I tried Flux and Z Image, but I didn't like them (especially since I use them for almost 100% of my manga).
 
 - ## [SVG-T2I: Text-to-Image Generation Without VAEs : r/StableDiffusion _202512](https://www.reddit.com/r/StableDiffusion/comments/1pn97kd/svgt2i_texttoimage_generation_without_vaes/)
   - SVG: "Self-supervised representations for Visual Generation"
