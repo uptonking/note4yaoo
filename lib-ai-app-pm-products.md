@@ -250,8 +250,9 @@ modified: 2025-03-22T16:10:24.856Z
   - 易用性: 模型推荐 + 场景优化的提示词 + 多模型/多版本对比
     - llm ux: natural language as interface
     - 对同一场景, 如翻译/ocr, 针对不同模型内置合理的参数且支持配置
-    - pdf: ocr(提取table/chart), editing(还原布局), rag(citation)
-    - pm: llamaparse-extract, cowork(docx-xml/databases/ilovepdf), notebooklm, Image, Audio, 翻译, 多维表格, pretext-edit, GPU硬件
+    - pdf: ocr(提取table/chart), editing(proof/布局), rag(citation)
+    - pm: llamaparse-extract, cowork(docx-xml/databases/ilovepdf), notebooklm
+    - later: GPU硬件(ai难取代), Image, Audio, 翻译, 多维表格, pretext-edit
     - roadmap: 
       - agentic场景优化: ocr-vlm/pipeline, translation
       - citation, backlinks: 提升rag的准确度, 优化搜索结果中的code/text/image

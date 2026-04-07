@@ -1,11 +1,11 @@
 ---
-title: toc-lib-format-translate-ocr
-tags: [format, image, ocr, pdf, translation]
+title: toc-office-translate-ocr
+tags: [image, ocr, pdf, translation]
 created: 2025-12-19T12:42:18.519Z
-modified: 2025-12-19T12:43:21.150Z
+modified: 2026-04-07T11:52:43.122Z
 ---
 
-# toc-lib-format-translate-ocr
+# toc-office-translate-ocr
 
 # guide
 
