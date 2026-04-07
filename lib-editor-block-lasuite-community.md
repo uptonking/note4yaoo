@@ -80,7 +80,7 @@ modified: 2025-07-17T14:40:07.230Z
 
 - ## 
 
-- ## 
+- ## 未实现 [Support OIDC configuration / discovery URL for easier set-up _202511](https://github.com/suitenumerique/docs/issues/1562)
 
 - ## [login/passwd instead of authentity provider _202509](https://github.com/suitenumerique/docs/discussions/1367)
   - Can I use standard login/password instead of services like Keycloak

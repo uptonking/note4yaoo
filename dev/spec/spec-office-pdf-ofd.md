@@ -81,7 +81,8 @@ modified: 2026-04-05T18:34:12.403Z
 
 - ## 
 
-- ## 
+- ## [if you download a google doc-->pdf can you see edit history : r/pdf _202604](https://www.reddit.com/r/pdf/comments/1sa8v13/if_you_download_a_google_docpdf_can_you_see_edit/)
+- PDF is literally to view and print documents. It doesn't have any concept of a change history, unless you force that upon it (my guess is that Illustrator might be doing that with their .ai format).
 
 - ## [How do you manage your documents, such as PDFs? : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1sdcd54/how_do_you_manage_your_documents_such_as_pdfs/)
 - Zotero and the Zotero Connector for your browser, this can then connect to Obsidian.

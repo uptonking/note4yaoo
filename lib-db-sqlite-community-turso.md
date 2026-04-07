@@ -381,7 +381,14 @@ Today, Turso is in beta with early customers working toward production deploymen
 
 - ## 
 
-- ## 
+- ## 🤼🤔 I played with just-bash at the start of the year, and then realised I ended up mostly just leveraging its support for sqlite, so I just went with an in-memory sqlite db. 
+- https://x.com/PsudoMike/status/2041480116149092613
+  - Then I realised this wouldn't scale to larger datasets, so I made https://github.com/andrewIngram/tupl 
+  - I don't know if SQL-based tools will have better longevity than bash-based ones, but it _is_ only a small transform away from relational algebra -- so if the goal is that agents can extract stored data as efficiently as possible, it _might_ be directionally correct.
+- SQLite as a state store for agents is underrated for small to medium workloads. The moment you need cross-agent coordination or replay semantics it starts to show cracks, which is probably what pushed you toward tupl. Curious what the persistence model looks like.
+  - There isn't really one, somewhat by design. I'm a mild proponent of CQRS, so I do think reads should be thought about a bit differently to writes. tupl primarily focuses on solving reads. It's basically GraphQL but with a SQL interface rather than GraphQL queries.
+
+- filesystems/bash/git make a decent translation layer between human<->agent and the concept of authoring software. I *think* I still want agents to build projects in such a way that I can understand it...
 
 - ## Virtual filesystem is the way: S3 is a filesystem, so is Postgres, so is Notion, so is Box
 - https://x.com/Vtrivedy10/status/2040166655355941303

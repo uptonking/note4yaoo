@@ -715,7 +715,7 @@ modified: 2025-08-11T08:47:56.335Z
   - slack/bolt: Integration with Slack for building Slack apps.
   - fastify: serves as a web server in src/api
 
-- https://github.com/mayooear/ai-pdf-chatbot-langchain /15.8kStar/MIT/202502/ts
+- https://github.com/mayooear/ai-pdf-chatbot-langchain /15.8kStar/MIT/202502/ts/archived
   - PDF chatbot agent built with LangChain & LangGraph
   - This monorepo is a customizable template example of an AI chatbot agent that "ingests" PDF documents, stores embeddings in a vector database (Supabase), and then answers user queries using OpenAI (or another LLM provider) utilising LangChain and LangGraph as orchestration frameworks.
   - This template is also an accompanying example to the book Learning LangChain (O'Reilly): Building AI and LLM applications with LangChain and LangGraph.

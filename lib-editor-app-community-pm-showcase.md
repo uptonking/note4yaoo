@@ -22,6 +22,7 @@ modified: 2024-08-11T07:21:05.619Z
 
 - ## [window有什么软件可以查看上百m大小的的txt。不卡的  - LINUX DO _202603](https://linux.do/t/topic/1866557)
 - emeditor 很贵，订阅制， nsane等网站有破解版，可自行测试
+  - 🐛 emeditor仅支持windows
 
 - logview只能看不能改
 

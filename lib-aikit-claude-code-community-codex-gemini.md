@@ -416,7 +416,9 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
-- ## 
+- ## [Pro tip: you can replace Codex’s built-in system prompt instructions with your own : r/codex _202604](https://www.reddit.com/r/codex/comments/1seqhxd/pro_tip_you_can_replace_codexs_builtin_system/)
+  - model_instructions_file = "../soul.md"
+  - [Configuration Reference – Codex ](https://developers.openai.com/codex/config-reference)
 
 - ## [error sending request for url (https://api.openai.com/v1/responses) · Issue · openai/codex](https://github.com/openai/codex/issues/4885)
 - I guess it's a network proxy problem. Last week I solve it by change my proxy point. But this week I can't fix it again

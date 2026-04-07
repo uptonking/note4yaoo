@@ -234,7 +234,7 @@ modified: 2025-12-25T19:55:10.911Z
 
 - https://github.com/Lamkateh/richtext-typst /MIT/202509/python/inactive
   - Convert rich text JSON documents (from editors like ProseMirror, Quill, Slate) to Typst markup.
-  - Supports multiple formats: ~~Quill, Slate~~, ProseMirror (extensible)
+  - Supports multiple formats: ~~Quill, Slate~~ , ProseMirror (extensible)
   - Custom parser support: Register your own parser for new formats
   - https://github.com/Lamkateh/outline-typst
     - Converts Outline's ProseMirror-based exports to Typst markup
@@ -263,6 +263,17 @@ modified: 2025-12-25T19:55:10.911Z
 - https://github.com/ra-jeev/write-assist-ai /MIT/202511/ts
   - OpenAI-powered Text Rewriter for VS Code. 
   - Works with Markdown, LaTeX, quarto, typst and text files.
+
+- https://github.com/XWBarton/glyph /202604/ts
+  - Desktop Typst editor for macOS, Windows, and Linux. 
+  - Write in a Monaco-powered source panel, see the compiled PDF update live alongside it.
+  - https://github.com/XWBarton/glyph-quorum /202603/ts
+    - Real-time collaborative Typst editor.
+    - Multiple people edit the same document simultaneously, see each other's cursors, leave comments, and compile to PDF — all in the browser.
+  - https://github.com/XWBarton/glyph-folio /202604/ts
+    - Personal Typst note-taking system. 
+    - Write notes in Typst markup on your Mac or iPhone, compile to PDF, and keep everything in sync through a self-hosted server — or stay fully offline with local storage.
+    - [Glyph Folio: A simple Typst note-taker : r/typst _202604](https://www.reddit.com/r/typst/comments/1sesz5k/glyph_folio_a_simple_typst_notetaker/)
 
 - https://github.com/lemueldls/mnemo /AGPL/202512/rust/ts/vue
   - https://mnemo.world/
@@ -815,7 +826,7 @@ modified: 2025-12-25T19:55:10.911Z
   - https://katex.org/
   - Fast math typesetting for the web.
   - KaTeX renders its math synchronously and doesn't need to reflow the page. See how it compares to a competitor in this speed test.
-  - KaTeX's **layout** is based on **Donald Knuth's TeX**, the gold standard for math typesetting.
+  - KaTeX's **layout** is based on **Donald Knuth's TeX** , the gold standard for math typesetting.
   - support ssr
   - KaTeX supports much (but not all) of LaTeX and many LaTeX packages.
 

@@ -70,7 +70,12 @@ modified: 2025-12-25T19:54:56.482Z
 
 - ## 
 
-- ## 
+- ## [Are there any Typst exporters in any Word processors? : r/typst _202604](https://www.reddit.com/r/typst/comments/1sery5y/are_there_any_typst_exporters_in_any_word/)
+- Most likely not. Typst is pretty new and it takes a lot of reverse-engineering effort to find out how Word files work and how the Microsoft XML should be interpreted and exported.
+  - Microsoft themselves will not develop this, because it is against their commercial interests of keeping you locked into their software ecosystem.
+
+- Microsoft Word is an object-oriented word processor. Markdown, Typst, html are all streaming formats. You should seriously consider using WordPerfect as your desktop word processor, as it is also a streaming format. It also natively supports export to XML and html. Given the robust (and heavily supported) macro language, you could likely build your own Typst exporter with greater ease than doing it with visual basic.
+  - From scratch, probably yes, but as there already are Word2Wiki export macros, editing one of those is easier.
 # discuss-internals
 - ## 
 

@@ -51,7 +51,10 @@ modified: 2021-04-21T15:01:12.882Z
 
 - ## 
 
-- ## 
+- ## Use 𝚜𝚒𝚋𝚕𝚒𝚗𝚐-𝚒𝚗𝚍𝚎𝚡() to stagger children of a parent without having to manually track a using --𝚒 𝚟𝚊𝚛𝚒𝚊𝚋𝚕𝚎𝚜 or having to use an animation library
+- https://x.com/mannupaaji/status/2041530769009705360
+  - Clean and minimal approach for stagger(摇晃; 踉跄; 蹒跚) animations
+  - Make your landing pages look 100x better with templates and blocks from Aceternity UI
 
 - ## View Transitions API before/after setting on a transition group
 - https://x.com/mattgperry/status/1874406487742886000

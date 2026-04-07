@@ -53,6 +53,24 @@ modified: 2021-08-12T20:21:51.264Z
 
 - ## 
 
+- ## 
+
+- ## 🆚 JSON Server vs MSW  _202604
+- https://x.com/kettanaito/status/2041518375818658231
+- MSW has steadily risen to the industry standard over the past 7 years. It brings a new philosophy to API mocking, is widely used (10M+ weekly downloads), and offers the richest feature set in the ecosystem.
+  - The primary way of describing the network in MSW is via the Express-inspired handlers in your code. This helps with type-safety, reusing the logic, and maintaining a single, use case-independent contract for any purposes.
+  - MSW favors a handler-centric approach, which means you have to list all the wanted methods on the API yourself (e.g. http.get, http.delete, etc). For example, you can generate handlers from your OpenAPI spec and spawn an HTTP server out of those just like JSON Server does. 
+  - Since MSW separates the contract and the interception parts, either one can come from virtually anywhere. 
+- JSON Server allows you to describe the data in a JSON file, following their own convention, and then spin up an actual HTTP server based on that data. It foregoes JavaScript entirely, making it easy to adopt in other languages.
+  - JSON Server will automatically create appropriate operation routes for your data (think CRUD), making it faster to achieve a mock server with realistic behaviors.
+- JSON Server focuses only on RESTful API. You cannot easily mock GraphQL or WebSocket APIs with its data declaration syntax.
+  - MSW supports mocking RESTful, GraphQL, SSE, and WebSocket APIs, offering the richest feature set in the entire ecosystem. Not only that, but it heavily promotes the philosophy that your mocks must resemble how you normally work with those protocols/conventions.
+- JSON Server spawns a designated HTTP server 
+  - MSW works in the browser and in Node.js via designated entrypoints (setupServer/setupWorker) and can spawn an HTTP server, if you so choose, via its "http-middleware" package. The latter, however, isn't recommended, and here's why...
+- JSON Server requires you to alter your tests/app to communicate with the mock server instead of the actual API. This introduces a deviation to your code, making it prone to errors. 
+  - MSW does not require any changes to your tests/app. They keep requesting the same production resources, get seamlessly intercepted, and handled as per your network contract.
+- The best way for me to compare these two is to think of JSON Server as a fully-fledge, solid implementation of one particular way of API mocking, whereas MSW gives you a bunch of building blocks to compose and create the experience you think suits your project best.
+
 - ## TIL you can mock fetch natively in Node.
 - https://x.com/mattpocockuk/status/1841074839446003927
 - MSW is already doing this

@@ -173,6 +173,21 @@ modified: 2026-01-21T04:22:29.956Z
 - ## 
 
 - ## 
+# discuss-ai-api-gateway/router-tips
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [toolcall-gateway ：让不支持function call的模型支持function call - LINUX DO _202604](https://linux.do/t/topic/1915096)
+  - 分享一个从我的web2api项目抽离出来的python库(已发布pypi)：toolcall-gateway 作用：让不支持function call的模型支持function call
+
+- [「开源自荐」[AnyToolCall] 去tmd原生工具调用 | 基于提示词注入的工具调用中间件  - LINUX DO _202601](https://linux.do/t/topic/1400154)
+
+- [Toolify——为任意LLM API添加完善的Function Calling支持 - LINUX DO _202507](https://linux.do/t/topic/797373)
 # discuss-model-api-gateway/router/proxy
 - ## 
 

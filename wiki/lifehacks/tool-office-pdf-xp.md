@@ -38,6 +38,10 @@ modified: 2020-12-29T17:52:48.584Z
 - 
 - 
 
+# pdf-solutions
+- [iLovePDF | Online PDF tools for PDF lovers](https://www.ilovepdf.com/)
+
+- [ihatepdf - Free Online PDF Editor Without Watermark — Merge, Split & Compress PDFs](https://www.ihatepdf.cv/)
 # pdf-studio
 - 编辑功能强大
 

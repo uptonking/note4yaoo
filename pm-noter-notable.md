@@ -187,6 +187,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 - 🧩 vibe-writing/document/building/creating
   - proof-writing/reading: 支持添加额外的元数据，交互实现上可隐藏或末尾文献
+  - pic2text/port2text/rewashed pdf: 将文本作为元数据或附件嵌入扫描版pdf
 
 - willing-to-sponsor ❤️
   - 📌 obsidian-bases

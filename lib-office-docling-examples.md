@@ -372,11 +372,6 @@ modified: 2025-09-21T13:58:46.548Z
   - 🤔 支持大佬，只能是曲线吗？其他类型的图表能识别吗
     - 目前只做了2D曲线，后面考虑考虑做更多类型的数据图
 
-- https://github.com/ispras/dedoc /apache2/202512/python
-  - converting documents to a unified output format. It extracts a document’s logical structure and content: tables, text formatting and metadata. 
-  - The document’s content is represented as a tree storing headings and lists of any level. 
-  - Dedoc can be integrated in a document contents and structure analysis system as a separate module.
-
 - https://github.com/whyhow-ai/knowledge-table /MIT/202411/python/ts/inactive
   - open-source package designed to simplify extracting and exploring structured data from unstructured documents. 
   - It enables the creation of structured knowledge representations, such as tables and graphs, using a natural language query interface. 

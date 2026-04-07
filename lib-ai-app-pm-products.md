@@ -252,7 +252,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 对同一场景, 如翻译/ocr, 针对不同模型内置合理的参数且支持配置
     - pdf: ocr(提取table/chart), editing(proof/布局), rag(citation)
     - pm: llamaparse-extract, cowork(docx-xml/databases/ilovepdf), notebooklm
-    - later: GPU硬件(ai难取代), Image, Audio, 翻译, 多维表格, pretext-edit
+    - later: GPU硬件(ai难取代), Image, Audio, TableAI, 翻译, 多维表格, pretext-edit
     - roadmap: 
       - agentic场景优化: ocr-vlm/pipeline, translation
       - citation, backlinks: 提升rag的准确度, 优化搜索结果中的code/text/image
@@ -697,6 +697,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [『高级推广』『君の公益』Claude渠道恢复  ](https://linux.do/t/topic/1853293)
     - 仅支持Claude Code
     - [「慕鸢の公益站」](https://newapi.linuxdo.edu.rs/console/personal)
+    - [星辰·AI ](https://ai.centos.hk/pricing), 无签到， 支持对公转账和发票
   - 📌 [Any Router](https://anyrouter.top/), 每日签到获取$25
     - 仅支持coding工具，不支持使用api聊天
     - 本站直接接入官方 Claude Code 转发，无法转发非 Claude Code 的 API 流量
@@ -865,7 +866,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 随便刷吧，可能刷崩了，我就关站了
     - cc, opus 是cursor2api的 sonnet4.6
     - [真好记公益站 ](https://linux.do/t/topic/1795254)
-  - [api-test](https://openai.api-test.us.ci/console/personal)
+  - [api-test](new-api.publicvm.com/console/personal)
+    - https://openai.api-test.us.ci  /legacy
     - [LDC Virtual Goods Shop](https://shop.api-test.us.ci/)
     - https://cdk.api-test.us.ci/
     - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex

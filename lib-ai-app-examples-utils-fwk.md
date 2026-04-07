@@ -680,6 +680,11 @@ modified: 2025-02-21T18:20:42.624Z
     - You define one or more providers (Drizzle/Kysely/Objection/custom). 
     - Providers expose normalized entities that represent physical sources. You build an executable logical SQL-facing schema from those entities.
     - tupl plans query fragments across providers and local logical operators.
+  - https://x.com/andrewingram/status/2041468129797198268
+    - I played with just-bash at the start of the year, and then realised I ended up mostly just leveraging its support for sqlite, so I just went with an in-memory sqlite db. Then I realised this wouldn't scale to larger datasets, so I made tupl
+    - I don't know if SQL-based tools will have better longevity than bash-based ones, but it _is_ only a small transform away from relational algebra -- so if the goal is that agents can extract stored data as efficiently as possible, it _might_ be directionally correct.
+  - Curious what the persistence model looks like.
+    - There isn't really one, somewhat by design. I'm a mild proponent of CQRS, so I do think reads should be thought about a bit differently to writes. tupl primarily focuses on solving reads. It's basically GraphQL but with a SQL interface rather than GraphQL queries.
 
 - https://github.com/openrundev/openrun /808Star/apache2/202603/go
   - https://openrun.dev/

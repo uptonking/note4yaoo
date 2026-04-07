@@ -28,6 +28,11 @@ modified: 2026-02-20T17:36:40.796Z
 - https://x.com/threepointone/status/2040720964451754464
   - this is simply evolution. the next step; the sections right under the chat box will become contextual/smarter about their suggestions, based on the user/org. 
 
+- https://x.com/rabi_guha/status/2041547036529709191
+  - Replacing dashboards with a chatbar was step one
+  - Here's what step two could look like
+  - 给每个组件都加上了chat输入框，特别是图表
+
 - ## 🔀 非常有意思的人 & agent 协作 UX 探索！但如果为了实时看见 agent 改动而「实时更新磁盘版本」，会有两个问题：
 - https://x.com/ewind_dev/status/2038275182180315379
   - 1. 人未保存的改动随时可能被 agent 覆盖，且现在是全量覆盖

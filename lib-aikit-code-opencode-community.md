@@ -60,7 +60,33 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## opencode server now can run under nodejs as we're no longer using any bun specific apis
+- https://x.com/thdxr/status/2041330695822279077
+  - we're working on a larger refactor now of its internals as we work towards a 2.0
+  - nothing wrong with bun but opencode runs on millions of end user devices every week
+  - hard to recreate the stability of nodejs
+- The biggest problem is the v8 api; considering that bun uses jscore, simulating v8's behavior requires a tremendous amount of effort and testing. The most obvious point is that they don't want to support `better-sqlite3` , which uses the v8 api, and instead developed `bun/sqlite` .
+  - Jarred said in an interview that the initial version (just a JS bundler) used V8. I think they later switched to JSCore for differentiation.
+
+- is bun being completely phased out? 
+  - yes it will eventually be flipped. 
+- does this mean opentui no longer has a bun:ffi dependency?
+  - being worked on
+
+- Scale always pulls you toward Node.
+
+- Bun is greasegmentation fault: core dumped
+
+- is there a roadmap or some sort of post about 2.0 features or is it way down the line and doesn't worth talking about ATM?
+  - we've started to take notes on it in `specs/v2` but not much there. will fill out over the next couple weeks
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## [desktop: multi-window support in electron _202603](https://github.com/anomalyco/opencode/pull/17155)
 

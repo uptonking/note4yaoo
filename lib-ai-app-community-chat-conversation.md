@@ -147,7 +147,7 @@ iOS 端至少有 Kelivo……（没接触过苹果，更多的就不清楚了）
 - ## 多轮问答跑了一天，目前效果很稳定，可以来解释一下是如何实现的了。
 - https://twitter.com/xicilion/status/1647408696312602624
   - 问答通常的实现，embedding -> search -> llm，连续语义在第一步就丢失了。
-  - 我的方案是在前面，**先让 ChatGPT 解释问题，返回关键词**，流程变为：explain -> embedding -> search -> llm。
+  - 我的方案是在前面， **先让 ChatGPT 解释问题，返回关键词** ，流程变为：explain -> embedding -> search -> llm。
 - 两次 llm 会不会慢了点
   - 第一次几乎不推理，很快。
 - 类似langchain conversational chain里面的CONDENSE_QUESTION_PROMPT，让llm先对用户的提问结合历史进行重新的阐述，从而提高搜索命中率
@@ -189,6 +189,17 @@ iOS 端至少有 Kelivo……（没接触过苹果，更多的就不清楚了）
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## I'm completely convinced at this point that the "Command Palette" is a fundamental UI concept, and should be in all applications. 
+- https://x.com/devongovett/status/2041378392570999200
+  - It should also be a built in browser concept, there should be an API for websites to push items to the command palette ("new post", "muted words" etc)
+- Another case of programmers making all UIs into a terminal. Command palettes are a huge UI cop-out. I hate apps that have commands that are only available in these things. Most people will never discover them. That’s why we invented menus and buttons. Design actual UI!
+
+- macOS has had this for years, and it's scriptable via AppleScript. AppleScript's use is underrated, but (no doubt) it'll become a big part of Apple's soon-to-be announced AI integration into macOS.
 
 - ## Claude交互式UI的原理分析和开源实现
 - https://x.com/Gorden_Sun/status/2032829589253447985
@@ -542,7 +553,7 @@ iOS 端至少有 Kelivo……（没接触过苹果，更多的就不清楚了）
 
 - ## Is it fair to think of LLMs as a database with a natural language query interface? Where does the database metaphor break?
 - https://twitter.com/dvassallo/status/1644914034905579526
-- The most interesting counter-argument is that LLMs seem to be practically **👀 read only**. There’s only short-term memory (so far), and no insert/update equivalent.
+- The most interesting counter-argument is that LLMs seem to be practically **👀 read only** . There’s only short-term memory (so far), and no insert/update equivalent.
   - The rest still seems to stand. There’s data, a query, and a result derived from the data and the query algorithm.
 - LLMs create data in response to queries, unlike traditional databases which simply retrieve data.
 

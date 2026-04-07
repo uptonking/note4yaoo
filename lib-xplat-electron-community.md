@@ -9,6 +9,22 @@ modified: 2023-01-02T10:30:19.459Z
 
 # guide
 
+# discuss-alternatives
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 Migrated an Electron app to be a PWA. Six months later my conclusion is: not worth it. Migrating back.
+- https://x.com/kettanaito/status/2041467464970633585
+  - PWA are truly awesome and more powerful than you think, but they lack fundamental APIs to build a meaningful app (menus, tray, dock, keybinds).
+  - This is really sad because otherwise PWA clear Electron apps by a margin (thinking offline-only apps). They are tiny, *insanely* fast, and can do pretty much anything via web workers and OPFS.
+
+- Also. You can’t trust IndexedDB. It's not reliable API. Full of bugs (all browsers). In iOS PWA it also automatically removes all IndexedDB if you didn't use the PWA for a week
+  - I strongly suspect iOS was wiping our your db because the app didn't request extended permissions. The browsers erase pretty much all temporary state, but PWAs account for that through the permissions. 
 # discuss-electron-vs-tauri/nw
 - ## 
 
