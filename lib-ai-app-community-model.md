@@ -313,7 +313,13 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## everyone is converging on the same product shape: a general harness that takes a goal, uses tools, and does knowledge work. 
+- https://x.com/essamsleiman/status/2041639638889328868
+  - once every product is a harness, the next frontier is the feedback loop that improves it after deployment.
+
+- Recursive self improvement is close in many areas. Software and other domains will just generate themselves in the fly (probably making it impossible for any human to keep up)
+  - Content Marketing is very close. Generated video / images can be weird sometimes, but sometime it hits.
+  - Sales feels like the low hanging fruit is gone (cold emails etc). But give a sales agent open claw tell it to be clever and there is still fruit
 
 - ## [autoloop — run overnight optimization experiments with your local Ollama model on anything (prompts, SQL, strategies) : r/ollama _202604](https://www.reddit.com/r/ollama/comments/1s9i09f/autoloop_run_overnight_optimization_experiments/)
   - Built a library that applies Karpathy's autoresearch loop to any optimization task, not just ML training. Works fully local with Ollama, zero API cost.

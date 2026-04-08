@@ -10,6 +10,17 @@ modified: 2022-08-18T16:57:29.058Z
 # guide
 
 # popular
+- https://github.com/superdoc-dev/superdoc /AGPL/202604/ts
+  - https://superdoc.dev/
+  - Renders, edits, and automates .docx files in the browser, headless on the server, and within AI agent workflows.
+  - Works with React, Vue, and vanilla JS.
+  - Built on ProseMirror, Yjs, JSZip, and Vite.
+  - Real DOCX, not rich text — Built on OOXML. Real pagination, section breaks, headers/footers. Not a contenteditable wrapper with export bolted on.
+  - Runs entirely in the browser. 
+  - collaboration — Yjs-based CRDT. Multiplayer editing with comments, tracked changes
+  - Agentic tooling — Runs headless in Node.js. Bring your own LLM for document automation, redlining, and template workflows.
+  - Dual licensed — AGPLv3 for community use. Commercial license for proprietary deployments.
+
 - https://github.com/mizuka-wu/prose-typed /202505/ts
   - https://mizuka-wu.github.io/prose-typed/
   - ProseTyped is a streaming text animation library for ProseMirror editors, leveraging the prosemirror-model to create typewriter effects

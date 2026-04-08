@@ -181,6 +181,23 @@ modified: 2025-02-21T17:17:42.225Z
   - Operating System for your personal AI Agents with Security-first approach. 
   - Multi-channel (WhatsApp, Telegram, Discord, Slack, iMessage), multi-provider (Claude, GPT, Gemini, Ollama), fully self-hosted.
 
+- https://github.com/agi-hub/AGIAgent /apache2/202604/python
+  - https://agiagentonline.com/
+  - 支持 Vibe Doc、Vibe Coding 和自然语言通用任务执行的智能体平台，也是一个图文文档交互式创作平台
+  - 通过直观的 GUI，AGI Agent 能够与您携手完成内容的深度加工——更换图片、编辑文字、实时修改 SVG 矢量图与 Mermaid 流程图，乃至边写边运行 HTML 小程序，让每一次创作都所见即所得
+  - 平台内置 40+ 工具，提供 GUI、CLI 及嵌入式运行等多种模式，
+  - 全面支持 Anthropic/OpenAI 大模型接口及开源/私有化部署。
+  - AGI Agent 主要用于生产力任务，如写专业文档、编写程序、整理数据等，并提供了强大的文档/图像编辑能力，包括图文文档的 Word/PDF 无损直接导出、网页小程序直接执行等；
+  - 强化中文处理：对 Mermaid、SVG 图像等环节的中文进行了优化，生成的图像中文显示效果出众，界面支持中/英文切换；
+  - 适配了多数国产大模型，支持各类大模型接口（streaming/non-streaming、tool-call/message、OpenAI/Claude）
+  - 完全可本地化：无需依赖云服务
+  - 100% 开源：提供完整的源代码，实现透明度、可定制性
+  - 无需 Claude Code 作为底层：从零开始构建的独立架构
+  - AGIAgent 采用 Manager + 多子 Agent 的协作架构：Manager（老板）负责发起并管理多个子 Agent（如码工、具身机器人、艺术工作者等），每个子 Agent 在独立线程中运行，可独立完成任务，也可相互协作或竞争。
+  - 遵循 Plan → Act → Observe → Reflect 循环，大模型在每轮中调用工具并接收反馈，支持多轮迭代优化（默认 50 轮）。内置渐进式历史压缩机制，突破上下文长度限制，实现真正的长程任务执行。
+  - 双层记忆架构: 短期、长期
+  - 支持外部的 skill 文件
+
 - https://github.com/cortask/cortask /MIT/202603/ts
   - https://www.cortask.com/
   - a self-hosted AI orchestration platform

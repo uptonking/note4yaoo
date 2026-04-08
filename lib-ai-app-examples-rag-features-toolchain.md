@@ -118,13 +118,19 @@ modified: 2026-04-07T12:33:48.087Z
     - GitNexus is a client-side knowledge graph creator that runs entirely in your browser. 
     - Drop in a GitHub repo or ZIP file, and get an interactive knowledge graph wit a built in Graph RAG Agent. Perfect for code exploration
     - Zero-Server, Graph-Based Code Intelligence Engine Works fully in-browser through WebAssembly. (DB engine, Embeddings model, AST parsing, all happens inside browser)
- chunking
+# chunking
 - https://github.com/MichalZnalezniak/Chunking-Vis /MIT/202601/python
   - https://chunkingvis-production.up.railway.app/
   - A tool for visualizing different text-chunking methods.
   - Chunking Methods
   - [Built a tool for visualizing text chunking strategies : r/Rag](https://www.reddit.com/r/Rag/comments/1qnplpb/built_a_tool_for_visualizing_text_chunking/)
     - https://chunkviz.up.railway.app/
+
+- https://github.com/ai-agents-buzz/rag-chunking-playground /MIT/202603/html
+  - https://aiagentsbuzz.com/tools/rag-chunking-playground/
+  - [Built a RAG chunking playground — paste any document, see how different chunking strategies get split : r/Rag _202604](https://www.reddit.com/r/Rag/comments/1sffdpn/built_a_rag_chunking_playground_paste_any/)
+    - Compare 6 chunking strategies side by side
+    - Test retrieval with a query to see what each strategy returns (BM25)
 
 - https://github.com/lumina-ai-inc/chunkr /AGPLv3/202410/python/ts/rust
   - https://chunkr.ai/

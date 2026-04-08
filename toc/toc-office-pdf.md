@@ -247,11 +247,138 @@ modified: 2021-01-04T17:26:43.784Z
   - [My free, open-source PDF Editor is ready. Edit, sign, and merge PDFs without paying a dime. : r/macapps _202508](https://www.reddit.com/r/macapps/comments/1miyrty/my_free_opensource_pdf_editor_is_ready_edit_sign/)
     - Can it edit text? That’s the one feature I’m missing from preview.
     - There is no function to change text within PDF yet, but there is a function to add text separately
+# pdf-apps/tools
+- https://github.com/Stirling-Tools/Stirling-PDF /20.4kStar/GPL > MIT/202403/java/js
+  - https://www.pdfdrills.com/
+  - locally hosted web application that allows you to perform various operations on PDF files
+  - locally hosted web based PDF manipulation tool using docker that allows you to perform various operations on PDF files
+  - 依赖 Spring Boot + Thymeleaf、pdfbox、itext7、libreoffice转换格式、ocrMyPdf
+  - 除了能给PDF打水印之外，还可以轻松批量给扫描的PDF文件瘦身，1秒钟搞定，太好用了
+  - [New Browser-based PDF Editor (github link) : selfhosted](https://www.reddit.com/r/selfhosted/comments/10pexhn/new_browserbased_pdf_editor_github_link/)
+  - https://twitter.com/dotey/status/1739426777091408207
+    - 一个本地的处理 PDF 的工具，界面是 Web UI，可以支持 Docker 部署。
+  - https://twitter.com/geekbb/status/1739627252701450251
+    - Docker 真是方便，刚刚在 NAS 上弄了一个本地 PDF 工具 ：Stirling PDF，并通过 Cloudflare Tunnels 建立连接方便自己外网访问，再也不用担心 PDF 资料泄漏的问题了
+  - [Fat VS Lite?  _202507](https://github.com/Stirling-Tools/Stirling-PDF/discussions/3940)
+    - Lite: Only Java code, no external dependencies (features that rely on them are disabled). Affected endpoints: Compress, File to PDF, Repair, etc.,
+    - Standard: Java + external dependencies (e.g., GhostScript, LibreOffice, qpdf), with this you have access to everything.
+    - Fat: Standard Java + external dependencies + a large set of fonts.
+  - [Editor needs a LOT of work _202512](https://github.com/Stirling-Tools/Stirling-PDF/discussions/5222)
+    - It messes up the fonts...puts random spaces in between words, it drops paragraphs on top of each other, and you can't scroll the whole document - you have to click on each page at the top (?) On a 300+ page book, this is impossible. The UI is horrible.
+    - we are working in it! As you mention it's not even beta but an alpha release as a concept to build on. We will get this improved! This is a top priority for us
+  - [Browser-based PDF Editor and PDF Toobox Stirling-PDF : r/selfhosted _202305](https://www.reddit.com/r/selfhosted/comments/13glhyr/browserbased_pdf_editor_and_pdf_toobox_stirlingpdf/)
+
+- https://github.com/ShashwatSricodes/PDFSlice /MIT/202603/ts
+  - https://www.pdfslice.in/
+  - Client Side PDF editor Toolkit
+  - 100% client side processing using JavaScript. 
+  - 依赖pdf-lib、PDF.js、@hyzyla/pdfcpu
+  - [I built Pdfslice - a privacy first open source pdf toolkit : r/foss _202603](https://www.reddit.com/r/foss/comments/1rtsa9l/i_built_pdfslice_a_privacy_first_open_source_pdf/)
+    - Stirling-PDF became really gross and bloated to the point of becoming unusable since its v2 launch.
+    - There is already PDF24. It too is not FOSS, but freeware, and is can be used as downloadable software that's 100% is running on the computer. 
+    - How's is it different from BentoPDF?
+      - At this point it's not different.
+    - This is a low quality vibe slopped app. How do I know? Look through the code. There are a lot of useEffects that's are used very incorrectly
+
+- https://github.com/OpenAEC-Foundation/open-pdf-studio /LGPL/202604/js/tauri
+  - open-source PDF editor and annotator for Windows, macOS, Linux, and Android.
+  - lightweight, native desktop application that provides professional-grade PDF annotation, markup, and editing tools without subscriptions, telemetry, or bloatware
+  - Built with Tauri 2 and web technologies, it delivers a fast, modern experience with a Microsoft Office-style ribbon interface.
+  - 依赖tauri2、solidjs、pdfjs、pdf-lib
+  - Text Editing: Edit existing PDF text content inline
+  - Page Management
+  - Text markup: Highlight, underline, strikethrough
+  - Text annotations: Text box, callout with leader line, sticky notes with popup editing
+  - Shapes: Rectangle, ellipse, polygon, cloud, cloud polyline, line, arrow, polyline
+  - Freehand drawing: Pen tool with configurable color, width, and opacity
+  - Stamps: 10 built-in stamps (Approved, Rejected, Draft, Confidential, Final, etc.)
+  - Redaction: Mark areas and apply to permanently remove content
+  - Export pages as PNG or JPEG 
+
+- https://github.com/anig1scur/tocify /GPL/202604/js
+  - https://tocify.aeriszhu.com/
+  - Add or edit PDF bookmarks / Table of Contents online - 快速给 PDF 添加目录 / 书签
+
+- https://github.com/kirank55/mydevicemypdf /MIT/202602/ts
+  - https://mydevicemypdf.com/
+  - Privacy-first PDF utilities that run entirely in your browser. Compress, split, merge, and more — with no uploads, no servers, and no tracking.
+  - [MyDeviceMyPdf - local and Open Source alternative to ilovepdf : r/reactjs _202602](https://www.reddit.com/r/reactjs/comments/1rdfrt7/mydevicemypdf_local_and_open_source_alternative/)
+
+- https://github.com/GSiesto/PDFLince /MIT/202603/ts
+  - https://pdflince.com/en
+  - Compress PDF, merge PDF, split documents, extract pages, and convert PDF to images or images to PDF right in your browser. No uploads, fully private, always free.
+
+- https://github.com/angelojsf/juntaPDF /MIT/202511/python/inactive
+  - 100% offline PDF processing. Secure unification, splitting, and conversion to PDF/A2B
+  - Unlike cloud-based solutions ( SaaS ), JuntaPDF performs all processing locally
+  - features: Merging, Divide/Extract, PDF/A, Audit Trail (Logs)
+
+- https://github.com/ikenai-lab/convert.gg /MIT/202512/python/ts/inactive
+  - powerful, privacy-focused desktop application designed to handle your day-to-day file manipulation
+  - Whether you're merging PDFs, compressing images, or extracting archives, everything happens securely on your own machine.
+  - PDF, image, zip
+  - Frontend: Electron, React, Vite, TypeScript, TailwindCSS
+  - Backend: Python (PySidecars): Heavy lifting is delegated to specialized Python scripts.
+  - [I built an open source desktop alternative to iLovePDF to avoid uploading private files : r/SideProject _202512](https://www.reddit.com/r/SideProject/comments/1pwzhlo/i_built_an_open_source_desktop_alternative_to/)
+
+- https://github.com/NPC-Worldwide/incognide /AGPL/202604/ts
+  - https://enpisi.com/incognide
+  - Incognide unifies chat, code, documents, web browsing, and media into a tileable workspace with intelligent context and composable automations.
+
+- ilovepdf
+  - [ArmorPDF - Free Browser-Based PDF Tools, 100% Private](https://armorpdf.com/)
+
+- https://github.com/superpilot69/pdf-trad-to-simp-preserve-layout-kit
+  - PDF traditional-to-simplified Chinese conversion kit with layout-preserving scripts, Codex skill, and example source/output PDFs.
 # pdf-editor
+- https://github.com/luke-browning/pdf-web-edit /MIT/202309/ts/c#/ng/inactive
+  - a web-based application for manipulating PDF files. 
+  - It's main purpose is to pre-process documents before they are imported into a Document Management System (DMS) such as Paperless (-ng and -ngx) or stored in a directory based structure.
+
+- https://github.com/jichang/unionpdf /MIT/202502/ts
+  - https://jichang.github.io/unionpdf/
+  - A universal pdf rendering/editing library
+  - model, engine, react
+
+- https://github.com/awesome-yasin/PDF-Verse /MIT/202312/js/ejs/inactive
+  - https://pdf-verse.vercel.app/
+  - a powerful web based PDF Editor with tools for editing, converting, and manipulating PDFs
+  - Merge, compress, add or remove pages, or extract text using OCR technology. 
+  - built with Node.js, EJS, Express.js, and `PDF-lib`, and features a user-friendly interface using jQuery and Bootstrap
+  - The Edit PDF tool is made using a combination of Bootstrap, PDF.js, Fabric.js, and Prettify.js.
+  - 依赖jimp
+
+- https://github.com/nelsonduarte/PDFApps /MIT/202604/python/PySide6
+  - PDF editor and manager for Windows, macOS and Linux — fast, offline and subscription-free.
+  - 100% offline — your files never leave your computer
+  - All-in-one — 13 tools: split, merge, compress, encrypt, OCR, convert, edit and more in a single app
+  - OCR	Recognise text in scanned PDFs: Tesseract OCR is required for text recognition
+  - Inline visual editor: redact, insert text, image, signature, highlight, notes, forms and edit existing text
+  - 依赖PySide6、PyMuPDF、pypdf、pytesseract、python-docx、Pillow
+  - 🛝
+    - 编辑ux不够自然: 先点击edit切换到编辑模式, 然后点击要编辑的文本出现弹窗，接着在弹窗中修改纯文本,确认后会展示修改diff, 然后再保存为新文件,
+    - 🐛 弹窗中的可编辑文本只包含点击那一行, 不是整个段落， 如果粘贴大段文本，也只会显示一行直到超出边界, 不会自动换行
+    - 不支持多次编辑, error: save to original must be incremental
+  - Bookmarks / TOC — clickable side panel with the PDF outline (chapters, sections)
+  - Undo/Redo 
+
+- https://github.com/ShizukuIchi/pdf-editor /1.8kStar/MIT/202403/js/inactive
+  - https://pdf-editor.now.sh/
+  - Offline PDF editor. Add images, signatures, text to PDF in your browser
+
+- https://github.com/gr2m/pdf-editor /201504/js/inactive/单文件
+  - WYSIWYG PDF-Editor, plugin-free, using pdfkit and pdf.js
+
+- https://github.com/xinglie/report-designer
+  - https://xinglie.github.io/report-designer/
+  - 打印设计、可视化、标签打印、编辑器、设计器、数据分析、报表设计、组件化、表单设计、h5页面、调查问卷、pdf生成、流程图、试卷、SVG、图形元素、物联网、标签纸
+  - https://github.com/xinglie/magix5-playground
+
 - https://github.com/BDenizKoca/Tideflow-md-to-pdf /MIT/202511/ts/tuari
   - https://bdenizkoca.studio/projects/tideflow/
   - Turn Markdown into beautiful PDFs with Tideflow instantly - offline, portable desktop app
-  - offline-first Markdown → PDF desktop app powered by Typst. Write on the left, get a beautifully typeset PDF on the right – instantly.
+  - offline-first Markdown → PDF desktop app powered by Typst. 
+  - Write on the left, get a beautifully typeset PDF on the right – instantly.
   - Typst (bundled binary) for PDF: Tideflow bundles the official Typst CLI (currently v0.13.1) for macOS, Windows, and Linux so the app works offline out of the box.
   - Zustand store (single slice: editor state, preferences, UI flags)
   - Export Formats: Primarily PDF, but also exports to PNG, SVG, and clean Markdown. No HTML export yet.
@@ -267,15 +394,6 @@ modified: 2021-01-04T17:26:43.784Z
       - No, is the short answer. The longer answer is more involved.
       - KeenWrite uses `flexmark-java` to convert Markdown into XHTML. The Tables Extension for flexmark-java supports column spans. So, technically, you could use its column span syntax to generate XHTML with colspans.
 
-- https://github.com/luke-browning/pdf-web-edit /MIT/202309/ts/c#/ng/inactive
-  - a web-based application for manipulating PDF files. 
-  - It's main purpose is to pre-process documents before they are imported into a Document Management System (DMS) such as Paperless (-ng and -ngx) or stored in a directory based structure.
-
-- https://github.com/jichang/unionpdf /MIT/202502/ts
-  - https://jichang.github.io/unionpdf/
-  - A universal pdf rendering/editing library
-  - model, engine, react
-
 - https://github.com/cosformula/mdxport /MIT/202512/ts/svelte
   - https://www.mdxport.com/
   - Markdown to PDF, Perfect Typesetting, Powered by Typst.
@@ -287,26 +405,6 @@ modified: 2021-01-04T17:26:43.784Z
   - [Built a browser-based PDF exporter using Typst + WASM (No Pandoc/LaTeX setup required) : r/ObsidianMD _202512](https://www.reddit.com/r/ObsidianMD/comments/1ppmoql/built_a_browserbased_pdf_exporter_using_typst/)
     - 100% Local (WASM): It uses the Typst engine compiled to WebAssembly. all rendering happens in your browser. No data is sent to any server
     - Better Pagination: unlike the standard HTML-to-PDF print (which Obsidian uses), Typst handles page breaks smartly. It keeps table rows together and handles footnotes/math ($E=mc2$) beautifully.
-
-- https://github.com/awesome-yasin/PDF-Verse /MIT/202312/js/ejs/inactive
-  - https://pdf-verse.vercel.app/
-  - a powerful web based PDF Editor with tools for editing, converting, and manipulating PDFs
-  - Merge, compress, add or remove pages, or extract text using OCR technology. 
-  - built with Node.js, EJS, Express.js, and `PDF-lib`, and features a user-friendly interface using jQuery and Bootstrap
-  - The Edit PDF tool is made using a combination of Bootstrap, PDF.js, Fabric.js, and Prettify.js.
-  - 依赖jimp
-
-- https://github.com/ShizukuIchi/pdf-editor /1.8kStar/MIT/202403/js/inactive
-  - https://pdf-editor.now.sh/
-  - Offline PDF editor. Add images, signatures, text to PDF in your browser
-
-- https://github.com/gr2m/pdf-editor /201504/js/inactive/单文件
-  - WYSIWYG PDF-Editor, plugin-free, using pdfkit and pdf.js
-
-- https://github.com/xinglie/report-designer
-  - https://xinglie.github.io/report-designer/
-  - 打印设计、可视化、标签打印、编辑器、设计器、数据分析、报表设计、组件化、表单设计、h5页面、调查问卷、pdf生成、流程图、试卷、SVG、图形元素、物联网、标签纸
-  - https://github.com/xinglie/magix5-playground
 
 - https://github.com/rylog/pdf-editor-electron
   - /ts
@@ -412,25 +510,12 @@ modified: 2021-01-04T17:26:43.784Z
   - It’s meant to be an alternative to PDF.js, with a focus on rendering accuracy and customizability. You can use it with a full UI out of the box, or headless for full control.
   - It’s MIT-licensed and framework-agnostic.
 
-- https://github.com/Stirling-Tools/Stirling-PDF /20.4kStar/GPL > MIT/202403/java/js
-  - https://www.pdfdrills.com/
-  - locally hosted web application that allows you to perform various operations on PDF files
-  - locally hosted web based PDF manipulation tool using docker that allows you to perform various operations on PDF files
-  - 依赖 Spring Boot + Thymeleaf、pdfbox、itext7、libreoffice转换格式、ocrMyPdf
-  - 除了能给PDF打水印之外，还可以轻松批量给扫描的PDF文件瘦身，1秒钟搞定，太好用了
-  - [New Browser-based PDF Editor (github link) : selfhosted](https://www.reddit.com/r/selfhosted/comments/10pexhn/new_browserbased_pdf_editor_github_link/)
-  - https://twitter.com/dotey/status/1739426777091408207
-    - 一个本地的处理 PDF 的工具，界面是 Web UI，可以支持 Docker 部署。
-  - https://twitter.com/geekbb/status/1739627252701450251
-    - Docker 真是方便，刚刚在 NAS 上弄了一个本地 PDF 工具 ：Stirling PDF，并通过 Cloudflare Tunnels 建立连接方便自己外网访问，再也不用担心 PDF 资料泄漏的问题了
-  - [Fat VS Lite?  _202507](https://github.com/Stirling-Tools/Stirling-PDF/discussions/3940)
-    - Lite: Only Java code, no external dependencies (features that rely on them are disabled). Affected endpoints: Compress, File to PDF, Repair, etc.,
-    - Standard: Java + external dependencies (e.g., GhostScript, LibreOffice, qpdf), with this you have access to everything.
-    - Fat: Standard Java + external dependencies + a large set of fonts.
-  - [Editor needs a LOT of work _202512](https://github.com/Stirling-Tools/Stirling-PDF/discussions/5222)
-    - It messes up the fonts...puts random spaces in between words, it drops paragraphs on top of each other, and you can't scroll the whole document - you have to click on each page at the top (?) On a 300+ page book, this is impossible. The UI is horrible.
-    - we are working in it! As you mention it's not even beta but an alpha release as a concept to build on. We will get this improved! This is a top priority for us
-  - [Browser-based PDF Editor and PDF Toobox Stirling-PDF : r/selfhosted _202305](https://www.reddit.com/r/selfhosted/comments/13glhyr/browserbased_pdf_editor_and_pdf_toobox_stirlingpdf/)
+- https://github.com/docMentis/docmentis-udoc-viewer /MIT-partOpen/202604/ts
+  - https://www.docmentis.com/
+  - https://www.docmentis.com/viewer/demo
+  - 似乎只开源了sdk
+  - 功能普通
+  - framework-agnostic viewer powered by a built-from-scratch WebAssembly engine for high-fidelity rendering across PDF, DOCX, PPTX, and images.
 
 - https://github.com/stephanrauh/ngx-extended-pdf-viewer /apache2/202604/ts
   - https://pdfviewer.net/
@@ -456,6 +541,10 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/CMOISDEAD/next-library /GPLv3/202307/js/inactive
   - Next Library is an innovative virtual library application that offers a seamless and personalized way to manage your book collection
   - Custom PDF Viewer Tool: Open and view PDF files directly within the virtual library program using a customized PDF viewer tool.
+
+- https://github.com/nextcloud/files_pdfviewer /AGPL/202604/js
+  - A PDF viewer for Nextcloud， 不能单独使用
+  - integrates the PDF.js library into Nextcloud's Viewer. You can view PDF files as well as Adobe Illustrator files (.ai)
 
 - https://github.com/PSPDFKit/pspdfkit-electron-example /JS
   - PSPDFKit for Electron Example Application

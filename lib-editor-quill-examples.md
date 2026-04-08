@@ -74,6 +74,12 @@ modified: 2023-02-09T18:32:06.240Z
   - 依赖quill-delta、lodash
   - v202210版不依赖rxjs，后面引入rxjs
 
+- https://github.com/opentiny/tiny-editor /MIT/202603/ts
+  - https://opentiny.github.io/tiny-editor
+  - 基于 Quill 2.0 的富文本编辑器，在 Quill 基础上扩展了丰富的模块和格式，功能强大、开箱即用
+  - not related to frameworks and can be used in multiple frameworks such as Vue, React, Angular, etc.
+  - Compatible with all Quill APIs, Quill ecosystem modules and formats.
+
 - https://github.com/nico-martin/markdown-editor /MIT/202403/ts
   - https://md.nico.dev/
   - a web based markdown editor that uses modern progressive web app features to provide a great, cross-platform editing experience

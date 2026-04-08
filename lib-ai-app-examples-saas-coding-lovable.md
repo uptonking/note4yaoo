@@ -10,7 +10,11 @@ modified: 2026-04-07T11:51:51.225Z
 # guide
 
 # popular
-
+- https://github.com/WyRainBow/Resume-Agent /MIT/202604/python/ts
+  - 一句话输入、生成可编辑、可导出的专业简历。
+  - 可视化编辑：左侧编辑、右侧实时预览、支持模块化调整
+  - AI 辅助优化：支持分模块导入、改写、润色和内容增强
+  - 高质量导出：基于 LaTeX 生成专业 PDF、支持中英文渲染
 # ai-designer/lovable
 - https://github.com/Amery2010/open-builder /GPL/202603/ts
   - https://builder.u14.app/

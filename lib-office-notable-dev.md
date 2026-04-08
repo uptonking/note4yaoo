@@ -41,11 +41,12 @@ modified: 2024-01-29T23:05:26.855Z
     - 因为文章内容较长时，对于随页面滚动的toc会滚动到页面顶部然后消失
 - themeable markdown editor and viewer  
   - optimized table editor and viewer 
-
-- draft
+# draft
+- roadmap
   - inline preview: 边书写边预览，会隐藏实际文本，只预览部分内联元素
   - video/audio
   - paste html into md
+  - make frontmatter optional: 标题默认用文件名， 时间默认用文件更新时间
 
 - format
   - 一级标题的相互替换，如 `## 标题名` 与 `标题名 ---`

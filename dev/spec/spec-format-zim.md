@@ -54,7 +54,7 @@ modified: 2023-07-05T10:22:57.942Z
 
 - ZIM文件格式是一种自由档案格式，用于存储 Wiki 内容，以便离线浏览。
   - 它主要用于维基百科和其它维基百科项目。
-  - 这种格式**允许压缩文章，支持全文搜索索引以及本地分类和图像管理**，类似 MediaWiki。
+  - 这种格式 **允许压缩文章，支持全文搜索索引以及本地分类和图像管理** ，类似 MediaWiki。
   - 和原始的 Wikipedia XML 维基百科: 数据库下载 不同，整个文件可以容易的索引，并且可以被类似Kiwix的程序读取。
   - 维基百科在2012年一月的镜像大概有三百八十万篇不含图片的文章，有 7.5 GiB，对应的 ZIM 文件有 9.7 GiB（大约30%的额外开销）。
   - 除了自由文件格式，openZIM 项目还提供一个开源的 ZIM 阅读器。
@@ -92,7 +92,7 @@ modified: 2023-07-05T10:22:57.942Z
   - Readers allowing to read an embedded archive must adapt offset accordingly.
 - The MIME type list always follows directly after the header, so the mimeListPos also defines the end and size of the ZIM file header.
 
-- **The current major version is `6`**. 
+- **The current major version is `6`** . 
   - You may found old zim archives with major version 5. 
   - They are the same than 6 less extended cluster, so you can read a 5 major version as if it was a 6.
 
@@ -125,6 +125,9 @@ modified: 2023-07-05T10:22:57.942Z
   - [Zimi – ZIM file access for AI agents and humans (UI, API, more...) : r/Kiwix _202602](https://www.reddit.com/r/Kiwix/comments/1r4f6vv/zimi_zim_file_access_for_ai_agents_and_humans_ui/)
     - I tried to use Claude Code to access my ZIM files and realized there's no great way to do that, so I built one.
     - It runs locally or in Docker and can be used via API, CLI, MCP, or a web UI in the browser.
+# resources
+- [StreetZim — Offline Maps for Kiwix ](https://streetzim.web.app/)
+  - [Streetzim - offline map ZIMs : r/Kiwix _202604](https://www.reddit.com/r/Kiwix/comments/1sfdzf7/streetzim_offline_map_zims/)
 # more
 
 # discuss-features

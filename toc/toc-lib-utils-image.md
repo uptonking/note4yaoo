@@ -508,54 +508,24 @@ modified: 2023-04-04T22:39:45.442Z
   - cimbar is a high-density 2D barcode format. Data is stored in a grid of colored tiles
   - 一般二维码只能容纳 2.9KB 的数据，用来放超链接和文本足够了。libcimbar 开发了一个特殊的压缩和解压算法。可以把小于 33MB 的文件直接压缩到特殊的二维码里，用他们提供的 App 扫码解压即可得到文件。
 # image-ai 👾
-- https://github.com/Tansuo2021/gemini-3-pro-image-preview /MIT/202601/js
-  - https://tansuo2021.github.io/gemini-3-pro-image-preview/
-  - 基于 Google Gemini 3 Pro 模型的现代化图像生成工作台
-  - [【开源】并发自定义多渠道的gemini-3-pro-image-preview超强生图工具 _202511](https://linux.do/t/topic/1222546)
+- https://github.com/ultrathink-art/agentbrush /MIT/202603/python
+  - Image editing toolkit for AI agents. Agent Skills compatible.
+  - Background removal, compositing, text rendering, resizing, format conversion, and spec validation.
 
-- https://github.com/Hi5v/UnderlayX /AGPL > closrc/202510/ts/inactive
-  - https://www.underlayx.com/
-  - UnderlayX is a creative image editing tool that lets you clone objects, change or remove backgrounds, and place text or shapes behind objects in an image, all in one place.
-  - It uses https://github.com/imgly/background-removal-js for background removal.
-  - [Built an all-in-one creative image editing tool—after thousands of visits and requests for the code, I made it open-source! : r/webdev _202501](https://www.reddit.com/r/webdev/comments/1i1aoxn/built_an_allinone_creative_image_editing/)
-  - 🍴 forks
-  - https://github.com/bytexposure/UnderlayX
-
-- https://github.com/LuqP2/Image-MetaHub /153Star/MPL/202512/ts
-  - https://imagemetahub.com/
-  - A desktop application for browsing, searching, and organizing AI-generated images locally. 
-  - It scans your folders, parses metadata from popular tools (Automatic1111, ComfyUI, Fooocus, SD. Next, Forge, SwarmUI, DrawThings) and online services like Midjourney / Nijijourney, whenever their metadata is present in the files. and lets you search, filter and organize your images by prompt, model, sampler, seed and more – all offline, on your machine.
-  - Rich metadata parsing for Stable Diffusion / A1111 / ComfyUI and other tools
-  - Powerful search & filters by prompt text, model, steps, CFG, sampler, seed, etc.
-  - Compare tools to inspect variations side‑by‑side (Pro)
-  - Analytics dashboard to see how you actually generate and use your models (Pro)
-  - The core app is free and open‑source (MPL 2.0) – this repository.
-  - Some advanced workflow features are Pro and require a license key to unlock in the desktop app.
-  - Pro currently unlocks:
-    - Automatic1111 integration (send prompts/settings back and forth)
-
-- https://github.com/upscayl/upscayl /39.3kStar/AGPLv3/202508/ts
-  - https://upscayl.org/
-  - Upscayl lets you enlarge and enhance low-resolution images using advanced AI algorithms. Enlarge images without losing quality
-  - You'll need a Vulkan compatible GPU (Graphics Card) to upscale images. Many iGPUs (integrated graphics) do not work but, no harm in trying
-    - NCNN Vulkan requires a Vulkan-compatible GPU. Upscayl won't work with most iGPUs or CPUs.
-    - @Wyrdgirn has contributed a workaround for Windows and Linux 
-  - Upscayl uses AI models to enhance your images by guessing what the details could be. 
-    - It uses Real-ESRGAN and Vulkan architecture to achieve this. 
-    - Our backend is fully open-source under the AGPLv3 license.
-  - https://github.com/upscayl/upscayl-ncnn /AGPL/202507/cpp/c/backend
-
-- https://github.com/karant-dev/AutoRedact /GPL/202512/ts
-  - Client-side, privacy-first image redaction tool. No server, no data leaks
-  - Automatically detects and blurs PII (Emails, IPs, Keys) using local OCR. 
-  - Tech Stack: React, Vite, Tesseract.js v6.
-
-- https://github.com/Sanster/IOPaint /22.6kStar/apache2/202504/python/ts/inactive
-  - https://www.iopaint.com/
-  - A free and open-source inpainting & outpainting tool powered by SOTA AI model.
-  - fully self-hosted, support CPU & GPU & Apple Silicon
-  - FileManager: Browse your pictures conveniently and save them directly to the output directory.
-  - https://huggingface.co/spaces/Sanster/iopaint-lama
+- https://github.com/BarathwajAnandan/EasyEdit /MIT/202502/python/inactive
+  - https://easyedit-bhl5hydyqiozrmfqjy3ict.streamlit.app/
+  - an interactive image processing and analysis platform that lets you edit images using natural language. 
+  - Built with Python, it combines Streamlit's user interface with OpenCV and NumPy for image manipulation, powered by AI agents that understand your intent and execute the appropriate operations.
+  - Image Editing: Resize, blur, draw shapes, add text, and more
+  - Image Analysis: Get dimensions, pixel values, and other properties
+  - AI agents translate your requests into precise OpenCV/NumPy operations
+  - Easy EdIT uses a pipeline of specialized AI agents to: 
+    - Parse your natural language query 
+    - Determine the appropriate image processing operations 
+    - Execute the operations using OpenCV/NumPy 
+    - Provide human-friendly feedback
+  - Version control system for your edits (similar to git)
+  - [I made an LLM/ AI app to make image editing stupidly simple—check out EasyEdit - Do basic edits by describing what you want in English! : r/SideProject _202502](https://www.reddit.com/r/SideProject/comments/1iha4vy/i_made_an_llm_ai_app_to_make_image_editing/)
 
 - https://github.com/chunxiuxiamo/ai-image-edit /95Star/202601/js
   - AI图片生成编辑网站，可以框选图片局部区域进行编辑修改。
@@ -569,7 +539,70 @@ modified: 2023-04-04T22:39:45.442Z
     - 模型需要支持通用的OpenAI API格式 我测试gpt-image是可以的
     - 复刻了lovart的核心功能啊，大佬牛逼
     - 新增支持gemini官方API渠道 但是我没有官方api key测试不了 你拉下代码看看有没有问题
-    - 可以用cliproxyapi反代antigravity，有pro的话使用gemini api格式，每五小时可以生成20张nano banana pro4K图
+
+- https://github.com/josefdc/ImageAgent /MIT/202506/python/inactive
+  - AI-powered image editor with LangGraph
+  - Edit photos using natural language commands through an intelligent conversational interface. 
+  - This application combines a standard Streamlit image editor with a conversational AI assistant powered by LangGraph. 
+  - Features both traditional manual controls and an AI assistant that understands complex editing requests.
+  - The agent understands your requests and uses the editor's functions (like brightness, contrast, filters) as tools to modify the image.
+  - Core Libraries: streamlit, pillow>=9.5.0, numpy, matplotlib, opencv-python>=4.7.0.
+  - An OpenAI API Key is required for the AI Assistant.
+  - Operations: Zoom/Crop, Binarization, Negative (Invert), RGB Channel Selection, Highlight Light/Dark Areas.
+
+- https://github.com/hanifsyarubany/Zero-shot-Agentic-AI-Image-Editing-App /202509/python
+  - Zero-shot AI image editing pipeline combining multimodal LLM reasoning, VisionReasoner-7B, SAM-2 segmentation, SDXL inpainting, ObjectClear, Add-it, CatVTON, etc.
+  - Planner and Router: Composes multistep jobs from a single query, selects and orders tools.
+  - Editing Engines:
+    - SDXL Inpaint / IP-SDXL for reference-driven edits
+    - PrefPaint (SDXL-based) for human-aligned inpainting
+    - ObjectClear for clean removals and background fill
+  - [Agentic AI Image Editor: Building a Multi-Turn, Multi-Agent Image Editing Stack _202509](https://ai.plainenglish.io/agentic-ai-image-editor-building-a-multi-turn-multi-agent-image-editing-stack-c439b167a3a5)
+
+- https://github.com/yctimlin/mcp_excalidraw /MIT/202603/ts
+  - Run a live Excalidraw canvas and control it from AI agents.
+  - AI agent creates a complete architecture diagram from a single prompt
+  - Excalidraw now has an official MCP — it's great for quick, prompt-to-diagram generation rendered inline in chat. We solve a different problem.
+    - Official Excalidraw MCP: Prompt in, diagram out (one-shot)
+    - This Project: Programmatic element-level control (26 tools), CRUD per element
+
+- https://github.com/Hi5v/UnderlayX /AGPL > closrc/202510/ts/inactive
+  - https://www.underlayx.com/
+  - UnderlayX is a creative image editing tool that lets you clone objects, change or remove backgrounds, and place text or shapes behind objects in an image, all in one place.
+  - It uses https://github.com/imgly/background-removal-js for background removal.
+  - [Built an all-in-one creative image editing tool—after thousands of visits and requests for the code, I made it open-source! : r/webdev _202501](https://www.reddit.com/r/webdev/comments/1i1aoxn/built_an_allinone_creative_image_editing/)
+  - 🍴 forks
+  - https://github.com/bytexposure/UnderlayX
+
+- https://github.com/karant-dev/AutoRedact /GPL/202512/ts
+  - Client-side, privacy-first image redaction tool. No server, no data leaks
+  - Automatically detects and blurs PII (Emails, IPs, Keys) using local OCR. 
+  - Tech Stack: React, Vite, Tesseract.js v6.
+
+- https://github.com/Sanster/IOPaint /22.6kStar/apache2/202504/python/ts/inactive
+  - https://www.iopaint.com/
+  - A free and open-source inpainting & outpainting tool powered by SOTA AI model.
+  - fully self-hosted, support CPU & GPU & Apple Silicon
+  - FileManager: Browse your pictures conveniently and save them directly to the output directory.
+  - https://huggingface.co/spaces/Sanster/iopaint-lama
+
+## img-gen
+
+- https://github.com/Tansuo2021/gemini-3-pro-image-preview /MIT/202601/js
+  - https://tansuo2021.github.io/gemini-3-pro-image-preview/
+  - 基于 Google Gemini 3 Pro 模型的现代化图像生成工作台
+  - [【开源】并发自定义多渠道的gemini-3-pro-image-preview超强生图工具 _202511](https://linux.do/t/topic/1222546)
+
+- https://github.com/upscayl/upscayl /39.3kStar/AGPLv3/202508/ts
+  - https://upscayl.org/
+  - Upscayl lets you enlarge and enhance low-resolution images using advanced AI algorithms. Enlarge images without losing quality
+  - You'll need a Vulkan compatible GPU (Graphics Card) to upscale images. Many iGPUs (integrated graphics) do not work but, no harm in trying
+    - NCNN Vulkan requires a Vulkan-compatible GPU. Upscayl won't work with most iGPUs or CPUs.
+    - @Wyrdgirn has contributed a workaround for Windows and Linux 
+  - Upscayl uses AI models to enhance your images by guessing what the details could be. 
+    - It uses Real-ESRGAN and Vulkan architecture to achieve this. 
+    - Our backend is fully open-source under the AGPLv3 license.
+  - https://github.com/upscayl/upscayl-ncnn /AGPL/202507/cpp/c/backend
 
 - https://github.com/markfulton/NanoBananaEditor /521Star/AGPL/202509/ts/inactive
   - https://nanobananaeditor.dev/
@@ -600,20 +633,18 @@ modified: 2023-04-04T22:39:45.442Z
   - 无论是去除水印、修改细节、批量编辑，还是通过局部框选绕过 AI 模型的安全过滤实现漫画翻译，这个工具都能轻松胜任。
   - [开源一个可以用banana pro翻译涩图的项目 _202601](https://linux.do/t/topic/1510546)
 
-- https://github.com/BarathwajAnandan/EasyEdit /MIT/202502/python/inactive
-  - https://easyedit-bhl5hydyqiozrmfqjy3ict.streamlit.app/
-  - an interactive image processing and analysis platform that lets you edit images using natural language. 
-  - Built with Python, it combines Streamlit's user interface with OpenCV and NumPy for image manipulation, powered by AI agents that understand your intent and execute the appropriate operations.
-  - Image Editing: Resize, blur, draw shapes, add text, and more
-  - Image Analysis: Get dimensions, pixel values, and other properties
-  - AI agents translate your requests into precise OpenCV/NumPy operations
-  - Easy EdIT uses a pipeline of specialized AI agents to: 
-    - Parse your natural language query 
-    - Determine the appropriate image processing operations 
-    - Execute the operations using OpenCV/NumPy 
-    - Provide human-friendly feedback
-  - Version control system for your edits (similar to git)
-  - [I made an LLM/ AI app to make image editing stupidly simple—check out EasyEdit - Do basic edits by describing what you want in English! : r/SideProject _202502](https://www.reddit.com/r/SideProject/comments/1iha4vy/i_made_an_llm_ai_app_to_make_image_editing/)
+- https://github.com/LuqP2/Image-MetaHub /153Star/MPL/202512/ts
+  - https://imagemetahub.com/
+  - A desktop application for browsing, searching, and organizing AI-generated images locally. 
+  - It scans your folders, parses metadata from popular tools (Automatic1111, ComfyUI, Fooocus, SD. Next, Forge, SwarmUI, DrawThings) and online services like Midjourney / Nijijourney, whenever their metadata is present in the files. and lets you search, filter and organize your images by prompt, model, sampler, seed and more – all offline, on your machine.
+  - Rich metadata parsing for Stable Diffusion / A1111 / ComfyUI and other tools
+  - Powerful search & filters by prompt text, model, steps, CFG, sampler, seed, etc.
+  - Compare tools to inspect variations side‑by‑side (Pro)
+  - Analytics dashboard to see how you actually generate and use your models (Pro)
+  - The core app is free and open‑source (MPL 2.0) – this repository.
+  - Some advanced workflow features are Pro and require a license key to unlock in the desktop app.
+  - Pro currently unlocks:
+    - Automatic1111 integration (send prompts/settings back and forth)
 # more
 - https://github.com/ascorbic/unpic-img
   - This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. 

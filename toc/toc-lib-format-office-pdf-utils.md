@@ -75,6 +75,12 @@ modified: 2022-11-11T10:46:41.519Z
     - When you convert Word to PDF, it calls LibreOffice in headless mode.
   - [refactor: move modules under app/ directory and update file paths _202507](https://github.com/Stirling-Tools/Stirling-PDF/pull/3938)
 
+- https://github.com/shockz09/noupload /MIT/202604/ts
+  - https://www.noupload.xyz/
+  - Privacy-first PDF, image, audio & QR tools — everything runs in your browser, nothing gets uploaded
+  - privacy-first alternative to ilovepdf
+  - `@bentopdf/gs-wasm`—a polished npm package that wraps Ghostscript WASM nicely. Tried it out, and it worked amazingly well.
+
 - https://github.com/PDFCraftTool/pdfcraft /3.8kStar/AGPL/202604/ts
   - https://pdfcraft.devtoolcafe.com/
   - privacy-focused PDF toolkit that runs entirely in your browser. 
@@ -109,62 +115,6 @@ modified: 2022-11-11T10:46:41.519Z
   - Tabula is a tool for liberating data tables trapped inside PDF files
   - Tabula only works on text-based PDFs, not scanned documents
   - Tabula allows you to extract that data in CSV format, through a simple web interface.
-# pdf-tools/apps
-- https://github.com/ShashwatSricodes/PDFSlice /MIT/202603/ts
-  - https://www.pdfslice.in/
-  - Client Side PDF editor Toolkit
-  - 100% client side processing using JavaScript. 
-  - 依赖pdf-lib、PDF.js、@hyzyla/pdfcpu
-  - [I built Pdfslice - a privacy first open source pdf toolkit : r/foss _202603](https://www.reddit.com/r/foss/comments/1rtsa9l/i_built_pdfslice_a_privacy_first_open_source_pdf/)
-    - Stirling-PDF became really gross and bloated to the point of becoming unusable since its v2 launch.
-    - There is already PDF24. It too is not FOSS, but freeware, and is can be used as downloadable software that's 100% is running on the computer. 
-    - How's is it different from BentoPDF?
-      - At this point it's not different.
-    - This is a low quality vibe slopped app. How do I know? Look through the code. There are a lot of useEffects that's are used very incorrectly
-
-- https://github.com/OpenAEC-Foundation/open-pdf-studio /LGPL/202604/js/tauri
-  - open-source PDF editor and annotator for Windows, macOS, Linux, and Android.
-  - lightweight, native desktop application that provides professional-grade PDF annotation, markup, and editing tools without subscriptions, telemetry, or bloatware
-  - Built with Tauri 2 and web technologies, it delivers a fast, modern experience with a Microsoft Office-style ribbon interface.
-  - 依赖tauri2、solidjs、pdfjs、pdf-lib
-  - Text Editing: Edit existing PDF text content inline
-  - Page Management
-  - Text markup: Highlight, underline, strikethrough
-  - Text annotations: Text box, callout with leader line, sticky notes with popup editing
-  - Shapes: Rectangle, ellipse, polygon, cloud, cloud polyline, line, arrow, polyline
-  - Freehand drawing: Pen tool with configurable color, width, and opacity
-  - Stamps: 10 built-in stamps (Approved, Rejected, Draft, Confidential, Final, etc.)
-  - Redaction: Mark areas and apply to permanently remove content
-  - Export pages as PNG or JPEG 
-
-- https://github.com/kirank55/mydevicemypdf /MIT/202602/ts
-  - https://mydevicemypdf.com/
-  - Privacy-first PDF utilities that run entirely in your browser. Compress, split, merge, and more — with no uploads, no servers, and no tracking.
-  - [MyDeviceMyPdf - local and Open Source alternative to ilovepdf : r/reactjs _202602](https://www.reddit.com/r/reactjs/comments/1rdfrt7/mydevicemypdf_local_and_open_source_alternative/)
-
-- https://github.com/GSiesto/PDFLince /MIT/202603/ts
-  - https://pdflince.com/en
-  - Compress PDF, merge PDF, split documents, extract pages, and convert PDF to images or images to PDF right in your browser. No uploads, fully private, always free.
-
-- https://github.com/angelojsf/juntaPDF /MIT/202511/python/inactive
-  - 100% offline PDF processing. Secure unification, splitting, and conversion to PDF/A2B
-  - Unlike cloud-based solutions ( SaaS ), JuntaPDF performs all processing locally
-  - features: Merging, Divide/Extract, PDF/A, Audit Trail (Logs)
-
-- https://github.com/ikenai-lab/convert.gg /MIT/202512/python/ts/inactive
-  - powerful, privacy-focused desktop application designed to handle your day-to-day file manipulation
-  - Whether you're merging PDFs, compressing images, or extracting archives, everything happens securely on your own machine.
-  - PDF, image, zip
-  - Frontend: Electron, React, Vite, TypeScript, TailwindCSS
-  - Backend: Python (PySidecars): Heavy lifting is delegated to specialized Python scripts.
-  - [I built an open source desktop alternative to iLovePDF to avoid uploading private files : r/SideProject _202512](https://www.reddit.com/r/SideProject/comments/1pwzhlo/i_built_an_open_source_desktop_alternative_to/)
-
-- https://github.com/NPC-Worldwide/incognide /AGPL/202604/ts
-  - https://enpisi.com/incognide
-  - Incognide unifies chat, code, documents, web browsing, and media into a tileable workspace with intelligent context and composable automations.
-
-- ilovepdf
-  - [ArmorPDF - Free Browser-Based PDF Tools, 100% Private](https://armorpdf.com/)
 # examples
 - https://github.com/xitanggg/open-resume /AGPLv3/202308/ts
   - https://open-resume.com/
@@ -411,6 +361,13 @@ modified: 2022-11-11T10:46:41.519Z
   - OFD 解析	ofd.js（自定义实现）
   - 国密算法	sm-crypto（SM2/SM3/SM4）、jsrsasign
   - 文件处理	JSZip、file-saver
+
+- https://github.com/dichovsky/pdf-to-png-converter /MIT/202604/ts
+  - Node.js library for converting PDF files and buffers to PNG images
+  - No Build-Time Compilation - Pre-built native binaries included via @napi-rs/canvas, no node-gyp or compiler toolchain required
+  - Supports parallel page processing
+  - Handle password-protected documents
+  - Lightweight - Minimal dependencies
 # utils
 - https://github.com/RussCoder/djvujs /js
   - https://djvu.js.org/

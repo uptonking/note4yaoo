@@ -1357,6 +1357,10 @@ modified: 2025-11-30T17:27:16.720Z
   - https://ai.casibase.com/
   - Open-source enterprise-level AI knowledge base and MCP (model-context-protocol)/A2A (agent-to-agent) management platform with admin UI, user management and Single-Sign-On
   - Golang + Beego + Python + Flask + MySQL
+
+- https://github.com/docsagent/docsagent /apache2/202604/ts
+  - a local-first AI documents assistant that lets you securely index and chat with thousands of desktop documents with zero cloud leakage.
+  - High-Performance Core: Powered by a native C++ engine. Experience millisecond-level retrieval even across massive document libraries.
 # chat-excel
 - https://github.com/huggingface/aisheets /1.5kStar/apache2/202510/python/ts
   - https://huggingface.co/spaces/aisheets/sheets
@@ -1420,6 +1424,10 @@ modified: 2025-11-30T17:27:16.720Z
   - A semantic search is first performed on your pdf content and the most relevant embeddings are passed to the Open AI.
   - https://github.com/tuxxon/PDFGPT /202408/inactive
     - I rebuilt it because I thought this repository was no longer being maintained.
+
+- https://github.com/sanidhyy/quill /MIT/202604/ts
+  - https://ai-quill.vercel.app/
+  - open-source software to make chatting to your PDF files easy
 # chat-workspace/notebooklm
 - https://github.com/lfnovo/open-notebook /13kStar/MIT/202512/python/ts/提交少
   - https://www.open-notebook.ai/
@@ -1809,6 +1817,11 @@ modified: 2025-11-30T17:27:16.720Z
   - AI-Powered Personalized Learning Assistant
   - Smart Knowledge Base: Upload textbooks, research papers, technical manuals, and domain-specific documents. 
   - Multi-Agent Problem Solving: Dual-loop reasoning architecture with RAG, web search, and code execution -- delivering step-by-step solutions with precise citations.
+
+- https://github.com/Joy-Marchattiwar/AI-NoteMaker /202604/python/ts
+  - a full-stack web app built with Django REST Framework, Celery, and Next.js that lets users upload academic PDFs, generate AI-powered notes, and retrieve relevant content using RAG. 
+  - It's optimized for long documents, supports async processing, and runs fully containerized with Docker.
+  - Pinecone: A vector database that allows for fast and efficient retrieval of information.
 
 - https://github.com/rav4nn/youtube-rag-scraper
   - [Experiment: turning YouTube channels into RAG-ready datasets (transcripts → chunks → embeddings) : r/Rag](https://www.reddit.com/r/Rag/comments/1rm7cxi/experiment_turning_youtube_channels_into_ragready/)

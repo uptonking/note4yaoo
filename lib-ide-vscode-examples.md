@@ -160,6 +160,17 @@ modified: 2024-08-24T16:15:54.137Z
   - Fully local operation of Code Server
   - Can run without an internet connection
 # vscode-server
+- https://github.com/pithings/coderaft /MIT/202604/ts
+  - Run VS Code on any machine anywhere and access it in the browser.
+  - A redistribution of `coder/code-server` bundled into a single zero-dependency package (~25 MB). 
+  - Native modules are shimmed with better alternatives (zigpty, ripgrep-node, ...more).
+  - Fully portable across platforms and architectures, unlike `code-server` (platform-specific binaries) and `openvscode-server` (Linux only)
+  - Works everywhere Node.js runs, including minimal images like node:slim and node:alpine
+  - https://x.com/_pi0_/status/2041682533906055594
+    - A fully functional VS Code packed into a ~25MB, zero-dependency, platform-agnostic npm package.
+    - node-pty replaced with slimmer zigpty
+    - bundled ripgrep replaced with ripgrep-node (wasm)
+
 - https://github.com/coder/code-server /68.8kStar/MIT/202411/ts
   - https://coder.com/
   - Run VS Code on any machine anywhere and access it in the browser.
@@ -173,7 +184,7 @@ modified: 2024-08-24T16:15:54.137Z
     - code-server isn't a Docker image, although Docker images for code-server exist. 
     - I'd prefer code-server since Gitpod's VS Code Web Server doesn't allow me to use `sudo` command
     - since code-server is used on Coder(dev workspaces) but I don't think code-server will be dead. I think for collaborating with multiple people simultaneously, Open VS Code is best but for individuals, code-server is recommended since it has protection.
-    - ~~One little known gotcha is that OpenVSCode does not let you pre-install extensions in a non-interactive mode (e.g. during docker build to ship after security scanning for use on air-gapped servers)~~. This does not appear to be the case anymore.
+    - ~~One little known gotcha is that OpenVSCode does not let you pre-install extensions in a non-interactive mode (e.g. during docker build to ship after security scanning for use on air-gapped servers)~~ . This does not appear to be the case anymore.
   - Here is my summary of differences:
     - 🔒 code-server support auth (protect the editor with password) while OpenVSCode doesn't
     - OpenVSCode installs extensions from open-vsx, while code-server is in the process of switching to open-vsx

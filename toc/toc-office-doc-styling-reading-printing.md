@@ -85,7 +85,9 @@ modified: 2022-10-05T04:57:38.647Z
   - 古籍风格的书纸，给出了中文竖排的示例
   - a modern CSS framework with a vintage breeze of China
 
- 
+- https://github.com/hyunbinseo/print-friendly /MIT/202604/js
+  - https://hyunb.in/print-friendly
+  - CSS for paper. Style HTML for printing and PDF conversion.
 
 - https://github.com/kykungz/html-a4-paper
   - https://kykungz.github.io/html-a4-paper/

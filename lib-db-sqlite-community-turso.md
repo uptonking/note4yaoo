@@ -381,6 +381,51 @@ Today, Turso is in beta with early customers working toward production deploymen
 
 - ## 
 
+- ## 
+
+- ## Created a library that gives your @aisdk agent tools for S3 Files
+- https://x.com/tomasholtz_/status/2041906828032749608
+  - https://github.com/HoltzTomas/s3-files-ai-sdk /MIT/202604/ts
+
+- ## ✨ S3 files is a shared file system that lets you access S3 data as regular files and directories.  _202604
+- https://x.com/neural_avb/status/2041751691108987372
+  - S3 Files keeps it in sync with the linked S3 bucket automatically. Small files (<128 KB) loads super fast. This threshold can be configured.
+  - Larger files have only their metadata imported. Their data is read directly from S3 on demand.
+  - You can navigate through the files using standard fs commands like ls, grep etc. Reads are instant after the data has been synced in the high performance layer. Writes get synced back to your S3 bucket in batches.
+  - The rabbit hole goes deeper: New files become new S3 objects, edits become new object versions, deletions become S3 delete markers.
+  - You have POSIX permissions (owner, group, permission bits) - you can do chmod and chown and all that. These are stored as S3 object metadata.
+
+- "Built using Amazon **EFS** , S3 Files gives you..." - so its EFS with cold storage on S3 (or S3 with EFS write-thru cache). Neat, but nothing new. You still pay extra for the EFS part btw.
+
+- it's not a fundamentally new thing. aws has had mountpoint for s3 for YEARS. i would call aws s3 files a major upgrade though (better latency, full POSIX compat)
+  - no need to roll out our own sync layer anymore
+
+- a few footguns to watch out for:
+  - No fsync
+  - The commit window is 60s
+  - also no copy on write
+  - expensive
+
+- https://x.com/suryaoruganti/status/2041832660520349817
+  - I was very excited until I saw the pricing 
+  - $0.03/GB of reads and $0.06/GB of writes
+
+- https://x.com/skeptrune/status/2041657917708103915
+  - s3 files effectively means that you no longer need to spin up a sandbox vm to give agents access to POSIX tools
+  - you can now point arbitrarily large amounts of compute at s3 to run massively parallel agent swarms on the same filesystem
+
+- The cost structure is crazy with such a high minimum for simple operations
+
+- s3 object ops are great for fanout and coordination. But if your agent need tight read-modify-write loops on intermediate artifacts, you'll still want local scratch space
+
+- the point of a sandbox was never the filesystem lol, also you need somewhere for the agent to run lol.
+  - this replaces NFS backed filesystems with s3 backed ones, before this s3fs was garbage and unusable, now s3 is usable as a file system and we still have to validate how it handles itself on the hot path.
+
+- https://x.com/Werner/status/2041601741049749883
+- Agents navigate directory trees far better than flat object stores. RAG search depends on semantic understanding. Directory traversal is just walking a tree indexed with AGENTS.md files. Way faster, way fewer tokens. Mounting S3 as a filesystem unlocks new agentic architectures
+
+- s3 files is cool until latency spikes wreck your supposedly posix workload
+
 - ## 🤼🤔 I played with just-bash at the start of the year, and then realised I ended up mostly just leveraging its support for sqlite, so I just went with an in-memory sqlite db. 
 - https://x.com/PsudoMike/status/2041480116149092613
   - Then I realised this wouldn't scale to larger datasets, so I made https://github.com/andrewIngram/tupl 

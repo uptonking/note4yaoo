@@ -10,6 +10,17 @@ modified: 2023-01-09T11:03:32.533Z
 # guide
 
 # popular
+- https://github.com/superdoc-dev/superdoc /AGPL/202604/ts
+  - https://superdoc.dev/
+  - Renders, edits, and automates .docx files in the browser, headless on the server, and within AI agent workflows.
+  - Works with React, Vue, and vanilla JS.
+  - Built on ProseMirror, Yjs, JSZip, and Vite.
+  - Real DOCX, not rich text — Built on OOXML. Real pagination, section breaks, headers/footers. Not a contenteditable wrapper with export bolted on.
+  - Runs entirely in the browser. 
+  - collaboration — Yjs-based CRDT. Multiplayer editing with comments, tracked changes
+  - Agentic tooling — Runs headless in Node.js. Bring your own LLM for document automation, redlining, and template workflows.
+  - Dual licensed — AGPLv3 for community use. Commercial license for proprietary deployments.
+
 - https://github.com/SheetJS/js-word /apache2/202007/js
   - Parser and writer for various word processing doc formats. 
   - Pure-JS cleanroom implementation from official specifications, related documents, and test files

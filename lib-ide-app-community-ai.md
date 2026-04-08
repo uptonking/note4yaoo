@@ -155,28 +155,6 @@ modified: 2024-08-24T16:28:20.515Z
 
 - I want an LLM which uses an LSP to gather more context.
   - Aider uses Treesitter to improve code generation.
-# discuss-ai-coding-free 💰
-- ## 
-
-- ## 
-
-- ## You get 2, 000 free Qwen Code runs every day! `npx @​qwen-code/qwen-code@latest` Hit Enter, and that’s it! _20250808
-- https://x.com/Alibaba_Qwen/status/1953835877555151134
-  - 2, 000 requests per day with no token limits
-  - 60 requests per minute rate limit
-  - 2000 is for china users, 1000 for everyone else
-
-- You kind of get the same deal with Gemini cli too. Just that it's 1000 requests per day, not 2000 like Qwen. You sign up through your personal Google account, not AI Studio API keys. And all requests go to Gemini 2.5 pro, which is better than Qwen3 coder?
-  - It’s not 1000 Gemini 2.5 Pro requests per day. You only get 40-50 requests per day for 2.5 Pro and then it switches to Flash.
-- 2.5 pro is bad at tool calling though
-
-- Do you log/train/retain code written with Qwen Code free tier?  Didn’t see info on that on GitHub.
-- almost all providers that allow free usage like google gemini cli, qwen code, the horizon beta model on open router etc use the data for training.
-
-- I notice this is a Gemini-CLI fork. Is anybody else having trouble with the google_web_search tool?
-
-- Is this the full qwen coder or qwen coder flash? Big regardless but if this is for the full coder then its game over.
-  - the 480b version. full.
 # discuss-terminal-ai
 - ## 
 
@@ -488,7 +466,12 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ## 
 
-- ## 
+- ## @GitHubCopilot is now a built in extension inside VSCode _202604
+- https://x.com/OrenMe/status/2041587486539829318
+  - 1, 369, 200 LOC later and the transition from closed code repo to separate open code and now built in @code extension is done
+
+- https://x.com/_Evan_Boyle/status/2041617032916119876
+  - Copilot CLI now supports BYOK and local models
 
 - ## 现在各种编程的Vibe CLI多到程序和程序员都不够了。我列下，还来不及进行ranking。 _202510
 - https://x.com/mranti/status/1981381099889840358
@@ -632,7 +615,7 @@ modified: 2024-08-24T16:28:20.515Z
 - https://x.com/itsandrewgao/status/1786613503471829485
   - Launch Interactive mode to help Devin navigate the web. Really useful if it gets stuck on something like a CAPTCHA.
   - One of my biggest gripes with Devin was not being able to intervene and edit code. You can now do so by launching a web VSCode.
-  - Another super exciting update is Cookies which enables Devin to log in to websites for your account **without needing to give Devin your password**.
+  - Another super exciting update is Cookies which enables Devin to log in to websites for your account **without needing to give Devin your password** .
   - Machine snapshots let you save the state of Devin so when the server shuts down, you can start up again
 
 - ## 👾 [Replit's new Code LLM: Open Source, 77% smaller than Codex, trained in 1 week | Hacker News _202305](https://news.ycombinator.com/item?id=35803435)

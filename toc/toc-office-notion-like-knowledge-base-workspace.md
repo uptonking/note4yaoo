@@ -300,6 +300,17 @@ modified: 2022-06-03T21:34:54.893Z
   - Currently macOS only. Linux and Windows support is coming
   - Exposes an MCP server — Claude Code, Cursor, or any MCP client can query and add to your knowledge base
   - [I built and open sourced a local Obsidian alternative (sqlite) : r/PKMS](https://www.reddit.com/r/PKMS/comments/1r7tgl4/i_built_and_open_sourced_a_local_obsidian/)
+
+- https://github.com/superdoc-dev/superdoc /AGPL/202604/ts
+  - https://superdoc.dev/
+  - Renders, edits, and automates .docx files in the browser, headless on the server, and within AI agent workflows.
+  - Works with React, Vue, and vanilla JS.
+  - Built on ProseMirror, Yjs, JSZip, and Vite.
+  - Real DOCX, not rich text — Built on OOXML. Real pagination, section breaks, headers/footers. Not a contenteditable wrapper with export bolted on.
+  - Runs entirely in the browser. 
+  - collaboration — Yjs-based CRDT. Multiplayer editing with comments, tracked changes
+  - Agentic tooling — Runs headless in Node.js. Bring your own LLM for document automation, redlining, and template workflows.
+  - Dual licensed — AGPLv3 for community use. Commercial license for proprietary deployments.
 # confluence-like
 - MrDoc /2.1kStar/GPLv3/202403/js/python/Django/仅网页版
   - https://github.com/zmister2016/MrDoc

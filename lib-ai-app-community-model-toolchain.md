@@ -1597,7 +1597,12 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## [Why MoE models keep converging on \~10B active parameters : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sepmtm/why_moe_models_keep_converging_on_10b_active/)
+  - Interesting pattern: despite wildly different total sizes, many recent MoE models land around 10B active params. Qwen 3.5 122B activates 10B. MiniMax M2.7 runs 230B total with 10B active via Top 2 routing.
+  - Training cost scales as C ≈ 6 × N_active × T. At 10B active and 15T tokens, you get ~9e23 FLOPs, roughly 1/7th of a dense 70B on equivalent data. The economics practically force this convergence.
+  - Has anyone measured real inference memory scaling when expert count increases but active params stay fixed? KV cache seems to dominate past 32k context regardless.
+
+- For the same reson dense models under ~10B parameters tend to fall apart when it comes to solving more complex tasks.
 
 - ## [Hardware requirements for training a ~3B Model From Scratch locally? : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rckqpp/hardware_requirements_for_training_a_3b_model/)
 - I strongly suggest you start with a much smaller model, so that you can test and refine your pipeline a lot faster, not to mention 2 GPUs will be unnecessary pain in the beginning. Also not sure if 3B params are realistic on 2x3090, unless you plan to go tiny microbatches (which will take forever), but you probably did the math. For a 3B param model, you'll need way more than 50b training tokens to get decent results.

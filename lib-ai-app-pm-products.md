@@ -243,6 +243,10 @@ modified: 2025-03-22T16:10:24.856Z
 - 2b-ai
   - 企业需要支持快速集成现有系统、权限、日志审计
 
+- editor-heavy
+  - pretext
+  - ooxml editing
+
 - rewrite open-canvas with langgraph
 # 💎🚀 aichorage - local llm with joy, 提供模型API、rag可靠性、pdf文本操作
 - selling-points
@@ -880,6 +884,10 @@ modified: 2025-03-22T16:10:24.856Z
     - gpt-5.2
   - 📌 [Dooong AI ](https://ai.dooo.ng/console/personal), 签到需过盾
     - 后台有加权风控分系统，T+1和不定时封禁违规账号
+  - [Mu. API 2026](https://demo.awa1.fun/console/personal)
+    - cc支持
+    - 不定期兑换码, [兑换码领取系统 ](https://cdk.awa1.fun/app/redeem)
+    - [「公益站」最终还是换成了 New-API _202509](https://linux.do/t/topic/927953)
   - [六万 购曼公益 _202603](https://ai.dogaltman.us.ci/console/personal)， 签到
     - [六万公益站复活，改名【购曼公益】 ](https://linux.do/t/topic/1855060)
   - [无邪公益站 _202603](https://wuxiexiexie.us.ci/console/personal)
@@ -984,9 +992,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 可用模型：claude, gpt
     - 在CC中效果不佳，更推荐作为日常对话
     - 这个网站最开始是给kiro写的，但生不逢时
-  - [Mu. API 2026](https://demo.awa1.fun/console/personal)
-    - cc支持
-    - [「公益站」最终还是换成了 New-API _202509](https://linux.do/t/topic/927953)
   - 🗑️ [轻 API](https://lightllm.online/console/personal), 签到
     - cc支持
   - [DEV88公益](https://api.dev88.tech/console/personal), 签到-0.01

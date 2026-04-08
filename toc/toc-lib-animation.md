@@ -312,6 +312,10 @@ modified: 2020-10-05T06:22:02.107Z
   - https://brm.io/matter-js/
   - a 2D rigid body physics engine for the web
   - 一个高性能的 2D 物理 js 库
+# text/font-transition
+- https://github.com/gunnargray-dev/unicode-animations /MIT/202602/ts
+  - Unicode spinner animations as raw frame data — no dependencies, works everywhere.
+  - 用文本符号作为loading效果
 # page-transition
 - https://github.com/michalzalobny/plain-page-transition
   - https://zesty-cocada-b5eb44.netlify.app/
