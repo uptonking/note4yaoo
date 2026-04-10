@@ -44,6 +44,11 @@ modified: 2025-12-26T08:56:31.035Z
   - Collection of handy online tools for developers, with great UX.
   - 非常典型的list-article导航结构
 
+- https://github.com/dr5hn/ilovejson /AGPL/202604/ts
+  - https://www.ilovejson.com/
+  - open-source online tools to convert, transform, and work with JSON files.
+  - 20+ Conversion Tools — JSON to/from CSV, YAML, XML, PHP, Markdown, HTML, TOML, SQL, TypeScript, Excel
+
 - https://github.com/ikenai-lab/convert.gg /MIT/202512/python/ts/inactive
   - powerful, privacy-focused desktop application designed to handle your day-to-day file manipulation
   - Whether you're merging PDFs, compressing images, or extracting archives, everything happens securely on your own machine.

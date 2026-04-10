@@ -74,6 +74,23 @@ modified: 2025-11-30T17:27:16.720Z
     - [电子图书公益阅读](http://read.nlc.cn/gyyd/index)
   - 书格, 版权过期图书
 # popular
+- https://github.com/muna-ai/nomic-layout /202604/python/ts
+  - https://pdflayout.ai/
+  - Web demo and agent skill for the Nomic Layout v1 document parsing model.
+  - Empower your AI agents to find specific information in large, complex PDF documents using Nomic's layout model.
+  - a web demo, allowing users to upload PDFs and ask questions. The web demo runs layout detection, OCR, text embeddings, and LLM-based generation directly in the browser
+  - Ask your AI agent natural-language questions about your PDF documents and get precise, cited answers. The skill uses layout detection, OCR, and text embeddings to index every text region across your PDFs, then performs vector search to find the most relevant passages.
+  - It works equally well with born-digital PDFs and scanned documents.
+  - reading-pdf
+    - layout detection
+    - embedding
+    - ocr: rapid-ocr
+    - smol
+  - 点击底部引用附件能显示原文pdf, 高亮引用所有chunk的bbox, 未能高亮具体的文本range
+  - https://x.com/andriy_mulyar/status/2041893915347812710
+    - the bottleneck for AI agents isn't reasoning, it's retrieval
+    - on-device layout models help with fixing this
+
 - https://github.com/pipeshub-ai/pipeshub-ai /2kStar/apache2/202511/python/ts
   - https://pipeshub.com/
   - The OpenSource Alternative to Glean's Workplace AI
@@ -1804,13 +1821,6 @@ modified: 2025-11-30T17:27:16.720Z
     - Isolated installation (Ollama) – Operate fully on-premises with containers. All neural networks (LLM, reranker, embedding) run on your cloud or PC 
     - Custom LLM (OpenAI-compatible API) – Use your own deployed LLM with OpenAI-compatible API (vLLM, Ollama server, TGI, etc.). The indexer runs locally while the LLM can be on your server, cloud, or local machine.
     - Custom GPT – Query your local documents using ChatGPT app or web with custom GPTs. The indexer runs on your cloud or local PC, while the primary LLM remains ChatGPT.
-
-- https://github.com/NitroRCr/nyaai /apache2/202603/ts/vue
-  - https://nyaai.cc/
-  - [[开源] Nya AI: 在一个地方进行 AI 对话 / 网络搜索 / 笔记 / 协作 / 频道 / 网盘  - LINUX DO _202603](https://linux.do/t/topic/1787694)
-    - Nya AI 结合了 AI 对话客户端和协作平台，让你能够在一个平台进行 AI 对话、网络搜索、记笔记、编写文档、与团队沟通/协作、管理文件等操作。
-    - Nya AI 是可协作的平台，因此所有内容都储存在云端，你可以随时通过任意设备访问所有内容。得益于同步引擎 Zero
-    - 类似于传统搜索引擎和 AI 搜索的结合，左侧是搜索结果，右侧会生成 AI 总结回答，也可进行后续对话。
 
 - https://github.com/HKUDS/DeepTutor /9.3kStar/AGPL/202601/python/ts
   - https://hkuds.github.io/DeepTutor

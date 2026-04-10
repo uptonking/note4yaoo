@@ -76,36 +76,10 @@ modified: 2026-04-05T18:34:12.403Z
 # spec-ofd
 - [中国人自己的“PDF”版式文档格式：OFD （哪些软件能打开这种格式？） - 知乎](https://zhuanlan.zhihu.com/p/1932328214493115870)
   - WPS, 福昕阅读器, 永中OFD版式软件, 友虹可信版式阅读软件, 数科阅读器, 点聚OFD
-# discuss-pm-pdf
+# discuss-pdf-parser/generator
 - ## 
 
 - ## 
-
-- ## [if you download a google doc-->pdf can you see edit history : r/pdf _202604](https://www.reddit.com/r/pdf/comments/1sa8v13/if_you_download_a_google_docpdf_can_you_see_edit/)
-- PDF is literally to view and print documents. It doesn't have any concept of a change history, unless you force that upon it (my guess is that Illustrator might be doing that with their .ai format).
-
-- ## [How do you manage your documents, such as PDFs? : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1sdcd54/how_do_you_manage_your_documents_such_as_pdfs/)
-- Zotero and the Zotero Connector for your browser, this can then connect to Obsidian.
-  - Another vote for Zotero. Its PDF annotation tools are first rate.
-
-- If you're simply downloading and not taking notes about them, I wouldn't put them in my Obsidian vault.
-  - If you're talking notes about them, then to me they're like any other attachment and I'd manage them that way.
-- For my part, the documents I download are for study purposes, so they are linked to notes and canvas that I have created.
-
-- all documents (Epub, JPEG, PNG, PDF) are stored in /assets folder , inside that folder i have a folder for attachments (JPEG/PNG) another folder for books library which include only books (epub/pdf) organized automatically using calibre , when i'm looking for some book i just use the seach menu (ctrl+O) and open it and take notes. 
-
-- I use three different tools for three different "levels" of information.
-  - 1st level - all daily writing : Drafts
-  - 2nd level - documentation and capture of all project-related information and action-able assets : Obsidian
-  - 3rd level - all long-term reference information that is curated as source material for projects : DEVONthink
-  - Text created in Drafts may migrate to Obsidian. And notes and clippings in Obsidian may migrate to DEVONthink. But DEVONthink information and assets never migrate back to Obsidian or Drafts unless it is copied text or a URL to a document.
-  - Use Obsidian for what it is good at (markdown files).
-- Second this. Keep your documents in Devonthink. Use Obsidian for its native purpose - Markdown. I also use Calibre for my library, which is on my local network. Once I mark a book, I tend to keep it in Devonthink. Otherwise, just copied text in a note and a link to the book in Calibre.
-
-- Images are in the vault if they are part of a note, as are a small number of PDFs (medical and insurance related mostly).
-
-- I create a markdown with front matter metadata about the document, save the PDF itself to the attachments folder and embed it into the markdown. That gives me queryable properties and I can make notes before and after the document content.
-  - Same here. I manage several thousand PDF files, including technical documentation, how-to, patch reports, software notices aso. Using a Python script to convert the PDF to MD. Additionally, space is added at the beginning of the MD for metadata and a section for personal notes. The original PDF are automatically moved to the NAS. Next step will be connecting to an LLM for semantic search.
 
 - ## [So you want to parse a PDF? | Hacker News _202508](https://news.ycombinator.com/item?id=44780353)
   - The author of the blog works on PdfPig, a framework to parse PDFs. For its document understanding APIs, it uses a hybrid approach that combines basic image understanding algorithms with PDF metadata .  https://github.com/UglyToad/PdfPig/wiki/Document-Layout-Analysis
@@ -155,6 +129,66 @@ modified: 2026-04-05T18:34:12.403Z
 
 - you can "just" enforce pdf/a
   - ...well there is like 50 different pdf/a versions; just pick one of them
+
+- ## 90% 牛逼的 pdf 解析器诞生在大模型发展的这两年。
+- https://x.com/yihong0618/status/1906895307826516284
+- 关键还是OCR吧，还有根据OCR 之后的数据做推断的LLM, 识别 -> 推断 -> 纠正 -> 质量很好的文档, 这是CV + NLP 的一家亲时刻
+  - 现在很少是基于格式解析的，大多数都是基于 OCR 的，或者两者结合
+- OCR的能力很久没升级了，科研界卷到顶了，这一波优化的应该是各种后处理，也就是各种规则或者文本处理的小技巧。全都是脏活累活，只有工业价值科研界以前不愿意做，现在大家卷一卷整体效果又提升了几个点
+
+- 文档解析还有个问题--字体，字体大小和字体类型，如果没有metadata，目前没有能解决这种问题的模型
+
+- 毕竟这玩意离图片只有一步之遥，比图片只多了一个字符准确坐标以及准确的字符内容…解析起来不比图片简单多少。
+  - 图片的解析不需要还原回规格化的结果，但是 pdf 的解析却需
+
+- 文档中关于表格，图片的解析，是现在 pdf识别的主要性能差异。 由其是在rag领域
+
+- ## @VikParuchuri 在 Marker 中坚持先提取 PDF 的原始文本，仅在文本质量差时才使用 OCR  _202508
+- https://x.com/shao__meng/status/1955413498516906316
+  - PDF 解析的八个难题，虽然很难，但直接提取 PDF 中的文本仍然比重新 OCR 更快、更准确 
+
+01.  字体映射问题：
+PDF 文件包含字体映射，理论上能将显示的字符与实际字符对应，便于复制粘贴。但这些映射有时不准确，导致复制的字符与看到的完全不同，甚至可能是乱码。
+02.  隐形文本：
+有些 PDF 包含不可见的文本，只有在提取时才会显现。例如，文本 “Measurement in your home” 可能在文件中重复出现，但肉眼无法察觉，增加了解析难度。
+03.  数学公式乱码：
+数学公式在 PDF 中常以随机字符呈现，字体映射问题让公式变成类似泰米尔文或阿姆哈拉文的奇怪组合，难以正确解析。
+04.  数学公式分块：
+数学公式的边界框（bounding box）往往被拆分成多个小块，重新组合这些片段需要复杂的处理，耗时且易出错。
+05.  连字不一致：
+PDF 文件有时会将某些字母组合（如“ffi”或“fl”）合并成一个字符（连字），但处理连字的方式不统一，有时甚至完全忽略，导致文本提取不完整。
+06.  OCR 文本错误：
+部分 PDF 的文本是通过 OCR 添加的。如果 OCR 基于不准确的文本检测，提取结果可能出现混乱，影响数据质量。
+07.  文本重叠：
+PDF 中的水印或其他重叠文本会干扰正常文本的阅读顺序，解析时难以确定正确的文本流，增加处理复杂性。
+08.  表格行边界问题：
+PDF 文件只记录字符位置，需后期处理将字符组合成行。在表格中，判断单元格的起点和终点尤为困难，容易导致行或列混淆。
+
+- OCR只能作为最后的兜底方案，不然数据质量太难保证了
+
+- ## 📌 Parsing PDFs has slowly driven me insane over the last year.  Here are 8 weird edge cases to show you why PDF parsing isn't an easy problem  _202508
+- https://x.com/VikParuchuri/status/1955355127818358929
+  - PDFs have a font map that tells you what actual character is connected to each rendered character, so you can copy/paste.  Unfortunately, these maps can lie, so the character you copy is not what you see.  If you're unlucky, it's total gibberish.
+  - PDFs can have invisible text that only shows up when you try to extract it.  "Measurement in your home" is only here once...or is it?
+  - Math is a whole can of worms.  Remember the font map problem?  Well, math is almost always random characters - here we get some strange Tamil/Amharic combo.
+  - Math bounding boxes are always fun - see how each formula is broken up into lots of tiny sections?  Putting them together is a great time!
+  - letters may be connected together into one character - like ffi or fl.  Unfortunately, PDFs are inconsistent with this, and sometimes will totally skip ligatures - very ecient of them.
+  - Not all text in a PDF is correct.  Some PDFs are digital, and the text was added on creation.  But others have had invisible OCR text added, sometimes based on pretty bad text detection. 
+  - Overlapping text elements can get crazy - see how the watermark overlaps all the other text?  Forget about finding good reading order here.
+  - I've been showing you somewhat nice line bounding boxes.  But PDFs just have character positions inside - you have to postprocess to join them into lines.  In tables, this can get tricky, since it's hard to know when a new cell starts
+  - 🤔 This is what we do with marker - https://github.com/datalab-to/marker - we only OCR if the text is bad.
+  - I actually made https://github.com/datalab-to/pdftext as a thin wrapper over pypdfium2 - the problem with determinism is it can't account for all the crazy edge cases!
+
+- LLMs work well for many cases, but in these cases, they aren't the right tool:
+  - Latency/throughput sensitive
+  - Need layout/positional info
+  - Absolute accuracy and low hallucination risk matter
+  - Edge cases like complex tables, etc.
+  - Want deterministic customization
+  - Cross-document things, like setting section headers (long docs)
+  - There are a TON of edge case accuracy issues that I don't think LLMs, due to architecture, will be able to solve.  
+
+- You forgot to mentions that PDFs can even have javascript, and you might see different content unless you can execute the javascript.
 # discuss-tools/conversions
 - ## 
 
@@ -164,18 +198,37 @@ modified: 2026-04-05T18:34:12.403Z
 
 - ## 
 
+- ## 📌 PDF转Markdown 方案选型
+- https://x.com/dotey/status/1817072212316135776
+01.  document-convert（开源）：https://github.com/multimodal-art-projection/MAP-NEO/tree/main/Matrix/document-convert
+02.  Ragflow（开源）：https://github.com/infiniflow/ragflow
+03.  gptpdf（开源）：https://github.com/CosmosShadow/gptpdf
+04.  百度云Textmind（闭源）：https://cloud.baidu.com/product/textmind.html
+05.  doc2x（闭源）：https://doc2x.noedgeai.com
+06.  腾讯云文档解析（闭源）：https://cloud.tencent.com/document/product/1759/107504
+07.  marker（开源）：https://github.com/VikParuchuri/marker
+08.  PDF-Extract-Kit（开源）：https://github.com/opendatalab/PDF-Extract-Kit
+09.  zerox（开源）：https://github.com/getomni-ai/zerox
+10. OminiParse（开源）：https://github.com/adithya-s-k/omniparse
+11. MinerU（开源）：https://github.com/opendatalab/MinerU
+
+- 评估指标：人工评估
+- 评估数据集：
+   * 数字PDF：论文、财报（含图片、表格和文字）
+   * 扫描PDF：书籍（含图片、表格和文字）、模拟试卷、水印文档、教辅习题、复杂合并单元格表格、财报图片格式（含复杂表格）、含图片的表格。
+
 - ## 强烈推荐这篇文章：《深入探索：AI 驱动的 PDF 布局检测引擎源代码解析 [译]》
 - https://twitter.com/dotey/status/1734129116167729596
   - 系统的分析了最近很火的 PDF 转 Markdown 开源程序 Marker 的工作原理，比我想象的要复杂不少，用了好几个开源库。
   - https://github.com/VikParuchuri/marker
   - [Inside Marker: A Guided Source Code Tour for an AI-powered PDF Layout Detection Engine_202312](https://journal.hexmos.com/marker-pdf-document-ai/)
 - Marker 主要通过以下六个阶段来工作：
-  1. 准备阶段： 利用 PyMuPDF 工具，可以把各种格式的文档转换成 PDF 文件。
-  2. 文本识别（OCR）： 使用 Tesseract 或 OCRMyPDF 进行文字识别；也可以选择用 PyMuPDF 进行基本的文字抓取。
-  3. 布局识别： 运用专门定制的 LayoutLMv3 模型 来识别文档中的表格、图表、标题、图说、页眉和页脚。
-  4. 列的检测和排序： 再用一个定制的 LayoutLMv3 模型来识别文档中的列，并按照正确的顺序（上到下，左到右）进行排列。
-  5. 公式/代码处理： 通过 Nougat 工具，把公式图片转换成对应的 latex 代码，并利用启发式方法准确识别和调整代码及表格内容。
-  6. 文本清理与优化： 使用定制的 T5ForTextClassification 模型进行文本清理，比如去掉不必要的空格和奇怪的字符，确保以一种保守且保留原意的方式进行优化。
+  01. 准备阶段： 利用 PyMuPDF 工具，可以把各种格式的文档转换成 PDF 文件。
+  02. 文本识别（OCR）： 使用 Tesseract 或 OCRMyPDF 进行文字识别；也可以选择用 PyMuPDF 进行基本的文字抓取。
+  03. 布局识别： 运用专门定制的 LayoutLMv3 模型 来识别文档中的表格、图表、标题、图说、页眉和页脚。
+  04. 列的检测和排序： 再用一个定制的 LayoutLMv3 模型来识别文档中的列，并按照正确的顺序（上到下，左到右）进行排列。
+  05. 公式/代码处理： 通过 Nougat 工具，把公式图片转换成对应的 latex 代码，并利用启发式方法准确识别和调整代码及表格内容。
+  06. 文本清理与优化： 使用定制的 T5ForTextClassification 模型进行文本清理，比如去掉不必要的空格和奇怪的字符，确保以一种保守且保留原意的方式进行优化。
   - 借助这六个阶段，Marker 能够把任何文档转化为格式整洁的 Markdown 文件。
 
 - 这跟我的企业知识库产品的处理流程几乎一样，看来大家殊途同归，没有高效的解决办法，只能搞这种缝合怪
@@ -295,3 +348,8 @@ modified: 2026-04-05T18:34:12.403Z
 - Sejda PDF Desktop it's really good
   - Sejda PDF Desktop is free to use with daily limits.
   - 3 tasks per day
+
+- ## [History of the PDF | Hacker News _202312](https://news.ycombinator.com/item?id=38511697)
+- PDF is a remarkable creation. It has some notable weaknesses, such as the fact that its color channel for images does not include alpha, and thus needs masks, but the fact that it covers so much visual complexity in a relatively compact form is just amazing. (BTW: Its graphics model is strictly from Adobe Postscript, but PDF content streams are not programs.)
+
+- IBM tried to push a competitor in the 1990s…BookManager was an initially mainframe (VM/CMS, MVS, etc) combination of viewer program and proprietary format

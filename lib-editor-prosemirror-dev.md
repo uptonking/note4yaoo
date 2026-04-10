@@ -106,7 +106,7 @@ modified: 2021-05-06T09:39:53.522Z
   - views
   - 针对 vlm 优化的表格及编辑
   - table/pdf-table to excel
-- image
+- image/mermaid
   - img-diff 使用slider对比交互
   - img-editor
   - img-gen

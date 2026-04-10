@@ -43,6 +43,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 对多语言支持很好
 
 - why-local-ai? 🌹
+  - popular local apps: claude-code, obsidian, openclaw
   - stable model and stable api
   - privacy: code, data, 还可以跳过广告推广
   - tweak different configs for ai-models
@@ -246,6 +247,7 @@ modified: 2025-03-22T16:10:24.856Z
 - editor-heavy
   - pretext
   - ooxml editing
+  - agentfs
 
 - rewrite open-canvas with langgraph
 # 💎🚀 aichorage - local llm with joy, 提供模型API、rag可靠性、pdf文本操作
@@ -255,8 +257,8 @@ modified: 2025-03-22T16:10:24.856Z
     - llm ux: natural language as interface
     - 对同一场景, 如翻译/ocr, 针对不同模型内置合理的参数且支持配置
     - pdf: ocr(提取table/chart), editing(proof/布局), rag(citation)
-    - pm: llamaparse-extract, cowork(docx-xml/databases/ilovepdf), notebooklm
-    - later: GPU硬件(ai难取代), Image, Audio, TableAI, 翻译, 多维表格, pretext-edit
+    - pm: llamaparse-extract( **mineru/paddleocr**/mistral/本地/远程), cowork(docx-xml/databases/**ilovepdf** ), notebooklm
+    - later: GPU硬件(ai难取代), Image, TableAI, Audio, 翻译, 多维表格, pretext-edit
     - roadmap: 
       - agentic场景优化: ocr-vlm/pipeline, translation
       - citation, backlinks: 提升rag的准确度, 优化搜索结果中的code/text/image
@@ -308,6 +310,7 @@ modified: 2025-03-22T16:10:24.856Z
     - vector-marketplace, 支持用户选择任意数量的pdf文档创建embeddings, 并发布, 可作为一种变通方案解决数据隐私问题
     - 行业应用: law, medical
     - sources: docs, emails
+    - cited code
   - large pdf rag workflows: chunking-strategies, reindex, pdf-parts
     - 中文rag需要优化
     - rag db支持浏览空间占用、手动删除文件索引
@@ -315,6 +318,7 @@ modified: 2025-03-22T16:10:24.856Z
     - ocr router like openrouter/mineru/paddleocr/new-api/ccswitch
     - obsidian for pdf/ocr: ilovepdf/stirling-pdf/stirling-image
     - acp for pdf/rich-editing: 参考 google-workspace-cli 实现 本地版
+    - mineru/paddleocr gui
     - diff without git
     - proofreading: 一键检查, 版本历史
       - chunking viz
@@ -460,10 +464,12 @@ modified: 2025-03-22T16:10:24.856Z
     - Letterboxd
     - Metacritic
     - La Liste
-# 💎 llm-playground - 使用公益api的效率工具+api统计分析
-- 公益版
 
-- 企业版
+- llm-playground - 使用公益api的效率工具+api统计分析
+  - 公益版
+  - 企业版
+# 💎 ai-pdf/docs
+- revision history for pdf
 # pm-mcp
 - writing
 
@@ -765,7 +771,7 @@ modified: 2025-03-22T16:10:24.856Z
     - docs 指的是这是 claude 的文档 ai，不破限只会回答文档相关的内容
   - 🗑️ [NihaoAPI _202603](https://nih.cc/console/personal)
     - cc
-  - 📌 [Pond Hub 反重力号池 _202603](https://code.claudex.us.ci/panel/profile), 签到
+  - 🗑️ [Pond Hub 反重力号池 _202603](https://code.claudex.us.ci/panel/profile), 签到
     - [【公益站】Code公益站-反重力号池 重回更名为Pond Hub ](https://linux.do/t/topic/1785656)
   - [ThatAPI](https://gyapi.zxiaoruan.cn/console/personal), 签到
     - 有多个cc分组，IP限制严格(无需gfw)
@@ -808,7 +814,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [Codex公益站，三网优化，每天100刀 - LINUX DO _202603](https://linux.do/t/topic/1833285)
     - 并发限制35
     - 注册看见余额是0不需要管，注册就有每日100u的套餐
-  - [冰のCodex _202603](https://ice.v.ua/dashboard), 签到
+  - [冰のCodex _202603](https://icoe.pp.ua/dashboard), 签到
     - 当余额低于 20 刀时可申请重置到 200 刀。
     - [【开放】【冰の公益站】纯GPT站点 支持5.3 5.4 ](https://linux.do/t/topic/1795246)
     - 清理首批不活跃用户信息（默认条件：注册超过 48 小时，且无 usage、无签到、无重置、API Key 从未使用）
@@ -845,7 +851,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [Rosmontis](https://ai.rosmontis.de/console/personal)
     - [[迷迭香公益站]  ](https://linux.do/t/topic/1694922)
     - 公益站有无限codex(目前限制500并发)，无限grok(程序默认限制50并发)。glm系列目前不保证可用性。还有一些杂七杂八的模型。
-  - [YAO API _202603](https://yybbwan.xyz/console/personal)
+  - 🗑️ [YAO API _202603](https://yybbwan.xyz/console/personal)
     - [YAO](http://154.37.220.66:3000/console/personal) , legacy
     - [[Yao公益站]codex注册200刀，可能随时倒闭  ](https://linux.do/t/topic/1683788)
     - claude-sonnet-4-5-20250929
@@ -870,7 +876,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 随便刷吧，可能刷崩了，我就关站了
     - cc, opus 是cursor2api的 sonnet4.6
     - [真好记公益站 ](https://linux.do/t/topic/1795254)
-  - [api-test](new-api.publicvm.com/console/personal)
+  - [api-test](https://new-api.publicvm.com/console/personal)
     - https://openai.api-test.us.ci  /legacy
     - [LDC Virtual Goods Shop](https://shop.api-test.us.ci/)
     - https://cdk.api-test.us.ci/
@@ -885,7 +891,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 📌 [Dooong AI ](https://ai.dooo.ng/console/personal), 签到需过盾
     - 后台有加权风控分系统，T+1和不定时封禁违规账号
   - [Mu. API 2026](https://demo.awa1.fun/console/personal)
-    - cc支持
+    - cc支持, 国产模型
     - 不定期兑换码, [兑换码领取系统 ](https://cdk.awa1.fun/app/redeem)
     - [「公益站」最终还是换成了 New-API _202509](https://linux.do/t/topic/927953)
   - [六万 购曼公益 _202603](https://ai.dogaltman.us.ci/console/personal)， 签到
@@ -903,7 +909,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
     - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
     - 反代 kiro
-  - 📌 [SakuraCode _202603](https://codex.sakurapy.de/dashboard), 计算pow
+  - [SakuraCode _202603](https://codex.sakurapy.de/dashboard), 计算pow
     - https://codesign.sakurapy.de/
     - 5.4
   - [GGBOOM公益站](https://ai.qaq.al/dashboard)

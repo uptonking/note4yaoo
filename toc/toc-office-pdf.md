@@ -321,10 +321,6 @@ modified: 2021-01-04T17:26:43.784Z
   - Backend: Python (PySidecars): Heavy lifting is delegated to specialized Python scripts.
   - [I built an open source desktop alternative to iLovePDF to avoid uploading private files : r/SideProject _202512](https://www.reddit.com/r/SideProject/comments/1pwzhlo/i_built_an_open_source_desktop_alternative_to/)
 
-- https://github.com/NPC-Worldwide/incognide /AGPL/202604/ts
-  - https://enpisi.com/incognide
-  - Incognide unifies chat, code, documents, web browsing, and media into a tileable workspace with intelligent context and composable automations.
-
 - ilovepdf
   - [ArmorPDF - Free Browser-Based PDF Tools, 100% Private](https://armorpdf.com/)
 
@@ -496,7 +492,7 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/kevalbhatt/puppeteer-pdf-generator /js
   - Internally server starts a headless browser and opens http://localhost:3000 application and creates the pdf (i.e print layout).
   - Note: Server-side pdf generator code is hardcoded so you will get same pdf every time.
-# reader/viewer
+# viewer/reader
 - https://github.com/embedpdf/embed-pdf-viewer /1.8kStar/MIT/202508/ts
   - https://www.embedpdf.com/
   - https://app.embedpdf.com/
@@ -568,6 +564,22 @@ modified: 2021-01-04T17:26:43.784Z
 
 - https://github.com/scribusproject/scribus /542Star/GPLv2/202512/cpp
   - open source page layout program which produces commercial grade output in PDF and Postscript, primarily, though not exclusively, for Linux.
+
+- https://github.com/rudi-q/leed_pdf_viewer /paid/202604/ts/svelte
+  - https://www.leedpdf.com/
+  - https://leed.my/   /web
+  - Open-source PDF annotation and drawing tool built for privacy. 
+  - Sketch and annotate PDFs with natural pen-like precision, drawing tablet support. 
+  - SvelteKit + Tauri.
+  - The core focus with LeedPDF has been PDF annotations and easy document markup.
+  - The web UI leed.my is now open-source and self-hosted
+  - This tool runs entirely in your web browser and does not rely on server-side processing. When you import a PDF or any other file, it is handled locally on your device and is not uploaded to any servers.
+  - OCR and e-signatures are indeed next on the roadmap. 
+  - [8 months later: My free, open-source PDF editor, LeedPDF is finally a full suite (almost). : r/software _202604](https://www.reddit.com/r/software/comments/1seqoud/8_months_later_my_free_opensource_pdf_editor/)
+    - The web app is completely free with no ads.
+    - It's the desktop app that requires a one-time paid license as it's the only source of sustenance for the entire project.
+  - https://github.com/R0GGER/leed-my-selfhost
+    - Docker setup to self-host LeedPDF
 
 - https://github.com/sagargurtu/lector /201908/js
   - PDF Reader built using Electron and PDF.js

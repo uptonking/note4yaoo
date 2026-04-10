@@ -29,6 +29,29 @@ modified: 2026-04-07T12:33:48.087Z
   - [[开源自荐] 开卷考试/论文搜索神器 - 基于语义向量和BM25的PDF文件搜索软件 ](https://linux.do/t/topic/1408107)
     - 不管是开卷考试需要在几百页的 PPT 里瞬间定位知识点，还是写论文时需要在几十篇参考文献中寻找佐证，传统的 Ctrl+F 往往力不从心
 
+- https://github.com/run-llama/liteparse /686Star/apache2/202603/python/ts
+  - https://developers.llamaindex.ai/liteparse/
+  - https://github.com/jerryjliu/liteparse_samples
+  - LiteParse is a standalone OSS PDF parsing tool focused exclusively on fast and light parsing. 
+  - It provides high-quality spatial text parsing with bounding boxes, without proprietary LLM features or cloud dependencies.
+  - Everything runs locally on your machine.
+  - Fast Text Parsing: Spatial text parsing using PDF.js
+    - use a typescript wrapper called `pdfium` to simplify pdf.js integration
+  - Flexible OCR System:
+    - Built-in: Tesseract.js (zero setup, works out of the box!)
+    - HTTP Servers: Plug in any OCR server (EasyOCR, PaddleOCR, custom)
+    - Standard API: Simple, well-defined OCR API specification
+  - Screenshot Generation: Generate high-quality page screenshots for LLM agents
+  - 🐛
+    - 仅导出文本， 丢失了文本格式， 是否丢失语义?
+    - 需要支持扫描版pdf
+  - Standalone Binary: No cloud dependencies, runs entirely locally
+  - Multi-platform: Linux, macOS (Intel/ARM), Windows
+  - https://github.com/run-llama/liteparse/tree/main/packages/python
+    - Python wrapper for LiteParse 
+  - https://x.com/jerryjliu0/status/2034665976428724267
+    - Introducing LiteParse - the best model-free document parsing tool for AI agents 
+
 - https://github.com/AstraBert/litesearch /202604/ts/rust
   - Fully-local search engine with `Liteparse`, transformers.js and Qdrant Edge
   - A fully-local semantic search CLI. Ingest documents, embed them locally, and run vector search — no external services required.
@@ -44,11 +67,6 @@ modified: 2026-04-07T12:33:48.087Z
   - https://github.com/qdrant/qdrant-edge-demo
     - https://qdrant.tech/edge/
     - POC visual search with smart glasses and Qdrant Edge.
-# office-ai
-- https://github.com/iOfficeAI/OfficeAI /NonOpen
-  - https://office-ai.net/
-  - Make Office/WPS more powerful and easier to use with AI, similar to Office Copilot and WordGPT
-  - System Requirements: Windows 7/10/11 or later + Office 2013/2016/2019/Office 365
 # rag-memory/context
 - https://github.com/zilliztech/memsearch /109Star/MIT/202602/python
   - https://zilliztech.github.io/memsearch/
@@ -198,6 +216,13 @@ modified: 2026-04-07T12:33:48.087Z
   - 一个基于语义理解的智能文本切片服务，专门用于处理PDF和Word文档，能够根据段落语义进行合理切片，避免传统基于Token数量切分导致的语义割裂问题。
   - 支持PDF、Word（.docx/.doc）、纯文本等多种文档格式
 # embedding
+- https://github.com/PotentiallyARobot/EmbeddingAdapters /NC/202604/python
+  - https://www.embedding-adapters.com/
+  - Universal embedding-space translation library. 
+  - Plug-and-play adapters that map one embedding model’s vector space into another — locally or via API — enabling cross-model retrieval, routing, and interoperability.
+  - a lightweight Python library and model collection that lets you map embeddings from one model’s space into another’s.
+  - [I built a Python library that translates embeddings from MiniLM to OpenAI _202512](https://www.reddit.com/r/Rag/comments/1py8l8f/i_built_a_python_library_that_translates/)
+
 - https://github.com/AlwaysSany/huggingface-local-embedding /MIT/202507/python
   - A Fast API server that provides local text and multi-modal embedding using LlamaIndex Hugging Face Embedding
 
@@ -214,12 +239,6 @@ modified: 2026-04-07T12:33:48.087Z
   - Multiple Embedders: Support for Demo (synthetic), local MiniLM (sentence-transformers), and OpenAI (text-embedding-3-small).
   - Flexible Storage: Ships with an in-memory/local `ChromaDB` adapter.
   - matplotlib (for heatmap rendering)
-
-- https://github.com/PotentiallyARobot/EmbeddingAdapters /CC-NC/202512/python
-  - Universal embedding-space translation library. 
-  - Plug-and-play adapters that map one embedding model’s vector space into another — locally or via API — enabling cross-model retrieval, routing, and interoperability.
-  - a lightweight Python library and model collection that lets you map embeddings from one model’s space into another’s.
-  - [I built a Python library that translates embeddings from MiniLM to OpenAI _202512](https://www.reddit.com/r/Rag/comments/1py8l8f/i_built_a_python_library_that_translates/)
 # vectordb
 - https://github.com/vectordbz/vectordbz /NonOpen
   - http://vectordbz.com/
@@ -255,29 +274,6 @@ modified: 2026-04-07T12:33:48.087Z
   - mini cli search engine for your docs, knowledge bases, meeting notes, whatever. 
   - Tracking current sota approaches while being all local
   - use it on the command line, it also exposes an MCP (Model Context Protocol) server for tighter integration.
-
-- https://github.com/run-llama/liteparse /686Star/apache2/202603/python/ts
-  - https://developers.llamaindex.ai/liteparse/
-  - https://github.com/jerryjliu/liteparse_samples
-  - LiteParse is a standalone OSS PDF parsing tool focused exclusively on fast and light parsing. 
-  - It provides high-quality spatial text parsing with bounding boxes, without proprietary LLM features or cloud dependencies.
-  - Everything runs locally on your machine.
-  - Fast Text Parsing: Spatial text parsing using PDF.js
-    - use a typescript wrapper called `pdfium` to simplify pdf.js integration
-  - Flexible OCR System:
-    - Built-in: Tesseract.js (zero setup, works out of the box!)
-    - HTTP Servers: Plug in any OCR server (EasyOCR, PaddleOCR, custom)
-    - Standard API: Simple, well-defined OCR API specification
-  - Screenshot Generation: Generate high-quality page screenshots for LLM agents
-  - 🐛
-    - 仅导出文本， 丢失了文本格式， 是否丢失语义?
-    - 需要支持扫描版pdf
-  - Standalone Binary: No cloud dependencies, runs entirely locally
-  - Multi-platform: Linux, macOS (Intel/ARM), Windows
-  - https://github.com/run-llama/liteparse/tree/main/packages/python
-    - Python wrapper for LiteParse 
-  - https://x.com/jerryjliu0/status/2034665976428724267
-    - Introducing LiteParse - the best model-free document parsing tool for AI agents 
 
 - https://github.com/sovit-123/local_file_search /MIT/202510/python
   - Scripts to replicate simple file search and RAG in a directory with embeddings and Language Models.

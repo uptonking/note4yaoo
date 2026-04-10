@@ -31,6 +31,21 @@ modified: 2023-03-21T07:54:11.468Z
   - 从监督学习开始，带你入门机器学习和深度学习
   - 尝试剖析和推导每一个基础算法的原理，将数学过程写出来，同时基于 Python 代码对公式进行实现
   - Jupyter Notebook 能够将文字和代码结合在一起，方便阅读和理解
+# discuss-toolchain-ml
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Hugging Face launches a new repo type: Kernels : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sgq6h9/hugging_face_launches_a_new_repo_type_kernels/)
+- I don't know any backends with plainly swap-able kernels.
+  - Transformers does it exactly, see https://huggingface.co/docs/transformers/en/kernel_doc/loading_kernels
+
+- Predictable, but I won't be hyped about another label for simple universal data storage.
+  - That's just github releases page but stored on AWS S3 instead of Azure.
+  - I hope they'll follow through and add integrations with pip and community projects.
+- It's more than universal data storage. It works closely with transformers. Transformers practically defines the interfaces of some commonly used operators such as attention and MoE, and now we can easily download kernels that implement these interfaces, such as FlashAttention and SageAttention.
 # discuss
 - ## 
 

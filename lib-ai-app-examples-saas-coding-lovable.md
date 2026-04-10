@@ -300,6 +300,20 @@ modified: 2026-04-07T11:51:51.225Z
   - 本地存储 - 支持保存和加载卡片项目
 # designing/builder
 
+# 3d
+- https://github.com/TangSY/aedifex /MIT/202604/ts
+  - https://aedifex.app/
+  - Open-source 3D architectural editor with AI design assistant
+  - [【开源】用自然语言驱动的开源 3D 建筑设计 AI 编辑器-Aedifex - LINUX DO _202604](https://linux.do/t/topic/1932519)
+    - 运行在浏览器中的 3D 建筑编辑器，集成了基于大语言模型的 AI 设计助手。你可以通过自然语言描述设计意图，AI 直接在三维场景中执行建墙、开窗、摆放家具等操作——不需要学习任何专业建模工具。
+    - 项目基于上游开源 3D 编辑器内核深度改造，重新设计了场景数据架构和渲染管线，并在此基础上构建了完整的 AI 辅助设计能力。
+    - 在 GitHub 上看到一个开源的 3D 建筑编辑器项目，基础能力不错——墙体、门窗、家具摆放都有了，Three.js 渲染，浏览器里就能跑。但交互方式还是传统的那一套：左边工具栏选工具，右边属性面板调参数，中间画布上点来点去。能用，但对非专业用户来说门槛不低。
+    - 看到这个编辑器的时候觉得方向对了：3D 建筑设计天然适合自然语言交互——人描述空间的时候用的就是"客厅放一组沙发，对面摆电视柜"这样的语言，而编辑器的每一个操作（建墙、开窗、放家具）都可以被抽象成结构化的工具调用。把 AI Agent 接入编辑器的操作接口，用户就不需要学习任何工具，直接用自然语言描述就行。
+    - 真正动手之后才发现，"接入 AI"远不是加个对话框那么简单。原项目的数据结构、渲染方案、交互逻辑都是为手动编辑设计的，要让 AI 成为核心交互方式，几乎每一层都需要重新设计。
+    - 原项目的节点结构不太适合 AI 操作——AI 需要快速定位和操作任意节点。重新设计成了扁平字典 + parentId 引用的架构：所有节点（墙体、门窗、家具、楼板、屋顶等）平铺存储在一个 `Record<NodeId, Node>` 字典中，通过 parentId 表达层级关系，任何节点都可以通过 ID 直接索引。
+    - 兼容任何 OpenAI 格式的 API 端点——官方 OpenAI、Azure OpenAI、本地 Ollama、DeepSeek 等均可。
+  - https://github.com/pascalorg/editor /9.8kStar/MIT/202604/ts
+    - A 3D building editor built with React Three Fiber and WebGPU.
 # docs/wiki
 
 # examples

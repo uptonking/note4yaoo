@@ -363,6 +363,21 @@ modified: 2026-01-19T05:01:00.055Z
   - [clawskills.sh — Curated OpenClaw Skill Discovery](https://clawskills.sh/)
   - [SkillHub-专为中国用户优化的Skills社区 ](https://skillhub.tencent.com/)
 
+- https://github.com/vercel-labs/skills /13.5kStar/MIT/202604/ts
+  - https://skills.sh/
+  - The CLI for the open agent skills ecosystem.
+  - Supports OpenCode, Claude Code, Codex, Cursor, and 41 more.
+  - Global scope (-g): canonical location is `~/.agents/skills/<skill>` .
+    - Project scope: canonical location is `<cwd>/.agents/skills/<skill>`.
+  - If install mode is `symlink`, the skill is written to the canonical dir first, then symlinked into each agent dir
+    - If install mode is `copy`, it skips the canonical dir and writes directly into each agent’s dir
+  - For that specific repo,  `skills add` first tries the blob fast path
+    - https://api.github.com/repos/vercel-labs/agent-skills/git/trees/[ref]?recursive=1  in src/blob.ts
+    - each SKILL.md from raw.githubusercontent.com
+    - If that blob path fails, it falls back to git clone https://github.com/vercel-labs/agent-skills.git into a temp dir like /tmp/skills-* via src/git.ts
+    - with the blob fast path, there is usually no persistent repo download on disk at all. Files are fetched as API/blob content and written straight into the install directory by src/add.ts
+    - Only the fallback clone uses a temp checkout.
+
 - https://github.com/PrefectHQ/colin /202602/python
   - https://colin.prefect.io/
   - A context engine that treats skills as software.

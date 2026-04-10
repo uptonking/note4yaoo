@@ -58,8 +58,8 @@ modified: 2025-11-06T18:49:13.977Z
   - 不同vlm/ocr模型的输出格式不同, 统一输出内容是否存在需求? 目前对blocks/tags的定义缺乏统一规范(各项目都自定义)
 
 - llama.cpp
-  - 已支持: LightOnOCR-1B
-  - 暂不支持(20260106): deepseek-ocr, dots.ocr, PaddleOCR, hunyuanocr, chandra, nanonets
+  - 已支持: PaddleOCR-VL, LightOnOCR-1B, deepseek-ocr, dots.ocr, hunyuanocr, glm-ocr
+  - 暂不支持(20260106): chandra, nanonets
 
 - ollama
   - 支持: deepseek-ocr, qwen3vl

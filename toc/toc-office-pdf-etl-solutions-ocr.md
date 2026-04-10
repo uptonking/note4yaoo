@@ -991,6 +991,17 @@ modified: 2026-04-07T12:53:38.419Z
 - https://github.com/Leisurelybear/ocr-bye /MIT/202604/js
   - 将文字转换成OCR无法轻易识别的图片
   - 文字单独随机旋转角度
+
+- https://github.com/aiptimizer/turbo-ocr /MIT/202604/cpp/python
+  - Fast GPU OCR server. C++ / CUDA / TensorRT.
+  - Platform: Linux only. Requires NVIDIA GPU (tested on RTX 5090). AMD and Intel GPUs are not supported.
+  - High-throughput text detection and recognition using PP-OCRv5 models. Fused CUDA kernels, zero per-request allocation, multi-stream pipeline concurrency. For when you need to process hundreds of images per second rather than one page at a time.
+  - [Turbo-OCR for high-volume image and PDF processing : r/Rag _202604](https://www.reddit.com/r/Rag/comments/1sg5o33/turboocr_for_highvolume_image_and_pdf_processing/)
+    - Running VLMs over a million pages is slow and expensive. PaddleOCR, in my opinion the best non-VLM open source OCR, only handled ~15 img/s on my RTX 5090, which was still too slow. PaddleOCR-VL was crawling at 2 img/s with vLLM.
+    - The main bottleneck was GPU utilization. PaddleOCR wasn't using the hardware well, and PaddleOCR HPI isn't available for this architecture. 
+    - So I built a C++/CUDA inference server around Paddle's PP-OCRv5 models with FP16 inference. It takes images and PDFs via HTTP/gRPC and returns bounding boxes and text.
+    - Results: 100+ img/s on text-heavy pages, 1,000+ on sparse ones.
+  - Trade-offs: this sacrifices layout fidelity for speed. If you need perfect layout detection, multi-column reading order, or complex table extraction, you're better off with VLM-based OCR like GLM-OCR or PaddleOCR-VL.
 # ocr-visual-grounding 🆚
 - qwen3-vl
   - qwenvl html 指令使用时，不能开thinking, 只支持图片，不支持pdf

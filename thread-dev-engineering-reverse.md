@@ -90,6 +90,19 @@ modified: 2026-03-01T17:12:41.271Z
 - Claude code will reverse engineer Claude code with very little convincing
 
 - this is sick. the fact that ANE has 38 TFLOPS of INT8 but Apple basically pretends it doesn't exist for training is so frustrating. I've got an M2 Pro and always wondered if there was a way to tap into the NPU beyond CoreML inference.
+# discuss-web-reversed
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 做 Web 开发，有一个很  Harness 的魔法 Prompt： 用 CDP，详细获取 xxx 网站的内容，分析 js 和 css , xxxxx 
+- https://x.com/hwwaanng/status/2042241793044238697
+  - 基本上无论是功能/样式，还是 canvas 特效，AI 都能搞个 7788..
+- 可以让 codex 把 codex 的设置页面/theme系统扒了下来放到 shadcn 上，同时 agent-browser + dcp 对比实现
+
+- 真巧，我刚做了这样的事情。不过我比较省事，我给 claude opus 说，我不管，我就要这个效果，像素级复刻，你给我弄出来，然后他花了 5 分钟弄出来了
 # discuss-toolchain
 - ## 
 

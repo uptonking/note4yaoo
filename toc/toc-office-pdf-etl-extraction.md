@@ -366,6 +366,20 @@ modified: 2026-04-07T12:53:02.538Z
   - 针对文档类图像，整合版面分析、文字识别、表格识别和公式识别结果，还原版面布局信息。
   - 输入：文档类图像, 输出：TXT或Word
   - A[/文档图像/] --> B([文档方向分类 rapid_orientation]) --> C([版面分析 rapid_layout])
+
+- https://github.com/muna-ai/nomic-layout /202604/python/ts
+  - https://pdflayout.ai/
+  - Web demo and agent skill for the Nomic Layout v1 document parsing model.
+  - Empower your AI agents to find specific information in large, complex PDF documents using Nomic's layout model.
+  - a web demo, allowing users to upload PDFs and ask questions. The web demo runs layout detection, OCR, text embeddings, and LLM-based generation directly in the browser
+  - Ask your AI agent natural-language questions about your PDF documents and get precise, cited answers. The skill uses layout detection, OCR, and text embeddings to index every text region across your PDFs, then performs vector search to find the most relevant passages.
+  - It works equally well with born-digital PDFs and scanned documents.
+  - reading-pdf
+    - layout detection
+    - embedding
+    - ocr: rapid-ocr
+    - smol
+  - 点击底部引用附件能显示原文pdf, 高亮引用所有chunk的bbox, 未能高亮具体的文本range
 # examples
 - https://github.com/PragmaticMachineLearning/docai /MIT/202409/python
   - Extract structured data from unstructured documents using Answer. AI's Byaldi, OpenAI gpt-4o, and Langchain's structured output.

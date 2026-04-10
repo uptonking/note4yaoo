@@ -152,6 +152,16 @@ modified: 2022-11-06T11:21:27.612Z
   - Supports PostgreSQL, MySQL, Microsoft SQL Server, and SQLite.
   - SSH Tunnels - Connect securely through bastion hosts with password or key auth
 
+- https://github.com/debba/tabularis /1kStar/apache2/202604/ts/rust
+  - http://tabularis.dev/
+  - cross-platform database client for developers, built with Tauri and React.
+  - [Open source db client now has sql notebooks with cell references : r/sqlite _202604](https://www.reddit.com/r/sqlite/comments/1sg4otk/open_source_db_client_now_has_sql_notebooks_with/)
+    - I just released v0.9.15 of tabularis (open source database gui) and the headline feature is sql notebooks.
+    - Qql cells + markdown cells in one document. the killer feature is cell references. write {{cell_3}} in a later cell and it wraps cell 3's query as a CTE automatically.  
+    - Cells can run in parallel (mark independent ones with a button), there's stop-on-error mode with a summary of what broke, and every cell keeps its last 10 executions so you can restore a previous state.
+    - inline charts (bar, line, pie) are there for quick visual checks
+    - **Html export** lets you share the full notebook — queries, results, charts — with people who don't have the app.
+
 - https://github.com/outerbase/studio /AGPLv3/202412/ts
   - https://studio.outerbase.com/
   - A lightweight Database GUI in your browser. 

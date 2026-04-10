@@ -58,6 +58,15 @@ modified: 2025-08-16T14:12:24.416Z
 - 
 - 
 
+## image-tools-xp
+
+```sh /image
+cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o ~/Pictures/test11.png -W 512 -H 512 -s 7 -p "一位帅哥和他的宠物狗穿着配套的服装参加狗狗秀节目，室内灯光，背景中有观众。"
+
+cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o ~/Pictures/test11.png -W 1024 -H 1024 -s 9 -p "
+
+```
+
 # models-benchmark 🆚
 - time cost for image-gen on macbook air m4(32gRAM)
   - prompts: lawn, rabbit, cat

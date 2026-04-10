@@ -958,7 +958,10 @@ def slugify(text):
 
 - ## 
 
-- ## 
+- ## [Gemma 4 seems to work best with high temperature for coding : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sg8r4l/gemma_4_seems_to_work_best_with_high_temperature/)
+- I just tested it on 26B A3B and 31B. This is insane. I used temp 1.5 and they're passing the carwash test easily now. They're using agentic tools in VSCode properly as well.
+
+- I wonder if it would be interesting or useful at all to have a model that could have its temperature change over the course of a multi-stage thinking process.
 
 - ## 🆚 [Tested how OpenCode Works with SelfHosted LLMS: Qwen 3.5 & 3.6, Gemma 4, Nemotron 3, GLM-4.7 Flash... : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sduazd/tested_how_opencode_works_with_selfhosted_llms/)
   - i14700 + 64GB RAM + 16GB VRAM (RTX 4080)

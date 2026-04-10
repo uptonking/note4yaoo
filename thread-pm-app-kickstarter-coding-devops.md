@@ -60,7 +60,9 @@ Bottom Line: Success isn’t just about good code. It’s about presentation, ac
 
 - ## 
 
-- ## 
+- ## Anthropic 在 AI 模型 2B 这个领域，1000 家年化消费超百万美元的大客户 _202604
+- https://x.com/shao__meng/status/2042152822691782661
+- Claude找对了发展方向，企业才是能真正给钱的大户
 
 - ## [Cursor Revenue Leak: $2 Billion Annual Sales Rate : r/cursor _202603](https://www.reddit.com/r/cursor/comments/1rjqupl/cursor_revenue_leak_2_billion_annual_sales_rate/)
   - Cursor, the AI coding assistant startup led by CEO Michael Truell, has reached a $2 billion annualized revenue run rate as of February 2026, doubling its revenue in just three months. 

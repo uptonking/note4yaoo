@@ -120,6 +120,49 @@ modified: 2025-02-21T17:17:42.225Z
   - OpenMAIC (Open Multi-Agent Interactive Classroom) is an open-source AI platform that turns any topic or document into a rich, interactive classroom experience.
   - [THU-MAIC/OpenMAIC 开源多智能体互动教室 - LINUX DO _202603](https://linux.do/t/topic/1765092)
 # ai-apps
+- https://github.com/NPC-Worldwide/incognide /AGPL/202604/ts/类似全家桶
+  - https://enpisi.com/incognide
+  - Incognide unifies chat, code, documents, web browsing, and media into a tileable workspace with intelligent context and composable automations.
+  - https://github.com/npc-worldwide/npcsh /MIT/python
+    - The agentic shell for building and running AI teams from the command line.
+  - https://github.com/npc-worldwide/npcpy /MIT/python
+    - flexible agent framework for building AI applications
+
+- https://github.com/NitroRCr/nyaai /apache2/202603/ts/vue
+  - https://nyaai.cc/
+  - [[开源] Nya AI: 在一个地方进行 AI 对话 / 网络搜索 / 笔记 / 协作 / 频道 / 网盘  - LINUX DO _202603](https://linux.do/t/topic/1787694)
+    - Nya AI 结合了 AI 对话客户端和协作平台，让你能够在一个平台进行 AI 对话、网络搜索、记笔记、编写文档、与团队沟通/协作、管理文件等操作。
+    - Nya AI 是可协作的平台，因此所有内容都储存在云端，你可以随时通过任意设备访问所有内容。得益于同步引擎 ZeroSync
+    - 类似于传统搜索引擎和 AI 搜索的结合，左侧是搜索结果，右侧会生成 AI 总结回答，也可进行后续对话。
+
+- https://github.com/ahmedkhaleel2004/gitdiagram /MIT/202503/python/ts
+  - https://gitdiagram.com/
+  - Turn any GitHub repository into an interactive diagram for visualization in seconds.
+  - Powered by Claude 3.5 Sonnet for quick and accurate diagrams
+  - Public API available for integration (WIP)
+  - Frontend: Next.js, TypeScript, Tailwind CSS, ShadCN
+  - Backend: FastAPI, Python, Server Actions
+  - Database: PostgreSQL (with Drizzle ORM)
+  - Deployment: Vercel (Frontend), EC2 (Backend)
+  - Analytics: PostHog, Api-Analytics
+
+- https://github.com/fastaistack/OpenChat /MIT/202508/python/inactive
+  - https://fastaistack.github.io/OpenChat/
+  - 跨平台本地客户端，集成多模型聊天、网络检索、知识库与文档对话，开箱即用、稳定高效。
+  - 兼容主流云端大模型：如 OpenAI、Deepseek、硅基流动等
+  - 支持本地化模型部署：适配 Ollama，服务器部署等本地运行方案
+  - 智能助手应用：集成Kimi，秘塔AI搜索，文心一言，豆包等应用，让你一站式访问国内多个大模型平台
+  - 敏感词检测：精准识别敏感内容，确保文本合规
+  - 跨平台支持：适配 Windows、Mac
+  - 202510: 在v1.0.4的基础上添加了深度求索最新推出的 DeepSeek—OCR 
+
+- https://github.com/GeoRetina/Arion /GPL/202512/python/ts
+  - https://www.georetina.com/
+  - the first agentic AI desktop app for geospatial analysis, developed by GeoRetina Inc.
+  - Built with Electron, React (TypeScript), and Vite, Arion runs natively on Windows, macOS, and Linux, empowering users to leverage local and cloud-based Large Language Models (LLMs), integrate custom Model Context Protocol (MCP) servers, and utilize a plugin system for extended capabilities.
+
+## cowork
+
 - https://github.com/iOfficeAI/AionUi /18.4kStar/apache2/202603/ts
   - https://www.aionui.com/
   - https://github.com/iOfficeAI/AionUi/wiki
@@ -162,10 +205,14 @@ modified: 2025-02-21T17:17:42.225Z
     - Is it computer-use or browser-use?!
       - Both. It has file system access and can manipulate your computer. For browsing tasks it has a browser tool. Both are operated by the same agent
 
-- https://github.com/different-ai/openwork /1.1kStar/MIT/202601/rust/ts/tauri
+- https://github.com/different-ai/openwork /1.1kStar/MIT+EE/202601/rust/ts/tauri
   - https://openwork.software/
+  - https://openworklabs.com/
   - open-source alternative to Claude Cowork, powered by OpenCode
   - Built on OpenCode and utilizes OpenPackage for plugins installation.
+  - [Future licensing: is OpenWork going closed source? _202604](https://github.com/different-ai/openwork/issues/1412)
+  - [OpenWork, an opensource Claude Cowork alternative, is silently relicensing under a commercial license : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sgnppg/openwork_an_opensource_claude_cowork_alternative/)
+    - Openwork will remain a true open-source solution. We're just re-licensing parts of the stack that are for enterprise.
   - [I built an open-source alternative to Claude Cowork (on top of opencode!) : r/ClaudeAI _202601](https://www.reddit.com/r/ClaudeAI/comments/1qcf8mu/i_built_an_opensource_alternative_to_claude/)
     - it’s basically an alternative gui for opencode, which (at least until now) has been more focused on technical folks.
     - the goal with openwork is to bring the kind of workflows i’m used to running in the cli into a gui, while keeping a very deep extensibility mindset. ideally this grows into something closer to an obsidian-style ecosystem, but for agentic work.
@@ -389,32 +436,6 @@ modified: 2025-02-21T17:17:42.225Z
   - At its core, Holaboss is built to support long-horizon agent operation. The design target is not isolated task execution, but role-holding work that has to persist across many runs inside the same workspace.
   - [I wanted Ollama to hold a job, not just answer prompts, so I built this : r/ollama _202604](https://www.reddit.com/r/ollama/comments/1sdzjy9/i_wanted_ollama_to_hold_a_job_not_just_answer/)
 
-- https://github.com/fastaistack/OpenChat /MIT/202508/python/inactive
-  - https://fastaistack.github.io/OpenChat/
-  - 跨平台本地客户端，集成多模型聊天、网络检索、知识库与文档对话，开箱即用、稳定高效。
-  - 兼容主流云端大模型：如 OpenAI、Deepseek、硅基流动等
-  - 支持本地化模型部署：适配 Ollama，服务器部署等本地运行方案
-  - 智能助手应用：集成Kimi，秘塔AI搜索，文心一言，豆包等应用，让你一站式访问国内多个大模型平台
-  - 敏感词检测：精准识别敏感内容，确保文本合规
-  - 跨平台支持：适配 Windows、Mac
-  - 202510: 在v1.0.4的基础上添加了深度求索最新推出的 DeepSeek—OCR 
-
-- https://github.com/GeoRetina/Arion /GPL/202512/python/ts
-  - https://www.georetina.com/
-  - the first agentic AI desktop app for geospatial analysis, developed by GeoRetina Inc.
-  - Built with Electron, React (TypeScript), and Vite, Arion runs natively on Windows, macOS, and Linux, empowering users to leverage local and cloud-based Large Language Models (LLMs), integrate custom Model Context Protocol (MCP) servers, and utilize a plugin system for extended capabilities.
-
-- https://github.com/ahmedkhaleel2004/gitdiagram /MIT/202503/python/ts
-  - https://gitdiagram.com/
-  - Turn any GitHub repository into an interactive diagram for visualization in seconds.
-  - Powered by Claude 3.5 Sonnet for quick and accurate diagrams
-  - Public API available for integration (WIP)
-  - Frontend: Next.js, TypeScript, Tailwind CSS, ShadCN
-  - Backend: FastAPI, Python, Server Actions
-  - Database: PostgreSQL (with Drizzle ORM)
-  - Deployment: Vercel (Frontend), EC2 (Backend)
-  - Analytics: PostHog, Api-Analytics
-
 - https://github.com/eren726290/opencode-cowork-plugins
   - Standalone OpenCode CLI plugins for Windows. Ported from Anthropic's knowledge-work-plugins.
   - [Coworke Plugins wiped out 100 billion from SaaS. I made for opencode. : r/opencodeCLI _202603](https://www.reddit.com/r/opencodeCLI/comments/1rhrbgg/coworke_plugins_wiped_out_100_billion_from_saas_i/)
@@ -465,6 +486,11 @@ modified: 2025-02-21T17:17:42.225Z
   - [【开源推广】让 Claude Code、Codex、Cursor、OpenCode 也支持接入微信/飞书/（甚至自己的产品） _202603](https://linux.do/t/topic/1802351)
     - Claude Code 前两天出了 Channels，可以把 Agent 挂到 Telegram 和 Discord 上，论坛里讨论也不少。
     - 我之前做了个开源项目 GolemBot，做的事情差不多，但覆盖面更广一些——不只是 Claude Code，Cursor、Codex、OpenCode 也都能接；通道这边除了 Telegram 和 Discord，还支持微信、飞书、钉钉、企业微信、Slack。 最近刚把个人微信也接上了
+
+- https://github.com/iOfficeAI/OfficeAI /NonOpen
+  - https://office-ai.net/
+  - Make Office/WPS more powerful and easier to use with AI, similar to Office Copilot and WordGPT
+  - System Requirements: Windows 7/10/11 or later + Office 2013/2016/2019/Office 365
 
 ## office
 

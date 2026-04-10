@@ -686,6 +686,16 @@ modified: 2025-11-01T10:54:26.044Z
   - Not enough VRAM? We keep only hot experts and offload the rest to RAM.
   - Not enough RAM? We have a second tier of caching logic with prefetch from SSD and performance hacks.
   - This project is a PoC to push these features in vLLM and llama.cpp, but as i started I kept piling features into it and I intend to get to it to be at least as good as llama.cpp on all popular models.
+# model-safetensors/gguf
+- https://github.com/EvanZhouDev/umr /AGPL/202604/ts
+  - The Unified Model Registry for all your local AI apps.
+  - [Use the Same Model Across Ollama, LM Studio, Jan, and your Favorite Local AI Apps : r/ollama _202604](https://www.reddit.com/r/ollama/comments/1sgwjwy/use_the_same_model_across_ollama_lm_studio_jan/)
+    - A problem I’ve had is that every local AI app, like Ollama, LM Studio, Jan, all download and store their own copy of any local model you use.
+    - So, I created UMR, the Unified Model Registry for all your local AI Apps!
+    - It lets you add one canonical copy of whatever model you’re using, then link it to tools like Ollama, LM Studio, or Jan. Linking uses the same model you already downloaded, doesn’t require extra storage, and is super fast.
+    - Add any Hugging Face GGUF model that you want. Use that model ID to add it to any supported local AI app. 
+    - UMR itself does not necessarily store your model. It simply knows where to find them after you register them.
+      - You can also add a model manually with `umr add ./path/to/file.gguf`, which will clone it locally into UMR's own store
 # more
 - https://github.com/intel/ipex-llm /apache2/202510/python/inactive
   - an LLM acceleration library for Intel GPU (e.g., local PC with iGPU, discrete GPU such as Arc, Flex and Max), NPU and CPU

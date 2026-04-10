@@ -47,6 +47,7 @@ modified: 2021-07-20T13:50:23.433Z
     - backend: orm vs sql
     - 采用第三方包前期开发快，后期跟随升级及处理breaking changes的工作量会增加，要做取舍
   - data-app
+    - popular local apps: claude-code, obsidian, openclaw
     - specification for pivot table
     - 输入数据input-data-table, 开放数据api，开放应用app-builder
     - 产品方向: 偏设计布局， 偏业务逻辑
@@ -482,8 +483,9 @@ modified: 2021-07-20T13:50:23.433Z
 ## rewrite-to 🛝👾
 
 - prosemirror
-  - columns
   - code-diff
+  - columns-layout
+  - pretext-layout
 - codemirror
   - monaco-diff
 - vscode 
@@ -504,7 +506,7 @@ modified: 2021-07-20T13:50:23.433Z
   - word
   - excel
 
-- janai
+- janai-cli
   - lmstudio-cli
 
 - web-clipper

@@ -37,6 +37,12 @@ modified: 2023-04-04T22:39:45.442Z
   - Single container - One docker run, no Redis, no Postgres, no external services
   - 📡
     - 可开发cli
+  - changelog
+    - inspect/edit metadata flow for EXIF/GPS/XMP
+    - multi-image stitching with horizontal/ vertical layout
+    - Content-aware Resize
+    - HEIC/HEIF input and output support
+    - Smart Crop upgrade
   - [chore: switch to AGPLv3 dual-license _20260403](https://github.com/stirling-image/stirling-image/commit/51a4f2d2bf80d3bb5e680e77dc3c0c8c26fb2cd4)
   - [I built Stirling-PDF but for images : r/selfhosted _202604](https://www.reddit.com/r/selfhosted/comments/1sbgjxk/i_built_stirlingpdf_but_for_images/)
     - it is heavily AI-coded, but if i need to quickly edit some things i think this could be actually useful. If it get's the job done i'm happy. A 9GB+ Docker image is really big atm.
