@@ -63,9 +63,7 @@ modified: 2023-02-08T10:46:26.912Z
 
 - inactive
   - [GitHub-Chinese-Top-Charts](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts)
-
-## nice-to-have
-
+# nice-to-have
 - 空仓库标记，如搜索时标记出空仓库可省去点开查看
 - 搜索时显示 latest-push-time, 而不是bot机器人push的时间，方便判断废弃仓库
 - 若仓库是一个library，查找依赖本仓库的仓库中star最多的，没必要如此做，关注重点依赖即可
@@ -82,6 +80,9 @@ modified: 2023-02-08T10:46:26.912Z
 - github-release
   - app store
   - pkg store
+
+- repo-topic/tag
+  - 不支持中文标签
 
 - features
   - navigation within issue answers with shortcut J
@@ -189,7 +190,7 @@ language:JavaScript  language:TypeScript
   - 对于最新的库或版本，直接搜索import是最准确的方式
 
 - 搜索代码的变通方式 filename
-  - ~~可作为查找dependents被依赖被使用项目的一种变通方式~~
+  - ~~可作为查找dependents被依赖被使用项目的一种变通方式~~ 
   - react-table filename:package.json
     - 此时搜索的是 Code，而不是 Repositories
     - 新版搜索要将filename改为path

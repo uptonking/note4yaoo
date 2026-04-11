@@ -92,7 +92,7 @@ modified: 2025-04-09T02:49:16.372Z
 - Use workers to import the esm module  into the worker and atomics in the main thread and worker to wait on this synchronously.
 
 - ## [How to compile a specific file with tsc using the paths compiler option - Stack Overflow](https://stackoverflow.com/questions/44676944/how-to-compile-a-specific-file-with-tsc-using-the-paths-compiler-option)
-- what you can do is overwrite the include property of your tsconfig with something like this: `"include": [ "src/root/index.ts" ]`
+- what you can do is overwrite the include property of your tsconfig with something like this: `"include": [ "src/root/index.ts" ]` 
 
 # discuss-tsgo
 - ## 
@@ -117,6 +117,17 @@ modified: 2025-04-09T02:49:16.372Z
   - you should consider using node with --experimental-strip-types. it replaces 90+% of reasons ts-node or tsx is needed. it is more similar to ts-node than tsx in spirit, as it does do normal runtime module resolution, no 'bundling', it just removes ts types so that it can ingest .ts files
 
 - these tools do different things. tsgo is for type checking. People typically don't check types when using something like tsx to execute code. You just do that in your IDE / CI.
+# discuss-lint-js/ts
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Rspack Introduces Rslint, a TypeScript-First Linter Written in go _202508](https://socket.dev/blog/rspack-introduces-rslint-a-typescript-first-linter-written-in-go)
+  - Unlike Rspack’s Rust-based bundler, Rslint is written in Go and powered by Microsoft’s experimental typescript-go compiler. 
+  - It began as a fork of https://github.com/oxc-project/tsgolint
+
 # discuss
 - ## 
 

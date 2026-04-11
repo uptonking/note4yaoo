@@ -248,6 +248,31 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [1 Year Later: Data on how making commercial use free affected Obsidian's revenue - up to $1, 100, 000/year in lost revenue from enterprise : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1shm3ym/1_year_later_data_on_how_making_commercial_use/)
+  - A year ago, commercial use became free, shifting the use of Obsidian at work from a mandatory legal requirement of $50/user/year to an optional supporter license.
+  - Commercial license numbers on the day the change was announced: at least 18, 900, at most 47, 902
+  - Commercial license numbers today: at least 16, 150, at most 25, 818
+  - Obsidian lost at least 2, 750 (14.5% decrease), at most 22, 084 (46% decrease) commercial license subscribers, which at $50/user/year represents a net revenue loss of $137, 500/year at the minimum or $1, 104, 200/year at the maximum.
+  - Amazon remains the bedrock (puns intended) of Obsidian's enterprise supporters, paying for more commercial licenses than all other companies combined
+  - the company's business model, philosophy, and success continues to be the flagship force against the VC "growth at all costs" approach, serving as a prime example for what's possible when the vision isn't to please investors, but users.
+  - For added clarity, here's the list of companies and my calculations for anyone curious.
+
+- 👷: Making the license optional aligns it with the reality that companies were only optionally paying. Yes, it means a lot of potential lost revenue, but it aligns better with our Manifesto's goals to make Obsidian available to everyone for free.
+  - many companies are still happy to support us. In the future maybe we could have another service like Sync or Publish that is designed for companies, but it's not something we've been working on yet.
+- It would be better if the developers took money from those who have it – entrepreneurs and companies – and made synchronization free for ordinary users.
+  - I disagree because it changes the priorities. If only businesses are paying, you end up priortizing features for businesses. This ends up hurting the experience for regular people. There are many examples of apps that went down this path, and the results speak for themselves.
+
+- I have a catalyst one, but I realize that only goes so far for the team. Sync is recurring, and it actually gets me something useful.
+
+- Tbh, Obsidian should offer a lower price for startups. Something like 10 USD with some support would make Replicats a great customer for them.
+  - I say that because Notion charges twice as much, and it is a pain in the a$$ for start-up management.
+
 - ## one fun thing in Obsidian 1.8 is that it lets you browse the web in plain text — the "reader mode" is persistent as you click links
 - https://x.com/kepano/status/1885022352209306085
 

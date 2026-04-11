@@ -102,6 +102,21 @@ modified: 2023-01-09T11:03:32.533Z
   - A .docx file writer with Rust/WebAssembly.
 # extension-superset
 
+# diff 🆚
+
+- https://github.com/AnsonLai/docx-redline-js /MIT/202603/js/NoDeps
+  - Zero-dependency OOXML engine for text reconciliation and native Microsoft Word redlines.
+  - Host-independent OOXML reconciliation engine for .docx manipulation with track changes (redlines).
+  - Converts AI-generated or programmatic text/markdown edits into valid Office Open XML (OOXML) with w:ins/w:del revision markup that Microsoft Word renders as native tracked changes.
+  - Text reconciliation with word-level diffing and native-looking redlines
+  - Formatting updates (bold, italic, underline, strikethrough) via surgical w:rPrChange
+  - Lists: generate and edit real Word lists (w:numPr) from markdown
+  - Tables: virtual-grid diffing for cell-level edits with merge safety
+  - Comments: inject OOXML comments anchored to text ranges
+  - Revision management: accept/reject tracked changes by author or for all authors
+  - This package operates on OOXML strings (XML parts inside .docx zip archives), not raw .docx binaries.
+    - Extract the .docx zip (for example with JSZip, fflate, or similar)
+    - Apply reconciliation APIs to XML strings
 # utils
 - https://github.com/axa-group/Parsr
   - a minimal-footprint document (image, pdf, docx, eml) cleaning, parsing and extraction toolchain which generates readily available, organized and usable data in JSON, Markdown (MD), CSV/Pandas DF or TXT formats.

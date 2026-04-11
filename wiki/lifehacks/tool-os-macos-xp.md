@@ -323,6 +323,10 @@ redis-cli shutdown
   - `brew install --cask productdevbook/tap/portkiller`
   - https://x.com/productdevbook/status/2001594478524572124
     - With Cloudflare tunnels via PortKiller, you can open any port you want with a single click.
+
+- https://github.com/SolitaryJune/TempBarApp /BSD/202604/swift
+  - macOS 菜单栏温度监控工具，适用于 Apple Silicon Mac
+  - Universal Binary（支持 arm64）
 # discuss-macos-apps/tools
 - ## 
 

@@ -43,6 +43,19 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/dsebastien/obsidian-transcriber /MIT/202604/ts
   - An Obsidian plugin that transcribes images to Markdown using local Ollama vision models.
+# feat-ocr/rag
+- https://github.com/rootiest/obsidian-ai-image-ocr /MIT/202509/ts/inactive
+  - Obsidian plugin for AI-powered text extraction from images
+
+- https://github.com/jritzi/ocr-extractor /MIT/202604/ts
+  - Obsidian plugin to extract text from documents, images, etc. and store it as Markdown in notes
+
+- https://github.com/qidianlinjin1990/multi-ocr /NonOpen
+  - 一个支持AI OCR和OCR服务商的Obsidian插件
+  - [Multi OCR——可能是目前最棒的 Obsidian OCR插件 - 开发调优 - LINUX DO _202601](https://linux.do/t/topic/1433285)
+    - 开发原由是因为常用的yolo暂时不支持多模态，而在Obsidian上发现了两个插件ai-image-ocr和ocr-extractor，所以将二者综合了一下。
+    - 支持添加多个AI OCR供应商和自动抓取所有模型并进行选择，方便添加，自定义提示词，自定义json参数。
+    - 支持四大OCR服务商，包括MinerU、TextIn、Paddle OCR-VL和Mistral OCR。支持OCR服务商OCR参数设置
 # feat-canvas
 
 # alternatives

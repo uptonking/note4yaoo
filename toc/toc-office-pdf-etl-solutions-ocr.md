@@ -643,6 +643,13 @@ modified: 2026-04-07T12:53:38.419Z
     - 项目最开始的目的是为了在私有环境给非开发人员使用，提高工作效率。按最开始官方版本的UI界面复刻的
     - pdf预览用的浏览器的功能，理论不卡
     - 图片直接解析并存储到minio
+
+## utils
+
+- https://github.com/frondesce/mineru-kb-packager /python
+  - Post-process a MinerU extraction directory into a retrieval-ready knowledge base dataset for RAG pipelines.
+  - [开源：MinerU → RAG 数据集转换工具 - LINUX DO _202604](https://linux.do/t/topic/1940345)
+    - MinerU 自身的输出格式很标准，但有一些标记和符号对于 RAG 模型来说反而是噪声。
 # ocr-examples
 - https://github.com/AKSarav/pdfstract /108Star/apache2/202601/python/js
   - The Extraction and Chunking Layer in Your RAG Pipeline - Available as CLI - WEBUI - API

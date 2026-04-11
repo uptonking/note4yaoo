@@ -301,51 +301,6 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 
 ```
 
-- git-repo-sync
-```prompt
-git repo `./ilove-image`  is several commits behind `./ilove-stirling-image`. ilove-image has MIT license, while ilove-stirling-image has GPL license. so I want to migrate some features from ilove-stirling-image to ilove-image. 
-please analyze git commits and explain to me what major features are in stirling-image but missing in ilove-image.
-
-- please make migrations to ilove-image. 
-- the following 2 features can be ignored:
-1. HEIC/HEIF input and output
-2. CUDA Docker variant can be ignored. Lite Docker variant should be migrated.
-3. any features you feel unimportant or redundant can be ignored too
-- feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation work, but without licensing issues.
-- in your implementation, you can also improve the code logic for features and make your implementation clean and extensible. tests are not necessary for your implementation, but you can write some important tests if you want. do not write too many tests, if logic is simple/clear, skipping tests is ok. 
-
-```
-
-- git-repo-sync
-
-```prompt
-
-git repo `./ilove-pdf`  is several commits behind `./ilove-bentopdf`. ilove-pdf has MIT license, while ilove-bentopdf has GPL license. so I want to migrate some features from ilove-bentopdf to ilove-pdf. 
-please analyze git commits and explain to me what major features are in ilove-bentopdf but missing in ilove-pdf.
-
-- please make migrations to ilove-pdf. 
-- the following 8 features should be migrated:
-1. dynamic WASM loading
-2. bookmarks / TOC / page labels / Bates
-3. attachment extract/edit
-4. overlay/underlay
-5. better Compare PDFs
-6. better OCR
-7. better Image/PDF UX
-8. features: divide pages, extract images, prepare PDF for AI, PDF layers
-- other features can be ignored: 
-1. Forms and signing, digital signature / validation / timestamp
-2. Big conversion expansion, many Office, email converters, but you can migrate some if you want 
-3. Workflow/automation
-4. repair PDF
-5. Encryption
-6. PDF to PDF/A, PDF booklet,ebook, deskew, font-to-outline, rasterize PDF, ...
-7. any features you feel unimportant or redundant can be ignored
-- feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation work, but without licensing issues.
-- in your implementation, you can also improve the code logic for features and make your implementation clean and extensible. tests are not necessary for your implementation, but you can write some important tests if you want. do not write too many tests, if logic is simple/clear, skipping tests is ok. 
-
-```
-
 - goal-to 增强特色
   - editor
   - crud
@@ -360,6 +315,12 @@ please analyze git commits and explain to me what major features are in ilove-be
   - ?
 - dev-log
   - ?
+
+## 0410
+
+```prompt
+
+```
 
 ## 0406
 

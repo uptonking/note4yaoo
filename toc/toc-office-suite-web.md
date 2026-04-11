@@ -62,6 +62,12 @@ modified: 2023-03-09T13:47:07.317Z
   - https://github.com/ONLYOFFICE/core /cpp
     - Server core components which are a part of ONLYOFFICE Document Server
 
+- https://github.com/Euro-Office/desktop-apps /AGPL
+  - https://github.com/Euro-Office/DesktopEditors 
+  - https://github.com/Euro-Office/DocumentServer
+  - Euro-Office is based on the ONLYOFFICE Open Source, an AGPL codebase. This code base is being extensively reviewed and cleaned up, with the goal of making it easy to build and contribute to. 
+  - Why did we resort to a fork, rather than collaborate? Of course, forking should be a last resort. Unfortunately, open collaboration with ONLYOFFICE was not possible
+
 - https://github.com/ranuts/document /1.6kStar/AGPL/202512/js
   - https://ranuts.github.io/document/
   - 基于 OnlyOffice 的本地网页文档编辑器，让您直接在浏览器中编辑文档，无需服务器端处理
@@ -174,7 +180,7 @@ modified: 2023-03-09T13:47:07.317Z
   - 依赖userbase-js、automerge.v0.14、dexie.v3、jquery、quill、workbox
   - https://github.com/smallbets/userbase /js
     - Userbase is the easiest way to add user accounts and user data persistence to your static site.
-    - All Userbase features are accessible through a very simple **JavaScript SDK**, directly from the browser. No backend necessary. 类似Authing
+    - All Userbase features are accessible through a very simple **JavaScript SDK** , directly from the browser. No backend necessary. 类似Authing
     - 100% open source, MIT licensed. You can host it yourself 
 # office-inactive
 - https://github.com/Darth-Ness/Ink /202210/js/实现简单

@@ -9,6 +9,22 @@ modified: 2025-12-18T12:27:14.982Z
 
 # guide
 
+# codex-cli-xp
+
+```sh
+# alias --yolo
+codex --dangerously-bypass-approvals-and-sandbox
+codex --full-auto --bypass-approvals --bypass-sandbox --trusted-workspace
+
+# pick recent interactive sessions
+codex resume
+# most recent session from the current working directory 
+codex --yolo resume --last
+```
+
+- hotkeys
+  - ctrl + u: 清空聊天框
+    - This is a standard Unix/Mac terminal shortcut that deletes everything from your cursor to the beginning of the line. I
 # discuss-stars
 - ## 
 

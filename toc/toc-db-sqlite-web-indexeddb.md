@@ -120,6 +120,11 @@ modified: 2022-11-06T03:19:28.284Z
   - sqlite-wasm playground
   - typescript, web worker, vite
 
+- https://github.com/Ehesp/sqlitey /MIT/202604/ts
+  - A simple (vibe coded) SQLite (including Turso support) browser.
+  - https://x.com/elliothesp/status/2042367134773158181
+    - A simple in browser SQLite (+ @tursodatabase ) compatible viewer, built with @bunjavascript & @shadcn
+
 - https://github.com/bgrins/opfs-sqlite-demo
   - /js
 

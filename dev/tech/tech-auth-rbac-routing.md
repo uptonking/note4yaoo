@@ -212,3 +212,10 @@ modified: 2022-01-06T17:30:03.280Z
     - 前面几种方式，除了 登录页与主应用分离，每次路由跳转，都在全局路由守卫里做了判断
     - 应用初始化的时候只挂载不需要权限控制的路由
     - 若没有初始化，则调用远程接口获取菜单和路由等，然后处理后端返回的路由，将 component 赋值为真正的组件，接着调用 addRoutes 挂载新路由，最后跳转路由即可
+# discuss-auth
+- ## `Clear-Site-Data` header 
+- https://x.com/MozDevNet/status/2042497867420746181
+  - One HTTP header to clear cookies, storage, or cache for your site. Perfect for logout flows.
+
+- And ALL subdomains? Why no control over what (sub)domains such a request should apply? There are plenty websites/applications where one subdomain is unrelated to another!
+  - Not even using the Public Suffix List?

@@ -119,7 +119,10 @@ modified: 2026-03-05T19:32:00.353Z
 
 - ## 
 
-- ## 
+- ## [Is there a need for 3 filtering "systems"? : r/django _202604](https://www.reddit.com/r/django/comments/1sh78sj/is_there_a_need_for_3_filtering_systems/)
+- `SearchFilter` is DRF's native filtering. It uses a single query parametar to search one or more fields for multiple space-delimited terms (like "googling" your data).
+- `DjangoFilterBackend` from django-filter library does simple equality-based filtering for one or more fields.
+- `FilterSet` from django-filter library is for highly-customizable filters.
 
 - ## [Thoughts on using django admin (with a good looking theme and restricted enough) as MVP ? : r/django](https://www.reddit.com/r/django/comments/1qtd4j6/thoughts_on_using_django_admin_with_a_good/)
 - Just MVP? im using django admin with unfold as the main interface it looks good and has a lot of customization and if you know how to override things you are set for life

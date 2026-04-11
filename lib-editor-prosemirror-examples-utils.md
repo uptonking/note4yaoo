@@ -20,6 +20,20 @@ modified: 2022-08-18T16:57:29.058Z
   - collaboration — Yjs-based CRDT. Multiplayer editing with comments, tracked changes
   - Agentic tooling — Runs headless in Node.js. Bring your own LLM for document automation, redlining, and template workflows.
   - Dual licensed — AGPLv3 for community use. Commercial license for proprietary deployments.
+  - [Open source MS Word GPT redlining add-in for contract review : r/legaltech _202510](https://www.reddit.com/r/legaltech/comments/1nv8c0u/open_source_ms_word_gpt_redlining_addin_for/)
+    - We uniquely unzip the DOCX and edit the raw XML which allows us to keep the formatting intact, a must for legal tech.
+  - [Deliberately violating REST for developer experience - a case study : r/programming _202508](https://www.reddit.com/r/programming/comments/1miogsp/deliberately_violating_rest_for_developer/)
+    - After 15 years building APIs, I made a decision that my younger self would hate: using GET requests to mutate state.
+    - The API component handles document tooling (e.g. DOCX to PDF, etc.) without the full editor.
+  - https://github.com/superdoc-dev/ooxml-dev /MIT/202604/ts
+    - https://ooxml.dev/
+    - Interactive OOXML (ECMA-376) reference explained by people who actually implemented it
+    - Every page combines XML structure, live rendered previews, and implementation notes that tell you what the spec doesn't.
+    - The ECMA-376 spec is 5,000+ pages and it lies. Word's actual behavior diverges from the standard in ways you only discover by building against it. The knowledge to implement OOXML correctly is locked inside a handful of companies that have no incentive to share it.
+- https://github.com/yuch85/contract-playbook-ai /AGPL/inactive
+  - Generate playbooks using AI from contracts, and review contracts using AI against playbooks, with changes tracked in native docx redlines.
+  - [Built an open-source Contract Playbook AI tool with native .docx tracked-changes editing : r/legaltech _202604](https://www.reddit.com/r/legaltech/comments/1pfd17e/built_an_opensource_contract_playbook_ai_tool/)
+  - It uses the Superdoc open-source library under AGPLv3 to bring full online .docx editing into the workflow.
 
 - https://github.com/mizuka-wu/prose-typed /202505/ts
   - https://mizuka-wu.github.io/prose-typed/

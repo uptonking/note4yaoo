@@ -181,6 +181,19 @@ modified: 2024-01-11T15:57:32.182Z
 
 - ## 
 
+- ## [How Anthropic built their Office/Powerpoint creation agent : r/AI_Agents _202510](https://www.reddit.com/r/AI_Agents/comments/1nxwobd/how_anthropic_built_their_officepowerpoint/)
+  - Anthropic just shipped Office document editing capabilities (PPTX, DOCX, XLSX, PDF).
+  - The problem? It's only available in Claude Desktop/Web, not in Claude Code or the API. Thankfully Claude reveals all the skills & scripts it uses for this when asked.
+  - So I published a complete skills repository that brings these same workflows to the CLI. 
+- How PowerPoint creation works:
+  - From scratch (HTML → PowerPoint)
+  - From templates
+
+- what is even the point of formats like ppt or docx? Might as well generate slides with HTML, CSS & JS, which LLMs can manipulate much more easily for the desired outcome!
+  - It all boils down LLM output vs customizability, i am already using v0 to create slides works most of the time but editing is a nightmare
+
+- Main issue is editing them. Slides needs tons of editing based on needs and reviews which is difficult once model generates them. Let know if anyone knows solution.
+
 - ## [大香蕉生成海报，怎么让图中的文字正确？ - LINUX DO _202604](https://linux.do/t/topic/1929096/15)
 - 可以试试把海报中文字的部分用红线框选然后喂给豆包即梦去修改
 

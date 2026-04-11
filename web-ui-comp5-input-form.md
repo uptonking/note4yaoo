@@ -44,6 +44,36 @@ modified: 2021-07-28T20:11:24.350Z
 - There are gaps between guidelines and actual practices
 
 - ### [checkboxes - Checkbox vs toggle](https://ux.stackexchange.com/questions/63884/checkbox-vs-toggle)
+# discuss-form-solutions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 React Hook Form, TanStack Form, or Formisch — which one should you actually pick in 2026?
+- https://x.com/FabianHiller/status/2042251006612844819
+  - We compared all three across TypeScript inference, validation architecture, and performance as forms grow
+  - [Choosing a React Form Library in 2026: React Hook Form, TanStack Form, and Formisch Compared | Formisch _202604](https://formisch.dev/blog/react-form-library-comparison/)
+- RHF attaches validation rules at the point of field registration. Alternatively, you can pass a schema resolver at the form level using Zod, Valibot, Yup, or similar. Either way, the mental model is field-centric. Each field is responsible for its own validation, and the form is an aggregation of those field-level concerns.
+  - RHF's core design decision is that field values do not live in React state. They live in RHF's internal object. RHF updates the native HTML input directly through refs, bypassing React's re-render system entirely. 
+  - This is what makes RHF fast. It is a deliberate architectural choice.
+  - In small forms, this is not a problem, but in larger forms with many watched fields, the re-render problem returns, but scoped to the components subscribed to those fields.
+- The most significant architectural change in TanStack Form is that validators are first-class objects. Each validator you define specifies its own trigger: onChange, onBlur, onSubmit, or onMount and these triggers are independent of each other. Async validation is also treated as a first-class concern. Form-level validators are also part of the core design. These validators run against the entire form state and can assign errors to specific fields.
+  - TanStack Form stores field values in a reactive store, and components subscribe only to the specific slice of state they use. When a field changes, only components subscribed to that field update.
+  - TanStack Form's store-based reactivity manages re-render scope automatically, so performance remains stable as forms grow without additional architectural work.
+- Formisch centralizes everything in the Valibot schema. Validation runs when the form is submitted by default, rather than on individual field events like onChange, giving users silent-until-submit behaviour on first interaction, then live feedback as they correct mistakes. 
+  - Formisch uses signals as its reactive model internally
+  - A signal represents a single value and tracks exactly which components depend on it. When a signal changes, only those components update, allowing updates to be scoped very precisely with minimal overhead compared to store-based approaches.
+  - The dependency graph is more direct than a store-based model. 
+
+- For most applications, the difference between TanStack Form and Formisch comes down to this: both scope re-renders automatically without requiring deliberate component structure. Formisch does it at the signal level, which can reduce overhead as form size and update frequency increase.
+
+- Tanstack Form hands down. When they implement multi step functionality then i wont even consider other options
+
+- Great framing. Form choices should be made on failure modes (async validation, nested state, dynamic schemas), not DX first impressions. Tradeoff-first comparisons are rare and useful.
 # discuss
 - ## 
 
@@ -81,7 +111,7 @@ modified: 2021-07-28T20:11:24.350Z
 
 - ## Tip: number inputs have a `valueAsNumber` property, which allows you to quickly get their numeric value 
 - https://twitter.com/mgechev/status/1429662217318850560
-  - use `input.valueAsNumber` instead of `parseInt(input.value)`
+  - use `input.valueAsNumber` instead of `parseInt(input.value)` 
 
 - ## 🌰 [A Better Way to Work With Number and Date Inputs in JavaScript](https://www.builder.io/blog/numbers-and-dates)
 

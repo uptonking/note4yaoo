@@ -110,6 +110,12 @@ modified: 2020-06-22T09:23:56.117Z
 
 - 学术相关数据: arxiv/paper, huggingface-data, github-code
   - [Trending Papers - Hugging Face](https://huggingface.co/papers/trending)
+
+- https://github.com/TapXWorld/ChinaTextbook
+  - 所有小初高、大学PDF教材。
+# ebook
+- [资源资讯：全球免费开放的电子图书馆-清华大学公共管理学院](https://www.sppm.tsinghua.edu.cn/info/1072/1251.htm)
+  - [公共版權電子圖書](https://web.lins.fju.edu.tw/mao/works/pdbooks.htm)
 # geo
 - 现地名，古地名，如南京-建业(三国)
 - 地名，车牌号 的对应关系(如浙A)

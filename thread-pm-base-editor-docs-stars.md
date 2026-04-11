@@ -16,6 +16,55 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
+- ## 🚀 Claude for Word is now in beta. _202604
+- https://x.com/claudeai/status/2042670341915295865
+  - Draft, edit, and revise documents directly from the sidebar. 
+  - Claude preserves your formatting, and edits appear as tracked changes.
+  - Claude for Word shares context with Claude for Excel and Claude for PowerPoint, so Claude can work across your open documents in a single conversation.
+  - [Claude for Word  ](https://claude.com/claude-for-word)
+
+- claude sneaks into Word with tracked changes before microsoft finishes copilot.
+
+- This is where AI actually becomes useful. Not a separate tool… just built into where people already work. 
+  - When it lives inside Word, it stops feeling like AI — and starts feeling normal.
+
+- Can’t wait for Claude for LaTeX.
+
+- Cross-file context across Word, Excel, and PowerPoint in a single conversation means Claude now understands the entire deliverable—not just the document you're in. Pull data from a spreadsheet, reference it in a report, and build an executive summary—all in one conversation, with zero re-explaining. 
+  - The most expensive friction in knowledge work isn’t the writing. It’s the context-switching between files that resets the AI every time.
+
+- https://x.com/Yuchenj_UW/status/2042672637906948121
+  - How did Anthropic do automation to Word, PowerPoint and Excel before Microsoft 365 Copilot?
+
+- I don’t think Anthropic "beat" Microsoft here, they’re just solving a different problem.
+  - Microsoft is trying to build this as an enterprise-wide system, with what they’d call "Work IQ" baked in… who you are, what you have access to, what’s appropriate in your org. That means permissions, compliance, IT controls, all that. It slows things down, but it’s intentional.
+  - Anthropic doesn’t really have to deal with that (at least not to the same extent), so they can move faster and ship features that feel more direct.
+
+- microsoft doesn’t have to race to be first. they sell “trust”. enterprises won’t touch anthropic with a 10 foot pole
+  - take a look at their revenue chart and tell me enterprise doesn't trust anthropic.
+
+- What are you talking about.. M365 Copilot already can edit documents.. Can even use Anthropic models too.
+
+- The real game-changer is when automation becomes accessible, not just powerful. API integrations + smart prompting let businesses build custom workflows without needing to code. That's where the magic happens. 
+
+- Microsoft was waiting for Sam to build a plugin but he was busy building SORA
+
+- https://x.com/dotey/status/2042714553004245254
+  - Anthropic 刚刚发布了 Word 插件的测试版。装上之后，Claude 直接在 Word 侧边栏里工作，你选中一段文字、用自然语言描述想怎么改，它就会以 Word 原生的"修订模式"呈现修改结果，接受或拒绝都在 Word 自带的审阅面板里完成。
+  - 你还可以上传参考文档，它会在写作时标注引用来源。
+  - 还支持 Skills：团队把某个反复使用的工作流（比如合同审查、研究简报）封装成一个 Skill，其他成员一键就能复用，不用每次重新描述需求。
+  - 另外，这个插件和之前推出的 Excel、PowerPoint 插件共享同一个对话上下文。也就是说你可以让 Claude 从 Excel 里的财报数据出发，直接在 Word 里起草分析报告，中间不用手动搬运数据。
+  - 目前仅对 Claude Team 和 Enterprise 付费用户开放，支持 .docx 和 .docm 格式。
+
+- 把AI直接塞进Word的原生修订模式，这一步确实实用。以后改合同、写报告不用再来回复制粘贴，效率提升明显。不过多人协作时，修订作者标识和冲突处理会不会乱？还有云端历史记录是怎么同步的？
+- 多人协作时它怎么处理修订作者标识和冲突？接受/拒绝会同步到云端历史吗？
+
+- 把 AI 直接塞进 Word 当然会提升效率，但也会让很多人更懒得思考结构和判断。工具越顺滑，越容易把‘会改字’误当成‘会写作’，这才是真正值得警惕的地方。
+
+- 
+- 
+- 
+
 - ## @LandingAI 指出 GPT-5.4、Gemini 和 Opus 等主流 LLM 在文档处理时的问题：视觉定位/可追溯定位能力弱。
 - https://x.com/shao__meng/status/2037097008087839005
   - 它们能提取文档中的数值或信息，却无法指出该数值在原始页面上的确切位置（bounding box、页码、坐标等）。一旦要求“把你提取的这个值在原文档里标出来”，模型就搞不定了。

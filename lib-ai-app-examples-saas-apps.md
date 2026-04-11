@@ -119,6 +119,18 @@ modified: 2025-02-21T17:17:42.225Z
 - https://github.com/THU-MAIC/OpenMAIC /10.7kStar/AGPL/202603/ts
   - OpenMAIC (Open Multi-Agent Interactive Classroom) is an open-source AI platform that turns any topic or document into a rich, interactive classroom experience.
   - [THU-MAIC/OpenMAIC 开源多智能体互动教室 - LINUX DO _202603](https://linux.do/t/topic/1765092)
+
+- https://github.com/ZJU-LLMs/OpenStory /apache2/202604/python
+  - http://xhslink.com/o/9aBzc2kULyF
+  - a multi-agent deduction and simulation framework developed based on Large Language Models (LLMs) and Agent-Kernel.
+  - https://github.com/ZJU-LLMs/Agent-Kernel
+    - multi-agent system development framework, which is designed to powerfully enable large-scale social simulation.
+  - [OpenStory：拒绝线性结局，你的故事从此拥有 1000 种活法 - LINUX DO _202604](https://linux.do/t/topic/1940123)
+    - 还原了红楼梦的世界，可以任意添加智能体，指派任务，有点像一个游戏版的斯坦福小镇。 你可以实现孙悟空棒打王熙凤，柯南调查大观园等任何你想要的剧情
+    - 我制作了一个 1：1 还原的红楼梦前端，宁国府，荣国府，大观园完全合理的空间安排。 地图上会显示所以角色的模型，以及它们的动作，对话，记忆，像上帝一样观察红楼梦的故事。
+    - 后端纯 python 架构，前端为 web 架构，非常轻量 
+    - 我感觉我们最大的特点是可以自由添加角色，还可以指定行动
+    - 可以自动推演剧情，会比较有意思，但是这种项目的痛点都是token消耗比较高，我们用各种方法，降低到了1个tick用flash模型只要3毛左右
 # ai-apps
 - https://github.com/NPC-Worldwide/incognide /AGPL/202604/ts/类似全家桶
   - https://enpisi.com/incognide
@@ -223,6 +235,9 @@ modified: 2025-02-21T17:17:42.225Z
     - I don't understand the point when opencode desktop already exists.
     - it's fully integrated with Claude Skills.
     - What's the security boundary here - there's no mention of a VM or anything to isolate the agent from the file system?
+  - https://github.com/different-ai/the-factory
+    - OpenWork Enterprise is the OpenWork Factory superproject: one workspace for product repos, operational automation, and reusable OpenCode behaviors.
+    - Build automation-first workflows, skills, and runbooks that scale beyond ad-hoc scripts.
 
 - https://github.com/CoWork-OS/CoWork-OS /MIT/202603/ts
   - Operating System for your personal AI Agents with Security-first approach. 
@@ -612,6 +627,11 @@ modified: 2025-02-21T17:17:42.225Z
     - i've also renamed the open-excel repo into office-agents.
     - the SDK, which contains the agent loop, IndexedDB storage logic, etc is published to NPM. so you can build your own plugins.
     - fwiw, powerpoint is only ~2.5k LoC excluding the system prompt and the officejs .d.ts file
+  - https://github.com/hewliyang/headless-word /MIT/202604/cpp
+    - Word document automation via LibreOffice for headless environments.
+  - https://github.com/hewliyang/headless-spreadjs /MIT/202604/ts
+    - Headless Excel engine for Node.js using SpreadJS. Runs without a browser or Excel.
+    - require SpreadJS license key
 
 - https://github.com/GongRzhe/Office-Word-MCP-Server /1.8kStar/MIT/202512/python/archived
   - MCP server for creating, reading, and manipulating Microsoft Word documents. 
@@ -628,6 +648,16 @@ modified: 2025-02-21T17:17:42.225Z
   - Visual QA 闭环：每页 HTML 构建后自动截图，由大模型进行视觉审计。检测到布局溢出后，子代理以 DOM + CSS 结构重写的方式消除冲突，而非依赖间距微调。
   - 无状态断点恢复：全流程不依赖任何进度状态文件。中断后通过扫描磁盘上已存在的产物文件（outline.txt / style.json / slide-N.png 等）自动推断恢复点。
   - [pptx agent skills 完全重构版（harness agent），佬友们所期待的 SKILL 终于完成了 - LINUX DO _202604](https://linux.do/t/topic/1882610)
+
+- https://github.com/qWaitCrypto/AuraWork /MIT/202604/python/ts
+  - A local-first multi-agent framework for office workflows — clarify requirements, plan as a DAG, execute with parallel subagents and human-in-the-loop approvals.
+  - Structured before execution — every task starts with a clarified WorkSpec, not a raw prompt
+  - DAG-based parallel dispatch — dependency-aware scheduling with concurrent subagents
+  - Human-in-the-loop approvals — high-risk actions pause for review; low-risk actions proceed automatically
+  - Office-native skills — built-in Word, Excel, PowerPoint, PDF, and browser research capabilities
+    - Office/PDF files are converted to a structured intermediate representation (Markdown/JSON preserving heading levels, table boundaries, image positions), edited there, then written back to the target format for delivery.
+  - CLI is the recommended and most stable entry point.
+  - Web Workspace is under active development — the frontend UX and flows are not finalized; expect rough edges.
 
 ## reader
 

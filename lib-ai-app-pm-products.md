@@ -734,7 +734,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 模型不稳定，经常异常再恢复再异常
     - [【nhh公益站】介绍贴及主贴  ](https://linux.do/t/topic/1370326)
     - [模型中转状态检测](https://status.123nhh.xyz/)
-  - [Wind Hub](https://windhub.cc/console/personal), 农场
+  - 📌 [Wind Hub](https://windhub.cc/console/personal), 农场
     - https://api.224442.xyz/panel  /legacy
     - [福利站](https://wcdk.224442.xyz/)
     - 提供了free分组，包含deepseek-v3.2, gpt-4.1-mini
@@ -806,7 +806,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 很多openrouter渠道的模型
     - cc不支持tool, **cc渠道经常上架下架** 
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
-  - [OAI-FREE](https://newapi.zhx47.xyz/pricing), 每天100, 需手动领取
+  - 📌 [OAI-FREE](https://newapi.zhx47.xyz/pricing), 每天100, 需手动
     - [LinuxDo 社区福利活动](https://campaign.zhx47.xyz/)
     - [OAI-FREE 签到发送订阅 ](https://linux.do/t/topic/1632349)
     - 都是临时渠道，不开签到了，直接每天送 100 刀余额
@@ -886,9 +886,12 @@ modified: 2025-03-22T16:10:24.856Z
     - [开个小公益站测试一下 ](https://linux.do/t/topic/1414593)
   - 📌 [小辣椒 公益站 ](https://yyds.215.im/console/topup), 签到类似wong
     - cc
+  - [Huainova _202604](https://ai.huaibao.top/console/personal)
+    - [【Huainova公益站】二次开放注册啦 ](https://linux.do/t/topic/1939664)
+    - 定时清理注册未使用的
   - [蒸蚌公益站 _202603](https://laoxi.ethan010203.online/console/personal), 签到50
     - gpt-5.2
-  - 📌 [Dooong AI ](https://ai.dooo.ng/console/personal), 签到需过盾
+  - [Dooong AI ](https://ai.dooo.ng/console/personal), 签到需过盾
     - 后台有加权风控分系统，T+1和不定时封禁违规账号
   - [Mu. API 2026](https://demo.awa1.fun/console/personal)
     - cc支持, 国产模型
@@ -898,7 +901,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [六万公益站复活，改名【购曼公益】 ](https://linux.do/t/topic/1855060)
   - [无邪公益站 _202603](https://wuxiexiexie.us.ci/console/personal)
     - [【公益站】仅限Linuxdo注册 回馈佬友 随时跑路 _202603](https://linux.do/t/topic/1853752)
-  - [marybrown API _202603](https://marybrown.dpdns.org/console/personal)
+  - 📌 [marybrown API _202603](https://marybrown.dpdns.org/console/personal)
     - [服务器小升级,grok-4.2无限用和gpt-5.4试用 _202603](https://linux.do/t/topic/1795512)
     - 23公益站作者后续维护
   - [955code _202603](https://955code.top/console/personal), 无签到
