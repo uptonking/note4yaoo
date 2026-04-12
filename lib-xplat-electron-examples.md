@@ -469,6 +469,7 @@ modified: 2024-01-31T19:13:11.286Z
   - Framework: Nextron (Next.js + Electron)
   - Backend: Python, FastAPI
   - Build/Deployment: Electron Builder
+  - [I built a free, open-source desktop app to edit PDFs locally, because I don't trust online tools with my private documents. : r/pdf _202507](https://www.reddit.com/r/pdf/comments/1m14qxv/i_built_a_free_opensource_desktop_app_to_edit/)
   - https://github.com/prasadlonare35/pdf-utility-platform /202601/python/js
     - Offline desktop PDF utility app (Electron + FastAPI)
 

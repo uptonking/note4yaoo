@@ -80,6 +80,8 @@ modified: 2022-11-11T10:46:41.519Z
   - Privacy-first PDF, image, audio & QR tools — everything runs in your browser, nothing gets uploaded
   - privacy-first alternative to ilovepdf
   - `@bentopdf/gs-wasm`—a polished npm package that wraps Ghostscript WASM nicely. Tried it out, and it worked amazingly well.
+  - https://github.com/dannycranmer/parchment
+    - collection of free PDF tools that run entirely in your browser. No uploads, no servers
 
 - https://github.com/PDFCraftTool/pdfcraft /3.8kStar/AGPL/202604/ts
   - https://pdfcraft.devtoolcafe.com/
@@ -88,27 +90,25 @@ modified: 2022-11-11T10:46:41.519Z
   - Powered by Next.js and WebAssembly for near-native performance.
   -  powerful visual workflow editor that allows you to chain multiple PDF operations together, creating automated processing pipelines.
 
-- https://github.com/mrmn2/PdfDing /1.4kStar/AGPL/202511/python
-  - https://www.pdfding.com/
-  - a selfhosted PDF manager, viewer and editor offering a seamless user experience on multiple devices.
-  - designed be to be minimal, fast, and easy to set up using Docker.
-  - The name is a combination of PDF and ding. Ding is the German word for thing. Thus, PdfDing is a thing for your PDFs. Initially inspired by linkding.
-  - browser based PDF viewing on multiple devices. Remembers current position - continue where you stopped reading
-  - Edit PDFs by adding comments, highlighting and drawings
-  - SSO support via OIDC
-
-- https://github.com/SimplePDF/simplepdf-embed /280Star/NonOpen/202502/ts
+- https://github.com/SimplePDF/simplepdf-embed /280Star/NonOpen/202603/ts
   - https://simplepdf.eu/embed
+  - https://simplepdf.github.io/
   - PDF editor in the browser – add text, checkboxes, pictures, signatures to PDF files. 
   - Merge, rotate PDF pages – iframe, script and React component
   - Client-based: the document and data filled in does not leave the browser
   - The library is a simple wrapper around an Iframe that loads SimplePDF on-demand (whenever the user clicks the wrapped link), as such the footprint for this "opening an Iframe" mechanism is very tiny
   - As for the editor itself, it's not open-source
     - The generation part is done using **PDF-lib** 
+  - 🐛 SimplePDF Embed is a ~5KB wrapper that opens an iframe loading the proprietary SimplePDF editor hosted at https://{companyIdentifier}.simplepdf.com. The real editor code is closed-source and lives on their servers — this repo only contains the embed wrapper.
+  - 不支持类似acrobat的行内编辑
   - [I made a free PDF editor that works in your browser](https://www.reddit.com/r/InternetIsBeautiful/comments/zxdz3e/i_made_a_free_pdf_editor_that_works_in_your/)
     - The PDF editor is completely free and does not require an account to be used.
     - I want to keep it for free for individuals, but there's a paid service for companies
     - I am resting on the shoulders of giants: I used every possible help (read open source work from others) and combined them into the result you're able to use. So I haven't luckily had to spend a lot of time dealing with the complexity of PDFs.
+
+- https://github.com/ElasticPDF/elasticpdf /NonOpen
+  - https://www.elasticpdf.com/
+  - 新国产 PDF 编辑器开发框架，基于开源 pdf.js ，增加了批注功能
 
 - https://github.com/tabulapdf/tabula /MIT/201802/js/inactive
   - http://tabula.technology/

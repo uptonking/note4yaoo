@@ -43,6 +43,14 @@ modified: 2025-11-01T10:54:26.044Z
 
 - https://github.com/Blaizzy/mlx-vlm /1.8kStar/MIT/202511/python
   - a package for inference and fine-tuning of Vision Language Models (VLMs) and Omni Models (VLMs with audio and video support) on your Mac using MLX
+  - https://github.com/avbiswas/mlx-vlm-batch-outlines /MIT/202604/python
+    - Minimalist repo to do mlx vlm constrained decoding in batch mode
+    - a small Qwen-focused MLX vision-language package for: multimodal chat with images; batched multimodal chat; structured outputs from Pydantic, regex, CFG, or JSON Schema
+    - It is intentionally narrow. It is built for local MLX/Qwen workflows and does not try to support every mlx-vlm backend or the full Outlines API surface.
+    - This project heavily reuses and adapts ideas and code paths from: mlx-vlm, outlines
+    - https://x.com/neural_avb/status/2042908404390437000
+      - I have been using local VLMs for annotating videos and images locally and producing synthetic datasets on my mac.
+      - You can point to a folder full of images and get structured outputs 2-3x faster. Fully local.
 
 - https://github.com/jundot/omlx /6.4kStar/apache2/202603/python
   - https://omlx.ai/

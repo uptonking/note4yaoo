@@ -16,6 +16,13 @@ modified: 2021-01-04T17:26:43.784Z
   - pdf标注可参考 office-drawing, 还可参考: okular, foxit, canva, xournal, 各类电子书阅读器
   - 提取pdf中插图/图表的思路是分步执行, vlm返回bbox, 然后通过pymupdf裁剪
 
+- pdf-editor
+  - stirling-pdf
+  - open-pdf-studio
+  - onlyoffice
+  - LibreOffice Draw
+  - Inkscape
+
 - https://printcss.live/
   - 渲染pdf的多种js示例
 # popular
@@ -254,6 +261,9 @@ modified: 2021-01-04T17:26:43.784Z
   - locally hosted web based PDF manipulation tool using docker that allows you to perform various operations on PDF files
   - 依赖 Spring Boot + Thymeleaf、pdfbox、itext7、libreoffice转换格式、ocrMyPdf
   - 除了能给PDF打水印之外，还可以轻松批量给扫描的PDF文件瘦身，1秒钟搞定，太好用了
+  - [Edit PDF text directly _202404](https://github.com/Stirling-Tools/Stirling-PDF/issues/1141)
+    - 202506: We are working on Stirling-PDF V2 at the moment, which will add a ton of improvements and features and we hope will be the backbone towards greater features like edit text. But I cant give any estimates on the edit text feature itself, its a large unknown and we have other things in our backlog along with it. BUT yes it is planned
+    - 202512: We now have an initial extremely early alpha version releeased fully Opensource.. One ask for the community is for PDFs that dont render correctly at all (on export) can you please share the font info shown in bottom right of page.
   - [New Browser-based PDF Editor (github link) : selfhosted](https://www.reddit.com/r/selfhosted/comments/10pexhn/new_browserbased_pdf_editor_github_link/)
   - https://twitter.com/dotey/status/1739426777091408207
     - 一个本地的处理 PDF 的工具，界面是 Web UI，可以支持 Docker 部署。
@@ -268,7 +278,7 @@ modified: 2021-01-04T17:26:43.784Z
     - we are working in it! As you mention it's not even beta but an alpha release as a concept to build on. We will get this improved! This is a top priority for us
   - [Browser-based PDF Editor and PDF Toobox Stirling-PDF : r/selfhosted _202305](https://www.reddit.com/r/selfhosted/comments/13glhyr/browserbased_pdf_editor_and_pdf_toobox_stirlingpdf/)
 
-- https://github.com/ShashwatSricodes/PDFSlice /MIT/202603/ts
+- https://github.com/ShashwatSricodes/PDFSlice /MIT/202603/ts/inactive
   - https://www.pdfslice.in/
   - Client Side PDF editor Toolkit
   - 100% client side processing using JavaScript. 
@@ -294,6 +304,31 @@ modified: 2021-01-04T17:26:43.784Z
   - Stamps: 10 built-in stamps (Approved, Rejected, Draft, Confidential, Final, etc.)
   - Redaction: Mark areas and apply to permanently remove content
   - Export pages as PNG or JPEG 
+  - 🛝 
+    - 编辑文本时,会编辑一个段落/1行/2行/3行, 实现方式是在图片上叠加文本框，然后修改文本框的文字
+    - 点击待编辑的位置时开始, 到渲染出文本框, 会有闪烁感
+    - This app does not truly edit existing PDF text. It uses a "cover and replace" approach
+    - PDF.js extracts text positions via getTextContent() and renders a transparent DOM text layer for selection
+    - When you click on PDF text, a textarea overlay appears for you to type
+    - pdf-lib draws a white rectangle over the original text, then draws the new text on top with page.drawText()
+    - So the original PDF content stream is untouched — the old text is visually hidden behind a white rectangle.
+  - pdfjs-dist   │ Apache-2.0 │ Rendering, text extraction, annotation parsing
+  - pdf-lib      │ MIT        │ PDF modification (save, draw text/shapes) 
+  - mupdf        │ AGPL-3.0   │ Optional WASM renderer, falls back to PDF.js if mupdf can't load
+  - lopdf (Rust) │ MIT        │ PDF parsing in the Rust backend 
+  - [Window does not appear on macOS 26 (Tahoe) — app runs but main window stays hidden  _202603](https://github.com/OpenAEC-Foundation/open-pdf-studio/issues/208)
+    - The entire rendering and processing pipeline runs on the CPU via Canvas 2D with no GPU acceleration. 
+    - All rendering is done via HTML5 Canvas 2D on the main thread. No OffscreenCanvas, ImageBitmap, or requestAnimationFrame batching is used anywhere. 
+  - [perf: large PDF performance bottlenecks — rendering, loading & annotation pipeline  _202603](https://github.com/OpenAEC-Foundation/open-pdf-studio/issues/175)
+  - 🏘️ [arch: multi-engine rendering architecture for large PDF performance _202603](https://github.com/OpenAEC-Foundation/open-pdf-studio/issues/176)
+    - The current architecture pushes everything through a single pipeline: one pdf.js render call → one canvas → annotations on top → done. All on the main thread. This fundamentally doesn't scale for large/complex PDFs.
+    - Professional PDF viewers (PDFium, MuPDF, Adobe Acrobat) solve this with a multi-engine architecture. We should adopt a similar approach.
+    - Tile-based rendering: Divide each page into tiles (e.g. 512×512px). Only render tiles visible in the viewport
+    - Level-of-detail (LOD): Keep a low-res cached version per page for instant display while high-res tiles load
+    - Progressive zoom: On zoom change, immediately CSS-scale existing tiles, then re-render at the new zoom level in the background (like Google Maps)
+    - Annotation Overlay (independent render cycle)
+    - Worker pool (2-4 workers) handles: stamp image extraction, annotation color extraction, CMYK/indexed image decoding, snap/vector geometry parsing, content bounds detection
+    - Job queue with priority: visible pages first, nearby pages next, rest later
 
 - https://github.com/anig1scur/tocify /GPL/202604/js
   - https://tocify.aeriszhu.com/
@@ -326,7 +361,23 @@ modified: 2021-01-04T17:26:43.784Z
 
 - https://github.com/superpilot69/pdf-trad-to-simp-preserve-layout-kit
   - PDF traditional-to-simplified Chinese conversion kit with layout-preserving scripts, Codex skill, and example source/output PDFs.
+
+- https://github.com/mrmn2/PdfDing /1.7kStar/AGPL/202604/python
+  - https://www.pdfding.com/
+  - a selfhosted PDF manager, viewer and editor offering a seamless user experience on multiple devices.
+  - designed be to be minimal, fast, and easy to set up using Docker.
+  - The name is a combination of PDF and ding. Ding is the German word for thing. Thus, PdfDing is a thing for your PDFs. Initially inspired by linkding.
+  - browser based PDF viewing on multiple devices. Remembers current position - continue where you stopped reading
+  - Edit PDFs by adding comments, highlighting and drawings
+  - SSO support via OIDC
 # pdf-editor
+- https://github.com/R0mb0/PDF_web_editor /MIT/202604/js
+  - https://r0mb0.github.io/PDF_web_editor/
+  - 100% client-side web app to edit PDF files directly in your browser. Built with Vanilla JS, Tailwind, PDF.js, and PDF-lib. 
+  - Add, duplicate pages, and edit text seamlessly. 
+  - No server uploads required, ensuring total privacy
+  - 支持编辑pdf文本, 但底层文字不会消失，效果是重影
+
 - https://github.com/luke-browning/pdf-web-edit /MIT/202309/ts/c#/ng/inactive
   - a web-based application for manipulating PDF files. 
   - It's main purpose is to pre-process documents before they are imported into a Document Management System (DMS) such as Paperless (-ng and -ngx) or stored in a directory based structure.

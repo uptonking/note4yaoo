@@ -316,11 +316,19 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
-## 0410
+## 0412
 
-```prompt
+- 🤔 hardoc-pdf
+- the core PDF editing model should be headless and DOM-agnostic.
+- PDF.js is enough to get open -> render -> text geometry -> viewport working fast.
+- PDF page render: canvas via PDF.js
+- text edit session: absolutely positioned DOM editor over the selected text block
+- annotations/shapes: DOM SVG overlay or Konva overlay
 
-```
+- 
+- 
+- 
+- 
 
 ## 0406
 

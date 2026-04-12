@@ -14,6 +14,9 @@ modified: 2026-01-14T18:58:32.523Z
   - llamafarm: lemonade(cpp) + ui
   - transformerlab-app: backend-plugins + ui
   - omlx: mlx-lm + ui(PyObjC)
+
+- lmstudio-alternatives
+  - [Elvean - Private AI Workspace for Mac](https://elvean.app/)
 # draft
 - 在lmstudio支持服务端headless模式后, 将ollama wrapper替换为lmstudio wrapper
   - 💰 谨慎封装lmstudio, 因为之前lmstudio连免费工作使用都不支持

@@ -9,6 +9,12 @@ modified: 2024-01-19T18:27:51.917Z
 
 # guide
 
+# changelog
+- [ONLYOFFICE Docs 8.1 released   _202406](https://www.onlyoffice.com/blog/2024/06/onlyoffice-docs-8-1-released)
+  - Text editing: Included in BOTH Desktop Editors AND Document Server (web-based)
+  - PDF forms: say goodbye to our DOCXF format
+- [ONLYOFFICE Desktop Editors v7.5: a new PDF editor and more _202310](https://www.onlyoffice.com/blog/2023/10/onlyoffice-desktop-editors-v7-5)
+  - open PDF files and perform basic editing operations, such as text annotating, form filling, commenting and drawing.
 # discuss-stars
 - ## 
 

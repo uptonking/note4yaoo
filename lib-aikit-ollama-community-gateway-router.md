@@ -31,6 +31,11 @@ modified: 2026-01-21T04:22:29.956Z
 - there is no configuration option to enforce max context length
   - While there is a `ContextLength` field in the ModelInfo struct (model/model_info.go:12), it is only used for informational/display purposes in the web UI - it does not enforce any validation.
 
+- exceeded retry limit, last status: 429 Too Many Requests 频繁出现问题，但无法确定哪个channel/provider
+  - 因为频繁出现，说明优先级和权重高, 缩小范围
+  - 然后可以观察api的使用记录，观察哪个权重高的api没有出现在使用记录中，说明这个渠道出现了问题
+  - 最后可以让agent排查日志，锁定channel id
+
 - 
 - 
 - 

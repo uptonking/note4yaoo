@@ -197,6 +197,26 @@ modified: 2026-01-14T18:59:01.949Z
 - 
 - 
 
+# discuss-mlx-gui
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 MLX: there are far too many servers now: vMLX, oMLX, Osaurus, LMStudio, mlx-lm, mlx-vlm.
+- https://x.com/ivanfioravanti/status/2042855890219327650
+  - I'm finding all kind of different behaviors while testing inference servers on Apple Silicon. 
+  - vMLX is ultra aggressive with caching, this can be good but in different runs it's getting cached elements of previous runs. How can I avoid this? I'm adding prefixes everywhere, I think I'll have to use random text here.
+- Very curious to hear which performs best. In LocalAI we use mlx-lm and mlx-vlm under the hood
+
+- oMLX has a massive memory overhead, put their caching gives fast responses. But I prefer the raw performance of mlx-lm
+  - Testing oMLX right now and you are right, they put a lot of emphasis on caching. I'm testing performance with and without it.
+- vmlx solves this problem
+
+- Missing Pico AI Server, which is a good one; and Ollama. Ollama was too late to the MLX game. Osaurus is my current favorite, but a little bloated with things I don't need. Pico AI Server is great, but, like most others, no Proxying. And yet, with all of these, I 'rolled my own'.
+
+- any engine based on mlx is faster than llama.cpp on Apple Silicon, but... llama.cpp is far more stable than anything else on MLX side, at least for now.
 # discuss
 - ## 
 

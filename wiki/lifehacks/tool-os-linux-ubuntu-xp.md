@@ -206,7 +206,7 @@ modified: 2021-01-01T22:26:57.773Z
 
 - ## [图形的未来](http://happyseeker.github.io/graphic/2016/11/10/the-future-of-the-desktop.html)
 - xorg因为其原有的架构设计与现如今各种严苛的绘图需求不相匹配，主要表现如：
-  - Xorg大管家管事太多，除了管理input，所有的**绘图请求、窗口管理、窗口合成**都必须要与Xorg进行交互，导致Xorg上存在性能瓶颈。根源还在于Xorg的架构太复杂。
+  - Xorg大管家管事太多，除了管理input，所有的 **绘图请求、窗口管理、窗口合成** 都必须要与Xorg进行交互，导致Xorg上存在性能瓶颈。根源还在于Xorg的架构太复杂。
   - Xorg绘图无法充分利用GPU的硬件加速。所有绘图操作都必须提交到Xorg完成，而Xorg自身，对于2D加速，虽然有EXA；对于3D加速，虽然有Glamour，但仍旧无法充分利用硬件加速。
 
 - Wayland的优势
@@ -222,7 +222,7 @@ modified: 2021-01-01T22:26:57.773Z
 - ## 🆚️ [Mir 和 Wayland 等 X11 替代品，相比 X11 有哪些具体的优点？ - 知乎](https://www.zhihu.com/question/22052356)
 - X 系统非常复杂。而且这个复杂度的设计目的是为了灵活性而不是为了可靠性。所谓的灵活性就是可以提供很多策略：比如 Window Manager 可以更换，可以支持远端桌面。
 - X 系统的灵活性到了今天，很多都是屠龙之技。于是又不得不加上各种 hack。比如说，为了保持原来的标准，支持远端桌面的传统协议还要支持，同时为了显卡硬件加速，又加了一套平行的本地优化。整个系统最初的设计初衷已经被改得乱七八糟。
-- 因为 X 开发者的时间并没有像 BSD 或者 Linux 内核那样，始终集中在提高稳定性上，而是在做很多无用功 —— **先花大笔的 performance overhead 来实现一个过于灵活的 framework**，然后又再上面打补丁取消 performance overhead，同时还要保持向后兼容。这种悠久的历史，反而是稳定性的毒药。
+- 因为 X 开发者的时间并没有像 BSD 或者 Linux 内核那样，始终集中在提高稳定性上，而是在做很多无用功 —— **先花大笔的 performance overhead 来实现一个过于灵活的 framework** ，然后又再上面打补丁取消 performance overhead，同时还要保持向后兼容。这种悠久的历史，反而是稳定性的毒药。
 
 - 🤔 什么是over-designed，Xwindow就是典型的例子。很可惜Wayland也好不到哪儿去。
 
@@ -233,7 +233,30 @@ modified: 2021-01-01T22:26:57.773Z
   - Wayland breaks AppImages that don't ship a special Wayland Qt plugin
   - Wayland prevents GUI applications from running as root
 
-# discuss-ubuntu
+# discuss-dist-nixos
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [古法编程时代过来的程序员，用了快 2 个月 NixOS ，预感这就是 AIOS 的基座，记录下经验和感受  - LINUX DO _202604](https://linux.do/t/topic/1947667)
+  - 最重要的还是落到开发环境上，最初让我接触到 NixOS 的那个问题自然也解决了，现在每次进入一个项目后，先 devenv shell 启动开发环境，要运行就 devenv up，再也不用管各种项目的环境了，统一扔给 Coding Agent + devenv 就好了。目前还没踩到啥坑，devenv 也是用的 Nix 语法来配置的，所以也给我一种 NixOS 的生态很规整的感觉 
+  - 当时选择 devenv 也是纠结了挺久，尤其是 direnv 确实是有种cd出env随的言出法随效果，但我不一定进文件夹就是为了开发，也可能是为了摸鱼或者纯手误。
+
+# discuss-dist-archlinux
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-dist-ubuntu
 - refs
   - [Latest Desktop/Team Updates](https://discourse.ubuntu.com/c/desktop/team-updates/23)
 

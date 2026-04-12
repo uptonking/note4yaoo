@@ -806,10 +806,17 @@ modified: 2025-03-22T16:10:24.856Z
     - 很多openrouter渠道的模型
     - cc不支持tool, **cc渠道经常上架下架** 
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
-  - 📌 [OAI-FREE](https://newapi.zhx47.xyz/pricing), 每天100, 需手动
+  - 📌 [OAI-FREE](https://newapi.zhx47.xyz/console/personal), 每天100, 需手动
     - [LinuxDo 社区福利活动](https://campaign.zhx47.xyz/)
     - [OAI-FREE 签到发送订阅 ](https://linux.do/t/topic/1632349)
     - 都是临时渠道，不开签到了，直接每天送 100 刀余额
+  - 📌 [Enjoy _202604](https://free.glen.cc.cd/dashboard), 无签到, 每天限额1000刀
+    - [enjoycodex公益站1000个账号邀请码 ](https://linux.do/t/topic/1944332)
+  - [ruilab _202604](http://sub2api.ruilab.top/dashboard)
+    - [公益站更换域名 ](https://linux.do/t/topic/1947960)
+  - [FreeAI _202604](https://free.closeai.hk/home), 无需签到, 
+    - $5/d, $35/w, 非L站, 可付费
+    - rpm为2, 全为Plus号池
   - [Super Codex _202603](https://supercodex.lol/dashboard), 每天100, 自动发放
     - [Codex公益站，三网优化，每天100刀 - LINUX DO _202603](https://linux.do/t/topic/1833285)
     - 并发限制35
@@ -822,7 +829,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 余额超过100时无法签到
   - [CM-API-公益站 _202603](https://api.chengmo.cc.cd/console/personal), 无签到
     - [【CM公益站】佬们，该蹬车了！GPT-5.4强势回归！0倍率+无限制 ](https://linux.do/t/topic/1777029)
-  - [52公益站 _202603](https://free.9e.nz/dashboard), 无需签到
+  - 📌 [52公益站 _202603](https://free.9e.nz/dashboard), 无需签到
     - [[52公益站]既然天才程序员回归了，那各位爽蹬吧（支持5.4） ](https://linux.do/t/topic/1774352)
     - 倍率设置为0，为保证可用性并发默认5
     - 随时失效，不作保障性承诺
@@ -844,6 +851,14 @@ modified: 2025-03-22T16:10:24.856Z
     - [CRWorld公益站  ](https://linux.do/t/topic/1906259)
     - 提供GPT Grok Gemini Claude
     - 自用，但不保证可用性
+  - 📌 [Ciallo  _202604](https://ioll.pp.ua/console/personal), 手动签到10
+    - https://sin.ioll.pp.ua
+    - [【Ciallo~公益站】公益站新增域名喵 ](https://linux.do/t/topic/1945895)
+  - [Huainova _202604](https://ai.huaibao.top/console/personal)
+    - [【Huainova公益站】二次开放注册啦 ](https://linux.do/t/topic/1939664)
+    - 定时清理注册未使用的
+  - [CHY API公益站 _202604](https://api.xn--chy-js0fk50c.top/console/personal)
+    - [CHY API公益站主域名已恢复访问 ](https://linux.do/t/topic/1947845)
   - [【深夜 100】【章鱼小站】给站内的公益站分担点压力 _202604](https://linux.do/t/topic/1897365), 无签到
     - 不定期兑换码
   - [vvcode _202603](https://vvcode.cc/dashboard), 无额度
@@ -857,8 +872,9 @@ modified: 2025-03-22T16:10:24.856Z
     - claude-sonnet-4-5-20250929
   - [荷塘AI _202604](https://hetang.lyvideo.top/console/personal)
     - [【荷塘公益站】仅支持GPT5.4  ](https://linux.do/t/topic/1875698)
-  - [Hello AI _202603](https://hello.xhyun.eu.cc/console/personal)
+  - 📌 [Hello AI _202603](https://hello.xhyun.eu.cc/console/personal)
     - [「XH AI Center/Hello AI 」重新出发 _202603](https://linux.do/t/topic/1759449)
+    - [Hello AI/XH AI Center 国产模型狂欢节 ](https://linux.do/t/topic/1948668)
   - [dudu公益站 _202603](https://wududu.edu.kg/console/personal)
     - [【dudu公益站】gpt价格0.01，gpt号池持续补号，grok3000+账号，还有十几个国产模型。（不限制nsfw） - LINUX DO _202603](https://linux.do/t/topic/1808197)
     - gpt和grok的速率限制是60。国产模型速率限制40rpm
@@ -876,8 +892,9 @@ modified: 2025-03-22T16:10:24.856Z
     - 随便刷吧，可能刷崩了，我就关站了
     - cc, opus 是cursor2api的 sonnet4.6
     - [真好记公益站 ](https://linux.do/t/topic/1795254)
-  - [api-test](https://new-api.publicvm.com/console/personal)
+  - [api-test](https://new-api.abrdns.com/console/personal)
     - https://openai.api-test.us.ci  /legacy
+    - https://new-api.publicvm.com /legacy
     - [LDC Virtual Goods Shop](https://shop.api-test.us.ci/)
     - https://cdk.api-test.us.ci/
     - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex
@@ -886,9 +903,6 @@ modified: 2025-03-22T16:10:24.856Z
     - [开个小公益站测试一下 ](https://linux.do/t/topic/1414593)
   - 📌 [小辣椒 公益站 ](https://yyds.215.im/console/topup), 签到类似wong
     - cc
-  - [Huainova _202604](https://ai.huaibao.top/console/personal)
-    - [【Huainova公益站】二次开放注册啦 ](https://linux.do/t/topic/1939664)
-    - 定时清理注册未使用的
   - [蒸蚌公益站 _202603](https://laoxi.ethan010203.online/console/personal), 签到50
     - gpt-5.2
   - [Dooong AI ](https://ai.dooo.ng/console/personal), 签到需过盾
@@ -1809,6 +1823,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 套餐倍率0.17(计算后就是right.code的价格)，按量倍率0.3
 
 - [codex-for.me ](https://codex-for.me/)
+  - [vibe coding 专营的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/GUBERQA2)
   - 日卡-5
   - 月卡-59
 
