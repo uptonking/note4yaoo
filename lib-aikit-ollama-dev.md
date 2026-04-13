@@ -1,4 +1,4 @@
----
+≠---
 title: lib-aikit-ollama-dev
 tags: [large-language-model, ollama]
 created: 2026-01-14T18:56:51.610Z
@@ -19,9 +19,11 @@ modified: 2026-01-14T18:57:01.673Z
 - mlx-cons
   - 有些冷门模型未提供mlx格式，需要手动转换
   - mlx-4bit 的精度比 gguf-Q4_K_XL 要低
+  - 对omini/tts类型的模型支持差
 
 - llama.cpp-pros
   - 对最新模型的支持又快又多，项目开发和维护活跃度高
+  - 支持的模型丰富, 社区贡献多, 支持omini/tts类型模型
   - 官方提供 cli/server/web-ui, 功能丰富
 
 - llama.cpp-cons

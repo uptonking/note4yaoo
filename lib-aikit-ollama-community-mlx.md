@@ -208,6 +208,13 @@ modified: 2026-01-14T18:59:01.949Z
 - https://x.com/ivanfioravanti/status/2042855890219327650
   - I'm finding all kind of different behaviors while testing inference servers on Apple Silicon. 
   - vMLX is ultra aggressive with caching, this can be good but in different runs it's getting cached elements of previous runs. How can I avoid this? I'm adding prefixes everywhere, I think I'll have to use random text here.
+- https://x.com/ivanfioravanti/status/2043203888908574899
+  - MLX benchmarking the various inference engines is a real mess at the moment.
+  - I'm finding many issues under heavy load, wrong perf stats from some servers, wrong management of cache mixing parts of prompts from other sessions, OOM, bugs.
+  - 🥇 mlx-vlm best performance overall in non cache scenarios
+  - 🥈 omlx best cache management (7.3K prefill below sounds wrong to me)
+  - 🥉 vmlx was unable to complete batch inference tests going in OOM with 32 parallel batch of prompt/tg 2048/128
+
 - Very curious to hear which performs best. In LocalAI we use mlx-lm and mlx-vlm under the hood
 
 - oMLX has a massive memory overhead, put their caching gives fast responses. But I prefer the raw performance of mlx-lm

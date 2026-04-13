@@ -325,10 +325,21 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - text edit session: absolutely positioned DOM editor over the selected text block
 - annotations/shapes: DOM SVG overlay or Konva overlay
 
-- 
-- 
-- 
-- 
+- 🆚 can your explain your other plan like wasm-first architecture, and compare it with hybrid? 
+  - WASM-first is the stronger architecture if your real target is maximum ONLYOFFICE-like parity. 
+  - Hybrid is the safer architecture if your real target is shipping improvement steadily from the current Hardoc codebase.
+  - In WASM-first, the native backend becomes the center of the product, not just the save engine.
+  - instead of TypeScript building semantic parcels first and asking WASM to help rewrite, TS asks WASM for the authoritative document model from the start.
+- Hybrid
+  - TS still owns much of analysis and view-model building.
+  - pdfjs-dist still provides most visual extraction.
+  - WASM is mainly added for the hardest backend problems.
+- WASM-first:
+  - TS stops being the source of truth for text semantics.
+  - the native backend becomes the source of truth for both analysis and rewrite.
+  - pdfjs-dist may stay only for raster rendering, or even eventually be replaced.
+- a headless editor needs a document engine, not a browser editing layer
+- ONLYOFFICE is not built around pdfjs-dist or pdf-lib. From the code, it uses a custom native PDF engine exposed to JS through `drawingfile.wasm / asm.js` bindings, and then layers a document-style editing model on top of that.
 
 ## 0406
 

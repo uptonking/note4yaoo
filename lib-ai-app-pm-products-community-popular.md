@@ -731,6 +731,27 @@ modified: 2026-02-20T17:36:40.796Z
 - Co-work is great, to be honest. If they cancel that, I’ll drop my Claude subscription. I use it to write confluence docs, edit pdfs, word docs, create contracts, amend them, do P&l stuff, powerpoint presentation, even google slides via chrome mcp. You’re using it wrong OP.
 
 - I think the idea is that many more non coders in the near future will do small coding activities in their jobs. If that’s not you, it’s not for you. But it might be for your replacement
+# discuss-ai-pm-browser
+- ## 
+
+- ## 
+
+- ## 
+
+- ## VS Code is so much more than a dev tool these days. With the integrated browser Copilot is my aviation weather tutor.
+- https://x.com/joshspicer_/status/2043420770832130347
+  - It opened http://aviationweather.gov, navigated through a dozen forecast charts, and systematically explained HOW to interpret this crazy weather in the PNW today
+
+- ## You can vibe code your own "New tab" page in Chrome. I have turned mine into the ultimate solution to the "too many tabs" problem
+- https://x.com/zarazhangrui/status/2043415572688629937
+  - See all your tabs with clear titles, grouped by domain
+  - Closing any tab gives you "swoosh" sound and confetti effect
+  - "Easy wins" grouped together: homepages, localhost tabs... batch-close them with one click
+  - Duplicate tabs detected; close duplicates with one click
+  - For tabs you're not done with, save it for later in a checklist
+  - This is the Marie Kondo method for browser tabs
+  - https://github.com/zarazhangrui/tab-out
+
 # discuss-ai-showcase-apps/products
 - ## 
 
@@ -799,6 +820,8 @@ modified: 2026-02-20T17:36:40.796Z
 
 - You are better off having a normal NAS and an inferencing machine that pulls from it. That way, you aren't maxxing out your GPU when you're just pulling an image or two.
 # discuss-ai-pm
+- ## 
+
 - ## 
 
 - ## 

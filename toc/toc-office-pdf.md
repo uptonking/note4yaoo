@@ -316,6 +316,9 @@ modified: 2021-01-04T17:26:43.784Z
   - pdf-lib      │ MIT        │ PDF modification (save, draw text/shapes) 
   - mupdf        │ AGPL-3.0   │ Optional WASM renderer, falls back to PDF.js if mupdf can't load
   - lopdf (Rust) │ MIT        │ PDF parsing in the Rust backend 
+  - It includes mupdf as an npm dependency and renderer.js tries MuPDF WASM as an optional rendering path.
+    - It has a separate Rust crate open-pdf-render, which is a pure Rust PDF renderer built on
+    - But those do not appear to be the main authoritative editing engine for the shipped editor. The main shipped editing flow is still PDF.js + pdf-lib + overlay logic.
   - [Window does not appear on macOS 26 (Tahoe) — app runs but main window stays hidden  _202603](https://github.com/OpenAEC-Foundation/open-pdf-studio/issues/208)
     - The entire rendering and processing pipeline runs on the CPU via Canvas 2D with no GPU acceleration. 
     - All rendering is done via HTML5 Canvas 2D on the main thread. No OffscreenCanvas, ImageBitmap, or requestAnimationFrame batching is used anywhere. 

@@ -130,7 +130,15 @@ modified: 2026-01-14T18:57:51.174Z
 
 - ## 
 
-- ## 
+- ## [Audio processing landed in llama-server with Gemma-4 : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sjhxrw/audio_processing_landed_in_llamaserver_with_gemma4/)
+  - llama.cpp (llama-server) now supports STT with Gemma-4 E2A and E4A models.
+- I wonder if it's better than Whisper at transcription.
+  - Tbf, Parakeet is already better than Whisper. Anything that doesn't make shit up on silence is better than Whisper.
+- parakeet is amazing and extremely fast even on CPU. wondering how gemma4 is compared to parakeet, bummer that only E2B and E4B have it
+
+- It seems that there are some issues left to be ironed out. In the current state it's mostly unusable for me for 5+ minutes of audio - Voxtral works way better. I'm using E4B as Q8_XL quant with BF16 mmproj (recommended, as other mmproj formats lead to degraded capabilities)
+
+- Nice, but watch the VRAM hit: audio tokenization and STT usually push context pressure up fast. On 8GB cards this is probably GGUF-only territory unless the model is tiny; would love a rough ms/sec benchmark on CPU vs CUDA.
 
 - ## ⚡️ [Breaking change in llama-server? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s62el8/breaking_change_in_llamaserver/)
   - Migrating cache to HuggingFace cache directory

@@ -1188,6 +1188,11 @@ modified: 2025-12-11T18:10:23.710Z
   - https://github.com/gptme/gptme-tauri /NALic/202507/rust/ts/inactive
     - Desktop app for gptme built with Tauri
 
+- https://github.com/razvanneculai/litecode /ISC/202604/ts
+  - CLI Tool for 8k context ai models
+  - The AI coding agent built for the models everyone actually has — free tiers, local models, and 8k context windows.
+  - As of v0.2, it shows a diff and asks for confirmation before touching any file — but it still may produce incorrect edits depending on the model you use.
+
 - https://github.com/neovateai/neovate-code /MIT/202601/ts
   - https://neovateai.dev/
   - a coding agent to enhance your development workflow. You can use it to generate code, fix bugs, review code, add tests, and more

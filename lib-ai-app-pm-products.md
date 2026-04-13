@@ -30,6 +30,11 @@ modified: 2025-03-22T16:10:24.856Z
   - agent框架的tool-use实现对最新llm的支持，llm-provider的部署 都会影响llm的效果
   - ai适合快速生成草稿文本或原型, 但修改难
 
+- app vs browser
+  - 不是每个用户都能免费使用word的审阅模式, 自定义webapp/app提供了可选方式
+  - 自定义webapp/app能提供独特的体验, 如artifacts/diff/image/code-running/table/ocr
+  - agent擅长浏览器操作, agent能读取其他文件或程序
+
 - ai-ux/visiual
   - 在浏览器cdp成熟后, 通过cdp直接打开浏览器操作web ui似乎比electron app更强大
   - 输入或输出包含visual内容的产品需要human-in-the-loop, 如ocr/image
@@ -304,6 +309,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴, 产品价值参考context7
     - 目前cli的搜索体验太差, 可针对 context/search-engine 结合 coding-agent 开发类似notebooklm的搜索体验
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
+    - optimized for long docs/books
     - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
     - wikipedia zim 自动翻译为中文
     - web-search
