@@ -67,6 +67,27 @@ modified: 2026-01-25T17:23:01.510Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [High-Precision Table Extraction from Complex PDFs : r/Rag _202604](https://www.reddit.com/r/Rag/comments/1sk0reu/highprecision_table_extraction_from_complex_pdfs/)
+- VLMs have been good, but latency is an issue, so we use a stacked approach right now where we send tables that ADI is more prone to get wrong to the VLM.
+
+- Only vision LLM can solve this. I am building a high fidelity parser and tried many oss tools without any meaningful accuracy for tables and newspaper layouts. And finally ended up and 3 tier pipeline. 
+  - Use a basic parser for simple pdf that can save you cost and time, 
+  - use a advanced pipeline for complex pdf using a Vision LLM. 
+  - Many will recommend docling, but it sucks when the pdf have many tables.
+  - We use 3 pipelines.
+  - Basic pipeline handle basic layout and pdf, this helps in cost control and concurrency, you dont need every pdf to parse with llm. that will skyrocket your costs. So this pipeline is a heuristic based geometric extraction. This have 2 modes one is for single column and other is for 2 column layout. without table and diagrams, it gives 90+% accuracy.
+  - Second is advanced, which use GLM 4.6 vision model custom deployed. concurrency is less and absolutely use when you have complex pdf. (I had rejected docling due to the accuracy issue. )
+  - Third is for scanned PDF with OCR. We use Mistral and Sarvam AI for Indic Languages.
+  - All goes through an Async pipeline and manage the limits with queue depth. Again we don't give results as such, we had a Json schema for each formats with semantic enrichments and Chunk hint directly added into extracted outputs. outputs are high fidelity json with all structure, layout preserved.
+
+- Tried pdfplumber for this, it's fast but completely breaks on merged cells and anything multi-column. Switched to Docling (IBM, open source) and it's been decent. Docker container, ~1.5GB RAM. Gets maybe 80% of PDFs right without me having to babysit it. Deeply nested tables still trip it up sometimes. Honestly the bigger win wasn't even the parser. It was when I stopped splitting tables across chunks. Just keep the whole table as one chunk with the section heading above it for context. Splitting rows into separate chunks absolutely killed my retrieval quality. Scanned or native text? The answer changes a lot depending on that.
+
 - ## llamaindex: I wrote a blog post digging into the PDF representation itself, why its impossible to “simply” read the page into plaintext, and what the modern parsing techniques are
 - https://x.com/jerryjliu0/status/2029998812216127763
   - [Why Reading PDFs is Hard _202603](https://www.llamaindex.ai/blog/why-reading-pdfs-is-hard)

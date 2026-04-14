@@ -15,6 +15,10 @@ modified: 2026-04-11T01:31:17.720Z
 
 ## ilove-image
 
+- codebase
+  - a client/server app
+  - the backend handles uploads, auth, SQLite, pipelines, tool execution, AI bridge calls, and serves the built SPA
+
 ```prompt
 git repo `./ilove-image`  is several commits behind `./ilove-stirling-image`. ilove-image has MIT license, while ilove-stirling-image has GPL license. 
 the goal is to migrate major features from ilove-stirling-image to ilove-image. 
@@ -42,6 +46,10 @@ please recheck migrated features and improve your implementation in ilove-image,
 ```
 
 ## ilove-pdf
+
+- codebase
+  - a client-side-only PDF app, not a client/server architecture
+  - Core PDF work is done with browser libraries and browser runtimes like pdf-lib, pdfjs-dist, tesseract.js, and qpdf.wasm
 
 ```prompt
 
@@ -133,15 +141,17 @@ recheck and migrate full features of pdf compare and layers to ailovedoc.
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 
 you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it without licensing issue.  
-you have done it several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. make a plan and implement it to match full features of upstream without licensing issues.
+you have worked on this problem several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. make a plan and implement it to match full features of upstream without licensing issues.
 
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
-- make a plan, then migrate and improve to the best , without licensing issues
+- make a plan, then migrate and improve full feature pairity, without licensing issues
+
+- the goal now is to achieve robust and extensible ooxml editing engine with full feature parity of upstream.
 
 - the most important feature is a powerful, robust, extensible, headless ai ooxml editing engine with track change support .
 - you may deep research, and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite code without licensing issues.
 
-- you have done it several times but features are still lacking. They are the most important features at this moment. DO NOT stop untill you achieve full feature parity. 
+- you have worked on this several times but features are still lacking. They are the most important features at this moment. DO NOT stop untill you achieve full feature parity. 
 
 - make a full plan, migrate and improve to the best without licensing issues.
 ```
@@ -152,6 +162,8 @@ you have done it several times but features are still lacking. They are the most
 
 onlyoffice implements renders, edits, annotates `.pdf` files in the browser, but it is AGPL licensed.
 - the final goal is to implement from scratch a new extensible web pdf editor named hardoc with in-place text editing features similar to onlyoffice/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
+- hardoc pdf editor should be more of a headless client-server architecture, so that you can build a hardoc cli with the hardoc sdk.
+
 - goals for pdf editing:
 1. modular and extensible architecture for pdf viewing and editing: you may design sub packages like state/view/command/transform/... when you need. you may design a sdk if you want.
 2. in-place text editing feature like adobe acrobat; undo/redo
@@ -186,6 +198,10 @@ one goal is to enhance hardoc pdf editor with more important features:
 7. ready for ai editing, you may reference how onlyoffice, full migration is not required
 6. the core pdf editor and app should be modular and extensible. an extensible pdf sdk can be provided.
 
+one goal is to enhance hardoc pdf editor with more features:
+- collaborative editing
+- ocr with llm
+
 project onlyoffice and project at `~/Documents/repos/office/all-pdf/open-pdf-studio` can be used as implementation reference, you can reference their architecture and code, but you should rewrite code to avoid licensing issue. 
 
 - git repo at `~/Documents/repos/office/all-pdf/open-pdf-studio` is a buggy and not-featureful pdf editor. please read related code and analyze architecture. do you think open-pdf-studio is good start point for implement a custom pdf editor?  compare the architecture of open-pdf-studio and onlyoffice.
@@ -203,7 +219,7 @@ recheck and migrate full features of True PDF text editing engine with annotatio
 
 - you can deep research, and reference good deisgn from onlyoffice pdf editor.
 - you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it without licensing issue.  
-- you have done it several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. 
+- you have worked on this several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. 
 
 make a plan and implement it to match full features of upstream without licensing issues.
 
@@ -218,16 +234,21 @@ please make a plan, then improve the core in-place text editing engine to make i
 - you can deep research, referencing good deisgn from onlyoffice pdf editor.
 - you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
 
-- you have done it several times but features are still lacking. They are the most important features at this moment. DO NOT stop untill you achieve full feature parity. 
+- please deep research the onlyoffice pdf editor, then can you design a similar solution to solve it? is onlyoffice's solution good enough? if yes, solve it in a similar way for hardoc
 
-- make a full plan, migrate and improve to the best without licensing issues.
+- DO NOT stop untill you achieve full feature parity. 
+- you have worked on this several times but still not solve it. this is the most important features at this moment. 
+- make a full plan to solve it completely, DO NOT stop if you improves just a little, only stop when you have solved it .
+
+- make a full plan, migrate and improve to full feature parity without licensing issues.
+
 ```
 
 # code-review
 
 ```prompt
 
-please recheck migrated features and improve your implementation in project hardodc, make it runnable locally using npm without docker. Read core implementation logic details for major features, find possible bugs in code and fix them, make sure major features implementations are correct and extensible.
+please recheck migrated features and improve your implementation in project ailovedoc, make it runnable locally using npm without docker. Read core implementation logic details for major features, find possible bugs in code and fix them, make sure major features implementations are correct and extensible.
 
 please recheck migrated features and implementations for possible licensing issues. if the code is too similar to upstream, you can adjust the risking code to avoid licensing issues. if features are already migrated under different names, it is unnecessary to design it as a standalone/separate tool as the upstream did, this also helps to avoid licensing issues.
 

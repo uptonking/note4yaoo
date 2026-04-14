@@ -818,7 +818,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 都是临时渠道，不开签到了，直接每天送 100 刀余额
   - 📌 [Enjoy _202604](https://free.glen.cc.cd/dashboard), 无签到, 每天限额1000刀
     - [enjoycodex公益站1000个账号邀请码 ](https://linux.do/t/topic/1944332)
-  - [ruilab _202604](http://sub2api.ruilab.top/dashboard)
+  - [ruilab ](https://newapi.ruilab.top/console/personal)
+    - [ruilab _202604](http://sub2api.ruilab.top/dashboard)
     - [公益站更换域名 ](https://linux.do/t/topic/1947960)
   - [FreeAI _202604](https://free.closeai.hk/home), 无需签到, 
     - $5/d, $35/w, 非L站, 可付费
@@ -1736,6 +1737,10 @@ modified: 2025-03-22T16:10:24.856Z
   - L站用户注册就送小小股东, $5/mon
     - right code 也是站内的一家主要做codex的中转站
   - o2a基本没有缓存?
+
+- [帕帝AI](https://padi-shop.closeai.hk/)
+  - [FreeAI - AI API Gateway](https://free.closeai.hk/)
+  - [Home - 帕帝AI _202604](https://padi.closeai.hk/home)
 
 - [IKunCode](https://api.ikuncode.cc/pricing)
   - [LinuxDo商家评价平台](https://rate.linux.do/merchant/15)
