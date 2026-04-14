@@ -665,13 +665,6 @@ modified: 2025-03-22T16:10:24.856Z
   - https://github.com/cheahjs/free-llm-api-resources
 
 - news
-  - [OAI-FREE](https://newapi.zhx47.xyz/pricing)
-    - [LinuxDo 社区福利活动](https://campaign.zhx47.xyz/)
-    - [OAI-FREE 签到发送订阅 ](https://linux.do/t/topic/1632349)
-    - 都是临时渠道，不开签到了，直接每天送 100 刀余额 
-  - [GOOOD！！！ _202603](https://goood.my/pricing), 无签到
-    - [自建公益站随便蹬！注册即送1000额度 - LINUX DO _202603](https://linux.do/t/topic/1779827)
-    - 个人自建的站，随意蹬，如果用完了，到时候会补的
   - [Atomgit GLM5 无限 Token? ](https://linux.do/t/topic/1696331)
   - [华为云 CodeArts 试用期间开放GLM4.7与DeepSeek V3.2模型无限畅用，大善人还是小白鼠？ _202601](https://linux.do/t/topic/1536794/5)
   - [寻找L站开源作者，UUcode送商业级API额度—— 优质开源项目扶持计划 1228](https://linux.do/t/topic/1370667)
@@ -709,6 +702,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [Compute Token](https://computetoken.ai/console/personal)
     - [【正式上线】Compute Token —— 是大家推着我们走到这里 _202603](https://linux.do/t/topic/1772654)
     - 正式上线付费版，但公益的精神不丢。每天签到送额度
+  - [xem API](https://ai.xem8k5.top/console/personal)
   - [君の的公益](https://muyuan.do/console/personal), 签到额度少
     - [『高级推广』『君の公益』Claude渠道恢复  ](https://linux.do/t/topic/1853293)
     - 仅支持Claude Code
@@ -812,7 +806,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 很多openrouter渠道的模型
     - cc不支持tool, **cc渠道经常上架下架** 
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
-  - 📌 [OAI-FREE](https://newapi.zhx47.xyz/console/personal), 每天100, 需手动
+  - 🗑️ [OAI-FREE](https://newapi.zhx47.xyz/console/personal), 每天100, 需手动
     - [LinuxDo 社区福利活动](https://campaign.zhx47.xyz/)
     - [OAI-FREE 签到发送订阅 ](https://linux.do/t/topic/1632349)
     - 都是临时渠道，不开签到了，直接每天送 100 刀余额

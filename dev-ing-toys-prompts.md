@@ -143,6 +143,8 @@ recheck and migrate full features of pdf compare and layers to ailovedoc.
 you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it without licensing issue.  
 you have worked on this problem several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. make a plan and implement it to match full features of upstream without licensing issues.
 
+- to achieve full feature parity with superdoc, help me choose the best option for long-term.
+
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 - make a plan, then migrate and improve full feature pairity, without licensing issues
 
@@ -150,6 +152,8 @@ you have worked on this problem several times but features are still lacking. Th
 
 - the most important feature is a powerful, robust, extensible, headless ai ooxml editing engine with track change support .
 - you may deep research, and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite code without licensing issues.
+
+- please deep research superdoc code, then can you design a similar solution in ailovedoc to improve it? is superdoc's solution good enough? if yes, solve it in a similar way for ailovedoc.
 
 - you have worked on this several times but features are still lacking. They are the most important features at this moment. DO NOT stop untill you achieve full feature parity. 
 
@@ -234,7 +238,7 @@ please make a plan, then improve the core in-place text editing engine to make i
 - you can deep research, referencing good deisgn from onlyoffice pdf editor.
 - you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
 
-- please deep research the onlyoffice pdf editor, then can you design a similar solution to solve it? is onlyoffice's solution good enough? if yes, solve it in a similar way for hardoc
+- please deep research the onlyoffice pdf editor, then can you design a similar solution to solve it? is onlyoffice's solution good enough? if yes, solve it in a similar way for hardoc.
 
 - DO NOT stop untill you achieve full feature parity. 
 - you have worked on this several times but still not solve it. this is the most important features at this moment. 

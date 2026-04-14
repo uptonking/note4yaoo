@@ -20,6 +20,24 @@ modified: 2022-08-18T16:57:29.058Z
   - collaboration — Yjs-based CRDT. Multiplayer editing with comments, tracked changes
   - Agentic tooling — Runs headless in Node.js. Bring your own LLM for document automation, redlining, and template workflows.
   - Dual licensed — AGPLv3 for community use. Commercial license for proprietary deployments.
+  - **Separate Layout Engine** : Pure calculation, separate from PM
+    - ProseMirror Doc → pm-adapter → FlowBlock[] → layout-engine → painter-dom → DOM
+    - `export type LayoutMode = 'vertical' | 'horizontal' | 'book'`;
+    - virtualization is hardcoded to only work with `vertical` mode
+    - Each page is independent DOM tree
+  - ✨ Virtualization: implemented in the DOM painter, not in the pure layout algorithm, enabled by default
+    - virtualizes rendered pages, not the document model.
+    - In paginated vertical mode, the DOM painter mounts only a sliding window of pages and uses top/ bottom spacer elements to preserve total scroll height.
+    - it does not paginate ProseMirror by directly laying out PM DOM. It paginates a derived intermediate model
+    - PM document is converted to flow blocks via pm-adapter, layout-engine computes page layout from those blocks, layout-resolved and painter-dom turn that into positioned page fragments, layout-bridge maps page geometry back to PM positions for selection, hit-testing, cursor behavior, and remeasurement
+  - 🐛 
+    - Vuejs UI framework coupling
+  - 🌹 
+    - Section Awareness: Widow/Orphan, Section Breaks,Headers/Footers
+    - Columns
+    - Tables
+    - collab: yjs
+    - Bidirectional
   - [fix: prep for multi editor versions - no logical changes. structure only _202603](https://github.com/superdoc-dev/superdoc/pull/2591)
   - [Open source MS Word GPT redlining add-in for contract review : r/legaltech _202510](https://www.reddit.com/r/legaltech/comments/1nv8c0u/open_source_ms_word_gpt_redlining_addin_for/)
     - We uniquely unzip the DOCX and edit the raw XML which allows us to keep the formatting intact, a must for legal tech.
@@ -35,6 +53,26 @@ modified: 2022-08-18T16:57:29.058Z
   - Generate playbooks using AI from contracts, and review contracts using AI against playbooks, with changes tracked in native docx redlines.
   - [Built an open-source Contract Playbook AI tool with native .docx tracked-changes editing : r/legaltech _202604](https://www.reddit.com/r/legaltech/comments/1pfd17e/built_an_opensource_contract_playbook_ai_tool/)
   - It uses the Superdoc open-source library under AGPLv3 to bring full online .docx editing into the workflow.
+
+- https://github.com/samwillis/premirror /MIT/202603/ts
+  - https://samwillis.uk/premirror/
+  - Premirror is a library for building Word-class page-layout editors on the web. 
+  - It layers deterministic pagination and composition on top of ProseMirror, giving you paper-style page breaks, widow/orphan control, and fragment-level text positioning — all while keeping ProseMirror as the single source of truth for document content and editing.
+  - ProseMirror owns the document model and all editing operations. Premirror's composer takes a measured snapshot of the document and produces a deterministic layout: pages, frames, line boxes, and placed runs. A React rendering layer then projects those fragments into absolute positions inside page-chrome viewports, producing a word-processor-style paged view with a single contenteditable surface.
+  - Text measurement is handled by @chenglou/pretext, which provides segment-aware width calculation and line fitting.
+  - 🐛 
+    - Single-Root: Uses one contenteditable (multi-root deferred)
+    - No Columns: Multi-column
+    - No page virtualization
+    - No Tables/Footnotes
+  - 🌹 
+    - Deterministic: Same input → same output
+    - Performant: Measurement cached, composition is pure arithmetic
+    - i18n: Proper CJK, Arabic, Thai, emoji handling
+    - Inspectable: Every break has a reason, metrics available
+    - Light DOM operations(decorations)
+  - https://x.com/samwillis/status/2038209756268048771
+    - Document layout with page breaks
 
 - https://github.com/mizuka-wu/prose-typed /202505/ts
   - https://mizuka-wu.github.io/prose-typed/
@@ -63,17 +101,12 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/vueditor/tiptap-extension-handle /MIT/202409/ts
   - A tiptap extension to support drag handle and custom view
 
-- https://github.com/samwillis/premirror /MIT/202603/ts
-  - https://samwillis.uk/premirror/
-  - Premirror is a library for building Word-class page-layout editors on the web. 
-  - It layers deterministic pagination and composition on top of ProseMirror, giving you paper-style page breaks, widow/orphan control, and fragment-level text positioning — all while keeping ProseMirror as the single source of truth for document content and editing.
-  - ProseMirror owns the document model and all editing operations. Premirror's composer takes a measured snapshot of the document and produces a deterministic layout: pages, frames, line boxes, and placed runs. A React rendering layer then projects those fragments into absolute positions inside page-chrome viewports, producing a word-processor-style paged view with a single contenteditable surface.
-  - Text measurement is handled by @chenglou/pretext, which provides segment-aware width calculation and line fitting.
-  - https://x.com/samwillis/status/2038209756268048771
-    - Document layout with page breaks
-
 - https://github.com/todorstoev/prosemirror-pagination /88Star/MIT/202412/ts/inactive
   - Plugin for ProseMirror emulating A4 pages
+  - This is a single ProseMirror editor with a single contenteditable that manages multiple pages as structured content within one document.
+    - Each page renders as a `<div class="editor-page">` containing nested divs for header, body, footer etc., but all within one contenteditable container that ProseMirror controls.
+    - After each edit, it checks if the last page's body overflows using isOverflown()  which checks `scrollHeight` > `clientHeight`.
+    - The advantage is that you get true pagination with proper content flow while maintaining a single undo/redo history, single selection, and unified state management - which would be much harder with multiple independent editors
 
 - https://github.com/RomikMakavana/tiptap-pagination /MIT/202505/ts
   - http://romikmakavana.me/tiptap-pagination/

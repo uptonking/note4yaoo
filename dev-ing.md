@@ -316,6 +316,16 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0414
+
+- "Widow/orphan control" is a typesetting concept that prevents awkward page breaks in paragraphs. 
+  - Widow: A single line (or few lines) left alone at the top of a new page after a break 
+  - Orphan: A single line (or few lines) left alone at the bottom of a page before a break
+  - This is a standard typesetting practice for professional document formatting, preventing ugly single-line stragglers that look unprofessional. 
+- Word's "Widow/Orphan control" checkbox in Paragraph settings:    
+  - w:widowControl attribute in OOXML     
+  - When enabled, ensures at least 2 lines on each side of a page break
+
 ## 0412
 
 - 🤔 hardoc-pdf

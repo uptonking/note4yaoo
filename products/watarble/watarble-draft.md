@@ -30,3 +30,5 @@ modified: 2022-11-24T11:37:08.907Z
   - aicore
   - gaiden
   - modelpedia (占用的多)
+  - codocs
+  - docode
