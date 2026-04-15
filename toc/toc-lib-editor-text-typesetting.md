@@ -253,4 +253,13 @@ modified: 2024-11-16T08:23:40.617Z
   - Wrap long texts into multiple svg text in multiple lines. CJK ready. 
   - 调整浏览器宽度时, svg容器宽度需要保持不变， 否则in-place模式下上下两层文本会错位导致视觉混乱
   - in place mode: texts can also be layouted directly from an existing div with content. original content in red, and svg text in blue.
+
+- https://github.com/KurtGokhan/tegaki /MIT/202604/ts
+  - http://gkurt.com/tegaki
+  - Tegaki (手書き) turns any Google Font into animated handwriting. No manual path authoring. No native dependencies. Just pick a font.
+  - https://x.com/gkurttech/status/2043704940942483824
+    - Introducing Tegaki, a handwriting animation library for the web. Works with any font or text.
+    - Tegaki supports the most popular frontend frameworks, including React, web components, and vanilla JS.
+    - It works in Remotion too, which is how I created (vibe-coded) the video at the start of the thread.
+    - I wasn't looking forward to re-implementing text layout while writing this library. Thankfully, `Pretext` came to the rescue. So the library now also works with multiline text and wraps it automatically.
 # more

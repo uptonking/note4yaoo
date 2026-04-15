@@ -14,7 +14,15 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
-- ## 
+- ## New in Word: Copilot now tracks changes, leaves comments, and more _202604
+- https://x.com/dotey/status/2044122415018430513
+  - 很难想象微软到现在才推出这个 AI 操作 Word 的功能，还没 Anthropic 快
+  - 核心卖点是：AI 编辑文档时能开启"修订模式"（Track Changes），每一处改动都留痕可追溯。
+- 微软太慢了我已经转到latex了，ai时代word用户现在还得手动调格式修订内容，接受不了
+
+- 不是 GPT4 时代就在宣传这个了吗我记得，现在才搓出来啊
+
+- 实测过，Gemini 可以操作 Google Docs 了。Gemini 直接编辑当前文档，带修改痕迹，用户可以确认是否接受修改。
 
 - ## 🚀 Claude for Word is now in beta. _202604
 - https://x.com/claudeai/status/2042670341915295865

@@ -12,7 +12,7 @@ modified: 2023-03-18T17:53:25.909Z
 # tools
 - https://github.com/docmirror/dev-sidecar
   - 为开发者打辅助的边车工具
-  - dns优选（解决***污染问题）
+  - dns优选（解决 *** 污染问题）
   - 请求拦截
   - github加速
   - Stack Overflow 加速
@@ -104,6 +104,29 @@ modified: 2023-03-18T17:53:25.909Z
   - 你要是没需求就没必要。 在你路由器性能好的前提下可以降低延时 提高稳定性等等 对联机 p2p也有很大帮助
 
 - 而且就算是移动一样可以改桥接，你都玩软路由了这点动手能力应该不至于没有。我还有一条移动的宽带，打电话过去也是唧唧歪歪这不行那不行，一怒之下自己改桥接了。
+# discuss-forwarding
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 最近，Cloudflare 也下场做私有局域网了，推出了 Mesh。
+- https://x.com/VnetLink/status/2044232342617965027
+- 区别在于：
+
+Tailscale：设备直连（P2P）
+Cloudflare Mesh：全部走 Cloudflare
+本质区别👇
+一个尽量不走中继
+一个把中继变默认路径
+
+选型：
+要低延迟 👉 Tailscale
+要 Zero Trust 👉 Cloudflare
+
 # discuss
 - ## 
 

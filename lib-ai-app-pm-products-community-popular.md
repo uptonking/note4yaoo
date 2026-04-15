@@ -9,6 +9,9 @@ modified: 2026-02-20T17:36:40.796Z
 
 # guide
 
+- https://github.com/garylab/MakeMoneyWithAI /md
+  - https://garymeng.com/
+  - A list of open-source AI projects you can use to generate income easily.
 # discuss-stars
 - ## 
 
@@ -824,9 +827,25 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## [同样都是等待，愿意排队还是愿意低tps？ - LINUX DO _202604](https://linux.do/t/topic/1974772)
+  - 不排队但缓慢生成 : 排队但快速生成 = 3:1 
 
-- ## 
+- 低tps至少证明确实在处理我的问题，排队的话，谁知道它是不是把你丢一边不管了？
+
+- ## [BOSS决定自建微型数据中心提供api服务，有没有搞头？ - LINUX DO _202604](https://linux.do/t/topic/1974293)
+  - 自建机柜好处是一次性投入，还有灵活性。
+  - 提供超高并发的LLM翻译api，使用gemma4等高能力小模型或者特调模型api。
+  - 由客户选择模型，提供自定义模型的api，如酒馆用的模型。
+  - 垂直领域的模型推理服务。
+  - 低价的 agent api
+
+- 100W连个水漂都没有, 一组H100都买不到
+
+- 并非一次性投入，你这投入都不够一次性的, 整点小模型的话你们又没什么优势
+
+- 理想主义坚持理想怎么就被赋予小孩哥的称号了呢？
+
+- 一百万，房租电费都要花不少，不要说租到穷乡僻壤，还有断电啥的能保障服务运行吗，稳定性做不到，谁用你
 
 - ## 试图逆向一个 Youmind 非公开 Skill 的提示词 没有成功, 此刻，我理解了 SaaS = Skill as a Service 成立的可能性
 - https://x.com/cellinlab/status/2037464272184242590

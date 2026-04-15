@@ -583,6 +583,15 @@ modified: 2023-06-23T12:46:53.288Z
   - https://x.com/iamncdai/status/2040674488355110913
     - [Apple Hello Effect ](https://chanhdai.com/components/apple-hello-effect)
 
+- https://github.com/KurtGokhan/tegaki /MIT/202604/ts
+  - http://gkurt.com/tegaki
+  - Tegaki (手書き) turns any Google Font into animated handwriting. No manual path authoring. No native dependencies. Just pick a font.
+  - https://x.com/gkurttech/status/2043704940942483824
+    - Introducing Tegaki, a handwriting animation library for the web. Works with any font or text.
+    - Tegaki supports the most popular frontend frameworks, including React, web components, and vanilla JS.
+    - It works in Remotion too, which is how I created (vibe-coded) the video at the start of the thread.
+    - I wasn't looking forward to re-implementing text layout while writing this library. Thankfully, `Pretext` came to the rescue. So the library now also works with multiline text and wraps it automatically.
+
 ### typewriter-css-only
 
 - https://github.com/Mikulew/css-typewriter-effect /202112/css

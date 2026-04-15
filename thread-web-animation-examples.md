@@ -94,6 +94,28 @@ modified: 2021-04-21T15:01:12.882Z
 - Damn, someone should port this for react-native
 
 - Babel transform at build time means your animation values are fully static though. Dynamic animations based on runtime state still need escape hatches.
+# discuss-css-anime
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-shape-anime
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🌰 pure CSS motion
+- https://x.com/tranmautritam/status/2044341343460474996
+  - [yui](https://yui540.com/motions)
+  - https://github.com/yui540/css-animations
+- You could do that 10 years ago, and some animations even earlier than that.
+
+- I dont think all of this are CSS
 # discuss
 - ## 
 

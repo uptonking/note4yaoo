@@ -311,6 +311,15 @@ modified: 2024-01-23T02:52:23.932Z
 
 - Yes, that would be very useful! I’ve already been using something very similar with the Diarian plugin, but it’s not quite there yet.
 
+- ## [How have you ACTUALLY benefitted from linking/tagging notes? : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1slxf7d/how_have_you_actually_benefitted_from/)
+- I find embedding of subheadings or paragraphs from other notes super useful, which works through links. I also find myself adding and using links to make index pages, which then summarize and link to online or local resources. I tag my notes as I use a very shallow folder tree, but so far, I haven't benefited from tags for searching much, other than being a hub-seed in my graph view. I do use the graph view for surfing my vault, which I find not only pleasing but which also reduces methodic drift and has me rediscover old projects, so that's neat.
+
+- I use links to refer to notes that are references, aka notes that are written like a Wikipedia article about a topic/system. I then use tags to refer to the topics of the note. Finally I use folders for the primary topic of the note. That way it's easy to find a note if you know the topic, all reference information gets collected into the reference notes, and I can still find things manually though the folder structure (my brain defaults to traversing folders instead of the search bar and I've given up trying to change that).
+  - The tags particularly are really useful when you have a slight memory of something, but even the context is gone. Aka you remember Bob mentioned something important about whales but can't really remember what he said and in which financial reporting meeting.
+
+- Linking is essential to a Zettelkasten system
+- As a Game Master and thus world builder for a cortex Prime campaign: I use linking all the time. The Zettelkasten won’t work without it. Other than that, tags are used for broad areas, like „playerCharacter“ or „NPC“ or „Location“ or „Plotline“.
+
 - ## [Project Folders now available in Lovely Bases Plugin : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1q89nct/project_folders_now_available_in_lovely_bases/)
   - I didn't do the design, I reused this component from shadcn and adapted it to work within Obsidian
   - https://github.com/aitorllj93/obsidian-lovely-bases

@@ -49,6 +49,11 @@ modified: 2025-11-30T17:27:16.720Z
   - 中文优化
   - structured extraction
 
+- rag-docs-solutions
+  - llamaindex: liteparse
+  - NanoNets
+  - datalab: chandra
+
 - context/memory layering
   - user/system prompt
   - chat hisotry
@@ -599,6 +604,15 @@ modified: 2025-11-30T17:27:16.720Z
   - https://github.com/gptme/gptme-tauri /NALic/202507/rust/ts/inactive
     - Desktop app for gptme built with Tauri
 
+- https://github.com/tobocop2/lilbee /MIT/202604/python
+  - https://tobocop2.github.io/lilbee/
+  - Chat with your documents offline using your own hardware. 
+  - Augment any AI agent via MCP with a sophisticiated search engine over PDFs, code, and 150+ formats. Integrate with your favorite GUI via REST API.
+  - No cloud, no telemetry, no API keys required
+  - Bring your own GUI — built-in REST API means you can integrate document search into whatever tool you already use. No extra app needed (see Obsidian plugin)
+  - 🐛 Per-project databases — lilbee init creates a .lilbee/ directory (like .git/) so each project gets its own isolated index
+  - vision OCR (LightOnOCR-2), then queried in lilbee's interactive chat (qwen3-coder:30b, fully local). 
+
 - https://github.com/thiswillbeyourgithub/wdoc /GPL/202511/python
   - https://wdoc.readthedocs.io/en/stable/
   - Summarize and query from a lot of heterogeneous documents. 
@@ -811,6 +825,17 @@ modified: 2025-11-30T17:27:16.720Z
   - Multiple Formats: PDF, DOCX, TXT, MD, PPTX, XLSX, and more
   - [RAG-Enterprise: One-command local RAG setup (Docker + Ollama + Qdrant) with zero-downtime backups via rclone – for privacy-focused enterprise docs : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rhvpuj/ragenterprise_onecommand_local_rag_setup_docker/)
 # rag-fwk
+- https://github.com/NanoNets/nanoindex /apache2/202604/python
+  - https://nanonets.com/research/nanonets-ocr-3
+  - Open-source agentic harness for long documents. Self-validating trees. Entity graphs. Karpathy-inspired LLM wikis. Cited answers down to the pixel.
+  - Most RAG systems chop documents into chunks and turn them into embeddings. Two things break: Structure is lost, Multi-hop questions fail.
+  - NanoIndex preserves document structure instead of destroying it. Nanonets OCR-3 extracts the table of contents, section hierarchy, and heading structure. NanoIndex builds a tree from these.
+  - NanoIndex compiles documents into a persistent, interlinked wiki that gets richer with every source you add and every question you ask. The wiki is a directory of markdown files. 
+  - Roadmap
+    - Agentic extraction self-correcting 
+    - Streaming tree building real-time tree construction as pages are parsed
+    - Multi-agent wiki multiple agents maintaining different sections of the wiki concurrently
+
 - https://github.com/run-llama/semtools /1.5kStar/MIT/202511/rust/ts
   - Semantic search and document parsing tools for the command line
   - A collection of high-performance CLI tools for document processing and semantic search, built with Rust for speed and reliability.

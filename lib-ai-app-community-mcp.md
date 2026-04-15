@@ -182,6 +182,13 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
+- ## 
+
+- ## Google Chrome 正式推出浏览器中的 Skills 功能
+- https://x.com/shao__meng/status/2044259225610924222
+  - 用户在 Gemini in Chrome 聊天中输入过一次的高频 Prompt，可以直接从聊天历史“保存”为 Skill。以后不需要重复输入，只用在浏览器侧边栏 Gemini 界面中键入“/”或点击“+”按钮，就可以一键调用。
+  - 同时上线官方 Skills 库，包含一系列预置模板（如 “Protein maximizer 蛋白质最大化器” “Gift concierge 礼物管家” ），用户可直接保存并自定义修改提示词。
+
 - ## A new version of the MCP spec was finalized today. _20230326
 - https://x.com/alexalbert__/status/1904908450473324721
   - Auth framework based on OAuth 2.1

@@ -129,7 +129,7 @@ modified: 2026-04-07T11:52:43.122Z
     - 公式排版完美保留 · Zotero 深度联动
     - OnnxRuntime 8 秒超时机制
 
-- https://github.com/wxyhgk/retain-pdf /NALic/202604/python/rust/js
+- https://github.com/wxyhgk/retain-pdf /MIT/202604/python/rust/js
   - [RetainPDF：PDF 保留排版翻译工具 - LINUX DO _202604](https://linux.do/t/topic/1891990)
   - RetainPDF 做的事: 上传 PDF，一键拿到保留原始排版的中文译文。
   - 首次运行需要填写两个 API Key：MinerU（用于 PDF 解析，每天 2000 页免费）和 DeepSeek（用于翻译，需要自己充值 API ）。
@@ -530,6 +530,11 @@ modified: 2026-04-07T11:52:43.122Z
 - https://github.com/windingwind/zotero-pdf-translate /10.6kStar/AGPLv3/202401/ts
   - Translate PDF, EPub, webpage, metadata, annotations, notes to the target language. 
   - Support 20+ translate services.
+
+- https://github.com/transkit-app/transkit-desktop /GPL/202604/rust/js
+  - https://transkit.app/
+  - a cross-platform translation & OCR app, originally based on Pot
+  - https://github.com/pot-app/pot-desktop /GPL
 
 ## utils-translation
 

@@ -375,7 +375,13 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
-- ## 
+- ## [Does keeping Markdown syntax (#, ** , -) in Chunks actually hurt vector search precision? Or is it "semantic gold"? : r/Rag _202604](https://www.reddit.com/r/Rag/comments/1sl69wr/does_keeping_markdown_syntax_in_chunks_actually/)
+- No does not hurt if there few in the chunk. If you have many of them, you should test the retriever performance with and without them on a subset of them
+
+- It shouldn't, there are some techniques such as context chunking that should reduce the problem if the number of symbols is relevant.
+  - You can use this tool to enrich, check and correct your chunks
+
+- use ragas, and i evaluate context recall and precision
 
 - ## [Increasing your chunk size solves lots of problems - the default 1024 bit chunk size is too small : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1r36f72/increasing_your_chunk_size_solves_lots_of/)
 - you are wrong, but given you are only here to inform us that you are right, i think i'll let you find out yourself.
@@ -610,7 +616,14 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
-- ## 
+- ## [Evaluating 16 embedding models, 7 rerankers, with all 128 combinations. : r/Rag _202604](https://www.reddit.com/r/Rag/comments/1sm5sb0/evaluating_16_embedding_models_7_rerankers_with/)
+  - Binary relevance has been the default for MTEB retrieval evaluation since the benchmark launched. Every document is either relevant or it isn't. That works fine when models are far apart. It stops working when frontier embeddings are separated by fractions of a percent on Recall@100.
+  - Therefore We re-annotated 24 MTEB retrieval datasets with graded relevance scores using three large language model judges: GPT-5-nano (OpenAI), Grok-4-fast (xAI), and Gemini-3-flash (Google). Each query-document pair got a 0-10 score from all three judges independently. Inter-annotator agreement came in at Pearson r = 0.7-0.8 across judges, which is high enough to trust the signal.
+  - The core problem with binary labels is that Normalized Discounted Cumulative Gain (NDCG) degenerates under them. 
+  - We evaluated 16 embedding models, 7 rerankers, and all 128 combinations.
+  - Some notable moves on embed-only graded NDCG@10 versus binary MTEB:
+  - harrier-27b and qwen3-embedding-4b held near the top (1st to 3rd and 3rd to 4th)
+  - harrier-0.6b dropped from 2nd to 10th (70.8 to 0.650 graded)
 
 - ## 🆚 [Reasoning Models vs Non-Reasoning Models : r/Rag _202603](https://www.reddit.com/r/Rag/comments/1rosq4y/reasoning_models_vs_nonreasoning_models/)
   - I was playing around with my RAG workflow, I had a complex setup going with a non-thinking model, but then I discovered some models have built-in reasoning capabilities, and was wondering if the ReACT, and query retrieval strategies were overkill? In my testing, the reasoning model outperformed the non-reasoning workflows and provided better answers for my domain knowledge. Thoughts?

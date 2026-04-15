@@ -15,7 +15,7 @@ modified: 2026-04-07T00:47:33.626Z
   - [I made an awesome list of FOSS apps compatible with the Obsidian vault format : r/PKMS](https://www.reddit.com/r/PKMS/comments/1ro31d0/i_made_an_awesome_list_of_foss_apps_compatible/)
     - I’ve been tracking tools that are compatible with the Obsidian vault format.
     - The idea is to identify FOSS applications that can work with the same vault structure so our notes stay truly portable and future-proof.
-# feat-bases
+# feat-bases/kanban
 - https://github.com/bgarciamoura/obsidian-notion-bases-plugin /GPL/202603/ts
   - Turn any folder in your vault into a powerful database — right inside Obsidian.
   - [I built a Notion-like database plugin for Obsidian — 6 views, fully local, no external tools : r/ObsidianMD _202603](https://www.reddit.com/r/ObsidianMD/comments/1rtwcja/i_built_a_notionlike_database_plugin_for_obsidian/)
@@ -28,6 +28,11 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/PlayerMiller109/obsidian-sheets-basic /202408/js
   - merge markdown table cells after Obsidian v1.5.0
   - [小插件 Sheets Basic：合并 Markdown 表格单元格 - Obsidian 中文论坛 _202405](https://forum-zh.obsidian.md/t/topic/35091)
+
+- https://github.com/samaraliwarsi/obsidian-board /202604/css
+  - Simple self contained obsidian markdown kanban board
+  - https://github.com/Louai99k/obsidian-board
+  - [Markdown Kanban | No Plugin : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1slcmgi/markdown_kanban_no_plugin/)
 # feat-cli
 
 # feat-ai

@@ -30,6 +30,11 @@ modified: 2025-09-21T13:58:46.548Z
   - https://huggingface.co/ibm-granite/granite-docling-258M /apache2
     - a multimodal Image-Text-to-Text model engineered for efficient document conversion
 
+- https://github.com/scub-france/Docling-Studio /MIT/202604/python/vue
+  - https://scub-france.github.io/Docling-Studio/
+  - A visual document analysis studio powered by Docling. 
+  - Upload a PDF, configure the extraction pipeline, and visualize the results — text, tables, images, formulas, bounding boxes — all from your browser.
+
 - https://huggingface.co/spaces/ibm-granite/granite-docling-258M-WebGPU/tree/main /apache2/202510/html/vanillajs
   - a demo which showcases the model running entirely in your browser with WebGPU acceleration
   - ✨ 此类demo可考虑实现类似图片对比的新旧对比滑块

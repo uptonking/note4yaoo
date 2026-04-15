@@ -172,6 +172,15 @@ modified: 2026-04-07T12:33:48.087Z
   - Real-time indexing - Automatic file watching, smart diffs, seamless branch switching
   - pr已合并 [refactor: Extract BaseCLIProvider and improve OpenCode integration _202512](https://github.com/chunkhound/chunkhound/pull/122)
 
+- https://github.com/HaroldConley/chunk-norris /MIT/202604/python
+  - Evaluate and compare chunking strategies for RAG pipelines
+  - [Chunk Norris 🥋: Stop guessing your RAG chunking strategy : r/Rag _202604](https://www.reddit.com/r/Rag/comments/1sl3oii/chunk_norris_stop_guessing_your_rag_chunking/)
+    - Like many people building RAG pipelines, I kept defaulting to things like “512 tokens + 10% overlap” without really knowing if it was the right choice. 
+    - You give it a document + a set of questions (with expected answers)
+    - It tries different chunking strategies (fixed, sentence, paragraph, recursive, etc.)
+    - No LLM needed for evaluation — just embeddings + deterministic scoring.
+    - The idea is simple: instead of guessing your chunking strategy → you test it on your real data.
+
 - https://github.com/CoreyFransen08/chunk-forge /apache2/202512/python/ts
   - A self-hosted document processing platform for converting PDFs to Markdown with semantic chunking, drag-and-drop editing, rich metadata management, and multi-format export.
   - Upload PDFs and convert them to Markdown using LlamaParse, MarkItDown, or Docling.
@@ -192,6 +201,10 @@ modified: 2026-04-07T12:33:48.087Z
   - https://x.com/zirkelc_/status/1992520261325771153
     - Chunkdown now compacts markdown tables thanks to a one-line PR
     - Markdown tables can be pretty formatted with additional dashes and spaces to align the columns vertically. This makes them easier for humans to read, but wastes tokens and embedding space on useless characters
+
+- https://github.com/GiovanniPasq/chunky /MIT/202604/python/ts
+  - Convert and validate your Markdown, then choose the best chunking strategy for your RAG pipeline.
+  - Most RAG pipelines fail silently — Chunky is a local, open-source tool that gives you full visibility at both stages — validate your Markdown, validate your chunks, fix what's wrong before it reaches your vector store.
 
 - https://github.com/speedyk-005/chunklet-py /MIT/202512/python
   - https://speedyk-005.github.io/chunklet-py/

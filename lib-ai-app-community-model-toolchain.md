@@ -1461,7 +1461,23 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 # discuss-CPU/RAM
 - ## 
 
-- ## 
+- ## [[Project] I built an AI Agent that runs entirely on CPU with a 1.5B parameter model — here's what I learned : r/ollama _202604](https://www.reddit.com/r/ollama/comments/1sld3tl/project_i_built_an_ai_agent_that_runs_entirely_on/)
+  - TL; DR: Built an intelligent ops agent using a 1.5B model (Qwen2.5:1.5b) that runs on CPU-only machines. 
+  - Uses RAG + Rerank + structured Skills for usable accuracy without any GPU. 
+  - I work in private cloud operations. Our customers deploy on-premises — no public internet, no GPU, no cloud API access. But they still need intelligent troubleshooting.
+  - Embedding	bge-large-zh-v1.5	Text → vector for semantic search
+  - Reranker	bge-reranker-v2-m3	CrossEncoder re-ranking
+  - Adding Rerank actually made the system faster, not slower. Traditional RAG feeds Top-K docs to LLM. With Rerank, we filter to Top-2 high-quality docs first.
+  - Tiered Intent Routing: Not every request needs the LLM. A two-phase routing system handles requests at the cheapest level. The LLM classifier receives only the skill name list and outputs a single skill name. 80%+ of requests resolved by rules in < 5ms.
+  - From Tools to Structured Skills (SOP): Traditional agents let the LLM plan tool execution. This falls apart with a 1.5B model. Our approach: pre-defined playbooks where the SLM only handles language understanding.  Atomic Skill = single tool wrapper, no LLM. SOP Skill = chain of Atomic Skills + scoped LLM calls. Each LLM step receives ONLY the context it needs — not the entire history. This is what makes SLM execution possible.
+  - We turned a generic Qwen2.5:1.5b into a RocketMQ operations expert using LoRA. Entire pipeline runs on a MacBook Pro — no cloud GPU.
+- i used it to query rocketmq knowledges.
+  - do rag query, get top 3 parts
+  - do rerank, get top 2 parts
+  - put 2 parts into slm and get output
+
+- Dod you look at Microsoft bitnet? I believe the future of CPU inference relies there. They released a 2B 1.58b model along with the code.
+  - Same. I truly believe we wasted years and billions of dollars because researches didn’t know about bit packing. Apple’s own on device model is as small as 2 bit for certain parts.
 
 - ## [TinyServe - run large MoE models on consumer hardware : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s54zdo/tinyserve_run_large_moe_models_on_consumer/)
   - Not enough VRAM? We keep only hot experts and offload the rest to RAM.

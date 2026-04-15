@@ -60,6 +60,16 @@ modified: 2021-07-24T08:16:41.076Z
   - But pandas itself is also becoming faster due to Apache Arrow, so having both pandas and Streamlit using the same format should yield improvements
   - The app creator still needs to think about their workflow, use caching as appropriate, etc. **Apache Arrow can't fix algorithmic complexity of complex transformations** 
 
+- ## Arrow is not a file format. It's an in-memory columnar format.
+- https://x.com/sspaeti/status/2044030554669248621
+  - The Arrow ecosystem:
+  - Arrow: language-agnostic in-memory columnar format.
+  - Arrow Flight: high-performance RPC over gRPC. No more JSON/CSV serialization tax.
+  - Flight SQL: send and execute SQL queries over Flight.
+  - ADBC: standardized API for Arrow-native database interactions.
+  - DuckDB, Polars, DataFusion, Spark - they all use Arrow under the hood. If you're building anything that moves data between processes, Arrow is the standard to know.
+- [Zero Copy Architecture - Anurag's Homepage _202604](https://theaanuragg.vercel.app/writing/article-zero-copy.html)
+
 # discuss-showcase
 - ## 
 

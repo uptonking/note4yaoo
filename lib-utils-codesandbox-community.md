@@ -84,7 +84,8 @@ modified: 2024-01-25T13:33:23.267Z
 - ## 
 
 - ## boxsh — a sandboxed POSIX shell for AI agents. Single static binary. No Docker, no root.
-- https://x.com/xicilion/status/2041075667954258116
+- https://x.com/xicilion/status/2040879181316407720
+  - https://x.com/xicilion/status/2041075667954258116
   - Overlay COW keeps your files untouched. JSON RPC for parallel execution. Branch sessions to compare two approaches.
   - Built for Linux. Fast and secure.
   - 在这个方案之前，我写过好几个实现，把 agent 放进 docker；提取 agent，把 tools 放进 docker；引入 just-bash，把 exec 留在 docker；用 unshare+namespace 替换 docker。 拼凑到最后忍无可忍，干脆写了一个专用的。 完整 shell，完整 sandbox，完整 linux 命令，零成本目录分叉，json rpc 通信。

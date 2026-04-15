@@ -720,6 +720,9 @@ modified: 2025-03-22T16:10:24.856Z
     - > 签到功能在哪里呀？ 退出登录重新登陆就好了. 
     - [AgentRouter 问题汇总 · Issue · millylee/anyrouter-check-in](https://github.com/millylee/anyrouter-check-in/issues/48)
       - agent 是在登录的时候签到的，并没有额外的 sign_in 接口，是在登录的那个接口是返回了一个check_in 的字段判断的，所以才把cookie 时间给调短了，就是让重新登录签到才有效
+  - [Kiro-Go Contribute _202604](https://sub.timefiles.online/contribute)
+    - [[Kiro Free Contribute] 一个不常规的公益站开放 · 每小时免费kiro 试用号反代 · kiro账号无偿托管服务  ](https://linux.do/t/topic/1971059)
+    - 每小时更新一个新apikey,前40分钟会使用AI自动生成的字谜加密，后20分钟密文会解开，可以直接查看
   - [Code Router](https://api.code-relay.com) , 无法签到和更多额度
     - [Code Router](https://api.codemirror.codes/)
     - 支持 Claude Code & CodeX
@@ -848,7 +851,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [APIKey - Subscription Automation](https://gpt.apikey.uk/subscribe), 注册机
     - [【APIKey公益站】速蹬！全新协议注册+绑卡自动化注册机  _202603](https://linux.do/t/topic/1802338)
     - 内置了大概100条号吧，还有七八张卡吧，内置四条ip，美英韩日
-  - 📌 [CRWorld API _202604](https://api.crworld.site/console/personal), 签到-需手动
+  - 🗑️ [CRWorld API _202604](https://api.crworld.site/console/personal), 签到-需手动
     - [CRWorld公益站  ](https://linux.do/t/topic/1906259)
     - 提供GPT Grok Gemini Claude
     - 自用，但不保证可用性

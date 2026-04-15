@@ -28,7 +28,8 @@ modified: 2023-04-04T22:39:45.442Z
   - https://vectorizer.ai/
     - 利用人工智能将 JPG、PNG 等位图转成矢量 SVG 格式。先用 MidJourney 生成插图，再用这个工具转成矢量略加修改，岂不美哉。
 
-- https://github.com/stirling-image/stirling-image /MIT > AGPL/202604/ts
+- https://github.com/ashim-hq/ashim /MIT > AGPL/202604/ts
+   - https://github.com/stirling-image/stirling-image
   - https://stirling-image.github.io/stirling-image/
   - Stirling-PDF but for images. 30+ tools and local AI in a single Docker container - resize, compress, remove backgrounds, upscale, OCR, and more. 
   - Local AI - Remove backgrounds, upscale images, erase objects, blur faces, extract text (OCR). All running on your hardware with pre-downloaded models, no internet required

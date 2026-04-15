@@ -688,6 +688,14 @@ modified: 2023-09-02T09:17:22.992Z
     - 系统采用控制面（console ）与执行面（worker ）分离架构。执行面提供多个运行时，适用于不同部署场景。
     - worker-docker	runc	Docker 容器	常见的云服务器场景，更好的兼容性
     - worker-boxlite	KVM	boxlite	内核级隔离
+
+- https://github.com/xicilion/boxsh /MIT/202604/cpp/js
+  - A sandboxed POSIX shell with a concurrent JSON-line RPC mode
+  - https://x.com/xicilion/status/2040879181316407720
+    - boxsh — a sandboxed POSIX shell for AI agents. Single static binary. No Docker, no root.
+  - https://x.com/xicilion/status/2043911257108164942
+    - Agent 和执行环境必须分离，这个结论是对的。不过他们实现有些差别。
+    - 关注沙箱可以了解一下 @anthropic-ai/sandbox-runtime，实现原理和 boxsh 一样，区别在于 sandbox-runtime 目标在于安全，boxsh 在安全之上规划了零成本 cow worktree 工作流。 boxsh 的沙箱单位是会话。
 # playground
 - https://github.com/nalgeon/codapi /1.2kStar/apache2/202411/go
   - https://codapi.org/

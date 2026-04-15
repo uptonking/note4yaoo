@@ -589,6 +589,32 @@ modified: 2026-04-07T12:53:38.419Z
   - Structured extraction - Define schemas, get JSON back
   - Built for scale - Queue-based processing for thousands of documents
   - WebSocket notifications for job progress
+
+- https://github.com/BoltzmannEntropy/batch-ocr /MIT/202512/python/inactive
+  - Dockerized PaddleOCR pipeline to convert thousands of PDFs into clean text (GPU/CPU, Windows / OSX/ Linux)
+  - This project packages a fast, reliable PDF-to-text pipeline using PaddleOCR. It scans a folder recursively, extracts embedded text when available, falls back to OCR when needed, filters low-quality text, and writes clean .txt files while mirroring the original folder structure under ocr_results.
+  - Run it via Docker on Windows, Linux, and macOS (CPU-only on macOS), or natively on macOS (CPU). GPU acceleration is available on Windows/Linux with NVIDIA CUDA; macOS is CPU-only.
+  - [Batch OCR: Dockerized PaddleOCR pipeline to convert thousands of PDFs into clean text (GPU/CPU, Windows + Linux) : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1ptn2lq/batch_ocr_dockerized_paddleocr_pipeline_to/)
+
+## utils
+
+- https://github.com/PT-Perkasa-Pilar-Utama/ppu-paddle-ocr /MIT/202604/ts
+  - https://pt-perkasa-pilar-utama.github.io/ppu-paddle-ocr/
+  - A lightweight, PaddleOCR implementation in Typescript for OCR text detection and recognition in JavaScript environments.
+  - This library simplifies the integration of ONNX models with Node.js
+  - Built on top of `onnxruntime-node` and `onnxruntime-web`, ppu-paddle-ocr handles all the complexity of model loading, preprocessing, and inference, providing a clean and simple API for developers to extract text from images with minimal setup.
+  - Works in Node.js and Bun environments
+  - Web Support: Supports running directly in the browser
+  - Customizable: Support for custom models and dictionaries
+  - Pre-packed Models: Defaults to optimized PP-OCRv5 mobile models (English) ready for immediate use, with automatic fetching and caching on the first run.  Supports 40+ languages via ppu-paddle-ocr-models.
+
+- https://github.com/timminator/PaddleOCR-Standalone /apache2/202602/python
+  - [[P] Standalone PaddleOCR Executable - Simplified OCR for Everyone! : r/MachineLearning _202501](https://www.reddit.com/r/MachineLearning/comments/1iab2w2/p_standalone_paddleocr_executable_simplified_ocr/)
+    - a standalone executable version of PaddleOCR. This makes it super easy for users to start using it without having to go through Python and package installations, or setting up environments.
+    - I've created a CPU and GPU version and also an easy to follow setup wizard for both of them to make the usage even easier.
+  - [Standalone PaddleOCR Executable - Simplified OCR for Everyone! : r/computervision _202604](https://www.reddit.com/r/computervision/comments/1i8ic8p/standalone_paddleocr_executable_simplified_ocr/)
+    - You need to include the metadata from a lot of packages because this is required at runtime and it is not included by default. 
+    - There also is no version 1.5.0 of Paddle out there. My release is based on the latest version 3.4.0. If you are referring to PaddleOCR-VL 1.5 - as stated in my releases notes this is not included in my standalone package. You are currently using the PP-OCRv5 OCR Pipeline not the VL Pipeline.
 # mineru
 - https://github.com/zt6453928/ailat-translation /MIT/202601/python/js
   - https://mineru.net/apiManage/docs
@@ -1234,7 +1260,12 @@ modified: 2026-04-07T12:53:38.419Z
   - OCR on scanned PDFs
   - 需要指定entity后，才会高亮出ocr后符合entity语义的文本
 # exampels
-
+- https://github.com/SmileSnail5470/PowerTools /GPL/202604/python/PySide6
+  - 一站式多媒体处理工具箱。支持图片与视频的可见/盲水印植入与移除，内置高精度 OCR 文字提取与全功能图像编辑器。为版权保护与内容创作而生。
+  - 支持 Windows、macOS
+  - 水印添加: 可见 + 盲水印，图片/视频，批量
+  - 水印移除
+  - 文字提取(OCR): 图片文字提取与识别，单文件与批量
 # utils
 
 # more

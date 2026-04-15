@@ -619,6 +619,9 @@ modified: 2025-02-21T17:17:42.225Z
     - PPTX-generator：基于 PptxGenJS，定义 5 种标准页面类型（封面/目录/章节分割/内容/总结）和 4 套视觉配方（Sharp/Soft/Rounded/Pill）
     - 前些天刷到佬友发的适用于wps的一套skill
 
+- https://github.com/zai-org/GLM-skills /apache2/202604/python
+  - Official skills for the GLM family of models, designed for agent architectures including Claude Code, OpenCode, OpenClaw, AutoClaw, and other AI coding agents.
+
 - https://github.com/hewliyang/office-agents /MIT/202603/ts
   - Office Agents is a monorepo of Microsoft Office Add-ins with integrated AI chat panels. Each add-in connects to major LLM providers using your own credentials (BYOK) and can read/write documents through built-in tools, a sandboxed shell, and a virtual filesystem.
   - https://x.com/hewliyang/status/2033176726663249959

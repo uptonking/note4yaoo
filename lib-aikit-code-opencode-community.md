@@ -58,7 +58,10 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## 🐛 OpenCode v1.4.4 released. TL; DR: Effect architecture migration • Embedded WASM Ripgrep
+- https://x.com/OpenCodeLog/status/2044217880271536617
+  - Replaced global async runtime facades with Effect, unifying service injection, contextual logging, and improving composability across core subsystems. 
+  - Swapped the external Ripgrep binary backend for an embedded WASM version
 
 - ## opencode server now can run under nodejs as we're no longer using any bun specific apis
 - https://x.com/thdxr/status/2041330695822279077
