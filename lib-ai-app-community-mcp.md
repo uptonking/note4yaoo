@@ -988,7 +988,12 @@ AI 可以直接操作后台 UI，把复杂流程自动化。
 
 - ## 
 
-- ## 
+- ## New @code version 1.116 is out  _202604
+- https://x.com/OrenMe/status/2044637007108850040
+  - The Agents app is now officially available in the Stable release. It’s fully powered by the CLI as its agentic engine, which is a pretty major shift
+  - We’ve been in a relatively long phase without obvious, visible leaps, but under the hood there’s serious groundwork being laid for the Agents app and the Agent Host protocol
+
+- The Agent Host protocol is the real story here. Multi-agent coordination inside the IDE could fundamentally change how we think about tool approval surfaces and security boundaries for agentic workflows.
 
 - ## 🚀 cursor: We're proposing an open standard for tracing agent conversations to the code they generate. It's interoperable with any coding agent or interface.
 - https://x.com/cursor_ai/status/2016934752188576029

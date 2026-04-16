@@ -68,6 +68,7 @@ modified: 2022-11-07T10:25:12.034Z
     - 参与网络运维、服务器配置、DNS、邮件系统、虚拟化等技术的深入讨论
   - [NodeSeek](https://www.nodeseek.com/about)
     - 旨在为主机爱好者打造高品质社区
+    - [交易版块](https://www.nodeseek.com/categories/trade)
 
 - [LINUX DO - 新的理想型社区](https://linux.do/)
   - 是否还记得十多年前互联网的模样？那时候的人们乐于分享自己的见识，不以有钱为成功标准。

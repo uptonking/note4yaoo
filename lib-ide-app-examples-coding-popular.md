@@ -253,11 +253,15 @@ modified: 2025-12-11T18:10:23.710Z
   - Built-in Git Diff Viewer lets you review all changes directly within Claude Code Viewer
   - What Makes Claude Code Viewer Different: specifically designed as a session log viewer
   - Core Philosophy: Zero data loss + Effective organization + Remote-friendly design
+  - 🐛 
+    - 不支持codex
   - 支持在浏览器中打开terminal
   - 支持resume-chat
   - 支持查看变更文件列表, 支持查看diff视图
   - 支持pr模式，可选择branch
   - 快速查看tool-calls列表
+  - 支持搜索chat内容
+  - 对于超长的chat内容， 会直接无法显示chat内容
 
 - https://github.com/jhlee0409/claude-code-history-viewer /571Star/MIT/202603/ts/rust/tauri
   - https://jhlee0409.github.io/claude-code-history-viewer
@@ -938,7 +942,9 @@ modified: 2025-12-11T18:10:23.710Z
   - https://cloudcli.ai/
   - A desktop and mobile UI for Claude Code, Cursor CLI, Codex, and Gemini-CLI.
   - Use Claude Code or Cursor CLI on mobile and web with Claude Code UI. 
-  - 不支持rag
+  - 🐛 
+    - 不支持rag
+    - 不支持显示codex的历史会话，只显示cc的历史会话
   - Claude Code UI free open source webui/GUI that helps you manage your Claude Code session and projects remotely
   - You can use it locally or remotely to view your active projects and sessions in Claude Code or Cursor and make changes to them
   - Supports models including Claude Sonnet 4, Opus 4.1, and GPT-5

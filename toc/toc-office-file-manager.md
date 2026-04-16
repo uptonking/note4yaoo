@@ -319,6 +319,12 @@ modified: 2021-08-23T05:27:08.068Z
   - Multi-Protocol Support: Support for local filesystem, S3-compatible storage, FTP and other protocols
   - Complete File Operations: Support for file/directory listing, upload, download, delete, create, and more
 
+- https://github.com/aleksey-hoffman/sigma-file-manager /202604/rust/ts/vue
+  - free, open-source, quickly evolving, modern file manager (explorer / browser) app for Windows and Linux.
+  - Split view: Any tab can be splitted into 2 panes which you can navigate indipendently and transfer files between them easily.
+  - LAN file sharing: Share or stream files and folders over your local network, with browser access, QR codes, and FTP support.
+  - WSL drives: On Windows, browse detected WSL distributions directly in the navigator.
+
 - https://github.com/Coordinate-Cat/Flanker /GPLv3/202407/ts
   - New Age File Explorer
 # git-file-tree

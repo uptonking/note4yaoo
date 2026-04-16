@@ -313,6 +313,13 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## 
+
+- ## Today we launched a major update to the OpenAI Agents SDK to help developers build and deploy long-running, durable agents in production.
+- https://x.com/snsf/status/2044514160034324793
+  - You can now build your own Codex-style agents using powerful primitives for modern agents - file and computer use, skills, memory and compaction.
+  - The harness and compute are now split - you can bring your own sandbox or use partners like Blaxel, Cloudflare, Daytona, E2B, Modal, Runloop, and Vercel for container execution.
+
 - ## everyone is converging on the same product shape: a general harness that takes a goal, uses tools, and does knowledge work. 
 - https://x.com/essamsleiman/status/2041639638889328868
   - once every product is a harness, the next frontier is the feedback loop that improves it after deployment.

@@ -185,7 +185,8 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
-- ## 
+- ## [反代用 CLIProxyAPI 还是 Sub2API ? - LINUX DO _202604](https://linux.do/t/topic/1972760)
+- 我记得 sub2api 有粘性会话，cliproxyapi 没有？
 
 - ## [toolcall-gateway ：让不支持function call的模型支持function call - LINUX DO _202604](https://linux.do/t/topic/1915096)
   - 分享一个从我的web2api项目抽离出来的python库(已发布pypi)：toolcall-gateway 作用：让不支持function call的模型支持function call
@@ -198,7 +199,22 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
-¡- ## [你们都用什么管理模型，想找cc-switch替代品 - LINUX DO _202604](https://linux.do/t/topic/1970428)
+- ## 
+
+- ## 
+
+- ## [Does ChatGPT Team Plan Offers Better quota compared to Plus? : r/codex _202603](https://www.reddit.com/r/codex/comments/1rzskhx/does_chatgpt_team_plan_offers_better_quota/)
+- Plus and business have the same quotas. Business just gives you free pro uses per month and consolidated billing. 
+
+- [gpt付费选择plus还是team？ - LINUX DO _202604](https://linux.do/t/topic/1939900/21)
+- 建议整一个team来用，自从砍了plus额度之后team额度跟plus额度好像是一样的了，一个team母号还能拉多个子号
+- 主要是team 0刀绑卡都是死得极快，plus有英区谷歌使用，现在还算稳的
+- OpenAI经常搞一些给用户重置额度的活动，最近两次都没team的份儿
+
+- [10个plus，每周大概能跑多少 - LINUX DO _202604](https://linux.do/t/topic/1980754)
+  - 5H限额15刀, 周限95刀, 自己计算倍, 反正现在plus纯垃圾了, 没什么额度
+
+- ## [你们都用什么管理模型，想找cc-switch替代品 - LINUX DO _202604](https://linux.do/t/topic/1970428)
 - 现在各种渠道我都用metapi整合一下，感觉蛮好用的 
 - 有服务器的可以套一个 newapi 或者 sub2api，这样管理也方便，也不用频繁去改配置
 

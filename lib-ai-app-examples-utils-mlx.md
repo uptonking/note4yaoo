@@ -297,6 +297,16 @@ modified: 2025-11-01T10:54:26.044Z
     - Lemonade is 100% open source. It’s sponsored by AMD, which only makes money if you buy a computer. The idea is that if local AI gets increasingly awesome then more people will buy computers, so there’s no need for lemonade itself to have revenue/profits.
     - llama.cpp has had server routing for models for months now. You can literally mount and unmount models on the fly. lemonade literally copied and pasted the relevant snippets into their code base. They did do some other stuff in there, Ill give them that at the very least. But the only thing special about it is that its optimized for AMD hardware. Thats really it.
 
+- https://github.com/kyuz0/amd-strix-halo-toolboxes /202604/python
+  - https://strix-halo-toolboxes.com/
+  - This project provides pre-built containers (“toolboxes”) for running LLMs on AMD Ryzen AI Max “Strix Halo” integrated GPUs. 
+  - Toolbx is the standard developer container system in Fedora (and now works on Ubuntu, openSUSE, Arch, etc).
+  - This repository is part of the Strix Halo AI Toolboxes project.
+  - [Toolbox or Lemonade : r/StrixHalo _202604](https://www.reddit.com/r/StrixHalo/comments/1smyye9/toolbox_or_lemonade/)
+    - Lemonade recently added NPU support under linux, which gets an extra 50 TOPS (vs the 76 TOPS from gpu/cpu)
+    - Lemonade dev here. The main UI/UX idea is that installation should be a single click/command, and after that you can manage all your backends and models with the web app or CLI.
+  - https://github.com/stampby/halo-ai-core
+
 - https://github.com/jjang-ai/vmlx /apache2/202604/python/ts
   - https://vmlx.net/
   - vMLX - Home of JANG_Q - Cont Batch, Prefix, Paged, KV Cache Quant, VL - Powers MLX Studio. Image gen/edit, OpenAI/Anth

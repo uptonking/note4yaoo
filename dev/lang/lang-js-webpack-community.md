@@ -60,7 +60,7 @@ modified: 2024-01-02T07:52:13.141Z
 - ## 
 
 - ## [[Bug Report]: output.library.type = 'module' not outputting ESM correctly](https://github.com/web-infra-dev/rspack/issues/2293)
-- it works with the new version when enabling `experiments.outputModule = true`
+- it works with the new version when enabling `experiments.outputModule = true` 
 
 - ## [rspack 4.0 版本新模块解析 styled-components 报错](https://github.com/web-infra-dev/rspack/issues/4770)
 - Module resolution has to go from `"module": "./dist/styled-components.esm.js"` , then to `browser's "./dist/styled-components.esm.js": "./dist/styled-components.browser.esm.js"` part in order for things to get resolved correctly.
@@ -70,7 +70,22 @@ modified: 2024-01-02T07:52:13.141Z
 - ## [NormalModuleReplacementPlugin is not a constructor_202306](https://github.com/web-infra-dev/rspack/issues/3522)
   - [fix(rspack): add fileReplacements support_merged✅_202308](https://github.com/nrwl/nx-labs/pull/231)
 
+# discuss-module-federation
+- ## 
+
+- ## 
+
+- ## 
+
+- ## An update on Module Federation: We're officially recommending module-federation/vite.
+- https://x.com/ScriptedAlchemy/status/2044280506817372395
+- This was a big design decision on our end with v2, the build plugin layer basically creates the data structures and chunks that the js/runtime & js plugin can orchestrate. Federation in rspack is a very thin layer that connects the runtime. We also has concerns with bundler blocking. Ideally bundler just provides the general capabilities we need & js plugin + runtime does the rest. This way we can release new versions of federation without needing the bundler to push updates, most of the time. I’m glad to see this is the direction 
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

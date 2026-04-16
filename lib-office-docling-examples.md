@@ -30,6 +30,13 @@ modified: 2025-09-21T13:58:46.548Z
   - https://huggingface.co/ibm-granite/granite-docling-258M /apache2
     - a multimodal Image-Text-to-Text model engineered for efficient document conversion
 
+- https://github.com/docling-project/docling-agent /MIT/202604/python
+  - Docling-agent simplifies agentic operation on documents, such as writing, editing, summarizing, etc.
+  - Targeted editing: Load an existing Docling JSON and apply focused edits with natural-language tasks.
+  - Schema-guided extraction
+  - Model-agnostic: Plug in different backends via Mellea model_ids
+  - [Docling just announced Docling Agent + Chunkless RAG : r/Rag _202604](https://www.reddit.com/r/Rag/comments/1smeh2j/docling_just_announced_docling_agent_chunkless_rag/)
+
 - https://github.com/scub-france/Docling-Studio /MIT/202604/python/vue
   - https://scub-france.github.io/Docling-Studio/
   - A visual document analysis studio powered by Docling. 

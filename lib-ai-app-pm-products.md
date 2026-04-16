@@ -702,8 +702,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [Compute Token](https://computetoken.ai/console/personal)
     - [【正式上线】Compute Token —— 是大家推着我们走到这里 _202603](https://linux.do/t/topic/1772654)
     - 正式上线付费版，但公益的精神不丢。每天签到送额度
-  - [xem API](https://ai.xem8k5.top/console/personal)
-  - [君の的公益](https://muyuan.do/console/personal), 签到额度少
+  - 📌 [君の的公益](https://muyuan.do/console/personal), 签到额度少
     - [『高级推广』『君の公益』Claude渠道恢复  ](https://linux.do/t/topic/1853293)
     - 仅支持Claude Code
     - [「慕鸢の公益站」](https://newapi.linuxdo.edu.rs/console/personal)
@@ -714,6 +713,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 无充值，邀请注册来获得更多额度
     - tg群讨论的内容看，作者似乎精力不在anyrouter而在开发商用产品
     - 用户较多，有提供vscode插件无法使用的解决方案
+  - [xem API](https://ai.xem8k5.top/console/personal)
   - [Agent Router](https://agentrouter.org/console), 每日签到
     - 转向商业了
     - 模型支持 Claude Code、Codex、RooCode、Qwen Code、Gemini Cli 等多款工具， 仅支持coding工具，不支持使用api聊天
@@ -1679,6 +1679,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 提供了很多折扣码
 
 - latest
+  - 可在google搜索 `GPT site:pay.ldxp.cn/shop`.
   - [现在的claude中转站有什么推荐的吗  _202603](https://linux.do/t/topic/1868009/5)
     - neko, right, 星宸, 慕鸢
 
@@ -1767,6 +1768,32 @@ modified: 2025-03-22T16:10:24.856Z
   - [话题 - 活动 - WCyrus - LINUX DO](https://linux.do/u/wcyrus/activity/topics)
   - cc官方 1.5x , 提供opus, in-¥5-15/M, out-¥25-75
 
+- [TangSeng AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/tangsengai)
+  - 提供不限量token的日卡/周卡/月卡
+
+- [熊猫Ai](https://cwppt.cn/)
+  - 自助充值plus
+  - https://pay.ldxp.cn/shop/PBY2YIR3  /周全
+
+- [codex-for.me ](https://codex-for.me/)
+  - [vibe coding 专营的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/GUBERQA2)
+  - 日卡-5
+  - 月卡-59
+
+- [逍遥AI批发小铺的小店 ](https://pay.ldxp.cn/shop/1490777)
+  - plus-质保15
+  -  https://ai.dcfkj.com/xin/chatgpt 
+  - [出GPT Plus直充卡密8元 _202604](https://www.nodeseek.com/post-687488-1)
+
+- [炒鸡变黑的AI店的小店 ](https://pay.ldxp.cn/shop/chaoji)
+  - plus-无质保6
+
+- [AI源头小陈的小店 - 链动小铺 _202604](https://pay.ldxp.cn/shop/AItools)
+  - 品类多
+
+- [52AI店铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/52ai)
+  - 品类非常多
+
 - [米醋API](https://www.openclaudecode.cn/)
   - 提供opus, in-￥1.00/M, out-￥5.00/M
   - [openclaudecode好像是也被卖了，但还是好评 _202601](https://linux.do/t/topic/1520754)
@@ -1830,10 +1857,10 @@ modified: 2025-03-22T16:10:24.856Z
   - 月卡49
   - 套餐倍率0.17(计算后就是right.code的价格)，按量倍率0.3
 
-- [codex-for.me ](https://codex-for.me/)
-  - [vibe coding 专营的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/GUBERQA2)
-  - 日卡-5
-  - 月卡-59
+- [BeeCode AI](https://beecode.cc/dashboard)
+  - [pay](https://pay.beecode.cc/)
+
+- [GAPI ](https://api.easyabcard.ltd/dashboard)
 
 - [兔小店](https://store.tu-zi.com/)
   - 特别贵, 199+

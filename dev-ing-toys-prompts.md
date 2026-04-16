@@ -215,7 +215,7 @@ project onlyoffice and project at `~/Documents/repos/office/all-pdf/open-pdf-stu
 - forms, ocr, collaboration, ai-editing, complicated shapes, search is not required now, but architecture should support these features later.
 - please make a plan for the extensible text editing editor first, then implement it at folder `./hardoc`.
 
-- please analyze code and docs when you need, then explain to me what major features are in onlyoffice pdf editor but missing in hardoc. 
+- please analyze code and docs if you need, then explain to me what major features are in onlyoffice pdf editor but missing in hardoc. 
 
 - please refactor code structure in hardoc project to use similar architecture and code structure as onlyoffice without licensing issue, to make it easy to migrate more features in the future. 
 
@@ -234,7 +234,7 @@ please make a plan, then improve the core in-place text editing engine to make i
 
 - the goal now is to achieve full feature parity of native True PDF text editing engine like onlyoffice pdf editor.
 
-- the most important feature is a powerful, robust, extensible, native True PDF in-place text editing engine with annotation support.
+- the most important feature in hardoc is a powerful, robust, extensible, native True PDF in-place text editing engine with annotation support like onlyoffice pdf editor.
 - you can deep research, referencing good deisgn from onlyoffice pdf editor.
 - you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
 
@@ -252,7 +252,7 @@ please make a plan, then improve the core in-place text editing engine to make i
 
 ```prompt
 
-please recheck migrated features and improve your implementation in project hardoc, make it runnable locally using npm without docker. Read core implementation logic details for major features, find possible bugs in code and fix them, make sure major features implementations are correct and extensible.
+for project hardoc, please recheck migrated features and improve your implementation, make it runnable locally using npm without docker. Read core implementation logic details for major features, find possible bugs in code and fix them, make sure major features implementations are correct and extensible.
 
 please recheck migrated features and implementations for possible licensing issues. if the code is too similar to upstream, you can adjust the risking code to avoid licensing issues. if features are already migrated under different names, it is unnecessary to design it as a standalone/separate tool as the upstream did, this also helps to avoid licensing issues.
 
@@ -262,8 +262,9 @@ document what you have migrated from which commit id for future migration refere
 # tests
 
 ```
-you have migrated/impelmented major features in project ilove-pdf, but when you implement features, tests are not taken good care of. please fix and update existing tests. 
-make sure all tests run and pass locally with npm. you can update/fix tests file by file progressively. outdated or over-complicated or hard-to-maintain tests can be removed or rewritten. 
+you have migrated/implemented major features in project hardoc, but when you migrated/implemented features, tests are not taken good care of. please fix and update existing tests. 
+when you improve the tests, you can also improve the source code logic by fixing or refactoring code. DO NOT get locked to the risk code that has weak or wrong logic, you should fix them.
+finally make sure all tests run and pass locally with npm. you can update/fix tests file by file progressively. outdated or over-complicated or hard-to-maintain tests can be removed or rewritten. 
 ```
 
 # rafactor

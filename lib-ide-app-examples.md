@@ -539,6 +539,11 @@ modified: 2024-08-24T16:30:20.218Z
   - pr-agent analyze --full --verbose   # Full analysis with details
   - ? 似乎只能执行命令，不能添加提示词
 
+- https://github.com/backnotprop/plannotator /4.3kStar/MIT/202604/ts
+  - https://plannotator.ai/
+  - Interactive Plan & Code Review for AI Coding Agents. 
+  - Mark up and refine your plans or code diffs using a visual UI, share for team collaboration, and seamlessly integrate with Claude Code, Copilot CLI, Gemini CLI, OpenCode, Pi, and Codex.
+
 - https://github.com/diffray/diffray /MIT/202601/ts
   - https://diffray.ai/cli
   - AI-powered code review CLI for git changes

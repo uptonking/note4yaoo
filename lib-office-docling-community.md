@@ -27,6 +27,25 @@ modified: 2025-09-21T13:57:50.332Z
 
 - [Does VlmPipeline ignore pipeline_options.do_picture_description = True? _202510](https://github.com/docling-project/docling/discussions/2434)
   - it seems the markdown format that works
+# discuss-news
+- ## 
+
+- ## 
+
+- ## [Docling just announced Docling Agent + Chunkless RAG : r/Rag _202604](https://www.reddit.com/r/Rag/comments/1smeh2j/docling_just_announced_docling_agent_chunkless_rag/)
+  - Docling Agent - official repo is up (docling-project/docling-agent). Agentic doc operations: writing, editing, extraction. Works with DoclingDocument in/out, runs locally. Docling is moving beyond conversion.
+  - Chunkless RAG - instead of the classic chunk+embed+cosine pipeline, the idea is to use graph/tree structures that preserve document hierarchy. Sections, tables, figures stay connected. The LLM navigates the structure instead of searching isolated text fragments. Also designed to run locally.
+  - If you've debugged RAG pipelines you know chunking is where most quality issues come from. This basically says stop flattening documents into chunks, use the structure for retrieval instead.
+
+- Am I the only one who knows the words hierarchical chunking. Idk if this is a straw man or if people are legitimately confused about basic retrieval practices.
+
+- Graph rag is the more general term for using graph representations in a rag pipeline. It sounds like docling is doing a specific type of graph rag implementation, but there are a few different ways to use graphs inside of a pipeline that are different than what they're doing here specifically
+
+- Docling was part of the stack I use on VectorFlow, but I've recently been disappointed with it.
+  - First, I think people should let go of the idea that any OSS tooling can handle the entire parsing process for a document. It can't. You want to have something to handle the skeleton. Another for OCR-specific needs. Another for tables, equations, and such to augment the primary parser for what is poor or outright missing with the main parser. Etc. Etc.
+  - Second, my tests so far show that marker is better than docling in most cases. I'm now exploring olmOCR.
+
+- "Chunkless RAG" seems like it would be very good for deeply analyzing a single, long, well structured document. This doesn't seem like it would be a RAG system replacement though. From what I'm understanding it can't really manage a knowledge base/lots of documents. And probably can't really even manage more than a couple documents as it seems like the hierarchy/schema it uses is all in memory/context window. So maybe this is a last mile technique just to help LLMs reason over long well structured documents? Maybe I'm misunderstanding... Def an interesting concept though
 # discuss-llamaIndex
 - ## 
 
@@ -361,7 +380,7 @@ modified: 2025-09-21T13:57:50.332Z
 
 - ## [FileNotFoundError: Missing safe tensors file: D:\docling\docling\_model\model.safetensors  ](https://github.com/docling-project/docling/issues/2310)
 - I managed to solve it by downloading specific configs and models. This command helped in my case:
- `docling-tools models download layout tableformer rapidocr -o <folder_path>`
+`docling-tools models download layout tableformer rapidocr -o <folder_path>` 
 
 - ## [Doubts about requirements to use docling in server : r/LangChain _202505](https://www.reddit.com/r/LangChain/comments/1kivf0m/doubts_about_requirements_to_use_docling_in_server/)
 - We run Docling on CPU on dedicated servers from OVHCloud with min 32gb ram. Takes anywhere from 1 ot 5 seconds of parsing per page, more with OCR.

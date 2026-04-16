@@ -316,6 +316,52 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0416
+
+- 🤔 Microsoft Word support track changes. Please check for me whether  suggestion mode has to be turned on if I want to use track changes in word. another question, does office excel or PowerPoint also support track changes or suggestion mode? if yes, is there any differences in feature differences or implementation differences for word, excel PowerPoint check changes?
+  - "Suggestion Mode" is a Google Docs term, whereas "Track Changes" is the Microsoft Word equivalent. 
+- In Word Desktop (Windows/Mac): You simply turn on Track Changes (go to the Review tab > click Track Changes). Once it is on, any edits you make are automatically marked as suggestions (redlines/strikethroughs) that can be accepted or rejected.
+  - In Word for the Web: Microsoft recently adopted a mode-switching interface similar to Google Docs. In the top right corner of the web browser, you will see a dropdown that lets you choose between Editing, Reviewing, and Viewing.
+  - inline, and character-by-character tracking.
+- Modern Excel has moved away from the traditional "Track Changes" feature and replaced it with a feature called Show Changes. (There is a "Legacy Track Changes" feature, but Microsoft hides it by default because it disables modern co-authoring and Excel Tables).
+  - Cell-level tracking via a sidebar pane, rather than inline text markups.
+  - This opens a pane on the right side of the screen. It acts as an audit trail of who changed what, and when.
+  - No Accept/Reject: Unlike Word, you cannot "Accept or Reject" a change
+  - Edits don't alter the visual look of the spreadsheet (no redlines or strikethroughs).
+  - Microsoft also still documents a legacy Track Changes / Shared Workbook path for older workflows. Functionally, this is more of an edit history than Word-style inline tracked revisions.
+- PowerPoint does not have a live "Track Changes" button. Instead, PowerPoint relies on a Compare feature and robust Comments to handle revisions.
+  - Offline merging and manual review via a "Revisions" pane.
+  - Because tracking every moved image or changed font size live on a slide would be visually chaotic, PowerPoint doesn't have a live tracking toggle. Instead, you use the Compare feature.
+  - It highlights changed elements (text boxes, shapes, images) with a small icon. You click the icon and check a box to Accept or uncheck it to Reject their changes.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+```
+
+For the parity refactor, which live edit authority should the plan assume for forms/annotations/reviews on recognized pages?
+
+1. Unify Page-Owned (Recommended)  Use one recognized-page scene/object authority for live editing, with forms/annotations/reviews projected to PDF/native structures only at import/save boundaries.
+
+2. Keep Sidecars                   Keep forms/annotations/reviews as separate live arrays beside the page scene, and only unify text/images/shapes under the page-owned runtime.
+
+3. Hybrid By Family                Unify annotations/reviews into the page scene now, but keep forms as a separate live model for longer.
+
+```
+
+- ONLYOFFICE is closer to Keep Sidecars, not Unify Page-Owned.
+- So the ONLYOFFICE-like choice for Hardoc is:
+  1. Keep recognized-page drawings/page objects as the authority for rich editable page content: text, images, shapes, groups, tables, charts.
+  2. Keep forms, annotations/redactions, and review threads as separate live families in the document model.
+  3. Unify them at the command/history/collaboration/selection layer, not by forcing them into one scene schema.
+
 ## 0414
 
 - "Widow/orphan control" is a typesetting concept that prevents awkward page breaks in paragraphs. 
