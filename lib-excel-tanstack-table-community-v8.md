@@ -42,7 +42,10 @@ modified: 2022-08-21T10:19:58.756Z
 - ## 🎯📡 [TanStack Table V9 Roadmap _202401](https://github.com/TanStack/table/discussions/5270)
 - 
 - 
-- 
+
+- https://x.com/KevinVanCott/status/2041884716425503015
+  - 202604: tanstack table doesn't use actual javascript classes, but it does use functions to construct an object with lots of functions on them.
+  - The new thing in v9 is that you can optionally leave out the functions on the objects (builder pattern) and just use static functions instead.
 
 - ## 🔌 I just released a small, but somewhat significant "feature" to TanStack Table.
 - https://twitter.com/KevinVanCott/status/1770162986629337282
@@ -91,7 +94,7 @@ modified: 2022-08-21T10:19:58.756Z
 
 - I'm in this dilemma right now, and doing this with the tanstack table. Use case: a checkbox outside the table for filtering out some data. Currently I'm pre-filtering the data before sending to the table. But I'm also using the columnFilters for more filtering further down.
   - Curious about your reasoning for keeping the 'filters' outside the table? For me it's because of various use-cases that I need to work-around using context/children/pre-filtering, all of which could be easier if filters just lived outside the table (then it's all pre-filter)
-- 💡 I personally **split my table instance and table component** for this reason. It makes it easier to **build a supplementary ui around the table logic before rendering the actual table**.
+- 💡 I personally **split my table instance and table component** for this reason. It makes it easier to **build a supplementary ui around the table logic before rendering the actual table** .
 
 - One universal filter outside of the table is good for 80% cases. Then add common filters if needed
 
@@ -159,7 +162,7 @@ modified: 2022-08-21T10:19:58.756Z
 
 - I thought you'd gotten it working?
   - It was so close. But apparently generic maps just don't have the support they need yet. Either the inferred generic syntax needs to land or named/optional generic slots need to land. Without either, it just won't work without increasing the LOC required by plugins by like 10x 
-- Typescript FAILS when the effort to 'type' variations of arguments and overrides becomes  *more work* than writing the actual library code. I then revert to 'any' or 'unknown'.
+- Typescript FAILS when the effort to 'type' variations of arguments and overrides becomes *more work* than writing the actual library code. I then revert to 'any' or 'unknown'.
   - That last 20%of typing properly is not worth the mental anguish(痛苦，苦恼) just to deliver extra 'insight' that will be rarely used.
 - Yes. Everyone has a different answer, none of them have been comprehensive.
   - I might have some higher expectations from TS (eg. I refuse to declaration merge)

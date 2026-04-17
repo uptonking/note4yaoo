@@ -677,6 +677,13 @@ modified: 2025-02-21T18:20:42.624Z
     - VKFS 是一个给 AI agent 用的“文件系统”，把向量数据库包装成 Unix 风格接口。
     - agent 不需要理解 embedding、向量检索、metadata filter，只要会 ls / cat / grep / find / search，就能像查本地文件一样查知 识库。
 
+- https://github.com/cloudflare/artifact-fs /apache2/202604/go
+  - http://workers.cloudflare.com/product/artifacts
+  - ArtifactFS is a filesystem driver designed to mount large git repos as quickly as possible, hydrating file contents on-the-fly instead of blocking on the initial clone. It's ideal for agents, sandboxes, containers and other use-cases where startup time is critical.
+  - https://x.com/dillon_mulroy/status/2044765430649168272  _202604
+    - announcing artifacts - a versioned file system that speaks git
+    - built on Durable Objects
+
 - https://github.com/AndrewIngram/tupl /MIT/202603/ts
   - tupl lets you expose a controlled SQL facade over one or more underlying data systems.
   - tupl is a provider-first query runtime: 

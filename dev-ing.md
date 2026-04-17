@@ -334,16 +334,6 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - Because tracking every moved image or changed font size live on a slide would be visually chaotic, PowerPoint doesn't have a live tracking toggle. Instead, you use the Compare feature.
   - It highlights changed elements (text boxes, shapes, images) with a small icon. You click the icon and check a box to Accept or uncheck it to Reject their changes.
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
 ```
 
 For the parity refactor, which live edit authority should the plan assume for forms/annotations/reviews on recognized pages?

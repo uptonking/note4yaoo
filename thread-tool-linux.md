@@ -54,7 +54,25 @@ modified: 2024-01-06T13:48:42.969Z
   4. your coding agent keeps working
   5. type `dmux` and you're right back where you were.
 
+# discuss-disk/drive
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What's a good free drive cloning software? : r/software _202604](https://www.reddit.com/r/software/comments/1sngvvg/whats_a_good_free_drive_cloning_software/)
+- Macrium Reflect Free, get v8.0.6560.
+- Another alternative is Clonezilla.
+
+- DiskGenius
+
+- Rescuezilla, a GUI version of Clonezilla.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

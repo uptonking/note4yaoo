@@ -295,6 +295,20 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [What do you feel Obsidian is currently lacking? : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1snrrrz/what_do_you_feel_obsidian_is_currently_lacking/)
+- Literally the most downloaded 10 or 20 plugins should make it painfully obvious what features people want...
+
+- really needs a better search function, and while I know it's a burden on the app I think it'd be really cool if bases could read the note body for things like inline properties
+
+- try omnisearch
+
+- Official support for Kanban view
+  - It's on their "Planned" Roadmap, but I wish it were prioritized higher in development. The Bases core plugin is their silver bullet that, if developed fully, could really amp up Obsidian's functions.
+
 - ## [Can Obsidian do something like this? (Notion dashboard) : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1salt9e/can_obsidian_do_something_like_this_notion/)
 - There’s a very useful CSS snippet called MCL that lets you build multi-column pages like this. Most other things on here can be done with bases or dataviews.
 

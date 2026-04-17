@@ -56,12 +56,35 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## ↪️ we've moved opencode desktop to electron. it's faster, more reliable, and will replace our tauri build soon
+- https://x.com/thdxr/status/2045134085178167803
+  - supports multi-window + will soon have wsl integration
+  - tauri is fast but requires overhead since we have to spawn `opencode serve` in a separate process. electron lets us run the server js in the main process.
+
+- electron is really proving (over and over ) that rust is not always faster
+  - the rust component of desktop was always tiny compared to the server anyway.
+  - electron is great for us since chromium gives better frontend perf + we can embed the server into the main process instead of spawning an extra bun/node process
+- Electron provides consistency between all platforms. There's not much use in having a lighter, faster backend if you have to worry that your front-end will have a more limited feature set and performance on macOS and Linux (WebKit2GTK is the worst).
+
+- had to do the same because Tauri uses WebKit on Linux and the dev loop was painful af. it's crazy how much Electron gets bashed because of performance while there are products out there that perform extremely well on top of it (VSCode, Obsidian)
+
+- Tauri is awesome, but webkit is just not usable on Linux, and electron has all the parts of app distribution pretty much solved for better or worse
+
+- why is nobody using flutter to build these desktop apps?
+  - I think adoption is the main gap. Electron has more native things and libraries. Flutter paints its own UI instead of using native widgets, which affects accessibility and a bunch of other things. It also has some pain points around long lists.
+
+- https://x.com/dreamsofcode_io/status/2045141885547635117
+  - The reason for this isn’t Rust. It’s Chrome vs native Webviews. Chrome dominates in performance compared to WebView, but ultimately you’re still running a web app on your desktop.
+  - GPUI is excellent. Iced is fantastic. I built Kiru using both of these at various points (now I’m fully GPUI) Electron is always beneficial to the developer, at a cost to the user.
+- it's eliminating the need of IPCing with another process
 
 - ## 🐛 OpenCode v1.4.4 released. TL; DR: Effect architecture migration • Embedded WASM Ripgrep
 - https://x.com/OpenCodeLog/status/2044217880271536617
   - Replaced global async runtime facades with Effect, unifying service injection, contextual logging, and improving composability across core subsystems. 
   - Swapped the external Ripgrep binary backend for an embedded WASM version
+
+- https://x.com/OpenCodeLog/status/2045139536750018793
+  - OpenCode v1.4.8 released. TL; DR: config system migrated to Effect • massive TS namespace unwrapping
 
 - ## opencode server now can run under nodejs as we're no longer using any bun specific apis
 - https://x.com/thdxr/status/2041330695822279077

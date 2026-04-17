@@ -1150,6 +1150,10 @@ modified: 2025-11-30T17:27:16.720Z
   - https://x.com/HilaShmuel/status/2041579428044480777
     - (Imagine if Paperclip + Obsidian made a baby)
 
+- https://github.com/LittleBunVerse/Dosphere /MIT/202604/go/ts
+  - 面向知识工作者的开源 AI 知识管理平台 — 集优雅富文本编辑、结构化知识库与可溯源 RAG 问答于一体
+  - [【开源】 面向知识工作者的开源 AI 知识管理平台 - LINUX DO _202604](https://linux.do/t/topic/1984267)
+
 - https://github.com/MrSibe/KnowNote /54Star/GPL/202601/ts/Electron
   - 一个本地优先的知识笔记工具，灵感来自 Google NotebookLM。它将你的 PDF、Word 文档、PowerPoint 和网页转化为可提问、可引用、可追溯的个人知识库。
   - 自定义 LLM - 支持 OpenAI、Claude、本地模型等多种 AI 服务

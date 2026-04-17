@@ -38,6 +38,10 @@ modified: 2026-04-07T12:53:02.538Z
     - a minimal-footprint document (image, pdf, docx, eml) cleaning, parsing and extraction toolchain which generates readily available, organized and usable data in JSON, Markdown (MD), CSV/Pandas DF or TXT formats.
     - 依赖Tesseract、Pdfminer.six、ImageMagick、QPDF
     - Consider using an alternative such as LiteParse
+  - https://x.com/jerryjliu0/status/2044745884727136585
+    - docling is somewhere in between liteparse (our free/open-source project) and llamaparse (our commercial vlm-based parser): it uses ML models of varying complexity to parse PDFs.
+    - liteparse is model-free, can parse ~200-500 pages/second, is designed to be an extremely fast/free parser to replace pypdf/pymupdf. it integrates with paddleOCR for OCR workloads. its main purpose is outputting text for semantic understanding for agents, and will lack certain things that VLM parsers do OOB. 
+    - llamaparse is our commercial vlm-powered parsing service. it scores quite high on parsebench (https://parsebench.ai), our OCR benchmark over enterprise docs. you can see docling is ranked a bit furher down
 # extraction-pdf
 - https://github.com/CatchTheTornado/text-extract-api /3.1kStar/MIT/202512/python/inactive
   - https://github.com/CatchTheTornado/pdf-extract-api /renamed

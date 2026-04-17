@@ -828,6 +828,16 @@ modified: 2025-02-21T17:17:42.225Z
     - 火宝无限画布；支持文生图，图生图，图生视频，多模型切换。兼容 openai标准格式
     - [【开源自荐】花两天时间做了一个无限画布，开源了一个 乞丐版 lovart _202601](https://linux.do/t/topic/1438600)
 
+- https://github.com/Stonewuu/ai-fusion-video /MIT/202604/java/ts
+  - [基于 Agent 的AI短剧漫剧创作平台：融光 - LINUX DO _202604](https://linux.do/t/topic/1986023)
+  - 搓了一个Java 技术栈基于 Agent 的AI短剧漫剧创作平台
+  - 整个AI创作过程都是基于agent运行的，为此写了30多个 tools（数量确实太多了，后续考虑怎么合并一下）
+  - 分镜编辑则参考了影视飓风的 闪电分镜（低配版哈哈哈，未来争取融入协作功能）
+
+- https://github.com/liangdabiao/Seedance2-Storyboard-Generator /202603
+  - [为什么 -怎样做 -经验分享Seedance2-Storyboard-Generator ](https://linux.do/t/topic/1985955)
+  - seedance效果很好，而且功能已经非常强大，但是我看了市面上的大部分开源项目，都是用传统那种分镜和首尾帧方式，还有就是大量强调一致性，其实seedance根本不需要这些，seedance需要的其实是文学，所以我就做了这个开源项目。
+
 - [PDF to Brainrot | MemenomeLM](https://www.memenome.gg/)
   - 把 PDF 转化为易上瘾的视频
   - 通过 AI 技术将传统的 PDF 学习材料转换为更生动有趣的视频形式, 既保留了学习内容的专业性, 又强调提高效率、改善学习体验和趣味性, 网站显示已经有超过 10w 学生使用

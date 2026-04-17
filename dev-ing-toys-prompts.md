@@ -252,8 +252,9 @@ please make a plan, then improve the core in-place text editing engine to make i
 
 ```prompt
 - Grist is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database. 
-- The final goal is to implement an alternative frontend webapp at folder `app/client-react` at the current git branch `feat/office-react`, with the same features as existing frontend webpp at `app/client`,  using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table. After you finished the react webapp, `npm run start:app` should start the new react webapp, the legacy yarn toolchain should still be kept for backward compatibility. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so keep as many code unchanged as possible.
-- the final goal is to rewrite all the ui/ux with modern react ui, but you can implement the core speadsheet view/create/edit/save data flow first, then migrate more and more features.
+- The final goal is to implement an alternative react frontend webapp at folder `app/client-react` at the current git branch `feat/office-react`, with the same features as existing backbonejs frontend webpp at `app/client`,  using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table. After you finished the react webapp, `npm run start:app` should start the new react webapp, the legacy yarn toolchain should still be kept for backward compatibility. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so keep as many code unchanged as possible.
+- the final goal is to rewrite all the ui/ux with modern react ui, but you can implement the core speadsheet view/create/edit/save data flow first, then migrate more and more features. 
+- you should support all the routing urls of existing backbonejs webapp, using the same existing backend api.
 
 - the following features can be planned, but implemention may be delayed if you want:
 1. Can be displayed on a static website with grist-static.
@@ -265,16 +266,18 @@ please make a plan, then improve the core in-place text editing engine to make i
 
 - tech stack for react webapp needs to use open source libs/fwk:
   - use npm workspaces, typescript, reactjs(not vue), tailwindcss, zustand, no jquery/knockoutjs/backbone.
-  - for ui components, you can use base-ui, source clone is at `~/gh-mirror/mui/base-ui` for
-  your reference.
+  - for ui components, you can use base-ui, source clone is at `~/gh-mirror/mui/base-ui` for your reference.
   - use floating-ui instead of @popperjs/core, source code is here for your reference `~/gh-mirror/floating-ui/floating-ui`.
   - you can reuse existing dependencies for easier feature migration.
   - for spreadshhet table, you should use @tanstack/react-table. the source code is cloned at folder `~/gh-mirror/tanstack` for your reference.
   - you may use zustand for state management in framework-agnostic core package, the source code is at folder `~/gh-mirror/pmndrs/zustand` for your reference.
 
-- you may deep research and reference the existing code, you may use similar dependencies, and implement similar logic, but you should rewrite it with more tech stacks like react. 
+- you may deep research and reference the existing code, you may use similar dependencies, and implement similar logic, but you should rewrite it with modern tech stacks like react. 
 
-- research and make a full plan, then implement the react webapp to match full features of existing webapp, or even better.
+- please deep research the backbonejs webapp, then can you design a similar solution in react webapp to achieve full feature parity?
+- you may do a big code refactor to match full feature of backbonejs webapp in a similar architecture, to make it easier to maintain and migrate more features later. 
+
+- research and make a full plan, then implement the react webapp to match full features of existing backbonejs webapp, or even better.
 
 - `grist-static` is a fully in-browser build of Grist for displaying spreadsheets on a website without back-end support.
 
