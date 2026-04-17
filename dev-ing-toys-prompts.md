@@ -162,7 +162,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 ## hardoc-pdf
 
-```
+```prompt
 
 onlyoffice implements renders, edits, annotates `.pdf` files in the browser, but it is AGPL licensed.
 - the final goal is to implement from scratch a new extensible web pdf editor named hardoc with in-place text editing features similar to onlyoffice/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
@@ -245,6 +245,87 @@ please make a plan, then improve the core in-place text editing engine to make i
 - make a full plan to solve it completely, DO NOT stop if you improves just a little, only stop when you have solved it .
 
 - make a full plan, migrate and improve to full feature parity without licensing issues.
+
+```
+
+## grist-office
+
+```prompt
+- Grist is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database. 
+- The final goal is to implement an alternative frontend webapp at folder `app/client-react` at the current git branch `feat/office-react`, with the same features as existing frontend webpp at `app/client`,  using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table. After you finished the react webapp, `npm run start:app` should start the new react webapp, the legacy yarn toolchain should still be kept for backward compatibility. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so keep as many code unchanged as possible.
+- the final goal is to rewrite all the ui/ux with modern react ui, but you can implement the core speadsheet view/create/edit/save data flow first, then migrate more and more features.
+
+- the following features can be planned, but implemention may be delayed if you want:
+1. Can be displayed on a static website with grist-static.
+2. A self-contained desktop app for viewing and editing locally: grist-desktop.
+3. Native forms. Create forms that feed directly into your spreadsheet.
+4.Sandboxing options for untrusted documents
+5. AI Formula Assistant 
+6. integrations to airtable/...
+
+- tech stack for react webapp needs to use open source libs/fwk:
+  - use npm workspaces, typescript, reactjs(not vue), tailwindcss, zustand, no jquery/knockoutjs/backbone.
+  - for ui components, you can use base-ui, source clone is at `~/gh-mirror/mui/base-ui` for
+  your reference.
+  - use floating-ui instead of @popperjs/core, source code is here for your reference `~/gh-mirror/floating-ui/floating-ui`.
+  - you can reuse existing dependencies for easier feature migration.
+  - for spreadshhet table, you should use @tanstack/react-table. the source code is cloned at folder `~/gh-mirror/tanstack` for your reference.
+  - you may use zustand for state management in framework-agnostic core package, the source code is at folder `~/gh-mirror/pmndrs/zustand` for your reference.
+
+- you may deep research and reference the existing code, you may use similar dependencies, and implement similar logic, but you should rewrite it with more tech stacks like react. 
+
+- research and make a full plan, then implement the react webapp to match full features of existing webapp, or even better.
+
+- `grist-static` is a fully in-browser build of Grist for displaying spreadsheets on a website without back-end support.
+
+```
+
+## slaides
+
+```prompt
+- project `PPTist` at `../PPTist` is an online presentation webapp that replicates most of the commonly used features of MS PowerPoint, allowing for the editing and presentation of PPT online, also supports AIPPT. But it has AGPL license.
+- project `slaides` at current folder is an old version of `PPTist` with apache2 license, but many commits behind PPTist.
+
+- please analyze git commits and code if you need, then explain to me what major features are in PPTist but missing in slaides.
+
+- the final goal is to implement a framework-agnostic, modular, extensible, headless ai ppt editing solution named `slaides` with features similar to `PPTist` to avoid the licensing issues.
+- goals:
+1. re-architect slaides project to have a framework-agnostic headless core package, with react/vue ui binding package and appropriate utils package.
+- migrate PPTist's robust feature-rich ppt view/editing features to slaides, this is the most important feature, the goal is full feature parity for ppt view/editing, for example page zoom, Page Editing, Element/Images/Shapes Editing, Rich text editing, Slide Show...
+2. undo/redo support, friendly to collaboration.
+3. Import/export .pptx files, Export local files (PPTX, JSON, images, PDF).
+4. Mobile friendly: Basic editing, Basic preview, Play preview.
+5. migrate PPTist's ai editing solution to slaides, better to implement as a separate package: ai workflow, outline editing, use template, streaming-generation...
+6. a runnable demo/example should be provided.
+
+- the following features can be planned, but implemention may be delayed if you want:
+- the following features should be implemented if the core architecture is stable:
+1. table
+2. chart
+3. Formulas
+4. Audio, Video
+5. vue ui binding
+
+- tech stack for project slaides needs to use open source libs/fwk:
+  - projects/packages at `slaides` should use npm workspaces, typescript, reactjs(not vue), tailwindcss.
+  - you can reuse dependencies from PPTist for easier feature migration.
+  - for rich text editing in ppt, you should still use prosemirror. the source code for prosemirror is cloned at folder `~/Documents/repos/yaoo/nostalgia-studio/editor-prosemirror/src-pkgs` for your reference.
+  - you may use `zustand/vanilla` for state management in framework-agnostic core package, the source code is at folder `~/gh-mirror/pmndrs/zustand` for your reference.
+  - for drag-drop, you may use  `~/gh-mirror/atlassian/pragmatic-drag-and-drop` to implement robust dnd.
+  - all local packages names should start with `@datalking/`, for example `@datalking/slaides-core`,`@datalking/slaides-react`...
+
+- project PPTist can be used as implementation reference, you can reference their architecture and code.
+- you may deep research and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issue. 
+you may use similar file/folder names instead of the same file/folder names as the original. you may also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
+
+- please deep research the PPTist, then can you design a similar solution in slaides to achieve full feature parity?
+- you may do a big code refactor to match full feature of PPTist in a similar architecture, to make it easier to maintain and migrate more features later. 
+
+- the most important feature in slaides is a framework-agnostic, modular, extensible, headless ai ppt view/editing engine with undo/redo history support like PPTist.
+- you can deep research, referencing good deisgn from PPTist editing engine.
+- you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
+
+- research and make a full plan, then implement it to match full features of PPTist without licensing issues.
 
 ```
 

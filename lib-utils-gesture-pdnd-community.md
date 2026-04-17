@@ -1,6 +1,6 @@
 ---
 title: lib-utils-gesture-pdnd-community
-tags: [community, dnd, programatic-drag-drop]
+tags: [community, dnd, pragmatic-drag-drop]
 created: 2024-03-08T05:29:05.014Z
 modified: 2024-03-08T05:29:35.446Z
 ---

@@ -10,8 +10,8 @@ modified: 2022-08-21T10:02:27.788Z
 # focus
 
 - features
-  - **editable operations support**: logux/ospreadsheet/slate/typewriter
-  - group/aggregate/**pivot**: tanstack-table(大量缓存)
+  - **editable operations support** : logux/ospreadsheet/slate/typewriter
+  - group/aggregate/ **pivot** : tanstack-table(大量缓存)
   - multi views
   - _collaborative optional_: 作为插件，似乎将ospreadsheet的ot去掉就是llw了
   - _undo/redo+batch-undo_: 存反向op和存值2种方案，存值本身也是反向op
@@ -41,7 +41,7 @@ modified: 2022-08-21T10:02:27.788Z
     - 以哪种数据作为single source of truth
     - 一般以crdt形式的数据结构作为唯一数据源，是否在内存？
   - 实时协作、冲突处理
-  - 离线合并，last-write-win对~~同一用户~~不同设备的合并不友好
+  - 离线合并，last-write-win对 ~~同一用户~~ 不同设备的合并不友好
   - 对于现有系统，是不是只用替换模型层数据结构且保留api接口不变就可以了
   - 自己实现sync，参考hlc；使用现有同步层，参考logux、automerge
   - undo/redo的实现
@@ -103,14 +103,14 @@ modified: 2022-08-21T10:02:27.788Z
   - tinybase
 
 - src-list-grid
-  - **ag-grid**
-  - **tanstack-table**
-  - **react-virtual**
+  - **ag-grid** 
+  - **tanstack-table** 
+  - **react-virtual** 
   - react-tiny-virtual-list
   - react-virtualized/window
 
 - src-list-grid-canvas
-  - **luckysheet**: 未使用class类，函数式风格
+  - **luckysheet** : 未使用class类，函数式风格
   - glide-data-grid: react组件
   - x-spreadsheet/wolf: class类和函数式都有
   - cheetah-grid(ts): 基于class类继承
@@ -221,7 +221,7 @@ modified: 2022-08-21T10:02:27.788Z
     - We need to write a transformation function for each command we create
     - Undo/Redo is synchronous, i.e. it should be accepted by the server before being executed locally.
   - Model is the owner of the state of the Spreadsheet
-    - it defers the actual state manipulation work to **plugins**.
+    - it defers the actual state manipulation work to **plugins** .
     - State changes are then performed through commands. Commands are dispatched to the model
     - Model can be used in a standalone way to manipulate programmatically a spreadsheet
   - [[WIP] Version history](https://github.com/odoo/o-spreadsheet/pull/2259)
@@ -233,7 +233,7 @@ modified: 2022-08-21T10:02:27.788Z
   - Owl's virtual dom is a fork of `snabbdom`.
   - Class based components with hooks, reactive state and concurrent mode
   - a fine grained reactivity system similar to Vue
-  - Owl components are defined with ES6 classes and xml templates, uses an underlying **virtual DOM**, integrates beautifully with hooks, and the rendering is asynchronous.
+  - Owl components are defined with ES6 classes and xml templates, uses an underlying **virtual DOM** , integrates beautifully with hooks, and the rendering is asynchronous.
   - Most frameworks will compile templates ahead of time. 
     - However, this is not what Odoo needs: Odoo will fetch templates from the database and need to compile them only at the last possible moment, so we can apply all necessary xpaths
     - Odoo needs to be able to generate (and compile) templates at runtime.
@@ -649,7 +649,7 @@ modified: 2022-08-21T10:02:27.788Z
   - We've poured our soul into ReactDataGrid and built it from scratch with React
   - Community Edition
     - sort,filter,pagination,edit inline,row selection
-    - **colspan**,context menu,remote data source,column resize/reorder
+    - **colspan** ,context menu,remote data source,column resize/reorder
   - Enterprise Edition也开源了
     - group,pivot,master/detail,tree-grid
     - locked column,row resize/reorder,footer
@@ -928,7 +928,7 @@ modified: 2022-08-21T10:02:27.788Z
 
 ## div-more
 
-- revogrid /2.5kStar/MIT/202310/ts/web-comp/stencil
+- revogrid /3.4kStar/MIT/202604/ts/web-comp/stencil
   - https://github.com/revolist/revogrid
   - https://revolist.github.io/revogrid
   - https://github.com/revolist/revogrid-react
@@ -937,6 +937,10 @@ modified: 2022-08-21T10:02:27.788Z
   - Millions of cells virtual viewport scroll with a powerful core is in-build by default.
   - [Show HN: RevoGrid – Spreadsheet data table for all frameworks | Hacker News_202101](https://news.ycombinator.com/item?id=25894174)
     - Seems more like an alternative to Handsontable than for LibreOffice Calc. That is, its not an end-user spreadsheet, but rather a spreadsheet/datatable component for use in your web applications.
+  - [Open source data grid 4 years of experience, what I've learned working on RevoGrid : r/vuejs _202409](https://www.reddit.com/r/vuejs/comments/1fe9w8q/open_source_data_grid_4_years_of_experience_what/)
+    - It’s DOM with VNODES. So we put a peace of mind into smart recombinations to make it work faster. Also there is almost no node creation, mostly recombinations and content replacement. 
+    - New Technical Goals and version 4+: Customization and integrity are crucial. We build our favorite components straight inside the cells and customize everything without diving into the grid core or forking from the main branch.
+    - How fun/gr8/cool would it be to have a data grid/spreadsheet that could transform into a Kanban board or a Gantt chart within the same component? I mean, who doesn’t love multitasking? Our customers usually take these 3 components from different companies and on separate licenses.
 
 - https://github.com/xem/sheet /public/201710/html/js
   - https://xem.github.io/sheet/

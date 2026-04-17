@@ -44,6 +44,9 @@ modified: 2022-08-21T10:19:58.756Z
   - ag-grid, handsontable
   - tinybase
   - mobile
+
+- tips
+  - 纯前端的表格，可用tanstack-table, 对需要支持formula/kanban/dashboard的场景，多用grist
 # dev-pivot-views
 - dev-to
   - 替换trpc

@@ -111,6 +111,36 @@ modified: 2024-02-04T20:54:34.896Z
 
 - Maybe I'm old-fashioned, but I do still think that SQL is a better interface to databases than excel formulas, and classical spreadsheet UIs are a better interface for, well, spreadsheets.
 
+- ## [Grist - Free open source alternative to Airtable and Google Sheets. A relational spreadsheet UI to SQLite database with customizable layouts, data linking, and Python formulas. : r/selfhosted _202202](https://www.reddit.com/r/selfhosted/comments/su6tv3/grist_free_open_source_alternative_to_airtable/)
+  - [Grist - Free open source alternative to Airtable and Google Sheets. A relational spreadsheet UI to SQLite database with customizable layouts, data linking, and Python formulas. : r/opensource _202202](https://www.reddit.com/r/opensource/comments/su7xie/grist_free_open_source_alternative_to_airtable/)
+- Do you know if there is row level security available if one user wanted to edit their specific data? (let's say one row per user)
+  - If you mean granting a user access to a particular row (or set of rows that pertain to a particular user based on some logic), then yes!
+
+- Doing a quick scan for nocodb:
+  - It looks like it's intended to hook up to an existing database. Though perhaps it can be used without one and nocoDB will just use it's own.
+  - It seems their formula support is limited. No Python formula support and fewer spreadsheet-like functons.
+  - They do have non-grid views of data, but I'm not seeing charts. Grist can have static charts or dynamic charts that update based on record selection.
+  - the idea in nocoDB is to go from database to spreadsheet-like app, which is useful! Grist more comfortably sits between spreadsheet and database. In Grist, less technical users can work in a spreadsheet-like product that feels familiar, and build a database as their project grows.
+- NocoDB works in a quite limited mode when backed by SQLite. I couldn't force myself to try it out for an extended period due to UI bulkiness and the fact it requires full-blown RDBMS to work properly
+
+- What are the performance constrains based on size of data?
+  - Generally, Grist works best when documents don't exceed 100, 000 rows, but it varies depending on the number of tables and columns, and the size of data stored in cells.
+
+- Can I use this as a REST/JSON API server for a simple web application?
+  - 🐛 Using Grist as a backend solution directly to a website or web app is not yet supported.
+  - We don’t yet have an authentication method for this use case. The API key method isn’t generally appropriate for web use, because the key would end up accessible to any viewer of the webpage, which is usually undesirable.
+  - Though we'd love to support this and have discussed doing so. Keep an eye on our roadmap!
+
+- Since it runs in the browser, does it also support Javascript along with Python for scripting?
+  - You can script in Python or JS.
+
+- Could you tell me what features are not included in this open-source edition?
+  - Currently, the self-hosted version has all the key features of the hosted version -- custom layouts, summary tables (pivot tables) Python formula support, charts, custom widgets, and granular access rules.
+  - What it does not have is support for multiple logins, though it is possible to set up your own authentication method. 
+  - In the future, the SaaS version will include some business-facing features that enterprises care about when managing large teams.
+- Our founder also discussed Grist's philosophy in response to question about Grist v. Baserow. 
+  - https://community.getgrist.com/t/comparison-with-baserow/572/3
+
 - ## [Grist – Open core alternative to Airtable and Google Sheets | Hacker News _202202](https://news.ycombinator.com/item?id=30392227)
 - Development currently happens on a private mono-repo with all sorts of stuff in it - including for the SaaS environment yes, and bits left over from when Grist started out initially as a stand-alone desktop app, and so on. Commits are pushed to grist-core about once a week, using git subtree. If you look at commit history, you'll see plenty of features going in month after month. Since we currently develop elsewhere, you'll see few pull requests on github.
 

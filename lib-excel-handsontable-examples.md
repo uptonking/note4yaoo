@@ -122,7 +122,7 @@ modified: 2023-12-21T20:06:13.700Z
   - https://github.com/handsontable/formula.js /MIT/202001/js/archived
   - 🧮 [Handsontable 9.0.0: New formula plugin _202106](https://handsontable.com/blog/handsontable-9.0.0-new-formula-plugin)
     - It integrates our powerful calculation engine – HyperFormula®
-    - Up to version 8.4.0 there was a formula plugin that was built by us based on two other projects: our own formula parser, and an external library of spreadsheet functions, called formula.js. T
+    - Up to version 8.4.0 there was a formula plugin that was built by us based on two other projects: our own formula parser, and an external library of spreadsheet functions, called formula.js.
   - https://github.com/PascalKeukInovia/hot-formula-parser /202205/js/inactive
     - Library provides a Parser class that evaluates excel and mathematical formulas.
     - All excel formulas defined in formula.js;
@@ -134,8 +134,9 @@ modified: 2023-12-21T20:06:13.700Z
 # utils
 - https://github.com/Yinger/ts-excel-compare /202009/ts
   - https://yinger.github.io/ts-excel-compare/
-  - Diff Tool to Compare Two Excel Spreadsheet Files 
+  - 🆚 Diff Tool to Compare Two Excel Spreadsheet Files 
   - 依赖handsontable、sheetjs、daff、antd
+  - 借鉴了diff符号，+++(-:1) 表示新增行, `(1:-) 表示删除行
 
 - https://github.com/21epub/xlsx /201908/js
   - xlsx table data module

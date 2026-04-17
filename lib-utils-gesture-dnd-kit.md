@@ -93,6 +93,7 @@ modified: 2022-06-04T00:44:30.749Z
   - Performance improvements: reducing unnecessary re-renders being very high on the list
   - I am hoping to launch the refactor with React and Vanilla as the main two targets, and lots of APIs are still in flux, so it's a bit early to involve others in this refactor.
   - I will be looking for developers who have experience working in other frameworks such as Vue, SolidJS, Svelte, etc. to adapt @dnd-kit to work with those frameworks and maintain those compatibility layers. 
+- 👷 202602: agnostic libs are released - @dnd-kit/state@0.3.0, @dnd-kit/react@0.3.0
 # issues
 
 ## not-yet
@@ -195,7 +196,7 @@ export interface DragOverEvent extends DragMoveEvent {}
 ## collision
 
 ```typescript
-/** id + data, candidate node for drop */
+/ ** id + data, candidate node for drop * /
 export interface Collision {
   id: UniqueIdentifier;
   data?: Record<string, any>;

@@ -56,6 +56,7 @@ modified: 2022-06-03T21:34:54.893Z
     - https://github.com/ProseWorker/ProseWriter
 
 - https://github.com/suitenumerique/docs /4.8kStar/MIT/202503/python/ts
+  - https://lasuite.numerique.gouv.fr/
   - https://docs.numerique.gouv.fr/
   - A collaborative note taking, wiki and documentation platform that scales. 
   - Docs is built on top of Django Rest Framework, Next.js, BlockNote.js, HocusPocus and Yjs.

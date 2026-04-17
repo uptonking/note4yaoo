@@ -58,15 +58,20 @@ modified: 2025-07-17T14:40:07.230Z
 - please name some open source (or lower priced) alternatives that support: comments on documents, database functionality to a similar level, publishing websites, scripting for properties. I'm very curious!
   - I was going to say git, but really you need the whole environment.
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
+- ### [Europe's Open Source Answer to US Tech Giants: La Suite Numérique _202504](https://www.linkedin.com/posts/sujayapale_digitalsovereignty-opensource-lasuitenum%C3%A9rique-activity-7318305278423117824-brrf)
+  - https://github.com/suitenumerique/documentation
+  - 办公套件缺少PPT/Slides
+- La Suite Numérique is a comprehensive digital workspace developed by the French government. It offers a range of applications designed for collaboration, document management, and communication, all built with a focus on security and user autonomy
+- Key Products within La Suite Numérique:
+* Docs: An alternative to Google Docs.
+* Visio: An alternative to rival Google Meet, Microsoft Teams and Zoom.
+* Tchap: An alternative to Slack.
+* France Transfert: An alternative to Google Drive or Dropbox.
+* Messagerie: An alternatives to Gmail and Outlook.
+* Grist: A powerful tool for creating custom applications and managing data, offering a viable alternative to Airtable or Microsoft Excel for complex data management.
+* Webinaire: A platform for hosting webinars, rivaling Zoom Webinar and Microsoft Teams.
+* ProConnect: A unified authentication system, similar to Google Account or Microsoft Azure Active Directory.
+* Resana: A collaborative platform for project management and communication, offering an alternative to tools like Asana or Microsoft Teams.
 # discuss
 - ## 
 

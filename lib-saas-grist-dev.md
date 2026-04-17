@@ -11,9 +11,17 @@ modified: 2024-02-04T20:54:21.002Z
 - pros
   - license: apache2
   - 支持2种embed模式(readonly/edit), 还可以使用grist-static嵌入无后端的静态版
+  - charts
 
 - cons
   - 不支持已有数据库，需要import data
+  - 💰 paid-features
+    - GristConnect: OIDC and SAML support is part of grist-core and covers most authentication use cases.
+    - Azure back-end for document storage 
+    - Audit log streaming
+    - AI Formula Assistant
+    - Invite Notifications: with grist-core you can just send a link 
+    - Document Change and Comment Notifications 
 
 - features
   - Python formulas
@@ -22,6 +30,9 @@ modified: 2024-02-04T20:54:21.002Z
   - Drag-and-drop dashboards
   - Access control options
   - Sandboxing options for untrusted documents
+
+- tips
+  - 纯前端的表格，可用tanstack-table, 对需要支持formula/kanban/dashboard的场景，多用grist
 # draft
 - roadmap
   - react frontend

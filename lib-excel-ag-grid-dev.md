@@ -30,6 +30,9 @@ modified: 2022-08-21T09:54:26.037Z
   - resizable
   - ag-charts to observable-plot
 
+- tips
+  - 纯前端的表格，可用tanstack-table, 对需要支持formula/kanban/dashboard的场景，多用grist
+
 - usecase
   - [AdapTable Overview](https://docs.adaptabletools.com/docs/)
     - AdapTable is a sophisticated HTML5 DataGrid add-on.
@@ -67,7 +70,7 @@ modified: 2022-08-21T09:54:26.037Z
 - ag-root-wrapper: 最顶层容器，ref是eRootWrapper
   - ag-root-wrapper-body
     - ag-tab-guard-top
-    - **ag-root**: 这里是grid component的根组件
+    - **ag-root** : 这里是grid component的根组件
       - ag-header
         - ag-pinned-left-header
         - ag-header-viewport: 这里是表头内容
@@ -83,8 +86,8 @@ modified: 2022-08-21T09:54:26.037Z
           - ag-center-cols-viewport
             - ag-center-cols-container
               - ag-row
-              - **ag-row**: 行组件
-                - **ag-cell**: 最内层单元格，内容直接是文字
+              - **ag-row** : 行组件
+                - **ag-cell** : 最内层单元格，内容直接是文字
               - ag-row
         - ag-pinned-right-cols-container
         - ag-full-width-container: 无text
@@ -101,8 +104,7 @@ modified: 2022-08-21T09:54:26.037Z
   position: relative;
   flex: 1 1 auto;
   display: flex;
-  /* 竖向放置header，body，paging */
-  flex-direction: column;
+  / * 竖向放置header，body，paging * / flex-direction: column;
   width: 0;
   height: 100%;
   overflow: hidden;
@@ -121,8 +123,7 @@ modified: 2022-08-21T09:54:26.037Z
   position: relative;
   flex: 1 1 auto;
   display: flex;
-  /* 水平放置左固定列，表格内容，右固定列 */
-  flex-direction: row;
+  / * 水平放置左固定列，表格内容，右固定列 * / flex-direction: row;
   min-width: 0;
   height: 100%;
   overflow: hidden;
@@ -130,8 +131,7 @@ modified: 2022-08-21T09:54:26.037Z
 }
 
 .ag-center-cols-clipper {
-  /* 父元素ag-body-viewport，是flex容器 */
-  display: block;
+  / * 父元素ag-body-viewport，是flex容器 * / display: block;
   flex: 1;
   min-width: 0;
   min-height: 100%;
@@ -140,14 +140,12 @@ modified: 2022-08-21T09:54:26.037Z
 }
 
 .ag-center-cols-viewport {
-  /* 父元素ag-center-cols-clipper，是display block */
-  position: relative;
+  / * 父元素ag-center-cols-clipper，是display block * / position: relative;
   flex: 1 1 auto;
   display: block;
   min-width: 0;
   width: 100%;
-  /* height开始是100% */
-  height: calc(100% + 15px);
+  / * height开始是100% * / height: calc(100% + 15px);
   overflow: hidden;
   overflow-x: auto;
 }
@@ -176,8 +174,7 @@ modified: 2022-08-21T09:54:26.037Z
   display: inline-block;
 
   width: 200px;
-  /* height实际是41px */
-  height: 100%;
+  / * height实际是41px * / height: 100%;
   overflow: hidden;
   border: 1px solid transparent;
 
@@ -221,8 +218,7 @@ modified: 2022-08-21T09:54:26.037Z
   display: inline-block;
 
   width: 200px;
-  /* height实际是84px */
-  height: 40*spanpx;
+  / * height实际是84px * / height: 40* spanpx;
   white-space: nowrap;
 }
 
@@ -231,7 +227,7 @@ modified: 2022-08-21T09:54:26.037Z
 }
 
 .ag-cell-focus {
-  /* 为空 */
+  / * 为空 * /
 }
 ```
 

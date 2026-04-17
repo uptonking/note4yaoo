@@ -725,6 +725,14 @@ modified: 2024-01-11T15:57:32.182Z
 - Very nice! I wonder whether that could be used to get LLMs to annotate pdfs. Say an "agentic" CLI like Claude Code or Gemini-cli reviews a pdf and finds typos, could it use this to annotate the pdf like underlining them in red or something of that sort? That could be nice.
 
 - I am disappointed that this doesn't modify the underlying pdf structure (which is a horror show, I know) but instead relies on fairly lossy OCR back&fourths.
+# discuss-libreoffice
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
 
