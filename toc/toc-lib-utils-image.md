@@ -33,11 +33,17 @@ modified: 2023-04-04T22:39:45.442Z
   - https://stirling-image.github.io/stirling-image/
   - Stirling-PDF but for images. 30+ tools and local AI in a single Docker container - resize, compress, remove backgrounds, upscale, OCR, and more. 
   - Local AI - Remove backgrounds, upscale images, erase objects, blur faces, extract text (OCR). All running on your hardware with pre-downloaded models, no internet required
+    - Python AI model bridge
+    - Models are not pre-loaded. Each tool script loads its model weights from disk at request time and discards them when the request finishes. 
   - Pipelines - Chain tools into reusable workflows. Batch process up to 200 images at once
   - REST API - Every tool available via API 
   - Single container - One docker run, no Redis, no Postgres, no external services
+  - Fastify backend, React + Vite frontend
+  - Sharp-based image operations: handles all non-AI operations: resize, crop, rotate, flip, convert, compress, strip metadata, and color adjustments (brightness, contrast, saturation, grayscale, sepia, invert, color channels). 
+    - This package has no network dependencies and runs entirely in-process.
   - 📡
     - 可开发cli
+    - as comfyui gui
   - changelog
     - inspect/edit metadata flow for EXIF/GPS/XMP
     - multi-image stitching with horizontal/ vertical layout

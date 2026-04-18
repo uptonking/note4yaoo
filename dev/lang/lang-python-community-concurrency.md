@@ -9,6 +9,8 @@ modified: 2023-08-28T06:15:00.563Z
 
 # guide
 
+- resources
+  - [Try Free-Threaded Python 3.14 with uv | pydevtools _202604](https://pydevtools.com/handbook/tutorial/try-free-threaded-python-with-uv/)
 # discuss-stars
 - ## 
 

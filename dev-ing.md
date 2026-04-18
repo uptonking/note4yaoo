@@ -316,6 +316,12 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0418
+- Problem: JavaScript’s `.sort()` mutates the array.
+  - https://x.com/petarivanovv9/status/2045116666321818020
+  - Solution: Use `.toSorted()` instead. It returns a new sorted array. 
+- Yup. and there are other non-mutating array methods like toSpliced() , toReversed() and with()
+
 ## 0416
 
 - 🤔 Microsoft Word support track changes. Please check for me whether  suggestion mode has to be turned on if I want to use track changes in word. another question, does office excel or PowerPoint also support track changes or suggestion mode? if yes, is there any differences in feature differences or implementation differences for word, excel PowerPoint check changes?

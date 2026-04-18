@@ -70,7 +70,13 @@ modified: 2024-09-08T20:08:16.088Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🌐 [Can RAG handle translation for an invented language , so that I dont need to fine-tune a model for that task ? : r/Rag _202604](https://www.reddit.com/r/Rag/comments/1so4z4z/can_rag_handle_translation_for_an_invented/)
+  - I’m wondering if RAG can be used for translation based on a book written in a specific language (like an invented language with its own grammar).
+- Short answer: No. RAG works best when you have data and you want to ask the LLM about that specific data. RAG gives context to the LLM and the LLM answers based on this context.
+
+- I am so surprised people are saying Yes to this. This has almost literally nothing to do with RAG and almost everything to do with your model. Is your model trained on both the languages (source, destination) ? If it's not then it won't work without training.
+
+- RAg can work but here its more of a retrieval assisted translation than true translation.. the model looks up grammar rules and vocabulary from the book at query time rather than having learned the language itself. The setup that works best is chinking the source material by grammatical rules and vocabulary entries separately and then retrieving relevant rules alongside the input sentence, accuracy depends heavily on how consistently the invented language is documented in the book
 
 - ## 💡 [Any local LLMs that can read 500 page books? : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1s7yow5/any_local_llms_that_can_read_500_page_books/)
 - Assistant_Pepe_8B was built on nVidia's Ultralong Nemotron, so 1 million context and a very good long context capability in general

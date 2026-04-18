@@ -726,6 +726,10 @@ modified: 2025-02-21T17:17:42.225Z
   - Redis temporal memory (rolling window)
   - [[开源]实时金融新闻影响评分网站（带一键分享api）  - LINUX DO _202604](https://linux.do/t/topic/1890565)
 
+- https://github.com/wbh604/UZI-Skill /MIT/202604/python
+  - 游资（UZI）Skills — 51位投资大佬帮你看盘 · 22维数据 × 180条量化规则 × 17种机构分析方法 · A股/港股/美股
+  - [今年A股收益率42.83%我只靠他？游资Skill！让格雷厄姆、陈小群同台竞技，帮你分析个股 - LINUX DO _202604](https://linux.do/t/topic/1981105)
+
 ## ecommerce
 
 - https://github.com/liangdabiao/amazon-sorftime-research-MCP-skill /MIT/202603/python

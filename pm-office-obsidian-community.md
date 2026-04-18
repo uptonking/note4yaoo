@@ -403,7 +403,11 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## [How to make obsidian bases beatiful, Notion style example? : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1so8pj2/how_to_make_obsidian_bases_beatiful_notion_style/)
+- Pretty Properties plugin. (Nvm)
+
+- You're going to have to be good at CSS + HTML to achieve this without a plugin. I highly recommend reading through Bases-CSS-Guide. You're going to have to recreate this table view yourself with the classification based on the status/role to change colors.
+  - The easiest method dataview which is a plugin. That way you can write embed inside the CSS you'd like. But if you're going to use plugins, might as well use Pretty Properties plugin.
 
 - ## [Bases : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1sd4zfa/bases/)
   - Trying to understand how people are actually using Bases in Obsidian.

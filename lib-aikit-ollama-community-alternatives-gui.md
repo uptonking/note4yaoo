@@ -46,8 +46,19 @@ modified: 2026-04-06T17:38:13.599Z
 - ## 
 
 - ## 
+# discuss-unsloth
+- ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Can we use Unsloth Studio as an API provider ? : r/unsloth _202604](https://www.reddit.com/r/unsloth/comments/1so9q48/can_we_use_unsloth_studio_as_an_api_provider/)
+- There's an API tab in Unsloth Studio with usage examples for calling the Interface. One of the examples is with tool use, so it seems like the answer to your question is yes?
 
 - ## [How to change models folder for Studio (tutorial) : r/unsloth _202603](https://www.reddit.com/r/unsloth/comments/1s3vq8x/how_to_change_models_folder_for_studio_tutorial/)
 - By default, Unsloth Studio will check Hugging Face d/l folders. So if you can edit the environment variables for the HF cache, then US will use that env to follow to your folder.

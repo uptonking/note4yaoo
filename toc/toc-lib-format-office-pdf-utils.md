@@ -37,7 +37,7 @@ modified: 2022-11-11T10:46:41.519Z
     - PDFLib.js – For enabling powerful client-side PDF manipulation.
     - PDF.js – For the robust PDF rendering engine in the browser.
     - PDFKit – For creating and editing PDFs with ease.
-    - EmbedPDF – For seamless PDF embedding in web pages.
+    - EmbedPDF – For seamless PDF embedding in web pages. https://github.com/embedpdf/embed-pdf-viewer /MIT
     - Cropper.js – For intuitive image cropping functionality.
   - 📡 Roadmap
     - Edit PDF Content: Directly edit text and other content within your PDF.

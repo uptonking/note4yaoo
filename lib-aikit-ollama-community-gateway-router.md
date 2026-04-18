@@ -203,6 +203,20 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
+- ## [10个plus，每周大概能跑多少 - LINUX DO _202604](https://linux.do/t/topic/1980754)
+- 5H限额15刀, 周限95刀, 自己计算倍, 反正现在plus纯垃圾了, 没什么额度
+
+- [三天蹬爆了10个gpt plus号，分享一下实际的额度和小问题求助 - LINUX DO _202604](https://linux.do/t/topic/1994112)
+  - 自组一个 plus 号池来维持，结果就是三天居然蹬完了 10 个 plus 号
+  - 一个号周限 94.4$ = 216.1887M tokens
+  - 按照 9 块钱一个号的均价来算的话: ~9.53￥/ 100$ ；~4.16￥/ 100M tokens
+- 看好多人说 team 和 plus 额度差不多，但是 team 现在市场价更便宜，为什么不使用 team 呢
+  - team 一般需要自带账号，我嫌麻烦所以包括这里也是直接去收的成品号 还有就是，我这样薅基本上就是奔着蹬完周限等封号去的，放 team 有点算炸车了吧
+- plus 还是高贵一点呀，team 的周限才 60 出头。一个 plus 是 team 的 1.5 倍了
+  - 但是一个team母号能拖5个子号吧。
+
+- gpt工作时间短的问题应该只出现在gpt-5.4, 换到5.3codex就好了
+
 - ## [Does ChatGPT Team Plan Offers Better quota compared to Plus? : r/codex _202603](https://www.reddit.com/r/codex/comments/1rzskhx/does_chatgpt_team_plan_offers_better_quota/)
 - Plus and business have the same quotas. Business just gives you free pro uses per month and consolidated billing. 
 
@@ -210,9 +224,6 @@ modified: 2026-01-21T04:22:29.956Z
 - 建议整一个team来用，自从砍了plus额度之后team额度跟plus额度好像是一样的了，一个team母号还能拉多个子号
 - 主要是team 0刀绑卡都是死得极快，plus有英区谷歌使用，现在还算稳的
 - OpenAI经常搞一些给用户重置额度的活动，最近两次都没team的份儿
-
-- [10个plus，每周大概能跑多少 - LINUX DO _202604](https://linux.do/t/topic/1980754)
-  - 5H限额15刀, 周限95刀, 自己计算倍, 反正现在plus纯垃圾了, 没什么额度
 
 - ## [你们都用什么管理模型，想找cc-switch替代品 - LINUX DO _202604](https://linux.do/t/topic/1970428)
 - 现在各种渠道我都用metapi整合一下，感觉蛮好用的 

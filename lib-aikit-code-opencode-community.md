@@ -78,6 +78,8 @@ modified: 2026-01-17T22:41:25.867Z
   - GPUI is excellent. Iced is fantastic. I built Kiru using both of these at various points (now I’m fully GPUI) Electron is always beneficial to the developer, at a cost to the user.
 - it's eliminating the need of IPCing with another process
 
+- [Opencode Desktop now uses Electron instead of Tauri : r/opencodeCLI _202604](https://www.reddit.com/r/opencodeCLI/comments/1sok2dy/opencode_desktop_now_uses_electron_instead_of/)
+
 - ## 🐛 OpenCode v1.4.4 released. TL; DR: Effect architecture migration • Embedded WASM Ripgrep
 - https://x.com/OpenCodeLog/status/2044217880271536617
   - Replaced global async runtime facades with Effect, unifying service injection, contextual logging, and improving composability across core subsystems. 

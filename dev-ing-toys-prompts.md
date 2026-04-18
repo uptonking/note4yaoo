@@ -13,7 +13,7 @@ modified: 2026-04-11T01:31:17.720Z
 - 有些常用工具AI也记不住API, 比如pdfium, 可以将代码clone到本地让ai理解
 # prompts 🔠
 
-## ilove-image
+## ilove-image(stirling-image)
 
 - codebase
   - a client/server app
@@ -43,9 +43,11 @@ please analyze git commits and code if you need, then explain to me what major f
 
 please recheck migrated features and improve your implementation in ilove-image, make it runnable locally with npm. make sure implementation is correct and extensible.
 
+- research and make a full plan, then implement ilove-image to match full features of ilove-stirling-image, or even better than ilove-stirling-image, without licensing issues.
+
 ```
 
-## ilove-pdf
+## ilove-pdf(bentopdf)
 
 - codebase
   - a client-side-only PDF app, not a client/server architecture
@@ -53,7 +55,7 @@ please recheck migrated features and improve your implementation in ilove-image,
 
 ```prompt
 
-git repo `./ilove-pdf`  is several commits behind `./ilove-bentopdf`. ilove-pdf has MIT license, while ilove-bentopdf has GPL license. 
+git repo `./ilove-pdf`  is several commits behind `../ilove-bentopdf`. ilove-pdf has MIT license, while ilove-bentopdf has GPL license. 
 the goal is to migrate major features from ilove-bentopdf to ilove-pdf. 
 
 please analyze git commits and code if you need, then explain to me what major features are in ilove-bentopdf but missing in ilove-pdf.
@@ -106,10 +108,15 @@ if migration/refactoring of similar code architecture as ilove-bentopdf is compl
 now recheck migrated features and improve your implementation in ilove-pdf, make it runnable locally with npm. make sure implementation is correct and extensible.
 
 for the most important features like pdf compare and PDF layer, why are you always migrating and improving without full features matching the upstream? 
-you have improved several times, why is it always lacking features behind the upstream? what is the reason? what should be done to macth the upstream? explain to me. if it it complicated, you can make a plan and discuss with me
+you have improved several times, why is it always lacking features behind the upstream? what is the reason? 
+what should be done to macth the upstream? explain to me. if it it complicated, you can make a plan and discuss with me.
+
+- please deep research related code of ilove-bentopdf, then can you design a similar solution in ilove-pdf to achieve full feature parity?
+
+- research and make a full plan, then implement ilove-pdf to match full features of ilove-bentopdf, or even better than ilove-bentopdf, without licensing issues.
 ```
 
-## ailovedoc
+## ailovedoc(superdoc)
 
 ```prompt
 `./superdoc` implemented renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed.
@@ -157,10 +164,11 @@ you have worked on this problem several times but features are still lacking. Th
 
 - you have worked on this several times but features are still lacking. They are the most important features at this moment. DO NOT stop untill you achieve full feature parity. 
 
-- make a full plan, migrate and improve to the best without licensing issues.
+- research and make a full plan, then implement ailovedoc to match full features of superdoc, or even better than superdoc, without licensing issues.
+
 ```
 
-## hardoc-pdf
+## hardoc(onlyoffice-pdf)
 
 ```prompt
 
@@ -245,6 +253,7 @@ please make a plan, then improve the core in-place text editing engine to make i
 - make a full plan to solve it completely, DO NOT stop if you improves just a little, only stop when you have solved it .
 
 - make a full plan, migrate and improve to full feature parity without licensing issues.
+- research and make a full plan, then implement hardoc to match full features of onlyoffice-pdf-editor, or even better than onlyoffice-pdf-editor, without licensing issues.
 
 ```
 
@@ -272,18 +281,21 @@ please make a plan, then improve the core in-place text editing engine to make i
   - for spreadshhet table, you should use @tanstack/react-table. the source code is cloned at folder `~/gh-mirror/tanstack` for your reference.
   - you may use zustand for state management in framework-agnostic core package, the source code is at folder `~/gh-mirror/pmndrs/zustand` for your reference.
 
+- the most important feature in react webapp is a modular, extensible, headless spreadsheet view/editing engine with undo/redo history support like backbonejs webapp. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so keep as many code unchanged as possible.
+
+- please deep research the existing backbonejs webapp, then can you design a similar solution in react webapp to achieve full feature parity?
+
 - you may deep research and reference the existing code, you may use similar dependencies, and implement similar logic, but you should rewrite it with modern tech stacks like react. 
 
-- please deep research the backbonejs webapp, then can you design a similar solution in react webapp to achieve full feature parity?
-- you may do a big code refactor to match full feature of backbonejs webapp in a similar architecture, to make it easier to maintain and migrate more features later. 
+- you may do a big code refactor to match full feature of backbonejs webapp in a similar architecture, to make it easier to maintain and migrate more features in the long term. 
 
-- research and make a full plan, then implement the react webapp to match full features of existing backbonejs webapp, or even better.
+- research and make a full plan, then implement the react webapp to match full features of existing backbonejs webapp, or even better than backbonejs webapp.
 
 - `grist-static` is a fully in-browser build of Grist for displaying spreadsheets on a website without back-end support.
 
 ```
 
-## slaides
+## slaides(PPTist)
 
 ```prompt
 - project `PPTist` at `../PPTist` is an online presentation webapp that replicates most of the commonly used features of MS PowerPoint, allowing for the editing and presentation of PPT online, also supports AIPPT. But it has AGPL license.
@@ -321,14 +333,15 @@ please make a plan, then improve the core in-place text editing engine to make i
 - you may deep research and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issue. 
 you may use similar file/folder names instead of the same file/folder names as the original. you may also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
 
-- please deep research the PPTist, then can you design a similar solution in slaides to achieve full feature parity?
-- you may do a big code refactor to match full feature of PPTist in a similar architecture, to make it easier to maintain and migrate more features later. 
-
 - the most important feature in slaides is a framework-agnostic, modular, extensible, headless ai ppt view/editing engine with undo/redo history support like PPTist.
+
+- please deep research the PPTist, then can you design a similar solution in slaides to achieve full feature parity?
+- you may do a big code refactor to match full feature of PPTist in a similar architecture, to make it easier to maintain and migrate more features in the long term. 
+
 - you can deep research, referencing good deisgn from PPTist editing engine.
 - you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
 
-- research and make a full plan, then implement it to match full features of PPTist without licensing issues.
+- research and make a full plan, then implement slaides to match full features of PPTist, or even better than PPTist, without licensing issues.
 
 ```
 

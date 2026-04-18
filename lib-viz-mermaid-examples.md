@@ -84,4 +84,13 @@ modified: 2025-11-19T17:59:15.580Z
   - Readable everywhere: Preview rich UI, but if unsupported, it's still legible Markdown
   - Zero lock-in: Pure spec—works with any Markdown parser + any UI framework
   - [Show HN: Turn Markdown into React/Svelte/Vue UI at runtime, zero build step | Hacker News _202508](https://news.ycombinator.com/item?id=45024532)
+# alternatives
+
+- https://github.com/Nimblesite/typeDiagram /MIT/202604/ts
+  - http://typediagram.dev/
+  - typeDiagram is a tiny, language-neutral DSL for diagramming data types. Write type, union, alias — get a beautiful, auto-laid-out SVG. No drag, no drop, no proprietary format.
+  - https://x.com/CFDevelop/status/2045103139934900648
+  - So you created a clone of PlantUML and Mermaid?
+    - It’s a language independent markup language for defining algebraic data types. You can build DTOs across languages and codegen in both languages, all while having a visual representation of the model. 
+
 # more
