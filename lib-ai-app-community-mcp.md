@@ -567,6 +567,22 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Browser Use 团队开源发布「Browser Harness ♞」：让 LLM 获得对浏览器的完全控制自由，且具备自我进化能力
+- https://x.com/shao__meng/status/2045657138119549006
+  - Browser Harness 是一个极简的 Chrome DevTools Protocol 桥梁——仅用约 592 行 Python，构建了一个 LLM 直接操作真实浏览器的最小化 harness。
+  - 传统浏览器自动化工具（如 Selenium、Playwright、甚至 browser-use 本体）往往预设了人类的操作逻辑：封装点击、填写、等待等 API，让开发者按剧本编排流程。
+  - 而 browser-harness 走了一条相反的路：
+  - 不封装能力：只提供一个 websocket 连接到 Chrome，LLM 直接发送 CDP 命令
+  - 不预设流程：没有"等待元素→点击→输入"这类剧本，LLM 自己决定如何与页面交互
+  - 无中间层：只有一个薄层把 LLM 的输出翻译成浏览器能理解的协议
+  - 自修复机制（Self-healing）-- 独特创新点 项目包含一个 helpers. py，里面存放了一些基础的浏览器操作函数。但关键在于：这个文件不是给人类维护的，而是给 LLM 自己维护的。
+
+- 这个其实和现在基于 file system 的 agentic search 的理念有点类似: 给予 ai 合适的自由，反而能更快找到目标的路径
+
 - ## Browser Use 在 Online-Mind2Web 取得 97% 的最高成绩，团队采用了 Karpathy 的 Auto-Research 方案
 - https://x.com/shao__meng/status/2036978751834042524
 1. Browser Agent 框架升级为 Coding Agent
@@ -574,12 +590,12 @@ modified: 2025-02-03T10:17:42.052Z
 · Claude Code 直接改造了 Browser Agent 的 harness，新增 Python 代码执行能力。
 · Agent 不再局限于预定义动作，而是可以实时编写并执行 Python 代码，直接在浏览器上下文中解析 HTML、提取结构化数据。
 
-2. 基础设施优化：最隐蔽浏览器环境 + 真实用户日常任务训练信号
+1. 基础设施优化：最隐蔽浏览器环境 + 真实用户日常任务训练信号
 单纯算法优化不够，Browser Use 同步对底层执行环境进行了极致打磨：
 · 最隐蔽的浏览器基础设施：他们从真实生产数据构建了一个专属的 stealth benchmark，对市面上所有主流云浏览器进行全面测试，最终选用了隐蔽性最强的方案。
 · 真实用户日常任务作为训练信号：每天将 power users 在生产环境中提出的新任务和修复需求，直接纳入 Auto-Research 循环的训练/优化信号。
 
-3. 评判器升级：从截图 Judge 到基于 Claude Agent SDK 的 Agentic Judge
+1. 评判器升级：从截图 Judge 到基于 Claude Agent SDK 的 Agentic Judge
 整个 Auto-Research 闭环能够高效运转的最关键一环。
 · 传统截图 Judge 的失效：早期评测依赖截图比对，但新一代代理大量使用代码执行、API 调用、提取数千条数据，这些行为在截图中完全不可见或被误判为“幻觉”。
 · 新 Agentic Judge：完全基于 Claude Agent SDK 重新构建，让 Judge 本身也成为一个具备 agentic 能力的智能体。

@@ -313,7 +313,11 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## KIMI [Prefill-as-a-Service: KVCache of Next-Generation Models Could Go Cross-Datacenter : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sp216x/prefillasaservice_kvcache_of_nextgeneration/)
+  - We push Prefill/Decode disaggregation beyond a single cluster: cross-datacenter + heterogeneous hardware, unlocking the potential for significantly lower cost per token.
+  - This was previously blocked by KV cache transfer overhead. The key enabler is our hybrid model (Kimi Linear), which reduces KV cache size and makes cross-DC PD practical.
+
+- disaggregated prefill is not a new concept. vllm and sglang support this already. the issue is data transfer speed. you realistically need >200gbps connection for a mere 8B model to make this practical (scales linearly to # of params, so 1tbps for a 40B model). if you don't design the model architecture around compressing kv cache like the authors did here, bottom line is: its going to be much slower.
 
 - ## Today we launched a major update to the OpenAI Agents SDK to help developers build and deploy long-running, durable agents in production.
 - https://x.com/snsf/status/2044514160034324793

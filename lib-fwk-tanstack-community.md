@@ -59,7 +59,7 @@ modified: 2025-12-16T06:25:32.663Z
 - https://x.com/tannerlinsley/status/1928169539344420917
 - It's actually pretty easy. Everything runs on both server/client by default. This is called isomorphism. 
   - If you want something to *only* run on the server, use `createServerFn` , `serverOnly` , or `createIsomorphicFn().server()` . 
-  - If you want something to only run on the client, use `clientOnly()` , `<ClientOnly>` or `createIsomorphicFn().client()`
+  - If you want something to only run on the client, use `clientOnly()` , `<ClientOnly>` or `createIsomorphicFn().client()` 
 
 - beforeLoad is a router thing, so it runs all the time, but you can create a server function that is called in your before load function .
 - when a server function is called on the server, is making s request to itself? Like an actual http request?
@@ -154,6 +154,27 @@ modified: 2025-12-16T06:25:32.663Z
 
 - What do u mean component route?
   - Components as nested routes.
+# discuss-tanstack-db
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## TanStack Stores have been called stores despite more closely resembling atoms architecturally. 
+- https://x.com/KevinVanCott/status/2045550293618676183
+  - As part of the alien-signals refactor contributed by @DavidKPiano , we renamed them to atoms.
+  - You can pull the actions right from the store.actions, or use the new upcoming useStore hook (called _useStore until 1.0 breaking change) to read both selected state and the actions from the store, similar to useAtom's tuple pattern.
+  - if you already are using either Jotai, Zustand, or Valatio, I think you are already doing it right. Don't feel any pressure to migrate from one of those to TanStack Store!
+- We've had TanStack Store around for about 3 years now.
+  - The original reason that we made it was to solve reactive state management in vanilla js with adapters for every library/framework so that we could solve state management inside all tanstack library framework adapters once, and just re-use that solution consistently.
+  - We are just now polishing it up for application use after its core has become proven over the last 3 years.
+  - You are correct. React doesn't need another state management library, really. We needed it though. And it's good enough for us to share.
+
+- can you explain why we need useSelector if useStore supports a select/selector option? What am I missing
+  - useSelector is simpler and just reads state (slices) from either atoms or stores
 # discuss-tanstack-db
 - ## 
 

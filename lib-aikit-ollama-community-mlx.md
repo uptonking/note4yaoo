@@ -173,7 +173,17 @@ modified: 2026-01-14T18:59:01.949Z
 
 - ## 
 
-- ## 
+- ## 🆚 [Gemma 4 - MLX doesn't seem better(faster) than GGUF : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1spn7zh/gemma_4_mlx_doesnt_seem_better_than_gguf/)
+- GGUF/llama.cpp has really caught up to MLX over the past few months by leaning into Metal.
+
+- For m1-m2 macs you need to know they don't support bf16 while all pre-converted MLX models are bf16 for unquantizied weights. You are leaving a big chunk of performance by not doing a simple mlx_lm.convert --dtype fp16 for them
+  - The absence of bf16 is painful.. although.. even then, Torch AMP is flaky on MPS.
+
+- Use oMLX app, in oMLX you can quant Gemma to oQ4 with non-quant dtype set to float16 (takes 5 mins) and then run that.
+
+- why people hate using mxfp version of MLX models?
+  - MXFP4 and NVFP4 are 4 bit float point formats that some GPUs can work with natively. That way it can be much faster. It is not necessarily better than other formats, but native support means it doesn't need to be upcasted to FP16 before doing the calculation.
+  - Unfortunately "some GPUs" == Nvidia Blackwell only.
 
 - ## [New - Apple Neural Engine (ANE) backend for llama.cpp : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s835d5/new_apple_neural_engine_ane_backend_for_llamacpp/)
   - Note that ANE is the NPU in all Apple Silicon, not the new 'Neural Accelerator' GPU cores that are only in M5.

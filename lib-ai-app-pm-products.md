@@ -131,6 +131,11 @@ modified: 2025-03-22T16:10:24.856Z
   - web sandbox + ai-coding > lovable ❓
   - sandpack ai? react-live ai?
 
+- 🏠 ai-architecture/patterns
+  - OpenAI Agents SDK
+  - Claude Agent SDK
+  - openclaw pi
+  - huggingface smolagents
 - 🏠 ai-architecture: 
   - 架构及功能偏向 RAG(ragflow/quivr), 还是偏向 automation/workflow(dify/flowise/coze/sim)
   - 与ai的通信和计算是在前端实现，还是在后端实现
@@ -1268,6 +1273,9 @@ modified: 2025-03-22T16:10:24.856Z
   - [TS-AI | 灵感创作工坊](https://linux.tsart.lat/workspace)
     - [【绘画公益站】TS-AI  ](https://linux.do/t/topic/1641029)
     - 每天签到可获得 3000 积分（三天内有效）
+  - [IMG Hub ](https://aiddup.com/)
+    - [公益生图站点 - LINUX DO _202604](https://linux.do/t/topic/2004335)
+    - 三级	200积分/天
 
 - image-saas
   - [小白生图 - AI Image Generator](https://catsapi.com/)
@@ -1881,6 +1889,9 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [风萧萧公益机场](https://chanel.weyolo.com)
   - [萧草 · 臻选](https://shop.sxxe.net/)
+
+- [SecOne](https://secone.telecom.moe/#/dashboard)
+  - [[SecOne公益机场] 开放注册 - LINUX DO _202604](https://linux.do/t/topic/2004418)
 
 - [Canopy Wave](https://cloud.canopywave.io/)
   - 提供模型API

@@ -318,7 +318,22 @@ export ANTHROPIC_SMALL_FAST_MODEL="claude-sonnet-4-5-20250929"
 
 - ## 
 
-- ## 
+- ## Claude Code 程序的分发采用的是 Bun 作为运行时，源码通过 esbuild 打包成一个 JS bundle，并编译成 JavaScriptCore 字节码（JSC bytecode）装载在分发包中。
+- https://x.com/Barret_China/status/2045752834126434456
+  - Bun 打包的时候有一个 fallback 策略，如果 JSC 加载失败，会去加载源码，因此分发包不仅包含了字节码，源码也保留了一份。
+  - 按照这个思路，将 CC 源码 dump 一份出来就不难了。
+  - 可以通过分析 Bun 的产物格式，做静态分析拿到 bundle JS，再将 bundle JS 运行起来，在运行时通过 hook 模块加载函数来 dump 各模块的源码，这个操作可以提取目录层级依赖关系。
+  - 唯一的缺点是，JS bundle 本身已经被 esbuild 压缩了一轮，变量名混淆了，直接阅读较为困难，但字符串字面量（包括 API 端点、prompt 模板、属性名等等）都完整保留了，因此交给 AI 去理解和阅读，没啥问题。
+
+- unminify，很多人写过，如果想更可读，可以从 ast 里抽出变量，让 ai 换名字，然后再输出出来。
+  - 再让AI进行轻微的重构，搞不好输出的质量比源代码还要高
+
+- 没区别，bytecode 映射回源代码也是容易的
+
+- https://x.com/yetone/status/2045802042564940126
+  - 所以 Claude Code 为了把 minification code 充当加密做了一件很恶心的事情：它要求很多函数只能返回 tuple，不能返回 named object，以此防止在 minification code 里暴露很多关键信息
+- 用tuple返回确实是个聪明的反逆向手段。named object压缩完字段名还在，等于给逆向的人留了语义地图。tuple把这层信息直接抹掉了，配合minification效果跟strip symbols差不多。代价就是可读性变差，维护的人得靠位置记住每个字段是什么。
+- 用 tuple 防 minification 这操作，属实没想到。不过逆向这东西，签名藏住了执行流还是藏不住的
 
 - ## [Claude Code记忆层加载顺序总结  - LINUX DO _202604](https://linux.do/t/topic/1907664)
   - 按照cc官方文档 ，Claude Code的记忆分为CLAUDE.md files、Auto Memory两个互补的部分，并且都在会话开始时被加载。

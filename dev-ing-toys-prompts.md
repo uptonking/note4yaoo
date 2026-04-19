@@ -103,7 +103,7 @@ please refactor code structure in ilove-pdf project to use similar architecture 
 you may deep research and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issue. 
 you may use similar file/folder names instead of the same file/folder names as the original. you may also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
 
-if migration/refactoring of similar code architecture as ilove-bentopdf is complicated, you can make a plan first, then migrate as the plan.
+if migration/refactoring of similar code architecture as ilove-bentopdf is complicated, you can make a plan first, then migrate by the plan.
 
 now recheck migrated features and improve your implementation in ilove-pdf, make it runnable locally with npm. make sure implementation is correct and extensible.
 
@@ -225,7 +225,7 @@ project onlyoffice and project at `~/Documents/repos/office/all-pdf/open-pdf-stu
 
 - please analyze code and docs if you need, then explain to me what major features are in onlyoffice pdf editor but missing in hardoc. 
 
-- please refactor code structure in hardoc project to use similar architecture and code structure as onlyoffice without licensing issue, to make it easy to migrate more features in the future. 
+- please refactor code structure in hardoc project to use similar architecture and code structure as onlyoffice without licensing issue, to make it easy to migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 recheck and migrate full features of True PDF text editing engine with annotation support. 
 
@@ -261,9 +261,11 @@ please make a plan, then improve the core in-place text editing engine to make i
 
 ```prompt
 - Grist is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database. 
-- The final goal is to implement an alternative react frontend webapp at folder `app/client-react` at the current git branch `feat/office-react`, with the same features as existing backbonejs frontend webpp at `app/client`,  using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table. After you finished the react webapp, `npm run start:app` should start the new react webapp, the legacy yarn toolchain should still be kept for backward compatibility. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so keep as many code unchanged as possible.
-- the final goal is to rewrite all the ui/ux with modern react ui, but you can implement the core speadsheet view/create/edit/save data flow first, then migrate more and more features. 
+- The final goal is to implement an alternative react frontend webapp at folder `app/client-react` at the current git branch `feat/office-react`, with the same features as existing backbonejs frontend webpp at `app/client`,  using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table. After you finished the react webapp, `npm run start:app` should start the new react webapp, the legacy yarn toolchain should still be kept for backward compatibility. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please keep as many code unchanged as possible.
+- the final goal is to rewrite all the existing ui/ux with modern react ui, but you can implement the core speadsheet view/create/edit/save data flow first, then migrate more and more features. 
 - you should support all the routing urls of existing backbonejs webapp, using the same existing backend api.
+
+- please read and analyze git commits/code if you need, then explain to me what major features are in backbonejs webapp but missing in react webapp.
 
 - the following features can be planned, but implemention may be delayed if you want:
 1. Can be displayed on a static website with grist-static.
@@ -283,11 +285,13 @@ please make a plan, then improve the core in-place text editing engine to make i
 
 - the most important feature in react webapp is a modular, extensible, headless spreadsheet view/editing engine with undo/redo history support like backbonejs webapp. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so keep as many code unchanged as possible.
 
+- you have worked on this several times but features are still lacking.
+
 - please deep research the existing backbonejs webapp, then can you design a similar solution in react webapp to achieve full feature parity?
 
-- you may deep research and reference the existing code, you may use similar dependencies, and implement similar logic, but you should rewrite it with modern tech stacks like react. 
+- you may deep research and reference the existing code, you may use similar dependencies, and implement similar logic, but you should rewrite it with modern tech stacks like react/typescript-utils. 
 
-- you may do a big code refactor to match full feature of backbonejs webapp in a similar architecture, to make it easier to maintain and migrate more features in the long term. 
+- you may do a big code refactor to match full feature of backbonejs webapp in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - research and make a full plan, then implement the react webapp to match full features of existing backbonejs webapp, or even better than backbonejs webapp.
 
@@ -301,7 +305,7 @@ please make a plan, then improve the core in-place text editing engine to make i
 - project `PPTist` at `../PPTist` is an online presentation webapp that replicates most of the commonly used features of MS PowerPoint, allowing for the editing and presentation of PPT online, also supports AIPPT. But it has AGPL license.
 - project `slaides` at current folder is an old version of `PPTist` with apache2 license, but many commits behind PPTist.
 
-- please analyze git commits and code if you need, then explain to me what major features are in PPTist but missing in slaides.
+- please read and analyze git commits/code if you need, then explain to me what major features are in PPTist but missing in slaides.
 
 - the final goal is to implement a framework-agnostic, modular, extensible, headless ai ppt editing solution named `slaides` with features similar to `PPTist` to avoid the licensing issues.
 - goals:
@@ -329,14 +333,18 @@ please make a plan, then improve the core in-place text editing engine to make i
   - for drag-drop, you may use  `~/gh-mirror/atlassian/pragmatic-drag-and-drop` to implement robust dnd.
   - all local packages names should start with `@datalking/`, for example `@datalking/slaides-core`,`@datalking/slaides-react`...
 
-- project PPTist can be used as implementation reference, you can reference their architecture and code.
+- project PPTist can be used as implementation reference, you can reference its architecture and code.
 - you may deep research and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issue. 
 you may use similar file/folder names instead of the same file/folder names as the original. you may also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
 
 - the most important feature in slaides is a framework-agnostic, modular, extensible, headless ai ppt view/editing engine with undo/redo history support like PPTist.
 
+- you have migrated some features from PPTist to slaides.
+
+- you have worked on this several times but features are still lacking.
+
 - please deep research the PPTist, then can you design a similar solution in slaides to achieve full feature parity?
-- you may do a big code refactor to match full feature of PPTist in a similar architecture, to make it easier to maintain and migrate more features in the long term. 
+- you may do a big code refactor to match full feature of PPTist in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you can deep research, referencing good deisgn from PPTist editing engine.
 - you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.

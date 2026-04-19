@@ -66,7 +66,7 @@ modified: 2023-12-09T10:03:55.375Z
   - 📝 [Web OPFS 数据持久化](https://gine.me/posts/70f8e931bc17426fb54127948bcf4a0e)
   - 跑去 sqlite 论坛发帖问了下，终于找到问题所在。因为我没有向用户请求数据持久化权限。如果你没有向用户请求持久化权限。数据还是会给你存储，但是浏览器可能会把数据清理掉。 
   - 这一点很隐晦，MDN只给了代码，在代码里面提了下，但是文档里面没怎么说。
-  - 如何获取数据持久化权限呢？ `navigator.storage.persist()`
+  - 如何获取数据持久化权限呢？ `navigator.storage.persist()` 
 
 - ## Feature table of all the possible ways of using a sqlite database in a JavaScript environment
 - https://twitter.com/fabiospampinato/status/1693379882409922788
@@ -107,7 +107,10 @@ modified: 2023-12-09T10:03:55.375Z
 
 - ## 
 
-- ## 
+- ## wa-sqlite supports a new OPFSWriteAheadVFS virtual file system that unlocks much better performance by allowing multiple workers to read the database concurrently with a writer.
+- https://x.com/powersync_/status/2045261069808242765
+  - This means your UI no longer needs to lock up during heavy writes!
+  - Only works in Chromium right now.
 
 - ## 🆚 Your SQLite bindings really matter.
 - https://x.com/tantaman/status/1956151559110451499

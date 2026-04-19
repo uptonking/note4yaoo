@@ -801,6 +801,15 @@ modified: 2022-06-03T21:34:54.893Z
   - Collaboration — Threaded discussions with @mentions, voting, and moderation at corpus and document levels
   - Data Extraction — Extract structured data from hundreds of documents using agent-powered queries
   - Version Control — Track document changes, restore previous versions, soft delete with recovery
+
+- https://github.com/BoatingCloud/WenText /MIT/202604/ts/dart
+  - 文雨档案管理系统是一个面向企业场景的档案全生命周期管理平台，覆盖电子文档、实体档案、借阅审批、文档审查、在线预览、角色权限、审计日志与统计分析。
+  - [「开源自荐」文雨-一个文档管理系统 - LINUX DO _202604](https://linux.do/t/topic/2001537)
+    - 之前文档的集群管理是在网盘上的，但是没办法满足需求，于是vibe coding出来一个文档管理平台
+    - 电子文档、实体档案、借阅审批、文档审查、在线预览、角色权限
+    - 在线文档编辑已经实现
+    - 文档版本回退已经实现
+    - 有flutter开发的android客户端，同理应该可以开发电脑端的
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3
