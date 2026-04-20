@@ -9,6 +9,10 @@ modified: 2025-08-07T17:22:10.051Z
 
 # guide
 
+# draft
+- 难以diff的元素或场景
+  - 表格增删、缩放
+  - 图片的增删、缩放
 # discuss-stars
 - ## 
 

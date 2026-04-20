@@ -121,11 +121,12 @@ what should be done to macth the upstream? explain to me. if it it complicated, 
 ```prompt
 `./superdoc` implemented renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed.
 - the final goal is to implement from scratch a new ai docx editing solution similar to superdoc at folder `./ailovedoc`  to avoid the licensing issues.
-code at `./ailovedoc` should use npm workspaces, typescript, prosemirror, yjs.
+- in superdoc, running `pnpm dev:docs` shows a mininal paginated editor demo. please migrate the example to ailovedoc without licensing issues, and make it runnable locally in ailovedoc.
+
 - feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
 - in your implementation, you can also improve the code logic for features and make your implementation correct and extensible. tests are not necessary for your implementation.
 - the most important feature to implement at first step is ai editing with track change support, other features can be implemented later progressively. a runnable ai editing example with track change should be provided.
-- you should implement code architecture and structure similar to superdoc, but rewrite from scractch to avoid licensing issue. `EditorAdapter` is a good design, you should implement similar architecture. OOXML → ProseMirror handlers is powerful, you should implement your converter and handler by refrencing superdoc, but remember to avoid licensing issues. collaboration with yjs should be implemented. encryption/signing can be skipped now. you can reference as many superdoc code as possible, but remember to rewrite it to avoid license issue.
+- you may implement code architecture and structure similar to superdoc, but rewrite from scractch to avoid licensing issue. `EditorAdapter` is a good design, you should implement similar architecture. OOXML → ProseMirror handlers is powerful, you should implement your converter and handler by refrencing superdoc, but remember to avoid licensing issues. collaboration with yjs should be implemented. encryption/signing can be skipped now. you can reference as many superdoc code as possible, but remember to rewrite it to avoid license issue.
 - please analyze related code and architecture, make a plan and implement your ailovedoc project.
 
 - you have migrated some features from superdoc to ailovedoc.
@@ -136,6 +137,8 @@ code at `./ailovedoc` should use npm workspaces, typescript, prosemirror, yjs.
 please refactor code structure in ailovedoc project to use similar architecture and code structure as superdoc, to make it easy to migrate more features in the future.
 
 please recheck migrated features and improve your implementation in project ailovedoc, make it runnable locally using npm without docker. Read core implementation logic details for major features, find possible bugs in code and fix them, make sure major features implementations are correct and extensible.
+
+code at `./ailovedoc` should use npm workspaces, typescript, prosemirror, yjs.
 
 please continue to migrate features related to ooxml editing with ai agent progressively. this is the most important feature. 
 
@@ -190,7 +193,7 @@ AGPL dependencies like MuPDF should be avoided, ask for approve if you must use.
 
 - serveral questions need to be made clear before implementation:
 1. should core pdf data model be headless/dom-agnostic, so that it will be usable in nodejs?
-2. should wasm like pdfium  be used?
+2. should wasm like pdfium be used?
 3. should canvas framework like fabric/knova be used?
 
 please analyze onlyoffice architecture, and give tips to my question before iplementing new pdf editor hardoc.
@@ -252,7 +255,8 @@ please make a plan, then improve the core in-place text editing engine to make i
 - you have worked on this several times but still not solve it. this is the most important features at this moment. 
 - make a full plan to solve it completely, DO NOT stop if you improves just a little, only stop when you have solved it .
 
-- make a full plan, migrate and improve to full feature parity without licensing issues.
+- make a full plan, 
+to full feature parity without licensing issues.
 - research and make a full plan, then implement hardoc to match full features of onlyoffice-pdf-editor, or even better than onlyoffice-pdf-editor, without licensing issues.
 
 ```

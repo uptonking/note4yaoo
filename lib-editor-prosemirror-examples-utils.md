@@ -12,6 +12,7 @@ modified: 2022-08-18T16:57:29.058Z
 # popular
 - https://github.com/superdoc-dev/superdoc /AGPL/202604/ts
   - https://superdoc.dev/
+  - https://demos.superdoc.dev/
   - Renders, edits, and automates .docx files in the browser, headless on the server, and within AI agent workflows.
   - Works with React, Vue, and vanilla JS.
   - Built on ProseMirror, Yjs, JSZip, and Vite.
@@ -49,10 +50,15 @@ modified: 2022-08-18T16:57:29.058Z
     - Interactive OOXML (ECMA-376) reference explained by people who actually implemented it
     - Every page combines XML structure, live rendered previews, and implementation notes that tell you what the spec doesn't.
     - The ECMA-376 spec is 5,000+ pages and it lies. Word's actual behavior diverges from the standard in ways you only discover by building against it. The knowledge to implement OOXML correctly is locked inside a handful of companies that have no incentive to share it.
+  - https://github.com/superdoc-dev/demos
+    - Working demos built with SuperDoc
 - https://github.com/yuch85/contract-playbook-ai /AGPL/inactive
   - Generate playbooks using AI from contracts, and review contracts using AI against playbooks, with changes tracked in native docx redlines.
   - [Built an open-source Contract Playbook AI tool with native .docx tracked-changes editing : r/legaltech _202604](https://www.reddit.com/r/legaltech/comments/1pfd17e/built_an_opensource_contract_playbook_ai_tool/)
   - It uses the Superdoc open-source library under AGPLv3 to bring full online .docx editing into the workflow.
+  - https://docx.tools/
+    - Convert, redact, compare, and view Word documents — entirely in your browser.
+    - Built on SuperDoc — DOCX editing and tooling
 
 - https://github.com/samwillis/premirror /MIT/202603/ts
   - https://samwillis.uk/premirror/

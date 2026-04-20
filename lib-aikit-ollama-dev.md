@@ -1,4 +1,4 @@
-≠---
+---
 title: lib-aikit-ollama-dev
 tags: [large-language-model, ollama]
 created: 2026-01-14T18:56:51.610Z
@@ -13,8 +13,9 @@ modified: 2026-01-14T18:57:01.673Z
   - lm studio底层用的也是llama.cpp, 不必寻找替代，深入底层更容易替代和扩展
 
 - mlx-pros
-  - mlx的优点之一是方便支持在iphone上运行
+  - 方便支持在iphone上运行
   - mlx模型的生成速度更快
+  - ? 社区提供的量化版本和可运行工具更多
 
 - mlx-cons
   - 有些冷门模型未提供mlx格式，需要手动转换

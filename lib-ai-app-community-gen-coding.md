@@ -276,7 +276,13 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## [如何对vibe coding 生成的代码维护 - LINUX DO _202604](https://linux.do/t/topic/2014797)
+- 可以尝试一下类似 superpowers 的开发框架 skills，这些 skills 会强迫 LLM 走 TDD 开发，先写测试再开发，可维护性会高不少
+- 是的，佬，有使用superpower，不过在使用过程中还是觉得，约束性不强的状态下，维护性还是比较差，时间久了就是个很大的黑盒
+
+- trellis 可以试试，spec 优先驱动的
+
+- 开发前先制定好计划，和ai多轮对话，过程里实时审阅plan，直到没问题了再去coding, ai写逻辑很强，但是可能没有整体的把控，这个得自己参与我觉得
 
 - ## [Best open-source coder model for replacing Claude Code with Qwen locally? : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rbvbzt/best_opensource_coder_model_for_replacing_claude/)
 - Qwen 3 Coder and OSS 20B are your best bet. 

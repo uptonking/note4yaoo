@@ -199,7 +199,7 @@ npm up -g opencode-ai @openai/codex @kilocode/cli
   - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav
   - 做完tailwind-table就面试
 - dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
-# dev-03
+# dev-04
 
 ```log //dev-xp
 console.log('; ; task ', taskState, runningTaskAction, task?.task_steps)
@@ -316,7 +316,10 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0420
+
 ## 0418
+
 - Problem: JavaScript’s `.sort()` mutates the array.
   - https://x.com/petarivanovv9/status/2045116666321818020
   - Solution: Use `.toSorted()` instead. It returns a new sorted array. 
