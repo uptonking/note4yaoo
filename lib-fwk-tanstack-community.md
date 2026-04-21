@@ -163,7 +163,7 @@ modified: 2025-12-16T06:25:32.663Z
 
 - ## 
 
-- ## TanStack Stores have been called stores despite more closely resembling atoms architecturally. 
+- ## TanStack Stores have been called stores despite more closely resembling atoms architecturally. _202604
 - https://x.com/KevinVanCott/status/2045550293618676183
   - As part of the alien-signals refactor contributed by @DavidKPiano , we renamed them to atoms.
   - You can pull the actions right from the store.actions, or use the new upcoming useStore hook (called _useStore until 1.0 breaking change) to read both selected state and the actions from the store, similar to useAtom's tuple pattern.

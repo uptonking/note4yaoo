@@ -44,7 +44,7 @@ export VSCODE_GALLERY_CONTROL_URL=""
 - ## [Search in VS Code for multiple terms - Stack Overflow](https://stackoverflow.com/questions/49944569/search-in-vs-code-for-multiple-terms)
   - Suppose I search on VS Code the terms 'word1 word2'. Then it finds all the occurrences where 'word1' is followed by 'word2'. In reality I want to find all the files where word1 and word2 occur, but they don't have to be consecutive.
 
-- Use regex flag and search for `(word1[\s\S\n]*word2)|(word2[\s\S\n]*word1)`
+- Use regex flag and search for `(word1[\s\S\n] *word2)|(word2[\s\S\n]* word1)`
 # discuss-diff
 - ## 
 
@@ -93,7 +93,8 @@ export VSCODE_GALLERY_CONTROL_URL=""
 
 - ## 
 
-- ## 
+- ## you can select bracket and string content with a simple double-click
+- https://x.com/code/status/2046331469396693073
 
 - ## [Clearing cache · Issue · microsoft/vscode](https://github.com/microsoft/vscode/issues/164980)
   - Can I remove the .vscode/CachedExtensionVSIXs directory safely?
@@ -102,7 +103,7 @@ export VSCODE_GALLERY_CONTROL_URL=""
 
 - ## [VS Code terminal font size - Stack Overflow](https://stackoverflow.com/questions/61311241/vs-code-terminal-font-size)
 - search for terminal font size and then enter the size of your choice.
-  - `"terminal.integrated.fontSize": 12`
+  - `"terminal.integrated.fontSize": 12` 
 
 - ## TIL you can mark files as read-only in vscode by config `readonlyInclude` .
 - https://x.com/localhost_5173/status/1910612549860536812
@@ -141,10 +142,10 @@ export VSCODE_GALLERY_CONTROL_URL=""
 - ## 🔍 [Visual Studio Code: Secrets of Regular Expression Search | by Nikhilbaxi | Medium _202309](https://medium.com/@nikhilbaxi3/visual-studio-code-secrets-of-regular-expression-search-71723c2ecbd2)
 - (.+) : This is used to find the content between the unknown. For example, we need to find where the API call is defined.
   - `/api/user/${userId}/address/` or `/api/user/123/address/` ; 
-  - `/api/user/(.+)/address/`
+  - `/api/user/(.+)/address/` 
 
 - To find all lines with both “apple” and “banana”:
-  - `(apple.*banana)|(banana.*apple)`
+  - `(apple. *banana)|(banana.* apple)`
 
 - ## vscode 准备支持内置 terminal 的 zsh/bash 补全列表了
 - https://x.com/YuTengjing/status/1834076948089454896

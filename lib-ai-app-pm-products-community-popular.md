@@ -356,7 +356,12 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## [Unpopular opinion: OpenClaw and all its clones are almost useless tools for those who know what they're doing. It's kind of impressive for someone who has never used a CLI, Claude Code, Codex, etc. Nor used any workflow tool like 8n8 or make. : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1srkah3/unpopular_opinion_openclaw_and_all_its_clones_are/)
+- It's not about the tool, it's about the adoption it created. OpenClaw has some nice ideas, but yeah it's true all of that was there before, but it made it accessible.
+
+- Completely disagree. The ongoing work context, tool history, as well as broader access has been a huge help for my work.
+
+- they have product market fit.
 
 - ## [[开源分享] ClaudeChrome - 在浏览器中启动 Claude/Codex，实现通用智能交互体验 - LINUX DO _202604](https://linux.do/t/topic/1903375)
   - 项目 idea 很简单：把 Claude / Codex / Shell 放进 Chrome 侧边栏（Shell 其实现在还没啥用，因为主要靠自行实现的 MCP Server 实现自动页面交互，主要是给未来一些插件脚本手动调用浏览器接口留空），并把每个 session 绑定到一个真实标签页（使用过程中也可以 rebind 标签页）。这样 Agent 看到的就不再只是你手动贴过去的一点信息，而是当前标签页的页面文本、HTML、请求、console 等浏览器上下文。

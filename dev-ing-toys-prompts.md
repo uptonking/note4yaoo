@@ -255,8 +255,6 @@ please make a plan, then improve the core in-place text editing engine to make i
 - you have worked on this several times but still not solve it. this is the most important features at this moment. 
 - make a full plan to solve it completely, DO NOT stop if you improves just a little, only stop when you have solved it .
 
-- make a full plan, 
-to full feature parity without licensing issues.
 - research and make a full plan, then implement hardoc to match full features of onlyoffice-pdf-editor, or even better than onlyoffice-pdf-editor, without licensing issues.
 
 ```
@@ -288,6 +286,8 @@ to full feature parity without licensing issues.
   - you may use zustand for state management in framework-agnostic core package, the source code is at folder `~/gh-mirror/pmndrs/zustand` for your reference.
 
 - the most important feature in react webapp is a modular, extensible, headless spreadsheet view/editing engine with undo/redo history support like backbonejs webapp. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so keep as many code unchanged as possible.
+
+- you have migrated some features from backbonejs webapp to react webapp.
 
 - you have worked on this several times but features are still lacking.
 
@@ -357,7 +357,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 ```
 
-# code-review
+# code-review 👀
 
 ```prompt
 
@@ -371,7 +371,7 @@ document what you have migrated from which commit id for future migration refere
 # tests
 
 ```
-you have migrated/implemented major features in project hardoc, but when you migrated/implemented features, tests are not taken good care of. please fix and update existing tests. 
+you have migrated/implemented major features in project react web, but when you migrated/implemented features, tests are not taken good care of. please fix and update existing tests. 
 when you improve the tests, you can also improve the source code logic by fixing or refactoring code. DO NOT get locked to the risk code that has weak or wrong logic, you should fix them.
 finally make sure all tests run and pass locally with npm. you can update/fix tests file by file progressively. outdated or over-complicated or hard-to-maintain tests can be removed or rewritten. 
 ```
@@ -379,7 +379,7 @@ finally make sure all tests run and pass locally with npm. you can update/fix te
 # rafactor
 
 ```prompt
-for project ailovedoc, please refactor code structure if you need, to make sure all source code and tests files should have less than **800** lines of code(other code-unrelated or unimportant files are not required. ). because if too many code exists in a single file, it will be hard to maintain. small files and modular architecture are always preferred.
+for project ailovedoc, please refactor code structure if you need, to make sure all source code and tests files should have less than **800** lines of code(other code-unrelated or unimportant files are not required). because if too many code exists in a single file, it will be hard to maintain. small files and modular architecture are always preferred.
 
 please refactor code to migrate from pnpm to npm.
 please keep as many code as possible unchanged, so most bun scripts and code should be kept for backward compatibility, but bun wont be used any more. bun code should not be removed. you should create new script for nodejs or add new entrypoint for nodejs. now update your plan.

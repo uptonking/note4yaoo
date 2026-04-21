@@ -26,6 +26,7 @@ https://meeting.tencent.com/p/9606972663
   - https://atlaskit.atlassian.com/packages/editor/editor-core/example/full-page-minimal
   - https://atlaskit.atlassian.com/packages/editor/editor-core/example/full-page-with-toolbar
   - https://ckeditor.com/docs/ckeditor5/latest/examples/builds-custom/full-featured-editor.html
+  - https://prosekit.dev/examples/change-tracking/
   - more-editor
     - https://demo.grammarly.com/
 

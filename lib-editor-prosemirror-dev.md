@@ -108,6 +108,13 @@ modified: 2021-05-06T09:39:53.522Z
   - views
   - 针对 vlm 优化的表格及编辑
   - table/pdf-table to excel
+  - atlaskit-editor-kitchen-sink包含table
+    - table支持 dynamic loading 数据， 手动请求数据
+    - column支持多种类型: checkbox, avatar, tags, date
+    - 🐛 cons
+    - table边界不支持拖拽缩放大小，但提供了按钮支持wider/narrower/center
+    - column字段类型， 似乎不支持调整
+    - 单元格内文本不支持富文本
 - image/mermaid
   - img-diff 使用slider对比交互
   - img-editor

@@ -656,6 +656,18 @@ modified: 2023-09-02T09:17:22.992Z
   - 沙箱环境：内置 Command、Filesystem、Code Interpreter 实现。并提供 Coding Agent（Claude Code 等）、浏览器自动化（Chrome、Playwright）和桌面环境（VNC、VS Code）等示例。
   - 网络策略：提供统一的 Ingress Gateway 实现，并支持多种路由策略；提供单实例级别的沙箱出口网络限制。
 
+- https://github.com/TencentCloud/CubeSandbox /apache2/go/rust/c
+  - https://docs.cubesandbox.ai/
+  - Instant, Concurrent, Secure & Lightweight Sandbox Service for AI Agents
+  - sandbox service built on RustVMM and KVM. 
+  - It supports both single-node deployment and can be easily scaled to a multi-node cluster. 
+  - It is compatible with the E2B SDK, capable of creating a hardware-isolated sandbox environment with full service capabilities in under 60ms, while maintaining less than 5MB memory overhead.
+  - https://x.com/TencentAI_News/status/2046511216907157678
+    - Dedicated kernel per sandbox (hardware-level isolation) 
+    - Sub-60ms cold start (2.5-50x faster)
+    - Thousands of concurrent sandboxes per node 
+    - 100% E2B SDK compatible. Swap the endpoint, zero code changes
+
 - https://github.com/boxlite-ai/boxlite /apache2/202601/rust
   - https://boxlite-ai.github.io/website/
   - Embedded micro-VM runtime for AI agents running OCI containers with hardware-level isolation — no daemon required.

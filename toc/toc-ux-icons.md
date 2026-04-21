@@ -330,6 +330,15 @@ modified: 2021-05-06T09:58:23.803Z
   - https://github.com/aykutkardas/svgps
     - https://svgps.app/
     - SVGPS removes the burden of working with a cluster of SVG files by converting your icons into a single JSON file. You can easily use this file in your frontend or mobile projects.
+# icons-engineering
+- https://github.com/svg-jar/plugin /MIT/202604/ts
+  - An unplugin for importing SVGs as components. 
+  - Supports sprite sheets, inline SVGs, and raw file exports across Vite and Rollup.
+  - Sprite mode (default): SVGs are collected into a sprite sheet and rendered via `<use href>`. The sprite file is emitted with a content-hashed filename for cache busting.
+  - Inline mode: Embed the full SVG markup directly in the component. No sprite sheet, no external request.
+  - Inline SVGs are embedded in your JavaScript bundle, increasing parse time and preventing separate caching. Sprite mode (the default) is more efficient for most use cases. 
+  - https://x.com/evo1/status/2046511527172170205
+    - SVG Jar goes multi-framework and multi-bundler. The best way to work with SVGs in your web apps. 
 # icons-tooling
 - [Iconbuddy — 200K+ open source free svg icons](https://iconbuddy.app/)
   - Download, Customize, Edit and Personalize. Over 200k+ open source icons.
@@ -381,6 +390,10 @@ modified: 2021-05-06T09:58:23.803Z
 # icons-anime
 - https://icons.pqoqubbw.dev/
   - animated icons i’ve been working on lately are now open source
+
+- [Vector Motion Kit](https://vectormotionkit.web.app/)
+  - https://x.com/romankhrupa/status/2046142681445798127
+  - We’re trying to build the biggest animated icon library for Android devs
 # logos-generator
 - https://github.com/Nutlope/logocreator /202411/ts
   - https://www.logo-creator.io/

@@ -236,6 +236,11 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/claude-code-best/claude-code /202604/ts
   - Claude Code 可运行版; Typescript 类型全修复; 企业级可靠性; 安全无毒, lock 文件保真, 可直接 bun i; bun run dev 启动
 
+- https://github.com/Kocoro-lab/Shannon /MIT/202604/go
+  - https://shannon.run/
+  - A production-oriented multi-agent orchestration framework.
+  - [Claude Code 源码分析与复刻实现](https://www.bilibili.com/video/BV15HXCBkEKY)
+
 - https://github.com/lukilabs/craft-agents-oss /3.2kStar/apache2/202603/ts
   - https://agents.craft.do/
   - https://x.com/balintorosz/status/2013302678105796764  _202601
