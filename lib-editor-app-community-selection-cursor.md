@@ -9,6 +9,10 @@ modified: 2023-11-21T04:37:09.686Z
 
 # guide
 
+# examples
+- https://github.com/andreasnicolaou/halo-cursor /MIT/202603/ts
+  - https://andreasnicolaou.github.io/halo-cursor/
+  - Framework-agnostic animated cursor for Angular, React, Vue, and plain TypeScript apps.
 # discuss-stars
 - ## 
 

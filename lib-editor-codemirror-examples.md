@@ -2044,6 +2044,10 @@ modified: 2023-06-23T12:46:53.288Z
   - This repository provides a React component that you can use to embed an interactive coding playground on a website that uses Val Town to execute code.
   - `<Playground env={{ YOUR_API_KEY: 'something' }} code="console.log(1);" workerPath="/public/worker.ts" />`
 
+- https://github.com/Oluwasetemi/playground /MIT/202601/ts
+  - https://playground-demo-five.vercel.app/
+  - A robust, framework-agnostic code playground component using WebContainers API from StackBlitz.
+
 - https://github.com/abhirampai/CodeBoost /MIT/202304/js/inactive
   - https://codeboost.vercel.app/
   - CodeBoost is a code runner that allows you to refactor and run your code in one convenient location.

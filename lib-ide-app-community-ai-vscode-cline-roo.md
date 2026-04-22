@@ -152,7 +152,7 @@ modified: 2025-10-28T20:02:16.727Z
 
 - ## Do we also have any examples how to setup project Indexing?
 - https://discord.com/channels/1275535550845292637/1392662920982171738/1393446018795704464
-- Cline does not currently do indexing of the codebase, he just searches around using `ripgrep`
+- Cline does not currently do indexing of the codebase, he just searches around using `ripgrep` 
 
 - ## 🏠 已合并pr [Run the cline extension as a standalone process outside of vscode. by sjf · Pull Request · cline/cline _202505](https://github.com/cline/cline/pull/3535)
   - Adds a new build target npm run compile-standalone for the standalone version of the cline extension. 
@@ -432,6 +432,21 @@ modified: 2025-10-28T20:02:16.727Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Roo Code hit 3 million installs. We're shutting it down to go all-in on Roomote.  _202604
+- https://x.com/mattrubens/status/2046636598859559114
+  - When we started Roo Code in late 2024 by forking Cline and adding what's now widely known as dangerously-skip-permissions, agentic coding was rough and experimental. 
+  - But by Fall 2025, we were seeing another big shift in how we worked internally. We were running Roo Code in cloud containers to parallelize work and keep up with hundreds of community PRs and issues. It worked headlessly with full auto-approve enabled, opened fixes, ran the actual app, and verified its own work before asking anyone to look. It quickly became the default way for us to work.
+  - We call our cloud agent Roomote. It rocks. It lives in Slack with the rest of your team, integrates into all of your tools (Linear, Github, Sentry, etc), and runs whichever frontier model fits the job.
+
+- [Roo Code hit 3 million installs. We're shutting it down to go all-in on Roomote. : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1ss1ls9/roo_code_hit_3_million_installs_were_shutting_it/)
+- Roo code is great but I always felt the developers were kinda disconnected from users. I reported some bugs and always got the 'won't fix' treatment.
+
+- There's not much cash to be made from a truly local OSS product like Roo Code, so naturally they "pivot" to some cloud based garbage instead while pretending it's just a "evolution" of their previous project rather than an entirely different thing.
+
 - ## roocode没有/v1/responses端点吗
 - https://linux.do/t/topic/1476432/29
 - 好像是没有，接口这里没有 response 类型的，下面也没看到有配置。
@@ -686,7 +701,7 @@ modified: 2025-10-28T20:02:16.727Z
 - Features Roo Code offers that Cline doesn't:
   - Diff Mode Toggle**: Enable or disable diff editing
   - Diff Match Precision**: Control how precisely (1-100) code sections must match when applying diffs
-  - Wildcard Command Auto-Approval**: Use * to auto-approve all command executions (use with caution).
+  - Wildcard Command Auto-Approval **: Use * to auto-approve all command executions (use with caution).
   - Boomerang Tasks (task orchestration / subtasks): Create new tasks from within existing ones, allowing for automatic context continuation. Child tasks can return summaries to parent tasks upon completion ("Boomerang"). Includes option for automatic approval.
   - Temperature Control**: Configure model temperature per Provider Configuration.
   - Custom Rate Limiting**: Configure minimum delay between API requests to prevent provider overload.

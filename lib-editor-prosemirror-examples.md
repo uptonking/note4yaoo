@@ -15,7 +15,7 @@ modified: 2022-08-18T16:57:46.405Z
   - 方向：collab、markdown、pivot-table、math/formula、media/embed、cms
   - 大部分的方案是以vanillajs为core，react为wrapper
   - toys
-    - 尝试保留rich-markdown-editor的api，将core用~~tiptap~~重写
+    - 尝试保留rich-markdown-editor的api，将core用 ~~tiptap~~ 重写
     - 尝试用atlassian editor重写outline，抽象出可替换编辑器的接口，考虑可替换的协作同步方案
     - react indexeddb， 编辑器数据频繁的更新可参考编辑器实时协作的更新
 
@@ -277,6 +277,7 @@ modified: 2022-08-18T16:57:46.405Z
     - https://github.com/QinHongZhe/hongzhe-tui.editor
 
 - bangle.dev-editor /667Star/MIT/202503/ts
+  - https://github.com/bangle-io/banger-editor
   - https://github.com/bangle-io/bangle-editor
   - https://github.com/bangle-io/bangle.dev
   - https://bangle.dev/docs/examples/markdown-editor

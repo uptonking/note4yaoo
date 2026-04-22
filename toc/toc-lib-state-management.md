@@ -73,6 +73,24 @@ modified: 2020-07-14T11:03:53.196Z
     - [Nano Stores 0.5 · Issue_202109](https://github.com/nanostores/nanostores/issues/57)
   - [Nano Stores in Angular: how to make the state management simpler - DEV Community](https://dev.to/evilmartians/nano-stores-in-angular-how-to-make-the-state-management-simpler-38a1)
 
+- https://github.com/TrigenSoftware/nano_kit /MIT/202604/ts
+  - http://nano-kit.js.org/
+  - A lightweight, modular, and performant state management ecosystem for building modern web applications.
+  - built around a push-pull based reactivity system.
+  - Nano Kit is built on the philosophy of Nano Stores and extends its core ideas:
+    - Atomicity: Use independent, atomic stores for granular updates.
+    - Mountable stores: Initialize resources only when the store is in use (on first listener) and clean up automatically.
+    - Shift logic out of components: Move business logic to the store level.
+    - Minimal footprint: Maintain a tiny core size that is fully tree-shakeable.
+  - Nano Stores has some limitations:
+    - Performance overhead
+    - Suboptimal Developer Experience (DX)
+    - Issues with SSR support
+  - Nano Kit aims to fix these issues while keeping the same principles.
+  - Nano Kit takes a different approach. Because the router, data fetching, and state management layer are engineered to work together from day one, they integrate deeply at the store level.
+  - To achieve high performance, Nano Kit uses the push-pull algorithm from alien-signals as the core of its reactivity system. A dedicated fork named “Agera” was created to support additional required features.
+    - https://github.com/stackblitz/alien-signals
+
 - effector /4.3kStar/MIT/202309/ts/event-driven
   - https://github.com/effector/effector
   - https://effector.dev/
@@ -101,6 +119,17 @@ modified: 2020-07-14T11:03:53.196Z
   - A tiny event-based Redux-like state manager for React, Vue, Angular, and Svelte.
   - [Using async data fetching does not return the latest state after calling state.get()](https://github.com/storeon/storeon/issues/152)
     - We recommend moving to nanostores
+
+- https://github.com/xoidlabs/xoid /MIT/202601/ts
+  - https://xoid.dev/
+  - Framework-agnostic state management library designed for simplicity and scalability
+  - The biggest aim of xoid is to unify global state, local component state, finite state machines, and observable streams in the same API. 
+  - It might be the very first library to introduce the notion of isomorphic component logic that's able to run across multiple frameworks. With xoid, you can move business logic out of components in a truly framework-agnostic manner.
+    - With xoid, you can write component logic (including lifecycle) ONCE, and run it across multiple frameworks.
+  - If you prefer implicit subscriptions and mutable updates similar to MobX or Vue 3, you can use @xoid/reactive, a tiny proxy-state layer over xoid. 
+  - Import @xoid/devtools and set a debugValue to your atom. It will send values and action names to the Redux Devtools Extension.
+  - This repo initially started as a fork of `zustand`. 
+  - Following awesome projects inspired xoid a lot: Recoil, zustand, mobx-state-tree
 
 - reatom /504Star/MIT/202006/ts
   - https://github.com/artalar/reatom
@@ -355,7 +384,7 @@ modified: 2020-07-14T11:03:53.196Z
 - https://github.com/ic3Dragon/such-a-fancy-shopping-list
   - A shopping list app using typescript and preact signals
 
-- https://github.com/stackblitz/alien-signals /MIT/202410/ts
+- https://github.com/stackblitz/alien-signals /3kStar/MIT/202604/ts
   - The lightest signal library
   - The goal of alien-signals is to create a Signal library with the lowest overhead.
   - We have set the following scheduling logic constraints:
@@ -364,8 +393,19 @@ modified: 2020-07-14T11:03:53.196Z
     - No use of Array/Set/Map
     - No recursion calls
     - Class properties must be fewer than 10 (https://v8.dev/blog/fast-properties)
+  - This project explores a push-pull based signal algorithm. Its current implementation is similar to or related to certain other frontend projects:
+    - Propagation algorithm of Vue 3
+    - Preact’s double-linked-list approach 
+    - Inner effects scheduling of Svelte
+    - 实现未使用proxy
   - The overall performance of alien-signals is approximately 400% that of Vue 3.4's reactivity system.
   - To achieve high-performance code generation in https://github.com/vuejs/language-tools, I needed to write some on-demand computed logic using Signals, but I couldn't find a low-cost Signal library that satisfied me.
+  - 🍴 forks
+  - https://github.com/WebReflection/alien-signals
+  - https://github.com/Rajaniraiyn/react-alien-signals
+    - provides state management APIs built on top of Alien Signals.
+  - https://github.com/hunghg255/reactjs-signal
+    - React Signal Implement from alien-signals
 
 - https://github.com/tldraw/signia /ts
   - Reactive signals that scale, by tldraw.

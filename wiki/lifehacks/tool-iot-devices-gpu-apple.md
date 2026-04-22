@@ -186,9 +186,30 @@ modified: 2026-01-15T15:43:25.456Z
 - ## 
 
 - ## 
+# discuss-cluster-mac
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## List of Apple Macs with Thunderbolt 5:
+- https://x.com/anemll/status/2046784844320121204
+  - MacBook Pro (2024, M4 Pro / M4 Max)
+  - Mac Studio (2025, M4 Max / M3 Ultra)
+  - MacBook Pro (2026, M5 Pro / M5 Max)
+  - Base models MacBook Pro have Thunderbolt 4. As do the MacBook Air, Mac Mini, and iMac.
+- MLX's implementation of RDMA (Remote Direct Memory Access) over Thunderbolt on macOS, can now be used as an independent library by anyone. It is the gem that powers Mac clusters for local AI, and is an order of magnitude faster than protocols over TCP.
+- tcp was the ceiling for mac to mac. the interesting part is whether this makes cluster wide kv cache sharing practical, since that is where most local llm setups actually fall apart, not raw tensor throughput.

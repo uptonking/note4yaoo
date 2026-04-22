@@ -450,6 +450,17 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Introducing PaddleOCR 3.5 — now with browser-based OCR, document-to-Markdown conversion, and Transformers backend integration.  _202604
+- https://x.com/PaddlePaddle/status/2046921966981120127
+  - PaddleOCR.js for direct browser deployment
+  - WebGPU & Wasm acceleration support
+  - One-click conversion: Word/Excel/PPT to Markdown
+  - Unified inference engine supporting Transformers
+
 - ## 🆚 [GLM OCR对比Deepseek OCR 2 _202602](https://linux.do/t/topic/1563022)
 - Deepseek OCR 我觉得文字识别这一块还不如 Gemini
   -  GLM OCR 任务 2 可以比 Gemini 还要强

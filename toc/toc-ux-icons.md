@@ -438,6 +438,7 @@ modified: 2021-05-06T09:58:23.803Z
 - https://github.com/productdevbook/etiket /MIT/202603/ts/NoDeps
   - Zero-dependency barcode & QR code SVG generator. 
   - 40+ formats, styled QR codes, tree-shakeable. Pure TypeScript.
+  - 支持多种风格: barcodes, qrcode, 2d-codes
   - https://x.com/productdevbook/status/2036082175024496801
     - French word again. Ty for that. I love it
 # more

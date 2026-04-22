@@ -297,7 +297,17 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## [Migrating out of Obsidian : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1ss6v8k/migrating_out_of_obsidian/)
+- CyberSec identified few risks with Obsidian and quarantined it (put a hold on new installs).
+  - Embedded Commands in the Vault (i.e. unauthorized script execution)
+  - Publish/Sync Feature can be used to bypass Data Loss Prevention measures
+  - Unregulated Community Plugins install
+  - Community Plugins prone to supply chain risk
+- Obsidian should consider releasing a specially secured business variant of their app.
+  - Yep. I have talked to our IT, and the plugins are the main issue, and locking down storage to a certain location on our servers is a must.
+- IT department can already do this by controlling access to the config both at the file system level and network level 
+
+- We plan to have a special edition of Obsidian that has plugins and other features off by default.
 
 - ## [What do you feel Obsidian is currently lacking? : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1snrrrz/what_do_you_feel_obsidian_is_currently_lacking/)
 - Literally the most downloaded 10 or 20 plugins should make it painfully obvious what features people want...

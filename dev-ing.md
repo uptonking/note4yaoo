@@ -21,23 +21,29 @@ https://meeting.tencent.com/p/9606972663
   - [Chrome Web AI Demos](https://chrome.dev/web-ai-demos/)
 
 - 编辑器参考
-  - https://atlaskit.atlassian.com/packages/editor/editor-core
   - https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink
+  - https://atlaskit.atlassian.com/packages/editor/editor-core
   - https://atlaskit.atlassian.com/packages/editor/editor-core/example/full-page-minimal
   - https://atlaskit.atlassian.com/packages/editor/editor-core/example/full-page-with-toolbar
   - https://ckeditor.com/docs/ckeditor5/latest/examples/builds-custom/full-featured-editor.html
-  - https://prosekit.dev/examples/change-tracking/
   - more-editor
     - https://demo.grammarly.com/
 
 - editor-play
   - https://ckeditor.com/docs/ckeditor5/latest/examples/builds-custom/full-featured-editor.html
   - https://prosemirror.net/examples/
-    - https://tiptap.dev/docs/examples/basics/default-text-editor
+  - https://tiptap.dev/docs/examples/basics/images  /nextjs
+  - https://www.blocknotejs.org/examples/basic/multi-column  /fumadocs
+  - https://milkdown.dev/playground  /storybook/nextjs
+  - https://prosekit.dev/examples/change-tracking  /astro
   - https://codemirror.net/try/
   - https://www.slatejs.org/
-  - https://quilljs.com/playground/snow
+  - https://platejs.org/docs/examples/version-history  /nextjs
+  - https://yoopta.dev/examples/word-example  /单独示例
+  - https://wangeditor-next.github.io/demo/
   - https://playground.lexical.dev/
+  - https://mdxeditor.dev/editor/demo
+  - https://quilljs.com/playground/snow
 
 - code-play
   - https://microsoft.github.io/monaco-editor/playground.html
@@ -50,6 +56,14 @@ https://meeting.tencent.com/p/9606972663
   - https://lit.dev/playground/
   - https://playground.solidjs.com/
   - https://angular.dev/playground
+
+- agnostic-play
+  - https://tiptap.dev/docs/examples/basics/images  /react和vue示例为iframe嵌入
+    - https://embed.tiptap.dev/preview/Examples/Images
+  - https://prosekit.dev/examples/change-tracking/  /基于astro
+  - https://tanstack.com/table/latest/docs/framework/react/examples/basic  /切换react/vue示例
+  - https://formisch.dev/playground/nested/  /基于qwik
+  - https://formkit.com/inputs/range  /示例未开源
 
 - lang-play
   - https://www.typescriptlang.org/play/
@@ -317,7 +331,10 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
-## 0420
+## 0421
+
+- The local ONLYOFFICE docs confirm the core point: it does not win by universally regenerating arbitrary original operators. It wins by converting editable page content into its own document/ drawing model and then saving through a PDF-specific change stream. 
+  - I’m drilling into Hardoc’s current export-plan/serializer seam now to move it one step closer to that model instead of preserving mixed “native-like” thinking.
 
 ## 0418
 

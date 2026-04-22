@@ -19,7 +19,9 @@ modified: 2020-11-13T07:28:27.824Z
   - slate-editor, wangEditor, editablejs
   - tiptap-editor, prosekit
   - ark-ui
+  - dnd-kit, pdnd, floating-ui
   - 热门组件
+  - ui组件: semi-design-foundation
 
 - 没必要执着于render agnostic
   - 具体场景需求不同，如ui组件、图表、动画
@@ -34,7 +36,7 @@ modified: 2020-11-13T07:28:27.824Z
   - https://github.com/SaraVieira/ui-libraries /组件库对比
   - [The Vanilla Javascript Component Pattern](https://dev.to/megazear7/the-vanilla-javascript-component-pattern-37la)
 # framework-agnostic components
-- https://github.com/hunvreus/basecoat /MIT/202506/tailwindcss/js
+- https://github.com/hunvreus/basecoat /3.9kStar/MIT/202602/tailwindcss/js
   - https://basecoatui.com/
   - A collection of modern UI components built with Tailwind CSS that works with any web stack. 
   - Basecoat brings the magic of shadcn/ui to traditional web applications, no React required.
@@ -160,11 +162,11 @@ modified: 2020-11-13T07:28:27.824Z
   - https://github.com/Gitjinfeiyang/vue-easy-canvas
     - 将 easy-canvas 封装成vue组件进行使用 注意：内部实现是将vue节点转换成目标节点，转换过程中会有性能损失，渲染与转换时间大概4:1
 
-- https://github.com/AgnosticUI/agnosticui
+- https://github.com/AgnosticUI/agnosticui /798Star/apache2/202604/ts
   - https://agnosticui.github.io/agnosticui
-  - /3Star/Apache2/202101/js
   - 主要是复用css，组件逻辑并未复用
   - an agnostic UI component library prioritizing clean HTML and CSS, but built to agnostically work with many popular JavaScript frameworks
+  - v2 is a CLI-based UI component library that copies components directly into your project
   - the philosophy of AgnosticUI is to curate the top-level component.html and component.css, and then to synchronize the css down into the framework-based variants. 
     - This is done via a simple Node script which literally copies the CSS over.
     - The above approach forces our framework-specific implementations to use the same single stylesheet. 
@@ -209,6 +211,23 @@ modified: 2020-11-13T07:28:27.824Z
   - https://github.com/vuestorefront/vue-storefront
     - An ecosystem of developer tools that accelerate and simplify building eCommerce Storefronts
     - Fully customizable, backend-agnostic with 3500+ Live Stores
+
+- https://github.com/xoidlabs/doja /MIT/202401/ts/inactive
+  - A framework-agnostic, headless library to create React and Vue components via the same API.
+
+- https://github.com/guynikan/schepta /NonCommercial/202604/ts
+  - https://schepta.org/
+  - Framework-agnostic rendering engine for server-driven UI
+  - Build dynamic forms and UIs from JSON schemas with full support for React, Vue, and Vanilla JavaScript. 
+  - Framework Agnostic Core: Single source of truth that works across React, Vue, and Vanilla JS
+  - Schema-Driven Forms: Define complex forms using JSON schemas with validation
+  - Pluggable Integrations: Built-in support for react-hook-form, Formik, and native form management
+  - Reactive System: Handle both declarative and imperative state management
+
+- https://github.com/f5/unovis /apache2/202604/ts
+  - https://unovis.dev/
+  - a modular data visualization framework for React, Angular, Svelte, Vue, Solid and vanilla TypeScript or JavaScript
+  - 文档基于 docusaurus, 示例支持多种语言
 # adapters
 - https://github.com/plantain-00/schema-based-json-editor /MIT/202211/ts/inactive
   - https://plantain-00.github.io/schema-based-json-editor/packages/react/demo/

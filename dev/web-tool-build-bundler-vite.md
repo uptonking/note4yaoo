@@ -22,6 +22,11 @@ modified: 2021-01-10T16:24:19.787Z
 
 - ## 
 
+- ## 
+
+- ## Vite8 悄然支持了 full bundle mode  _202604
+- https://x.com/zouhangoo/status/2046885550737834403
+
 - ## Introducing Void, the Vite-native deployment platform: _20260313
 - https://x.com/youyuxi/status/2032385324572180575
   - Auto-provisioned infra (db, kv, storage, AI, crons, queues...)
@@ -99,7 +104,7 @@ modified: 2021-01-10T16:24:19.787Z
 
 - ## [如何看待 Web 开发构建工具 Vite？](https://www.zhihu.com/question/394062839/answers/updated)
 - vite不需要打包工具参与，利用浏览器对模块化的支持，实现vue的热更新
-- 利用 `<script type='module'>`
+- 利用 `<script type='module'>` 
 
 - vite vs snowpack
   - Vite handles both dev and bundle in the same package, using Rollup. 

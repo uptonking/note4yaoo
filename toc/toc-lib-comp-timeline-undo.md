@@ -368,6 +368,15 @@ modified: 2023-11-24T18:41:26.906Z
     - You can use the similar `refractor` if you want to use `Prism` grammars instead. 
     - If you’re looking for a really good (but rather heavy) alternative, use `starry-night`.
 # utils/undo
+- https://github.com/mutativejs/travels /MIT/202604/ts
+  - A fast, framework-agnostic undo/redo core powered by Mutative JSON Patch
+  - A fast, framework-agnostic undo/redo library that stores only changes, not full snapshots.
+  - Travels gives your users the power to undo and redo their actions—essential for text editors, drawing apps, form builders, and any interactive application. Unlike traditional undo systems that copy entire state objects for each change, Travels stores only the differences (JSON Patches), making it 10x faster and far more memory-efficient.
+  - Framework-agnostic - Works with React, Vue, Zustand, MobX, Pinia, or vanilla JavaScript.
+  - Travels stores only the differences between states (JSON Patches following RFC 6902)
+  - Memory-efficient history storage - Stores only differences (patches), not full snapshots. Changing one field in a large object stores only a few bytes.
+  - Fast immutable updates - Built on `Mutative`, which is 10x faster than `Immer`.
+
 - https://github.com/philipmendels/undomundo /202204/ts/inactive
   - https://github.com/philipmendels/undomundo-multiplayground
   - https://philipmendels.github.io/undomundo-multiplayground/
@@ -412,6 +421,9 @@ modified: 2023-11-24T18:41:26.906Z
   - Set a history limit to prevent huge memory consumption.
   - You can choose how you'd like state changes to be reflected, with mergePastReversed, mergePast, destroyFuture, or keepFuture
   - why does this project exist? most undo/redo packages default to the `destroyFuture` behavior. I don't think this is a good approach
+
+- https://github.com/eihabkhan/reddojs /MIT/202602/ts
+  - A tiny Undo/Redo Library for JavaScript, React, Vue, and Svelte
 
 - https://github.com/ubie-oss/historian-js /202006/ts
   - History manager with undo and redo capabilities

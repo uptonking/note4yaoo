@@ -667,6 +667,18 @@ modified: 2023-09-02T09:17:22.992Z
     - Sub-60ms cold start (2.5-50x faster)
     - Thousands of concurrent sandboxes per node 
     - 100% E2B SDK compatible. Swap the endpoint, zero code changes
+  - https://x.com/CMGS1988/status/2046862614190551521
+    - 他们这个实现抛弃了很多东西，VMM 没有银弹。
+    - 设计目的是无状态沙箱，reflink 预热存储池，每次挑一个过来跑一下，跑完就塞回去。
+    - 网络层固定 IP MAC, eBPF 实现数据面转发和重写
+    - 走的 eBPF 啊！确实可以，这确实能让 vm 轻非常多
+  - https://x.com/0xLogicrw/status/2046515815940592100
+    - Cube 的做法是给每个 Agent 开一套独立的 Guest OS 内核，走硬件级隔离，同时把启动时间压到百毫秒内。
+    - 加速靠资源池预置、快照克隆、底层锁优化；
+    - 压内存靠 Rust 重写、CoW 内存复用、reflink 磁盘共享。
+    - 项目还附带 CubeVS，用 eBPF 做沙盒之间的网络隔离。
+    - 规模化验证给了两个案例。Cube 原本跑在腾讯云 Serverless 体系里，承载过百亿级调用。元宝 AI 编程场景迁到 Cube 后，资源核时消耗降了 95.8%。外部客户里，MiniMax 在 Agentic RL 训练中靠 Cube 做到分钟级调度数十万沙箱实例。下一步规划是把事件级快照回滚也开源出去，提供百毫秒级状态回滚。
+    - Cube 性能数字漂亮，但 E2B 在 SDK 生态和接口契约上的先发位置不是性能指标能翻掉的。Cube 完全兼容 E2B API 的设计已经默认这个判断。开源的主要影响集中在腾讯云内部元宝和 Serverless 的算力账，对外抢 E2B 份额是另一回事。
 
 - https://github.com/boxlite-ai/boxlite /apache2/202601/rust
   - https://boxlite-ai.github.io/website/

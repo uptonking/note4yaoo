@@ -13,6 +13,10 @@ modified: 2021-07-21T18:07:43.056Z
 - write with markdown
 - render to html
 
+- tips
+  - 没必要将不同ui框架的文档完全区分开, 可能只需要替换 code片段 和 live-preview
+  - tiptap本地demo支持react/vue示例
+
 - ref
   - [top documentation-tool](https://github.com/topics/documentation-tool?o=desc&s=stars)
   - [Unminify JS, CSS, HTML，支持大文件](https://www.unminify2.com/)

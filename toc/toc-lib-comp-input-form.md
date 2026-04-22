@@ -16,6 +16,7 @@ modified: 2023-11-23T18:01:59.304Z
   - https://stackblitz.com/edit/formisch-playground-solid
   - The modular and type-safe form library for any framework
   - Supported frameworks: React, Preact, Qwik, SolidJS, and Vue. Svelte will follow soon.
+    - 文档中多框架的示例基于 qwik 实现
   - a schema-based, headless form library for JS frameworks. It manages form state and validation. 
   - its bundle size is small due to its modular design
   - Schema-based validation with Valibot
@@ -65,7 +66,7 @@ modified: 2023-11-23T18:01:59.304Z
   - react binding 代码也挺多
   - The author of Redux Form took all of the lessons he learned about form use cases from maintaining Redux Form and built React Final Form
 
-- https://github.com/ivan-dalmet/formiz
+- https://github.com/ivan-dalmet/formiz /MIT/202506/ts/inactive
   - https://formiz-react.com/
   - React forms with ease! Composable, headless & with built-in multi steps
 
@@ -87,6 +88,7 @@ modified: 2023-11-23T18:01:59.304Z
   - https://formkit.com/
   - FormKit is a form-authoring framework ~~for Vue~~ 
   - supports its whole feature set for native HTML inputs (like select, checkbox, and textarea) 
+  - 文档网站未开源
   - https://x.com/jpschroeder/status/2039754919133974622 _202604
     - announcing FormKit for React.
     - We (the creators of FormKit) thought form libraries were no longer necessary, given the trajectory of coding agents. It turns out we were wrong, and we learned this the hard way. Need repeating conditional fields nested 3 layers deep inside a dynamic component, with accessibility, validation, internationalization, and backend error placement? Turns out coding agents aren’t great at that. It’s table stakes for FormKit.

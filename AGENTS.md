@@ -17,4 +17,7 @@ modified: 2026-02-06T15:48:09.172Z
   - for nested list item,  `*` may be preferable.
 # coding
 - when writing simple html webapp, always perfer self-contained and runnable html file with tailwindcss, you can refer to the existing html files like `toyapps/boilerplate/b1b1-tailwind-minimal.html`.
+# dev-patterns
+- perfer functional programming style, which emphasizes immutability, pure functions, and higher-order functions. 
+- perfer pure functions, which are easier to test, debug.
 # more rules

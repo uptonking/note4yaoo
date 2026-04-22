@@ -9,6 +9,19 @@ modified: 2026-01-03T08:33:17.870Z
 
 # guide
 
+- pros-turso
+  - ?
+
+- cons-turso
+  - partial sync 未实现
+  - conflict处理不够灵活
+
+- features
+  - ?
+
+- tips
+  - ?
+
 - who is using #agentfs
   - lobsterx
 # usage
@@ -1062,6 +1075,47 @@ Today, Turso is in beta with early customers working toward production deploymen
   - Step 3 (optional): Manual investigation
   - Step 4: Make branch, commit, and push
 
+# discuss-sqlite-sync
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🔄🤔 One really cool architecture you can build with Turso / libSQL: keep the DB locally as a cache and have the remote DB as the primary.
+- https://x.com/iavins/status/2046581014794051816
+  - Turso has a concept of "embedded replicas." 
+  - Basically, this enables replication for the embedded SQLite DB, which gives microsecond reads!
+  - Here's how it works: you keep making changes to the remote primary DB, but you also keep an embedded replica where the app lives. Any read you do happens in microseconds because it's local and may even be in-memory (i.e. pages may be cached) 
+  - The changes made to the primary get replicated to the embedded replica at the sync interval you specify.
+  - Writes can go to the replica and then later get synced with the primary. Or, writes can be forwarded to the primary. This configuration depends on how you want to handle write concurrency and conflicts.
+  - to make it explicitly clear: all of this is open source
+
+- How does this scale as the database gets much larger over time? Does it try to copy the full database in memory? Is it smart about what it syncs locally? What happens when memory is low? Any docs on specifically how sync works when the database won't fit in memory?
+  - just to be clear, on app side the replica db will reside on the disk, just like a sqlite file. the entire db won't be in the memory, only some of the pages.
+  - cache size can be configured
+- Is it smart about what it syncs locally?
+  - 👀 no, as of now, the replica db will get full db as the server. we do have plans of introducing partial sync, where some only some tables get replicated 
+- What happens when memory is low? Any docs on specifically how sync works when the database won't fit in memory?
+  - the cache will be small, all reads will be served from the disk. But no network I/O nor it will connect to remote db. local reads will be in microseconds
+- What happens when the disk gets full or is close to full and the database still doesn’t fit?
+  - in that case, new writes will fail, but reads can still continue. the only way around it would be to provide more disk space for the writes. 
+  - but I guess you're wondering about tooling to control the replica size, but that's not possible today.
+
+- how do you decide what to cache though ? and how do you ensure that the user's device doesnt get bloated with data it doesnt need or cannot handle?
+  - right now, the embedded replica gets all the changes. so it has all the data like primary. we have partial sync-ing planned though, that would enable to replicate only the data you are interested in 
+  - since its full replica, the storage would get used up fully.
+
+- Since replicas can accept writes, there’s a high risk of conflicts in applications where the same data may be modified by multiple users simultaneously, e.g JIRA. How does this handle conflicts?
+  - replicas accept writes but they forward them to primary first. in that case, it would like same how multiple writers making writes to a remote db
+  - there is also configuration for offline writes, i.e. a replica accepts the write, writes it locally first and then syncs. this works well for single writer
+  - The conflict resolution is barebones. If an offline writer synced first, then remote db is updated. Now if another offline writer wants to sync, but it does not have previous changes, it writes will be rejected. in this case, it has to pull the changes, resolve the conflicts locally and then push the changes.
+
+- Are writes serialized before forwarding, or does this inherit the libsql single-writer model? I ask because Turso specifically behaves differently under concurrent write loads, if I remember correctly.
+  - with Turso specifically, it is last push wins
+
+- this wouldn't work well if you want to have strong consistency though
+  - since it can work offline, it is trading availability over consistency
 # discuss-sqlite-cloud
 - ## 
 

@@ -49,6 +49,11 @@ modified: 2021-05-19T08:32:28.120Z
     - Yjs 的基本使用中，通过Map设置数据，observe观察器实现数据获取
     - 用户闪烁的光标目前还没有思路实现，后面会攻克技术难点，但是用户选取可以通过API实现
 
+- https://github.com/WindRunnerMax/CanvasEditor /MIT/202603/ts
+  - https://windrunnermax.github.io/CanvasEditor/
+  - Canvas 简历编辑器
+  - 🐛 未实现原位置编辑，需要在弹窗或右侧面板编辑文字
+
 - https://github.com/karpov-kir/canvas-block-editor /ts
   - A block based canvas text editor.
 
@@ -74,7 +79,7 @@ modified: 2021-05-19T08:32:28.120Z
 - https://github.com/cfu288/canvas-text-editor
   - https://cfu288.github.io/canvas-text-editor/
   - A proof of concept text editor implemented with HTML5 Canvas
-  - Currently this editor uses an array of **Gap Buffer**s to represent and manipulate the file data. 
+  - Currently this editor uses an array of **Gap Buffer** s to represent and manipulate the file data. 
   - Internal benchmarks show it is more performant than a javascript simple array or another implementation of Gap Buffer using javascript Typed Arrays.
 
 - https://github.com/makepad/makepad /rust

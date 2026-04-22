@@ -86,7 +86,7 @@ modified: 2022-11-08T19:04:00.289Z
 - textbus /763Star/GPLv3/202208/ts
   - https://github.com/textbus/textbus
   - https://textbus.io/collab
-  - 依赖prismjs、~~rxjs~~、reflect-metadata、@tanbo/di、@tanbo/stream、@tanbo/color、katex
+  - 依赖prismjs、 ~~rxjs~~ 、reflect-metadata、@tanbo/di、@tanbo/stream、@tanbo/color、katex
   - 从 contenteditable 到完全自定义光标
   - 抽象选区
   - 自实现虚拟DOM
@@ -176,6 +176,13 @@ modified: 2022-11-08T19:04:00.289Z
 - https://gitee.com/modstart-lib/ueditor-plus
   - https://open-demo.modstart.com/ueditor-plus/_examples/
   - 功能丰富，中文友好
+
+- https://github.com/WindRunnerMax/BlockKit /MIT/202604/ts
+  - https://windrunnermax.github.io/BlockKit/
+  - 从零实现的富文本编辑器 WYSIWYG Editor
+  - core基于类似quill的delta结构
+  - 最初，希望基于 Quill 实现块结构组织的编辑器，却被跨行的选区问题所困扰。 后来，希望基于 Embed Blot 设计插件实现块结构的嵌套，却被复杂交互所需要的视图层实现掣肘。
+  - 最终，希望能以 Quill、Slate、EtherPad 的核心理念为参考，从零实现富文本编辑器，以便能够解决相关的问题
 
 - https://github.com/fastmail/Squire /ts/NoDeps/email
   - an HTML5 rich text editor, which provides powerful cross-browser normalisation

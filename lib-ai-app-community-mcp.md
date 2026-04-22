@@ -1002,7 +1002,29 @@ AI 可以直接操作后台 UI，把复杂流程自动化。
 
 - ## 
 
-- ## 
+- ## DESIGN.md 正式发布为开放标准！期待 Codex、Claude Code、Cursor 跟进支持
+- https://x.com/shao__meng/status/2046758188834267480
+  - 格式核心：机器可读 token + 人类可读 rationale 的双层结构
+- https://github.com/google-labs-code/design.md
+  - A format specification for describing a visual identity to coding agents. 
+
+(1) YAML Front Matter（机器层）
+顶部用 --- 包裹的 YAML 定义精确的设计 token，包括：
+· colors：语义化命名 + 十六进制值（如 primary: "# 1A1C1E"）
+· typography：字体家族、字号、字重、行高、字距等
+· rounded / spacing：圆角与间距的阶梯尺度
+· components：组件级 token，支持引用（如 backgroundColor: "{colors.tertiary}"）
+
+(2) Markdown Body（人类层）
+正文用自然语言描述设计哲学与使用语境，规范要求按固定顺序组织为 8 个章节：
+1. Overview（品牌与风格总览）
+2. Colors（色彩角色与情感）
+3. Typography（排版气质）
+4. Layout（布局与留白策略）
+5. Elevation & Depth（层级与阴影）
+6. Shapes（形状语言）
+7. Components（组件规范）
+8. Do's and Don'ts（设计禁区）
 
 - ## New @code version 1.116 is out  _202604
 - https://x.com/OrenMe/status/2044637007108850040

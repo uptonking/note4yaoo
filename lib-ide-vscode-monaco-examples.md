@@ -33,6 +33,10 @@ modified: 2024-08-24T16:17:47.677Z
   - https://ast-grep.github.io/playground.html
   - A CLI tool for code structural search, lint and rewriting. Written in Rust
   - playground的diff视图基于monaco实现
+
+- https://github.com/Simon-He95/stream-monaco /MIT/202604/ts
+  - A framework-agnostic library for integrating Monaco Editor with Shiki highlighting, optimized for streaming updates
+  - Framework-agnostic core for Vue, React, Svelte, Solid, Preact, and Vanilla JS.
 # monaco-based-editors
 - https://github.com/versyxdigital/mkeditor /MIT/202407/ts/inactive
   - https://versyxdigital.github.io/mkeditor

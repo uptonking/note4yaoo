@@ -28,6 +28,7 @@ modified: 2021-04-11T06:17:51.318Z
   - popular: floating-ui, dnd-kit, autocomplete
   - radix-ui: 提供了自研stitches的样式解决方案
   - react-spectrum: based on react-stately, react-aria
+  - 专注于react: react-spectrum/aria, base-ui
   - headlessui
     - listbox/select,dropdown/menu,switch,radio-group
     - dialog,popover,disclosure,transition
@@ -73,10 +74,13 @@ modified: 2021-04-11T06:17:51.318Z
   - open-source collection of unstyled Web Components and tools that helps you build accessible user interface.
   - Uses signals to manage state reactively and automatically update the DOM in response to state changes. powered by `@preact/signals-core`.
   - Shares signals easily across widely nested HTML elements through context.
+  - Light DOM only. No Shadow DOM, so global CSS, Tailwind, and [aria- *] / [data-* ] selectors all work directly.
+  - Framework-agnostic. Use the elements directly in HTML, or generate idiomatic wrappers with @aria-ui/cli
+  - Composable parts. Each component is split into focused custom elements ( *-root, *-trigger, *-popup, *-positioner, * -item, …) that talk to each other through a shared store.
   - https://github.com/dddstack/ariatype
     - TypeScript type definition for WAI-ARIA accessibility.
 
-- AdaptUI/renderlesskit-react /197Star/MIT/202207/ts
+- AdaptUI/renderlesskit-react /197Star/MIT/202309/ts/inactive
   - https://github.com/adaptui/react
   - https://github.com/adaptui/react-tailwind
   - https://github.com/timelessco/renderlesskit-react

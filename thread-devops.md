@@ -95,7 +95,24 @@ modified: 2021-03-31T06:50:19.936Z
 
 - ## 
 
-- ## 
+- ## [Beyond the Basics: What are your non-negotiable Linux server hardening steps before exposing a service to the web? : r/selfhosted _202604](https://www.reddit.com/r/selfhosted/comments/1sqi04i/beyond_the_basics_what_are_your_nonnegotiable/)
+  - Most of us start by slapping a reverse proxy (like Nginx Proxy Manager or Traefik) and maybe Tailscale or Wireguard on our setups. But for those of you exposing specific services directly to the web, how far do you take your server hardening?
+  - I usually stick to a strict baseline (Fail2Ban/Crowdsec, UFW, disabling root SSH, key-only auth, and isolating apps in Docker containers), but I’m curious about the more advanced layers. Are any of you actively running SOC-level monitoring, Wazuh, or strict SELinux/AppArmor profiles on your homelabs?
+
+- If Docker - Use Reverse Proxy for HTTPs, expose only Dockers which are made for being exposed (Like Seer etc.) where it is known that part of the community is trying to maintain a proper and secure code base for that part.
+  - For Docker: Container has no privilege, they dont run as root PUID/GUID “0:0” case, and you have own Docker Network, nor the default bridge.
+  - For the Host: enable firewall and block all access from countries you are not from. Use 2FA.
+
+- NPM with automated lets encrypt certs is 👌
+
+- A basic nmap scan of your server is one of the first things an attacker might do, so it never hurts to chuck your favorite port scanner at the server directly and make sure you’re comfortable with what’s exposed.
+
+- the one thing most people skip is egress filtering. everyone locks down inbound but lets containers talk to anything outbound. a compromised container phones home and you never notice because nothing is watching outbound. even basic dns logging with something like adguard home will catch stuff you'd never see otherwise.
+  - Monitoring outbound traffic is a good idea but I don't see how egress filtering helps. If you have a compromised device then hopefully you have other layers that protect you like VLAN segmentation and just hardening each device separately.
+
+- Pangolin + Crowdsec on a VPS, authentik unified SSO to log in. Important backend services go through Tailscale. 
+
+- I feel that any web service, especially publicly reachable ones, should be behind a Web Application Firewall like modSecurity as well.
 
 - ## 才知道还有这种 CRLF 漏洞... 通过在网址里塞入 %0d%0aSet-Cookie: xxxx 的方式，让一些跳转登录页的网站被注入cookie。
 - https://twitter.com/zQwQs/status/1718893609905455519
