@@ -38,6 +38,16 @@ modified: 2025-12-31T15:43:19.960Z
   - 🐛 cons
     - Runtime Route Manipulation (Fog of War)
 
+- Should I use TanStack Start or just TanStack Router?
+  - 90% of any framework usually comes down to the router, and TanStack Start is no different. TanStack Start relies 100% on TanStack Router for its routing system. 
+  - Full-document SSR - Server-side rendering for better performance and SEO
+  - Streaming - Progressive page loading for improved user experience
+  - Server Routes & API Routes - Build backend endpoints alongside your frontend
+  - Server Functions - Type-safe RPCs between client and server
+  - Middleware & Context - Powerful request/response handling and data injection
+  - Full-Stack Bundling - Optimized builds for both client and server code
+  - Universal Deployment - Deploy to any Vite-compatible hosting provider
+
 ## issues-router
 
 ## dev-xp

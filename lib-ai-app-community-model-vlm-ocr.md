@@ -222,6 +222,20 @@ modified: 2025-11-06T18:49:13.977Z
   - The goal of this benchmark is to publish a comprehensive benchmark of OCRaccuracy across traditional OCR providers and multimodal Language Models.
   - The evaluation dataset and methodologies are all Open Source, and we encourage expanding this benchmark to encompass any additional providers.
 
+- https://github.com/ArbitrHq/ocr-mini-bench 
+  - https://arbitrhq.ai/leaderboards/
+  - [We benchmarked 18 LLMs on OCR (7k+ calls) — cheaper/old models oftentimes win. Full dataset + framework open-sourced. : r/LLMDevs _202604](https://www.reddit.com/r/LLMDevs/comments/1ssf0gs/we_benchmarked_18_llms_on_ocr_7k_calls_cheaperold/)
+    - TLDR; We were overpaying for OCR, so we compared flagship models with cheaper and older models. New mini-bench + leaderboard. Free tool to test your own documents. Open Source.
+    - We put together a curated set of 42 standard documents and ran every model 10 times under identical conditions; 7,560 total calls. 
+    - Main takeaway: for standard OCR, smaller and older models match premium accuracy at a fraction of the cost.
+  - there is a difference between OCR models and Vision models. I found that few models worked for OCR purposes as well the legacy Tesseract in my cases (no articles about that one.) In short, if you want to read the neon sign on a photo, you want a vision model, and if you give it a page, even with fairly specialized prompting, it has a tendency to describe the page rather than OCR it.
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## There is no best VLM OCR model - rankings can flip completely by document type.
 - https://x.com/vanstriendaniel/status/2029555038322917718
   - I built ocr-bench: run open OCR models on YOUR documents, get a per-collection leaderboard. 

@@ -388,10 +388,40 @@ finally make sure all tests run and pass locally with npm. you can update/fix te
 # rafactor
 
 ```prompt
+The goal is to refactor existing code to be more clear, extensible, functional-programming style, while improving logic correctness at the same time.
+The first important task is to remove `class extends` inheritance and js prototype. es6 class may be used, but `class extends` inheritance and prototype MUST be avoided by refactoring and rewriting.
+
+Keep the existing code/architecture working. Do not rewrite the whole codebase at once. you may refactor and improve code progressively.
+
+Prefer composition over Inheritance: Replace class hierarchies with small, composable functions.
+Prefer pure functions, immutable data, explicit inputs/outputs, and small composable functions.
+Extract repeated logic into small, composable, named functions. The core logic becomes a pure function that can be unit tested.
+Use function composition instead of nested calls.
+If a function is too large, decompose it into smaller pure functions composed together.
+
+Pure FP applications push side effects to the "edges" of the program (the main function, controllers, UI handlers). The core remains pure.
+Prefer to extract all side effects (logging, API calls, DOM updates) to the function's edges.
+
+Prefer to reduce hidden state, side effects, mutation, and tightly coupled modules.
+Prefer to avoid mutating inputs. prefer immutable-style functions: `(state, action) => newState`.
+Prefer to replace mutation with immutable transformations.
+Prefer to replace nested imperative logic with composition, mapping, filtering, or small helpers.
+Prefer `map/filter` if it is better than LOOP. `reduce` should be avoid, you may use LOOP to replace `reduce`.
+
+make a plan, refactor and improve the codebase progressively.
+
+yes, continue to refactor and improve towards more functional-programming style
+```
+
+
+
+```prompt
 for project ailovedoc, please refactor code structure if you need, to make sure all source code and tests files should have less than **700** lines of code(other code-unrelated or unimportant files are not required). because if too many code exists in a single file, it will be hard to maintain. small files and modular architecture are always preferred.
 
 please refactor code to migrate from pnpm to npm.
 please keep as many code as possible unchanged, so most bun scripts and code should be kept for backward compatibility, but bun wont be used any more. bun code should not be removed. you should create new script for nodejs or add new entrypoint for nodejs. now update your plan.
+
+Make minimal, mechanical changes first, then deeper improvements only when safe.
 
 you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it without licensing issue. 
 ```

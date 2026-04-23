@@ -424,6 +424,14 @@ modified: 2023-06-23T12:46:53.288Z
   - Interactive Web Console for Rebol language (Ren-C branch)
   - This project is an effort to build an interactive GUI console that runs in a web browser, for the Ren-C branch of Rebol3
 
+- https://github.com/miantiao-me/bm.md /AGPL/202602/ts
+  - https://bm.md/
+  - 更好用的 Markdown 排版助手｜一键适配微信公众号、网页与图片。
+  - 示例是经典双栏布局，左边是md文本，右边是手机预览， 📡 可调整手机尺寸
+  - 实时预览 - 基于 CodeMirror 6 的 Markdown 编辑器，所见即所得
+  - 14 种排版样式 - 从专业商务到复古怀旧，满足不同场景需求
+  - 图片导出 - 将排版内容导出为图片分享
+
 - https://github.com/uiwjs/react-markdown-editor /MIT/202404/ts
   - https://uiwjs.github.io/react-markdown-editor
   - A markdown editor with preview, implemented with React.js and TypeScript.
@@ -2277,7 +2285,7 @@ modified: 2023-06-23T12:46:53.288Z
   - It serves as a starting point for writing documentation and helps us understand features
   - 支持nested routes
 
-- https://github.com/tajo/ladle /2.8kStar/MIT/202510/ts
+- https://github.com/tajo/ladle /2.8kStar/MIT/202512/ts/inactive
   - https://ladle.dev/docs/
   - Ladle is a drop-in alternative to Storybook. 
     - Without adding a single component Storybook 6.4 outputs 5.1MB of assets. Ladle only 250KB

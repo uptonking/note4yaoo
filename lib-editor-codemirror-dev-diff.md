@@ -86,6 +86,13 @@ modified: 2024-07-29T11:49:33.248Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [The uphill climb of making diff lines performant - The GitHub Blog _202604](https://github.blog/engineering/architecture-optimization/the-uphill-climb-of-making-diff-lines-performant/)
+- 
+
 - ## 🧮 Myers diff may generate weird deltas like the following example. It will make concurrent text updates generate weird merge results. Any suggestions? 
 - https://x.com/zx_loro/status/1854568496413524165
   - My current thought is to implement an A* search on top of the edit graph that punishes noncontinuous edits

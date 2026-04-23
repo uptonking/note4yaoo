@@ -38,7 +38,7 @@ modified: 2025-12-16T06:25:12.641Z
   - 表单：TanStack React Form、React Hook Form Resolver、Zod
   - Zustand 搭配 Cookie 工具管理鉴权态
   - 鉴权流程完整：src/features/auth 覆盖登录、注册、OTP、忘记密码，并与 stores/auth-store.ts 联动 Cookie。
-  - 任务、用户、设置等模块示例：src/features/* 与 src/routes/_authenticated/* 展示真实业务拆分方式。
+  - 任务、用户、设置等模块示例：src/features/ * 与 src/routes/_authenticated/* 展示真实业务拆分方式。
   - SSR 友好的数据获取：Query Client 通过 integrations/tanstack-query 统一创建，并由 Router Context 向下传递，确保首屏命中缓存。
   - 📡 roadmap
     - 首次点击部分route如/account时， 渲染会出现页面闪烁
@@ -270,6 +270,33 @@ modified: 2025-12-16T06:25:12.641Z
   - https://pacekit.dev/
   - Enterprise grade starter kit for Tanstack Start. Built for modern products
   - https://github.com/pacekit/nextjs-starter /MIT/ts
+# cms/ssg/documentation
+- https://github.com/lukonik/prestige /MIT/202604/ts
+  - https://lukonik.github.io/prestige/
+  - Static Site Generator Built On Tanstack-Start, TailwindCSS, Vite, React
+  - Prestige is a documentation framework Built on Tanstack Start, Vite, Tailwind and React
+  - MD, MDX, and GFM compilation integrated out of the box. Extend capabilities via `rehype` and `remark` plugins.
+  - Algolia DocSearch integration.
+  - Collection-based architecture. Different collections can have independent navigation menus and sidebars, such as /docs/ * and /api/* .
+  - Hot reloading. Markdown changes appear in the UI immediately during development.
+  - Fast static analysis and generation. Content routes are lazy-loaded, while the compiled content is imported directly so SSG can produce fast static HTML.
+  - Fully customizable application. Prestige is opinionated about sensible defaults, but it remains a thin layer over TanStack Start.
+  - 📡
+    - reimplement nextra
+- https://github.com/lukonik/themer /MIT/202603/ts
+  - https://lukonik.github.io/themer/
+  - Theming library for tanstack start and router
+  - a theme management library built for TanStack Start and TanStack Router. In most cases, you will use it to add light and dark mode support to your app.
+  - This library uses the TanStack APIs, so it will not work with other frameworks. If you are using Next.js, next-themes is a good alternative. It also inspired this library.
+  - Tailwind integration is straightforward.
+  - Themer persists the selected theme through the storage prop on ThemeProvider.
+    - three built-in storage options: localStorage,sessionStorage,cookie
+  - 官方文档是经典的3栏布局, 使用prestige/tanstack-start实现
+  - 注意打开 http://localhost:3000/themer/  (末尾带斜杠) , 而不是 http://localhost:3000/themer
+  - [Documentation website for Themer, Tanstack Theme library : r/reactjs _202603](https://www.reddit.com/r/reactjs/comments/1ryvqvg/documentation_website_for_themer_tanstack_theme/)
+    - What has a theme to do with a router?
+    - When you use theming library, you want to avoid hydration errors or flickering issues. 
+    - You got a valid point that Theming is a generic functionality that doesn't depend on any framework, But having opinionated framework under the hood, gives more capabilities than raw React.
 # examples
 - https://github.com/murabcd/docufy /202512/ts
   - https://docufy-oss.vercel.app/
@@ -322,6 +349,14 @@ modified: 2025-12-16T06:25:12.641Z
     - This is super similar to what I built back before devinxi but way cleaner. 
   - https://github.com/kurochenko/tanstack-router-breadcrumbs-example /202412/ts/csr
     - demonstrates how to implement dynamic breadcrumbs in a React application using TanStack Router 
+
+- https://github.com/miantiao-me/bm.md /AGPL/202602/ts
+  - https://bm.md/
+  - 更好用的 Markdown 排版助手｜一键适配微信公众号、网页与图片。
+  - 示例是经典双栏布局，左边是md文本，右边是手机预览， 📡 可调整手机尺寸
+  - 实时预览 - 基于 CodeMirror 6 的 Markdown 编辑器，所见即所得
+  - 14 种排版样式 - 从专业商务到复古怀旧，满足不同场景需求
+  - 图片导出 - 将排版内容导出为图片分享
 
 - https://github.com/Vijayabaskar56/tancn /MIT/202512/ts
   - https://tancn.dev/

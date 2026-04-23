@@ -38,7 +38,10 @@ modified: 2024-02-12T17:47:34.152Z
 
 - ## 
 
-- ## 
+- ## [How I built a Postgres CDC that can be 240x faster than Debezium : r/PostgreSQL _202604](https://www.reddit.com/r/PostgreSQL/comments/1sspqiv/how_i_built_a_postgres_cdc_that_can_be_240x/)
+  - Postgres can do more than you imagine. The WAL is a complete, ordered, and durable record of every state transition in your database. When you start using it, several architectural problems become much simpler.
+  - Change Data Capture is a concept where Instead of your application announcing "this changed, " the database notifies you: each insert, update, and delete, in order, at the moment it happens, with the values ​​before and after. And this is already built into several databases; it just needs the "wiring."
+  - This concept already exists in several tools, but all the ones I've used are either too overpowered/expensive, or didn't completely solve my problem. That's why I created Kaptanto (https://kaptan.to). It means "the one who captures" in Esperanto. 
 
 - ## 📝 "CDC Is a Feature Not a Product": Some thoughts on Change Data Capture as a Service.
 - https://x.com/gunnarmorling/status/1847280389443706914

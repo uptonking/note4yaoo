@@ -33,6 +33,18 @@ modified: 2023-10-28T13:46:14.957Z
 # discuss-indexing
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Partial Index: specify a WHERE clause in the index itself, only matching rows get indexed.
+- https://x.com/iavins/status/2047168405820584030
+  - CREATE INDEX ON invoices (customer_id) WHERE status = 'pending'; 
+  - Covering Index: use INCLUDE to add extra columns so the query is answered from the index alone, without touching the heap.
+  - CREATE INDEX idx_org_covering ON users(org_id) INCLUDE (email, created_at); 
+
 - ## “Why is Postgres seq-scanning rather than use this index?”
 - https://x.com/gwenshap/status/1928139754287333641
   - Short answer: the planner thinks that index won’t help (or can’t use it).

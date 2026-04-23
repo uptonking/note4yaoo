@@ -82,6 +82,55 @@ modified: 2021-07-21T18:07:43.056Z
     - By default, the page map contains all .md and .mdx filenames and the directory structure, sorted alphabetically.
     - You can have an `_meta.json` file in each directory, and it will be used to override the default configuration of each page
 
+- https://github.com/fuma-nama/fumadocs /11.6kStar/MIT/202604/ts
+  - https://fumadocs.dev/
+  - https://www.fumadocs.dev/docs/comparisons
+  - The framework for building documentation websites in any React.js frameworks.
+  - Supported:
+    - Next.js
+    - Vite: Tanstack Start, Waku, React Router
+    - 🤔 技术选型阶段，为什么想要切换不同的react框架(不如vike支持切换前端框架)
+    - 支持框架过多，调试连路太长， 带来不必要的复杂度
+  - 支持ssg、ssr
+  - 支持TypeScript Twoslash
+  - 相比于nextra: 支持 TypeScript Docs Generation, OpenAPI Integration
+  - 相比于vike: 不支持vue/solid
+  - 支持ask ai
+  - 搜索基于orama
+  - Partial Versioning: Feedback When versioning only applies to part of your docs, You can separate them by folders.
+    - 似乎是靠手动组织
+    - Full Versioning: Feedback Sometimes you want to version the entire website, such as https://v14.fumadocs.dev
+  - Traditionally, static site generators are static. 
+    - By default, Fumadocs use a server-first approach which always requires a running server to serve.
+    - You can enable Next.js static export, it allows you to export the app as a static HTML site without a Node.js server.
+  - The Fumadocs framework refers to a combination of UI + Core + Content Source, Fumadocs is more of a mental framework and each layer can be a library on its own.
+    - Composable UI: we follow a much more flexible approach inspired by Shadcn UI — Fumadocs CLI, allowing you to "fork" a part of Fumadocs UI, and fully customize it.
+  - Fumadocs is highly inspired by Nextra. For example, the Routing Conventions. That is why `meta.json` also exists in Fumadocs.
+  - [Performance | Fumadocs ](https://www.fumadocs.dev/docs/mdx/performance)
+    - Although Fumadocs MDX can handle nearly 500+ files, it could be slow and inefficient. A huge amount of MDX files can cause extremely high memory usage during build and development mode.
+    - This is because of: Feedback Bundlers do a lot of work under the hood to bundle MDX and JavaScript files and optimize performance. Feedback Bundlers are not supposed to compile hundreds of MDX files.
+    - The main solution is to make the compilation on-demand, such that content is only loaded when it's being requested.
+    - By default, all Markdown and MDX files need to be pre-compiled first. The same constraint also applies to the development server.
+    - This may result in longer dev server start times for large docs sites. You can enable Async or Dynamic mode on doc collections to improve this.
+    - Async mode will generate collection outputs using async imports.
+    - Dynamic mode works by performing on-demand compilation, then execute the output on runtime. BUT No import/export allowed in MDX files. 
+
+- https://github.com/nisabmohd/Aria-Docs /MIT/202604/ts
+  - https://ariadocs.vercel.app/
+  - lightweight documentation builder for React and Next.js, designed for speed, simplicity, and minimal setup
+  - React-first library for building beautiful documentation sites. Works with Next.js, TanStack Start, and React Router.
+  - Plugin System - Extensible with remark/rehype plugins
+  - Syntax Highlighting - Built-in Prism.js integration for code blocks
+  - Full support for React Server Components
+  - 支持nextjs/react-router/TanStack Start
+  - 🐛 滚动页面时，不会自动高亮右侧对应的标题
+  - [Please add versions too like in docs so for docs/v1/ docs/v2/ _202409](https://github.com/nisabmohd/Aria-Docs/issues/8)
+    - 最新代码已不支持versioning
+  - [Is there a big difference between their versions, please?  _202504](https://github.com/nisabmohd/Aria-Docs/issues/39)
+    - All versions contain ssg and ssr support. The variants are just like templates. i18n version is fully ssr and all pages are static
+    - [algolia search done _202502](https://github.com/nisabmohd/Aria-Docs/pull/32)
+      - 最新代码已移除algolia
+
 - NextBook /168Star/MIT/202206/js/inactive
   - https://github.com/amiroff/NextBook
   - https://next-book.vercel.app/
@@ -230,6 +279,29 @@ modified: 2021-07-21T18:07:43.056Z
   - https://storybook.js.org/
   - UI component dev & test: React, Vue, Angular, Web Components & more
   - 定位很尴尬，做测试有更专业的jest，做文档不够灵活，适合边开发边预览
+
+- https://github.com/histoire-dev/histoire /3.5kStar/MIT/202604/ts/vue
+  - https://histoire.dev/
+  - Fast and beautiful interactive component playgrounds, powered by Vite
+  - 支持vue/svelte， 不支持react
+    - Write your story naturally in either .vue files, .svelte files, JSX or whatever feel the most at home with the framework you are using 
+  - Dynamic source: Histoire can generate the template/JSX/source code
+  - Variant grids: Display many variants of your story on a single grid page.
+  - Add documentation to your stories with (extendable) Markdown with code snippets 
+  - Resize the preview to test your design on different screen sizes.
+  - Fast fuzzy search
+  - [React support?  _202207](https://github.com/histoire-dev/histoire/discussions/199)
+
+- https://github.com/tajo/ladle /2.8kStar/MIT/202512/ts/inactive
+  - https://ladle.dev/docs/
+  - Ladle is a drop-in alternative to Storybook. 
+    - Without adding a single component Storybook 6.4 outputs 5.1MB of assets. Ladle only 250KB
+  - Develop, test and document your React story components faster
+  - 仅支持react
+  - It is a tool for developing and testing your React components in an environment that's isolated 
+  - Why? Performance! 
+    - Ladle supports only React, embraces the latest standards (ES Modules) and focuses on performance. It's built around Vite
+    - Each Ladle story gets automatically code-split, so it doesn't matter how many components you want it to handle. Ladle always loads fast.
 
 - https://github.com/fwouts/previewjs /AGPL+MIT/202405/ts
   - https://previewjs.com/

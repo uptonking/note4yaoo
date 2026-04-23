@@ -45,6 +45,8 @@ modified: 2022-08-18T16:57:29.058Z
   - [Deliberately violating REST for developer experience - a case study : r/programming _202508](https://www.reddit.com/r/programming/comments/1miogsp/deliberately_violating_rest_for_developer/)
     - After 15 years building APIs, I made a decision that my younger self would hate: using GET requests to mutate state.
     - The API component handles document tooling (e.g. DOCX to PDF, etc.) without the full editor.
+  - [Can it support paper sizes such as A2, A3, A4, A5, letter paper, etc., or custom sizes? _202511](https://github.com/superdoc-dev/superdoc/issues/1204)
+    - 👷 202603: It has been awhile since you filed this but SuperDoc already supports different page sizes - if you open an A4, A3, Legal, or any custom-sized document, it will display and export at the correct dimensions. What we don't have yet is a UI dropdown to change the page size or switch between portrait/landscape from within the editor - that's on our roadmap as a separate feature.
   - https://github.com/superdoc-dev/ooxml-dev /MIT/202604/ts
     - https://ooxml.dev/
     - Interactive OOXML (ECMA-376) reference explained by people who actually implemented it

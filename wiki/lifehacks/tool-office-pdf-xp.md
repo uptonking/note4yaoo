@@ -38,6 +38,16 @@ modified: 2020-12-29T17:52:48.584Z
 - 
 - 
 
+# pm-pdf
+- [Foxit brings PDF editing into ChatGPT so you never have to leave the conversation _202604](https://nerds.xyz/2026/04/foxit-foxit-pdf-editor-chatgpt/)
+
+- https://www.pdf-xchange.com/product/pdf-xchange-editor#features-section
+  - 230+ free & 130+ paid features
+
+- 
+- 
+- 
+
 # pdf-solutions
 - [iLovePDF | Online PDF tools for PDF lovers](https://www.ilovepdf.com/)
 

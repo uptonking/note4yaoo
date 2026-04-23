@@ -236,7 +236,24 @@ OCR 适配：第三方 OCR 引擎接入尚处于实验阶段，底层仍高度�
 
 - ## 
 
-- ## 
+- ## 🧮 The best part is LiteParse doesn't use VLMs or any ML models at all. It's entirely heuristics based and super fast 
+- https://x.com/jerryjliu0/status/2047041129326194882
+  - [How LiteParse's Grid Projection Algorithm Parses PDFs _202604](https://www.llamaindex.ai/blog/how-liteparse-turns-pdfs-into-text-a-deep-dive-into-the-grid-projection-algorithm)
+  - The secret lies in our sophisticated grid projection algorithm. 
+  - 1️⃣ Sort lines based on similar Y coordinates
+  - 2️⃣ Extract left, right, and center anchors
+  - 3️⃣ Classify every text item into one of these anchors
+  - 4️⃣ Project every text item into a grid column (the exception is any paragraph of flowing text, which is rendered separately) 
+  - 5️⃣ For any item projected into a grid column, that item is the forward anchor for all subsequent text items with the same anchor 
+  - 6️⃣ Postprocess the final outputs to remove extraneous spaces and margins
+- I tested multiple modes of LlamaParse on financial account statements, and they consistently fail to handle a critical real-world case: when a single transaction spans multiple lines (or even pages).
+  - In many bank statements, a row item continues onto the next line, but LlamaParse treats it as a new transaction instead of merging it with the previous one. This breaks downstream use cases like reconciliation, where row integrity is essential.
+  - A simple reproduction would be parsing a multi-page account statement where line items spill over to the next line or page. It seems the parser processes content page-by-page, which might be why continued rows are misinterpreted as separate entries.
+  - This is a significant limitation for financial documents, and it would be great if this scenario could be handled more robustly.
+
+- i noticed though that some PDFs have hidden characters and liteparse picks them. if you ran a YOLO26 doc layout first to get proper TEXT, FORMULA, FIGURE, TABLE regions, it would solve that and also make liteparse more robust.
+
+- Local execution is the speed layer for agentic parsing. 84.9% accuracy via grid projection beats cloud VLMs at a fraction of the latency. Spatial awareness is the differentiator in layout-dense PDF workflows.
 
 - ## Last week, we launched LiteParse: a fast, free, and non-VLM based document parser that provides the highest quality context to AI agents compared to other tools out there.
 - https://x.com/jerryjliu0/status/2036610356362309677

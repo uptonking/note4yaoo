@@ -23,6 +23,9 @@ modified: 2023-03-19T20:03:32.594Z
   - However, it would be a little too much to create a variable for each key. 
   - For that reason, an object is created with a property for each key code that you want to track down. A key code is usually the ASCII code.
 # utils
+- https://github.com/TanStack/hotkeys /MIT/202604/ts
+  - Type-Safe keyboard shortcuts library with awesome devtools
+
 - https://github.com/jamiebuilds/tinykeys /3.8kStar/MIT/202408/ts/体积小
   - https://jamiebuilds.github.io/tinykeys/
   - A tiny (~650 B) & modern library for keybindings
