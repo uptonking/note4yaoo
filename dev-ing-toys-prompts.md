@@ -172,6 +172,10 @@ you have worked on this problem several times but features are still lacking. Th
 
 - research and make a full plan, then implement ailovedoc to match full features of superdoc, or even better than superdoc, without licensing issues.
 
+------
+
+ailovedoc should have full feature parity for important features like document data model, editing engine, rich-text formatting, layout engine, virtualization, document-rendering, track-change.
+
 ```
 
 ## hardoc(onlyoffice-pdf)
@@ -269,8 +273,8 @@ please make a plan, then improve the core in-place text editing engine to make i
 ```prompt
 - Grist is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database. 
 - The final goal is to implement an alternative react frontend webapp at folder `app/client-react` at the current git branch `feat/office-react`, with the same features as existing backbonejs frontend webpp at `app/client`,  using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table. After you finished the react webapp, `npm run start:app` should start the new react webapp, the legacy yarn toolchain should still be kept for backward compatibility. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please keep as many code unchanged as possible.
-- the final goal is to rewrite all the existing ui/ux with modern react ui, but you can implement the core speadsheet view/create/edit/save data flow first, then migrate more and more features. 
-- you should support all the routing urls of existing backbonejs webapp, using the same existing backend api.
+- one goal is to rewrite all the existing backbonejs ui/ux with modern react ui/ux, but you can implement the core speadsheet view/create/edit/save data flow first, then migrate more and more features. 
+- react webapp should support all the routing urls of existing backbonejs webapp, using the same existing backend api.
 
 - please read and analyze git commits/code if you need, then explain to me what major features are in backbonejs webapp but missing in react webapp.
 
@@ -318,7 +322,7 @@ please make a plan, then improve the core in-place text editing engine to make i
 
 - please read and analyze git commits/code if you need, then explain to me what major features are in PPTist but missing in slaides.
 
-- the final goal is to implement a framework-agnostic, modular, extensible, headless ai ppt editing solution named `slaides` with features similar to `PPTist` to avoid the licensing issues.
+- the final goal is to implement a framework-agnostic, modular, extensible, headless ai ppt editing solution named `slaides` with features similar to `PPTist` to avoid the licensing issues. legacy vue code should be kept for reference only.
 - goals:
 1. re-architect slaides project to have a framework-agnostic headless core package, with react/vue ui binding package and appropriate utils package.
 - migrate PPTist's robust feature-rich ppt view/editing features to slaides, this is the most important feature, the goal is full feature parity for ppt view/editing, for example page zoom, Page Editing, Element/Images/Shapes Editing, Rich text editing, Slide Show...
@@ -357,10 +361,12 @@ you may use similar file/folder names instead of the same file/folder names as t
 - you have worked on this several times but features are still lacking.
 
 - please deep research the PPTist, then can you design a similar solution in slaides to achieve full feature parity?
-- you may do a big code refactor to match full feature of PPTist in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you can deep research, referencing good deisgn from PPTist editing engine.
+
 - you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
+
+- you may do a big code refactor to match full feature of PPTist in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - research and make a full plan, then implement slaides to match full features of PPTist, or even better than PPTist, without licensing issues.
 
@@ -388,10 +394,10 @@ finally make sure all tests run and pass locally with npm. you can update/fix te
 # rafactor
 
 ```prompt
-The goal is to refactor existing code to be more clear, extensible, functional-programming style, while improving logic correctness at the same time.
-The first important task is to remove `class extends` inheritance and js prototype. es6 class may be used, but `class extends` inheritance and prototype MUST be avoided by refactoring and rewriting.
-
-Keep the existing code/architecture working. Do not rewrite the whole codebase at once. you may refactor and improve code progressively.
+The goal is to refactor existing code and architecture to be more clear, extensible, functional-programming style, while improving logic correctness at the same time.
+One task is to remove `class extends` inheritance and js prototype. `class extends` inheritance and prototype MUST be avoided by refactoring and rewriting.
+es6 class may be used very very sparingly. No confusing `this`, no prototype. 
+Prefer to avoid relying on dynamic binding, `.bind()`, `.call()`, `.apply()`, or method context unless truly necessary. 
 
 Prefer composition over Inheritance: Replace class hierarchies with small, composable functions.
 Prefer pure functions, immutable data, explicit inputs/outputs, and small composable functions.
@@ -399,16 +405,23 @@ Extract repeated logic into small, composable, named functions. The core logic b
 Use function composition instead of nested calls.
 If a function is too large, decompose it into smaller pure functions composed together.
 
-Pure FP applications push side effects to the "edges" of the program (the main function, controllers, UI handlers). The core remains pure.
-Prefer to extract all side effects (logging, API calls, DOM updates) to the function's edges.
-
+Prefer explicit parameters, local variables, closures, or plain objects.
 Prefer to reduce hidden state, side effects, mutation, and tightly coupled modules.
 Prefer to avoid mutating inputs. prefer immutable-style functions: `(state, action) => newState`.
 Prefer to replace mutation with immutable transformations.
 Prefer to replace nested imperative logic with composition, mapping, filtering, or small helpers.
 Prefer `map/filter` if it is better than LOOP. `reduce` should be avoid, you may use LOOP to replace `reduce`.
 
+No Side Effects in Core Logic: Separate core business logic from I/O (database calls, network requests, DOM access, console.log). Core business functions must be pure; side effects should be pushed to the edges of the application.
+Prefer to extract all side effects (logging, API calls, DOM updates) to the function's edges.
+
+Identify shared mutable state across modules (globals, singletons, module-level variables), and improve the architecture to make it resuable and clear.
+
+you may do some big code refactor to improve the architecture and data flow logic, to make it easier to maintain in the long term.
+
 make a plan, refactor and improve the codebase progressively.
+
+Keep the existing code/architecture working. Do not rewrite the whole codebase at once. you may refactor and improve code progressively.
 
 yes, continue to refactor and improve towards more functional-programming style
 ```

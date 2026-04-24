@@ -23,6 +23,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 之前的软件设计是面向用户、开发者，现在不得不重新设计，以大模型为使用者。 WebMCP的推进会让产品api快速发展
   - 大模型可能的成本变化: 推广期token廉价, 等到工程师coding能力下降, token再涨价, 因为本地运行大模型成本太高
   - 需要清理ai工作的中间物缓存、代码缓存、npm/uv缓存
+  - 足够好用的工具能够改编用户习惯，如 claude-code 替换 cursor
 
 - ai-dev-xp
   - 🦞 openclaw带来的产品变化, 用户更能接受在本地电脑安装常驻app/进程, 然后通过im-app交流
@@ -294,6 +295,7 @@ modified: 2025-03-22T16:10:24.856Z
     - modes config for coding/ocr/translation/rag like cline-plan/act/ask
       - 内置场景化提示词
       - 内置场景参数, 支持disable thinking(qwen/nemotron)
+    - quant量化版本维护, 热门模型经常有社区维护，但非热门模型的量化版本少，维护更新少， 可维护mlx/dflash/turboquant
     - 参考lmstudio支持本地并发请求, 支持展示进度
     - 参考janai/pipeshub, 既支持选择本地/api模型，也支持选择图片/文档
     - ocr/vlm comparison-matrix/playground: 识别对比, 翻译对比
@@ -686,6 +688,20 @@ modified: 2025-03-22T16:10:24.856Z
   - 置换的总体思想就是将你闲置的订阅套餐、朋友赠送的 Key、公司发的额度——闲着也是浪费。把它们上架成公开渠道，换成可以继续消费的 credits
   - 其实这样会有一个弊端，肯定会出现拿次要模型换取好的模型，感觉会出现最后一堆好模型的供不应求，hub中又会存在大量无法消费的次要模型
 
+- [LD士多 - LinuxDo站点积分兑换中心](https://ldcstore.com/)
+  - [LD士多 - LDC积分商城](https://ldst0re.qzz.io/)
+- [跳蚤市场话题 - LINUX DO](https://linux.do/c/trade/10)
+
+- [RawChat公益站点](https://chatgptplus.cn/)
+- 免费的共享ChatGPT账号
+  - [RawChat公益站点 ](https://sharedchat.cc/)
+  - [RawChat公益站点](https://sharedchat.fun/)
+
+- 中转站
+  - 不需要用自己的gpt/claude账号
+  - 不需要网络代理
+  - 个人帐号在内地使用顶级模型时，经常触发风控/KYC， 使用中转站的api很少碰到此问题
+
 - tips: 公益站不稳定(3个月就倒闭一批), 来源不明可能导致效果差, 需要经常确认和维护, 不要浪费过多时间
   - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
   - 🤔 与其花时间签到游戏，不如研究2api和反代; 比较 公益站的配置折腾 / 反代的配置及更新
@@ -694,13 +710,12 @@ modified: 2025-03-22T16:10:24.856Z
   - 有的api不能显示thinking内容
   - 模型不断更新，落后的公益站会逐渐淘汰
   - 公益站主页模型广场展示的可用模型不准确，可以在控制台的playground直接测试，异常会直接抛出
+  - 公益站api稳定性较差，顶级模型难获取或很慢，集中工作阶段稳定性最重要
 - 免费api的技巧: 在知乎/小红书直接搜索 免费 claude (公益站), 就会有最新的api推广信息, 可以用小号邀请自己
   - 公益站 [Search results for '公益站' - LINUX DO](https://linux.do/search?q=%E5%85%AC%E7%9B%8A%E7%AB%99%20order%3Alatest)
   - [L站免费AI汇总 ](https://linux.do/t/topic/638821)
     - [LD OPEN HUB — 公益站导航](https://ldoh.105117.xyz/)
     - [站内公益站汇总 ](https://linux.do/t/topic/1398351)
-      - 公益站的域名被集中泄露遭到集中的打击
-      - 跑路，黑与白，薄荷，wong，elysiver，都是可以kilo的。cline和roocline不懂
       - 👀 不要花费过多时间，有站点会不定期清理不活跃账号，如 windhub/Fovt
     - [模型中转状态检测](https://check.linux.do/)
     - [L站的佬友们应该早已经 token 自由了吧 ](https://linux.do/t/topic/1397594)
@@ -1891,8 +1906,6 @@ modified: 2025-03-22T16:10:24.856Z
   - [MoonTVPlus](https://moontv.wangchao.uno/)
 
 ## hosting
-
-- [LD士多 - LDC积分商城](https://ldst0re.qzz.io/)
 
 - [风萧萧公益机场](https://chanel.weyolo.com)
   - [萧草 · 臻选](https://shop.sxxe.net/)

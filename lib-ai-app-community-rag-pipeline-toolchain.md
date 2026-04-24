@@ -373,7 +373,48 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
-- ## 
+- ## 🤔 [Is the chunking in your RAG still a default option? : r/Rag _202604](https://www.reddit.com/r/Rag/comments/1ssp0k2/is_the_chunking_in_your_rag_still_a_default_option/)
+  - This post is about chunking - specifically, why I think it should no longer be the default shape of a RAG pipeline, and when it still makes sense.
+- Why chunking became the default. There were three original reasons to split documents before indexing:
+  - Embedding model context windows were small (often 512 tokens)
+  - LLM inference was expensive
+  - LLM context windows were tight
+- All three constraints were real in 2023-2024, and chunk-and-embed was a reasonable engineering response. Frameworks like LangChain and LlamaIndex picked it up as the default, and the industry normalized it. Almost everyone believes it's an industry standard nowadays. Is it?
+
+- What's changed
+  - Embedding models now comfortably handle 8k–32k tokens of input.
+  - Small, cheap LLMs (Gemma 4, Qwen 4... at modest sizes) produce reliable structured output locally, for free.
+  - Context windows on both local and hosted models have grown an order of magnitude.
+
+- The alternative: extract first, then index
+  - Pass the whole document to an LLM once, at indexing time, and ask it the questions your agent will eventually need to answer. Store the answers as structured fields and document-level summaries. Search against independent but standalone notes instead of pieces.
+- This is what Ennoia does out of the box, and it's the pattern I've been calling Declarative Document Indexing. 👀 It's more work up front - you need to know what you want to extract, which means thinking about your queries before you index. In return, your retrieval surface becomes a set of clean, traceable, self-contained units rather than a soup of fragments that may or may not reassemble into a coherent answer.
+
+- Honest trade-offs
+  - Indexing is slower (1+ LLM calls per document).
+  - Re-indexing after schema changes is more expensive than re-chunking.
+  - On very large dataset, the indexing cost compounds.
+  - It requires upfront schema design, which is real work, even though it pays off.
+
+- Where chunking still makes sense
+  - Dataset is large enough that per-document LLM indexing cost is prohibitive.
+  - Documents with no useful structure to extract (random text dumps, raw logs).
+  - Retrieval to find source, load full document and answer based on them
+  - Use cases where you genuinely don't know what questions will be asked and can't define a schema.
+  - Streaming or near-real-time ingestion where you can't afford indexing latency.
+
+- If you go the chunking route, you own the following decisions, usually by trial and error:
+  - Chunking strategy (fixed size, semantic, recursive, by section, hierarchical...)
+  - Overlap size
+  - Whether you need BM25 alongside vectors
+  - Whether you need reranking
+  - How to prompt the LLM to handle fragments from different sources coherently
+  - Which LLMs can actually produce reliable answers from fragmented context
+
+- honestly, this will just shift the problem
+
+- Chunking is still needed. Then, metadata for an LLM to make sense of those chunks along with non-LLM filtering. I also use an LLM during the chunking stage to create per-chunk, per-page and per-document summaries. It eats up a lot of tokens but it's fine when running it locally.
+  - The hard part for RAG isn't retrieval, it's chunking and indexing and all the database-related stuff
 
 - ## [Does keeping Markdown syntax (#, ** , -) in Chunks actually hurt vector search precision? Or is it "semantic gold"? : r/Rag _202604](https://www.reddit.com/r/Rag/comments/1sl69wr/does_keeping_markdown_syntax_in_chunks_actually/)
 - No does not hurt if there few in the chunk. If you have many of them, you should test the retriever performance with and without them on a subset of them

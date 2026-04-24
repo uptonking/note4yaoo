@@ -432,6 +432,24 @@ codex --yolo resume --last
 
 - ## 
 
+- ## [Fast service tier should not be the default · Issue · openai/codex _202604](https://github.com/openai/codex/issues/19230)
+  - Users who want standard routing have to either set service_tier explicitly or persist a new [notice].fast_default_opt_out = true marker.
+
+- [GPT-5.5 silently opts you in for 2X pricing : r/codex _202604](https://www.reddit.com/r/codex/comments/1sunsv2/gpt55_silently_opts_you_in_for_2x_pricing/)
+
+- ## [Model metadata for `gpt-5.5` not found. Defaulting to fallback metadata; this can degrade performance and cause issues.](https://linux.do/t/topic/2042554)
+  - 问题根源是codex 124.0 的模型列表没有更新，所以需要通过账号登录获取一份新鲜的模型列表。
+  - 我从本地提取了一份，api用户可以使用这个这个方式修复
+  - model_catalog_json = '.\\model-catalog.gpt-5.5.json'
+
+- ## [Model changes to Medium uninstructed · Issue · openai/codex _202602](https://github.com/openai/codex/issues/11013)
+
+```toml
+model = "gpt-5.3-codex"
+model_reasoning_effort = "medium"
+plan_mode_reasoning_effort = "high"
+```
+
 - ## [Pro tip: you can replace Codex’s built-in system prompt instructions with your own : r/codex _202604](https://www.reddit.com/r/codex/comments/1seqhxd/pro_tip_you_can_replace_codexs_builtin_system/)
   - model_instructions_file = "../soul.md"
   - [Configuration Reference – Codex ](https://developers.openai.com/codex/config-reference)

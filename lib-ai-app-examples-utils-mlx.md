@@ -686,7 +686,11 @@ modified: 2025-11-01T10:54:26.044Z
   - Running a big model on a small laptop
   - Pure C/Metal inference engine that runs Qwen3.5-397B-A17B (a 397 billion parameter Mixture-of-Experts model) on a MacBook Pro with 48GB RAM at 4.4+ tokens/second with production-quality output including tool calling.
   - The entire 209GB model streams from SSD through a custom Metal compute pipeline.
-  -  No Python. No frameworks. Just C, Objective-C, and hand-tuned Metal shaders.
+  - No Python. No frameworks. Just C, Objective-C, and hand-tuned Metal shaders.
+
+- https://github.com/mchenetz/mlxr /202604/python
+  - a lightweight server + web dashboard that wraps Apple's MLX framework and turns your Mac into a local AI inference engine. 
+  - Load any model from HuggingFace, interact with it in a built-in playground, and expose it as an OpenAI-compatible API endpoint 
 # llm-provider
 - https://github.com/ArseniiBrazhnyk/Veritensor /apache2/202601/python
   - https://www.veritensor.com/
@@ -695,13 +699,11 @@ modified: 2025-11-01T10:54:26.044Z
   - [I need a feedback about an open-source CLI that scan AI models (Pickle, PyTorch, GGUF) for malware, verify HF hashes, and check licenses : r/LocalLLM _202601](https://www.reddit.com/r/LocalLLM/comments/1qcmc9v/i_need_a_feedback_about_an_opensource_cli_that/)
     - I've created a new CLI tool to secure AI pipelines. It scans models (Pickle, PyTorch, GGUF) for malware using stack emulation, verifies file integrity against the Hugging Face registry, and detects restrictive licenses (like CC-BY-NC). It also integrates with Sigstore for container signing.
 # mlx-benchmark
-
 - https://github.com/Goekdeniz-Guelmez/MLX-Benchmark /202604/python
   - The best benchmark for LLMs on Apple's MLX framework knowledge and coding tasks.
   - https://x.com/ActuallyIsaak/status/2045255228237238555
     - The first comprehensive benchmark for evaluating LLMs on Apple's MLX framework.
     - MLX Benchmark is a CLI tool and dataset that measures how well large language models understand, write, and debug code for Apple's MLX  — covering everything from core array operations to LoRA fine-tuning with mlx-lm, mlx-vlm, and mlx-embeddings.
-
 # llm-cpu/ram
 - https://github.com/e1n00r/tinyserve /MIT/202603/python
   - Run 20B-400B+ MoE models on 8GB consumer GPUs. 
