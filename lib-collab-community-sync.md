@@ -338,6 +338,19 @@ modified: 2022-11-29T20:41:25.566Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [How CRDTs and sync engines keep realtime lists ordered with fractional indexing | Liveblocks blog _202604](https://liveblocks.io/blog/how-crdts-and-sync-engines-keep-realtime-lists-ordered-with-fractional-indexing)
+- 
+- 
+
+- https://x.com/ctnicholasdev/status/2047354184044052912
+- We use this technique too, plus storing parent+child index in a single field for easy atomic updates of tree position.
+
+- This is very similar to how we mitigated a similar problem w/ recalculating positions for every change in a list
+
 - ## The local-first / sync engine ecosystem is far bigger than I realized.
 - https://x.com/housecor/status/1933860203537047589 
   - There are DBs / BAAS providers that provide real-time sync like Supabase, Firestore, Convex, Fireproof, and PouchDB.
@@ -353,6 +366,12 @@ modified: 2022-11-29T20:41:25.566Z
 - 
 
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 
@@ -421,7 +440,7 @@ modified: 2022-11-29T20:41:25.566Z
 - It’s really difficult. I’ve had success applying event sourcing to the problem, but schema evolution is a pain and it means my data model takes up a lot of my complexity budget
   - Yeah, I'm using event sourcing on a custom transport/storage system now, and it's eating up *way* too much complexity.
 - At least for me, the one saving grace is that this is very amenable to TDD and testing in general; easy+fast to replay events and then verify the final state
-- **I use event sourcing on @stayinsession based on that article. Helped a lot, and yeah it's really complex. But I don't believe there's other alternative than that approach**. Been researching about offline first for years too.
+- **I use event sourcing on @stayinsession based on that article. Helped a lot, and yeah it's really complex. But I don't believe there's other alternative than that approach** . Been researching about offline first for years too.
 - In Mintter we have been working on this for more than a year... it is a challenge to ride the complexity
 
 - do you think there's value in non-syncable, non-collaborative "local-first" ?

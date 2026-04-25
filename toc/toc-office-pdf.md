@@ -480,6 +480,15 @@ modified: 2021-01-04T17:26:43.784Z
   - As of April 27, 2025, The change to the MIT License was made to provide greater freedom and flexibility for both open-source and commercial use
   - qt LGPL
   - libjpeg, OpenJPEG, Blend2D
+
+- https://github.com/SteveTheKiller/KillerPDF /GPL/202604/csharp
+  - https://pdf.killertools.net/
+  - PDF editor for Windows. Install or run portable. GPLv3. No account, no subscription
+  - High-quality rendering via PDFium (Docnet. Core)
+  - Inline text editing with font matching against the original document
+  - Save Flattened PDF: rasterizes every page at 150 DPI via PDFium into a fully uneditable document
+  - Password-protected PDF support: prompts for password instead of erroring, decrypted copy held in temp for the session
+  - Self-installing EXE: Install or Run dialog on first launch, installs per-user to %LOCALAPPDATA% (no UAC), registers as PDF file handler, adds Start Menu shortcut, self-uninstalls cleanly
 # generator
 - https://github.com/rkusa/pdfjs /MIT/202312/js
   - A Portable Document Format (PDF) generation library targeting both the server- and client-side.

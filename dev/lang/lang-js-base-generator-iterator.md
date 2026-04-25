@@ -28,7 +28,10 @@ modified: 2022-11-23T17:41:19.245Z
 
 - ## 
 
-- ## 
+- ## Transform iterators without converting to arrays
+- https://x.com/MozDevNet/status/2047782738393235809
+  - Iterator helpers like .map(), .filter(), .take(), and .drop() work lazily on any iterable. 
+  - Process data efficiently without intermediate arrays.
 
 - ## I will absolutely not go back to using Generators. 
 - https://twitter.com/TkDodo/status/1693592744835301656

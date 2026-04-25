@@ -754,6 +754,27 @@ sudo systemctl start minidlna
 
 ### justmysocks
 
+- [Just My Socks · Alvin9999-newpac/fanqiang Wiki](https://github.com/Alvin9999-newpac/fanqiang/wiki/Just-My-Socks)
+  - Just My Socks是一个ss/ssr/v2ray服务商（机场），由搬瓦工官方推出，每个服务提供6条线路，包括最快的CN2 GIA线路。
+  - 最大的优势是保证IP不被墙，如果IP被墙，会自动更换新的可用IP给用户。
+  - 搬瓦工官方推出的，已经稳定运行了近6年了（2018年10月推出的）。
+  - 缺点：无法看Netflix。
+  - 支持的协议：TCP或UDP？ Just My Socks 100仅支持TCP协议，该协议足以用于浏览网络以及使用YouTube等大多数流媒体服务。从Just My Socks 500开始的所有套餐均支持TCP和UDP协议
+  - Just My Socks一共有17种方案：
+  - Just My Socks LA 100	1 G	100 GB /月	$2.88 / 月	最多3个设备同时在线(当前断货)
+  - cXs1，cXs2和cXs5通过CN2 GT网络与其他中国联通和中国移动直接连接进行路由。
+  - 服务器cXs3通过中国电信提供的CN2 GIA网络进行路由（仅中国电信路由）。
+  - 服务器cXs4通过高级中国移动混合路由（在返回路径上具有CN2 GIA）（仅中国移动路由）。
+- [2025 年 Just My Socks 套餐整理、线路介绍、方案推荐 - Just My Socks中文网 _202501](https://ijustmysocks.com/375.html)
+  - 提供 6 种方案：LA、IPLC HK、Hong Kong、Tokyo、London、HK CMI + NTT
+- LA 洛杉矶方案, 每个套餐均有 6 台服务器可以使用，路由线路略微不同：
+  - cXs1：电信 CN2 GT，移动和联通直连，美国洛杉矶机房
+  - cXs2：电信 CN2 GT，移动和联通直连，美国洛杉矶机房
+  - cXs3：电信 CN2 GIA，移动和联通直连，美国洛杉矶机房
+  - cXs4：日本软银，日本大阪机房
+  - cXs5：三网 CN2 GIA，荷兰机房
+  - cXs801：下载专线，流量只计算 1/10，但是不保证线路速度。
+
 - [Just My Socks clients](https://justmysocks.net/members/index.php?rp=/knowledgebase/2/How-to-use-Just-My-Socks)
   - [Software download links - Knowledgebase - Just My Socks](https://justmysocks.net/members/index.php?rp=/knowledgebase/5/Software-download-links.html)
   - win-jamjamsapp/v2rayN, mac-jamjamsapp/v2rayX, ios-jamjamsapp/potatso, android-ss/v2rayNG

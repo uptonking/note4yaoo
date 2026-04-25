@@ -362,6 +362,10 @@ modified: 2022-11-11T11:04:29.007Z
 - https://github.com/deweyapp/dewey /201603/js/inactive
   - a Chrome app for tagging, searching and sorting your Chrome bookmarks.
 
+- https://github.com/dd3v/favbox /MIT/202601/js/vue
+  - FavBox is a local-first experimental browser extension that enhances and simplifies bookmark management without cloud storage or third-party services.
+  - Advanced search, sorting, and filtering by tags, domains, folders, and keywords
+
 ## twitter-bookmarks
 
 - https://github.com/twillot-app/twillot /202501/ts/archived

@@ -313,9 +313,10 @@ modified: 2021-01-04T17:26:25.032Z
   - Sync Scrolling
 # import/export
 - https://github.com/liyown/marknative /MIT/202604/ts
+  - https://liyown.github.io/marknative/
   - A Markdown rendering engine that generates paginated PNG and SVG output — no browser, no Chromium, no DOM.
   - Most Markdown rendering pipelines go through a browser: Markdown → HTML → DOM/CSS → browser layout → screenshot
-  - marknative takes a different path. It parses Markdown directly into a typed document model, runs its own block and inline layout engine, paginates the result into fixed-size pages, and paints each page using a native 2D canvas API.
+  - marknative takes a different path. It parses Markdown directly into a typed document model, runs its own block and inline layout engine, paginates the result into fixed-size pages, and paints each page using a native 2D `canvas` API.
   - The result is deterministic, server-renderable, and completely headless.
   - https://x.com/axiaisacat/status/2039561953358565679
     - 服务端直接跑，零浏览器依赖; 

@@ -812,6 +812,12 @@ modified: 2021-04-30T20:14:17.669Z
     - 一个方案是让 ai 读图输出 svg/mermaid/graphviz/plantuml
 
 - [ChatSlide | Build your Slides and Videos from Documents in one click](https://chatslide.ai/landing)
+
+## ppt-image
+
+- https://github.com/JuneYaooo/gpt-image2-ppt-skills /apache2/202604/python
+  - 任何 .pptx 模板"抄"成你的 PPT：gpt-image-2 仿版式、你换内容，另含 10 套精选风格
+- [【开源自荐】gpt-image2-ppt-skills：丢一张 .pptx 模板进去，AI 仿版式换内容 - 开发调优 - LINUX DO _202604](https://linux.do/t/topic/2053515)
 # ai-canvas
 - https://github.com/open-webui/open-webui /104kStar/BSD+LOGO/python/ts/svelte
   - https://openwebui.com/

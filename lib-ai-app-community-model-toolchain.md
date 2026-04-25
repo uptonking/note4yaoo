@@ -18,7 +18,25 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
-- ## 
+- ## [Qwen3.6-35B-A3B - even in VRAM limited scenarios it can be better to use bigger quants than you'd expect! : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sutct2/qwen3635ba3b_even_in_vram_limited_scenarios_it/)
+  - I am running a 3070 8gb + 64gb DDR4. Pretty lightweight setup so I chose the smallest Q4 unsloth model Qwen3.6-35B-A3B-UD-IQ4_XS.gguf - which is ~18gb. It does run ok, and with some optimizations in llama.cpp I got about 25-30 tokens/s with a 32k context window.
+  - I did have some problems with looping during thinking so I tried a bigger Q4 model Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf - ~23gb. To my surprise, this is much faster! With a 128k context window, I am seeing 32 tokens/s.
+  - I ended up using Q5_K_S for best quality/speed balance - about 30 tokens/s. Oh, and I'm also using 128k context window. The speed does go down with long context. It's still over 25 at 50k context though! (haven't tested higher yet)
+
+- IQ quant work slower if you unload a part of it layer by layer into RAM.
+
+- Can confirm this. After jumping from Q4 to Q6 I did not loose any speed using MoE models. Despite having only 8G VRAM + 32G RAM.
+
+- This is due to now all quants being optimized in the kernel (I checked at that time for Vulkan and IQ4_XS was not, IQ4_NL and Q4_K_M was). Have no clue as for Cuda, but from your report, I guess not.
+  - If it is like Vulkan, you can use IQ4_NL, it will be very fast, and the difference to IQ4_XS is not much.
+
+- Two thirds of the expert tensors in unsloth's IQ4_XS are actually IQ3_S which really sucks on cpu, real IQ4_XS is usually more or less on par with Q4_K instead
+
+- 
+- 
+- 
+- 
+- 
 
 - ## [Someone needs to create a "Can You Run It?" tool for open-source LLMs : r/LocalLLaMA _202501](https://www.reddit.com/r/LocalLLaMA/comments/1iaubfm/someone_needs_to_create_a_can_you_run_it_tool_for/)
 - LM studio, Msty both has info on this before you download.

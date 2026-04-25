@@ -331,6 +331,27 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0425
+
+- 如何查看当前wifi网络的服务商是 移动、联通、还是电信？ 可以使用在线工具，也可以安装和使用本地工具。 给我一些在mac上快速查看当前wifi网络的服务商的方法 
+  - https://cip.cc/ 直接显示ip地址、运营商
+  - https://ip138.com/ (老牌IP查询网站，直接显示运营商)
+  - https://www.ipip.net/(国内很准的IP归属地查询，直接显示运营商)
+  - 直接在百度搜索框输入 IP，百度会在搜索结果顶部显示你的IP和运营商
+```sh
+curl cip.cc
+
+IP	: 124.240.71.187
+地址	: 中国 广东 佛山
+运营商	: 广电
+
+数据二	: 中国广东佛山 | 广电网
+
+数据三	: 中国广东省广州市 | 广东广电
+
+URL	: http://www.cip.cc/124.240.71.187
+```
+
 ## 0421
 
 - The local ONLYOFFICE docs confirm the core point: it does not win by universally regenerating arbitrary original operators. It wins by converting editable page content into its own document/ drawing model and then saving through a PDF-specific change stream. 

@@ -432,6 +432,38 @@ codex --yolo resume --last
 
 - ## 
 
+- ## 
+
+- ## [GPT 5.5 安全分析需要验证身份 - LINUX DO _202604](https://linux.do/t/topic/2050475)
+  - 正儿八经开发, 没有任何破限. 使用grok搜索直接触发
+  - 更新5.4不会触发. 5.5就触发了.
+
+- 目前的结论就是5.5web端可能加强了二次审查
+
+- 这个是涉及网安相关的需要KYC，正常是不需要的，API那边调用高级模型也是需要的，但是那边身份证就可以了
+- 意料之中，上周御三家不是搞反蒸馏合作么。已经拉闸了一堆订阅号了，都加KYC也是正常的。中转站的含金量还在上升，自己的号就要找过KYC的方式了
+
+- 应该不影响吧，我也弹了，叉了继续用 没感受到啥
+
+- 拿GPT-image-2 AI了张香港身份证通过了.
+  - 找一个香港身份证的图片. 说明是影视道具使用. 你可以打上 无法律效力 的logo. 一般都会出的. 然后去P一下就好了. 记住要拿你自己的照片 因为后面会有人脸的
+
+- 主动验证的. gpt一直不怎么封号的. 不过验证了去破限也会被警告
+
+- 一个号触发一次，号池里有几百个号，怎么玩
+  - 你这是号池吧，不是一个人用那种，如果有别人在搞事情，会影响到其他人
+
+- 其实只要kyc能过就行，oai对地区管得很松的
+
+- [浅谈吐槽一下目前发现的gpt5.5新审查机制 - LINUX DO _202604](https://linux.do/t/topic/2050872/3)
+  - 新审查是类似gemini的外审, 但gpt5.5外审在正经工作的时候现在都是敏感肌
+- 审查对几点尤其敏感
+  - 直接发的原始提示词，有一点歧义立马把你毙掉
+  - 压缩后的第一次请求，也很容易毙掉
+  - xhigh时模型会多想，只要cot稍微一发散，立马毙掉
+  - 工作区文件太多也不行，可能是codex会文件名还是什么，很多时候太大的仓库第一句话都动不了就死了
+  - 过于暴力和直白的破限会直接炸，伪装成正常网安任务之类的可以提高存活率，但用长了也会炸
+
 - ## [Fast service tier should not be the default · Issue · openai/codex _202604](https://github.com/openai/codex/issues/19230)
   - Users who want standard routing have to either set service_tier explicitly or persist a new [notice].fast_default_opt_out = true marker.
 

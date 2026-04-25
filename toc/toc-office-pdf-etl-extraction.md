@@ -42,6 +42,21 @@ modified: 2026-04-07T12:53:02.538Z
     - docling is somewhere in between liteparse (our free/open-source project) and llamaparse (our commercial vlm-based parser): it uses ML models of varying complexity to parse PDFs.
     - liteparse is model-free, can parse ~200-500 pages/second, is designed to be an extremely fast/free parser to replace pypdf/pymupdf. it integrates with paddleOCR for OCR workloads. its main purpose is outputting text for semantic understanding for agents, and will lack certain things that VLM parsers do OOB. 
     - llamaparse is our commercial vlm-powered parsing service. it scores quite high on parsebench (https://parsebench.ai), our OCR benchmark over enterprise docs. you can see docling is ranked a bit furher down
+
+- http://github.com/simonw/liteparse /apache2/202604/python/ts
+  - https://simonw.github.io/liteparse/
+  - A fast, helpful, and open-source document parser
+  - [Extract PDF text in your browser with LiteParse for the web _202604](https://simonwillison.net/2026/Apr/23/liteparse-for-the-web/)
+  - https://x.com/simonw/status/2047434783962354130
+    - It's only available as a Node.js CLI app, so I vibe-coded up this version that runs in a browser
+
+- https://github.com/GiovanniPasq/chunky /MIT/202604/python/ts
+  - Convert and validate your Markdown, then choose the best chunking strategy for your RAG pipeline.
+  - Most RAG pipelines fail silently — Chunky is a local, open-source tool that gives you full visibility at both stages — validate your Markdown, validate your chunks, fix what's wrong before it reaches your vector store.
+  - Upload a PDF or Markdown file, pick a splitting strategy (Token, Recursive Character, Character, Markdown Header), and inspect every chunk color-coded side-by-side with the source
+  - Edit, enrich chunks directly in the UI without re-running the whole pipeline
+  - Export clean, validated chunks as JSON ready for your vector store
+  - Six PDF → Markdown converters: PyMuPDF, Docling, MarkItDown, LiteParse, VLM, Cloud API
 # extraction-pdf
 - https://github.com/CatchTheTornado/text-extract-api /3.1kStar/MIT/202512/python/inactive
   - https://github.com/CatchTheTornado/pdf-extract-api /renamed

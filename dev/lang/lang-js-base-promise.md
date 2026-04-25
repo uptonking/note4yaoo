@@ -70,3 +70,18 @@ new Promise(function(resolve, reject) {
   console.log(e); // works!
 });
 ```
+
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Node.js has an internal API for inspecting the state of an unsettled Promise
+  - It's used by util.inspect() so that when you console.log() a Promise, it'll show you its state.
+  - So you can inspect Promise state synchronously in Node by string-parsing util.inspect().

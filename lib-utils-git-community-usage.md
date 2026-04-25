@@ -36,7 +36,7 @@ modified: 2024-05-27T09:12:06.925Z
   - Pinterest's largest monorepo had more than 350k commits and was 20GB in size.
   - Their continuous build pipelines (Jenkins) took 40 minutes to clone that massive repo.
   - What was odd was that they were telling Git to do a shallow clone.
-  - Digging into the script that used Git, they realized they left off the `refspec` option. If you leave that off, the default is to tell Git to fetch all refspecs (e.g. "+refs/heads/*:refs/remotes/origin/*") In their case, this fetched more than 2500 branches.
+  - Digging into the script that used Git, they realized they left off the `refspec` option. If you leave that off, the default is to tell Git to fetch all refspecs (e.g. "+refs/heads/ *:refs/remotes/origin/* ") In their case, this fetched more than 2500 branches.
   - To fix this, they added one line to their build config which specified that they only cared about master (e.g. "+refs/heads/master:refs/remotes/origin/master")
   - Specifying this decreased cloning times from 40 minutes to 30 seconds.
   - [How a one line change decreased our clone times by 99% | by Pinterest Engineering _202010](https://medium.com/pinterest-engineering/how-a-one-line-change-decreased-our-build-times-by-99-b98453265370)
@@ -71,6 +71,22 @@ modified: 2024-05-27T09:12:06.925Z
   - Git isn't good for databases or data lakes. The files are huge and typically aren't modified (CSV) or are binary/compressed (Parquet).
 
 - git (and more generally diff) is not very efficient for detecting and showing moved text (which it displays as deletion+addition)
+# disccuss-news
+- ## 
+
+- ## 
+
+- ## Git 2.54 is here with features like config-based hooks, new ways to rewrite history, and much more
+- https://x.com/birch_js/status/2047339672679137748
+- maybe we don’t need husky anymore!
+
+- native git hooks are cool but they don't talk to your AI agents
+
+- I think you still need something because this config can’t live in the repo so you’ll need some sort of bridge to do the setup. It’s cool for other reasons, though!
+  - Git only reads ~/.gitconfig. It doesn’t read .gitconfig for each repo. It reads .git/config which cannot be checked in.
+  - You can set yourself up for repo-specific config to be loaded, but this is just a convention and requires you to change settings in your global git config. There is no way for a repo to define git hooks that are always and automatically installed when you clone. For good reason! Arbitrary code execution is scary! See npm post-install scripts for an example of how that has caused havoc.
+
+- That config lives under the “.git/config” file inside the repo. The .git folder is not versioned, so you still need some mechanism to ensure everyone has that config + the minimum git version that supports it, so… it seems easier to still use husky, doesn’t it? am I missing something?
 # disccuss-usage-github
 - ## 
 
@@ -208,7 +224,7 @@ git log --online --graph --decorate
 ```JS
 {
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,mjs,mts,json,css}": [
+    "src/ **/* .{js,jsx,ts,tsx,mjs,mts,json,css}": [
       "prettier --write",
       "eslint --fix src/",
       "tslint --fix --project .",
@@ -333,6 +349,8 @@ git show HEAD^^^:test/test.py
 git show somebranch:from/the/root/myfile.txt
 ```
 
+
+
 ```sh
 # shows a diff, and not the file contents, 显示的是指定commit的git diff输出，只显示一个
 git show a44d7 README.md
@@ -382,7 +400,7 @@ git fetch --depth=1000000
   - Commit any changes that you need to fix/change.
   - Run this command: `git rm -r --cached .` (which removes everything from the git index in order to refresh your git repository)
   - Then run this command: `git add .` (to add everything back to the repo)
-  - Finally, commit these changes using `git commit -m ".gitignore Fixed"`
+  - Finally, commit these changes using `git commit -m ".gitignore Fixed"` 
 
 - ## [git - warning: ignoring broken ref refs/remotes/origin/HEAD - Stack Overflow](https://stackoverflow.com/questions/45811971/warning-ignoring-broken-ref-refs-remotes-origin-head)
 
@@ -460,6 +478,8 @@ git checkout my-branch
 git merge master
 git stash pop
 ```
+
+
 
 ```sh
 # you want to pull in changes from branch1 to branch2

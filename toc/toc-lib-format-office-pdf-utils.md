@@ -83,6 +83,10 @@ modified: 2022-11-11T10:46:41.519Z
   - https://github.com/dannycranmer/parchment
     - collection of free PDF tools that run entirely in your browser. No uploads, no servers
 
+- https://github.com/potatameister/PaperKnife /AGPL/202603/ts
+  - https://potatameister.github.io/PaperKnife/
+  - Privacy-first PDF utility (Zero-Server Architecture). Merge, split, compress, and edit PDFs 100% locally on your device. No uploads, no servers, no tracking.
+
 - https://github.com/PDFCraftTool/pdfcraft /3.8kStar/AGPL/202604/ts
   - https://pdfcraft.devtoolcafe.com/
   - privacy-focused PDF toolkit that runs entirely in your browser. 

@@ -544,6 +544,15 @@ export COMMANDLINE_ARGS="--skip-torch-cuda-test --disable-nan-check --upcast-sam
 
 - This kind of service with pre-configured workflows would be very, very helpful especially to newer users. 
 
+- ## [Comfy raises $30M to continue building the best creative AI tool in open : r/StableDiffusion _202604](https://www.reddit.com/r/StableDiffusion/comments/1sumuc3/comfy_raises_30m_to_continue_building_the_best/)
+  - Today we’re excited to share that Comfy has raised $30M at a $500M valuation! Comfy has grown a lot over the past year, and especially over the past six months: more than 50% of our users joined the Comfy ecosystem during that period. Comfy Cloud has also grown quickly, with annualized bookings crossing $10M in 8 months.
+  - This funding gives us more room to invest in the things this community cares about most: making Comfy more stable, improving the product experience, fixing bugs faster (sorry again for the bugs!) and continuing to launch powerful new features in the open!
+
+- I don't know why this is good news. Comfy is raising money from VC. $30M VC expects 10x returns, so just this investment assumes a $300M exit. Exit to whom? And under what terms? I am not sure that the existing open-source users figure at all under that calculus, and every additional round means less and less focus on the local models and more focus on the cloud.
+
+- They took 30M at a 500M valuation. This is guaranteed to happen just like with Civitai. Comfy is dead.
+  - Paywalling more and more, while they remove more and the actual website keeps running worse.
+
 - ## 💰 [Comfy Raises $17M : r/comfyui _202509](https://www.reddit.com/r/comfyui/comments/1nikzu7/comfy_raises_17m/)
   - In October 2022, u/comfyanonymous discovered Stable Diffusion and got hooked—not because of some vague “make AI accessible” mission, but out of a raw obsession with image generation. The first experiments? Generating better images of characters with fennec ears. Out of that obsession, ComfyUI was born.
   - Open source must win. If a proprietary service dominates, creativity loses. Proprietary services can come and go. Open source lasts forever.

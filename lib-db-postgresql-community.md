@@ -63,7 +63,16 @@ modified: 2022-06-13T03:01:05.956Z
 
 - ## 
 
-- ## 
+- ## 🧩 [What is your experience with JS/PLV8 in Postgres? : r/PostgreSQL _202604](https://www.reddit.com/r/PostgreSQL/comments/1stazvo/what_is_your_experience_with_jsplv8_in_postgres/)
+  - I have insanely complex lateral transformations I have to do in multiple services. At the current setup we choose to have the code copied in both TS and Go and make automated tests insuring alignment between the implementations. Our speed requirements have increased and the transfer between languages are becoming a juicy target for optimization.
+  - We are on a GCP managed Postgres, so if want to write everything other than SQL it is JS (PLV8). I separated out the transformation to a pure function (we had the logic separated to allow for good unit tests) made a script to convert TS to JS and inline the two functions imported. And it just worked!!! Reduced run time with 35 %. And with a little extra scripting it was fully integrated in our CI/CD pipeline.
+- The author has also recently release pljs, which uses QuickJS instead of V8, and is available in the pgdg packages and is also easy to compile.
+
+- When you say it reduced the run time by 35%, compared to what? You didn’t say. Compared to SQL or PL/pgSQL or something else?
+  - Network IO, serializers, deserilisers. We tried to split the logic in what makes sense in a declarative batch focused langague (fetching data) and what makes sense in a sequencial langague ( business logic on objects).
+  - The portability is a big deal, also allowing our frontend clients, fetching of the raw data and making client side simulations. Plus automated tests.
+
+- Just write it in plpgsql.. better documentation and online examples. I’ve rewritten tens of thousands of lines of oracle plsql into plpgsql. It works well. To reinforce your line of thinking.. at my current org we’ve ported large operations that the Java team couldn’t implement with an acceptable level of efficiency into Oracle plsql running on exadata machines. We reduced run time from close to 24 hours to only 45 minutes.
 
 - ## great to see more posts on table access methods for postgres (I.e. pluggable storage engines)
 - https://twitter.com/eatonphil/status/1765456975012282750

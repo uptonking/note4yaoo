@@ -840,7 +840,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [LinuxDo 社区福利活动](https://campaign.zhx47.xyz/)
     - [OAI-FREE 签到发送订阅 ](https://linux.do/t/topic/1632349)
     - 都是临时渠道，不开签到了，直接每天送 100 刀余额
-  - 📌 [Enjoy _202604](https://free.glen.cc.cd/dashboard), 无签到, 每天限额1000刀
+  - [Enjoy _202604](https://free.glen.cc.cd/dashboard), 无签到, 每天限额1000刀
     - [enjoycodex公益站1000个账号邀请码 ](https://linux.do/t/topic/1944332)
   - [ruilab ](https://newapi.ruilab.top/console/personal)
     - [ruilab _202604](http://sub2api.ruilab.top/dashboard)
@@ -885,9 +885,15 @@ modified: 2025-03-22T16:10:24.856Z
   - 📌 [Ciallo  _202604](https://ioll.pp.ua/console/personal), 手动签到10
     - https://sin.ioll.pp.ua
     - [【Ciallo~公益站】公益站新增域名喵 ](https://linux.do/t/topic/1945895)
+  - [New00000 _202604](https://api.00000.mom/console/personal)
+    - [[限速了]Codex公益站支持GPT5.5 ](https://linux.do/t/topic/2051012)
+    - 号池组成是Pro(2)+Plus(3)都是快要过期的. 服务器是香港cn2gia一模就GG
   - [Huainova _202604](https://ai.huaibao.top/console/personal)
     - [【Huainova公益站】二次开放注册啦 ](https://linux.do/t/topic/1939664)
     - 定时清理注册未使用的
+  - [CnGPT公益站 _202604](https://cngpt.net/console/personal)
+    - [CnGPT 公益站：给佬友们搭的免费 AI API 中转站 - LINUX DO _202604](https://linux.do/t/topic/2053819)
+    - 支持 每日签到，每天可以领取少量额度，适合轻量使用
   - [CHY API公益站 _202604](https://api.xn--chy-js0fk50c.top/console/personal)
     - [CHY API公益站主域名已恢复访问 ](https://linux.do/t/topic/1947845)
   - [【深夜 100】【章鱼小站】给站内的公益站分担点压力 _202604](https://linux.do/t/topic/1897365), 无签到
@@ -949,6 +955,8 @@ modified: 2025-03-22T16:10:24.856Z
   - 📌 [marybrown API _202603](https://marybrown.dpdns.org/console/personal)
     - [服务器小升级,grok-4.2无限用和gpt-5.4试用 _202603](https://linux.do/t/topic/1795512)
     - 23公益站作者后续维护
+  - [xiaoxin _202604](https://api.xiaoxin.cfd/dashboard), 无签到
+    - [自建了一个中转站，佬们可以体验一下 ](https://linux.do/t/topic/2055010)
   - [955code _202603](https://955code.top/console/personal), 无签到
     - [【955code】codex公益站，上线试运营 _202603](https://linux.do/t/topic/1840889)
   - 🗑️ [意念公益站 _202604](https://yinian.564779.xyz/dashboard), 无签到
@@ -1700,6 +1708,8 @@ modified: 2025-03-22T16:10:24.856Z
 - tips
   - 中转商的价格每天都在变化, 套餐也在改变, 不要在一家花费过多
     - 很可能注册的第一天会显示低价，后面就恢复正常价格了，注意误导
+  - GPT site:pay.ldxp.cn/shop
+  - 搜索: 手工, 质保, 源头, 印尼
 
 - resources
   - [LinuxDo商家评价平台](https://rate.linux.do/)
@@ -1766,7 +1776,7 @@ modified: 2025-03-22T16:10:24.856Z
     - right code 也是站内的一家主要做codex的中转站
   - o2a基本没有缓存?
 
-- [帕帝AI](https://padi-shop.closeai.hk/)
+- 🗑️ [帕帝AI](https://padi-shop.closeai.hk/), 已倒闭
   - [FreeAI - AI API Gateway](https://free.closeai.hk/)
   - [Home - 帕帝AI _202604](https://padi.closeai.hk/home)
 
@@ -1798,12 +1808,96 @@ modified: 2025-03-22T16:10:24.856Z
   - [话题 - 活动 - WCyrus - LINUX DO](https://linux.do/u/wcyrus/activity/topics)
   - cc官方 1.5x , 提供opus, in-¥5-15/M, out-¥25-75
 
+- [xin](https://receipt.nitro.xin/redeem/chatgpt)
+
+- [chong](https://chong.databrain.sbs/)
+
 - [TangSeng AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/tangsengai)
   - 提供不限量token的日卡/周卡/月卡
+  - [这个api中转站的定价如何？ _202603](https://www.nodeseek.com/post-649864-1)
 
-- [熊猫Ai](https://cwppt.cn/)
+- [AI杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/PBY2YIR3), /周全
   - 自助充值plus
-  - https://pay.ldxp.cn/shop/PBY2YIR3  /周全
+
+- [AI HOME的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/MEDDEX4V) , 保证金1000元
+  - 群：https://t.me/aihome123
+  - 无低价号
+  - plus-32
+  - pro5x-140
+  - pro10x-210
+
+- [松松的小店，招代理的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/gpt_songsong)
+  - 交流群: https://t.me/+5UfugtLTLq40ZGQ0
+  - 无低价号
+  - plus-35
+  - pro5x-160, 质保400
+  - pro10x-250, 质保650
+
+- [YCYAPI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/3RXKX01X)
+  - YCY供应商订阅: https://t.me/+n5uswJrZIAg2NTk1
+  - plus成品号-10, 反代质保首登---不是日抛
+  - plus-30
+  - pro5x-175
+  - pro10x-270
+
+- [AI杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ai-shop)
+  - AI科研交流群：560520490
+  - 低价号, 后续印尼佬会换成outlook邮箱账号，本次就还是他们自己内部自建邮箱
+  - team-5
+  - plus-5
+  - 质保3天：从  激活时间  起算 72小时 内出现掉车，可  提交工单  无限次补车。
+  - 货源纯手工开通订阅 理论一个月 
+  - [ChatGPT源头的小店](https://pay.ldxp.cn/shop/B8TNSEBM)
+    - 群友的印尼渠道， 但没货
+
+- [GPTPLUS.icu 的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YQJERQW3)
+  - [GPTPLUS.icu Team ](https://gptplus.icu/)
+  - 防迷路请进客户⑥群 1091880491
+  - 【手工】【30天】GPT-Team / Business 高质量激活码（质保3天）
+  - [极速的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/jishu)
+    - 【手工】【30天】GPT-Team / Business , 源头 GPTPLUS. ICU 
+    - 质保3天：从  激活时间  起算 72小时 内出现掉车，可  提交工单  无限次补车。
+
+- [LToken的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/12P8XO9Z)
+  - 公益Plus/Team机器人
+  - 品类非常多
+  - 低价号很多， 很多10个起购
+  - plus-8
+  - team-3
+  - pro5x-175
+  - [咕咕嘎嘎 GPT Plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/E7AEE7TS)
+    - 和上面的plus很像
+
+- [GPT PRO的小店 - 链动小铺](https://pay.ldxp.cn/shop/progpt)
+  - pro5x-236, 质保1月
+
+- [懒虫AI](https://buy.aieasy.plus/)
+  - [懒虫AI充值的小店  ](https://pay.ldxp.cn/shop/LanChongAI)
+  - TG客服: https://t.me/LanChongAI
+  - pro5x-140
+  - pro10x-250
+
+- [见AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/JIANAI)
+  - TG频道：https://t.me/JIANAI996
+  - 兑换网址：aichong.plus
+
+- [52AI店铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/52ai)
+  - 品类非常多
+  - TG客服：https://t.me/x87110  , 仅通知，无聊天
+
+- [AI源头小陈的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/AItools)
+  - 客服微信BIGLanjiao00
+  - 品类多
+  - pro5x-350
+
+- [ai源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/dagou.vip)
+  - plus成品账号-15，特价商品极不稳定，随时会封，3件起购
+  - pro5x-214
+  - pro10x-310
+
+- [九渊Ai源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/jiuyuan)
+  - 售后TG：https://t.me/jiuyuanai
+  - plus-150
 
 - [codex-for.me ](https://codex-for.me/)
   - [vibe coding 专营的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/GUBERQA2)
@@ -1815,14 +1909,27 @@ modified: 2025-03-22T16:10:24.856Z
   -  https://ai.dcfkj.com/xin/chatgpt 
   - [出GPT Plus直充卡密8元 _202604](https://www.nodeseek.com/post-687488-1)
 
+- [AI源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/shiwanfute)
+  - TG：https://t.me/mikaksa2
+  - 仅gemini
+
+- [玩偶小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/WOXP888)
+  - https://t.me/WOXP66
+  - 无pro
+
+- [5jupe1的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/5jupe1_5)
+  - 可以加QQ：3673905468或添加公众号：5jupe1, 或者电报客服机器人：https://t.me/jupe1_5_bot
+
+- [逸轩ai店铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/xuanplus/)
+  - team-5
+
+- [沐风的小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/mfshop)
+  - pro5x-185, chong
+
 - [炒鸡变黑的AI店的小店 ](https://pay.ldxp.cn/shop/chaoji)
   - plus-无质保6
 
-- [AI源头小陈的小店 - 链动小铺 _202604](https://pay.ldxp.cn/shop/AItools)
-  - 品类多
-
-- [52AI店铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/52ai)
-  - 品类非常多
+- [KiroSwitch官方直营店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Z3VSKEGC)
 
 - [米醋API](https://www.openclaudecode.cn/)
   - 提供opus, in-￥1.00/M, out-￥5.00/M
@@ -1894,6 +2001,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [兔小店](https://store.tu-zi.com/)
   - 特别贵, 199+
+  - 充值基本是官方价格
 
 - [UUcode - API 中转管理平台](https://www.uucode.org/)
   - [【致敬开源】与其打硬广，不如给佬友们的代码“供电”，寻找L站开源作者，UUcode送商业级API额度 ](https://linux.do/t/topic/1370667)

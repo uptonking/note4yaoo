@@ -236,7 +236,12 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## [Obsidian new plugins review waiting line is huge : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1surv34/obsidian_new_plugins_review_waiting_line_is_huge/)
+- I bet you 75% of those PRs are vibe coded trash fires. Which means someone has to take the time and close the PR. It’s a waste of everyone’s time.
+
+- It was mentioned a few times. The team is working on a new system to handle reviewing plugins. There is no ETA. But it is in the works. Once ready it should help unblock then backlog
+
+- While vibe coded projects are an issue, the main problem is lack of long term support. It takes a lot of effort to properly support a GitHub repository. Even small ones. Most people, including myself, don’t have the patience or attention span
 
 - ## 一旦进入充满pptx和docx的世界，就发现Obsidian一点都不能用
 - https://x.com/TooooooBug/status/2033116556511842680

@@ -126,6 +126,7 @@ modified: 2021-07-21T18:07:43.056Z
   - 🐛 滚动页面时，不会自动高亮右侧对应的标题
   - [Please add versions too like in docs so for docs/v1/ docs/v2/ _202409](https://github.com/nisabmohd/Aria-Docs/issues/8)
     - 最新代码已不支持versioning
+    - I've changed this from template to library and all features are supported. you can check the documentation. The templates are deprecated now but still exist in other branch 
   - [Is there a big difference between their versions, please?  _202504](https://github.com/nisabmohd/Aria-Docs/issues/39)
     - All versions contain ssg and ssr support. The variants are just like templates. i18n version is fully ssr and all pages are static
     - [algolia search done _202502](https://github.com/nisabmohd/Aria-Docs/pull/32)

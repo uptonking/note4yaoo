@@ -263,3 +263,16 @@ modified: 2024-11-16T08:23:40.617Z
     - It works in Remotion too, which is how I created (vibe-coded) the video at the start of the thread.
     - I wasn't looking forward to re-implementing text layout while writing this library. Thankfully, `Pretext` came to the rescue. So the library now also works with multiline text and wraps it automatically.
 # more
+- https://github.com/liyown/marknative /MIT/202604/ts
+  - https://liyown.github.io/marknative/
+  - A Markdown rendering engine that generates paginated PNG and SVG output — no browser, no Chromium, no DOM.
+  - Most Markdown rendering pipelines go through a browser: Markdown → HTML → DOM/CSS → browser layout → screenshot
+  - marknative takes a different path. It parses Markdown directly into a typed document model, runs its own block and inline layout engine, paginates the result into fixed-size pages, and paints each page using a native 2D `canvas` API.
+  - The result is deterministic, server-renderable, and completely headless.
+  - 通过原生渲染管线直接生成图片: Markdown → 解析 → 排版 → Canvas / Vector 绘制 → 导出图片
+  - https://x.com/axiaisacat/status/2039561953358565679
+    - 服务端直接跑，零浏览器依赖; 
+    - 分页结果完全确定性，每次输出一模一样; 
+    - 批量渲染，速度快到飞起
+  - Markdown是支持插入HTML的，它支持？
+    - 支持的呀，你试试看

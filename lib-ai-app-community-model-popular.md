@@ -660,6 +660,21 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - you can also look on hugging face for any model that is "uncensored" but the more common term is "abliterated" or "heretic"/"heresy"
 
 - If you Google around you can find "abliterared" models that have essentially been trained to ignore that safety without losing the conversational coherence at the same time.
+# discuss-models-top
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Since GPT-5.4, we’ve unified Codex and the main model into a single system, so there’s no separate coding line anymore.  _202604
+- https://x.com/romainhuet/status/2047955381578838357
+  - GPT-5.5 takes this further, with strong gains in agentic coding, computer use, and any task on a computer.
+
 # discuss-models-hot/features
 - ## 
 

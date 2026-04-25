@@ -845,9 +845,37 @@ Code
 
 # discuss-edit-format/protocol ⚖️
 - ## 
+
 - ## 
+
 - ## 
+
 - ## 
+
+- ## Zed 也出 conductor like 的项目了 - 基于 acp 能连一切 agent
+- https://x.com/yetone/status/2047297737587409101
+- 今天试了一下 Zed 的 Parallel Agents，然后意识到我们一直以来决定彻底抛弃 ACP 的想法是正确的。连 ACP 的老东家 Zed 推出的 ACP-powered Agent 都这么卡、这么难用，我一下子就释然了。
+  - 原理的问题，first token 太慢了，session 管理也不成熟
+  - ACP 冷启动太慢了
+- acp客户端基本上第一条消息多少都有问题，加上官方的cc acp和codex acp维护更新明显不够快，最后都要让应用开发者自己处理用户因为acp产生的问题。但是用acp自然兼容大部分agent也是很好的营销宣传点
+
+- 真的非常烦 ACP 的新开和 resume session，有的要加载好十几秒，很多特性支持的也慢。 不过我在想不能 new session 的时候直接异步加载么，用户输完 prompt 也差不多加载完了，体验会好很多
+
+- acp 真的不需要，直接terminal 启动就最简单。 多 Agent 可以设计通信机制也可以直接控制tui就完了。
+
+- 为啥呢？ acp 不只负责通信协议么，怎么会影响卡不卡呢
+
+- 不過老實說 acp 是一個不錯的利用訂閱服務的方式, T3 code 我記得也是透過 ACP
+  - 的确如此，但是 ACP 永远是功能的子集，太不灵活了。
+- t3code针对codex和claude做了case by case的hardcode吧，刚出来的时候我翻过他的repo
+  - 對，codex / claude 不是透過 ACP , 但我有看到相關程式，我猜是其他agent 像是 Cursor
+
+- 感觉各家 CLI 都在探索和整花活的情况下，ACP 很难大一统。 Claude Code Agent Teams、Factory Droid Missions、pi-mono tree 这些专有的特性，在 ACP 下也不知道怎么呈现会比较好。
+
+- 是，我们之前内部 agent 看板也选择了 acp，复杂度提高了，体验没提高。我们现在直接用 --json 之类命令行来适配 codex 和 claude code。小公司能力精力不够没选择手搓 agent loop
+
+- ACP 比较方便把 agent runtime 包装成 service 做远程操控。cc 可以用stdio stream-json 实现但必须得开 dangerous mode
+
 - ## ⚖️ [RFC: Token-Efficient and Consistent AI Code Generation Through GNU Unified Diff _202411](https://medium.com/@zackisland/rfc-token-efficient-and-consistent-ai-code-generation-through-gnu-unified-diff-md-a07f676c975a)
 - A strategy to enhance AI-driven code editing in multi-agent systems using the GNU unified diff format. This format standardizes output from code-generating language models. In testing, diff-based changes reduced output tokens and speed of inference by up to 90%.
 - Why?
