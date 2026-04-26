@@ -12,6 +12,8 @@ modified: 2022-09-01T18:37:15.430Z
 - pm-history.v1.2.0-202108
   - history plugin now listens for beforeInput events with historyUndo or historyRedo type, and applies the undo/redo commands when they occur.
 # changelog
+- [ProseMirror's Migration to Forgejo _202603](https://discuss.prosemirror.net/t/prosemirrors-migration-to-forgejo/8974)
+  - I feel rather strongly about reducing my dependence on GitHub and big “free as in you have no recourse” platforms in general. Having a big part of my daily workflow tied up to a platform that continues to get slower and buggier, and could ban my account or change their terms on a whim, is something I’m motivated to avoid, even if there’s a cost to it.
 
 ## v202205-view-1.4.0
 

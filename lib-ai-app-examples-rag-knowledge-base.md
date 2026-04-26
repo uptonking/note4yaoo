@@ -1875,6 +1875,28 @@ modified: 2025-11-30T17:27:16.720Z
   - https://filesorter.app/
   - Cross-platform desktop application for content-aware file organization and renaming. 
   - Supports local and remote LLMs, preview-based workflows, and fully user-controlled changes.
+
+## docs-llm
+
+- https://github.com/oomol-lab/spinedigest /apache2/202604/ts
+  - https://inkora.oomol.com/download/sdpub
+  - [SpineDigest：把长篇内容蒸馏成知识脊柱 - LINUX DO _202604](https://linux.do/t/topic/2045859)
+    - 把任意长篇内容（书籍、文档）“蒸馏”成它的脊柱（Spine）——不只是文字总结，还给你章节拓扑 + 知识图谱 + 可复用的结构化档案。
+    - 它完全跳出了“简单 prompt 让 LLM 总结”的低效循环，用了一套提示驱动 + 知识图谱 + 对抗式多智能体的流水线
+    - 按你的意图提取知识单元（Chunk）
+    - 提取出来的知识块变成节点，自动连边、聚类，形成有序的“知识蛇链”。一眼就能看出全书的逻辑骨架、章节脉络、概念关联
+    - 对抗式多智能体总结: 一个“答辩者”负责写总结，一群“教授”智能体（各持一条 Snake）轮番挑战、挑刺、补漏。几轮迭代后出来的总结，既忠实于原书结构，又高度浓缩，还不会漏掉你关心的部分。真正做到了“结构保留 + 意图对齐”。
+    - 输出 .sdpub 档案格式: 
+    - 一次处理完，所有中间结果（Chunk、图谱、Snake、总结）全部打包进一个 .sdpub 文件。以后想重新导出成 Markdown、EPUB、纯文本……完全不需要再跑 LLM，秒级完成。
+    - 而且可以用我们的 Inkora 查看器直接打开，图形化浏览知识图谱和蛇链。
+    - [Inkora 下载 | SDPUB 阅读](https://inkora.oomol.com/zh-CN/download/sdpub)
+    - Inkora 是用来打开 sdpub 的客户端软件。 如果未来 SpineDigest 支持客户端转化，大概率会上我们的云，届时会收费。 如果用开源方案，可以自由配置 LLM，在本地运行不收费。
+  - 输入：EPUB、Markdown、纯文本、.sdpub
+  - 输出：Markdown、EPUB、纯文本、.sdpub
+  - 支持 stdin/stdout 管道调用，完美适配 AI Agent 工作流
+  - 为什么它比直接用大模型强: 普通 LLM 总结的本质问题是 “不知道该砍什么”。SpineDigest 用 提示驱动提取 + 图谱聚类 + 对抗审查，直接把决策权交给结构和你的意图。
+  - 在我们自己内部测试中，处理 30 万字的技术书，总结质量和结构保留度完胜单次 prompt。
+  - 🤔 如果使用的时候因为api问题中断了，有办法恢复吗
 # data-rag
 - https://github.com/statespace-tech/toolfront /801Star/MIT/202512/python
   - https://docs.toolfront.ai/

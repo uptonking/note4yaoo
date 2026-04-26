@@ -98,7 +98,7 @@ please recheck your migrated ocr features and implementation logic, make sure th
 
 please refactor code structure in ilove-pdf project to use similar architecture and code structure as ilove-bentopdf without licensing issue, to make it easy to migrate more features in the future. 
 
-you may deep research and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issue. 
+you may deep research and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issue. 
 you may use similar file/folder names instead of the same file/folder names as the original. you may also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
 
 if migration/refactoring of similar code architecture as ilove-bentopdf is complicated, you can make a plan first, then migrate by the plan.
@@ -117,8 +117,10 @@ what should be done to macth the upstream? explain to me. if it it complicated, 
 ## ailovedoc(superdoc)
 
 ```prompt
-`./superdoc` implemented renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed.
-- the final goal is to implement from scratch a new ai docx editing solution similar to superdoc at folder `./ailovedoc`  to avoid the licensing issues.
+`../superdoc` implemented renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed.
+- the final goal is to implement from scratch a new ai docx editing solution named ailovedoc similar to superdoc at folder `./ailovedoc`  to avoid the licensing issues.
+- ailovedoc should be implemented in a modular and extensible architecture for core features like rendering and editing, with functional programming style.
+
 - in superdoc, running `pnpm dev:docs` shows a mininal paginated editor demo. please migrate the example to ailovedoc without licensing issues, and make it runnable locally in ailovedoc.
 
 - feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
@@ -127,7 +129,7 @@ what should be done to macth the upstream? explain to me. if it it complicated, 
 - you may implement code architecture and structure similar to superdoc, but rewrite from scractch to avoid licensing issue. `EditorAdapter` is a good design, you should implement similar architecture. OOXML → ProseMirror handlers is powerful, you should implement your converter and handler by refrencing superdoc, but remember to avoid licensing issues. collaboration with yjs should be implemented. encryption/signing can be skipped now. you can reference as many superdoc code as possible, but remember to rewrite it to avoid license issue.
 - please analyze related code and architecture, make a plan and implement your ailovedoc project.
 
-- please analyze git repo and code when you need, then explain to me what major features are in superdoc but missing in ailovedoc.
+- please analyze git repo and code if you need, then explain to me what major features are in superdoc but missing in ailovedoc.
 
 - the most important feature is a powerful, robust, extensible, headless ai ooxml editing engine . 
 
@@ -147,7 +149,7 @@ recheck and migrate full features of pdf compare and layers to ailovedoc.
 3. real layout/pagination fidelity
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 
-you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it without licensing issue.  
+you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issue.  
 you have worked on this problem several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. make a plan and implement it to match full features of upstream without licensing issues.
 
 - to achieve full feature parity with superdoc, help me choose the best option for long-term.
@@ -159,12 +161,12 @@ you have worked on this problem several times but features are still lacking. Th
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 - make a plan, then migrate and improve full feature pairity, without licensing issues
 
-- the goal now is to achieve robust and extensible ooxml editing engine with full feature parity of upstream.
+- the goal now is to achieve robust and extensible ooxml editing engine with full feature parity of upstream supercode.
 
 - the most important feature is a powerful, robust, extensible, headless ai ooxml editing engine with track change support .
-- you may deep research, and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite code without licensing issues.
+- you may deep research, and reference the upstream superdoc code, you may use similar dependencies, and implement similar logic, but you should rewrite code without licensing issues.
 
-- please deep research superdoc code, then can you design a similar solution in ailovedoc to improve it? is superdoc's solution good enough? if yes, solve it in a similar way for ailovedoc.
+- please deep research superdoc, then can you design a similar solution in ailovedoc to improve it? is superdoc's solution good enough? if yes, solve it in a similar way for ailovedoc.
 
 - you have worked on this several times but features are still lacking. They are the most important features at this moment. DO NOT stop untill you achieve full feature parity. 
 
@@ -174,6 +176,8 @@ you have worked on this problem several times but features are still lacking. Th
 
 ------
 
+superdoc's overall architecture is good enough to follow. Mostly ailovedoc should use similar architecture to superdoc.
+
 ailovedoc should have full feature parity for important features like document data model, editing engine, rich-text formatting, layout engine, virtualization, document-rendering, track-change.
 
 ```
@@ -182,9 +186,10 @@ ailovedoc should have full feature parity for important features like document d
 
 ```prompt
 
-onlyoffice implements renders, edits, annotates `.pdf` files in the browser, but it is AGPL licensed.
+onlyoffice pdf editor implements renders, edits, annotates `.pdf` files in the browser, but it is AGPL licensed.
 - the final goal is to implement from scratch a new extensible web pdf editor named hardoc with in-place text editing features similar to onlyoffice/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
-- hardoc pdf editor should be more of a headless client-server architecture, so that you can build a hardoc cli with the hardoc sdk.
+- hardoc pdf editor should be more of a headless client-server architecture, so that you can build a hardoc cli with a hardoc sdk. 
+- hardoc should be implemented in a modular and extensible architecture for core pdf features like viewing and editing, with functional programming style.
 
 - goals for pdf editing:
 1. modular and extensible architecture for pdf viewing and editing: you may design sub packages like state/view/command/transform/... when you need. you may design a sdk if you want.
@@ -231,18 +236,18 @@ project onlyoffice and project at `~/Documents/repos/office/all-pdf/open-pdf-stu
 - forms, ocr, collaboration, ai-editing, complicated shapes, search is not required now, but architecture should support these features later.
 - please make a plan for the extensible text editing editor first, then implement it at folder `./hardoc`.
 
-- please analyze code and docs if you need, then explain to me what major features are in onlyoffice pdf editor but missing in hardoc. 
-
 - please refactor code structure in hardoc project to use similar architecture and code structure as onlyoffice without licensing issue, to make it easy to migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+
+- please analyze code and docs if you need, then explain to me what major features are in onlyoffice pdf editor but missing in hardoc. 
 
 recheck and migrate full features of True PDF text editing engine with annotation support. 
 
-- you have migrated some features from onlyoffice pdf editor to hardoc.
+- you have already migrated/implemented some features from onlyoffice pdf editor to hardoc.
 
-- you should recheck logic parity detail by detail for every  major feature, the goal is to achieve full feature parity(ux can differ).
+- you should recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ).
 
 - you can deep research, and reference good deisgn from onlyoffice pdf editor.
-- you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it without licensing issue.  
+- you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issue.  
 - you have worked on this several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. 
 
 make a plan and implement it to match full features of upstream without licensing issues.
@@ -255,8 +260,8 @@ please make a plan, then improve the core in-place text editing engine to make i
 - the goal now is to achieve full feature parity of native True PDF text editing engine like onlyoffice pdf editor.
 
 - the most important feature in hardoc is a powerful, robust, extensible, native True PDF in-place text editing engine with annotation support like onlyoffice pdf editor.
-- you can deep research, referencing good deisgn from onlyoffice pdf editor.
-- you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
+- you can deep research and reference good deisgn from onlyoffice pdf editor.
+- you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 
 - please deep research the onlyoffice pdf editor, then can you design a similar solution to solve it? is onlyoffice's solution good enough? if yes, solve it in a similar way for hardoc.
 
@@ -265,6 +270,14 @@ please make a plan, then improve the core in-place text editing engine to make i
 - you may do a big code refactor to match full feature of onlyoffice-pdf-editor in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - research and make a full plan, then implement hardoc to match full features of onlyoffice-pdf-editor, or even better than onlyoffice-pdf-editor, without licensing issues.
+
+------
+
+onlyoffice-pdf-editor's overall architecture is good enough to follow. Mostly hardoc should use similar architecture to onlyoffice pdf editor. 
+
+You should implement hardoc pdf editor in a similar architecture of onlyoffice pdf editor. If onlyoffice does not use the rust core architecure, you MUST NOT do it.
+
+DO NOT search the web for onlyoffice pdf api, you should find and read source code of onlyoffice pdf editor directly in current folder ~/Documents/repos/office/all-office/onlyoffice
 
 ```
 
@@ -304,7 +317,7 @@ please make a plan, then improve the core in-place text editing engine to make i
 
 - please deep research the existing backbonejs webapp, then can you design a similar solution in react webapp to achieve full feature parity?
 
-- you may deep research and reference the existing code, you may use similar dependencies, and implement similar logic, but you should rewrite it with modern tech stacks like react/typescript-utils. 
+- you may deep research and reference the existing code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style with modern tech stacks like react/typescript-utils. 
 
 - you may do a big code refactor to match full feature of backbonejs webapp in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
@@ -349,7 +362,7 @@ please make a plan, then improve the core in-place text editing engine to make i
   - all local packages names should start with `@datalking/`, for example `@datalking/slaides-core`,`@datalking/slaides-react`...
 
 - project PPTist can be used as implementation reference, you can reference its architecture and code.
-- you may deep research and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issue. 
+- you may deep research and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issue. 
 you may use similar file/folder names instead of the same file/folder names as the original. you may also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
 
 - the most important feature in slaides is a framework-agnostic, modular, extensible, headless ai ppt view/editing engine with undo/redo history support like PPTist.
@@ -364,7 +377,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - you can deep research, referencing good deisgn from PPTist editing engine.
 
-- you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
+- you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 
 - you may do a big code refactor to match full feature of PPTist in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
@@ -436,7 +449,7 @@ please keep as many code as possible unchanged, so most bun scripts and code sho
 
 Make minimal, mechanical changes first, then deeper improvements only when safe.
 
-you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it without licensing issue. 
+you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issue. 
 ```
 
 # toys

@@ -62,6 +62,17 @@ modified: 2021-01-03T17:11:47.916Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Why do vibe coded buttons NEVER have cursor:pointer? removed in v4.
+- https://x.com/akinkunmi/status/2047922960749519046
+- tailwind is a styling solution - using it in your component system ala shadcn is the sensible thing to do, so i  would say its shadcn’s fault - alltough you can easily add it yourself 
+
+- Buttons native behaviour is not to have it...
+- Button doesn’t have the pointer by default only Link/anchor tag. You can try this by setting up a plain HTML file and add in the button element
+
 - ## [Padding and margin are not working on Vue.js _ TW v4.0 · tailwindlabs/tailwindcss _202501](https://github.com/tailwindlabs/tailwindcss/discussions/15728)
   - I had a similar issue where a lot of my styles seemed to be alright but margin and padding were obviously very wrong. 
   - In v3, my main CSS file had reset styles like the ones below. I like to reset all margin and padding to 0 and handle those manually for each element and this worked fine in v3. 

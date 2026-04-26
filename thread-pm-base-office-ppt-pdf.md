@@ -181,6 +181,27 @@ modified: 2024-01-11T15:57:32.182Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [卧槽！终于解决了AI生成可编辑PPT的问题 - LINUX DO _202604](https://linux.do/t/topic/2045659)
+  - 我让GPT帮我生成一张单页PPT的图，然后我让他把这张图“按照原样式改成一个可编辑的pptx文件”，于是我得到了
+  - 下载下来后发现还原的很真实，所有内容都可以编辑，连图标都可以编辑
+  - 是的网页端对话就可以生成了，没有使用其他工具
+
+- 确实是一个很好的思路，Image2足够好看，再逆推出PPT
+
+- gemini的canvas功能早就能做到了啊，可以根据论文直接生成，没有notebooklm华丽，但极简风就挺好了，直接导出PPTX格式，自己还能精修
+  - 效果还是有差距的
+- 明白了佬友，我的想法是同一张图用gpt和gemini还原对比，不过感觉得到gpt应该还是获胜
+
+- 如果他的图标库里面没有，画的就会比较乱，我看了下过程，也是内部调用了skills
+
+- 编辑倒不是壁垒，主要是复杂的，比如科研流程图，它转化的结果是不是像SVG那样简陋垃圾？是否能保持原有的风格
+
+- 试了下感觉还是不太行啊，文字可能重叠，然后符号也画的符号也乱了。第一张是生成的图，第二张是转成的ppt
+
 - ## [How Anthropic built their Office/Powerpoint creation agent : r/AI_Agents _202510](https://www.reddit.com/r/AI_Agents/comments/1nxwobd/how_anthropic_built_their_officepowerpoint/)
   - Anthropic just shipped Office document editing capabilities (PPTX, DOCX, XLSX, PDF).
   - The problem? It's only available in Claude Desktop/Web, not in Claude Code or the API. Thankfully Claude reveals all the skills & scripts it uses for this when asked.

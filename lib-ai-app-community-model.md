@@ -306,12 +306,31 @@ modified: 2023-10-30T07:34:03.602Z
   - 训练数据：37, 979 对查询-Skills 样本（GPT-4o-mini 合成，训练/测试完全 disjoint）。
 
 - body比description重要这个发现很对 我把skill description改成trigger condition格式后匹配率明显提高
+# discuss-llm-architecture-internals/vendor
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Kimi k2.6 used DeepSeek’s v3 architecture. DeepSeek v4 used kimi's muon optimiser. 1.6 trillion parameters & 1M context - both match or beat closed models on benchmarks while being 8x cheaper. 
+- https://x.com/jenzhuscott/status/2047825291071098984
+  - Both build on each other's breakthroughs. 
+  - Both keep shipping frontier LLMs w far less & nerfed NVIDA GPUs. 
+
 # discuss-llm-architecture
 - ## 
 
 - ## 
 
 - ## 
+
+- ## coding场景天然是按任务区分会话的，而对话类个人助理agent则是一个会话持续进行下去，其中的任务是在对话中隐式切换的。这两种不同的假设会需要不同的上下文压缩和记忆系统的设计。
+- https://x.com/wong2__/status/2048249317362737233
+  - 比如很多coding agent的compaction是要求模型把历史对话压缩成任务目标、任务状态、任务待办等信息，这如果硬搬到personal agent是不合适的。
+- hermes和 claw 也就是定期手动/自动重置session。根本分不清什么当前任务
 
 - ## KIMI [Prefill-as-a-Service: KVCache of Next-Generation Models Could Go Cross-Datacenter : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sp216x/prefillasaservice_kvcache_of_nextgeneration/)
   - We push Prefill/Decode disaggregation beyond a single cluster: cross-datacenter + heterogeneous hardware, unlocking the potential for significantly lower cost per token.

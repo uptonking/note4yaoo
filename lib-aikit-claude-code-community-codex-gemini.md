@@ -437,6 +437,7 @@ codex --yolo resume --last
 - ## [GPT 5.5 安全分析需要验证身份 - LINUX DO _202604](https://linux.do/t/topic/2050475)
   - 正儿八经开发, 没有任何破限. 使用grok搜索直接触发
   - 更新5.4不会触发. 5.5就触发了.
+- your account was flagged for potentially high-risk cyber activity. requests may be slower while additional verifi cation is applied.
 
 - 目前的结论就是5.5web端可能加强了二次审查
 

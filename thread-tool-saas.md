@@ -67,9 +67,42 @@ modified: 2023-05-07T18:35:50.897Z
 
 - ## 
 
-- ## 
+- ## [互联网不想让你发现的工具 - LINUX DO _202604](https://linux.do/t/topic/2060052)
+Shodan 用于搜索互联网连接设备的搜索引擎。可以找到在线暴露的摄像头、服务器和路由器。
 
-·- ## [【开源】来薅羊毛，把huggingface repo弄成网盘 ](https://linux.do/t/topic/1699359)
+https://archive.ph/ 保存任何网页的永久快照。当文章被付费墙挡住时很有用。
+
+Similarsites 输入任何网站，立即发现数十个类似网站。非常适合发现替代品。
+
+Mailtrack 显示某人何时打开你的邮件。你可以看到确切的阅读时间。
+
+https://hunter.io/ 输入公司名称，它会找到链接到该域名的员工电子邮件地址。
+
+Photopea 完全在浏览器中运行的免费Photoshop。无需下载。
+
+https://smry.ai/ 不仅能绕过付费墙，还能快速生成文章摘要。
+
+Carbon 将你的代码转换为漂亮的可分享图片。在开发者中很流行。
+
+Explainshell 粘贴任何Linux命令，它会解释每部分的确切作用。
+
+TinEye 反向图像搜索，显示照片在互联网上出现的位置。
+
+Namecheckr 同时检查用户名在所有社交媒体平台上是否可用。
+
+Untools 思维框架和心智模型集合，帮助你做出更好的决策。
+
+BuiltWith 显示任何网站使用的确切技术、工具和软件。
+
+GeoGuessr 将你放在世界任何地方的谷歌街景中。你猜测位置，（国内平替：图寻 - 探索世界
+
+VirusTotal 上传任何文件或粘贴任何链接，它会用70多个反病毒引擎立即扫描。
+
+https://modelscope.cn/ 魔搭社区一个专门提供AI模型的开源平台，让你可以直接用、下载或训练AI模型
+
+- tineye这网站居然还活着，我记得10多年前用图搜电影就靠它
+
+- ## [【开源】来薅羊毛，把huggingface repo弄成网盘 ](https://linux.do/t/topic/1699359)
   - 前段时间看到huggingface在x上发的推文，宣传他们的xet多好用，就寻思着免费的100GB私有空间得薅呀，于是就产生了本项目。
   - Huggingface有100GB私密空间和8.7TB公用空间，如果不怕隐私泄漏，理论上能薅8.8TB的网盘空间。
   - huggingcloud默认才用直链模式，也就是说下载文件不使用服务器流量，仅上传时需要服务器流量。
@@ -388,7 +421,7 @@ THREAD
 
 - ## 一个有趣的网站「12英尺」，http://12ft.io，一位外国程序员受不了互联网充满了付费高墙，他撸了一个 12 英尺的高梯来帮助读者们翻越各种付费围墙——Show me a 10ft paywall, I’ll show you a 12ft ladder.
 - https://twitter.com/Barret_China/status/1711042013230256476
-- The idea is pretty simple, news sites want Google to index their content so it shows up in search results. So **they don't show a paywall to the Google crawler**. We benefit from this because the Google crawler will cache a copy of the site every time it crawls it.
+- The idea is pretty simple, news sites want Google to index their content so it shows up in search results. So **they don't show a paywall to the Google crawler** . We benefit from this because the Google crawler will cache a copy of the site every time it crawls it.
 - 有个插件叫Bypass Paywalls，可以破解看各大新闻网站的付费内容，估计实现原理是一样的，那些付费网站的付费内容为了搜索流量给谷歌爬虫开白名单，允许抓取付费内容，谷歌就有了文章缓存，然后把网站链接的内容替换为谷歌的缓存内容，以此绕过付费
 
 - ## Cloudflare 的验证码服务 Turnstile（图一），对所有人开放了。只要加入几行代码（图二），就能免费嵌入自己的网站

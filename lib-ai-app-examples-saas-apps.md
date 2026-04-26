@@ -730,6 +730,10 @@ modified: 2025-02-21T17:17:42.225Z
   - 游资（UZI）Skills — 51位投资大佬帮你看盘 · 22维数据 × 180条量化规则 × 17种机构分析方法 · A股/港股/美股
   - [今年A股收益率42.83%我只靠他？游资Skill！让格雷厄姆、陈小群同台竞技，帮你分析个股 - LINUX DO _202604](https://linux.do/t/topic/1981105)
 
+- https://github.com/TraderAlice/OpenAlice /AGPL/202604/python/ts
+  - https://openalice.ai/
+  - Your one-person Wall Street. An AI trading agent covering equities, crypto, commodities, forex, and macro — from research through position entry, ongoing management, to exit.
+
 ## ecommerce
 
 - https://github.com/liangdabiao/amazon-sorftime-research-MCP-skill /MIT/202603/python
@@ -848,6 +852,11 @@ modified: 2025-02-21T17:17:42.225Z
   - 用 AI 改造成交互式学习的过程, 交互视频、AI 和真人交互都可以
   - https://x.com/0xPaulius/status/1852697757124845684
     - Been using this to post automated tiktoks on the latest research papers, its actually getting pretty good traction
+
+- https://github.com/actionow-ai/actionow /apache2+LOGO/202604/java/ts
+  - 从剧本到分镜，从角色到成片，Actionow 把"开拍 · 此刻"变成创意团队。
+  - 触手可及的工程化工作台——智能体驱动，开箱即接最新模型，可代码级控制、可私有化部署
+  - [【开源·Actionow】【演示站上线】包含Agent辅助·团队协作·多租户·积分系统的 AI 影视创作SaaS平台 - LINUX DO _202604](https://linux.do/t/topic/2034482)
 
 ## subtitle
 

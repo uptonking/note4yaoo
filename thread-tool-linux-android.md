@@ -15,6 +15,24 @@ modified: 2025-02-03T08:37:50.714Z
 - ## 
 
 - ## 
+# discuss-devtools-android
+- ## 
+
+- ## 
+
+- ## 
+
+- ## docker-android: One docker command spins up a complete Android device with ADB port-forwarding, KVM, and GPU acceleration.. fully headless and CI-ready.
+- https://x.com/oliviscusAI/status/2047984992815304885
+  - https://github.com/HQarroum/docker-android /MIT/202604/sh
+
+- Didn’t android x86 do this already?
+
+- Redroid existed for a long time and its gpu accelerated
+
+- This has been here for a long time and there are multiple problems with it. This doesn't work on Shared Runners and requires KVM, so you need a self hosted runner with KVM support for this to work. Then you need a "load balancer" for when running multiple devices.
+
+- Headless Android emulation with KVM acceleration is critical for 5G IoT testing. Dubai deploys this in days; our regulators move slower than a Docker build on dial-up.
 # discuss
 - ## 
 

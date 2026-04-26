@@ -69,6 +69,10 @@ modified: 2020-12-12T19:01:56.749Z
   - https://sniffnet.net/
   - comfortably monitor your Internet traffic. Cross-platform.
   - import and export comprehensive capture reports as PCAP files
+  - https://x.com/abskoop/status/2048066454361461157
+    - Sniffnet 把本机网络连接、应用流量和远程主机信息做成可视化面板，让你像看系统仪表盘一样，直观了解电脑正在和谁通信、哪些程序正在占用带宽
+    - 支持 Windows、macOS 和 Linux
+    - 提供直观的可视化面板，可查看本机网络连接、域名、ASN、地理位置和应用流量来源
 
 - https://github.com/tinkink-net/devns /202511/js
   - a lightweight local DNS server for development purposes, it listens on UDP port 53 (configurable) and answers DNS queries by resolving them via Node's built-in dns module, with support for local hosts file overrides.

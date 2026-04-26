@@ -2435,9 +2435,17 @@ modified: 2025-12-11T18:10:23.710Z
     - Each transformation creates a new field solely based on input fields, without hidden states and value mutation. 
     - All data before/after each transformation is observable, with lineage out of the box.
   - Particularly, developers don't explicitly mutate data by creating, updating and deleting. They just need to define transformation/formula for a set of source data.
+  - The core is Rust 
   - Install Postgres if you don't have one. CocoIndex uses it for incremental processing.
   - Install Claude Code skill for enhanced development experience.
   - 用户定义workflow， 框架执行转换
+  - https://x.com/0xLogicrw/status/2048238878860128368  _202604
+    - V1，对引擎做了完整重写。CocoIndex 帮 AI agent 把代码库、文档、会议记录、PDF 等数据源转换成 agent 可用的结构化上下文，核心卖点是增量处理：一份文档改了一段，只有受影响的部分重新计算，其余跳过，源文件删除时对应的数据库记录也自动清理。
+    - V1 有两个面向使用者的大改动。
+    - 一是去掉了项目自己的配置语言，整条数据处理流程用普通 Python 函数写就行，可以直接打断点调试。引擎在后台自动追踪每个函数的输入和代码变化，只有真正变了的部分才重新执行。
+    - 二是去掉了对 Postgres 数据库的强制依赖，`pip install cocoindex` 后可以直接运行，不再需要先搭数据库。底层引擎仍用 Rust 实现，Apache 2.0 协议。
+    - 数据可以输出到 Postgres、LanceDB、Neo4j、SQLite、Kafka、S3 等十余种目标。
+  - https://x.com/chien_vu1692/status/2047909345053339921
   - https://github.com/VioletCranberry/coco-search /MIT
     - Local-first hybrid semantic code search tool. 
     - Indexes codebases into PostgreSQL with pgvector embeddings via Ollama, combines vector similarity + keyword search with RRF fusion.
