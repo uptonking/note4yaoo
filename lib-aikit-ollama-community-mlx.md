@@ -72,7 +72,6 @@ modified: 2026-01-14T18:59:01.949Z
 - There is a known issue with mlx runtime in lmstudio, where prompt caching for qwen3.5 multimodal is not working, which means, that for each turn of conversation with the agent, the whole conversation history is processed again (rather than just new tokens). One way around this with current stable lmstudio version, is to use qwen3.5 version, that has vision part removed (there are a bunch of quants like that available). 
 
 - ## I attached a benchmark chart (Apple M4 Max 128GB, 4-bit) showing vllm-mlx beating llama.cpp across multiple model families, roughly ~1.17× to 1.87× faster depending on the model. _202602
-- ## I attached a benchmark chart (Apple M4 Max 128GB, 4-bit) showing vllm-mlx beating llama.cpp across multiple model families, roughly ~1.17× to 1.87× faster depending on the model. _202602
 - https://x.com/mynamekarma/status/2021375707021181330
   - And it’s not just text-only either, multimodal caching is getting stupid fast (image prefix cache 21.7s → 0.78s, up to 28×).
 - Compare it to mlx-server, not llama.cpp.
@@ -213,6 +212,23 @@ modified: 2026-01-14T18:59:01.949Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## MLX a quick head to head between mlx-lm, omlx, LM Studio using Qwen3.6-27B-UD-Q3_K_XL model.
+- https://x.com/ivanfioravanti/status/2048411835108389072
+- Are these benchmarks with reasoning or without?
+  - These are pure throughput with cut at 128 tokens generated so not so relevant, but evals I do think and no-think, clearly the first wins big.
+
+- Benchmarking inference is brutal. Half the time you aren't even testing the hardware, you're just benchmarking the engine's default KV cache allocation policy.
+
+- I find quantisation and vision support are the hardest. Most of the Apple Silicon sit on top of mlx-vlm so seem pointless to compare. Benchmarks though are difficult, there’s always something you forgot.
+
+- 
+- 
+- 
 
 - ## 🆚 MLX: there are far too many servers now: vMLX, oMLX, Osaurus, LMStudio, mlx-lm, mlx-vlm.
 - https://x.com/ivanfioravanti/status/2042855890219327650

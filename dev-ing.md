@@ -331,6 +331,17 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0427
+
+- superdoc: when i run `pnpm dev`, there is a editor demo in browser. in the demo config menus, "Tracked replacements" supports "paired (google docs)" or "independent (word)", read related code and explain to me what's the difference when i open a .docx .
+  - When you open a DOCX file with tracked changes, this setting controls how tracked replacements (typing over selected text) are interpreted
+  - Word documents represent replacements as two separate tracked changes in the XML. Google Docs treats a replacement as one operation. 
+  - Paired (Google Docs): default - Adjacent `w:ins` (insertion) and w:del (deletion) elements with matching author and timestamp share one internal ID. The editor treats them as a single logical change. User sees one accept/reject button for the replacement. Matches the Google Docs user experience
+  - Independent (Word): Each w:ins and w:del element gets its own unique ID. Each is addressable and resolves independently. User sees two separate accept/reject buttons (one for deletion, one for insertion). Matches the Microsoft Word / ECMA-376 §17.13.5 standard behavior.
+- `pnpm dev` and `pnpm dev:superdoc` shows similar demo, what is the difference? `pnpm dev:super-editor"` shows a simpler demo, what is the point of it?
+  - `pnpm dev and pnpm dev:superdoc` - Identical : All editing features + Full application demo
+  - `pnpm dev:super-editor` - Minimal Editor Demo : just the editor + toolbar, no sidebar, no panels  
+
 ## 0425
 
 - 如何查看当前wifi网络的服务商是 移动、联通、还是电信？ 可以使用在线工具，也可以安装和使用本地工具。 给我一些在mac上快速查看当前wifi网络的服务商的方法 

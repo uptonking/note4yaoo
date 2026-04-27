@@ -25,7 +25,16 @@ modified: 2025-09-22T13:53:51.831Z
 
 - ## 
 
-- ## 
+- ## [A/B tested password vs magic link vs passkey signup. Embarassing conversion difference. : r/reactjs _202604](https://www.reddit.com/r/reactjs/comments/1swygdc/ab_tested_password_vs_magic_link_vs_passkey/)
+  - Timeline - 2 weeks. Got roughly 3000 signups per variant.
+  - Password-first: 61% completion, 3m 42s to dashboard
+  - Magic link: 79% completion, 1m 15s to dashboard
+  - Passkey-first (magic link fallback): 74% completion, 48 seconds to dashboard
+  - We eventually opted for passkey-first, felt like an obvious choice despite lower initial conversion compared to magic link.
+  - Retention was also higher as passkey users come back more because returning login is just a biometric tap.
+  - Some context: the reason we tested all 3 is because descope's flow builder let us design each variant visually and switch between them without code changes.
+
+- What kind of platforms are your users on? Seems passkey works better on Macs
 
 - ## [Should we do authentication in house or outsource? : r/webdev _202402](https://www.reddit.com/r/webdev/comments/1akm37q/should_we_do_authentication_in_house_or_outsource/)
 - having built several of them myself and often used djangos pre made auth, i would still go with Keycloak if you plan to have either multi client or distributed backend. 

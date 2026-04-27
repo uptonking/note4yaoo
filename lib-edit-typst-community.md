@@ -37,7 +37,8 @@ modified: 2025-12-25T19:54:56.482Z
 
 - ## 
 
-- ## 
+- ## [From LaTeX to Typst? Whatabout Markdown : r/typst _202604](https://www.reddit.com/r/typst/comments/1sx2eez/from_latex_to_typst_whatabout_markdown/)
+- Markdown isn't especially standardised. There are many things that work in (for example) Reddit-flavoured Markdown which won't work in GitHub-flavoured markdown, which won't work in Discord-flavoured markdown. Commonmark, the closest thing to an actual standard has comparatively very few features. Rather than bringing along the enormous amount of inconsistency and resultant confusion when it comes to Markdown, it is better (in my opinion) to create a standard which is similar but is tailored towards the project's specific goals (document preparation).
 
 - ## 🆚 [记录从obsidian迁移到typst的尝试 _202512](https://linux.do/t/topic/1370697)
 - 近几年使用md遇到的痛点

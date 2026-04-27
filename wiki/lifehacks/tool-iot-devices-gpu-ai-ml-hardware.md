@@ -134,6 +134,29 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 📌 [Comparison of upcoming x86 unified memory systems : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1swiylm/comparison_of_upcoming_x86_unified_memory_systems/)
+
+```markdown
+| Component            | Architecture   | Memory Type   | Bandwidth (approx.)   |
+|----------------------|----------------|---------------|-----------------------|
+| Medusa Halo          | Zen 6/RDNA5    | LPDDR6        | ~460 - 690 GB/s       |
+| Intel Nova Lake AX   | - / Xe3        | LPDDR5X/6?    | ~341 GB/s (10667 MT/s)|
+| Gorgon Halo (Refresh)| Zen 5/RDNA3.5  | LPDDR5X-8533  | ~273 GB/s             |
+| Strix Halo           | Zen 5/RDNA3.5  | LPDDR5X-8000  | ~256 GB/s             |
+```
+
+- Apple had laptops with 400GB/s of memory bandwidth and unified memory architecture in 2021.
+  - Amd has had unified memory for few years also for data centers. There was no market for PC, but even steam deck has it
+
+- Apple problem is the chip are slow even with MLX. Bandwidth alone means sht if the chip cannot do the number crunching. That's why AMD 395 trades blows with the M4 MAX even if the later has several times more bandwidth.
+
+- Nova Lake AX is canceled.
+  - Replaced by Nova Lake AX+ or AX-? There was a rumor that a lower CPU core count would be available. 
+
 - ## 🆚 [Dual DGX Sparks vs Mac Studio M3 Ultra 512GB: Running Qwen3.5 397B locally on both. Here's what I found. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s4lmep/dual_dgx_sparks_vs_mac_studio_m3_ultra_512gb/)
   - Bought both a dual DGX Spark setup and a Mac Studio M3 Ultra 512GB, each cost me about $10K after taxes. Same price, completely different machines. Here is what I learned running Qwen3.5 397B A17B on both.
   - The Mac Studio: MLX 6 bit quantization, 323GB model loaded into 512GB unified memory. 30 to 40 tok/s generation. The biggest selling point is memory bandwidth at roughly 800 GB/s. Setup was easy. Install mlx vlm, point it at the model, done. The weakness is raw compute. Prefill is slow (30+ seconds on a big system prompt with tool definitions) and if you want to do batch embedding alongside inference, you are going to feel it. I also had to write a 500 line async proxy because mlx vlm does not parse tool calls or strip thinking tokens natively.
@@ -370,6 +393,21 @@ modified: 2026-01-15T15:44:10.647Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [To 16GB VRAM users, plug in your old GPU : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1swzjnu/to_16gb_vram_users_plug_in_your_old_gpu/)
+  - For those who want to run latest dense ~30b models and only have 16GB VRAM, if you have a old card with 6GB VRAM or more, plug it in.
+  - It matters that everything fits on the VRAM, even on 2 cards. Even if one of them is quite weak.
+  - I have a 5070Ti 16GB and a old 2060 6GB. The common idea is you need 2 same GPU to maximize performance. But one day I was strike by the idea, why not give it a try?
+  - Let's see, if you did not bought a mother board just for LLM, it's very possible you have a true PCI-E x16 slot and a couple that looks like x16 but are actually wired with x4, just like me. That's a perfect slot for a old card.
+  - 16GB + 6GB = 22GB, it's getting close to the 24GB class card. If you have a better old card, lucky you!
+- I want to do this but the thing stopping me is power and space. I run a 16gb 4080S, and have a 12GB 3080ti, but I don’t see a slot where the 3080 can fit without grinding the 4080. Plus what power even runs these two cards lol I’m gonna have a stove top.
+
+- I did the same. Upgraded the power supply, though.
+  - You could just powerlimit your second gpu it won't make a real difference for llms in llma.cpp here and you don't have to worry that it takes like 300w but even then it's a bit more so yeah new psu might still be necessary
+
+- If your GPUs are different BRAND, then the best thing to do is have the OS/any programs use the weakest gpu, and load model weights/kv cache onto the strongest card only. That way, your beat best card is 100% available for inference.
 
 - ## [Multi-GPU? Check your PCI-E lanes! x570, Doubled my prompt proc. speed by switching 'primary' devices, on an asymmetrical x16 / x4 lane setup. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rwiuvg/multigpu_check_your_pcie_lanes_x570_doubled_my/)
   - Short version - in my situation, adding export CUDA_VISIBLE_DEVICES="1, 0" to my llama.cpp launch script doubled prompt processing speed for me in some situations.

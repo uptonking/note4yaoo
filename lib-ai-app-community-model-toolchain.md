@@ -32,12 +32,6 @@ modified: 2025-09-16T12:36:12.968Z
 
 - Two thirds of the expert tensors in unsloth's IQ4_XS are actually IQ3_S which really sucks on cpu, real IQ4_XS is usually more or less on par with Q4_K instead
 
-- 
-- 
-- 
-- 
-- 
-
 - ## [Someone needs to create a "Can You Run It?" tool for open-source LLMs : r/LocalLLaMA _202501](https://www.reddit.com/r/LocalLLaMA/comments/1iaubfm/someone_needs_to_create_a_can_you_run_it_tool_for/)
 - LM studio, Msty both has info on this before you download.
 
@@ -413,14 +407,19 @@ PP Speed: Q3 GGUF: 50 t/s
 - M3 Ultra, 512 GB RAM, 32/80-core variant.
   - I have a script processing files roughly 30-50k tokens in length, which I cache, and then ask subsequent questions of. I just fired it up on GLM4.5 4 bit MLX quant. For a 35000 token document, prompt processing took ~247 seconds. In subsequent turns of conversation generation speed was 10 tokens per second roughly speaking.
   - GLM4.5 Air, same document was ~104 seconds for prompt processing, and then generation is at 30 tokens per second or so.
-# discuss-quant-solutions
+# discuss-quant-format/solutions
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## Local LLM: MLX vs GGUF vs nvfp
+- https://x.com/songjunkr/status/2048506963584307507
+  - mlx: Due to significant quantization loss, it's best to use 6-bit or higher
+  - NVFP is a format optimized for NVIDIA graphics cards. It has low quantization loss and high speed.
+- Hardware-native formats win every time — the industry has been learning this since CUDA. Fragmentation is the tax you pay for specialization.
+  - MLX on M-series chips runs inference 2-3x faster than GGUF equivalents for the same model size.
 
 - ## I've just released APEX (Adaptive Precision for EXpert Models): a novel MoE quantization technique that outperforms @UnslothAI Dynamic 2.0 on accuracy while being 2x smaller for MoE architectures.
 - https://x.com/mudler_it/status/2039364812463853708

@@ -35,7 +35,7 @@ please analyze git commits and code if you need, then explain to me what major f
 
 - please rename all local packages whose names start with "@stirling-image/" to "@datalking/", for example "@stirling-image/image-engine" should be renamed to "@datalking/image-engine". then update related code/tests/scripts. make sure project and tests still runs with no error using npm, without docker.
 
-- you have migrated some features from ilove-stirling-image to ilove-image. 
+- you have migrated/reimplemented some features from ilove-stirling-image to ilove-image. 
 
 - for important features, the goal is to achieve full feature pairity or even better.
 
@@ -94,7 +94,7 @@ ocr is the most important feature in ilove-pdf project.
 
 please recheck your migrated ocr features and implementation logic, make sure the logic is correct without licensing issues. improve the ocr logic to make it robust and extensible.
 
-- you have migrated some features from ilove-bentopdf to ilove-pdf. 
+- you have migrated/reimplemented some features from ilove-bentopdf to ilove-pdf. 
 
 please refactor code structure in ilove-pdf project to use similar architecture and code structure as ilove-bentopdf without licensing issue, to make it easy to migrate more features in the future. 
 
@@ -154,9 +154,9 @@ you have worked on this problem several times but features are still lacking. Th
 
 - to achieve full feature parity with superdoc, help me choose the best option for long-term.
 
-- you have migrated some features from superdoc to ailovedoc.
+- you have migrated/reimplemented some features from superdoc to ailovedoc.
 
-- you should recheck logic parity detail by detail for every  major feature, the goal is to achieve full feature parity(ux can differ).
+- you should recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ).
 
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 - make a plan, then migrate and improve full feature pairity, without licensing issues
@@ -164,7 +164,7 @@ you have worked on this problem several times but features are still lacking. Th
 - the goal now is to achieve robust and extensible ooxml editing engine with full feature parity of upstream supercode.
 
 - the most important feature is a powerful, robust, extensible, headless ai ooxml editing engine with track change support .
-- you may deep research, and reference the upstream superdoc code, you may use similar dependencies, and implement similar logic, but you should rewrite code without licensing issues.
+- you may deep research, and reference the upstream superdoc code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 
 - please deep research superdoc, then can you design a similar solution in ailovedoc to improve it? is superdoc's solution good enough? if yes, solve it in a similar way for ailovedoc.
 
@@ -176,7 +176,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 ------
 
-superdoc's overall architecture is good enough to follow. Mostly ailovedoc should use similar architecture to superdoc.
+- superdoc's overall architecture is good enough to follow. Mostly ailovedoc should use similar architecture to superdoc.
 
 ailovedoc should have full feature parity for important features like document data model, editing engine, rich-text formatting, layout engine, virtualization, document-rendering, track-change.
 
@@ -186,8 +186,8 @@ ailovedoc should have full feature parity for important features like document d
 
 ```prompt
 
-onlyoffice pdf editor implements renders, edits, annotates `.pdf` files in the browser, but it is AGPL licensed.
-- the final goal is to implement from scratch a new extensible web pdf editor named hardoc with in-place text editing features similar to onlyoffice/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
+onlyoffice-pdf-editor(code is at several git repos in current folder) implements renders, edits, annotates `.pdf` files in the browser, but it is AGPL licensed.
+- the final goal is to implement from scratch a new extensible web pdf editor named hardoc with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
 - hardoc pdf editor should be more of a headless client-server architecture, so that you can build a hardoc cli with a hardoc sdk. 
 - hardoc should be implemented in a modular and extensible architecture for core pdf features like viewing and editing, with functional programming style.
 
@@ -242,7 +242,7 @@ project onlyoffice and project at `~/Documents/repos/office/all-pdf/open-pdf-stu
 
 recheck and migrate full features of True PDF text editing engine with annotation support. 
 
-- you have already migrated/implemented some features from onlyoffice pdf editor to hardoc.
+- you have migrated/reimplemented some features from onlyoffice pdf editor to hardoc.
 
 - you should recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ).
 
@@ -273,7 +273,7 @@ please make a plan, then improve the core in-place text editing engine to make i
 
 ------
 
-onlyoffice-pdf-editor's overall architecture is good enough to follow. Mostly hardoc should use similar architecture to onlyoffice pdf editor. 
+- onlyoffice-pdf-editor's overall architecture is good enough to follow. Mostly hardoc should use similar architecture to onlyoffice pdf editor. 
 
 You should implement hardoc pdf editor in a similar architecture of onlyoffice pdf editor. If onlyoffice does not use the rust core architecure, you MUST NOT do it.
 
@@ -309,9 +309,9 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - the most important feature in react webapp is a modular, extensible, headless spreadsheet view/editing engine with undo/redo history support like backbonejs webapp. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so keep as many code unchanged as possible.
 
-- you have migrated some features from backbonejs webapp to react webapp.
+- you have migrated/reimplemented some features from backbonejs webapp to react webapp.
 
-- you should recheck logic parity detail by detail for every  major feature, the goal is to achieve full feature parity(ux can differ).
+- you should recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ).
 
 - you have worked on this several times but features are still lacking.
 
@@ -367,9 +367,9 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - the most important feature in slaides is a framework-agnostic, modular, extensible, headless ai ppt view/editing engine with undo/redo history support like PPTist.
 
-- you have migrated some features from PPTist to slaides.
+- you have migrated/reimplemented some features from PPTist to slaides.
 
-- you should recheck logic parity detail by detail for every  major feature, the goal is to achieve full feature parity(ux can differ).
+- you should recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ).
 
 - you have worked on this several times but features are still lacking.
 

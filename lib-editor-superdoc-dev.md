@@ -10,11 +10,12 @@ modified: 2026-04-20T00:35:08.788Z
 # guide
 
 - pros
+  - virtualized render
+  - track-change / redline
+  - 支持多种layout: print/web, multi-column
   - headless(renders, edits, and automates .docx files)
   - supports browser and nodejs
   - framework-agnostic: Works with React, Vue, and vanilla JS
-  - track-change / redline
-  - 支持多种layout: print/web
   - collaboration — Yjs-based CRDT. Multiplayer editing with comments, tracked changes, and automatic conflict resolution.
   - Agentic tooling — Runs headless in Node.js. Bring your own LLM for document automation, redlining, and template workflows.
     - 提供了MCP
@@ -24,6 +25,8 @@ modified: 2026-04-20T00:35:08.788Z
   - license: AGPL, Self-hosted — Runs entirely in the browser or nodejs
   - 不支持元素: task-list, custom syntax
   - 对markdown支持度待改进: Tables, footnotes, task lists, custom syntax extensions
+  - 打开多栏布局的.docx文件时, 分页模式下直接打不开， 单页模式下显示为普通单栏文档
+  - multi-column布局未提供示例
 
 - features
   - Built on OOXML. Real pagination, section breaks, headers/footers. Not a contenteditable wrapper with export bolted on.
@@ -47,6 +50,7 @@ modified: 2026-04-20T00:35:08.788Z
 - 如何解决同一个 .docx 文件在不同软件如 word/wps/onlyoffice/libreoffice 中的分页换行位置不同
 # draft
 - 类似word的多种视图: print/web/outline/draft
+- multi-column布局示例
 # dev-xp
 
 - 

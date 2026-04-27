@@ -184,6 +184,7 @@ modified: 2022-11-07T10:26:22.510Z
     - 我决定发起一个全新的项目，用于提供一套面向个人用户的个人私有云音乐解决方案。
   - [LX 以后的发展方向 _202310](https://github.com/lyswhut/lx-music-desktop/issues/1643)
     - LX于2023年10月18日收到了腾讯的警告信，要求停止提供软件内置的连接到他们平台的在线播放及下载服务，所以我们决定关停内置的“临时接口”与“测试接口”。
+  - https://github.com/pdone/lx-music-source
 # calendar
 - https://github.com/lwlsw/Chinese-Lunar-Calendar-ics
   - 现成的中国农历ics文件 2015-2100

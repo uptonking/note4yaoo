@@ -669,7 +669,15 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [我大概明白了为什么Deepseek v4 有时候不遵循指令 - LINUX DO _202604](https://linux.do/t/topic/2069690)
+  - 这几天使用发现v4明明能力挺强的，但有时候就是不调用工具，并且会出现一些莫名其妙的错误
+  - 同样的提示词，放到System prompt 和第一句话的末尾优先级天差地别。
+  - 测试官方给的角色扮演思维替换提示词发现，放在System prompt有可能不生效，但放在第一句话的末尾必然生效
+  - v4是角色扮演特化模型，只要设置了人物设定，会极大的影响其后续的思维过程、回复风格、工具调用。
+  - 如果提示词中设置了这样的内容：你是xxx/你将扮演xxx/你名为xxx，极大概率就会优先进行扮演
+  - 如果没有在角色设定中要求其调用工具，其使用工具的概率就会严重降低！
+  - 综上所述，我建议大家如果发现自己的v4不听命令，可以先尝试把具体的提示词再发送一遍（不调用工具就把调用工具的规则发一遍）
+  - 同时可以排查下系统提示词中是否有：你是xxx/You are xxx 的这类描述，可以删掉或者把工具调用提示词放进去补全
 
 - ## Since GPT-5.4, we’ve unified Codex and the main model into a single system, so there’s no separate coding line anymore.  _202604
 - https://x.com/romainhuet/status/2047955381578838357

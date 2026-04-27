@@ -520,6 +520,8 @@ modified: 2025-02-21T17:17:42.225Z
   - This is a very well implemented CLI. It's so thorough. It dynamically registers commands, it's designed for a browser-wielding agent to automate the setup steps, it can start a MCP daemon…
   - https://x.com/addyosmani/status/2029372736267805081
     - Google Drive, Gmail, Calendar, and every Workspace API. 40+ agent skills included.
+- https://github.com/google/skills /apache2
+  - Agent Skills for Google products and technologies
 
 - https://github.com/jaredpalmer/mogcli /MIT/202603/go
   - Unofficial agent-friendly Microsoft 365 CLI
@@ -865,4 +867,11 @@ modified: 2025-02-21T17:17:42.225Z
   - Upload a video or paste a direct media link to instantly create accurate, timed subtitles.
   - https://x.com/nutlope/status/2041199444855492790
     - Powered by Whisper on @togethercompute and @FFmpeg via fluent-ffmpeg.
+# audio
+- https://github.com/Deep-unlearning/smol-audio /apache2/202604/jupyter
+  - Practical, Colab-friendly notebooks for fine-tuning and running audio AI models
+  - Practical notebooks for shrinking, optimizing, and customizing audio AI models with the Hugging Face ecosystem.
+  - https://x.com/Tu7uruu/status/2048768154818801956
+    - A collection of notebooks & scripts to build on cutting-edge local audio models
+    - Fine-tune Whisper / Parakeet / Voxtral / Granite Speech
 # more

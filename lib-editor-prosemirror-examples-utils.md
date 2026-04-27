@@ -22,6 +22,9 @@ modified: 2022-08-18T16:57:29.058Z
   - Agentic tooling — Runs headless in Node.js. Bring your own LLM for document automation, redlining, and template workflows.
   - Dual licensed — AGPLv3 for community use. Commercial license for proprietary deployments.
   - **Separate Layout Engine** : Pure calculation, separate from PM
+    - https://github.com/superdoc-dev/superdoc/tree/main/packages/layout-engine/layout-engine
+    - Takes measured FlowBlocks (paragraphs, tables, lists, images, drawings) and layouts them into paginated fragments.
+    - Handles multi-column layouts, section breaks, page breaks, headers/footers, anchored/floating objects, and column/page advancement. 
     - ProseMirror Doc → pm-adapter → FlowBlock[] → layout-engine → painter-dom → DOM
     - `export type LayoutMode = 'vertical' | 'horizontal' | 'book'`;
     - virtualization is hardcoded to only work with `vertical` mode
@@ -66,6 +69,7 @@ modified: 2022-08-18T16:57:29.058Z
   - https://samwillis.uk/premirror/
   - Premirror is a library for building Word-class page-layout editors on the web. 
   - It layers deterministic pagination and composition on top of ProseMirror, giving you paper-style page breaks, widow/orphan control, and fragment-level text positioning — all while keeping ProseMirror as the single source of truth for document content and editing.
+  - 仅提供了分页示例，未提供分栏布局的示例
   - ProseMirror owns the document model and all editing operations. Premirror's composer takes a measured snapshot of the document and produces a deterministic layout: pages, frames, line boxes, and placed runs. A React rendering layer then projects those fragments into absolute positions inside page-chrome viewports, producing a word-processor-style paged view with a single contenteditable surface.
   - Text measurement is handled by @chenglou/pretext, which provides segment-aware width calculation and line fitting.
   - 🐛 

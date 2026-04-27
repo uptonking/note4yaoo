@@ -1747,7 +1747,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 质保3天：从  激活时间  起算 72小时 内出现掉车，可 提交工单 无限次补车。
   - 货源纯手工开通订阅 理论一个月 
   - [ChatGPT源头的小店](https://pay.ldxp.cn/shop/B8TNSEBM) , 还有开单独中转站
-    - 群友提供的印尼渠道
+    - 群友提供的印尼渠道, 都是微软邮箱, 印尼的临时不要
     - plus-6
     - 提供2类账号: hotmail邮箱+密码登陆，邮箱+验证码登录
   - [视界AI的小店 - 链动小铺](https://pay.ldxp.cn/shop/shijieAI)
@@ -1755,6 +1755,11 @@ modified: 2025-03-22T16:10:24.856Z
   - [shop.aitonse.com](https://shop.aitonse.com/products)
     - 印尼
   - [商家5651的小店 ](https://pay.ldxp.cn/shop/AO4GDZSI)
+    - 自助售后
+  - [山姆奥特曼商店的小店 - 链动小铺](https://pay.ldxp.cn/shop/1E5DST9P)
+    - plus账号-6, 质保三天 
+  - [超低价GPT会员的小店 - 链动小铺](https://pay.ldxp.cn/shop/dijiagpt)
+    - 【手工】【30天】GPT-Team / Business 高质量激活码（质保3天）
 
 - [GPTPLUS.icu 的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YQJERQW3)
   - 自助激活页面：https://gptplus.icu

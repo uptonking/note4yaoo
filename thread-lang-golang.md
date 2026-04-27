@@ -51,6 +51,23 @@ modified: 2025-04-18T03:57:00.075Z
   - How do these numbers makes sense without context like how many hosts are in the fleet serving these requests? Both for 150B/month and 58M req/s. I am assuming these numbers are not from single host.
 
 - This isn't the flex you think it is. Honestly, you need to at least share peak numbers, because 150 billion HTTP requests/month seems like a large number, but it really isn't. From all my tests, Go is a slow language. Like, really slow. The word "half" comes to mind.
+# discuss-dev-xp-golang
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I've heard Java devs call Go "Simpler Java" & I agree after I used it.
+- https://x.com/avrldotdev/status/2048278700446359645
+  - std-lib is lean but strong, provides OS to HTTP & much more.
+  - natively concurrent with goroutines & channels
+  - simpler runtime & small GC pauses
+  - faster builds & fewer abstractions
+  - easier to learn too
+
 # discuss
 - ## 
 

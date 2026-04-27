@@ -41,6 +41,23 @@ modified: 2024-11-16T16:54:18.953Z
 - 🌰 https://github.com/vercel/examples/tree/main/solutions/node-hello-world
 
 - [How to deploy Node.js server on Vercel properly? - Stack Overflow](https://stackoverflow.com/questions/78929927/how-to-deploy-node-js-server-on-vercel-properly)
+# discuss-cloudflare
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Cloudflare 新版 wrangler 的 Local Explorer 真好用，总算有个 web 界面可以看本地的 CF 资源了，
+- https://x.com/vikingmute/status/2048404675960139788
+  - 升级到最新版，运行 wrangler dev 命令以后，在 console 中再按 e，就会弹出一个 localhost:8787/cdn-cgi/explorer 这样的界面，就可以看本地所有的 CF 资源了，比原来方便好多。
+- 之前用着另一个 `npx localflare` 也非常好用, 基本和这个界面一样
+
+- 很不错了，不过还差个关键的 queue
+
+- With Cloudflare CLI, Wrangler CLI, and Cloudflare Skill, I no longer need to use the UI. 
 # discuss
 - ## 
 

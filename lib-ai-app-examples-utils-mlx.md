@@ -712,6 +712,14 @@ modified: 2025-11-01T10:54:26.044Z
   - Not enough VRAM? We keep only hot experts and offload the rest to RAM.
   - Not enough RAM? We have a second tier of caching logic with prefetch from SSD and performance hacks.
   - This project is a PoC to push these features in vLLM and llama.cpp, but as i started I kept piling features into it and I intend to get to it to be at least as good as llama.cpp on all popular models.
+
+- https://github.com/lucienhuangfu/eLLM /apache2/202604/rust
+  - eLLM can infer LLM on CPUs faster than on GPUs
+  - [eLLM: Run LLM Inference on CPUs Faster Than on GPUs : r/Vllm _202604](https://www.reddit.com/r/Vllm/comments/1swog6b/ellm_run_llm_inference_on_cpus_faster_than_on_gpus/)
+    - Building eLLM, a CPU-only LLM inference framework. A single CPU server (Xeon) can outperform an 8-GPU H20 server in prefilling-heavy, long-context workloads.
+    - eLLM needs Xeon Gen4 + with AMX and DDR5 support
+    - AMD CPUs are also viable, but they may be slower due to the lack of AMX instructions.
+    - This direction is quite interesting—especially for long-context, prefill-heavy workloads, where large CPU memory can indeed offer advantages over GPU VRAM. Being able to prefill the entire prompt in a single pass, instead of relying on chunking and repeatedly loading parameters, makes a lot of sense.
 # model-safetensors/gguf
 - https://github.com/EvanZhouDev/umr /AGPL/202604/ts
   - The Unified Model Registry for all your local AI apps.
