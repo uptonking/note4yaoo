@@ -1750,18 +1750,35 @@ modified: 2025-03-22T16:10:24.856Z
     - 群友提供的印尼渠道, 都是微软邮箱, 印尼的临时不要
     - plus-6
     - 提供2类账号: hotmail邮箱+密码登陆，邮箱+验证码登录
+  - [畅用plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/ooopp)
+    - plus账号, 质保三天 
   - [视界AI的小店 - 链动小铺](https://pay.ldxp.cn/shop/shijieAI)
     - 印尼， 提供批量折扣
   - [shop.aitonse.com](https://shop.aitonse.com/products)
     - 印尼
+
+- [codex.kedaya.xyz](https://codex.kedaya.xyz/)
   - [商家5651的小店 ](https://pay.ldxp.cn/shop/AO4GDZSI)
-    - 自助售后
+    - 自助售后, 质保三天 
   - [山姆奥特曼商店的小店 - 链动小铺](https://pay.ldxp.cn/shop/1E5DST9P)
     - plus账号-6, 质保三天 
+  - [商家9052的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/LOA3IZW5)
+    - plus账号, 质保三天 
+  - [王二的小铺的小店 ](https://pay.ldxp.cn/shop/2JSR3DGY)
+    - plus账号, 质保三天 
+  - [哈哈的ai杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/22DHYNNV)
+    - plus账号, 质保三天 
+  - [夏麦小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/GSVP35W6)
+    - plus账号, 质保三天 
   - [超低价GPT会员的小店 - 链动小铺](https://pay.ldxp.cn/shop/dijiagpt)
     - 【手工】【30天】GPT-Team / Business 高质量激活码（质保3天）
+  - [普露米AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/plumire)
+    - 低价号多
+  - [叮当猫稳定AI渠道的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/dingdangmao)
+    - 品类特别多
+    - 只做群里面的三级代理
 
-- [GPTPLUS.icu 的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YQJERQW3)
+- [GPTPLUS.icu team 的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YQJERQW3)
   - 自助激活页面：https://gptplus.icu
   - 纯净激活页面：https://icustore.icu
   - 防迷路请进客户⑥群 1091880491
@@ -1771,6 +1788,9 @@ modified: 2025-03-22T16:10:24.856Z
     - 质保3天：从  激活时间  起算 72小时 内出现掉车，可  提交工单  无限次补车。
   - [CK能量的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ZYKSFL9A)
     - 低价号多
+
+- [咕咕Ai源头号商（招代理）的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/gugu)
+  - 价格较贵, 只做批发
 
 - [AI杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/PBY2YIR3), /周全
   - 自助充值plus

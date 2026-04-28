@@ -90,7 +90,25 @@ modified: 2026-01-12T10:04:03.442Z
 - Check out https://github.com/agenta-ai/agenta provides the tools for automatic evaluation, comparing the results side by side, and doing human evaluation / A/B testing on the results. It's open-source and can be self-hosted.
 
 - try out this one: https://github.com/Addepto/contextcheck
+# discuss-monitor/observability-solutions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [LangChain made it much easier to build agent workflows, but what should teams use for tracing, evaluation, guardrails, and testing once those workflows are live? : r/LangChain _202604](https://www.reddit.com/r/LangChain/comments/1sx39tr/langchain_made_it_much_easier_to_build_agent/)
+  - Langfuse is already a strong open-source option for teams that want observability around LLM apps. It is open source, supports self-hosting, and covers tracing, prompt management, datasets, experiments, and evaluation workflows in a way that fits naturally into modern LLM app development.
+  - What we built at Future AGI starts from a different assumption. We assumed LangChain would already handle orchestration. What many teams still need after that is the production system around the orchestration layer, not just the observability layer. So the stack we open-sourced goes beyond tracing and experiments into simulation, evaluation, protection, gateway control, prompt optimization, and the platform loop that connects them.
+  - That matters because most production teams do not stop at visibility. They want to replay the pattern, test the fix, score the output, block unsafe responses, route traffic cleanly, and keep watching the rollout after deployment.
+
+- Different layer, honestly. If your main need is classic experiment tracking and model lifecycle, MLflow is a natural fit, but Future AGI is built more around the production agent loop, tracing, evals, simulation, guardrails, gateway routing, and prompt optimization once the workflow is live.
+- Langfuse has done a great job making observability, prompt workflows, and evals easier for LangChain teams, and that is a big reason it is widely adopted in the ecosystem. What we wanted to open-source on top of that was the rest of the production loop, simulation, guardrails, gateway routing, prompt optimization 
 # discuss-eval-solutions
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

@@ -121,7 +121,7 @@ modified: 2023-08-25T22:31:05.132Z
 
 - https://github.com/snowtrack/snowfs /GPLv3/ts/inactive
   - https://www.snowtrack.io/
-  - SnowFS is a high-performance command-line application and node library for Windows, macOS and Linux with a focus on **binary file versioning**. 
+  - SnowFS is a high-performance command-line application and node library for Windows, macOS and Linux with a focus on **binary file versioning** . 
   - It is made for the graphics industry and was initially developed for Snowtrack.
   - Support for instant snapshots
   - Support for instant rollback
@@ -190,6 +190,13 @@ modified: 2023-08-25T22:31:05.132Z
     - go-mysql-server is a drop-in replacement for MySQL. Any client library, tool, query, SQL syntax, SQL function, etc. that works with MySQL should also work with go-mysql-server.
     - A simple in-memory database implementation is included, and you can query any data source you want by implementing your own backend.
 
+- https://github.com/dolthub/doltlite /apache2/202604/c
+  - DoltLite - Version Controlled SQLite
+  - A SQLite fork that replaces the B-tree storage engine with a content-addressed prolly tree, enabling Git-like version control on a SQL database. 
+  - Everything above SQLite's btree.h interface (VDBE, query planner, parser) is untouched. 
+  - Everything below it -- the pager and on-disk format -- is replaced with a prolly tree engine backed by a single-file content-addressed chunk store.
+  - [Why DoltLite? _202604](https://www.dolthub.com/blog/2026-04-27-why-doltlite/)
+
 - https://github.com/terminusdb/terminusdb-store /341Star/apache2/202309/rust
   - a tokio-enabled data store for triple data
   - This library implements a way to store triple data - data that consists of a subject, predicate and an object, where object can either be some value, or a node
@@ -248,7 +255,7 @@ modified: 2023-08-25T22:31:05.132Z
   - Blazing-fast Postgres cloning and branching
   - Provide temporary full-size database clones for SQL query analysis and optimization
   - Available for any PostgreSQL, including self-managed and managed* like AWS RDS, GCP CloudSQL, Supabase, Timescale.
-  - **Thin cloning is fast because it is based on Copy-on-Write(CoW)**. 
+  - **Thin cloning is fast because it is based on Copy-on-Write(CoW)** . 
     - DBLab employs two technologies for enabling thin cloning: ZFS (default) and LVM.
     - Using ZFS, DBLab routinely takes new snapshots of the data directory, managing a collection of them and removing old or unused ones. When requesting a fresh clone, users have the option to select their preferred snapshot.
   - [How Database Lab Works | Database branching for any Postgres DB](https://postgres.ai/products/how-it-works)

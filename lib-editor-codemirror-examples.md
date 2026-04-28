@@ -129,6 +129,9 @@ modified: 2023-06-23T12:46:53.288Z
     - [TypeScript integration · codesandbox/sandpack _202112](https://github.com/codesandbox/sandpack/discussions/237)
       - once you start to edit the code or change tab (trig render basically), ts-server will start to kick in
       - Vocs is solving this elegantly with Twoslash
+  - 🍴 forks
+  - https://github.com/owellandry/sandpack
+    - Fix build script to use pnpm
 
 - https://github.com/jupyterlab/jupyterlab/tree/main/packages/codemirror /BSD/202405/ts
   - A JupyterLab package which provides the default implementation of the `@jupyterlab/codeeditor` interface, using the `CodeMirror` editor.
@@ -288,6 +291,8 @@ modified: 2023-06-23T12:46:53.288Z
   - Supports Server-Side Rendering (SSR)
   - Wrap a native `textarea` element with the `wrap` export
   - 🔌 Plugin API (experimental): blockquote, image, codeblock
+  - 🐛 
+    - 不支持table
   - https://github.com/davidmyersdev/octo /MPLv2/202405/ts/vue
     - https://octo.app/
     - A local-first, progressive web app for knowledge management
@@ -302,6 +307,7 @@ modified: 2023-06-23T12:46:53.288Z
     - 亮变更内容的粒度是字符，但未突出删除字符的样式
   - markdown编辑体验支持行内切换md代码和预览，✨ 类似typora
   - 支持图片、emoji
+  - 支持显示table， 但点击table时不会直接编辑单元格，而会切换为编辑文本表格
   - 依赖thememirror、emojilib
   - manual resizing of the editor (similar to html textarea)
   - custom linting
@@ -429,6 +435,7 @@ modified: 2023-06-23T12:46:53.288Z
   - 更好用的 Markdown 排版助手｜一键适配微信公众号、网页与图片。
   - 示例是经典双栏布局，左边是md文本，右边是手机预览， 📡 可调整手机尺寸
   - 实时预览 - 基于 CodeMirror 6 的 Markdown 编辑器，所见即所得
+    - 🐛 并不能直接在预览上编辑
   - 14 种排版样式 - 从专业商务到复古怀旧，满足不同场景需求
   - 图片导出 - 将排版内容导出为图片分享
 

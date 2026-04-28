@@ -32,7 +32,7 @@ https://meeting.tencent.com/p/9606972663
 - editor-play
   - https://ckeditor.com/docs/ckeditor5/latest/examples/builds-custom/full-featured-editor.html
   - https://prosemirror.net/examples/
-  - https://tiptap.dev/docs/examples/basics/images  /nextjs
+  - https://tiptap.dev/docs/examples/basics/images  /nextjs+iframe
   - https://www.blocknotejs.org/examples/basic/multi-column  /fumadocs
   - https://milkdown.dev/playground  /storybook/nextjs
   - https://prosekit.dev/examples/change-tracking  /astro
@@ -42,7 +42,7 @@ https://meeting.tencent.com/p/9606972663
   - https://yoopta.dev/examples/word-example  /单独示例
   - https://wangeditor-next.github.io/demo/
   - https://playground.lexical.dev/
-  - https://mdxeditor.dev/editor/demo
+  - https://mdxeditor.dev/editor/demo  /nextjs
   - https://quilljs.com/playground/snow
 
 - code-play
@@ -330,6 +330,33 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - ?
 - dev-log
   - ?
+
+## 0428
+
+- i want to build a demo website for js library.  https://github.com/formidablelabs/react-live renders  demo as html directly.  https://github.com/codesandbox/sandpack and  https://github.com/huozhi/devjar  renders demo in iframe. which solution should i choose?
+- Use iframe when you want:
+  - strong isolation from your site’s CSS and JS
+  - safer execution of untrusted or user-edited code
+  - fewer collisions with your app’s state, styles, and global variables
+  - support for more realistic “mini app” demos
+  - Crash Protection: If the demo has an infinite loop or throws a fatal error, only the iframe crashes. Your docs site stays alive.
+  - If your library involves responsive design (e.g., CSS media queries, grid layouts), iframes are vastly superior. 
+  - True Event Isolation
+  - Z-Index and Fixed Positioning: If your library includes elements like sticky headers or fixed sidebars, rendering them in direct HTML will make them stick to the documentation's window, which breaks the layout.
+  - Framework Agnostic
+  - optional advanced tooling: npm import
+  - 🐛
+    - Performance Overhead: Booting up the bundler and iframe takes time
+    - Modals, Dropdowns, and Tooltips: This is the biggest drawback of iframes. If your library includes a dropdown menu, a tooltip, or a modal popup, an iframe will cut it off if the dropdown is taller than the iframe itself.
+    - Interacting with iframes on mobile devices can be frustrating. 
+- Use direct HTML injection when you want:
+  - fast
+  - the simplest setup
+  - tighter integration with the host page styling
+  - very small, controlled examples
+  - lower overhead and easier messaging between demo and page
+  - 🐛 
+    - Shared State: If your library mutates window or document, it might mess up your docs site. Easier to share state between the demo and surrounding docs (e.g., theme toggles)
 
 ## 0427
 

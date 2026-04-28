@@ -882,6 +882,22 @@ It amazes me how people default to LLM calls when you can do it in a simple, fre
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [I'm done with using local LLMs for coding : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sxqa2c/im_done_with_using_local_llms_for_coding/)
+  - I used Qwen 27B and Gemma 4 31B, these are considered the best local models under the multi-hundred LLMs. I also tried multiple agentic apps. My verdict is that the loss of productivity is not worth it the advantages.
+  - Shitty decision-making and tool-calls. I know there's huge AGENTS.md that treat the LLM like a programmable robot, giving it long elaborate protocols because they don't expect to have decent self-guidance, I didn't try those tbh. And tbh none of them go into details like not reading the output of 'docker build'. I stuck to the default prompts of the agentic apps I used, + a few guidelines in my AGENTS.md.
+  - Performance
+  - I'm not learning anything: Other than changing the URL of the Chat Completions server, there's no difference between using a local LLM and a cloud one, just more grief.
+
+- AGENTS.md still too weak, you need to be more thorough for a 27b model. make it focus on what the LLM really need to do, avoid using "IF", "DON'T". you need to create a solid plan mode first before executing anything in build mode. local llm for coding is still good if you know what you're doing. so keep learning
+
+- the trick is to use a large llm to orchestrate smaller coding llm’s to save output tokens
+
+- Skill issue
+
 - ## vibe coding可以说是显著增大了我的精神压力... 哪怕我已经用了最顶尖的模型，我依然需要无时无刻Review LLM的命令执行和代码输出，并快速做出各种架构决策、在它犯错的时候及时干预。
 - https://x.com/is_llll/status/2032825865969742281
   - 这种神经紧绷的状态特别累。我好久没有体会曾经自己写代码那种愉悦的心流状态了。但放弃使用LLM又会大大降低效率...

@@ -128,7 +128,7 @@ modified: 2021-06-02T15:26:39.741Z
 - ## How should markdown be saved and rendered?
 - https://dev.to/michael/how-should-markdown-be-saved-and-rendered-51f
 - All the responses here are right, and I definitely would stress @mortoray's point
-  - There's a general rule for for asset transformation: **always keep the original**
+  - There's a general rule for for asset transformation: **always keep the original** 
   - I like to think of the HTML as a function of the markdown. 
   - Every time the markdown changes, run the function to output HTML. 
   - Within the main function are a series of other functions to handle each subtask and return the latest state of the HTML. 
@@ -381,6 +381,18 @@ export default marked;
   - Noteworthy currently takes inspiration from remirror's plugin system for defining schema extensions, and for Markdown parser extensions I let plugins define transformations between the mdast and ProseMirror tree formats.
 - In fact milkdown take everything as an Atom. So a prosemirror node as actually an atom. The core part of milkdown just load the atom one by one, and I provide some internal atoms such as parser and serializer, and I also provide some helpers for users to quickly create their own atoms, such as createProsemirrorPlugin
   - All atoms will share a common context, they can read and write properties on it. So as you can imagine, a Paragraph atom will add a node to node list on context. And later, a ProsemirrorSchema atom will use the node list to create a prosemirror schema. This sequence is controlled by LoadState, which has a more clear description in this document page
+# discuss-styling-md/text
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Easiest way to make a custom css file as a template for markdown files? : r/Markdown _202604](https://www.reddit.com/r/Markdown/comments/1swuogu/easiest_way_to_make_a_custom_css_file_as_a/)
+- Parse your .md into html. There exist parser for this case.
+
 # discuss
 - ## 
 
@@ -514,6 +526,8 @@ This is some text
 console.log('Hello, World!');
 ```
 
+
+
 ```js
 console.log('Hello, World!');
 ```
@@ -528,6 +542,8 @@ This is some text
 ```js
 console.log('Hello, World!');
 ```
+
+
 
 ```js
 console.log('Hello, World!');

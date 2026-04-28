@@ -43,6 +43,7 @@ modified: 2022-08-18T16:57:46.405Z
   - https://github.com/ueberdosis/tiptap
   - https://tiptap.dev/
   - https://tiptap.dev/examples/default
+    - 文档中的示例基于iframe预览
   - A headless, framework-agnostic and extendable rich text editor, based on ProseMirror.
   - It’s headless and comes without any CSS. You are in full control over markup, styling and behaviour.
   - 优点: 🔁 协同后端实现hocuspocus, 示例丰富(drawing), RAG生成示例
@@ -76,15 +77,20 @@ modified: 2022-08-18T16:57:46.405Z
   - https://github.com/Milkdown/milkdown
   - https://github.com/Saul-Mirone/milkdown
   - https://milkdown.dev/
-  - https://milkdown.dev/online-demo
+  - https://milkdown.dev/playground
   - 依赖prosemirror、remark、prism、katex，但不依赖prosemirror-markdown、react
-  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
+  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of `prosemirror` and `remark`.
   - ✨ 主要特性是自定义markdown、支持plugin
   - Plugin Driven: Everything in Milkdown are plugins
   - Collaborative with yjs
   - Headless: comes without any CSS
+  - Math - LaTeX math equations support via math plugin
   - 不同于其他prosemirror项目，可配置支持的markdown特性
   - ⚠️️breaking: @milkdown/core@4.4.0(date202107) migrate from markdown-it to remark
+  - Milkdown is a headless editor, which means it doesn't come with any default styles. 
+    - Crepe theme uses CSS variables for consistent styling. 
+    - provides default class names for each node and mark. 
+  - Crepe is a powerful, feature-rich Markdown editor built on top of Milkdown. It provides a complete editing experience with a beautiful UI and extensive customization options.
   - https://github.com/Milkdown/vscode /MIT/202501/ts
     - vscode-ext: Edit markdown in a WYSIWYG way, powered by milkdown
 
@@ -98,6 +104,14 @@ modified: 2022-08-18T16:57:46.405Z
   - 支持多层嵌套拖拽
   - https://prosekit.dev/examples/change-tracking
     - 示例较简单，偏向纯文本的diff
+  - https://prosekit.dev/components/block-handle/
+    - reorder, and insert blocks in your editor through drag-and-drop.
+  - Cross-Framework Support: Use with React, Vue, Preact, Svelte, Solid, or vanilla JavaScript.
+  - Modular & Extensible: Easily add or modify features.
+  - Headless: Full control over the editor's appearance.
+  - Tailwind CSS Components: Quickly build beautiful editors with copy-paste components in your app.
+  - supports multiple content formats: json, html
+  - ProseKit can run in Node.js environments for background processing, CLI applications, and Server-Side Rendering (SSR). The primary limitation is that DOM-dependent APIs are unavailable unless you provide a DOM implementation.
   - 🆚️ [how is it different from Remirror, Prosemirror or Tiptap? _202412](https://github.com/prosekit/prosekit/discussions/857)
     - Remirror and TipTap share some similar designs. One of them is that every extension is a class (e.g., BoldExtension). If you want to add more features based on an existing extension, you extend it (e.g., class MyBoldExtension extends BoldExtension) and add/override methods in the subclass.
     - I found this design makes it harder to use in complex scenarios. Using the principle of "composition over inheritance," I redesigned the extension system in ProseKit, where every extension is just a function that calls one or more other extensions.

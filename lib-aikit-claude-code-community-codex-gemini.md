@@ -432,7 +432,22 @@ codex --yolo resume --last
 
 - ## 
 
-- ## 
+- ## 最近折腾出一个特别顺手的玩法：在 Claude Code 里直接接入 Codex 做代码审查（而且是 OpenAI 官方插件）。
+- https://x.com/wsl8297/status/2048797883512902134
+1. /plugin marketplace add openai/codex-plugin-cc
+2. /plugin install codex@openai-codex
+3. /reload-plugins
+4. /codex:setup
+- 我的日常用法也很简单：代码写完就丢给 Codex 先过一遍。小改动、常规检查、边角问题基本都让它先拦下来，再决定要不要继续深挖。
+- 用了一段时间的真实体感：
+- token 用量肉眼可见地降了，基本能省一半
+- 更惊喜的是，代码质量反而更稳了，很多细节坑会更早被揪出来
+
+- 是的，我也很喜欢这么用。直接写到 Skill 的名字，然后开启双路 Review：Cloud Code 加 Codex 一起 Review
+
+- 
+- 
+- 
 
 - ## [GPT 5.5 安全分析需要验证身份 - LINUX DO _202604](https://linux.do/t/topic/2050475)
   - 正儿八经开发, 没有任何破限. 使用grok搜索直接触发

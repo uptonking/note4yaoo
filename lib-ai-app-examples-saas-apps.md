@@ -664,6 +664,11 @@ modified: 2025-02-21T17:17:42.225Z
   - CLI is the recommended and most stable entry point.
   - Web Workspace is under active development — the frontend UX and flows are not finalized; expect rough edges.
 
+- https://github.com/yeap531/word-format-skill /apache2/202604/python
+  - skill：把一份参考 Word (.docx) 的排版样式（字体 / 字号 / 缩进 / 行距 / 对齐 / 页面设置 / 样式表 / 主题 / 页眉页脚）视觉一致地复刻到新内容上。
+  - 仅在 macOS 工作（依赖 Microsoft Word + 浏览器 + System Events 的 UI 自动化）。
+  - [100%复刻word模版的skill - LINUX DO _202604](https://linux.do/t/topic/2068329)
+
 ## reader
 
 - https://github.com/codedogQBY/ReadAny /GPL/2026t03/ts

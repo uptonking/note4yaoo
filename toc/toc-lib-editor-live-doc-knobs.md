@@ -44,7 +44,7 @@ modified: 2021-03-03T21:48:48.379Z
     - If you need to modify these, you will have to fork the projects, make your modifications and then re-publish them as new packages which can then be used instead of the original ones. The real problem you are trying to solve are not modifying these. The actual problem is providing the code suggestions in the same format that the codeium server does. The actual codeium backend server running the AI models is not open-source.
     - this is not easily done. :( Thank you for the explanations
 
-- react-view /711Star/MIT/202312/ts/inactive
+- react-view /711Star/MIT/202312/ts/html/inactive
   - https://github.com/uber/react-view
   - https://react-view.netlify.com/
   - 优点是除了支持直接编辑源码，还支持类似storybook的knobs，通过复选框直接设置属性值，甚至能直接输入函数形式的字符串作为属性值
@@ -54,7 +54,7 @@ modified: 2021-03-03T21:48:48.379Z
   - We also rely on babel and babel-parser instead of buble.
   - React View aims to make documentation more interactive and useful.
 
-- react-live /4.1kStar/MIT/202402/ts/inactive
+- react-live /4.1kStar/MIT/202402/ts/html/inactive
   - https://github.com/FormidableLabs/react-live
   - https://commerce.nearform.com/open-source/react-live/
   - https://react-live.netlify.com/
@@ -68,7 +68,7 @@ modified: 2021-03-03T21:48:48.379Z
   - [codemirror withlive](https://github.com/FormidableLabs/react-live/issues/210)
     - 202210: if you are using the standard LiveProvider, you can use `@uiw/react-codemirror` as a drop in replacement for LiveEditor
 
-- react-runner /382Star/MIT/202303/ts/inactive
+- react-runner /382Star/MIT/202303/ts/html/inactive
   - https://github.com/nihgwu/react-runner
   - https://nihgwu.github.io/react-runner/
   - https://react-runner.vercel.app/
@@ -87,7 +87,7 @@ modified: 2021-03-03T21:48:48.379Z
     - I've tried other solutions, like use-editable, but I'd say react-simple-code-editor provides the best UX and less bugs, I don't think there is anything preventing it's been used with React 18, just ignore the warnings for now, and react-live-runner aims to provide a smooth transition from react-live, 
     - if you want to use other code editors, you are free to use theme with react-runner, like CodeMirror, CodeJar or even Monaco, I don't have the bandwidth to maintain another editor which is complicated regarding multi browsers support
 
-- https://github.com/jquense/jarle
+- https://github.com/jquense/jarle /202512/ts/html/inactive
   - https://jquense.github.io/jarle/
   - JARLE only looks at the last thing you return, so write whatever you need in front of it.
   - Jarle removes boilerplate code in your examples, by rendering the last expression in your code block
@@ -99,6 +99,7 @@ modified: 2021-03-03T21:48:48.379Z
   - https://devjar.vercel.app/
   - live code runtime for your react project in browser
   - devjar only works for browser runtime at the moment. It will always render the default export component in index.js as the app entry.
+  - `iframe` element where the live coding will be executed.
   - 依赖sucrase
 
 - https://github.com/konnorrogers/light-pen /MIT/202311/js

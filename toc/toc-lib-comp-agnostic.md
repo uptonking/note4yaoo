@@ -20,6 +20,7 @@ modified: 2020-11-13T07:28:27.824Z
   - tiptap-editor, prosekit
   - ark-ui
   - dnd-kit, pdnd, floating-ui
+  - dockview
   - 热门组件
   - ui组件: semi-design-foundation
 

@@ -531,7 +531,22 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
-- ## 
+- ## 🆚 [Qwen 3.6 27B BF16 vs Q4_K_M vs Q8_0 GGUF evaluation : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sxzqry/qwen_36_27b_bf16_vs_q4_k_m_vs_q8_0_gguf_evaluation/)
+  - Evaluated Qwen 3.6 27B across BF16, Q4_K_M, and Q8_0 GGUF quant variants with llama-cpp-python using Neo AI Engineer.
+  - Benchmarks used: HumanEval: code generation, HellaSwag: commonsense reasoning, BFCL: function calling
+  - Q4_K_M looks like the best practical variant here. It keeps BFCL almost identical to BF16, drops about 5.5 points on HumanEval, and is still only 4 points behind BF16 on HellaSwag.
+  - Q8_0 was a bit underwhelming in this run. It improved HumanEval over Q4_K_M by ~1.8 points, but used 42 GB RAM vs 28 GB and was slower. It also scored lower than Q4_K_M on HellaSwag in this eval.
+  - For local/CPU deployment, I would probably pick Q4_K_M unless the workload is heavily code-generation focused. For maximum quality, BF16 still wins.
+  - This evaluation was done using Neo AI Engineer, which built the GGUF eval setup, handled checkpointed runs, and consolidated the benchmark results. I manually reviewed the outcome as well.
+
+- A similar comparison with different kv quants would also be useful.
+- You should try kv caches too, q4_0, q4_1, q5_1 and q8_0
+
+- How is Q8 worse than Q4 in some tests?
+  - Easy, they weren't tested correctly or enough.
+
+- Incorrect comparison. There are various publishers on HuggingFace, and it's always better to use the weights from Bartowski and Unsloth and others. Unsloth usually publishes good graphs showing the KLD results for many of the newer models, and the weights from the likes of LM Studio consistently have the worst quality loss. 
+  - Try to compare not just Q4, but also Q5 quants as well. Q4_K_L and Q4_K_XL quants would be the better ones, and Q5_K_M/ Q5_K_L/Q5_K_XL are the sweetspot, especially for MoE models with less than 5B active parameters.
 
 - ## [Is Q4_K_M the best practical quantization method : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s88x5g/is_q4_k_m_the_best_practical_quantization_method/)
 - It depends....on MAC 100% not, because MLX allows mixed grouping and there is an outfit (MINT-UI) that takes advantage of that to give you better quality models.

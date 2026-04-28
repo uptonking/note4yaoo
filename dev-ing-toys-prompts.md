@@ -156,7 +156,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 - you have migrated/reimplemented some features from superdoc to ailovedoc.
 
-- you should recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ).
+- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ).
 
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 - make a plan, then migrate and improve full feature pairity, without licensing issues
@@ -175,6 +175,8 @@ you have worked on this problem several times but features are still lacking. Th
 - research and make a full plan, then implement ailovedoc to match full features of superdoc, or even better than superdoc, without licensing issues.
 
 ------
+
+- you may reference how superdoc implements it, then do a similar or better implementation in ailovedoc without licensing issue.
 
 - superdoc's overall architecture is good enough to follow. Mostly ailovedoc should use similar architecture to superdoc.
 
@@ -244,10 +246,8 @@ recheck and migrate full features of True PDF text editing engine with annotatio
 
 - you have migrated/reimplemented some features from onlyoffice pdf editor to hardoc.
 
-- you should recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ).
+- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like onlyoffice-pdf-editor.
 
-- you can deep research, and reference good deisgn from onlyoffice pdf editor.
-- you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issue.  
 - you have worked on this several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. 
 
 make a plan and implement it to match full features of upstream without licensing issues.
@@ -260,6 +260,7 @@ please make a plan, then improve the core in-place text editing engine to make i
 - the goal now is to achieve full feature parity of native True PDF text editing engine like onlyoffice pdf editor.
 
 - the most important feature in hardoc is a powerful, robust, extensible, native True PDF in-place text editing engine with annotation support like onlyoffice pdf editor.
+
 - you can deep research and reference good deisgn from onlyoffice pdf editor.
 - you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 
@@ -272,6 +273,8 @@ please make a plan, then improve the core in-place text editing engine to make i
 - research and make a full plan, then implement hardoc to match full features of onlyoffice-pdf-editor, or even better than onlyoffice-pdf-editor, without licensing issues.
 
 ------
+
+- you may reference how onlyoffice-pdf-editor implements it, then do a similar or better implementation in hardoc without licensing issue.
 
 - onlyoffice-pdf-editor's overall architecture is good enough to follow. Mostly hardoc should use similar architecture to onlyoffice pdf editor. 
 
@@ -311,7 +314,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - you have migrated/reimplemented some features from backbonejs webapp to react webapp.
 
-- you should recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ).
+- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ).
 
 - you have worked on this several times but features are still lacking.
 
@@ -369,7 +372,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - you have migrated/reimplemented some features from PPTist to slaides.
 
-- you should recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ).
+- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ).
 
 - you have worked on this several times but features are still lacking.
 

@@ -776,6 +776,7 @@ modified: 2023-09-02T09:17:22.992Z
   - https://devjar.vercel.app/
   - live code runtime for your react project in browser
   - devjar only works for browser runtime at the moment. It will always render the default export component in index.js as the app entry.
+  - `iframe` element where the live coding will be executed.
   - 依赖sucrase
 # codesandbox-like
 - https://github.com/rajatmaheshwari2512/codefiddle /202308/ts

@@ -22,6 +22,34 @@ modified: 2024-03-30T05:55:54.349Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## JavaScript Runtimes in 2026
+- https://x.com/atalocke/status/2048789332501119030
+- Node: 
+
+        * Runs TS natively
+        * The standard everyone builds around
+        * No side hussle. Just wants you to code
+
+- Deno:
+
+        * Most annoying APIs to use
+        * Best dev environment to use
+        * Always trying to steer you towards their cloud
+
+- Bun:
+
+        * Owned by Anthropic
+        * Actively shills Claude Code to its users
+        * Only differentiator is that it's still faster than Node and Deno
+
+- "faster" is not necessarily true. We tried, it was significantly slower for our usecase.
+
 - ## the more I look how all javascript runtimes implement garbage-collection, the more I lose my hope in humanity. it’s a surprisingly hard task with too many edge cases.
 - https://x.com/yagiznizipli/status/2000728248607486172
 - Don't worry about it, we have the following package.json script before running any command.
