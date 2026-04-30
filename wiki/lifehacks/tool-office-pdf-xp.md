@@ -33,6 +33,14 @@ modified: 2020-12-29T17:52:48.584Z
 # draft
 - 基于 AI 的pdf review/suggestions
 
+- 将富文本化的内容embed到扫描版pdf，这样传统pdf软件能预览，而定制pdf软件能文本化编辑
+
+- 
+- 
+- 
+- 
+- 
+
 - ⚖️ 支持中国知网的 caj 格式
 
 - 

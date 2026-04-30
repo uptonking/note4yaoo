@@ -669,6 +669,16 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [自建的GPT中转站被挂马，AI回复内容出现彩票广告，如何处理？ - LINUX DO _202604](https://linux.do/t/topic/2082118)
+- GPT 5 换了新的 tokenizer，因为训练的时候用的语料很差，练了很多小广告，tokenizer 就把“天天中彩票”作为了一个 token，然后导致 -codex 系列小模型在推理时有概率输出这个 token，然后就成这样了呗。
+  - 解决方案是换大的模型，5.4 5.5 就很不错，目前没遇到中彩票的情况
+
+- 目前只有在5.3/5.2-codex模型可能会遇到这种污染，用最新的5.4/5.5就小概率了
+
 - ## [我大概明白了为什么Deepseek v4 有时候不遵循指令 - LINUX DO _202604](https://linux.do/t/topic/2069690)
   - 这几天使用发现v4明明能力挺强的，但有时候就是不调用工具，并且会出现一些莫名其妙的错误
   - 同样的提示词，放到System prompt 和第一句话的末尾优先级天差地别。

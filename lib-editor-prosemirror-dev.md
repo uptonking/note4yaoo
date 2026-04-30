@@ -137,6 +137,7 @@ modified: 2021-05-06T09:39:53.522Z
   - mdx
   - md文本在hover时 和 富文本渲染元素 自动高亮对应显示
   - 将markdown-editor的交互逻辑复用到 typst-pdf-editor
+  - 类似overleaf的 从text到pdf， 市场需求小， 而从 text 到 WYSIWYG 需求大一点, 或者从 WYSIWYG 到 pdf 的需求更大
 
 - pdf
   - search pdf

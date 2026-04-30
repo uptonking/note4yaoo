@@ -30,6 +30,26 @@ modified: 2021-09-10T14:15:55.903Z
 
 - Yet, no navigation solutions, native module examples are only obj-c, no clue if Swift is supported. CSS support is impressive
   - It seems to be using JSI under the hood (same basis as RN), so it may need object C bindings to call swift, but on principle, it should be possible.
+# discuss-internals
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## The standard fetch in React Native is a JavaScript polyfill. 
+- https://x.com/ReactNativeRwd/status/2049399819127451974
+  - Every response gets parsed, decoded, and wrapped in JS before you touch it.
+  - react-native-nitro-fetch, developed by the team at Margelo, just hit its 1.0.0 milestone, a drop-in replacement for the standard Fetch API, built on the Nitro Modules core.
+  - React Native's built-in fetch is a spec-compliant JavaScript implementation sitting on top of the platform's native networking stack. That means every response goes through JS-side decoding, Response/Blob wrapping, and text parsing before your code sees a single byte. For small JSON payloads, it's fine, but for large responses, streaming, or anything latency-sensitive, that JS work adds up.
+  - react-native-nitro-fetch moves that pipeline into C++. By leveraging Nitro's JSI-based architecture, response handling happens natively and hands off to your JavaScript with zero serialisation in between. 
+  - 𝗗𝗿𝗼𝗽-𝗶𝗻 𝗥𝗲𝗽𝗹𝗮𝗰𝗲𝗺𝗲𝗻𝘁: It follows the standard Fetch API 
+  - 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 𝗦𝘂𝗽𝗽𝗼𝗿𝘁: It supports efficient body streaming, which is a game-changer for handling large datasets or real-time AI responses without spiking memory usage.
+
 # discuss
 - ## 
 
@@ -124,7 +144,7 @@ modified: 2021-09-10T14:15:55.903Z
 - ## Why isn’t there a react native for Linux yet?__202009
 - https://www.reddit.com/r/reactnative/comments/j855s7/why_isnt_there_a_react_native_for_linux_yet/
 - Market share. There just aren't enough users on other platforms.
-- Another thing to consider is that **there isn't really a single unified "Linux" graphical toolkit API**. 
+- Another thing to consider is that **there isn't really a single unified "Linux" graphical toolkit API** . 
   - We have GTK 3 for Gnome/elementary/XFCE apps - which one with their own UI guidelines - QT for KDE apps and lots of smaller options. 
   - Thus, React Native would have to target one or more of those specific APIs, which I don't think would be feasible.
 - I think flutter's approach makes more sense in this regard, since it doesn't use native toolkits for the UI widgets and instead implements their own, thus making it easier to develop cohesive experiences across a different myriad of platforms - which would basically solve a similar problem to what electron currently does.

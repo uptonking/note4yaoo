@@ -23,6 +23,7 @@ modified: 2025-12-25T19:53:44.941Z
 # draft
 - viewers
   - 尝试将markdown编辑器的双栏预览，替换为 富文本/pdf打印预览
+  - 类似overleaf的 从text到pdf， 市场需求小， 而从 text 到 WYSIWYG 需求大一点, 或者从 WYSIWYG 到 pdf 的需求更大
 
 - table
   - lowcode table builder + export to markdown/typst

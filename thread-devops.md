@@ -118,7 +118,27 @@ modified: 2021-03-31T06:50:19.936Z
 - https://twitter.com/zQwQs/status/1718893609905455519
   - 不过也有前提就是 server 侧读取 pathname 的时候 decode 了
 
+# discuss-cicd
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 开源终端模拟器 Ghostty 将从 GitHub 迁出。
+- https://x.com/zhdsuperman/status/2049314706805113322
+  - Hashimoto 是 GitHub 的第 1299 号用户，2008 年注册，用了 18 年。他说自己每天都打开 GitHub，甚至蜜月的时候老婆还没醒就在刷 GitHub。这个平台承载了他的职业生涯、开源项目和热情所在，当年做 Vagrant 的动力之一就是“说不定 GitHub 会因此雇我”。
+  - 但过去一个月，他开始在日记本上给每天打“X”，标记 GitHub 宕机影响工作的日子。结果几乎每天都有 X。写这篇公告当天，GitHub Actions 又挂了，他有两个小时没法做代码审查。他说，一个每天都会把你挡在外面几个小时的平台，已经不适合做严肃的开发工作了。
+  - 迁移计划是渐进式的：先保留一个只读镜像在 GitHub 原地址，具体搬去哪还在和多家供应商（商业和开源都有）谈。他的个人项目暂时不动，先把 Ghostty 迁走。
+
+- 也不能全怪 GitHub Action，Artifact 来自外部，action 脚本来自社区，机器性能不稳，同时有点网络波动就容易挂。所以我宁愿用 AWS Codebuild，docker 放 ECR，中间构建物放 Code Artifact + 私有 repository，脚本自己写，error 通知到 slack，都在内网解决问题，跑起来更快更稳。
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

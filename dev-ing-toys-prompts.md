@@ -156,7 +156,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 - you have migrated/reimplemented some features from superdoc to ailovedoc.
 
-- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ).
+- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like superdoc.
 
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 - make a plan, then migrate and improve full feature pairity, without licensing issues

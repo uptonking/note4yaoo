@@ -34,6 +34,18 @@ modified: 2024-08-24T16:14:33.275Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Zed 1.0 is a complete code editor _20260429
+- https://x.com/zeddotdev/status/2049498864093184045
+  - 1.0 doesn't mean done, and it doesn't mean perfect. It means most developers can quickly feel at home in Zed. 
+  - We'll keep shipping every week, the way we always have.
+  - [Zed is 1.0 — Zed's Blog _202604](https://zed.dev/blog/zed-1-0)
+
+- WSL support is my favorite feature. That said, git integration still has a long way to go. Separate staged and unstaged diffs would be a great addition!
+
 - ## 🆚 We just shipped v0.216.0! Word-level diffing just landed.
 - https://x.com/zeddotdev/status/1998804461909639384
   - You can now view the git commit history of any file. Select the `File History` option in the right-click editor context menu to open it.
