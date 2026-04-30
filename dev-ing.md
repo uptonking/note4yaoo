@@ -41,9 +41,9 @@ https://meeting.tencent.com/p/9606972663
   - https://platejs.org/docs/examples/version-history  /nextjs
   - https://yoopta.dev/examples/word-example  /单独示例
   - https://wangeditor-next.github.io/demo/
+  - https://quilljs.com/playground/snow
   - https://playground.lexical.dev/
   - https://mdxeditor.dev/editor/demo  /nextjs
-  - https://quilljs.com/playground/snow
 
 - code-play
   - https://microsoft.github.io/monaco-editor/playground.html

@@ -74,6 +74,22 @@ modified: 2026-04-07T12:53:02.538Z
   - The document’s content is represented as a tree storing headings and lists of any level. 
   - Dedoc can be integrated in a document contents and structure analysis system as a separate module.
 # extraction-vlm
+- https://github.com/ahnafnafee/local-llm-pdf-ocr /MIT/202604/python
+  - [Building a Local LLM-Powered Hybrid OCR Engine _202604](https://www.ahnafnafee.dev/blog/local-llm-pdf-ocr)
+  - Convert scanned PDFs into searchable text locally using Vision LLMs (olmOCR). 
+  - The tool has two execution paths behind a single `OCRPipeline` seam (src/pdf_ocr/pipeline.py). 
+    - The default hybrid path works with any OCR-capable VLM; 
+    - the opt-in grounded path collapses the whole flow into one call for VLMs that emit text+bbox natively.
+  - DP-Based Text↔Box Alignment: Surya OCR detects layout boxes; a Local LLM transcribes the whole page; a Needleman-Wunsch dynamic-programming aligner binds LLM lines to the correct boxes in reading order, with a per-box crop re-OCR fallback for boxes the DP cannot confidently populate.
+  - Grounded Path (opt-in): Point the tool at a bbox-native VLM (Qwen2.5-VL, Qwen3-VL, MinerU, Florence-2, …) with --grounded and it skips Surya/DP/refine entirely — the model returns text + coordinates in a single call.
+  - PDF or Raw Image Input: Accepts .pdf, .jpg, .jpeg, .png, .bmp, .webp, .tif/.tiff, .avif. Multi-frame TIFFs become multi-page output PDFs — no manual PDF-wrap step.
+  - Fast Detection: Surya runs in detection-only mode (no recognition) and batches across pages.
+  - 100% Local & Private: No cloud APIs, no subscription fees. Run it entirely offline using LM Studio or Ollama.
+  - Searchable Outputs: Embeds an invisible text layer into a sandwich PDF. Glyph bboxes are horizontally scaled so selection in a PDF viewer covers the full width of each text region.
+  - Dual Interfaces:
+    - Web UI: Drag & drop, Dark Mode, real-time per-page progress.
+    - CLI: Documented flags for power users and batch automation, Rich progress bars.
+
 - https://github.com/NameetP/pdfmux /MIT/202604/python
   - https://pdfmux.com/
   - Universal PDF extraction orchestrator. 
@@ -405,5 +421,11 @@ modified: 2026-04-07T12:53:02.538Z
   - 基于Answer. AI的Byaldi、OpenAI的gpt-4o和Langchain 做结构化数据输出
   - 支持从PDF等非结构化文档中提取结构化信息，比如损失历史记录、基本应用程序信息等
 # utils
-
+- https://github.com/TylerMorrison21/paperflow /MIT/202603/python/js
+  - https://paperflowing.com/
+  - Open-source PDF-to-Markdown post-processor with footnotes, LaTeX normalization, figure links, and YAML metadata. 
+  - Supports Marker, MinerU, PyMuPDF, and Docling. 
+  - Includes a self-hosted web UI.
+  - Turn academic PDFs into structured, knowledge-ready Markdown - with working footnotes, LaTeX equations, figure links, and metadata.
+  - It takes raw Markdown from any PDF parser (Marker, PaddleOCR-VL, PyMuPDF, Docling, LlamaParse) and upgrades it into structured output that works in Obsidian, Notion, Logseq, or any RAG pipeline.
 # more

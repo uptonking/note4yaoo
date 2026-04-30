@@ -1196,6 +1196,44 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [What are people using Local LLMs for (beyond coding) : r/LocalLLM _202604](https://www.reddit.com/r/LocalLLM/comments/1sz59g6/what_are_people_using_local_llms_for_beyond_coding/)
+- Roleplaying
+
+- News aggregation. Weather monitoring. Novel writing. Schedule keeping.
+  - Book-keeping (gnucash alternative to SAAS quickbooks et al that put financial info in cloud server security danger). "But you just use a pc for that." The AI is for budgeting and forecasting for a small business.
+
+- In the last couple weeks, besides general info, here are some things I've asked Local LLMs to do:
+
+Help with writing. Not creating it but spell checking, grammar, coherence, and helping me convey exactly what I am trying to say... like finding that word on the tip of my tongue that I'm trying to think of.
+
+Pulling transcripts from long YouTube videos and giving a synopsis
+
+Generating images using ComfyUI, sometimes with OpenWebUI to mimic the cloud LLMs
+
+Image analysis (vision)... for example:
+
+Took a photo of items in a "junk drawer, " and it listed everything in it.
+
+Took photos of my bookshelf, and it listed all the books.
+
+Analysing logs from my home DNS queries for suspicious activity.
+
+Created a beautiful custom Grafana dashboard in one shot to monitor devices in my homelab.
+
+Asking questions and doing comparisons against long PDF documents: e.g. Health and Auto Insurance
+
+Instead of auto-accepting "Terms of Service" I'll now copy and paste, and ask if there are any catches or if it's pretty standard
+
+Use with the Smart Composer plugin in Obsidian to compose and analyse notes
+
+- For basic web search, creative writing, and exchanging ideas, Gemma 4 31B has been great.  I also use Gemma 4 31B and Qwen 3.6 27B for image reasoning when privacy is the priority. 
+
+- uncensored models, + AI costs gonna be explode in future, most people using online tools for coding will learn it in hard way
+
 - ## [Do 2B models have practical use cases, or are they just toys for now? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1s5bztk/do_2b_models_have_practical_use_cases_or_are_they/)
 - The 2B size is practical for: classification, routing, summarization of small inputs, function calling with well-defined schemas, and anything where the output format is constrained.
   - They are genuinely useful for structured tasks.

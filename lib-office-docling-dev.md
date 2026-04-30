@@ -89,7 +89,12 @@ modified: 2025-09-21T13:58:08.942Z
 - 
 
 # mineru
-- mineru模型版本，三个选项: pipeline、vlm、MinerU-HTML，默认pipeline。
+
+## docs
+
+- model_version
+  - mineru模型版本，三个选项: pipeline、vlm、MinerU-HTML，默认pipeline。
+  - 如果解析的是HTML文件，model_version需明确指定为MinerU-HTML，如果是非HTML文件，可选择pipeline或vlm
 
 - [输出文件格式 - MinerU](https://opendatalab.github.io/MinerU/zh/reference/output_files/)
   - pipeline 后端 输出结果
@@ -97,6 +102,10 @@ modified: 2025-09-21T13:58:08.942Z
   - 2.5版本vlm后端的输出存在较大变化，与pipeline版本存在不兼容情况
 
 - 上传本地pdf相关的api
+  - 单个文件解析 https://mineru.net/api/v4/extract/task
+    - 获取任务结果 https://mineru.net/api/v4/extract/task/task_id
+    - layout.json对应中间处理结果 (middle.json), **_model.json对应模型推理结果 (model.json)，** _content_list.json对应内容列表 (content_list.json)，full.md为MarkDown解析结果。
+    - html文件解析结果略有不同：full.md为MarkDown解析结果,main.html为提取后正文html
   - 文件批量上传解析 https://mineru.net/api/v4/file-urls/batch
     - 文件上传完成后，无须调用提交解析任务接口。系统会自动扫描已上传完成文件自动提交解析任务
     - response包含 batch_id

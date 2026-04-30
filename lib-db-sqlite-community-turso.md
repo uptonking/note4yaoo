@@ -394,7 +394,38 @@ Today, Turso is in beta with early customers working toward production deploymen
 
 - ## 
 
-- ## 
+- ## Introducing Mesa: the most powerful filesystem ever built, designed specifically for enterprise AI agents.
+- https://x.com/jerryjliu0/status/2049661223420223492
+  - Every team building agents eventually hits the same wall: where do the files live?
+  - Not the chat history, the actual artifacts the agent works on. 
+  - > The contracts your agent redlined
+  - > The claim files it updated
+  - > The 200-page audit report it edited overnight while you were asleep
+  - Today those documents live in a sandbox that dies in 30 minutes, an S3 bucket where concurrent writes clobber each other, or a GitHub repo that was never built to absorb agent-scale traffic.
+  - So we built Mesa.
+  - The world's first POSIX-compatible filesystem with built-in version control, designed from the ground up for agents. You mount it into your sandbox like any other filesystem. Your agent reads and writes files normally. Behind the scenes every change is versioned, branchable, reviewable, and rollback-able — like a codebase, for any file type.
+  - we do have on-prem, we’re just not oss yet so its not self serve. if you need to self host let’s talk!
+- Mesa provides
+  – Branches so agents work in parallel without locking
+  – Durable storage that survives sandbox death
+  – Sparse materialization so massive document sets load instantly
+  – Fine-grained access control per agent
+  – Full history for human review and audit
+
+- exactly like cloudflare artifacts but it works on any cloud and our virtual filesystem is way more robust and performant than theirs
+- agent-fs is another really interesting take on this
+
+- How’s this compare to https://archil.com? We’re currently evaluating agentic fs solutions
+  - can't have agents execute in parallel with archil (need to lock files and directories)
+  - can't run in serverless environments without paying them to run your compute
+  - doesn't have robust version control so makes it harder to create human-in-the-loop flows and rollback or experiment with different changes
+  - archil is a great product if you need a traditional cloud filesystem. For agents, mesa is better
+
+- On one hand, fs is indeed an important interaction surface for agents. And it’s very easily pluggable, which is the real patent here. 
+  - On the other hand, when an agent runs in a sandbox, it typically reads and more importantly writes to an outside channel via tools (edits a db, updates a website, makes an http request, etc). The only exception perhaps is a coding agent, but then for those the files are in source control already. 
+  - So while this is cool, the impact seems to be quite limited imo.
+
+- the product shape probably needs both: filesystem semantics for agent-native work, plus hosted/shared state for teams. local files are great until review, permissions, replay, and handoff become the actual product.
 
 - ## Created a library that gives your @aisdk agent tools for S3 Files
 - https://x.com/tomasholtz_/status/2041906828032749608

@@ -158,6 +158,8 @@ you have worked on this problem several times but features are still lacking. Th
 
 - please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like superdoc.
 
+- ailovedoc should have full feature parity matching superdoc for important features like document data model, editing engine, rich-text formatting, layout-engine(supports toggling pagination), virtualized-rendering, document-rendering, track-change.
+
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 - make a plan, then migrate and improve full feature pairity, without licensing issues
 
@@ -179,8 +181,6 @@ you have worked on this problem several times but features are still lacking. Th
 - you may reference how superdoc implements it, then do a similar or better implementation in ailovedoc without licensing issue.
 
 - superdoc's overall architecture is good enough to follow. Mostly ailovedoc should use similar architecture to superdoc.
-
-ailovedoc should have full feature parity for important features like document data model, editing engine, rich-text formatting, layout engine, virtualization, document-rendering, track-change.
 
 ```
 
@@ -247,6 +247,8 @@ recheck and migrate full features of True PDF text editing engine with annotatio
 - you have migrated/reimplemented some features from onlyoffice pdf editor to hardoc.
 
 - please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like onlyoffice-pdf-editor.
+
+- hardoc should have full feature parity matching onlyoffice-pdf-editor for important features like in-place text editing engine,undo/redo, pdf annotations/highlights, plugin architecture and manager, pdf search, pdf page-thumbnails, bookmarks.
 
 - you have worked on this several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. 
 

@@ -38,6 +38,7 @@ modified: 2026-04-07T12:53:38.419Z
   - 还可以参考漫画manga的编辑/翻译方案
 
 - 💡 pdf的文本化
+  - 💡 将minerU/paddleocr识别的html结果转换为 prosemirror editor
   - 输出不一定是markdown, 各厂商都有自己的偏向, qwenvl-html, Nanonets-markdown, docling-doctags
   - 可以不做完全体ocr，而优化重点数据的ocr，如 pdf-table > excel
   - vlm也可以提取bounding-box + 手动分割图片为主来提取表格、图表、图片
@@ -96,6 +97,37 @@ modified: 2026-04-07T12:53:38.419Z
   - 光学字符识别：使用PaddleOCR进行文本识别
   - [Update license from Apache 2.0 to AGPL-3.0 _20240914](https://github.com/opendatalab/PDF-Extract-Kit/commit/1471e22384d4b02e1357926e4908296ed31dac51)
     - Since this project uses YOLO code and PyMuPDF for file processing, these components require compliance with the AGPL-3.0 license
+
+- https://github.com/magicyuan876/mineru-tianshu /apache2/202601/python/ts/vue
+  - 天枢 - 企业级 AI 数据预处理平台，将非结构化数据转换为 AI 可用的结构化格式
+  - 支持文档、图片、音频等多模态数据处理 | GPU 加速 | MCP 协议
+  - 后端：FastAPI、LitServe、MinerU、PaddleOCR、SenseVoice、SQLite、Loguru
+  - 前端：Vue 3、TypeScript、Vite、TailwindCSS、Pinia、Vue Router
+  - 多解析引擎: MinerU、PaddleOCR-VL、MarkItDown、格式引擎
+    - pipeline: MinerU 标准流程，通用文档解析
+    - vlm-transformers/vlm-vllm-engine: MinerU VLM 模式
+    - paddleocr-vl: 109+ 语言，自动方向矫正, 仅支持 GPU: PaddleOCR-VL 目前不支持 CPU 及 Arm 架构
+  - 文档: PDF、Word、Excel、PPT → Markdown/JSON（MinerU、PaddleOCR-VL 109+ 语言、水印去除）
+  - 视频: MP4、AVI、MKV → 语音转写 + 关键帧 OCR🧪（FFmpeg + SenseVoice）
+  - 音频: MP3、WAV、M4A → 文字转写 + 说话人识别（SenseVoice 多语言）
+  - 大文件并行处理: PDF 自动拆分功能：超过阈值（默认 500 页）的 PDF 自动拆分为多个子任务并行处理
+    - 并发安全: 原子操作防止任务重复，支持多 Worker 并发
+    - Worker 主动拉取: 0.5秒响应，无需调度器触发
+  - RustFS 对象存储：所有解析结果的图片自动上传到对象存储, S3 兼容 API，基于 minio-py 实现
+  - GPU 负载均衡: LitServe 自动调度，避免显存冲突，多 GPU 隔离
+  - 企业特性: GPU 负载均衡、任务队列、JWT 认证、MCP 协议、现代化 Web 界面
+  - Tianshu 支持完全离线部署，提供两种部署模式：
+    - 方式 1：Linux 服务器（有 GPU 则加速，无 GPU 自动降级 CPU）
+    - 方式 2：CPU 专用版（Mac/无 GPU 环境）
+- https://github.com/phuocnguyen90/paraOCR /MIT/202509/python/inactive
+  - a Python library for high-throughput OCR on large collections of files—PDFs, PNGs, JPEGs—at the speed your hardware allows. 
+  - Built around `EasyOCR`, it adds production-grade features such as true batch processing, a parallel CPU/GPU architecture, and detailed logging.
+  - It runs OCR in true parallel, supports multiple backends (EasyOCR, PaddleOCR, Tesseract), and includes a WebUI for easy use.
+  - Originally CLI-first, it now also ships with a Web UI for ease of use. 
+  - Parallel CPU & GPU Processing: Maximizes hardware utilization for unparalleled speed.
+  - Multiple Concurrent GPU Workers: Fully utilizes high-VRAM GPUs by running multiple OCR engines at once.
+  - Extensible Architecture: Pluggable, content-aware processors (e.g., table and image extraction) with support for multiple OCR backends—LLM-assisted OCR on the roadmap.
+  - An optional flag generates a detailed performance log to help you tune parameters and identify bottlenecks.
 
 - https://github.com/run-llama/llama_index /45.5kStar/MIT/202511/python
   - https://developers.llamaindex.ai/
@@ -267,6 +299,9 @@ modified: 2026-04-07T12:53:38.419Z
   - 集成 LayoutLMv3、YOLOv8 等模型，支持多模态解析（表格/公式/图像）
   - 支持 API 和图形界面
   - 依赖 GPU，表格处理速度较慢，配置复杂
+  - [PDF 解析接口文档 | 开发者文档 | MinerU](https://mineru.net/apiManage/docs)
+    - 每个账号每天享有 1000 页最高优先级解析额度，超过 1000 页的部分优先级降低
+    - 单文件最多200页， 单日上限5000页
   - MinerU2.5: currently the most powerful multimodal large model for document parsing. With only 1.2B parameters
   - Output text in human-readable order, suitable for single-column, multi-column, and complex layouts.
   - Extract images, image descriptions, tables, table titles, and footnotes.
@@ -279,8 +314,30 @@ modified: 2026-04-07T12:53:38.419Z
   - https://huggingface.co/spaces/opendatalab/MinerU
   - [Connect to the local LLM接入本地大语言模型 _202503](https://github.com/opendatalab/MinerU/issues/1976)
     - 教程没写就只是预留字段而已，有想做成llm方向的想法
+  - [升级2.5后 在解析3000页的pdf时候 mineru-api服务内存剧增 _202509](https://github.com/opendatalab/MinerU/issues/3648)
+    - 在2.2.2版本没有遇到这种问题, 单文件3000页, 采用的mineru-vllm-server vlm-http-client 模式, 开始的时候内存缓慢增长，后面剧增 然后占用内存达到148g, 巅峰到了 170g
+    - 2.2处理单文件3000页也需要128g内存以上的，2.5应该差不多情况
+    - 估计是2.5的vlm使用了两步推理模式，在第二步对所有页面进行了一次额外的切块操作，因此内存需求量会远超过2.2版本
+    - 有可以限制或者优化的参数吗
+    - 暂时还没有，两阶段推理是会有一些额外的cpu和内存占用需求，我们会在下个版本探索一些优化方案，您可以暂时先将页数过多的文档切片处理下
+    - 我也遇到了显存和内存暴增的情况，我通过环境变量限制MINERU_MIN_BATCH_INFERENCE_SIZE MINERU_VIRTUAL_VRAM_SIZE两者数值后后情况没有那么严重了，可能是因为动态batch 造成的，特别是显存很大的时候batch会动态很大
+    - 这俩参数是pipeline使用的，你们用的是vlm还是pipeline？
   - [issue: MinerU not working in vllm mode ](https://github.com/open-webui/open-webui/discussions/18446)
     - Its not in the code yet, the only options are vlm and pipeline
+- https://github.com/opendatalab/MinerU-HTML /apache2/202603/python
+  - HTML main content extraction tool based on Small Language Models (SLM). It can accurately identify and extract main content from complex web page HTML, automatically filtering out auxiliary elements such as navigation bars, advertisements, and metadata.
+  - https://huggingface.co/opendatalab/MinerU-HTML  /0.8B/v1.1-0.5B
+    - https://huggingface.co/opendatalab/MinerU-HTML-v1.1-hunyuan0.5B-compact
+
+- https://github.com/opendatalab/MinerU-Document-Explorer /MIT/202604/python/ts
+  - Agent-native knowledge engine with MCP tools for document indexing, wiki organization, fast retrieval and deep reading across PDF/DOCX/PPTX/Markdown
+  - equips your agent with three tool suites — Retrieve, Deep Read, and Ingest — closing the full knowledge loop
+  - Retrieve — Cross-collection search: BM25, vector, and hybrid with LLM reranking and query expansion
+  - Deep Read — Navigate inside a single document without loading the whole file: table of contents, section reading, inline search, and element extraction
+  - Ingest — Build and maintain a LLM wiki from raw documents, following the Karpathy LLM Wiki pattern
+  - Developed by the MinerU team, building on `QMD` and Karpathy's LLM Wiki.
+  - https://github.com/opendatalab/MinerU-Document-Explorer/tree/main/demo
+    - The demo/ folder contains a complete end-to-end example — an AI agent automatically reads ~10 arXiv papers on RAG, builds an interlinked wiki knowledge base, and writes a research survey. 
 
 - https://github.com/RapidAI/RapidDoc /apache2/202512/python/非VLM
   - RapidDoc 是一个轻量级、专注于文档解析的开源框架，支持 OCR、版面分析、公式识别、表格识别和阅读顺序恢复 等多种功能。
@@ -596,6 +653,24 @@ modified: 2026-04-07T12:53:38.419Z
   - Run it via Docker on Windows, Linux, and macOS (CPU-only on macOS), or natively on macOS (CPU). GPU acceleration is available on Windows/Linux with NVIDIA CUDA; macOS is CPU-only.
   - [Batch OCR: Dockerized PaddleOCR pipeline to convert thousands of PDFs into clean text (GPU/CPU, Windows + Linux) : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1ptn2lq/batch_ocr_dockerized_paddleocr_pipeline_to/)
 
+- https://github.com/Edgaras0x4E/paddleocr-pdf-api /MIT/202604/python
+  - A self-hosted PDF OCR API powered by PaddleOCR and the PaddleOCR-VL model. 
+  - Powered by PaddleOCR-VL, runs on GPU via Docker.
+  - Runs on GPU via Docker, processes PDFs page-by-page, and returns markdown content in JSON responses. 
+  - Good support (not perfect) for Latvian and Lithuanian languages.
+  - How it works
+    - A PDF is uploaded and saved to disk
+    - A background worker picks up queued jobs in order
+    - Each page is rendered to an image using `pypdfium2`.
+    - PaddleOCR-VL extracts text and converts it to markdown
+    - HTML tags and image placeholders are stripped from the output
+    - Results are stored in SQLite and available per-page as they complete
+    - Jobs interrupted by a restart are automatically re-queued
+
+- https://github.com/egore4606/paddle-ocr-ui /202602/python/js
+  - Local web UI for PaddleOCR‑VL via Docker (PDF/Image OCR, preview, logs, downloads)
+  - I’m not a programmer, and this entire project was built with the help of AI.
+
 ## utils
 
 - https://github.com/PT-Perkasa-Pilar-Utama/ppu-paddle-ocr /MIT/202604/ts
@@ -616,6 +691,14 @@ modified: 2026-04-07T12:53:38.419Z
     - You need to include the metadata from a lot of packages because this is required at runtime and it is not included by default. 
     - There also is no version 1.5.0 of Paddle out there. My release is based on the latest version 3.4.0. If you are referring to PaddleOCR-VL 1.5 - as stated in my releases notes this is not included in my standalone package. You are currently using the PP-OCRv5 OCR Pipeline not the VL Pipeline.
 # mineru
+- https://github.com/liuhuapiaoyuan/MinerU-webui /202412/python/inactive
+  - 本项目为其提供一个简化版本的WebUI，方便用户上传PDF文件，并实时展示提取结果。
+  - MinerU-PDFScanner, 可以将本程序作为后端调用，支持多任务并行处理，支持历史数据查看，支持导出包
+  - https://github.com/liuhuapiaoyuan/MinerU-PDFScanner /MIT/202410/ts/inactive
+    - https://liuhuapiaoyuan.github.io/MinerU-PDFScanner/
+    - 基于 MinerU 的 Windows 客户端程序，用于高效地扫描和提取 PDF 文档中的内容。
+    - 该工具结合深度学习技术，能够自动提取文档中的文字、表格、图片和公式等，并提供多种分析和统计功能。
+
 - https://github.com/zt6453928/ailat-translation /MIT/202601/python/js
   - https://mineru.net/apiManage/docs
   - AI-Powered Document Translation Tool
@@ -670,7 +753,53 @@ modified: 2026-04-07T12:53:38.419Z
     - pdf预览用的浏览器的功能，理论不卡
     - 图片直接解析并存储到minio
 
+- https://github.com/wzdavid/mineru-api /MIT/202601/python
+  - [只需 4 步搞定！开源文档解析服务 MinerU-API 最新安装指南 - 知乎](https://zhuanlan.zhihu.com/p/1999940036863492525)
+  - 基于 Celery 的异步文档解析服务
+  - 异步处理：基于分布式任务队列，支持高并发
+  - 支持任务重试和故障恢复
+  - 实时监控：任务状态跟踪和队列统计。你可以随时查看任务的进度和状态
+  - 模块化设计，易于添加新的解析引擎。如果你需要处理新的文档格式，只需要添加一个新的解析引擎即可。
+
+- https://github.com/firecrawl/mineru-api /AGPL/202512/python
+  - Fork of neka-nat/mineru-api - API server for MinerU.
+  - designed for running MinerU on serverless platforms such as Runpod.
+  - https://github.com/neka-nat/mineru-api /AGPL/202512/python
+    - API server for MinerU.
+
 ## utils
+
+- https://github.com/LeoLin990405/mineru-skill /MIT/202603
+  - skill for MinerU document parsing API - convert PDF/DOC/PPT/images to Markdown/JSON
+  - Cloud API	No GPU needed — uses mineru.net hosted service
+  - Local API	Self-hosted with mineru-api for full control
+  - Smart Models	hybrid (default), pipeline, vlm, MinerU-HTML
+  - Rich Extraction	OCR (109 languages), LaTeX formulas, cross-page tables
+  - Batch Processing	Parse up to 200 files per request
+  - CLI Script	mineru-parse.sh for quick command-line usage
+  - https://github.com/Nebutra/MinerU-Skill /MIT/202602/python
+  - https://github.com/nilecui/mineru-parser-skills
+    - parsing tool based on Claude Agent SDK and MinerU Skill
+  - https://github.com/openclaw/skills/tree/main/skills/mineru-extract
+
+- https://github.com/linxule/mineru-mcp /MIT/202602/ts/代码少
+  - MCP server for MinerU document parsing API — extract text, tables, and formulas from PDFs, DOCs, and images.
+  - VLM model — 90%+ accuracy for complex documents
+  - Pipeline model — Fast processing for simple documents
+  - Batch processing — Parse up to 200 documents at once
+  - Optimized for Claude Code — 73% token reduction vs alternatives
+
+- https://github.com/OpenDCAI/Flash-MinerU /apache2+GPL/202604/python
+  - 基于 Ray 的 MinerU 加速层，将 PDF → Markdown 构建为可扩展、面向集群的数据基础设施。
+  - a lightweight, low-intrusion acceleration layer for MinerU
+  - Ray-powered distributed execution: Turns PDF parsing into a scalable data pipeline, from single-node multi-GPU setups to clusters
+    - https://github.com/ray-project/ray Provides powerful abstractions for distributed and parallel computing, making multi-GPU and multi-process orchestration simpler and more reliable.
+  - Pipeline-parallel execution (core improvement): Uses an asynchronous pipeline with cross-stage overlap for sustained high utilization
+    - Keeps GPUs busy more than 90% of the time, while vanilla MinerU is often around 40-50% because stages block each other
+    - Different batches run in different stages at the same time, such as render / VLM / Markdown, instead of waiting for full completion
+  - High-throughput VLM inference: Focuses on the bottleneck stage and currently defaults to vLLM
+  - composable design: Retains MinerU’s `middle_json` and downstream logic for easy integration
+  - Flash-MinerU is based on and contains modified source code from MinerU.
 
 - https://github.com/frondesce/mineru-kb-packager /python
   - Post-process a MinerU extraction directory into a retrieval-ready knowledge base dataset for RAG pipelines.
@@ -875,9 +1004,7 @@ modified: 2026-04-07T12:53:38.419Z
   - IndexedDB 持久化 — OCR 结果通过 Dexie.js 存入浏览器数据库
   - 客户端图片压缩 — Web Worker + OffscreenCanvas 后台压缩，不阻塞主线程；不支持时自动回退
   - [[开源] 做了一个用LLM来OCR的工具，欢迎各位佬友使用！ - LINUX DO _202604](https://linux.do/t/topic/1888946)
-
-## utils-ocr
-
+# utils-ocr
 - https://github.com/yigitkonur/llm-based-ocr /AGPL/202511/python
   - PDF-to-Markdown OCR API using LLMs with vision capabilities. 
   - The LLM-powered OCR engine that turns any PDF into beautifully formatted Markdown. 

@@ -140,6 +140,7 @@ modified: 2021-05-06T09:39:53.522Z
   - 类似overleaf的 从text到pdf， 市场需求小， 而从 text 到 WYSIWYG 需求大一点, 或者从 WYSIWYG 到 pdf 的需求更大
 
 - pdf
+  - 将minerU/paddleocr识别的html结果转换为 prosemirror editor
   - search pdf
   - citations from pdf
 

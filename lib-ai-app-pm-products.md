@@ -31,6 +31,15 @@ modified: 2025-03-22T16:10:24.856Z
   - agent框架的tool-use实现对最新llm的支持，llm-provider的部署 都会影响llm的效果
   - ai适合快速生成草稿文本或原型, 但修改难
 
+- ai-harness
+  - claude-code
+  - codex-cli
+  - gemini-cli/qwen-code
+  - opencode
+  - mistral-vibe
+  - cursor-cli/sdk
+  - vscode copilot-cli/sdk
+
 - app vs browser
   - 不是每个用户都能免费使用word的审阅模式, 自定义webapp/app提供了可选方式
   - 自定义webapp/app能提供独特的体验, 如artifacts/diff/image/code-running/table/ocr
@@ -483,6 +492,8 @@ modified: 2025-03-22T16:10:24.856Z
   - 企业版
 # 💎 ai-pdf/docs
 - revision history for pdf
+
+- spinedigest: 一次处理完，所有中间结果（Chunk、图谱、Snake、总结）全部打包进一个 .sdpub 文件。以后想重新导出成 Markdown、EPUB、纯文本……完全不需要再跑 LLM，秒级完成。
 # pm-mcp
 - writing
 
@@ -1758,6 +1769,10 @@ modified: 2025-03-22T16:10:24.856Z
     - 印尼
 
 - [codex.kedaya.xyz](https://codex.kedaya.xyz/)
+  - [KEDAYA的小店 - 链动小铺](https://pay.ldxp.cn/shop/3S5GUAQ4)
+    - https://shop.kedaya.xyz/
+    - https://t.me/kedaya_888
+    - 中转站: https://api.kedaya.xyz/
   - [商家5651的小店 ](https://pay.ldxp.cn/shop/AO4GDZSI)
     - 自助售后, 质保三天 
   - [山姆奥特曼商店的小店 - 链动小铺](https://pay.ldxp.cn/shop/1E5DST9P)
@@ -1777,6 +1792,11 @@ modified: 2025-03-22T16:10:24.856Z
   - [叮当猫稳定AI渠道的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/dingdangmao)
     - 品类特别多
     - 只做群里面的三级代理
+
+- [麦当当plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/EOTZ17J2)
+  - 交流: https://t.me/maidangdangplus
+  - 兑换及售后：https://plus.geekzone.cloud
+  - 在兑换后48小时内账号有问题，可以到网站提供兑换码或者邮箱兑换新的
 
 - [GPTPLUS.icu team 的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YQJERQW3)
   - 自助激活页面：https://gptplus.icu

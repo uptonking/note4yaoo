@@ -154,6 +154,10 @@ modified: 2021-01-04T17:26:25.032Z
   - Jump directly from Zotero Items to connected Markdown files.
   - Supports various Markdown databases, including Obsidian, logseq, and Zettlr
   - Supports various Markdown databases, including Obsidian, logseq, and Zettlr
+
+- https://github.com/subramanya1997/markdownfs /MIT/202604/rust
+  - A high-performance, in-memory virtual file system for Markdown files. Unix-like commands, Git-style versioning, content-addressable storage, and multi-user permissions — built in Rust.
+  - Only Markdown (.md) files are supported by design.
 # tools
 - monotome /151Star/AGPLv3/202208/js
   - https://github.com/cblgh/monotome

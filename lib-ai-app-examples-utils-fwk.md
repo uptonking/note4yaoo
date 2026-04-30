@@ -755,6 +755,13 @@ modified: 2025-02-21T18:20:42.624Z
   - a high-level NLP toolkit built on top of LLMs.
   - utilities for translation, question detection, categorization, NER extraction, and more
 # eval/prompt
+- https://github.com/MigoXLab/LMeterX /apache2/202604/python/ts
+  - 一站式通用 API 压测平台，支持大模型推理与业务 HTTP 接口，一键完成性能测试、结果对比与 AI 智能分析总结
+  - Full Modality & Scenarios: Supports GPT, Claude, Llama to document parsing models like MinerU and dots.ocr, covering text, multimodal, and streaming.
+  - Hybrid Protocol Testing: Supports standard Chat APIs and business HTTP interface
+  - Built-in Dual-Mode Datasets: Pre-configured with high-quality self-built datasets and ShareGPT standard sets, supporting one-click invocation to lower data preparation barriers.
+  - Web Console: Manage task scheduling, monitoring, and real-time logs through an intuitive interface, reducing operational complexity.
+
 - https://github.com/openai/evals /17.7kStar/MIT/202511/python
   - Evals provide a framework for evaluating large language models (LLMs) or systems built using LLMs.
   - We offer an existing registry of evals to test different dimensions of OpenAI models and the ability to write your own custom evals for use cases you care about.

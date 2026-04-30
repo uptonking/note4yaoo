@@ -35,6 +35,7 @@ modified: 2025-09-21T13:58:46.548Z
   - Targeted editing: Load an existing Docling JSON and apply focused edits with natural-language tasks.
   - Schema-guided extraction
   - Model-agnostic: Plug in different backends via Mellea model_ids
+  - 只提供了api，无ui
   - [Docling just announced Docling Agent + Chunkless RAG : r/Rag _202604](https://www.reddit.com/r/Rag/comments/1smeh2j/docling_just_announced_docling_agent_chunkless_rag/)
 
 - https://github.com/scub-france/Docling-Studio /MIT/202604/python/vue

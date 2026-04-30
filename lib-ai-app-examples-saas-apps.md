@@ -872,6 +872,11 @@ modified: 2025-02-21T17:17:42.225Z
   - 目前内置了 NanoBanana、Midjourney、GPT Image、火山豆包、通义千问、通义万相等媒体渠道配置入口
   - 另外对于视频生成方面，由于我不是专业的工作者，只是按照我的理解+ai的理解进行编写的，所以对于视频生来说可能略微不足，还请各位佬提提意见。
 
+## vid2txt
+
+- https://github.com/maskgo68/YPBrief
+  - [【开源】YPBrief，自托管 YouTube 播客与长视频简报工具，支持docker、GitHub Action部署 - LINUX DO _202604](https://linux.do/t/topic/2086869)
+
 ## subtitle
 
 - https://github.com/Nutlope/ai-subtitles /MIT/202604/ts

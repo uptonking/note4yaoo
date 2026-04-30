@@ -17,6 +17,14 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
+- ## 🪟✨ Cursor now has built a Kanban board where you can just drop in tasks and the agent will pick those up and complete them.
+- https://x.com/ParthJadhav8/status/2049564851060801663
+- Similar: if you’re using @Jira you can just get agents to automatically pick up any step of your Jira workflow or define any condition in an automation role. Been blown away with millions of agents automatically working on boards in a loop
+
+- the actual test is whether it can handle a task that requires context from 3 other tasks. single-task agents are solved. dependency-aware execution is where it gets real.
+
+- Kanban + agent这个组合意味着从人对AI说一句话变成人定义一个流水线，AI自己跑。我用编码工具的时候就发现，最大的效率提升不是单次对话的输出质量，而是你能不能把一系列任务串起来让工具自己推进，中间不需要你盯着。kanban board本质上是在给agent一个记忆。
+
 - ## Linear, PostHog, Attio - all shipped the same thing in the last few weeks. Homepage is a chat bar - not a dashboard.
 - https://x.com/rabi_guha/status/2040082295563169852
   - This is the SaaS industry quietly admitting that traditional UI doesn't work anymore. Every user is different. One homepage can't serve them all.
@@ -842,6 +850,16 @@ modified: 2026-02-20T17:36:40.796Z
   - I certainly don’t want my nas to be built for AI, it would make it unnecessary expensive and power hungry to run for what is something I will be using less than 1% of the time. I want cheap energy efficient quiet box to store files not an electric heater that sounds like a jet taking off and costing more in electricity than it’s worth.
 
 - You are better off having a normal NAS and an inferencing machine that pulls from it. That way, you aren't maxxing out your GPU when you're just pulling an image or two.
+# discuss-ai-coding 🔡
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # discuss-ai-pm
 - ## 
 

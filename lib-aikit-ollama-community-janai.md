@@ -31,6 +31,8 @@ modified: 2026-01-14T19:05:15.969Z
   - skills for janai-cli
   - 直接兼容 lms-cli, 使用已下载的model
 
+- 参考janai支持切换llamacpp/mlx, 来实现支持切换 mineru/paddleocr/docling
+
 - model-manager
   - mlx后端不支持自定义安装最新mlx-lm/mlx-vlm版本
   - 参考msty，能统一管理 local/ollama/lmstudio/huggingface 的模型，释放空间

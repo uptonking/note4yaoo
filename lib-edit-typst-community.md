@@ -84,7 +84,13 @@ modified: 2025-12-25T19:54:56.482Z
 
 - ## 
 
-- ## 
+- ## [How is the typst web app so smooth? : r/typst _202604](https://www.reddit.com/r/typst/comments/1szr80o/how_is_the_typst_web_app_so_smooth/)
+  - When I use their web app, I can smoothly scroll and zoom in and out the document preview. 
+  - But when I use the tinymist extension in VS code, it gets so slow. scrolling and zooming feels so laggy. And also when the preview is on the keystrokes get reflecting slower than usual.
+
+- The web-app renders a bit-map for preview, while tinymist uses an SVG. Since SVGs need to be rendered into a bit-map for display anyway, the SVG is an intermediate format, which can additionally be slower to render than the output the Typst document produces. For example some gradients need to be approximated in SVG, which makes them much more taxing to sample.
+
+- That's why I use nvim to edit my typst files.
 # discuss-tips
 - ## 
 

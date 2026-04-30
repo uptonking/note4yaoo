@@ -71,6 +71,8 @@ modified: 2025-11-30T17:27:16.720Z
   - 国家统计局
   - 中国裁判文书网
   - 国家哲学社会科学(所有文献免费下载)
+  - wikipedia: kiwix
+  - spinedigest: 一次处理完，所有中间结果（Chunk、图谱、Snake、总结）全部打包进一个 .sdpub 文件。以后想重新导出成 Markdown、EPUB、纯文本……完全不需要再跑 LLM，秒级完成。
 
 - 图书
   - [Project Gutenberg - Free eBooks ](https://www.gutenberg.org/)
@@ -442,6 +444,16 @@ modified: 2025-11-30T17:27:16.720Z
     - Would also like to know if it allows users to connect to an existing ollama instance over LAN? Would it allow me to connect to my ollama API on my network? So I can use this on my laptop and connect to my AI server in the basement? Can you put a custom IP/port? 
       - this is the most requested feature 
 # rag-examples
+- https://github.com/opendatalab/MinerU-Document-Explorer /MIT/202604/python/ts
+  - Agent-native knowledge engine with MCP tools for document indexing, wiki organization, fast retrieval and deep reading across PDF/DOCX/PPTX/Markdown
+  - equips your agent with three tool suites — Retrieve, Deep Read, and Ingest — closing the full knowledge loop
+  - Retrieve — Cross-collection search: BM25, vector, and hybrid with LLM reranking and query expansion
+  - Deep Read — Navigate inside a single document without loading the whole file: table of contents, section reading, inline search, and element extraction
+  - Ingest — Build and maintain a LLM wiki from raw documents, following the Karpathy LLM Wiki pattern
+  - Developed by the MinerU team, building on `QMD` and Karpathy's LLM Wiki.
+  - https://github.com/opendatalab/MinerU-Document-Explorer/tree/main/demo
+    - The demo/ folder contains a complete end-to-end example — an AI agent automatically reads ~10 arXiv papers on RAG, builds an interlinked wiki knowledge base, and writes a research survey. 
+
 - https://github.com/pymupdf/pymupdf4llm /1.2kStar/AGPL/202601/python/lib
   - https://pymupdf.readthedocs.io/en/latest/pymupdf4llm
   - a specialized extension of PyMuPDF designed specifically for extracting content from PDFs in a format that's optimized for LLMs
@@ -1372,7 +1384,7 @@ modified: 2025-11-30T17:27:16.720Z
   - 轻松与第三方应用进行集成：支持做成网页挂件挂在其他网站上，支持做成钉钉、飞书、企业微信等聊天机器人。
   - 通过第三方来源导入内容：根据网页 URL 导入、通过网站 Sitemap 导入、通过 RSS 订阅、通过离线文件导入等。
 
-- https://github.com/OpenDCAI/Paper2Any /1.2kStar/apache2/202601/python/ts
+- https://github.com/OpenDCAI/Paper2Any /2.2kStar/apache2/202604/python/ts
   - http://dcai-paper2any.nas.cpolar.cn/
   - From paper PDFs / images / text to editable scientific figures, slide decks, video scripts, academic posters, and other multimodal content in one click.
   - Paper2Figure - Editable Scientific Figures: One-click generation of model architecture diagrams, technical roadmaps (PPT + SVG), and experimental plots. Supports multiple input sources and outputs editable PPTX.
@@ -1866,6 +1878,11 @@ modified: 2025-11-30T17:27:16.720Z
     - Custom LLM (OpenAI-compatible API) – Use your own deployed LLM with OpenAI-compatible API (vLLM, Ollama server, TGI, etc.). The indexer runs locally while the LLM can be on your server, cloud, or local machine.
     - Custom GPT – Query your local documents using ChatGPT app or web with custom GPTs. The indexer runs on your cloud or local PC, while the primary LLM remains ChatGPT.
 
+- https://github.com/jsgrrchg/NeverWrite /apache2/202604/ts/rust
+  - a local-first knowledge workspace for people who need to handle workflows with multiple parallel agents and subagents. Built like a code editor, but for markdown. It has inline review changes, like Cursor and others. 
+  - An Electron desktop app with a Rust sidecar that opens a local vault and keeps working state on disk.
+  - [Open source agentic markdown workspace : r/Markdown _202604](https://www.reddit.com/r/Markdown/comments/1szrlga/open_source_agentic_markdown_workspace/)
+
 - https://github.com/HKUDS/DeepTutor /9.3kStar/AGPL/202601/python/ts
   - https://hkuds.github.io/DeepTutor
   - AI-Powered Personalized Learning Assistant
@@ -1902,7 +1919,7 @@ modified: 2025-11-30T17:27:16.720Z
     - 提取出来的知识块变成节点，自动连边、聚类，形成有序的“知识蛇链”。一眼就能看出全书的逻辑骨架、章节脉络、概念关联
     - 对抗式多智能体总结: 一个“答辩者”负责写总结，一群“教授”智能体（各持一条 Snake）轮番挑战、挑刺、补漏。几轮迭代后出来的总结，既忠实于原书结构，又高度浓缩，还不会漏掉你关心的部分。真正做到了“结构保留 + 意图对齐”。
     - 输出 .sdpub 档案格式: 
-    - 一次处理完，所有中间结果（Chunk、图谱、Snake、总结）全部打包进一个 .sdpub 文件。以后想重新导出成 Markdown、EPUB、纯文本……完全不需要再跑 LLM，秒级完成。
+    - spinedigest: 一次处理完，所有中间结果（Chunk、图谱、Snake、总结）全部打包进一个 .sdpub 文件。以后想重新导出成 Markdown、EPUB、纯文本……完全不需要再跑 LLM，秒级完成。
     - 而且可以用我们的 Inkora 查看器直接打开，图形化浏览知识图谱和蛇链。
     - [Inkora 下载 | SDPUB 阅读](https://inkora.oomol.com/zh-CN/download/sdpub)
     - Inkora 是用来打开 sdpub 的客户端软件。 如果未来 SpineDigest 支持客户端转化，大概率会上我们的云，届时会收费。 如果用开源方案，可以自由配置 LLM，在本地运行不收费。
