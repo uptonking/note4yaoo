@@ -129,6 +129,14 @@ modified: 2026-04-07T12:53:38.419Z
   - Extensible Architecture: Pluggable, content-aware processors (e.g., table and image extraction) with support for multiple OCR backends—LLM-assisted OCR on the roadmap.
   - An optional flag generates a detailed performance log to help you tune parameters and identify bottlenecks.
 
+- https://github.com/sandraschi/ocr-mcp /MIT/202603/python/ts
+  - FastMCP server providing advanced OCR capabilities with current state-of-the-art models (DeepSeek-OCR, Florence-2, DOTS. OCR, PP-OCRv5, Qwen-Image-Layered decomposition), WIA scanner control, and multi-format document processing for PDFs, CBZ comics, and images.
+  - A web app for people (drag‑and‑drop OCR, scanner, batch) and a FastMCP 3.1 MCP server for agentic IDEs—Claude, Cursor, Windsurf—so agents can run OCR
+    - Web app — React (web_sota/) + FastAPI (backend/app.py): upload or scan, pick engine, get text/PDF/JSON. Ports 10858 (Vite) and 10859 (API). In-app Help (/help) documents the web UI, the MCP server, and OCR backends.
+    - MCP server — FastMCP 3.1 stdio: tools for OCR, preprocessing, scanner, workflows.
+  - 10+ backends (PaddleOCR-VL-1.5, DeepSeek-OCR-2, Mistral OCR, …) : torch, transformers, PIL
+    - https://github.com/sandraschi/ocr-mcp/blob/master/docs/OCR_BACKEND_REQUIREMENTS.md
+
 - https://github.com/run-llama/llama_index /45.5kStar/MIT/202511/python
   - https://developers.llamaindex.ai/
   - LlamaIndex (GPT Index) is a data framework for your LLM application.
@@ -339,7 +347,7 @@ modified: 2026-04-07T12:53:38.419Z
   - https://github.com/opendatalab/MinerU-Document-Explorer/tree/main/demo
     - The demo/ folder contains a complete end-to-end example — an AI agent automatically reads ~10 arXiv papers on RAG, builds an interlinked wiki knowledge base, and writes a research survey. 
 
-- https://github.com/RapidAI/RapidDoc /apache2/202512/python/非VLM
+- https://github.com/RapidAI/RapidDoc /apache2/202604/python/非VLM
   - RapidDoc 是一个轻量级、专注于文档解析的开源框架，支持 OCR、版面分析、公式识别、表格识别和阅读顺序恢复 等多种功能。
   - 框架基于 `Mineru` 二次开发，移除 VLM，专注于 Pipeline 产线下的高效文档解析，在 CPU 上也能保持不错的解析速度。
   - 基于 MinerU 改造而来，已移除原项目中的 YOLO 模型，并替换为 PP-StructureV3 系列 ONNX 模型。 由于已移除 AGPL 授权的 YOLO 模型部分，本项目整体不再受 AGPL 约束。
@@ -351,6 +359,14 @@ modified: 2026-04-07T12:53:38.419Z
     - 优化Dockerfile（在项目根目录下）：集成libreoffice到容器，支持直接解析docx、ppt等文件
     - 解决libreoffice转码和MinerU识别中文乱码问题
     - 使用fastapi开发了api服务，部署后无需再次做接口开发（在web_service目录下）
+
+- https://github.com/RapidAI/RapidOCR /6.5kStar/apache2/202604/python
+  - https://rapidai.github.io/RapidOCRDocs
+  - open-source, free OCR tool that supports multi-platform, multi-language operation and rapid offline deployment. 
+  - Its core advantages lie in extreme speed and extensive compatibility.
+  - Supported Languages: Default support for Chinese and English recognition. For other supported languages
+  - Project Origin: Considering that `PaddleOCR` still has room for optimization in engineering aspects, we innovatively converted the models in PaddleOCR into the highly compatible ONNX format to simplify and accelerate the inference deployment of OCR models on various terminal devices.
+  - This repository contains the Python component of RapidOCR. Components for other languages have been migrated to separate repositories.
 
 - https://github.com/tesseract-ocr/tesseract /71.5kStar/apache2/202512/cpp
   - https://tesseract-ocr.github.io/
@@ -673,6 +689,15 @@ modified: 2026-04-07T12:53:38.419Z
 
 ## utils
 
+- https://github.com/yunwoong7/aws-ocr-vision-lab /MIT/202604/python/ts
+  - A serverless OCR playground for testing PaddleOCR models on AWS infrastructure. Features PP-OCRv5, PP-StructureV3, and PaddleOCR-VL with React frontend and SageMaker GPU inference.
+  - A serverless OCR playground for testing PaddleOCR models on AWS infrastructure
+  - a web-based playground for testing and experimenting with PaddleOCR models on AWS infrastructure. It provides an intuitive interface to upload documents, select OCR models, and visualize extraction results with bounding box overlays.
+  - Multiple OCR Models
+    - PP-OCRv5: General-purpose OCR with high accuracy for text extraction
+    - PP-StructureV3: Document structure analysis with table and layout detection
+    - PaddleOCR-VL: Vision-language model for complex document understanding
+
 - https://github.com/PT-Perkasa-Pilar-Utama/ppu-paddle-ocr /MIT/202604/ts
   - https://pt-perkasa-pilar-utama.github.io/ppu-paddle-ocr/
   - A lightweight, PaddleOCR implementation in Typescript for OCR text detection and recognition in JavaScript environments.
@@ -682,6 +707,15 @@ modified: 2026-04-07T12:53:38.419Z
   - Web Support: Supports running directly in the browser
   - Customizable: Support for custom models and dictionaries
   - Pre-packed Models: Defaults to optimized PP-OCRv5 mobile models (English) ready for immediate use, with automatic fetching and caching on the first run.  Supports 40+ languages via ppu-paddle-ocr-models.
+- https://github.com/xushengfeng/eSearch-OCR /apache2/202602/ts
+  - 基于paddleOCR的nodejs库
+  - 本仓库是 eSearch的 OCR 服务依赖
+  - 支持本地 OCR（基于 PaddleOCRv4）
+  - https://github.com/xushengfeng/eSearch
+- https://github.com/siva-sub/client-ocr /MIT/202507/ts/inactive
+  - https://siva-sub.github.io/client-ocr/
+  - High-performance client-side OCR with ONNX Runtime and PaddleOCR models
+  - privacy-focused OCR solution that runs entirely in the browser using ONNX Runtime with both RapidOCR and PPU PaddleOCR models. 
 
 - https://github.com/timminator/PaddleOCR-Standalone /apache2/202602/python
   - [[P] Standalone PaddleOCR Executable - Simplified OCR for Everyone! : r/MachineLearning _202501](https://www.reddit.com/r/MachineLearning/comments/1iab2w2/p_standalone_paddleocr_executable_simplified_ocr/)
@@ -690,6 +724,18 @@ modified: 2026-04-07T12:53:38.419Z
   - [Standalone PaddleOCR Executable - Simplified OCR for Everyone! : r/computervision _202604](https://www.reddit.com/r/computervision/comments/1i8ic8p/standalone_paddleocr_executable_simplified_ocr/)
     - You need to include the metadata from a lot of packages because this is required at runtime and it is not included by default. 
     - There also is no version 1.5.0 of Paddle out there. My release is based on the latest version 3.4.0. If you are referring to PaddleOCR-VL 1.5 - as stated in my releases notes this is not included in my standalone package. You are currently using the PP-OCRv5 OCR Pipeline not the VL Pipeline.
+
+- https://github.com/zhaohb/paddleocr_vl_ov /202604/python
+  - A complete document understanding pipeline based on OpenVINO for PaddleOCR-VL-1.5, supporting document layout detection and Vision Language Model (VLM) inference. 
+  - Features automatic model downloading for out-of-the-box usage.
+  - PySide6 desktop GUI for running paddleocr_vl_openvino inference, and for managing outputs and successful task history.
+
+- https://github.com/jingsongliujing/OnnxOCR /1.7kStar/apache2/202605/python
+  - 基于PaddleOCR重构，并且脱离PaddlePaddle深度学习训练框架的轻量级OCR，推理速度超快 
+  - A High-Performance Multilingual OCR Engine Based on ONNX
+  - Cross-Architecture Support: Uses PaddleOCR-converted ONNX models, rebuilt for deployment on both ARM and x86 architecture computers
+  - Multilingual Support: Single model supports 5 language types: Simplified Chinese, Traditional Chinese, Chinese Pinyin, English, and Japanese.
+  - Model Accuracy: Consistent with PaddleOCR models.
 # mineru
 - https://github.com/liuhuapiaoyuan/MinerU-webui /202412/python/inactive
   - 本项目为其提供一个简化版本的WebUI，方便用户上传PDF文件，并实时展示提取结果。
@@ -1087,9 +1133,6 @@ modified: 2026-04-07T12:53:38.419Z
 
 - https://github.com/eloops/hocr2pdf /MIT/202509/js/inactive
   - take scanned image, and hocr output from tesseract, create PDF. Thats it.
-
-- https://github.com/sandraschi/ocr-mcp /MIT/202601/python
-  - FastMCP server providing advanced OCR capabilities with current state-of-the-art models (DeepSeek-OCR, Florence-2, DOTS. OCR, PP-OCRv5, Qwen-Image-Layered decomposition), WIA scanner control, and multi-format document processing for PDFs, CBZ comics, and images.
 
 - https://github.com/jbaiter/ocr-parser /MIT/202309/ts
   - This library provides a simple interface to parse OCR data from a stream, buffer or string. 

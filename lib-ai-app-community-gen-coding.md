@@ -276,6 +276,23 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
+- ## 
+
+- ## Writing code is cheap. Maintaining code is not cheap
+- https://x.com/mattpocockuk/status/2050167042771194226
+  - Anyone who's hired an external contractor knows this
+
+- isn't it in essence the same thing? Maintaining code is just writing code
+  - The idea here is that every piece of code you have in your repo is not only code that you've written but code that will require rewriting. All code is debt. So the more code you write, the more code you need to maintain.
+
+- This hits different once you've had to debug someone else's "clean" AI-generated codebase 3 months later. Writing it was 2 hours. Understanding it was 2 days. The real cost of code is always in the future.
+
+- ## optimize performance 
+- https://x.com/diegohaz/status/2049869296210235568
+  1. Have full test coverage.
+  2. Set up benchmark tests, like vitest bench.
+  3. Instruct an AI agent to optimize performance using the benchmark tests. Explore different approaches with subagents as long as the tests keep passing.
+
 - ## [如何对vibe coding 生成的代码维护 - LINUX DO _202604](https://linux.do/t/topic/2014797)
 - 可以尝试一下类似 superpowers 的开发框架 skills，这些 skills 会强迫 LLM 走 TDD 开发，先写测试再开发，可维护性会高不少
 - 是的，佬，有使用superpower，不过在使用过程中还是觉得，约束性不强的状态下，维护性还是比较差，时间久了就是个很大的黑盒

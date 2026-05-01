@@ -39,6 +39,16 @@ modified: 2024-04-14T12:19:52.096Z
   - WIP: An alternative to using Remotion Lambda or Cloudrun for rendering Remotion videos in the cloud
   - This is a Next.js template for building programmatic video apps, with @remotion/player and @remotion/lambda built in.
 
+- https://github.com/ZhouXiaolin/opencat /MIT/202605/rust/ts
+  - http://www.catcut.cc/
+  - OpenCat 是一个 纯 Rust 原生 的程序化视频合成引擎——类似 Remotion 用 React 写视频，但 OpenCat 不跑浏览器、不依赖 Node.js。它把 Skia 渲染、Taffy 布局、QuickJS 脚本和 FFmpeg 编码焊成一个独立的 Rust 二进制。一行命令或几行 JSONL，就能生成一段带转场、动画、字幕和音频的 MP4 视频。
+  - Tailwind 写布局，GSAP 调动画，CanvasKit 画图形——底层是 Rust + Skia 原生渲染，不跑浏览器。
+  - [OpenCat, 一个程序化视频生成制作库 - LINUX DO _202604](https://linux.do/t/topic/2090262)
+
+- https://github.com/liangdabiao/hyperframes-fix /?open
+  - 本项目目的是让 HyperFrames 生成视频适应国内需求，1 流畅的中文语音， 2 中文短视频样式新增， 3 优化整个生成视频流程。 基本上现在一键就可以完成横版竖版的快节奏短视频，例如随便丢给一个文章，一个doc，就能够制作视频
+  - [【开源】HyperFrames-fix 生成快节奏短视频-丢文章就能够制作视频 - 流畅语音和样式 - 源荟萃 - LINUX DO _202605](https://linux.do/t/topic/2092060)
+
 - https://github.com/video-db/Director /MIT/202412/python
   - https://chat.videodb.io/
   - Think of Director as ChatGPT for videos. It is a framework to build video agents that can reason through complex video tasks like search, editing, compilation, generation etc & instantly stream the results.

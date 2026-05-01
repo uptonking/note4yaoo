@@ -46,6 +46,30 @@ modified: 2023-03-21T07:54:11.468Z
   - That's just github releases page but stored on AWS S3 instead of Azure.
   - I hope they'll follow through and add integrations with pip and community projects.
 - It's more than universal data storage. It works closely with transformers. Transformers practically defines the interfaces of some commonly used operators such as attention and MoE, and now we can easily download kernels that implement these interfaces, such as FlashAttention and SageAttention.
+# discuss-ml-fwk
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [TensorFlow、Pytorch、OneFlow，MXNet、MindSpore这些框架谁最好用？ - 知乎 _202102](https://www.zhihu.com/question/446540609)
+- Tensorflow：适用工业界部署，持续演化、受众最广的开发框架
+- PyTorch：轻量灵活易上手，用户爽才是真的爽
+- MXNet：优化云端分布式部署，利好AWS生态参与者
+- CNTK：微软风的“傻瓜式”深度学习框架
+- MindSpore：软硬结合，MindSpore+昇腾，构建最优全栈方案体系
+
+- 等你debug到哭的时候，等你在google上搜索bug information发现一个答案都没有的时候，等你为了实现一个简单的常见的功能而耗费了两个小时的时候，你就会知道自己当初选择了一个社区差甚至没有社区的框架是多裂开的一件事情。你可以在tf或torch成熟的框架和强大的社区下实现自己想要的定制化功能，在这上面花费的时间远小于你去看一些小众的仅在某些功能上突出的框架的源代码要省事儿的多。
+
+- TF 像 C++，诞生在一批技术很强的人手里，但是不懂用户需求，被用户用脚投票。TF 2.0 开始痛定思痛（这点也和 C++ 很像），着力改善用户体验，但是相比 PyTorch 还是更傲娇一点，不会完全迎合用户
+  - PyTorch 像 Javascript，是一个 made by researcher for researcher 的框架，但是早期开发者的 PL & system 功底不足留了坑，不过随后不少大佬加入之后补上了短板，现在整个项目可以说是蒸蒸日上，其他框架基本没有正面竞争的机会。
+  - PaddlePaddle 和 MindSpore 像低配版的 TF，更准确地说百度和华为像低配版的 Google，但是他们和 TF / Google 有一个根本不同是 PaddlePaddle 和 MindSpore 是行政主导开发的框架，这使得他们天生就有极大的劣势，要竞争过 TF 都不乐观，更不用说 PyTorch 了。
+
+- 
+
 # discuss
 - ## 
 

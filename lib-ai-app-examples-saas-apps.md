@@ -884,6 +884,12 @@ modified: 2025-02-21T17:17:42.225Z
   - Upload a video or paste a direct media link to instantly create accurate, timed subtitles.
   - https://x.com/nutlope/status/2041199444855492790
     - Powered by Whisper on @togethercompute and @FFmpeg via fluent-ffmpeg.
+
+- https://github.com/timminator/VideOCR /MIT/202604/python
+  - Extract hardcoded subtitles from videos via a simple GUI using machine learning. Supports 200+ languages.
+  - VideOCR supports both 100% local processing utilizing the PaddleOCR engine, as well as a hybrid cloud-based approach using Google Lens for highly accurate text recognition. Everything can be easily configured via a few clicks.
+  - This repository also provides a version of VideOCR that can be used from the command line in combination with the supported OCR engines.
+  - https://github.com/devmaxxing/videocr-PaddleOCR /legacy
 # audio
 - https://github.com/Deep-unlearning/smol-audio /apache2/202604/jupyter
   - Practical, Colab-friendly notebooks for fine-tuning and running audio AI models

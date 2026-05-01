@@ -124,6 +124,17 @@ modified: 2025-12-16T06:34:43.005Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🎨 Minimal Line + Color Accent Illustrations
+- https://x.com/dotey/status/2049691392364916875
+  - Minimal illustration of [SUBJECT/OBJECT], clean thin lines with selective vibrant color accents, lots of negative space, refined composition, modern editorial style, elegant and simple.
+- 一张极简风格插画，画面主体是【主体/物体】。使用干净纤细的线条描绘轮廓与结构，整体以黑白或低饱和色为主，只在局部加入少量鲜明色彩作为视觉重点。画面有大量留白，构图精致克制，现代杂志编辑插画风格，优雅、简洁、高级。不要复杂背景，不要写实摄影，不要厚重阴影，不要过多装饰。 
+
+- I love these minimalist illustrations with accents of color.
+
 - ## 参考图中的设计，给三国演义中的主要历史人物生成相同风格的图片。ChatGPT
 - https://x.com/op7418/status/2044800056973570417
 - https://x.com/op7418/status/2044800056973570417

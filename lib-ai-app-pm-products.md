@@ -270,6 +270,9 @@ modified: 2025-03-22T16:10:24.856Z
   - agentfs
 
 - rewrite open-canvas with langgraph
+
+- token-router/gateway
+  - 分享本地的GPU、token，类似的项目有分享画图gpu，但如何分享token还未流行
 # 💎🚀 aichorage - local llm with joy, 提供模型API、rag可靠性、pdf文本操作
 - selling-points
   - non-goals: local image gen
@@ -1724,6 +1727,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 很可能注册的第一天会显示低价，后面就恢复正常价格了，注意误导
   - GPT site:pay.ldxp.cn/shop
   - 搜索: 手工, 质保, 源头, 印尼
+  - 月初是openai集中清理风险型用户和欺诈性用户的敏感时间, 很多便宜的渠道会挂掉
 
 - resources
   - [LinuxDo商家评价平台](https://rate.linux.do/)
@@ -1798,6 +1802,10 @@ modified: 2025-03-22T16:10:24.856Z
   - 兑换及售后：https://plus.geekzone.cloud
   - 在兑换后48小时内账号有问题，可以到网站提供兑换码或者邮箱兑换新的
 
+- [吱吱鼠卡网](https://zzshu.com/)
+  - https://t.me/gptteamzz
+  - https://t.me/ttshushu
+
 - [GPTPLUS.icu team 的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YQJERQW3)
   - 自助激活页面：https://gptplus.icu
   - 纯净激活页面：https://icustore.icu
@@ -1816,8 +1824,14 @@ modified: 2025-03-22T16:10:24.856Z
   - 自助充值plus
 
 - [TangSeng AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/tangsengai)
-  - 提供不限量token的日卡/周卡/月卡
+  - 提供不限量token的日卡(¥19)/周卡(¥99)/月卡(¥299)
+  - 按量: ¥5-800w, ¥11-2000w, ¥30-6000w, ¥50-0.125b
   - [这个api中转站的定价如何？ _202603](https://www.nodeseek.com/post-649864-1)
+  - 12/分钟的请求量单个任务都跑不下去，经常是跑一会就断了，然后一分钟到了又继续，昨天买个19一天不限量的的根本无法流畅使用
+    - 主要是并发太低了，单线程都跑不了，不然我还是愿意买的
+  - 月卡是12，天卡设置的6, 因为买天卡狠狠蹬的太多了, 单线程没有问题，多线程是顶不住的。
+  - 大家有多线程需求的可以单独找我
+  - 不支持代中代, 就是再放到sub2api里面使用
 
 - [AI HOME的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/MEDDEX4V) , 保证金1000元
   - 群：https://t.me/aihome123
@@ -1849,6 +1863,12 @@ modified: 2025-03-22T16:10:24.856Z
   - pro5x-175
   - [咕咕嘎嘎 GPT Plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/E7AEE7TS)
     - 和上面的plus很像
+
+- [FantasticAiCccx的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1C57XPY2)
+  - 主站链接：https://testvideo.site
+  - 加速节点：https://hk.testvideo.site
+  - gpt中转, 3元-$100, 1.5倍率-换算下来是0.045一刀, 
+  - Plus号池是2.5除了不能生图都一样, 1.5倍率是Free, 没生图而已
 
 - [GPT PRO的小店 - 链动小铺](https://pay.ldxp.cn/shop/progpt)
   - pro5x-236, 质保1月
@@ -1885,6 +1905,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [vibe coding 专营的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/GUBERQA2)
   - 日卡-5
   - 月卡-59
+
+- [Ai2You智友社，让更多的人用上更好的AI的小店 - 链动小铺](https://pay.ldxp.cn/shop/282D9KDL)
 
 - [逍遥AI批发小铺的小店 ](https://pay.ldxp.cn/shop/1490777)
   - plus-质保15

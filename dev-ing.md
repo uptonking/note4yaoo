@@ -400,7 +400,7 @@ URL	: http://www.cip.cc/124.240.71.187
 - Problem: JavaScript’s `.sort()` mutates the array.
   - https://x.com/petarivanovv9/status/2045116666321818020
   - Solution: Use `.toSorted()` instead. It returns a new sorted array. 
-- Yup. and there are other non-mutating array methods like toSpliced() , toReversed() and with()
+- Yup. and there are other non-mutating array methods like toSpliced() , toReversed() and with(), return new arrays instead of modifying the original.
 
 ## 0416
 

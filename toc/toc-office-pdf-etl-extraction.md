@@ -420,6 +420,12 @@ modified: 2026-04-07T12:53:02.538Z
   - Extract structured data from unstructured documents using Answer. AI's Byaldi, OpenAI gpt-4o, and Langchain's structured output.
   - 基于Answer. AI的Byaldi、OpenAI的gpt-4o和Langchain 做结构化数据输出
   - 支持从PDF等非结构化文档中提取结构化信息，比如损失历史记录、基本应用程序信息等
+
+- https://github.com/dahuilangda/BioChemInsight /MIT/202604/python/ts
+  - a powerful platform that automates the extraction of chemical structures and their corresponding bioactivity data from scientific literature.
+  - Automatically identifies and extracts compound structures and biological activity data (e.g., IC50, EC50, Ki) from PDF documents.
+  - dots_ocr as OCR Engine
+  - Modern Web UI: A React-based frontend with FastAPI backend for intuitive PDF processing, real-time progress tracking, and interactive result visualization.
 # utils
 - https://github.com/TylerMorrison21/paperflow /MIT/202603/python/js
   - https://paperflowing.com/

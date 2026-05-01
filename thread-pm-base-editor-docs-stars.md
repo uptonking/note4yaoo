@@ -14,6 +14,23 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## we’re introducing a new Legal Agent in @Microsoft Word, built to support the precision and rigor legal work demands. 
+- https://x.com/BradSmi/status/2049993319800066119
+  - Every clause matters. Every redline tells a story. That’s why this agent was built to follow the structured workflows lawyers use while keeping them fully in control.
+- The Not a substitute for advice from a qualified legal professional disclaimer at the bottom of the UI is doing a lot of work. That's the moat lawyers still have: accountability. AI drafts. Humans sign. That liability gap is worth more than any feature set.
+- 52% of legal teams already use GenAI and cut cycle times by 40%. The courtroom was never going to wait for Word to catch up.
+
+- https://x.com/aakashgupta/status/2050144715916677157
+  - Microsoft just turned an $11 billion startup into a Word feature.
+  - Harvey raised $200M at an $11B valuation in March on the bet that legal AI is its own surface. The numbers held that up. $190M ARR per TechCrunch's December reporting. 100, 000 lawyers across 1, 300 organizations including the majority of the AmLaw 100. Around $1, 200 per lawyer per month per Sacra. Big firms paid because Harvey was the only tool in the category that worked.
+  - The interesting tell: Microsoft built the agent with legal engineers, many of them from Robin AI, a legal AI startup that recently went under, per Artificial Lawyer's reporting. The talent that knew how to make legal AI work for lawyers landed at Microsoft after their startup couldn't survive standalone. That's the legal AI category in one sentence.
+  - Distribution was always the constraint here. Lawyers don't switch tools. Word is where contracts get drafted, redlined, and tracked. Whichever AI lives inside that .docx wins the default workflow, and Microsoft just walked through the door uncontested.
+  - Harvey's surviving moat is the AmLaw 100 partner workflow. Domain training, agentic litigation prep, deep integrations with iManage and NetDocuments. Real moat for $1, 500-an-hour partners running M&A and complex litigation. It does not extend to the millions of lawyers globally drafting NDAs, redlining vendor contracts, and updating templates. That layer is exactly what Word Legal Agent goes after, and Microsoft can ship it as a feature inside a $360-a-year subscription.
+
 - ## New in Word: Copilot now tracks changes, leaves comments, and more _202604
 - https://x.com/dotey/status/2044122415018430513
   - 很难想象微软到现在才推出这个 AI 操作 Word 的功能，还没 Anthropic 快
