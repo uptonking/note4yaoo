@@ -9,6 +9,8 @@ modified: 2025-12-16T06:34:43.005Z
 
 # guide
 
+- latest-prompts-collections
+  - https://youmind.com/prompts
 # discuss-stars
 - ## 
 
@@ -126,7 +128,12 @@ modified: 2025-12-16T06:34:43.005Z
 
 - ## 
 
-- ## 
+- ## 一堆提示词来做这个小小黏土风。
+- https://x.com/berryxia/status/2050519706319384862
+  - {主题}的软陶黏土微缩场景，手作橡皮泥质感，圆润可爱的小人偶，低饱和奶油暖色，柔和棚拍光，浅景深微距摄影，桌面玩具布景，所有道具带轻微指纹、压痕和手捏纹理，哑光表面，童趣、治愈、安静、可爱，像手作黏土定格动画截图。
+- 提示词做减法才是正路。模型对齐上来了，堆砌风格词只会稀释注意力权重，留白让采样自己跑更稳。
+
+- 一年前的那些提示词工程，模型迭代直接抹平了，技巧还没捂热就过时
 
 - ## 🎨 Minimal Line + Color Accent Illustrations
 - https://x.com/dotey/status/2049691392364916875

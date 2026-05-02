@@ -121,7 +121,7 @@ what should be done to macth the upstream? explain to me. if it it complicated, 
 - the final goal is to implement from scratch a new ai docx editing solution named ailovedoc similar to superdoc at folder `./ailovedoc`  to avoid the licensing issues.
 - ailovedoc should be implemented in a modular and extensible architecture for core features like rendering and editing, with functional programming style.
 
-- in superdoc, running `pnpm dev:docs` shows a mininal paginated editor demo. please migrate the example to ailovedoc without licensing issues, and make it runnable locally in ailovedoc.
+- in superdoc, running `pnpm dev:super-editor` shows a mininal editor demo that supports to toggle pagination. running `pnpm dev` shows a powerful editor demo that supports to toggle pagination, zoomable, toolbars, sidebars. please migrate the examples to ailovedoc without licensing issues, and make it runnable locally in ailovedoc. you should migrate all superdoc examples/features to a new standalone package at `apps/playground`, the basic ux can be a list of editor example names at left sidebar, when click one example name, the demo will show on the right.
 
 - feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
 - in your implementation, you can also improve the code logic for features and make your implementation correct and extensible. tests are not necessary for your implementation.

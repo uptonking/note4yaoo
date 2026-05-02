@@ -401,8 +401,13 @@ modified: 2026-03-29T13:03:35.455Z
 - https://x.com/codewithshripal/status/2038984058546663751
 
 ```CSS
-.scrolling {
+.container {
   scrollbar-gutter: stable;
   / * overflow-y: scroll * /
 }
 ```
+
+- https://x.com/alicalimli_dev/status/2050455805938540810
+  - This one line of CSS will fix the annoying layout shift that scrollbars cause.
+  - With that, space is reserved for the scrollbar before it even appears.
+  - Use `both-edges` if your content is centered.

@@ -700,6 +700,18 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Introducing the IBM Granite 4.1 family of models (3B/8B/30B) : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sz23wn/introducing_the_ibm_granite_41_family_of_models/)
+  - Also released : https://huggingface.co/ibm-granite/granite-vision-4.1-4b
+  - [Granite 4.1 LLMs: How They’re Built _202604](https://huggingface.co/blog/ibm-granite/granite-4-1)
+
+- Very weak on benchmarks FWIW. 30B scored 15 on AA index. Equal to the non-reasoning scores of Gemma 4 E4B and Qwen 3.5 2B.
+
+- [Granite 4.1: IBM's 8B Model Is Competing With Models Four Times Its Size : r/LocalLLM _202604](https://www.reddit.com/r/LocalLLM/comments/1szucjv/granite_41_ibms_8b_model_is_competing_with_models/)
+
 - ## 💡🧩 Information All You Need for Gemma 4
 - https://x.com/holo_b/status/2039815942658523392?s=20
 - it's multimodal  meaning it can process not just text, but also images, video, and audio. 

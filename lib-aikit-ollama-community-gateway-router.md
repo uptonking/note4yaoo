@@ -508,21 +508,28 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
-- ## 
+- ## 老实人是赚不了钱的，最近也是听同行说一个前段时间刚开始干的中转站，严重掺水利润做到九成
+- https://x.com/Pluvio9yte/status/2050436054591877593
+  - 他们现在一个月就至少赚200万，基本是我们的50倍。
+  - 保持初心很困难，听了他们这个我也动摇过。不过还是忍住了。这卷钱速度真的堪比没有风险的抢银行
+
+- 掺水做不了太远的，用一阵子都知道，只能骗骗新入门玩龙虾的人
+
+- 能用顶级模型的大家又不傻，一次骗就不会再信任，我们就不会要低价造假的，这行业最后就是拼口碑
 
 - ## @justinsuntron孙哥也加入中转站创业了，有种刘强东搞外卖大战美团和饿了么的感觉。前期大撒币最是简单抢占市场的手段。
 - https://x.com/eastweb3eth/status/2050156414954525009
   - 另外连孙哥都加入这门生意，说明这生意是真赚钱。对于消费者来说也是好事，希望更多竞争给消费者带来更多实惠。
 下面我将列出自己收藏的全部中转站，排名不分先后，大家挑便宜和服务好的用即可：
-01. https://tokennav.cc TokenNav 中转站导航
-02. https://aibijia.org
-03. https://aigocode.com
-04. https://manage-xai.ainaibahub.com
-05. https://openrouter.ai
-06. https://subrouter.ai
-07. https://helpaio.com/transit
-08. https://packyapi.com
-09. https://openclaudecode.cn
+01.   https://tokennav.cc TokenNav 中转站导航
+02.   https://aibijia.org
+03.   https://aigocode.com
+04.   https://manage-xai.ainaibahub.com
+05.   https://openrouter.ai
+06.   https://subrouter.ai
+07.   https://helpaio.com/transit
+08.   https://packyapi.com
+09.   https://openclaudecode.cn
 10. https://api.ikuncode.cc
 11. https://dapicloud.com
 12. https://b.ai 

@@ -214,7 +214,7 @@ npm up -g  @openai/codex opencode-ai @kilocode/cli
   - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav
   - 做完tailwind-table就面试
 - dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
-# dev-04
+# dev-05
 
 ```log //dev-xp
 console.log('; ; task ', taskState, runningTaskAction, task?.task_steps)
@@ -330,6 +330,10 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - ?
 - dev-log
   - ?
+
+## 0503
+
+# dev-04-pretext-rich-text-&-liteparse-or-nomic-model-citation-&-stirling-pdf/image-&-superdoc
 
 ## 0428
 
@@ -572,7 +576,7 @@ eval duration:        8.749817833s
 eval rate:            26.06 tokens/s
 ```
 
-# dev-03
+# dev-03-openclaw-local-first-&-huggingface-storage-s3-&-nodejs-vfs-&-electricsql-durable-transport
 
 ## 0325
 

@@ -14,6 +14,11 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
+- ## 
+
+- ## the new CSS border-shape API makes this possible: 手绘/草稿风格边框线条
+- https://x.com/wesbos/status/2050252606501457958
+
 - ## 常见的为 DOM 设置平滑圆角的方案大多使用的 mask，我来分享一种利用 superellipse 并在数学上对齐顶点，并支持多重方案低成本使用 
 - https://x.com/xiaolinbythesea/status/2039644145044824305
 - chrome 不久前实现了border shape，任意形状的边框都可以了

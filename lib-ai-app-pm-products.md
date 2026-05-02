@@ -1777,6 +1777,11 @@ modified: 2025-03-22T16:10:24.856Z
     - https://shop.kedaya.xyz/
     - https://t.me/kedaya_888
     - 中转站: https://api.kedaya.xyz/
+  - [叮当猫稳定AI渠道的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/dingdangmao)
+    - 品类特别多
+    - 只做群里面的三级代理
+  - [夏麦小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/GSVP35W6)
+    - plus账号-9.5, 质保三天 
   - [商家5651的小店 ](https://pay.ldxp.cn/shop/AO4GDZSI)
     - 自助售后, 质保三天 
   - [山姆奥特曼商店的小店 - 链动小铺](https://pay.ldxp.cn/shop/1E5DST9P)
@@ -1785,22 +1790,31 @@ modified: 2025-03-22T16:10:24.856Z
     - plus账号, 质保三天 
   - [王二的小铺的小店 ](https://pay.ldxp.cn/shop/2JSR3DGY)
     - plus账号, 质保三天 
-  - [哈哈的ai杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/22DHYNNV)
-    - plus账号, 质保三天 
-  - [夏麦小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/GSVP35W6)
-    - plus账号, 质保三天 
   - [超低价GPT会员的小店 - 链动小铺](https://pay.ldxp.cn/shop/dijiagpt)
     - 【手工】【30天】GPT-Team / Business 高质量激活码（质保3天）
   - [普露米AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/plumire)
     - 低价号多
-  - [叮当猫稳定AI渠道的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/dingdangmao)
-    - 品类特别多
-    - 只做群里面的三级代理
 
 - [麦当当plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/EOTZ17J2)
   - 交流: https://t.me/maidangdangplus
   - 兑换及售后：https://plus.geekzone.cloud
   - 在兑换后48小时内账号有问题，可以到网站提供兑换码或者邮箱兑换新的
+
+- [NFXW的小店 - 链动小铺](https://pay.ldxp.cn/shop/MYIAKTYT)
+  - 交流 https://t.me/aivip6688
+  - 账号检测 https://ban.nloop.cc/
+  - 邮件取件助手：https://email.nloop.cc/
+  - CPA ↔️ Sub2API：https://conversion.nloop.cc/
+  - plus-8.5
+  - [Gemini/Plus 源头供应商的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/aipro)
+    - plus质保15天-65
+
+- https://nissanserena.my.id/otp    /印尼
+  - [哈哈的ai杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/22DHYNNV)
+    - plus账号, 质保三天 
+
+- [小猫GPT源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1D0LD6BR)
+  - 频道通知链接：https://t.me/+UkH0O6HZLBM5MTJh
 
 - [吱吱鼠卡网](https://zzshu.com/)
   - https://t.me/gptteamzz
@@ -1817,11 +1831,28 @@ modified: 2025-03-22T16:10:24.856Z
   - [CK能量的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ZYKSFL9A)
     - 低价号多
 
-- [咕咕Ai源头号商（招代理）的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/gugu)
-  - 价格较贵, 只做批发
+- [Tora-雪诺AI源头分销小铺的小店 - 链动小铺](https://pay.ldxp.cn/shop/Tora)
+  - 通知 https://t.me/Tora_AiShop
+  - 提供正规充值 gpt/claude 的方式
+  - 品类很多
+  - plus成品号-质保1天， 15
+  - plus成品号-质保30天， 75
+  - GPT TEAM 手工直拉 无质保， 35
+  - GPT Cyber认证【Persona认证】， 100
 
 - [AI杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/PBY2YIR3), /周全
   - 自助充值plus
+
+- [AI HOME的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/MEDDEX4V) , 保证金1000元
+  - 群：https://t.me/aihome123
+  - 无低价号
+  - plus-32
+  - pro5x-140
+  - pro10x-210
+  - Gpt认证Kyc-100
+
+- [咕咕Ai源头号商（招代理）的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/gugu)
+  - 价格较贵, 只做批发
 
 - [TangSeng AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/tangsengai)
   - 提供不限量token的日卡(¥19)/周卡(¥99)/月卡(¥299)
@@ -1833,13 +1864,6 @@ modified: 2025-03-22T16:10:24.856Z
   - 大家有多线程需求的可以单独找我
   - 不支持代中代, 就是再放到sub2api里面使用
 
-- [AI HOME的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/MEDDEX4V) , 保证金1000元
-  - 群：https://t.me/aihome123
-  - 无低价号
-  - plus-32
-  - pro5x-140
-  - pro10x-210
-
 - [松松的小店，招代理的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/gpt_songsong)
   - 交流群: https://t.me/+5UfugtLTLq40ZGQ0
   - 无低价号
@@ -1847,7 +1871,7 @@ modified: 2025-03-22T16:10:24.856Z
   - pro5x-160, 质保400
   - pro10x-250, 质保650
 
-- [YCYAPI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/3RXKX01X), 已被封禁
+- [YCYAPI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ycyapi), 已被封禁
   - YCY供应商订阅: https://t.me/+n5uswJrZIAg2NTk1
   - plus成品号-10, 质保3天, 反代质保首登---不是日抛
   - plus-30
@@ -1863,6 +1887,11 @@ modified: 2025-03-22T16:10:24.856Z
   - pro5x-175
   - [咕咕嘎嘎 GPT Plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/E7AEE7TS)
     - 和上面的plus很像
+
+- [AI源头小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/lwq)
+  - QQ群：1080624221 , 进群需提供订单号
+  - plus-10, 联系客服手工现开，无需排队， 已稳定一周
+  - plus-6, Plus新号慢充需要排队（无质保）
 
 - [FantasticAiCccx的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1C57XPY2)
   - 主站链接：https://testvideo.site
@@ -1900,6 +1929,7 @@ modified: 2025-03-22T16:10:24.856Z
 - [九渊Ai源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/jiuyuan)
   - 售后TG：https://t.me/jiuyuanai
   - plus-150
+  - plus土区-120
 
 - [codex-for.me ](https://codex-for.me/)
   - [vibe coding 专营的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/GUBERQA2)
@@ -1914,7 +1944,9 @@ modified: 2025-03-22T16:10:24.856Z
   - [出GPT Plus直充卡密8元 _202604](https://www.nodeseek.com/post-687488-1)
 
 - [AI 源头旗舰店的小店 - 链动小铺](https://pay.ldxp.cn/shop/CodexBro)
+  - 中转站: https://www.inroi.shop
   - 低价号多，但及其不稳定
+  - Plus土区iOS官方直充月卡（无质保，987渠道）， 100
 
 - [AI源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/shiwanfute)
   - TG：https://t.me/mikaksa2

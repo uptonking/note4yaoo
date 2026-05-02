@@ -1667,6 +1667,61 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
+- ## 
+
+- ## [PFlash: 10x prefill speedup over llama.cpp at 128K on a RTX 3090 : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1t0vp3w/pflash_10x_prefill_speedup_over_llamacpp_at_128k/)
+  - The problem: Q4_K_M Qwen3.6-27B on a 24 GB 3090 decodes fast (~74 tok/s with DFlash spec decode), but prefill scales O(S²). On a 131K-token prompt, vanilla llama.cpp takes 248.4 s cold (llama-bench pp131072 --no-warmup -r 1, 527.6 tok/s). That is 4.1 minutes staring at a blank screen before the first token. Decode is fast, but the wait kills the UX. Warmed steady-state is better (169.3 s at 128K) but still painful, and grows quadratically as you push context.
+  - Standing on shoulders: This work stands on two recent papers, Speculative Prefill, FlashPrefill
+- What we built
+  - In-process composition. 
+  - CUDA port of FlashPrefill.
+  - 24 GB memory orchestration. Drafter (1.3 GB weights + KV + ~600 MB BSA scratch at 128K) and the DFlash daemon (15 GB target + 3 GB draft + 3 GB KV) do not coexist on a 3090. The daemon parks, unparks, and frees weights between stages over a stdin protocol; ~3 s per request, makes the whole pipeline fit on a single consumer card.
+
+- Interesting technique but if I'm reading this corrrectly this is a super lossy way to process prefill?
+  - A small Qwen3-0.6B drafter reads the full 64K/128K prompt
+  - FlashPrefill/BSA-style sparse attention makes that drafter pass cheaper
+  - The drafter scores token/span importance and keeps a small subset
+  - The 27B target only prefills the compressed prompt (retokenized from the drafter?)
+  - After that, DFlash+DDTree does speculative decode on the compressed target KV
+- Yeah. It’s 10x faster. But how much dumber is the real question.
+- Yeah I dunno why everyone in this space seems to forget that EVERYTHING in computing is a space/time/quality tradeoff. You generally don't get 10x improvements in well-researched areas without massive tradeoffs.
+
+- the comparison against vanilla llama.cpp matters here -- llama.cpp's CUDA prefill path doesn't have proper flash attention at these context lengths, so part of that 10x is recovering that overhead anyway. the interesting claim is the speculative part: the drafter scores token importance and the heavy model only prefills the flagged spans, which is genuinely different from just flash attention -- it's an approximation. NIAH is the right benchmark to stress this because the failure mode for sparse prefill is the drafter systematically underweighting the relevant needle tokens. curious what architecture the drafter is and how much VRAM overhead it adds loading in-process
+  - qwen3-0.6b has a 32k native context — at 128k it would need positional extrapolation, which is where the stability concern gets real. the drafter job is to score importance across the full window, so if it degrades past its training length the sparse prefill will systematically drop tokens in that region. not random errors but a reproducible blind spot. curious whether they rope-extended the drafter or if the 10x claim is only benchmarked under 32k
+
+- llama.cpp has a pretty good prefill if you aren't offloading to CPU RAM, I don't believe the difference could be 10x on a model like Qwen 3.6 27B.
+
+- Vulkan/ROCm version pls
+
+- Will streaming pre-fill work with this? I'm doing streaming prefill for some low latency inputs, and I have a feeling this may break it
+  - I guess it would work if you stream straight into the small model instead of the large one
+
+- Prefill at 128K is the metric that actually decides whether long-context agentic workflows are usable on consumer cards or not. Curious whether the 10x holds at 32K and 64K or whether it's a curve that only diverges hard at the top end. Decode tok/s comparison would also be nice for the people running this as a daily driver, not just for one-shot ingestion.
+
+- This sounds like a more radical application of the RAG concept to KV Cache. We're already struggling to combat the information loss caused by RAG Chunk fragmentation. Now we might have to worry even more about information loss in KV Cache.
+
+- ## 🚀 We just released something new: Luce PFlash  _202605
+- https://x.com/pupposandro/status/2050214657953030381
+  - Long-context prefill is a silent killer for throughput speed. llama.cpp takes ~257 seconds to prefill 128K tokens of Qwen3.6-27B on a single RTX 3090. So we tried to solve the problem. 
+  - A small Qwen3-0.6B drafter loads in-process, scores token importance across the whole prompt, and the heavy 27B target only prefills the spans that matter. 128K prompt in 24.8 seconds, ~10.4x faster TTFT, NIAH retrieval preserved at every measured context.  
+  - It is a clean C++/CUDA port of FlashPrefill wired through Block-Sparse Attention, with a custom Qwen3-0.6B BF16 forward so drafter and target share one ggml allocator. The whole thing is a single daemon command (compress) in front of the existing dflash spec-decode stack.
+
+- so now we have PFlash? Me still waiting for DFlash come to llamacpp
+
+- This will work for 4090 too?
+  - maybe need some porting/iterations, but should work there as well
+
+- Would be interesting to apply this concept to MLX or something to solve the prefill speed problem on Macs.
+  - Try omlx, it use cache for prefill
+
+- Everyone obsesses over decode speed and completely ignores TTFT until their app hangs for 4 minutes. An in-process drafter just for prefill is exactly the right move.
+
+- https://x.com/nash_su/status/2050373766048620588
+  - DFlash 是在 Decoding 阶段用小模型进行 Speculative 来提速，但是对于超长 Context， Prefill 阶段的时间也会很久。
+  - PFlash (Speculative Prefill) 推测预填充，用同样的思路，让 Prefill 结算实现了最快 10x 的提速！
+
+- prefill没人卷是因为效果不明显吧…本来就几百上千token/s提升10倍，对rps贡献度小于5%
+
 - ## Understanding LLMs by Building One: We use large language models every day, but what actually happens inside them?
 - https://x.com/danilop/status/2039265823907283048
   - [Understanding LLMs by Building One ](https://danilop.github.io/micro-gpt-and-beyond/)

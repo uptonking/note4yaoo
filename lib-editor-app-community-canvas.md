@@ -164,7 +164,11 @@ modified: 2023-03-13T08:05:09.453Z
 
 - ## 
 
-- ## 
+- ## The nascent HTML-in-Canvas API is exciting to me not for flashy effects, but because it extends the semantics that the DOM can (tractably) represent 
+- https://x.com/OrionReedOne/status/2050598560127762934
+  - tiny example: it's possible to show an element in multiple places, cheaply, under arbitrary transforms.
+  - https://folkjs.org/demos/html-in-canvas.html
+- OK now we can make the PORTAL 3 in Web
 
 - ## Nice to see excitement around the proposed html-in-canvas feature, but remember you can already put canvas behind/atop HTML elements.
 - https://x.com/jaffathecake/status/2040365428338303225

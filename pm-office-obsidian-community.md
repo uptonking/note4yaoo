@@ -302,6 +302,21 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
+- ## 
+
+- ## [Obsidian helped me most when I stopped trying to make it impressive : r/ObsidianMD _202605](https://www.reddit.com/r/ObsidianMD/comments/1t036y1/obsidian_helped_me_most_when_i_stopped_trying_to/)
+  - My vault got better when I stopped chasing the perfect graph and started writing ugly useful notes.
+  - One note per problem. One daily note. Links only when they actually help. No pretending a beautiful system means I did the work.
+  - The biggest win has been noticing patterns I used to miss, especially around distraction. A few blunt notes about when I pick up my phone taught me more than any screen time report.
+
+- It helps when you accept that customising your vault is a separate hobby, often barely related to daily use of your vault.
+
+- As your vault expands, you’ll eventually feel the need to distill meaningful insights from these fragments to truly accumulate knowledge. At that point, you might shift your Obsidian workflow to better support long-term synthesis. That is when you’ll truly discover how powerful links could be
+
+- I agree with your premise… my obsidian is best when it’s just a place for all of my notes. The only extra handholding I use is inter-note links. However I hate daily notes. A separate note for each day is a place for daily notes to die and never be seen again. I have a ‘daily notes 2026’ note for the entire year; one header per day. To review the week I hit page down and page up.
+
+- Similar for me too re: plugins; tasks, git, excalidraw.. that's it. Originally I had about 20, spent far too much time noodling around with them instead of just using the app!
+
 - ## [Migrating out of Obsidian : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1ss6v8k/migrating_out_of_obsidian/)
 - CyberSec identified few risks with Obsidian and quarantined it (put a hold on new installs).
   - Embedded Commands in the Vault (i.e. unauthorized script execution)
