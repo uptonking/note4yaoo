@@ -1951,6 +1951,13 @@ modified: 2025-08-23T11:43:35.904Z
   - https://github.com/fabricio3g/FlaxeoUI /MIT/202512/ts/vue
     - A Front End for stable-diffusion.cpp. Built with Electron and Node.js, I made it to be simple to interact with the stable difussion cpp cli
     - Currently, it has only been tested using Vulkan on Linux and Windows.
+# image-gen-client/ui
+- https://github.com/Stareven233/leaf-flow /202605/go/ts
+  - 一个轻量的声明式执行框架，支持通过 YAML 配置快速为 CLI/TUI 工具生成结构化的交互界面
+  - ComfyUI：很灵活但略显复杂，学习成本高，依赖 Python
+  - Gradio：开发快但启动慢，不灵活，依赖 Python
+  - leaf² 有一个更好的平衡： 轻量快速，1秒启动, 多模块统一管理
+  - [leaf²: 声明式执行框架，Gradio/ComfyUI之外的轻量选择 - LINUX DO _202605](https://linux.do/t/topic/2103425)
 # ai-image-provider
 - https://github.com/Lingyuzhou111/Comfyui_Free_API /apache2/202508/python
   - 为ComfyUI提供多种免费AI API服务的插件，支持文本对话、图像生成、图像分析等功能

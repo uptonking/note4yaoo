@@ -256,6 +256,27 @@ modified: 2026-04-07T11:51:51.225Z
   - Text-to-Website: Generate complete websites from simple natural language prompts.
   - Image-to-Website: Upload UI mockups to generate frontend code automatically.
   - Live Code Preview: Edit and preview the website in real time using an in-browser code editor.
+
+- https://github.com/1weiho/open-slide /MIT/202605/ts
+  - https://open-slide.dev/
+  - https://demo.open-slide.dev/
+  - The slide framework built for agents. Describe your deck in natural language — your coding agent writes the React. 
+  - open-slide handles the canvas, scaling, navigation, hot reload, and present mode so the agent can focus on content.
+  - Every slide renders into a fixed 1920 × 1080 canvas. Pages are arbitrary React components, not a constrained DSL.
+  - 依赖radix-ui、tailwindcss、commander、fflate
+  - 🛝
+    - 不支持 markdown, 完全基于coding
+    - 不支持 zoom
+    - 目前的实现偏静态页面， 交互性很弱， 但基于coding实现难度不大
+  - Why open-slide? Slides are visual code. Agents are great at writing code. open-slide is the missing runtime that turns "make slides about X" into a polished, presentable deck.
+  - Works with any coding agent (Claude Code, Codex, Cursor, …). 
+  - In-browser inspector: Click any element → leave a comment like 𝚖𝚊𝚔𝚎 𝚝𝚑𝚒𝚜 𝚛𝚎𝚍 or 𝚜𝚑𝚛𝚒𝚗𝚔 𝚝𝚑𝚎 𝚑𝚎𝚊𝚍𝚕𝚒𝚗𝚎 → run /apply-comments → the agent applies every edit.
+  - Assets manager + svgl logo search
+  - Export to static HTML & PDF
+  - Fullscreen playback with keyboard navigation, plus a presenter mode with current/next slide preview, speaker notes, and a timer.
+  - You can use the built-in /𝚌𝚛𝚎𝚊𝚝𝚎-𝚝𝚑𝚎𝚖𝚎 skill to set up a style.
+  - https://x.com/1weiho/status/2050602481953181968
+    - This framework doesn’t include Next.js. It’s built on Vite + React
 # UI-gen
 - https://github.com/itzcrazykns/epoch /MIT/202511/ts
   - Epoch transforms traditional text-based AI conversations into interactive, component-driven experiences. 

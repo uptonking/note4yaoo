@@ -133,6 +133,13 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/verazuo/jailbreak_llms
   - A dataset consists of 15, 140 ChatGPT prompts from Reddit, Discord, websites, and open-source datasets (including 1, 405 jailbreak prompts).
   - 开源了论文中使用的 15, 140 个 ChatGPT 提示，其中包括 1, 405 个越狱提示，收集于 Reddit、Discord、网站和开源数据集。
+# ai-client-gui
+- https://github.com/Zhou-Shilin/Aether /GPL/202605/kotlin
+  - A stunning, localized, general-purpose AI Agent for Android.
+  - [「Aether 扶摇」正努力成为 Android 端最好看最好用的通用 AI 客户端 - LINUX DO _202605](https://linux.do/t/topic/2100085)
+    - 可以把她用作日常纯文字聊天（就像 ChatBox 一样）, 也可以给予她访问网络、操作手机的能力
+    - 从深度研究 Deep Research 到逆向本机 APK 软件，Aether 全量支持 MCP、Skills，提供 Virtual Display 虚拟屏幕操作功能ww
+    - Agent Mode 对标的是 ChatGPT 的 Computer Use 功能，通过创建虚拟屏幕，让 Agent 操作你的手机的同时不干扰前台焦点，用户仍然可以使用手机完成其他工作哦
 # llm-impl/rewrite
 - https://github.com/ideaweaver-ai/qwen3-from-scratch /apache2/202509/python
   - A complete implementation of a Qwen3-based language model trained on the TinyStories dataset. 

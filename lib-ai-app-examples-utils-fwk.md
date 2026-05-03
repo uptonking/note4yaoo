@@ -955,6 +955,8 @@ modified: 2025-02-21T18:20:42.624Z
   - https://github.com/router-for-me/Cli-Proxy-API-Management-Center /MIT/202601/ts
     - a WebUI interface based on CLI-Proxy-API, designed to simplify configuration modifications and runtime status monitoring.
     - Since version 6.0.19, the WebUI ships with the main program; access it via `/management.html` on the API url
+  - https://github.com/seakee/CPA-Manager /MIT
+    - [解决 CPA 移除使用统计方法：CPA-Manager - LINUX DO _202605](https://linux.do/t/topic/2103420)
   - https://github.com/router-for-me/CLIProxyAPIPlus /MIT/202512/go
     - the Plus version of CLIProxyAPI, adding support for third-party providers on top of the mainline project.
     - Added GitHub Copilot support (OAuth login)

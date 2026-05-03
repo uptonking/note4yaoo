@@ -92,6 +92,8 @@ modified: 2022-11-07T10:25:12.034Z
     - do 一年 300, 服务器可能是 ovh 你拉到顶配试试, 顺便 cf 商业版
   - [还差一点点，但服务器已经撑不住了 _202505](https://linux.do/t/topic/627271)
     - 我又果断入手一台 192G 裸金属，准备横向扩容
+  - https://linux.do/s/subscriptions
+    - 支持购买广告位
 
 - [Hugging Face Spaces](https://huggingface.co/docs/hub/en/spaces-overview)
   - Spaces stores your code inside a git repository, just like the model and dataset repositories. 
@@ -374,6 +376,13 @@ mineru paddleocr site:github.com -inurl:"github.com/opendatalab/" -inurl:"github
   - Desktop Telegram client with good customization and Ghost mode.
   - No Copy & Download Restrictions by Default
   - Local Telegram Premium
+  - 在tg内提供了安卓apk下载， 
+    - 安卓app在手机号输入界面可选择qr code扫码登录，然后可使用其他设备的 "Link Desktop Device" 扫码登录，似乎只有手机app支持来扫码
+    - 安卓app基于 exteraGram 修改实现， 也支持ghost mode
+  - https://github.com/AyuGram/AyuGram4A /1.9kStar/GPL/202307/cpp/java/inactive
+    - https://github.com/exteraSquad/exteraGram 
+    - Experimental third-party Telegram client based on official sources.
+    - AyuGram4A is a fork of exteraGram with some patches from  https://github.com/nikitasius/Telegraher
 
 - https://github.com/tangyoha/telegram_media_downloader /MIT/202507/python/js
   - 基于Dineshkarthik的项目， 电报视频下载，电报资源下载，跨平台，支持web查看下载进度 ，支持bot下发指令下载，支持下载已经加入的私有群但是限制下载的资源

@@ -226,6 +226,22 @@ modified: 2026-01-21T04:22:29.956Z
 - ## 
 
 - ## 
+# discuss-ai-api-gateway-devops
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [[拙见]分享一下高速中转站架构 - LINUX DO _202605](https://linux.do/t/topic/2106032)
+  - cloudflare和dnsPod都可以实现类似于cdn的效果 来源于支持一个前缀多个解析 如果用到这个功能的话我建议使用dnspad因为便宜还有短信通知
+  - 如果是通过cloudflare和dnsPod实现类似于CDN效果我推荐使用dmit机器CN2GIA+9929+CMIN2…叠加 每个节点最少1-2 最好是2-2
+  - 这里给大家提供一种思路, 不建议任何已经在正式运营的佬这样改(对运维能力要求还是有的!!!).
+  - 上面方案使用dmit自建类cdn方案 通常也在60s左右
+  - 单纯使用独立服务器+号池分离+cloudflare方案在90-300s
+
 # discuss-ai-api-gateway/router-tips
 - ## 
 
@@ -674,6 +690,15 @@ https://makerich.club/ chong 这个渠道不是源头，也是流传最久的渠
 - ## [中转管理系统！！中转商价格对比器 - LINUX DO _202603](https://linux.do/t/topic/1673364)
 - https://github.com/Goingu/New-API-Price-Sync-Tool
 
+- ## 对于中国市场而言，中转站的意义是帮用户：
+- https://x.com/interjc/status/2050839205010661758
+  - 搞定了网络；且不说有没有以次充好搞灰色的问题，是不是一定程度上扮演了机场的角色？
+  - 搞定了支付；
+  - 搞定了KYC；
+- 中转站上游是原罪，需要用各种薅羊毛、仅退款等形式来获取 token 价差，把正常中国用户都给牵连。这是一个恶性循环，你越使用中转站，官方就封中国账号越厉害，然后反过来又越依赖中转站。这其中获利的只有中转站老板，但是也迟早会面临法律风险，就跟当初在墙内卖 VPN 的那些人一样，赚钱的都会被清算
+  - 早期是这样，客户稳定以后他们就会以次充好了，上游风险会降下来
+
+- AI中转站利润比机场高，法律风险远比机场低，的确是一个赚钱的好机会
 # discuss-model-api-free
 - resources
   - https://github.com/cheahjs/free-llm-api-resources

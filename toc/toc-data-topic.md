@@ -13,7 +13,7 @@ modified: 2020-06-22T09:23:56.117Z
 
 - 历年世界五百强
 
-## wiki
+## wiki-topics
 
 - 优质数据源
   - 政府/事业单位
@@ -110,6 +110,8 @@ modified: 2020-06-22T09:23:56.117Z
 
 - 学术相关数据: arxiv/paper, huggingface-data, github-code
   - [Trending Papers - Hugging Face](https://huggingface.co/papers/trending)
+  - [marcodsn/arxiv-markdown · Datasets at Hugging Face ](https://huggingface.co/datasets/marcodsn/arxiv-markdown)
+    - This dataset contains open-access papers retrieved from arXiv and converted to markdown format using docling;
 
 - https://github.com/TapXWorld/ChinaTextbook
   - 所有小初高、大学PDF教材。

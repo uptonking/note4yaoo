@@ -29,6 +29,14 @@ modified: 2023-03-21T09:03:05.361Z
 
 - ## 
 
+- ## 
+
+- ## 在订阅制盛行的今天，AppStore 不同区的价格差异巨大。
+- https://x.com/uczyw/status/2046113537391505444
+  - AppHunt目标很简单：一键查询全球AppStore 本体&内购价格，帮你更快找到合适的订阅价，收藏订阅关注的软件价格变更，不再错过你喜欢的软件。
+- https://apps.apple.com/cn/app/apphunt/id6762038999
+  - 专为 iPhone 设计。未针对 macOS 验证
+
 - ## App Stores were a mistake.
 - https://twitter.com/videolan/status/1771104206872555660
   - Currently, we cannot update VLC on Windows Store, and we cannot update VLC on Android Play Store, without reducing security or dropping a lot of users...

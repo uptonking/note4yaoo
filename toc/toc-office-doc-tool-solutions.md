@@ -178,6 +178,11 @@ modified: 2021-07-21T18:07:43.056Z
 
 - https://github.com/wechatsync/Wechatsync
   - 一键同步文章到多个内容平台，支持今日头条、WordPress、知乎、简书、掘金
+# docs-site-popular
+- https://github.com/huggingface/doc-builder /apache2/202604/python/js/svelte
+  - This is the package we use to build the documentation of our Hugging Face repos.
+  - https://github.com/huggingface/hub-docs
+    - http://hf.co/docs/hub
 # doc-solution-catalog
 - helpkb /8Star/MIT/202208/js
   - https://github.com/mrvautin/helpkb

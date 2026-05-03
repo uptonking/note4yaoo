@@ -439,6 +439,27 @@ modified: 2021-04-30T20:14:17.669Z
   - https://open.chatppt.cn/?channel=github-openppt
   - AIPPT在线编辑器，基于ChatPPT，支持整个过程的文档编辑服务，包括导入、导出、布局美化、在线编辑、播放和演示动画。
 
+- https://github.com/1weiho/open-slide /MIT/202605/ts
+  - https://open-slide.dev/
+  - https://demo.open-slide.dev/
+  - The slide framework built for agents. Describe your deck in natural language — your coding agent writes the React. 
+  - open-slide handles the canvas, scaling, navigation, hot reload, and present mode so the agent can focus on content.
+  - Every slide renders into a fixed 1920 × 1080 canvas. Pages are arbitrary React components, not a constrained DSL.
+  - 依赖radix-ui、tailwindcss、commander、fflate
+  - 🛝
+    - 不支持 markdown, 完全基于coding
+    - 不支持 zoom
+    - 目前的实现偏静态页面， 交互性很弱， 但基于coding实现难度不大
+  - Why open-slide? Slides are visual code. Agents are great at writing code. open-slide is the missing runtime that turns "make slides about X" into a polished, presentable deck.
+  - Works with any coding agent (Claude Code, Codex, Cursor, …). 
+  - In-browser inspector: Click any element → leave a comment like 𝚖𝚊𝚔𝚎 𝚝𝚑𝚒𝚜 𝚛𝚎𝚍 or 𝚜𝚑𝚛𝚒𝚗𝚔 𝚝𝚑𝚎 𝚑𝚎𝚊𝚍𝚕𝚒𝚗𝚎 → run /apply-comments → the agent applies every edit.
+  - Assets manager + svgl logo search
+  - Export to static HTML & PDF
+  - Fullscreen playback with keyboard navigation, plus a presenter mode with current/next slide preview, speaker notes, and a timer.
+  - You can use the built-in /𝚌𝚛𝚎𝚊𝚝𝚎-𝚝𝚑𝚎𝚖𝚎 skill to set up a style.
+  - https://x.com/1weiho/status/2050602481953181968
+    - This framework doesn’t include Next.js. It’s built on Vite + React
+
 - https://github.com/icip-cas/PPTAgent /2.3kStar/MIT/202511/python
   - Generating and Evaluating Presentations Beyond Text-to-Slides [EMNLP 2025]
   - We present PPTAgent, an innovative system that automatically generates presentations from documents.

@@ -32,6 +32,13 @@ modified: 2020-11-11T13:19:48.284Z
     - The dataset upload, as of 15 April 2025, includes high-utility elements such as abstracts, short descriptions, infobox-style key-value data, image links, and clearly segmented article sections (excluding references and other non-prose elements which are only available via Snapshot API).
     - Because all content is derived from Wikipedia, it is freely licensed under Creative Commons Attribution-Share-Alike 4.0 and the GNU Free Documentation License (GFDL)
 
+- [euirim/goodwiki · Datasets at Hugging Face](https://huggingface.co/datasets/euirim/goodwiki)
+  - GoodWiki is a 179 million token dataset of English Wikipedia articles collected on September 4, 2023, that have been marked as Good or Featured by Wikipedia editors. The dataset provides these articles in GitHub-flavored Markdown format, preserving layout features like lists, code blocks, math, and block quotes, unlike many other public Wikipedia datasets. 
+
+- [marin-community/wikipedia-markdown · Datasets at Hugging Face ](https://huggingface.co/datasets/marin-community/wikipedia-markdown)
+  - Markdownified Wikipedia is a large-scale, pre-processed version of the English Wikipedia Enterprise HTML dump consisting of 8.59B tokens. 
+  - The corpus has been converted to clean, section-aware Markdown for language-model training.
+
 ## wiki-tools
 
 - https://github.com/SomeOddCodeGuy/OfflineWikipediaTextApi /apache2/202508/python/inactive

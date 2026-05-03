@@ -655,6 +655,9 @@ modified: 2025-11-01T10:54:26.044Z
   - Run local LLMs on Apple Silicon via mlx-lm. 
   - Menubar app + CLI with OpenAI-compatible and Ollama-compatible APIs on localhost:11434.
   - [Show: ollmlx — run local LLMs on Apple Silicon with an Ollama-compatible API. : r/mlxAI _202604](https://www.reddit.com/r/mlxAI/comments/1s82jmf/show_ollmlx_run_local_llms_on_apple_silicon_with/)
+
+- [Outlier — Unlimited tokens. On your Mac. Free forever.](https://outlier.host/)
+  - https://github.com/Outlier-host/outlier-app-releases  /NonOpen
 # examples
 - https://github.com/Lakr233/FlowDown /934Star/AGPL/202601/swift
   - a native AI chat client for Apple platforms, designed for speed, privacy, and power users. 

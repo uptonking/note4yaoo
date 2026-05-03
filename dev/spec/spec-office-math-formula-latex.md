@@ -35,6 +35,14 @@ modified: 2026-04-05T18:43:05.552Z
   - 还支持化学方程式和物理单位的书写，理工科场景基本够用。
   - 完全离线可用，如果你在做教育类或学术类 App，想摆脱 WebView 渲染公式的传统笨重方案，这个项目值得试试。
 
+- https://x.com/wsl8297/status/2050801788794912973
+- WebView feels cheap for math until startup and memory become the product. Curious how RaTeX handles dynamic font sizes on small screens.
+  - I would test it with accessibility font scaling before trusting it. Math UI usually looks fine until a small Android screen makes every assumption visible.
+
+- 积分的下标位置不太对，另外，例子里没有粗体、mathcal、mathbb、mathsf，不知道对这些的支持程度
+
+- 數學公式的渲染，這種需求在移動端大嗎
+
 - ## Does MathLive use KaTeX or MathJax for rendering?
 - https://github.com/arnog/mathlive/issues/402
 - MathLive includes its own rendering engine. 

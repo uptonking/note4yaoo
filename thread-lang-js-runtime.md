@@ -129,6 +129,30 @@ modified: 2024-03-30T05:55:54.349Z
 # discuss-bun
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Bun goes way too far in userland territories.
+- https://x.com/hatem_hosny_/status/2050559357088067687
+  - Those things create more ecosystem fragmentation "runtime lock-in".
+  - Compare this to Deno, which added a standard library, that you can mostly import as ESM even from other runtimes or the browser.
+  - I like Deno's approach more.
+- 🤔 java的巨大runtime从java9开始模块化了，很多模块都从core分离出去了包括fx
+
+- Definitely, bun is a kitchen sink runtime, it can't be the "right" approach because it's ugly
+
+- you can use Deno's standard library in node using any package manager
+  - JSR is compatible with npm
+
+- I don't understand this criticism. Think of Bun's userland features as optional libraries. If you don't like them -- don't use them. Personally I love the idea of needing fewer third-party dependencies which are prone to various security attacks and bundle bloat. Choice is good!
+  - I also get a bloated bundle when I could have had a tiny one
+- The Go std library has also provided image module but it's foundational. If you need processing you need third party. I feel that's a good divide. This feels bloated. Just my taste, not saying this is a wrong decision or not.
+
+- I think this is maybe valid criticism 5 years ago, but now I think bun approach is probably preferred with AI code writing. I think one reason you’d want a big std lib is that supply chain attacks are currently probably the biggest attack vectors with AI written code
+
+- couldn't you just tree-shake the runtime in production, if needed?
+
 - ## @ulpi/browse v1.0: Ported from Bun to Node.js (Bun's WebSocket bug blocked CDP for 2 years — we moved on)
 - https://x.com/cip_spiridon/status/2035369941654966723
 

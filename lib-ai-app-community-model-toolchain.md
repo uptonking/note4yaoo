@@ -520,7 +520,7 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## [Has anyone tried NVFP4 on mlx? : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1ry5gm3/has_anyone_tried_nvfp4_on_mlx/)
 - NVFP4 is only supported on Blackwell gpu right ? So I assume that if you run those models on Mac (mlx), it would just revert back to FP4 ?
-  - yeah Blackwell gpus have a specific chip for NVFP4 but im pretty sure mlx just converts it to fp16 on the fly for inference, so even tho you arent getting the speeds like blackwell does it would still be useful to use it since its similar to fp16/fp8.
+  - yeah Blackwell gpus have a specific chip for NVFP4 but im pretty sure mlx just converts it to `fp16` on the fly for inference, so even tho you arent getting the speeds like blackwell does it would still be useful to use it since its similar to fp16/fp8.
 
 - I benchmarked it against 4bit on mlx and it has worse perplexity, same with mxfp4 at the moment. I don't think nvfp4 has been fully implemented yet on mlx, as it should perform better than a standard 4bit.
   - Here's the results for reference, when running mlx evaluate - this is my testing of Qwen 3.5 35b

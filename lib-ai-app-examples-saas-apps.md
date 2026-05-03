@@ -820,6 +820,15 @@ modified: 2025-02-21T17:17:42.225Z
   - We write your reusable computer vision tools. Whether you need to load your dataset from your hard drive, draw detections on an image or video, or count how many detections are in a zone.
   - Supervision was designed to be model agnostic. Just plug in any classification, detection, or segmentation model.
     - we have created connectors for the most popular libraries like Ultralytics, Transformers, or MMDetection.
+# image 
+- https://github.com/dwzhu-pku/PaperBanana /6.2kStar/apache2/202604/python/js
+  - https://dwzhu-pku.github.io/PaperBanana/
+  - PaperBanana: Automating Academic Illustration For AI Scientists
+  - PaperBanana is a reference-driven multi-agent framework for automated academic illustration generation.
+  - Acting like a creative team of specialized agents: Retriever, Planner, Stylist, Visualizer, and Critic agents
+  - https://github.com/917940234/PaperBanana-CN
+    - 持各类中转站的科研生图工具（中文友好，包含最新gpt-image-2）
+    - [[开源自荐] PaperBanana-CN：支持各类中转站的科研生图工具（中文友好，包含最新gpt-image-2） - LINUX DO _202605](https://linux.do/t/topic/2098853)
 # video/mtv
 - https://github.com/zapdos-labs/unblink /182Star/AGPL/202512/ts
   - Unblink is a camera monitoring application that runs AI vision models on your camera streams in real-time
