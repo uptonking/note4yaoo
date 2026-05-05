@@ -829,6 +829,10 @@ modified: 2025-02-21T17:17:42.225Z
   - https://github.com/917940234/PaperBanana-CN
     - 持各类中转站的科研生图工具（中文友好，包含最新gpt-image-2）
     - [[开源自荐] PaperBanana-CN：支持各类中转站的科研生图工具（中文友好，包含最新gpt-image-2） - LINUX DO _202605](https://linux.do/t/topic/2098853)
+
+- https://github.com/feichanggege/ecommerce-visual-copywriting-skill /MIT/202605
+  - 一个 AI Agent Skill，让 AI 按照标准化 SOP 输出电商主图 + 详情页的图文案执行方案。
+  - [【开源】我把电商出图文案工作流开源了 - LINUX DO _202605](https://linux.do/t/topic/2108317)
 # video/mtv
 - https://github.com/zapdos-labs/unblink /182Star/AGPL/202512/ts
   - Unblink is a camera monitoring application that runs AI vision models on your camera streams in real-time

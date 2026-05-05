@@ -1645,6 +1645,17 @@ modified: 2025-11-30T17:27:16.720Z
 
 - https://github.com/zstmfhy/zlibrary-to-notebooklm /MIT/202601/python
   - 一键将 Z-Library 书籍自动下载并上传到 Google NotebookLM
+# notes-markdown
+- https://github.com/refactoringhq/tolaria /9.4kStar/AGPL/202605/ts/rust
+  - https://tolaria.md/
+  - a desktop app for macOS, Windows, and Linux for managing markdown knowledge bases.
+  - Files-first — Your notes are plain markdown files. They're portable
+  - Git-first — Every vault is a git repository. You get full version history, the ability to use any git remote, and zero dependency on Tolaria servers.
+  - Offline-first, zero lock-in — No accounts, no subscriptions, no cloud dependencies. 
+  - Standards-based — Notes are markdown files with YAML frontmatter. No proprietary formats, no locked-in data. Everything works with standard tools if you decide to move away from Tolaria.
+  - Types as lenses, not schemas — Types in Tolaria are navigation aids, not enforcement mechanisms. There's no required fields, no validation, just helpful categories for finding notes.
+  - [有人用过爆火的Tolaria笔记么? - LINUX DO _202605](https://linux.do/t/topic/2106096)
+    - 感觉ui不是很好看，重复造轮子，大概率不如 obsidian
 # citation/sourcing 🔗
 - https://github.com/jerryjliu/liteparse_samples
   - LiteParse Visual Citations: search for any keyword and see joined bounding boxes pop up in the source images

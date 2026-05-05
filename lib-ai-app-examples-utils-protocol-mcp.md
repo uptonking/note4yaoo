@@ -123,6 +123,27 @@ modified: 2026-01-19T05:01:00.055Z
 - https://github.com/ivanvanderbyl/pdf-reader-mcp /MIT/202505/go/inactive
   - MCP server for reading and analyzing PDF documents using Google's Gemini API, written in Go. This server enables AI assistants like Claude (Code and Desktop) and Cursor to seamlessly read, extract, and analyze PDF content directly from their interfaces.
 # browser-use
+- https://github.com/browser-use/desktop /MIT/202605/ts
+  - http://browser-use.com/
+  - Run a team of browser agents on your desktop.
+  - Every AI browser tries to be both a browser and an agent. Keep your normal Chrome — this is just the agent half.
+  - Ports your cookies into a fresh Chromium so agents are logged in everywhere you are, and spawns tasks from anywhere with a keyboard shortcut.
+  - Built on Browser Harness.
+  - https://github.com/browser-use/browser-harness /10.2kStar/MIT/202605/python
+    - https://browser-harness.com/
+    - Connect an LLM directly to your real browser with a thin, editable CDP harness. 
+    - One websocket to Chrome, nothing between. The agent writes what's missing during execution. The harness improves itself every run.
+  - https://x.com/larsencc/status/2051108228063510836
+  - Since you loved Browser-harness so much - we packaged it into a desktop app. It lets your Claude / codex / open code control the browser reliable.
+  - works locally
+  - If Codex Browser Use Plugin is letting you down, try the real Browser Use instead. why not just take our OSS Browser Harness and add it to Codex CLI. Everyone will benefit!
+    - The one in codex already is pretty good, and doesn't only do browsers.
+    - Codex has browser use and it has computer use Computer use in general is typically slower and more token hungry.
+  - We literally forked chromium and made it agent native. Idk what they are doing but its not good atm.
+  - Can I give your browser use tool to my agents that are running on a vps?
+    - yes! we even offer exactly that - called bux! you get a computer in the cloud only for you and you can ping it from telegram. If you already have one, you can just tell your agent to add browser-harness.
+  - browser harness is the easy half. the failure mode hits the second a flow bounces into a native auth sheet or a desktop app, the harness has nothing to grab there. accessibility tree on the OS layer is what holds up past that boundary.
+
 - https://github.com/microsoft/playwright-mcp /27.2kStar/apache2/202602/ts
   - A Model Context Protocol (MCP) server that provides browser automation capabilities using Playwright. 
   - This server enables LLMs to interact with web pages through structured accessibility snapshots, bypassing the need for screenshots or visually-tuned models.

@@ -635,6 +635,17 @@ modified: 2025-11-01T10:54:26.044Z
   - No frameworks, no OpenAI shims, no abstractions between you and the model.
   - Dual inference backends: Ollama (/api/chat) for GGUF models, vllm-mlx (/v1/chat) for Apple Metal (auto-detected at startup)
   - Unified brain server -- Memory, knowledge, web search, and teaching in one MCP server (8 tools). Replaces separate memory + knowledge servers.
+
+- https://github.com/raullenchai/Rapid-MLX /apache2/202605/python
+  - The fastest local AI engine for Apple Silicon. 4.2x faster than Ollama, 0.08s cached TTFT, 100% tool calling. 17 tool parsers, prompt cache, reasoning separation, cloud routing. 
+  - Drop-in OpenAI replacement. 
+  - Works with Claude Code, Cursor, Aider.
+
+- https://pypi.org/project/mlx-optiq/
+  - https://mlx-optiq.pages.dev/
+  - Optimized deployment of LLMs, VLMs, and vision models on Apple Silicon.
+  - [Is mlx-optiq legit? Has anyone tested the new quants for Gemma4/qwen3.6 yet? : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sxcj77/is_mlxoptiq_legit_has_anyone_tested_the_new/)
+    - the pypi has the source distribution , the license is MIT in the license file.
 # llm-apps
 - https://github.com/eclaire-labs/eclaire /MIT/202510/ts
   - Local-first, open-source AI assistant for your data. Unify tasks, notes, docs, photos, and bookmarks. Private, self-hosted, and extensible via APIs.

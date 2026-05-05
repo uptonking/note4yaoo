@@ -162,7 +162,9 @@ modified: 2023-03-13T08:05:09.453Z
 
 - ## 
 
-- ## 
+- ## 这个 html-in-canvas和 Three.js 做的动画太炫了
+- https://x.com/op7418/status/2050915251739369539
+  - 允许开发者将真实的、可交互的 HTML 和 CSS 直接渲染到 `<canvas>` （包括 2D、WebGL 和 WebGPU）中。
 
 - ## The nascent HTML-in-Canvas API is exciting to me not for flashy effects, but because it extends the semantics that the DOM can (tractably) represent 
 - https://x.com/OrionReedOne/status/2050598560127762934

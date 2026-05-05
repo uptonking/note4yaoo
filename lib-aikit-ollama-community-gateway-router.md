@@ -233,7 +233,13 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
-- ## 
+- ## [有没有大佬科普下cpa和sub2api的原理和差别 - LINUX DO _202605](https://linux.do/t/topic/2108651)
+- 两个我都部署过，CPA才是更轻量那个吧，纯反代，前端都要额外配，没任何权限管理。
+  - sub2api更偏企业级，前端页面和权限控制更完善，要用docker compose起PostgreSQL啥的好几个服务
+
+- Cpa性能差劲啊，低配机配置CPA经常内存爆炸
+
+- 佬友可以去https://zread.ai/看看，智谱搞得，对开源项目的分析质量很不错
 
 - ## [[拙见]分享一下高速中转站架构 - LINUX DO _202605](https://linux.do/t/topic/2106032)
   - cloudflare和dnsPod都可以实现类似于cdn的效果 来源于支持一个前缀多个解析 如果用到这个功能的话我建议使用dnspad因为便宜还有短信通知

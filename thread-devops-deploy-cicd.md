@@ -163,6 +163,28 @@ jobs:
 - spaceship 四块几毛钱（不过是六个数字.xyz）
 
 - https://tld-list.com 这里可以对比价格
+# discuss-cicd-mac
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 运行 Snapshots 测试，本地始终通过，CI（Mac mini）始终失败，百思不得其解…
+- https://x.com/tualatrix/status/2050940460903071828
+  - 后来让 AI 来看这个问题，抽丝剥茧，终于找到了问题：Mac mini 由于没有接显示器，默认按  1x backing scale 来生成 snapshot 截图，而测试集是本地机器按 2x 生成的，自然就失败了。
+  - 测试集也是在 CI 机器上生成的
+- https://github.com/iamsyc/VoidDisplay  创建一个虚拟显示器开启 hidpi 的
+
+- 一直有这个问题（或者叫特性）。没接显示器的mini在使用在线会议共享屏幕时，对方看到的是白屏。接一次显示器比如hdmi输出，然后再拔掉就一切正常了。
+# discuss-cicd
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
 

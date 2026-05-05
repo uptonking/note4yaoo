@@ -34,7 +34,14 @@ modified: 2021-04-27T09:19:37.711Z
 
 - ## 
 
-- ## 
+- ## Use `new Notification()` to send browser notifications natively  (no app needed).
+- https://x.com/denicmarko/status/2051241186854420956
+- Most people say no to a browser level notification, and once that's a "No" your domain can't re-request. You might instead want to first get an application layer question asked before triggering the browser notification 
+- The real insight isn't the API, it's that 97% of users will click "block" before they even read what the notification says. Permission timing kills this feature more than anything technical.
+
+- It has limited support
+
+- Can this work on mobile ? To replace push notifications?
 
 - ## Can you Syntax Highlight a code snippet on the web without overloading the DOM with a ton of `<span>` elements wrapped around the tokens? Thanks to the Custom Highlight API, you can!
 - https://twitter.com/bramus/status/1758266600946548878
@@ -212,7 +219,7 @@ const setAnotherTimeout = () => {
 
 - ## [CSS Container Queries For Designers](https://ishadeed.com/article/container-queries-for-designers/)
 - The Current State Of Responsive Design
-  - Nowadays, it’s still okay to work on multiple versions of the same web layout to show how the inner parts will change **based on the viewport width**
+  - Nowadays, it’s still okay to work on multiple versions of the same web layout to show how the inner parts will change **based on the viewport width** 
   - In CSS, the developer needs to create three variations of this component
   - The variations above depend on media queries or the viewport width. That means, we can’t control them based on their parent width.
 - The problem is that the developer is tied with using a variation of a component only when the viewport width is greater than a specific value

@@ -316,6 +316,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 允许分享文档/插画中的模型配置/运行日志, 将prompt放入git-commit，还是直接放入图片?
     - ❓ 如何一键切换到cloud版
     - https://github.com/tc-mb/llama.cpp-omni is the first Omni multimodal inference engine built on llama.cpp.
+    - custom model: 针对nvidia nim的模型做优化, 如qwen3.5-plus
   - 👾 local agent
     - skills for local model
     - openclaw比manus更火的原因，是支持在本地自动化执行任务，而不是云端
@@ -1449,6 +1450,15 @@ modified: 2025-03-22T16:10:24.856Z
   - models: deepseek-r1, qwen3-coder-480b
   - [NVIDIA NIM FAQ - AI & Data Science / NVIDIA NIM - NVIDIA Developer Forums _202409](https://forums.developer.nvidia.com/t/nvidia-nim-faq/300317)
     - NIM access through the NVIDIA Developer Program is for prototyping, research, development and testing purposes only and does not include enterprise features or support.
+  - [API Reference — NVIDIA NIM](https://docs.nvidia.com/nim/large-language-models/latest/reference/api-reference.html)
+    - api文档表明支持 /v1/responses api, 但放在donehub中存在异常
+    - unexpected status 404 Not Found: Provider API error: bad response status code 404 (request id: 20260505034505506297000MT8jCw5U), url: http://localhost:4090/v1/responses
+  - https://github.com/MauroDruwel/NIMStats /python
+    - https://nimstats.maurodruwel.be/
+    - Automated hourly benchmarks for 20+ NVIDIA NIM models — interactive dashboard, zero infra, self-hostable.
+    - [NVIDIA NIM is inconsistent, so I benchmarked 20+ models every hour : r/SillyTavernAI _202605](https://www.reddit.com/r/SillyTavernAI/comments/1t1zlcj/nvidia_nim_is_inconsistent_so_i_benchmarked_20/)
+  - https://github.com/sherman-yang/nvidia-model-info /202604/js
+    - Local dashboard for exploring the free models exposed through build.nvidia.com.
 
 - [Groq Rate Limits - Docs](https://console.groq.com/docs/rate-limits)
   - tldr: tpd-100k~500k
@@ -1728,6 +1738,7 @@ modified: 2025-03-22T16:10:24.856Z
   - GPT site:pay.ldxp.cn/shop
   - 搜索: 手工, 质保, 源头, 印尼
   - 月初是openai集中清理风险型用户和欺诈性用户的敏感时间, 很多便宜的渠道会挂掉
+  - 封号的时机注意周初和月末， 周初前几天可能会清理，月末很可能集中清理，最好在北美周二买号
 
 - resources
   - [LinuxDo商家评价平台](https://rate.linux.do/)
@@ -1776,20 +1787,18 @@ modified: 2025-03-22T16:10:24.856Z
   - [KEDAYA的小店 - 链动小铺](https://pay.ldxp.cn/shop/3S5GUAQ4)
     - https://shop.kedaya.xyz/
     - https://t.me/kedaya_888
+    - https://t.me/gpt_kedaya   讨论组里面大多是代理商, 点击头像就能看到店铺链接
     - 中转站: https://api.kedaya.xyz/
-  - [叮当猫稳定AI渠道的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/dingdangmao)
-    - 品类特别多
-    - 只做群里面的三级代理
+  - [商家9052的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/LOA3IZW5)
+    - plus账号极低价格， 10个-35
+  - [xileyyds的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/KK5XQNYK)
+    - 低价代理商
   - [夏麦小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/GSVP35W6)
     - plus账号-9.5, 质保三天 
   - [商家5651的小店 ](https://pay.ldxp.cn/shop/AO4GDZSI)
     - 自助售后, 质保三天 
   - [山姆奥特曼商店的小店 - 链动小铺](https://pay.ldxp.cn/shop/1E5DST9P)
     - plus账号-6, 质保三天 
-  - [商家9052的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/LOA3IZW5)
-    - plus账号, 质保三天 
-  - [王二的小铺的小店 ](https://pay.ldxp.cn/shop/2JSR3DGY)
-    - plus账号, 质保三天 
   - [超低价GPT会员的小店 - 链动小铺](https://pay.ldxp.cn/shop/dijiagpt)
     - 【手工】【30天】GPT-Team / Business 高质量激活码（质保3天）
   - [普露米AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/plumire)
@@ -1810,8 +1819,12 @@ modified: 2025-03-22T16:10:24.856Z
     - plus质保15天-65
 
 - https://nissanserena.my.id/otp    /印尼
+  - https://zovlyx.fun/
   - [哈哈的ai杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/22DHYNNV)
-    - plus账号, 质保三天 
+    - plus账号, 质保
+- [叮当猫稳定AI渠道的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/dingdangmao)
+  - 品类特别多
+  - 只做群里面的三级代理
 
 - [小猫GPT源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1D0LD6BR)
   - 频道通知链接：https://t.me/+UkH0O6HZLBM5MTJh
@@ -1828,8 +1841,6 @@ modified: 2025-03-22T16:10:24.856Z
   - [极速的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/jishu)
     - 【手工】【30天】GPT-Team / Business , 源头 GPTPLUS. ICU 
     - 质保3天：从  激活时间  起算 72小时 内出现掉车，可  提交工单  无限次补车。
-  - [CK能量的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ZYKSFL9A)
-    - 低价号多
 
 - [Tora-雪诺AI源头分销小铺的小店 - 链动小铺](https://pay.ldxp.cn/shop/Tora)
   - 通知 https://t.me/Tora_AiShop
@@ -1842,6 +1853,11 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [AI杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/PBY2YIR3), /周全
   - 自助充值plus
+
+- [464的小店 - 链动小铺](https://pay.ldxp.cn/shop/7HVUEC3Y)
+  - 通知频道：https://t.me/hdunzx
+  - 质保两天
+    - 一天就上几个，引流的
 
 - [AI HOME的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/MEDDEX4V) , 保证金1000元
   - 群：https://t.me/aihome123
@@ -2120,6 +2136,12 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [AI Ping](https://aiping.cn/modelList)
 
+### 中转站
+
+- [Duo API - /newapi](https://api.duou.ai/)
+
+- [subgo /sub2api](https://code.subgo.qzz.io/)
+
 ## video/movie
 
 - [OmniBox - 在线观影](https://omnibox.wangchao.uno/)
@@ -2132,6 +2154,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [SecOne](https://secone.telecom.moe/#/dashboard)
   - [[SecOne公益机场] 开放注册 - LINUX DO _202604](https://linux.do/t/topic/2004418)
+  - 300GB/月 - 100LDC
 
 - [Canopy Wave](https://cloud.canopywave.io/)
   - 提供模型API

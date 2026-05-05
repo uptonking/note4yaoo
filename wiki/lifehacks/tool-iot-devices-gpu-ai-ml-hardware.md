@@ -16,7 +16,30 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
-- ## 
+- ## [3090 still the king? Trying to pick a local LLM setup (~2000€) in Germany : r/LocalLLM _202605](https://www.reddit.com/r/LocalLLM/comments/1t2qwew/3090_still_the_king_trying_to_pick_a_local_llm/)
+  - 比较了N卡、A卡、Mac的详细信息
+  - My current understanding
+  - 3090 = safest long-term choice
+  - V100 = cheapest way into “serious VRAM”, but EOL
+  - M1 Ultra = best for flexibility and ease of use
+  - MI50 = wildcard
+- I’d separate this into three different goals because they point to different answers.
+  - If you want the safest “works with the most repos/tools” path, CUDA still matters a lot. That pushes you toward the 3090 route, especially if you want LLMs plus image/audio experiments without constantly fighting compatibility.
+  - If you want the cleanest “try bigger models without multi-GPU weirdness” path, unified memory is the appeal of the Mac Studio. It may be slower, but fitting the model comfortably and not debugging split VRAM / NUMA / PCIe issues has real value.
+  - If you want the cheapest VRAM-per-euro lab, V100/MI50 can look tempting, but then the risk is that the hardware becomes the project instead of the LLM work.
+- For your stated goal — trying lots of models comfortably rather than max tokens/sec — I would probably avoid anything that turns compatibility into the main workload. The hidden cost is not just power draw. It is time spent fighting drivers, ROCm, EOL support, multi-GPU splits, and weird repo assumptions.
+  - A 3090 is probably the safe ecosystem answer.
+  - A used M1 Ultra / higher unified-memory setup is probably the comfort answer.
+  - V100/MI50 are probably only worth it if you actually enjoy the hardware/debugging side.
+
+- AMD/V100-style routes can make sense for people who enjoy the hardware/debugging side, but for most LLM experimentation the compatibility tax is real.
+
+- I've had both, 9700 is better, 32GB provides a LOT more flexibility, and speed wise it's a 3090ti with better thermals and 2 slot conforming. You don't need ROCm, I've found vulkan is consistently much faster and completely stable I'm running it on a threadripper 79xx platform with proxmox in a rack chassis
+
+- The older Instinct AMD cards and older Nvidia cards may not be worth it because of driver issues, be very careful they’re still supported before you buy.
+  - The list is missing the Radeon Pro W7900 48GB and W7800 32GB. Those are both older cards which are based on the same RDNA3 technology as the 7900 XTX but slightly less power hungry with more memory obviously.
+  - You mention ROCm, but I have heard mixed opinions and I’m on a Windows system - so I run llama.cpp built with Vulkan Compute support and have been very happy with it. VLLM is probably better than llama.cpp for serving on a dedicated machine, especially for concurrent calls - but I have no experience with that.
+  - On the XTX I can get 120 tokens/sec with Qwen 35B-A3B UD IQ4-XS quant with full 256KB context window. Will be moving that to the 9700 with a bigger quant, likely slower but frees the XTX for other uses.
 
 - ## [Anyone tried models created by AMD? : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1s8wios/anyone_tried_models_created_by_amd/)
   - I had question that why AMD is not creating models like how NVIDIA doing it. NVIDIA's Nemotron models are so popular(Ex: Nemotron-3-Nano-30B-A3B, Llama-3_3-Nemotron-Super-49B & recent Nemotron-3-Super-120B-A12B).

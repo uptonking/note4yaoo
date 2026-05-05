@@ -641,6 +641,24 @@ modified: 2025-02-21T18:20:42.624Z
     - Arch handles the pesky plumbing work in building AI agents — like applying guardrails, routing prompts to the right agent, generating hyper-rich information traces for RL, and unifying access to any LLM.
     - Arch runs alongside app servers as a containerized process, and builds on top of `Envoy`'s proven HTTP management and scalability features to handle ingress and egress traffic related to prompts and LLMs.
     - Arch was built by the contributors of Envoy Proxy with the belief that: Prompts are nuanced and opaque user requests, which require the same capabilities as traditional HTTP requests including secure handling, intelligent routing, robust observability, and integration with backend (API) systems to improve speed and accuracy for common agentic scenarios – all outside core application logic.
+
+## harness-router
+
+- https://github.com/farion1231/cc-switch /59kStar/MIT/202605/rust/ts
+  - https://www.ccswitch.io/
+  - A cross-platform desktop All-in-One assistant tool for Claude Code, Codex, OpenCode, openclaw & Gemini CLI.
+  - 📡 roadmap
+  - [希望增加并发支持  _202603](https://github.com/farion1231/cc-switch/issues/1217)
+    - 在批量作业场景下，系统会并发启动 5-10 个 subagent 执行任务。当前实现中，当某个 API 触发限流时，CC switch 会切换到下一个 API，但存在以下问题： 顺序切换低效：限流后逐一尝试切换，仍可能立即触发下一个 API 的限流; 资源未充分利用：多个 API 无法并行工作，导致整体吞吐量受限
+    - This is exactly the WAIT vs CAP vs STOP classification problem. The 429 from GLM/MiniMax/Aliyun means different things
+
+- https://github.com/musistudio/claude-code-router /23.3kStar/MIT/202512/ts
+  - Use Claude Code as the foundation for coding infrastructure, allowing you to decide how to interact with the model
+  - Model Routing: Route requests to different models based on your needs (e.g., background tasks, thinking, long context).
+  - Supports various model providers like OpenRouter, DeepSeek, Ollama, Gemini, Volcengine, and SiliconFlow.
+  - Switch models on-the-fly within Claude Code using the /model command.
+  - The `activate` command allows you to set up environment variables globally in your shell, enabling you to use the claude command directly or integrate Claude Code Router with applications built using the Agent SDK.
+    - `eval "$(ccr activate)"`
 # crawler-ai
 - https://github.com/mendableai/firecrawl /AGPLv3/202502/python/rust/ts
   - https://firecrawl.dev/
@@ -737,6 +755,10 @@ modified: 2025-02-21T18:20:42.624Z
   - An open-source, community-driven dependency manager for AI agents.
   - Think package.json, requirements.txt, or Cargo.toml — but for AI agent configuration.
   - GitHub Copilot · Claude Code · Cursor · OpenCode · Codex
+
+- https://github.com/matthewp/rosie /BSD/202605/C
+  - cross-platform package manager for AI agent skills. Think npm, but for skills.
+  - [Astro联合创始人开源Rosie：装一次技能自动同步10种AI编程助手 - LINUX DO _202605](https://linux.do/t/topic/2107121)
 # utils
 - https://github.com/Olow304/memvid /MIT/202506/python
   - https://pypi.org/project/memvid/

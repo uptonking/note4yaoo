@@ -1667,7 +1667,15 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## dflash-mlx sweet spot on Apple Silicon is narrower than expected: prompt ≤16K AND max_tokens ≤1024 to get the 1.45-1.65x decode speedup.
+- https://x.com/hxiao/status/2050965517100601448
+  - the speculative win is concentrated in the first ~500 generated tokens, then acceptance decays and the gap closes. outside that, llama.cpp wins on wall time. dflash for short prompt + short reply (one-shot, data gen, classification).
+  - benched M3 Ultra 512GB, Qwen3.6-27B-Instruct-8bit + z-lab DFlash draft vs llama.cpp build 9010. 5 prompt sizes × 3 max_tokens.
+
+- On Apple Silicon it seems best for shorter prompts + shorter replies, once prefill or long-gen dominates, llama.cpp wins on wall time. 
+  - The important takeaway isn’t - DFlash is faster, it’s ‘where’ it’s faster: roughly ≤16K prompt / ≤1024 output, with most of the gain concentrated early in generation.
+
+- The prefill 2-3x slowdown is the real tell — speculative pays a fixed verification tax that only amortizes while acceptance stays high. So the boundary isn't prompt-vs-gen length, it's whether the output stays on-trajectory, which most long-form agent gens won't.
 
 - ## [PFlash: 10x prefill speedup over llama.cpp at 128K on a RTX 3090 : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1t0vp3w/pflash_10x_prefill_speedup_over_llamacpp_at_128k/)
   - The problem: Q4_K_M Qwen3.6-27B on a 24 GB 3090 decodes fast (~74 tok/s with DFlash spec decode), but prefill scales O(S²). On a 131K-token prompt, vanilla llama.cpp takes 248.4 s cold (llama-bench pp131072 --no-warmup -r 1, 527.6 tok/s). That is 4.1 minutes staring at a blank screen before the first token. Decode is fast, but the wait kills the UX. Warmed steady-state is better (169.3 s at 128K) but still painful, and grows quadratically as you push context.
@@ -1872,7 +1880,53 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - 每分钟20次好像，个人用完全够，再加上 备用的那个 更够了
 - r.jina.ai算是覆盖全的了 有的需要js加载的也能搞得定
+# discuss-cache
+- ## 
+
+- ## 
+
+- ## 
+
+- ## DeepSeek v4 small KV cache + MacBook fast SSD disks = the idea that the disk is not a good target for KV cache is, in this context, totally obsolete. It works *great* . 
+- https://x.com/antirez/status/2050982689696588013
+  - The session you see is opencode using my inference engine for DS4, saving, loading sessions from disk.
+- wonder what magic could be done to improve prefill rate. i think that's mostly what's holding things back at the moment.
+  - What I was able to achieve today was a *much* better slope in the prefill rate, that remains at 200 t/s even in very long contexts. This already makes the game a more fair one, since it does not start to degradate in a sensible way as you continue to work. In the M3 Ultra is much faster btw. I also tested there, 2x speed in prefill.
+- Luce PFlash
+
+- The Apple nvme are dramatically faster than most ssd, which makes the disk access much more tenable than it would be in most other systems.
+
+- Wow. Being able to use disk for. Kvcache can be a huge change. Are you using any quantization. On KV cache? May I ask more details on how it perform in general and specifically in the refill phase?
+  - I'm storing the already compressed KV cache of DeepSeek v4, there is no need to quantize it more, it is already small. Even for long prefills it's sub-second reads from disk. Really works great.
+
+- Everyone spent a year obsessing over RAM capacity for long context, and the actual unlock was just compressing the KV cache enough that a fast NVMe drive can handle the I/O.
+
+- Exactly what we do at scale, leveraging NVLink to outperform DRAM, with 1000x SSD capacities 
+
+- the 7GB/s read on M-series SSDs makes disk-based KV cache actually viable. people are still benchmarking against spinning rust when they dismiss this
+
+- Persisting KV to SSD turns context into a versionable artifact — system prompts and stable RAG chunks become precomputed cache files, so prefill stops being the per-session tax it used to be. The bigger shift is that "session" becomes a file format, not process state.
+
+- ## [哎 deepseek的缓存过了2h还是有效的？？。。难怪这么省  - LINUX DO _202605](https://linux.do/t/topic/2109381)
+  - 我差不多18点半左右吧 开着会话就去吃饭了, 然后快21点的时候回来继续改点东西 看着ds后台的缓存读比例依旧很高
+  - 2个半小时还有缓存啊。。实在太顶了吧 
+- 硬盘缓存说是，就是不知道咋做到的(我不知道而已，因为不太懂这方面)，不过看这意思是传来传去真实成本比重新做一次prefill还低…还挺神奇
+
+- 据说是硬盘缓存，因此容量很大，不知道用的什么协议，吞吐量和延迟都很优秀的样子，有一些服务商使用的是内存缓存
+
+- 官方的说法是缓存时间从几个小时到几天 具体看情况
+- 看到官方文档里了 也写着几小时到几天过期
+
+- [原来这才是Deepseekv4.0大放水降价背后的真相 - LINUX DO _202605](https://linux.do/t/topic/2104188)
+  - 应该是DeepSeek发现为V4做了over-prepared，准备过度，结果V4的KV Cache命中率比预想的还要高，不得不（注意是不得不）加大流量，让batch size更大。
+  - DeepSeek肯定为V4准备了大量推理算力，大到他们自己都没想到V4这么『省』，V4的架构优化（更激进的KV Cache压缩）让GPU计算和带宽消耗远低于预期，KV Cache命中率也高出规划。
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

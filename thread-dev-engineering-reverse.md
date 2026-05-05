@@ -98,7 +98,12 @@ modified: 2026-03-01T17:12:41.271Z
 
 - ## 
 
-- ## 
+- ## Want to reverse the source of a JS app?
+- https://x.com/hd_nvim/status/2051092460084814174
+  - Wakaru unpacks modules, formats the code, then runs AST transforms to recover intent, recovering readability where possible.
+  - https://github.com/pionxzh/wakaru /MIT/ts
+  - https://github.com/HerringtonDarkholme/wakaru /MIT/rust
+- But the problem I met is that the JS implementation is usually stuck with big App files. that's why I also RIIRed
 
 - ## 做 Web 开发，有一个很  Harness 的魔法 Prompt： 用 CDP，详细获取 xxx 网站的内容，分析 js 和 css , xxxxx 
 - https://x.com/hwwaanng/status/2042241793044238697

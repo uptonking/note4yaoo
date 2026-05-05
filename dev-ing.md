@@ -288,6 +288,8 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 # cd ~/Documents/repos/ai-ml-llm/done-hub-local && dist/one-api --config config.yaml
 
+# this project is running locally by "./dist/one-api --config config.yaml". the log is at folder `~/Documents/runlog/donehublocal` .
+
 launchctl stop com.donehub && launchctl start com.donehub
 
 # auto checkin
@@ -331,7 +333,39 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
-## 0503
+## 0504
+
+- 🐛 ccswitch配置nvidia后无响应内容
+  - The immediate reason you got “no response” is that the session stops at tool_use, not at network failure. 
+  - In the same run, NVIDIA returned a tool request to read the log and run a Bash command: see / Users/yaoo/.cc-switch/logs/cc-switch.log:524 and /Users/yaoo/.cc-switch/logs/cc-switch.log:526. Claude Code’s own transcript ends right there with no later tool_result
+  - Your local allowlist in / Users/yaoo/.claude/settings.local.json:3 does not allow that Bash command, so the run is stopping at the client-side tool approval boundary.
+- 🐛 [Nvidia provider 下 Claude Code 的 Bash/tool use 会一直 Waiting，但相同 cc-switch 配置切到阿里云百炼后可正常执行 · Issue · farion1231/cc-switch _202604](https://github.com/farion1231/cc-switch/issues/2135)
+  - 在 cc-switch 中将 Claude Code 的上游 provider 切换为 Nvidia。使用支持普通文本回复的 Nvidia 模型，例如： qwen/qwen3.5-397b-a17b, 
+  - 在 Claude Code 中发送纯文本提示词： 请只回复 ok，不要调用任何工具。 可以正常回复。
+  - 然后发送最小 Bash 执行提示词： 请执行 echo test，只调用一次 bash，不要做额外解释。此时界面会显示 Bash(...)，但会一直停留在 Waiting...，无法完成执行。
+- 💡 试试 @anthropic-ai/claude-code@2.1.104 这个版本。我这边情况是 用百炼的，能回复信息，但是就不能读取、修改文件。换到104 版本就好了。
+- [fix(proxy): normalize OpenAI chat payloads by Tomodad · Pull Request · farion1231/cc-switch _202604](https://github.com/farion1231/cc-switch/pull/2391)
+  - Map Anthropic tool_choice objects to OpenAI Chat Completions shapes.
+  - NVIDIA NIM DeepSeek accepts simple /v1/chat/completions requests, streaming, and basic tools, but rejects Claude Code converted payloads when Anthropic-only fields leak into the OpenAI Chat request.
+
+- [Qwen 3.5 "System Message Must Be at the Beginning" — SFT Constraints & Better Ways to Limit Tool Call Recursion? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rinx3k/qwen_35_system_message_must_be_at_the_beginning/)
+  - Almost every model only supports system prompt as the first field... System prompts are the prefix, then user<->assistant<->tools "ping-pong"
+- [API Error: 400 {"error":{"code":400,"message":"System message must be at the beginning.","param":null,"type":"BadRequestError"}} · Issue #1881 · farion1231/cc-switch _202604](https://github.com/farion1231/cc-switch/issues/1881)
+  - 👀 provider的问题可以由gateway类似 ccswitch 来解决
+- [[Help] System prompt exception when calling Qwen3.5-35B-A3B-GGUF from OpenCode : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rf4sl8/help_system_prompt_exception_when_calling/)
+  - Not an actual fix, but I found a workaround for this. If you're running the model with llama.cpp, remove the --jinja flag. Or if in LM Studio, switch the chat template to normal default ChatML, maybe.
+
+- ### [Hosted Integrate /v1/responses returns 404 across multiple models while /v1/models and /v1/chat/completions work - NVIDIA NIM / Models - NVIDIA Developer Forums _202603](https://forums.developer.nvidia.com/t/hosted-integrate-v1-responses-returns-404-across-multiple-models-while-v1-models-and-v1-chat-completions-work/364768)
+  - unexpected status 404 Not Found: Provider API error: bad response status code 404 (request id: 20260505034505506297000MT8jCw5U), url:
+http://localhost:4090/v1/responses
+
+- [404 not found when congiure codex with NVDIA Nim · Issue · farion1231/cc-switch _202604](https://github.com/farion1231/cc-switch/issues/2032)
+  - codex uses the resp interface, nvidia did not provide
+
+- [Allow provider configs to inject custom request-body fields · Issue · openai/codex _202510](https://github.com/openai/codex/issues/5458)
+
+- [Use NVIDIA MODEL to Codex, fault · Issue · farion1231/cc-switch _202604](https://github.com/farion1231/cc-switch/issues/2128)
+  - When I use - Nvidia models - to - Codex - , test the config ,its 404 .
 
 # dev-04-pretext-rich-text-&-liteparse-or-nomic-model-citation-&-stirling-pdf/image-&-superdoc
 
