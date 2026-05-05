@@ -159,7 +159,27 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
-- ## 
+- ## [Ryzen AI Max+ 495 (Gorgon Halo) with 192GB VRAM! : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1t3duwm/ryzen_ai_max_495_gorgon_halo_with_192gb_vram/)
+- While I'm sure some people will enjoy the extra memory, a couple notes from someone's that done very extensive testing on Strixt Halo (and a lot of kernel work on RDNA3):
+  - Memory bandwidth looks like it remains the same? 256GB/s theoretical. On Strix Halo the best measured GPU MBW I got (using ROCm/rocm_bandwidth_test) was 212 GB/s (83% max theoretical), and the best on llama.cpp (Llama-2-7B tg testing) was ~180GB/s (70%)
+  - What's worse though is while theoretical max FP16 TFLOPS is ~59.4, the fastest I found w/ mamf-finder was about 37 TFLOPS (hipBLASLt), about 62% efficiency. Many shapes are much worse.
+  - Note, at long context, I believe compute is actually what's killing decode speed. While the AMD APUs remain on RDNA3, this won't change. I would be hesitant to recommend Gorgon Halo even for LLM inference in 2026/2027
+  - If Medusa Halo moves to RDNA5 or whatever has a better architecture for AI/ML, great, if not you'd be much better off with basically anything else (Mac Studio, GPU+workstation/server w/ K-Transformers, probalby even a DGX Spark).
+- Having done a lot of kernel work on RDNA3/3.5 too, I would say that the max FP16 TFLOPs is lower than the theoretical max due to clocks just not reaching that high. And hipBLASLt still leaves room for more TFLOPs on the table, as it's possible to get ~45 TFLOPs on average. It's just unfortunate that it seems like there's still some work to be done for RDNA3.5 as kernel performance always seems to fluctuate
+
+- I don't think this would be resolved with the DGX or Mac Studio. The DGX has the same memory bandwidth as the 395 and similar compute. The Mac Studio has ~3x the memory bandwidth, but suffers from weaker compute (26 TFLOPS vs. your measured 37 on the Strix), making long context prompt processing slower on the Mac.
+- DGX has similar memory bandwidth but the compute is not so similar... On paper, BF16/FP16 is pretty close, however FP8 is already 2X and INT8 is 4X on DGX. This is just hardware - in practice rocBLAS and hipBLASLt for RDNA3.5 are also simply not very performant...
+
+- Anyone know if adding an egpu via oculink or usb4 can help improve pre-fill?
+  - https://www.reddit.com/r/LocalLLaMA/comments/1o7ewc5/fast_pcie_speed_is_needed_for_good_pp/ - It helps a bit if we sacrifice VRAM and set a large -ub size. Not great, will not do it again.
+
+- I don’t want to be that guy but with increased in RAM doesn’t means you can run bigger model effectively. The prefill speed is the weakness of this device.
+  - I think it would be good for running multiple small models for various tasks instead.
+
+- the main issues of the AI MAX+ 395 is not insufficent RAM but too slow iGPU.
+  - Too slow iGPU, lacking important data format compatibility, with a narrow bus and slow memory.
+
+- More than 256GB, since Medusa Halo moves to a 384-bit LPDDR6 bus. Using the same die density as a 192GB Gorgon Halo, that yields 288GB. With bigger dies (ones that would be needed for a 256GB Gorgon Halo), we get 384GB for Medusa Halo.
 
 - ## 📌 [Comparison of upcoming x86 unified memory systems : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1swiylm/comparison_of_upcoming_x86_unified_memory_systems/)
 

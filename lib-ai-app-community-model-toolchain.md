@@ -1667,6 +1667,26 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## MTPLX | 2.24x faster TPS | The native MTP inference engine for Apple Silicon
+- https://x.com/Youssofal_/status/2051435496551878847
+  - TLDR: 28 tok/s → 63 tok/s on Qwen3.6-27B on a MacBook Pro M5 Max. 2.24× faster at real temperature 0.6. 
+  - MTPLX uses a model's built-in MTP heads as speculative drafters to increase decode speeds on LLMs by up to 2.25x, all while preserving the model's default inference settings, allowing you to do coding or creative writing tasks.
+  - Works on ANY MTP model: No external drafter. No extra memory usage. Uses the model's own built-in MTP heads. Works on any model that ships them.
+- How Is This Different From DFlash / DDTree?
+  - DFlash MLX has greater absolute speed, however it is restricted to greedy (temp 0) only sampling which severely restricts its real world use case. It also requires an external drafter model which requires additional memory and needs to be created for every model that is released.
+  - DDTree adds tree-based verification on top of DFlash so it inherits the same limitations: greedy only, external drafter required.
+  - MTPLX works with any model that retains the MTP heads and gives full customisability to the user to choose the number of MTP heads and run any locally saved or HuggingFace model with MTP heads.
+
+- This looks awesome. Is it possible to do something similar for Gemma 4 31B?
+  - Blame Google! They released the model and stripped the MTP heads from it. So sadly I cannot, only Gemma E4B.
+
+- https://x.com/o_lacombe/status/2051697645824213033
+  - Google just released Multi-Token Prediction (MTP) drafters that deliver up to a 3x faster inference boost! 
+
 - ## dflash-mlx sweet spot on Apple Silicon is narrower than expected: prompt ≤16K AND max_tokens ≤1024 to get the 1.45-1.65x decode speedup.
 - https://x.com/hxiao/status/2050965517100601448
   - the speculative win is concentrated in the first ~500 generated tokens, then acceptance decays and the gap closes. outside that, llama.cpp wins on wall time. dflash for short prompt + short reply (one-shot, data gen, classification).
@@ -1920,6 +1940,12 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 - [原来这才是Deepseekv4.0大放水降价背后的真相 - LINUX DO _202605](https://linux.do/t/topic/2104188)
   - 应该是DeepSeek发现为V4做了over-prepared，准备过度，结果V4的KV Cache命中率比预想的还要高，不得不（注意是不得不）加大流量，让batch size更大。
   - DeepSeek肯定为V4准备了大量推理算力，大到他们自己都没想到V4这么『省』，V4的架构优化（更激进的KV Cache压缩）让GPU计算和带宽消耗远低于预期，KV Cache命中率也高出规划。
+
+- [deepseek V4 pro缓存命中率知识 - LINUX DO _202605](https://linux.do/t/topic/2115383)
+  - 了解到Deepseek的命中率高的原因与用法，必须把代码文件放在每次提问的绝对开头 ，且一字不差。标题、寒暄都不能有。有效期经人指正，可能几小时到几天不等。
+  - 而claude则是手动标记缓存，需要用 cache_control 明确圈定 那个长文档段落，告诉系统：“这一段帮我缓存下来”。不一定在开头部分。
+  - 百万上下文，有能力构建一个庞大到足以覆盖你绝大部分工作场景的“固定前缀”，从而减少token消耗量。
+- ds的缓存时间老长了，有时候隔天都还有，A​:divide: 才是五分钟, 另外A的缓存标记也必须从头到尾不能中断，给你标记权是因为他的缓存要收钱，让你自己决定缓存权
 # discuss
 - ## 
 

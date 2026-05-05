@@ -333,6 +333,14 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0505
+
+- [Integrate NVIDIA NIM as an Inference Provider · Issue · openai/codex _202605](https://github.com/openai/codex/issues/19145)
+  - closed as not planned
+  - Since NVIDIA NIM uses a different API schema and not a fully OpenAI-compatible one, the practical approach would be through an adapter/proxy layer.
+  - Codex -> Adapter Proxy -> NVIDIA NIM
+  - The proxy would translate OpenAI-style /v1/chat/completions requests into NIM’s expected request format and then convert the response back for Codex.
+
 ## 0504
 
 - 🐛 ccswitch配置nvidia后无响应内容

@@ -118,7 +118,7 @@ what should be done to macth the upstream? explain to me. if it it complicated, 
 
 ```prompt
 `../superdoc` implemented renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed.
-- the final goal is to implement from scratch a new ai docx editing solution named ailovedoc similar to superdoc at folder `./ailovedoc`  to avoid the licensing issues.
+- the final goal is to implement from scratch a new ai docx editing solution named ailovedoc similar to superdoc in current folder to avoid the licensing issues.
 - ailovedoc should be implemented in a modular and extensible architecture for core features like rendering and editing, with functional programming style.
 
 - in superdoc, running `pnpm dev:super-editor` shows a mininal editor demo that supports to toggle pagination. running `pnpm dev` shows a powerful editor demo that supports to toggle pagination, zoomable, toolbars, sidebars. please migrate the examples to ailovedoc without licensing issues, and make it runnable locally in ailovedoc. you should migrate all superdoc examples/features to a new standalone package at `apps/playground`, the basic ux can be a list of editor example names at left sidebar, when click one example name, the demo will show on the right.

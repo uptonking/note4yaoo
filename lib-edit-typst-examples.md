@@ -121,6 +121,7 @@ modified: 2025-12-25T19:55:10.911Z
   - Typstudio is built using Tauri.
   - https://github.com/Ahdeyyy/typwriter /rust/ts/svelte
     - modern editor for Typst, built with Tauri and Svelte
+    - [[Self promo] - Typwriter - Typst text editor : r/typst _202605](https://www.reddit.com/r/typst/comments/1t1y2o1/self_promo_typwriter_typst_text_editor/)
 
 - https://github.com/automataIA/wasm-typst-studio-rs /202510/rust/tauri
   - https://automataia.github.io/wasm-typst-studio-rs/  /典型双栏预览

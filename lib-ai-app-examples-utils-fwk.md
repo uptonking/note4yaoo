@@ -438,6 +438,11 @@ modified: 2025-02-21T18:20:42.624Z
   - [基于 One-Hub 的二开项目 Done-Hub ](https://linux.do/t/topic/712560)
     - 支持 /gemini 原生生图请求的额外参数透传
     - 支持 gemini-2.0-flash-preview-image-generation 文生图 / 图生图，并兼容 OpenAI 对话接口
+  - 📡
+    - [渠道支持多个密钥 _202405](https://github.com/MartialBE/one-hub/issues/203)
+      - 现在批量添加密钥， 逻辑是新增的时候有多个密钥就会自动增加多个渠道，要是能一个渠道下能支持多个密钥就更加方便了
+      - 暂时 不会在同一个渠道中 配置 多个key， 因为 这里面有负载均衡，可以配置 优先级和权重，如果不拆分，这些不好配置。
+      - 🛝: 凑合能用，使用tag管理多个密钥的ux比较奇怪
   - [同渠道多API轮询功能 ](https://github.com/MartialBE/one-hub/issues/791)
     - 用tag就行了
     - 在一个tag下的渠道，是随机还是轮询？
@@ -448,8 +453,6 @@ modified: 2025-02-21T18:20:42.624Z
     - 这是用于批量管理的。 你添加后要去 渠道标签 修改
   - [有接入豆包的计划吗?  ](https://github.com/MartialBE/one-hub/issues/323)
     - 直接用 openai + 模型映射就可以了
-    - 渠道API地址 Base URL 填入 https://ark.cn-beijing.volces.com
-    - ChatCompletions地址 填入 /api/v3/chat/completions
   - [new-api、one-api、chatnio对比以及令牌限制可用模型 ](https://github.com/MartialBE/one-hub/issues/332)
   - [通过OneHub接入字节火山引擎教程 ](https://linux.do/t/topic/412857)
   - [[Bug] 无法对相同模型不同名称(deepseek-r1和deepseek-ai/deepseek-r1)的模型负载均衡调用 ](https://github.com/songquanpeng/one-api/issues/2170)
@@ -463,6 +466,7 @@ modified: 2025-02-21T18:20:42.624Z
   - [one-api负载均衡疑问 ](https://linux.do/t/topic/210397)
   - [百度文心模型调用异常 ](https://github.com/MartialBE/one-hub/issues/208)
     - failed to get token encoder for model ERNIE-Speed: no encoding for model ERNIE-Speed, using encoder for gpt-3.5-turbo 这个报错是只没有找到这个模型的tokens计算，可以无视
+  - [Responses API _202503](https://github.com/MartialBE/one-hub/issues/579)
 
 - https://github.com/cita-777/metapi /777Star/MIT/202603/ts
   - http://metapi.cita777.me/
@@ -980,9 +984,15 @@ modified: 2025-02-21T18:20:42.624Z
   - https://github.com/seakee/CPA-Manager /MIT
     - [解决 CPA 移除使用统计方法：CPA-Manager - LINUX DO _202605](https://linux.do/t/topic/2103420)
   - https://github.com/router-for-me/CLIProxyAPIPlus /MIT/202512/go
+    - https://hub.docker.com/r/leic4u/cli-proxy-api-plus
     - the Plus version of CLIProxyAPI, adding support for third-party providers on top of the mainline project.
     - Added GitHub Copilot support (OAuth login)
     - Added Kiro (AWS CodeWhisperer) support (OAuth login)
+    - plus is a lockstep fork of mainline focused only on third-party provider support. share the same Go module identity and the same server shape, but plus adds code paths and auth flows that aren’t present upstream.
+      - Upstream CLIProxyAPI code is merged into the plus repo in batches
+    - [各位佬，CLIProxyAPIPlus 这个怎么没了，想要反代copilot 在codex 上使用 - LINUX DO _202604](https://linux.do/t/topic/2080269/4?tl=en)
+      - 由于外接了Kiro、CodeBuddy、Copilot等第三方供应商，受DMCA警告，已删库跑路。直接装 cliproxyapi吧
+  - https://github.com/KooshaPari/cliproxyapi-plusplus
   - https://github.com/dongshuyan/CPA-Dashboard 
     - 控制面板 - 服务管理与账户监控 Web 界面
     - 启动 / 停止 / 重启 CLIProxyAPI 服务

@@ -86,4 +86,9 @@ modified: 2025-12-26T08:56:31.035Z
 - https://github.com/p2r3/convert /GPL/202603/ts
   - https://convert.to.it/
   - Truly universal online file converter
+
+- https://github.com/xiaoxu123195/tool_forge /MIT/202605/go/ts
+  - 跨平台桌面工具箱·36+ 工具·AI Chat/翻译/Provider 切换/Claude·Codex 用量洞察·剪贴板/HTTP 调试/取证/编解码/加密。Wails + Go + React + TS
+  - [Tool Forge v0.2.0 — Wails + Go + React 写的桌面工具箱 - LINUX DO _202605](https://linux.do/t/topic/2112787)
+  - 我电脑上常年开着浏览器收藏夹的一堆在线小工具：JSON 格式化、Plist 解析、MMKV 解析、ProtoBuf、cURL 转 Python、JWT 解析、Hash 计算… 所以我想做一个离线优化 + 统一外壳 + 轻量 + 可扩展的小桌面端工具
 # more

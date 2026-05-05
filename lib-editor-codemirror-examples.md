@@ -1249,7 +1249,8 @@ modified: 2023-06-23T12:46:53.288Z
   - 依赖lexical、codemirror6、radix-ui、hast、mdast、react-diff-view、react-hook-form
   - diff左右分屏视图基于codemirror实现，左边不可编辑，右边可编辑，左右都是codemirror的md源码
 
-- https://github.com/codemirror/merge /MIT/202403/ts
+- https://code.haverbeke.berlin/codemirror/merge
+  - https://github.com/codemirror/merge /MIT/202403/ts
   - https://codemirror.net/try/?example=Merge%20View
   - Merge view for CodeMirror
   - 左边旧代码可编辑，右边新代码不可编辑，与vscode相反
@@ -1678,7 +1679,8 @@ modified: 2023-06-23T12:46:53.288Z
   - The server is written in Clojure and heavily inspired by the LSP protocol which is a success case for this kind of integration.
   - How it works: Editors spawn the server via `eca server` and communicate via stdin/stdout, similar to LSPs. Supported editors already download latest server on start and require no extra configuration.
 # lsp
-- https://github.com/codemirror/lsp-client /MIT/202508/ts
+- https://code.haverbeke.berlin/codemirror/lsp-client
+  - https://github.com/codemirror/lsp-client /MIT/202508/ts
   - Language server protocol client for CodeMirror
   - https://github.com/andy0130tw/codemirror-lsp-client-demo /202507/ts
     - Demo on wiring up tsserver with CodeMirror's lsp-client module

@@ -33,6 +33,8 @@ modified: 2022-08-18T16:57:46.405Z
 
 - examples
   - https://prosekit.dev/examples/drop-cursor
+  - https://code.haverbeke.berlin/prosemirror/prosemirror
+  - https://code.haverbeke.berlin/prosemirror/prosemirror-view
 
 - fans-prosemirror
   - https://github.com/sereneinserenade/tiptap-comment-extension

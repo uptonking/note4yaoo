@@ -788,6 +788,13 @@ modified: 2026-04-07T11:52:43.122Z
   - It's a simple alternative to DeepL, Grammarly, and other similar tools.
   - Uses Copilot, Ollama, or OpenAI for proofreading.
 
+- https://github.com/TW-NLP/ChineseErrorCorrector /202604/python
+  - 一个面向中文文本纠错任务的综合平台，集学术研究、模型训练、模型评测和推理部署于一体，覆盖拼写纠错与语法纠错两个核心方向。
+  - https://x.com/wsl8297/status/2051270379696803991
+    - 一款专业的中文文本纠错模型，它基于 Qwen2.5 训练，既能揪出拼写错误，也能识别更复杂的语法问题，并给出清晰、可用的修改建议。
+    - 提供 1.5B 到 32B 多种规模，支持 transformers、vllm 等推理方式。
+    - https://huggingface.co/twnlp
+
 - https://github.com/hotchpotch/open_provence /MIT/202511/python
   - Open-Source, Efficient, and Robust Context Pruning for Retrieval-Augmented Generation
   - Lightweight Provence-style rerankers that keep the answers and drop the noise for retrieval-augmented generation.

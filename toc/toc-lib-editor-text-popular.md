@@ -36,7 +36,9 @@ modified: 2022-11-08T19:04:00.289Z
   - [Text Editor - OSSRank](https://ossrank.com/cat/4-text-editor)
 # known-text-editor
 - prosemirror /6kStar/MIT/202208/ts
-  - https://github.com/ProseMirror/prosemirrorp
+  - https://code.haverbeke.berlin/prosemirror/prosemirror
+  - https://code.haverbeke.berlin/prosemirror/prosemirror-view
+  - https://github.com/ProseMirror/prosemirror
   - http://prosemirror.net/
   - rich semantic content editor based on contentEditable, with support for collaborative editing and custom document schemas.
   - ProseMirror library consists of a number of separate modules.

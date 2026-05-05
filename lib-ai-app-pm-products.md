@@ -316,7 +316,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 允许分享文档/插画中的模型配置/运行日志, 将prompt放入git-commit，还是直接放入图片?
     - ❓ 如何一键切换到cloud版
     - https://github.com/tc-mb/llama.cpp-omni is the first Omni multimodal inference engine built on llama.cpp.
-    - custom model: 针对nvidia nim的模型做优化, 如qwen3.5-plus
+    - custom model: 针对nvidia/openrouter/mistral的模型做优化, 如qwen3.5-plus
   - 👾 local agent
     - skills for local model
     - openclaw比manus更火的原因，是支持在本地自动化执行任务，而不是云端
@@ -681,17 +681,18 @@ modified: 2025-03-22T16:10:24.856Z
 - 不要在公益站浪费过多时间, 工作状态需要稳定和高效, 折腾公益站经常打断核心任务
   - 可尝试直接购买付费中转站， 注意跑路
   - 可采用类似 opus+sonnet+haiku 的 顶级+主流+轻量 组合架构
+    - 一种轻量token方案: 使用gpt/中转站作为类似sonnet的高级模型, 类似haiku的普通模型可用nvidia/openrouter/ollama/opencode/longcat
   - 跳蚤市场经常有临期或拼车的惊喜
 
 - resources
   - https://github.com/cheahjs/free-llm-api-resources
+  - https://github.com/ShaikhWarsi/free-ai-tools
 
 - news
   - [New API _202604](http://82.157.186.24:3000/console/personal)
     - [公益 glm5 和千问 注册送160刀免费蹬，每天签到大概30吧 _202604](https://linux.do/t/topic/2023484)
   - [Atomgit GLM5 无限 Token? ](https://linux.do/t/topic/1696331)
   - [华为云 CodeArts 试用期间开放GLM4.7与DeepSeek V3.2模型无限畅用，大善人还是小白鼠？ _202601](https://linux.do/t/topic/1536794/5)
-  - [寻找L站开源作者，UUcode送商业级API额度—— 优质开源项目扶持计划 1228](https://linux.do/t/topic/1370667)
 
 - claude-news
   - [Ollama v0.14.0 and later are now compatible with the Anthropic Messages API _202601](https://ollama.com/blog/claude)
@@ -700,6 +701,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [Token HUB](https://hub.linux.do/)
   - [讨论token银行的可行性 - LINUX DO _202604](https://linux.do/t/topic/2007302)
+  - [L站的活跃佬友永远也不缺token花了，token自由已实现 _202605](https://linux.do/t/topic/2111825)
   - 置换的总体思想就是将你闲置的订阅套餐、朋友赠送的 Key、公司发的额度——闲着也是浪费。把它们上架成公开渠道，换成可以继续消费的 credits
   - 其实这样会有一个弊端，肯定会出现拿次要模型换取好的模型，感觉会出现最后一堆好模型的供不应求，hub中又会存在大量无法消费的次要模型
   - https://github.com/lhish/hub_pro
@@ -807,7 +809,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 不要对模型进行测试，测试失败不是因为服务不可用，是我禁掉了测试
   - 📌 [随时跑路公益](https://runanytime.hxi.me/console/personal), 每天签到
     - [随时跑路福利站](https://fuli.hxi.me/wheel)
-    - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
     - RPM 暂时定为 5，之后看情况调整
   - 📌 [Elysiver](https://elysiver.h-e.top/console/personal), 站内签到
     - 支持embedding model
@@ -817,6 +818,9 @@ modified: 2025-03-22T16:10:24.856Z
     - [『Elysiver公益站主贴』 ](https://linux.do/t/topic/1175087)
     - 2cx 指接入 Codex 使用
     - docs 指的是这是 claude 的文档 ai，不破限只会回答文档相关的内容
+  - [SunRouter _202605](https://sun.meowai.net/console/personal)
+    - [SunRouter 公益站，来源bai号池，无限 gemini ](https://linux.do/t/topic/2114421)ƒ
+    - 限制每用户rpm为30，enjoy
   - 🗑️ [NihaoAPI _202603](https://nih.cc/console/personal)
     - cc
   - 🗑️ [Pond Hub 反重力号池 _202603](https://code.claudex.us.ci/panel/profile), 签到
@@ -830,7 +834,6 @@ modified: 2025-03-22T16:10:24.856Z
     - [Old API](https://oldai.zeabur.app/console/personal)
     - [【old API公益站】公益站上线（已恢复？） ](https://linux.do/t/topic/1541085)
     - rpm 为 25，还是老样子小容器部署，服务稳定性未知，随时可能因为账号短缺、高并发而死掉
-    - 仅支持 sonnet 和 haiku，等 kiro 恢复 free 用户的 opus 使用权后会上 opus
   - 📌 [小呆API](https://api.daiju.live/console/personal), 签到，api不稳定
     - https://china.184772.xyz
     - [小呆API](https://new.184772.xyz/)
@@ -924,7 +927,6 @@ modified: 2025-03-22T16:10:24.856Z
   - 🗑️ [YAO API _202603](https://yybbwan.xyz/console/personal)
     - [YAO](http://154.37.220.66:3000/console/personal) , legacy
     - [[Yao公益站]codex注册200刀，可能随时倒闭  ](https://linux.do/t/topic/1683788)
-    - claude-sonnet-4-5-20250929
   - [荷塘AI _202604](https://hetang.lyvideo.top/console/personal)
     - [【荷塘公益站】仅支持GPT5.4  ](https://linux.do/t/topic/1875698)
   - 📌 [Hello AI _202603](https://hello.xhyun.eu.cc/console/personal)
@@ -945,7 +947,6 @@ modified: 2025-03-22T16:10:24.856Z
     - arrow-preview, QuiverAI API flagship SVG gen
   - 🗑️ [真好记公益站](https://api.zhenhaoji.qzz.io/console/personal)
     - 随便刷吧，可能刷崩了，我就关站了
-    - cc, opus 是cursor2api的 sonnet4.6
     - [真好记公益站 ](https://linux.do/t/topic/1795254)
   - [api-test](https://new-api.abrdns.com/console/personal)
     - https://openai.api-test.us.ci  /legacy
@@ -1428,6 +1429,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 稍微测了下，不是 50rpd，挺好
   - [Introducing Web Search via the API  _202501](https://openrouter.ai/announcements/introducing-web-search-via-the-api)
     - The OpenRouter API now supports a web search feature, available for all models. 
+  - [OpenRouter Charges for FREE models, why? : r/openrouter _202605](https://www.reddit.com/r/openrouter/comments/1t0kr36/openrouter_charges_for_free_models_why/)
+    - Web search always has been charged, disable that and enjoy the freebies
 
 - 📌 [Ollama Cloud models](https://ollama.com/search?c=cloud)
   - Hourly + Weekly limits
@@ -1510,7 +1513,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 语言模型(Chat)	 RPM=1000-10000 TPM=50000-5000000
     - 🖼️ 图像生成模型(Image)	 IPM:2 IPD:400
 
-- 📌 [iflow 心流开放平台 - 限流](https://platform.iflow.cn/docs/limitSpeed)
+- 🗑️ [iflow 心流开放平台 - 限流](https://platform.iflow.cn/docs/limitSpeed)
   - 当前服务免费使用，但请合理使用资源，避免不必要的高并发请求。
   - 每个用户最多只能同时发起一个请求，超出限制的请求会返回429错误码。
   - 流式请求: 主动取消后立即释放令牌，推荐使用流式请求以提高效率。
@@ -1649,6 +1652,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [Cohere API Keys and Rate Limits](https://docs.cohere.com/docs/rate-limits)
   - all endpoints are limited to 1000 calls per month with a trial key
+  - 仅支持自研模型 Command A, Command R
 
 - [AIHubMix - Models](https://aihubmix.com/models)
   - 免费模型不多，大多coding相关
@@ -1681,10 +1685,6 @@ modified: 2025-03-22T16:10:24.856Z
   - https://www.scnet.cn/
 
 - [ZenMux](https://zenmux.ai/models?sort=pricingLowToHigh)
-
-- paid-api
-  - [OAIPro API](https://api.oaipro.com/)
-    - L 站不倒，这个就不倒
 
 - [令牌查询](https://apikey.cifang.xyz/)
 
@@ -1858,6 +1858,11 @@ modified: 2025-03-22T16:10:24.856Z
   - 通知频道：https://t.me/hdunzx
   - 质保两天
     - 一天就上几个，引流的
+
+- [度偶Ai专卖店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/G3EUVLR7)
+  - gpt plus月订阅CPA json(质保3天)
+  - 无密码，无codex登录。质保3天，出现401封禁可换1次账号。
+  - 购买后获得兑换卡密，卡密到 https://chat.duou.ai/download/ 网站兑换gpt plus cpa json
 
 - [AI HOME的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/MEDDEX4V) , 保证金1000元
   - 群：https://t.me/aihome123

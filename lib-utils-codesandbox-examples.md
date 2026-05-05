@@ -547,6 +547,12 @@ modified: 2023-09-02T09:17:22.992Z
     - It was essentially entirely written by Opus 4.5. Coding agents love bash and they are good at reproducing it. They are also great at text-book recursive descent parsers and AST tweet-walk interpreters. 
     - It has cURL already
 
+- https://github.com/iamleonie/elasticsearch-fs /apache2/202605/ts
+  - This project is a proof-of-concept implementation of a virtual filesystem over Elasticsearch using just-bash, a virtual Bash environment with an in-memory filesystem written in TypeScript for AI agents.
+  - [Implementing a virtual filesystem over Elasticsearch – Leonie Monigatti _202605](https://leoniemonigatti.com/blog/virtual-filesystem-elasticsearch.html)
+  - https://x.com/helloiamleonie/status/2051634317097414833
+    - I built a ChromaFS implementation exactly like the one in the article, using it for LangChain DeepAgents
+
 - https://github.com/rivet-dev/agent-os /1.4kStar/apache2/202604/ts/rust
   - https://www.rivet.dev/agent-os
   - A portable open-source operating system for agents. 

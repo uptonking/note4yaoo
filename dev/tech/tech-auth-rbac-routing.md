@@ -219,3 +219,6 @@ modified: 2022-01-06T17:30:03.280Z
 
 - And ALL subdomains? Why no control over what (sub)domains such a request should apply? There are plenty websites/applications where one subdomain is unrelated to another!
   - Not even using the Public Suffix List?
+
+- https://x.com/sebastienlorber/status/2051649789553520883
+  - Clear-Site-Data: "storage"

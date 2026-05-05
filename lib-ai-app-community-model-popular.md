@@ -712,6 +712,15 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - [Granite 4.1: IBM's 8B Model Is Competing With Models Four Times Its Size : r/LocalLLM _202604](https://www.reddit.com/r/LocalLLM/comments/1szucjv/granite_41_ibms_8b_model_is_competing_with_models/)
 
+- ## [Gemma 4 MTP released : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1t4jq6h/gemma_4_mtp_released/)
+- The E2B model has a 78M draft model - Cuuute!
+
+- llama.cpp does not have MTP support yet
+  - https://github.com/ggml-org/llama.cpp/pull/22673 looks like very soon
+
+- There is a configuration option in LMStudio, if you enable it it gives you a file chooser.
+  - lm studio has had some issues regarding draft model to main model. I tried it early on, and found it was pretty good but something went awry. I think vllm supports speculative draft models in a more robust manner these days.
+
 - ## 💡🧩 Information All You Need for Gemma 4
 - https://x.com/holo_b/status/2039815942658523392?s=20
 - it's multimodal  meaning it can process not just text, but also images, video, and audio. 

@@ -1198,7 +1198,14 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [Why don't more people or companies run local LLMs rather than using APIs? : r/LocalLLM _202605](https://www.reddit.com/r/LocalLLM/comments/1t3vts9/why_dont_more_people_or_companies_run_local_llms/)
+- I can't speak for many other companies, but at my company we have a policy to prefer external enterprise solutions over local/custom/on-premise solutions.
+
+- Higher up front cost and difficulty sourcing GPUs
+
+- They are still under aws spell - cloud is cheaper, better, faster. I've had that told to me, even on a CPU intensive applications, where aws marks up at least 10x over on-prem
+
+- uptime, redundancy, infrastructure cost, maintenance cost, man hour cost, liability for all the previously mentioned etc.
 
 - ## [What are people using Local LLMs for (beyond coding) : r/LocalLLM _202604](https://www.reddit.com/r/LocalLLM/comments/1sz59g6/what_are_people_using_local_llms_for_beyond_coding/)
 - Roleplaying

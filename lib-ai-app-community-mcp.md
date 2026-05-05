@@ -521,6 +521,18 @@ modified: 2025-02-03T10:17:42.052Z
 - You can test out a few chunkers here: https://chunkers.vercel.app
 
 - Actually the LangChain splitters (which is quite good) is not bundled, it's available as a separate package @langchain/textsplitters
+# discuss-ai-use-phone
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [AI自动操作手机，谷歌正式下场：系统权限重写，GUI Agent上岸 _202604](https://www.bilibili.com/video/BV1PYQgBAEie/?spm_id_from=333.1007.tianma.3-3-7.click&vd_source=deff4d2e2efa3273948dd6911a08fd39)
+  - google基于虚拟屏幕实现， 会截图识别
+  - up主根据adb调试日志分析流程
+  - 新的权限: access computer control , 官方提供权限规范，不需要hack
+
 # discuss-ai-use-computer/container
 - ## 
 

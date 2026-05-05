@@ -29,10 +29,21 @@ modified: 2024-06-21T09:53:44.956Z
   - There are also some additional headers, like Accept-Ranges: bytes and Content-Range: bytes 0-554057/554058.
 
 - Together, these make up an HTTP range request. As the name suggests, range requests allow the client to request a specific range of bytes from the server, rather than the entire resource. This is particularly useful for video, as videos can be arbitrarily long 
-# discuss-vid-pm
+# discuss-vid-ai 👾
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Codex + HyperFrame is eating vedio editors
+- https://x.com/Saccc_c/status/2051145377865204222
+  - 用纯编码的形式手搓各种视频，真tm的太爽了
+  - Claude 官推通过Remotion、hyperframe 这类工具制作视频已经撸了至少10M流量
+
+- 这个方向最值得看的不是替代剪辑师，而是把视频变成可测试的代码资产。以后改一个脚本批量重出 20 个版本，比在时间线上手搓稳定太多。
 
 - ## Google 正式推出 Gemini AI 驱动的视频演示应用 Vids 
 - https://x.com/imxiaohu/status/1855436961131164004
