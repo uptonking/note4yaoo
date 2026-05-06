@@ -687,6 +687,43 @@ CREATE DATABASE mydatabase;
 - Kap 录制视频和 gif 的轻量工具；
 - SwitchKey  自动在各个应用之间切换中英输入法；
 - Linear 项目管理的好工具。
+# discuss-appstore
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [AppleStore 换区方法分享 - LINUX DO _202605](https://linux.do/t/topic/2120516)
+  - 其实用你自己本来的Apple ID 打开手机的梯子->全局模式 然后打开Applestore->头像->地区 选择你想去的低价区 
+  - 因为你选了全局，所以付款方式可以选择“无/None”而直接切换过去
+  - 而且下方的地址/手机号完全可以随便填
+- 是切换到哪个地区，就需要开哪里的节点吗
+  - 跟节点没有关系，随便哪一个，我经常用台湾、美国的换到尼、土
+
+# discuss-devops
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 以前更换电脑，是吭哧吭哧用 dotfiles 管配置、写脚本，一点点把环境克隆出来。
+- https://x.com/Barret_China/status/2051841823908487242
+  - 现在的方式简单粗暴多了。打开新电脑的远程端口，让旧电脑直接 ssh 过去，然后丢给 AI，一路操作下去。吃个饭回来，七七八八了。
+- nix-darwin + homebrew 几乎可以将所有配置代码化
+
+- 都是mac为啥不用Time Machine？ Time Machine transfer过去一比一还原的
+- 都是macbook 用time machine一会儿就直接转过去了 你还用ai消耗token 真是个大聪明
+- 都是mac的情况下，即便平移最快的方式也应该是一根雷电线吧？
+
+- 我发现直接Time Machine传的话，偶尔会出现把不必要的配置传过去导致续航有问题的情况。
+
+- dotfiles 我用 stow 管了几年，新机第一次 zsh -l 还是会被某个漏掉的 export 卡住。SSH 反向迁移这思路确实简单粗暴，sudo 和磁盘权限那一段倒是省不掉。
 # discuss-hardware
 - ## 
 

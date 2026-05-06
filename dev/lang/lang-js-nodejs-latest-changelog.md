@@ -19,6 +19,18 @@ modified: 2022-12-31T20:13:33.307Z
 
 ## v
 
+## v
+
+## v
+
+## v26
+
+- [v26.0.0 (Current) _202605](https://nodejs.org/en/blog/release/v26.0.0)
+  - Temporal API is now enabled by default
+  - V8 engine is updated to version 14.6.202.33, which is part of Chromium 146.
+  - Undici has been updated to version 8.0.2, bringing new features and improvements to Node.js's HTTP client implementation.
+  - https://x.com/_rafaelgss/status/2051672890462892353
+
 ## v24
 
 - [v23.1.0 (Current) _2024-10-24](https://nodejs.org/en/blog/release/v23.1.0)

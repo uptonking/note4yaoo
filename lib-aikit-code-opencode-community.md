@@ -246,7 +246,8 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## 其实opencode会根据模型名字路由到不同的 系统提示词的，不过它默认的系统提示词写得想当烂是了，kimi团队甚至专门提了pr给kimi搞了个kimi 版本的提示词.....
+- https://x.com/DeepGrey449866/status/2051812943709540817
 
 - ## Features in OpenCode itself will be internal plugins and can be activated/deactivated at runtime. Same as external plugins. 
 - https://x.com/thdxr/status/2036954434727555095

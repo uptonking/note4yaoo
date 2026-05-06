@@ -429,6 +429,11 @@ modified: 2026-01-19T05:01:00.055Z
   - 强制学习机制 - 处理 PDF/Excel 前必须先学习处理方法
     - 遇到 PDF 或 Excel 文件时，必须先读取 references/pdf_reading.md
 
+- https://github.com/warpdotdev/oz-skills /MIT/202605/python
+  - A curated collection of reusable Agent Skills for Warp AI agents and Oz.
+  - https://x.com/shao__meng/status/2051865033425190994
+    - Warp 团队的 15 个 Skills
+
 - https://github.com/op7418/Humanizer-zh /MIT/202601/md
   - Humanizer-zh: AI 写作去痕工具（中文版）
   - https://github.com/blader/humanizer

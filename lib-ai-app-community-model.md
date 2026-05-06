@@ -327,6 +327,75 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## Build long-running agents with more control over agent execution.
+- https://x.com/teach_fireworks/status/2051808777457016922
+  - Run agents in controlled sandboxes: The Agents SDK now supports sandbox execution with providers including @Cloudflare , @Vercel , @modal , @e2b , and more. sandbox preserves working state across pauses, retries, and resumptions.
+  - Control when memories are created and where they’re stored: Keep files, credentials, and execution state in your environment while passing approved context to the model.
+  - Inspect and customize the open-source harness: Use it out of the box, or adapt the models, tools, instructions, and orchestration logic your agent needs. The Agents SDK capabilities are available to all API customers.
+- OpenAI 这次 Agents SDK 大更新，核心就是这张图里的 Harness 与 Compute 分离架构，完美解决了困扰 Agent 开发者的两大难题：安全隔离 & 长时程稳定运行。
+
+- 说白了就是把云安全那套搬过来，理论谁都行，落地见真章
+
+- ## 📌🏠 2026 年 Subagent 的四种管理模式
+- https://x.com/shao__meng/status/2051845258192052527
+
+- 把"主 agent 如何驱动其它 agents"按主 agent 对 subagent 生命周期的控制力从弱到强排成四档。模型能力越强，能驾驭的模式越复杂。
+
+模式 1：Inline Tool —— subagent 就是一次函数调用
+主 agent 通过 call_agent 工具派一个任务，等结果返回，跟调用 read_file 没本质区别。
+
+· 同步：工具调用阻塞，结果作为 tool response 返回。
+· 异步：工具立即返回一个 agent_id，结果完成后以"通知消息"形式注入对话。
+
+适用：自包含任务 —— 资料检索、代码 review、文件分析、测试生成。绝大多数所谓"多 agents"需求其实到这里就够了。 局限：没法中途追加指令、查看进度或取消。任务理解错了，只能等结果出来才知道。 门槛：任何能调用工具的模型都行，包括小模型。
+
+模式 2：Fan-Out —— 派发后再收集
+把"派发"和"收集"拆成两个工具：spawn_agent 立即返回 ID，wait_agent 阻塞等结果。
+
+关键差异：派发与等待之间，主 agent 可以做自己的事（读文件、再派新任务）。模型自己决定什么时候 wait_agent。
+
+适用：多个互相独立、可并行的任务。 局限：如果模型一 spawn 完就立刻 wait，等于退化成模式 1。价值依赖模型能合理穿插自身工作。仍然是 fire-and-forget，无法中途纠偏。 门槛：模型要能推理"何时该等"。
+
+模式 3：Agent Pool —— 持久化 agent + 消息通信
+subagent 变成长寿命、有状态的成员。工具集扩展为 spawn / send_message / wait / list / kill。主 agent 可以反复给同一个 agent 发消息，对方保留完整上下文。
+
+文中示例：研究员 agent-r 第一次被派去找资料，第二次被叫来对照刚写好的草稿做事实核查 —— 它仍记得上次找到的 5 个来源。
+
+wait_agent 按消息粒度返回，主 agent 可以根据返回内容动态调整下一步指令。
+
+适用：需要专家协作的多步工作流，主 agent 充当信息路由器。 局限：主 agent 要追踪多个 agent 的状态、决定何时发消息何时等待、记得 kill_agent 释放资源。前沿模型大概能 hold 住 2–4 个 agent。
+
+模式 4：Teams —— agents 之间直接对话
+主 agent 只负责组队、定角色、启动，然后退场。每个成员都拥有 send_message，可以直接互相寻址（层级路径、文件邮箱或 IPC）。
+
+示例中主 agent 只对 planner 说一句"你的队友是 implementer 和 reviewer，做完汇报给我"，之后 planner <-> implementer <-> reviewer 之间的协作完全发生在主代理上下文之外。主 agent 只在有 agent 显式向它汇报时才收到结果。
+
+适用：协调逻辑本身已经超出单个 agent 能逐步管理的复杂度的大型任务。 局限：
+· 每个成员都需要前沿模型能力，不只是主 agent。
+· 基础设施问题：环路检测（A 等 B、B 等 A）、写入冲突、关停协调。
+· 调试极难，消息链难追踪，失败会级联放大。
+
+- Philipp Schmid 的核心建议
+
+1. 从模式 1 开始。大多数看起来像"需要多 agents"的任务，靠一个 prompt 写得好的内联工具调用就能解决。
+2. 真正独立可并行才升级到模式 2。
+3. 需要跨步骤协作才上模式 3。
+4. 协调逻辑本身爆炸才考虑模式 4。
+5. 每升一级，对模型能力的要求陡增。模型不够强，就停在 1 或 2。
+6. 框架提供工具，编排由模型决定。今天要 4 个 agents 协作的任务，明天可能一个更强的单 agent 就能解决。
+
+- 👥
+
+- 从模式1到模式4的递进非常清晰。实际用 Hermes Agent 的 delegate_task 跑任务时，模式2（Fan-Out）确实是最常用的——主 agent 派发完继续自己的工作，而不是干等。模式3的 Agent Pool 在长任务场景下价值很大，跨步骤保持上下文记忆是关键。
+
+- 从模式1到模式4的递进非常清晰。实际用 Hermes Agent 的 delegate_task 跑任务时，模式2（Fan-Out）确实是最常用的——主 agent 派发完继续自己的工作，而不是干等。模式3的 Agent Pool 在长任务场景下价值很大，跨步骤保持上下文记忆是关键。
+
+- 实测下来 Claude Code 的 Agent 工具主要走模式1和模式2 — 单次任务跑 grep/glob 探索就是内联那种，一次并发派几个子 agent 做代码评审是 Fan-Out。模式3/4 那套持久化+消息路由的状态管理太重，自己一直没真跑过，规模上也不到那一步。
+
+- 说实话 90% 的"多 agent 系统"用模式 1 Inline Tool 就够了，剩下的在硬凹架构。 真正需要 Fan-Out 和 Supervisor 的场景，瓶颈不在编排框架，在模型能不能准确拆子任务。现在的模型拆错率大概 30-40%，这才是卡点。
+
+- 模式3 Agent Pool是我觉得最实用的。模式4 Teams虽然帅但调试起来要命，级联失败排查到怀疑人生。现在大部分场景模式1+2就够了，别为了炫技搞复杂架构
+
 - ## coding场景天然是按任务区分会话的，而对话类个人助理agent则是一个会话持续进行下去，其中的任务是在对话中隐式切换的。这两种不同的假设会需要不同的上下文压缩和记忆系统的设计。
 - https://x.com/wong2__/status/2048249317362737233
   - 比如很多coding agent的compaction是要求模型把历史对话压缩成任务目标、任务状态、任务待办等信息，这如果硬搬到personal agent是不合适的。
@@ -1196,7 +1265,14 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [What do you use Gemma 4 for? : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1t4zca8/what_do_you_use_gemma_4_for/)
+- Gemma trounces Qwen for my handwriting analysis and general vision tasks at the very least. I also appreciate Gemma in chat significantly more than Qwen (qwen is cold and calculating even with system prompt modifications/nudging I've found though I have gotten it to be better lately with further modifications).
+  - Gemma also produces quality outputs with far less thinking than Qwen. Qwen can think forever before responding.
+
+- The only things I use llms for are coding and JP->EN translation, for agentic coding its a nobrainer, Qwen is much better than gemma with tools, for JP->EN translation its also a nobrainer, Gemma is much better (at least in the genre of text I translate from—hentai and porn tweets)
+
+- Qwen3.5/3.6 are really good at video analysis, better than Gemma4
+  - Gemma4 is considerably better as a voice agent, Qwen does not follow instructions for conciseness as it seems it wants to be "too helpful" and spends a lot of time listing options and things which it is explicitly told not to. Gemma4 follows instructions perfectly and is better assistant overall IMO.
 
 - ## [Why don't more people or companies run local LLMs rather than using APIs? : r/LocalLLM _202605](https://www.reddit.com/r/LocalLLM/comments/1t3vts9/why_dont_more_people_or_companies_run_local_llms/)
 - I can't speak for many other companies, but at my company we have a policy to prefer external enterprise solutions over local/custom/on-premise solutions.

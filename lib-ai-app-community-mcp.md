@@ -1014,6 +1014,29 @@ AI 可以直接操作后台 UI，把复杂流程自动化。
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Chrome's "web standard" Prompt API:
+- https://x.com/jaffathecake/status/2051962549545963951
+  - [Prompt API · Issue · mozilla/standards-positions _202504](https://github.com/mozilla/standards-positions/issues/1213)
+Mozilla: Opposed
+WebKit: Opposed
+Microsoft: Several concerns
+W3C TAG: Several concerns
+Developers: Mostly negative
+
+Chrome: Ships anyway.
+
+- "Developers: Mostly negative" You are lying.
+
+- Microsoft has the prompt api in edge, where can i read up on the concerns?
+
+- Google spent tons of money on their browser project, and now they get to tell everyone what to do and shape the internet for themselves (and their LLM models). It was over a long time ago.
+
+- Just like MSIE6 and MSHTML.
+
 - ## DESIGN.md 正式发布为开放标准！期待 Codex、Claude Code、Cursor 跟进支持
 - https://x.com/shao__meng/status/2046758188834267480
   - 格式核心：机器可读 token + 人类可读 rationale 的双层结构

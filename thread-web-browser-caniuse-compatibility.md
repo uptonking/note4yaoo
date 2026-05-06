@@ -45,6 +45,20 @@ modified: 2021-07-29T11:15:44.100Z
   - Yes, works both in Chrome and Firefox.
 
 - better to persist and sync localStorage with one of the https://0data.app protocols, @remotestorage_ even lets you connect dropbox and google drive
+# discuss-shape
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## As of Chrome 149, shape() works in shape-outside!
+- https://x.com/Una/status/2052025665336098906
+  - rect() and xywh() are also supported for shape-outside in Chrome 149
+  - https://codepen.io/una/pen/ogzRBWV
+
 # discuss
 - ## 
 
@@ -60,7 +74,7 @@ modified: 2021-07-29T11:15:44.100Z
 - https://x.com/TomasJansson/status/2000843006140654046
 - It seems to have too many limitations to be used today.
   - Was very excited to use Popover API for Bootstrap's dropdown, popover, and tooltip components, but **limiting to the top layer** seems like a deal breaker? Can't control layering, not reliable with sticky headers, and maybe a little jittery? This could also be the polyfill's fault?
-- This also dovetails with **anchor positioning**, also another polyfill for cross browser usage, which doesn't seem to account for some of this stuff either?
+- This also dovetails with **anchor positioning** , also another polyfill for cross browser usage, which doesn't seem to account for some of this stuff either?
 - If you can't fully control component positioning, it could break your layout. The Popover API is not a suitable solution for a UI component creator at this time.
 
 - [[dialog] Use html `<dialog>` element · Issue #485 · mui/base-ui](https://github.com/mui/base-ui/issues/485)
@@ -119,7 +133,7 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 🌊 `ReadableStream` async iteration is coming to a Chromium-based browser near you! 
 - https://twitter.com/MattiasBuelens/status/1765655738095960191
-  - In Chrome Canary, this now works: `for await (const chunk of response.body) {}`
+  - In Chrome Canary, this now works: `for await (const chunk of response.body) {}` 
 
 - Also tastes great combined with WebSocketStream
   - `for await (const message of wss.readable) {}`
@@ -165,7 +179,7 @@ modified: 2021-07-29T11:15:44.100Z
 - ## 🤔 [Does Safari and Google Chrome for macOS use the same rendering engine?](https://apple.stackexchange.com/questions/350671/does-safari-and-google-chrome-for-macos-use-the-same-rendering-engine)
 - While Google Chrome used WebKit for macOS client at one point, that's no longer the case for current stable build.
   - WebKit was the original rendering engine, but Google eventually forked it to create the Blink engine; 
-  - **all Chrome variants except iOS now use Blink**
+  - **all Chrome variants except iOS now use Blink** 
 - The restriction to use WebKit as the rendering engine for 3rd party Web browser apps exists solely on iOS. 
 
 - ## Just confirmed: iOS 15 now supports the HTML5 drag and drop API on iPhone!
@@ -220,7 +234,7 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## JS and CSS modules with no build in sight!
 - https://twitter.com/justinfagnani/status/1403436100132110340
-  - all built into the platform, no builds required, usable with `python -m SimpleHTTPServer 8000`
+  - all built into the platform, no builds required, usable with `python -m SimpleHTTPServer 8000` 
 
 - CSS modules is a very simple idea: import a CSSStyleSheet from a CSS file. Apply it to the document, or a shadow root for scoped styles.
   - They're great with web components already and a good building block for future features like importing class names and such from CSS into JS.

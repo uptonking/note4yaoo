@@ -455,6 +455,9 @@ please keep as many code as possible unchanged, so most bun scripts and code sho
 Make minimal, mechanical changes first, then deeper improvements only when safe.
 
 you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issue. 
+
+there are many onlyoffice-pdf-editor audit/report code/scripts in this project, please reduce them and make them tidy. you can reorganize related code/scripts and track feature parity under a specific folder at `./upstream` to make it easy to maintain and migrate more features in the long term.
+it would be better if you could make a scripts like `npm run check:upstream-parity` to check feature parity with upstream superdoc. and you may update related markdown/json/reports by running the scripts.
 ```
 
 # toys

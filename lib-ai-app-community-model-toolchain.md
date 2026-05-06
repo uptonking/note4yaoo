@@ -1669,7 +1669,21 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## Introducing SubQ - the first model built on a fully sub-quadratic sparse-attention architecture (SSA)
+- https://x.com/elliotchen100/status/2051808387978199178
+  - the first frontier model with a 12 million token context window which is:
+  - 52x faster than FlashAttention at 1MM tokens
+  - Less than 5% the cost of Opus
+  - Transformer-based LLMs waste compute by processing every possible relationship between words (standard attention).
+
+- 确实很酷，拿 2900 万美金做 12M context， 侧面证明了一件事：整个行业都开始相信稀疏注意力是 dense attention 的解药。 SubQ 走的是「重训一个模型」，属于垂直整合，风险大回报也大。
+  - @evermind 的 MSA 走的是「给主流模型加记忆」，属于 水平嵌入，谁的模型都能用。
+  - 另外，SubQ API 跟 SubQ Code (类似 Claude Code 的 CLI agent)，主打把整个代码库一次性塞进 context，从 API 可以看出来，场景已经非常固定了。
+  - EverMind  早两个月把这条路走到了 100M, 论文 + 代码全开源。同一个方向，不同的赌法。
+  - 另外，EverMind 的模型开源，SubQ 的模型不开源。
+
+- 实际上并不是从零开始的，而是用开源模型作为起点，他们自己还提到了老师模型，应该是用了蒸馏+开源
+  - 主要是他们的技术报告就没什么东西，哪怕一点点细节上的东西都没提到，而且整个技术报告还是ai生成的，而且访问权限还得申请，往常但凡是突破的，一般来说都是给大家用的。所以我个人觉得整个项目看起来像是某种利用开源模型做起点，然后蒸馏自己的模型，再做了一些注意力优化，官网的检索率也就只更新到了1m大概60%多，后面就没数据了。
 
 - ## MTPLX | 2.24x faster TPS | The native MTP inference engine for Apple Silicon
 - https://x.com/Youssofal_/status/2051435496551878847

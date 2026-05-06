@@ -69,7 +69,14 @@ modified: 2024-03-13T14:26:26.220Z
 
 - ## 
 
-- ## 
+- ## why is Vercel Blob not S3 compatible???
+- https://x.com/chribjel/status/2051579506511495611
+- We felt that there is space to innovate on the API for web-facing use cases (e.g. for reliable, concurrent upload). We don't take such divergences lightly. I agree that there should be an S3 compatible API. Thing is: we're on AWS. You can just use S3 directly
+  - But then you have to use IAM
+
+- Don't forget that most tools understand S3. Sometimes, it isn't about improving things, but simply that it works for what it is, and I would rather not deal with the improvement
+
+- it’s called vendor lock-in T. it’s when you build something intentionally incompatible to make it hell to leave the service
 
 - ## [S3 Storage Benchmark Round 3: MinIO vs SeaweedFS vs Garage vs HS5 vs RustFS : r/selfhosted _202603](https://www.reddit.com/r/selfhosted/comments/1s4z2ux/s3_storage_benchmark_round_3_minio_vs_seaweedfs/)
   - Server: Ryzen7 5700x3d, 32 GB RAM, 1.8 TB NVMe

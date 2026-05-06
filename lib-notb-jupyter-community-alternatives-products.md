@@ -96,6 +96,22 @@ modified: 2024-06-30T03:32:45.893Z
 - I am skeptical about the power of static analysis with a language like Python. Many times, the hidden state in Jupyter lives in another module, or somewhere deep in an object hierarchy. If you’re going to reinvent the Python notebook for reproducibility, I wonder why not go further, and fully snapshot the program state?
 
 - the only ergonomic solution to me is to maintain a converted script of notebooks and using it for diff tracking, productionizing, etc. through a simple abstraction.
+# discuss-notebook-vendor/solutions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Why no one is talking about Google Colab which is almost free for basic work in daily life? : r/software _202605](https://www.reddit.com/r/software/comments/1t4wn93/why_no_one_is_talking_about_google_colab_which_is/)
+- It doesn't matter if Google kills Colab because it uses Jupyer notebook files which you can download from Colab and run on your own computer. 
+
+- Slow as hell and prone to freezing
+- The performance is awful compared to locally-run even on a mid range PC.
+
+- Timeouts are frequent, so I do stuff locally.
+
+- my question is why run the python script on Google Colab when you can execute it on your own PC/laptop?
 # discuss
 - ## 
 
