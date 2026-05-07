@@ -158,7 +158,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 - please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like superdoc.
 
-- ailovedoc should have full feature parity matching superdoc for important features like document data model, editing engine, rich-text formatting, layout-engine(supports toggling pagination), virtualized-rendering, document-rendering, track-change.
+- ailovedoc should have full feature parity matching superdoc for important features like document data model, editing engine, rich-text formatting, layout-engine(supports toggling pagination), virtualized-rendering, document rendering/zoom, track-change.
 
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 - make a plan, then migrate and improve full feature pairity, without licensing issues
@@ -178,7 +178,8 @@ you have worked on this problem several times but features are still lacking. Th
 
 ------
 
-- you may reference how superdoc implements it, then do a similar or better implementation in ailovedoc without licensing issue.
+- yes, continue to improve.
+- you may reference how superdoc implements/solves it, then do a similar or better implementation in ailovedoc without licensing issue.
 
 - superdoc's overall architecture is good enough to follow. Mostly ailovedoc should use similar architecture to superdoc.
 
@@ -276,7 +277,8 @@ please make a plan, then improve the core in-place text editing engine to make i
 
 ------
 
-- you may reference how onlyoffice-pdf-editor implements it, then do a similar or better implementation in hardoc without licensing issue.
+- yes, continue to improve.
+- you may reference how onlyoffice-pdf-editor implements/solves it, then do a similar or better implementation in hardoc without licensing issue.
 
 - onlyoffice-pdf-editor's overall architecture is good enough to follow. Mostly hardoc should use similar architecture to onlyoffice pdf editor. 
 
@@ -458,6 +460,9 @@ you may reference the upstream code, use similar dependencies, and implement sim
 
 there are many onlyoffice-pdf-editor audit/report code/scripts in this project, please reduce them and make them tidy. you can reorganize related code/scripts and track feature parity under a specific folder at `./upstream` to make it easy to maintain and migrate more features in the long term.
 it would be better if you could make a scripts like `npm run check:upstream-parity` to check feature parity with upstream superdoc. and you may update related markdown/json/reports by running the scripts.
+
+in project hardoc, 
+current code is under active development. please refactor code if you need to make code more clean, correct, and extensible. please refactor outdated/legacy code that contains something like `v1/v2/Compat/...` by using the right architecture or better logic, so that the latest code does not contain legacy code and the logic is more clean and easier to maintain in the long term.
 ```
 
 # toys

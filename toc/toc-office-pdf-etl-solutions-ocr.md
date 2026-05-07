@@ -38,7 +38,7 @@ modified: 2026-04-07T12:53:38.419Z
   - 还可以参考漫画manga的编辑/翻译方案
 
 - 💡 pdf的文本化
-  - 💡 将minerU/paddleocr识别的html结果转换为 prosemirror editor
+  - 将minerU/paddleocr识别的html结果转换为 prosemirror editor: html通过markdown转换而来， 布局已丢失
   - 输出不一定是markdown, 各厂商都有自己的偏向, qwenvl-html, Nanonets-markdown, docling-doctags
   - 可以不做完全体ocr，而优化重点数据的ocr，如 pdf-table > excel
   - vlm也可以提取bounding-box + 手动分割图片为主来提取表格、图表、图片
@@ -823,10 +823,15 @@ modified: 2026-04-07T12:53:38.419Z
   - Rich Extraction	OCR (109 languages), LaTeX formulas, cross-page tables
   - Batch Processing	Parse up to 200 files per request
   - CLI Script	mineru-parse.sh for quick command-line usage
-  - https://github.com/Nebutra/MinerU-Skill /MIT/202602/python
-  - https://github.com/nilecui/mineru-parser-skills
-    - parsing tool based on Claude Agent SDK and MinerU Skill
   - https://github.com/openclaw/skills/tree/main/skills/mineru-extract
+- https://github.com/Nebutra/MinerU-Skill /MIT/202602/python
+  - https://smithery.ai/skills/nebutra/mineru-skill
+  - Skill that transforms PDFs into clean Markdown using MinerU's VLM engine. 
+  - Supports LaTeX formulas, tables, images, and batch async processing.
+  - Single File, Batch Directory, Direct to Obsidian
+  - Visit MinerU, Create free API token
+- https://github.com/nilecui/mineru-parser-skills
+  - parsing tool based on Claude Agent SDK and MinerU Skill
 
 - https://github.com/linxule/mineru-mcp /MIT/202602/ts/代码少
   - MCP server for MinerU document parsing API — extract text, tables, and formulas from PDFs, DOCs, and images.

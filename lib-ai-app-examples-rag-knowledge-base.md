@@ -182,13 +182,13 @@ modified: 2025-11-30T17:27:16.720Z
     - 可以逐页处理，但仍需要加载完整PDF
   - Docling Parser - DoclingParser
     -  Uses `docling.DocumentConverter` with full file
-  - MinerU Parser - MinerUParser
+  - MinerU Parser 
     - External tool, entire file processing
-  - TCADP Parser - TCADPParser
+  - TCADP Parser 
     - Tencent Cloud API integration
     - Cloud-based, file upload to Tencent Cloud
     - Reading Method: Converts entire file to `base64` and uploads, entire file loaded into memory for Base64 conversion
-  - Vision Parser - VisionParser
+  - Vision Parser 
     - Visual model processing, full file
     - Higher memory requirements
     - Uses `pdfplumber` with full file access

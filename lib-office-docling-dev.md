@@ -88,6 +88,51 @@ modified: 2025-09-21T13:58:08.942Z
 - 
 - 
 
+# paddleocr
+- [PaddleOCR - 文档解析与智能文字识别 - 飞桨星河社区](https://aistudio.baidu.com/paddleocr)
+  - 支持调整配置、多次识别， 配置的参数变多(如table+chart+image)后，识别速度可能很慢
+
+- PaddleOCR-VL
+  - 解析结果是无布局的markdown， 可设置丰富的配置项
+
+- PP-OCRv5 Pipeline
+  - 解析结果是文字叠加在图片上，所以保留了布局信息，可显示或隐藏原文底图， 识别出的文本位置与底图原文有部分错位
+
+- PP-StructureV3
+  - 解析结果是无布局的markdown， 在原文pdf中能标记出布局元素名称如页眉
+
+## docs
+
+- [PaddleOCR-VL](https://www.paddleocr.ai/latest/en/version3.x/pipeline_usage/PaddleOCR-VL.html)
+  - efficient document parsing model designed specifically for element recognition in documents. 
+  - its core component is PaddleOCR-VL-0.9B, a vlm composed of a NaViT-style dynamic resolution visual encoder and the ERNIE-4.5-0.3B language model, enabling precise element recognition.
+  - The model series supports 109 languages and excels in recognizing complex elements (such as text, tables, formulas, and charts) while maintaining extremely low resource consumption.
+  - It significantly outperforms existing Pipeline-based solutions
+  - v1.5 innovatively supports irregular-shaped bounding box localization
+
+- [PP-OCR Pipeline](https://www.paddleocr.ai/latest/en/version3.x/pipeline_usage/OCR.html)
+  - The general OCR pipeline is used to solve text recognition tasks by extracting text information from images and outputting it in text form. 
+  - The General OCR Pipeline consists of the following 5 modules.
+  - Document Image Orientation Classification Module (Optional): PP-LCNet_x1_0_doc_ori
+  - Text Image Unwarping Module (Optional): UVDoc
+  - Text Line Orientation Classification Module (Optional): PP-LCNet_x0_25_textline_ori
+  - Text Detection Module: PP-OCRv5_server_det, PP-OCRv5_mobile_det
+  - Text Recognition Module: PP-OCRv5_server_rec, PP-OCRv5_mobile_rec
+
+- [PP-Structure](https://www.paddleocr.ai/latest/en/version3.x/pipeline_usage/PP-StructureV3.html)
+  - Layout analysis is primarily used to convert complex document layouts into machine-readable data formats. 
+  - Layout analysis combines Optical Character Recognition (OCR), image processing, and machine learning algorithms to identify and extract text blocks, titles, paragraphs, images, tables, and other layout elements from documents. 
+  - This process generally includes three main steps: layout analysis, element analysis, and data formatting. 
+  - The final result is structured document data, which enhances the efficiency and accuracy of data processing. 
+  - PP-StructureV3 improves upon the general layout analysis v1 pipeline by enhancing layout region detection, table recognition, and formula recognition. It also adds capabilities such as multi-column reading order recovery, chart understanding, and result conversion to Markdown files.
+  - The PP-StructureV3 pipeline consists of the following seven modules or sub-pipelines. 
+    - Layout Detection Module
+    - General OCR Subline
+    - Document Image Preprocessing Subline （Optional）
+    - Table Recognition Subline （Optional）
+    - Seal Text Recognition Subline （Optional）
+    - Formula Recognition Subline （Optional）
+    - Chart Parsing Module (Optional)
 # mineru
 
 ## docs
@@ -101,12 +146,17 @@ modified: 2025-09-21T13:58:08.942Z
   - VLM 后端 输出结果
   - 2.5版本vlm后端的输出存在较大变化，与pipeline版本存在不兼容情况
 
-- 上传本地pdf相关的api
-  - 单个文件解析 https://mineru.net/api/v4/extract/task
+- [上传本地pdf相关的api](https://mineru.net/apiManage/docs)
+  - `extra_formats`: markdown、json为默认导出格式，无须设置，该参数仅支持docx、html、latex三种格式中的一个或多个。对源文件为html的文件无效。
+  - 📌 单个文件解析 https://mineru.net/api/v4/extract/task
     - 获取任务结果 https://mineru.net/api/v4/extract/task/task_id
+      - https://cdn-mineru.openxlab.org.cn/pdf/018e53ad-d4f1-475d-b380-36bf24db9914.zip
+      - https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/7458f694-bb7c-4cd5-9cb7-ef0b8b129b49.zip
+      - 无需auth可下载
     - layout.json对应中间处理结果 (middle.json), **_model.json对应模型推理结果 (model.json)，** _content_list.json对应内容列表 (content_list.json)，full.md为MarkDown解析结果。
+      - 旧版结果.zip文件中还包含full.html、full.docx，似乎是markdown转换得到, 所以布局也是丢失的
     - html文件解析结果略有不同：full.md为MarkDown解析结果,main.html为提取后正文html
-  - 文件批量上传解析 https://mineru.net/api/v4/file-urls/batch
+  - 📌 文件批量上传解析 https://mineru.net/api/v4/file-urls/batch
     - 文件上传完成后，无须调用提交解析任务接口。系统会自动扫描已上传完成文件自动提交解析任务
     - response包含 batch_id
   - 通过 batch_id 批量查询提取任务的进度和结果 https://mineru.net/api/v4/extract-results/batch/batch_id
