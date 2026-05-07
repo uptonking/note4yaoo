@@ -23,7 +23,7 @@ modified: 2025-09-16T19:59:57.856Z
 
 - awesome-models
   - [LLM Explorer: A Curated LLM List ](https://llm-explorer.com/)
-
+# model-bench
 - leaderboard-llm
   - [Artificial Analysis LLM Leaderboard - Comparison of over 100 AI models from OpenAI, Google, DeepSeek & others](https://artificialanalysis.ai/leaderboards/models)
   - [Vellum LLM Leaderboard 2025](https://www.vellum.ai/llm-leaderboard)
@@ -42,6 +42,13 @@ modified: 2025-09-16T19:59:57.856Z
 - leaderboard-tool-call
   - [Berkeley Function Calling Leaderboard (BFCL)](https://gorilla.cs.berkeley.edu/leaderboard.html)
     - claude, gpt, glm, grok, kimi, qwen3-235b, gemini-pro,watt-tool-70B,deepseek-r1
+
+- [Introducing Harvey’s Legal Agent Benchmark](https://www.harvey.ai/blog/introducing-harveys-legal-agent-benchmark)
+  - [哈维律师事务所 发布 长期法律Agent基准测试 - LINUX DO _202605](https://linux.do/t/topic/2124390)
+  - 我们推出 Harvey 的法律代理基准测试 (LAB)，这是一个面向法律代理的开源基准测试。LAB 旨在评估和提升代理支持律师实际工作的能力。每个任务都包含一条指令、一个包含相关材料的客户案例，以及一项要求代理提交工作成果以供审核的条件。这种结构旨在模拟大型律师事务所的工作分配、执行和审核流程。
+  - 👥
+  - 我记得之前GPT不是动了医药复合体的蛋糕吗，立马就认怂，这是要搞法律这些吗？我觉得各家估计是不会测的 
+  - 所以这家没有放榜说是，等着别人贴数据
 # discuss-stars
 - ## 
 

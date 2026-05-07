@@ -463,6 +463,12 @@ modified: 2025-02-21T17:17:42.225Z
   - https://x.com/segmenta/status/2041563979299139975
     - Memory is markdown files on specific topics: things about the user and their preferences on tasks like email drafting, presentations, etc. The assistant can save things to memory when needed and there is also a background agent that looks at chats and creates memory notes if the assistant missed anything.
 
+- https://github.com/royalknight56/skylark /202605/ts
+  - 云雀是一款正在开发中的企业通讯与办公协作软件，目标是提供一个可自托管、可二次开发、可被 AI 深度改造的开源工作台。它不是一个只开放 API 的 SaaS 平台，而是一套可以被企业直接拿走、部署、修改、重组的代码。
+  - 企业不再只是 SaaS 的租户，而是自己协作系统的拥有者。
+  - 云雀尽量把运行复杂度压到 Cloudflare 生态内
+  - [【开源项目】开源云雀， 巨大历史机遇，我用 300 刀实现了企业通讯办公平台 - LINUX DO _202605](https://linux.do/t/topic/2125920)
+
 ## manus/openclaw/computer-use
 
 - https://github.com/openclaw/openclaw /273kStar/MIT/202603/ts
@@ -610,6 +616,23 @@ modified: 2025-02-21T17:17:42.225Z
   - [【开源自荐】拾语：外刊、外文原版书精读利器  - LINUX DO _202603](https://linux.do/t/topic/1786244)
 
 ### office-skills
+
+- https://github.com/zouchenzhen/docx-template-translator-skill /apache2/202605/python
+  - 一个用于将 LaTeX、PDF、Markdown 或粗转 DOCX 转译成指定 Word 模板格式的 Codex skill。
+  - 适合那些 pandoc 默认 DOCX 输出不够用、必须严格套用学校或机构 Word 模板的任务。
+    - pandoc --reference-doc 能复用一部分样式，但它只知道样式定义， 不理解学校模板里的正文语义和版式约束；图表/公式/表格更容易跨页、间距松散， 表格也不是目标模板要求的三线表效果。
+    - pandoc 很适合做第一轮转换，尤其适合 Markdown 和 LaTeX 类源文件。--reference-doc 也能复用 Word 样式，但它只知道“样式定义”，不知道模板里的页面和段落语义。
+    - 本项目会先 inspect 模板，再用 adaptive pipeline 映射正文、图题、公式和表格，最后用 Word finalize 导出， 所以更适合严格学校/单位模板。
+  - inspect / adaptive / preview 三步在 macOS / Linux / Windows 都能跑；
+    - 用 Word COM 更新字段并导出 PDF 的 finalize 步骤只在 Windows + Microsoft Word 下可用。
+  - 本项目的差异点是：它不是一个固定转换器，而是一个 开放的 AI 模板重建工作流。它让 AI 先检查用户上传的 Word 模板，再为该模板生成一版专用 Python 后处理脚本，从而适配学校、单位、期刊等强模板场景。
+    - 把 LaTeX/PDF/Markdown 当作 内容源。
+    - 把 .docx 模板当作 排版源。
+    - 先用 pandoc、Word 导入或其他工具生成粗略 body DOCX。
+    - 让 AI 基于模板检查结果编写或修改 Python 重建脚本。
+    - 用 `python-docx` 和底层 OOXML 操作生成最终 DOCX。
+    - 用 Word COM 更新目录、页码等字段，并导出 PDF。
+  - [套用word模板把PDF/LaTeX/Markdown文件转写为word的skill-本地agent可以一键调用 - LINUX DO _202605](https://linux.do/t/topic/2127366)
 
 - https://github.com/MiniMax-AI/skills /MIT/202603/csharp
   - Development skills for AI coding agents. Plug into your favorite AI coding tool and get structured, production-quality guidance for frontend, fullstack, Android, iOS, and shader development.
@@ -833,6 +856,11 @@ modified: 2025-02-21T17:17:42.225Z
 - https://github.com/feichanggege/ecommerce-visual-copywriting-skill /MIT/202605
   - 一个 AI Agent Skill，让 AI 按照标准化 SOP 输出电商主图 + 详情页的图文案执行方案。
   - [【开源】我把电商出图文案工作流开源了 - LINUX DO _202605](https://linux.do/t/topic/2108317)
+- https://github.com/liangdabiao/ecom-details-image
+  - [【开源】AI生成完整电商主图-详情页图片-社媒推广图-直播间场景图等全套视觉素材-适合跨境电商 - LINUX DO _202605](https://linux.do/t/topic/2126137)
+  - 利用 GPT-Image-2 API生成最终效果。一键生成电商相关图片！输入产品图片和需求描述，自动生成完整的电商主图、详情页图片、社媒推广图、直播间场景图等全套视觉素材。 
+  - 大神的作品更偏向于国内电商平台，而我思考，为什么不做一个跨境电商版本的：精选25个高质量案例，涵盖纯色底产品主图、场景化生活图、平铺图、电商详情图、真实场景等等，全部配完整提示词，都可以利用 GPT-Image-2 API生成最终效果。
+  - 与众不同之处是：Campaign Style Lock 机制 和 强推广 和 重视转化效果。
 # video/mtv
 - https://github.com/zapdos-labs/unblink /182Star/AGPL/202512/ts
   - Unblink is a camera monitoring application that runs AI vision models on your camera streams in real-time

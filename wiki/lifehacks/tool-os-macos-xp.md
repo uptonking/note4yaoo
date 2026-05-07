@@ -281,6 +281,12 @@ redis-cli shutdown
 - https://github.com/buresdv/Cork /4.1kStar/CC/202602/swift
   - https://corkmac.app/
   - A fast GUI for Homebrew written in SwiftUI
+
+- https://github.com/sunnyyoung/WeChatTweak /AGPL
+  - https://www.tweaks.app/
+  - 首款微信 macOS 客户端撤回拦截与多开
+  - 阻止消息撤回
+  - 客户端多开
 # arm-mac
 - https://github.com/scriptingosx/utiluti /apache2/202507/swift
   - macOS command line utility to work with default apps.

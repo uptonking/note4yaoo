@@ -44,6 +44,14 @@ modified: 2025-12-26T08:56:31.035Z
   - Collection of handy online tools for developers, with great UX.
   - 非常典型的list-article导航结构
 
+- https://github.com/ccascio/ConvertPrivately /MIT/202605/ts
+  - https://convertprivately.com/
+  - a privacy-first web app with 160+ converters that run entirely in your browser. 
+  - a free collection of 250+ file conversion, formatting, and validation tools. 
+  - The difference: most tools run entirely in your browser. Your files are never uploaded to a server — they're read into memory, converted using WebAssembly and JavaScript libraries, and downloaded locally.
+  - core: Framework-agnostic TypeScript functions: HEIC→JPG, AVIF→PNG, image/PDF compress, OCR, Base64, CSV↔JSON, QR codes, unit conversion, slugify, case conversion, URL encode, HTML entities, JWT decode, Unix timestamps, JSON formatter, JSON↔YAML, JSON↔XML, color (hex/rgb/hsl).
+  - [Your PDFs probably leak more metadata than you think : r/pdf _202605](https://www.reddit.com/r/pdf/comments/1t6iymu/your_pdfs_probably_leak_more_metadata_than_you/)
+
 - https://github.com/dr5hn/ilovejson /AGPL/202604/ts
   - https://www.ilovejson.com/
   - open-source online tools to convert, transform, and work with JSON files.

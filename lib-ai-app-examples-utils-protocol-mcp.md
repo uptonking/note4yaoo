@@ -304,6 +304,13 @@ modified: 2026-01-19T05:01:00.055Z
     - 这个东西我深度使用了一段时间，目前发现了两个问题，一个是在 Windows 的稳定性不够，经常出现 Daemon 无法启动的情况。在 GitHub 上发现了一个 PR 修复这个问题，不过目前还没有合入。另外就是不能去获取网页的 dom 结构。如果是用来调试一些前端页面问题，或者做一些深入的数据抓取，就不太行了。
     - 不用尝试了，社交媒体网站会屏蔽所有headless浏览器，这种工具毫无意义
     - 我用cdp的模式比较可控
+# phone-use
+- https://github.com/wuwei-crg/AutoLXB /MIT/202605/java
+  - 基于常驻守护进程的 Android 自动化框架，支持多任务定时执行
+  - [【开源更新】AutoLXB 安卓自动化助手：任务及其路线可导入导出，探索跨设备复用的自动化流程 - LINUX DO _202605](https://linux.do/t/topic/2126610)
+    - AutoLXB 是一款安卓手机自动化助手，目标不是让模型在手机里“自由探索”，而是尽量把可复用的操作流程沉淀下来。
+    - 每天固定时间打开某个 App 签到
+    - 支持导出已经配置好的任务。
 # acp/agent-client-protocol
 - https://github.com/mcpc-tech/mcpc/tree/main/packages/acp-ai-provider /MIT/202512/ts
   - https://ai-sdk.dev/providers/community-providers/acp

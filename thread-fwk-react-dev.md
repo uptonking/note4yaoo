@@ -101,7 +101,7 @@ modified: 2021-01-06T14:40:03.364Z
   • React.lazy → RSC, promise-as-child
   • useContext → use(Context)
   • throw promise → use(promise)
-  • `<Context.Provider>` → `<Context>`
+  • `<Context.Provider>` → `<Context>` 
 
 - Can `key` be a normal prop too?
   - That one is different because conceptually it doesn't belong to the child; it's called `key` because it's like the key for the map of children. So it really belongs to the parent.
@@ -177,7 +177,7 @@ modified: 2021-01-06T14:40:03.364Z
 
 - ## [Bug: useSyncExternalStore update not batched within unstable_batchedUpdates](https://github.com/facebook/react/issues/24831)
 - `unstable_batchedUpdates` is a way to deprioritize an update by delaying it. 
-  - The default priority is even more delayed and more batched than unstable_batchedUpdates. **So `unstable_batchedUpdates` is a noop in React 18**.
+  - The default priority is even more delayed and more batched than unstable_batchedUpdates. **So `unstable_batchedUpdates` is a noop in React 18** .
 - If you need the consistency you need to compromise - by making your updates less batched and flush earlier than they otherwise would - using `flushSync` .
   - That's the compromise of using useSyncExternalStore. To preserve consistency with external mutable store you have to make it less batchable - less delayed, than other forms of updates.
 
@@ -238,7 +238,9 @@ modified: 2021-01-06T14:40:03.364Z
 
 - ## 
 
-- ## 
+- ## [Remix changed the direction yet again, this time it is not even a react framework anymore : r/reactjs _202605](https://www.reddit.com/r/reactjs/comments/1t6cej2/remix_changed_the_direction_yet_again_this_time/)
+  So Remix went from being an alternative to Next.js in React ecosystem, to merging Remix.js into React router 7 (after shopify aquisition) and now it is not even react framework anymore.
+  Source: https://remix.run/blog/remix-3-beta-preview
 
 - ## If you think this is all optional you're not paying attention. React 19 doesn't even ship a file that works in the browser anymore without a compiler. Why?
 - https://x.com/mjackson/status/1905009747881025898
@@ -453,7 +455,7 @@ modified: 2021-01-06T14:40:03.364Z
   - 在业务端使用2个useState分别管理deps和stateVal，在deps变化后通过setStateVal更新数据值
 - I think what you are aiming for is a memo with cleanup, so something like this.
   - Unfortunately that pattern has been reported to leak memory but I haven’t tested it myself.
-- There's also `useLayoutEffect`
+- There's also `useLayoutEffect` 
 
 - ## React Core PR: Upcoming `<Offscreen>` renamed to `<Activity>` .
 - https://twitter.com/sebastienlorber/status/1729890709749002410
@@ -783,7 +785,7 @@ React.useEffect(() => {
 - I mean, yeah, React is even worse, its not just silence, its feigning to be working on it until someone else does it for them.
 - I've extensively consumed WCs in a Svelte app and only had minor issues. AFAIK it's just the compile-to-CE feature that's buggy -- a nice-to-have, but nowhere near as essential as basic WC compatibility.
 - tbh, reading that issue as someone who knows React but not WCs, the impression I got was that no one on the WC side could come up with a clear explanation of how React _should_ handle the seemingly dozens of nuances(细微差别) in data passing behavior WCs can apparently have
-- It’s a very difficult design space because there are many ways to do WCs, and also because **React is “pulling” into the SSR direction while the WC community doesn’t have a cohesive story around it yet**. I think Joseph has done a fabulous job integrating feedback from all sides.
+- It’s a very difficult design space because there are many ways to do WCs, and also because **React is “pulling” into the SSR direction while the WC community doesn’t have a cohesive story around it yet** . I think Joseph has done a fabulous job integrating feedback from all sides.
 
 - ## Can someone please open source a package which takes a list of file path strings (like Remix, Next) and convert into React Router route object.
 - https://twitter.com/dev__adi/status/1432310439254261764
@@ -1004,7 +1006,7 @@ React.useEffect(() => {
 
 ```JS
 const counterSlice = createSlice({
-  /* usual stuff here */
+  / * usual stuff here * /
 })
 
 // later
@@ -1111,7 +1113,7 @@ const [counter, dispatch] = useReducer(counterSlice.reducer, 0)
   - you use the same components across platforms. 
   - this is how it looks when you use react-spring for instance on a native shell
 - As of version 5.3.x react-spring is now universal/platform independent. 
-  - It can animate *anything* on *any target*, from react-native, react-blessed (see screen-cap), to your fridges touchscreen if it had a react-renderer. 🙀 For anything other than dom point it to dist/universal
+  - It can animate *anything* on *any target* , from react-native, react-blessed (see screen-cap), to your fridges touchscreen if it had a react-renderer. 🙀 For anything other than dom point it to dist/universal
 - this is how it looks when you use react for webgl and games 
   - that isn't just shared knowledge bc these are all components, 
   - it's using the same react libraries you'd rely on with the dom: react-router, redux, etc 
@@ -1167,7 +1169,7 @@ const [counter, dispatch] = useReducer(counterSlice.reducer, 0)
 - ## can I virtualize an array of @reactjs components?
 - https://twitter.com/sseraphini/status/1362502418781642755
   - I'd like an API like this:
-  - `<Virtualize> {arr.map(a => <Item key={a.id} a={a} /> </Virtualize>`
+  - `<Virtualize> {arr.map(a => <Item key={a.id} a={a} /> </Virtualize>` 
 
 - What do you mean by virtualize?
   - I’d like to stop rendering them on DOM to make the page light

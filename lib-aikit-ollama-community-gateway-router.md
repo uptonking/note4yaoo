@@ -530,6 +530,151 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
+- ## 
+
+- ## 运营中转站这段时间是真没赚到钱，只能说勉强cover了我自己用ai的消费。
+- https://x.com/sukie234/status/2052067924257493416
+
+首先整个系统由3个部分组成：
+• 第CN2 回国专线服务器：放在海外但回国速度极快的 VPS，作为运行核心。
+• sub2api：核心程序，负责把网页账号转成 API 接口。
+• Cloudflare：把流量再绕一道，提升国内访问速度，同时隐藏真实服务器 IP。
+
+你需要准备：
+• 一台 CN2 GIA 或 CN2 GT 线路的海外 VPS（推荐配置：2 核 CPU、2GB 内存、20GB 硬盘以上）。
+
+普通海外 VPS 在国内晚高峰几乎不可用，而 CN2 GIA 通过专线绕开了拥堵的公网节点，国内访问延迟一般在 150ms 以内。如果你买了不是 CN2 的服务器，国内用户体验会非常糟糕。
+
+• 一个域名（建议在 Cloudflare 或 Namecheap 上购买，便宜的 .top 或 .xyz 也行，几块钱一年）。
+• 一个 Cloudflare 账号（免费）。
+• 号池：初期可以用 claude code pro 账户+ 注册大量gpt账户，货比三家去找到别的号商卡商，等后期你就可以搞claude code max kiro 反代 aws bedrock（去跟sales聊，基本能搞到7.2折），但是初期只需要保障claude code pro账号稳定即可，因为你需要养号，后期转max。
+
+完整请求路径如下：
+国内用户的客户端 → 解析到 Cloudflare 的 IP → Cloudflare 边缘节点 → CN2 专线回源到你的服务器 → 宝塔面板的 Nginx 反向代理 → sub2api 程序 → 你的号池 → ChatGPT 或 Claude 网页 → 数据原路返回。
+
+购买并初始化CN2服务商
+CN2 GIA 线路的常见服务商有 BandwagonHost（搬瓦工）、RackNerd、CloudCone、Lisahost。新手推荐搬瓦工的 CN2 GIA-E 套餐，稳定但价格略贵。预算紧的可以看 Lisahost 的香港 CN2 套餐。
+如果你懂命令行搭建Nginx，手动部署SSL证书，那你就自己搞，如果你不懂可以使用中国程序员流行的宝塔面板，一键搭建Nginx、一键部署SSL证书、可视化配置反向代理，全程鼠标点击操作，新手也能轻松上手。
+安装完Linux + Nginx + MySQL + PHP，就可以开始设置防火墙，够买域名，添加DNS解析。
+最后去命令行输入ping.api. 你购买的域名，返回服务器ip就行了。
+
+搭建sub2api:
+
+sub2api 是一个开源项目，可以把 ChatGPT 网页版、Claude 网页版的 cookie 或者 session 转换成 OpenAI 兼容的 API 接口。
+
+打开sub2api的官方教程，安装流程安装docker，拉取并启动sub2api的容器。
+
+你需要把号池数据放到 /www/sub2api/data 目录下，sub2api 容器会读取这个目录。具体格式参考 sub2api 项目文档。
+
+设置Nginx反向代理
+
+添加完之后目标url是127.0.0.1:8080因为 sub2api 容器监听的就是这个地址。Nginx 收到外部请求后，转给本机的 8080 端口，sub2api 处理完返回给 Nginx，Nginx 再发回给用户。
+
+后面你去问claude code 如何优化Nginx的配置，AI API 调用是流式响应（SSE），需要长连接 + 不缓存才能正常工作。默认 Nginx 配置在这种场景下会出问题，按照claude的提示优化，proxy_buffering 必须关闭，如果不关闭这个，AI 的回答会"卡一阵 → 一次性吐出"，而不是逐字流式输出。客户端会感觉非常慢甚至超时。
+
+申请HTTPS证书：
+OpenAI 兼容客户端基本只信任 HTTPS。HTTP 明文会暴露 API Key 给中间网络。
+申请好Let's Encrypt证书之后，回到 SSL 主界面，把"强制 HTTPS"开关打开。
+
+优化Cloudflare配置
+测试HTTPS-开启cloudflare代理-Cloudflare SSL 模式必须设为 Full (strict)
+AI API 是动态接口，Cloudflare 的某些"优化"会破坏流式响应。
+Cloudflare → 你的域名 → 速度 → 优化。
+全部关掉以下选项：
+• Auto Minify（自动压缩 HTML/CSS/JS）：关闭。
+• Rocket Loader：关闭。
+• Mirage：关闭。
+• Polish：关闭。
+
+设置缓存规则：
+Cloudflare → 缓存 → 配置。
+Caching Level 选 Bypass，或者保持 Standard 但是后面用页面规则覆盖。
+更彻底的做法：Cloudflare → 规则 → 页面规则 → 创建页面规则。
+URL 模式：http://api.example.com*
+设置：Cache Level = Bypass
+
+设置防火墙规
+Cloudflare → 安全性 → WAF → 自定义规则 → 创建规则。
+规则一：限制单个 IP 频率
+字段：IP source address，操作：Rate limiting，每 10 秒最多 30 次请求，超出后挑战或屏蔽 1 小时。
+规则二：屏蔽明显恶意爬虫
+字段：User Agent，运算符：包含，值：python-requests
+启用 Cloudflare Argo Smart Routing，每月 5 美元，能在 Cloudflare 内部用最优路径路由你的流量。对国内用户访问海外服务器有 30% 到 50% 的速度提升。预算够推荐开。
+
+测试上线
+用 curl 测试 API，或者打开 CherryStudio 或 ChatBox，填写你的api地址和key做测试
+使用Prometheus/Grafana，或者直接用宝塔面板做监控，可以看到 CPU、内存、流量实时数据。如果 sub2api 容器经常吃满 CPU，考虑升级服务器配置。
+
+- 写完技术部分来写一下如何推广营销：营销这部分算是我的专长，首先我们需要一句话写清楚我们这个产品的优势：
+  - 国内直连、高稳定、多模型 AI API 中转，支持 GPT-4o/Claude Opus 满血，企业级技术支持。
+- 另外确定目标用户：
+
+01. 个人开发者：
+特别厉害的个人开发者其实自己也可以解决我刚刚写的那些东西，所以我就不跟这些人卷了，我去闲鱼上找了很多代写项目，毕业设计，软件开发的开发者，这部分人一般懒得折腾，不懂如何配置号池。
+
+02. ai套壳创业者：
+他们需要稳定的api，高并发，子账号，针对这部分用户定制了一些企业级的面板和技术支持，然后去三四线城市的boss直聘/转转找各种ai创作视频，装修，ai做本地服务的小团队小企业，跟他们聊合作。
+
+03.  中小企业/传统行业/实验室
+他们需要合规，开发票，私有路由，所以我在国内开了个公司，给他们走合规公司签单。
+
+其次就是做seo，小红书，抖音，比如我这篇文章就是一篇seo，seo的核心就是why what how 通过教别人如何搞中转站，如何使用claude code获取流量，当然你也可以发布在知乎掘金csdn个人博客V2EX、NodeSeek、SegmentFault、Linuxo
+标题：
+
+《国内直连 GPT-4o/Claude API，稳定 99.9%》
+
+《破产后我在家开中转站日入过万》
+
+回帖：在“求 API”“不稳定”问题下推荐自己
+
+然后就是社群裂变：
+
+在各大开发者群里面发自己的产品，并招募代理，通过免费试用 + 裂变实现冷启动。
+
+注册送10刀额度，邀请好友双方各得5刀。
+
+长期返佣：邀请用户消费的 10%–20% 返给邀请人。
+
+针对学生用户，我们还有学生邮箱打折的优惠。
+
+然后就是建qq群，把以上用户全部引流在群里，定期更新项目动态。
+
+这样一条龙下来，你的生意就启动了。
+
+- ### 我也总结下自己运营快一个月的中转站经验
+- https://x.com/wangray/status/2052271405081997734
+  - 结论跟 sukie 老师差不多，即使现在我有上千注册用户，日流水破千，但实际算下来并没有网传的那么暴利，用来当个副业，或者说像我一样是作为主业的增值服务那是划算的，不然现在埋头进来就是淹没在一片红海里
+- 
+我的初始准备：
+• 一台 VPS，DMIT 家的 EB. WEE 年付款，本来用来搭梯子的，使用率不高，就直接拿来当服务器了
+• 一个域名，我已有
+• Cloudflare 账号，给域名开通 Argo 路由，月付5美元
+• Stripe 收款：美国主体开通，单次手续费在3%左右，确实高，但是考虑到合规性必须用 Stripe
+• 号池：我维护的都是 Claude Max 20x和 GPT Pro 200u正价账号，这也是为什么实际我赚的并不多的主因，成本确实高，包括提供的 Anthropic API 也是官 Key，基本是赔本赚吆喝，也正因为如此，前阵子 GPT 封号潮，对我们的稳定性影响不大
+启动成本：$600-$1000
+
+如何开始：
+Step 1:
+初始化 VPS，然后本地指挥 Claude Code 去服务器配置好所有环境，然后安装 sub2api 开源项目，跟随指引很快就能部署好一套服务
+
+Step 2:
+配置外网访问，在 Cloudflare 完成 DNS 解析，同时可以用 CF 提供的10年期 SSL 证书配置 HTTPS 请求，完成之后你就可以用域名访问你的中转站了
+
+Step 3:
+CF 优化可以参考 sukie 老师原帖，我就不再赘述，建议开的是 Argo Smart Routing，毕竟 CF 在国内部分区域可能存在不可访问的情况，这在一定程度上会有些改善
+
+Step 4:
+完成自测，考虑好定价模型，即可小范围内测，如果没问题就可以大范围公开上线
+
+自此，你就拥有了一个自己的中转站
+
+如何获客：
+这应该是你考虑做中转站之前就应该想好的问题，如果你只是想搭一个中转站跟朋友一起分享平摊 AI 订阅费，这完全OK，但如果你想以赚钱为目的，你就要想好你的客源在哪里
+
+中转现在已经是红海，你通过闲鱼/小红书/抖音去截流获客，转化低，而且竞争者的价格可能比你还低，反正就我的情况来说卷价格肯定是卷不动的
+
+c端客户的流动性很高，哪家便宜就去用哪家，最稳的方式还是你有客源，或者参考 sukie 老师的推广营销方案，去找 AI 套壳创业者/中小企业/传统行业，这些客群只要求你稳定提供服务，现金流就是持续的，28原则放在哪里都是真相
+
 - ## 老实人是赚不了钱的，最近也是听同行说一个前段时间刚开始干的中转站，严重掺水利润做到九成
 - https://x.com/Pluvio9yte/status/2050436054591877593
   - 他们现在一个月就至少赚200万，基本是我们的50倍。
@@ -543,15 +688,15 @@ modified: 2026-01-21T04:22:29.956Z
 - https://x.com/eastweb3eth/status/2050156414954525009
   - 另外连孙哥都加入这门生意，说明这生意是真赚钱。对于消费者来说也是好事，希望更多竞争给消费者带来更多实惠。
 下面我将列出自己收藏的全部中转站，排名不分先后，大家挑便宜和服务好的用即可：
-01.   https://tokennav.cc TokenNav 中转站导航
-02.   https://aibijia.org
-03.   https://aigocode.com
-04.   https://manage-xai.ainaibahub.com
-05.   https://openrouter.ai
-06.   https://subrouter.ai
-07.   https://helpaio.com/transit
-08.   https://packyapi.com
-09.   https://openclaudecode.cn
+01.       https://tokennav.cc TokenNav 中转站导航
+02.       https://aibijia.org
+03.       https://aigocode.com
+04.       https://manage-xai.ainaibahub.com
+05.       https://openrouter.ai
+06.       https://subrouter.ai
+07.       https://helpaio.com/transit
+08.       https://packyapi.com
+09.       https://openclaudecode.cn
 10. https://api.ikuncode.cc
 11. https://dapicloud.com
 12. https://b.ai 

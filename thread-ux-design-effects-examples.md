@@ -28,7 +28,10 @@ modified: 2021-05-10T04:06:02.843Z
 
 - ## 
 
-- ## 
+- ## ✨ This website is tearable.
+- https://x.com/pushmatrix/status/2052376582434529412
+  - https://pushmatrix.github.io/tearable/
+  - 撕布或橡皮的效果
 
 - ## [Dory - An app switcher for people who can’t remember shortcuts : r/MacOS](https://www.reddit.com/r/MacOS/comments/1nyzej5/dory_an_app_switcher_for_people_who_cant_remember/)
 - 圆环型的悬浮菜单fab, 带有动画

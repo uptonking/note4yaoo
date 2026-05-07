@@ -640,12 +640,24 @@ modified: 2025-11-01T10:54:26.044Z
   - The fastest local AI engine for Apple Silicon. 4.2x faster than Ollama, 0.08s cached TTFT, 100% tool calling. 17 tool parsers, prompt cache, reasoning separation, cloud routing. 
   - Drop-in OpenAI replacement. 
   - Works with Claude Code, Cursor, Aider.
+  - https://x.com/aigclink/status/2052321728295240139
+    - Rapid-MLX内置17种工具解析器，能自动检测损坏输出并将其转换回结构化的tool_calls
+    - 对话不用每次从头算：标准transformer通过KV缓存裁剪实现，混合架构模型（比如Qwen3.5 DeltaNet）则通过保存 RNN状态快照从内存恢复不可裁剪层、避免重复计算，整体TTFT快2-5倍
+  - https://github.com/samuelfaj/lightning-mlx
+    - a fork of Rapid-MLX with MTPLX-style work inspired by MTPLX.
 
 - https://pypi.org/project/mlx-optiq/
   - https://mlx-optiq.pages.dev/
   - Optimized deployment of LLMs, VLMs, and vision models on Apple Silicon.
   - [Is mlx-optiq legit? Has anyone tested the new quants for Gemma4/qwen3.6 yet? : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sxcj77/is_mlxoptiq_legit_has_anyone_tested_the_new/)
     - the pypi has the source distribution , the license is MIT in the license file.
+
+- https://github.com/Mininglamp-AI/cider /MIT/202605/python
+  - W8A8/W4A8 inference on Apple Silicon — unlocking unused INT8 TensorOps in M5 for 1.2–1.9× faster LLM prefill, built as MLX custom primitives.
+  - developed on top of MLX for macOS. It provides online activation quantization operators absent in MLX, with custom int-matmul kernels built as MLX custom primitives supporting full lazy evaluation. 
+  - It also includes service-side extensions and non-intrusive compatibility patches for mlx_vlm (validated on mlx_vlm 0.4.3)
+  - https://x.com/GitHub_Daily/status/2052327598282441116
+    - 专为 Apple Silicon 设计的本地推理加速框架。 把 Mac 芯片里一直闲置的计算单元激活，让本地模型跑得更快、占用的内存更少。
 # llm-apps
 - https://github.com/eclaire-labs/eclaire /MIT/202510/ts
   - Local-first, open-source AI assistant for your data. Unify tasks, notes, docs, photos, and bookmarks. Private, self-hosted, and extensible via APIs.

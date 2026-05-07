@@ -21,6 +21,10 @@ modified: 2024-01-23T02:52:23.932Z
 # pm
 
 - 部分内容需要加密的场景，如何解决
+
+## ob-bases
+
+- database的技术方案可参考agentfs+just-bash, 以数据库作为数据源，到处markdown方便ai理解
 # dev-xp
 
 # discuss-stars

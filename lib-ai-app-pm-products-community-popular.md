@@ -17,6 +17,8 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
+- ## 
+
 - ## 🪟✨ Cursor now has built a Kanban board where you can just drop in tasks and the agent will pick those up and complete them.
 - https://x.com/ParthJadhav8/status/2049564851060801663
 - Similar: if you’re using @Jira you can just get agents to automatically pick up any step of your Jira workflow or define any condition in an automation role. Been blown away with millions of agents automatically working on boards in a loop
@@ -154,6 +156,18 @@ modified: 2026-02-20T17:36:40.796Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 其实这个观点反过来说也没问题：现在恰恰是普通人最好的创业机会。
+- https://x.com/LuoSays/status/2052253542728233421
+  1. AI 已经彻底把任何产品的技术壁垒给打翻了，只要你想做，用 AI 就能做得出来，你可以轻轻松松山寨任何你想山寨的产品，这在过去是难度很大的。
+  2. 随着 vibe coding 的流行，技术门槛大幅降低，你不用再把大把的时间花在产研上。相反，你可以更多的和用户之间建立人脉网络，去聆听他们的需求和痛点，再交给 AI 去实现。有人的地方就有需求，有需求就有付费，不是每个人都愿意自己去做一个产品来解决自己的需求。
+  3. 你根本不需要投资人，你只需要占领一小部分市场，甚至是一个不起眼的小业务，就可以活下来，甚至可以活得很好，而那些依赖融资的创业公司和大厂都需要非常巨大的市场来满足业务需要，不必担心他们会下场抢你的业务，因为他们这样做的 ROI 非常低。
+  - 基于这些原因，普通人应该在如今这个时代敢想敢干，you have nothing to lose。
+- 你如果把目标定为想成为张一鸣张小龙那样的人物或者搞出什么独角兽，那你目标成功的几率肯定是渺茫的。不管有没有 AI 都是如此。
 
 - ## 统计下大家跑通的AI赚钱路径
 - https://x.com/0xLoki_Zeng/status/2050502892168114418

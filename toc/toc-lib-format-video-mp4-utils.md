@@ -45,9 +45,14 @@ modified: 2024-04-14T12:19:52.096Z
   - Tailwind 写布局，GSAP 调动画，CanvasKit 画图形——底层是 Rust + Skia 原生渲染，不跑浏览器。
   - [OpenCat, 一个程序化视频生成制作库 - LINUX DO _202604](https://linux.do/t/topic/2090262)
 
+- https://github.com/heygen-com/hyperframes /15.7kStar/apache2/202605/ts
+  - Write HTML. Render video. Built for agents.
+  - open-source video rendering framework that lets you create, preview, and render HTML-based video compositions — with first-class support for AI agents.
+  - This teaches your agent (Claude Code, Cursor, Gemini CLI, Codex) how to write correct compositions, GSAP timelines, Tailwind v4 browser-runtime styles, and first-party adapter animations.
+
 - https://github.com/liangdabiao/hyperframes-fix /?open
   - 本项目目的是让 HyperFrames 生成视频适应国内需求，1 流畅的中文语音， 2 中文短视频样式新增， 3 优化整个生成视频流程。 基本上现在一键就可以完成横版竖版的快节奏短视频，例如随便丢给一个文章，一个doc，就能够制作视频
-  - [【开源】HyperFrames-fix 生成快节奏短视频-丢文章就能够制作视频 - 流畅语音和样式 - 源荟萃 - LINUX DO _202605](https://linux.do/t/topic/2092060)
+  - [【开源】HyperFrames-fix 生成快节奏短视频-丢文章就能够制作视频 - 流畅语音和样式 - LINUX DO _202605](https://linux.do/t/topic/2092060)
 
 - https://github.com/video-db/Director /MIT/202412/python
   - https://chat.videodb.io/

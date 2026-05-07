@@ -100,6 +100,14 @@ modified: 2023-06-23T12:46:53.288Z
   - vendors
   - https://latex.cstcloud.cn/
     - 可直接上传arxiv下载的zip
+- https://github.com/kfq20/Coleaf /MIT/202605/ts
+  - 把任意 Overleaf Git 项目变成一个 多人协作的 AI LaTeX 写作工作台。
+  - Coleaf 是一个本地优先的 Web 应用：它连接 Overleaf 的 Git 仓库，在浏览器里提供 Monaco 编辑器、PDF 预览、Git 同步控制，以及一个能读写论文项目文件的 agent 聊天框。
+  - 每个协作者都可以使用自己的模型凭据和自己的 Overleaf token。
+  - Coleaf 的思路是：不替代 Overleaf，而是作为 Overleaf Git 旁边的一层 AI workspace。
+  - PDF 预览：后端通过 latexmk 编译，并在浏览器中预览 PDF。
+  - [【开源自荐】Coleaf：把 Overleaf Git 项目变成多人 Agent LaTeX 写作工作台 - LINUX DO _202605](https://linux.do/t/topic/2126362)
+    - 最近偶然发现overleaf的会员不仅有更长时间的编译，而且还能用git，于是vibe coding了一个叫做Coleaf的平台，连接overleaf git项目，右侧有agent聊天框，可以通过openai api来读写文件，创建本地commit等，最后同步回overleaf仍然由人点击按钮一键push。
 
 - https://github.com/codesandbox/sandpack /4.5kStar/apache2/202405/ts
   - https://sandpack.codesandbox.io/

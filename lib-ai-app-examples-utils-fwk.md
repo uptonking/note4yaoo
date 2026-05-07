@@ -702,6 +702,12 @@ modified: 2025-02-21T18:20:42.624Z
   - https://github.com/oldshensheep/sqlitefs /MIT/202604/rust
     - sqlitefs is an experimental SQLite-backed FUSE filesystem with snapshots, chunk-level deduplication, and configurable compression.
 
+- https://github.com/strukto-ai/mirage /apache2/202605/python/ts
+  - https://www.strukto.ai/mirage
+  - Mirage is a Unified Virtual File System for AI Agents: a single tree that mounts services and data sources like S3, Google Drive, Slack, Gmail, and Redis side-by-side as one filesystem.
+  - https://x.com/zechengzh/status/2052105012172792061
+    - We rewrote bash from the ground up so cat, grep, head, and pipes work across heterogeneous services.
+
 - https://github.com/ZeroZ-lab/vkfs /202604/go
   - Unix-like filesystem commands over vector databases, built for AI agents.
   - https://x.com/ZeroZ_JQ/status/2040468390549311996

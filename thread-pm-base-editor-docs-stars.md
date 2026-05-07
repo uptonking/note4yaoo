@@ -41,6 +41,12 @@ modified: 2021-08-22T07:29:34.045Z
 
 - 实测过，Gemini 可以操作 Google Docs 了。Gemini 直接编辑当前文档，带修改痕迹，用户可以确认是否接受修改。
 
+- ## Claude for Excel, PowerPoint, and Word are now generally available, and Claude for Outlook is in public beta.
+- https://x.com/claudeai/status/2052445786651168849
+  - As Claude moves between your Microsoft apps, it carries the full context of your conversation.
+
+- This works surprisingly well in Word. I've been editing all my Word documents through Claude for the last few days. Presentations are still less polished than Kimi AI's, though
+
 - ## 🚀 Claude for Word is now in beta. _202604
 - https://x.com/claudeai/status/2042670341915295865
   - Draft, edit, and revise documents directly from the sidebar. 

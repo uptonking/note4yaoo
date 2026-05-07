@@ -14,13 +14,13 @@ modified: 2020-07-14T09:27:30.503Z
   - editor: lasuite-docs, jupyter(framework)
   - ai: 🌹 langgraph, comfyui, mlx, label-studio, ragflow, mlx-lm
     - huggingface模型库里的启动/测试脚本都是python
-  - data: superset, pyodide(MPL)
-  - office: pymupdf(AGPL), docling, Pillow(MIT)
   - coding: kimi-cli, mistral-vibe
+  - office: pymupdf(AGPL), docling, Pillow(MIT), python-docx
+  - data: superset, pyodide(MPL)
   - devops: airflow, posthog
   - crdt
   - git-like
-  - apps: docling, OCRmyPDF(MPL), archivebox/linkding(MIT)
+  - apps: OCRmyPDF(MPL), archivebox/linkding(MIT)
   - more: json-parser, tree
 
 - tutorials 🧑‍🏫

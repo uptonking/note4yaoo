@@ -12,7 +12,16 @@ modified: 2023-10-28T13:38:46.522Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## SQLite supports databases up to 281 terabytes in size
+- https://x.com/levelsio/status/2052459324308373505
+  - SQLite is a highly optimized piece of software and can easily write 500, 000 rows per second with proper batching
+
+- Yet single row is limited to 2GiB in size.
+- 2, 000 columns.
+
+- currently running my entire AGNT ecosystem on sqlite. its handling hundredsof gigs of my trace and generation data. i love sqlite
+
+- Correct but it is tricky to scale if you have multiple VPS/containers (no matter their load). Afaik it can't work well over NFS or other network solutions. MySQL/PostgreSQL are better in that sense.
 
 - ## Reminder: SQLite is 35% faster than the filesystem while also using 20% less disk space
 - https://x.com/iavins/status/1850165947392254445

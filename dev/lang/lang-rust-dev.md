@@ -11,14 +11,16 @@ modified: 2022-11-11T06:57:09.670Z
 
 - classic-examples-rust
   - tips: 比cpp更安全的语言, 在 编辑器/ide/存储层 有探索，业务开发速度慢
-  - editor: kilo-editor, treesitter, ripgrep, xi-editor/lapce/zed
+  - editor: kilo-editor, treesitter, ripgrep, xi-editor/lapce/zed, 
+  - docs: micromark(remark), mdx, mdBook(MPL)/rustdoc, typst, 
   - db: 🌹 turso, rust-kv, terminusdb-store, xet(hf storage)
-  - crdt
+  - crdt: automerge
   - git-like: codex-cli/server
-  - utils: mdx, mdBook(MPL)/rustdoc, typst, arrow
+  - utils:  arrow
   - toolchain: rspack+unplugin
   - ui: gpui(by zed), tauri/pake
-  - more: wasm, json-parser, tree, kanban, remark
+  - ai: janai
+  - more: wasm, json-parser, tree, kanban, 
 
 - tutorials 🧑‍🏫
   - [Rust Language Cheat Sheet](https://cheats.rs/)

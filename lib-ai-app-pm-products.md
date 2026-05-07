@@ -498,6 +498,13 @@ modified: 2025-03-22T16:10:24.856Z
 - revision history for pdf
 
 - spinedigest: 一次处理完，所有中间结果（Chunk、图谱、Snake、总结）全部打包进一个 .sdpub 文件。以后想重新导出成 Markdown、EPUB、纯文本……完全不需要再跑 LLM，秒级完成。
+
+- 无需打开文档就支持展示image/docs/pdf的元数据
+
+- 
+- 
+- 
+
 # pm-mcp
 - writing
 
@@ -2164,6 +2171,9 @@ modified: 2025-03-22T16:10:24.856Z
 - [Canopy Wave](https://cloud.canopywave.io/)
   - 提供模型API
   - 也提供部署环境
+
+- [MoonTVPlus](https://moontv.662778.xyz/)
+  - [𝔔𝔦𝔫𝔤 𝔖𝔥𝔢𝔫𝔤 -公益MoonTVPlus - LINUX DO _202605](https://linux.do/t/topic/2126755)
 
 - [Huggingface和Cloudflare羊毛自建代理的方法 ](https://linux.do/t/topic/1411544)
   - 利用cf大善人的网络代理加速，利用hug大善人的免费域名和证书，达到我们的目的

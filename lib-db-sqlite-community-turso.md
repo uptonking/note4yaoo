@@ -394,6 +394,25 @@ Today, Turso is in beta with early customers working toward production deploymen
 
 - ## 
 
+- ## 
+
+- ## 🚀 Introducing Mirage, a unified virtual filesystem for AI agents
+- https://x.com/zechengzh/status/2052105012172792061
+  - We rewrote bash from the ground up so cat, grep, head, and pipes work across heterogeneous services. S3, Google Drive, Slack, Gmail, GitHub, Linear, Notion, Postgres, MongoDB, SSH, and more, all mounted side-by-side as one filesystem.
+  - Bash that AI agents already know works on every format! cat, grep, head, and wc parse .parquet, .csv, .json, .h5, even .wav! One pipe can stitch S3, Drive, GitHub, Slack, and Linear together, same Unix semantics throughout.
+  - Workspaces are versioned too. Snapshot, clone, and roll back the whole thing with one API call. A two-layer cache turns repeated reads into local lookups, so agent loops stay fast and cheap.
+  - Drop a Workspace into FastAPI, Express, or a browser app. Wire it into OpenAI Agents SDK, Vercel AI SDK, LangChain, Mastra, or Pi. Run it alongside Claude Code and Codex.
+
+- This reminds me of https://db9.ai
+
+- would be great if you could do an eval/feature comparison with the other VFS out there to see where you stand
+  - The main difference is the bash commands routing in mirage is more flexible, can be per file type command overriding and registration and be automatically routed to different services.
+
+- Can you do writes / updates(append) to Google Drive / S3 as well? 
+  - Now will write to cache and at last do sync to s3. Some unix commands can directly write to s3 for example.
+- Locks exist natively to prevent write contentions?
+  - Yea I am cautious on the write and execution. So now each mount has the choice of read, write or exec. If mount with read any write will fail and give some information to the agents.
+
 - ## Introducing Mesa: the most powerful filesystem ever built, designed specifically for enterprise AI agents.
 - https://x.com/jerryjliu0/status/2049661223420223492
   - Every team building agents eventually hits the same wall: where do the files live?

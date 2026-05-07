@@ -250,6 +250,34 @@ modified: 2026-01-14T18:59:01.949Z
 - Missing Pico AI Server, which is a good one; and Ollama. Ollama was too late to the MLX game. Osaurus is my current favorite, but a little bloated with things I don't need. Pico AI Server is great, but, like most others, no Proxying. And yet, with all of these, I 'rolled my own'.
 
 - any engine based on mlx is faster than llama.cpp on Apple Silicon, but... llama.cpp is far more stable than anything else on MLX side, at least for now.
+# discuss-mlx-lm
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-mlx-vlm
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## mlx-vlm release (v0.5.0): You can offload your cached context to disk and also cap it (i.e. max 50GB or 100GB). 
+- https://x.com/Prince_Canuma/status/2052146444455276706
+  - When you exceed it, we automatically trim it for so your device doesn’t run out of space.
+
+- How this compares to oMLX caching?
 # discuss
 - ## 
 

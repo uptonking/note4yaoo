@@ -68,7 +68,11 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
-- ## 
+- ## The power of @property
+- https://x.com/vponamariov/status/2052356540372595052
+  - Without it → CSS treats --progress as text → no animation
+
+- I believe gradient animations are possible with properties as well.
 
 - ## Why isn't the html dialog element used in tools like @base_ui and @radix_ui to create a dialog like elements?
 - https://x.com/TomasJansson/status/2000843006140654046

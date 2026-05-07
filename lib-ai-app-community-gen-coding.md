@@ -269,12 +269,48 @@ modified: 2025-09-01T07:58:29.058Z
 - 业务逻辑封装到存储过程，二十年前流行过，现在这种方式已经被废弃了吧
 
 - 数据库还是安心用作存储 做计算到时候要扩容比无状态的应用麻烦太多
+# discuss-coding-prompts
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Codex 5.5 hack: makes Codex 5.5 high perform even better than codex 5.5 extra high. 
+- https://x.com/vikingmute/status/2052279836157362526
+  - Are you 100% confident in this strategy? If not, find all possible loopholes, suggest proper fixes and run this loop until you are factually 100% confident in the new startegy.
+  - Why? Codex 5.5 is the only model i noticed that is self aware. It never makes high claims unless the model verifies everything. 
+  - This doesn't work with Opus 4.7 cuz that's a very insecure model. You can paste this prompt over and over again, the model keeps saying "you're absolutely right, ....." 
+  - But with codex, after 2-3 iterations you'll notice yourself it actually patched all loopholes and this genuinely sounds like a good strategy. 
+
+- This is too vague. 5.5 Will think 100% percent confidence is impossible!
+  - You're better running it through a real diagnose loop : surface map -> hypothesis -> failing test/proof -> minimal fix -> verification -> architecture cleanup
+  - ... Often the root cause for these holes in the first place is because AI codebases have many shallow modules, narrow helpers/ wrappers that hide behavior and create unclear boundaries.  The models initial output then fails to cover all the seams the change covers.
+
+- sking Claude or Codex to do a “pre-mortem” gets a similar result to this for me. Finds all the edge cases, I do it on ever feature I build
 # discuss-coding-tools/tricks
 - ## 
 
 - ## 
 
-- ## 
+- ## 怎么跨项目（目录）让 AI 干活，因为我俩都是 App 和 Backend 分在不同的 repo，而不是 monorepo。目前我的方法是这样的。
+- https://x.com/tualatrix/status/2052193263453634874
+  - 首先保证两个 repo 处于平级的本地目录，在 App 的 AGENTS.md 加一句： 相关项目位置
+  - 这样日常无论重点是去改 App，还是改 Backend，都可以像对待一个仓库一样进行了。
+
+1. claude code 或者 codex 都有一个 add-dir 参数可以加一个可操作目录
+2. 在上级目录运行
+3. monorepo
+
+- 我之前是直接做了一个umbrella repo，有一个setup脚本来clone，不走git submodule。umbrella的AGENTS.md直接写清楚。后来换monorepo了，CI方便
+
+- 我的方法是软链接，比如你主要开发 APP，就在 APP 里面是软链 Backend 的。非常灵活，随时可以移除。另外一个小技巧就是 Backend 开发完了之后，生成 SDK 给 APP 去用。基本上前后端很难漂移。
+
+- 直接在两个目录的父目录启动 Claude？然后告诉它这两个字目录有是独立的 git repo。
 
 - ## 每一次看到AI写奇怪的代码的时候，一般都预示着模块的设计可能除了一些问题，今天又再一次应验了。
 - https://x.com/geniusvczh/status/2051312132537692408

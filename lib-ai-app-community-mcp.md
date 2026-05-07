@@ -583,6 +583,28 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
+- ## Codex now works directly in Chrome on macOS and Windows.
+- https://x.com/OpenAI/status/2052480800004956323
+  - With the new Chrome extension, Codex can quickly move through repetitive browser work, like navigating structured pages and complex data entry flows. 
+  - Under the hood, it writes and runs code to navigate and complete tasks.
+  - The Chrome extension expands what Codex can do for coding and work. From debugging browser flows to checking dashboards, conducting research, or updating CRMs, Codex can take on more of the tasks that already happen in your browser.
+- Excellent! I'm curious on the capabilities compared to Claude in Chrome and and Browser Harness https://github.com/browser-use/browser-harness, which are the two I use most often. Does this have any special sauce as a first-party plugin to differentiate it from Browser Harness specifically?
+
+- ## 一个用 Chrome Dev Tool 学习调试 Codex App 的技巧：
+- https://x.com/dotey/status/2052200047278739457
+1. 退出 Codex App，从命令行打开：
+
+> open /Applications/Codex.app --args --remote-debugging-port=8315 --remote-allow-origins=http://localhost:8315
+
+2. Chrome 中输入 chrome://inspect
+3. 点击其中的链接即可打开 Chrome Debug Tool
+
+- 不只是 Codex  现在市面上绝大多数基于 Electron 框架开发的 App基本都能用这个思路去调试
+
+- 但 Electron app 有个隐藏坑：production build 多数会把 remote-debugging-port 那层 hook 关掉，能不能进得去还得看打包脚本。
+
+- 按 Electron 这套打开 DevTools，调试入口一开，很多卡住的行为就能直接看请求和状态了。
+
 - ## Browser Use 团队开源发布「Browser Harness ♞」：让 LLM 获得对浏览器的完全控制自由，且具备自我进化能力
 - https://x.com/shao__meng/status/2045657138119549006
   - Browser Harness 是一个极简的 Chrome DevTools Protocol 桥梁——仅用约 592 行 Python，构建了一个 LLM 直接操作真实浏览器的最小化 harness。
@@ -1060,6 +1082,16 @@ Chrome: Ships anyway.
 6. Shapes（形状语言）
 7. Components（组件规范）
 8. Do's and Don'ts（设计禁区）
+
+- ### 汇集一下 DESIGN.md 工具网站：
+1. https://styles.refero.design
+2. https://neuform.ai
+3. https://designmd.me
+4. https://designmd.supply
+5. https://getdesign.md
+6. https://github.com/bergside/design-md-chrome
+- 个人推荐 refero，提供了 2, 000+ DESIGN.md，以及支持 DESIGN.md、Tailwind v4、 CSS Variables 和  Design Tokens 最全面的配置输出。
+  - neuform 给我的视觉体验更好，除了 getdesign md，其他全都支持输入任意网站生成设计规范和配置，design-md-chrome 则是 chrome 的扩展适合即开即用。
 
 - ## New @code version 1.116 is out  _202604
 - https://x.com/OrenMe/status/2044637007108850040
