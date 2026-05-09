@@ -56,6 +56,18 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 💰 OpenCode Go 看起来上面的 DeepSeek 不是自托管模型，而是买的官方 API。
+- https://x.com/9hills/status/2052679682840310124
+  - 下午碰到了 429，OpenCode 在 DeepSeek 那边的并发达到了 500 被限流了。那用满的话还蛮赚的。
+
+- OpenCode自己都说了，所有OpenCode Go内的模型都是原厂提供的API
+  - Zen is the us hosted.
+  - Go is original provider api
+
 - ## ↪️ we've moved opencode desktop to electron. it's faster, more reliable, and will replace our tauri build soon
 - https://x.com/thdxr/status/2045134085178167803
   - supports multi-window + will soon have wsl integration

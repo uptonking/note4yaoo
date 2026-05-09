@@ -297,6 +297,19 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## i love how people are saying "if we write a sufficiently detailed specification, the agent can write all our code"
+- https://x.com/CWood_sdf/status/2052482202085048592
+  - do you know what writing a sufficiently detailed specification that deterministically maps to what a computer's actions is? it's coding
+
+- yes, but you don’t need fully deterministic mapping. there’s a lot that can be implied about a system without explicitly writing it in a spec. I can ask an AI to “implement secure email/pass auth” without having to tell it to salt + hash the password
+
+- No no no, specifications are the wrong take. You write a extraordinarily detailed desired user experience. Then let the AI work backwards from there. 
+  - Before I started my game I had 30, 000 lines of markdown files detailing the user experience. Now on days when I am distracted my other work I can tell the AI to reference the docs and come up with 20 action items and execute on them. And I usually end keeping 90% of the work it does. And none of those docs have technical specifications.
+
 - ## 怎么跨项目（目录）让 AI 干活，因为我俩都是 App 和 Backend 分在不同的 repo，而不是 monorepo。目前我的方法是这样的。
 - https://x.com/tualatrix/status/2052193263453634874
   - 首先保证两个 repo 处于平级的本地目录，在 App 的 AGENTS.md 加一句： 相关项目位置

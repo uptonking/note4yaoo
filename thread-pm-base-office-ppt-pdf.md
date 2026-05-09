@@ -606,6 +606,21 @@ modified: 2024-01-11T15:57:32.182Z
 # discuss-design-poster
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [用codex生成了UI界面有什么方案可以将UI切图出来呢? - LINUX DO _202605](https://linux.do/t/topic/2133493)
+- 让AI生成一张大图，包含所有图片，按游戏精灵图切图的那个思路去处理，避免一张一张生成
+- 直接让生成UI图，然后分层连续的生成多张图片，再背景透明一下 裁切 这样差不多吧
+
+- 精灵图的方式我试过，不是很稳定。出的图片边缘模糊，并且速度也挺慢。
+  - ai生成SVG，和原型UI差距非常大不可取。
+
+- 直接告诉ai，这个是设计图， 直接给我符合某个css框架或者其他框架的代码。要完全一致巴拉巴拉的。
+
 - ## Agentation 2.0. Your agent can now see your annotations in real-time and act on them directly. 
 - https://x.com/benjitaylor/status/2019454660575146062
   - 产品视频和动画很好

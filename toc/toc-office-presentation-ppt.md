@@ -459,6 +459,8 @@ modified: 2021-04-30T20:14:17.669Z
   - You can use the built-in /𝚌𝚛𝚎𝚊𝚝𝚎-𝚝𝚑𝚎𝚖𝚎 skill to set up a style.
   - https://x.com/1weiho/status/2050602481953181968
     - This framework doesn’t include Next.js. It’s built on Vite + React
+  - https://x.com/1weiho/status/2052763367744606443
+    - In open-slide 1.1.0, we added a new Shuffle button in the design panel. Get a random design in one click.
 
 - https://github.com/icip-cas/PPTAgent /2.3kStar/MIT/202511/python
   - Generating and Evaluating Presentations Beyond Text-to-Slides [EMNLP 2025]

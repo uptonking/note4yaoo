@@ -158,7 +158,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 - please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like superdoc.
 
-- ailovedoc should have full feature parity matching superdoc for important features like document data model, editing engine, rich-text formatting, layout-engine(supports toggling pagination), virtualized-rendering, document rendering/zoom, track-change.
+- ailovedoc should have full feature parity matching superdoc for important features like document data model, layout-engine(supports toggling pagination), document rendering/zoom, virtualized-rendering, editing engine, rich-text formatting, track-change.
 
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 - make a plan, then migrate and improve full feature pairity, without licensing issues
@@ -249,7 +249,7 @@ recheck and migrate full features of True PDF text editing engine with annotatio
 
 - please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like onlyoffice-pdf-editor.
 
-- hardoc should have full feature parity matching onlyoffice-pdf-editor for important features like in-place text editing engine,undo/redo, pdf annotations/highlights, plugin architecture and manager, pdf search, pdf page-thumbnails, bookmarks.
+- hardoc should have full feature parity matching onlyoffice-pdf-editor for important features like  document rendering/zoom, in-place text editing engine,undo/redo, pdf annotations/highlights, plugin architecture and manager, pdf search, pdf page-thumbnails, bookmarks.
 
 - you have worked on this several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. 
 
@@ -392,6 +392,17 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 ```
 
+## aichorage(tranfromerlab-app/janai)
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # code-review 👀
 
 ```prompt
@@ -462,7 +473,7 @@ there are many onlyoffice-pdf-editor audit/report code/scripts in this project, 
 it would be better if you could make a scripts like `npm run check:upstream-parity` to check feature parity with upstream superdoc. and you may update related markdown/json/reports by running the scripts.
 
 in project hardoc, 
-current code is under active development. please refactor code if you need to make code more clean, correct, and extensible. please refactor outdated/legacy code that contains something like `v1/v2/Compat/...` by using the right architecture or better logic, so that the latest code does not contain legacy code and the logic is more clean and easier to maintain in the long term.
+current code is under active development. please review and refactor code if you need to make code more clean, correct, and extensible. please refactor outdated/legacy code that contains something like `v0/v1/v2/Compat/...` by keeping only the right architecture or good implementation in the long term and removing legacy/deprecated code, so that the latest code does not contain legacy code and the logic is more clean and easier to maintain in the long term.
 ```
 
 # toys

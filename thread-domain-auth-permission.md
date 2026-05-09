@@ -161,6 +161,26 @@ modified: 2025-09-22T13:53:51.831Z
 - ## [Comparing Auth from Supabase, Firebase, Auth.js, Ory, Clerk and others : r/selfhosted _202302](https://www.reddit.com/r/selfhosted/comments/114kufp/comparing_auth_from_supabase_firebase_authjs_ory/)
 - Keycloak isn't an auth solution (at least in the way of having app integrations or an SDK), it's an identity manager. It's closer to a self hosted Azure active directory than anything else.
 
+# discuss-auth-vendors
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [怪不得没人用微软的验证器Authenticator - LINUX DO _202605](https://linux.do/t/topic/2137113)
+  - 我之前还疑惑，微软的验证器Authenticator不挺好用的吗，怎么没人用呢，也没见人提，甚至许多网站的2fa设置中建议的验证器都没有提到它的名字(我用微软的authenticator，而不用谷歌的验证器的原因就是，它可以在不翻墙的情况下打开使用)
+  - 然后赶紧打开Authenticator看了下，这Authenticator是不需要登录就可以使用的，所以就没有账户同步功能，数据都在本地，那万一手机丢了，那岂不是数据都没了，得赶紧备份
+- 其实谷歌的不联网也可以用的，2FA本身就是个本地算法，只不过谷歌的连不上服务器同步不了会显示个加载图标有点烦
+- 不止是微软，谷歌身份验证器也做的不好，有一次手滑导出时没管那个自动勾选的删除原设备记录，直接把所有的otp删了，导致我要一个个重新生成，害得我的huggingface账号灰飞烟灭
+
+- 2FA 本身就不需要联网，另外，微软的2FA 导不出来，我又懒得一个一个改
+
+- 自己部署，或者论坛有个公益的服务器。Bitwarden 本身E2EE 的，服务器看不了你的东西
+
+- 现在慢慢迁移Google的身份验证器到KeepassXC，之前一直用Keepass2，迁移到XC才发现这东西真是越用越好用，纯本地，支持TOTP，ssh-agent也可以管理。
 # discuss-solutions
 - ## 
 

@@ -40,6 +40,9 @@ modified: 2025-11-01T10:54:26.044Z
       - Python's built-in ThreadingHTTPServer (threading-based)
       - single model per server
       - single queue
+      - [[Enhancement] Native Node.js bindings for mlx-lm — eliminate Python subprocess dependency _202605](https://github.com/ml-explore/mlx-lm/issues/1237)
+        - mlx-lm is currently callable from non-Python environments only via subprocess — spawnSync into mlx_lm generate, lora, convert, fuse. This works but carries real costs: process spawn overhead on every call, a Python environment that must be version-pinned and validated, and an architectural seam that is foreign to otherwise Python-free systems.
+        - The MLX C API is already stable. Community Ruby bindings (mlx-ruby) confirm the binding pattern works.
 
 - https://github.com/Blaizzy/mlx-vlm /1.8kStar/MIT/202511/python
   - a package for inference and fine-tuning of Vision Language Models (VLMs) and Omni Models (VLMs with audio and video support) on your Mac using MLX
@@ -52,7 +55,7 @@ modified: 2025-11-01T10:54:26.044Z
       - I have been using local VLMs for annotating videos and images locally and producing synthetic datasets on my mac.
       - You can point to a folder full of images and get structured outputs 2-3x faster. Fully local.
 
-- https://github.com/jundot/omlx /6.4kStar/apache2/202603/python
+- https://github.com/jundot/omlx /12.7kStar/apache2/202605/python
   - https://omlx.ai/
   - https://omlx.ai/benchmarks
   - LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar
@@ -70,12 +73,24 @@ modified: 2025-11-01T10:54:26.044Z
   - 🆚 How is oMLX different from Ollama or LM Studio?
     - Ollama and LM Studio cache the KV state in memory, but when the context shifts mid-session — which happens constantly with coding agents — the entire cache gets invalidated and recomputed from scratch. oMLX persists every KV cache block to SSD, so previously cached portions are always recoverable. TTFT drops from 30–90 seconds to under 5 seconds on long contexts.
   - 📡 
+    - [feat: JANG implementation  _202603](https://github.com/jundot/omlx/pull/364)
     - [Is there a way to use the huggingface cache? _202603](https://github.com/jundot/omlx/discussions/211)
   - [Unable to find the gguf model  _202603](https://github.com/jundot/omlx/issues/180)
     - oMLX uses mlx-lm as its backend, so GGUF models are not supported. 
+  - [Feature Request: Add Windows support (or cross-platform backend)  _202603](https://github.com/jundot/omlx/issues/200)
+    - the project currently relies entirely on the MLX framework, which only supports macOS + Apple Silicon. This means Windows users (including a large number of users with NVIDIA/AMD GPUs) are completely unable to use it.
   - [I input LM Studio's downloaded models dir doesn't work _202603](https://github.com/jundot/omlx/issues/149)
     - you need to set the parent directory instead of the model directory itself, and it will discover all models inside. @TipKnuckle has also submitted a PR to make it work when pointing directly to a model directory, so i'll review and merge that soon!
   - [Built oMLX.ai/benchmarks - One place to compare Apple Silicon inference across chips and models : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1ro646t/built_omlxaibenchmarks_one_place_to_compare_apple/)
+  - [What happened to oQe? _202604](https://github.com/jundot/omlx/discussions/1019)
+    - Short answer: the oQe quants already on HuggingFace aren't broken. They still load and run fine. But I'm not going to be re-uploading or refreshing them while the enhanced path is paused, so consider them frozen rather than actively maintained.
+    - On why it's paused: in the few weeks before I disabled it, I tried several variants of the enhanced approach. GPTQ-style, AWQ-style, the original formulations, plus a few MoE-optimized variations of each. Across a handful of models and short benchmarks, the results were not consistent. Some models clearly improved with the enhanced path. Others actually regressed compared to the plain oQ baseline. I haven't found a single method that reliably improves quality across model architectures, so I'd rather keep it off in the UI than ship something that silently makes some models worse. Once I find an approach that holds up across architectures, I'll bring enhanced quantization back.
+
+- https://github.com/mlx-node/mlx-node /MIT/202512/rust/ts
+  - MLX-Node brings Apple's MLX framework to JavaScript/TypeScript, enabling efficient on-device ML inference and training on Apple Silicon and CUDA devices. 
+  - Built with a Rust compute layer and TypeScript orchestration, it delivers production-ready GRPO training with 100% feature parity with HuggingFace's TRL library.
+  - Pure Rust/TypeScript implementation — no Python runtime required
+  - TypedArray-First API: Zero-copy operations using native JavaScript typed arrays
 
 - https://github.com/RamboRogers/mlx-gui /GPL/202601/python/tkinter
   - https://mlxgui.com/
@@ -152,6 +167,47 @@ modified: 2025-11-01T10:54:26.044Z
     - it also deletes/rebuilds ~/.unsloth/llama.cpp each run at studio/setup.sh
     - rerunning setup is expensive. Practical workflow: run unsloth studio setup only when first installing, after major updates, or when deps break
     - Local .gguf (or directory containing .gguf) is auto-detected in studio/backend/utils/ models/model_config.py
+  - The system has two distinct inference backends, and the chat endpoint auto-routes between them
+  - Transformers Backend (InferenceBackend) — for standard HF models (.safetensors files, non-GGUF)
+    - Runs as a persistent subprocess (multiprocessing.Process) to isolate GPU memory  
+    - Loads models via transformers + torch (GGUF via llama.cpp bindings, or standard HF models)
+    - Communicates with the main FastAPI process via queues (_cmd_queue, _resp_queue)
+    - One model at a time: The subprocess is recreated on each model switch for clean state   
+  - llama-server Backend (LlamaCppBackend) — for GGUF models
+    - It handles tokenization, chat templates, vision, function calling, and streaming natively in optimized C++ with no Python overhead for inference
+    - Spawns a llama-server subprocess (the C++ binary from llama.cpp)
+    - The subprocess runs its own built-in HTTP server on a local port
+    - Studio's Python backend acts as a proxy — it forwards requests to http://127.0.0.1:{port}/v1/chat/completions
+    - Supports streaming via SSE from llama-server's native /v1/chat/completions endpoint
+    - Tool calling (function calls) is also forwarded verbatim to llama-server
+    - llama-server binary not found: Run setup.sh to build it, install llama.cpp, or set LLAMA_SERVER_PATH environment variable.
+  - Both backends run as subprocesses, but differently:
+    - LlamaCppBackend — spawns llama-server as an OS subprocess (a compiled C++ binary). The parent process communicates with it over HTTP
+    - InferenceBackend — The transformer backend is not a binary. It's the same Python codebase running in an isolated subprocess. code runs inside a `multiprocessing.Process` using spawn context. The entry point is run_inference_process() in worker.py. This is not a binary — it's pure Python. The subprocess starts a fresh Python interpreter, activates the correct transformers version, imports unsloth and ML libraries, creates an InferenceBackend instance, then enters a command loop processing load/generate/unload via mp.Queue IPC. Model loading can bloat memory (GPU allocations, large weight tensors) — the subprocess is killed and recreated on each load (orchestrator.py) to guarantee clean state. The spawn context avoids sharing interpreter state with the parent, preventing GIL/contention issues.
+  - safetensors support works in two modes: 
+    - Standard .safetensors — InferenceBackend (inference.py:212) uses FastLanguageModel. These wrap transformers and load standard HF model files (.safetensors, .bin, etc.) via torch.
+    - Apple MLX .safetensors — MLXInferenceBackend (mlx_inference.py:15) activates when _hw.DEVICE == _hw.DeviceType.MLX in the worker subprocess (line 661 of worker.py). It uses FastMLXModel.from_pretrained() from unsloth_zoo.mlx_loader instead of torch/transformers, loading models with mlx-lm/mlx-vlm on Apple Silicon. mlx-lm/mlx-vlm are Python packages, not compiled binaries like llama-server. They don't need to be manually placed on disk; they are installed automatically via pip
+  - How Models Are Discovered 
+    - Default models — hardcoded curated list in core/inference/defaults.py
+    - Loaded models — currently loaded in the transformers subprocess 
+    - Active GGUF model — if llama-server has a model loaded 
+    - HF cache (~/.cache/huggingface/hub/) — scans downloaded model directories
+    - Custom scan folders — user-registered directories stored in the Studio SQLite database
+    - Ollama directories — reads Ollama's content-addressable blob layout and creates .gguf symlinks under a .studio_links directory
+  - when the model does NOT exist locally — download flow
+    - GGUF model(downloaded auto)
+    - Before even starting llama-server, the Python backend calls _download_gguf()
+    - Uses huggingface_hub.hf_hub_download() to download the .gguf file 
+    - Download destination: $HF_HUB_CACHE (default: ~/.cache/huggingface/hub/)
+    - After download, llama-server is spawned with -m downloaded_path
+    - Standard HF model (downloaded by the transformers worker subprocess) 
+    - The InferenceOrchestrator._spawn_subprocess()  creates a fresh Python subprocess using multiprocessing.Process with spawn context
+    - Downloads happen via huggingface_hub with XET acceleration 
+  - 🤔 i have followed your guide step by step. `npm run dev` starts webapp at http://localhost:5173/. `python studio/backend/run.py --port 8888` starts backend at http://127.0.0.1:8888. when i vist http://localhost:5173/change-password, it shows the error above. but when i visit http://127.0.0.1:8888/change-password, password is set successful.
+    - The root cause is how the default admin's bootstrap password gets delivered to the frontend.
+    -  When the backend starts for the first time, It creates a default admin user (unsloth) with a randomly generated diceware passphrase, This passphrase is saved to a file .bootstrap_password beside auth.db.
+    - The backend's _inject_bootstrap() function (main.py:410-435) inserts the bootstrap password into the HTML. But this injection only happens when the backend serves the frontend as static files — i.e., when you visit :8888 directly. The setup_frontend() function (main.py:438-457) mounts the frontend/dist/ directory and calls _inject_bootstrap() on every HTML response.
+    - The Vite dev server on :5173 serves its own index.html — it never passes through the backend's _inject_bootstrap() function
   - [[Feature] MLX Support  _202602](https://github.com/unslothai/unsloth/issues/4061)
     - We're working on it as we speak. Will be released within 2 months I'd say
   - [Introducing Unsloth Studio  _202603](https://unsloth.ai/docs/new/studio)
@@ -208,21 +264,47 @@ modified: 2025-11-01T10:54:26.044Z
   - Convert Models Across Platforms: Convert from/to Huggingface, MLX, GGUF
   - 🔌 Plugin Support: loader, trainer, generator, eval, exporter
   - NVIDIA or AMD GPU on Linux (or Windows via WSL2)
-  - 🛝
+  - 🛝 v202601
     - 插件功能强大，体验类似lmstudio
     - import model时选择的路径在windows的wsl环境下逻辑有问题, 在mac下只支持.workspace目录下的文件，导致需要拷贝
     - 模型RUN很慢，STOP停止困难
     - 需要chat template的模型(如qwen3-0.6b)无法配置template, 可以先用不需要template的模型如lfm测试
     - new chat有问题，只能聊一次，之后必须restart model才能再聊一次
     - 安装时，使用 miniforge3/conda 安装环境， 本地环境+workspace+1GB小模型总体占用空间为8GB左右
+  - 🛝 latest
+    - cd api && uv run --env-file ../.env -- uvicorn api:app --reload --port 8338
+    - 新版本去掉了electron-app、chat、plugins
   - macOS with Apple Silicon is supported (training functionality varies by hardware)
   - CPU-only installs run inference but not GPU-heavy workflows
   - Transformer Lab consists of a React application "Frontend" that communicates with a Python API "Backend" (found in the api directory). Application data is stored in a file system workspace that is accessed by the API and third-party scripts using the SDK (which can be found in the lab-sdk directory).
+  - The Electron desktop app was deprecated and removed through a multi-stage process spanning roughly December 2025 through March 2026
+    - 最后一次app发布于20260116: https://github.com/transformerlab/transformerlab-app/releases/tag/v0.27.8
+    - Dec 24, 2025 (commit 804aeb84e) — The bulk removal: 28 files changed, 7,352 lines deleted. This eliminated the Electron main process code (src/main/main.ts — 625 lines), menu system (src/main/menu.ts), shell commands, SSH client, file watcher, platform detection utilities
+    - Jan 14, 2026 (commit d911aebe3) — "Last electron update with header and other fixtures" — the final cleanup of remaining Electron surface area
+    - Mar 17, 2026 (commit 7d1af2b7c) — Final pass removing Electron legacy code and stubs
+    - Why it was removed: The app shifted to a "cloud-first" web architecture. The FastAPI backend now serves the frontend as static files, with an index.ejs template in src/renderer/. There is no need for an Electron wrapper when the UI runs as a standard web application in any browser.
+  - New Features and Architecture Changes Since Removal
+    - The CLI (cli/) became the main control plane, replacing Electron's GUI role
+    - Identity & Authentication Overhaul (cli login)
+    - New Evals: Full evaluation workflow with compare and preview
+    - Cloud/Remote Compute: GCP, SkyPilot
   - 🐛 [Importing models from folder doesn't work on Windows _202408](https://github.com/transformerlab/transformerlab-app/issues/142)
     - The challenge is that Transformer Lab is architected as a frontend app running in your browser/Electron talking to an API running in WSL, and when you pop open the file explorer dialog it is passing a windows path to WSL.
     - There are a number of ways we might be able to fix this but we were hoping to solve in a way that allows the API to run on a remote machine. 
     - Perhaps the easiest short term fix is to just add the ability to copy and paste a path that the server can access into the modal.
     - Or if you are comfortable generating paths to your models relative to you WSL install, you can try directly importing your models via the API by calling a path like `http://localhost:8338/model/import_from_local_path/?model_path=<wsl_path>`.
+  - [Packaging Python and PyTorch for a Machine Learning Application  _202408](https://lab.cloud/blog/packaging%20python/)
+    - we need a way to package Python, PyTorch, and associated tools as part of our application. 
+    - Transformer Lab has two major parts. There is an Electron app built with React+Typescript. This app communicates with an API that handles machine learning tasks on top of our Python Engine.
+    - Transformer Lab allows users to install Plugins that themselves can install arbitrary Python libraries. So we needed an accessible Python environment that we could modify after it's installed on a user's machine.
+    - Conda / Miniconda is the most common packaging tool for Python. There is history here but a big reason why it works well is that Conda will install a specific version of Python for you in an environment, and it also makes it easy to install CUDA and CUDA-specific variants of the libraries you need.
+    - we think we have the most reliable way to install Python via conda through an Electron app. 
+    - At startup, our Electron App pulls our git repo and then spawns the embedded bash file called install.sh.
+    - install.sh. script that separates out each step of the process so each step can be run separately
+    - We then use Conda to install CUDA (if possible)
+  - 🔠
+    - there are several commits on 20260318-20260320 that removed the electron app from this codebase.
+    - can you analyze related code/docs/git-commits, then explain to me why the electron app is removed. and what new features or architecture changes have been made since the electron removal.
 
 - https://github.com/lm-sys/FastChat /39.4kstar/apache2/202506/python/inactive
   - FastChat is an open platform for training, serving, and evaluating large language model based chatbots.
@@ -658,7 +740,42 @@ modified: 2025-11-01T10:54:26.044Z
   - It also includes service-side extensions and non-intrusive compatibility patches for mlx_vlm (validated on mlx_vlm 0.4.3)
   - https://x.com/GitHub_Daily/status/2052327598282441116
     - 专为 Apple Silicon 设计的本地推理加速框架。 把 Mac 芯片里一直闲置的计算单元激活，让本地模型跑得更快、占用的内存更少。
+# llm-gui
+- https://github.com/openconstruct/llm-desktop /MIT/202602/python
+  - Local AI desktop for GGUF models on Linux & SBCs (Radxa, Pi, etc.)
+  - This project built initially for the Baidu ERNIE hackathon, Oct 24-Nov23 2025.
+  - a lightweight application to provide a nice GUI and toolset for running LLM models on SBCs or computers. It functions on ARM and AMD64 Linux currently, with plans to package it for windows. 
+  - Designed as a free and open source alternative to apps like ChatGPT and Claude Desktop.
+  - LLM-Desktop has two built-in tools, internet search and file access.
+    - Internet search uses `DuckDuckGo` (via ddgs) and does not require any signup or API key.
+  - You will need to download or build llamacpp for your architecture. 
+  - 功能太简陋，只支持linux
+  - [I created an opensource alternative to LMstudio and similar apps for linux PCs/SBCs. : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r0eer8/i_created_an_opensource_alternative_to_lmstudio/)
+
+## mac-llm-gui
+
+- https://github.com/osaurus-ai/osaurus /5.2kStar/MIT/202605/swift/c
+  - https://osaurus.ai/
+  - he native macOS harness for AI agents -- any model, persistent memory, autonomous execution, cryptographic identity. Built in Swift. Fully offline. Open source.
 # llm-apps
+- https://github.com/NPC-Worldwide/incognide /MIT/202605/ts/类似全家桶
+  - https://enpisi.com/incognide
+  - Incognide unifies chat, code, documents, web browsing, and media into a tileable workspace with intelligent context and composable automations.
+  - Browse the web, read and annotate PDFs
+  - Edit DOCX, XLSX, PPTX, MAPX.
+  - 功能非常多， ux非常杂乱
+  - 支持多实例，类似vscode开多个窗口
+  - Usage path — pick one of:
+    - No AI — workspace only (files, code, browsers, terminals, docs, maps). No model calls.
+    - Cloud AI — OpenAI / Anthropic / Gemini / etc. via API keys.
+  - Local AI — Ollama / LM Studio / llama.cpp / oMLX running on your machine. 
+    - The setup wizard (Local Models step) and the in-app Model Manager both probe these endpoints and binary locations. The Model Manager has Start/Stop buttons when the binary is installed.
+    - GGUF / GGML model files can be loaded directly without a server, but only if llama.cpp or koboldcpp is installed — the Model Manager's GGUF tab depends on that engine and shows "Not found" otherwise.
+  - https://github.com/npc-worldwide/npcsh /MIT/python
+    - The agentic shell for building and running AI teams from the command line.
+  - https://github.com/npc-worldwide/npcpy /MIT/python
+    - flexible agent framework for building AI applications
+
 - https://github.com/eclaire-labs/eclaire /MIT/202510/ts
   - Local-first, open-source AI assistant for your data. Unify tasks, notes, docs, photos, and bookmarks. Private, self-hosted, and extensible via APIs.
   - works with llama.cpp, vLLM, mlx-lm/mlx-vlm, LM Studio, Ollama, and more via the standard OpenAI-compatible API.
@@ -696,12 +813,6 @@ modified: 2025-11-01T10:54:26.044Z
   - [[Update] mlx-knife 2.0 stable — MLX model manager for Apple Silicon : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1otwdq0/update_mlxknife_20_stable_mlx_model_manager_for/)
     - Can you help me understand how this is better than simply using: mlx_lm.server
       - Yeah. Unless it supports vision, mlx_lm.server plus llama swap is much better.
-
-- https://github.com/mlx-node/mlx-node /MIT/202512/rust/ts
-  - MLX-Node brings Apple's MLX framework to JavaScript/TypeScript, enabling efficient on-device ML inference and training on Apple Silicon and CUDA devices. 
-  - Built with a Rust compute layer and TypeScript orchestration, it delivers production-ready GRPO training with 100% feature parity with HuggingFace's TRL library.
-  - Pure Rust/TypeScript implementation — no Python runtime required
-  - TypedArray-First API: Zero-copy operations using native JavaScript typed arrays
 
 - https://github.com/rohanelukurthy/rig-rank /MIT/202602/go
   - a CLI tool written in Go that benchmarks how well Large Language Models (LLMs) run on your specific hardware. 
@@ -746,6 +857,12 @@ modified: 2025-11-01T10:54:26.044Z
     - eLLM needs Xeon Gen4 + with AMX and DDR5 support
     - AMD CPUs are also viable, but they may be slower due to the lack of AMX instructions.
     - This direction is quite interesting—especially for long-context, prefill-heavy workloads, where large CPU memory can indeed offer advantages over GPU VRAM. Being able to prefill the entire prompt in a single pass, instead of relying on chunking and repeatedly loading parameters, makes a lot of sense.
+# compression
+- https://github.com/tencent/AngelSlim /1.1kStar/apache2+3rd/202605/python
+  - https://angelslim.readthedocs.io/
+  - Model compression toolkit engineered for enhanced usability, comprehensiveness, and efficiency.
+  - This toolkit integrates mainstream compression algorithms into a unified framework, offering developers one-click access with exceptional ease of use.
+  - We continuously optimize end-to-end performance in model compression workflows and algorithm deployment, such as enabling quantization of models like Qwen3-235B and DeepSeek-R1 on a single GPU.
 # model-safetensors/gguf
 - https://github.com/EvanZhouDev/umr /AGPL/202604/ts
   - The Unified Model Registry for all your local AI apps.

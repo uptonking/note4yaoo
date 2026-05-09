@@ -14,7 +14,20 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
-- ## 
+- ## [Why I'm holding out until late 2027 to spend money on a local LLM rig : r/LocalLLM _202605](https://www.reddit.com/r/LocalLLM/comments/1t6iiph/why_im_holding_out_until_late_2027_to_spend_money/)
+  - Here's the math: A100 SXM4 80gb cards are currently $2, 500–4, 000 used, but we're at the inflection point where enterprises are upgrading to H100s and B200s. By late 2027, we'll see massive A100 liquidation hitting the used market. Historical precedent (V100 went from $5K in 2017 to $300–600 by 2024) suggests A100 80GB cards will bottom out around $1, 000 per card by then, and HGX-A100 baseboards will drop to $400–700. That means a 4× A100 80GB system (320GB VRAM) for around $4k and decreasing as time passes. Vastly outperforming anything I can build today.
+  - 2028 models will almost certainly be sparse/MoE (following V4 Flash's pattern), which means you don't need 640GB for a "10T model"—you need it to hold all the expert weights while only computing 200–300B active parameters per token. A 4× A100 system handles this at 20–35 tok/sec, with reasonable quant.
+  - The only thing that might throw a wrench into this plan is if those datacenters start selling their used gear to a ton of business customers who have the same idea I do, and don't have wives who complain about that noisy box.
+
+- More importantly, enterprise cards will NOT be hitting the secondary market in droves. Nvidia has long term service agreements and they buy back the previous cards- at a steep discount for refurbish or destruction. They are not letting enterprise partners sell their chips on eBay lmao.
+
+- If I'd waited when everyone said RAM prices were too high and going to come down I'd have paid 35% more. 
+
+- if LLM is truly useful for many people, the price won't come down anytime soon. it looks like it is true at this moment. building a new semiconductor fab take years, until the new fab come online, the pricing won't come down. remember COVID supply chain issue took two years to settle down? we are not even one year into the memory shortage. News says Samsung and Hynix's new fab won't be online until Q2/2027. I would say the pricing might stay put until 2028, unless the AI market crashes like dotcom bubble.
+
+- ["Hardware is the only moat" - Should we buy new hardware now or wait? : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1t6x2yx/hardware_is_the_only_moat_should_we_buy_new/)
+- Hardware isn't a moat, it's a depreciating asset
+- My Strix Halo went up 48% in price
 
 - ## [3090 still the king? Trying to pick a local LLM setup (~2000€) in Germany : r/LocalLLM _202605](https://www.reddit.com/r/LocalLLM/comments/1t2qwew/3090_still_the_king_trying_to_pick_a_local_llm/)
   - 比较了N卡、A卡、Mac的详细信息

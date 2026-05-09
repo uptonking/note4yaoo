@@ -488,7 +488,19 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
-- ## 
+- ## We finally know why LLMs hallucinate. It's not the model. It's the geometry.
+- https://x.com/anirudhbv_ce/status/2052532004919361958
+  - @OpenAI text-embedding-3-large: 91/3072 dimensions do real work.
+  - @GeminiApp gemini-embedding-001: 80/3072 dimensions do real work.
+  - ~97% of your vector database is mathematically empty. Your RAG system is retrieving from noise.
+- We present "The Geometry of Consolidation." We prove that for any RAG compression algorithm:
+  - centroid
+  - product quantization
+  - learned routing
+
+- It's not the model hallucinating it's the geometry of how embeddings actually work. This reframes everything
+
+- This is why I stopped working with vector databases for a while.  It caused more problems than it helped.  But it will probably be going back on my roadmap in the near future.
 
 - ## [Embedding latency killing my RAG speed, any fixes? : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1t3f72i/embedding_latency_killing_my_rag_speed_any_fixes/)
   - The issue is embedding the query takes around 600ms to 1.1s every time. That’s basically my bottleneck now.

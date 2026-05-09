@@ -39,6 +39,16 @@ modified: 2022-08-21T10:19:58.756Z
 # discuss-news
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Now that TanStack Table V9 is built on top of TanStack Store, it allows you to fine-tune re-renders with subscriptions to state slices or individual atoms.
+- https://x.com/KevinVanCott/status/2052806850135929272
+  - This might be a huge deal performance-wise for certain situations in React or Preact.
+  - This inverts the rendering issue from needing to opt-out of renders down the tree with React.memo or useMemo hacks, and instead opt-in to re-renders where necessary.
+  - Here is some code showing how it works. The implementation is mostly copied from TanStack Form's `form.Subscribe` .
+
 - ## 🎯📡 [TanStack Table V9 Roadmap _202401](https://github.com/TanStack/table/discussions/5270)
 - 
 - 

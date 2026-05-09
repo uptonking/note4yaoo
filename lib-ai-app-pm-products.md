@@ -273,6 +273,9 @@ modified: 2025-03-22T16:10:24.856Z
 
 - token-router/gateway
   - 分享本地的GPU、token，类似的项目有分享画图gpu，但如何分享token还未流行
+
+- local-reimpl
+  - 比如支持minimax语言的api、mineru-ocrapi，直接本地可用
 # 💎🚀 aichorage - local llm with joy, 提供模型API、rag可靠性、pdf文本操作
 - selling-points
   - non-goals: local image gen
@@ -317,6 +320,7 @@ modified: 2025-03-22T16:10:24.856Z
     - ❓ 如何一键切换到cloud版
     - https://github.com/tc-mb/llama.cpp-omni is the first Omni multimodal inference engine built on llama.cpp.
     - custom model: 针对nvidia/openrouter/mistral的模型做优化, 如qwen3.5-plus
+    - cpu-model: 适合cpu的模型是否存在市场需求
   - 👾 local agent
     - skills for local model
     - openclaw比manus更火的原因，是支持在本地自动化执行任务，而不是云端

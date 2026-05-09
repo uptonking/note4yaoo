@@ -313,7 +313,15 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## Mamba 3 is a non-Transformer LM architecture.
+- https://x.com/burkov/status/2052514640899244040
+  - Unlike attention, which maintains a growing KV cache that scales with sequence length, Mamba-3 compresses all past context into a fixed-size state of a fixed dimensionality​.
+  - Each decode step therefore takes constant time regardless of how long the sequence is, making total decoding cost linear in sequence length.
+  - The performance on the 1.5B parameter scale is comparable to Transformer with much faster inference with context sizes above 16k (see the table below).
+
+- Fixed-size state is a dream for the latency budget until you actually need perfect recall on a 50k token needle. The KV cache is a nightmare to manage but at least it doesn't forget.
+
+- welcome back RNNs
 
 - ## Kimi k2.6 used DeepSeek’s v3 architecture. DeepSeek v4 used kimi's muon optimiser. 1.6 trillion parameters & 1M context - both match or beat closed models on benchmarks while being 8x cheaper. 
 - https://x.com/jenzhuscott/status/2047825291071098984
@@ -1546,6 +1554,35 @@ Use with the Smart Composer plugin in Obsidian to compose and analyse notes
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 🧭 [Google Chrome secretly installed Gemma 3 and 4 on a billion PCs and Macs, it's called weights.bin, a 4gb file for your RAM. : r/LocalLLM _202605](https://www.reddit.com/r/LocalLLM/comments/1t6vhyx/google_chrome_secretly_installed_gemma_3_and_4_on/)
+- You don't need to delve into chrome://flags. Settings -> System -> On-device AI
+
+- Gemini Nano, not Gemma. Not new. Chrome has had this for a while. It powers the prompt API and no, it doesn't send anything back to the mothership.
+  - Prompt API allows websites to use the LLM via JavaScript. For translations, summary, voice decoding etc.
+
+- If you still use chrome, you don’t mind about bloat and spyware so whats the point?
+
+- my weights.bin file date shows up as 31-Dec-1979 5:00pm version ...seems very strange
+  - That's just a placeholder or epoch date used by the file system. Happens when the file metadata is corrupted or missing.
+
+- [4GB "Gemini Nano" model GGUF anyone? : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1t72aui/4gb_gemini_nano_model_gguf_anyone/)
+- Gemini Nano is based on a custom variant of one of the smaller Gemma 4 models. It was mentioned in some Google/DeepMind blog post when Gemma 4 came out.
+  - Still not Gemma 4 afaict
+
+- It you can use it locally by writing javascript in the browser
+
+```JS
+const session = await LanguageModel.create({ outputLanguage: "en" });
+const reply = await session.prompt("what model are you");
+console.log(reply);
+```
+
+- You can test it with: chrome://on-device-internals
 
 - ## [关于大模型对于中文字数的理解  - LINUX DO _202603](https://linux.do/t/topic/1773860)
 - 反正玩酒馆的时候发现，AI并不能掌控自己到底输出多少字，更有效的prompt是要求大概的tokens数或每一段落大概多少多少字，一共字数在哪个范围。大模型只能估算，没办法实际去计数。

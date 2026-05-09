@@ -30,7 +30,17 @@ codex --yolo resume --last
 
 - ## 
 
-- ## 
+- ## [Is there a reason to use the CLI instead of the desktop app? : r/codex _202605](https://www.reddit.com/r/codex/comments/1t6tpf1/is_there_a_reason_to_use_the_cli_instead_of_the/)
+- Coz you use linux and there is no app for that 
+
+- cli could be easily called by other apps (e.g., a cron job, an external wrapper).
+- The CLI performs well, and is callable via other tools.
+
+- The Codex app on macOS has a known CPU usage issue, which leads to high temperatures. When I need to run long sessions with huge prompts, I switch to the CLI to keep it from taking off like a jet haha.
+  - It’s the same on Windows. It’s a CPU hog
+
+- CLI got more experimental features that the APP doesn't have, like the /goal and many others, use "codex features list" to see. But he app allows a better workflow like easy worktree creation, switching, commit. In a terminal it could get dicey and overwhelming, i've tried.
+- The app lacks the ability to separately configure the reasoning effort for plan mode. It works flawlessly in the CLI though.
 
 - ## [claude code 相比 opencode 到底有哪些优势，能量化吗？  _202604](https://linux.do/t/topic/1881349)
 - 我目前是分不出高低，看习惯了，我之前比较喜欢用cc，后来自己vibe了webui之后就用oc了，个人感觉只是使用习惯的差别，然后就是oc能自定义渠道sdk，对接api方便点，而且适配也好一点吧，比如说同样都是edit功能gpt模型用的是patch，claude模型用的是新旧文本替换
@@ -106,6 +116,27 @@ codex --yolo resume --last
   - 冷启动并不快，加上 opencode 启动也慢，每次冷启动得 10s 多 但是非生产服务，冷启动慢也无所谓了。
   - S3 慢的问题我尽可能把 S3 和容器都放在美西来减少延迟，但是容器目前没法强制区域。
   - sandbox 自带 volume 靠谱？ sandbox 是只 Cloudflare sandbox 吗？  这个底层也是容器+S3, 原理应该是一样的
+# discuss-news-codex
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## openai-cli is released  _202605
+- https://x.com/jxnlco/status/2052497604764913732
+- watch this become codex-lite
+
+- official OpenAI CLI with unix-style outputs means you can pipe AI responses directly into your existing shell scripts
+
+- the missing piece on cli ai ops is response caching across runs. keying on (prompt hash + model + temp) and shipping to a tiny kv layer cuts 30 to 40 percent on batch jobs over a directory. without it the cli is the most expensive way to read your own files.
+
+- The unix-style structured output is the unlock. We've been duct-taping claude -p + jq for the same workflow at our org — having it means cron'd agents become trivial. Will the structured outputs respect a JSON schema or is it freeform-then-parse?
+
+- https://x.com/bozhou_ai/status/2052596459753914446
+  - 直接调 Responses API，云端工具（网页搜索、代码解释器）开箱即用，输出 JSON/YAML 可以管道接 jq、grep，图像生成和语音转录也都是单行命令
 # discuss-alternatives
 - ## 
 
@@ -426,6 +457,10 @@ codex --yolo resume --last
 
 - 同感。有时候我感觉google他们家的ai coding领域的工具和理念自成一派，甚至会怀疑是不是自己不会用，怎么会这么难用。
 # discuss-codex-tips/tricks
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

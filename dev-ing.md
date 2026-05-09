@@ -333,6 +333,37 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0508
+
+- Failed to load model: Subprocess error: Failed to import ML libraries: Unsloth: Please install unsloth_zoo via `pip install unsloth_zoo` then retry!
+  - Failed to load model: Subprocess error: Failed to import ML libraries: Unsloth currently only works on NVIDIA, AMD and Intel GPUs.
+  - unsloth_zoo provides unsloth_zoo.mlx_loader.FastMLXModel (the Python wrapper), but the actual MLX framework (mlx and mlx-lm packages) are separate dependencies — they are not part of unsloth_zoo.
+  - mlx-vlm transitively pulls in mlx-lm, which transitively pulls in mlx. But if you only ran pip install unsloth_zoo, the mlx family packages were never installed.
+  - Studio is correctly taking the MLX path, but when it tries to load the MLX backend it still needs unsloth_zoo.mlx_loader. Your manual local install skipped the unsloth-zoo git-main overlay that the repo’s supported local setup performs in install.sh:1795.
+  - In your current .venv, the installed unsloth_zoo wheel has no mlx_loader.py or mlx_trainer.py, and its package init imports device_type first, which raises the misleading Unsloth currently only works on NVIDIA, AMD and Intel GPUs. on Apple Silicon. That is why every local model fails the same way.
+  - The clean fix is to install the MLX-capable unsloth-zoo from git main, not the published wheel you got via uv pip install unsloth_zoo ....
+
+```sh
+
+# Either rerun the supported local setup:
+cd ~/Documents/repos/ai-ml-llm/unsloth
+./install.sh --local
+
+# or do the minimal repair in your current venv:
+cd ~/Users/yaoo~/Documents/repos/ai-ml-llm/unsloth
+uv pip install --python .venv/bin/python --no-deps --force-reinstall \
+  "unsloth-zoo @ git+https://github.com/unslothai/unsloth-zoo"
+uv pip install --python .venv/bin/python -e . --no-deps
+python studio/backend/run.py --port 8888
+
+```
+
+- `TFL_HOME_DIR="$HOME/.transformerlab2026"`: can `$HOME` be used in .env value
+  - it depends on the context in which the .env file is loaded.
+  - In api/run.sh (lines 25–43), the .env file is sourced directly in bash: `source "$env_file"`. Bash performs variable expansion, so $HOME resolves to the user's home directory
+  - Python load_dotenv() context — NO
+  - Frontend / dotenv-cli context — NO
+
 ## 0505
 
 - [Integrate NVIDIA NIM as an Inference Provider · Issue · openai/codex _202605](https://github.com/openai/codex/issues/19145)
@@ -358,7 +389,7 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 
 - [Qwen 3.5 "System Message Must Be at the Beginning" — SFT Constraints & Better Ways to Limit Tool Call Recursion? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rinx3k/qwen_35_system_message_must_be_at_the_beginning/)
   - Almost every model only supports system prompt as the first field... System prompts are the prefix, then user<->assistant<->tools "ping-pong"
-- [API Error: 400 {"error":{"code":400,"message":"System message must be at the beginning.","param":null,"type":"BadRequestError"}} · Issue #1881 · farion1231/cc-switch _202604](https://github.com/farion1231/cc-switch/issues/1881)
+- [API Error: 400 {"error":{"code":400, "message":"System message must be at the beginning.", "param":null, "type":"BadRequestError"}} · Issue #1881 · farion1231/cc-switch _202604](https://github.com/farion1231/cc-switch/issues/1881)
   - 👀 provider的问题可以由gateway类似 ccswitch 来解决
 - [[Help] System prompt exception when calling Qwen3.5-35B-A3B-GGUF from OpenCode : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rf4sl8/help_system_prompt_exception_when_calling/)
   - Not an actual fix, but I found a workaround for this. If you're running the model with llama.cpp, remove the --jinja flag. Or if in LM Studio, switch the chat template to normal default ChatML, maybe.
@@ -373,8 +404,7 @@ http://localhost:4090/v1/responses
 - [Allow provider configs to inject custom request-body fields · Issue · openai/codex _202510](https://github.com/openai/codex/issues/5458)
 
 - [Use NVIDIA MODEL to Codex, fault · Issue · farion1231/cc-switch _202604](https://github.com/farion1231/cc-switch/issues/2128)
-  - When I use - Nvidia models - to - Codex - , test the config ,its 404 .
-
+  - When I use - Nvidia models - to - Codex - , test the config , its 404 .
 # dev-04-pretext-rich-text-&-liteparse-or-nomic-model-citation-&-stirling-pdf/image-&-superdoc
 
 ## 0428
@@ -422,6 +452,7 @@ http://localhost:4090/v1/responses
   - https://ip138.com/ (老牌IP查询网站，直接显示运营商)
   - https://www.ipip.net/(国内很准的IP归属地查询，直接显示运营商)
   - 直接在百度搜索框输入 IP，百度会在搜索结果顶部显示你的IP和运营商
+
 ```sh
 curl cip.cc
 

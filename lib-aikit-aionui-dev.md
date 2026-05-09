@@ -70,6 +70,8 @@ modified: 2025-12-13T18:38:27.763Z
 
 - 集成 docling-mcp
 
+- 类似openclaw的服务进程和remote control
+
 ### issues
 
 - 使用内置的cli，会导致使用外部同名cli出现配置冲突、端口冲突、编辑冲突吗

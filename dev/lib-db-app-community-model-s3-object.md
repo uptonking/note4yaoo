@@ -365,6 +365,30 @@ modified: 2024-03-13T14:26:26.220Z
 
 - libvirt uses LGPL and the KVM/linux kernel uses GPL. Both are fine to keep to yourself if you run it on your own machine and only expose it over the network.
   - MinIO uses AGPL which explicitly includes network usage so Nutanix is forced to provide all patches and associated code.
+# discuss-s3-disk 🆚
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I hate all the discussions around NVMe vs S3, because they miss all the nuances.
+- https://x.com/iavins/status/2052767549289648269
+  - The extremely obvious thing: the read or write latency from NVMe is going to be way smaller than S3 (or S3 Express).
+  - But... most discussions talk about database running in a single machine attached to NVMe. That comparison isn't fair, and here's why:
+  - When you write to S3, it is replicated to multiple machines. But your data is poof if your NVMe is gone.
+  - S3 Standard writes to multiple AZs. S3 Express One Zone writes to multiple machines in a single AZ. Only after the data is secured and durable is it acknowledged as successful. You can't get the same durability guarantees with NVMe attached to a single machine.
+  - If you implement your own quorum (within an AZ) to do the same, it will be around 2–3ms. I implemented a disaggregated storage engine for libSQL using FoundationDB. IIRC, the latency numbers were around 5–6ms with a 3 node FDB cluster in the same AZ. This was an out of the box FDB setup, without any config changes or tuning. I am really handwaving the numbers here, but the point is, when you write to a quorum the latency gonna be way higher than NVMe.
+  - The truth is somewhere in between, this is where DB vendors are fooling you: NVMe isn't as fast as they claim, but still faster than S3.
+- Isn't the main gap still the network hop? That in comparison to something like RAID is still going to be a big gap?
+
+- Strong +1 on including durability guarantees.  The folks doing single node Postgres on NVMe benchmarks with no HA and comparing that to systems running on remote disks with 5 9's or more durability need to be much clearer on the trade-offs (100x higher chance of data loss)
+
+- Ask them to deploy their NVMe in UAE 
 # discuss
 - ## 
 

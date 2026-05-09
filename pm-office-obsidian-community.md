@@ -309,7 +309,20 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## 这三个东西凑齐之后，Obsidian已经不是一个笔记软件了。
+- https://x.com/yanhua1010/status/2052720961531879779
+1. Obsidian Web Clipper 
+浏览器看到好东西一键剪进库，原生 .md 格式。
+2. Obsidian CLI 
+让Claude Code直接接管整个仓库：读、写、搜、改、建双链等等。
+3. Obsidian Skills 
+最狠的一个，让Agent知道什么时候应该写 .md 笔记，建 .base 表格，或者生成一张 .canvas 画板。
+
+- 都在用啦~~~不过实际效果，还没有完全体会到精妙之处
+
+- Obsidian + Agent 整合最大的解锁是从被动笔记变成主动 retrieval。Web Clipper 收, CLI 让 agent 写, Skills 决定什么形式。瓶颈在最后一步, agent 选错形式 (该建表却建画板) 反而比没整合还难受。
+
+- Obsidian Web Clipper  其实并不好用，混合公式类文章容易出现格式错误，长文章有时候只能截取到一张图...
 
 - ## [Obsidian helped me most when I stopped trying to make it impressive : r/ObsidianMD _202605](https://www.reddit.com/r/ObsidianMD/comments/1t036y1/obsidian_helped_me_most_when_i_stopped_trying_to/)
   - My vault got better when I stopped chasing the perfect graph and started writing ugly useful notes.

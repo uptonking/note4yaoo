@@ -73,6 +73,8 @@ modified: 2026-04-07T12:53:02.538Z
   - converting documents to a unified output format. It extracts a document’s logical structure and content: tables, text formatting and metadata. 
   - The document’s content is represented as a tree storing headings and lists of any level. 
   - Dedoc can be integrated in a document contents and structure analysis system as a separate module.
+  - https://x.com/wsl8297/status/2052735548364857741
+    - 把各种文档自动“拆解+规整”，输出统一的结构化结果。
 # extraction-vlm
 - https://github.com/ahnafnafee/local-llm-pdf-ocr /MIT/202604/python
   - [Building a Local LLM-Powered Hybrid OCR Engine _202604](https://www.ahnafnafee.dev/blog/local-llm-pdf-ocr)

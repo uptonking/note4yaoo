@@ -889,7 +889,37 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## 💄 Problem: How do I quickly tell AI exactly which elements I want to change? Solution: Agentation
+- https://x.com/housecor/status/2052504763690832318
+  - This npm package displays a toolbar in your app so you can click on elements, add comments, and then send those comments to your LLM (like Claude Code).
+  - There's also an MCP server that provides more streamlined integrations and a watch mode.
+  - [Agentation](https://www.agentation.com/)
+
+- https://github.com/frontman-ai/frontman /fe-apache2+be-AGPL/202605/rescript/elixir
+  - https://frontman.sh/
+  - open-source AI coding agent that lives in your browser. It hooks into your dev server as middleware and sees the live DOM, component tree, CSS styles, routes, and server logs.
+
+- This is such a smart UX pattern. Being able to point-and-click on UI elements and send structured comments to an LLM feels like the missing bridge between ‘chat about my app’ and ‘actually change my app.
+
+- This is exactly the same as react-grab
+
+- Tidewave does this and a lot more. Check it out.
+
+- ## 🔀 Codex /side 功能挺实用
+- https://x.com/shao__meng/status/2052590985075675524
+  - Codex 跑着的时候，遇到问题绕不过去，我想帮它一下（比如登录或点一下鼠标），又不想打断它重新来一遍，就可以用 /side 开一个新窗口插入新的对话，不阻断当前主要进程
+  - 如果 /side 窗口运行中，突然又有新的想插入的话题，就再开一个新的 /side，还没试过有没有上限
+
+- 我们用 Hermes Agent 做类似的事——delegate_task 可以并行开多个子代理，互不干扰主进程。/side 的思路很像，不过我们是在 CLI 层面实现的多窗口并发。
+
+- ## You don't need a new IDE. You need a new ISE. Integrated Spec Environment.
+- https://x.com/odysseus0z/status/2052548306996531281
+  - Spec is the new code. Ship the right spec and your job is basically done.
+
+- spec misalignment/incompleteness = grill issue?
+
+- Correct, but you can’t actually finish the spec without writing and testing code.
+  - Doesn't have to be a spec spec! just enough of a thing that the intent part is clear. Not waterfall level of spec for sure.
 # discuss-ai-pm
 - ## 
 

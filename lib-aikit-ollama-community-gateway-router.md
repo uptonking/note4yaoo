@@ -231,7 +231,10 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
-- ## 
+- ## [CPA号多应该轮询还是？ - LINUX DO _202605](https://linux.do/t/topic/2132423)
+- 我有很多个free，一直是填充模式，封不封感觉和路由模式没有关系，而且我一直是同一个IP，放心大胆的用吧
+
+- 和这个没关系，和邮箱有关系，该封就封。我一直是轮询，有的号根本没轮询到也会封
 
 - ## [有没有大佬科普下cpa和sub2api的原理和差别 - LINUX DO _202605](https://linux.do/t/topic/2108651)
 - 两个我都部署过，CPA才是更轻量那个吧，纯反代，前端都要额外配，没任何权限管理。
@@ -861,7 +864,12 @@ https://makerich.club/ chong 这个渠道不是源头，也是流传最久的渠
 
 - ## 
 
-- ## 
+- ## [用Hub的一定要慎重，怎么制裁他？？？ - LINUX DO _202605](https://linux.do/t/topic/2132553/30)
+- 我早在15天前就说过这个问题，发布渠道的人可以随时改价，可以让一个渠道本来免费，看有人调用的多了，马上改成高价来背刺用渠道的人
+- 这个站理想是好的, 人人拿闲置的token互相交换, 但是完全不透明, 甚至还有暗箱操作的情况, 模型你都不好分辨是不是真的, 很花精力, 只能说有很长的路要走
+- 看调用记录，是缓存读命中的时候，扣费非常离谱, 所以那个上游是钻了空子，假设佬友们试着调用一次，那无所谓缓存，费用很低，但是佬友们开始多次调用，缓存命中高了，费用就逆天了
+
+- 还有人用haiku伪装opus4.6的。
 
 - ## [Free Model List (API Keys) : r/LLMDevs _202603](https://www.reddit.com/r/LLMDevs/comments/1s020se/free_model_list_api_keys/)
   - Here is a list with free models (API Keys) that you can use without paying. Only providers with permanent free tiers, no trial/temporal promo or credits. 
@@ -987,13 +995,13 @@ Hugging Face 🇺🇸 Llama 3.3 70B, Qwen2.5 72B, Mistral 7B +many more. $0.10/m
 - 一个是卖钱的正式版，一个是对话用于训练的免费公测版。测试版不一定弱，但 Ta 是测试版。
 
 - ## 💡 [【长期更新-授人以鱼不如授人以渔】公益站渠道公示（人人都可搭公益？） _202601](https://linux.do/t/topic/1477161)
-  01. q2api(claude)
-  02. 英伟达ai平台（大部分开源模型）
-  03. hf抱脸（大部分开源模型）
-  04. groq平台
-  05. 硅基流动平台
-  06. 富可敌国平台（duck已许可分发付费站anti, 正在申请分发max）
-  07. 杂七杂八的短效羊毛平台（国外）
+  01.  q2api(claude)
+  02.  英伟达ai平台（大部分开源模型）
+  03.  hf抱脸（大部分开源模型）
+  04.  groq平台
+  05.  硅基流动平台
+  06.  富可敌国平台（duck已许可分发付费站anti, 正在申请分发max）
+  07.  杂七杂八的短效羊毛平台（国外）
 
 - [还有可以白嫖opus的平台嘛  ](https://linux.do/t/topic/1510785)
 

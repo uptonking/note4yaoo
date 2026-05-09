@@ -132,14 +132,6 @@ modified: 2025-02-21T17:17:42.225Z
     - 我感觉我们最大的特点是可以自由添加角色，还可以指定行动
     - 可以自动推演剧情，会比较有意思，但是这种项目的痛点都是token消耗比较高，我们用各种方法，降低到了1个tick用flash模型只要3毛左右
 # ai-apps
-- https://github.com/NPC-Worldwide/incognide /AGPL/202604/ts/类似全家桶
-  - https://enpisi.com/incognide
-  - Incognide unifies chat, code, documents, web browsing, and media into a tileable workspace with intelligent context and composable automations.
-  - https://github.com/npc-worldwide/npcsh /MIT/python
-    - The agentic shell for building and running AI teams from the command line.
-  - https://github.com/npc-worldwide/npcpy /MIT/python
-    - flexible agent framework for building AI applications
-
 - https://github.com/NitroRCr/nyaai /apache2/202603/ts/vue
   - https://nyaai.cc/
   - [[开源] Nya AI: 在一个地方进行 AI 对话 / 网络搜索 / 笔记 / 协作 / 频道 / 网盘  - LINUX DO _202603](https://linux.do/t/topic/1787694)
@@ -823,6 +815,14 @@ modified: 2025-02-21T17:17:42.225Z
 - https://github.com/Lianues/Iris /GPL/202603/ts/vue
   - 一个面向多平台的智能代理程序。支持 Console、Web、Discord、Telegram、微信、企业微信、飞书、QQ 等平台，支持工具调用、会话存储、图片输入、OCR 回退、Computer Use、MCP 和记忆能力。
   - [IrisAgent，将coding，claw，web，mcp，skill，多agent，computer use等全部集成的agent项目，支持飞书，vx，终端，网页等多个平台同时使用，支持一键安装，替代openclaw  - LINUX DO _202603](https://linux.do/t/topic/1839669)
+
+- https://github.com/EryouHao/zano /MIT/202605/ts
+  - https://zano.fehey.com/
+  - A collaborative workspace where humans and AI agents work together in shared channels
+  - Each agent runs as a Claude Code process on your own machine, has its own working directory and MEMORY.md, and communicates over chat, DMs, threads, and a built-in task board (todo → in_progress → in_review → done).
+  - Web: Next.js 16 + Supabase Auth/DB/Realtime. Channels, DMs, threads, tasks, agent management.
+  - https://x.com/QingQ77/status/2052522615517204990
+    - 频道里可以加 AI 队友。每个代理是本地跑的 Claude Code 进程，有独立工作目录和 MEMORY.md 来沉淀经验。
 # cv
 - https://github.com/IDEA-Research/Rex-Omni /1kStar/IDAE/202512/python/华人作者
   - https://rex-omni.github.io/

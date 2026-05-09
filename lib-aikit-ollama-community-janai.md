@@ -23,8 +23,10 @@ modified: 2026-01-14T19:05:15.969Z
 
 - 实现参考
   - janai: rust/tauri + ui
+  - transformerlab-app: backend-plugins + ui, 支持mlx/llamacpp/ollama/mlx-audio
+    - 💡 可参考 tansformer-app 用python重写
+  - unsloth-studio: llama-server/transformer
   - llamafarm: lemonade(cpp) + ui
-  - transformerlab-app: backend-plugins + ui
   - omlx: mlx-lm + ui(PyObjC)
 # draft
 - janai-cli like obsidian-cli, ollama-cli, lms-cli
@@ -35,9 +37,12 @@ modified: 2026-01-14T19:05:15.969Z
 
 - model-manager
   - mlx后端不支持自定义安装最新mlx-lm/mlx-vlm版本
+  - 支持针对cpu优化的backend和模型
   - 参考msty，能统一管理 local/ollama/lmstudio/huggingface 的模型，释放空间
 
 - search in chat
+
+- 类似openclaw的服务进程和remote control
 
 - v0.7.6_20260127版本上, 自定义url都会失败
 
@@ -64,6 +69,37 @@ modified: 2026-01-14T19:05:15.969Z
 - 
 - 
 
+# codebase
+- Desktop App 
+  - Frontend: web-app/ (React 19 + TanStack Router + Tailwind CSS) 
+  - Backend: src-tauri/ (Tauri/Rust — native window, file I/O, process control)
+  - Extensions: extensions/ (JS extensions for llama.cpp, assistant, downloads, RAG, etc.)  
+  - Path: UI → JS extensions → Tauri IPC → Rust plugins → llama-server/mlx-server 
+
+- CLI (jan-cli) 
+  - Single binary: src-tauri/src/bin/jan-cli.rs (~1, 350 lines, built with Clap + Tokio)  
+  - Compiled with --features cli — excludes all Tauri/desktop code
+  - 100% Rust — no webview, no JS extensions, no GUI  
+- The CLI is a first-class standalone binary. it works without desktop.
+  - Auto-downloads GGUF models from HuggingFace on demand 
+  - Spawns llama-server (or mlx-server on Apple Silicon) as a child process 
+  - Exposes an OpenAI-compatible API at localhost:6767/v1
+  - Shares ~/.jan/ with the desktop app (models downloaded by either are available to both) 
+  - 🐛 However, the CLI doesn't have a chat REPL — it's primarily a model server.
+  - You serve a model and then interact via the OpenAI API (curl, another tool, or launch to feed it into Claude Code/OpenClaw).
+
+- cli and desktop share
+  - Rust core modules (src-tauri/src/core/): threads, downloads, filesystem, MCP, server, state 
+  - Plugins (tauri-plugin-llamacpp, tauri-plugin-mlx, etc.) — both use the same llama.cpp/MLX backend
+  - Server proxy (proxy.rs) — OpenAI-compatible API server at localhost: PORT/v1 
+  - Data folder (~/.jan/) — same location for models, threads, configs
+
+- 
+- 
+- 
+- 
+- 
+
 # discuss-stars
 - ## 
 
@@ -77,7 +113,11 @@ modified: 2026-01-14T19:05:15.969Z
 
 - ## 
 
-- ## 
+- ## [Goal: Jan Desktop has CLI · Issue · janhq/jan _202603](https://github.com/janhq/jan/issues/7596)
+  - [Jan CLI docs](https://www.jan.ai/docs/desktop/cli)
+  - The jan CLI lets you serve local AI models and launch autonomous agents from your terminal — no cloud account, no usage fees, full privacy.
+  - Jan CLI is installed automatically when you launch the Jan desktop app for the first time — no extra steps needed. 
+  - The Jan desktop app helps you manage inference backends (LlamaCPP, MLX) and models — or use the CLI to manage them. Both share the same data folder, so models installed via either interface are available to both.
 
 - ## 🚀🍎 pr已合并_20260205 [feat: add new backend - MLX · Pull Request · janhq/jan](https://github.com/janhq/jan/pull/7459)
   - This PR adds native MLX inference support for Jan, enabling Apple Silicon Macs to run MLX-optimized models (safetensors format) with Metal GPU acceleration. 

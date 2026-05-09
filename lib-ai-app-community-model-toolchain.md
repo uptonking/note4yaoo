@@ -1493,6 +1493,17 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 # discuss-CPU/RAM
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Is local PDF chatbot with Ollama + Llama 3 usable on CPU-only laptop? : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1t63dnp/is_local_pdf_chatbot_with_ollama_llama_3_usable/)
+- CPU is ROUGH. You’ll have to be very smart about how you manage the chunk sizes. It’s doable though.
+
+- Use LM Studio for your LLM provider, not Ollama, and run it in Vulkan mode. This is has a much better shot at picking up your Iris Xe  iGPU, which will speed things up significantly, and is far easier to configure than llama.cpp. Ollama usually takes a ton of tweaking to get non-Nvidia stuff working.
+
 - ## [[Project] I built an AI Agent that runs entirely on CPU with a 1.5B parameter model — here's what I learned : r/ollama _202604](https://www.reddit.com/r/ollama/comments/1sld3tl/project_i_built_an_ai_agent_that_runs_entirely_on/)
   - TL; DR: Built an intelligent ops agent using a 1.5B model (Qwen2.5:1.5b) that runs on CPU-only machines. 
   - Uses RAG + Rerank + structured Skills for usable accuracy without any GPU. 
@@ -1700,6 +1711,16 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - https://x.com/o_lacombe/status/2051697645824213033
   - Google just released Multi-Token Prediction (MTP) drafters that deliver up to a 3x faster inference boost! 
+
+- ## 🆚🤔 Google's MTP approach is way better than Qwen's because it SCALES with MTP parameter but Qwen peaks at MTP=3. 
+- https://x.com/OrganicGPT/status/2052129236199117212
+  - I can now have FULL BF16 Gemma 4 31B at +400 tok/s on RTX 6000 Pro using MTP=100, video coming soon!
+  - In short: Qwen predicts N tokens in parallel (independent guesses), Gemma 4 predicts N tokens sequentially (each informed by the last). That's why Gemma 4 keeps scaling.
+
+- Qwen's MTP uses NEXTN too. It is same as Gemma's, they are not fundamentally different.
+
+- is quality ok? is it falling apart? tool usage?
+  - MTP is lossless by design, so yes it's as good as the base model
 
 - ## dflash-mlx sweet spot on Apple Silicon is narrower than expected: prompt ≤16K AND max_tokens ≤1024 to get the 1.45-1.65x decode speedup.
 - https://x.com/hxiao/status/2050965517100601448
