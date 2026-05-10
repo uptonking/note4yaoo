@@ -1047,6 +1047,12 @@ modified: 2025-02-21T18:20:42.624Z
 
 - https://github.com/lza6/notion-2api /apache2/202510/python
   - 将你强大的 Notion AI 体验，无缝转换为兼容 OpenAI 格式的 API 服务的神奇项目。这意味着，你可以将 Notion AI 作为后端，驱动任何支持 OpenAI API 的应用程序、脚本或服务。
+# data-synthetic
+- https://github.com/NVIDIA-NeMo/DataDesigner /apache2/202605/python
+  - https://nvidia-nemo.github.io/DataDesigner/
+  - Data Designer is an orchestration framework for generating high-quality synthetic data. Y
+  - ou provide LLM endpoints (NVIDIA, OpenAI, vLLM, etc.), and Data Designer handles batching, parallelism, validation, and more.
+  - Configure columns and models → Preview samples and iterate → Create your full dataset at scale.
 # more
 - https://github.com/beuaaa/pywinauto_recorder /MIT/202411/python
   - https://pywinauto-recorder.readthedocs.io/

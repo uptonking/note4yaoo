@@ -671,7 +671,17 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
-- ## 
+- ## firecracker doesn't even support GPU acceleration.
+- https://x.com/binsquares/status/2052920113989574962
+  - smol machine's next release will support GPU acceleration for both linux + macOS natively.
+  - smol machines = isolation + subsecond boot + stateful + GPU acceleration + cross platform (windows + linux).
+
+- Why not cloud hypervisor that has GPU passthrough support?
+  - Native macOS support
+
+- Using qemu?
+  - nope. https://github.com/smol-machines/smolvm
+  - smolvm does not use qemu btw, i am built ontop of `libkrun`. gpu acceleration works due to modifications
 
 - ## 🌰 Added an example of how to run Firecracker VM on top of AgentFS with copy-on-write overlay filesystem to the git repository
 - https://x.com/penberg/status/2003522274004206057

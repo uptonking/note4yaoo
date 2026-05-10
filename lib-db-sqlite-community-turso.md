@@ -394,7 +394,24 @@ Today, Turso is in beta with early customers working toward production deploymen
 
 - ## 
 
-- ## 
+- ## 🆚 Just completed several days benchmarking/experimenting with AI SDK, OpenCode, Flue, and several Virtual Filesystems (Mesa/Archil)
+- https://x.com/michael_chomsky/status/2052884812172828912
+- 1. The inside/outside sandbox debate largely depends on what tool calls are running. If the tools are your API and not bash as much, then it makes sense to be off a sandbox because most of your latency outside of inference will come from tool calls. If mostly bash, then running on a sandbox makes more sense--each tool call is substantially faster. This can be up to a 20% gain, but I don't think a 20% latency difference should decide whether you're off or on sandbox in more cases. There are more important things to think about.
+
+2. Running off sandbox helps with cold starts, but only shaves around a second. You can solve this by prewarming the sandbox while the user is typing, then it kinda becomes a non-issue in practice.
+
+3. Archil writes seem to be faster than Mesa's no matter how you cut it. Mesa's versioning/git features are really cool though.
+
+4. AI SDK is the most annoying to manage skills/memory with, which feels weird because Vercel is pioneering skills. For short tasks on my very very rudimentary tests, I see basically zero difference in performance between AI SDK, Flue, and OpenCode. The harder question is how they perform on long-running tasks.
+
+5. Flue VFS mounting DX is fantastic, but its 'no-integration' philosophy is intensely annoying and possibly counterproductive. That said, LLMs seem to love it.
+
+6. Given OpenCode's bulkiness compared to the alternatives,  I really really expected it to perform worse, either in first request latency, or have some other major disadvantage. It's just so massive compared to other options, yet it seems to perform just as well. Very impressed with it, and it has the most complete SDK.
+
+- Overall, I think AI SDK has a very clear opportunity to get a major win if they were more harness agnostic, made it easier to use serverless Pi. I haven't been able to get that working quite yet.
+  - Biggest surprise for me was Archil's speed. Incredible tech, and should have more visibility with AI native teams. If I was them I'd put some billboards around SF ASAP.
+
+- The AI SDK wasn’t architected like Pi (what Flue uses) and OpenCode. It has almost two years of code built up with abstractions and more. I don’t believe they will be able to match OpenCode or Flue unless they do a fresh re-write. I would only recommend OpenCode or Flue if starting fresh with agentic workflows
 
 - ## 🚀 Introducing Mirage, a unified virtual filesystem for AI agents
 - https://x.com/zechengzh/status/2052105012172792061

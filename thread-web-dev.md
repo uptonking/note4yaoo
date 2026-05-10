@@ -37,6 +37,11 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
+- ## 
+
+- ## html tip: You can use the `translate="no"` attribute to specify whether the content of an element should be translated by the browser's translation features.
+- https://x.com/Shefali__J/status/2053003615628153270
+
 - ## A URL is a URI, but a URI is not always a URL.
 - https://x.com/sergiodxa/status/1928582537003118593
   - e.g. a torrent magnet link is a URI, but not a URL, it identifies a resource (the torrent) but doesn't locate it via a protocol like HTTP or FTP.
@@ -60,7 +65,7 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 💡 I knew elements with IDs became global variables, but any child elements with a `name` attribute become properties on that global variable
 - https://x.com/kilianvalkhof/status/1840739327354998987
-  - `idElem.namedInput.onclick=()=>{}`
+  - `idElem.namedInput.onclick=()=>{}` 
 
 - But it applies *only for form* and its elements. These "form elements" are not necessarily direct form children. And even not necessarily children at all, since there is the "form" attribute we can use to link the "detached" element.
 - Give the input a name of attributes and watch things break 
@@ -242,7 +247,7 @@ modified: 2021-01-08T17:13:43.392Z
 - I did not try `<meta>` ! Let me look into it.
 - script or style tags won’t do?
   - I tried that. It causes perf issues. I want to have a marker element that I can replace with some dynamic content.
-- label? or `<blink>` ? `<object> or <input type=hidden>`
+- label? or `<blink>` ? `<object> or <input type=hidden>` 
 
   - Causes issues with the accessibility tree.
 - Depending on context,  `<wbr>` might work for you
@@ -290,7 +295,7 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## TIL that Google Maps implements a scheduler in the browser main thread, similar to React!
 - https://twitter.com/geoffreylitt/status/1615761940055212032
-- I think any sufficiently large graphics app has a scheduler of some form, whether ad-hoc or not. You implement a scheduler the moment you abstract around `requestAnimationFrame`
+- I think any sufficiently large graphics app has a scheduler of some form, whether ad-hoc or not. You implement a scheduler the moment you abstract around `requestAnimationFrame` 
 
 - ## [Compress An Image Before Upload With JavaScript - PQINA](https://pqina.nl/blog/compress-image-before-upload/)
 - Compress An Image Before Upload With JavaScript - without any external dependency. Neat trick! Did you know that browsers have built-in image compression features? 
@@ -332,6 +337,8 @@ modified: 2021-01-08T17:13:43.392Z
   display: none;
 }
 ```
+
+
 
 ```CSS
 .carousel {
@@ -468,7 +475,7 @@ main {
 - https://twitter.com/fabiospampinato/status/1444436271120752641
   - It can unlock some extra performance when you need to do some work on your HTML (parsing, sanitizing etc.) and you can cache the result for unchanged tags.
   - You should probably use DOMParser instead for this, but the thing is **DOMParser is synchronous** and the HTML string could be arbitrarily large, you can't just block the main thread indefinitely like that. 
-  - Unfortunately **DOMParser can't run in a Web Worker**, but this module can.
+  - Unfortunately **DOMParser can't run in a Web Worker** , but this module can.
 
 - ## at work i need to change the cursor dynamically, tried to translate3d html but it's laggy.
 - https://twitter.com/0xca0a/status/1441327362914742277
@@ -532,7 +539,7 @@ main {
 - https://twitter.com/kentcdodds/status/1418719232271929346
   - Otherwise, filewatchers will trigger even when there weren't content changes
 - I think this makes more sense to be the filewatcher’s responsibility? The watcher could be configured in one place and just compare file hashes, otherwise you’d have to configure every tool
-- The filewatcher having the cache for what has changed or not makes more sense. From a tools perspective it is **always cheaper to write rather than keep a cache or read before write**.
+- The filewatcher having the cache for what has changed or not makes more sense. From a tools perspective it is **always cheaper to write rather than keep a cache or read before write** .
 - Having trouble seeing why this just wouldn’t always be the behavior?
   - I think it’s because writing straight to the fs is just easier to implement. To implement the correct behaviour you’d have to perform an atomic write (write to new file and rename).
 
@@ -821,7 +828,7 @@ decode('&#70;'); // => F
 - https://twitter.com/JoshWComeau/status/1365347703107031041
   - But it's only supported in Chrome and Firefox
   - Fortunately, we can use the `<picture>` HTML tag to support *all* browsers, by providing fallbacks in other formats
-  -  I found, a web-based .avif file converter that does its work *in the browser*
+  -  I found, a web-based .avif file converter that does its work *in the browser* 
 - the decoding speed of this format can be pretty slow, since the compression is so advanced. 
   - This can mean that while it saves time/bandwidth downloading, it can still be bad for performance 
   - As always, do your own testing! 
@@ -838,7 +845,7 @@ decode('&#70;'); // => F
 
 - ## Use the `start` attribute to change the starting point for your ordered lists.
 - https://twitter.com/denicmarko/status/1364480932955238401
-  - `<ol start="2">`
+  - `<ol start="2">` 
 
 - ##  TIL about the "ping" attribute on `<a>` tags, which will send a POST request to the given URLs when the anchor is clicked.
 - https://twitter.com/svenluijten/status/1363245229533507585
@@ -889,7 +896,7 @@ decode('&#70;'); // => F
 - Nice but that means the popup will be native and different across browsers
 - That smells of new IE6 in the making.
 
-- ## If you ever looked inside a non-minified bundle, you might’ve seen a lot of automatically generated comments that look like this `/*#​__PURE__*/ `
+- ## If you ever looked inside a non-minified bundle, you might’ve seen a lot of automatically generated comments that look like this `/ *#​__PURE__* / ` 
 
 - https://twitter.com/iamakulov/status/1353650608750825472
 - In 2016, folks noticed that when you transpile a JS class with Babel, the class isn’t removed during tree-shaking. 
@@ -899,13 +906,13 @@ decode('&#70;'); // => F
   - So, to transpile a class, Babel was converting it into a function – and wrapping that function into an IIFE (immediately invoked function expression)
   - a problem with an IIFE is that UglifyJS (which did tree shaking in webpack back then) doesn’t know whether it’s safe to remove it.
   - An IIFE may simply create a class and do nothing else, like above. But it also may send a request to the server. UglifyJS doesn’t know
-  - To solve this `/*#​__PURE__*/` was born.
-  - Babel started to add /*#​__PURE__*/ comments in front of IIFEs it generates (as it knows they don’t have any side effects).
+  - To solve this `/ *#​__PURE__* /` was born.
+  - Babel started to add / *#​__PURE__* / comments in front of IIFEs it generates (as it knows they don’t have any side effects).
   - And UglifyJS started to recognize these comments – and dropping pure function calls if their result isn’t used.
 - Fast forward to 2021:
   - Terser replaced UglifyJS in webpack (and is still responsible for most of tree shaking)
-  - A lot of other tools adopted /*#​__PURE__*/ comments (eg babel-preset-react – for React.createElement – or babel-plugin-styled-components – for styled.whatever)
-  - /*#​__PURE__*/ annotations were documented on the Terser website, along with a couple others
+  - A lot of other tools adopted / *#​__PURE__* / comments (eg babel-preset-react – for React.createElement – or babel-plugin-styled-components – for styled.whatever)
+  - / *#​__PURE__* / annotations were documented on the Terser website, along with a couple others
 
 - ## The "hidden" cost of webfonts: you need to test everything twice. 
 - https://twitter.com/rauchg/status/1352730054950703104
@@ -979,7 +986,7 @@ decode('&#70;'); // => F
 - https://twitter.com/markdalgleish/status/1350999134631768069
 - No outlines? You know I care deeply about a11y. Seems like you guys are just pressing my buttons.
 - Bug Report: Can't focus while PMs are hovering
-  - `.markDalgleish:not(:focus) { }`
+  - `.markDalgleish:not(:focus) { }` 
 
 - ## Two of my most- and first-used checks when doing a performance audit are surprisingly old school:
 - https://twitter.com/csswizardry/status/1349400099647090694
@@ -1002,7 +1009,7 @@ decode('&#70;'); // => F
 
 - ## Avoid layout shifts on long pages by adding a scrollbar
 - https://twitter.com/JoshWComeau/status/1349374805418635264
-  - `overflow-y: scroll; `
+  - `overflow-y: scroll; ` 
 
   - Improves CLS score
 - this is indeed annoying.
@@ -1064,7 +1071,7 @@ decode('&#70;'); // => F
 - ## Do any of you create raw web components? e.g. custom elements without Stencil, lit, or any other tooling?
 - https://twitter.com/claviska/status/1348797980854378496
 - Any convenience utilities you’ve created/are using for data binding and similar things?
-  - I’m weird I guess but I like to use jQuery it already supports scope `$(this, ’.element’)`
+  - I’m weird I guess but I like to use jQuery it already supports scope `$(this, ’.element’)` 
 
   - The util functions I often end up using is a function to `queryselector(all)` in the shadowDOM; 
 
@@ -1170,7 +1177,7 @@ decode('&#70;'); // => F
 - https://www.joshwcomeau.com/react/modern-spacer-gif/
 - Instead of using margin, I create a new element explicitly to add some space between the icon and text!
 - In the late 90s, if you were to pop open the source of a typical website, you'd likely encounter this curious fella
-  - `<img alt="" src="spacer.gif" width="1" height="1" />`
+  - `<img alt="" src="spacer.gif" width="1" height="1" />` 
 
 - CSS didn't exist yet, and web layouts were built using HTML tables. 
   - GIFs were used because GIFs were the only image format that supported transparency (this is pre-PNG). 

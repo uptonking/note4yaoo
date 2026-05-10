@@ -310,6 +310,51 @@ modified: 2024-06-30T11:17:28.971Z
   - `docker events --filter container=<your_container_id>` 
 
 - In terms of debugging, it's cleaner to see error events or logs first, then to hop on the host and look for specifics.
+# discuss-gfw/mirrors ✈️
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [国内现在Docker镜像依然拉不下来吗？佬们都是怎么做的呢？ - LINUX DO _202605](https://linux.do/t/topic/2139734/9)
+
+```JSON
+{
+  "registry-mirrors": [
+    "https://docker.1ms.run",
+    "https://docker.m.daocloud.io",
+    "http://mirrors.ustc.edu.cn",
+    "http://mirror.azure.cn"
+  ]
+}
+```
+
+```JSON
+{
+  "registry-mirrors": [
+    "https://1panel.live",
+    "https://daocloud.io",
+    "https://1ms.run",
+    "https://xuanyuan.me"
+  ]
+}
+```
+
+- 我个人是用的轩辕镜像，免费也能用
+
+- 可以自己去cf免费搭建一个加速地址，自用稳定快速。最好是有自己的域名
+
+- 两个方法，1个是使用镜像站。2是使用代理来拉镜像
+- 首先需要代理，mac、windows走Docker Desktop的就在软件内配配就好了。 然后linux系统光配置系统proxy还是拉不了的，需要给dockerd配置一下proxy
+
+- 镜像站的镜像之前踩过坑，在服务器上跑了一个镜像站的docker镜像，感觉被投毒了一样，让我的服务器带宽跑满，最后只能重装了，镜像站还是要仔细斟酌，找靠谱的
+
+- 
+- 
+- 
+- 
+
 # discuss
 - ## 
 

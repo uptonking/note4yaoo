@@ -379,6 +379,11 @@ modified: 2023-04-05T19:35:14.347Z
 - https://github.com/fabiospampinato/siar
   - a simple random-access archive format. 
   - It's similar to Electron's asar (compact, json header, random access) but with: no integrity checks, browser support, tree-shaking, much smaller, zero party dependencies. Fast.
+# large-file
+- https://github.com/stardustai/dataset-viewer /MIT/202510/rust/ts/inactive
+  - https://stardustai.github.io/dataset-viewer
+  - A sleek dataset viewer built entirely by AI Agent. 
+  - Supports streaming large files from WebDAV, S3, SSH, Local or Hugging Face.
 # more
 
 # discuss

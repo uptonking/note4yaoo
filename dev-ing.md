@@ -333,6 +333,12 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0509
+
+- The issue is that the curly quotes in the file are Unicode characters that don't visually match when I type them
+  - The file uses Unicode curly quotes (`\xe2\x80\x9c` and `\xe2\x80\x9d`). Let me use a script to fix this precisely
+  - The shell is interpreting the escape sequences. Let me use a different approach - write a Python script to a file and execute it
+
 ## 0508
 
 - Failed to load model: Subprocess error: Failed to import ML libraries: Unsloth: Please install unsloth_zoo via `pip install unsloth_zoo` then retry!

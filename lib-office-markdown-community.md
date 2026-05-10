@@ -393,6 +393,19 @@ export default marked;
 - ## [Easiest way to make a custom css file as a template for markdown files? : r/Markdown _202604](https://www.reddit.com/r/Markdown/comments/1swuogu/easiest_way_to_make_a_custom_css_file_as_a/)
 - Parse your .md into html. There exist parser for this case.
 
+# discuss-md-alternatives
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Markdown vs HTML. Every time we go from a semantically dense to a semantically sparse format, we lose. 
+- https://x.com/antirez/status/2053113951123054963
+  - Even more today where less tokens from the same content is way better. I can understand we need a better markdown. I can't understand we should replace it with HTML.
+
 # discuss
 - ## 
 

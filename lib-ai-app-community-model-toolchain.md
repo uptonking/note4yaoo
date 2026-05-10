@@ -1680,6 +1680,22 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
+- ## [The GB10 Solution Atlas is now open source, the inference engine made for the community with breakneck inference speeds (Qwen3.6-35B-FP8 100+ tok/s) : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1t5p2yv/the_gb10_solution_atlas_is_now_open_source_the/)
+
+- ## [MTP is all about acceptance rate : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1t7mdrl/mtp_is_all_about_acceptance_rate/)
+  - I was very excited about the MTP stuff especially since Gemma4 has become my "daily driver" for some stuff. I grabbed the latest mlx-vlm and did some tests and found it disappointing.
+  - JSON output was my core use case where I'm handing the LLM a list of items, asking it to group them by similarity according to some rules and then get them back in a structured output*.
+  - Bonus for you hackers: Gemma's JSON structure instruction following is pretty good and I find using structured output to be about a 20% hit to token generation. It is faster to just accept a little bit of sloppy JSON and massage it at runtime; so all this is with json_schema off which mlx-vlm doesn't support for spec-decode anyway
+
+- It’s not just a matter of acceptance rate, it’s a matter of having computation to burn (which Macs famously don’t have much to spare before the M5 series added Neural Accelerators), and gains are hard won in MoE models for complicated reasons. You’d likely see better results on one of the dense Gemma 4 models even on a Mac.
+  - In this case, I mostly think this is just MoE being difficult. Every miss is far more expensive than it is on a dense model.
+  - As another said, Gemma 4’s adaptive drafting would be useful too.
+
+- Which is why adaptive draft is a must.
+  - All we need is for someone to train a model based off of this paper
+
+- A reminder that DFlash and native MTPs (Qwen3.5/3.6) are biased towards what they got trained on (agent/code), so keep that in mind!
+
 - ## Introducing SubQ - the first model built on a fully sub-quadratic sparse-attention architecture (SSA)
 - https://x.com/elliotchen100/status/2051808387978199178
   - the first frontier model with a 12 million token context window which is:
