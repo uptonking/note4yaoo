@@ -11,6 +11,15 @@ modified: 2026-04-11T01:31:17.720Z
 
 # coding-harness-xp
 - 有些常用工具AI也记不住API, 比如pdfium, 可以将代码clone到本地让ai理解
+
+- ai容易工作一小段时间就停止然后提示你next, 有时候感觉是无底洞
+  - /goal 可以让ai专注于目标
+
+- 
+- 
+- 
+- 
+
 # prompts 🔠
 
 ## ilove-image(stirling-image)
@@ -395,19 +404,20 @@ you may use similar file/folder names instead of the same file/folder names as t
 ## aichorage(janai/tranfromerlab-app)
 
 - project jan(at folder `../jan`) is a apache2-licensed, local, powerful chatgpt-like tauri app that supports to Download and run LLMs, Connect to cloud llm api, install custom llm backend like custom llama.cpp.
-- project transformerlab-app(at folder `../all-runtime-llamacpp/transformerlab-app-electron`) is a AGPL-licensed electron app that supports to train, fine-tune, chat with your own model locally. it can be used to train/tune local model, but it also supports to import local model, install custom llm backend plugin, run and chat with local model.
+- project transformerlab-app(at folder `../all-runtime-llamacpp/transformerlab-app-electron`) is a AGPL-licensed electron app that supports to train, fine-tune, chat with your own model locally. it can be used to train/tune local model, but it also supports to import local models, install custom llm backend plugin, run and chat with local model.
 - project unsloth-studio(at folder `../unsloth`) is a AGPL-licensed webapp that supports to run and train text, audio, embedding, vision models on Windows, Linux and macOS. It supports to run local gguf/mlx models, but it cannot install custom llm backend. It also supports auto detect locally downloaded models in local huggingface-cache/ollama/lmstudio.
 
 - The final goal for aichorage is to implement an jan-like webapp/electron-app/cli with headless, extensible, client-server architecture in current folder with the same features as existing jan webapp/tauri-app/cli, but built using modern tech stacks like python, uv, npm workspaces, reactjs, @tanstack/react-router, @base-ui/react, typescript, tailwindcss, oxlint, oxfmt. After you finished the work,  `npm run dev` should start the webapp. you should implement the goal in a way to make it easy to migrate code changes/features from jan to aichorage in the future.
 - The core goal is to support most of the existing jan features/ux, like Download and run LLMs, Connect to cloud llm api, install custom llm backend like custom llama.cpp, chat with local llm or cloud llm api. since jan is apache2 licensed, you can reuse/rewrite whatever code you need from jan repo. you may reuse jan web-app(at `../jan/web-app`) or just reuse/rewrite any code you want, but you should rewrite the jan rust backend with a good custom python implementation which you can borrow design and rewrite code from jan-rust-code/transformerlab-app/unsloth-studio to avoid license issue. you may implement the core llm download/run/chat/tool-call data flow first, then migrate more features later. 
-- you may reuse most webapp code, you may also add new features and ux if you want. Since you can reuse many frontend code, the python backend should be the hard work. Strictly following jan-rust-backend architecture/logic/code is unnecessary. 
+- you may reuse most webapp code from jan, you may also add new features and ux if you want. Since you can reuse many frontend code, the python backend should be the hard work. Strictly following jan-rust-backend architecture/logic/code is unnecessary. 
   - transformerlab-app-electron repo gives a good reference for how to support to install multiple backend plugin like llama.cpp/mlx-vlm/ollama/mlx-audio from ui, you may reference useful architecture/features/code from it and migrate this custom llm backend feature to aichorage(llama.cpp/mlx-vlm first, ollama/mlx-audio may be delayed), you should ignore llm training/tuning code from it. tranfromerlab-app electron app also supports windows/linux/mac, you may reference the bundling logic if you need. 
   - unsloth-studio webapp also supports windows/linux/mac, you may reference the bundling logic if you need. unsloth-studio supports auto detect local models from local huggingface-cache/ollama/lmstudio, it's a good feature, please migrate it to aichorage. unsloth-studio also supports llama-server/mlx-lm/mlx-vlm backend on windows/linux/mac, also a good reference. you should ignore llm training/tuning code from it.
 
 - most features/ux from jan should be migrated/reimplemented in aichorage. rag should be planned, but rag implementation may be delayed.
-- multi-user/team/workspace concepts in tranfromerlab-app should be implemented in aichorage, so that different team can install different plugins. all plugins may be installed in global scope, but each team can only use plugin enabled in their team. a default workspace should be created for user so that user can use it easily.
-- aichorage backend/runtime should be extensible, configurable, flexible. Apart from good defaults value, a `.env.example` should be provided in related sub packages if you want. you may borrow good design and config from upstream jan/transformerlab-app/unsloth-studio.
-- some local models if you need: ~/.lmstudio/models/unsloth, ~/.lmstudio/models/unsloth/LFM2.5-1.2B-Thinking-GGUF/LFM2.5-1.2B-Thinking-UD-Q5_K_XL.gguf, ~/.lmstudio/models/unsloth/gemma-4-E4B-it-UD-MLX-4bit.
+- multi-user/team/workspace concepts in tranfromerlab-app should be implemented in aichorage, you may borrow the good design/architecture of transformerlab-app, but strictly following is unnecessary. all custom backend plugins may be installed in global scope, but each team can only use plugin enabled in their team. a default workspace and username/password should be created so that user can use it easily by just click login.
+- aichorage backend/runtime/web should be extensible, configurable, flexible. Apart from good defaults value, a `.env.example` should be provided in related sub packages if you want. you may borrow some good design/config from upstream jan/transformerlab-app/unsloth-studio.
+- all llm backend/runtime should be optional that supports to install/uninstall/enable/disable, so that the architecture is extensible and flexible. but llama.cpp amd mlx-vlm are installed by default to make it easy to use out of the box. you may design a standalone llm-runtime package to make the architecture modular, resuable, extensible.
+- some local models if you need: ~/.lmstudio/models/unsloth/LFM2.5-1.2B-Thinking-GGUF/LFM2.5-1.2B-Thinking-UD-Q5_K_XL.gguf, ~/.lmstudio/models/unsloth/gemma-4-E4B-it-UD-MLX-4bit, ~/.lmstudio/models.
 
 - tech stack for project aichorage needs to use open source libs/fwk:
   - you can use similar dependencies from jan/transoformerlab-app/unsloth-studio for easier feature migration. AGPL deps should be avoided.
@@ -426,20 +436,21 @@ you may use similar file/folder names instead of the same file/folder names as t
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 - make a plan, then migrate and improve full feature pairity, without licensing issues
 
-- you may deep research, and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
-
 - please deep research jan, then can you design a similar solution in aichorage to improve it? is jan's solution good enough? if yes, solve it in a similar way for ailovedoc.
 
-- you may do a big code refactor to match full feature of jan in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may deep research, and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
 
+- you may do a big code refactor to match full feature of jan in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+
+- you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream jan/transformerlab-app/unsloth-studio should be put in folder `upstream`. you may even design a script to automate it.
 - research and make a full plan, then implement aichorage to match full features of jan, or even better than jan, without licensing issues.
-
-- you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update the it. all checking/docs/scripts related to upstream jan/transformerlab-app/unsloth-studio should be put in folder `upstream`. you may even design a script to automate it.
 
 ------
 
 - yes, continue to improve.
-- you may reference how jan implements/solves it, then do a similar or better implementation in ailovedoc without licensing issue.
+- you may reference how jan implements/solves it, then do a similar or better implementation in aichorage without licensing issue.
+
+- you may borrow good deisgn from to upstream jan/transformerlab-app/unsloth-studio and rewrite it to avoid licensing issues.
 
 - jan's overall architecture is good enough to follow. Mostly aichorage should use similar architecture to jan.
 

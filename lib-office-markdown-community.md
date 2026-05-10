@@ -402,6 +402,23 @@ export default marked;
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## AI 自媒体圈太没非共识了, 之前非常笃定 md 就是最好的格式, 现在突然宣称 html 也是最好的, 理由是 html 更适合阅读和交互, 开始 for human 了
+- https://x.com/lifesinger/status/2052974808196157810
+  - 会不会往后发展 突然发现 SaaS 比 html 更适合表达, 数据库比 md 更适合存储
+
+- 有个项目同时站在了这两个点上。叫OfficeCLI。一方面它给Agent做了个CLI，简单几行命令就能创建修改Office三件套，又高效又省token。另一方面为了让人看得方便，它用HTML完美渲染了三件套，让三件套直接在浏览器就能打开看（说不定编辑也快了）
+
+- 未来可能不是“Markdown vs HTML”，而是三层分离即底层是机器可读的结构化数据、中间层是 agent 可操作的工作格式和上层是人可消费的界面。
+
+- 写html，ai要浪费多少token和context在效果上。还不如md+插件。这些自媒体根本没有技术常识
+
+- 我自己写的 skill，以 json 保存核心数据和信息，md 负责保存丰富的 context，然后优先输出 Excel 和html 给人阅读
+  - markdown根本没法看，我一堆的数据参数要对比
+
 - ## Markdown vs HTML. Every time we go from a semantically dense to a semantically sparse format, we lose. 
 - https://x.com/antirez/status/2053113951123054963
   - Even more today where less tokens from the same content is way better. I can understand we need a better markdown. I can't understand we should replace it with HTML.

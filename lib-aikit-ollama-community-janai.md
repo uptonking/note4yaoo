@@ -40,6 +40,9 @@ modified: 2026-01-14T19:05:15.969Z
   - 支持针对cpu优化的backend和模型
   - 参考msty，能统一管理 local/ollama/lmstudio/huggingface 的模型，释放空间
 
+- speculative-decoding
+  - draft model for dflash
+
 - search in chat
 
 - 类似openclaw的服务进程和remote control

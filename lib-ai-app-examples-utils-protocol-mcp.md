@@ -258,6 +258,19 @@ modified: 2026-01-19T05:01:00.055Z
     - [Midscene.js - Joyful Automation by AI - Midscene.js](https://midscenejs.com/index.html#visualized-report)  
       - Midscene wants to provide a way to make automation more stable and easier to debug, so we provide a visual report after each run. With this report, you can review the animated replay and view the details of each step in the process.
 
+- https://github.com/iFurySt/open-codex-computer-use /MIT/202605/gp/swift
+  - open-source Computer Use service wrapped as MCP. Any AI agent or MCP client can use it to run Computer Use on macOS, Linux, and Windows.
+- https://github.com/iFurySt/open-codex-browser-use
+  - 目前是以浏览器插件的形式存在
+  - [Browser Use详解 - LINUX DO _202605](https://linux.do/t/topic/2146379)
+    - 总体而言iab（in-app browser）是Codex.app自己抽象的一个浏览器，用windowId+sessionId作唯一id，整体表现为单窗口单会话只有一个浏览器窗口。
+    - 回归到Codex APP本身的Browser Use能力，主要由Browser Use（iab，应用内部浏览器页面）和Chrome（浏览器插件）组成。 IAB(In-App Browser) 这个在Codex.app里表现为Browser Use插件
+    - 这个方案是因为Codex.app本身就是Electron写的，内置的就已经有浏览器的能力了，他的做法是在中间自己抽象了一层业务层，以单个codex.app的窗口（window）+会话（session）唯一对应到一个浏览器页面，这个页面对应到Electron的WebContents，细节对上层屏蔽了。
+    - iab的一个优点是相对简单，且对于用户来说丝滑一些，直接在APP里就可以预览正在操作的浏览器
+    - 但是弊端也很明显：目前设计只能打开一个页面，打开其他页面会顶掉前面的页面; 内置的无法安装一些浏览器插件，尤其是针对某些操作依赖某些浏览器插件时; 无法无缝接入用户的浏览器
+  - 因为甚至连Codex CLI都无法用Codex.app的这两个Browser Use的能力，我们需要一个平台中立的方案，可以让所有的AI Agent轻易使用，可以让所有的AI应用轻易集成
+    - Open Browser Use的实现方案和Codex.app的extension路线是一致的，我希望的定位是打造成超集的存在，就是在满足原有的一切能力以外还能有一些额外的能力可以赋能上层业务的开箱即用
+
 - https://github.com/e2b-dev/open-computer-use /apache2/202503/python
   - A secure cloud Linux computer powered by E2B Desktop Sandbox and controlled by open-source LLMs.
   - Uses E2B for secure Desktop Sandbox

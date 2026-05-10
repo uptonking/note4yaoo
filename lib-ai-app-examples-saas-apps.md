@@ -861,6 +861,12 @@ modified: 2025-02-21T17:17:42.225Z
   - 利用 GPT-Image-2 API生成最终效果。一键生成电商相关图片！输入产品图片和需求描述，自动生成完整的电商主图、详情页图片、社媒推广图、直播间场景图等全套视觉素材。 
   - 大神的作品更偏向于国内电商平台，而我思考，为什么不做一个跨境电商版本的：精选25个高质量案例，涵盖纯色底产品主图、场景化生活图、平铺图、电商详情图、真实场景等等，全部配完整提示词，都可以利用 GPT-Image-2 API生成最终效果。
   - 与众不同之处是：Campaign Style Lock 机制 和 强推广 和 重视转化效果。
+
+- https://github.com/coolqoo/1click-ecom-detailpage /202605/python
+  - 专为 AI Agent 设计的跨境电商图像生成工具。
+  - 一键出图：根据简单描述自动生成 5 张主图 + 7~9 张详情页图片（默认），全自动交付。
+  - 广泛的框架兼容：专为 Agent 打造，已在 OpenClaw, Hermes, Codex, Claude Code 等主流框架深度验证
+  - [【开源】开源一个专为跨境电商服务的生图skill，可以生成主图和详情页 - LINUX DO _202605](https://linux.do/t/topic/2146113)
 # video/mtv
 - https://github.com/zapdos-labs/unblink /182Star/AGPL/202512/ts
   - Unblink is a camera monitoring application that runs AI vision models on your camera streams in real-time

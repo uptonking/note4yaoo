@@ -339,7 +339,21 @@ modified: 2026-01-15T15:33:18.008Z
 
 - ## 
 
-- ## 
+- ## [Has anyone bought a 3080 20GB mod recently? : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1t92h41/has_anyone_bought_a_3080_20gb_mod_recently/)
+- Yes, I just bought two from Memory Partner on eBay last week. They arrived very well packed and are working fine.
+  - Qwen 3.6 27B at 25 tok/sec without MTP and up to 50 tok/sec with MTP.
+  - Qwen 3.6 35B at 110 tok/sec without MTP, a quick test with MTP went to 145 tok/sec.
+  - Both UD-Q6_K_XL at 128k F16 context.
+
+- I got one from ebay a few months back, has been running 24/7 with no issues. Sadly the bios does not support rebar and non of the normal 10gb variant bioses worked for me either. If anyone could share a working bios that would be great, because without rebar tensor parallelism is out of the question.
+
+- It is the best budget build for multi gpu. Price of 4x of it = 2x3090. 50% of 3090 % , 85% of its performance
+
+- ### [RTX 3080 20GB - A comprehensive review of Chinese card : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p0bbrl/rtx_3080_20gb_a_comprehensive_review_of_chinese/)
+  - The cards feature blower-style cooling. Physical dimensions matches that of a server card, like Mi50 or Tesla series. It takes 2 PCIe slots and features power connector on the shorter side. The power is supplied by 2x regular gpu connector (not EPS12V like on Tesla cards), with default power limit of 320W. The card is clearly prepared for installation inside server enclosures.
+  - It looks like the card is based on a custom PCB. This PCB features NVLink connector, however, it is taped over with capton tape, and at this moment I can't verify if it is operational. The card also has video connectors (1 HDMI, 3 DisplayPort) and can function like a regular GPU. Card's enclosure is fully made out of metal. From the side, a full copper heatsink is visible, with thermal pads connecting it both to PCB and external shroud. The card feels heavy, sturdy, and well-built.
+  - At the moment of writing, the cheapest 3090 in Europe on Ebay is 730 EUR including shipping. This makes 3080 20GB a better value: it costs 25 EUR per GB of VRAM, versus 30 EUR/GB for 3090. From performance comparison we can see that price/performance ratio of those two cards is roughly equal.
+- It maches the umodded spec - 760GB/s, I've validated it by running cuda_bandwidthtest from default sdk. AMD is questionable. First, just like Nvidia, AMDs best card in under 500 EUR range is just 16GB. But software compatibility is what really bothers me. Rocm officially supports only 7900xt/xtx and, I believe, 9070xt cards, every other consumer model is unofficial. I've had a pair of Mi50 before, and I've learned that basically everything beyond llama.cpp requires CUDA, and I'm not willing to risk my money again by getting a card that will be held back by software.
 
 - ## [Is the 48 GB modded RTX 4090 still the highest available or is there something higher confirmed and who is the most reliable seller? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1ru63f0/is_the_48_gb_modded_rtx_4090_still_the_highest/)
 - they were cool when they were little known and could be purchasen for about 2700 USD, after the price rise to 4k because of the hype they are useless now because there is RTX Pro 5000 48GB for about 5k
