@@ -20,4 +20,6 @@ modified: 2026-02-06T15:48:09.172Z
 # dev-patterns
 - perfer functional programming style, which emphasizes immutability, pure functions, and higher-order functions. 
 - perfer pure functions, which are easier to test, debug.
+
+- if a large file needs to be edited or huge content needs to be written to a file, you may do it in multiple batches with small edits, because it is easy to fail for writing large content.
 # more rules

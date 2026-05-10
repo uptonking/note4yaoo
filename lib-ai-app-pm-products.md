@@ -832,6 +832,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [SunRouter _202605](https://sun.meowai.net/console/personal)
     - [SunRouter 公益站，来源bai号池，无限 gemini ](https://linux.do/t/topic/2114421)ƒ
     - 限制每用户rpm为30，enjoy
+  - [GPT Pool _202605](https://gpt-pool.com/)
+    - [[GPT Pool]临时开放 LinuxDO Connect 注册 _202605](https://linux.do/t/topic/2150883)
   - 🗑️ [NihaoAPI _202603](https://nih.cc/console/personal)
     - cc
   - 🗑️ [Pond Hub 反重力号池 _202603](https://code.claudex.us.ci/panel/profile), 签到

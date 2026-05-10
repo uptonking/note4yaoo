@@ -1038,7 +1038,19 @@ AI 可以直接操作后台 UI，把复杂流程自动化。
 
 - ## 
 
-- ## 
+- ## [Why MCP when we have REST APIs? : r/mcp _202605](https://www.reddit.com/r/mcp/comments/1t8sjho/why_mcp_when_we_have_rest_apis/)
+- LLMs are trained on tool calling, and MCP is the way that the industry has decided to expose MCP tooling. It’s a CLI with discoverability baked in. Therefore achieving the same result without MCP is an engineering effort of an uphill battle.
+- If you have OpenAPI spec or another full doc, you can quickly generate a skill with a script to use the API
+- That’s not the problem. To do that you have to:
+  - locate the endpoint(s) you need to call.
+  - authorize (MCP handles this as part of the connection)
+  - then write a script to use all of that.
+  - execute the script
+  - report back
+  - Whereas MCP gets rid of those steps and makes it “execute the script and report back”
+
+- the honest answer is discoverability + how the model was trained. with a rest api + openapi spec the agent has to first read the spec, pick an endpoint, construct the call, parse the response, all as plain code gen. with mcp the tool catalog shows up in the model's tool-use channel, which every frontier model is post-trained on heavily — so the args are schema-checked, failures are structured, and the model picks tools instead of writing http glue.
+  - for your threat modeling tool specifically — if the openapi spec is already clean, you can auto-generate an mcp wrapper from it (there are tools for this). you don't have to choose. keep the rest api for humans, expose a thin mcp layer for the agent.
 
 - ## Chrome's "web standard" Prompt API:
 - https://x.com/jaffathecake/status/2051962549545963951

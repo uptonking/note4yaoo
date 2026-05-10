@@ -78,6 +78,21 @@ modified: 2025-11-05T19:04:50.350Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Memoir (Git for AI Memory) - Memory your agents can explain, rewind, and branch. : r/coolgithubprojects _202605](https://www.reddit.com/r/coolgithubprojects/comments/1t5jh09/memoir_git_for_ai_memory_memory_your_agents_can/)
+  - https://github.com/zhangfengcdt/memoir /apache2/python
+  - memoir uses git as its versioning backed, but git repository is for files; but AI memory is for facts.
+  - I try to keep Git's mental model (commit, branch, merge, ...) but swamps the storage backed to use ProllyTree - optimized for many tiny commits with structured keys.
+
+- What search methods do you use to find a related memory and what gets passed back to the model?
+  - So Memoir's idea is to save memories retrieved in a hierarchy taxonomy-structure, such as default:context.project.scope, default:debugging.practices.frontend). In search, it basically performs paths exploit pre-classified semantic paths for O(log n)-shaped lookups.
+
+- you actually can use github repo for the memories as well. just use a separate org to store all the memories and not mix with the regular repo files
+- Git is definitely the best way to do it. My way also uses a github org for storage to keep separate from your main repos. 
+
 - ## [How I implemented 3-layer memory for LLM agents (semantic + episodic + procedural) : r/LLMDevs _202604](https://www.reddit.com/r/LLMDevs/comments/1s8njqy/how_i_implemented_3layer_memory_for_llm_agents/)
   - Three memory types
   - 1. Semantic memory — facts and knowledge: Retrieval pipeline: Vector (HNSW) → BM25 (ts_rank_cd) → RRF fusion → Graph expansion → Recency+MMR → Reranking

@@ -211,10 +211,13 @@ modified: 2025-11-01T10:54:26.044Z
   - [[Feature] MLX Support  _202602](https://github.com/unslothai/unsloth/issues/4061)
     - We're working on it as we speak. Will be released within 2 months I'd say
   - [Introducing Unsloth Studio  _202603](https://unsloth.ai/docs/new/studio)
+    - [Introducing Unsloth Studio | Unsloth Documentation](https://unsloth.ai/docs/new/studio)
     - open-source, no-code web UI for training, running and exporting open models in one unified local interface.
     - Powered by llama.cpp + Hugging Face, we support multi-GPU inference and most models.
     - Unsloth Studio runs 100% offline and locally.
     - Studio supports a range of supported transformers compatible model families, including text, multimodal models, text-to-speech, audio, embeddings, and BERT-style models.
+    - Unsloth Studio lets LLMs run Bash and Python, not just JavaScript. It also sandboxes programs like Claude Artifacts so models can test code, generate files, and verify answers with real computation.
+    - features: run local models, coding/tool-call, api(openai/anthropic), Observability, Model Arena
     - https://x.com/UnslothAI/status/2033926272481718523
     - This is the right direction. The next bottleneck for most teams isn’t model speed anymore — it’s dataset + eval quality. We saw local fine-tuning cut iteration cost by ~60% in one workflow, but bad eval sets still gave misleading “wins.” Are you planning built-in eval templates/versioning so people can benchmark model changes more reliably?
   - ⚖️ Is Unsloth now licensed under AGPL-3.0?
