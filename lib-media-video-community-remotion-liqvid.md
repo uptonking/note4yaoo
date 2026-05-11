@@ -162,7 +162,20 @@ modified: 2024-06-21T09:53:44.956Z
 
 - ## 
 
-- ## 
+- ## [Emby 和 Jellyfin，大家最后都选了谁？ - LINUX DO _202605](https://linux.do/t/topic/2155784)
+- Emby：
+客户端成熟
+UI 顺手
+开箱体验不错
+- Jellyfin：
+完全开源
+可折腾空间大
+插件挺多
+现在有点纠结要不要迁移，尤其是移动端体验和硬解支持这块。
+
+- 看下来还是 Emby 更适合日常用，省心也稳一点。Jellyfin 更适合想折腾的人，开源这点挺香，但真要长期用，体验还是 Emby 更顺手。
+
+- 入坑用的jellyfin，后面要用302，很多工具都是针对emby写的，就转emby了
 
 - ## [Plex vs. Jellyfin for New Install : r/selfhosted _202512](https://www.reddit.com/r/selfhosted/comments/1pjoamf/plex_vs_jellyfin_for_new_install/)
 - try jellyfin first since it’s free. i’ve used both plenty and much prefer jellyfin

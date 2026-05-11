@@ -411,7 +411,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 - The core goal is to support most of the existing jan features/ux, like Download and run LLMs, Connect to cloud llm api, install custom llm backend like custom llama.cpp, chat with local llm or cloud llm api. since jan is apache2 licensed, you can reuse/rewrite whatever code you need from jan repo. you may reuse jan web-app(at `../jan/web-app`) or just reuse/rewrite any code you want, but you should rewrite the jan rust backend with a good custom python implementation which you can borrow design and rewrite code from jan-rust-code/transformerlab-app/unsloth-studio to avoid license issue. you may implement the core llm download/run/chat/tool-call data flow first, then migrate more features later. 
 - you may reuse most webapp code from jan, you may also add new features and ux if you want. Since you can reuse many frontend code, the python backend should be the hard work. Strictly following jan-rust-backend architecture/logic/code is unnecessary. 
   - transformerlab-app-electron repo gives a good reference for how to support to install multiple backend plugin like llama.cpp/mlx-vlm/ollama/mlx-audio from ui, you may reference useful architecture/features/code from it and migrate this custom llm backend feature to aichorage(llama.cpp/mlx-vlm first, ollama/mlx-audio may be delayed), you should ignore llm training/tuning code from it. tranfromerlab-app electron app also supports windows/linux/mac, you may reference the bundling logic if you need. 
-  - unsloth-studio webapp also supports windows/linux/mac, you may reference the bundling logic if you need. unsloth-studio supports auto detect local models from local huggingface-cache/ollama/lmstudio, it's a good feature, please migrate it to aichorage. unsloth-studio also supports llama-server/mlx-lm/mlx-vlm backend on windows/linux/mac, also a good reference. you should ignore llm training/tuning code from it. Unsloth speaks two dialects on the same port. Both support streaming, tool calling (OpenAI tools / Anthropic tools), and vision inputs: Anthropic-compatible /v1/messages  for Claude Code, OpenAI-compatible /v1/chat/completions and /v1/responses.
+  - unsloth-studio webapp also supports windows/linux/mac, you may reference the bundling logic if you need. unsloth-studio supports auto detect local models from local huggingface-cache/ollama/lmstudio, it's a good feature, please migrate it to aichorage. unsloth-studio also supports llama-server/mlx-lm/mlx-vlm backend on windows/linux/mac, also a good reference. you should ignore llm training/tuning code from it. Unsloth studio can provide 2 llm apis that both support streaming, tool calling (OpenAI tools / Anthropic tools), and vision inputs: Anthropic-compatible /v1/messages  for Claude Code, OpenAI-compatible /v1/chat/completions and /v1/responses.
 
 - most features/ux from jan should be migrated/reimplemented in aichorage. rag should be planned, but rag implementation may be delayed.
 - multi-user/team/workspace concepts in tranfromerlab-app should be implemented in aichorage, you may borrow the good design/architecture of transformerlab-app, but strictly following is unnecessary. all custom backend plugins may be installed in global scope, but each team can only use plugin enabled in their team. a default workspace and username/password should be created so that user can use it easily by just click login.
@@ -427,6 +427,13 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - you have migrated/reimplemented some features from jan to aichorage.
 
+- you may deep research, and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
+
+- you may do a big code refactor to match full feature of jan in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+
+- you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream jan/transformerlab-app/unsloth-studio should be put in folder `upstream`. you may even design a script to automate it.
+- research and make a good design, then implement aichorage to match full features of jan, or even better than jan, without licensing issues.
+
 - please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) matching jan.
 
 - you have worked on this several times but features are still lacking.
@@ -438,11 +445,6 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - please deep research jan, then can you design a similar solution in aichorage to improve it? is jan's solution good enough? if yes, solve it in a similar way for ailovedoc.
 
-- you may deep research, and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
-
-- you may do a big code refactor to match full feature of jan in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
-
-- you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream jan/transformerlab-app/unsloth-studio should be put in folder `upstream`. you may even design a script to automate it.
 - research and make a full plan, then implement aichorage to match full features of jan, or even better than jan, without licensing issues.
 
 ------
@@ -456,12 +458,28 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - 
 - 
+
+-------
+- unsoloth-studio llm api has very very good fixes for tool-calls.
+
 - 
 - 
 - 
 - 
 - 
 
+### draft-aichorage
+
+- 
+- 
+- 
+- 
+- 
+
+- 🤔 是否要实现管理本地已有的ollama/lmstudio
+  - pros: 对使用本地已有工具的场景更友好
+  - cons: 内置runtime方便支持多种格式如 /v1/chat/completions, /v1/responses
+  - 参考很多主流开放性ai的产品
 # code-review 👀
 
 ```prompt

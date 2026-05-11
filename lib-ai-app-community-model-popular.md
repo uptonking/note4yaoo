@@ -2274,7 +2274,24 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
   - With 10GB of VRAM, you'd probably want to stick in the 8B-16B category (running around Q4).
 
 - if you’re going fully local, open source LLMs like Mistral, LLaMA 2, or Falcon handle uncensored roleplay well, especially when paired with a lightweight frontend. For image generation, Stable Diffusion forks with ComfyUI or Flux work fine on a 10GB 3080 
+# discuss-underrated/unpopular-models
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Odyseus - Spatial VLM : Projecting 2D reasoning into 3D outputs (open source repo) : r/computervision _202605](https://www.reddit.com/r/computervision/comments/1t9tomn/odyseus_spatial_vlm_projecting_2d_reasoning_into/)
+  - So I've always argued that Physical AI for robotics need actionable outputs like 3D coordinates, not bullet points or nice paragraphs.
+  - So decided to experiment by combining a VLM with Monocular Depth Estimation, essentially projecting 2D reasoning into 3D, I called it Odyseus - Spatial VLM
+  - Tech Stack: - VLM: Qwen 3.6 - Depth Estimation: Depth Anything 3 - Metric Large
+  - https://github.com/MercuriusTech/Odyseus-Spatial-VLM
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

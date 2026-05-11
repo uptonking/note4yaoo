@@ -231,7 +231,12 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
-- ## 
+- ## [newapi、sub2api、cpa 有啥区别 - LINUX DO _202605](https://linux.do/t/topic/2153855)
+- cpa 能做号池管理，但没有 key 分发机制和统计功能，只适合自用。
+  - new api 没法管理号池，但是分发做的好，和 cpa 互补，因此通常配合使用。但是我觉得它 UI 丑丑的，用的不多。
+  - sub2api 号池管理和分发 key 都挺不错，UI 也看得顺眼，不过配置起来稍微复杂一点。听说兼容性好像没有 new api 好（常用的 codex 和 cc 这种没啥问题）。
+
+- newapi纯中转，sub2api和cpa支持反代，而sub2api也能中转用，属于即能反代又能中转
 
 - ## [佬友们，0成本开站的方法找到了 -- huggingface spaces - LINUX DO _202605](https://linux.do/t/topic/2139475)
   - duplicate 已有的new api

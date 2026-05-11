@@ -265,7 +265,18 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
-- ## 
+- ## [Is anyone still running pure vector RAG in production in 2026, and is it actually holding up? : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1t9v93f/is_anyone_still_running_pure_vector_rag_in/)
+- For us on technical documents we still on pure vector RAG with hybrid retrieving. 95% accuracy on hundreds of docs with 50pages each.
+  - We managed to keep this precision because we maintain a high quality of OCR and Vectors by maintaining them in time. Once a doc is well parsed and vectorized, pure vector RAG is efficient and accurate.
+  - https://github.com/scub-france/Docling-Studio
+  - But for me, GraphRAG, deterministic ingestion etc... are more complex solutions, and they all will be hard to maintain in time. But might be a good balance benefits/cons in some cases.
+  - One things that work for us on some projects is that we melt approches. We are actually tryin this : "graph or relational layer for explicit relationships between entities/docs" and back it with our traditionnal pure vector RAG.
+  - I also go recently interested in the "Chunkless RAG" aproach proposed by Docling in "Docling-Agent". It is a catchy title, still exprimental, but it is intersting.
+  - The idea is that as Docling already cvreate a tree, no need for GRaph or hunk or whatever, just run reasoning on the tree directly !
+
+- RAGAS is pretty awesome, but it doesn't measure search with your actual customers. A/B testing is honestly the only way to go. It's a hard front-load tax that pays off in the end. Think of it this way - AB testing is real measurement. RAGAS is an integration test that says "you won't screw up launching this" but it doesn't necessarily tell you at all if your search improved. In fact, a good LLM upgrade can hide regressions in your search algorithm.
+
+- RAG is a wonderfully expensive way to blow your employer's money. If RAG really worked, the foundation model providers would offer their own version.
 
 - ## we launched Notion AI Q&A in Nov 2023, Notion vector search over the past 2 years: 10x scale, then 1/10th cost. 
 - https://x.com/nxlouie/status/2024525357672808844

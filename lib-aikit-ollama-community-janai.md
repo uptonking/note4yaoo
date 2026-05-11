@@ -42,6 +42,8 @@ modified: 2026-01-14T19:05:15.969Z
 
 - speculative-decoding
   - draft model for dflash
+- faster
+  - mtp
 
 - search in chat
 

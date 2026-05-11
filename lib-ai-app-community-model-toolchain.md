@@ -1958,6 +1958,10 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
+- ## 
+
+- ## 
+
 - ## DeepSeek v4 small KV cache + MacBook fast SSD disks = the idea that the disk is not a good target for KV cache is, in this context, totally obsolete. It works *great* . 
 - https://x.com/antirez/status/2050982689696588013
   - The session you see is opencode using my inference engine for DS4, saving, loading sessions from disk.
@@ -1997,6 +2001,48 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
   - 而claude则是手动标记缓存，需要用 cache_control 明确圈定 那个长文档段落，告诉系统：“这一段帮我缓存下来”。不一定在开头部分。
   - 百万上下文，有能力构建一个庞大到足以覆盖你绝大部分工作场景的“固定前缀”，从而减少token消耗量。
 - ds的缓存时间老长了，有时候隔天都还有，A​:divide: 才是五分钟, 另外A的缓存标记也必须从头到尾不能中断，给你标记权是因为他的缓存要收钱，让你自己决定缓存权
+
+- ## 🧩 KV Caching in LLMs
+- https://x.com/servasyy_ai/status/2053664200971686356
+  - 核心现象：你用 ChatGPT/Claude 的时候，第一个字出来特别慢，后面噼里啪啦就全出来了。原因是 KV Caching。
+- 6个部分讲清楚了这个机制：
+
+1. LLM 怎么生 token：Transformer 处理所有输入 token，每个产生一个 hidden state，但只有最后一个 token 的 hidden state 用来预测下一个词。前面的都是中间产物。
+
+2. Attention 在算什么：每层里每个 token 有 Q、K、V 三个向量。要算最后一个 token 的输出，需要它的 Q × 所有 token 的 K 和 V。
+
+3. 冗余在哪：生成第50个 token 要用 1-49 的 K、V；生成第51个又要用 1-50 的。1-49 的 K、V 根本没变，但模型每次从头重算。浪费 O(n²) 的计算。
+
+4. 解决办法：把算过的 K、V 存起来（cache）。每步只算新 token 的 Q、K、V，然后把新的 K、V 追加到缓存里，attention 用新 Q 对完整缓存跑。这就是 KV Caching。
+
+5. 为什么第一个字慢：你发 prompt 的时候，模型要一次性处理整个输入，算出所有 token 的 K、V 并缓存——这叫 prefill 阶段，是最吃算力的。缓存建好后，后续每个 token 只需一次单 token 前向传播。
+
+6. 代价是显存：KV Cache 用计算换内存。以 Qwen 2.5 72B 为例，单请求的 KV Cache 可以吃掉好几 GB 显存。并发量一大，KV Cache 比模型权重本身还大。这就是为什么有 GQA/MQA（共享 key/value head 省显存）和 Paged Attention（高效管理 KV Cache 内存）。
+
+所有主流推理框架（vLLM、TGI、TensorRT-LLM）都基于这个思路。
+
+- 之前压测发现kv cache占显存比模型权重还凶，batch稍大就oom，最后靠分页+淘汰策略才稳住
+
+- KV cache 这个解释里 prefill 那段是真瓶颈，长 context 下显存反而是次要的，第一个 token 出来前的延迟才是用户体感最难绷的环节，vLLM 那套 chunked prefill 就是把这一段拆出来缓解
+
+- ### KV Caching in LLMs, Clearly Explained
+- https://x.com/_avichawla/status/2034902650534187503
+- tl; dr
+  - KV caching eliminates redundant computation during autoregressive generation. Previous tokens always produce the same K and V vectors, so you compute them once and store them. Each new token only needs its own Q, K, and V. Then, attention runs against the full cache.
+  - 5x speedup in practice. The cost is GPU memory, which becomes the binding constraint at scale. Every LLM serving stack (vLLM, TGI, TensorRT-LLM) builds on this idea.
+
+- Before we get into the technical details, here's a side-by-side comparison of LLM inference with and without KV caching:
+- Part 1: How LLMs generate tokens
+- Part 2: What Attention actually computes
+- Part 3: The redundancy involved
+- Part 4: The fix
+- Part 5: Time-to-First-Token
+- Part 6: The Tradeoff
+
+- 
+- 
+- 
+
 # discuss
 - ## 
 

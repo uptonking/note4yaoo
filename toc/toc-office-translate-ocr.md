@@ -536,6 +536,17 @@ modified: 2026-04-07T11:52:43.122Z
   - a cross-platform translation & OCR app, originally based on Pot
   - https://github.com/pot-app/pot-desktop /GPL
 
+- https://github.com/XianYuDaXian/llm-image-translator /202605/js
+  - LLM图片翻译助手是一个 Chrome / Edge 浏览器扩展。它可以在网页图片上显示翻译入口，调用用户配置的多模态模型接口生成翻译后的图片，并在原页面中展示结果。
+  - 图片悬浮翻译：鼠标移到网页图片上时显示翻译按钮。
+  - 原位显示结果：翻译完成后直接在页面中替换展示结果图。
+  - 原图对比：支持查看翻译图与原图的上下滑动对比。
+  - 自定义服务：支持 OpenAI、Gemini、xAI 兼容接口和自定义端点。
+  - [【上架官方商店】图片翻译助手--利用多模态生成模型来翻译图片并回填 - LINUX DO _202605](https://linux.do/t/topic/2156214)
+    - 这个扩展主要用来补全 沉浸式翻译、阅读蛙 等工具在图片翻译方面的缺失。
+    - 就是填你自己的图生图api，扩展接收到图片后会回填到原位置。 利用的是图片模型，文字模型当然不行。要多模态的
+    - 暂时不推荐用于漫画翻译。目前试下来的效果还没有特别满意，大多数模型会偏直译，对语气、分镜上下文和人物口吻的处理还不够自然。
+
 ## utils-translation
 
 - https://github.com/mozilla/firefox-translations
