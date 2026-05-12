@@ -106,6 +106,26 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [No more www google searches by January 2027. : r/LocalLLM _202605](https://www.reddit.com/r/LocalLLM/comments/1taj621/no_more_www_google_searches_by_january_2027/)
+- I somehow didn't even know Google could be used with local llms. I've been using both Brave and Tavily that have 1000 free per month. I never hit those limits. Both much better companies than Google if you're handing out your search data.
+  - Duckduckgo is free completely but somewhat inferior to both those others.
+  - Real local people, however, set up SearxNG so that your searching itself is untrackable https://github.com/searxng/searxng
+
+- You can always spin up your own hosted Searxng. This is what I am doing with Claude code and my local LLM. Create an MCP service with Searxng and have the harness follow a strict global rule that always use your MCP for searching instead of, in my case, phone home to Anthropic for the WebSearch functionality.
+- playwright-cli is better and nothing to host and no crappy MCP needed.
+
+- Searxng, crawl4ai, local reranker. The Internet can go down and my search will still be usable. Just I don't know what for
+
+- Another option is the gemini-cli. Free users get 1000 requests per day, and sicne gemini-cli has access to Google search, all you need to do is write a skill that invokes gemini-cli in its agent/non-interactive mode with the right type of query.
+
+- The best FREE way is to use playwright-cli and attach to an existing Chrome that you can launch with a dedicated profile. This is the absolute best and only way to search and scrape the web without being rate limited or blocked.
+
+- For web searches I've started granting a tool that allows single calls to Grok 4.1 Fast. Works amazingly well for realtime data and is cheap/fast enough where I don't mind using it as a paid section of my local setup after all the problems I had with setting up my own local web search.
+
 - ## Introducing Chroma Context-1, a 20B parameter search agent. _202603
 - https://x.com/trychroma/status/2037243681988894950
   - Apache 2.0, open-source

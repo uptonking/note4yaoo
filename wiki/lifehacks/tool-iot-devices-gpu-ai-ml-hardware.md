@@ -533,6 +533,19 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Stop wasting electricity : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1tayu5t/stop_wasting_electricity/)
+  - Power limit was set using sudo nvidia-smi -pl N
+  - On my observation, GPU constantly hitting power limit, so its safe to say that it actual consumption. You can cut power consumption to 40% without losing performance(and also reduce noise, heat from pc, and extend lifespan of gpu).
+- That chart is very RTX4090 specific. In general the cost/efficiency sweetspot for almost all operations on the 4090 is ~75% to 80% power limit depending on who you ask. Mileage on other gpus may vary wildly.
+
+- Decode (tg) is not an issue. You lose a bit more on prefill (pp), but still only about 15-20% if you go down from 450W to 270W depending on the model.
+
+- I always power limit my gpu exactly for this reason. I cant stand the noise anyway
+
 - ## [DGX Spark vs. Framework Desktop for a multi-model companion (70b/120b) : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rxgrgh/dgx_spark_vs_framework_desktop_for_a_multimodel/)
 - The advantage of VLLM, which is NVIDIA-optimized, is that you can run the model concurrently with 4 or 5 agents without losing too much performance per agent.
 

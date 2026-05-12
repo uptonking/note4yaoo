@@ -73,6 +73,12 @@ modified: 2023-10-28T13:46:14.957Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## Did you know Postgres uses TWO in-memory caches?
 - https://x.com/BenjDicken/status/2024863773216133439
   - Every time pg reads a row, it comes from one of three places:

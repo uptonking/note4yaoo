@@ -165,6 +165,20 @@ modified: 2023-04-05T19:35:14.347Z
   - Its primary purpose is to provide a single consistent interface for easy, ceremony-free persistence of record-based struct data.
   - Currently supported formats are CSV, TSV, Excel (.xlsx), JSON Lines (JSONL), and SQLite. Additional writers are also provided to assist with testing and debugging. 
   - All writers perform atomic file operations, writing data to a temporary location and moving it to the final output location when Close is called.
+# file-api/interoperability
+- https://github.com/haydenbleasel/files-sdk /MIT/202605/ts
+  - A unified storage SDK for object and blob backends. One small, honest API. Web-standards I/O. An escape hatch when you need the native client.
+  - One API across providers — upload, download, head, delete, copy, list, url, signedUploadUrl. The shape is the same on S3, GCS, Azure, Vercel Blob, the local filesystem, and consumer providers like Dropbox.
+  - Web-standard I/O — bodies are Blob, File, ReadableStream, Uint8Array, ArrayBuffer, or string. No provider-specific types leak into your code.
+  - Escape hatch — every adapter exposes its native client at files.raw, so provider-specific features are one property access away.
+  - https://x.com/haydenbleasel/status/2053883406459740532
+    - 18 providers - S3, R2, Vercel Blob, Google Drive, etc.
+  - https://x.com/jhleath/status/2053914208430141463
+    - if it doesn’t support random overwrites, it’s not files — it’s just sparkling object storage
+    - random overwrites meaning block-level? or something else?
+      - changing part of the file without need to reupload all of it
+    - But range requests!
+    - that's actually Prosecco I/O not POSIX I/O.
 # file-server
 - https://github.com/vercel/serve /ts
   - serve helps you serve a static site, single page application or just a static file

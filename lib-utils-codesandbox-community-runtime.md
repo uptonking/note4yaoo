@@ -671,6 +671,37 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
+- ## 
+
+- ## libkrun > firecracker anyday and everyday
+- https://x.com/confusedqubit/status/2054043291268624700
+  - Significantly more hackable, doesn’t require root, works natively on MacOS, what’s not to love?
+
+- ## 🧩 What is Firecracker, and why do all the Agent Infra companies care about it?
+- https://x.com/kylejeong/status/2053932013099630883
+  - Every day, AWS Lambda runs trillions of function invocations. AWS Fargate schedules millions of containers. Every one of those is a full virtual machine, with its own kernel, booted in a fraction of a second.
+  - About 50, 000 lines of Rust called Firecracker, which exists because the industry finally admitted that a Linux container that controls resource usage was never designed to be a security boundary. 
+- Every Docker container on your laptop is three Linux kernel features in a trench coat:
+  - Namespaces are blindfolds. A process inside one gets a private view of the system: its own PID list, network stack, mount table, hostname, and user IDs. PID 1 inside the container is some random PID on the host; the container can't even see the other processes.
+  - cgroups are budgets. Control groups are the kernel's accounting and rate-limiting layer. They cap how much CPU, memory, disk IO, and network bandwidth a process tree is allowed to consume.
+  - seccomp + capabilities are allowlists. capabilities chop root's powers into ~40 separate privileges (bind low ports, load kernel modules, mount filesystems, etc.) so you can grant only the ones you need. seccomp is a per-process filter that decides which syscalls (userspace's only API into the kernel) the process is even allowed to make.
+  - Everything else Docker does (image layers, registries, DNS) is orchestration on top.
+- Full virtual machines solve isolation by brute force: every VM gets its own kernel.
+
+- 
+- 
+
+- 👥
+- Containers are fast. VMs are safe. Everyone building agent infra needs both.
+
+- he key design choice is where you draw the trust boundary: run the planner in a warm container, but execute untrusted browser or tool actions in per-task microVMs with strict egress and short TTLs. You keep latency low while making compromise blast radius measurable.
+
+- 
+- 
+- 
+- 
+- 
+
 - ## firecracker doesn't even support GPU acceleration.
 - https://x.com/binsquares/status/2052920113989574962
   - smol machine's next release will support GPU acceleration for both linux + macOS natively.

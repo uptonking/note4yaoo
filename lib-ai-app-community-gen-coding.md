@@ -30,7 +30,17 @@ modified: 2025-09-01T07:58:29.058Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Introducing Zenbu.js - The framework for hackable software
+- https://x.com/RobKnight__/status/2053867901028110592
+  - I wanted the ability to edit the software I use with my coding agents, from there Zenbu.js was born
+  - Zenbu.js allows you to build desktop apps that can be modified by users after installation. This is made possible by: shipping the app's raw source code to the user; a built in plugin system for your apps
+  - Zenbu apps operate under the philosophy that there is no distinction between production and development. This gives your users the ability to edit your app the same way you do while developing it.
+  - When you install a Zenbu app, you are essentially cloning a git repo onto your computer, and running it in development mode. Any changes made to that cloned repo instantly hot reload in the running app.
+  - Effect was super helpful when building some of those features, but we aren't directly using effect to power them
+
+- a browser built to exclusively load zenbu.js apps would be pretty weird
+
+- 🤔 当一个软件有了很多fork，怎么办
 
 - ## 🤼 What spec-driven development gets wrong
 - https://x.com/jakevin7/status/2026238245609365939

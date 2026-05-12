@@ -181,8 +181,9 @@ you have worked on this problem several times but features are still lacking. Th
 
 - you have worked on this several times but features are still lacking. They are the most important features at this moment. DO NOT stop untill you achieve full feature parity. 
 
-- you may do a big code refactor to match full feature of superdoc in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor to match full feature of superdoc in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
+- you may design feature parity docs at `upstream/superdoc/reports`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream superdoc should be put in folder `upstream`. you may even design a script to automate it.
 - research and make a full plan, then implement ailovedoc to match full features of superdoc, or even better than superdoc, without licensing issues.
 
 ------
@@ -199,8 +200,8 @@ you have worked on this problem several times but features are still lacking. Th
 ```prompt
 
 onlyoffice-pdf-editor(code is at several git repos in current folder) implements renders, edits, annotates `.pdf` files in the browser, but it is AGPL licensed.
-- the final goal is to implement from scratch a new extensible web pdf editor named hardoc with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
-- hardoc pdf editor should be more of a headless client-server architecture, so that you can build a hardoc cli with a hardoc sdk. 
+- the final goal is to implement from scratch a new headless, extensible web pdf editor named hardoc with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
+- hardoc pdf editor should be more of a headless client-server architecture, so that you can also build a hardoc sdk/cli. 
 - hardoc should be implemented in a modular and extensible architecture for core pdf features like viewing and editing, with functional programming style.
 
 - goals for pdf editing:
@@ -224,7 +225,7 @@ please analyze onlyoffice architecture, and give tips to my question before iple
 
 - the core pdf editor should be modular and extensible. 
 
-one goal is to support to view both text pdf and scanned image pdf, text pdf should support in-place text editing like onlyoffice/adobe-acrobat. both text and image pdf should support annotations with simple shapes and text.
+one goal is to support to view both text pdf and scanned image pdf, text pdf should also support in-place text editing like onlyoffice/adobe-acrobat. both text and scanned pdf should support annotations/highlights.
 
 one goal is to enhance hardoc pdf editor with more important features:
 1. robust undo/redo that is friendly to collaborative editing
@@ -245,7 +246,7 @@ project onlyoffice and project at `~/Documents/repos/office/all-pdf/open-pdf-stu
   - 采用图片的方案
 
 - the final goal is to implement from scratch a extensible web pdf editor named hardoc with in-place text editing features similar to onlyoffice/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues. 
-- forms, ocr, collaboration, ai-editing, complicated shapes, search is not required now, but architecture should support these features later.
+- forms, ocr, collaboration, ai-editing, complicated shapes, search should be planned but implementation may be delayed, so that architecture should support these features later.
 - please make a plan for the extensible text editing editor first, then implement it at folder `./hardoc`.
 
 - please refactor code structure in hardoc project to use similar architecture and code structure as onlyoffice without licensing issue, to make it easy to migrate more features in the long term. legacy code may be migrated or removed by rewriting.
@@ -258,7 +259,7 @@ recheck and migrate full features of True PDF text editing engine with annotatio
 
 - please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like onlyoffice-pdf-editor.
 
-- hardoc should have full feature parity matching onlyoffice-pdf-editor for important features like  document rendering/zoom, in-place text editing engine,undo/redo, pdf annotations/highlights, plugin architecture and manager, pdf search, pdf page-thumbnails, bookmarks.
+- hardoc should have full feature parity matching onlyoffice-pdf-editor for important features like document rendering/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, plugin architecture and manager, pdf search, pdf page-thumbnails, bookmarks.
 
 - you have worked on this several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. 
 
@@ -273,15 +274,16 @@ please make a plan, then improve the core in-place text editing engine to make i
 
 - the most important feature in hardoc is a powerful, robust, extensible, native True PDF in-place text editing engine with annotation support like onlyoffice pdf editor.
 
-- you can deep research and reference good deisgn from onlyoffice pdf editor.
+- you may deep research and reference good deisgn from onlyoffice pdf editor.
 - you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 
 - please deep research the onlyoffice pdf editor, then can you design a similar solution to solve it? is onlyoffice's solution good enough? if yes, solve it in a similar way for hardoc.
 
 - you have worked on this several times but still not solve it. 
 
-- you may do a big code refactor to match full feature of onlyoffice-pdf-editor in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor to match full feature of onlyoffice-pdf-editor in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
+- you may design a feature parity doc at `upstream/parity/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream onlyoffice-pdf-editor should be put in folder `upstream`. you may even design a script to automate it.
 - research and make a full plan, then implement hardoc to match full features of onlyoffice-pdf-editor, or even better than onlyoffice-pdf-editor, without licensing issues.
 
 ------
@@ -335,7 +337,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - you may deep research and reference the existing code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style with modern tech stacks like react/typescript-utils. 
 
-- you may do a big code refactor to match full feature of backbonejs webapp in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor to match full feature of backbonejs webapp in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - research and make a full plan, then implement the react webapp to match full features of existing backbonejs webapp, or even better than backbonejs webapp.
 
@@ -395,7 +397,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 
-- you may do a big code refactor to match full feature of PPTist in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor to match full feature of PPTist in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - research and make a full plan, then implement slaides to match full features of PPTist, or even better than PPTist, without licensing issues.
 
@@ -411,7 +413,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 - The core goal is to support most of the existing jan features/ux, like Download and run LLMs, Connect to cloud llm api, install custom llm backend like custom llama.cpp, chat with local llm or cloud llm api. since jan is apache2 licensed, you can reuse/rewrite whatever code you need from jan repo. you may reuse jan web-app(at `../jan/web-app`) or just reuse/rewrite any code you want, but you should rewrite the jan rust backend with a good custom python implementation which you can borrow design and rewrite code from jan-rust-code/transformerlab-app/unsloth-studio to avoid license issue. you may implement the core llm download/run/chat/tool-call data flow first, then migrate more features later. 
 - you may reuse most webapp code from jan, you may also add new features and ux if you want. Since you can reuse many frontend code, the python backend should be the hard work. Strictly following jan-rust-backend architecture/logic/code is unnecessary. 
   - transformerlab-app-electron repo gives a good reference for how to support to install multiple backend plugin like llama.cpp/mlx-vlm/ollama/mlx-audio from ui, you may reference useful architecture/features/code from it and migrate this custom llm backend feature to aichorage(llama.cpp/mlx-vlm first, ollama/mlx-audio may be delayed), you should ignore llm training/tuning code from it. tranfromerlab-app electron app also supports windows/linux/mac, you may reference the bundling logic if you need. 
-  - unsloth-studio webapp also supports windows/linux/mac, you may reference the bundling logic if you need. unsloth-studio supports auto detect local models from local huggingface-cache/ollama/lmstudio, it's a good feature, please migrate it to aichorage. unsloth-studio also supports llama-server/mlx-lm/mlx-vlm backend on windows/linux/mac, also a good reference. you should ignore llm training/tuning code from it. Unsloth studio can provide 2 llm apis that both support streaming, tool calling (OpenAI tools / Anthropic tools), and vision inputs: Anthropic-compatible /v1/messages  for Claude Code, OpenAI-compatible /v1/chat/completions and /v1/responses.
+  - unsloth-studio webapp also supports windows/linux/mac, you may reference the bundling logic if you need. unsloth-studio supports auto detect local models from local huggingface-cache/ollama/lmstudio, it's a good feature, please migrate it to aichorage. unsloth-studio also supports llama-server/mlx-lm/mlx-vlm backend on windows/linux/mac, also a good reference. you should ignore llm training/tuning code from it. Unsloth studio can provide 2 llm apis that both support streaming, tool calling (OpenAI tools / Anthropic tools), and vision inputs: Anthropic-compatible api /v1/messages , OpenAI-compatible api /v1/chat/completions and /v1/responses. OpenAI-compatible api should be implemented in aichorage, anthropic api may be delayed. unsoloth-studio llm api has very very good fixes for tool-calls. It also support web search.
 
 - most features/ux from jan should be migrated/reimplemented in aichorage. rag should be planned, but rag implementation may be delayed.
 - multi-user/team/workspace concepts in tranfromerlab-app should be implemented in aichorage, you may borrow the good design/architecture of transformerlab-app, but strictly following is unnecessary. all custom backend plugins may be installed in global scope, but each team can only use plugin enabled in their team. a default workspace and username/password should be created so that user can use it easily by just click login.
@@ -429,7 +431,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - you may deep research, and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
 
-- you may do a big code refactor to match full feature of jan in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor to match full feature of jan in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream jan/transformerlab-app/unsloth-studio should be put in folder `upstream`. you may even design a script to automate it.
 - research and make a good design, then implement aichorage to match full features of jan, or even better than jan, without licensing issues.
@@ -460,7 +462,6 @@ you may use similar file/folder names instead of the same file/folder names as t
 - 
 
 -------
-- unsoloth-studio llm api has very very good fixes for tool-calls.
 
 - 
 - 
@@ -484,7 +485,8 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 ```prompt
 
-for project hardoc, please recheck migrated features and improve your implementation, make it runnable locally using npm without docker. Analyze core data flow and implementation logic details for major features, find possible bugs in code and fix them, make sure major features implementations are correct and extensible.
+for project hardoc, 
+please recheck migrated features and improve your implementation, make it runnable locally using npm without docker. Analyze core data flow and implementation logic details for major features, find possible bugs in code and fix them, make sure major features implementations are correct, modular, extensible for long-term maintenance.
 
 please recheck migrated features and implementations for possible licensing issues. if the code is too similar to upstream, you can adjust the risking code to avoid licensing issues. if features are already migrated under different names, it is unnecessary to design it as a standalone/separate tool as the upstream did, this also helps to avoid licensing issues.
 

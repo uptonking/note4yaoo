@@ -27,6 +27,10 @@ modified: 2023-03-21T07:54:11.468Z
   - 业务变化快，可能还没训练出来就换了方向
   - 传统模型和算法效果如何，是否只是锦上添花
 # resources
+- [《动手学深度学习》 — 动手学深度学习 2.0.0 documentation ](https://zh.d2l.ai/)
+  - 李沐
+  - [10.7. Transformer ](https://zh.d2l.ai/chapter_attention-mechanisms/transformer.html)
+
 - [动手实战人工智能 Hands-on AI — 动手实战人工智能 Hands-on AI](https://ai.huhuhang.com/intro)
   - 从监督学习开始，带你入门机器学习和深度学习
   - 尝试剖析和推导每一个基础算法的原理，将数学过程写出来，同时基于 Python 代码对公式进行实现

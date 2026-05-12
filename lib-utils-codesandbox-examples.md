@@ -726,6 +726,13 @@ modified: 2023-09-02T09:17:22.992Z
   - https://x.com/xicilion/status/2043911257108164942
     - Agent 和执行环境必须分离，这个结论是对的。不过他们实现有些差别。
     - 关注沙箱可以了解一下 @anthropic-ai/sandbox-runtime，实现原理和 boxsh 一样，区别在于 sandbox-runtime 目标在于安全，boxsh 在安全之上规划了零成本 cow worktree 工作流。 boxsh 的沙箱单位是会话。
+
+- https://github.com/NVIDIA/OpenShell /5.8kStar/apache2/202605/rust
+  - https://docs.nvidia.com/openshell/latest/
+  - OpenShell is the safe, private runtime for autonomous AI agents. 
+  - It provides sandboxed execution environments that protect your data, credentials, and infrastructure — governed by declarative YAML policies that prevent unauthorized file access, data exfiltration, and uncontrolled network activity.
+  - A supported host — macOS, Windows with WSL 2, or Linux.
+  - A local runtime — Docker, Podman, or host virtualization enabled for MicroVM-backed sandboxes.
 # playground
 - https://github.com/nalgeon/codapi /1.2kStar/apache2/202411/go
   - https://codapi.org/

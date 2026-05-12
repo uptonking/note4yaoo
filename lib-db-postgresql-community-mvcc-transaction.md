@@ -29,6 +29,22 @@ modified: 2024-02-18T13:52:07.926Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Postgres uses a process-per-connection model not thread-per-connection.
+- https://x.com/codersGyan/status/2054041396873454073
+  - That means every connection is expensive : memory, file descriptors, process overhead.
+  - Now the connection math matters.
+  - A default pool of 100 connections is roughly ~1GB of RAM before queries even run. 4 app servers x 100 connections = 400 connections. Postgres defaults to max_connections = 100. Now the database starts refusing connections.
+  - The fix usually isn’t “add more connections.” It’s a connection pooler. 
+  - PgBouncer in transaction mode is the standard answer.
+  - Apps connect to PgBouncer (cheap). PgBouncer multiplexes them onto a much smaller pool of real Postgres connections (expensive).
+  - 1, 000 app connections can fan into 20 actual DB connections. Before reaching for it, read the caveats. 
+  - Prepared statements, session-level state, advisory locks.. all behave differently. 
+  - If your scaling plan is just increasing max_connections, you probably don’t need a bigger database. You need PgBouncer.
+
 - ## 🤼 PostgreSQL的快照隔离在有长事务的情况下性能不良，因为并行事务不能写冲突。也就是说如果很多个事务试图修改计数器，那么除了一个事务其他都必须失败。
 - https://x.com/JXQNHZr1yUAj5Be/status/2027003437200674862
   - 而MySQL的update是当前写（原子寄存器语义），意味着它总是看到最新的状态，对同一个行的写不会导致事务被取消。因此它更有利于长事务和写入。

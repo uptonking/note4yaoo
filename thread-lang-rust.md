@@ -351,6 +351,46 @@ Uber’s internal platforms use Go
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 📌 rust usage
+- https://x.com/adahstwt/status/2053672160053567569
+Rust + Tokio → Async Systems
+Rust + Actix → High-Performance APIs
+Rust + Axum → Modern Backend
+
+Rust + Diesel → ORM / DB Access
+Rust + SQLx → Async Database
+
+Rust + WebAssembly → Browser Apps
+Rust + Yew → Frontend (WASM)
+
+Rust + Tauri → Desktop Apps
+Rust + egui → Native GUIs
+
+Rust + Bevy → Game Development
+Rust + wgpu → Graphics
+
+Rust + Embedded Rust → Firmware / IoT
+Rust + Linux Kernel → Systems
+
+Rust + Polars → Data Processing
+Rust + Arrow → Analytics
+
+one language
+
+> performance
+> safety
+> systems
+> full-stack (yes)
+
+and people still say
+“rust is too hard” 
+
+- Every language has this ecosystem, long before Rust existed. So being hard is something else & having a rich ecosystem is something else.
+
 - ## Starting next week, @meilisearch will switch its core engine from Rust to C++. 
 - https://twitter.com/Kerollmops/status/1774917166350868893
   - After years of struggling with segfaults, out-of-bounds issues, and a complex package manager, the team decided that the Rust language still needed to reach its promise of being the successor of C++.

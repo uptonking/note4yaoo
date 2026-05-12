@@ -17,7 +17,21 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## Codex /goal now has a native Kanban board.
+- https://x.com/tolibear_/status/2053859040556360116
+  - Starting a /goal run now fires up a lightweight Kanban board with clickable cards that move as Codex completes tasks.
+  - https://github.com/tolibear/goalbuddy /MIT/202605/js
+  - npx goalbuddy
+  - npx goalbuddy extend install linear-ticket-handoff
+  - its a cli and skill to be used in codex or claude code 
+
+- Kanban is useful because it turns agent progress into interrupt points. Without visible cards, /goal becomes another long-running black box you only debug at the end.
+
+- Kanban is useful because it turns agent work into inspectable state. For FileMaker teams, each card should map to a table/script/layout, evidence to collect, approval owner, exception state, and write-back log before source-of-truth records move.
+
+- Kanban helps because it makes agent state legible: planned, running, blocked, done. The hard part is keeping those cards synced with the real repo.
+
+- This is the right shape. Agents feel way better when state is legible. Half the anxiety in longer runs is not the work itself, it's not knowing what the system is doing right now.
 
 - ## 🪟✨ Cursor now has built a Kanban board where you can just drop in tasks and the agent will pick those up and complete them.
 - https://x.com/ParthJadhav8/status/2049564851060801663
@@ -893,7 +907,58 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## MCP 和 Skill 的下一步, 去年大家争的是谁家模型更强，今年争的好像变成了谁家窗口右侧更好用。
+- https://x.com/dotey/status/2053940091970580736
+  - Codex、Claude 桌面版、Cursor 3.0、TRAE SOLO，这几家最顶尖的 Agent，在完全没有协商的情况下，几乎同时收敛到了同一个界面布局：左侧是项目和会话列表，中间是和 Agent 的对话，右侧是工作区，放着文件浏览、网页预览、文件变更审查这些功能。
+
+- 传统 Chatbot 只需要两栏，左边会话历史，右边对话窗口，你问它答，用完走人。
+  - 到了 Agent 时代，Agent 能自己写代码、改文件、调工具了。它做完之后，你得看看有没有做对——右侧工作区就是为这件事出现的。
+  - 随着用户越来越多时间是在指挥 Agent，打开 VSCode 这类专业工具的时间自然越来越少。那个问题迟早会冒出来：Agent 帮你写完代码、做完 PPT，你想微调几个字，还要专门切出去打开另一个软件？
+  - 没有人愿意这样。用户的自然期待是：能不能直接在 Agent 里改？这也是目前 Codex App 呼声最高的功能之一（另一个呼声高的是手机版，马上要出了）。
+  - 交互细节上各家略有差异。Codex 和 Cursor 用 Tab 切换，Claude 用浮动面板。我自己用下来觉得 Codex 最顺手，Claude 的浮动面板方案设计感有余、实用性不足，迟早要改。
+
+- Codex 4 月大版本发布时的口号是“Codex for (almost) everything”——几乎任何任务都能做。你可以把它理解成一句广告口号，但更像是一个产品方向的声明。
+  - 要兑现这句话，Codex 不能只是个擅长写代码的 Agent，它必须能处理各种文件格式，支持各领域的专业工作流，还要让用户能在它里面完成全程闭环，包括最后的人工微调。
+  - 目前 Codex 还做不到最后一步：生成之后无法编辑，代码、Markdown、PPTX 都不行。这可能是产品上有意为之的克制，可能是技术上还没跑通，也可能是在等一个统一的解决方案出现。
+
+- MCP 和 Skill 都只解决了一半
+  - MCP 解决了“连接”问题：Agent 通过统一规范接入各种工具，数据库、日历、代码仓库，都能打通。
+  - Agent Skills 解决了“怎么做”的问题：Agent 学会了它没训练过的领域知识和最佳实践，比如怎么写特定风格的文章，怎么处理某类复杂任务。
+- 这两件事做得都还不错。但有一块缺口始终没补上：用户的二次编辑。
+  - 但 Codex 不会自己做一个 Markdown 编辑器，因为每个人的偏好都不一样，做出来永远有人不满意；更何况它也不可能把每个垂直领域的专业编辑器都集成进来。
+  - 最合理的路，是插件机制。
+
+- 下一步：Agent 版 App Store
+  - 把 Agent 做成平台，让社区来贡献插件，就像 VSCode 和 Chrome 那样。
+  - Codex 只需要聚焦在 Agent 调度这一层，把文件预览、二次编辑、垂直领域的专业能力都交给插件来扩展。用户按需安装，做设计的装设计插件，写作者装写作插件。
+  - 插件机制还能顺手解决一个长期没有答案的问题：Skill 没办法商业化。
+  - 插件不一样。App Store 和 Chrome 插件市场已经跑通了一套收费和版权保护机制，把它移植到 Agent 插件市场完全可行。好插件可以收费，开发者才有持续打磨的动力，生态才真正能转起来。
+  - Codex 现在已经有了一个非常原始的插件市场。从这里到成熟的收费插件生态，还有很长的路，但方向是对的。
+  - 想做这件事的不止 Codex 一家。Cursor 我能看到类似的影子。唯独 Claude Code 和 Cowork，目前没看到这个方向的产品迹象——也许他们不屑于做，也许只是还没走到这一步。
+
+- 👥
+
+- 你提到Claude的浮动面板实用性不足，我用下来也是同感。设计感强但切换麻烦，Codex的Tab方案明显更顺手。希望Claude别固执，赶紧跟进，不然在Agent交互上要被甩开了。
+
+- 如果 Codex 真的跑通了插件生态，对中小团队意味着什么？
+  - 除了自己做一个垂直 Agent，还有另一条路：在 Codex 这样的平台上做插件。不用自己搭 Agent 调度层，不用解决 Token 接入，用户分发也靠平台。你只需要专注在那个“最后一公里”——帮用户把 Agent 生成的结果处理好、编辑好、用得顺手。
+  - 这个窗口不会开太久。先进去的能拿到冷启动红利，晚进去的只剩存量竞争。
+
+- 最终自己还要去小幅度编辑？我认为这是个伪需求会被未来的模型能力证伪因为小是没标准的这是无AI时代的工作能力的逆向残留。加一个空格，加一行代码，加一段说明，多小算小？让交互更复杂的UI不是一个优秀的UI模式
+
+- 这就不得不提alma的右侧了 但是 @yetone 大概是ai介入以后可能不太需要人来介入修改了 现在ws等已经沦为提交代码合并解决冲突的工具了
+
+- MCP标准化+Skill分发这个方向确实是对的，但目前的挑战是Skill质量参差不齐。类比npm生态的早期——注册容易但维护难。关键看OpenAI怎么做curation和trust机制。
+
+- Skill 赚不到钱这事太熟了。 写几万字的指引，不如别人改个 Prompt 就漂走，真无解。还是只有打包服务才行吧
+
+- 最后都做成了manus的样子
+
+- codex把浏览器集成进来后就感觉他们就不想让我切窗口了
+
+- 右侧编辑缺口在 mac 上其实不必等 codex 出插件市场，accessibility API 驱动本地编辑器现在就跑得动。windows UIA 这条路一直更碎，所以插件机制对它的吸引力反而更大。 https://macos-use.dev/r/3qmncruj written with ai
+
+- 感觉大模型厂商应该设计一个提成的机制，用了某个 skill，可以按 token 比例提成
 
 - ## 💄 Problem: How do I quickly tell AI exactly which elements I want to change? Solution: Agentation
 - https://x.com/housecor/status/2052504763690832318

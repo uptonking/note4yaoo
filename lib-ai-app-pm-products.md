@@ -834,6 +834,10 @@ modified: 2025-03-22T16:10:24.856Z
     - 限制每用户rpm为30，enjoy
   - [GPT Pool _202605](https://gpt-pool.com/)
     - [[GPT Pool]临时开放 LinuxDO Connect 注册 _202605](https://linux.do/t/topic/2150883)
+  - [aini8 API _202605](https://api.aini8.com/console/personal)
+    - [【干草铺】公益站开放注册啦 - LINUX DO _202605](https://linux.do/t/topic/2159952)
+  - [果咪咪 aiinterface API](https://aiinterface.site/)
+    - [【公益推广】GPT公益满血官转支持图片 - LINUX DO _202605](https://linux.do/t/topic/2160297)
   - 🗑️ [NihaoAPI _202603](https://nih.cc/console/personal)
     - cc
   - 🗑️ [Pond Hub 反重力号池 _202603](https://code.claudex.us.ci/panel/profile), 签到
@@ -1701,6 +1705,14 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [令牌查询](https://apikey.cifang.xyz/)
 
+- [AI-中台 ](https://maas.gd.chinamobile.com:38559/maas/uifm/#/model-quota)
+  - [广东移动发售token plan - LINUX DO _202604](https://linux.do/t/topic/1980940)
+  - 定价为体验版-40/月，标准版-100/月；两个首月都是免费
+  - 体验版-30000次/月，20000次/周，2000次/5h
+  - 标准版-45000次/月，30000次/周，3000次/5h
+  - 刚刚发现暂时只可用oai协议
+  - 可用模型：minimax-2.5（其他模型陆续上线）
+
 ## llm-2api
 
 - embedding
@@ -1778,7 +1790,7 @@ modified: 2025-03-22T16:10:24.856Z
 - [chong](https://chong.databrain.sbs/)
 
 - [AI杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ai-shop)
-  - 管理员小店 [codelife.asia](https://www.codelife.asia/)
+  - 管理员小店 [faka.gsyun.cloud ](https://faka.gsyun.cloud/)
   - AI科研交流群：560520490
   - 低价号, 后续印尼佬会换成outlook邮箱账号，本次就还是他们自己内部自建邮箱
   - plus-6
@@ -1789,8 +1801,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 群友提供的印尼渠道, 都是微软邮箱, 印尼的临时不要
     - plus-6
     - 提供2类账号: hotmail邮箱+密码登陆，邮箱+验证码登录
-  - [畅用plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/ooopp)
-    - plus账号, 质保三天 
   - [视界AI的小店 - 链动小铺](https://pay.ldxp.cn/shop/shijieAI)
     - 印尼， 提供批量折扣
   - [shop.aitonse.com](https://shop.aitonse.com/products)
@@ -1798,24 +1808,27 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [codex.kedaya.xyz](https://codex.kedaya.xyz/)
   - [KEDAYA的小店 - 链动小铺](https://pay.ldxp.cn/shop/3S5GUAQ4)
+    -  https://gpt.kedaya.xyz    /支持用购买的卡密一个一个提取账号
     - https://shop.kedaya.xyz/
     - https://t.me/kedaya_888
     - https://t.me/gpt_kedaya   讨论组里面大多是代理商, 点击头像就能看到店铺链接
     - 中转站: https://api.kedaya.xyz/
   - [商家9052的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/LOA3IZW5)
     - plus账号极低价格， 10个-35
-  - [xileyyds的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/KK5XQNYK)
-    - 低价代理商
   - [商家5651的小店 ](https://pay.ldxp.cn/shop/AO4GDZSI)
     - 自助售后, 质保三天 
+  - [畅用plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/ooopp)
+    - plus账号, 质保三天 
+  - [xileyyds的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/KK5XQNYK)
+    - 低价代理商
   - [山姆奥特曼商店的小店 - 链动小铺](https://pay.ldxp.cn/shop/1E5DST9P)
     - plus账号-6, 质保三天 
   - [超低价GPT会员的小店 - 链动小铺](https://pay.ldxp.cn/shop/dijiagpt)
     - 【手工】【30天】GPT-Team / Business 高质量激活码（质保3天）
   - [普露米AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/plumire)
     - 低价号多
-
-- [邮件与账号工具台](https://mails.aidark.icu/)
+  - [猪猪AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/code)
+    - 零售+批量
 
 - [麦当当plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/EOTZ17J2)
   - 交流: https://t.me/maidangdangplus
@@ -1825,11 +1838,10 @@ modified: 2025-03-22T16:10:24.856Z
 - [NFXW的小店 - 链动小铺](https://pay.ldxp.cn/shop/MYIAKTYT)
   - 交流 https://t.me/aivip6688
   - 账号检测 https://ban.nloop.cc/
+  - https://json.nloop.cc/
   - 邮件取件助手：https://email.nloop.cc/
   - CPA ↔️ Sub2API：https://conversion.nloop.cc/
   - plus-8.5
-  - [Gemini/Plus 源头供应商的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/aipro)
-    - plus质保15天-65
 
 - https://nissanserena.my.id/otp    /印尼
   - https://zovlyx.fun/
@@ -1839,12 +1851,23 @@ modified: 2025-03-22T16:10:24.856Z
   - 品类特别多， 里面可以找到质保2天的
   - 只做群里面的三级代理
 
+- [ChatGPT Plus 个人版 自助开通 ](https://codexcn.com/)
+  - 付款后系统自动派发一个独立的 ChatGPT Plus 账号（含密保邮箱密码），登录即用。
+  - ¥58.88/月, 30 天内不可用免费换新
+
+- aidark [邮件与账号工具台](https://mails.aidark.icu/)
+
+- 批量取件： https://plus.keria.cc.cd/ 
+  - [AI会员小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/XLF7RCJG)
+    - 非协议，协议注册别来碰瓷，icloud 邮箱
+
 - [小猫GPT源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1D0LD6BR)
   - 频道通知链接：https://t.me/+UkH0O6HZLBM5MTJh
 
 - [吱吱鼠卡网](https://zzshu.com/)
   - https://t.me/gptteamzz
   - https://t.me/ttshushu
+  - 宽松期会发布低价渠道
 
 - [GPTPLUS.icu team 的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YQJERQW3)
   - 自助激活页面：https://gptplus.icu
@@ -1855,6 +1878,20 @@ modified: 2025-03-22T16:10:24.856Z
     - 【手工】【30天】GPT-Team / Business , 源头 GPTPLUS. ICU 
     - 质保3天：从  激活时间  起算 72小时 内出现掉车，可  提交工单  无限次补车。
 
+- [AI杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/PBY2YIR3), /周全
+  - 低价渠道多
+  - [xiamai gpt_plus_批发的小店 - 链动小铺](https://pay.ldxp.cn/shop/xiamai)
+    - 低价渠道多
+  - [爱喝奶茶的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/V3MBPGC5)
+    - 号多
+  - [AAA plus批发的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/F6077NPC)
+    - free + plus
+- [商家9237的小店 - 链动小铺](https://pay.ldxp.cn/shop/RXKT7LFX)
+  - https://otp.forestpolarpilot365.shop/
+- [发呆的小店 - 链动小铺](https://pay.ldxp.cn/shop/PL4EBAMI)
+  -  https://otp.the22222.org/
+  -  https://t.me/GPTattackz
+
 - [Tora-雪诺AI源头分销小铺的小店 - 链动小铺](https://pay.ldxp.cn/shop/Tora)
   - 通知 https://t.me/Tora_AiShop
   - 提供正规充值 gpt/claude 的方式
@@ -1863,9 +1900,6 @@ modified: 2025-03-22T16:10:24.856Z
   - plus成品号-质保30天， 75
   - GPT TEAM 手工直拉 无质保， 35
   - GPT Cyber认证【Persona认证】， 100
-
-- [AI杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/PBY2YIR3), /周全
-  - 自助充值plus
 
 - [464的小店 - 链动小铺](https://pay.ldxp.cn/shop/7HVUEC3Y)
   - 通知频道：https://t.me/hdunzx

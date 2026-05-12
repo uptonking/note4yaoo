@@ -544,6 +544,14 @@ modified: 2025-12-11T18:10:23.710Z
   - a Tauri app for orchestrating multiple Codex agents across local workspaces. 
   - It provides a sidebar to manage projects, a home screen for quick actions, and a conversation view backed by the Codex app-server protocol.
 
+- https://github.com/Ig0tU/ocodx /MIT/202605/python/ts
+  - a premium, high-performance desktop evolution of the Open Codex CLI. 
+  - It transforms the lightweight terminal assistant into a massive Sovereign Liquid Matrix (SLM-v3)—a professional-grade workbench for autonomous engineering, complex tool-calling, and visual layout surgery.
+  - Local Sovereignty – Optimized for Ollama, LM Studio, and Gemini. 
+  - AionUI Browser (AI on UI)
+  - Hybrid Orchestration: Seamlessly switch between Local (Ollama/LM Studio) and Cloud (Gemini/Ollama Cloud) providers.
+  - [I really enjoy the codex desktop app, so i made a fully open source desktop app for open-codex : r/codex _202605](https://www.reddit.com/r/codex/comments/1slpm72/i_really_enjoy_the_codex_desktop_app_so_i_made_a/)
+
 ## gemini/qwen-code-cli
 
 - https://github.com/Piebald-AI/gemini-cli-desktop /109Star/MIT/202512/rust/ts/tauri

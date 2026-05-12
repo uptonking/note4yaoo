@@ -581,7 +581,11 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## A Production Architecture for the Browser Use Open-Source Library
+- https://x.com/larsencc/status/2053862900289470765
+  - The API is a FastAPI service on ECS Fargate. It accepts task creation requests, validates them, writes a row to the database, drops a message on SQS, and returns HTTP 202.
+  - Behind it is a standard SQS queue with one message per agent run carrying the task ID and execution config. No ordering, no deduplication, no separate queue per workload type since agent tasks are independent of each other.
+  - The worker is an AWS Lambda function with `from browser_use import Agent` at the top. It pulls messages off SQS, instantiates the agent, runs it to completion, and writes results to S3.
 
 - ## Codex now works directly in Chrome on macOS and Windows.
 - https://x.com/OpenAI/status/2052480800004956323

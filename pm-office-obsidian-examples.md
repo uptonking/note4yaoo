@@ -65,6 +65,10 @@ modified: 2026-04-07T00:47:33.626Z
 
 # alternatives
 
+- https://github.com/tionis/vulcan /202605/rust
+  - A wiki cli to be used with obsidian style knowledge bases
+  - Vulcan is a headless Rust toolkit for Obsidian-style vaults and plain Markdown directories. It indexes notes into a rebuildable local SQLite cache, then exposes search, graph queries, Dataview/Bases-style metadata, TaskNotes workflows, static publishing, scripting, MCP tools, and safe note mutations without requiring Obsidian to be running.
+  - The long-term shape is a reusable Markdown/vault library stack plus a polished CLI. The current focus is a strong single-vault CLI and MCP server; the next major phase is a multi-vault daemon built on the shared vulcan-core and vulcan-app crates.
 # examples
 
 # utils/plugins

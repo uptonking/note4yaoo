@@ -12,8 +12,15 @@ modified: 2023-06-07T14:19:18.719Z
 - 商店类产品的设计可参考类似ckan的data-portal
 # popular
 
-# starter
+# cards/codes/redeem
 
+- https://github.com/lizhipay/acg-faka /4.9kStar/MIT/202605/php
+  - http://162.14.111.118:91/
+  - 个人发卡源码，发卡系统，二次元发卡系统，二次元发卡源码
+  - 很多 异次元店铺 都是用的这套系统
+  - cases
+    - https://shop.kedaya.xyz/
+# starter
 - https://github.com/hicmtrex/TypeShop-Backend /202212/ts
   - https://github.com/hicmtrex/TypeShop-Frontend
   - https://type-shop.vercel.app/

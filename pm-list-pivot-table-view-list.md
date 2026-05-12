@@ -8,6 +8,10 @@ modified: 2022-12-16T01:51:52.564Z
 # pm-list-pivot-table-view-list
 
 # guide
+
+- ai list
+  - task/goal items status(todo/ing/done)
+
 - search-view
   - 类似amazon/searchkit/elasticsearch/algolia
 

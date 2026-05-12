@@ -423,6 +423,14 @@ export default marked;
 - https://x.com/antirez/status/2053113951123054963
   - Even more today where less tokens from the same content is way better. I can understand we need a better markdown. I can't understand we should replace it with HTML.
 
+- https://x.com/karpathy/status/2053872850101285137
+- As AI improves, I think we'll see a progression that takes advantage:
+  1) raw text (hard/effortful to read)
+  2) markdown (bold, italic, headings, tables, a bit easier on the eyes) <-- current default
+  3) HTML (still procedural with underlying code, but a lot more flexibility on the graphics, layout, even interactivity) <-- early but forming new good default
+  ...4, 5, 6, ...
+  n) interactive neural videos/simulations
+
 # discuss
 - ## 
 
