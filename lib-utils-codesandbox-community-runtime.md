@@ -698,9 +698,12 @@ modified: 2024-05-12T17:20:03.132Z
 
 - 
 - 
-- 
-- 
-- 
+
+- https://x.com/kylejeong/status/2054275522113454174
+  - Every AWS Lambda invocation runs in a full VM that boots in under 125ms. Firecracker is the ~50, 000 line Rust binary that makes that possible.
+- the main reason infra companies would want to use firecracker virtualization is to basically run more "sandboxes" per VM, so you lower costs per sandbox compared to running a single pod per VM
+  - It's a tradeoff between higher density of secure, isolated workloads vs cost per sandbox. Cheaper than running VMs but more expensive than pods.
+- yeah the best and worst part of engineering is tradeoffs
 
 - ## firecracker doesn't even support GPU acceleration.
 - https://x.com/binsquares/status/2052920113989574962

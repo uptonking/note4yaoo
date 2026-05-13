@@ -95,8 +95,8 @@ modified: 2023-01-01T13:24:35.994Z
   - https://docs.lyrasearch.io/
   - https://docs.oramasearch.com/
   - A complete search engine and RAG pipeline in your browser, server or edge network with support for full-text, vector, and hybrid search in less than 2kb.
-  - ~~Fast, in-memory, typo-tolerant, full-text search engine written in TypeScript.~~
-  - ~~Lyra is an immutable, runtime-agnostic, edge, and in-memory full-text search engine that works both on client and server.~~
+  - ~~Fast, in-memory, typo-tolerant, full-text search engine written in TypeScript.~~ 
+  - ~~Lyra is an immutable, runtime-agnostic, edge, and in-memory full-text search engine that works both on client and server.~~ 
   - Lyra has been developed thinking of a simple way to add new features via a plugin system, leaving the core as small as possible.
   - Lyra will only index string properties, but will allow you to set and store additional data if needed.
 - https://github.com/xieyezi/lyra-cn
@@ -150,7 +150,7 @@ modified: 2023-01-01T13:24:35.994Z
   - https://github.com/itemsapi/itemsjs
   - https://github.com/itemsapi/itemsjs/blob/master/docs/demo.md
   - Full text, faceted, (almost) dependency free search engine in javascript
-  - **Created to perform fast search on json dataset (up to 100K items)**.
+  - **Created to perform fast search on json dataset (up to 100K items)** .
   - working on backend and frontend
   - If native full text search is not enough then you can integrate with external full text search, like `minisearch/lunr.js`.
   - Facet filtering and sorting: Filter and order results by various facets.
@@ -575,7 +575,7 @@ modified: 2023-01-01T13:24:35.994Z
 - https://github.com/Ryandonofrio3/osgrep /1kStar/apache2/202601/ts
   - Natural-language search that works like grep. Fast, local, and works with coding agents.
   - Semantic: Finds concepts ("auth logic"), not just strings.
-  - Local & Private: 100% local embeddings via `onnxruntime-node` ~~transformers.js~~.
+  - Local & Private: 100% local embeddings via `onnxruntime-node` ~~transformers.js~~ .
   - Adaptive: Runs fast on desktops, throttles down on laptops to prevent overheating.
   - Smart Chunking: Uses tree-sitter to split code by function/class boundaries
   - Deduplication: Identical code blocks (boilerplate, license headers) are embedded once and cached, saving space and time.
@@ -587,6 +587,10 @@ modified: 2023-01-01T13:24:35.994Z
   - osgrep serve
     - Watches the repo (via `chokidar`) and incrementally re-indexes on change.
   - Claude Code Plugin, Opencode Plugin
+
+- https://github.com/weijiehan3/multi-source-search /MIT/202603/python
+  - Agent-neutral multi-source search skill for Claude Code, Codex, and OpenClaw.
+  - Combine host web search + Exa + Tavily + Grok for high-coverage retrieval, thread pulling for deep context, and MinerU for anti-crawler page parsing.
 # more-search
 - https://github.com/typicode/json-server
   - Get a full fake REST API with zero coding

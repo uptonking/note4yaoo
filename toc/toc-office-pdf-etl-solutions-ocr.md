@@ -816,22 +816,77 @@ modified: 2026-04-07T12:53:38.419Z
 ## utils
 
 - https://github.com/LeoLin990405/mineru-skill /MIT/202603
+  - https://github.com/LeoLin990405/mineru-skill/blob/main/SKILL.md
   - skill for MinerU document parsing API - convert PDF/DOC/PPT/images to Markdown/JSON
   - Cloud API	No GPU needed — uses mineru.net hosted service
   - Local API	Self-hosted with mineru-api for full control
+    - uv pip install -U "mineru[all]"
   - Smart Models	hybrid (default), pipeline, vlm, MinerU-HTML
   - Rich Extraction	OCR (109 languages), LaTeX formulas, cross-page tables
   - Batch Processing	Parse up to 200 files per request
   - CLI Script	mineru-parse.sh for quick command-line usage
   - https://github.com/openclaw/skills/tree/main/skills/mineru-extract
+
 - https://github.com/Nebutra/MinerU-Skill /MIT/202602/python
   - https://smithery.ai/skills/nebutra/mineru-skill
   - Skill that transforms PDFs into clean Markdown using MinerU's VLM engine. 
   - Supports LaTeX formulas, tables, images, and batch async processing.
   - Single File, Batch Directory, Direct to Obsidian
   - Visit MinerU, Create free API token
-- https://github.com/nilecui/mineru-parser-skills
+- https://github.com/nilecui/mineru-parser-skills /202512/python/inactive
   - parsing tool based on Claude Agent SDK and MinerU Skill
+  - only supports online version. PDF documents must be accessed via URL. Local file upload is not supported.
+  - MINERU_API_KEY environment variable (required)
+
+- https://github.com/CSlawyer1985/mineru-converter-skill /shell
+  - 一个专业的 PDF 转 Markdown 工具，基于开源项目 MinerU (magic-pdf) 开发，专为法律人和知识工作者打造。通过方案A++策略实现防死机优化，支持 GPU 加速，提供完全独立封装的 CLI 工具和 Claude Skill，让 PDF 文档转换为 AI 可直接理解和分析的 Markdown 格式。
+  - 完全独立封装 - 3.4GB 虚拟环境封装在 skill 内，零外部依赖
+  - 方案A++策略 - 每文件独立进程，自动内存释放，防止死机
+  - GPU 加速 - 启用 1GB 显存，速度提升 2-3 倍 
+  - 自动清理 - 临时文件自动删除，保持目录整洁 
+  - https://github.com/lilyuan258/PDF2md-by-MinerU-api-skill
+    - automatically call the official API of MinerU (TextIn) when reading user-uploaded PDF documents. It converts PDFs into machine-friendly Markdown files.
+  - https://github.com/zhangyu-ch/mineru-md
+    - 先通过 MinerU v4 精准解析 API 将文件或 URL 转换为高质量 Markdown，并保留图片等结构化资产。
+  - https://github.com/veeicwgy/word-to-html
+    - md
+    - https://github.com/veeicwgy/word-converter
+
+- https://github.com/two4mamba/claude-skill-pdf-smart-ocr /MIT/202605/python
+  - skill that converts any PDF to clean Markdown by picking the best engine automatically.
+  - Classifies the file (text PDF? image PDF? page count?)
+  - ✨ Dispatches to the most efficient extractor:
+    - Text PDF (has text layer)  	markitdown
+    - Image PDF, ≤ 50 pages  	pdftoppm + Claude vision
+    - Image PDF, 51–100 pages	Cloud OCR API (configurable)
+    - Image PDF, > 100 pages  	`MinerU` CLI
+    - For large image PDFs, `MinerU` runs are auto-chunked to avoid OOM on 32 GB-class machines, and the resulting chunk markdowns are merged with content-hash deduplication of extracted images.
+  - export md, docx, pdf, layout_html, layout_pdf
+    - html, pdf are supported by baidu PaddleOCR-VL, MinerU
+    - The layout_* formats use bbox JSON (only baidu and MinerU emit it) to reconstruct the original page geometry — multi-column slides stay multi-column, image-on-left/text-on-right stays so. Mistral / OpenRouter / DeepInfra / Claude vision do not emit bbox, so they cannot do layout preservation.
+  - Why not just use one tool?
+    - markitdown is fastest but blind to scans → useless for image PDFs.
+    - MinerU is excellent for image PDFs but slow & memory-heavy for trivial text PDFs.
+    - Claude vision is highest quality but expensive (token cost) for hundreds of pages.
+
+- https://github.com/1596941391qq/anything-to-md /MIT/202605/python
+  - 把任何文件变成 AI 能吃的 Markdown。PDF、Office、图片、音视频、YouTube — 一个命令搞定。
+  - PDF 三级引擎 这是核心差异化能力。
+    - MinerU	OCR + 布局检测 + 表格识别 + 图片提取
+    - MarkItDown	快速文本提取
+    - pypdf	基础文本提取
+    - MinerU 首次运行会下载 ~2GB 模型（后续秒开）。如果你的 PDF 是纯文本英文，MarkItDown 就够了；但凡涉及中文、扫描件、表格 — MinerU 是质的飞跃。
+  - 视频智能路由: PROBE → DECIDE → EXTRACT → FUSE
+
+- https://github.com/bshlee/extractPDF-skill /202604
+  - skill that extracts a PDF to Markdown + figures using the local MinerU pipeline (CPU).
+  - CPU-only, ~1 page/sec on an M-series Mac.
+  - Scanned PDFs route through OCR automatically (English + Chinese by default).
+- https://github.com/loqz99156/pandoc_to_markdown
+  - 一个把本地文档统一转换成 Markdown 的工具集，封装了 pandoc、Marker 和 MinerU，同时提供 CLI 和 Claude Code skill。
+  - 非 PDF 文档走 pandoc
+  - PDF 文档可选 Marker 或 MinerU
+  - 首次执行 PDF 转换时需要联网下载对应模型
 
 - https://github.com/linxule/mineru-mcp /MIT/202602/ts/代码少
   - MCP server for MinerU document parsing API — extract text, tables, and formulas from PDFs, DOCs, and images.
@@ -839,6 +894,19 @@ modified: 2026-04-07T12:53:38.419Z
   - Pipeline model — Fast processing for simple documents
   - Batch processing — Parse up to 200 documents at once
   - Optimized for Claude Code — 73% token reduction vs alternatives
+
+- https://github.com/TriasJ/notebooklm-to-video /MIT/202605/python
+  - Claude Code skill: Convert NotebookLM slide decks into animated Remotion videos via MinerU OCR + HTML bbox editor + OpenCV inpainting
+  - A Claude Code skill that converts NotebookLM slide decks into animated Remotion videos.
+  - NotebookLM Notebook
+    → Generate slide deck (MCP)
+    → Download PDF
+    → Extract 300 DPI PNGs (PyMuPDF)
+    → MinerU layout detection + OCR
+    → HTML bbox editor (manual corrections + inpainting preview)
+    → Export corrected_content_list.json
+    → prepare_slides.py (OpenCV inpainting + priority-clipped layers)
+    → Remotion animated video (adaptive stagger, type-specific animations)
 
 - https://github.com/OpenDCAI/Flash-MinerU /apache2+GPL/202604/python
   - 基于 Ray 的 MinerU 加速层，将 PDF → Markdown 构建为可扩展、面向集群的数据基础设施。

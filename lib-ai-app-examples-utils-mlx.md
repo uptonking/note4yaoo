@@ -744,6 +744,12 @@ modified: 2025-11-01T10:54:26.044Z
   - https://x.com/GitHub_Daily/status/2052327598282441116
     - 专为 Apple Silicon 设计的本地推理加速框架。 把 Mac 芯片里一直闲置的计算单元激活，让本地模型跑得更快、占用的内存更少。
 # llm-gui
+- https://github.com/RyensX/LlamaCppHub /GPL/202605/rust/ts
+  - 轻量级llama.cpp用户界面外壳
+  - [最近沉迷于本地推理加速， 为了方便调试做了一个llama.cpp外壳 - LINUX DO _202605](https://linux.do/t/topic/2164105)
+    - 可以非常方便地管理多个llama.cpp启动配置和监测资源，还支持自定义参数来适应不同llama.cpp分支的功能，比如turboquant、Dflash等
+    - 同时对比LM Studio等，只是个轻量级外壳，不会造成性能损失
+
 - https://github.com/openconstruct/llm-desktop /MIT/202602/python
   - Local AI desktop for GGUF models on Linux & SBCs (Radxa, Pi, etc.)
   - This project built initially for the Baidu ERNIE hackathon, Oct 24-Nov23 2025.

@@ -519,6 +519,17 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## jina-embeddings-v5-omni is here! Our first universal embedding model for text, images, audio, and video. 
+- https://x.com/JinaAI_/status/2054226262047301933
+  - Available in two sizes: small (1.57B, 1024-dim, 32K context) and nano (0.95B, 768-dim, 8K context). Both support Matryoshka truncation down to 32 dimensions. 
+  - v5-omni is back-compatible: if you already use jina-embeddings-v5-text-small/nano, the existing text indexes work with v5-omni out of the box. Without reindexing the text, just index your multimodal content with v5-omni and start searching images, audio, and video.
+  - https://huggingface.co/collections/jinaai/jina-embeddings-v5-omni
+- id say multimodal retrieval only becomes boring enough to use when it fits existing infra. same vector space + matryoshka dims is the kind of unsexy detail that makes adoption much easier, im a big fan
+
 - ## We finally know why LLMs hallucinate. It's not the model. It's the geometry.
 - https://x.com/anirudhbv_ce/status/2052532004919361958
   - @OpenAI text-embedding-3-large: 91/3072 dimensions do real work.

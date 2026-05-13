@@ -43,6 +43,7 @@ modified: 2022-08-18T16:57:29.058Z
     - collab: yjs
     - Bidirectional
   - [fix: prep for multi editor versions - no logical changes. structure only _202603](https://github.com/superdoc-dev/superdoc/pull/2591)
+  - 已支持 [Feature: support rendering of line between columns _202602](https://github.com/superdoc-dev/superdoc/issues/2067)
   - [Open source MS Word GPT redlining add-in for contract review : r/legaltech _202510](https://www.reddit.com/r/legaltech/comments/1nv8c0u/open_source_ms_word_gpt_redlining_addin_for/)
     - We uniquely unzip the DOCX and edit the raw XML which allows us to keep the formatting intact, a must for legal tech.
   - [Deliberately violating REST for developer experience - a case study : r/programming _202508](https://www.reddit.com/r/programming/comments/1miogsp/deliberately_violating_rest_for_developer/)

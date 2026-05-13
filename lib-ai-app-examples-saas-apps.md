@@ -679,6 +679,15 @@ modified: 2025-02-21T17:17:42.225Z
   - CLI is the recommended and most stable entry point.
   - Web Workspace is under active development — the frontend UX and flows are not finalized; expect rough edges.
 
+- https://github.com/yilewang/llm-for-zotero /AGPL/202605/ts
+  - https://yilewang.github.io/llm-for-zotero/zh/
+  - 将大型语言模型带入 Zotero 阅读器，让您无需离开文库即可提问、总结论文、解读图表、比较文献并保存笔记。
+  - 它支持常规 API 服务商、本地 OpenAI 兼容模型、WebChat、Codex App Server 和 Claude Code。
+  - 就任意打开的 PDF 提问，回答基于论文内容并附带可点击的引用跳转。
+  - 不想配置 API 密钥时，可通过 Sync for Zotero 浏览器扩展使用 ChatGPT 或 DeepSeek 网页端。
+  - 可使用云端 MinerU 或本地 mineru-api 服务，进行高保真 PDF 解析，保留表格、公式、图表和复杂版式。
+  - 在独立窗口中打开 LLM 助手，提供全尺寸聊天界面和对话历史侧栏。
+
 - https://github.com/yeap531/word-format-skill /apache2/202604/python
   - skill：把一份参考 Word (.docx) 的排版样式（字体 / 字号 / 缩进 / 行距 / 对齐 / 页面设置 / 样式表 / 主题 / 页眉页脚）视觉一致地复刻到新内容上。
   - 仅在 macOS 工作（依赖 Microsoft Word + 浏览器 + System Events 的 UI 自动化）。

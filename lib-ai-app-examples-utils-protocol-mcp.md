@@ -129,10 +129,15 @@ modified: 2026-01-19T05:01:00.055Z
   - Every AI browser tries to be both a browser and an agent. Keep your normal Chrome — this is just the agent half.
   - Ports your cookies into a fresh Chromium so agents are logged in everywhere you are, and spawns tasks from anywhere with a keyboard shortcut.
   - Built on Browser Harness.
-  - https://github.com/browser-use/browser-harness /10.2kStar/MIT/202605/python
-    - https://browser-harness.com/
-    - Connect an LLM directly to your real browser with a thin, editable CDP harness. 
-    - One websocket to Chrome, nothing between. The agent writes what's missing during execution. The harness improves itself every run.
+  - https://github.com/browser-use/browsercode /MIT
+    - A streamlined coding agent that drives real browsers through unconstrained CDP.
+    - https://x.com/Alezander907/status/2054237667328676121
+    - The agent writes unconstrained CDP to drive your real chrome, all locally
+    - Browser benchmarks are useful, but the production pain is handoff to the real browser: logged in sessions, visible actions, owned tabs, and review before risky clicks. That is where FSB is focused  /https://github.com/LakshmanTurlapati/FSB  /BSL
+- https://github.com/browser-use/browser-harness /10.2kStar/MIT/202605/python
+  - https://browser-harness.com/
+  - Connect an LLM directly to your real browser with a thin, editable CDP harness. 
+  - One websocket to Chrome, nothing between. The agent writes what's missing during execution. The harness improves itself every run.
   - https://x.com/larsencc/status/2051108228063510836
   - Since you loved Browser-harness so much - we packaged it into a desktop app. It lets your Claude / codex / open code control the browser reliable.
   - works locally

@@ -66,6 +66,32 @@ modified: 2026-01-15T15:46:21.626Z
 - ## 
 
 - ## 
+# discuss-embedded-dev
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [咨询一下嵌入式的佬们，学硬件需要记很多公式么？ - LINUX DO _202605](https://linux.do/t/topic/2163373)
+  - 前阵子想学嵌硬打发时间加上自己搞点小东西，我时间还算充裕吧，基础电路学完查资料的时候看到有人在别的地方说必须背很多关于电的公式，有点迷茫，不是看懂电路图，然后多去临摹板子不懂的地方问ai为什么这么设计熟能生巧的学习么？这怎么搞得好像学物理的一样。。。。咨询一下做嵌入式的佬们，学硬件真的需要背很多公式么？
+- 我是搞嵌入式软件开发的，掌握下电路基础原理就还行，主要是上手操作
+
+- 作硬件的是需要一些基础公式，比如计划滤波参数等，软件的就基本不用了
+
+- 不用先抱着一堆公式背，容易劝退。做小项目的话，先把电路基础和常见模块看懂，照着开源板子画几次，遇到电源、滤波、分压这些地方再查公式就行。
+- 临摹的时候多查多看，做多了也就熟悉了，先背公式有点死板吧，而且很无聊 
+
+- 做着玩的话，有个基础的电路基础就行，读懂电路还需要有模电和数电的相关知识，但是没事，不是特别麻烦的电路图，你只要问gpt就可以，更难的是画板子以及设计板子，可以去嘉立创上找开源的，自己学着玩玩，对公式的要求真的没那么高, 至少玩玩的项目是这样的
+
+- 开发板开发： 目标是学习、验证算法或做个Demo（原型）。只要跑通了、能演示就行。使用的都是市面上买来的通用板子（如 Arduino, 树莓派, STM32 Nucleo板, ESP32开发板等）。
+  - 嵌入式开发： 目标是做出商业化、可量产的真实产品（如智能手表、汽车ECU、工业控制器、智能插座）。最终产出的是一块专门为这个产品定制的、形状奇特的绿色/蓝色电路板（PCB）。
+- 其实，专业的嵌入式工程师在开发新产品时，第一步往往也是“开发板开发”。 他们会先买一块官方的评估板（Evaluation Board），在上面把核心代码跑通，验证方案可行。
+  - 但这仅仅是万里长征的第一步。跑通之后，他们要：
+  - 画自己的硬件板子（去掉多余零件，改变形状）。
+  - 写底层驱动（适配自己选的特定型号的屏幕、传感器）。
+  - 优化性能与功耗（让电池能用一年而不是一天）。
+  - 测试与量产（解决生产线上的各种良品率问题）。
 # discuss
 - ## 
 
@@ -103,7 +129,7 @@ modified: 2026-01-15T15:46:21.626Z
 - ## [AMD EPYC 9654的主板为什么这么贵？单路9654能打7763双路吗？ - 知乎](https://www.zhihu.com/question/598929770)
 - 多项测试里单路 96核 9654 都优于 双路 128核 7003（7763/7773x）。
   - 架构制程升级、频率（大幅）提升（全核满载提升0.5GHz+）、12通道DDR5 4800、单路本就更低的多的CCD间通讯延迟等，都是不小的优势
-- 现在9004主板也没那么贵了，**单路板子5k价位就能拿下**，没比双路7003贵多少，ddr5 reg价格也在下降，整套还是比较超值的。
+- 现在9004主板也没那么贵了， **单路板子5k价位就能拿下** ，没比双路7003贵多少，ddr5 reg价格也在下降，整套还是比较超值的。
 
 - 5k真的不会赔本么？每个内存通道是不是72跟信号线，12通道是864，除此以外还有那么些PCI-E，这些还要和电源线地线混在一起，感觉很不容易了。当然了，要说每根信号线频率其实不算高，跟nvlink之类的没得比
 
@@ -811,8 +837,8 @@ modified: 2026-01-15T15:46:21.626Z
 - Additionally, frameworks like ktransformers or ik-llamacpp are optimized for CPU-GPU hybrid inference.
 
 - In China, there are OEM server processor options that offer comparable pricing to entry-level models while delivering significantly better prefill performance than 16-core alternatives. Notable affordable options include:
-  - - **Intel**: Xeon 8455C (48C SPR 8xDDR5 4800MHz ~¥6, 000), 8481C (56C SPR ~¥7, 500), 8581C (60C EMR 8xDDR5 5600MHz ~¥9, 000)
- - **AMD**: Epyc 7B13 (64C Zen3 8xDDR4 3200MHz ~¥3, 800), Epyc 9v74 (80C Zen4 12xDDR5 4800MHz ~¥8, 500)
+  - - **Intel** : Xeon 8455C (48C SPR 8xDDR5 4800MHz ~¥6, 000), 8481C (56C SPR ~¥7, 500), 8581C (60C EMR 8xDDR5 5600MHz ~¥9, 000)
+ - **AMD** : Epyc 7B13 (64C Zen3 8xDDR4 3200MHz ~¥3, 800), Epyc 9v74 (80C Zen4 12xDDR5 4800MHz ~¥8, 500)
   - Beyond OEM models, the Epyc 9375F (32C Zen5 12x6000MHz) offers exceptional single-core performance and memory bandwidth, making it better for some tasks. 
 - When comparing Intel and AMD platforms:
   - Intel's advantage lies in AMX instructions for prefill acceleration
@@ -1063,7 +1089,7 @@ modified: 2026-01-15T15:46:21.626Z
 
 - If you want small with 128GB of fast RAM, then something built with the AMD AI Max 395 might be of interest? Framework are going to sell an ITX motherboard (and SFF PC) with the same chip, but it isn't available yet
   - Yes I am aware of its existence and the advantages soldered RAM has to reduce latency and improve memory bandwidth, but I already got a rig and am happy with the general performance of my 7900. 
-  - I was considering upgrading form my measly 2*16GB and my most recent info is that optimum uses 2*48GB sticks, hence 96GB, but I couldn't find further info on 2*64GB.
+  - I was considering upgrading form my measly 2 *16GB and my most recent info is that optimum uses 2*48GB sticks, hence 96GB, but I couldn't find further info on 2* 64GB.
 
 - Even though only 96 GB of RAM is listed there, it is possible to use 128 GB. I've seen it in YouTube videos, but only with mini PCs, and the guy used SO DIMMs.
 

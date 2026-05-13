@@ -414,6 +414,19 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## We just shipped DFlash + PFlash for the AMD Ryzen AI MAX+ 395 iGPU (gfx1151, 128 GiB unified memory).
+- https://x.com/pupposandro/status/2054242335836316129
+  - ▸ Decode: 26.85 tok/s, 2.23x faster (DFlash + DDTree, budget 22)
+  - ▸ Prefill 16K: 20.2s, 3.05x faster (PFlash)
+  - ▸ Wall clock, 16K prompt + 1K gen: 58s vs 147s
+  - https://github.com/Luce-Org/lucebox-hub /apache2/202605/cpp/python
+
+- strix halo + egpu when? 
+
 - ## Local LLM: MLX vs GGUF vs nvfp
 - https://x.com/songjunkr/status/2048506963584307507
   - mlx: Due to significant quantization loss, it's best to use 6-bit or higher
@@ -1361,7 +1374,25 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## [Is using vLLM actually worth it if you aren't serving the model to other people? : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1tbftlt/is_using_vllm_actually_worth_it_if_you_arent/)
+  - as most of us here are, I'm a llama.cpp loyalist. Easy to understand, great configuration, relatively stable, etc.
+  - But I’ve been increasingly tempted by vLLM, especially since AMD just added it as a built-in inference engine to Lemonade, and I happen to have an AMD GPU. The thing is, I've never actually used vLLM directly, but I've heard good things about how it performs compared to llama.cpp, with vLLM apparently outperforming it pretty much across the board.
+
+- If you do any batched inference at all, vLLM is going to scale better and more easily, since it allocates VRAM per-batch as needed as context grows and as more concurrent queries arrive, while llama.cpp requires K and V caches to be pre-allocated for the maximum batch size and maximum context.
+  - Other than that, though, llama.cpp is pretty great. I'm really happy with it. I'm all AMD GPUs here too (MI50, MI60, V340) but llama.cpp's Vulkan back-end works splendidly with them.
+  - The only other reason I can think to switch to vLLM is if you're interested in picking up marketable tech job skills, since vLLM is the go-to for the Enterprise. It's what Red Hat's RHEAI is built around, for example. vLLM experience would look better on a CV than llama.cpp experience.
+
+- It usually gets new models before llama.cpp. The same goes for features. For example, MTP is already supported for Qwen3.6 and Gemma 4. vLLM can be much faster if you can use tensor parallelism. It does multi-user better. And since it's used professionally, I feel like there's a lower chance of a model having a bug where it works at a glance but deviates from the output of the reference implementation (but I can't prove this).
+  - On the other hand, vLLM uses way more VRAM for the same amount of context. It takes much longer to start up. Every time you upgrade to run a new model, you will break every older model (or at least that's my luck). And unlike llama.cpp, it's not a good option if you can't fit the entire model on GPU. And it wants modern GPUs, also.
+  - I usually use llama.cpp since I have regular consumer hardware and like to swap between models. I use vLLM to try new models if they aren't yet available in llama.cpp and I can fit them.
+
+- Yes, it’s worth it if you want a reliable service, but the biggest thing for me is tensor parallel work across nodes/gpus. I am serving Qwen 397b (aka Fat Qwen) on two nodes of 128Gb each (DGX spark) and there is no way to do this on lcpp reliably and as solidly. I serve also Skinny Qwen (Qwen 27B) with vLLM, but again, single container/single GPU, etc. For 35B, which runs with cpu offload, I use lcpp and for other small models too.
+- llama.cpp has tp now. Does it not work for you?
+  - You can’t tp across nodes as reliably with lcpp. I don’t tensor parallel across GPUs in the same box
+
+- The general rule of thumb is that you should use vllm any time your model fits fully in VRAM. It's way faster in almost all situtations, and generally more reliable too.
+  - llama.cpp is for the everyman (ie me and you) so it's totally the place to go if you're vram poor.
+- Add to the rule of thumb if your amd or Intel vllm, likely hates you.
 
 - ## [We tested 5 vLLM optimizations: Prefix Cache, FP8, CPU Offload, Disagg P/D, and Sleep Mode : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r61so4/we_tested_5_vllm_optimizations_prefix_cache_fp8/)
   - We just published a new article on the JarvisLabs blog that dives into 5 practical techniques to optimize vLLM performance.

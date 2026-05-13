@@ -130,7 +130,7 @@ what should be done to macth the upstream? explain to me. if it it complicated, 
 - the final goal is to implement from scratch a new ai docx editing solution named ailovedoc similar to superdoc in current folder to avoid the licensing issues.
 - ailovedoc should be implemented in a modular and extensible architecture for core features like rendering and editing, with functional programming style.
 
-- in superdoc, running `pnpm dev:super-editor` shows a mininal editor demo that supports to toggle pagination. running `pnpm dev` shows a powerful editor demo that supports to toggle pagination, zoomable, toolbars, sidebars. please migrate the examples to ailovedoc without licensing issues, and make it runnable locally in ailovedoc. you should migrate all superdoc examples/features to a new standalone package at `apps/playground`, the basic ux can be a list of editor example names at left sidebar, when click one example name, the demo will show on the right.
+- in superdoc, running `pnpm dev:super-editor` shows a mininal editor demo that supports to toggle pagination. running `pnpm dev` shows a powerful editor demo that supports to toggle pagination, zoomable, toolbars, sidebars. please migrate the examples to ailovedoc without licensing issues, and make it runnable locally in ailovedoc. you should migrate all superdoc examples/features to a standalone package at `apps/playground`, the basic ux can be a list of editor example names at left sidebar, when click one example name, the demo will show on the right.
 
 - feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
 - in your implementation, you can also improve the code logic for features and make your implementation correct and extensible. tests are not necessary for your implementation.
@@ -167,7 +167,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 - please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like superdoc.
 
-- ailovedoc should have full feature parity matching superdoc for important features like document data model, layout-engine(supports toggling pagination), document rendering/zoom, virtualized-rendering, editing engine, rich-text formatting, track-change.
+- ailovedoc should have full feature parity matching superdoc for important features like document data model, layout-engine(supports toggling pagination, multi-column layout), document rendering/zoom, virtualized-rendering, editing engine, rich-text formatting, track-change.
 
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 - make a plan, then migrate and improve full feature pairity, without licensing issues
@@ -184,6 +184,8 @@ you have worked on this problem several times but features are still lacking. Th
 - you may even do a big code refactor to match full feature of superdoc in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design feature parity docs at `upstream/superdoc/reports`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream superdoc should be put in folder `upstream`. you may even design a script to automate it.
+- feature parity docs may be outdated, please read related code and recheck/update.
+
 - research and make a full plan, then implement ailovedoc to match full features of superdoc, or even better than superdoc, without licensing issues.
 
 ------
@@ -193,6 +195,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 - superdoc's overall architecture is good enough to follow. Mostly ailovedoc should use similar architecture to superdoc.
 
+- please recheck migrated features and improve your implementation in ailovedoc. Analyze core data flow and implementation logic details for major features like editor-data-model/layout-engine(supports multi-column)/pagination/virtualized-render/zoom/track-change/diff..., compare the implementation of ailovedoc with superdoc to recheck and enhance the correctness of architecture and logic in ailovedoc, find possible bugs in code and fix them, refactor code if need,  make sure major features implementations in ailovedoc are correct, modular, extensible for long-term maintenance.
 ```
 
 ## hardoc(onlyoffice-pdf)
@@ -297,12 +300,13 @@ You should implement hardoc pdf editor in a similar architecture of onlyoffice p
 
 DO NOT search the web for onlyoffice pdf api, you should find and read source code of onlyoffice pdf editor directly in current folder ~/Documents/repos/office/all-office/onlyoffice
 
+- please recheck migrated features and improve your implementation in hardoc. Analyze core data flow and implementation logic details for major features, compare the implementation of hardoc with onlyoffice-pdf-editor to recheck and enhance the correctness of architecture and logic in hardoc, find possible bugs in code and fix them, refactor code if need,  make sure major features implementations in hardoc are correct, modular, extensible for long-term maintenance.
 ```
 
 ## grist-office
 
 ```prompt
-- Grist is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database. 
+- Project Grist is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database. 
 - The final goal is to implement an alternative react frontend webapp at folder `app/client-react` at the current git branch `feat/office-react`, with the same features as existing backbonejs frontend webapp at `app/client`,  using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table. After you finished the react webapp, `npm run start:app` should start the new react webapp, the legacy yarn toolchain should still be kept for backward compatibility. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please keep as many code unchanged as possible.
 - one goal is to rewrite all the existing backbonejs ui/ux with modern react ui/ux, but you can implement the core speadsheet view/create/edit/save data flow first, then migrate more and more features. 
 - react webapp should support all the routing urls of existing backbonejs webapp, using the same existing backend api.
@@ -339,9 +343,14 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - you may even do a big code refactor to match full feature of backbonejs webapp in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
+- you may design feature parity docs at `upstream/feature-parity.md`, when you migrate/implment features from backbonejs webapp to react webapp, you can recheck and update it. all checking/docs/scripts related to upstream backbonejs webapp should be put in folder `upstream`. you may even design a script to automate it.
 - research and make a full plan, then implement the react webapp to match full features of existing backbonejs webapp, or even better than backbonejs webapp.
 
 - `grist-static` is a fully in-browser build of Grist for displaying spreadsheets on a website without back-end support.
+
+-------
+
+- please recheck migrated features and improve your implementation in react webapp. Analyze core data flow and implementation logic details for major features, compare the implementation of react webapp with backbonejs webapp to recheck and enhance the correctness of architecture and logic in react webapp, find possible bugs in code and fix them, refactor code if need,  make sure major features implementations in react webapp are correct, modular, extensible for long-term maintenance.
 
 ```
 
@@ -499,6 +508,8 @@ document what you have migrated from which commit id for future migration refere
 you have migrated/implemented major features in project react web, but when you migrated/implemented features, tests are not taken good care of. please fix and update existing tests. 
 when you improve the tests, you can also improve the source code logic by fixing or refactoring code. DO NOT get locked to the risk code that has weak or wrong logic, you should fix them.
 finally make sure all tests run and pass locally with npm. you can update/fix tests file by file progressively. outdated or over-complicated or hard-to-maintain tests can be removed or rewritten. 
+
+you have improved the codebase several times, but running the tests/parity/scripts took a lot of time for your every improvement.  please refactor and improve the tests/parity/scripts/devops/ci to make it faster and more maintainable .  you may combine/reduce/redesign/deduplicate some tests/parity/scripts/devops/ci/outdated/legacy if you need. 
 ```
 
 # rafactor

@@ -12,6 +12,7 @@ modified: 2024-02-04T20:54:21.002Z
   - license: apache2
   - 支持2种embed模式(readonly/edit), 还可以使用grist-static嵌入无后端的静态版
   - charts
+  - [支持kanban](https://support.getgrist.com/newsletters/2024-01/)
 
 - cons
   - 不支持已有数据库，需要import data

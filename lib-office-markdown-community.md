@@ -431,6 +431,15 @@ export default marked;
   ...4, 5, 6, ...
   n) interactive neural videos/simulations
 
+- https://x.com/kunchenguid/status/2054010987871883764
+  - md is a bit limiting in terms of what kind of interactivity can be expressed through it
+- If you’re producing content for humans, HTML is 100% the right choice. For LLM guidance, not so sure about the ROI
+
+- https://x.com/AYi_AInotes/status/2053911048877707443
+  - 同样的内容，HTML的阅读效率和理解深度，是Markdown的10倍以上，这简直就是人机交互的真正下一代范式，因为人类的输入和输出偏好，天生就是完全不对称的，
+- 我知道会有很多铁汁说写短内容确实是，但只要超过300字，有表格、有对比、有数据，HTML的体验就是碾压级的，相信我
+
+- AI 的输出确实正在经历从“文本流”到“结构化交互”的升维。 
 # discuss
 - ## 
 

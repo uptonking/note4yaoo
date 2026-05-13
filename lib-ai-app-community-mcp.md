@@ -387,6 +387,27 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
+- ## 
+
+- ## 🤔 [Can MCP servers bundle Agent Skills, so any MCP host loads both the skill instructions and the server tools? : r/mcp _202605](https://www.reddit.com/r/mcp/comments/1tacsse/can_mcp_servers_bundle_agent_skills_so_any_mcp/)
+  - I’m exploring a pattern that combines Agent Skills with MCP servers, and I’m curious whether current MCP server frameworks/SDKs and MCP hosts support this workflow, or if this would require a new convention/spec extension.
+  - Instead of exposing many MCP tools directly, the MCP server exposes only one generic tool: execute_tool({ function_name: string, parameters: object })
+  - Alongside that, I want the MCP server to also provide an Agent Skill bundle consisting of multiple .md files.
+  - The reason I’m interested in this approach instead of putting executable scripts directly inside Agent Skills is authentication/security. Scripts bundled with skills are useful for deterministic local logic, but for real business systems I’d rather keep authenticated execution inside an MCP server, where credentials, access control, audit logging, rate limiting, and backend validation can be centralized.
+
+- FastMCP 3.0 now supports a skill registry and works somewhat like this, except the skill and related files are treated as resources, not tools. That's the part that is difficult, because not a lot of agentic frameworks support MCP resources, and especially not treating them as skills with progressive discovery. I've heard LangGraph can do this but haven't done more research
+
+- short answer: no spec for this today. the closest primitives in MCP right now are prompts (named prompt templates the host can surface) and resources (URIs the model can read on demand) — you can basically implement your router pattern by exposing SKILL.md and the domain refs as resources, plus a single execute_tool. the host still has to actually read them though, and most hosts don't auto-inject resource content into context the way Claude's agent skills do. so right now it works in theory but portability across hosts is the weak link — each host treats resources/prompts differently. i'd lean toward keeping your single execute_tool idea but have execute_tool itself return the relevant reference markdown on first call (like a "load_skill" sub-op), that way it works regardless of whether the host supports resources well.
+
+- Skill are just files. They can be delivered via MCP resources and/or MCP prompts. And AFAIK all the official MCP server framework support resources.
+  - The problem is client sides: most (all?) MCP clients support only MCP tools (and not even that well TBH). Even OpenWebUI and Librechat have very poor MCP tool call support, and 0 support for MCP resources/prompts.
+  - Agent skills on their own are only portable as long as they do not contain scripts that need specific binaries/packages. The only truly portable ones are the pure Markdown ones.
+
+- Currently there is no standard way to do this. Prompts have a similar function but not exactly same as what you are looking for. Here are some examples of prompts bundling to give you some idea:
+
+- This is why we have gone away from 'traditional' MCP, run all the internal APIs as virtual servers using the MCP auth pattern but use a more robust tool search too find the tools, then load in a way more useful tool instruction as well.
+  - MCP is great until it's not, and the agent can't usefully determine when to use what.
+
 - ## 每个 MCP 都要在用户本地跑一个 Node 进程，内存占用不说，光是进程启动和通信的延迟就非常明显，这是设计的问题
 - https://x.com/Jiaxi_Cui/status/2040800132073967631
   - 所以只有 Figma、工业软件这类本身就很重的大型应用，MCP 才有可能长期活下去。

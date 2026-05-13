@@ -27,6 +27,13 @@ modified: 2020-12-22T12:42:09.830Z
 
 - [Lucky Patcher v11.1.1 APK (Official by ChelpuS) Download](https://modzozo.com/lucky-patcher.html)
   - a versatile Android application that offers a wide range of features designed to empower users with control over their Android devices. 
+
+- https://github.com/gkd-kit/gkd /38.5kStar/GPL/202605/kotlin
+  - https://gkd.li/
+  - 基于无障碍，高级选择器，订阅规则的自定义屏幕点击安卓应用
+  - https://github.com/Lin-arm/GKD_subscription
+    - 用于安卓 GKD 的第三方订阅规则 (👻Fork版)
+  - [被开屏广告折磨死了，求李跳跳软件 - LINUX DO _202605](https://linux.do/t/topic/2168772/29)
 # apps-office
 - [List of office suites - Wikipedia](https://en.wikipedia.org/wiki/List_of_office_suites)
 

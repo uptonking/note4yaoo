@@ -264,7 +264,10 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## 🔌 The future of Obsidian plugins
+- https://x.com/obsdmd/status/2054234821875146898
+  - Today we’re excited to launch Obsidian Community, the new directory and developer dashboard for Obsidian plugins and themes.
+  - Since the Obsidian API release in 2020, more than 4, 000 plugins and themes have been created by our amazing community. Incredibly, Obsidian plugins have passed 120 million total downloads!
 
 - ## [1 Year Later: Data on how making commercial use free affected Obsidian's revenue - up to $1, 100, 000/year in lost revenue from enterprise : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1shm3ym/1_year_later_data_on_how_making_commercial_use/)
   - A year ago, commercial use became free, shifting the use of Obsidian at work from a mandatory legal requirement of $50/user/year to an optional supporter license.

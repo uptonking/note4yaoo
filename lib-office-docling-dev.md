@@ -88,7 +88,7 @@ modified: 2025-09-21T13:58:08.942Z
 - 
 - 
 
-# paddleocr
+# 📌 paddleocr
 - [PaddleOCR - 文档解析与智能文字识别 - 飞桨星河社区](https://aistudio.baidu.com/paddleocr)
   - 支持调整配置、多次识别， 配置的参数变多(如table+chart+image)后，识别速度可能很慢
 
@@ -133,7 +133,11 @@ modified: 2025-09-21T13:58:08.942Z
     - Seal Text Recognition Subline （Optional）
     - Formula Recognition Subline （Optional）
     - Chart Parsing Module (Optional)
-# mineru
+# 📌 mineru
+
+# dev-xp
+
+- 检查 vlm/pipeline 模式下输出的html是否包含分栏
 
 ## docs
 

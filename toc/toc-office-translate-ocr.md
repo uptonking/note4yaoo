@@ -549,6 +549,13 @@ modified: 2026-04-07T11:52:43.122Z
 
 ## utils-translation
 
+- https://github.com/flycalm/mineru-pdf-translate /202604/python
+  - 一个可直接用于 Codex 的 skill，同时也包含一个可以独立运行的 Python 脚本，用来把本地 PDF 文档翻译成目标语言 PDF。
+  - 整体流程是：
+    - 调用 MinerU 在线解析 PDF
+    - 使用 OpenAI 兼容接口翻译提取出的 Markdown
+    - 通过浏览器无头打印，把译文重新渲染成最终 PDF (布局丢失)
+
 - https://github.com/mozilla/firefox-translations
   - a webextension that enables client side translations for web browsers.
   - 不支持中文

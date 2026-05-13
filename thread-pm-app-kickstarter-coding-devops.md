@@ -124,6 +124,29 @@ Bottom Line: Success isn’t just about good code. It’s about presentation, ac
 
 - ## 
 
+- ## 
+
+- ## [信创处理器、数据库、操作系统整理 - LINUX DO _202605](https://linux.do/t/topic/2161846)
+  - 信创、国产化、自主可控类的要求，主要针对计算机终端和服务器搭载的中央处理器（CPU）、人工智能训练推理芯片、操作系统、数据库，以及激光或喷墨打印机搭载的主控芯片等开展。政策名字一直在变，名单以中国信息安全测评中心公布的安全可靠测评公告为准。
+  - 目前名录里的设备整理如下，供大家选型参考 
+
+- 适配，任重而道远，基于linux的系统操作， 适配x86，运行服务器 适配难度大，运行性能甚至能减半 
+- 而且兼容性差
+
+- 就这么多的系统和版本，所以有没有什么推荐的兼容性强的GUI应用开发方案
+  - QT，国产系统都是base QT5
+- 基本上就是QT 5.12.8，这是最稳的方案。基于web的方案要确认opengl支持情况和glibc版本情况。
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## Astral has entered into an agreement to join OpenAI as part of the Codex team. _202603
 - https://x.com/OpenAINewsroom/status/2034616934671724639 
   - https://x.com/astral_sh/status/2034622016049860869

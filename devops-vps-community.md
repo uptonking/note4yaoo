@@ -329,7 +329,8 @@ modified: 2024-11-16T10:52:53.263Z
 
 - ## 
 
-- ## 
+- ## [强制开启Firefox内置的VPN功能，每月免费50GB - LINUX DO _202605](https://linux.do/t/topic/2163443)
+  - Firefox从149版本开始内置了VPN功能，目前只面向美英德法加用户，但可以通过自定义配置文件强制开启这项功能。
 
 - ## TrustTunnel - [Adguard竟然把vpn协议开源了 _202601](https://linux.do/t/topic/1507556)
 - 有tls in tls的经典特征啊，已经是老掉牙的问题了。 而且它也没避开双重加密，性能咋样也要打个问号。 这感觉更像标准的h2/h3隧道嘛。

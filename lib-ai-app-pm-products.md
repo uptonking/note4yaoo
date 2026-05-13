@@ -24,6 +24,8 @@ modified: 2025-03-22T16:10:24.856Z
   - 大模型可能的成本变化: 推广期token廉价, 等到工程师coding能力下降, token再涨价, 因为本地运行大模型成本太高
   - 需要清理ai工作的中间物缓存、代码缓存、npm/uv缓存
   - 足够好用的工具能够改编用户习惯，如 claude-code 替换 cursor
+  - skill免费， 预览免费，编辑付费， ~~是否可行~~ 
+    - 似乎不可行，因为是ai编辑
 
 - ai-dev-xp
   - 🦞 openclaw带来的产品变化, 用户更能接受在本地电脑安装常驻app/进程, 然后通过im-app交流
@@ -1761,7 +1763,8 @@ modified: 2025-03-22T16:10:24.856Z
   - 中转商的价格每天都在变化, 套餐也在改变, 不要在一家花费过多
     - 很可能注册的第一天会显示低价，后面就恢复正常价格了，注意误导
   - GPT site:pay.ldxp.cn/shop
-  - 搜索: 手工, 质保, 源头, 印尼
+  - ~~搜索: 手工, 质保, 源头, 印尼~~ 
+    - 在5月13号，几乎所有成品号渠道都失效了，所有店铺(无论贵的还是便宜的)的源头渠道几乎相同，，，以后买便宜的就行了
   - 月初是openai集中清理风险型用户和欺诈性用户的敏感时间, 很多便宜的渠道会挂掉
   - 封号的时机注意周初和月末， 周初前几天可能会清理，月末很可能集中清理，最好在北美周二买号
 
@@ -1829,6 +1832,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 低价号多
   - [猪猪AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/code)
     - 零售+批量
+  - [OAI DO的小店 - 链动小铺](https://pay.ldxp.cn/shop/oai)
+  - [喜乐GPT plus的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/KK5XQNYK)
 
 - [麦当当plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/EOTZ17J2)
   - 交流: https://t.me/maidangdangplus
@@ -1856,6 +1861,7 @@ modified: 2025-03-22T16:10:24.856Z
   - ¥58.88/月, 30 天内不可用免费换新
 
 - aidark [邮件与账号工具台](https://mails.aidark.icu/)
+  - [xiaoxiao的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YD93JLNG)
 
 - 批量取件： https://plus.keria.cc.cd/ 
   - [AI会员小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/XLF7RCJG)
@@ -1905,6 +1911,15 @@ modified: 2025-03-22T16:10:24.856Z
   - 通知频道：https://t.me/hdunzx
   - 质保两天
     - 一天就上几个，引流的
+- [sekirocloud的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/L9P7JDGN)
+  - sub2api josn格式
+  - [plus源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/IY16OXB7)
+    - GPT-PLUS-JSON 中转站版
+  - [天选AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/txai)
+    - https://plus.oai.do/ 
+  - [随欲小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/MO2JGWG9)
+    - free-0.45
+  - [小NO plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/BWGFCYG1)
 
 - [度偶Ai专卖店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/G3EUVLR7)
   - gpt plus月订阅CPA json(质保3天)

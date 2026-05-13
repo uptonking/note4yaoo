@@ -983,6 +983,17 @@ modified: 2026-02-20T17:36:40.796Z
 
 - 我们用 Hermes Agent 做类似的事——delegate_task 可以并行开多个子代理，互不干扰主进程。/side 的思路很像，不过我们是在 CLI 层面实现的多窗口并发。
 
+- https://x.com/dkundel/status/2054307264794866148
+  - Use /side to fork a conversation to ask temporary follow ups
+  - Open multiple full windows in parallel
+- You can also open multiple app instances
+
+- Parallel Codex windows are useful only if you keep the branches disposable. /side is basically scratchpad state without contaminating the main run.
+- context branching only works if the summaries converge back into one plan otherwise you just move the confusion into parallel
+- yes the branch has to stay disposable or the coordination cost eats the gain pretty quickly
+
+- Parallel windows matter way more than people think. Once you stop forcing every subtask through one thread, Codex starts feeling less like a chatbot and more like an operating environment. Context branching is the real unlock.
+
 - ## You don't need a new IDE. You need a new ISE. Integrated Spec Environment.
 - https://x.com/odysseus0z/status/2052548306996531281
   - Spec is the new code. Ship the right spec and your job is basically done.

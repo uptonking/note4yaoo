@@ -667,6 +667,13 @@ modified: 2024-08-24T16:30:20.218Z
   - [【开源】pr-agent 自托管的代码 pr/issue 审查服务 - LINUX DO _202603](https://linux.do/t/topic/1787114)
     - 支持 openai-compatiable 格式请求。
     - 网页的前端是花了 4h vibe 做的，自认为极限时间内做出比较合格的官网
+
+- https://github.com/pullfrog/pullfrog /MIT/202605/ts
+  - Pullfrog is a GitHub bot that brings the full power of your favorite coding agents into GitHub. It's open source and powered by GitHub Actions.
+  - https://x.com/colinhacks/status/2054260900144812438
+    - introducing Pullfrog — the open source CodeRabbit alternative that runs in GitHub Actions
+    - BYOK (or use our at-cost model router)
+    - does PR review, issue triage, coding tasks, etc (just tag @pullfrog)
 # code-security
 - https://github.com/lintsinghua/DeepAudit /5kStar/AGPL/202602/python/ts
   - DeepAudit：人人拥有的 AI 黑客战队，让漏洞挖掘触手可及。国内首个开源的代码漏洞挖掘多智能体系统。

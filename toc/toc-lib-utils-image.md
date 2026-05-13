@@ -658,6 +658,15 @@ modified: 2023-04-04T22:39:45.442Z
   - Some advanced workflow features are Pro and require a license key to unlock in the desktop app.
   - Pro currently unlocks:
     - Automatic1111 integration (send prompts/settings back and forth)
+
+## img-metadata
+
+- https://github.com/863401402/image-provenance /MIT/202605/js
+  - AI 图片溯源分析工具。100% 在浏览器里跑, 图片从不离开你的设备。
+  - [【开源】Vibe了一个小工具，AI 图片溯源分析工具，AI图片伪装 - LINUX DO _202605](https://linux.do/t/topic/2162944)
+    - 识别AI图片，读取 C2PA / EXIF / 元数据 ，频域特征 + 可视化，支持剥元数据伪装成真相机照，真实相机 EXIF 注入。
+    - 其实目前的功能确实只能检测 元数据和C2PA ，SynthID目前还没有支持。SynthID不懂得怎么破解，目前的频域特征检测没有参考意义，求佬友指点。
+    - AI自媒体从业者 发作品伪装实拍
 # more
 - https://github.com/ascorbic/unpic-img
   - This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. 

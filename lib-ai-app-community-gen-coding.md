@@ -164,7 +164,8 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## [Built a CLI that cuts AI coding token usage by 97% — 10k downloads, looking for feedback : r/coolgithubprojects _202605](https://www.reddit.com/r/coolgithubprojects/comments/1t6qd9q/built_a_cli_that_cuts_ai_coding_token_usage_by_97/)
+  - Been building SigMap for 2 months. It fixes one specific problem: AI coding agents can burn a lot of context during repo orientation: searching broadly, opening full files, and rediscovering structure across sessions. SigMap generates a compact signature map first, so the agent can find likely relevant files before reading full source.
 
 - ## 一个 coding agent 砍掉了 MCP、子 agent、plan mode、权限系统——跑分居然没掉，还进了 Terminal-Bench 前十。
 - https://x.com/runes_leo/status/2032777762155487718
