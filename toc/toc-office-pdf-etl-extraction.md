@@ -42,6 +42,10 @@ modified: 2026-04-07T12:53:02.538Z
     - docling is somewhere in between liteparse (our free/open-source project) and llamaparse (our commercial vlm-based parser): it uses ML models of varying complexity to parse PDFs.
     - liteparse is model-free, can parse ~200-500 pages/second, is designed to be an extremely fast/free parser to replace pypdf/pymupdf. it integrates with paddleOCR for OCR workloads. its main purpose is outputting text for semantic understanding for agents, and will lack certain things that VLM parsers do OOB. 
     - llamaparse is our commercial vlm-powered parsing service. it scores quite high on parsebench (https://parsebench.ai), our OCR benchmark over enterprise docs. you can see docling is ranked a bit furher down
+  - https://github.com/run-llama/liteparse-server /MIT/202605/ts
+    - An Express server that exposes @llamaindex/liteparse as an HTTP parsing backend. 
+    - It supports single-file parsing and page screenshotting. 
+    - An example of how to use it with built-in rate limiting (Redis), distributed tracing (OpenTelemetry → Jaeger), and metrics (OpenTelemetry → Prometheus → Grafana) is available here.
 
 - http://github.com/simonw/liteparse /apache2/202604/python/ts
   - https://simonw.github.io/liteparse/

@@ -165,7 +165,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 - you have migrated/reimplemented some features from superdoc to ailovedoc.
 
-- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like superdoc.
+- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like superdoc for major features.
 
 - ailovedoc should have full feature parity matching superdoc for important features like document data model, layout-engine(supports toggling pagination, multi-column layout), document rendering/zoom, virtualized-rendering, editing engine, rich-text formatting, track-change.
 
@@ -195,7 +195,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 - superdoc's overall architecture is good enough to follow. Mostly ailovedoc should use similar architecture to superdoc.
 
-- please recheck migrated features and improve your implementation in ailovedoc. Analyze core data flow and implementation logic details for major features like editor-data-model/layout-engine(supports multi-column)/pagination/virtualized-render/zoom/track-change/diff..., compare the implementation of ailovedoc with superdoc to recheck and enhance the correctness of architecture and logic in ailovedoc, find possible bugs in code and fix them, refactor code if need,  make sure major features implementations in ailovedoc are correct, modular, extensible for long-term maintenance.
+- please recheck migrated features and improve your implementation in ailovedoc. Analyze core data flow and implementation logic details for major features like editor-data-model/layout-engine(supports multi-column)/pagination/virtualized-render/zoom/track-change/diff..., compare the implementation logic/code of ailovedoc with superdoc logic/code to recheck and enhance the correctness of architecture and logic in ailovedoc, find possible bugs in code and fix them, refactor code if you need,  make sure major features implementations in ailovedoc are correct, modular, extensible for long-term maintenance.
 ```
 
 ## hardoc(onlyoffice-pdf)
@@ -260,7 +260,7 @@ recheck and migrate full features of True PDF text editing engine with annotatio
 
 - you have migrated/reimplemented some features from onlyoffice pdf editor to hardoc.
 
-- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like onlyoffice-pdf-editor.
+- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like onlyoffice-pdf-editor for major features.
 
 - hardoc should have full feature parity matching onlyoffice-pdf-editor for important features like document rendering/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, plugin architecture and manager, pdf search, pdf page-thumbnails, bookmarks.
 
@@ -300,7 +300,7 @@ You should implement hardoc pdf editor in a similar architecture of onlyoffice p
 
 DO NOT search the web for onlyoffice pdf api, you should find and read source code of onlyoffice pdf editor directly in current folder ~/Documents/repos/office/all-office/onlyoffice
 
-- please recheck migrated features and improve your implementation in hardoc. Analyze core data flow and implementation logic details for major features, compare the implementation of hardoc with onlyoffice-pdf-editor to recheck and enhance the correctness of architecture and logic in hardoc, find possible bugs in code and fix them, refactor code if need,  make sure major features implementations in hardoc are correct, modular, extensible for long-term maintenance.
+- please recheck migrated features and improve your implementation in hardoc. Analyze core data flow and implementation logic details for major features like document rendering/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, plugin architecture and manager..., compare the implementation logic of hardoc with onlyoffice-pdf-editor to recheck and enhance the correctness of architecture and logic in hardoc, find possible bugs in code and fix them, refactor code if you need,  make sure major features implementations in hardoc are correct, modular, extensible for long-term maintenance.
 ```
 
 ## grist-office
@@ -333,7 +333,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - you have migrated/reimplemented some features from backbonejs webapp to react webapp.
 
-- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ).
+- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) for major features.
 
 - you have worked on this several times but features are still lacking.
 
@@ -350,7 +350,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 -------
 
-- please recheck migrated features and improve your implementation in react webapp. Analyze core data flow and implementation logic details for major features, compare the implementation of react webapp with backbonejs webapp to recheck and enhance the correctness of architecture and logic in react webapp, find possible bugs in code and fix them, refactor code if need,  make sure major features implementations in react webapp are correct, modular, extensible for long-term maintenance.
+- please recheck migrated features and improve your implementation in react webapp. Analyze core data flow and implementation logic details for major features, compare the implementation of react webapp with backbonejs webapp to recheck and enhance the correctness of architecture and logic in react webapp, find possible bugs in code and fix them, refactor code if you need,  make sure major features implementations in react webapp are correct, modular, extensible for long-term maintenance.
 
 ```
 
@@ -396,7 +396,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - you have migrated/reimplemented some features from PPTist to slaides.
 
-- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ).
+- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) for major features.
 
 - you have worked on this several times but features are still lacking.
 
@@ -445,7 +445,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 - you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream jan/transformerlab-app/unsloth-studio should be put in folder `upstream`. you may even design a script to automate it.
 - research and make a good design, then implement aichorage to match full features of jan, or even better than jan, without licensing issues.
 
-- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) matching jan.
+- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like jan for major features.
 
 - you have worked on this several times but features are still lacking.
 

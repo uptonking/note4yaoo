@@ -1884,6 +1884,14 @@ modified: 2025-03-22T16:10:24.856Z
     - 【手工】【30天】GPT-Team / Business , 源头 GPTPLUS. ICU 
     - 质保3天：从  激活时间  起算 72小时 内出现掉车，可  提交工单  无限次补车。
 
+- http://155.229.50.232/email-assistant 
+  - [plus源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/IY16OXB7)
+    - GPT-PLUS-JSON 中转站版
+    - 售后群QQ群1085440916，客户交流群1097585298
+  - [xybbz_api的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/BZKYFZG4)
+    - 邮箱查询地址：   http://82.156.59.169:8848/ 
+    - 7元
+
 - [AI杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/PBY2YIR3), /周全
   - 低价渠道多
   - [xiamai gpt_plus_批发的小店 - 链动小铺](https://pay.ldxp.cn/shop/xiamai)
@@ -1913,13 +1921,13 @@ modified: 2025-03-22T16:10:24.856Z
     - 一天就上几个，引流的
 - [sekirocloud的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/L9P7JDGN)
   - sub2api josn格式
-  - [plus源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/IY16OXB7)
-    - GPT-PLUS-JSON 中转站版
   - [天选AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/txai)
     - https://plus.oai.do/ 
   - [随欲小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/MO2JGWG9)
     - free-0.45
   - [小NO plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/BWGFCYG1)
+  - [秋刀鱼精品小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/qiudaoyu777)
+  - [faka.jnmtk PLUS 账号 ](http://faka.jnmtk.com/)
 
 - [度偶Ai专卖店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/G3EUVLR7)
   - gpt plus月订阅CPA json(质保3天)

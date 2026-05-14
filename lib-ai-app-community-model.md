@@ -333,7 +333,9 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## 花了大半天把张小珺访谈姚顺宇的4小时长访听了一遍。这位去年刚从Anthropic跳到Google DeepMind的哥们，参与过Claude 3.7/4.5和Gemini 3。
+- https://x.com/AlchainHust/status/2054201746751386014
+  - 他给了很多实诚的头部大模型一线研究员的视角。访谈信息密度相当高。说几条我觉得最有意思的
 
 - ## Build long-running agents with more control over agent execution.
 - https://x.com/teach_fireworks/status/2051808777457016922

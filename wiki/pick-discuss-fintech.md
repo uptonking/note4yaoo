@@ -526,6 +526,17 @@ modified: 2021-04-12T16:30:53.967Z
 021792. OF	华泰保兴产业升级A	50.48	滕春晓
 350007. OF	天治趋势精选	50.44	梁莉
 001184. OF	易方达新常态	50.04	何一铖
+# discuss-ai-market
+
+## 
+
+## 
+
+## 
+
+## [1万亿财富瞬间作废！Anthropic深夜出招，普通人彻底被踢出AI盛宴？_哔哩哔哩 _202605](https://www.bilibili.com/video/BV1Cv5D6HESp/?spm_id_from=333.1387.homepage.video_card.click&vd_source=deff4d2e2efa3273948dd6911a08fd39)
+
+- anthropic 打着安全的名义进行着垄断， 以前standard oil标准石油公司因为垄断被拆分因为没有
 # discuss
 
 ## 

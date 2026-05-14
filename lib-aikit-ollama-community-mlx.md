@@ -81,7 +81,8 @@ modified: 2026-01-14T18:59:01.949Z
 
 - ## 
 
-- ## 
+- ## We have achieved a milestone in MLX that all tests are passing in CUDA backend now. _202605
+- https://x.com/zcbenz/status/2054699392071016743
 
 - ## Ollama is now updated to run the fastest on Apple silicon, powered by MLX _202603
 - https://x.com/ollama/status/2038835449012351197

@@ -20,6 +20,16 @@ Symbol('a') === Symbol('a'); //false
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## JS has 3 modern primitives:
+- https://x.com/neciudan/status/2054464184356589621
+  1. Custom Error classes with structured fields like statusCode
+  2. Error.cause to wrap errors and keep the chain
+  3. AggregateError when many things fail at once
+
 - ## 🤔💡 spent 2+ hours debugging this problem:
 - https://x.com/aidenybai/status/1905662417461272761
 
@@ -35,7 +45,7 @@ JSON.stringify("data") === "\"data\"" // true
 
 - `stringify` shows the JSON string representation, parse it after stringifying if you want it represented as a js string
 
-- ##  `try { return 'try'}  finally { return 'final' }` would return `final`
+- ##  `try { return 'try'}  finally { return 'final' }` would return `final` 
 
 - https://x.com/FaPerreault/status/1905639919810195809
 - It returns finally. Finally runs regardless of an exception or a return statement being encountered. JS will remember the first return statement in case the finally block doesn't return something else.
@@ -107,7 +117,7 @@ c.a === c.b // true
   - https://twitter.com/ryanjhunter/status/1704767415228448948
 - You can even `return false` in the finally block and change the return value after the fact.
 
-- ## JS trivial! which `value` breaks if you: `${value}` but work if you do? `String(value)`
+- ## JS trivial! which `value` breaks if you: `${value}` but work if you do? `String(value)` 
 
 - https://twitter.com/manucorporat/status/1656669731892645891
   - i was not aware of this behaviour before, specially since `Symbol().toString()` works!
@@ -188,7 +198,7 @@ extraReducers: builder => {
 
 - Any thought of adding builder syntax to the plain “reducer” property of createSlice? Would add consistency and help with file splitting (just pass the builder). 
 
-- ## TIL that assigning default values in object destructure only protects you from `undefined` , not `null`
+- ## TIL that assigning default values in object destructure only protects you from `undefined` , not `null` 
 
 - https://twitter.com/he_zhenghao/status/1516542439334371335
 
@@ -274,7 +284,7 @@ obj[arr]
   - const { address, ...userWithoutAddress } = user; 
 - I'd rather use the spread operator and the good old 'delete newObj.prop'.makes it much more readable for non js devs.
 - but unnecessary it will create `address` variable
-  - I like to pick object properties using `lodash.pick`
+  - I like to pick object properties using `lodash.pick` 
 
 ```JS
 // And if you're using a dynamic field
@@ -326,7 +336,7 @@ const {
 
 - ## What is `[] + []` in JavaScript?
 - https://twitter.com/jaredpalmer/status/1423394089207312387
-  - `''`
+  - `''` 
 
 - ## namespace import items order
 - https://twitter.com/haoqunjiang/status/1422951822864515082
@@ -364,7 +374,7 @@ const {
 - Yes! It's a substitute for short circuit syntax
   - `foo && foo();` vs foo?.(); 
 - And property accessors using bracket notation / arrays:
-  - `object?.deepProp?.['evenDeeperProp']`
+  - `object?.deepProp?.['evenDeeperProp']` 
 
 - ## we can use Opaque or Branded types in our advantage to detect if user passed a value or the value has been initialized to default set value. 
 - https://twitter.com/anuraghazru/status/1405925522102657029
@@ -424,7 +434,7 @@ const {
 - If you modify one value in an object, the other values are unaffected. 
   - An object can represent multiple things (key-value pairs) at the same time, and those things can change independently.
 - also from Wikipedia:
-  - "Orthogonality is a system design property which guarantees that **modifying the technical effect produced by a component of a system neither creates nor propagates side effects to other components of the system**."
+  - "Orthogonality is a system design property which guarantees that **modifying the technical effect produced by a component of a system neither creates nor propagates side effects to other components of the system** ."
 
 - ## "let" and "else if" are often bad smells in JavaScript. 
 - https://twitter.com/neoziro/status/1374002846681731078
@@ -602,7 +612,7 @@ const readableNumbers = someNumbers.map((item, index, arr) =>
 
 - Everything works great until `some-library` is updated, then everything breaks.
 - `toReadableNumber` wasn't designed to be a callback to `array.map`, so the safe thing to do is create your own function that is designed to work with `array.map`
-- **The same issue, but with web platform functions**
+- **The same issue, but with web platform functions** 
 
 ```JS
 // A promise for the next frame:
@@ -613,7 +623,7 @@ const nextFrame = () =>
   new Promise((resolve, reject) => requestAnimationFrame(resolve, reject));
 ```
 
-- **Option objects can have the same gotcha**
+- **Option objects can have the same gotcha** 
 
 ```JS
 const controller = new AbortController();
@@ -643,7 +653,7 @@ el.addEventListener(name, callback, controller);
 - https://twitter.com/tannerlinsley/status/1354948274281566208
   - Reserve it for smaller functions and variable namespaces.
   - It can *feel* like a productivity hack, but time and experience have taught me the opposite.
-  - If you do too much of it unnecessarily, you might find yourself *re*structuring a lot, eg. Taking those same variables and reforming them into functions or other structures. 
+  - If you do too much of it unnecessarily, you might find yourself *re* structuring a lot, eg. Taking those same variables and reforming them into functions or other structures. 
   - It's much easier to spread an object than it is to type it all out again.
 - I'm saying this because I am literally in the middle of a painful refactor caused mostly by this issue. I only have my yester-self to blame, too. Live and learn, right?
   - I'd add that when you destructure too much - especially down into primitives - then you discard your data model and pass props 1 by 1. When the structure changes, there'd be multiple places to change. If you keep your data model and pass it down, refactors will be cheaper.

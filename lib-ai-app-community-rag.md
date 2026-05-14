@@ -806,7 +806,23 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [Got local RAG to surface the right schematic without a vision model — here's how : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1tbmlup/got_local_rag_to_surface_the_right_schematic/)
+  - Been building a local RAG stack for aviation technical manuals (the kind you legally can't upload to ChatGPT). Hit a wall that I think a lot of people hit: the model would cite "see Figure 9-02-40" but the user was left hunting through a 600-page PDF manually.
+  - PDFs with safety-critical schematics have figures that live *near* the text that references them but aren't embedded as extractable image objects — they're rendered geometry on the page.
+- Fixed using pdfplumber gives you word coordinates. When a RAG chunk contains a figure reference (Fig 4-12, HYDRAULIC SYSTEM SCHEMATIC, "refer to the following diagram"), you can:
+  - Parse the reference from the retrieved chunk
+  - Look up which page it came from (already in metadata)
+  - Use pdfplumber to crop a bounding box around the figure label coordinates
+  - Render and return it inline
+- No VLM. No vision API call. Sub-second. Runs entirely on local hardware.
+  - The coordinate precision is what makes it work — you're not guessing, you're reading the PDF's native geometry to find exactly where the schematic sits relative to its caption.
+  - Stack: pdfplumber + ChromaDB + Ollama (Gemma 3 / whatever fits your GPU). Works on an RTX 3080 Ti with a 3, 500-chunk corpus no problem.
+
+- Nice. You think this could work for architecture drawings as well?
+
+- Clever approach. Using PDF geometry as retrieval metadata instead of calling a VLM makes a lot of sense here. How do you handle cases where the caption and the actual schematic are in different columns or not very close to each other?
+  - this is actually where the coordinate logic earns its keep. The short answer: proximity heuristic + page-zone mapping.
+  - When pdfplumber extracts word coordinates, we build a bounding box around the figure reference text (e.g. "Fig 4-12"). From there, the crop logic searches *downward and rightward* first within a configurable pixel threshold (~200px on a standard A4/letter page).
 
 - ## [Pushing the limits of RAG? What's next? : r/Rag _202603](https://www.reddit.com/r/Rag/comments/1s3e31f/pushing_the_limits_of_rag_whats_next/)
   - To date we've seen query expansion, different forms of reranking, and knowledge graph integration. 

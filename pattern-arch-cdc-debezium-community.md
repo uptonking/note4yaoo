@@ -15,7 +15,19 @@ modified: 2024-02-12T17:47:34.152Z
 
 - ## 
 
-- ## 
+- ## Change Data Capture sounds complicated until you realize there are six different ways to do it in Postgres alone.
+- https://x.com/sspaeti/status/2054551833730039871
+  - CDC with Write-Ahead Logging.
+  - CDC with database triggers.
+  - CDC with timestamp columns.
+  - CDC with logical replication.
+  - CDC with transactional logs.
+  - CDC with table differencing.
+  - Most people jump straight to Debezium, which taps into the database's replication log. That works, but it's heavy infrastructure for many use cases. 
+  - A simpler approach: create a fingerprint combining ID + price to detect changes without needing DB transaction logs.
+  - The right CDC approach depends on your latency requirements and infrastructure tolerance. Start simple with fingerprinting. Graduate to log-based CDC when you actually need real-time.
+
+- it's nice to use the native in replication features, like pg logical. But again those don't work everywhere
 
 - ## [Is Event sourcing using Database CDC considered good architecture? - Stack Overflow](https://stackoverflow.com/questions/54379623/is-event-sourcing-using-database-cdc-considered-good-architecture)
 - So here's the problem: unless you are in some extreme edge case, your database is probably some general purpose application that you are customizing/configuring to meet your needs. Change data capture is going to be limited by the fact that it is implemented using general purpose mechanisms. So the events that are produced are going to look like general purpose patch documents (here's the diff between before and after).

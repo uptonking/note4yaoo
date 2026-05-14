@@ -12,7 +12,15 @@ modified: 2026-02-18T04:15:19.228Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [We replaced our RAG pipeline with persistent KV cache. It works. Here’s what we found. : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1tc3aix/we_replaced_our_rag_pipeline_with_persistent_kv/)
+  - No vector database. No embedding pipeline. No retrieval step. Just the model with full document context, warm and ready.
+- Forgive my ignorance, but isn’t this like putting the whole document in context with an inference engine that manage well kv cached?
+  - smartest question actually. Yes, conceptually similar. The key difference is persistence. Standard inference engines do use KV cache but it’s transient. Every new session recomputes from scratch. The cache lives in VRAM during the request and disappears after. What we did differently is the KV cache state is persisted to NVMe/storage and restored instantly for every query. The document is never recomputed. Ever. So it’s not just “long context inference” . it’s long context inference where the expensive part happens once and the result is reused indefinitely.
+
+- I’d keep RAG limited. MCP works well for current interaction flow, but compiled markdown is far better for preserving long-term knowledge without losing inspectability.
+
+- the obvious gotcha here is the cache selection problem - at 120k tokens you can fit maybe 200-300 pages of docs in a single cached context. for a tight, slow-moving knowledge base that's actually plenty (and the operational simplicity story is real).
+  - where this falls apart is when you have many documents and need to pick which cached context to use per query. you've basically pushed the retrieval problem up a layer - now instead of retrieving chunks, you're retrieving a cache. and that cache-selection step is where i'd expect things to break down, especially with overlapping documents.
 
 - ## [How to deal with constant stream of data. : r/Rag _202603](https://www.reddit.com/r/Rag/comments/1s1mzhd/how_to_deal_with_constant_stream_of_data/)
   - I dont know if RAG is the solution here or not. Basically the situation is the need to ingest security logs into the vector database to allow an agent to query. 
@@ -521,7 +529,12 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
-- ## 
+- ## [Results from testing 512 vs 1024 dimension embeddings and pgvector halfvec vs vector for RAG : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1tc7rmm/results_from_testing_512_vs_1024_dimension/)
+  - I’ve been benchmarking RAG retrieval with pgvector and Voyage 4 embeddings, mostly on legal / license / contract retrieval datasets. The main thing I wanted to understand was: Does moving from 512 to 1024 dimensions actually help?
+  - Short version: 1024 dimensions helped the harder legal retrieval workload, and halfvec preserved quality while cutting raw vector storage roughly in half.
+  - These are not universal results, but they were useful enough that I shared the full learnings on the TypeGraph blog here.
+
+- also curious if the 1024 dim advantage on legal/contract data held when you added a reranker. legal corpora are exactly where the subtle semantic distinctions matter, but i'd expect a good cross-encoder reranker to compress most of that gap.
 
 - ## jina-embeddings-v5-omni is here! Our first universal embedding model for text, images, audio, and video. 
 - https://x.com/JinaAI_/status/2054226262047301933

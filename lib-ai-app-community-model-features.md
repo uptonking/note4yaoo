@@ -190,6 +190,20 @@ modified: 2025-11-05T19:04:50.350Z
 
 - ## 
 
+- ## 
+
+- ## LobeHub Harness 的 memory 系统就是 db base 的。 我觉得接下来几个月行业里可能会出来的思潮是思辨 file-based agent VS db-based agent 。
+- https://x.com/arvin17x/status/2054426338610880903
+  - 我自己自始至终都坚持认为 db-based agent 才是可 scale 的。file-based agent 是行业演化路径上的一个里程碑，但不是终局
+
+- 最近研究的都是向量存储的记忆，召回率和token消耗都更优，这是bd base吗？
+
+- file-based in db，turso 的 agentfs 很早就在做这件事
+
+- ## 胡思乱想 模型只有短 context，加上外挂在 fs/db 上的长 context，各种外挂的 memory 系统可能还是一种 workaround？
+- https://x.com/Ehco1996/status/2054713724796313635
+  - 类比到人脑的记忆是认知本身，长期看我感觉模型应该自己演化出内化的认知结构，但这个结构一定是结构化的而不是基于文本
+
 - ## [10年AI研究，我想说说：为什么现在很多Agent框架的“记忆”方案，可能从一开始就走偏了 _202603](https://linux.do/t/topic/1711075)
   - 我决定往人工智能方向走，是因为15年学习了吴恩达的机器学习网课。之后一边自学机器学习，强化学习，脑科学，一边拿到了信息工程、生物学（准确说是理学硕士）的学位，同时辅修了认知科学。主攻研究方向是计算神经科学，至今学习和研究人工智能超过十年了。我十年前的目标就是造一个ai朋友，现在不得不说这个目标已经在逐渐实现
   - 我为了造我的ai朋友已经投入了10年，我就是认为自己做的记忆系统是目前最好用的ai灵魂容器，这不是软广是硬广。我对造AI是认真的。 https://github.com/Dataojitori/nocturne_memory

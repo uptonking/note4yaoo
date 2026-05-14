@@ -24,15 +24,26 @@ modified: 2023-04-16T12:52:03.130Z
   - 我搜了一下既梦的模版里，目前还没看到比这个更逼真些的
 
 - 我觉得 以后的书 都会变成这个样子
-# discuss-tts/audio
+# discuss-video-ai
 - ## 
 
 - ## 
 
-- ## In-browser TTS in 3 lines of code
-- https://twitter.com/xenovacom/status/1716711760982319429
-  - `import { pipeline } from '@​xenova/transformers';`
+- ## 
+# discuss-video-audio
+- ## 
 
+- ## 
+
+- ## [让AI分析总结视频是否可行？ - LINUX DO _202605](https://linux.do/t/topic/2173857)
+- 视频分析理解现在做到如何程度不细说，但是肯定还是差点意思，我建议你从音频提取文字再分析这样会准确点，基本上现在的说的视频分析都很难做到长视频分析理解的很精准，基本也都是文字为基底的
+
+- 要按你的目标视频进行分类处理。大部分的直接提取音频转文本，再总结文本就可以了。需要用到视频理解的应该不会太多。另外现在的大部分多模态模型对视频的理解，基本是基于抽帧处理成图片列表，然后去理解的图片，不是想象的那种基于连续视频。
+
+- 理论上是可行的，但实际你是做不了的。现在的分析总结视频，基本都是提取音频做 ASR，然后让 LLM 对文本做分析。你要对视频本身做分析，算力要求太大了。
+
+- https://github.com/wdkns/wdkns-skills
+  - 两个 Codex skill，用于将视频讲座转换为结构化的中文 LaTeX 讲义和最终 PDF。
 # discuss-designer/builder
 - ## 
 

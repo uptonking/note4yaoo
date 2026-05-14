@@ -36,6 +36,9 @@ modified: 2026-04-06T22:42:11.263Z
   - this project is a llm chat app built with tauri. it supports using external llm api like openai/mistral api, as well as running local .gguf models and mlx models to provide api. 
   - please analyze the project architecture and related code. explain the core architecture and data flow for the extensible architecture to support local models in different formats. write your result to dev-arch-gguf-mlx.md. 
   - there are different approaches to run local models. is it possible to write a extensible module to make the logic of running swift mlx server swappable. i want to use python mlx-server implementation to replace the swift implementation.
+  - 📡 
+    - [idea: Easy skills adding  _202604](https://github.com/janhq/jan/issues/7966)
+    - [idea: Support prompts  _202511](https://github.com/janhq/jan/issues/7019)
 
 - https://github.com/AtomicBot-ai/Atomic-Chat /apache2/202603/ts/rust/tauri
   - https://atomic.chat/

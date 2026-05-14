@@ -18,8 +18,16 @@ modified: 2023-06-07T14:19:18.719Z
   - http://162.14.111.118:91/
   - 个人发卡源码，发卡系统，二次元发卡系统，二次元发卡源码
   - 很多 异次元店铺 都是用的这套系统
-  - cases
+  - cases 🌰
     - https://shop.kedaya.xyz/
+
+- https://github.com/dujiao-next/dujiao-next /520Star/GPL/202605/go
+  - https://dujiao-next.com/
+  - Dujiao-Next Server 独角Next服务端
+  - https://github.com/dujiao-next/user
+    - Vue, Pinia
+  - cases 🌰 
+    - http://faka.jnmtk.com/
 # starter
 - https://github.com/hicmtrex/TypeShop-Backend /202212/ts
   - https://github.com/hicmtrex/TypeShop-Frontend

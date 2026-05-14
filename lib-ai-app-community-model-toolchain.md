@@ -414,9 +414,20 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
-- ## 
+- ## [I don't get Quants, I'm running Qwen3.6-27b flawlessly at iq3, makes no sense : r/LocalLLM _202605](https://www.reddit.com/r/LocalLLM/comments/1tcas9a/i_dont_get_quants_im_running_qwen3627b_flawlessly/)
+- dense models perform better than MoE at lower quants. And if you keep running you will see it hallucinating and taking longer to reason to get the same response that FP16 would give
 
-- ## 
+- Dense models are much more resilient to QAT than MOE models, which is why it does so much better than what most people are used to below FP8. 
+  - However you really would need to run some real accuracy benchmarks to quantify real changes between BF16 and the quant you are running. 
+
+- Lower quant does not always show up as obvious hallucination. Sometimes the loss appears as worse instruction following, weaker edge-case reasoning, more brittle formatting, or failure later in a long session. If IQ3 works for your workload, that is valid, but I would still test it against Q4/Q5 on the same coding tasks and long-context prompts before generalizing.
+
+- Quants are fine depending on what you need the. To do. Remember that precision is more important than speed with agentic tool calling. Extend that to LoRA and your fine tuning is quantized by definition depending on the depth of your LoRA training.
+
+- ## 🆚 [How do different quantizations perform on the benchmarks? : r/unsloth _202605](https://www.reddit.com/r/unsloth/comments/1tb9xa4/how_do_different_quantizations_perform_on_the/)
+- KLD kinda’ doesn’t. I’ve been saying for months that Gemma 4 and Qwen 3.6 take a HUGE real-world quality hit if quantized, even if you are careful which layers are quantized. And that this kind of failure mode is most noticeable not in casual conversation, but long-horizon planning and execution across lengthy context.
+  - You are saying as if people use quantized models by choice. That's definitely not the case. People choose the quantization based on their hardware capabilities. Everyone is aware that there is a hit on quality and aren't oblivious about what you are aware of. Quantized model is much better than no model.
+- It all depends. KLD looks great but the real test is long horizon with tool calling beyond 128K context. And not all quants are equal; some naive quants destroy quality, some (Unsloth UD comes to mind) try hard to preserve quality.
 
 - ## We just shipped DFlash + PFlash for the AMD Ryzen AI MAX+ 395 iGPU (gfx1151, 128 GiB unified memory).
 - https://x.com/pupposandro/status/2054242335836316129

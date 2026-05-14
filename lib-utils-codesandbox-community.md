@@ -81,7 +81,22 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
-- ## 
+- ## Codex on Windows has a sandbox built for the way coding agents run!
+- https://x.com/reach_vb/status/2054655421013434510
+  - By default, Codex needs to read files across the environment, write inside the workspace, run normal tools like shells/Git/Python/package managers, and keep network access constrained unless the user allows it.
+  - Windows did not provide a ready-made sandbox primitive for that shape of workload.
+  - The team evaluated AppContainer, Windows Sandbox, and Mandatory Integrity Control. Each had useful properties, but none fit Codex’s mix of local checkout access, arbitrary dev tooling, and process-tree enforcement.
+- The final implementation uses:
+  - CodexSandboxOffline / CodexSandboxOnline local users
+  - Windows Firewall rules for outbound network control
+  - ACLs for read/write boundaries
+  - write-restricted tokens
+  - DPAPI-encrypted sandbox credentials
+  - codex-windows-sandbox-setup.exe for elevated setup
+  - codex-command-runner.exe to spawn restricted child processes
+- A lot of systems engineering behind one product behavior: Allow Codex to run commands locally while the OS enforces where those commands can write and when they can access the network!
+
+- [Building a safe, effective sandbox to enable Codex on Windows | OpenAI _202605](https://openai.com/index/building-codex-windows-sandbox/)
 
 - ## boxsh — a sandboxed POSIX shell for AI agents. Single static binary. No Docker, no root.
 - https://x.com/xicilion/status/2040879181316407720

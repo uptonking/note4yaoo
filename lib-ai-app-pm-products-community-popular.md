@@ -686,6 +686,19 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Obsidian is great for notes, but what are you using for PDFs, screenshots, bookmarks, and videos? : r/ObsidianMD _202605](https://www.reddit.com/r/ObsidianMD/comments/1tc9p1g/obsidian_is_great_for_notes_but_what_are_you/)
+- Zotero is a great solution. You can search, make notes, tag, and link one entry to another. When you need, send the notes to Obsidian using the plugins. Zotero also has a desktop and phone app so you can access all those notes anywhere. Only put your notes in Obsidian.
+  - In Zotero, you can read and highlight PDFs, make separate notes attached to specific spots in the note, which are linked automatically. You won't want to read PDFs outside of Zotero again after you get used to it.
+  - You can put your screenshots in Zotero as well.
+  - Bookmark videos in Zotero. That way you can make a note, tag, and cross link to other entries. As far as I know, you can't watch them in Zotero, but if all your video links are in the app, at least you know where to look. With the search capability, tags, links, and folders, it's easy to find anything.
+- I wanted to like Zotero but the most basic task I wanted to use it for was tracking books and I was never able to just add a book. I assumed it would search various catalogs and autoadd books but even supplying it with IDs from places it claimed to import from failed. Not sure if it's user error but I don't give up easily.
+
+- DevonThink is the answer but it’s not free. Zotero is also great for this.
+
 - ## Codex App Server is 100% Open Source _202603
 - https://x.com/reach_vb/status/2036904822641676716
   - It allows you to build on codex and build richer experiences all with ChatGPT Auth
@@ -905,7 +918,13 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## [What app is the hardest for you to replace with Free Software? : r/freesoftware _202605](https://www.reddit.com/r/freesoftware/comments/1tadqhn/what_app_is_the_hardest_for_you_to_replace_with/)
+- Adobe Acrobat. ONLY because there is no other app that will allow the user to embed rich media into the PDF like Acrobat will (am aware that it can be done in InDesign, but InDesign is also not free software).
+  - Second that. Nothing is useful as Acrobat Reader for office production. Okular for linux is almost as great. But some bottleneck using that turn it slow. So slow to use that is better to don't try it's features. Like comments that isn't on hand or easy to config for fast use, or exporting to fdf that isn't so easy as Acrobat. Foxit is good but paid. Linux version is very poor.
+
+- Adobe AfterEffects.
+
+- None of them. I gave up proprietary software a long time ago. I have zero temptation to be trying new proprietary programs. Sometimes, we have to realize that the activity is problematic in the first place, such as streaming (DRM).
 
 - ## MCP 和 Skill 的下一步, 去年大家争的是谁家模型更强，今年争的好像变成了谁家窗口右侧更好用。
 - https://x.com/dotey/status/2053940091970580736

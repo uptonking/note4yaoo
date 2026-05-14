@@ -463,7 +463,15 @@ codex --yolo resume --last
 
 - ## 
 
-- ## 
+- ## [codex /goal 滥用思路 - LINUX DO _202605](https://linux.do/t/topic/2177132)
+  - 最近看到好几个贴提到/goal在额度跑完之后还在继续，那鉴于agent的特性，状态会不会是由客户端这一侧控制的呢？
+  - 可以说按照这些证据，只要不调用update_goal它是真的会一直跑的，那理论上只要找到给它补充新任务的切入点，它就可以一直工作下去，/goal edit这种在goal执行期间更新任务需求的口子也就为把它滥用成通用型API提供了可能性。
+- 根据我的使用经验： Anthropic 当你达到限额，会立即终止的， OpenAI 不会终止，但是当 context 太大，需要 compact 时，会触发 remote compact，这个时候会终止
+  - 对于各位提到的超额后compact会失败的问题，改一下代码让remote compact走别的方式完成compact应该就可以？
+- 这个处理起来很简单，而且过几个版本remote compact v2就不走那个万恶的endpoint了，会走responses stream了
+
+- [理论上无限用codex的方法，不堆账号池 - LINUX DO _202605](https://linux.do/t/topic/2079741)
+  - codex虽然是根据token计费，但是他的设计非常优雅，会完成任务后再退出，而不是直接中断，借此，我成功榨干codex，在我的免费号额度为0的情况下，继续工作了四个小时才停，确实吃爽了 
 
 - ## 大家不要本末倒置了，/goal 只是 continue * N 的语法糖。你需要自己清楚你要的目标，而不是把它当做圣杯许愿。
 - https://x.com/leon7hao/status/2051094386918994159
