@@ -928,6 +928,20 @@ modified: 2025-02-21T17:17:42.225Z
   - 目前内置了 NanoBanana、Midjourney、GPT Image、火山豆包、通义千问、通义万相等媒体渠道配置入口
   - 另外对于视频生成方面，由于我不是专业的工作者，只是按照我的理解+ai的理解进行编写的，所以对于视频生来说可能略微不足，还请各位佬提提意见。
 
+- https://github.com/yoqu/lingji-cut /apache2/202605/ts
+  - https://yoqu.github.io/lingji-cut-homepage/
+  - Lingji Cut（灵剪） 是一个本地优先的开源 AI 视频创作工作台。它把内容创作中分散的环节串在一起：写稿、素材管理、AI 审稿、语音合成、字幕处理、时间线剪辑、视觉卡片、封面生成和视频导出。
+  - [[开源] 灵机剪影 - LINUX DO _202605](https://linux.do/t/topic/2180902)
+    - 写稿在一个地方，审稿在一个地方，TTS 又在一个地方，字幕还要单独处理，最后进剪辑软件再把素材、字幕、卡片、封面重新整理一遍。
+    - 很多工具单点能力很强，但串起来之后还是很累。 所以我专门针对我的播客工作流程研发这么一套工具，通过流水线作业，把全部流程都写进一款软件中，并能通过 MCP 桥接到 claude code 或 codex 等 agent 工具中，实现 AI和工具的双向奔赴。
+    - 本地优先：项目文件保存在本地目录，不强依赖云端工程。
+    - AI 写稿工作台：支持 original.md / script.md、多文件标签、搜索替换、版本历史、AI 生成、AI 审稿和批注采纳。
+    - 一站式视频编辑界面：素材、预览、Inspector、时间线和导出配置在同一个工作区里。
+    - 自动口播流程：可以从文稿触发 TTS、字幕解析、内容分析、封面候选和视觉卡片生成。
+    - 时间线编辑：支持音频、字幕、图片、视频、文字、AI 卡片、多视觉轨、多音频轨、拖拽、吸附、拆分、裁剪、复制 / 剪切 / 粘贴和轨道锁定。
+    - 多 Provider AI 配置：支持 OpenAI 兼容模型、Gemini、LM Studio、图片生成 Provider、MiniMax TTS 等配置。
+    - Remotion 导出：通过 Remotion 渲染 MP4，支持 H.264、分辨率、质量配置和导出进度展示。
+
 ## vid2txt
 
 - https://github.com/maskgo68/YPBrief

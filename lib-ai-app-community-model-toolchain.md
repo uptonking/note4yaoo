@@ -414,6 +414,22 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
+- ## 
+
+- ## The main issue with Eagle, MTP, and DFlash is that verification eats 75–90% of the speculative overhead, which really shows on dense models. 
+- https://x.com/Prince_Canuma/status/2055044319166222522
+  - While working on speculative techniques for mlx-vlm, I noticed we weren't getting the claimed speedups on Apple Silicon, and profiling confirmed it: the overhead was the bottleneck. 
+  - Maxing out acceptance barely moved the needle.
+
+- ## [NVFP4 is a gamechanger right? 75% near lossless compression : r/LocalLLM _202605](https://www.reddit.com/r/LocalLLM/comments/1td6nxk/nvfp4_is_a_gamechanger_right_75_near_lossless/)
+- MXFP4 is the open version of it. Consumer hardware doesn't natively support NVFP4 yet (halfwell on RTX6000, 5090, 5070, Spark etc.. etc...). With how bad Nvidia has botched it, I'd rather see MXFP4 get support from AMD or others and kick Nvidia in the nuts. Plus, openai's 120b in MXFP4 was a piece of engineering work.
+
+- NVFP4 vs MXFP4 from Nvidia itself: https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/
+
+- NVFP4 on Blackwell gpus has potential but it hasn’t been fully implemented in vLLM or llama.cpp or sglang or any other platform for serving the models. Part of that is problems with Nvidia’s drivers and possibly firmware. There are active efforts to get it working but some issues are stuck due to fixes needed on Nvidia’s end.
+
+- from my experience of using them extensively in opencode and claude code, they are slightly worse than typical Q4, or even UD4 from unsloth, much closer to Q3.
+
 - ## [I don't get Quants, I'm running Qwen3.6-27b flawlessly at iq3, makes no sense : r/LocalLLM _202605](https://www.reddit.com/r/LocalLLM/comments/1tcas9a/i_dont_get_quants_im_running_qwen3627b_flawlessly/)
 - dense models perform better than MoE at lower quants. And if you keep running you will see it hallucinating and taking longer to reason to get the same response that FP16 would give
 

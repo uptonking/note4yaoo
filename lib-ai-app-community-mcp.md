@@ -600,7 +600,10 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## 🌰🤔 做 Midscene.js 这两年，我们做了一个迟来但关键的判断：UI 自动化迟早要从「理解 DOM」切到「看屏幕」，所以去年 12 月 1.0 版本我们直接砍掉了 DOM 兼容路径。
+- https://x.com/quanruzhuoxiu/status/2054924854588264559
+  - 早期我们和大家一样，走的是 DOM + 视觉混合方案——能拿 DOM 的地方就拿，省 Token、定位稳。但跑得越深越发现：同一个产品现在要同时跑在 Web、iOS、Android、HarmonyOS、Mac、Windows、Linux 桌面端，再加上 Canvas、Electron、Qt 这些根本没有 DOM 的渲染层。如果元素定位还要为每个平台维护一套 DOM 适配，事情永远收敛不了。
+  - 所以 1.0 我们把 UI 操作彻底切到纯视觉：只看截图，不读 DOM。意外收获是，UI 操作不带 DOM 进 prompt，Token 消耗反而比之前的混合方案更低。
 
 - ## A Production Architecture for the Browser Use Open-Source Library
 - https://x.com/larsencc/status/2053862900289470765

@@ -353,7 +353,14 @@ redis-cli shutdown
 
 - ## 
 
-- ## 
+- ## [艹！Chrome花了半年背着我给我电脑拉了足足250G的屎！ - LINUX DO _202605](https://linux.do/t/topic/1584944)
+  - 路径通用结构：/private/var/folders/xx/随机字符/X/com.google. Chrome.code_sign_clone。
+
+- [Detect and crash Chromium bots | Hacker News _202505](https://news.ycombinator.com/item?id=43916622)
+  - Since a couple months ago, if you use Chrome via playwright etc. on macOS, it will deposit a copy of Chrome (more than 1GB) into /private/var/folders/kd/<...>/X/com.google. Chrome.code_sign_clone/, and if you exit without a clean browser.close(), the copy of Chrome will remain there. I noticed after it ate up ~50GB in two days. No idea what's the point of this code sign clone thing, but I had to add --disable-features=MacAppCodeSignClone to all my invocations to prevent it, which is super annoying.
+- That's an open bug at the minute, but the one saving grace is that they're APFS clones so don't actually consume disk space.
+
+- [Chrome instances created in code_sign_clone are not cleared on MacOS · Issue #2795 · teamcapybara/capybara _202502](https://github.com/teamcapybara/capybara/issues/2795)
 
 - ## 👤🔒 [对于注册Apple ID也许你们都错了  _202603](https://linux.do/t/topic/1767331)
   - 如果你是在非苹果系的网页注册（苹果手机，平板 ，电脑），那么你的成功率降低百分之30以上 毕竟，现在注册机太多了，号商也太多了。不是苹果设备，你注册成功率，就是低（不服真的不行。你甚至可以用黑苹果系统，都比你用WINDS强！！！），人家也有风控的好吧。（在苹果设置里注册，就是比在谷歌浏览器里注册成功率高，三年以上的实践经验） 

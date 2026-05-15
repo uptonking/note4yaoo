@@ -761,6 +761,16 @@ modified: 2025-11-01T10:54:26.044Z
   - 功能太简陋，只支持linux
   - [I created an opensource alternative to LMstudio and similar apps for linux PCs/SBCs. : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r0eer8/i_created_an_opensource_alternative_to_lmstudio/)
 
+- https://github.com/daniel-farina/hipdash /202605/ts
+  - Live dashboard for MTPLX (a multi-token-prediction LLM runtime). 
+  - Streams per-request metrics, paged-KV cache state, system stats, and OpenCode agent activity. 
+  - Persists everything to SQLite so you get history and restart-aware runs across sessions.
+  - Overview - decode tok/s, TTFT, prefill, mode, CPU%, memory%, session bank, last restart.
+  - MTPLX - live generation pipeline (tokenize -> prefill -> decode -> emit), 4-up KPI quad, 12 history charts (decode, prefill, TTFT, context size, prompt tokens, completion tokens, prefill time, avg accept %, cached tokens, verify calls, bonus, corrections), session bank history with bytes/entries chart and eviction log, active sessions table, acceptance breakdown (D1/D2/D3 bars), benchmark report with run boundaries and archive button, live recent buffer.
+  - Computer - CPU, memory, swap, load, disk, thermal, 15-min host chart, MTPLX/opencode/claude process tables.
+  - https://x.com/Daniel_Farinax/status/2055003372021825792
+    - When local models start working like cloud models. We need better dashboard to educate everyone about all parameters that matter for every turn.
+
 ## mac-llm-gui
 
 - https://github.com/osaurus-ai/osaurus /5.2kStar/MIT/202605/swift/c

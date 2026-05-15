@@ -23,6 +23,8 @@ modified: 2025-09-30T08:59:30.846Z
   - ?
 # draft
 - 🎯 goals: joy writing for everyone
+
+- auto tagging/categorizing for folders downloads/sharing
 # dev-xp
 
 # devops

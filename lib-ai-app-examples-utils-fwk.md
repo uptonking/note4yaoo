@@ -787,6 +787,9 @@ modified: 2025-02-21T18:20:42.624Z
   - a high-level NLP toolkit built on top of LLMs.
   - utilities for translation, question detection, categorization, NER extraction, and more
 # eval/prompt
+- bench-resources
+  - omlx内置bench工具及ui
+
 - https://github.com/MigoXLab/LMeterX /apache2/202604/python/ts
   - 一站式通用 API 压测平台，支持大模型推理与业务 HTTP 接口，一键完成性能测试、结果对比与 AI 智能分析总结
   - Full Modality & Scenarios: Supports GPT, Claude, Llama to document parsing models like MinerU and dots.ocr, covering text, multimodal, and streaming.
@@ -930,6 +933,16 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/3615-computer/workunit-benchmarks /202602/python
   - Benchmarks for local and cloud LLM performance on real MCP tool calling.
   - [I benchmarked 17 local LLMs on real MCP tool calling — single-shot AND agentic loop. The difference is massive. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rcjepp/i_benchmarked_17_local_llms_on_real_mcp_tool/)
+
+- https://github.com/daniel-farina/hipdash /202605/ts
+  - Live dashboard for MTPLX (a multi-token-prediction LLM runtime). 
+  - Streams per-request metrics, paged-KV cache state, system stats, and OpenCode agent activity. 
+  - Persists everything to SQLite so you get history and restart-aware runs across sessions.
+  - Overview - decode tok/s, TTFT, prefill, mode, CPU%, memory%, session bank, last restart.
+  - MTPLX - live generation pipeline (tokenize -> prefill -> decode -> emit), 4-up KPI quad, 12 history charts (decode, prefill, TTFT, context size, prompt tokens, completion tokens, prefill time, avg accept %, cached tokens, verify calls, bonus, corrections), session bank history with bytes/entries chart and eviction log, active sessions table, acceptance breakdown (D1/D2/D3 bars), benchmark report with run boundaries and archive button, live recent buffer.
+  - Computer - CPU, memory, swap, load, disk, thermal, 15-min host chart, MTPLX/opencode/claude process tables.
+  - https://x.com/Daniel_Farinax/status/2055003372021825792
+    - When local models start working like cloud models. We need better dashboard to educate everyone about all parameters that matter for every turn.
 # observability/tracing
 - https://github.com/langfuse/langfuse /14.8kStar/MIT+EE/202508/ts
   - https://langfuse.com/docs
@@ -998,6 +1011,10 @@ modified: 2025-02-21T18:20:42.624Z
       - Upstream CLIProxyAPI code is merged into the plus repo in batches
     - [各位佬，CLIProxyAPIPlus 这个怎么没了，想要反代copilot 在codex 上使用 - LINUX DO _202604](https://linux.do/t/topic/2080269/4?tl=en)
       - 由于外接了Kiro、CodeBuddy、Copilot等第三方供应商，受DMCA警告，已删库跑路。直接装 cliproxyapi吧
+    - [现在不支持 plus 了么... 仓库都删了  _202604](https://github.com/router-for-me/CLIProxyAPI/issues/2951)
+      - CPA不会接入没有自主模型的二道贩子
+  - https://github.com/kaitranntt/CLIProxyAPIPlus
+  - https://github.com/HsnSaboor/CLIProxyAPIPlus
   - https://github.com/KooshaPari/cliproxyapi-plusplus
   - https://github.com/dongshuyan/CPA-Dashboard 
     - 控制面板 - 服务管理与账户监控 Web 界面
@@ -1007,6 +1024,10 @@ modified: 2025-02-21T18:20:42.624Z
   - native macOS menu bar app that lets you use your existing Claude Code, ChatGPT, Gemini, Qwen, and Antigravity subscriptions with powerful AI coding tools like Factory Droids – no separate API keys required.
   - Built on CLIProxyAPIPlus, it handles OAuth authentication, token management, and API routing automatically. One click to authenticate, zero friction to code.
   - 👀 注意 msty studio 内置并自动开启了Vibe CLI Proxy, 会导致通过系统包管理器安装的cliproxyapi出现端口冲突而不可用
+
+- https://github.com/justlovemaki/AIClient2API
+  - https://github.com/decolua/9router
+  - https://github.com/diegosouzapw/OmniRoute
 
 - https://github.com/zhalice2011/ProxyLLM /MIT/202601/ts
   - Electron 应用，用于捕获 LLM 网站的浏览器会话，并在本机暴露 OpenAI 兼容 API
@@ -1047,6 +1068,22 @@ modified: 2025-02-21T18:20:42.624Z
 
 - https://github.com/lza6/notion-2api /apache2/202510/python
   - 将你强大的 Notion AI 体验，无缝转换为兼容 OpenAI 格式的 API 服务的神奇项目。这意味着，你可以将 Notion AI 作为后端，驱动任何支持 OpenAI API 的应用程序、脚本或服务。
+
+- https://github.com/Quorinex/Kiro-Go /MIT/202605/go
+  - Convert Kiro accounts to OpenAI / Anthropic compatible API service.
+  - [feat: add /v1/responses endpoint for Codex CLI compatibility   _202605](https://github.com/Quorinex/Kiro-Go/pull/59)
+
+- https://github.com/hj01857655/kiro-account-manager /CC-NC/202605/rust/ts
+  - https://kiro-website-six.vercel.app/
+  - 基于 Tauri 2.x 的桌面应用，用于集中管理 Kiro IDE 账号与本地配置。
+  - 技术栈：React 18 + Vite + shadcn/ui + TailwindCSS 4 | Rust + Tauri 2.x | Windows / macOS / Linux
+  - 账号管理：导入、导出、刷新、验证、分组、标签、远程删除
+  - 登录认证：Google / GitHub Social OAuth，AWS IAM Identity Center（BuilderId / Enterprise）
+  - Kiro 集成：切换账号、同步模型 / 代理 / MCP / Steering / Skills / Hooks / Custom Agents / Powers
+  - 网关能力：内置 Kiro API Gateway，支持 Anthropic Messages、OpenAI Responses、Chat Completions 与流式转发
+
+- https://github.com/chaogei/Kiro-account-manager /AGPL/202605/ts
+  - Quick account switching, auto token refresh, group/tag management, machine ID management and more
 # data-synthetic
 - https://github.com/NVIDIA-NeMo/DataDesigner /apache2/202605/python
   - https://nvidia-nemo.github.io/DataDesigner/

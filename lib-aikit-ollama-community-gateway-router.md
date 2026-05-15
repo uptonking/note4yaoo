@@ -888,6 +888,29 @@ https://makerich.club/ chong 这个渠道不是源头，也是流传最久的渠
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [有没有用Kiro反代的佬 - LINUX DO _202605](https://linux.do/t/topic/2141352)
+- 用kiro-go，都不用安装kiro客户端，直接添加cookie就行，我玩了一天没被封
+
+- 是的，打开app.kiro.dev/home网站，右键审查元素找到cookie，然后填入 凭证 JSON
+  - 填最后那个，像这种格式就行[{“refreshToken”:“xxx”, “provider”:“Google”}]
+  - 拿到的是浏览器cookie有效期应该很长吧，我用了四五天都没失效
+
+- kiro官方的提示词始终都在的，上游注入进去没办法去掉，只能加点提示词减少干扰了（不然直接在claude code之类的地方用会胡言乱语）
+
+- [kiro额度超到1w+了还能用啊 - LINUX DO _202605](https://linux.do/t/topic/2178790/17)
+  - 同一个账号，kiro ide可以正常看到使用opus模型，kiro cli就只能用DeepSeek 3.2等，有佬知道怎么解决吗
+  - 因为cli默认不走代理，问一下ai加个环境变量就行
+- 头两天一直用的4.7，很快很流畅，差不多从前天开始估计薅的人多了，现在4.7动不动就无响应，现在白天用4.6, 晚上人少的时候用4.7, 总体下来还是4.7用的多
+  - 体感上还是4.7强一点，4.6遇到问题撞墙撞多了的时候切个4.7往往能很快解决，不过也没有压倒性的强，大部分活4.6干也没啥问题
+- kiro go 超额也是不能用了，但是客户端好像还能用
+
+- [Kiro反代情况 - LINUX DO _202605](https://linux.do/t/topic/2148687)
+  - 跑了1天了 KiroGo 目前状态正常 一个号没有阵亡爽飞了
+
 - ## [【开源推广】免费 Token Agent？用 yaCA 与 yaCA-Web 让你的 2api 模型也能调用本地工具！  - LINUX DO _202605](https://linux.do/t/topic/2169087)
   - 自己搓了一个仿 Claude/Codex cli 的终端 Agent，取名 yaCA（yet another Coding Agent）。基本仿照 Claude/Codex cli 制作，但特别加了工具兼容模式，通过提示词让大模型输出 XML 风格的工具调用，从而让一些无法调用本地工具的 2api 模型也能用上本地工具调用。
   - yaCA Web 作为 yaCA 的拓展包，主推的是默认 HTML 模型输出的功能，通过几个内置类名让模型轻松输出信息密度和组织程度更高的消息。运行时动态依赖 yaCA Cli，需要先全局安装并配置好 yaCA Cli。
@@ -1024,13 +1047,13 @@ Hugging Face 🇺🇸 Llama 3.3 70B, Qwen2.5 72B, Mistral 7B +many more. $0.10/m
 - 一个是卖钱的正式版，一个是对话用于训练的免费公测版。测试版不一定弱，但 Ta 是测试版。
 
 - ## 💡 [【长期更新-授人以鱼不如授人以渔】公益站渠道公示（人人都可搭公益？） _202601](https://linux.do/t/topic/1477161)
-  01.   q2api(claude)
-  02.   英伟达ai平台（大部分开源模型）
-  03.   hf抱脸（大部分开源模型）
-  04.   groq平台
-  05.   硅基流动平台
-  06.   富可敌国平台（duck已许可分发付费站anti, 正在申请分发max）
-  07.   杂七杂八的短效羊毛平台（国外）
+  01.           q2api(claude)
+  02.           英伟达ai平台（大部分开源模型）
+  03.           hf抱脸（大部分开源模型）
+  04.           groq平台
+  05.           硅基流动平台
+  06.           富可敌国平台（duck已许可分发付费站anti, 正在申请分发max）
+  07.           杂七杂八的短效羊毛平台（国外）
 
 - [还有可以白嫖opus的平台嘛  ](https://linux.do/t/topic/1510785)
 

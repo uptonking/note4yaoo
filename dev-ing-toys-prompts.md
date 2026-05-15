@@ -20,6 +20,8 @@ modified: 2026-04-11T01:31:17.720Z
 - 
 - 
 
+- code-port/translation
+  - 也行直接给明确的转译代码指令比模糊的rewrite更有效
 # prompts 🔠
 
 ## ilove-image(stirling-image)
@@ -177,7 +179,7 @@ you have worked on this problem several times but features are still lacking. Th
 - the most important feature is a powerful, robust, extensible, headless ai ooxml editing engine with track change support .
 - you may deep research, and reference the upstream superdoc code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 
-- please deep research superdoc, then can you design a similar solution in ailovedoc to improve it? is superdoc's solution good enough? if yes, solve it in a similar way for ailovedoc.
+- please deep research superdoc, is superdoc's solution for related feature/problem good enough? if yes, can you design a similar solution in ailovedoc to improve it? 
 
 - you have worked on this several times but features are still lacking. They are the most important features at this moment. DO NOT stop untill you achieve full feature parity. 
 
@@ -195,7 +197,8 @@ you have worked on this problem several times but features are still lacking. Th
 
 - superdoc's overall architecture is good enough to follow. Mostly ailovedoc should use similar architecture to superdoc.
 
-- please recheck migrated features and improve your implementation in ailovedoc. Analyze core data flow and implementation logic details for major features like editor-data-model/layout-engine(supports multi-column)/pagination/virtualized-render/zoom/track-change/diff..., compare the implementation logic/code of ailovedoc with superdoc logic/code to recheck and enhance the correctness of architecture and logic in ailovedoc, find possible bugs in code and fix them, refactor code if you need,  make sure major features implementations in ailovedoc are correct, modular, extensible for long-term maintenance.
+- please recheck migrated features and improve your implementation in ailovedoc. Analyze core data flow and implementation logic details for major features like editor-data-model/layout-engine(supports multi-column)/viewport/pagination/virtualized-render/zoom/track-change/diff..., compare the implementation logic/code of ailovedoc with superdoc logic/code to recheck and enhance the correctness of architecture and logic in ailovedoc, find possible bugs in code and fix them, refactor code if you need,  make sure major features implementations in ailovedoc are correct, modular, extensible for long-term maintenance. 
+
 ```
 
 ## hardoc(onlyoffice-pdf)
@@ -352,6 +355,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - please recheck migrated features and improve your implementation in react webapp. Analyze core data flow and implementation logic details for major features, compare the implementation of react webapp with backbonejs webapp to recheck and enhance the correctness of architecture and logic in react webapp, find possible bugs in code and fix them, refactor code if you need,  make sure major features implementations in react webapp are correct, modular, extensible for long-term maintenance.
 
+- RBAC or ui/ux is not important at the moment, related feature may be delayed, you can update the parity docs.
 ```
 
 ## slaides(PPTist)
@@ -472,7 +476,8 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 -------
 
-- 
+- unsloth-studio has very good support for openai-compatible api including v1/chat/completions and v1/ responses, you may reference it. it also support tool calls and chat templates, you may reference the code and rewrite it for aichorage.
+
 - 
 - 
 - 

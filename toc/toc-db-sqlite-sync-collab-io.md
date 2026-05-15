@@ -85,6 +85,10 @@ modified: 2022-11-04T14:21:31.365Z
     - A fullstack typescript offline-first PWA template repo
     - 前端: SQLite (vlcn.io CRDTs) + useQuery hook for reactive queries, SQLite (vlcn.io CRDTs) + useQuery hook for reactive queries
     - 后端: SQLite (vlcn.io CRDTs), Fastify
+- https://github.com/rbbydotdev/cr-sqlite
+  - https://x.com/rbbydotdev/status/2055066655517290623
+  - crdt powered sqlite - a fork to now support crdt text columns (was lww before)
+  - run in the browser and backend, (single tenant recommended) now you can sync across peers and backend services easily.
 
 - https://github.com/mycelial/mycelite /apache2/202309/rust
   - https://mycelial.com/

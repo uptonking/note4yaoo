@@ -277,7 +277,10 @@ modified: 2025-03-22T16:10:24.856Z
   - 分享本地的GPU、token，类似的项目有分享画图gpu，但如何分享token还未流行
 
 - local-reimpl
-  - 比如支持minimax语言的api、mineru-ocrapi，直接本地可用
+  - 比如支持minimax语言的api、mineru-ocr api，直接本地可用
+
+- cleaner
+  - 清理codex-cli/cc的对话历史，展示date/size/suggestion-to-clean
 # 💎🚀 aichorage - local llm with joy, 提供模型API、rag可靠性、pdf文本操作
 - selling-points
   - non-goals: local image gen
@@ -1774,6 +1777,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [AI中转站推荐 | Claude/Gemini/Codex中转站评测对比](https://www.helpaio.com/transit)
     - 评分结果与L站评分基本一致
     - 提供了很多折扣码
+  - [货源广场 - 链动小铺](https://pay.ldxp.cn/merchant/my_parent/source_square)
 
 - latest
   - 可在google搜索 `GPT site:pay.ldxp.cn/shop`.
@@ -1884,6 +1888,9 @@ modified: 2025-03-22T16:10:24.856Z
     - 【手工】【30天】GPT-Team / Business , 源头 GPTPLUS. ICU 
     - 质保3天：从  激活时间  起算 72小时 内出现掉车，可  提交工单  无限次补车。
 
+- [Chat-gpt（源头）的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/OGBZJ5SY)
+  - team
+
 - http://155.229.50.232/email-assistant 
   - [plus源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/IY16OXB7)
     - GPT-PLUS-JSON 中转站版
@@ -1905,6 +1912,10 @@ modified: 2025-03-22T16:10:24.856Z
 - [发呆的小店 - 链动小铺](https://pay.ldxp.cn/shop/PL4EBAMI)
   -  https://otp.the22222.org/
   -  https://t.me/GPTattackz
+
+- [Lyla-精灵小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/lyla)
+  - kiro周卡-18
+  - cursot周卡-19
 
 - [Tora-雪诺AI源头分销小铺的小店 - 链动小铺](https://pay.ldxp.cn/shop/Tora)
   - 通知 https://t.me/Tora_AiShop
@@ -1928,6 +1939,17 @@ modified: 2025-03-22T16:10:24.856Z
   - [小NO plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/BWGFCYG1)
   - [秋刀鱼精品小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/qiudaoyu777)
   - [faka.jnmtk PLUS 账号 ](http://faka.jnmtk.com/)
+  - [一只狗子的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/2IG615LQ)
+
+- [AI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/XWTVY86A)
+  - kiro
+
+- [AI服务站的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ikun666)
+  - 发货账号为谷歌邮箱: 账号----密码----辅助邮箱----2fa密钥
+  - kiro官网选择谷歌邮箱登录，输入账号密码登录，选择身份验证器验证，去2fa.fun网站输入2fa密钥获取6位数验证码
+  - [蒲美丽のAI副食店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YXCTJAH4)
+    - 只发凭证，不发账号，自行导入使用，质保首登
+    - 反代可用 claude opus
 
 - [度偶Ai专卖店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/G3EUVLR7)
   - gpt plus月订阅CPA json(质保3天)
@@ -2215,6 +2237,8 @@ modified: 2025-03-22T16:10:24.856Z
 - [AI Ping](https://aiping.cn/modelList)
 
 ### 中转站
+
+- [New API  /newapi](https://cc-api.chat/pricing)
 
 - [Duo API - /newapi](https://api.duou.ai/)
 

@@ -49,6 +49,9 @@ modified: 2026-01-14T19:05:15.969Z
 - faster
   - mtp
 
+- bench
+  - omlx-benchmark可迁移
+
 - search in chat
 
 - 类似openclaw的服务进程和remote control

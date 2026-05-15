@@ -340,6 +340,17 @@ modified: 2026-03-29T13:03:35.455Z
   - font-size: clamp(35px, (100vw - 32px) / var(--text-width), 55px)
   - You have perfectly scaling text no matter the viewport size. 
 
+- https://x.com/kyrylo/status/2053338909212635500
+  - font-size: clamp(1rem, 1vw, 1.75rem); 
+  - Perfectly responsive typography on every screen. No media queries or breakpoints.
+  - 1rem minimum keeps text readable on phones
+  - 1vw makes it scale fluidly with the viewport
+  - 1.75rem caps it elegantly on large displays
+
+- https://x.com/jh3yy/status/2055045858157097345
+  - using css pow() you can create runtime-configurable fluid typography that responds to viewport or container size 
+  - again, this is a "runtime" solution
+  - but in a lot of cases, you may choose to precompile the clamp() values instead 
 # discuss-solutions
 - ## 
 
