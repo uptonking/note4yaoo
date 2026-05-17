@@ -12,9 +12,14 @@ modified: 2026-04-11T01:31:17.720Z
 # coding-harness-xp
 - 有些常用工具AI也记不住API, 比如pdfium, 可以将代码clone到本地让ai理解
 
+- task/goal的描述要用具体的features/bugs，否则ai也找不到重点甚至会偏离要点
+  - ai工作时也可以直接发送instruction/goal来提醒
+
 - ai容易工作一小段时间就停止然后提示你next, 有时候感觉是无底洞
   - /goal 可以让ai专注于目标
 
+- 
+- 
 - 
 - 
 - 
@@ -53,7 +58,7 @@ please analyze git commits and code if you need, then explain to me what major f
 
 please recheck migrated features and improve your implementation in ilove-image, make it runnable locally with npm. make sure implementation is correct and extensible.
 
-- research and make a full plan, then implement ilove-image to match full features of ilove-stirling-image, or even better than ilove-stirling-image, without licensing issues.
+- research and make a full plan, then implement ilove-image to match major features of ilove-stirling-image, or even better than ilove-stirling-image, without licensing issues.
 
 ## ilove-pdf(bentopdf)
 
@@ -117,12 +122,12 @@ what should be done to macth the upstream? explain to me. if it it complicated, 
 
 - please deep research related code of ilove-bentopdf, then can you design a similar solution in ilove-pdf to achieve full feature parity?
 
-- research and make a full plan, then implement ilove-pdf to match full features of ilove-bentopdf, or even better than ilove-bentopdf, without licensing issues.
+- research and make a full plan, then implement ilove-pdf to match major features of ilove-bentopdf, or even better than ilove-bentopdf, without licensing issues.
 
 ## ailovedoc(superdoc)
 
 `../superdoc` implemented renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed.
-- the final goal is to implement from scratch a new ai docx editing solution named ailovedoc similar to superdoc in current folder to avoid the licensing issues.
+- the final goal is to implement a new ai docx editing solution named ailovedoc similar to superdoc in current folder to avoid the licensing issues.
 - ailovedoc should be implemented in a modular and extensible architecture for core features like rendering and editing, with functional programming style.
 
 - in superdoc, running `pnpm dev:super-editor` shows a mininal editor demo that supports to toggle pagination. running `pnpm dev` shows a powerful editor demo that supports to toggle pagination, zoomable, toolbars, sidebars. please migrate the examples to ailovedoc without licensing issues, and make it runnable locally in ailovedoc. you should migrate all superdoc examples/features to a standalone package at `apps/playground`, the basic ux can be a list of editor example names at left sidebar, when click one example name, the demo will show on the right.
@@ -147,14 +152,10 @@ please continue to migrate features related to ooxml editing with ai agent progr
 
 recheck and migrate full features of pdf compare and layers to ailovedoc. 
 
-- the most important features to migrate and improve is:
-1. full document API
-2. richer OOXML editing
-3. real layout/pagination fidelity
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 
 you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issue.  
-you have worked on this problem several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. make a plan and implement it to match full features of upstream without licensing issues.
+you have worked on this problem several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. make a plan and implement it to match major features of upstream without licensing issues.
 
 - to achieve full feature parity with superdoc, help me choose the best option for long-term.
 
@@ -162,7 +163,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 - please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like superdoc for major features.
 
-- ailovedoc should have full feature parity matching superdoc for important features like document data model, layout-engine(supports toggling pagination, multi-column layout), document rendering/zoom, virtualized-rendering, editing engine, rich-text formatting, track-change.
+- ailovedoc should have full feature parity matching superdoc for important features like document data-model, layout-engine(supports multi-column), toggling pagination, virtualized-rendering, zoom, editing engine, rich-text formatting, track-change.
 
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 - make a plan, then migrate and improve full feature pairity, without licensing issues
@@ -176,12 +177,12 @@ you have worked on this problem several times but features are still lacking. Th
 - you have worked on this several times but features are still lacking. They are the most important features at this moment. DO NOT stop untill you achieve full feature parity. 
 
 - you may deep research, and reference the upstream superdoc code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
-- you may even do a big code refactor to match full feature of superdoc in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor to match major features of superdoc in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design feature parity docs at `upstream/superdoc/reports`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream superdoc should be put in folder `upstream`. you may even design a script to automate it.
 - feature parity docs may be outdated, please read related code and recheck/update.
 
-- research and make a full plan, then implement ailovedoc to match full features of superdoc, or even better than superdoc, without licensing issues.
+- research and make a full plan, then implement ailovedoc to match major features of superdoc, or even better than superdoc, without licensing issues.
 
 ------
 
@@ -190,10 +191,16 @@ you have worked on this problem several times but features are still lacking. Th
 
 - superdoc's overall architecture is good enough to follow. Mostly ailovedoc should use similar architecture to superdoc.
 
-- please recheck migrated features and improve your implementation in ailovedoc. Analyze core data flow and implementation logic details for every major feature like editor-data-model/viewport/layout-engine(supports toggling multi-column)/pagination/virtualized-render/zoom/track-change/diff..., compare the implementation logic/code of ailovedoc with superdoc logic/code to recheck and enhance the correctness of architecture and logic in ailovedoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in ailovedoc are correct, modular, extensible for long-term maintenance. 
-- recheck and improve editor-data-model/viewport/layout-engine(supports toggling multi-column)/ pagination/virtualized-render/zoom/track-change/diff... in ailovedoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+- please recheck migrated features and improve your implementation in ailovedoc. Analyze core data flow and implementation logic details for every major feature like editor-data-model and rich formatting, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment..., compare the implementation logic/code of ailovedoc with superdoc logic/code to recheck and enhance the correctness of architecture and logic in ailovedoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in ailovedoc are correct, modular, extensible for long-term maintenance. 
+- prioritize and recheck/improve major features like editor-data-model and rich formatting, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment... in ailovedoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
 - please recheck migrated features and improve your implementation in ailovedoc. Analyze core data flow and implementation logic details for every major feature , compare the implementation logic/code of ailovedoc with superdoc logic/code to recheck and enhance the correctness of architecture and logic in ailovedoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in ailovedoc are correct, modular, extensible for long-term maintenance. recheck and improve major features/architecture in ailovedoc, make them correct and robust without guessing, the fewer bugs, the better.
+
+### draft-ailovedoc
+
+- there are many smoke tests, it seems messy. can you refactor/redesign the tests as common units that are eaiser to maintain? 
+
+- import/export
 
 ## hardoc(onlyoffice-pdf)
 
@@ -261,7 +268,7 @@ recheck and migrate full features of True PDF text editing engine with annotatio
 
 - you have worked on this several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. 
 
-make a plan and implement it to match full features of upstream without licensing issues.
+make a plan and implement it to match major features of upstream without licensing issues.
 
 - you can reference code from onlyoffice pdf editor. feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
 - in your implementation, you can also improve the code logic for features and make your implementation correct and extensible.  
@@ -279,7 +286,7 @@ please make a plan, then improve the core in-place text editing engine to make i
 - you have worked on this several times but still not solve it. 
 
 - you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
-- you may even do a big code refactor to match full feature of onlyoffice-pdf-editor in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor to match major features of onlyoffice-pdf-editor in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design a feature parity doc at `upstream/parity/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream onlyoffice-pdf-editor should be put in folder `upstream`. you may even design a script to automate it.
 - research and make a plan, then implement hardoc to match major features of onlyoffice-pdf-editor, or even better than onlyoffice-pdf-editor, without licensing issues.
@@ -295,7 +302,9 @@ You should implement hardoc pdf editor in a similar architecture of onlyoffice p
 
 DO NOT search the web for onlyoffice pdf api, you should find and read source code of onlyoffice pdf editor directly in current folder ~/Documents/repos/office/all-office/onlyoffice
 
-- please recheck migrated features and improve your implementation in hardoc. Analyze core data flow and implementation logic details for major features like document rendering/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights..., compare the implementation logic/code of hardoc with onlyoffice-pdf-editor logic/code to recheck and enhance the correctness of architecture and logic in hardoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in hardoc are correct, modular, extensible for long-term maintenance.
+- please recheck migrated features and improve your implementation in hardoc. Analyze core data flow and implementation logic details for every major feature like document rendering/layout/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, thumbnails/bookmarks..., compare the implementation logic/code of hardoc with onlyoffice-pdf-editor logic/code to recheck and enhance the correctness of architecture and logic in hardoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in hardoc are correct, modular, extensible for long-term maintenance.
+
+- prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, thumbnails/bookmarks... in aichorage, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
 ## grist-office
 
@@ -332,9 +341,9 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - please deep research the existing backbonejs webapp, then can you design a similar solution in react webapp to achieve full feature parity?
 
-- you may deep research and reference the existing code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style with modern tech stacks like react/typescript-utils. 
+- you may deep research and reference the existing backbonejs webapp code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style with modern tech stacks like react/typescript-utils. 
 
-- you may even do a big code refactor to match major features of backbonejs webapp in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor in react webapp to match major features of backbonejs webapp in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design feature parity docs at `upstream/feature-parity.md`, when you migrate/implment features from backbonejs webapp to react webapp, you can recheck and update it. all checking/docs/scripts related to upstream backbonejs webapp should be put in folder `upstream`. you may even design a script to automate it.
 - research and make a plan, then implement the react webapp to match major features of existing backbonejs webapp, or even better than backbonejs webapp.
@@ -343,7 +352,9 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 -------
 
-- please recheck migrated features and improve your implementation in react webapp. Analyze core data flow and implementation logic details for major features, compare the implementation of react webapp with backbonejs webapp to recheck and enhance the correctness of architecture and logic in react webapp, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in react webapp are correct, modular, extensible for long-term maintenance.
+- please recheck migrated features and improve your implementation in react webapp. Analyze core data flow and implementation logic details for every major feature like spreadsheet data-model and rich formatting, spreadsheet editing with history, custom-widget, formula, drag-and-drop-dashboard, incremental-imports..., compare the implementation of react webapp with backbonejs webapp to recheck and enhance the correctness of architecture and logic in react webapp, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in react webapp are correct, modular, extensible for long-term maintenance.
+
+- prioritize and recheck/improve major features like spreadsheet data-model and rich formatting, spreadsheet editing with history, custom-widget, formula, drag-and-drop-dashboard, incremental-imports... in react webapp, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
 - RBAC or ui/ux is not important at the moment, related feature may be delayed, you can update the parity docs.
 
@@ -386,7 +397,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
   - for rich text editing in ppt, you should still use prosemirror. the source code for prosemirror is cloned at folder `~/Documents/repos/yaoo/nostalgia-studio/editor-prosemirror/src-pkgs` for your reference.
   - you may use `zustand/vanilla` for state management in framework-agnostic core package, the source code is at folder `~/gh-mirror/pmndrs/zustand` for your reference.
   - for drag-drop, you may use  `~/gh-mirror/atlassian/pragmatic-drag-and-drop` to implement robust dnd.
-  - all local packages names should start with `@datalking/`, for example `@datalking/slaides-core`,                                   `@datalking/slaides-react`...
+  - all local packages names should start with `@datalking/`, for example @datalking/slaides-core, @datalking/slaides-react ...
 
 - project PPTist can be used as implementation reference, you can reference its architecture and code.
 - you may deep research and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issue. 
@@ -406,9 +417,9 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 
-- you may even do a big code refactor to match full feature of PPTist in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor to match major feature of PPTist in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
-- research and make a full plan, then implement slaides to match full features of PPTist, or even better than PPTist, without licensing issues.
+- research and make a full plan, then implement slaides to match major features of PPTist, or even better than PPTist, without licensing issues.
 
 ## aichorage(janai/tranfromerlab-app)
 
@@ -438,10 +449,10 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - you may deep research, and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
 
-- you may even do a big code refactor to match full feature of jan in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor to match major feature of jan in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream jan/transformerlab-app/unsloth-studio should be put in folder `upstream`. you may even design a script to automate it.
-- research and make a good design, then implement aichorage to match full features of jan, or even better than jan, without licensing issues.
+- research and make a good design, then implement aichorage to match major features of jan, or even better than jan, without licensing issues.
 
 - please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like jan for major features.
 
@@ -454,7 +465,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - please deep research jan, then can you design a similar solution in aichorage to improve it? is jan's solution good enough? if yes, solve it in a similar way for ailovedoc.
 
-- research and make a full plan, then implement aichorage to match full features of jan, or even better than jan, without licensing issues.
+- research and make a full plan, then implement aichorage to match major features of jan, or even better than jan, without licensing issues.
 
 ------
 
@@ -465,6 +476,11 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - jan's overall architecture is good enough to follow. Mostly aichorage should use similar architecture to jan.
 
+- please recheck migrated features and improve your implementation in aichorage. Analyze core data flow and implementation logic details for every major feature like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/caching, openai-compatible api, chat with local-model/cloud-llm-api-provider..., compare the implementation logic/code of aichorage with related jan/transformerlab-app/unsloth-studio logic/code to recheck and enhance the correctness of architecture and logic in aichorage, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in aichorage are correct, modular, extensible for long-term maintenance. 
+- prioritize and recheck/improve major features like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/caching, openai-compatible-api, chat with local-model/cloud-llm-api-provider... in aichorage, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+
+- 
+- 
 - 
 - 
 
@@ -488,7 +504,10 @@ you may use similar file/folder names instead of the same file/folder names as t
 - 
 - 
 - 
-- 
+
+- 对并行执行的支持度如何? 同时运行多个backend/runtime? 同一个runtime运行多个模型? 多个请求的queue?
+
+- 是否是都采用binary的方案? 同时运行多个backend/runtime时，是否存在端口冲突?
 
 - tasks that are out of scope for near-term parity and may be delayed:
   - team/workspace/rbac: basic owner/member safeguards are sufficient for now; broader workspace ACL parity may be delayed.

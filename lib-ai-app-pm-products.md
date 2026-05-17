@@ -1945,11 +1945,14 @@ modified: 2025-03-22T16:10:24.856Z
   - [🍑桃俊泽的AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/DJOBBG3H)
     - GPT plus日抛成品号x1
     - 不包codex接码
+  - [yimoAi-US的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/CQRJKJ0N)
+    - 频道：https://t.me/songbai0420
   - [小NO plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/BWGFCYG1)
   - [秋刀鱼精品小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/qiudaoyu777)
     - 购买后需要手动联系来索取json
   - [faka.jnmtk PLUS 账号 ](http://faka.jnmtk.com/)
   - [一只狗子的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/2IG615LQ)
+  - [Xun AI - 海外效率工具订阅的小店 - 链动小铺 5](https://pay.ldxp.cn/shop/XunAI)
 - [卓建AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/THJ70HZO)
   - sub2格式json不带账密质保首登
   - 格式转换网站 https://lywqfvjb.feiyus.com
@@ -2108,6 +2111,9 @@ modified: 2025-03-22T16:10:24.856Z
   - plus-¥2
   - 不包codex接码， 实测需要绑定手机号
   - https://plus3.yhmoai.online/?key=
+
+- [鹰鹰发卡](https://fk.apiway.cc/)
+  - 下单前请检测自己的号有没有试用资格，如果拿没有试用资格的普号导致无法升级
 
 ### 中转站
 

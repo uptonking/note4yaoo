@@ -11,6 +11,7 @@ modified: 2022-11-07T10:25:12.034Z
 
 - username
   - uptonking/yorke/yaork
+    - surname: king
   - [names.org - The Meaning Of Names](https://www.names.org/)
   - address
     - West Hollywood Park: 647 N San Vicente Blvd, West Hollywood, CA 90069
@@ -428,6 +429,11 @@ flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
   - mail.protonmail.com
   - ref
     - [请问现在有什么不用手机号可以注册的邮箱](https://v2ex.com/t/683308)
+
+- outlook
+  - 用wifi很难注册成功，用手机流量有时也会失败，但过一会儿也许就成功了
+  - [How can i find my recovery email - Microsoft Q&A _202208](https://learn.microsoft.com/en-us/answers/questions/4592959/how-can-i-find-my-recovery-email)
+    - If the account has not been accessed in the last 2 years, it would be automatically deleted due to inactivity as per the Microsoft Account Activity policy (subject to the exceptions noted). Once an account has been deleted (for any reason), it can never be recovered for any reason by anyone. There are no exceptions to that policy. Microsoft does not recycle email addresses.
 
 - [Pamir University](https://mail.ryanvan.com/inbox)
   - linux.do
