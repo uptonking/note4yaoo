@@ -25,6 +25,7 @@ modified: 2023-11-28T14:48:45.910Z
     - mobile-app-generator
     - image-gen
   - 📈 end-user database: 支持用户自定义数据和流程, multi views, obsidian-bases
+    - 可利用利用类似agentfs的思路, 用db存数据提高性能，同时用文件展示给用户
   - 🔍 search results with citation from existing documents
     - 搜索结果的交互包含 双向链接、 侧边pdf查看器
   - animated-text/code sharing: playback with different speed

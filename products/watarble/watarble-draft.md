@@ -32,3 +32,4 @@ modified: 2022-11-24T11:37:08.907Z
   - modelpedia (占用的多)
   - codocs
   - docode
+  - power-plant 发电厂

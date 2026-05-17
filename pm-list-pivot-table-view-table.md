@@ -23,6 +23,8 @@ modified: 2022-12-16T01:52:33.729Z
 - cons
   - name列的内容不能重复
   - undo/redo在删除一行后不能恢复一行
+# draft
+- database: 可利用利用类似agentfs的思路, 用db存数据提高性能，同时用文件展示给用户
 # features
 - ai
   - 针对系统级数据库和用户数据建表优化, 使用llm生成sql来执行查询, 是database的下一代产品

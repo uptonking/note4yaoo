@@ -333,6 +333,11 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0516
+
+- aichorage model/runtime caching
+  - Hugging Face assets should live in a dedicated app cache and be referenced directly, while managed runtimes should build once into a canonical prepared cache and materialize cheap references from that cache instead of full copies.
+
 ## 0509
 
 - The issue is that the curly quotes in the file are Unicode characters that don't visually match when I type them

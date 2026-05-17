@@ -1765,7 +1765,9 @@ modified: 2025-03-22T16:10:24.856Z
 - tips
   - 中转商的价格每天都在变化, 套餐也在改变, 不要在一家花费过多
     - 很可能注册的第一天会显示低价，后面就恢复正常价格了，注意误导
+  - [货源广场 - 链动小铺](https://pay.ldxp.cn/merchant/my_parent/source_square)
   - GPT site:pay.ldxp.cn/shop
+    - 小铺还有很多其他产品: kiro, windsurf, 接码, 虚拟卡, 手机号, visa
   - ~~搜索: 手工, 质保, 源头, 印尼~~ 
     - 在5月13号，几乎所有成品号渠道都失效了，所有店铺(无论贵的还是便宜的)的源头渠道几乎相同，，，以后买便宜的就行了
   - 月初是openai集中清理风险型用户和欺诈性用户的敏感时间, 很多便宜的渠道会挂掉
@@ -1777,7 +1779,6 @@ modified: 2025-03-22T16:10:24.856Z
   - [AI中转站推荐 | Claude/Gemini/Codex中转站评测对比](https://www.helpaio.com/transit)
     - 评分结果与L站评分基本一致
     - 提供了很多折扣码
-  - [货源广场 - 链动小铺](https://pay.ldxp.cn/merchant/my_parent/source_square)
 
 - latest
   - 可在google搜索 `GPT site:pay.ldxp.cn/shop`.
@@ -1930,26 +1931,43 @@ modified: 2025-03-22T16:10:24.856Z
   - 通知频道：https://t.me/hdunzx
   - 质保两天
     - 一天就上几个，引流的
+- [源头GPT的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1DM0L7CR)
+  - 100个 free账号 Token（实时验活）CPA + sub2api格式
 - [sekirocloud的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/L9P7JDGN)
   - sub2api josn格式
   - [天选AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/txai)
     - https://plus.oai.do/ 
   - [随欲小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/MO2JGWG9)
     - free-0.45
+  - [AI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/echo_dream)
+    - https://gpt.aveve.xyz/ 
+    - 手机接码推荐：https://hero-sms.com/cn  找安哥拉+244地区，接码成功率高！
+  - [🍑桃俊泽的AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/DJOBBG3H)
+    - GPT plus日抛成品号x1
+    - 不包codex接码
   - [小NO plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/BWGFCYG1)
   - [秋刀鱼精品小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/qiudaoyu777)
+    - 购买后需要手动联系来索取json
   - [faka.jnmtk PLUS 账号 ](http://faka.jnmtk.com/)
   - [一只狗子的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/2IG615LQ)
+- [卓建AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/THJ70HZO)
+  - sub2格式json不带账密质保首登
+  - 格式转换网站 https://lywqfvjb.feiyus.com
 
 - [AI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/XWTVY86A)
   - kiro
-
 - [AI服务站的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ikun666)
   - 发货账号为谷歌邮箱: 账号----密码----辅助邮箱----2fa密钥
   - kiro官网选择谷歌邮箱登录，输入账号密码登录，选择身份验证器验证，去2fa.fun网站输入2fa密钥获取6位数验证码
-  - [蒲美丽のAI副食店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YXCTJAH4)
-    - 只发凭证，不发账号，自行导入使用，质保首登
-    - 反代可用 claude opus
+- [蒲美丽のAI副食店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YXCTJAH4)
+  - 只发凭证，不发账号，自行导入使用，质保首登
+  - 反代可用 claude opus
+  - 低价kiro
+
+- [Windsurf专卖4988的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/3FR7Y3PY)
+  - 谷歌母号, 不质保，只保拍下立马登录满配额。有效期10天左右。
+- [AI账号百货通的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/windsurf-test)
+  - Windsurf 全新 纯谷歌邮箱账号 （wf 账号、密码发货）无质保（下单请思考）
 
 - [度偶Ai专卖店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/G3EUVLR7)
   - gpt plus月订阅CPA json(质保3天)
@@ -2085,6 +2103,13 @@ modified: 2025-03-22T16:10:24.856Z
   - plus-无质保6
 
 - [KiroSwitch官方直营店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Z3VSKEGC)
+
+- [黑鹅小铺的小店 - 云猫寄售 ](https://www.ooeao.com/shop/ithte)
+  - plus-¥2
+  - 不包codex接码， 实测需要绑定手机号
+  - https://plus3.yhmoai.online/?key=
+
+### 中转站
 
 - [PackyAPI](https://www.packyapi.com/pricing)
   - [Packy - 模型健康面板](https://check.linux.do/group/Packy)
@@ -2235,8 +2260,6 @@ modified: 2025-03-22T16:10:24.856Z
   - [【致敬开源】与其打硬广，不如给佬友们的代码“供电”，寻找L站开源作者，UUcode送商业级API额度 ](https://linux.do/t/topic/1370667)
 
 - [AI Ping](https://aiping.cn/modelList)
-
-### 中转站
 
 - [New API  /newapi](https://cc-api.chat/pricing)
 

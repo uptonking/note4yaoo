@@ -30,8 +30,7 @@ modified: 2026-04-11T01:31:17.720Z
   - a client/server app
   - the backend handles uploads, auth, SQLite, pipelines, tool execution, AI bridge calls, and serves the built SPA
 
-```prompt
-git repo `./ilove-image`  is several commits behind `./ilove-stirling-image`. ilove-image has MIT license, while ilove-stirling-image has GPL license. 
+git repo `./ilove-image` is several commits behind `./ilove-stirling-image` . ilove-image has MIT license, while ilove-stirling-image has GPL license. 
 the goal is to migrate major features from ilove-stirling-image to ilove-image. 
 
 please analyze git commits and code if you need, then explain to me what major features are in stirling-image but missing in ilove-image.
@@ -56,17 +55,13 @@ please recheck migrated features and improve your implementation in ilove-image,
 
 - research and make a full plan, then implement ilove-image to match full features of ilove-stirling-image, or even better than ilove-stirling-image, without licensing issues.
 
-```
-
 ## ilove-pdf(bentopdf)
 
 - codebase
   - a client-side-only PDF app, not a client/server architecture
   - Core PDF work is done with browser libraries and browser runtimes like pdf-lib, pdfjs-dist, tesseract.js, and qpdf.wasm
 
-```prompt
-
-git repo `./ilove-pdf`  is several commits behind `../ilove-bentopdf`. ilove-pdf has MIT license, while ilove-bentopdf has GPL license. 
+git repo `./ilove-pdf` is several commits behind `../ilove-bentopdf` . ilove-pdf has MIT license, while ilove-bentopdf has GPL license. 
 the goal is to migrate major features from ilove-bentopdf to ilove-pdf. 
 
 please analyze git commits and code if you need, then explain to me what major features are in ilove-bentopdf but missing in ilove-pdf.
@@ -123,11 +118,9 @@ what should be done to macth the upstream? explain to me. if it it complicated, 
 - please deep research related code of ilove-bentopdf, then can you design a similar solution in ilove-pdf to achieve full feature parity?
 
 - research and make a full plan, then implement ilove-pdf to match full features of ilove-bentopdf, or even better than ilove-bentopdf, without licensing issues.
-```
 
 ## ailovedoc(superdoc)
 
-```prompt
 `../superdoc` implemented renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed.
 - the final goal is to implement from scratch a new ai docx editing solution named ailovedoc similar to superdoc in current folder to avoid the licensing issues.
 - ailovedoc should be implemented in a modular and extensible architecture for core features like rendering and editing, with functional programming style.
@@ -177,12 +170,12 @@ you have worked on this problem several times but features are still lacking. Th
 - the goal now is to achieve robust and extensible ooxml editing engine with full feature parity of upstream supercode.
 
 - the most important feature is a powerful, robust, extensible, headless ai ooxml editing engine with track change support .
-- you may deep research, and reference the upstream superdoc code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 
 - please deep research superdoc, is superdoc's solution for related feature/problem good enough? if yes, can you design a similar solution in ailovedoc to improve it? 
 
 - you have worked on this several times but features are still lacking. They are the most important features at this moment. DO NOT stop untill you achieve full feature parity. 
 
+- you may deep research, and reference the upstream superdoc code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 - you may even do a big code refactor to match full feature of superdoc in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design feature parity docs at `upstream/superdoc/reports`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream superdoc should be put in folder `upstream`. you may even design a script to automate it.
@@ -197,16 +190,15 @@ you have worked on this problem several times but features are still lacking. Th
 
 - superdoc's overall architecture is good enough to follow. Mostly ailovedoc should use similar architecture to superdoc.
 
-- please recheck migrated features and improve your implementation in ailovedoc. Analyze core data flow and implementation logic details for major features like editor-data-model/layout-engine(supports multi-column)/viewport/pagination/virtualized-render/zoom/track-change/diff..., compare the implementation logic/code of ailovedoc with superdoc logic/code to recheck and enhance the correctness of architecture and logic in ailovedoc, find possible bugs in code and fix them, refactor code if you need,  make sure major features implementations in ailovedoc are correct, modular, extensible for long-term maintenance. 
+- please recheck migrated features and improve your implementation in ailovedoc. Analyze core data flow and implementation logic details for every major feature like editor-data-model/viewport/layout-engine(supports toggling multi-column)/pagination/virtualized-render/zoom/track-change/diff..., compare the implementation logic/code of ailovedoc with superdoc logic/code to recheck and enhance the correctness of architecture and logic in ailovedoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in ailovedoc are correct, modular, extensible for long-term maintenance. 
+- recheck and improve editor-data-model/viewport/layout-engine(supports toggling multi-column)/ pagination/virtualized-render/zoom/track-change/diff... in ailovedoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
-```
+- please recheck migrated features and improve your implementation in ailovedoc. Analyze core data flow and implementation logic details for every major feature , compare the implementation logic/code of ailovedoc with superdoc logic/code to recheck and enhance the correctness of architecture and logic in ailovedoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in ailovedoc are correct, modular, extensible for long-term maintenance. recheck and improve major features/architecture in ailovedoc, make them correct and robust without guessing, the fewer bugs, the better.
 
 ## hardoc(onlyoffice-pdf)
 
-```prompt
-
 onlyoffice-pdf-editor(code is at several git repos in current folder) implements renders, edits, annotates `.pdf` files in the browser, but it is AGPL licensed.
-- the final goal is to implement from scratch a new headless, extensible web pdf editor named hardoc with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
+- the final goal is to implement a new headless, extensible web pdf editor named hardoc with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
 - hardoc pdf editor should be more of a headless client-server architecture, so that you can also build a hardoc sdk/cli. 
 - hardoc should be implemented in a modular and extensible architecture for core pdf features like viewing and editing, with functional programming style.
 
@@ -281,16 +273,16 @@ please make a plan, then improve the core in-place text editing engine to make i
 - the most important feature in hardoc is a powerful, robust, extensible, native True PDF in-place text editing engine with annotation support like onlyoffice pdf editor.
 
 - you may deep research and reference good deisgn from onlyoffice pdf editor.
-- you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 
 - please deep research the onlyoffice pdf editor, then can you design a similar solution to solve it? is onlyoffice's solution good enough? if yes, solve it in a similar way for hardoc.
 
 - you have worked on this several times but still not solve it. 
 
+- you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 - you may even do a big code refactor to match full feature of onlyoffice-pdf-editor in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design a feature parity doc at `upstream/parity/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream onlyoffice-pdf-editor should be put in folder `upstream`. you may even design a script to automate it.
-- research and make a full plan, then implement hardoc to match full features of onlyoffice-pdf-editor, or even better than onlyoffice-pdf-editor, without licensing issues.
+- research and make a plan, then implement hardoc to match major features of onlyoffice-pdf-editor, or even better than onlyoffice-pdf-editor, without licensing issues.
 
 ------
 
@@ -303,15 +295,13 @@ You should implement hardoc pdf editor in a similar architecture of onlyoffice p
 
 DO NOT search the web for onlyoffice pdf api, you should find and read source code of onlyoffice pdf editor directly in current folder ~/Documents/repos/office/all-office/onlyoffice
 
-- please recheck migrated features and improve your implementation in hardoc. Analyze core data flow and implementation logic details for major features like document rendering/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, plugin architecture and manager..., compare the implementation logic of hardoc with onlyoffice-pdf-editor to recheck and enhance the correctness of architecture and logic in hardoc, find possible bugs in code and fix them, refactor code if you need,  make sure major features implementations in hardoc are correct, modular, extensible for long-term maintenance.
-```
+- please recheck migrated features and improve your implementation in hardoc. Analyze core data flow and implementation logic details for major features like document rendering/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights..., compare the implementation logic/code of hardoc with onlyoffice-pdf-editor logic/code to recheck and enhance the correctness of architecture and logic in hardoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in hardoc are correct, modular, extensible for long-term maintenance.
 
 ## grist-office
 
-```prompt
 - Project Grist is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database. 
-- The final goal is to implement an alternative react frontend webapp at folder `app/client-react` at the current git branch `feat/office-react`, with the same features as existing backbonejs frontend webapp at `app/client`,  using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table. After you finished the react webapp, `npm run start:app` should start the new react webapp, the legacy yarn toolchain should still be kept for backward compatibility. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please keep as many code unchanged as possible.
-- one goal is to rewrite all the existing backbonejs ui/ux with modern react ui/ux, but you can implement the core speadsheet view/create/edit/save data flow first, then migrate more and more features. 
+- The final goal is to implement an alternative react frontend webapp at folder `app/client-react` at the current git branch `feat/office-react`, with almost the same features as existing backbonejs frontend webapp at `app/client`, using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table. After you finished the react webapp,  `npm run start:app` should start the new react webapp, the legacy yarn toolchain/code should still be kept for backward compatibility. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please reuse as many code from main branch as possible.
+- The core goal is to rewrite most of the existing backbonejs ui/ux with modern react ui/ux, but you can prioritize the core speadsheet view/create/edit/save data flow, speadsheet-unrelated features may be delayed. 
 - react webapp should support all the routing urls of existing backbonejs webapp, using the same existing backend api.
 
 - please read and analyze git commits/code if you need, then explain to me what major features are in backbonejs webapp but missing in react webapp.
@@ -320,7 +310,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 1. Can be displayed on a static website with grist-static.
 2. A self-contained desktop app for viewing and editing locally: grist-desktop.
 3. Native forms. Create forms that feed directly into your spreadsheet.
-4.Sandboxing options for untrusted documents
+4. Sandboxing options for untrusted documents
 5. AI Formula Assistant 
 6. integrations to airtable/...
 
@@ -332,7 +322,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
   - for spreadshhet table, you should use @tanstack/react-table. the source code is cloned at folder `~/gh-mirror/tanstack` for your reference.
   - you may use zustand for state management in framework-agnostic core package, the source code is at folder `~/gh-mirror/pmndrs/zustand` for your reference.
 
-- the most important feature in react webapp is a modular, extensible, headless spreadsheet view/editing engine with undo/redo history support like backbonejs webapp. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so keep as many code unchanged as possible.
+- the most important feature in react webapp is a modular, extensible, headless spreadsheet view/editing engine with undo/redo history support like backbonejs webapp. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please reuse as many code from main branch as possible.
 
 - you have migrated/reimplemented some features from backbonejs webapp to react webapp.
 
@@ -344,23 +334,29 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - you may deep research and reference the existing code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style with modern tech stacks like react/typescript-utils. 
 
-- you may even do a big code refactor to match full feature of backbonejs webapp in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor to match major features of backbonejs webapp in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design feature parity docs at `upstream/feature-parity.md`, when you migrate/implment features from backbonejs webapp to react webapp, you can recheck and update it. all checking/docs/scripts related to upstream backbonejs webapp should be put in folder `upstream`. you may even design a script to automate it.
-- research and make a full plan, then implement the react webapp to match full features of existing backbonejs webapp, or even better than backbonejs webapp.
+- research and make a plan, then implement the react webapp to match major features of existing backbonejs webapp, or even better than backbonejs webapp.
 
 - `grist-static` is a fully in-browser build of Grist for displaying spreadsheets on a website without back-end support.
 
 -------
 
-- please recheck migrated features and improve your implementation in react webapp. Analyze core data flow and implementation logic details for major features, compare the implementation of react webapp with backbonejs webapp to recheck and enhance the correctness of architecture and logic in react webapp, find possible bugs in code and fix them, refactor code if you need,  make sure major features implementations in react webapp are correct, modular, extensible for long-term maintenance.
+- please recheck migrated features and improve your implementation in react webapp. Analyze core data flow and implementation logic details for major features, compare the implementation of react webapp with backbonejs webapp to recheck and enhance the correctness of architecture and logic in react webapp, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in react webapp are correct, modular, extensible for long-term maintenance.
 
 - RBAC or ui/ux is not important at the moment, related feature may be delayed, you can update the parity docs.
-```
+
+-------
+
+- the browser/nbrowser related features/tests like `npm run test:nbrowser:react-smoke` can be very slow and take huge disk space. please recheck related implementation-logic/tests, improve it by making the downloaded binary/resources cached locally, so that later testing/running can reuse it directly if already existed. improve the cache logic, and update related data-flow/tests, make sure the implementation is correct, robust, extensible without unnecessary redownloading.
+
+- recheck and improve it, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
+
+- every time you update some code, running tests is very slow, can you improve it?
 
 ## slaides(PPTist)
 
-```prompt
 - project `PPTist` at `../PPTist` is an online presentation webapp that replicates most of the commonly used features of MS PowerPoint, allowing for the editing and presentation of PPT online, also supports AIPPT. But it has AGPL license.
 - project `slaides` at current folder is an old version of `PPTist` with apache2 license, but many commits behind PPTist.
 
@@ -390,7 +386,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
   - for rich text editing in ppt, you should still use prosemirror. the source code for prosemirror is cloned at folder `~/Documents/repos/yaoo/nostalgia-studio/editor-prosemirror/src-pkgs` for your reference.
   - you may use `zustand/vanilla` for state management in framework-agnostic core package, the source code is at folder `~/gh-mirror/pmndrs/zustand` for your reference.
   - for drag-drop, you may use  `~/gh-mirror/atlassian/pragmatic-drag-and-drop` to implement robust dnd.
-  - all local packages names should start with `@datalking/`, for example `@datalking/slaides-core`,`@datalking/slaides-react`...
+  - all local packages names should start with `@datalking/`, for example `@datalking/slaides-core`,                                   `@datalking/slaides-react`...
 
 - project PPTist can be used as implementation reference, you can reference its architecture and code.
 - you may deep research and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issue. 
@@ -413,8 +409,6 @@ you may use similar file/folder names instead of the same file/folder names as t
 - you may even do a big code refactor to match full feature of PPTist in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - research and make a full plan, then implement slaides to match full features of PPTist, or even better than PPTist, without licensing issues.
-
-```
 
 ## aichorage(janai/tranfromerlab-app)
 
@@ -478,6 +472,11 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - unsloth-studio has very good support for openai-compatible api including v1/chat/completions and v1/ responses, you may reference it. it also support tool calls and chat templates, you may reference the code and rewrite it for aichorage.
 
+- local model testing/running can be slow and take huge disk space. please recheck implementation logic related to model/llm-runtime-backend downloading and related tests, improve it by making the downloaded models/binary/resources cached locally, so that later testing/running can reuse it directly if already existed. improve the cache logic, and update related data-flow/tests, make sure the implementation is correct, robust, extensible without unnecessary redownloading.
+
+- recheck and improve it, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
+
+- 
 - 
 - 
 - 
@@ -491,16 +490,21 @@ you may use similar file/folder names instead of the same file/folder names as t
 - 
 - 
 
+- tasks that are out of scope for near-term parity and may be delayed:
+  - team/workspace/rbac: basic owner/member safeguards are sufficient for now; broader workspace ACL parity may be delayed.
+  - running embedding models: embedding-model import and runtime execution may be delayed.
+  - full parity for Jan-style UI/UX is unnecessary; aichorage UI/UX may differ.
+
 - 🤔 是否要实现管理本地已有的ollama/lmstudio
   - pros: 对使用本地已有工具的场景更友好
   - cons: 内置runtime方便支持多种格式如 /v1/chat/completions, /v1/responses
-  - 参考很多主流开放性ai的产品
+  - 参考很多主流开放性ai的产品如cursor/cherry-studio, 都支持用户配置api，所以通过平台/系统来管理本地的工具是非必要的
 # code-review 👀
 
 ```prompt
 
 for project hardoc, 
-please recheck migrated features and improve your implementation, make it runnable locally using npm without docker. Analyze core data flow and implementation logic details for major features, find possible bugs in code and fix them, make sure major features implementations are correct, modular, extensible for long-term maintenance.
+please recheck migrated features and improve your implementation, make it runnable locally using npm without docker. Analyze core data flow and implementation logic details for major features, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations are correct, modular, extensible for long-term maintenance.
 
 please recheck migrated features and implementations for possible licensing issues. if the code is too similar to upstream, you can adjust the risking code to avoid licensing issues. if features are already migrated under different names, it is unnecessary to design it as a standalone/separate tool as the upstream did, this also helps to avoid licensing issues.
 
@@ -514,7 +518,7 @@ you have migrated/implemented major features in project react web, but when you 
 when you improve the tests, you can also improve the source code logic by fixing or refactoring code. DO NOT get locked to the risk code that has weak or wrong logic, you should fix them.
 finally make sure all tests run and pass locally with npm. you can update/fix tests file by file progressively. outdated or over-complicated or hard-to-maintain tests can be removed or rewritten. 
 
-you have improved the codebase several times, but running the tests/parity/scripts took a lot of time for your every improvement.  please refactor and improve the tests/parity/scripts/devops/ci to make it faster and more maintainable .  you may combine/reduce/redesign/deduplicate some tests/parity/scripts/devops/ci/outdated/legacy if you need. 
+you have improved the codebase several times, but running the tests/parity/scripts took a lot of time for your every improvement.  please refactor and improve the tests/parity/scripts/devops/ci to make it faster and more maintainable.  you may combine/deduplicate/reduce/clean/redesign some tests/parity/scripts/devops/ci/outdated/legacy if you need. update the readme/docs after your cleanup.
 ```
 
 # rafactor

@@ -461,6 +461,18 @@ codex --yolo resume --last
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [codex-tui.log · Issue · openai/codex _202603](https://github.com/openai/codex/issues/13463)
+- It's not typical for it to be that large, but there are situations where it can after significant usage. You can manually delete it if you'd like.
+
+- [Codex Desktop App Becomes Unusable Due to `codex-tui.log` Being Used as State / Index · Issue · openai/codex _202602](https://github.com/openai/codex/issues/11136)
+  - I've also reviewed the CLI (rust) code base, and I've confirmed that the codex-tui.log file is opened in "append only" mode, so its full contents are not read.
+
+- [Codex tui logs keeps growing and not getting rotated · Issue #16886 · openai/codex _202604](https://github.com/openai/codex/issues/16886)
+
 - ## [奇怪，为什么OpenAI 能直接看到我的真实ip了 - LINUX DO _202605](https://linux.do/t/topic/2179728)
 - 换成全局代理后重新登录，试试有没有提示了，如果没有提示了，说明你的规则里有openai的域名遗漏了。
   - 没有提示了，但是在连接里没有看到疑似openai的连接，所以想问问各位佬最近有没有什么新的openai域名啥的，因为昨天都是正常的

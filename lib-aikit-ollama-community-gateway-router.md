@@ -280,7 +280,10 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
-- ## 
+- ## ✨ [【开源】做了个中转站模型批量测试工具，解决「不知道哪些模型能用以及支不支持工具调用」的问题 - LINUX DO _202605](https://linux.do/t/topic/2188147)
+  - 用了好几个中转站之后，发现一个共同的痛点：就是站里有哪些模型可以用、哪些支持工具调用，完全看不出来，只能一个个试。
+- https://github.com/yuanzhi-yw/model-tester
+  - https://yuanzhi-yw.github.io/model-tester/
 
 - ## [反代用 CLIProxyAPI 还是 Sub2API ? - LINUX DO _202604](https://linux.do/t/topic/1972760)
 - 我记得 sub2api 有粘性会话，cliproxyapi 没有？
