@@ -333,6 +333,10 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0518
+
+- [openrouter和kilo的deepseek v4 flash是出问题了?思考全是乱码内容然后中断 - LINUX DO _202605](https://linux.do/t/topic/2193158)
+
 ## 0516
 
 - aichorage model/runtime caching

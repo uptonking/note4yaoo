@@ -459,6 +459,9 @@ modified: 2026-01-19T05:01:00.055Z
   - https://x.com/shao__meng/status/2051865033425190994
     - Warp 团队的 15 个 Skills
 
+- https://github.com/openai/skills /python
+  - Agent Skills are folders of instructions, scripts, and resources that AI agents can discover and use to perform at specific tasks. Write once, use everywhere.
+
 - https://github.com/op7418/Humanizer-zh /MIT/202601/md
   - Humanizer-zh: AI 写作去痕工具（中文版）
   - https://github.com/blader/humanizer

@@ -43,6 +43,7 @@ modified: 2025-09-21T13:58:46.548Z
   - A visual document analysis studio powered by Docling. 
   - Upload a PDF, configure the extraction pipeline, and visualize the results — text, tables, images, formulas, bounding boxes — all from your browser.
   - [Is anyone still running pure vector RAG in production in 2026, and is it actually holding up? : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1t9v93f/is_anyone_still_running_pure_vector_rag_in/)
+  - We built oss tool to make visual debugging of our chunk an re-injection
 
 - https://huggingface.co/spaces/ibm-granite/granite-docling-258M-WebGPU/tree/main /apache2/202510/html/vanillajs
   - a demo which showcases the model running entirely in your browser with WebGPU acceleration

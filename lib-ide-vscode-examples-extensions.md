@@ -837,6 +837,8 @@ modified: 2024-08-24T16:17:26.715Z
     - This project was mainly created to make the implementation of monaco-languageclient more robust and maintainable.
     - The first implementations of monaco-languageclient were using a fake VSCode api implementation. The vscode-languageclient was hacked so the VSCode<->protocol object converters were mainly bypassed, so the fake VSCode api was receiving Language Server Protocol objects. 
     - With this library, it would be possible to plug vscode-languageclient directly on top of monaco
+  - [Get rid of monaco-editor _202401](https://github.com/CodinGame/monaco-vscode-api/discussions/325)
+    - Stop trying to grab monaco-editor source-code at all, take everything from the vscode repo, remove all treemending logic
   - [Getting started guide](https://github.com/CodinGame/monaco-vscode-api/wiki/Getting-started-guide)
   - https://github.com/CodinGame/monaco-editor-react
     - This library uses https://github.com/CodinGame/monaco-editor-wrapper

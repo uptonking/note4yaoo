@@ -885,6 +885,14 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 
 - ## 
 
+- ## 
+
+- ## [[慢讯]动漫风格开源文生图模型Anima出 base v1.0 了 - LINUX DO _202605](https://linux.do/t/topic/2192647)
+  - 这模型挺小的，40 系的 6G 卡也能跑
+- 确实关注多了不少，大家对它的期待是超越 sdxl 系列吧，毕竟开源生图模型社区也需要新的进步了，之前的发展都是在 sdxl 上进步，anima 的新架构……希望它不会垮掉，不过目前为止的反馈还不错？
+
+- 挺强的，目前还没有做美学微调，出图质量和指令遵循都不错，而且性能需求不高，base就已经可以打平微调过的noob了
+
 - ## [What are the best models everyone is using right now? : r/StableDiffusion _202604](https://www.reddit.com/r/StableDiffusion/comments/1scuftr/what_are_the_best_models_everyone_is_using_right/)
 - Video = Wan 2.2 & 2.1(i2v, animate, vace, SVI), Ltx2.3 (Talking head only)
   - Anime = ILL

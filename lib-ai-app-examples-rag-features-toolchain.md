@@ -158,6 +158,13 @@ modified: 2026-04-07T12:33:48.087Z
   - 基于视觉模型进行段落提取和OCR，通过 Rust Actix 服务器统一输出，可实现单个NVIDIA L4 GPU上达到每秒约5页速度
   - 支持自托管部署，兼容GPU和CPU，提供用户界面
 
+- https://github.com/scub-france/Docling-Studio /MIT/202604/python/vue
+  - https://scub-france.github.io/Docling-Studio/
+  - A visual document analysis studio powered by Docling. 
+  - Upload a PDF, configure the extraction pipeline, and visualize the results — text, tables, images, formulas, bounding boxes — all from your browser.
+  - [Is anyone still running pure vector RAG in production in 2026, and is it actually holding up? : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1t9v93f/is_anyone_still_running_pure_vector_rag_in/)
+  - We built oss tool to make visual debugging of our chunk an re-injection
+
 - https://github.com/chunkhound/chunkhound /974Star/MIT/202602/python
   - https://chunkhound.github.io/
   - Deep Research for Code & Files

@@ -12,7 +12,7 @@ modified: 2024-08-24T16:15:11.456Z
 - pros
   - reliable, 开源十几年，有商业公司和开源社区持续投入
   - MIT, theia is licensed under EPL
-  - 完善的编辑器和ide架构，包括 editor/workbench/files/search/ext/cmd-palette
+  - 完善的编辑器和ide架构，包括 editor/workbench/fileTree/search/ext/cmd-palette/copilot-agent
     - 可提取出丰富的工具库
   - 支持运行在多种环境，如 electron, web-memory, web-node-server, 
     - 提供了处理 cross-platform/browser 的参考架构
@@ -110,6 +110,10 @@ modified: 2024-08-24T16:15:11.456Z
 
 - fileTree
   - 读文件的api/mcp 可以与 github公开的mcp-server 保持一致
+
+## ai-vscode 👾
+
+- 类似飞书lark-cli的体验，来实现vscode-cli
 
 ## extensions-to
 

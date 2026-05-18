@@ -414,7 +414,10 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
-- ## 
+- ## I tested 4bit with Dflash-MLX super fast but quality is much lower 
+- https://x.com/ivanfioravanti/status/2055228524764467626
+  - 66.7% in ~ 50 mins.
+- It's in no-think mode, this is main reason for low results. Fix in progress.
 
 - ## The main issue with Eagle, MTP, and DFlash is that verification eats 75–90% of the speculative overhead, which really shows on dense models. 
 - https://x.com/Prince_Canuma/status/2055044319166222522
@@ -2018,7 +2021,11 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## DeepSeek-V4-Flash with SSD KV Cache Offload on Blackwell
+- https://x.com/Tono_Ken3/status/2055134669512016304
+  - We achieved 63 tok/s inference of DeepSeek-V4-Flash-FP8 (284B) on 4× RTX PRO 6000 Blackwell (TP=4) with full 1M context via SSD KV cache offload! 
+  - sglang + SM120 custom flash_mla kernel
+  - KV cache → Optane SSD (ds4-server inspired disk offload)
 
 - ## DeepSeek v4 small KV cache + MacBook fast SSD disks = the idea that the disk is not a good target for KV cache is, in this context, totally obsolete. It works *great* . 
 - https://x.com/antirez/status/2050982689696588013

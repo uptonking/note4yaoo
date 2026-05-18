@@ -18,6 +18,8 @@ modified: 2026-04-11T01:31:17.720Z
 - ai容易工作一小段时间就停止然后提示你next, 有时候感觉是无底洞
   - /goal 可以让ai专注于目标
 
+- ❓ 有些提示词输入错误或复制粘贴错位会导致llm始终保持错误的指令/记忆
+
 - 
 - 
 - 
@@ -42,9 +44,9 @@ please analyze git commits and code if you need, then explain to me what major f
 
 - please make migrations to ilove-image. 
 - the following 2 features can be ignored:
-1. HEIC/HEIF input and output
-2. CUDA Docker variant can be ignored. Lite Docker variant should be migrated.
-3. any features you feel unimportant or redundant can be ignored too
+01. HEIC/HEIF input and output
+02. CUDA Docker variant can be ignored. Lite Docker variant should be migrated.
+03. any features you feel unimportant or redundant can be ignored too
 - feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation work, but without licensing issues.
 - in your implementation, you can also improve the code logic for features and make your implementation clean and extensible. tests are not necessary for your implementation, but you can write some important tests if you want. do not write too many tests, if logic is simple/clear, skipping tests is ok. 
 
@@ -73,30 +75,30 @@ please analyze git commits and code if you need, then explain to me what major f
 
 - please make migrations to ilove-pdf. 
 - the following 8 features should be migrated:
-1. dynamic WASM loading
-2. bookmarks / TOC / page labels / Bates
-3. attachment extract/edit
-4. overlay/underlay
-5. better Compare PDFs
-6. better OCR
-7. better Image/PDF UX
-8. features: divide pages, extract images, prepare PDF for AI, PDF layers
+01. dynamic WASM loading
+02. bookmarks / TOC / page labels / Bates
+03. attachment extract/edit
+04. overlay/underlay
+05. better Compare PDFs
+06. better OCR
+07. better Image/PDF UX
+08. features: divide pages, extract images, prepare PDF for AI, PDF layers
 - other features can be ignored: 
-1. Forms and signing, digital signature / validation / timestamp
-2. Big conversion expansion, many Office, email converters, but you can migrate some if you want 
-3. Workflow/automation
-4. repair PDF
-5. Encryption
-6. PDF to PDF/A, PDF booklet,ebook, deskew, font-to-outline, rasterize PDF, ...
-7. any features you feel unimportant or redundant can be ignored
+01. Forms and signing, digital signature / validation / timestamp
+02. Big conversion expansion, many Office, email converters, but you can migrate some if you want 
+03. Workflow/automation
+04. repair PDF
+05. Encryption
+06. PDF to PDF/A, PDF booklet,ebook, deskew, font-to-outline, rasterize PDF, ...
+07. any features you feel unimportant or redundant can be ignored
 - feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation work, but without licensing issues.
 - in your implementation, you can also improve the code logic for features and make your implementation clean and extensible. tests are not necessary for your implementation, but you can write some important tests if you want. do not write too many tests, if logic is simple/clear, skipping tests is ok. 
 
 - please recheck the migrations and improve implementation for the the following features:
-1. dynamic WASM loading
-2. PDF layers, overlay/underlay
-3. better OCR, make ocr robust
-4. better extract
+01. dynamic WASM loading
+02. PDF layers, overlay/underlay
+03. better OCR, make ocr robust
+04. better extract
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 - feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
 - in your implementation, you can also improve the code logic for features and make your implementation correct and extensible. tests are not necessary for your implementation.
@@ -163,7 +165,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 - please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like superdoc for major features.
 
-- ailovedoc should have full feature parity matching superdoc for important features like document data-model, layout-engine(supports multi-column), toggling pagination, virtualized-rendering, zoom, editing engine, rich-text formatting, track-change.
+- ailovedoc should have full feature parity matching superdoc for important/major features like document data-model, layout-engine(supports multi-column), toggling pagination, virtualized-rendering, zoom, editing engine, rich-text formatting, track-change.
 
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 - make a plan, then migrate and improve full feature pairity, without licensing issues
@@ -191,8 +193,10 @@ you have worked on this problem several times but features are still lacking. Th
 
 - superdoc's overall architecture is good enough to follow. Mostly ailovedoc should use similar architecture to superdoc.
 
-- please recheck migrated features and improve your implementation in ailovedoc. Analyze core data flow and implementation logic details for every major feature like editor-data-model and rich formatting, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment..., compare the implementation logic/code of ailovedoc with superdoc logic/code to recheck and enhance the correctness of architecture and logic in ailovedoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in ailovedoc are correct, modular, extensible for long-term maintenance. 
-- prioritize and recheck/improve major features like editor-data-model and rich formatting, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment... in ailovedoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+- please recheck migrated features and improve your implementation in ailovedoc. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment..., compare the implementation logic/code of ailovedoc with superdoc logic/code to recheck and enhance the correctness of architecture and logic in ailovedoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in ailovedoc are correct, modular, extensible for long-term maintenance. 
+- prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment... in ailovedoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+
+- docs/tests/scripts might be outdated, recheck code and data flow to improve ailovedoc.
 
 - please recheck migrated features and improve your implementation in ailovedoc. Analyze core data flow and implementation logic details for every major feature , compare the implementation logic/code of ailovedoc with superdoc logic/code to recheck and enhance the correctness of architecture and logic in ailovedoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in ailovedoc are correct, modular, extensible for long-term maintenance. recheck and improve major features/architecture in ailovedoc, make them correct and robust without guessing, the fewer bugs, the better.
 
@@ -210,11 +214,11 @@ onlyoffice-pdf-editor(code is at several git repos in current folder) implements
 - hardoc should be implemented in a modular and extensible architecture for core pdf features like viewing and editing, with functional programming style.
 
 - goals for pdf editing:
-1. modular and extensible architecture for pdf viewing and editing: you may design sub packages like state/view/command/transform/... when you need. you may design a sdk if you want.
-2. in-place text editing feature like adobe acrobat; undo/redo
-3. pdf highlights, annotations with simple shapes
-4. pdf file open and save
-5. in-place text editing is the most important feature to implement now, the following features can be planned, but unnecessary to implement at this moment: forms, ocr, collaboration, ai-editing, complicated shapes, search. any feature you feel unimportant to in-place text editing can be delayed to implement,  but architecture should be extensible enough to support them later.
+01. modular and extensible architecture for pdf viewing and editing: you may design sub packages like state/view/command/transform/... when you need. you may design a sdk if you want.
+02. in-place text editing feature like adobe acrobat; undo/redo
+03. pdf highlights, annotations with simple shapes
+04. pdf file open and save
+05. in-place text editing is the most important feature to implement now, the following features can be planned, but unnecessary to implement at this moment: forms, ocr, collaboration, ai-editing, complicated shapes, search. any feature you feel unimportant to in-place text editing can be delayed to implement,  but architecture should be extensible enough to support them later.
 
 - tech stack needs to use open source libs/fwk:
 you may reference architecture and implementation details of onlyoffice pdf editor. 
@@ -222,9 +226,9 @@ code at `./hardoc` should use npm workspaces, typescript.
 AGPL dependencies like MuPDF should be avoided, ask for approve if you must use.
 
 - serveral questions need to be made clear before implementation:
-1. should core pdf data model be headless/dom-agnostic, so that it will be usable in nodejs?
-2. should wasm like pdfium be used?
-3. should canvas framework like fabric/knova be used?
+01. should core pdf data model be headless/dom-agnostic, so that it will be usable in nodejs?
+02. should wasm like pdfium be used?
+03. should canvas framework like fabric/knova be used?
 
 please analyze onlyoffice architecture, and give tips to my question before iplementing new pdf editor hardoc.
 
@@ -233,13 +237,13 @@ please analyze onlyoffice architecture, and give tips to my question before iple
 one goal is to support to view both text pdf and scanned image pdf, text pdf should also support in-place text editing like onlyoffice/adobe-acrobat. both text and scanned pdf should support annotations/highlights.
 
 one goal is to enhance hardoc pdf editor with more important features:
-1. robust undo/redo that is friendly to collaborative editing
-2. ocr, you may reference how onlyoffice implements it, you may integrates Tesseract(whether to use wasm is up to you)
-3. pdf search
-4. view page thumbnails, pdf bookmarks, search... these ui-related features should be implemented in an extensible way like state/view so that it will be easy to adjust ux later.
-5. advanced annotation shapes
-7. ready for ai editing, you may reference how onlyoffice, full migration is not required
-6. the core pdf editor and app should be modular and extensible. an extensible pdf sdk can be provided.
+01. robust undo/redo that is friendly to collaborative editing
+02. ocr, you may reference how onlyoffice implements it, you may integrates Tesseract(whether to use wasm is up to you)
+03. pdf search
+04. view page thumbnails, pdf bookmarks, search... these ui-related features should be implemented in an extensible way like state/view so that it will be easy to adjust ux later.
+05. advanced annotation shapes
+07. ready for ai editing, you may reference how onlyoffice, full migration is not required
+06. the core pdf editor and app should be modular and extensible. an extensible pdf sdk can be provided.
 
 one goal is to enhance hardoc pdf editor with more features:
 - collaborative editing
@@ -264,7 +268,7 @@ recheck and migrate full features of True PDF text editing engine with annotatio
 
 - please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like onlyoffice-pdf-editor for major features.
 
-- hardoc should have full feature parity matching onlyoffice-pdf-editor for important features like document rendering/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, plugin architecture and manager, pdf search, pdf page-thumbnails, bookmarks.
+- hardoc should have full feature parity matching onlyoffice-pdf-editor for important/major features like document rendering/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, plugin architecture and manager, pdf search, pdf page-thumbnails, bookmarks.
 
 - you have worked on this several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. 
 
@@ -304,7 +308,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - please recheck migrated features and improve your implementation in hardoc. Analyze core data flow and implementation logic details for every major feature like document rendering/layout/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, thumbnails/bookmarks..., compare the implementation logic/code of hardoc with onlyoffice-pdf-editor logic/code to recheck and enhance the correctness of architecture and logic in hardoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in hardoc are correct, modular, extensible for long-term maintenance.
 
-- prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, thumbnails/bookmarks... in aichorage, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+- prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, selection range/offset/caret, undo/redo for editing, pdf annotations/highlights... in hardoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
 ## grist-office
 
@@ -316,12 +320,12 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 - please read and analyze git commits/code if you need, then explain to me what major features are in backbonejs webapp but missing in react webapp.
 
 - the following features can be planned, but implemention may be delayed if you want:
-1. Can be displayed on a static website with grist-static.
-2. A self-contained desktop app for viewing and editing locally: grist-desktop.
-3. Native forms. Create forms that feed directly into your spreadsheet.
-4. Sandboxing options for untrusted documents
-5. AI Formula Assistant 
-6. integrations to airtable/...
+01. Can be displayed on a static website with grist-static.
+02. A self-contained desktop app for viewing and editing locally: grist-desktop.
+03. Native forms. Create forms that feed directly into your spreadsheet.
+04. Sandboxing options for untrusted documents
+05. AI Formula Assistant 
+06. integrations to airtable/...
 
 - tech stack for react webapp needs to use open source libs/fwk:
   - use npm workspaces, typescript, reactjs(not vue), tailwindcss, zustand, no jquery/knockoutjs/backbone.
@@ -375,21 +379,21 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - the final goal is to implement a framework-agnostic, modular, extensible, headless ai ppt editing solution named `slaides` with features similar to `PPTist` to avoid the licensing issues. legacy vue code should be kept for reference only.
 - goals:
-1. re-architect slaides project to have a framework-agnostic headless core package, with react/vue ui binding package and appropriate utils package.
+01. re-architect slaides project to have a framework-agnostic headless core package, with react/vue ui binding package and appropriate utils package.
 - migrate PPTist's robust feature-rich ppt view/editing features to slaides, this is the most important feature, the goal is full feature parity for ppt view/editing, for example page zoom, Page Editing, Element/Images/Shapes Editing, Rich text editing, Slide Show...
-2. undo/redo support, friendly to collaboration.
-3. Import/export .pptx files, Export local files (PPTX, JSON, images, PDF).
-4. Mobile friendly: Basic editing, Basic preview, Play preview.
-5. migrate PPTist's ai editing solution to slaides, better to implement as a separate package: ai workflow, outline editing, use template, streaming-generation...
-6. a runnable demo/example should be provided.
+02. undo/redo support, friendly to collaboration.
+03. Import/export .pptx files, Export local files (PPTX, JSON, images, PDF).
+04. Mobile friendly: Basic editing, Basic preview, Play preview.
+05. migrate PPTist's ai editing solution to slaides, better to implement as a separate package: ai workflow, outline editing, use template, streaming-generation...
+06. a runnable demo/example should be provided.
 
 - the following features can be planned, but implemention may be delayed if you want:
 - the following features should be implemented if the core architecture is stable:
-1. table
-2. chart
-3. Formulas
-4. Audio, Video
-5. vue ui binding
+01. table
+02. chart
+03. Formulas
+04. Audio, Video
+05. vue ui binding
 
 - tech stack for project slaides needs to use open source libs/fwk:
   - projects/packages at `slaides` should use npm workspaces, typescript, reactjs(not vue), tailwindcss.
@@ -458,7 +462,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - you have worked on this several times but features are still lacking.
 
-- aichorage should have full feature parity matching jan for important features like llm search/download, running local gguf/mlx models, chat with local models or cloud llm api.
+- aichorage should have full feature parity matching jan for important/major features like llm search/download, running local gguf/mlx models, chat with local models or cloud llm api.
 
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 - make a plan, then migrate and improve full feature pairity, without licensing issues
@@ -486,7 +490,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 -------
 
-- unsloth-studio has very good support for openai-compatible api including v1/chat/completions and v1/ responses, you may reference it. it also support tool calls and chat templates, you may reference the code and rewrite it for aichorage.
+- unsloth-studio has very good support for openai-compatible api and gguf/mlx models, you may reference it. it also support tool calls and chat templates, you may reference the code and rewrite it for aichorage.
 
 - local model testing/running can be slow and take huge disk space. please recheck implementation logic related to model/llm-runtime-backend downloading and related tests, improve it by making the downloaded models/binary/resources cached locally, so that later testing/running can reuse it directly if already existed. improve the cache logic, and update related data-flow/tests, make sure the implementation is correct, robust, extensible without unnecessary redownloading.
 
@@ -518,12 +522,107 @@ you may use similar file/folder names instead of the same file/folder names as t
   - pros: 对使用本地已有工具的场景更友好
   - cons: 内置runtime方便支持多种格式如 /v1/chat/completions, /v1/responses
   - 参考很多主流开放性ai的产品如cursor/cherry-studio, 都支持用户配置api，所以通过平台/系统来管理本地的工具是非必要的
+
+## redmansion(vscode-obsidian/zotero)
+
+- goals
+  - ~~replace monaco with codemirror6~~ , 可替换的文本编辑器似乎价值不大
+  - obsidian rich-editor and plugin
+    - 如何兼容obsidian的plugin: 下载后 批量替换? 自动转换?
+    - popular: obsidian-homepage, obsidian-outliner, obsidian-iconize, obsidian-admonition
+  - obsidian bases
+  - Replace Monaco's core editing feature (text buffer, cursor, selection, basic operations) with CodeMirror v6, while keeping most existing VS Code code unchanged for easier future merges from main branch to feat/codemirror branch.
+
+- project `vscode` in current folder is a popular, open-source, powerful coding ide that provides editor, workbench, fileTree, global/in-file search, extension, cmd-palette, copilot-agent. 
+
+- codemirror v6 source code is at folder `~/gh-mirror/codemirror` for your reference.
+- text editor can be implemented with codemirrror v6, diff editor can be implemented with `@codemirror/merge` package at `~/gh-mirror/codemirror/merge`.
+
+- features/code that can be ignored: jsoncanvas
+
+### draft-redmansion
+
+- for the core editor, is it possible to use codemirror v6 to replace monaco editor by rewriting related logic with codemirror v6 state/view/plugin? 
+- https://code.visualstudio.com/api/extension-guides/custom-editors this doc shows vscode support custom editor, it seems a promising idea.
+
+- the final goal is to keep all exisitng vscode features working, just add a new `./scripts/redmansion.sh` like existing `./scripts/code.sh` to start the app with codemirror v6 editor.
+  - also add new `./scripts/redmansion-web.sh`
+- you should implement it in a way to make it easy to merge code changes from `main` branch to new `feat/codemirror` branch in the future, so please keep as many code from main branch unchanged as possible, most of codemirror related code/scripts should be designed as separate package or file without touching exising files.
+
+- analyze vscode source code and architecture/data-flow, deep-research the monaco-editor related features, then explain to me whether it is possible to replace/rewrite monaco editor with codemirror v6(replace the core editing feature first, other features can be planned but delayed.)
+
+- 
+- 
+- 
+- 
+- 
+- 
+
+### vscode-research
+
+- The custom editor API path is NOT viable. Custom editors use webviews (iframe isolation) which prevents synchronous model updates, direct access to decorations/diagnostics, native find/replace, undo/redo integration, and language service features. The only viable path is to replace the internal editor widget implementation.
+  - The custom-editor is an alternative editor association built on webviews and separate resolver inputs, not a drop-in replacement layer for the built-in text editor stack.
+
+- Can Stay Unchanged (Strong Abstractions)
+  - ITextModel (src/vs/editor/common/model.ts)
+  - Editor Input Layer (src/vs/workbench/common/editor/)
+  - Editor Groups (src/vs/workbench/services/editor/)
+  - Model Service (src/vs/editor/common/services/model.ts)
+  - BaseTextEditorModel (src/vs/workbench/common/editor/textEditorModel.ts)
+- Tight Coupling Points (Monaco Leaks Into Workbench)
+  - ICodeEditor / IDiffEditor interfaces (src/vs/editor/browser/editorBrowser.ts:606)
+  - CodeEditorWidget instantiation (src/vs/workbench/browser/parts/editor/textCodeEditor.ts:41)
+  - ICodeEditorService workbench wrapper (src/vs/workbench/services/editor/browser/codeEditorService.ts)
+  - Editor Options (src/vs/editor/common/config/editorOptions.ts)
+  - Type guards scattered throughout
+- Would Need Rewrite (Monaco-Specific Features, live in src/vs/editor/contrib/ and are Monaco-specific "contributions")
+  - bracketMatching, clipboard, codeAction, codeLens, colorPicker
+  - contextmenu, cursorUndo, dnd, find, folding, format
+  - gotoLine, hover, inPlaceReplace, indentLines, inlineHint
+  - inspectTokens, linesOperations, linkedEditing, message
+  - multicursor, parameterHints, placeholder, quickCommand
+  - quickOutline, referencesSearch, rename, selectionHighlight
+  - snippet, suggest, wordHighlighter, wordOperations, etc.
+- Strategy for Phase 1: Implement core editing only. Defer these features. They map to CodeMirror extensions, but reimplementing them all is Phase 2+ work.
+
+- Implementation Strategy: Minimal Existing-File Changes
+  - Create a parallel implementation alongside Monaco, then add minimal abstraction points in existing files to wire in CodeMirror
+  - Approach: Implement ICodeEditor Interface with CodeMirror Backend
+
+- Verification: Phase 1 Success Criteria
+  01.  Open text file — File loads, text displays correctly in CodeMirror widget
+  02.  Edit text — Typing, insertion, deletion work, content syncs to ITextModel
+  03.  Undo/redo — CodeMirror's history extension integrated with VS Code's undo stack
+  04.  Save file — ITextModel content saves correctly (model independent of editor)
+  05.  Cursor/selection — Cursor moves, selections work, events emit correctly
+  06.  View state — Close and reopen file restores cursor position, scroll position
+  07.  Split editor — Multiple views of same model work (ITextModel shared)
+  08.  Editor options — Font size, line numbers, readOnly config apply to CodeMirror
+  09.  Editor groups — Tabs, layout, groups work unchanged (Monaco-free layer)
+  10. Search in file — Basic find works (find contrib feature deferred to Phase 2)
+
+- Phase 2+: Monaco Contribution Features (Deferred)
+  - Each Monaco contribution in src/vs/editor/contrib/ maps to a CodeMirror extension
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # code-review 👀
 
 ```prompt
 
 for project hardoc, 
 please recheck migrated features and improve your implementation, make it runnable locally using npm without docker. Analyze core data flow and implementation logic details for major features, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations are correct, modular, extensible for long-term maintenance.
+- docs/tests/scripts might be outdated, recheck code and data flow to improve ailovedoc.
 
 please recheck migrated features and implementations for possible licensing issues. if the code is too similar to upstream, you can adjust the risking code to avoid licensing issues. if features are already migrated under different names, it is unnecessary to design it as a standalone/separate tool as the upstream did, this also helps to avoid licensing issues.
 

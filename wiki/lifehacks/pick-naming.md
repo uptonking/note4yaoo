@@ -34,7 +34,7 @@ modified: 2020-12-06T13:05:51.375Z
 # variables
 - prefix
   - is, has, should, min/max, prev/next
-    - ~~enable~~, ~~does~~(exists)
+    - ~~enable~~, ~~does~~ (exists)
   - 示例：isDisabled, isLoading
 
 - We always use `Is` for any method that will return a `boolean`, so in this case we would call the method `IsExistingAccount(id)` instead of `AccountExists(id)`
@@ -61,6 +61,9 @@ modified: 2020-12-06T13:05:51.375Z
   - bamboo shoots 竹笋
 - cactus
   - 仙人掌
+
+- remansion
+- redream
 # ref
 - https://github.com/kettanaito/naming-cheatsheet
   - Comprehensive language-agnostic guidelines on variables naming.

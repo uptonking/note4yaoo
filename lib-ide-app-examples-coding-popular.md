@@ -476,6 +476,13 @@ modified: 2025-12-11T18:10:23.710Z
     - Native integration with Claude Code's experimental Agent Teams feature for spawning and coordinating multiple Claude instances.
   - Extensible Plugin System - Add custom capabilities with the plugin SDK. Create workers, hooks, providers, and security modules. Share plugins via the decentralized IPFS marketplace.
 
+- https://github.com/leaningtech/browsercode /apache2/202605/svelte/ts
+  - https://browsercode.io/
+  - A BrowserPod-based solution to embed AI coding CLIs in web applications.
+  - 似乎核心未开源
+  - https://x.com/Barret_China/status/2055564356168098266
+    - 看了下这个仓库，开源的是产品的壳子，跑在浏览器的也是 wasm，不过这部分代码没开源出来。
+
 ### claude-plugins
 
 - https://github.com/tokenRollAI/acplugin /MIT/202603/ts

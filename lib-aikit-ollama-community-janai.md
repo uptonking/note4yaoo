@@ -27,7 +27,7 @@ modified: 2026-01-14T19:05:15.969Z
     - 💡 可参考 tansformer-app 用python重写
   - unsloth-studio: llama-server/transformer
   - llamafarm: lemonade(cpp) + ui
-  - omlx: mlx-lm + ui(PyObjC)
+  - omlx: mlx-lm + ui(PyObjC), 可参考迁移更多feature
 # draft
 - janai-cli like obsidian-cli, ollama-cli, lms-cli
   - skills for janai-cli

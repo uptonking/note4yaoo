@@ -15,7 +15,13 @@ modified: 2024-01-23T02:52:23.932Z
   - ?
 
 - features
-  - ?
+  - filetree, file-properties, search, file-recovery, note-merge/split, quick switcher, workspaces
+  - backlinks, bases, bookmarks, outline, page-preview, footnotes, slash commands, outgoing-links, web viewer
+  - canvas, slides, daily-notes, graph-view, tags view, 
+  - templates
+  - command-palette
+  - publish
+  - sync
 # draft
 
 # pm

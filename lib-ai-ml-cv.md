@@ -53,6 +53,20 @@ modified: 2026-02-19T14:38:28.823Z
   - https://trackers.roboflow.com/
   - Plug-and-play multi-object tracking for any detection model.
 
+# discuss-models-object-detection
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I am working on porting SAM models and harness into Apple silicon. 
+- https://x.com/neural_avb/status/2056094418013433895
+  - Already seeing 1.25x inference speed increase on mlx with the sam2.1-small model. Quantized versions soon.
+
+- Ive played with mlx vlm sam-3.1! I wanted to do some off the cuff experiments for a new project. I’m mainly doing it with Sam 2 and soon some grounding Dino and pointing models.
 # discuss
 - ## 
 

@@ -1081,6 +1081,13 @@ modified: 2025-02-21T18:20:42.624Z
   - 登录认证：Google / GitHub Social OAuth，AWS IAM Identity Center（BuilderId / Enterprise）
   - Kiro 集成：切换账号、同步模型 / 代理 / MCP / Steering / Skills / Hooks / Custom Agents / Powers
   - 网关能力：内置 Kiro API Gateway，支持 Anthropic Messages、OpenAI Responses、Chat Completions 与流式转发
+  - [能不能配置支持kiro-cli管理呢？ _202601](https://github.com/hj01857655/kiro-account-manager/issues/19)
+    - 我看是一个sqlite3的配置文件。
+    - kiro-cli 运行在 WSL 环境中，配置文件位于 WSL 文件系统（~/.kiro-cli/config.db\）。
+    - 本工具是 Windows 原生应用，无法直接访问 WSL 文件系统，因此无法支持 kiro-cli 的账号管理。 如需管理 kiro-cli 账号，请使用 kiro-cli 自带的命令行工具。
+  - [有支持无头模式的计划吗，docker或者cli都可以 _202603](https://github.com/hj01857655/kiro-account-manager/issues/30)
+    - 当前项目仍以桌面版 Tauri 应用为主，短期内没有正式落地无头模式 / Docker / CLI 的计划，所以先按 not planned 关闭。 
+    - 如果后面要做，比较合理的方向会是把账号管理核心逻辑拆成独立 CLI 或后台服务，而不是直接把现有桌面壳硬改成无头模式。
 
 - https://github.com/chaogei/Kiro-account-manager /AGPL/202605/ts
   - Quick account switching, auto token refresh, group/tag management, machine ID management and more

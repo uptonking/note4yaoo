@@ -171,7 +171,18 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## 不妨探讨一下 CS 专业应该如何避免被 agent 替代：
+- https://x.com/sheriyuo/status/2055686645224264073
+  1. 不会被替代型：纯刷题应试后考公 / 教培，去当蓝领 / 做服务业 / 自媒体，青托青基海优深耕学术界多年
+  2. 100M context 型：AI Infra / Data Infra / system / 运维，你做的方向需要越多的文档越好，你的实验 agent 越无法自主跑越好
+  3. 杀死所有人型：成为 LLM 领域的佼佼者，带着一大车 paper 去做 AI foundation，你就是 Top 0.1%
+  4. 没必要替代型：做量化 / AI 产品 / 创业 / AI 交叉学科
+- 如何精准被 agent 替代：
+  1. 不会用 agent，还在古法编程，觉得 chat 足够了
+  2. 只会纯做题刷题应试，缺乏对 AI 的理解，面试一问就挂
+  3. 用不起、不舍得用 agent，反正自己不需要
+  4. 一无所知，并不知道自己背后是什么，我只是一个学生
+  5. 只会焦虑要失业，每天摆烂
 
 - ## 🤔 「在现有软件或新软件里集成 agent」是误区和思维定式，「在通用 agent 里集成软件」才是王道和大势所趋
 - https://x.com/dexteryy/status/2053107385208861115
@@ -1021,6 +1032,22 @@ modified: 2026-02-20T17:36:40.796Z
 
 - Correct, but you can’t actually finish the spec without writing and testing code.
   - Doesn't have to be a spec spec! just enough of a thing that the intent part is clear. Not waterfall level of spec for sure.
+# discuss-ai-resources-copyright
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Nvidia contacted Anna's Archive to access books | Hacker News _202601](https://news.ycombinator.com/item?id=46677628)
+- Yes, it's been discussed many times before. All the corporations training LLMs have to have done a legal analysis and concluded that it's defensible. Even one of the white papers commissioned by the FSF ( "Copyright Implications of the Use of Code Repositories to Train a Machine Learning Model" at https://www.fsf.org/licensing/copilot/copyright-implications... ), concluded that using copyrighted data to train AI was plausibly legally defensible and outlined the potential argument. You will notice that the FSF has not rushed out to file copyright infringement suits even though they probably have more reason to oppose LLMs trained on FOSS code than anyone else in the world.
+
+- Considering AA gave them ~500TB of books, which is astonishing (very expensive to even store for AA), I wonder how much nvidia paid them for it? It has to be atleast close to half a million?
+
+- I'm wondering what Amazon is planning to do with their access to all those Kindle books.
+  - Anna’s Archive: ~61.7 million “books” (plus ~95.7M papers) as of January 2026
+  - Amazon Kindle: “over 6 million titles” as of March 2018
+  - Hard to compare because AA contains duplicates, and the Kindle number is old, but at a glance it seems AA wins.
 # discuss-ai-pm
 - ## 
 

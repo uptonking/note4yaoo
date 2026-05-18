@@ -490,6 +490,7 @@ modified: 2021-07-20T13:50:23.433Z
   - monaco-diff
 - vscode 
   - obsidian
+- directus supports update db without restarting
 
 - handsontable: database, grist
 - grist: ember to agnostic/react

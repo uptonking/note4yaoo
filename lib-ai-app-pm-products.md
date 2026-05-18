@@ -70,6 +70,7 @@ modified: 2025-03-22T16:10:24.856Z
   - cost: unlimited tokens, local models支持超大context, 利用本地模型ocr/文生图
     - 文本模型有很多api提供商可选择，ocr模型的api可选择的不多，定制模型只能本地运行
     - 简单的 tool call 使用本地模型更高效, 可考虑将tool call小模型内置在软件中
+    - 将本地token与移动/联通/电信的套餐做对比
   - openclaw比manus更火的原因，是支持在本地自动化执行任务，而不是云端
   - 多模态的场景，本地可以对图片预处理，如压缩、裁剪、base64编码
   - 🤔 能充分利用本地文件系统和命令行的资源，进行数据分析/文件修改/...
@@ -263,7 +264,7 @@ modified: 2025-03-22T16:10:24.856Z
 - 
 
 # draft
-- 2b-ai
+- toB-ai
   - 企业需要支持快速集成现有系统、权限、日志审计
 
 - editor-heavy
@@ -271,7 +272,13 @@ modified: 2025-03-22T16:10:24.856Z
   - ooxml editing
   - agentfs
 
-- rewrite open-canvas with langgraph
+- translation
+  - 基于ai的翻译对比阅读
+  - 对比阅读pdf的 原文 和 译文
+
+- rewrite 
+  - ✨ replace vscode with codemirror, compatible with obsidian
+  - open-canvas with langgraph
 
 - token-router/gateway
   - 分享本地的GPU、token，类似的项目有分享画图gpu，但如何分享token还未流行

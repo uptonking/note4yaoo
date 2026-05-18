@@ -100,6 +100,22 @@ modified: 2024-08-24T16:15:47.613Z
 - Microsoft has been very clear about their business model of VSCode -- similar to Chromium, the base product is free and you can do whatever you want, but extension marketplace/remote/GitHub Copilot are proprietary.
 
 - they have a number of "inline completion" APIs standardized as both VSCode APIs and LSP protocol (upcoming).
+# discuss-vscode-architecture
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Why VS Code should switch to CodeMirror for default text editing abilities _202105](https://github.com/microsoft/vscode/issues/123826)
+-  Our plan is to continue with the monaco editor and to improve the support for mobile, this will be significant less effort than to replace the entire editor implementation.
+
+- ## [Using the Monaco Editor in a browser without VSCode _201511](https://github.com/microsoft/vscode/issues/446)
+  - the open sourcing of VS Code is the first time the source code of the Monaco editor has been made public.
+  - Can someone please provide some documentation on using the Monaco Editor in a web site, or perhaps release the source code of TypeScript Playground 
+
+- GHEdit is a project that has "ported" large sections VSCode to run in a browser. 
+  - https://github.com/spiffcode/ghedit 
 # discuss
 - ## 
 

@@ -400,6 +400,10 @@ mineru paddleocr site:github.com -inurl:"github.com/opendatalab/" -inurl:"github
 - https://github.com/cinit/TMoe /GPL/202602/java/kotlin
   - 一个兼容若干第三方开源 Telegram 客户端的开源 Xposed 模块
   - 激活本模块后，在 Telegram 客户端的设置中点击 "TMoe 设置" 即可开关对应功能。
+
+- [离大谱，装telegram居然必须安装gnome桌面 - LINUX DO _202605](https://linux.do/t/topic/2196366)
+  - 可在kde下使用，但无法在kde下移除gnome
+  - telegram开发用了gnome来做ui吧, 也算正常, 毕竟linux的ui生态很难评
 # discord
 - [Use SOCKS5 proxy with Discord on Linux](https://gist.github.com/mzpqnxow/ca4b4ae0accf2d3b275537332ccbe86e)
 
