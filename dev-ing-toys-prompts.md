@@ -18,7 +18,7 @@ modified: 2026-04-11T01:31:17.720Z
 - ai容易工作一小段时间就停止然后提示你next, 有时候感觉是无底洞
   - /goal 可以让ai专注于目标
 
-- ❓ 有些提示词输入错误或复制粘贴错位会导致llm始终保持错误的指令/记忆
+- ❓ 有些提示词不小心输入错误或复制粘贴错位会导致llm始终保持错误的指令/记忆
 
 - 
 - 
@@ -28,131 +28,36 @@ modified: 2026-04-11T01:31:17.720Z
 - 
 
 - code-port/translation
-  - 也行直接给明确的转译代码指令比模糊的rewrite更有效
+  - 也可直接给明确的转译代码指令比模糊的rewrite更有效
 # prompts 🔠
 
-## ilove-image(stirling-image)
+## begonia(superdoc/ailovedoc)
 
-- codebase
-  - a client/server app
-  - the backend handles uploads, auth, SQLite, pipelines, tool execution, AI bridge calls, and serves the built SPA
+project `superdoc` at folder `../superdoc` implemented renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed.
+- the final goal is to implement a new ai docx editing solution named `begonia` similar to `superdoc` in current folder to avoid the licensing issues.
+- begonia should be implemented in a modular and extensible architecture for core features like rendering and editing, with functional programming style.
 
-git repo `./ilove-image` is several commits behind `./ilove-stirling-image` . ilove-image has MIT license, while ilove-stirling-image has GPL license. 
-the goal is to migrate major features from ilove-stirling-image to ilove-image. 
-
-please analyze git commits and code if you need, then explain to me what major features are in stirling-image but missing in ilove-image.
-
-- please make migrations to ilove-image. 
-- the following 2 features can be ignored:
-01. HEIC/HEIF input and output
-02. CUDA Docker variant can be ignored. Lite Docker variant should be migrated.
-03. any features you feel unimportant or redundant can be ignored too
-- feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation work, but without licensing issues.
-- in your implementation, you can also improve the code logic for features and make your implementation clean and extensible. tests are not necessary for your implementation, but you can write some important tests if you want. do not write too many tests, if logic is simple/clear, skipping tests is ok. 
-
-- please rename all local packages whose names start with "@stirling-image/" to "@datalking/", for example "@stirling-image/image-engine" should be renamed to "@datalking/image-engine". then update related code/tests/scripts. make sure project and tests still runs with no error using npm, without docker.
-
-- you have migrated/reimplemented some features from ilove-stirling-image to ilove-image. 
-
-- for important features, the goal is to achieve full feature pairity or even better.
-
-- please refactor code structure in ilove-image project to use similar architecture and code structure as ilove-stirling-image without licensing issue, to make it easy to migrate more features in the future. 
-
-please recheck migrated features and improve your implementation in ilove-image, make it runnable locally with npm. make sure implementation is correct and extensible.
-
-- research and make a full plan, then implement ilove-image to match major features of ilove-stirling-image, or even better than ilove-stirling-image, without licensing issues.
-
-## ilove-pdf(bentopdf)
-
-- codebase
-  - a client-side-only PDF app, not a client/server architecture
-  - Core PDF work is done with browser libraries and browser runtimes like pdf-lib, pdfjs-dist, tesseract.js, and qpdf.wasm
-
-git repo `./ilove-pdf` is several commits behind `../ilove-bentopdf` . ilove-pdf has MIT license, while ilove-bentopdf has GPL license. 
-the goal is to migrate major features from ilove-bentopdf to ilove-pdf. 
-
-please analyze git commits and code if you need, then explain to me what major features are in ilove-bentopdf but missing in ilove-pdf.
-
-- please make migrations to ilove-pdf. 
-- the following 8 features should be migrated:
-01. dynamic WASM loading
-02. bookmarks / TOC / page labels / Bates
-03. attachment extract/edit
-04. overlay/underlay
-05. better Compare PDFs
-06. better OCR
-07. better Image/PDF UX
-08. features: divide pages, extract images, prepare PDF for AI, PDF layers
-- other features can be ignored: 
-01. Forms and signing, digital signature / validation / timestamp
-02. Big conversion expansion, many Office, email converters, but you can migrate some if you want 
-03. Workflow/automation
-04. repair PDF
-05. Encryption
-06. PDF to PDF/A, PDF booklet,ebook, deskew, font-to-outline, rasterize PDF, ...
-07. any features you feel unimportant or redundant can be ignored
-- feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation work, but without licensing issues.
-- in your implementation, you can also improve the code logic for features and make your implementation clean and extensible. tests are not necessary for your implementation, but you can write some important tests if you want. do not write too many tests, if logic is simple/clear, skipping tests is ok. 
-
-- please recheck the migrations and improve implementation for the the following features:
-01. dynamic WASM loading
-02. PDF layers, overlay/underlay
-03. better OCR, make ocr robust
-04. better extract
-- these are the most important features now, the goal is to achieve full feature pairity or even better.
-- feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
-- in your implementation, you can also improve the code logic for features and make your implementation correct and extensible. tests are not necessary for your implementation.
-
-ocr is the most important feature in ilove-pdf project. 
-
-please recheck your migrated ocr features and implementation logic, make sure the logic is correct without licensing issues. improve the ocr logic to make it robust and extensible.
-
-- you have migrated/reimplemented some features from ilove-bentopdf to ilove-pdf. 
-
-please refactor code structure in ilove-pdf project to use similar architecture and code structure as ilove-bentopdf without licensing issue, to make it easy to migrate more features in the future. 
-
-you may deep research and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issue. 
-you may use similar file/folder names instead of the same file/folder names as the original. you may also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
-
-if migration/refactoring of similar code architecture as ilove-bentopdf is complicated, you can make a plan first, then migrate by the plan.
-
-now recheck migrated features and improve your implementation in ilove-pdf, make it runnable locally with npm. make sure implementation is correct and extensible.
-
-for the most important features like pdf compare and PDF layer, why are you always migrating and improving without full features matching the upstream? 
-you have improved several times, why is it always lacking features behind the upstream? what is the reason? 
-what should be done to macth the upstream? explain to me. if it it complicated, you can make a plan and discuss with me.
-
-- please deep research related code of ilove-bentopdf, then can you design a similar solution in ilove-pdf to achieve full feature parity?
-
-- research and make a full plan, then implement ilove-pdf to match major features of ilove-bentopdf, or even better than ilove-bentopdf, without licensing issues.
-
-## ailovedoc(superdoc)
-
-`../superdoc` implemented renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed.
-- the final goal is to implement a new ai docx editing solution named ailovedoc similar to superdoc in current folder to avoid the licensing issues.
-- ailovedoc should be implemented in a modular and extensible architecture for core features like rendering and editing, with functional programming style.
-
-- in superdoc, running `pnpm dev:super-editor` shows a mininal editor demo that supports to toggle pagination. running `pnpm dev` shows a powerful editor demo that supports to toggle pagination, zoomable, toolbars, sidebars. please migrate the examples to ailovedoc without licensing issues, and make it runnable locally in ailovedoc. you should migrate all superdoc examples/features to a standalone package at `apps/playground`, the basic ux can be a list of editor example names at left sidebar, when click one example name, the demo will show on the right.
+- in superdoc, running `pnpm dev:super-editor` shows a mininal editor demo that supports to toggle pagination. running `pnpm dev` shows a powerful editor demo that supports to toggle pagination, zoomable, toolbars, sidebars. please migrate the examples to begonia without licensing issues, and make it runnable locally in begonia. you should migrate all superdoc examples/features to a standalone package at `apps/playground`, the basic ux can be a list of editor example names at left sidebar, when click one example name, the demo will show on the right.
 
 - feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
 - in your implementation, you can also improve the code logic for features and make your implementation correct and extensible. tests are not necessary for your implementation.
 - the most important feature to implement at first step is ai editing with track change support, other features can be implemented later progressively. a runnable ai editing example with track change should be provided.
 - you may implement code architecture and structure similar to superdoc, but rewrite from scractch to avoid licensing issue. `EditorAdapter` is a good design, you should implement similar architecture. OOXML → ProseMirror handlers is powerful, you should implement your converter and handler by refrencing superdoc, but remember to avoid licensing issues. collaboration with yjs should be implemented. encryption/signing can be skipped now. you can reference as many superdoc code as possible, but remember to rewrite it to avoid license issue.
-- please analyze related code and architecture, make a plan and implement your ailovedoc project.
+- please analyze related code and architecture, make a plan and implement your begonia project.
 
-- please analyze git repo and code if you need, then explain to me what major features are in superdoc but missing in ailovedoc.
+- please analyze git repo and code if you need, then explain to me what major features are in superdoc but missing in begonia.
 
 - the most important feature is a powerful, robust, extensible, headless ai ooxml editing engine . 
 
-please refactor code structure in ailovedoc project to use similar architecture and code structure as superdoc, to make it easy to migrate more features in the future.
+please refactor code structure in begonia project to use similar architecture and code structure as superdoc, to make it easy to migrate more features in the future.
 
-please recheck migrated features and improve your implementation in project ailovedoc, make it runnable locally using npm without docker. Read core implementation logic details for major features, find possible bugs in code and fix them, make sure major features implementations are correct and extensible.
+please recheck migrated features and improve your implementation in project begonia, make it runnable locally using npm without docker. Read core implementation logic details for major features, find possible bugs in code and fix them, make sure major features implementations are correct and extensible.
 
-code at `./ailovedoc` should use npm workspaces, typescript, prosemirror, yjs.
+code at `./begonia` should use npm workspaces, typescript, prosemirror, yjs.
 
 please continue to migrate features related to ooxml editing with ai agent progressively. this is the most important feature. 
 
-recheck and migrate full features of pdf compare and layers to ailovedoc. 
+recheck and migrate full features of pdf compare and layers to begonia. 
 
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 
@@ -161,11 +66,11 @@ you have worked on this problem several times but features are still lacking. Th
 
 - to achieve full feature parity with superdoc, help me choose the best option for long-term.
 
-- you have migrated/reimplemented some features from superdoc to ailovedoc.
+- you have migrated/reimplemented some features from superdoc to begonia.
 
 - please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like superdoc for major features.
 
-- ailovedoc should have full feature parity matching superdoc for important/major features like document data-model, layout-engine(supports multi-column), toggling pagination, virtualized-rendering, zoom, editing engine, rich-text formatting, track-change.
+- begonia should have full feature parity matching superdoc for important/major features like document data-model, layout-engine(supports multi-column), toggling pagination, virtualized-rendering, zoom, editing engine, rich-text formatting, track-change.
 
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 - make a plan, then migrate and improve full feature pairity, without licensing issues
@@ -174,7 +79,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 - the most important feature is a powerful, robust, extensible, headless ai ooxml editing engine with track change support .
 
-- please deep research superdoc, is superdoc's solution for related feature/problem good enough? if yes, can you design a similar solution in ailovedoc to improve it? 
+- please deep research superdoc, is superdoc's solution for related feature/problem good enough? if yes, can you design a similar solution in begonia to improve it? 
 
 - you have worked on this several times but features are still lacking. They are the most important features at this moment. DO NOT stop untill you achieve full feature parity. 
 
@@ -184,27 +89,29 @@ you have worked on this problem several times but features are still lacking. Th
 - you may design feature parity docs at `upstream/superdoc/reports`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream superdoc should be put in folder `upstream`. you may even design a script to automate it.
 - feature parity docs may be outdated, please read related code and recheck/update.
 
-- research and make a full plan, then implement ailovedoc to match major features of superdoc, or even better than superdoc, without licensing issues.
+- research and make a full plan, then implement begonia to match major features of superdoc, or even better than superdoc, without licensing issues.
 
 ------
 
 - yes, continue to improve.
-- you may reference how superdoc implements/solves it, then do a similar or better implementation in ailovedoc without licensing issue.
+- you may reference how superdoc implements/solves it, then do a similar or better implementation in begonia without licensing issue.
 
-- superdoc's overall architecture is good enough to follow. Mostly ailovedoc should use similar architecture to superdoc.
+- superdoc's overall architecture is good enough to follow. Mostly begonia should use similar architecture to superdoc.
 
-- please recheck migrated features and improve your implementation in ailovedoc. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment..., compare the implementation logic/code of ailovedoc with superdoc logic/code to recheck and enhance the correctness of architecture and logic in ailovedoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in ailovedoc are correct, modular, extensible for long-term maintenance. 
-- prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment... in ailovedoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+- please recheck migrated features and improve your implementation in begonia. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment..., compare the implementation logic/code of begonia with superdoc logic/code to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
+- prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment... in begonia, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
-- docs/tests/scripts might be outdated, recheck code and data flow to improve ailovedoc.
+- docs/tests/scripts might be outdated, recheck code and data flow to improve begonia.
 
-- please recheck migrated features and improve your implementation in ailovedoc. Analyze core data flow and implementation logic details for every major feature , compare the implementation logic/code of ailovedoc with superdoc logic/code to recheck and enhance the correctness of architecture and logic in ailovedoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in ailovedoc are correct, modular, extensible for long-term maintenance. recheck and improve major features/architecture in ailovedoc, make them correct and robust without guessing, the fewer bugs, the better.
+- please recheck migrated features and improve your implementation in begonia. Analyze core data flow and implementation logic details for every major feature , compare the implementation logic/code of begonia with superdoc logic/code to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. recheck and improve major features/architecture in begonia, make them correct and robust without guessing, the fewer bugs, the better.
 
-### draft-ailovedoc
+### draft-begonia
 
 - there are many smoke tests, it seems messy. can you refactor/redesign the tests as common units that are eaiser to maintain? 
 
 - import/export
+
+- the goal is to rename project name from `ailovedoc` to `begonia`, please rename all docs/code/scripts that are related to `ailovedoc` to new name `begonia`.
 
 ## hardoc(onlyoffice-pdf)
 
@@ -427,6 +334,9 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 ## aichorage(janai/tranfromerlab-app)
 
+- goals
+  - 重后端、弱前端
+
 - project jan(at folder `../jan`) is a apache2-licensed, local, powerful chatgpt-like tauri app that supports to Download and run LLMs, Connect to cloud llm api, install custom llm backend like custom llama.cpp.
 - project transformerlab-app(at folder `../all-runtime-llamacpp/transformerlab-app-electron`) is a AGPL-licensed electron app that supports to train, fine-tune, chat with your own model locally. it can be used to train/tune local model, but it also supports to import local models, install custom llm backend plugin, run and chat with local model.
 - project unsloth-studio(at folder `../unsloth`) is a AGPL-licensed webapp that supports to run and train text, audio, embedding, vision models on Windows, Linux and macOS. It supports to run local gguf/mlx models, but it cannot install custom llm backend. It also supports auto detect locally downloaded models in local huggingface-cache/ollama/lmstudio.
@@ -467,7 +377,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
 - make a plan, then migrate and improve full feature pairity, without licensing issues
 
-- please deep research jan, then can you design a similar solution in aichorage to improve it? is jan's solution good enough? if yes, solve it in a similar way for ailovedoc.
+- please deep research jan, then can you design a similar solution in aichorage to improve it? is jan's solution good enough? if yes, solve it in a similar way for begonia.
 
 - research and make a full plan, then implement aichorage to match major features of jan, or even better than jan, without licensing issues.
 
@@ -492,7 +402,9 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - unsloth-studio has very good support for openai-compatible api and gguf/mlx models, you may reference it. it also support tool calls and chat templates, you may reference the code and rewrite it for aichorage.
 
-- local model testing/running can be slow and take huge disk space. please recheck implementation logic related to model/llm-runtime-backend downloading and related tests, improve it by making the downloaded models/binary/resources cached locally, so that later testing/running can reuse it directly if already existed. improve the cache logic, and update related data-flow/tests, make sure the implementation is correct, robust, extensible without unnecessary redownloading.
+- local model testing/running can be very slow and take huge disk space.
+local model testing/running can be very slow.
+- please recheck implementation logic related to model/llm-runtime-backend downloading and related tests, improve it by making the downloaded models/binary/resources cached locally, so that later testing/running can reuse it directly if already existed. improve the cache logic, and update related data-flow/tests, make sure the implementation is correct, robust, extensible without unnecessary redownloading. 
 
 - recheck and improve it, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
 
@@ -527,10 +439,11 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - goals
   - ~~replace monaco with codemirror6~~ , 可替换的文本编辑器似乎价值不大
-  - obsidian rich-editor and plugin
-    - 如何兼容obsidian的plugin: 下载后 批量替换? 自动转换?
-    - popular: obsidian-homepage, obsidian-outliner, obsidian-iconize, obsidian-admonition
-  - obsidian bases
+  - 📈 obsidian bases: with agentfs
+  - obsidian rich-editor and plugin: 内置了很多核心插件(实现方式不一定是插件，只提供了开关)如filetree/search/backlinks/bases, canvas, slides, graph-view
+    - 如何兼容obsidian的plugin: 下载后 批量替换api? 自动转换?
+    - 第三方插件: obsidian-homepage, obsidian-outliner, obsidian-iconize, obsidian-admonition
+  - knowledge-base
   - Replace Monaco's core editing feature (text buffer, cursor, selection, basic operations) with CodeMirror v6, while keeping most existing VS Code code unchanged for easier future merges from main branch to feat/codemirror branch.
 
 - project `vscode` in current folder is a popular, open-source, powerful coding ide that provides editor, workbench, fileTree, global/in-file search, extension, cmd-palette, copilot-agent. 
@@ -541,6 +454,8 @@ you may use similar file/folder names instead of the same file/folder names as t
 - features/code that can be ignored: jsoncanvas
 
 ### draft-redmansion
+
+- 对vscode-editor的修改是否会导致不兼容 coder-server
 
 - for the core editor, is it possible to use codemirror v6 to replace monaco editor by rewriting related logic with codemirror v6 state/view/plugin? 
 - https://code.visualstudio.com/api/extension-guides/custom-editors this doc shows vscode support custom editor, it seems a promising idea.
@@ -616,13 +531,107 @@ you may use similar file/folder names instead of the same file/folder names as t
 - 
 - 
 
+## ilove-image(stirling-image)
+
+- codebase
+  - a client/server app
+  - the backend handles uploads, auth, SQLite, pipelines, tool execution, AI bridge calls, and serves the built SPA
+
+git repo `./ilove-image` is several commits behind `./ilove-stirling-image` . ilove-image has MIT license, while ilove-stirling-image has GPL license. 
+the goal is to migrate major features from ilove-stirling-image to ilove-image. 
+
+please analyze git commits and code if you need, then explain to me what major features are in stirling-image but missing in ilove-image.
+
+- please make migrations to ilove-image. 
+- the following 2 features can be ignored:
+01. HEIC/HEIF input and output
+02. CUDA Docker variant can be ignored. Lite Docker variant should be migrated.
+03. any features you feel unimportant or redundant can be ignored too
+- feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation work, but without licensing issues.
+- in your implementation, you can also improve the code logic for features and make your implementation clean and extensible. tests are not necessary for your implementation, but you can write some important tests if you want. do not write too many tests, if logic is simple/clear, skipping tests is ok. 
+
+- please rename all local packages whose names start with "@stirling-image/" to "@datalking/", for example "@stirling-image/image-engine" should be renamed to "@datalking/image-engine". then update related code/tests/scripts. make sure project and tests still runs with no error using npm, without docker.
+
+- you have migrated/reimplemented some features from ilove-stirling-image to ilove-image. 
+
+- for important features, the goal is to achieve full feature pairity or even better.
+
+- please refactor code structure in ilove-image project to use similar architecture and code structure as ilove-stirling-image without licensing issue, to make it easy to migrate more features in the future. 
+
+please recheck migrated features and improve your implementation in ilove-image, make it runnable locally with npm. make sure implementation is correct and extensible.
+
+- research and make a full plan, then implement ilove-image to match major features of ilove-stirling-image, or even better than ilove-stirling-image, without licensing issues.
+
+## ilove-pdf(bentopdf)
+
+- codebase
+  - a client-side-only PDF app, not a client/server architecture
+  - Core PDF work is done with browser libraries and browser runtimes like pdf-lib, pdfjs-dist, tesseract.js, and qpdf.wasm
+
+git repo `./ilove-pdf` is several commits behind `../ilove-bentopdf` . ilove-pdf has MIT license, while ilove-bentopdf has GPL license. 
+the goal is to migrate major features from ilove-bentopdf to ilove-pdf. 
+
+please analyze git commits and code if you need, then explain to me what major features are in ilove-bentopdf but missing in ilove-pdf.
+
+- please make migrations to ilove-pdf. 
+- the following 8 features should be migrated:
+01. dynamic WASM loading
+02. bookmarks / TOC / page labels / Bates
+03. attachment extract/edit
+04. overlay/underlay
+05. better Compare PDFs
+06. better OCR
+07. better Image/PDF UX
+08. features: divide pages, extract images, prepare PDF for AI, PDF layers
+- other features can be ignored: 
+01. Forms and signing, digital signature / validation / timestamp
+02. Big conversion expansion, many Office, email converters, but you can migrate some if you want 
+03. Workflow/automation
+04. repair PDF
+05. Encryption
+06. PDF to PDF/A, PDF booklet,ebook, deskew, font-to-outline, rasterize PDF, ...
+07. any features you feel unimportant or redundant can be ignored
+- feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation work, but without licensing issues.
+- in your implementation, you can also improve the code logic for features and make your implementation clean and extensible. tests are not necessary for your implementation, but you can write some important tests if you want. do not write too many tests, if logic is simple/clear, skipping tests is ok. 
+
+- please recheck the migrations and improve implementation for the the following features:
+01. dynamic WASM loading
+02. PDF layers, overlay/underlay
+03. better OCR, make ocr robust
+04. better extract
+- these are the most important features now, the goal is to achieve full feature pairity or even better.
+- feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
+- in your implementation, you can also improve the code logic for features and make your implementation correct and extensible. tests are not necessary for your implementation.
+
+ocr is the most important feature in ilove-pdf project. 
+
+please recheck your migrated ocr features and implementation logic, make sure the logic is correct without licensing issues. improve the ocr logic to make it robust and extensible.
+
+- you have migrated/reimplemented some features from ilove-bentopdf to ilove-pdf. 
+
+please refactor code structure in ilove-pdf project to use similar architecture and code structure as ilove-bentopdf without licensing issue, to make it easy to migrate more features in the future. 
+
+you may deep research and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issue. 
+you may use similar file/folder names instead of the same file/folder names as the original. you may also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
+
+if migration/refactoring of similar code architecture as ilove-bentopdf is complicated, you can make a plan first, then migrate by the plan.
+
+now recheck migrated features and improve your implementation in ilove-pdf, make it runnable locally with npm. make sure implementation is correct and extensible.
+
+for the most important features like pdf compare and PDF layer, why are you always migrating and improving without full features matching the upstream? 
+you have improved several times, why is it always lacking features behind the upstream? what is the reason? 
+what should be done to macth the upstream? explain to me. if it it complicated, you can make a plan and discuss with me.
+
+- please deep research related code of ilove-bentopdf, then can you design a similar solution in ilove-pdf to achieve full feature parity?
+
+- research and make a full plan, then implement ilove-pdf to match major features of ilove-bentopdf, or even better than ilove-bentopdf, without licensing issues.
 # code-review 👀
 
 ```prompt
 
 for project hardoc, 
 please recheck migrated features and improve your implementation, make it runnable locally using npm without docker. Analyze core data flow and implementation logic details for major features, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations are correct, modular, extensible for long-term maintenance.
-- docs/tests/scripts might be outdated, recheck code and data flow to improve ailovedoc.
+- docs/tests/scripts might be outdated, recheck code and data flow to improve begonia.
 
 please recheck migrated features and implementations for possible licensing issues. if the code is too similar to upstream, you can adjust the risking code to avoid licensing issues. if features are already migrated under different names, it is unnecessary to design it as a standalone/separate tool as the upstream did, this also helps to avoid licensing issues.
 
@@ -677,7 +686,7 @@ yes, continue to refactor and improve towards more functional-programming style
 
 
 ```prompt
-for project ailovedoc, please refactor code structure if you need, to make sure all source code and tests files should have less than **700** lines of code(other code-unrelated or unimportant files are not required). because if too many code exists in a single file, it will be hard to maintain. small files and modular architecture are always preferred.
+for project begonia, please refactor code structure if you need, to make sure all source code and tests files should have less than **700** lines of code(other code-unrelated or unimportant files are not required). because if too many code exists in a single file, it will be hard to maintain. small files and modular architecture are always preferred.
 
 please refactor code to migrate from pnpm to npm.
 please keep as many code as possible unchanged, so most bun scripts and code should be kept for backward compatibility, but bun wont be used any more. bun code should not be removed. you should create new script for nodejs or add new entrypoint for nodejs. now update your plan.

@@ -489,8 +489,7 @@ modified: 2021-07-20T13:50:23.433Z
 - codemirror
   - monaco-diff
 - vscode 
-  - obsidian
-- directus supports update db without restarting
+  - obsidian(plugin价值不大， 可实现bases)
 
 - handsontable: database, grist
 - grist: ember to agnostic/react
@@ -522,6 +521,7 @@ modified: 2021-07-20T13:50:23.433Z
 
 - 🛝 later
   - rewrite discourse with apache-answer
+- directus supports update db without restarting
 
 - 
 - 

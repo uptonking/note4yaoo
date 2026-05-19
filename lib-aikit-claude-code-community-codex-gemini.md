@@ -137,10 +137,53 @@ codex --yolo resume --last
 
 - https://x.com/bozhou_ai/status/2052596459753914446
   - 直接调 Responses API，云端工具（网页搜索、代码解释器）开箱即用，输出 JSON/YAML 可以管道接 jq、grep，图像生成和语音转录也都是单行命令
+# discuss-cli-agent-tools
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 感觉现在的IDE、Coding Agent客户端做了一堆，其实都无法代替tmux的工作区持久化、长时间任务不怕误关闭等功能。为什么Coding Agent不围绕tmux来构建人机交互呢？
+- https://x.com/yetone/status/2056273108143862011
+  - 可能tmux的上手门槛还是高了一点点，主要是要记忆一堆快捷键。
+- 用户：我都关了软件了怎么还一直占我 CPU 内存啊
+
+- tmux capture-pane 这个点很真，日志和另一个 session 的上下文不用再靠人肉转述，agent 更像是在同一个操作台里干活。
+
+- Claude Code 半年前发 team agent 有利用 tmux 给每个 pane 发 send-keys 通信。在最新的 agent view 中还是老老实实做了新的 tui
+
+- 完全是的！我发现用 Tmux 的一个好处，就是 Coding Agent 会主动使用 tmux capture-pane 去获取别的 tmux window 甚至别的 tmux session 里的内容，从而获得更多的更准确的上下文。 比如： 1. debug 某个后端的错误日志 2. 去跟别的 Coding Agent 的 session 进行联动 这都是 Tmux 自然而然的用法，而且现在的 LLM 都用得很丝滑。
+  - claude agent view 已经把这部分吃掉了，tmux 回到了看监控日志的地位。 我指的工作区持久化、长时间任务不怕误关闭以及切窗口。联动这个应该直接偷窥下别人文件夹里的 jsonl 就行了（我的习惯）
+
+- tmux -CC 可以更强大，直接恢复多个窗口，远程开发可以跟本地一样的体验
+
+- tmux的ux就是纯粹的垃圾，这种东西是没有办法普及给大众用户的，折腾了这么久最后我退化到只有跑深度学习训练才开tmux，其他一律不开，终端持久化也没啥特别重要的意义
+
+- 因为围绕tmux来构建人机交互根本不需要构建，tmux直接硬控。我就是tmux硬控，让pane A的agent直接run tmux send-keys和tmux capture-pane来给另一个pane的agent发消息，或者看对方在干嘛。而且这么用一阵子，直接让它写个tmux skill就行了
+
+- tmux在解决一个问题的同时又带来很多新问题，例如和macOS touchID & clickable link的兼容性 
 # discuss-alternatives
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 [Nanocoder vs Pi, a comparison from the people who build Nanocoder. : r/nanocoder _202605](https://www.reddit.com/r/nanocoder/comments/1tgmnof/nanocoder_vs_pi_a_comparison_from_the_people_who/)
+  - Pi started as a solo MIT-licensed project by Mario Zechner (creator of libGDX) and was recently acquired by Earendil, a VC-backed company. It ships a deliberately minimal core that you extend. 
+  - Nanocoder is built by a community collective and ships the features you need out of the box. The bigger difference is who each project ultimately answers to.
+  - Pi itself is MIT-licensed and the team at Earendil have been refreshingly transparent about their plans. They've published an RFC explaining that the core will stay MIT and that commercial offerings will sit on top. The roadmap has to support a business model, and at some point "what users need" and "what we need to monetise" can stop being the same question.
+  - Nanocoder is built by the Nano Collective (https://nanocollective.org), a not-for-profit, community-driven group. No VC, no cap table, no exit pressure. The roadmap is public and contributor-led.
+  - Pi's minimalism is intentional philosophy, not oversight. Mario and Armin Ronacher have both written at length about why Pi deliberately omits MCP, sub-agents, and a built-in plan mode UI. They think those features create context bloat and observability problems. If you agree with that view, Pi is built for you. 
+  - Nanocoder takes the opposite position: a local-first coding agent should be useful the moment you install it.
+  - Nanocoder treats local models seriously. Ollama is a first-class provider. The TUI is built with React and Ink, with four built-in modes (normal, auto-accept, yolo, plan), MCP servers loaded from config, subagent primitives, session autosave, and file snapshots for recovery.
+
+- How is the system prompt/speed for local models, that was the biggest draw to Pi for me.
+  - A tune command, this allows you to set things like tool profile and default system prompt length to better support small local models
+  - Custom system prompt - you can of course set your own
 
 - ## [没用过claude code，用起来和open code有啥区别？ _202602](https://linux.do/t/topic/1636505)
 - 自己上手体验下就好嘛, 这东西搞一下又不麻烦
@@ -575,6 +618,22 @@ plan_mode_reasoning_effort = "high"
   - that works for cli, but not for vscode codex entension with ssh connection in linux server.
 - 问题一般是 VSCode 从 GUI 启动时没有继承代理/环境变量。从能用 codex 的终端输入code . 启动vscode(先在终端中先运行一下codex，然后退出codex，最后再启动vscode)，如果新打开的vscode里能用codex插件，则就是这个问题！想要根治这个问题有两大方法：①在vscode里配置系统代理；②把代理/Key写入到“系统级环境”，使得GUI启动vscode也可以走代理。
 
+# discuss-cloud/remote-coding
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 其实远程服务器上并不需要安装一个完整版的 Codex app，只需要安装 CLI 版的 Codex，并运行： codex remote-control
+- https://x.com/oasisfeng/status/2056354464064471409
+  - 这样手机上 ChatGPT 应用里的 Codex 就会显示出一个有「终端」图标的服务器名，远程体验与通过 Codex app 配置的远程控制无异。
+  - 启动 headless server 前需要先修改 ~/.codex/config.toml: remote_control = true
+  - 以 CLI 运行的 headless server 闲置时只有 100M+ 的内存占用；而 Codex app 常驻内存则差不多需要占用 1G+。
+
+- Codex CLI 也要先登录同一个 OpenAI 账号。
 # discuss-codex
 - ## 
 

@@ -507,6 +507,11 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - I don’t get the hype, their own huggingface has the 8B barely better than Qwen3 1.7B
 
+- ## [Why hasn't TurboQuant been implemented in llama.cpp yet? (Genuine question from a hobbyist) : r/OpenSourceAI _202605](https://www.reddit.com/r/OpenSourceAI/comments/1tet9yw/why_hasnt_turboquant_been_implemented_in_llamacpp/)
+- TurboQuant requires new kernels, new memory layouts, new GGUF metadata - major architecture changes and turboquant's speedups aren't yet fully demonstrated. High risk, unknown reward, massive uplift. Let things bake for a while.
+
+- I think it’s mostly because llama.cpp already has really optimized quants, so adding TurboQuant would be a lot of extra work to maintain for not enough benefit yet
+
 - ## [TurboQuant isn’t just for KV: Qwen3.5-27B at near-Q4_0 quality, about 10% smaller, and finally fitting on my 16GB 5060 Ti : r/Qwen_AI _202603](https://www.reddit.com/r/Qwen_AI/comments/1s8489c/turboquant_isnt_just_for_kv_qwen3527b_at_nearq4_0/)
   - When the TurboQuant paper came out, and when some shows memory can be saved in KV, I started wondering whether the same style of idea could help on weights, not just KV/ cache.
   - After many long nights (until 2am) after work, that turned into a llama.cpp fork with a 3.5-bit weight format I’m calling TQ3_1S:

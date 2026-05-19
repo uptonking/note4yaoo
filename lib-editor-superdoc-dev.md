@@ -10,6 +10,7 @@ modified: 2026-04-20T00:35:08.788Z
 # guide
 
 - pros
+  - pagination for editor
   - virtualized render
   - track-change / redline
   - 支持多种layout: print/web, multi-column
@@ -48,9 +49,14 @@ modified: 2026-04-20T00:35:08.788Z
   - ?
 # issues
 - 如何解决同一个 .docx 文件在不同软件如 word/wps/onlyoffice/libreoffice 中的分页换行位置不同
+  - 其他软件也没有解决这个问题
 # draft
 - 类似word的多种视图: print/web/outline/draft
 - multi-column布局示例
+
+- code-block
+- database
+- image
 # dev-xp
 
 - 

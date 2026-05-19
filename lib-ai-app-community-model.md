@@ -1141,6 +1141,21 @@ Kimi K2	1000	32	3.2%
 - If it includes evaluating js driven websites, including images Then yes 
   - To really replicate that, you'd probably wanna just use puppeteer, save the whole page as an image, extract the info from that, and then crunch that data
 
+# discuss-model-routing
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [关于大模型智能路由相关技术调研 - LINUX DO _202605](https://linux.do/t/topic/2197257)
+- 我记得以前做这个方向的多一点，我记得竞技场有些相关工作 [RouteLLM: An Open-Source Framework for Cost-Effective LLM Routing - LMSYS Blog | LMSYS Org _202407](https://www.lmsys.org/blog/2024-07-01-routellm/)
+  - 现在越来越少了，Agent / tool-use 时代这是吃力不讨好的活，基本也就 chatbot 上能有点用（还得是 single turn 或者很少的对话量）
+
 # discuss-deep-research
 - ## 
 

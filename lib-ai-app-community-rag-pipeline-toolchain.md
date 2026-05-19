@@ -166,7 +166,17 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
-- ## 
+- ## what is the actual latest state-of-the-art for file search and retrieval? 
+- https://x.com/jerryjliu0/status/2056519701011034419
+  - Actual grep over filesystem
+  - Virtualized grep / BM25 over a db (what@mintlifydid)
+  - Vector search over a db
+  - Hybrid search over a db
+  - SQL 
+
+- Actual grep over filesystem. We do this in production with over 10k users on @cfosilvia using http://TroveFiles.dev. Creates personalized memories, preferences, skills, etc. as the user chats
+
+- for agents i keep coming back to boring grep first, then hybrid once the corpus gets weird. vector only feels great until you need to explain why it missed the one obvious file
 
 - ## File search + grep is all you need
 - https://x.com/jerryjliu0/status/2029726062670967019

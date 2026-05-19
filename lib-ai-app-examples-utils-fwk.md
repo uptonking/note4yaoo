@@ -721,6 +721,14 @@ modified: 2025-02-21T18:20:42.624Z
     - announcing artifacts - a versioned file system that speaks git
     - built on Durable Objects
 
+- https://github.com/redis/agent-filesystem /AGPL/202605/go
+  - Agent Filesystem, or AFS, gives agents a filesystem-shaped way to work with data, without being trapped in one machine's local disk.
+  - AFS has three modes of operation:
+    - Cloud-hosted - now at https://afs.cloud
+    - Self-managed - run docker compose up or make web-dev
+    - Standalone - no control plane, direct to Redis
+  - AFS exists for a different shape of problem: agent workspaces that should feel like a normal directory, while also being easy to checkpoint, restore, fork, and move between machines.
+
 - https://github.com/AndrewIngram/tupl /MIT/202603/ts
   - tupl lets you expose a controlled SQL facade over one or more underlying data systems.
   - tupl is a provider-first query runtime: 

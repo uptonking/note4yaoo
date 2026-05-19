@@ -60,6 +60,9 @@ modified: 2022-11-07T10:25:12.034Z
 
 - [L站福利及项目信息汇总【综合篇】（不定时更新） - LINUX DO](https://linux.do/t/topic/487682)
   - 可搜索佬友分享的各种账号，如知网，特别在临近月末时有各种剩余额度
+  - [想知道始皇帝当初是怎么推广linuxdo社区的？ - LINUX DO _202605](https://linux.do/t/topic/2205232)
+    - 先积累了一批原始用户, zhile, 潘多拉知名项目， 具体我也记不清了，在后来好多人在其他论坛邀请，我就是这么进来的。 
+    - 站长最开始是jetbrains的破解插件制作者,有一个博客,叫zhile.io这时候已经有一定的流量了,然后ai火起来后,又用python写了一个pandora,具体怎么用的楼上有说,总之很火,几万个star
 # vps-dns-domain
 - sites
   - [IDC Flare - 域名、主机等信息集散地](https://idcflare.com/about)

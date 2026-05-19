@@ -433,12 +433,15 @@ modified: 2026-02-20T17:36:40.796Z
 - 这个方向适合先把视频片段找出来。但要做到视频问答，就不只是存视频向量，还得存文本描述。不然后面很容易变成“片段找到了，答案你自己看”。
 
 - 这玩意儿听起来挺酷的，终于不用一帧一帧地翻视频了。
-# discuss-ai-pm-computer-use/openclaw
+# discuss-ai-pm-computer-use/openclaw (hot at 202503)
 - ## 
 
 - ## 
 
-- ## 
+- ## [openclaw最近热度去哪里了? 有使用场景吗 - LINUX DO _202605](https://linux.do/t/topic/2204533)
+- 还是不如CodeX，CodeX啥都能干，官方开发的插件还比openclaw做得好。
+
+- 热度一半都跑到隔壁爱马仕(Hermes)去了
 
 - ## [Unpopular opinion: OpenClaw and all its clones are almost useless tools for those who know what they're doing. It's kind of impressive for someone who has never used a CLI, Claude Code, Codex, etc. Nor used any workflow tool like 8n8 or make. : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1srkah3/unpopular_opinion_openclaw_and_all_its_clones_are/)
 - It's not about the tool, it's about the adoption it created. OpenClaw has some nice ideas, but yeah it's true all of that was there before, but it made it accessible.
