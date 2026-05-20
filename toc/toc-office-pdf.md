@@ -120,6 +120,10 @@ modified: 2021-01-04T17:26:43.784Z
   - 🍴 forks
   - https://github.com/cantoo-scribe/pdf-lib
     - This fork adds the support for svg to the pdf-lib project.
+  - https://github.com/earonesty/boxpdf /MIT
+    - https://earonesty.github.io/boxpdf/
+    - Tiny box-layout DSL over pdf-lib.
+    - Flexbox-lite for server-side PDF generation in Node, Cloudflare Workers, Deno, and browsers.
 
 - https://github.com/LibPDF-js/core /1.7kStar/MIT/202603/ts
   - https://libpdf.dev/

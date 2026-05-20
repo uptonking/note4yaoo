@@ -932,6 +932,12 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [求远程同步接管claude code桌面端的开源项目或者方法 - LINUX DO _202605](https://linux.do/t/topic/2208406)
+
 - ## [What app is the hardest for you to replace with Free Software? : r/freesoftware _202605](https://www.reddit.com/r/freesoftware/comments/1tadqhn/what_app_is_the_hardest_for_you_to_replace_with/)
 - Adobe Acrobat. ONLY because there is no other app that will allow the user to embed rich media into the PDF like Acrobat will (am aware that it can be done in InDesign, but InDesign is also not free software).
   - Second that. Nothing is useful as Acrobat Reader for office production. Okular for linux is almost as great. But some bottleneck using that turn it slow. So slow to use that is better to don't try it's features. Like comments that isn't on hand or easy to config for fast use, or exporting to fdf that isn't so easy as Acrobat. Foxit is good but paid. Linux version is very poor.

@@ -190,7 +190,32 @@ modified: 2025-11-05T19:04:50.350Z
 
 - ## 
 
-- ## 
+- ## [The memory problem every AI agent has. And the 3 ways people are solving it. : r/better_claw _202605](https://www.reddit.com/r/better_claw/comments/1thl4yl/the_memory_problem_every_ai_agent_has_and_the_3/)
+  - The problem: Most agent frameworks (OpenCLAW, Hermes, everything else) store memory in files. markdown, YAML, JSON. Your agent writes facts to a file. When it needs to remember something, it searches those files.
+  - Sounds fine until you use it for more than a week.
+  - Your agent loads all of this into context on every single message. even when you ask "what's the weather." that's tokens burned on irrelevant memories, every interaction, forever. 
+  - Then compaction kicks in. Conversations get long, context gets trimmed, and details from earlier in the session just vanish. You agreed on somethBecause during compaction, your decision got compressed into "discussed project plans." And the worst part: your agent can't connect facts. 
+- Approach 1: the markdown purists (just make the files better)
+  - This is what most OpenCLAW users do. accept the flat file approach and optimize around it.
+  - keep SOUL. MD Lean. Personality rules and hard boundaries only. move everything procedural to AGENTS.md. Add explicit memory rules like "when I share a decision or preference, write it to MEMORY.md immediately before responding."
+  - manually prune memory files every few weeks. delete outdated entries. consolidate duplicates. treat it like cleaning your desk.
+  - The people making this work usually have tight, disciplined setups with one agent doing 3-4 things. 
+  - The moment you scale to multiple projects or longer time horizons, the flat file approach starts cracking.
+- Approach 2: the obsidian/external knowledge base crowd
+  - a growing number of people are connecting their agent to Obsidian, Joplin, or a custom knowledge base as a "second brain."
+  - The logic: give your agent a structured vault of notes organized by topic, project, and person. Instead of one big MEMORY.md, you have folders with context the agent can reference.
+  - The problem: Obsidian was built for humans browsing notes, not AI doing semantic retrieval across hundreds of files. You still hit context window limits. Your agent can't search the whole vault, so it either loads a tiny slice (missing everything else) or you build a retrieval pipeline yourself (congratulations, you're now building infrastructure).
+- Approach 3: the vector database / semantic memory crowd
+  - This is the "proper" solution that engineering-minded people are building. Instead of flat files or folder structures, store memories as vector embeddings. When the agent needs to recall something, it does a semantic search and retrieves only the relevant memories instead of loading everything.
+  - Hermes does this natively with a three-layer system. short-term context for the current session. episodic SQLite archive for past interactions (searchable). procedural skills that the agent writes itself from experience.
+  - The mem0 folks published data showing this approach reduces active context by 70-85% compared to naive file injection. same answer quality, way fewer tokens burned on irrelevant memories.
+  - For OpenCLAW specifically, people are bolting on pinecone, chromaDB, or mem0 as external memory layers. It works, but it's another piece of infrastructure to manage. Another thing that can break at 2am.
+- None of these are great. Approach 1 works for simple setups but doesn't scale. Approach 2 is clever but is a workaround for a problem the platform should solve. Approach 3 is the right architecture but requires engineering effort most users don't have.
+
+- The frustrating part is that all three approaches are kind of right, but none of them feel like the final answer.
+  - Markdown is simple and inspectable, but it turns into clutter. Obsidian is better organized, but still needs a lot of human maintenance. Vector memory helps with retrieval, but then you’re managing infrastructure and still hoping the right thing comes back at the right time.
+  - The real problem is that memory is being treated like storage. But useful memory is more than saving text. It has to preserve decisions, preferences, project context, corrections, recurring patterns, and what changed over time.
+  - That’s the broader problem we’re working on with AgentBay AI. The goal is to give agents shared memory/context across tools like OpenClaw, Claude, ChatGPT, Codex, and others, without users having to constantly manage files, notes, or rebuild context from scratch.
 
 - ## LobeHub Harness 的 memory 系统就是 db base 的。 我觉得接下来几个月行业里可能会出来的思潮是思辨 file-based agent VS db-based agent 。
 - https://x.com/arvin17x/status/2054426338610880903

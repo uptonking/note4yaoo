@@ -365,6 +365,9 @@ modified: 2022-06-03T21:34:54.893Z
   - [use orm like https://entgo.io/ instead of writing sqls manually _202401](https://github.com/usememos/memos/issues/2849)
     - currently, memos support sqlite, mysql, postgresql, but writing target sql separately, we could use orm, like entgo.io to simplify the db logic and get rid of manually written sql.
     - Although it's a bit more complicated to write SQL for each driver, but the execution/migration will be open and transparent. IMO, I think writing raw SQL is better then using ORM.
+  - [Memos — Open-source self-hosted note-taking app with zero telemetry : r/DigitalEscapeTools _202605](https://www.reddit.com/r/DigitalEscapeTools/comments/1tijhr9/memos_opensource_selfhosted_notetaking_app_with/)
+    - Can we use it on android?
+    - use PWA and add it to your home screen like an app
 - https://github.com/Rabithua/Rote /MIT/202512/ts/类似twitter
   - https://rote.ink/
   - https://demo.rote.ink/

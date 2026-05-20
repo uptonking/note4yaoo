@@ -21,6 +21,11 @@ modified: 2025-09-16T19:59:57.856Z
     - 可以通过一个API路由（比如New-API：链接 ），来轮流使用这些免费模型，额度耗尽就自动切换下一家
     - 对Agent应用来说，获得一个模型的参数，比如上下文大小，可以作为程序决策的依据
 
+- https://github.com/charmbracelet/catwalk /MIT/202605/go
+  - https://catwalk.charm.land/v2/providers
+  - A collection of LLM inference providers and models
+  - A database for Crush-compatible models.
+
 - awesome-models
   - [LLM Explorer: A Curated LLM List ](https://llm-explorer.com/)
 # model-bench

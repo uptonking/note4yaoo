@@ -108,6 +108,17 @@ modified: 2024-01-06T13:48:42.969Z
 - 向日葵下载过，要会员才能远程共享屏幕
 
 - 推荐一个软件：andromeld手机插公司电脑上，远程VNC到公司电脑
+# discuss-dualos-win-linux
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [一个完整的软件开发用的优秀 infra 搭建日志  - LINUX DO _202605](https://linux.do/t/topic/2212773)
+  - 考虑使用WSL+Docker+NAS这套方案，最终Win11做主力机，同时获得Linux的开发体验。
+  - 本文记录了我从零开始搭建这套「计算在Windows，开发在Linux，存储在NAS」的开发基础设施（infra）的全部过程。
+
 # discuss
 - ## 
 

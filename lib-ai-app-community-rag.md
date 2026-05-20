@@ -806,6 +806,8 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 
+
 - ## [Got local RAG to surface the right schematic without a vision model — here's how : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1tbmlup/got_local_rag_to_surface_the_right_schematic/)
   - Been building a local RAG stack for aviation technical manuals (the kind you legally can't upload to ChatGPT). Hit a wall that I think a lot of people hit: the model would cite "see Figure 9-02-40" but the user was left hunting through a 600-page PDF manually.
   - PDFs with safety-critical schematics have figures that live *near* the text that references them but aren't embedded as extractable image objects — they're rendered geometry on the page.

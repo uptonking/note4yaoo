@@ -33,9 +33,9 @@ modified: 2026-04-11T01:31:17.720Z
 
 ## begonia(superdoc/ailovedoc)
 
-project `superdoc` at folder `../superdoc` implemented renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed.
-- the final goal is to implement a new ai docx editing solution named `begonia` similar to `superdoc` in current folder to avoid the licensing issues.
-- begonia should be implemented in a modular and extensible architecture for core features like rendering and editing, with functional programming style.
+project `superdoc` at folder `../superdoc` implements renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed.
+- the final goal is to implement a framework-agnostic, modular, extensible, headless ai docx editing solution named `begonia` similar to `superdoc` in current folder to avoid the licensing issues.
+- begonia should be implemented in a modular and extensible architecture for core features, with functional programming style.
 
 - in superdoc, running `pnpm dev:super-editor` shows a mininal editor demo that supports to toggle pagination. running `pnpm dev` shows a powerful editor demo that supports to toggle pagination, zoomable, toolbars, sidebars. please migrate the examples to begonia without licensing issues, and make it runnable locally in begonia. you should migrate all superdoc examples/features to a standalone package at `apps/playground`, the basic ux can be a list of editor example names at left sidebar, when click one example name, the demo will show on the right.
 
@@ -98,8 +98,9 @@ you have worked on this problem several times but features are still lacking. Th
 
 - superdoc's overall architecture is good enough to follow. Mostly begonia should use similar architecture to superdoc.
 
-- please recheck migrated features and improve your implementation in begonia. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment..., compare the implementation logic/code of begonia with superdoc logic/code to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
-- prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment... in begonia, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+- please recheck migrated features and improve your implementation in begonia. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support..., compare the implementation logic/code of begonia with superdoc logic/code to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
+- core implementation for major features should be framework-agnostic without react, react should be used very sparingly.
+- prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support... in begonia, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
 - docs/tests/scripts might be outdated, recheck code and data flow to improve begonia.
 
@@ -110,8 +111,6 @@ you have worked on this problem several times but features are still lacking. Th
 - there are many smoke tests, it seems messy. can you refactor/redesign the tests as common units that are eaiser to maintain? 
 
 - import/export
-
-- the goal is to rename project name from `ailovedoc` to `begonia`, please rename all docs/code/scripts that are related to `ailovedoc` to new name `begonia`.
 
 ## hardoc(onlyoffice-pdf)
 
@@ -220,7 +219,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 ## grist-office
 
 - Project Grist is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database. 
-- The final goal is to implement an alternative react frontend webapp at folder `app/client-react` at the current git branch `feat/office-react`, with almost the same features as existing backbonejs frontend webapp at `app/client`, using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table. After you finished the react webapp,  `npm run start:app` should start the new react webapp, the legacy yarn toolchain/code should still be kept for backward compatibility. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please reuse as many code from main branch as possible.
+- The final goal is to implement an alternative modular, extensible react frontend webapp at folder `app/client-react` at the current git branch `feat/office-react`, with almost the same features as existing backbonejs frontend webapp at `app/client`, using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table without legacy backbonejs/knockoutjs. After you finished the react webapp,  `npm run start:app` should start the new react webapp, the legacy yarn toolchain/code should still be kept for backward compatibility, the legacy backonejs should still be working. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please reuse as many code from main branch as possible.
 - The core goal is to rewrite most of the existing backbonejs ui/ux with modern react ui/ux, but you can prioritize the core speadsheet view/create/edit/save data flow, speadsheet-unrelated features may be delayed. 
 - react webapp should support all the routing urls of existing backbonejs webapp, using the same existing backend api.
 

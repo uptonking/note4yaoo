@@ -39,4 +39,15 @@ modified: 2023-10-26T15:30:18.297Z
 - https://github.com/dimitri/pgcopydb /c
   - a tool that automates running `pg_dump | pg_restore` between two running Postgres servers. 
   - To make a copy of a database to another server as quickly as possible, one would like to use the parallel options of `pg_dump` and still be able to stream the data to as many `pg_restore` jobs.
+# utils
+- https://github.com/krylosov-aa/pg-status /MIT/202605/c
+  - lightweight and fast microservice (sidecar) that helps instantly determine the status of your PostgreSQL hosts including whether they are alive, which one is the master, which ones are replicas, and how far each replica is lagging behind the master.
+  - [pg-status 2.1.0 — HTTP discovery for PostgreSQL streaming replication, now with read-your-writes : r/PostgreSQL _202605](https://www.reddit.com/r/PostgreSQL/comments/1thok27/pgstatus_210_http_discovery_for_postgresql/)
+    - a tiny C microservice that polls your PostgreSQL hosts and exposes their status over HTTP — answers questions like "who's the primary?", "which replica is lagging less than 100 ms?", "which replica has already replayed this specific LSN?".
+    - TL;DR — what it is: a sidecar that lives next to your app, polls a static list of PG hosts in the background, and answers HTTP requests in sub-millisecond time. It is not a SQL proxy — your app still connects to Postgres directly, pg-status just tells it which host.
+  - Maybe I don’t get it but what’s the difference compare to Patroni with consul?
+    - In the case of patroni, the difference is really small. But there are other tools that provide a failover mechanism but do not provide good discover mechanism. And even in the case of patroni, there seems to be no ready-made mechanism for obtaining a host by min lsn.
+  - LSN: Log Sequence Number.
+    - In PostgreSQL, it is a position marker in the WAL (Write-Ahead Log). You can think of it as a unique “offset” or “bookmark” that identifies a specific point in the database’s change stream.
+    - LSN is a specific coordinate or "timestamp" in the database's internal transaction log. It acts as a unique, ever-increasing ID for every single change made to the database.
 # more

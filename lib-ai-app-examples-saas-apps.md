@@ -468,6 +468,9 @@ modified: 2025-02-21T17:17:42.225Z
   - https://docs.openclaw.ai/start/getting-started
   - OpenClaw is a personal AI assistant you run on your own devices. It answers you on the channels you already use (WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, iMessage...)
   - It can speak and listen on macOS/iOS/Android, and can render a live Canvas you control. The Gateway is just the control plane — the product is the assistant.
+  - [Pi integration architecture - OpenClaw](https://docs.openclaw.ai/pi)
+    - OpenClaw uses the pi SDK to embed an AI coding agent into its messaging gateway architecture. 
+    - Instead of spawning pi as a subprocess or using RPC mode, OpenClaw directly imports and instantiates pi’s AgentSession via createAgentSession().
 - https://github.com/Neirth/OpenLobster /GPL/202603/go/ts
   - [OpenLobster – for those frustrated with OpenClaw's architecture : r/openclaw _202603](https://www.reddit.com/r/openclaw/comments/1rum56j/openlobster_for_those_frustrated_with_openclaws/)
   - Neo4j graph database (proper memory system, not .md files)
@@ -941,6 +944,19 @@ modified: 2025-02-21T17:17:42.225Z
     - 时间线编辑：支持音频、字幕、图片、视频、文字、AI 卡片、多视觉轨、多音频轨、拖拽、吸附、拆分、裁剪、复制 / 剪切 / 粘贴和轨道锁定。
     - 多 Provider AI 配置：支持 OpenAI 兼容模型、Gemini、LM Studio、图片生成 Provider、MiniMax TTS 等配置。
     - Remotion 导出：通过 Remotion 渲染 MP4，支持 H.264、分辨率、质量配置和导出进度展示。
+
+- https://github.com/ycbing/Shortify-AI /MIT/202605/ts
+  - AI 驱动的短剧创作平台，从创意到成片一键搞定。
+  - AI 智能编剧 — 输入创意主题，AI 自动生成角色对话式结构化剧本
+  - AI 分镜生成 — 智谱 CogView-3-Plus 生成高质量分镜图片
+  - 智能配音 — 讯飞 TTS 多角色多音色配音，Edge-TTS 降级方案
+  - 视频合成 — FFmpeg 多运镜合成（Ken Burns 推近/拉远/平移 + 淡入淡出）
+  - AI 视频生成 — CogVideoX-3 图生视频，每镜头独立生成 + ffmpeg 拼接
+  - SRT 字幕 — 自动生成字幕并烧录到视频
+  - 上传自定义背景音乐，可调节音量混入
+  - 视频导出 — COS 签名 URL 直接下载
+  - 积分系统 — 注册送积分，各操作消耗积分
+  - [【开源推广】开源AI短剧创作平台 - LINUX DO _202605](https://linux.do/t/topic/2211107)
 
 ## vid2txt
 

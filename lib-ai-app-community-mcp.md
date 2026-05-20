@@ -1133,6 +1133,8 @@ Chrome: Ships anyway.
 - 个人推荐 refero，提供了 2, 000+ DESIGN.md，以及支持 DESIGN.md、Tailwind v4、 CSS Variables 和  Design Tokens 最全面的配置输出。
   - neuform 给我的视觉体验更好，除了 getdesign md，其他全都支持输入任意网站生成设计规范和配置，design-md-chrome 则是 chrome 的扩展适合即开即用。
 
+- [designmd.sh — a public registry for DESIGN.md files for coding agents : r/ClaudeCode _202605](https://www.reddit.com/r/ClaudeCode/comments/1thep3j/designmdsh_a_public_registry_for_designmd_files/)
+
 - ## New @code version 1.116 is out  _202604
 - https://x.com/OrenMe/status/2044637007108850040
   - The Agents app is now officially available in the Stable release. It’s fully powered by the CLI as its agentic engine, which is a pretty major shift

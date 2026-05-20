@@ -892,6 +892,12 @@ modified: 2025-11-01T10:54:26.044Z
     - Add any Hugging Face GGUF model that you want. Use that model ID to add it to any supported local AI app. 
     - UMR itself does not necessarily store your model. It simply knows where to find them after you register them.
       - You can also add a model manually with `umr add ./path/to/file.gguf`, which will clone it locally into UMR's own store
+# model-conversion
+
+## mlx
+
+- https://github.com/huggingface/transformers-to-mlx /python
+  - Use this Skill to support conversion of language models from transformers to MLX. It currently works for LLM models to be ported to the mlx-lm repo.
 # more
 - https://github.com/intel/ipex-llm /apache2/202510/python/inactive
   - an LLM acceleration library for Intel GPU (e.g., local PC with iGPU, discrete GPU such as Arc, Flex and Max), NPU and CPU

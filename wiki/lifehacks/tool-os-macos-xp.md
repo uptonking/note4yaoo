@@ -120,6 +120,7 @@ go clean -cache
 - 文件路径查看 cmd + i
 - 文件路径复制 cmd + opt + c
 - 移动文件 cmd + opt + v
+- 跳到顶部/底部 opt + arrow-up/down
 
 - tags
   - spotlight中设置排除文件夹fo11可能导致fo11下文件的tags都失效
@@ -147,6 +148,10 @@ go clean -cache
   - ctrl+shift+tab
   - shift+cmd+[
   - shift+cmd+←：显示上一个标签页，其中箭头对空tab无效。
+
+- [Is there a way to prevent Safari from closing when I accidentally press command + Q? : r/mac _202411](https://www.reddit.com/r/mac/comments/1go99b4/is_there_a_way_to_prevent_safari_from_closing/)
+  - 没有好的方案
+  - [How to Get Confirmation Alert Before Quitting Safari on macOS | Tugulab Blog. _202010](https://blog.tugulab.org/posts/2020-10-17_How-to-Get-Confirmation-Alert-Before-Quitting-Safari-on-macOS-f76aef37477e)
 
 ### vscode
 

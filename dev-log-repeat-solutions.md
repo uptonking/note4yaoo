@@ -506,6 +506,9 @@ modified: 2021-07-20T13:50:23.433Z
   - word
   - excel
 
+- image
+  - vue-fabric-editor
+
 - janai-cli
   - lmstudio-cli
 

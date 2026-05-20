@@ -10,6 +10,9 @@ modified: 2026-01-23T13:10:20.291Z
 # guide
 
 # local-models
+- local-hardware
+  - [Hardware – Hugging Face](https://huggingface.co/hardware)
+
 - local-model
   - [GPU Poor LLM Arena - a Hugging Face Space by k-mktr](https://huggingface.co/spaces/k-mktr/gpu-poor-llm-arena)
 
@@ -26,6 +29,13 @@ modified: 2026-01-23T13:10:20.291Z
   - Hundreds of models & providers. One command to find what runs on your hardware.
   - A terminal tool that right-sizes LLM models to your system's RAM, CPU, and GPU. Detects your hardware, scores each model across quality, speed, fit, and context dimensions, and tells you which ones will actually run well on your machine.
   - Ships with an interactive TUI (default) and a classic CLI mode. Supports multi-GPU setups, MoE architectures, dynamic quantization selection, speed estimation, and local runtime providers (Ollama, llama.cpp, MLX, Docker Model Runner).
+
+- https://github.com/outsourc-e/bench-loop /MIT/202605/python
+  - https://bench-loop.com/
+  - Local-first CLI for benchmarking LLMs on real hardware — quality, speed, reliability, and a real multi-turn agent loop.
+  - BenchLoop is a local-first CLI + web app for benchmarking LLMs running on your own hardware. 
+  - It scores models across seven repeatable suites — quality, speed, reliability, agentic tool use, coding, instruction following — and gives you receipts: per-task outputs, latency, token counts, machine info, scores.
+  - No accounts, no telemetry, no API keys. Your model, your machine, your numbers.
 # discuss-stars
 - ## 
 
@@ -72,7 +82,36 @@ modified: 2026-01-23T13:10:20.291Z
 - ## 
 
 - ## 
+# discuss-local-hardware
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## We’re launching @huggingface Hardware: → trending GPUs & CPUs  _202605
+- https://x.com/julien_c/status/2057084823097794772
+  - nvidia: 45%
+  - amd: 5%
+  - apple: 16%
+  - cpu: 32%
+
+- from tracking public training logs, A100s still dominate open-source runs by a wide margin. the interesting part is consumer GPUs — 4090s and M-series are quietly becoming the fine-tuning workhorses. real bottleneck for most people isn't compute, it's VRAM. wonder if your data shows the same split
+
+- The reverse would be great too: input my hardware (GPU + VRAM) and get the best models I can run locally right now, with quant suggestions.
+
+- 
+- 
+- 
+- 
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

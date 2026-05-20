@@ -2017,6 +2017,23 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - 每分钟20次好像，个人用完全够，再加上 备用的那个 更够了
 - r.jina.ai算是覆盖全的了 有的需要js加载的也能搞得定
+# discuss-infer-fwk/toolchain/pytorch
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## ExecuTorch now has an MLX delegate that runs PyTorch models on Apple Silicon GPUs. 
+- https://x.com/awnihannun/status/2056925067242872964
+  - It supports LLMs, speech-to-text, and MoE models with quantization via TorchAO. 
+  - Export with torch.export, run on Metal.
+- This is pretty cool - write PyTorch and export and run  with MLX on Apple silicon
+
 # discuss-cache
 - ## 
 

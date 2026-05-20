@@ -170,7 +170,12 @@ codex --yolo resume --last
 
 - ## 
 
-- ## 
+- ## [favorite Agentic Coding Harness : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1th5t1b/favorite_agentic_coding_harness/)
+- Goose has been adopted by the AAIF as a standard agent. I've used it a decent bit and it is pretty good. https://goose-docs.ai/ https://github.com/aaif-goose/goose
+
+- npcsh is similarly lean like pi
+
+- Pi coding agent, i love its simplicity and extensibility
 
 - ## 🆚 [Nanocoder vs Pi, a comparison from the people who build Nanocoder. : r/nanocoder _202605](https://www.reddit.com/r/nanocoder/comments/1tgmnof/nanocoder_vs_pi_a_comparison_from_the_people_who/)
   - Pi started as a solo MIT-licensed project by Mario Zechner (creator of libGDX) and was recently acquired by Earendil, a VC-backed company. It ships a deliberately minimal core that you extend. 
@@ -618,14 +623,19 @@ plan_mode_reasoning_effort = "high"
   - that works for cli, but not for vscode codex entension with ssh connection in linux server.
 - 问题一般是 VSCode 从 GUI 启动时没有继承代理/环境变量。从能用 codex 的终端输入code . 启动vscode(先在终端中先运行一下codex，然后退出codex，最后再启动vscode)，如果新打开的vscode里能用codex插件，则就是这个问题！想要根治这个问题有两大方法：①在vscode里配置系统代理；②把代理/Key写入到“系统级环境”，使得GUI启动vscode也可以走代理。
 
-# discuss-cloud/remote-coding
+# discuss-remote/cloud-coding
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## [如今各大Coding-CLI官方自带的远程操作都已经成熟起来，自己开发远程的还有必要吗？ - LINUX DO _202605](https://linux.do/t/topic/2212892)
+- 智谱自己开发的zcode走的有点类似于你说的方向。集成了cc, codex, gemini, opencode的Cli
+  - 智谱的Z Code我本身也会用一下下，我自己也是智谱的重度用户，但是他这个不开源也不能在服务器部署，就有点难受
+
+- [精心打磨的远程 vibe 工具来了 - LINUX DO _202605](https://linux.do/t/topic/2189412)
+  - https://github.com/a9gent/mindfs
 
 - ## 其实远程服务器上并不需要安装一个完整版的 Codex app，只需要安装 CLI 版的 Codex，并运行： codex remote-control
 - https://x.com/oasisfeng/status/2056354464064471409

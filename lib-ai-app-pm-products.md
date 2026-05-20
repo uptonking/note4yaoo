@@ -34,13 +34,16 @@ modified: 2025-03-22T16:10:24.856Z
   - ai适合快速生成草稿文本或原型, 但修改难
 
 - ai-harness
-  - claude-code
-  - codex-cli
-  - gemini-cli/qwen-code
-  - opencode
-  - mistral-vibe
+  - claude-code(ts)
+  - codex-cli(rust)
+  - gemini-cli/qwen-code(ts)
+  - opencode(ts)
+  - mistral-vibe(python)
   - cursor-cli/sdk
   - vscode copilot-cli/sdk
+  - pi/pi-coding-agent(ts)
+  - cline
+  - openclaw/hermes
 
 - app vs browser
   - 不是每个用户都能免费使用word的审阅模式, 自定义webapp/app提供了可选方式
@@ -273,6 +276,8 @@ modified: 2025-03-22T16:10:24.856Z
   - ooxml editing
   - agentfs
 
+- spinedigest: 一次处理完，所有中间结果（Chunk、图谱、Snake、总结）全部打包进一个 .sdpub 文件。以后想重新导出成 Markdown、EPUB、纯文本……完全不需要再跑 LLM，秒级完成。
+
 - translation
   - 基于ai的翻译对比阅读
   - 对比阅读已有pdf的 原文 和 译文
@@ -297,7 +302,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 对同一场景, 如翻译/ocr, 针对不同模型内置合理的参数且支持配置
     - pdf: ocr(提取table/chart), editing(proof/布局), rag(citation)
     - pm: llamaparse-extract( **mineru/paddleocr**/mistral/本地/远程), cowork(docx-xml/databases/**ilovepdf** ), notebooklm
-    - later: GPU硬件(ai难取代), Image, TableAI, Audio, 翻译, 多维表格, pretext-edit
+    - later: GPU硬件+model量化(ai难取代), Image, TableAI, Audio, 翻译, 多维表格, pretext-edit
     - roadmap: 
       - agentic场景优化: ocr-vlm/pipeline, translation
       - citation, backlinks: 提升rag的准确度, 优化搜索结果中的code/text/image
@@ -416,7 +421,7 @@ modified: 2025-03-22T16:10:24.856Z
     - parallel tasks
   - gui
     - better revert/checkpoint
-# 💎🚀 modelpedia - 模型参数对比, 历史评测结果, 能免费对比最新参数及上一个版本
+# 💎 modelpedia - 模型参数对比, 历史评测结果, 能免费对比最新参数及上一个版本
 - pm-eval/bench
   - 模型文档及参数都是on-paper, 可直接运行的测试集加上量化版本更适合实际效果, 是否存在产品空间
 
@@ -1453,6 +1458,10 @@ modified: 2025-03-22T16:10:24.856Z
   - If you have purchased less than 10 credits, you’re limited to 50 :free model requests per day.
   - If you purchase at least 10 credits, your daily limit is increased to 1000 :free model requests per day.
   - If your account has a negative credit balance, you may see `402` errors, including for free models.
+  - https://github.com/jomonylw/openrouter-free-model /202509/ts/inactive
+    - https://openrouter-free-model.vercel.app/
+    - a web application designed to browse, filter, sort, and manage free models available on OpenRouter.
+    - 可参考 https://github.com/MauroDruwel/NIMStats 添加状态
   - [Free Models Router ](https://openrouter.ai/openrouter/free)
     - openrouter/free
   - [openrouter出免费模型路由了 _202602](https://linux.do/t/topic/1559289)
@@ -1868,6 +1877,9 @@ modified: 2025-03-22T16:10:24.856Z
   - 只做群里面的三级代理
   - [xiamai gpt_plus_批发的小店 - 链动小铺](https://pay.ldxp.cn/shop/xiamai)
     - 低价渠道多
+  - [金幺の小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/jinyao)
+    - kiro
+    - 品类多
 
 - [ChatGPT Plus 个人版 自助开通 ](https://codexcn.com/)
   - 付款后系统自动派发一个独立的 ChatGPT Plus 账号（含密保邮箱密码），登录即用。
@@ -2062,7 +2074,6 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [AI源头小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/lwq)
   - QQ群：1080624221 , 进群需提供订单号
-  - plus-10, 联系客服手工现开，无需排队， 已稳定一周
   - plus-6, Plus新号慢充需要排队（无质保）
 
 - [FantasticAiCccx的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1C57XPY2)

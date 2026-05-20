@@ -462,11 +462,6 @@ modified: 2026-01-19T05:01:00.055Z
 - https://github.com/openai/skills /python
   - Agent Skills are folders of instructions, scripts, and resources that AI agents can discover and use to perform at specific tasks. Write once, use everywhere.
 
-- https://github.com/op7418/Humanizer-zh /MIT/202601/md
-  - Humanizer-zh: AI 写作去痕工具（中文版）
-  - https://github.com/blader/humanizer
-    - 原项目基于维基百科的 Signs of AI writing 指南
-
 - https://github.com/bobmatnyc/mcp-skillset /MIT/202603/python
   - mcp-skillset is a standalone Python application that provides intelligent, context-aware skills to code assistants through hybrid RAG (vector + knowledge graph). 
   - Unlike static skills that load at startup, mcp-skillset enables runtime skill discovery, automatic recommendations based on your project's toolchain
@@ -578,4 +573,20 @@ modified: 2026-01-19T05:01:00.055Z
 - https://github.com/AnEntrypoint/codemode-agent /202510/js/inactive
   - A Claude agent with an execute tool that provides programmatic access to file operations, system commands, and MCP tools. Features interactive mode with real-time typing, persistent execution context, and seamless integration with multiple MCP servers.
   - [I implemented the codemode article that cloudflare published, as an agent and MCP tool : r/aipromptprogramming](https://www.reddit.com/r/aipromptprogramming/comments/1o8vbep/i_implemented_the_codemode_article_that/)
+
+## humanizer
+
+- https://github.com/op7418/Humanizer-zh /MIT/202601/md
+  - Humanizer-zh: AI 写作去痕工具（中文版）
+  - https://github.com/blader/humanizer
+    - 原项目基于维基百科的 Signs of AI writing 指南
+
+- https://github.com/SmartisanNaive/AI-Cleaner /MIT/202605/python
+  - 基于 NLP 的 AI 痕迹 Agent 系统
+  - 一个基于 LangGraph 多 Agent 协作与本地 NLP 规则引擎的中文 AI 痕迹消解系统。通过 LLM 语义重构、Agent 迭代评估和零 token 本地后处理三层串联管线，在主流中文 AIGC 检测平台上均有稳定的低检出率表现。
+  - 低性能要求：在独立 NLP 算法下，使用零 token 直接对文本进行改写；
+  - 多轮改写：通过 LangGraph 状态机驱动改写 Agent 与评估 Agent 迭代协作，每轮由本地 AIGC 检测器产出风险报告，指导下一轮修订方向；
+  - 前端优雅：支持流式输出、差异对比、历史记录和设置页调试
+  - 项目透明：完整公开 LangGraph 工作流定义、Prompt 构造、NLP 管线、AIGC 检测逻辑及安全边界；
+  - [【开源推广】0 Token 的中文降 AI 率工具，实测朱雀/PaperYY等 AI 检测效果极佳 - LINUX DO _202605](https://linux.do/t/topic/2212246)
 # more

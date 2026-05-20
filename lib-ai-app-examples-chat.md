@@ -401,6 +401,17 @@ modified: 2025-03-22T18:49:15.634Z
   - 作为 `markdown-it` 的插件使用
   - adarender插件分为2部分，一部分是node.js这边的模板解析模块，一部分是前端页面js代码。
     - 最初选择的模板引擎是handlebars，实际使用中发现这个引擎太过于古老，有非常多的不方便，后来逐步替换为ejs
+
+## chat-card/component
+
+- https://github.com/StarDxxx/ai-frame /MIT/202605/ts
+  - https://ai-frame-umber.vercel.app/
+  - Frame your AI conversations as beautiful, shareable image cards.
+  - [【开源】AI Frame —— 把 AI 对话变成一张好看的卡片，一键分享 - LINUX DO _202605](https://linux.do/t/topic/2212865)
+    - 支持直接粘贴 ChatGPT、Claude、DeepSeek 的分享链接导入，也可以丢一个 .txt 文件进去（AI: / Human: 前缀，不需要账号）。导入之后选你想要的片段，调颜色、调字体、敏感内容一键模糊打码，最后导出一张 PNG，尺寸可以选方图、小红书竖版、抖音全屏。
+    - 多平台导入：DeepSeek，ChatGPT & Claude 解析分享链接
+    - 选段：不用全导，挑你觉得有意思的片段
+    - 富文本编辑：加粗、斜体、下划线，以及最实用的------模糊打码
 # ai-sdk/vendors
 - https://github.com/moeru-ai/xsai /MIT/202502/ts
   - https://xsai.js.org/

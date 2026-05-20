@@ -55,7 +55,13 @@ modified: 2026-04-06T17:38:13.599Z
 
 - ## 
 
-- ## 
+- ## Unsloth Studio now has auto speculative decoding & MTP support for GGUFs
+- https://x.com/danielhanchen/status/2056777199798440400
+  - We ran many experiments from small models to MoEs, and optimized the params for Mac, GPUs & CPUs.
+  - There's also a new toggle for MTP / ngram or auto!
+
+- The MTP support is the actual headline here. Not having to cram a separate draft model into VRAM is what makes speculative decoding finally viable on consumer cards.
+  - If anyone wants the math on why separate draft models usually bottleneck your memory bandwidth anyway
 
 - ## [Can we use Unsloth Studio as an API provider ? : r/unsloth _202604](https://www.reddit.com/r/unsloth/comments/1so9q48/can_we_use_unsloth_studio_as_an_api_provider/)
 - There's an API tab in Unsloth Studio with usage examples for calling the Interface. One of the examples is with tool use, so it seems like the answer to your question is yes?

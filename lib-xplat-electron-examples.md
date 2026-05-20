@@ -832,6 +832,19 @@ modified: 2024-01-31T19:13:11.286Z
   - Browser for Work
   - Wavebox gives you customizable toolbars, sleeping tabs, cookie containers and multiple profile
   - Wavebox 10, a complete **fork of Chromium** launched in 2019, but if you're looking for the Electron based Wavebox Classic, there's an archive of the code here
+
+## utils-updating/ota
+
+- https://github.com/electron-vite/electron-incremental-update /MIT/202601/ts
+  - 双 Asar 架构的 Electron 增量更新工具，使用 Vite 插件构建，支持字节码加密
+
+- https://github.com/velopack/velopack /MIT/202605/csharp/rust
+  - https://velopack.io/
+  - Installer and automatic update framework for cross-platform desktop applications
+  - https://x.com/EEEEYHN/status/2057053862666834357
+    - 使用 velopack 做更新框架，可以增量更新，每次更新只需要下载几百kb，而不是每次下载几百mb。
+    - 而且 velopack 是一个框架无关的更新器，你甚至可以从 electron 更新到 tauri 然后更新到原生，用户不用重新安装。
+    - qt非常好接了，有c/c++ sdk
 # packaging
 - apps
   - jupyterlab‑desktop

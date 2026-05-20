@@ -65,7 +65,7 @@ modified: 2021-08-12T14:36:02.148Z
   - refresh_token(刷新令牌，时效我通常设置一个月或更久)，
   - 客户登录后获得这两个令牌
   - 凭借访问令牌获得restful api 各个资源，凭借刷新令牌更新访问令牌（客户端可以设个判时间机制，在访问令牌快过期的时候PUT API一下, 这时旧的访问令牌就失效了）
-  - 最主流的还是 凭借刷新令牌更新访问令牌，客户凭借访问令牌访问各种资源，那么客户是否重新登录取决于客户端(前端)是否设计成自动更新访问令牌了，即**在客户每个请求资源之前客户端都能保证访问令牌始终有效**(被更新，时效性延续)，客户就无需重新登录了
+  - 最主流的还是 凭借刷新令牌更新访问令牌，客户凭借访问令牌访问各种资源，那么客户是否重新登录取决于客户端(前端)是否设计成自动更新访问令牌了，即 **在客户每个请求资源之前客户端都能保证访问令牌始终有效** (被更新，时效性延续)，客户就无需重新登录了
 
 - 然后redis炸了jwt还能用。 但session id没了，就没有登录状态了。
   - 到服务端后获取鉴权信息，都是拿id 先读缓存，再读数据库。
@@ -84,7 +84,7 @@ modified: 2021-08-12T14:36:02.148Z
   1、用户向服务器发送用户名和密码。
   2、服务器验证通过后，在当前对话（session）里面保存相关数据，比如用户角色、登录时间等等。
   3、服务器向用户返回一个 session_id，写入用户的 Cookie。
-  4、**用户随后的每一次请求，都会通过Cookie，将 session_id 传回服务器**。
+  4、 **用户随后的每一次请求，都会通过Cookie，将 session_id 传回服务器** 。
   5、服务器收到 session_id，找到前期保存的数据，由此得知用户的身份。
 - 这种模式的问题在于，伸缩性（scaling）不好。
   - 单机当然没有问题，如果是服务器集群，或者是跨域的服务导向架构，就要求 session 数据共享，每台服务器都能够读取 session。
@@ -226,7 +226,7 @@ HMACSHA256(
 # discuss-auth-solutions
 - ## 
 
-- ## 
+- ## [What is the most common way of implementing JWT? : r/SpringBoot _202605](https://www.reddit.com/r/SpringBoot/comments/1thjkj4/what_is_the_most_common_way_of_implementing_jwt/)
 
 - ## @better_auth: If you want `http://auth.site.com` to be your auth server and authenticate other subdomains like `http://app.site.com ` , `http://your.site.com` ... 
 - https://x.com/imbereket/status/1949675605345349801

@@ -11,14 +11,18 @@ modified: 2026-01-21T04:22:29.956Z
 
 # draft
 - 渠道列表
-  - 优先按优先级排序，其次按权重排序
+  - 首先按优先级排序，其次按权重排序(目前是按添加顺序排序)
 
-- 支持调整用户分组的展示顺序
+- 模型列表界面，支持调整用户分组的展示顺序
 
 - 刷新页面会使系统崩溃429，待排查是前端问题还是后端问题
   - 复现步骤: 快速连续多次刷新任意页面如 http://localhost:4090 
 
 - admin配置模型名映射后, 使用token的用户的日志名应该显示别名，而不是原始名称
+
+- 日志记录
+  - 搜索支持模型名模糊匹配
+  - 支持按session id搜索， 可参考各种chat viewer的设计
 
 - ai-provier-issues
   - mistral api转换为 claude api 时, 出现异常 Expected last role User or Tool (or Assistant with prefix True) for serving but got assistant
@@ -944,7 +948,8 @@ https://makerich.club/ chong 这个渠道不是源头，也是流传最久的渠
 
 - ## 
 
-- ## 
+- ## [闲鱼上卖的反重力从哪里来的 - LINUX DO _202605](https://linux.do/t/topic/2215828)
+- 我是建议不要买，买了给自己找罪受, Antigravity对号的各种风控评价，你如果号白的话用起来很不错，如果号黑就是一直429
 
 - ## 📌 [L站，GPT羊毛史官 编年史 - LINUX DO _202605](https://linux.do/t/topic/2196712)
 

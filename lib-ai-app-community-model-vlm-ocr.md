@@ -861,7 +861,23 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## open sourcing Marlin-2B - a tiny VLM to extract structured information from videos
+- https://x.com/HappyyPablo/status/2056839665551024474
+  - Marlin is finetuned for two questions devs want to ask in their videos: what is happening, and when?
+  - Best open model in its weight class, competitive with Gemini-2.5-flash at only 2B params
+  - Marlin was trained on two modes:
+  1. marlin.caption() returns a structured Scene + Events JSON with second-precise timestamps.
+  2. marlin.find() returns (start, end) timestamps for any natural-language query over a video.
+  - strongest open model in its weight class on dense captioning (DREAM-1K, CaReBench), beating Tarsier-2 7B/34B and competitive with Gemini-2.5-flash. 
+  - Back story: @rethinkNow348 and I were building video editing agents and using Gemini-2.5-Flash to parse ig reels for events. Kept hitting content filters on benign clips so we put a month and two H100s into this side quest and this is the result
+  - Marlin-2B has been relicensed to Apache 2.0.
+- We also distilled gemini3-flash for our timestamp grounded data but used a couple of filter layers and CoT tricks to accurately label these videos.
+
+- how accurate its finding and how big video it can process?
+  - We tried to make sure it’s pretty accurate on finding information but the video limit is 2mins (you can change that in the model card but longer videos drop fps). An interesting experiment i tried with a claude agent was give it this model to use as its “eyes” and the agent could find stuff even in ~1 hr long clips
+
+- Can the model understand and analyze basketball game videos?
+  - We had some sports highlights into our data mixture but not sure how accurate would be, do try and hit me up if you face any difficulties
 
 - ## Bunch of new open OCR models recently — all available as uv scripts on @huggingface .
 - https://x.com/vanstriendaniel/status/2034695914636325231

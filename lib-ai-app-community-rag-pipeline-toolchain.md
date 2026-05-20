@@ -422,6 +422,22 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Spent a weekend debugging why my RAG pipeline gave garbage answers, turned out the problem wasn't the model at all : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1tibkrf/spent_a_weekend_debugging_why_my_rag_pipeline/)
+  - Turned out the issue was how I was chunking documents.
+  - I was using fixed 512-token chunks with no overlap. Clean, simple, felt logical. But the retrieved chunks kept cutting sentences mid-thought, sometimes right before the actual answer, sometimes right after. The model was working with literally incomplete information and hallucinating the rest.
+  - What actually helped:
+  1. Adding overlap (obvious in hindsight) Went from 0 overlap to ~50 tokens. Retrieval quality jumped immediately. The "answer" wasn't getting split across two chunks anymore.
+  2. Respecting natural document boundaries Splitting by paragraph or section instead of raw token count made a huge difference for structured documents like PDFs and docs with headers.
+  3. Smaller chunks + more of them Counterintuitive but retrieving 6 small clean chunks beat retrieving 3 large messy ones. Less noise in the context window.
+  4. Checking what actually got retrieved I wasn't logging retrieved chunks at all early on. Once I started printing them, I immediately saw the problem. Obvious step I skipped because I assumed retrieval was working.
+  - The model was never the bottleneck. The garbage-in-garbage-out problem was upstream the whole time.
+
 - ## 🤔 [Is the chunking in your RAG still a default option? : r/Rag _202604](https://www.reddit.com/r/Rag/comments/1ssp0k2/is_the_chunking_in_your_rag_still_a_default_option/)
   - This post is about chunking - specifically, why I think it should no longer be the default shape of a RAG pipeline, and when it still makes sense.
 - Why chunking became the default. There were three original reasons to split documents before indexing:

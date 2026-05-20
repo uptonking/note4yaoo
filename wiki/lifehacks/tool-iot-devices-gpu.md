@@ -221,6 +221,20 @@ modified: 2026-01-15T15:33:18.008Z
 
 - ## 
 
+- ## 
+
+- ## 🆚 [RX 7900 XTX vs Radeon AI PRO R9700 — llama.cpp Vulkan vs ROCm (6 models, token-gen) : r/unsloth _202605](https://www.reddit.com/r/unsloth/comments/1thoonn/rx_7900_xtx_vs_radeon_ai_pro_r9700_llamacpp/)
+  - Setup: llama.cpp llama-bench, -fa 1 -ngl 99 -ctk q8_0 -ctv q8_0 -p 512, 2048 -n 128, 256 -r
+  - 7900 XTX beats the R9700 by +24–29% on token-gen across the whole slate — memory bandwidth (384-bit vs 256-bit).
+  - Vulkan > ROCm for token-gen on both architectures — huge on MoE (XTX: +33–64%).
+  - Prefill flips it: ROCm pp2048 is ~8–17% faster on dense models (e.g. Qwen-27B IQ4: ROCm 1022 vs Vulkan 870 t/s).
+
+- R9700 1x vs 2x GPU Comparison
+  - ROCm vs Vulkan on 1x-R9700 for 35B-A3B: Vulkan shows significantly better gen throughput (140 t/s vs 61 t/s) but ROCm has slightly better prefill at some depths. Vulkan is the clear winner for 35B-A3B.
+  - ROCm vs Vulkan on 1x-R9700 for 27B: Similar gen throughput (~50 t/s), but ROCm has better prefill speed and TTFR.
+
+- everyone is running the MTP version, can you give it a go?
+
 - ## [Is Buying AMD GPUs for LLMs a Fool’s Errand? : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rvs8fx/is_buying_amd_gpus_for_llms_a_fools_errand/)
   - I want to run a moderately quantized 70B LLM above 25 tok/sec using a system with 3200Mbs DDR4 RAM. I believe that would mean a ~40GB Q4 model. 
   - The options I see within my budget are either a 32GB AMD R9700 with GPU offloading or two 20GB AMD 7900XTs. 
