@@ -527,6 +527,16 @@ modified: 2025-03-22T16:10:24.856Z
 - 
 - 
 
+# 💎 syncable/backupable
+- 类似last.fm让用户同步本地数据， 类似ai模型
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 # pm-mcp
 - writing
 
@@ -1828,7 +1838,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 印尼
 
 - [codex.kedaya.xyz](https://codex.kedaya.xyz/)
-  - [KEDAYA的小店 - 链动小铺](https://pay.ldxp.cn/shop/3S5GUAQ4)
+  - [KEDAYA的小店 - 链动小铺](https://pay.ldxp.cn/shop/kedaya)
     -  https://gpt.kedaya.xyz    /支持用购买的卡密一个一个提取账号
     - https://shop.kedaya.xyz/
     - https://t.me/kedaya_888
@@ -1924,6 +1934,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 低价渠道多
   - [爱喝奶茶的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/V3MBPGC5)
     - 号多
+    - [爱喝奶茶的小店 - QXVX Pay](https://pay.qxvx.cn/shop/EUTV8STA)
   - [AAA plus批发的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/F6077NPC)
     - free + plus
 - [商家9237的小店 - 链动小铺](https://pay.ldxp.cn/shop/RXKT7LFX)
@@ -1937,19 +1948,33 @@ modified: 2025-03-22T16:10:24.856Z
   - 提卡 https://plus.keria.cc.cd/
   - [icloud 邮箱 GPT PLUS直营店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/A87R3DZP)
   - [商家8190的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/AY1FXLQX)
+  - 带rt
+- [ChongAPI-源头商家的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/TSCE0SEH)
+  - 低价多
+- [商家5812的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/8QYLBYPO)
+  - 多件折扣
+  - 提卡 https://ai.cdns.ccwu.cc/
+  - 卡密现在发卡之后有效期只有6小时。超过6小时卡自动销毁后无法使用不售后
+- [AI源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1CMPMUXM)
+  - 低价 https://redeem.buycodekey.com/
+  - (1卡1绑) sub2格式json 带At(不带rt)
+  - cpa格式自己转换
 - [GPT小杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YPFLK17T)
   - ¥3
   - GPT plus账号(印尼），一般日抛，没有rt ，就at ，日抛要什么rt？ at能用10天
   - 发货格式是：  txt 文件 一行就是一个json
 - [464的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/7HVUEC3Y)
   - ¥4.5
-  - [ChongAPI-源头商家的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/TSCE0SEH)
 - [ 9527code ](https://fk.9527code.com/)
   - ¥5
   - [plus专卖店的小店 - 链动小铺](https://pay.ldxp.cn/shop/RNJDBGD4)
     - PP渠道｜无质保，当日抛使用
   - [大熊AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/G09AC5SS)
   - [企业级AI交易平台的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ULOOBF79)
+- [Ai Plus shop](https://shop.558669.xyz/)
+  - 兑换网址：https://gpt.558669.xyz
+  - At成品号（无Rt）, 一号两绑，目前存活率很高，已有3天；
+  - 只出中转格式，CPA和Sub2api格式，不会用的不要买
 
 - [Lyla-精灵小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/lyla)
   - kiro周卡-18
@@ -1964,12 +1989,12 @@ modified: 2025-03-22T16:10:24.856Z
   - GPT TEAM 手工直拉 无质保， 35
   - GPT Cyber认证【Persona认证】， 100
 
+- [源头GPT的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1DM0L7CR)
+  - 100个 free账号 Token（实时验活）CPA + sub2api格式
 - [464的小店 - 链动小铺](https://pay.ldxp.cn/shop/7HVUEC3Y)
   - 通知频道：https://t.me/hdunzx
   - 质保两天
     - 一天就上几个，引流的
-- [源头GPT的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1DM0L7CR)
-  - 100个 free账号 Token（实时验活）CPA + sub2api格式
 - [sekirocloud的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/L9P7JDGN)
   - sub2api josn格式
   - [天选AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/txai)
@@ -1998,6 +2023,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/V2YZIFWM)
   - [壹码工坊的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1aicode)
   - [AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/HGQW9XKA)
+  - [AICA的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/aica)
 - [卓建AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/THJ70HZO)
   - sub2格式json不带账密质保首登
   - 格式转换网站 https://lywqfvjb.feiyus.com

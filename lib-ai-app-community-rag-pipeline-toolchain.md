@@ -555,6 +555,21 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
+- ## 
+
+- ## 🤔 [Do we really need embeddings vectors? : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1tiztv7/do_we_really_need_embeddings_vectors/)
+  - Re-embedding source documents that update 10+ times a day is incredibly expensive and slow. It's making me question if we actually need the embedding layer at all.
+
+- No thanks. Using an LLM to randomly expand a search and then run a BM25 search sounds like it would be rubbish. In the harnesses I've built, we uses deterministic aliases, which is the same idea. But no, for accurate retrieval, my gut instinct is that LLM expansion+BM25 sounds neat, would probably suck.
+  - Ok… so you would update the db every time the doc changes?
+- As in the embedding? Yes. I dont know how you are finding embeddings expensive and slow. I've literally run over a million embeddings in a single day at 4k dims and dont think i spent over a dollar, and batched them like 500 at a time.
+
+- If you had an agent monitoring chunks for changes and summarizing the changed chunks would it be more efficient? Seems like you need to update the changes somehow, vector, summary, keyword, or otherwise so what’s the difference?
+
+- I wouldn’t say embeddings are always necessary. If your docs change 10+ times a day, pure BM25/keyword search with query expansion may actually be the better first layer, especially for exact terms, product names, IDs, and fresh updates. But LLM query expansion can also become a bottleneck and may drift semantically. I’d probably use hybrid by document type: keyword search for fast-changing content, embeddings for stable semantic content, and a reranker on top. So less “no embeddings, ” more “don’t embed everything.”
+
+- the re-embedding cost is a pipeline architecture problem more than a RAG design problem. if your documents update 10+ times a day, the question isnt really embeddings vs BM25 - its whether youre re-embedding the whole document or just the changed chunks, and whether thats happening synchronously in the request path or async in the background. BM25 is a totally reasonable choice for high-churn corpora where term overlap with the query is strong, but query rewriting adds its own latency and failure surface. hybrid retrieval (BM25 + embeddings on a smaller, stable subset) is what ive seen work best when freshness requirements are uneven across the dataset.
+
 - ## [Results from testing 512 vs 1024 dimension embeddings and pgvector halfvec vs vector for RAG : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1tc7rmm/results_from_testing_512_vs_1024_dimension/)
   - I’ve been benchmarking RAG retrieval with pgvector and Voyage 4 embeddings, mostly on legal / license / contract retrieval datasets. The main thing I wanted to understand was: Does moving from 512 to 1024 dimensions actually help?
   - Short version: 1024 dimensions helped the harder legal retrieval workload, and halfvec preserved quality while cutting raw vector storage roughly in half.

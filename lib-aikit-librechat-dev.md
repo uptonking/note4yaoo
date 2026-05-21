@@ -67,6 +67,7 @@ modified: 2025-09-01T05:52:34.241Z
   - message queue, image queue
   - queue的必要性: ollama能设置并发数, 其他provider能吗
   - 通过queue自动收集不同模型对同一prompt的输出，最终汇总结果并自动分析
+  - queue中的message支持删除
 
 - librechat-custom-agent
   - custom comfyui workflow as custom agent

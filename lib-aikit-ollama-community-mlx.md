@@ -279,6 +279,23 @@ modified: 2026-01-14T18:59:01.949Z
   - When you exceed it, we automatically trim it for so your device doesn’t run out of space.
 
 - How this compares to oMLX caching?
+# discuss-mlx-cross-platform
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## a really cool project making MLX run on Vulkan, which would make it possible to run MLX on every platform
+- https://x.com/zcbenz/status/2057400661927747646
+  - https://github.com/goniz/mlx-vulkan /MIT/202605/python
+  - MLX Vulkan backend just passed both CPP AND Python test suites!!
+- Vulkan kinda supports all cards these days. Thing is I develop and test only on my own hardware which is AMD Strix Halo. 
+
 # discuss
 - ## 
 

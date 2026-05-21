@@ -9,6 +9,9 @@ modified: 2025-12-18T12:26:08.445Z
 
 # guide
 
+# pm-coding-cli
+- ide和cli主流的ux都与启动文件夹相关联，而chat并不会自带文件夹而是需要上传文件
+  - 可将vscode的文件书隐藏，将chat移到左边来实现目前主流chat的产品ux，没必要单独开发electron app for chat.
 # draft
 - 自定义 open claude-agent-sdk, 紧跟着官方版进行维护和升级
 # 📌 claude-code-xp

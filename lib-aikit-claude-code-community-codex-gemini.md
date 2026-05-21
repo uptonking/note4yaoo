@@ -22,9 +22,11 @@ codex resume
 codex --yolo resume --last
 ```
 
+- 工作时发送的消息会进入quque, 但queue中的message不支持删除
+
 - hotkeys
-  - ctrl + u: 清空聊天框
-    - This is a standard Unix/Mac terminal shortcut that deletes everything from your cursor to the beginning of the line. I
+  - ctrl + u: 清空一行
+    - This is a standard Unix/Mac terminal shortcut that deletes everything from your cursor to the beginning of the line. 
 # discuss-stars
 - ## 
 
@@ -511,7 +513,26 @@ codex --yolo resume --last
 
 - ## 
 
-- ## 
+- ## 来自 Codex 官方团队的分享：如何把 Codex 用到极致  _202605
+- https://x.com/dotey/status/2057250417638035555
+  - 写代码确实依然是 Codex 的核心强项。但仔细想想，我们在电脑上做的大部分工作，本质上其实都和代码息息相关：执行终端命令、浏览网页、调用应用程序接口、导出文档、响应各种事件，或者是触发自动化流程。当 Codex 开始延伸到这些领域时，它给人的感觉就不再只是一个狭义上的“编程助手”了，而是进化成了一个能帮你搞定各种电脑工作的“全能打工人”。
+- 想要彻底榨干 Codex 的潜能，你需要把下面这些绝招组合起来用：
+- 能够长期保存记忆的“持久对话流 (durable threads)”。 
+  - 把对话流“置顶 (Pinned threads)”是让这些持久对话随叫随到的好办法。置顶快捷键让这个操作变得极为实用。
+- 在你掌控全局时，灵活使用语音输入、任务干预 (steering) 和任务排队 (queuing)
+  - 任务干预 (Steering)：在当前任务还没完成时，中途打断 Codex 并给它指引新的方向。
+  - 任务排队 (Queuing)：在 Codex 完成当前步骤后，给它安排接下来的活儿。
+- 借助浏览器、电脑操控 (computer-use)、模型上下文协议服务器 (MCP servers, 一种让 AI 安全连接本地数据和工具的通用标准) 以及各类连接器，让 Codex 的手伸向代码库之外的地方
+  - MCP 服务器和各类连接器把这种能力进一步延伸到了你的整个工作流中。
+  - 技能 (Skills) 让那些重复的工作流可以被反复利用。一旦某个工作流被证明好用，你可以将它固化为技能，这样 Codex 下次就能直接跑通，而不需要从头开始重新学习这个流程。
+- 当你离开电脑时，利用对话流自动化 (thread automations) 和目标驱动 (Goals) 让它继续搬砖
+  - 把对话流置顶固然好用，但它毕竟还得等你主动回去找它。而“对话流自动化”则可以每隔几分钟或几小时自己去查岗，一直跑到满足某个条件为止，甚至还能根据情况自己调整查岗的频率。
+- 熟练使用侧边栏 (side panel)，随时审查它生成的代码、文档、幻灯片和其他文件
+  - 侧边栏功能 让你生成的工作成果始终和你们的聊天窗口并排在一起。生成的成果可能是代码，但也可能是幻灯片、PDF 文件、网页、表格，或者任何其他生成的东西。
+  - 侧边栏允许用户直接原地查看 Markdown 文档、电子表格、数据表、普通文档和幻灯片。你可以不打断现有的工作流，直接检查、做标记、修改文件。
+  - 应用内浏览器 让 Codex 能够直接检查渲染好的网页，控制它，甚至直接响应你在网页上做的标注。
+- 共享记忆 (Shared memory)：存储在单一对话之外的持久上下文，它可以让未来的工作能够基于一些明确的、可追溯的信息继续推进。
+  - 一个相对稳妥的做法是，把这些持久的对话流“锚定”在一个 Obsidian 知识库 (vault) 里。说白了，就是建一个存放纯文本文件的文件夹。
 
 - ## [codex-tui.log · Issue · openai/codex _202603](https://github.com/openai/codex/issues/13463)
 - It's not typical for it to be that large, but there are situations where it can after significant usage. You can manually delete it if you'd like.

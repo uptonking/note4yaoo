@@ -339,6 +339,19 @@ modified: 2025-09-21T13:57:50.332Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## PaddleOCR 3.5 now supports Hugging Face Transformers as an inference backend. 
+- https://x.com/PaddlePaddle/status/2057068831596773437
+  - Run PP-OCRv5 and PaddleOCR-VL 1.5 models directly within the Transformers ecosystem.
+  - Seamless integration for RAG & Document AI apps
+  - Same PaddleOCR pipeline, your favorite backend
+- [PaddleOCR 3.5: Running OCR and Document Parsing Tasks with a Transformers Backend _202605](https://huggingface.co/blog/PaddlePaddle/paddleocr-transformers)
+  - PaddleOCR 3.5 introduces a more flexible inference-engine interface. Developers can select the backend through the `engine` parameter 
+
 # discuss-mineru
 - ## 
 

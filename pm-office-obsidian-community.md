@@ -23,9 +23,11 @@ modified: 2024-01-23T02:52:23.932Z
   - publish
   - sync
 # draft
-
+- ide和cli主流的ux都与启动文件夹相关联，而chat并不会自带文件夹而是需要上传文件
+  - 可将vscode的文件书隐藏，将chat移到左边来实现目前主流chat的产品ux，没必要单独开发electron app for chat.
+- 基于vscode的方案的优点
+  - 直接使用基于git的同步
 # pm
-
 - 部分内容需要加密的场景，如何解决
 
 ## ob-bases

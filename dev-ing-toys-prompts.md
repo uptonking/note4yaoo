@@ -57,23 +57,20 @@ code at `./begonia` should use npm workspaces, typescript, prosemirror, yjs.
 
 please continue to migrate features related to ooxml editing with ai agent progressively. this is the most important feature. 
 
-recheck and migrate full features of pdf compare and layers to begonia. 
-
-- these are the most important features now, the goal is to achieve full feature pairity or even better.
+- these are the most important features now, the goal is to achieve major feature pairity or even better.
 
 you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issue.  
 you have worked on this problem several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. make a plan and implement it to match major features of upstream without licensing issues.
 
-- to achieve full feature parity with superdoc, help me choose the best option for long-term.
+- to achieve major feature parity with superdoc, help me choose the best option for long-term.
 
 - you have migrated/reimplemented some features from superdoc to begonia.
 
-- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like superdoc for major features.
+- please recheck logic parity detail by detail for every major feature, the goal is to achieve major feature parity(ux can differ) like superdoc for major features.
 
 - begonia should have full feature parity matching superdoc for important/major features like document data-model, layout-engine(supports multi-column), toggling pagination, virtualized-rendering, zoom, editing engine, rich-text formatting, track-change.
 
 - these are the most important features now, the goal is to achieve full feature pairity or even better.
-- make a plan, then migrate and improve full feature pairity, without licensing issues
 
 - the goal now is to achieve robust and extensible ooxml editing engine with full feature parity of upstream supercode.
 
@@ -172,7 +169,7 @@ recheck and migrate full features of True PDF text editing engine with annotatio
 
 - you have migrated/reimplemented some features from onlyoffice pdf editor to hardoc.
 
-- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like onlyoffice-pdf-editor for major features.
+- please recheck logic parity detail by detail for every major feature, the goal is to achieve major feature parity(ux can differ) like onlyoffice-pdf-editor for major features.
 
 - hardoc should have full feature parity matching onlyoffice-pdf-editor for important/major features like document rendering/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, plugin architecture and manager, pdf search, pdf page-thumbnails, bookmarks.
 
@@ -245,7 +242,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - you have migrated/reimplemented some features from backbonejs webapp to react webapp.
 
-- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) for major features.
+- please recheck logic parity detail by detail for every major feature, the goal is to achieve major feature parity(ux can differ) for major features.
 
 - you have worked on this several times but features are still lacking.
 
@@ -262,15 +259,18 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 -------
 
-- please recheck migrated features and improve your implementation in react webapp. Analyze core data flow and implementation logic details for every major feature like spreadsheet data-model and rich formatting, spreadsheet editing with history, custom-widget, formula, drag-and-drop-dashboard, incremental-imports..., compare the implementation of react webapp with backbonejs webapp to recheck and enhance the correctness of architecture and logic in react webapp, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in react webapp are correct, modular, extensible for long-term maintenance.
+- please recheck migrated features and improve your implementation in react webapp. Analyze core data flow and implementation logic details for every major feature like spreadsheet data-model and rich formatting, spreadsheet editing with undo/redo and history, custom-widget, formula, drag-and-drop-dashboard, incremental-imports..., compare the implementation of react webapp with backbonejs webapp to recheck and enhance the correctness of architecture and logic in react webapp, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in react webapp are correct, modular, extensible for long-term maintenance.
 
-- prioritize and recheck/improve major features like spreadsheet data-model and rich formatting, spreadsheet editing with history, custom-widget, formula, drag-and-drop-dashboard, incremental-imports... in react webapp, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+- prioritize and recheck/improve major features like spreadsheet data-model and rich formatting, spreadsheet editing with undo/redo and history, custom-widget, formula, drag-and-drop-dashboard, incremental-imports... in react webapp, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
 - RBAC or ui/ux is not important at the moment, related feature may be delayed, you can update the parity docs.
 
 -------
 
-- the browser/nbrowser related features/tests like `npm run test:nbrowser:react-smoke` can be very slow and take huge disk space. please recheck related implementation-logic/tests, improve it by making the downloaded binary/resources cached locally, so that later testing/running can reuse it directly if already existed. improve the cache logic, and update related data-flow/tests, make sure the implementation is correct, robust, extensible without unnecessary redownloading.
+- the browser/nbrowser related features/tests like `npm run test:nbrowser:react-smoke` can be very slow.
+- please recheck related implementation-logic/tests, improve it by making the downloaded binary/resources cached locally, so that later testing/running can reuse it directly if already existed. improve the cache logic, and update related data-flow/tests, make sure the implementation is correct, robust, extensible without unnecessary redownloading.
+
+- the scripts/tests/commands you just run took huge memory and is very slow. please recheck related implementation-logic/tests, improve it and make it correct and fast.
 
 - recheck and improve it, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
 
@@ -317,7 +317,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - you have migrated/reimplemented some features from PPTist to slaides.
 
-- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) for major features.
+- please recheck logic parity detail by detail for every major feature, the goal is to achieve major feature parity(ux can differ) for major features.
 
 - you have worked on this several times but features are still lacking.
 
@@ -367,14 +367,14 @@ you may use similar file/folder names instead of the same file/folder names as t
 - you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream jan/transformerlab-app/unsloth-studio should be put in folder `upstream`. you may even design a script to automate it.
 - research and make a good design, then implement aichorage to match major features of jan, or even better than jan, without licensing issues.
 
-- please recheck logic parity detail by detail for every major feature, the goal is to achieve full feature parity(ux can differ) like jan for major features.
+- please recheck logic parity detail by detail for every major feature, the goal is to achieve major feature parity(ux can differ) like jan for major features.
 
 - you have worked on this several times but features are still lacking.
 
 - aichorage should have full feature parity matching jan for important/major features like llm search/download, running local gguf/mlx models, chat with local models or cloud llm api.
 
-- these are the most important features now, the goal is to achieve full feature pairity or even better.
-- make a plan, then migrate and improve full feature pairity, without licensing issues
+- these are the most important features now, the goal is to achieve major feature pairity or even better.
+- make a plan, then migrate and improve major feature pairity, without licensing issues
 
 - please deep research jan, then can you design a similar solution in aichorage to improve it? is jan's solution good enough? if yes, solve it in a similar way for begonia.
 
@@ -553,7 +553,7 @@ please analyze git commits and code if you need, then explain to me what major f
 
 - you have migrated/reimplemented some features from ilove-stirling-image to ilove-image. 
 
-- for important features, the goal is to achieve full feature pairity or even better.
+- for important features, the goal is to achieve major feature pairity or even better.
 
 - please refactor code structure in ilove-image project to use similar architecture and code structure as ilove-stirling-image without licensing issue, to make it easy to migrate more features in the future. 
 
@@ -598,7 +598,7 @@ please analyze git commits and code if you need, then explain to me what major f
 02. PDF layers, overlay/underlay
 03. better OCR, make ocr robust
 04. better extract
-- these are the most important features now, the goal is to achieve full feature pairity or even better.
+- these are the most important features now, the goal is to achieve major feature pairity or even better.
 - feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
 - in your implementation, you can also improve the code logic for features and make your implementation correct and extensible. tests are not necessary for your implementation.
 
@@ -701,6 +701,7 @@ in project hardoc,
 current code is under active development. please review and refactor code if you need to make code more clean, correct, and extensible. please refactor outdated/legacy code that contains something like `superdoc/v0/v1/v2/v3/Compat/legacy...` by keeping only the right architecture or good implementation in the long term and removing legacy/deprecated code, so that the latest code does not contain legacy code and the logic is more clean and easier to maintain in the long term.
 ```
 
+- try to avoid hard-coded config/option
 # toys
 
 # play

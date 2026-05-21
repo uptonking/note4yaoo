@@ -219,6 +219,12 @@ modified: 2022-11-07T10:58:24.512Z
 # devtools
 - 以github作为插件/产物/模版仓库，支持自动统计更新时间/star数量
 
+- devtools-cleaner
+  - npm/yarn/pnpm
+  - uv/pip
+  - go
+  - rust
+
 ## sandbox
 
 - 标准版 拖拽、低代码

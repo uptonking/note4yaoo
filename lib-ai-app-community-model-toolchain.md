@@ -18,6 +18,23 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🧩📌 [Inference Engines for LLMs & Local AI Hardware (2026 Edition _202605](https://x.com/TheAhmadOsman/status/2057183854444843202)
+- 📌 [GPU Memory Math for LLMs (2026 Edition) _202604](https://x.com/TheAhmadOsman/status/2040103488714068245)
+- 📌 [Memory Bandwidth for Local AI Hardware (2026 Edition) _202604](https://x.com/TheAhmadOsman/status/2041331757329285589)
+
+- https://x.com/TheAhmadOsman/status/2057317394490499212
+  - Give Codex Cli the article below & tell it, 直接让ai判断合适的本地模型
+
+- https://x.com/TheAhmadOsman/status/2057268825326796906
+  - The bible for running LLMs locally is now available online to read for free
+
+- 
+- 
+
 - ## [Qwen3.6-35B-A3B - even in VRAM limited scenarios it can be better to use bigger quants than you'd expect! : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sutct2/qwen3635ba3b_even_in_vram_limited_scenarios_it/)
   - I am running a 3070 8gb + 64gb DDR4. Pretty lightweight setup so I chose the smallest Q4 unsloth model Qwen3.6-35B-A3B-UD-IQ4_XS.gguf - which is ~18gb. It does run ok, and with some optimizations in llama.cpp I got about 25-30 tokens/s with a 32k context window.
   - I did have some problems with looping during thinking so I tried a bigger Q4 model Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf - ~23gb. To my surprise, this is much faster! With a 128k context window, I am seeing 32 tokens/s.
@@ -217,6 +234,8 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
+- ## 
+
 - ## [2000 TPS with QWEN 3.5 27b on RTX-5090 : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rsz8k6/2000_tps_with_qwen_35_27b_on_rtx5090/)
   - I've been tuning my settings for a specific job that classifies markdown documents - lots of input tokens, no real caching because every doc is different and very few output tokens. So, these numbers are totally situational, but I thought I would share if anyone cares.
   - In the last 10 minutes it processed 1, 214, 072 input tokens to create 815 output tokens and classified 320 documents. ~2000 TPS
@@ -407,6 +426,77 @@ PP Speed: Q3 GGUF: 50 t/s
 - M3 Ultra, 512 GB RAM, 32/80-core variant.
   - I have a script processing files roughly 30-50k tokens in length, which I cache, and then ask subsequent questions of. I just fired it up on GLM4.5 4 bit MLX quant. For a 35000 token document, prompt processing took ~247 seconds. In subsequent turns of conversation generation speed was 10 tokens per second roughly speaking.
   - GLM4.5 Air, same document was ~104 seconds for prompt processing, and then generation is at 30 tokens per second or so.
+# discuss-feat-mtp
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [110 tok/s with 12GB VRAM on Qwen3.6 35B A3B and ik_llama.cpp : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1tjh7az/110_toks_with_12gb_vram_on_qwen36_35b_a3b_and_ik/)
+  - Had been getting great MTP performance with llama.cpp on my RTX 4070 Super 12GB, until they actually merged the MTP PR. Then, performance tanked and was barely above non-MTP. So, I decided to try out ik_llama.cpp since it also supports MTP and is apparently better optimized for CPU offloading.
+  - GPU: RTX 4070 Super 12GB
+  - CPU: AMD Ryzen 7 9700X
+  - RAM: 48GB DDR5-6000 EXPO I
+  - here's the regular llama.cpp mtp-bench.py results: 89.76 tok/s
+  - ik_llama.cpp: 110.24 tok/s average, or 23% increase!
+- It is a pity that @ikawrakow is no longer contributing with llama.cpp and we have this fragmentation. Hoping that one day this drama ends and huggingface him to bring his improvements to llama.cpp.
+  - Drama around llama.cpp will never end, because it's proactively conservative. It's so much easier to fork it rather than get your stuff PR'd into it. Even if your stuff if perfectly legit, like ik_llama.cpp is.
+
+- In my CPU-only inference tests on an EPYC server, the impact of ik_llama.cpp on most tested models including wen3.6 35B A3B is large.
+
+- Why temp 0.0? 0.6 is the recommended for Qwen
+
+- ## [MTP is all about acceptance rate : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1t7mdrl/mtp_is_all_about_acceptance_rate/)
+  - I was very excited about the MTP stuff especially since Gemma4 has become my "daily driver" for some stuff. I grabbed the latest mlx-vlm and did some tests and found it disappointing.
+  - JSON output was my core use case where I'm handing the LLM a list of items, asking it to group them by similarity according to some rules and then get them back in a structured output*.
+  - Bonus for you hackers: Gemma's JSON structure instruction following is pretty good and I find using structured output to be about a 20% hit to token generation. It is faster to just accept a little bit of sloppy JSON and massage it at runtime; so all this is with json_schema off which mlx-vlm doesn't support for spec-decode anyway
+
+- It’s not just a matter of acceptance rate, it’s a matter of having computation to burn (which Macs famously don’t have much to spare before the M5 series added Neural Accelerators), and gains are hard won in MoE models for complicated reasons. You’d likely see better results on one of the dense Gemma 4 models even on a Mac.
+  - In this case, I mostly think this is just MoE being difficult. Every miss is far more expensive than it is on a dense model.
+  - As another said, Gemma 4’s adaptive drafting would be useful too.
+
+- Which is why adaptive draft is a must.
+  - All we need is for someone to train a model based off of this paper
+
+- A reminder that DFlash and native MTPs (Qwen3.5/3.6) are biased towards what they got trained on (agent/code), so keep that in mind!
+
+- ## MTPLX | 2.24x faster TPS | The native MTP inference engine for Apple Silicon
+- https://x.com/Youssofal_/status/2051435496551878847
+  - TLDR: 28 tok/s → 63 tok/s on Qwen3.6-27B on a MacBook Pro M5 Max. 2.24× faster at real temperature 0.6. 
+  - MTPLX uses a model's built-in MTP heads as speculative drafters to increase decode speeds on LLMs by up to 2.25x, all while preserving the model's default inference settings, allowing you to do coding or creative writing tasks.
+  - Works on ANY MTP model: No external drafter. No extra memory usage. Uses the model's own built-in MTP heads. Works on any model that ships them.
+- How Is This Different From DFlash / DDTree?
+  - DFlash MLX has greater absolute speed, however it is restricted to greedy (temp 0) only sampling which severely restricts its real world use case. It also requires an external drafter model which requires additional memory and needs to be created for every model that is released.
+  - DDTree adds tree-based verification on top of DFlash so it inherits the same limitations: greedy only, external drafter required.
+  - MTPLX works with any model that retains the MTP heads and gives full customisability to the user to choose the number of MTP heads and run any locally saved or HuggingFace model with MTP heads.
+
+- This looks awesome. Is it possible to do something similar for Gemma 4 31B?
+  - Blame Google! They released the model and stripped the MTP heads from it. So sadly I cannot, only Gemma E4B.
+
+- https://x.com/o_lacombe/status/2051697645824213033
+  - Google just released Multi-Token Prediction (MTP) drafters that deliver up to a 3x faster inference boost! 
+
+- ## 🆚🤔 Google's MTP approach is way better than Qwen's because it SCALES with MTP parameter but Qwen peaks at MTP=3. 
+- https://x.com/OrganicGPT/status/2052129236199117212
+  - I can now have FULL BF16 Gemma 4 31B at +400 tok/s on RTX 6000 Pro using MTP=100, video coming soon!
+  - In short: Qwen predicts N tokens in parallel (independent guesses), Gemma 4 predicts N tokens sequentially (each informed by the last). That's why Gemma 4 keeps scaling.
+
+- Qwen's MTP uses NEXTN too. It is same as Gemma's, they are not fundamentally different.
+
+- is quality ok? is it falling apart? tool usage?
+  - MTP is lossless by design, so yes it's as good as the base model
+
+- ## MTP 的思路是让主模型自己预判并验证后续 token。对比外接方案，它省掉了一套独立的模型权重和适配环节，也避开了两者 tokenizer 或词表对不齐的麻烦。
+- https://x.com/0xLogicrw/status/2057420903395541375
+  - 以往做推测解码提速，推理系统习惯外挂一个草稿模型：小模型先猜后续 token，主模型再批量核对。随着带原生多 Token 预测（MTP）能力的模型出现，这个过程正被拉回主模型内部。
+  - DeepSeek-V3 在技术报告中将 MTP 列为训练目标，并指出其可在推理时用于 speculative decoding。DeepSeek-V4 报告也明确沿用了与 V3 相同的 MTP 策略。Qwen3.6 则直接在官方模型卡里写明了 SGLang 和 vLLM 的启动命令。
+  - 下游推理框架和工具也开始了密集适配：
+  - llama.cpp 在 2026 年 5 月 16 日合入了 MTP 支持。据开发者在 Qwen3.6 27B 和 35B-A3B 上的测试，稳定接受率达到 75% 左右，部分配置下生成速度翻倍。但 PR 同样提醒，开启 MTP 会拖慢 prompt processing，并行解码也还待优化。
+  - vLLM 已将 MTP 加入官方 speculative decoding 列表。按 Qwen3.6 官方推荐，加上 `--speculative-config '{"method":"qwen3_next_mtp","num_speculative_tokens":2}'` 参数即可启用。不过 vLLM 文档也交了底：真实的提速收益依然取决于具体模型和部署环境。
+  - LM Studio 0.4.14 Beta 加入了 MTP 手动开关，用户下载好支持 MTP 的模型后，在高级加载设置里开启即可。
+  - Ollama 现阶段相对谨慎，官方日志目前仅确认在 Mac 的 MLX runner 上支持 Gemma 4 MTP，尚未看到针对 Qwen3.6 或通用 MTP-GGUF 的默认加速说明。
+
 # discuss-quant-format/solutions
 - ## 
 
@@ -1748,20 +1838,6 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## [The GB10 Solution Atlas is now open source, the inference engine made for the community with breakneck inference speeds (Qwen3.6-35B-FP8 100+ tok/s) : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1t5p2yv/the_gb10_solution_atlas_is_now_open_source_the/)
 
-- ## [MTP is all about acceptance rate : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1t7mdrl/mtp_is_all_about_acceptance_rate/)
-  - I was very excited about the MTP stuff especially since Gemma4 has become my "daily driver" for some stuff. I grabbed the latest mlx-vlm and did some tests and found it disappointing.
-  - JSON output was my core use case where I'm handing the LLM a list of items, asking it to group them by similarity according to some rules and then get them back in a structured output*.
-  - Bonus for you hackers: Gemma's JSON structure instruction following is pretty good and I find using structured output to be about a 20% hit to token generation. It is faster to just accept a little bit of sloppy JSON and massage it at runtime; so all this is with json_schema off which mlx-vlm doesn't support for spec-decode anyway
-
-- It’s not just a matter of acceptance rate, it’s a matter of having computation to burn (which Macs famously don’t have much to spare before the M5 series added Neural Accelerators), and gains are hard won in MoE models for complicated reasons. You’d likely see better results on one of the dense Gemma 4 models even on a Mac.
-  - In this case, I mostly think this is just MoE being difficult. Every miss is far more expensive than it is on a dense model.
-  - As another said, Gemma 4’s adaptive drafting would be useful too.
-
-- Which is why adaptive draft is a must.
-  - All we need is for someone to train a model based off of this paper
-
-- A reminder that DFlash and native MTPs (Qwen3.5/3.6) are biased towards what they got trained on (agent/code), so keep that in mind!
-
 - ## Introducing SubQ - the first model built on a fully sub-quadratic sparse-attention architecture (SSA)
 - https://x.com/elliotchen100/status/2051808387978199178
   - the first frontier model with a 12 million token context window which is:
@@ -1777,32 +1853,6 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - 实际上并不是从零开始的，而是用开源模型作为起点，他们自己还提到了老师模型，应该是用了蒸馏+开源
   - 主要是他们的技术报告就没什么东西，哪怕一点点细节上的东西都没提到，而且整个技术报告还是ai生成的，而且访问权限还得申请，往常但凡是突破的，一般来说都是给大家用的。所以我个人觉得整个项目看起来像是某种利用开源模型做起点，然后蒸馏自己的模型，再做了一些注意力优化，官网的检索率也就只更新到了1m大概60%多，后面就没数据了。
-
-- ## MTPLX | 2.24x faster TPS | The native MTP inference engine for Apple Silicon
-- https://x.com/Youssofal_/status/2051435496551878847
-  - TLDR: 28 tok/s → 63 tok/s on Qwen3.6-27B on a MacBook Pro M5 Max. 2.24× faster at real temperature 0.6. 
-  - MTPLX uses a model's built-in MTP heads as speculative drafters to increase decode speeds on LLMs by up to 2.25x, all while preserving the model's default inference settings, allowing you to do coding or creative writing tasks.
-  - Works on ANY MTP model: No external drafter. No extra memory usage. Uses the model's own built-in MTP heads. Works on any model that ships them.
-- How Is This Different From DFlash / DDTree?
-  - DFlash MLX has greater absolute speed, however it is restricted to greedy (temp 0) only sampling which severely restricts its real world use case. It also requires an external drafter model which requires additional memory and needs to be created for every model that is released.
-  - DDTree adds tree-based verification on top of DFlash so it inherits the same limitations: greedy only, external drafter required.
-  - MTPLX works with any model that retains the MTP heads and gives full customisability to the user to choose the number of MTP heads and run any locally saved or HuggingFace model with MTP heads.
-
-- This looks awesome. Is it possible to do something similar for Gemma 4 31B?
-  - Blame Google! They released the model and stripped the MTP heads from it. So sadly I cannot, only Gemma E4B.
-
-- https://x.com/o_lacombe/status/2051697645824213033
-  - Google just released Multi-Token Prediction (MTP) drafters that deliver up to a 3x faster inference boost! 
-
-- ## 🆚🤔 Google's MTP approach is way better than Qwen's because it SCALES with MTP parameter but Qwen peaks at MTP=3. 
-- https://x.com/OrganicGPT/status/2052129236199117212
-  - I can now have FULL BF16 Gemma 4 31B at +400 tok/s on RTX 6000 Pro using MTP=100, video coming soon!
-  - In short: Qwen predicts N tokens in parallel (independent guesses), Gemma 4 predicts N tokens sequentially (each informed by the last). That's why Gemma 4 keeps scaling.
-
-- Qwen's MTP uses NEXTN too. It is same as Gemma's, they are not fundamentally different.
-
-- is quality ok? is it falling apart? tool usage?
-  - MTP is lossless by design, so yes it's as good as the base model
 
 - ## dflash-mlx sweet spot on Apple Silicon is narrower than expected: prompt ≤16K AND max_tokens ≤1024 to get the 1.45-1.65x decode speedup.
 - https://x.com/hxiao/status/2050965517100601448

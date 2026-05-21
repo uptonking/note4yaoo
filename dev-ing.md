@@ -333,6 +333,16 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0521
+
+- ik_llama.cpp runs on AVX-512 CPU + CUDA
+  - AVX stands for Advanced Vector Extensions. It is an instruction set architecture (ISA) that allows a CPU to perform the exact same mathematical operation on multiple pieces of data simultaneously. This is called SIMD (Single Instruction, Multiple Data).
+  - The "512" means the CPU has massive 512-bit data registers.
+  - The Analogy: Imagine a toll booth. A standard CPU (64-bit) is a 1-lane road. AVX2 (256-bit) is a 4-lane highway. AVX-512 is an 8-lane superhighway.
+  - The AVX-512 landscape is highly ironic. Intel invented it, but AMD is currently the king of it in the consumer market.
+  - Intel introduced AVX-512 on their server and high-end desktop chips years ago. They eventually brought it to consumer desktops with 11th Gen (Rocket Lake). However, starting with 12th Gen (Alder Lake), Intel moved to a "hybrid" architecture (Performance cores + Efficiency cores). Because the E-cores could not run AVX-512, Intel disabled AVX-512 entirely on 12th, 13th, 14th, and 15th Gen consumer CPUs to prevent crashes. Today, you can only get Intel AVX-512 on expensive Xeon Server/Workstation CPUs.
+  - AMD introduced AVX-512 support with their Zen 4 architecture (Ryzen 7000 series) and perfected it with Zen 5 (Ryzen 9000 series). Furthermore, AMD designed it so that running AVX-512 doesn't cause the CPU to overheat or aggressively drop clock speeds (which was a major issue with older Intel chips). Today, almost all modern AMD CPUs support AVX-512.
+
 ## 0518
 
 - [openrouter和kilo的deepseek v4 flash是出问题了?思考全是乱码内容然后中断 - LINUX DO _202605](https://linux.do/t/topic/2193158)

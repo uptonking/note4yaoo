@@ -936,6 +936,9 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
+- ## [codex让我从终端流转化为app流 - LINUX DO _202605](https://linux.do/t/topic/2218547/2)
+- codex app还有一个很好的是，可以内嵌浏览器打开网页，样式有问题，我可以直接标注怎么改，我之前改样式很费劲
+
 - ## [求远程同步接管claude code桌面端的开源项目或者方法 - LINUX DO _202605](https://linux.do/t/topic/2208406)
 
 - ## [What app is the hardest for you to replace with Free Software? : r/freesoftware _202605](https://www.reddit.com/r/freesoftware/comments/1tadqhn/what_app_is_the_hardest_for_you_to_replace_with/)
@@ -1041,6 +1044,22 @@ modified: 2026-02-20T17:36:40.796Z
 
 - Correct, but you can’t actually finish the spec without writing and testing code.
   - Doesn't have to be a spec spec! just enough of a thing that the intent part is clear. Not waterfall level of spec for sure.
+
+- ## 🆚 [What's the difference between using Codex directly and the Codex VS Code plugin? : r/codex _202605](https://www.reddit.com/r/codex/comments/1tj7bbm/whats_the_difference_between_using_codex_directly/)
+- under the hood theyre the same agent and model, so the output quality is basically identical. the difference is the surface and the workflow.
+  - the vs code extension is nicer day to day: inline diffs, click to approve edits, and it can pull in your open editor context. 
+  - the CLI shines when you want to run it headless, on a remote box, pipe it into scripts, or work across a big repo without the editor in the way. 
+  - context awareness is about the same since both can see the whole project, the extension just makes the current-file stuff more convenient.
+  - for most daily coding the extension is plenty. i keep the cli around for remote or automated runs and anything i want to script.
+- The VS Code extension is best for daily use when you’re already coding: review diffs, edit files, ask about the current file, and stay in your IDE.
+  - CLI is better if your workflow is terminal-first. Desktop/web is better for bigger or more autonomous tasks, especially when you want separate worktrees, longer-running sessions, or multiple agents.
+- I am pretty sure all frontends (CLI, App, Cloud, VS Code extensions) use the exact same agent under the hood, and the agent is a separate process.
+  - The VS Code extension can automatically include context for opened files, and has some other QoL (like it you write a // TODO: comment, a button above it will show "Implement with Codex").
+
+- In codex app you can dictate.
+
+- I use both. I have codex and vs code open at the same time. I use codex primarily for vibe coding my website, since I don’t care to know how that code works (just let the magically AI fairy work its magic for that stuff). Plus codex has the better chrome plugin.
+  - Then I am more detail orientated in vs code. Touching code more myself, and trying to still understand what’s going on. It’s been going pretty well with both. The chats are all synced live anyway.
 # discuss-ai-resources-copyright
 - ## 
 

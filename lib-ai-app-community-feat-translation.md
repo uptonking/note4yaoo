@@ -63,7 +63,13 @@ modified: 2026-02-01T08:25:22.883Z
 
 - ## 
 
-- ## 
+- ## Open-sourcing Hy-MT2, Three model sizes, 33 languages:  _202605
+- https://x.com/TencentAI_News/status/2057400913061650805
+  - 1.8B: 440MB, runs on mobile chips, beats Microsoft's API
+  - 7B: best-in-class among open-source models
+  - 30B-A3B: state-of-the-art, outperforms models 10x its size
+- There is mismatch between “open-sourcing” and the license file
+
 # discuss-tips
 - ## 
 

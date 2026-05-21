@@ -36,7 +36,8 @@ modified: 2026-01-14T19:05:15.969Z
 - 参考janai支持切换llamacpp/mlx, 来实现支持切换 mineru/paddleocr/docling
 
 - runtime/backend
-  - 下载llama.cpp/mlx-vlm到本地缓存位置如.cache后， 添加固定hash后缀，避免重复下载
+  - ik_llama.cpp
+  - ~~下载llama.cpp/mlx-vlm到本地缓存位置如.cache后， 添加固定hash后缀，避免重复下载~~ 
 
 - model-manager
   - mlx后端不支持自定义安装最新mlx-lm/mlx-vlm版本

@@ -175,7 +175,7 @@ modified: 2023-01-20T21:59:47.792Z
   - admin依赖ember、lexical
   - [Initial setup for Lexical multiplayer websockets service _202304](https://github.com/TryGhost/Ghost/commit/b286faf011c6e487198e93f0b6cab11f2cae7486)
     - Docs are in-memory only, YJS state will be lost on server restart
-    - **No tie-in with saved lexical state**. Lexical state is updated in the post model via normal API requests from Admin which can mean the multiplayer doc and the saved lexical state become out of sync but there's no detection/indication of that state at present. Will also trigger the "someone else is editing" errors because multiplayer doesn't yet override the default post update collision detection
+    - **No tie-in with saved lexical state** . Lexical state is updated in the post model via normal API requests from Admin which can mean the multiplayer doc and the saved lexical state become out of sync but there's no detection/indication of that state at present. Will also trigger the "someone else is editing" errors because multiplayer doesn't yet override the default post update collision detection
 
 - https://github.com/burdy-io/burdy /234Star/MIT/202202/ts/inactive
   - Headless CMS built in NodeJS and React. Written in Typescript
@@ -407,6 +407,16 @@ modified: 2023-01-20T21:59:47.792Z
   - It allows you to create, edit and save content that is automatically committed to your repository and deployed to your live website.
   - [Show HN: I made a CMS that uses Git to store your data | Hacker News _20221023](https://news.ycombinator.com/item?id=33306029)
 # cms
+- https://github.com/skelpo/cms /MIT/202605/ts
+  - https://skelpo.com/
+  - https://beta.perryts.com/
+  - A blazingly fast, opinionated, native TypeScript CMS. 
+  - Designed for Perry AOT, runs on Node and Bun.
+  - https://x.com/realamlug/status/2057337901432684712
+    - compiles to a ~10 MB binary via Perry
+    - role-aware UI by construction
+    - CLI ≡ API ≡ Admin
+
 - https://github.com/fiatjaf/coisas /317Star/MIT/201907/js/inactive
   - a headless CMS specifically designed to let you edit files hosted in a GitHub repository. 
   - It is similar to Netlify CMS and Prose.

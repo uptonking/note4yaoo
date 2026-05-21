@@ -15,6 +15,26 @@ modified: 2025-02-03T08:37:50.714Z
 - ## 
 
 - ## 
+# discuss-news-android-browser
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [ChromeOS and Android Merging Update : r/chromeos _202509](https://www.reddit.com/r/chromeos/comments/1npbm05/chromeos_and_android_merging_update/)
+- More like Android swallowing Chrome OS.
+
+- ## [Google's decision to merge ChromeOS into Android is completely predictable : r/chromeos _202411](https://www.reddit.com/r/chromeos/comments/1gunte2/googles_decision_to_merge_chromeos_into_android/)
+  - Including measures like using more Android tech stack in ChromeOS and bringing the Linux terminal into Android. 
+  - Therefore, the full version of Chrome browser with extensions will definitely still be there, and we can use the Android ecosystem more efficiently. 
+  - The only problem is that the Android launcher is not suitable as a laptop desktop. Google may need to customize a desktop for it, just like it does with ChromeOS now. 
+  - Overall I think this is a good change, provided Google does it and doesn't give up halfway like Lacros did.
+- It's funny, all Google needs to do is get Desktop Chrome running on Android with full extension support, and the need for ChromeOS completely goes away.
+  - Tell you more fun: kiwi browser on android already could run most extension of chrome, and if your android is rooted, many chroot methods already let you run say ubuntu on your android ... alike linux beta already. this is a good thing though, as file sharing and IP is really sucked in chromeos. the resultant thing would be better than chromeos on these ... which you can experience now using the above method.
+
 # discuss-devtools-android
 - ## 
 

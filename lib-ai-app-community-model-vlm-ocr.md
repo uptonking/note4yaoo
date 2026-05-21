@@ -33,6 +33,10 @@ modified: 2025-11-06T18:49:13.977Z
   - 交互与mineru类似
   - [PaddleOCR-VL Online Demo - a Hugging Face Space by PaddlePaddle](https://huggingface.co/spaces/PaddlePaddle/PaddleOCR-VL_Online_Demo)
 # models-vlm/ocr-xp
+- 不同vlm对图片中文本的格式输出不同
+  - qwen3.5-4b解析为bold， 会自动添加原文不存在的换行
+  - gemma4-e4b解析为code
+
 - ocr-pros
   - position data for layout and characters
   - confidence level for characters

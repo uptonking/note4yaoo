@@ -265,6 +265,10 @@ modified: 2025-12-25T19:55:10.911Z
   - OpenAI-powered Text Rewriter for VS Code. 
   - Works with Markdown, LaTeX, quarto, typst and text files.
 
+- https://github.com/collabst/collabst /AGPL/202605/ts/svelte
+  - Self-host a collaborative workspace for Typst.
+  - [Introducing Collabst, a self-hosted collaborative workspace for Typst. : r/typst _202605](https://www.reddit.com/r/typst/comments/1tjl560/introducing_collabst_a_selfhosted_collaborative/)
+
 - https://github.com/XWBarton/glyph /202604/ts
   - Desktop Typst editor for macOS, Windows, and Linux. 
   - Write in a Monaco-powered source panel, see the compiled PDF update live alongside it.
