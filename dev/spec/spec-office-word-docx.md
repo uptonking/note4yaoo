@@ -69,4 +69,9 @@ modified: 2026-04-05T18:29:33.553Z
 
 - ## 
 
-- ## 
+- ## 文档基金会 (LibreOffice) 再次发文抨击微软，称微软的 OOXML 文档格式极其荒谬，Excel 甚至都不能很好的处理日期。
+- https://x.com/landiantech/status/2057643105935859998
+  - 文档基金会致力于推动开源格式 ODF 成为主流，微软则主要使用自己的专有标准 OOXML，文档基金会认为除非实现 ODF 成为默认选项，否则无法实现真正的数字主
+  - [文档基金会(开源LibreOffice开发商)再次发文抨击微软的OOXML专有格式 - 蓝点网 _202605](https://www.landian.news/archives/113046.html)
+- libreoffice對ooxml的兼容性慘不忍睹 尤其是中文
+- libreoffice在编辑PDF的时候非常渣, 这东西甚至不如wps

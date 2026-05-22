@@ -285,6 +285,7 @@ modified: 2025-03-22T16:10:24.856Z
 - rewrite 
   - open-canvas with langgraph
   - ~~replace vscode with codemirror, compatible with obsidian~~ (没收益)
+  - Gemini file search API
 
 - token-router/gateway
   - 分享本地的GPU、token，类似的项目有分享画图gpu，但如何分享token还未流行
@@ -1802,6 +1803,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 小铺还有很多其他产品: kiro, windsurf, 接码, 虚拟卡, 手机号, visa
   - ~~搜索: 手工, 质保, 源头, 印尼~~ 
   - [阿华的AI比价聚合站 ](https://ahua-ai-price-aggregator.onrender.com/)
+  - [CPA <-> sub2api ](https://gtxx3600.github.io/CPA2sub2API/)
 
 - latest
   - 可在google搜索 `GPT site:pay.ldxp.cn/shop`.
@@ -1888,8 +1890,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [xiamai gpt_plus_批发的小店 - 链动小铺](https://pay.ldxp.cn/shop/xiamai)
     - 低价渠道多
   - [金幺の小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/jinyao)
-    - kiro
     - 品类多
+  - [青蛙AI·低价源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/qingwaAA)
 
 - [ChatGPT Plus 个人版 自助开通 ](https://codexcn.com/)
   - 付款后系统自动派发一个独立的 ChatGPT Plus 账号（含密保邮箱密码），登录即用。
@@ -1899,6 +1901,11 @@ modified: 2025-03-22T16:10:24.856Z
   - [xiaoxiao的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YD93JLNG)
 
 - 批量取件： https://plus.keria.cc.cd/ 
+  - [PLUS直营店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/FNAOIGBK)
+  - 卡密下单起1小时内自动失效, 还请快速兑换，icloud邮箱
+  - 提卡 https://plus.keria.cc.cd/
+  - [icloud 邮箱 GPT PLUS直营店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/A87R3DZP)
+  - [商家8190的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/AY1FXLQX)
   - [AI会员小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/XLF7RCJG)
     - 非协议，协议注册别来碰瓷，icloud 邮箱
 
@@ -1930,6 +1937,13 @@ modified: 2025-03-22T16:10:24.856Z
     - 邮箱查询地址：   http://82.156.59.169:8848/ 
     - 7元
 
+- [Apex AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/apexcode)
+  - 卡密取货地址为  https://apexcode.eu.cc 或 https://register.lovelymira.com/
+  - 取号内容为邮箱+验证码+无rt格式的JSON成品，单个卡密可以重复查询多次，不会用可以多看看介绍
+  - 卡密有效期3天，3天后销毁，不要囤货
+  - 也可以使用批量上号功能生成成品授权文件，支持sub2api和CPA两种格式
+  - 可sub2api  <==>  CPA互转，转换格式地址 https://register.lovelymira.com/format-converter
+
 - [AI杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/PBY2YIR3), /周全
   - 低价渠道多
   - [爱喝奶茶的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/V3MBPGC5)
@@ -1943,22 +1957,23 @@ modified: 2025-03-22T16:10:24.856Z
   -  https://otp.the22222.org/
   -  https://t.me/GPTattackz
 
-- [PLUS直营店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/FNAOIGBK)
-  - 卡密下单起1小时内自动失效, 还请快速兑换，icloud邮箱
-  - 提卡 https://plus.keria.cc.cd/
-  - [icloud 邮箱 GPT PLUS直营店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/A87R3DZP)
-  - [商家8190的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/AY1FXLQX)
-  - 带rt
+- [AI源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1CMPMUXM)
+  - 低价 https://redeem.buycodekey.com/
+  - (1卡1绑) sub2格式json 带At(不带rt)
+  - cpa格式自己转换:  https://cvt.okcode.cc.cd/ 
+  - [☀️的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/J0Q89LSE)
+  - [babu的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/9T40GAS6)
+  - [gpt低价货源的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/5XX41BQK)
 - [ChongAPI-源头商家的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/TSCE0SEH)
   - 低价多
 - [商家5812的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/8QYLBYPO)
   - 多件折扣
   - 提卡 https://ai.cdns.ccwu.cc/
   - 卡密现在发卡之后有效期只有6小时。超过6小时卡自动销毁后无法使用不售后
-- [AI源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1CMPMUXM)
-  - 低价 https://redeem.buycodekey.com/
-  - (1卡1绑) sub2格式json 带At(不带rt)
-  - cpa格式自己转换
+- [codex小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/BGPNHEF6)
+  - 20份起售, 散户别碰
+  - 需要登录网页的可去 https://inbox.ignore.md 贴入JSON收邮件验证码和登录密码
+  - 只要账号没封 AT过期可自行登录网页再取AT
 - [GPT小杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YPFLK17T)
   - ¥3
   - GPT plus账号(印尼），一般日抛，没有rt ，就at ，日抛要什么rt？ at能用10天
@@ -1995,15 +2010,13 @@ modified: 2025-03-22T16:10:24.856Z
   - 通知频道：https://t.me/hdunzx
   - 质保两天
     - 一天就上几个，引流的
-- [sekirocloud的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/L9P7JDGN)
-  - sub2api josn格式
-  - [天选AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/txai)
-    - https://plus.oai.do/ 
-  - [随欲小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/MO2JGWG9)
-    - free-0.45
-  - [AI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/echo_dream)
-    - https://gpt.aveve.xyz/ 
-    - 手机接码推荐：https://hero-sms.com/cn  找安哥拉+244地区，接码成功率高！
+- [AI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/echo_dream)
+  - https://gpt.aveve.xyz/ 
+  - 手机接码推荐：https://hero-sms.com/cn  找安哥拉+244地区，接码成功率高！
+- [yimoAi-US的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/CQRJKJ0N)
+  - 频道：https://t.me/songbai0420
+- [天选AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/txai)
+  - https://plus.oai.do/ 
   - [seven85777的小店 - 链动小铺  ](https://pay.ldxp.cn/shop/SEVEN857)
     - 切换日本节点注册新号，具有免费试用资料
     - 5个起购直冲渠道cdk-质保6小时（必须用日本节点注册新号）
@@ -2012,8 +2025,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [🍑桃俊泽的AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/DJOBBG3H)
     - GPT plus日抛成品号x1
     - 不包codex接码
-  - [yimoAi-US的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/CQRJKJ0N)
-    - 频道：https://t.me/songbai0420
+  - [随欲小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/MO2JGWG9)
+    - free-0.45
   - [小NO plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/BWGFCYG1)
   - [秋刀鱼精品小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/qiudaoyu777)
     - 购买后需要手动联系来索取json
@@ -2027,6 +2040,8 @@ modified: 2025-03-22T16:10:24.856Z
 - [卓建AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/THJ70HZO)
   - sub2格式json不带账密质保首登
   - 格式转换网站 https://lywqfvjb.feiyus.com
+- [sekirocloud的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/L9P7JDGN)
+  - sub2api josn格式
 
 - [AI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/XWTVY86A)
   - kiro
@@ -2358,6 +2373,9 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [OmniBox - 在线观影](https://omnibox.wangchao.uno/)
   - [MoonTVPlus](https://moontv.wangchao.uno/)
+  - [MoonTVPlus](https://moontv.662778.xyz/)
+  - [𝔔𝔦𝔫𝔤 𝔖𝔥𝔢𝔫𝔤 -公益MoonTVPlus - LINUX DO _202605](https://linux.do/t/topic/2126755)
+  - [𝓙𝓲𝓪1 𝓣𝓿 ](https://moontv.jia1.de/)
 
 ## hosting
 
@@ -2371,9 +2389,6 @@ modified: 2025-03-22T16:10:24.856Z
 - [Canopy Wave](https://cloud.canopywave.io/)
   - 提供模型API
   - 也提供部署环境
-
-- [MoonTVPlus](https://moontv.662778.xyz/)
-  - [𝔔𝔦𝔫𝔤 𝔖𝔥𝔢𝔫𝔤 -公益MoonTVPlus - LINUX DO _202605](https://linux.do/t/topic/2126755)
 
 - [Huggingface和Cloudflare羊毛自建代理的方法 ](https://linux.do/t/topic/1411544)
   - 利用cf大善人的网络代理加速，利用hug大善人的免费域名和证书，达到我们的目的

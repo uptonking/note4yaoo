@@ -17,6 +17,20 @@ modified: 2026-05-21T15:37:00.694Z
 - ## 
 
 - ## 
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
+
+- ## The work to bring full-fledged WebGPU support in llama.cpp started about an year and a half ago. _202605
+- https://x.com/ggerganov/status/2057668450076520811
+- Why do this? Certainly WebGPU is worse than direct CUDA.
+  - CUDA doesn’t run in the browser
+
+- running llama models in a browser with gpu accel is genuinely wild. does it work on safari too or chrome only?
+  - The demo in the blogpost should work in Chrome and Safari
 # discuss-tips/tricks
 - ## 
 
@@ -26,6 +40,8 @@ modified: 2026-05-21T15:37:00.694Z
 
 - ## 
 # discuss-alternatives
+- ## 
+
 - ## 
 
 - ## 
@@ -102,8 +118,6 @@ modified: 2026-05-21T15:37:00.694Z
 
 - ## 
 # discuss-internals
-- ## 
-
 - ## 
 
 - ## 

@@ -511,7 +511,11 @@ codex --yolo resume --last
 
 - ## 
 
-- ## 
+- ## [公司给开了火山的Coding Plan，好像没办法接入CodeX - LINUX DO _202605](https://linux.do/t/topic/2224299)
+- codex应该是需要支持oai responses api的，可以看看接口转换的一些开源项目，转成chat/messages的应该就可以了
+  - codex好像确实是要支持responses的，火山的文档里注明了不支持responses，只支持chat。不过之前好像是支持的
+
+- 用 CLIProxyAPI 这个项目中转下就行了，目前没法直接接入 codex 的。
 
 - ## 来自 Codex 官方团队的分享：如何把 Codex 用到极致  _202605
 - https://x.com/dotey/status/2057250417638035555

@@ -419,7 +419,19 @@ export default marked;
 - 我自己写的 skill，以 json 保存核心数据和信息，md 负责保存丰富的 context，然后优先输出 Excel 和html 给人阅读
   - markdown根本没法看，我一堆的数据参数要对比
 
-- ## Markdown vs HTML. Every time we go from a semantically dense to a semantically sparse format, we lose. 
+- ## [HTML instead of Markdown : r/ClaudeCode _202605](https://www.reddit.com/r/ClaudeCode/comments/1tkcci7/html_instead_of_markdown/)
+  - Anthropic put a blog about it [Using Claude Code: The unreasonable effectiveness of HTML | Claude _202605](https://claude.com/blog/using-claude-code-the-unreasonable-effectiveness-of-html)
+- I’ve found HTML works best when the artifact is more like a small interface than a document: collapsible sections, links between findings, status badges, maybe a tiny dependency map. For linear reasoning I still prefer Markdown because diffs are cleaner, but for codebase reviews and handoff reports HTML is much easier to scan.
+  - The `diff` cleanliness point is underrated. I've had markdown plans living in version control where the team would actually PR them and comment on specific lines, and swapping to HTML there would've broken the whole workflow, no meaningful diff, no inline review. For a one-shot handoff that a PM opens once in Chrome and never touches again, though, the collapsible sections alone are worth the extra tokens.
+
+- Plans are great in html. Mine 90% of reading ia plans, html was such an update
+
+- Spot on. Sending an HTML file to a PM knowing they can open it natively in Chrome without needing a markdown extension is a huge time saver. Also, the fact that you can use collapsible `<details>` tags makes skimming through those massive generated plans way easier than parsing endless nested markdown lists.
+
+- We would be better if we produced a “compiler” for markdown to html where we could define our brand colours etc. that way you have a 1 time set up, then you just drop the markdown text into an already built template. Shouldn’t be too difficult to map headers to detail sections etc.
+  - It sounds like you want to use pandoc to convert MD to HTML (also works the other way, HTML to MD) then link a CSS file with your brand colors, fonts, & other visual design elements, to make the HTML look the way you want. Claude can do all of this for you at the CLI for a lot fewer tokens than having to work solely in HTML.
+
+- ## 🆚 Markdown vs HTML. Every time we go from a semantically dense to a semantically sparse format, we lose. 
 - https://x.com/antirez/status/2053113951123054963
   - Even more today where less tokens from the same content is way better. I can understand we need a better markdown. I can't understand we should replace it with HTML.
 

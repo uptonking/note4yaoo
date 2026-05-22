@@ -102,7 +102,9 @@ modified: 2023-11-01T14:13:41.390Z
 
 - ## 
 
-- ## 
+- ## MySQL vs Postgres: storage engine addition.
+- https://x.com/BenjDicken/status/2057489560368795665
+  - Clustered indexes (MySQL) and heap tables (Postgres) each have unique advantages. 
 
 - ## Postgres vs MySQL table storage is a fascinating study in architectural trade-offs:
 - https://x.com/BenjDicken/status/1953121213829791804
@@ -224,7 +226,7 @@ modified: 2023-11-01T14:13:41.390Z
   - Updates and deletes in Postgres are actually inserts. Every update or delete creates a new tuple id and the old tuple id is kept for MVCC reasons. 
   - The truth is the tid by it itself is not enough. Really we need both the tuple id and also the page number, this is referred to as c_tid. Think about it, it is not enough to just know the tuple id we need to know which page the tuple live. Something we didn’t have to do for MySQL because we are actually doing a lookup to find the page of the primary key. Whereas in Postgres we are simply doing an I/O to fetch the full row.
 
-- That query in MySQL will cost us two B+Tree lookups*.  We need first to lookup x2 using the secondary index to find x2's primary key which is 1, then do another lookup for 1 on the primary index to find the full row so we return all the attributes (hence the *).
+- That query in MySQL will cost us two B+Tree lookups *.  We need first to lookup x2 using the secondary index to find x2's primary key which is 1, then do another lookup for 1 on the primary index to find the full row so we return all the attributes (hence the * ).
   - In Postgres looking up any secondary index will only require one index lookup followed by a constant single I/O to the heap to fetch the page where the full row live. One B+Tree lookup is better than two lookups of course.
 
 - Both MySQL and Postgres require a clean up process that removes dead and unwanted data. MySQL implements a process called “purge, ” while PostgreSQL uses “vacuum”.

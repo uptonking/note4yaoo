@@ -695,6 +695,19 @@ modified: 2026-02-20T17:36:40.796Z
 - 
 - 
 
+# discuss-ai-docs/format
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Is RAG for PDFs really marketable : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1tjuupm/is_rag_for_pdfs_really_marketable/)
+- No, nobody's gonna pay for it, because there are better established players that have trust (like Obsidian and Google NotebookLM or even just ChatGPT/Gemini/Claude with PDF upload). It is very marketable if you build it and can integrate it into other apps or custom solutions for clients however. Like sales teams that can use RAG for their CRM that you integrate into. But that's a completely different market.
+
+- Gemini file search API
+
+- Generic “chat with PDFs” is probably a tough market now. Ollama, LM Studio, AnythingLLM, ChatGPT, Claude, etc. already cover enough of the basic use case. But PDF RAG can still be marketable if it’s tied to a specific workflow. For example: researchers managing papers, lawyers checking citations, engineers searching manuals, compliance teams reviewing docs. People won’t pay much for “query PDFs.” They may pay for “save me 5 hours every week in this specific workflow.” So I’d niche down hard before building the full desktop app.
 # discuss-ai-pm-cowork/office
 - ## 
 
@@ -1081,9 +1094,12 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## [4 Open-Source AI Agents That Don't Write Code. They Trade Stocks, Run Marketing Campaigns, and Engineer Better Software : r/WebAfterAI _202605](https://www.reddit.com/r/WebAfterAI/comments/1tip6wo/4_opensource_ai_agents_that_dont_write_code_they/)
 
-- ## 
+- ## [【讨论】佬友们有没有什么想拿ai做的除了coding以外的长途任务 - LINUX DO _202605](https://linux.do/t/topic/2222404)
+- 很多现实中的定时或不定时任务都可以尝试给aiagent，比如给他课表，让他自己明白什么时候该怎么订闹钟，不用每周都调整，比如allinone，比如多agent协同，让agent盯着codex去每个月完成某个报表或什么的
+
+- 比如调研自己不熟悉的领域，对照BOM加购下单元件，这些都还挺需要的
 
 - ## agents 产品开始进入一种很诡异的阶段，大家都在寻找有钱人或有钱企业买单。
 - https://x.com/lifesinger/status/2050405884862538055

@@ -66,6 +66,15 @@ modified: 2022-08-18T16:57:29.058Z
     - Convert, redact, compare, and view Word documents — entirely in your browser.
     - Built on SuperDoc — DOCX editing and tooling
 
+- https://github.com/eigenpal/docx-editor /834Star/apache2/202605/ts
+  - https://docx-editor.dev/
+  - https://www.docx-editor.dev/editor
+  - Open-source WYSIWYG .docx editor library with canonical OOXML, tracked changes, and real-time collaboration.
+  - core依赖prosemirror、xml-js、docxtemplater、jszip、pizzip
+  - 依赖aisdk
+  - 🍴 forks
+  - https://github.com/reductoai/docx-editor
+
 - https://github.com/samwillis/premirror /MIT/202603/ts
   - https://samwillis.uk/premirror/
   - Premirror is a library for building Word-class page-layout editors on the web. 

@@ -209,26 +209,26 @@ You should implement hardoc pdf editor in a similar architecture of onlyoffice p
 
 DO NOT search the web for onlyoffice pdf api, you should find and read source code of onlyoffice pdf editor directly in current folder ~/Documents/repos/office/all-office/onlyoffice
 
-- please recheck migrated features and improve your implementation in hardoc. Analyze core data flow and implementation logic details for every major feature like document rendering/layout/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, thumbnails/bookmarks..., compare the implementation logic/code of hardoc with onlyoffice-pdf-editor logic/code to recheck and enhance the correctness of architecture and logic in hardoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in hardoc are correct, modular, extensible for long-term maintenance.
+- please recheck migrated features and improve your implementation in hardoc. Analyze core data flow and implementation logic details for every major feature like document rendering/layout/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, ..., compare the implementation logic/code of hardoc with onlyoffice-pdf-editor logic/code to recheck and enhance the correctness of architecture and logic in hardoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in hardoc are correct, modular, extensible for long-term maintenance.
 
 - prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, selection range/offset/caret, undo/redo for editing, pdf annotations/highlights... in hardoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
 ## grist-office
 
-- Project Grist is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database. 
-- The final goal is to implement an alternative modular, extensible react frontend webapp at folder `app/client-react` at the current git branch `feat/office-react`, with almost the same features as existing backbonejs frontend webapp at `app/client`, using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table without legacy backbonejs/knockoutjs. After you finished the react webapp,  `npm run start:app` should start the new react webapp, the legacy yarn toolchain/code should still be kept for backward compatibility, the legacy backonejs should still be working. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please reuse as many code from main branch as possible.
+Project Grist(in current folder) is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database. 
+- The final goal is to implement an alternative modular, extensible react frontend webapp at folder `app/client-react` at the current git branch `feat/office-react`, with almost the same features as existing backbonejs frontend webapp at `app/client`, using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table without legacy backbonejs/knockoutjs. After you finished the react webapp,  `npm run start:app` should start the new react webapp, the legacy yarn toolchain/code should still be kept for backward compatibility, the legacy backonejs should still works, so you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please reuse as many code from main branch as possible.
 - The core goal is to rewrite most of the existing backbonejs ui/ux with modern react ui/ux, but you can prioritize the core speadsheet view/create/edit/save data flow, speadsheet-unrelated features may be delayed. 
 - react webapp should support all the routing urls of existing backbonejs webapp, using the same existing backend api.
 
 - please read and analyze git commits/code if you need, then explain to me what major features are in backbonejs webapp but missing in react webapp.
 
 - the following features can be planned, but implemention may be delayed if you want:
-01. Can be displayed on a static website with grist-static.
-02. A self-contained desktop app for viewing and editing locally: grist-desktop.
-03. Native forms. Create forms that feed directly into your spreadsheet.
-04. Sandboxing options for untrusted documents
-05. AI Formula Assistant 
-06. integrations to airtable/...
+01.   Can be displayed on a static website with grist-static.
+02.   A self-contained desktop app for viewing and editing locally: grist-desktop.
+03.   Native forms. Create forms that feed directly into your spreadsheet.
+04.   Sandboxing options for untrusted documents
+05.   AI Formula Assistant 
+06.   integrations to airtable/...
 
 - tech stack for react webapp needs to use open source libs/fwk:
   - use npm workspaces, typescript, reactjs(not vue), tailwindcss, zustand, no jquery/knockoutjs/backbone.
@@ -248,8 +248,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - please deep research the existing backbonejs webapp, then can you design a similar solution in react webapp to achieve full feature parity?
 
-- you may deep research and reference the existing backbonejs webapp code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style with modern tech stacks like react/typescript-utils. 
-
+- you may deep research and reference the existing backbonejs webapp code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style with modern tech stacks like typescript-utils/react. 
 - you may even do a big code refactor in react webapp to match major features of backbonejs webapp in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design feature parity docs at `upstream/feature-parity.md`, when you migrate/implment features from backbonejs webapp to react webapp, you can recheck and update it. all checking/docs/scripts related to upstream backbonejs webapp should be put in folder `upstream`. you may even design a script to automate it.
@@ -278,20 +277,20 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 ## slaides(PPTist)
 
-- project `PPTist` at `../PPTist` is an online presentation webapp that replicates most of the commonly used features of MS PowerPoint, allowing for the editing and presentation of PPT online, also supports AIPPT. But it has AGPL license.
+project `PPTist` at `../PPTist` is an online presentation webapp that replicates most of the commonly used features of MS PowerPoint, allowing for the editing and presentation of PPT online, also supports AIPPT. But it has AGPL license.
 - project `slaides` at current folder is an old version of `PPTist` with apache2 license, but many commits behind PPTist.
 
 - please read and analyze git commits/code if you need, then explain to me what major features are in PPTist but missing in slaides.
 
 - the final goal is to implement a framework-agnostic, modular, extensible, headless ai ppt editing solution named `slaides` with features similar to `PPTist` to avoid the licensing issues. legacy vue code should be kept for reference only.
 - goals:
-01. re-architect slaides project to have a framework-agnostic headless core package, with react/vue ui binding package and appropriate utils package.
+01.  re-architect slaides project to have a framework-agnostic headless core package, with react/vue ui binding package and appropriate utils package.
 - migrate PPTist's robust feature-rich ppt view/editing features to slaides, this is the most important feature, the goal is full feature parity for ppt view/editing, for example page zoom, Page Editing, Element/Images/Shapes Editing, Rich text editing, Slide Show...
-02. undo/redo support, friendly to collaboration.
-03. Import/export .pptx files, Export local files (PPTX, JSON, images, PDF).
-04. Mobile friendly: Basic editing, Basic preview, Play preview.
-05. migrate PPTist's ai editing solution to slaides, better to implement as a separate package: ai workflow, outline editing, use template, streaming-generation...
-06. a runnable demo/example should be provided.
+01.  undo/redo support, friendly to collaboration.
+02.  Import/export .pptx files, Export local files (PPTX, JSON, images, PDF).
+03.  Mobile friendly: Basic editing, Basic preview, Play preview.
+04.  migrate PPTist's ai editing solution to slaides, better to implement as a separate package: ai workflow, outline editing, use template, streaming-generation...
+05.  a runnable demo/example should be provided.
 
 - the following features can be planned, but implemention may be delayed if you want:
 - the following features should be implemented if the core architecture is stable:
@@ -336,7 +335,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 - goals
   - 重后端、弱前端
 
-- project jan(at folder `../jan`) is a apache2-licensed, local, powerful chatgpt-like tauri app that supports to Download and run LLMs, Connect to cloud llm api, install custom llm backend like custom llama.cpp.
+project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-like tauri app that supports to Download and run LLMs, Connect to cloud llm api, install custom llm backend like custom llama.cpp.
 - project transformerlab-app(at folder `../all-runtime-llamacpp/transformerlab-app-electron`) is a AGPL-licensed electron app that supports to train, fine-tune, chat with your own model locally. it can be used to train/tune local model, but it also supports to import local models, install custom llm backend plugin, run and chat with local model.
 - project unsloth-studio(at folder `../unsloth`) is a AGPL-licensed webapp that supports to run and train text, audio, embedding, vision models on Windows, Linux and macOS. It supports to run local gguf/mlx models, but it cannot install custom llm backend. It also supports auto detect locally downloaded models in local huggingface-cache/ollama/lmstudio.
 
@@ -389,8 +388,8 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - jan's overall architecture is good enough to follow. Mostly aichorage should use similar architecture to jan.
 
-- please recheck migrated features and improve your implementation in aichorage. Analyze core data flow and implementation logic details for every major feature like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/caching, openai-compatible api, chat with local-model/cloud-llm-api-provider..., compare the implementation logic/code of aichorage with related jan/transformerlab-app/unsloth-studio logic/code to recheck and enhance the correctness of architecture and logic in aichorage, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in aichorage are correct, modular, extensible for long-term maintenance. 
-- prioritize and recheck/improve major features like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/caching, openai-compatible-api, chat with local-model/cloud-llm-api-provider... in aichorage, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+- please recheck migrated features and improve your implementation in aichorage. Analyze core data flow and implementation logic details for every major feature like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible api, chat with local-model/cloud-llm-api-provider..., compare the implementation logic/code of aichorage with related jan/transformerlab-app/unsloth-studio logic/code to recheck and enhance the correctness of architecture and logic in aichorage, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in aichorage are correct, modular, extensible for long-term maintenance. 
+- prioritize and recheck/improve major features like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible-api, chat with local-model/cloud-llm-api-provider... in aichorage, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
 - 
 - 
@@ -445,7 +444,7 @@ local model testing/running can be very slow.
   - knowledge-base
   - Replace Monaco's core editing feature (text buffer, cursor, selection, basic operations) with CodeMirror v6, while keeping most existing VS Code code unchanged for easier future merges from main branch to feat/codemirror branch.
 
-- project `vscode` in current folder is a popular, open-source, powerful coding ide that provides editor, workbench, fileTree, global/in-file search, extension, cmd-palette, copilot-agent. 
+project `vscode` in current folder is a popular, open-source, powerful coding ide that provides editor, workbench, fileTree, global/in-file search, extension, cmd-palette, copilot-agent. 
 
 - codemirror v6 source code is at folder `~/gh-mirror/codemirror` for your reference.
 - text editor can be implemented with codemirrror v6, diff editor can be implemented with `@codemirror/merge` package at `~/gh-mirror/codemirror/merge`.
@@ -700,6 +699,8 @@ it would be better if you could make a scripts like `npm run check:upstream-pari
 in project hardoc, 
 current code is under active development. please review and refactor code if you need to make code more clean, correct, and extensible. please refactor outdated/legacy code that contains something like `superdoc/v0/v1/v2/v3/Compat/legacy...` by keeping only the right architecture or good implementation in the long term and removing legacy/deprecated code, so that the latest code does not contain legacy code and the logic is more clean and easier to maintain in the long term.
 ```
+
+- try to avoid circular dependencies
 
 - try to avoid hard-coded config/option
 # toys

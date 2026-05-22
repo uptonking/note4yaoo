@@ -21,6 +21,13 @@ modified: 2023-01-09T11:03:32.533Z
   - Agentic tooling — Runs headless in Node.js. Bring your own LLM for document automation, redlining, and template workflows.
   - Dual licensed — AGPLv3 for community use. Commercial license for proprietary deployments.
 
+- https://github.com/eigenpal/docx-editor /834Star/apache2/202605/ts
+  - https://docx-editor.dev/
+  - https://www.docx-editor.dev/editor
+  - Open-source WYSIWYG .docx editor library with canonical OOXML, tracked changes, and real-time collaboration.
+  - core依赖prosemirror、xml-js、docxtemplater、jszip、pizzip
+  - 依赖aisdk
+
 - https://github.com/SheetJS/js-word /apache2/202007/js
   - Parser and writer for various word processing doc formats. 
   - Pure-JS cleanroom implementation from official specifications, related documents, and test files

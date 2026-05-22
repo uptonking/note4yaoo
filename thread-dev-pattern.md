@@ -32,6 +32,19 @@ modified: 2021-02-19T12:23:12.286Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Securely sharing .env files in small teams : r/reactjs _202605](https://www.reddit.com/r/reactjs/comments/1tkerg4/securely_sharing_env_files_in_small_teams/)
+- Try Infisical. You can self host it.
+
+- We use Doppler
+
+- Just self-host a Passbolt instance. It's literally created for scenarios like this.
+
 - ## 🤔 What are your thoughts on early returns?
 - https://x.com/schlimmson/status/1870122088100725244
 - Guards are great, there is a reason modern languages like Swift or Rust have them built in
@@ -192,7 +205,7 @@ modified: 2021-02-19T12:23:12.286Z
   - Fully agree. I often allow null to distinguish between “data has not yet been loaded/is not available” vs “there are no items”. Knowing explicitly via the type that these two possible states exist — vs where they don’t — is tremendously valuable.
   - I’ve seen a lot of TypeScript where people expand the type to include the edge cases instead of realizing they didn’t need the edge case at all
 - Null arrays can help you distinguish loading state vs empty data.
-  - If you want null to indicate that it's still loading, then you can simplify this to be: `(stuff || []).map(...)`
+  - If you want null to indicate that it's still loading, then you can simplify this to be: `(stuff || []).map(...)` 
 
 - ## Something about Redux I don't think most people appreciate enough:
 - https://twitter.com/acemarke/status/1482396019417620480

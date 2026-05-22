@@ -423,6 +423,12 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/gr2m/pdf-editor /201504/js/inactive/单文件
   - WYSIWYG PDF-Editor, plugin-free, using pdfkit and pdf.js
 
+- https://github.com/RabbitHols/pdf.js /apache2/202605/js
+  - https://rewirepdf.com/
+  - https://app.rewirepdf.com/
+  - 直接fork pdf.js, 编辑文本时时overlay
+  - [I built an open source PDF editor that runs locally in the browser: RewirePDF : r/pdf _202605](https://www.reddit.com/r/pdf/comments/1tjz892/comment/on4zn1a/)
+
 - https://github.com/xinglie/report-designer
   - https://xinglie.github.io/report-designer/
   - 打印设计、可视化、标签打印、编辑器、设计器、数据分析、报表设计、组件化、表单设计、h5页面、调查问卷、pdf生成、流程图、试卷、SVG、图形元素、物联网、标签纸

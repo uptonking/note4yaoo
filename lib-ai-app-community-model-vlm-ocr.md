@@ -51,10 +51,11 @@ modified: 2025-11-06T18:49:13.977Z
   - 对于非文档类型的文件识别更强大，如倾斜海报中的文字
   - simpler than the traditional ocr pipeline
   - powerful: ocr + qa + image-caption + translation
+    - 强大的vlm能直接提取json，不需要手动解析
   - good at handwriting recognition
 
 - vlm-cons
-  - hallucination for blurry text
+  - hallucination for blurry text: VLMs LOVE to hallucinate
   - slower than ocr
 
 - toolchain
@@ -205,16 +206,29 @@ modified: 2025-11-06T18:49:13.977Z
 # 🆚 ocr/vlm-parsing-benchmarking 
 - leaderboard
   - [Open VLM Leaderboard - a Hugging Face Space by opencompass](https://huggingface.co/spaces/opencompass/open_vlm_leaderboard)
-  - [allenai/olmOCR-bench · Datasets at Hugging Face](https://huggingface.co/datasets/allenai/olmOCR-bench)
-    - https://x.com/NielsRogge/status/2024518878655578509
-    - We converted OlmOCR-Bench by @allen_ai to an official benchmark on the hub.
 
-- https://github.com/opendatalab/OmniDocBench /1.3kStar/apache2/202512/python/mineru
+- [ParseBench — Document Parsing Benchmark for AI Agents](https://www.parsebench.ai/)
+  - https://github.com/run-llama/ParseBench /apache2/202605/python
+  - a benchmark for evaluating how well document parsing tools convert PDFs into structured output that AI agents can reliably act on.
+
+- [OpenDataLab OmniDocBench](https://opendatalab.com/omnidocbench)
+  - https://github.com/opendatalab/OmniDocBench /1.3kStar/apache2/202512/python/mineru
   - https://opendatalab.com/omnidocbench
   - A Comprehensive Benchmark for Document Parsing and Evaluation
 
+- [allenai/olmOCR-bench · Datasets at Hugging Face](https://huggingface.co/datasets/allenai/olmOCR-bench)
+  - https://x.com/NielsRogge/status/2024518878655578509
+  - We converted OlmOCR-Bench by @allen_ai to an official benchmark on the hub.
+
 - [OCR Arena](https://www.ocrarena.ai/battle)
   - [I made a free playground for comparing 10+ OCR models side-by-side _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p35f2c/i_made_a_free_playground_for_comparing_10_ocr/)
+
+- [OCRBench v2 _202605](https://99franklin.github.io/ocrbench_v2/)
+  - https://github.com/Yuliang-Liu/MultimodalOCR
+  - Improved Benchmark for Evaluating Large Multimodal Models on Visual Text Localization and Reasoning.
+
+- [socOCRbench - Noah Dasanaike _202602](https://noahdasanaike.github.io/posts/sococrbench.html)
+  - [socOCRbench: An OCR benchmark for social science documents : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r5wn6l/sococrbench_an_ocr_benchmark_for_social_science/)
 
 - [SpatialBench - AI Spatial Reasoning Benchmark](https://spicylemonade.github.io/spatialbench/)
   - https://github.com/spicylemonade/spatialbench
@@ -225,6 +239,11 @@ modified: 2025-11-06T18:49:13.977Z
   - https://github.com/getomni-ai/benchmark
   - The goal of this benchmark is to publish a comprehensive benchmark of OCRaccuracy across traditional OCR providers and multimodal Language Models.
   - The evaluation dataset and methodologies are all Open Source, and we encourage expanding this benchmark to encompass any additional providers.
+
+- https://github.com/reductoai/Reducto-Eval /202602/python
+  - open-source evaluation framework that benchmarks Reducto's document processing against standard OCR for retrieval-augmented generation (RAG). 
+  - https://github.com/reductoai/reducto-local-playground /202509/ts/inactive
+    - https://reductolocalplayground-reducto.vercel.app/parse
 
 - https://github.com/ArbitrHq/ocr-mini-bench 
   - https://arbitrhq.ai/leaderboards/

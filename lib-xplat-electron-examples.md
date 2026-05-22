@@ -845,6 +845,17 @@ modified: 2024-01-31T19:13:11.286Z
     - 使用 velopack 做更新框架，可以增量更新，每次更新只需要下载几百kb，而不是每次下载几百mb。
     - 而且 velopack 是一个框架无关的更新器，你甚至可以从 electron 更新到 tauri 然后更新到原生，用户不用重新安装。
     - qt非常好接了，有c/c++ sdk
+  - https://x.com/Free_BlackHole/status/2057655225465610252
+    - 目前 electron-builder 的 blockmap 方案是不需要在构建时下载前版本到本地进行差异生成的。而 velopack 必须先下载之前版本的 nuget，再生成新的 nuget 差异。
+      - 区别在于 diff 计算是 client 端(electron-builder)，还是 server 端预先计算好(velopack)
+      - 跨多个版本更新时，electron-builder  仍然只需要一次 blockmap 请求即可，而 velopack 则需要串行下载 nuget，或者 fallback 到 full。
+    - 按照最小改动的情况来说，velopack 的 delta nupkg 最少只需要下载几 Kb ，而 electron-builder 的方案，则需要下载几 M (按照 chunk 来下载)
+    - 主要还是要看团队或者个人的抉择了。我们22年开发 https://github.com/netless-io/flat 时，做过测试，基于 blockmap 的方案，下载的 chunk 也就在几十M 左右，对于我们来说已经足够了。
+  - https://x.com/Free_BlackHole/status/2057658229883302198
+    - 整体来说，velopack 和 electron-builder 的选择，需要根据个人的喜好以及产品特点来进行选择。
+    - 如果你的产品经常频繁更新，单次改动较小 ，同时可以忍受额外的维护成本(CI 增加额外流程、客户端需要预存一份 full nuget)，则可以选择 velopack。
+    - 否则我个人建议还是走 electron-builder 的 blockmap 方案。
+    - 需要额外注意的是，electron-builder 的 blockmap 方案是比较依赖 CDN 对 Range request 的支持程度的。如果 CDN 不支持，则会回落到 full 下载
 # packaging
 - apps
   - jupyterlab‑desktop

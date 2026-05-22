@@ -78,6 +78,30 @@ modified: 2025-11-18T13:22:22.078Z
   - what is the latest version of Node.js?
   - 大漠孤烟直 出自哪里? 上下句是什么？ 表达什么意思？ 有其他地方引用过这句吗?
 
+- 9B
+  - https://huggingface.co/Jackrong/Qwopus3.5-9B-Coder-MTP-GGUF
+    - https://huggingface.co/Jackrong/Qwopus3.5-9B-Coder-GGUF
+  - https://huggingface.co/zai-org/GLM-4.6V-Flash
+  - https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2
+
+- 8B
+  - https://huggingface.co/ibm-granite/granite-4.1-8b
+  - https://huggingface.co/EssentialAI/rnj-1-instruct
+  - https://huggingface.co/meta-llama/Llama-3.1-8B
+
+- 4B
+  - https://huggingface.co/Qwen/Qwen3.5-4B
+  - https://huggingface.co/google/gemma-4-E4B-it
+
+- tiny
+  - https://huggingface.co/Nanbeige/Nanbeige4.1-3B
+
+- edge
+  - ?
+
+- 30B
+  - https://huggingface.co/mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit-dwq-v2
+
 - cowork-model
   - macos model
   - shell model

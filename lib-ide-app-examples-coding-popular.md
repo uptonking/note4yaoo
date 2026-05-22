@@ -559,6 +559,10 @@ modified: 2025-12-11T18:10:23.710Z
   - Hybrid Orchestration: Seamlessly switch between Local (Ollama/LM Studio) and Cloud (Gemini/Ollama Cloud) providers.
   - [I really enjoy the codex desktop app, so i made a fully open source desktop app for open-codex : r/codex _202605](https://www.reddit.com/r/codex/comments/1slpm72/i_really_enjoy_the_codex_desktop_app_so_i_made_a/)
 
+- https://github.com/RyensX/OpenCodex /AGPL/202605/ts
+  - OpenCodex是一个轻量级Codex运行环境，可以让你的任意设备通过Web使用你的电脑上的Codex
+  - [OpenCodex第一版Release - LINUX DO _202605](https://linux.do/t/topic/2223341)
+
 ## gemini/qwen-code-cli
 
 - https://github.com/Piebald-AI/gemini-cli-desktop /109Star/MIT/202512/rust/ts/tauri
@@ -1128,7 +1132,7 @@ modified: 2025-12-11T18:10:23.710Z
       - Execution Phase: Use efficient local models (20B-30B range) for faster, cost-effective implementation
     - 已合并 [Feature Request: Subagent System for Specialized Task Delegation _202511](https://github.com/Nano-Collective/nanocoder/issues/97)
       - a subagent system that allows nanocoder to delegate specialized tasks to focused AI agents with specific expertise, tools, and capabilities. 
-    - [Feature Request: Plugin System & Marketplace for Extensible Capabilities ](https://github.com/Nano-Collective/nanocoder/issues/92)
+    - 已合并pr [Feature Request: Plugin System & Marketplace for Extensible Capabilities ](https://github.com/Nano-Collective/nanocoder/issues/92)
       - Current Limitations:
       - No dynamic extension system beyond custom commands
       - No marketplace for discovering and sharing extensions
@@ -1447,6 +1451,7 @@ modified: 2025-12-11T18:10:23.710Z
     - One npm package works everywhere. Binary distribution requires per-platform builds.
   - 📡 [[FEATURE] Other file types: pdf, png, etc ](https://github.com/tobi/qmd/issues/60)
   - 🇨🇳 [Poor Asia Language Indexing Support Caused by SQLite Tokenizer (With Possible Solution) _202602](https://github.com/tobi/qmd/issues/207)
+    - issue已关闭，不做处理
     - The `unicode61` tokenizer splits CJK text into individual characters rather than meaningful words.
     - This makes BM25 ranking essentially meaningless for CJK content because TF/IDF statistics computed at the single-character level lose their discriminative power.
     - The most portable approach (no native dependencies or special SQLite builds required) would be to segment CJK text at the application layer before indexing and querying. For example, using a library like `nodejieba` for Chinese.

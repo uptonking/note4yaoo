@@ -373,7 +373,40 @@ modified: 2025-09-21T13:57:50.332Z
 - ## [请问lite版和full版的主要差别 · opendatalab/MinerU _202411](https://github.com/opendatalab/MinerU/issues/1127)
 - lite是早期开发的时候测试用的，使用了paddleocr的PP-StructureV2作为layout模型，结合paddleocr本身的ocr能力，用来做可行性验证的，实际上结果并不准确，在正式版本中没有开放lite的使用能力。
 
+# discuss-tesseract
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Are ocr engines like tesseract still valid or do people just use image recognition models now. : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1scpwa5/are_ocr_engines_like_tesseract_still_valid_or_do/)
+- Both. They might use it to validate the LLM. However, the LLM was likely trained on OCR output so differences will likely be small. LLM have the benefit of reading disordered information. The LLM can natively output in formats like json and can output only requested data so they remove steps from the processing.
+  - I use Qwen3-VL-8B-Instruct for this handwritten note management app. Tesseract wasn't even an option; it can't do handwriting to save its life
+
+- Yes, along with other character/word-level OCR solutions, for a couple reasons:
+  - It's fast as hell
+  - It only makes mistakes at the character level - it will never fabricate a whole paragraph, or decide halfway through a page that the rest is too much work and just give up.  This is sometimes preferable even though an LLm might have higher average accuracy.
+
+- I've been going hard at it. Trying my best to do OCR, content validation, presence of text validation, etc.
+  - I found that having Google models excel at PDF file parsing. No other model comes close. If I split up the PDF into images, then older Gemini, Qwen, Grok, etc will work fairly well.
+  - Qwen3.5 27b is good for image to text, most Gemini 2.5+ and newer are good also, Qwen 2.5 VL 72b is a monster for image understanding (it's actually mind blowing how good it is).
+  - Currently I'm using opencv to preprocess images, get info from LLM about documents, then use opencv, then LLM again.
+  - I needed to create step by step pipeline to get best results
+
+- 
+- 
+- 
+- 
+- 
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

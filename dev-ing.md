@@ -335,6 +335,10 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 
 ## 0521
 
+- [`/goal` slash command does not work in 0.128.0 · Issue #20591 · openai/codex _202605](https://github.com/openai/codex/issues/20591)
+  - Failed to read thread goal: thread/goal/get failed in TUI
+- works after remove `~/.codex/state_5.sqlite` file for 0.128.0, mac os. install via npm.
+
 - ik_llama.cpp runs on AVX-512 CPU + CUDA
   - AVX stands for Advanced Vector Extensions. It is an instruction set architecture (ISA) that allows a CPU to perform the exact same mathematical operation on multiple pieces of data simultaneously. This is called SIMD (Single Instruction, Multiple Data).
   - The "512" means the CPU has massive 512-bit data registers.

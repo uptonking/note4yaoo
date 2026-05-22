@@ -243,6 +243,11 @@ modified: 2021-04-11T06:17:51.318Z
   - https://x.com/FabianHiller/status/1952545041341100173
     - What makes Formisch unique is its framework-agnostic core, It works by inserting framework-specific reactivity blocks when the core package is built. 
     - TanStack Form is implemented with a framework-agnostic core that has its own reactivity system. This system is then connected to the framework you are using via framework-specific adapters. This differs from how Formisch works under the hood.
+  - [One core, six frameworks, zero runtime abstraction | Formisch _202605](https://formisch.dev/blog/one-core-six-frameworks/)
+    - https://x.com/FabianHiller/status/2057667271846244589
+    - Most "framework-agnostic" libraries are only agnostic at runtime, they ship their own reactivity layer and bridge it into your framework. That bridge costs bytes and can break native batching.
+    - Formisch does it differently: the framework's own primitive is swapped in at build time. In @solid_js your form state is real Solid signals. In @vuejs , real shallowRefs. In @sveltejs , real $state. No runtime adapter.
+    - Most other framework-agnostic libraries are paying an abstraction tax. We deleted it. 
 
 - https://github.com/jieter/leaflet-headless
   - Leaflet for node.(Has Leaflet 1.1.x as dependency.)
