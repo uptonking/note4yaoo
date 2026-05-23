@@ -333,6 +333,23 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0523
+
+- Codex 授权就是一个号码可以授权 3 个账号
+
+- 服务器被oai风控了
+  - 机房ip同时50以上并发会被cf挡下来
+
+- OpenAI API 原始请求	"service_tier": "priority"	请求 Priority processing
+  - Codex config.toml	service_tier = "fast"	Codex 把它映射成 API 的 priority/快速层级
+所以在 Codex 里，你应该写：
+service_tier = "fast"
+而不是：
+service_tier = "priority"
+在 直接调用 OpenAI API 时，应该写：
+"service_tier": "priority"
+一句话：fast 是 Codex 配置里的名字，priority 是 API 请求里的名字；目标都是走更快的 Priority processing。
+
 ## 0521
 
 - [`/goal` slash command does not work in 0.128.0 · Issue #20591 · openai/codex _202605](https://github.com/openai/codex/issues/20591)

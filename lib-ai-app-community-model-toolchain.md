@@ -431,7 +431,18 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
-- ## 
+- ## 🆚 [GGUF with MTP vs MLX without. Is mlx still the way to go for mac users? : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1tgj2if/gguf_with_mtp_vs_mlx_without_is_mlx_still_the_way/)
+  - LM Studio has bad caching for mlx. And not MTP of course.
+
+- From what I have seen MTP improves performance on dense. For MoE it reduces performance. Since macs are memory loaded with no sot strong compute, they mostly benefit from large MoE models with small active params count. Since MTP gains are not there yet, MLX is still way to go.
+
+- On my MacBook M4 Pro 24GB, Gemma 4 26B with MLX plain decoding was faster than MLX MTP in a single-stream run.
+  - Plain MLX: ~68 tok/s
+  - MLX + MTP drafter: ~47-49 tok/s
+- This is misleading: MTP does not benefit everything: the larger the model, the more to gain from it, hence why MoE of small models is a bad use case. It is meant for medium to large dense model, or MoE or medium to large dense experts. Then there is the task as well: it does well on deterministic tasks such as coding (high token acceptance), and poorly on creative tasks such as brainstorming (low token acceptance, possibly before the benefit threshold). So if you are using a MoE with smallish experts, you are probably better off using MLX without MTP support.
+- I'm having same experience, i dont know if I'm configuring something wrong with oMLX but I dont see any improvements using MTP or dflash...
+
+- [Add speculative decoding and MTP inference support to the server · Issue · Blaizzy/mlx-vlm _202604](https://github.com/Blaizzy/mlx-vlm/issues/981)
 
 - ## [110 tok/s with 12GB VRAM on Qwen3.6 35B A3B and ik_llama.cpp : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1tjh7az/110_toks_with_12gb_vram_on_qwen36_35b_a3b_and_ik/)
   - Had been getting great MTP performance with llama.cpp on my RTX 4070 Super 12GB, until they actually merged the MTP PR. Then, performance tanked and was barely above non-MTP. So, I decided to try out ik_llama.cpp since it also supports MTP and is apparently better optimized for CPU offloading.

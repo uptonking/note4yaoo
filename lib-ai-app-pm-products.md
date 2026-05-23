@@ -1795,15 +1795,26 @@ modified: 2025-03-22T16:10:24.856Z
     - 很可能注册的第一天会显示低价，后面就恢复正常价格了，注意误导
     - 在5月13号，几乎所有成品号渠道都失效了，所有店铺(无论贵的还是便宜的)的源头渠道几乎相同，，，以后买便宜的就行了
   - 月初是openai集中清理风险型用户和欺诈性用户的敏感时间, 很多便宜的渠道会挂掉
-  - 封号的时机注意周初和月末， 周初前几天可能会清理，月末很可能集中清理，最好在北美周二买号
+    - 封号的时机注意周初和月末， 周初前几天可能会清理，月末很可能集中清理，最好在北美周二买号
+  - 带at/rt的帐号价格不同，在不同的封控政策下，可使用时间差异很大，最好选择 RT(可长期) + 可刷新AT(手动刷新来解决401问题)
+    - 廉价的AT号几乎都不提供刷新，在每天掉号的状况下经常用不完周限，很浪费
+    - 如果有rt和邮箱取码，可以手动接码来刷新AT，也是一种折中的方案(介于2个AT号 和 一个接码成品号)
+
+- sources
+  - [货源广场 - 链动小铺](https://pay.ldxp.cn/merchant/my_parent/source_square)
+  - [阿华的AI比价聚合站 ](https://ahua-ai-price-aggregator.onrender.com/)
+  - [AI 商品库存聚合搜索工具 ](https://goods.moo.kim/)
+    - [售票处的小店 - 链动小铺](https://pay.ldxp.cn/shop/T6UJ4L1M)
 
 - resources
-  - [货源广场 - 链动小铺](https://pay.ldxp.cn/merchant/my_parent/source_square)
   - GPT site:pay.ldxp.cn/shop
     - 小铺还有很多其他产品: kiro, windsurf, 接码, 虚拟卡, 手机号, visa
   - ~~搜索: 手工, 质保, 源头, 印尼~~ 
-  - [阿华的AI比价聚合站 ](https://ahua-ai-price-aggregator.onrender.com/)
-  - [CPA <-> sub2api ](https://gtxx3600.github.io/CPA2sub2API/)
+  - 转换 [CPA <-> sub2api ](https://gtxx3600.github.io/CPA2sub2API/)
+    - https://lywqfvjb.feiyus.com
+    - https://session.nloop.cc
+    - [ChatGPT Session -> CPA / sub2api / Cockpit / AxonHub / Codex-Manager ](https://gtxx3600.github.io/GPTSession2CPAandSub2API/)
+      - 只支持单向转换
 
 - latest
   - 可在google搜索 `GPT site:pay.ldxp.cn/shop`.
@@ -1818,27 +1829,6 @@ modified: 2025-03-22T16:10:24.856Z
   - Cubence（鹅）的包月用过，前身 shareyourcc 的亮点在于可以二级转发；但是新时代也不便宜了，有时候发现一些报错感觉是 aws 渠道特有的
   - PackyCode（农）是一直主力在用的，老农可能不太给情绪价值（不过被怼过之后好了些 hhh)，不过技术是一流的，诚信这一块也是一直没得黑的
 
-- [xin](https://receipt.nitro.xin/redeem/chatgpt)
-
-- [chong](https://chong.databrain.sbs/)
-
-- [AI杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ai-shop)
-  - 管理员小店 [faka.gsyun.cloud ](https://faka.gsyun.cloud/)
-  - AI科研交流群：560520490
-  - 低价号, 后续印尼佬会换成outlook邮箱账号，本次就还是他们自己内部自建邮箱
-  - plus-6
-  - team-7
-  - 质保3天：从  激活时间  起算 72小时 内出现掉车，可 提交工单 无限次补车。
-  - 货源纯手工开通订阅 理论一个月 
-  - [ChatGPT源头的小店](https://pay.ldxp.cn/shop/B8TNSEBM) , 还有开单独中转站
-    - 群友提供的印尼渠道, 都是微软邮箱, 印尼的临时不要
-    - plus-6
-    - 提供2类账号: hotmail邮箱+密码登陆，邮箱+验证码登录
-  - [视界AI的小店 - 链动小铺](https://pay.ldxp.cn/shop/shijieAI)
-    - 印尼， 提供批量折扣
-  - [shop.aitonse.com](https://shop.aitonse.com/products)
-    - 印尼
-
 - [codex.kedaya.xyz](https://codex.kedaya.xyz/)
   - [KEDAYA的小店 - 链动小铺](https://pay.ldxp.cn/shop/kedaya)
     -  https://gpt.kedaya.xyz    /支持用购买的卡密一个一个提取账号
@@ -1849,11 +1839,13 @@ modified: 2025-03-22T16:10:24.856Z
   - [商家9052的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/LOA3IZW5)
     - plus账号极低价格， 10个-35
     - [商家9152的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/KHRR17MS)
-  - [商家5651的小店 ](https://pay.ldxp.cn/shop/AO4GDZSI)
-    - 自助售后, 质保三天 
   - [畅用plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/ooopp)
     - plus账号, 质保三天 
-  - [xileyyds的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/KK5XQNYK)
+  - [猪猪AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/code)
+    - 零售+批量
+  - [商家5651的小店 ](https://pay.ldxp.cn/shop/AO4GDZSI)
+    - 自助售后, 质保三天 
+  - [喜乐GPT plus xileyyds的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/KK5XQNYK)
     - 低价代理商
   - [山姆奥特曼商店的小店 - 链动小铺](https://pay.ldxp.cn/shop/1E5DST9P)
     - plus账号-6, 质保三天 
@@ -1861,10 +1853,14 @@ modified: 2025-03-22T16:10:24.856Z
     - 【手工】【30天】GPT-Team / Business 高质量激活码（质保3天）
   - [普露米AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/plumire)
     - 低价号多
-  - [猪猪AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/code)
-    - 零售+批量
   - [OAI DO的小店 - 链动小铺](https://pay.ldxp.cn/shop/oai)
-  - [喜乐GPT plus的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/KK5XQNYK)
+
+- [NexusVault 中转号池交易台(类似交易所) ](https://trade.livetools.top/workspace)
+  - [协议登录测试台 ](https://token.livetools.top/)
+  - 面向中转站主和供应商，统一处理账号入库、质量检测、余额提号、自动补池、质保售后和结算核账
+  - 买号补池: 余额提号与自动推送
+  - 供应入池: 批量导入与质保上架
+  - 售后结算: 退款核账与付款申请
 
 - [麦当当plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/EOTZ17J2)
   - 交流: https://t.me/maidangdangplus
@@ -1889,25 +1885,23 @@ modified: 2025-03-22T16:10:24.856Z
   - 只做群里面的三级代理
   - [xiamai gpt_plus_批发的小店 - 链动小铺](https://pay.ldxp.cn/shop/xiamai)
     - 低价渠道多
-  - [金幺の小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/jinyao)
-    - 品类多
   - [青蛙AI·低价源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/qingwaAA)
-
-- [ChatGPT Plus 个人版 自助开通 ](https://codexcn.com/)
-  - 付款后系统自动派发一个独立的 ChatGPT Plus 账号（含密保邮箱密码），登录即用。
-  - ¥58.88/月, 30 天内不可用免费换新
+  - [464的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/7HVUEC3Y)
+    - 品类多
+  - [MLYF的AI工厂的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/TAFHH1PS)
+    - 质保、非质保 分开
 
 - aidark [邮件与账号工具台](https://mails.aidark.icu/)
   - [xiaoxiao的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YD93JLNG)
 
-- 批量取件： https://plus.keria.cc.cd/ 
+- https://plus.keria.cc.cd/ 
   - [PLUS直营店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/FNAOIGBK)
   - 卡密下单起1小时内自动失效, 还请快速兑换，icloud邮箱
   - 提卡 https://plus.keria.cc.cd/
   - [icloud 邮箱 GPT PLUS直营店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/A87R3DZP)
   - [商家8190的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/AY1FXLQX)
   - [AI会员小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/XLF7RCJG)
-    - 非协议，协议注册别来碰瓷，icloud 邮箱
+  - [青熵的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/P9HPIPWA)
 
 - [小猫GPT源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1D0LD6BR)
   - 频道通知链接：https://t.me/+UkH0O6HZLBM5MTJh
@@ -1942,6 +1936,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 取号内容为邮箱+验证码+无rt格式的JSON成品，单个卡密可以重复查询多次，不会用可以多看看介绍
   - 卡密有效期3天，3天后销毁，不要囤货
   - 也可以使用批量上号功能生成成品授权文件，支持sub2api和CPA两种格式
+  - 还提供高价的gmail版plus
   - 可sub2api  <==>  CPA互转，转换格式地址 https://register.lovelymira.com/format-converter
 
 - [AI杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/PBY2YIR3), /周全
@@ -1951,45 +1946,75 @@ modified: 2025-03-22T16:10:24.856Z
     - [爱喝奶茶的小店 - QXVX Pay](https://pay.qxvx.cn/shop/EUTV8STA)
   - [AAA plus批发的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/F6077NPC)
     - free + plus
-- [商家9237的小店 - 链动小铺](https://pay.ldxp.cn/shop/RXKT7LFX)
-  - https://otp.forestpolarpilot365.shop/
-- [发呆的小店 - 链动小铺](https://pay.ldxp.cn/shop/PL4EBAMI)
-  -  https://otp.the22222.org/
-  -  https://t.me/GPTattackz
+  - [商家9237的小店 - 链动小铺](https://pay.ldxp.cn/shop/RXKT7LFX)
+    - https://otp.forestpolarpilot365.shop/
+  - [发呆的小店 - 链动小铺](https://pay.ldxp.cn/shop/PL4EBAMI)
+    - https://otp.the22222.org/
+    - https://t.me/GPTattackz
+  - [商家3593的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/BQMWH5MY)
 
-- [AI源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1CMPMUXM)
+- [AI杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ai-shop)
+  - 管理员小店 [faka.gsyun.cloud ](https://faka.gsyun.cloud/)
+  - AI科研交流群：560520490
+  - [ChatGPT源头的小店](https://pay.ldxp.cn/shop/B8TNSEBM) , 还有开单独中转站
+    - 提供2类账号: hotmail邮箱+密码登陆，邮箱+验证码登录
+  - [视界AI的小店 - 链动小铺](https://pay.ldxp.cn/shop/shijieAI)
+    - 印尼， 提供批量折扣
+  - [shop.aitonse.com](https://shop.aitonse.com/products)
+    - 印尼
+
+- [极速AI源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1CMPMUXM)
   - 低价 https://redeem.buycodekey.com/
-  - (1卡1绑) sub2格式json 带At(不带rt)
+  - PLUS (icloud邮箱1卡1绑) 带At(不带rt)不带账密质保首登
+  - PLUS (精品雅虎邮箱1卡1绑) 带rt，不带账密质保首登
   - cpa格式自己转换:  https://cvt.okcode.cc.cd/ 
   - [☀️的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/J0Q89LSE)
-  - [babu的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/9T40GAS6)
+    - 只是个代理
+  - [商家4955的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/V38JA2MD)
   - [gpt低价货源的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/5XX41BQK)
-- [ChongAPI-源头商家的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/TSCE0SEH)
-  - 低价多
-- [商家5812的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/8QYLBYPO)
-  - 多件折扣
+  - [babu的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/9T40GAS6)
+    - 前往  https://downs.yossq.com/ 进行兑换获取邮箱和cpa
+    - plus账密一个月  质保首登 带cpa/sub2文件(AT)  
+  - [foxfishs的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/foxfishs)
+    - icloud邮箱，一号一绑, CPA和Sub2api格式，只适合中转站
+    - 兑换网址： https://diamon666.xyz/ 
+- [鼎尚AI 商家5812的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/8QYLBYPO)
   - 提卡 https://ai.cdns.ccwu.cc/
+  - 多件折扣
   - 卡密现在发卡之后有效期只有6小时。超过6小时卡自动销毁后无法使用不售后
-- [codex小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/BGPNHEF6)
+- [ngcoffee codex小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/BGPNHEF6)
   - 20份起售, 散户别碰
   - 需要登录网页的可去 https://inbox.ignore.md 贴入JSON收邮件验证码和登录密码
   - 只要账号没封 AT过期可自行登录网页再取AT
-- [GPT小杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YPFLK17T)
-  - ¥3
-  - GPT plus账号(印尼），一般日抛，没有rt ，就at ，日抛要什么rt？ at能用10天
-  - 发货格式是：  txt 文件 一行就是一个json
-- [464的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/7HVUEC3Y)
-  - ¥4.5
+- [ChongAPI-源头商家的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/TSCE0SEH)
+  - 只做批发，不零售
 - [ 9527code ](https://fk.9527code.com/)
   - ¥5
-  - [plus专卖店的小店 - 链动小铺](https://pay.ldxp.cn/shop/RNJDBGD4)
-    - PP渠道｜无质保，当日抛使用
   - [大熊AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/G09AC5SS)
   - [企业级AI交易平台的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ULOOBF79)
 - [Ai Plus shop](https://shop.558669.xyz/)
   - 兑换网址：https://gpt.558669.xyz
   - At成品号（无Rt）, 一号两绑，目前存活率很高，已有3天；
   - 只出中转格式，CPA和Sub2api格式，不会用的不要买
+  - https://faka.skiii21hc11.cc/
+- [GPT365商店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/gpt365)
+  - [shop GPT365商店 ](https://new-shop.gpt365.wiki/)
+  - 账号发货格式 卡密|激活地址，卡密激活成功后，将自动获取账号信息， 支持下载 CPA / Sub2 JSON
+  - 卡密必须在48小时内兑换，若在规定期限内未兑换，将直接封禁卡密，不予退款
+
+- [黑鹅小铺的小店 - 云猫寄售 ](https://www.ooeao.com/shop/ithte)
+  - plus-¥2
+  - 不包codex接码， 实测需要绑定手机号
+  - https://plus3.yhmoai.online/?key=
+  - [sanguine的小店 - 云猫寄售 ](https://www.ooeao.com/shop/sanguine)
+    - at号4r，rt号5r
+  - [某的号铺的小店 - 云猫寄售 ](https://www.ooeao.com/shop/mou)
+    - 各国接码
+  - [Gemini Pixel 设备认证 ](https://autopixel.qzz.io/wholesale)
+    - 品类多
+  - [风里的ai小铺的小店 - 云猫寄售 ](https://www.ooeao.com/shop/I7DPO2IK)
+    - 很多接码
+  - https://team.longxiadev.store/
 
 - [Lyla-精灵小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/lyla)
   - kiro周卡-18
@@ -2006,6 +2031,15 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [源头GPT的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1DM0L7CR)
   - 100个 free账号 Token（实时验活）CPA + sub2api格式
+  - 【icloud苹果邮箱】PLUS 成品-可登网页版-有RT-Json
+- [XC的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/K9NFLN0C)
+  - 账号----密码----邮箱----自行解决需要登入验证码的问题
+  - 如果需要跳过手机号认证，只能使用本地中转方案
+  - [plus专卖店的小店 - 链动小铺](https://pay.ldxp.cn/shop/RNJDBGD4)
+    - PP渠道｜无质保，当日抛使用
+- [AI源头-oak的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/oak)
+  - tg频道：https://t.me/dabaizu 
+  - 接码多, paypal
 - [464的小店 - 链动小铺](https://pay.ldxp.cn/shop/7HVUEC3Y)
   - 通知频道：https://t.me/hdunzx
   - 质保两天
@@ -2020,20 +2054,22 @@ modified: 2025-03-22T16:10:24.856Z
   - [seven85777的小店 - 链动小铺  ](https://pay.ldxp.cn/shop/SEVEN857)
     - 切换日本节点注册新号，具有免费试用资料
     - 5个起购直冲渠道cdk-质保6小时（必须用日本节点注册新号）
-  - [AI源头-oak的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/oak)
-    - tg频道：https://t.me/dabaizu 
-  - [🍑桃俊泽的AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/DJOBBG3H)
+  - [桃俊泽的AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/DJOBBG3H)
     - GPT plus日抛成品号x1
     - 不包codex接码
-  - [随欲小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/MO2JGWG9)
-    - free-0.45
+  - [GPT小杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YPFLK17T)
+    - GPT plus账号(印尼），一般日抛，没有rt ，就at ，日抛要什么rt？ at能用10天
+    - 发货格式是：  txt 文件 一行就是一个json
+  - [哇咔咔的AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/V2YZIFWM)
+    - 开发了ldxp扩展
   - [小NO plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/BWGFCYG1)
   - [秋刀鱼精品小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/qiudaoyu777)
     - 购买后需要手动联系来索取json
   - [faka.jnmtk PLUS 账号 ](http://faka.jnmtk.com/)
+  - [随欲小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/MO2JGWG9)
+    - 高价plus
   - [一只狗子的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/2IG615LQ)
   - [Xun AI - 海外效率工具订阅的小店 - 链动小铺 5](https://pay.ldxp.cn/shop/XunAI)
-  - [AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/V2YZIFWM)
   - [壹码工坊的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1aicode)
   - [AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/HGQW9XKA)
   - [AICA的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/aica)
@@ -2194,15 +2230,27 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [KiroSwitch官方直营店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Z3VSKEGC)
 
-- [黑鹅小铺的小店 - 云猫寄售 ](https://www.ooeao.com/shop/ithte)
-  - plus-¥2
-  - 不包codex接码， 实测需要绑定手机号
-  - https://plus3.yhmoai.online/?key=
-  - [sanguine的小店 - 云猫寄售 _202605](https://www.ooeao.com/shop/sanguine)
-    - at号4r，rt号5r
+### 发卡网
+
+- [发卡网 - 在线购买虚拟商品 ](https://sd.ncet.top/)
 
 - [鹰鹰发卡](https://fk.apiway.cc/)
   - 下单前请检测自己的号有没有试用资格，如果拿没有试用资格的普号导致无法升级
+
+### sms/code
+
+- [AI源头-oak的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/oak)
+  - tg频道：https://t.me/dabaizu QQ群：996266572
+
+- [SMS-AIShop的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/66666SMS)
+
+- [ZhuSMS — 接码平台 ](https://zhusms.com/)
+  - https://caowo.store/
+
+### ip
+
+- [静态IP的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/HLT0XHF9)
+  - 共享ip 或 单人
 
 ### 中转站
 
@@ -2212,6 +2260,10 @@ modified: 2025-03-22T16:10:24.856Z
   - [AI中转站推荐 | Claude/Gemini/Codex中转站评测对比](https://www.helpaio.com/transit)
     - 评分结果与L站评分基本一致
     - 提供了很多折扣码
+
+- [稳问AI /sub2api](https://api.wenwenai.org)
+  - 0.01是1块钱100刀
+  - 并发才给5, 不然给人刷吗
 
 - [PackyAPI](https://www.packyapi.com/pricing)
   - [Packy - 模型健康面板](https://check.linux.do/group/Packy)

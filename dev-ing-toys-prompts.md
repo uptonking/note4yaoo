@@ -97,7 +97,10 @@ you have worked on this problem several times but features are still lacking. Th
 
 - please recheck migrated features and improve your implementation in begonia. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support..., compare the implementation logic/code of begonia with superdoc logic/code to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
 - core implementation for major features should be framework-agnostic without react, react should be used very sparingly.
+
 - prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support... in begonia, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+
+- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achived so that further improvements goal will be designed as separate goal/task.
 
 - docs/tests/scripts might be outdated, recheck code and data flow to improve begonia.
 
@@ -213,6 +216,8 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, selection range/offset/caret, undo/redo for editing, pdf annotations/highlights... in hardoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
+- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achived so that further improvements goal will be designed as separate goal/task.
+
 ## grist-office
 
 Project Grist(in current folder) is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database. 
@@ -261,6 +266,8 @@ Project Grist(in current folder) is a modern relational spreadsheet. It combines
 - please recheck migrated features and improve your implementation in react webapp. Analyze core data flow and implementation logic details for every major feature like spreadsheet data-model and rich formatting, spreadsheet editing with undo/redo and history, custom-widget, formula, drag-and-drop-dashboard, incremental-imports..., compare the implementation of react webapp with backbonejs webapp to recheck and enhance the correctness of architecture and logic in react webapp, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in react webapp are correct, modular, extensible for long-term maintenance.
 
 - prioritize and recheck/improve major features like spreadsheet data-model and rich formatting, spreadsheet editing with undo/redo and history, custom-widget, formula, drag-and-drop-dashboard, incremental-imports... in react webapp, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+
+- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achived so that further improvements goal will be designed as separate goal/task.
 
 - RBAC or ui/ux is not important at the moment, related feature may be delayed, you can update the parity docs.
 
@@ -389,7 +396,9 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 - jan's overall architecture is good enough to follow. Mostly aichorage should use similar architecture to jan.
 
 - please recheck migrated features and improve your implementation in aichorage. Analyze core data flow and implementation logic details for every major feature like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible api, chat with local-model/cloud-llm-api-provider..., compare the implementation logic/code of aichorage with related jan/transformerlab-app/unsloth-studio logic/code to recheck and enhance the correctness of architecture and logic in aichorage, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in aichorage are correct, modular, extensible for long-term maintenance. 
+
 - prioritize and recheck/improve major features like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible-api, chat with local-model/cloud-llm-api-provider... in aichorage, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achived so that further improvements will be designed as separate goal/task.
 
 - 
 - 

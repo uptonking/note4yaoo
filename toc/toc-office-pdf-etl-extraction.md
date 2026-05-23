@@ -351,7 +351,7 @@ modified: 2026-04-07T12:53:02.538Z
   - For each document in the input_path, the main function will generate a corresponding folder with the same name as the original document in the output_path. All extracted figures (in jpg format), captions (in text format) and their coordinate information (in json format) will be saved in the corresponding folder.
   - PDF parsing using xpdf 
 
-- https://github.com/morkev/vlm-yolo-detector /MIT/202601/python
+- https://github.com/morkev/vlm-yolo-detector /MIT/202605/python
   - VLM-powered image extraction and semantic search for equipment manuals. This repository provides the image data pipeline for the agentic-rag system.
   - Extract images from PDF documents (embedded images + rendered pages with diagrams)
   - Generate VLM descriptions for each image using LLaVA via Ollama

@@ -437,6 +437,13 @@ modified: 2023-09-02T09:17:22.992Z
   - Built-in redaction - Auto-removes secrets, api keys, and other sensitive data completions
   - Universal agent support - Works with Claude Code, Gemini CLI, Grok CLI, Codex CLI, OpenCode, and more
   - Works offline & locally - No cloud dependencies or internet required
+
+- https://github.com/canonical/multipass /9.1kStar/GPL/202605/cpp
+  - https://canonical.com/multipass
+  - Multipass is a lightweight VM manager for Linux, Windows and macOS. 
+  - It's designed for developers who want to spin up a fresh Ubuntu environment with a single command. 
+  - It uses KVM on Linux, Hyper-V on Windows and QEMU on macOS to run virtual machines with minimal overhead. It can also use VirtualBox on Windows and macOS. 
+  - Multipass will fetch Ubuntu images for you and keep them up to date.
 # browser-emulator 🧭
 - https://github.com/thecodacus/OpenWebContainer /MIT/202501/ts
   - https://open-web-container.vercel.app/

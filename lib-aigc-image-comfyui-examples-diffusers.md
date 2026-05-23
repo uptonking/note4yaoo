@@ -361,6 +361,11 @@ modified: 2025-08-23T11:43:35.904Z
   - [Built an open source viewer for face looker project! : r/comfyui](https://www.reddit.com/r/comfyui/comments/1osskyi/built_an_open_source_viewer_for_face_looker/)
   - whats your process to regenerate face ? it is super fast
     - I have provided the way to do it the about; its using a model hosted in Replicate; it can be done for free.
+
+- https://github.com/hero8152/Infinite-Canvas /NALic/202605/python
+  - Supports comfyui/API calls/modelscope calls
+  - 最新做了智能画布，排除一切节点干扰，画面舒适。
+  - 增加了资产库管理
 # ai-image-generator
 - tips
   - midjourney alternative

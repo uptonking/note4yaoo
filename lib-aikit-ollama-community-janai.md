@@ -37,6 +37,7 @@ modified: 2026-01-14T19:05:15.969Z
 
 - runtime/backend
   - ik_llama.cpp
+  - mtplx
   - ~~下载llama.cpp/mlx-vlm到本地缓存位置如.cache后， 添加固定hash后缀，避免重复下载~~ 
 
 - model-manager

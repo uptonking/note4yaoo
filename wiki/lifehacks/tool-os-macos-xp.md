@@ -98,6 +98,9 @@ go clean -cache
   - Edit->Paste From->Rich Text
   - You have to add `->` without any spaces in-between the menu title fields.
 
+- [Have your Mac speak text that’s on the screen - Apple Support ](https://support.apple.com/guide/mac-help/have-your-mac-speak-text-thats-on-the-screen-mh27448/15.0/mac/15.0)
+  - To have your Mac start speaking, press the specified keyboard shortcut (the default key combination is Option-Esc).
+
 ### finder/files-explorer
 
 - 显示Finder/访达: cmd+option+space
@@ -172,6 +175,8 @@ go clean -cache
   - fn + shift + ArrowLeft/Right 让光标跳到行首/行尾
   - fn + ArrowLeft/Right 让光标跳到terminal的头部/尾部
   - cmd+D 会竖向显示2个terminal， cmd+shift+D可还原
+- [Close Terminal Without Confirmation? : r/mac _202404](https://www.reddit.com/r/mac/comments/1c3oxnh/close_terminal_without_confirmation/)
+  - In Settings, Profiles, Shell, Ask before closing, Only if there are processes other than the login shell and: Add ping to this list.
 
 - gpg
   - [Generating a new GPG key - GitHub Docs](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
