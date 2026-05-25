@@ -99,9 +99,27 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
-- ## 
+- ## [Claude Code v2.1.150 now allows Anthropic to perform remote system prompt injection : r/ClaudeCode _202605](https://www.reddit.com/r/ClaudeCode/comments/1tmizuy/claude_code_v21150_now_allows_anthropic_to/)
+  - I often patch the system prompts on my Claude Code executable in order to make Claude more effective. Every time I upgrade, I ask Claude himself to dissect the new binary and look for problematic system prompts to modify. Was upgrading to v2.1.150 today and discovered something that's rather alarming: Claude Code now allows Anthropic to perform remote system prompt injection via the network.
+  - Two data sources. First, API call to api.anthropic.com/api/claude_cli/bootstrap at startup, which also gets cached to disk. Second, a GrowthBook feature flag (tengu_heron_brook) that refreshes every 60 seconds with background sync. Any string returned by these endpoints gets injected into the system prompt of the LLM model with shell access.
 
-- ## 
+- ## [Claude Code dropped /workflows : r/ClaudeCode _202605](https://www.reddit.com/r/ClaudeCode/comments/1tkjy4u/claude_code_dropped_workflows/)
+  - Anthropic quietly shipped /workflows in Claude Code 2.1.147 and it might be the biggest shift in how we build multi-agent systems yet.
+  - Until now, the pattern was: one main agent (an LLM) decides what sub-agents to spawn, holds every intermediate result, and plans the next step.
+  - The problem? Every sub-agent result re-enters the orchestrator's context.
+  - /workflows replaces the LLM orchestrator with code.
+  - You define a workflow.js file. Sub-agent outputs flow from one phase to the next directly never touching the main context window.
+  - The principle is what's interesting: use code for what code is good at (control flow), and models for what models are good at (judgment inside each step).
+  - Update Note: It looks like they have taken it down for now. It was on the changelog earlier
+- Anthropic shipped agent teams and has been awkwardly quiet about it since.
+  - Cost. Agent teams are very expensive to run.
+- So what’s the difference between that and this new thing?
+  - Teams: configuration of group of agents + communication/orchestration primitives
+  - Workflows: deterministic processes with some form of phase-gate-validation and other guardrails to keep agent on track and/or work more efficiently.
+
+- I prefer using forked agents now. Tell the main agent to only use forked agents (have to enable from env variable) and to give thr forked agent minimal context or just keep using /fork
+  - 1 - forked agent gains all context of main agent does the task and reports back to main agent. Having all the context makes it way more predictable.
+  - 2 - because it has the exact same context it also gets all the caching so usage isn't as heavy as you'd think.
 
 - ## Custom slash commands have been merged into skills. 
 - https://code.claude.com/docs/en/skills

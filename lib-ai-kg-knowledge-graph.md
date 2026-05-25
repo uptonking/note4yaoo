@@ -9,7 +9,6 @@ modified: 2023-02-07T09:23:32.856Z
 
 # guide
 - resources
-
 # blogs
 
 ## [知识图谱基础之RDF，RDFS与OWL - 知乎](https://zhuanlan.zhihu.com/p/32122644)
@@ -49,3 +48,46 @@ modified: 2023-02-07T09:23:32.856Z
   - OWL 2包含了三个标准，或者三种配置（Profile），它们是OWL 2完整标准（OWL 2/Full）的一个子集。
 # more
 - [DDIA 读书笔记（二）：数据模型和查询语言 | 木鸟杂记](https://www.qtmuniao.com/2022/04/16/ddia-reading-chapter2/)
+# discuss-kg-files
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Knowledge Graphs vs. simple Markdown: Are the token savings worth the indexing overhead? : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1tnbsfj/knowledge_graphs_vs_simple_markdown_are_the_token/)
+  - I’m still pretty skeptical about using Knowledge Graphs for RAG/init. The biggest hurdle for me is that a KG requires continuous indexing of your repo to actually stay up to date.
+  - People claim KGs are great token savers, but is all that constant indexing overhead really worth it? Does it genuinely outperform just feeding the LLM a solid, well-structured flat file like a ⁠skills.md⁠ or ⁠architecture.md + fe caveman style⁠?
+
+- Yeah honestly for most repo/codebase RAG setups, good markdown + solid retrieval gets you 80–90% there without the operational headache.
+  - KGs only really start paying off when you need complex relationships or multi-hop reasoning. Otherwise the continuous indexing overhead becomes its own problem pretty fast.
+- What complex relationship can be described in the kg that is impossible to describe in md?
+  - markdown is much easier to end up out of date, it’s entirely manually maintained. and it usually lives next to other information that can inadvertently get pulled in and cause the LLM to reason itself out of doing what it was told to do without strict controls on scanning files/retrieval. for most of the really large agentic models this isn’t as much of a problem except when it comes to tokens consumed. on smaller models a knowledge graph can help a smaller model outperform large models by themselves. it just really depends on your structure and workload
+
+- I wound up with something like 400 markdown files for a project before I realized the sprawl and rediscovery that was happening. Either everything is siloed or context gets too bloated and mistakes start happening. The graph lets you get to anywhere from anywhere efficiently. I had a couple of big breakthroughs within the first day because the right specialist wound up getting just the right amount of info. I feel like I’ve barely scratched the surface too.
+
+- We have tried and used knowledge graph based system and the gains are beyond just tokens. There are also massive latency gains as well. You are able to retrieve deterministically and that's where real advantage is. The gains, as you can imagine really start to show up in complex and large code bases (10-15K lines of code and above)
+
+- Token savings is the wrong reason to use a KG. Grounding is. A flat architecture.md tells the LLM a story about your system. A KG gives it a fact table it can't lie about. The model can hallucinate that ServiceA calls ServiceB from prose; it can't invent an edge that doesn't exist in the graph.
+  - Indexing overhead is real but solvable — incremental updates on commit, same pattern your code search already uses. The skills.md alternative has the same staleness problem, just less visibly.
+  - Worth it when: cross-service reasoning, agentic chains of 5+ lookups, or wrong answers cost real money. Not worth it for: small repos, single-domain assistants, or anywhere a 500-line markdown file actually fits the whole picture.
+  - The trade-off isn't tokens vs. indexing. It's narrative vs. ground truth.
+
+- [Knowledge Graphs vs. simple Markdown: Are the token savings worth the indexing overhead? : r/LLMDevs _202605](https://www.reddit.com/r/LLMDevs/comments/1tnbyyg/knowledge_graphs_vs_simple_markdown_are_the_token/)
+- You are oversimplifying it. There is no one solution. It depends on the use case.
+  - For anything less than 3MB (~1Mtok), just send the whole thing to an LLM, if cost and speed aren't issues. Beyond that, you need to break it down. Something like K-graph RAG is a viable solution. But not always. Which RAG solution you pick depends on a lot of factors.
+
+- in my experience the flat file wins for most teams and it's not close.
+  - a well-structured architecture.md that a human actually maintains is more accurate than a KG that's theoretically comprehensive but practically stale. the continuous indexing problem you identified is the real issue. most teams set up the KG, run the initial index, and then the repo drifts. three weeks later the graph says module X calls module Y but someone refactored that path and nobody re-indexed. now your token-efficient retrieval is confidently injecting wrong context.
+  - KGs have a real advantage when the relationships between entities are the thing you're querying. "what depends on this service" or "which modules touch this data model" are questions a flat file answers poorly and a graph answers well. if your workflow is mostly "give the LLM enough context to work on this file, " the flat file is cheaper, simpler, and easier to keep current because a human can update it in 30 seconds.
+  - the token savings argument for KGs also assumes the graph retrieval is precise. in practice, graph traversal can pull in a lot of adjacent nodes that are technically connected but not relevant to the current task. you save tokens on the initial context but waste them on noisy neighbors.
+
+- for most codebases a well stuctured markdown file wins on simplicity and the kg overhead isnt justified until you have dense cross entity rekationshios that files cant represent neatly.
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 

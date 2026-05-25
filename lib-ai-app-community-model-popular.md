@@ -714,7 +714,13 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [Qwen3.6-35B-A3B vs Gemma4-26B-A4B : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1tmbola/qwen3635ba3b_vs_gemma426ba4b/)
+- For non-coding Gemma is better in my testing.
+
+- Gemma for role play (narrative chat workload as opposed to say vibe coding), Qwen for everything else
+  - It's hilarious that Qwen, a Chinese model, writes worse Chinese proses in RP than Gemma by default (minimal prompting).
+
+- Right now, most people are busy with Qwen3.6 models after recent MTP feature merged on llama.cpp. Once this PR merged, they would play with Gemma-4 models side by side with Qwen3.6.
 
 - ## [Introducing the IBM Granite 4.1 family of models (3B/8B/30B) : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sz23wn/introducing_the_ibm_granite_41_family_of_models/)
   - Also released : https://huggingface.co/ibm-granite/granite-vision-4.1-4b

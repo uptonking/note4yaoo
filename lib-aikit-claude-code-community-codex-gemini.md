@@ -174,6 +174,18 @@ codex --yolo resume --last
 
 - ## 
 
+- ## Kimi 自己基于 Python 写的 kimi-cli，在今天换成了基于 Typescript 和 pi-tui 写的新 kimi-code。
+- https://x.com/amehochan/status/2058738716840255990
+  - 而且 kimi code 可以对接其他家的 API 作为统一编程 CLI 入口了。
+
+- kimi web 没了？
+
+- ## 🆚 [Codex CLI vs OpenCode: is there an actual difference in coding quality? : r/opencodeCLI _202605](https://www.reddit.com/r/opencodeCLI/comments/1tmf4h5/codex_cli_vs_opencode_is_there_an_actual/)
+- The advantage of OpenCode you can create your own build and plan agents and completely overwrite the system prompt. You can make it more fit to your actual tech stack and environment
+  - Codex is also open source..
+
+- Codex harness has a lot of scaffolding for GPT that OpenCode won't have, so yes, they will absolutely behave differently.
+
 - ## [favorite Agentic Coding Harness : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1th5t1b/favorite_agentic_coding_harness/)
 - Goose has been adopted by the AAIF as a standard agent. I've used it a decent bit and it is pretty good. https://goose-docs.ai/ https://github.com/aaif-goose/goose
 

@@ -2102,7 +2102,8 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## [Inference provider tiers by Cache-hit rates, using openrouter data : r/LLM _202605](https://www.reddit.com/r/LLM/comments/1tlppan/inference_provider_tiers_by_cachehit_rates_using/)
+- Interesting ! How did you compute it ?
 
 - ## DeepSeek-V4-Flash with SSD KV Cache Offload on Blackwell
 - https://x.com/Tono_Ken3/status/2055134669512016304

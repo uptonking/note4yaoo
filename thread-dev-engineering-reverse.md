@@ -126,7 +126,9 @@ modified: 2026-03-01T17:12:41.271Z
 
 - ## 
 
-- ## 
+- ## [很好用的逆向+渗透工作流 - LINUX DO _202605](https://linux.do/t/topic/2244272)
+  - https://github.com/zhaoxuya520/reverse-skill-private
+
 # discuss-examples 🌰
 - ## 
 

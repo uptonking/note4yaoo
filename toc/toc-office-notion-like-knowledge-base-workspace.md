@@ -788,9 +788,14 @@ modified: 2022-06-03T21:34:54.893Z
   - Authentication: User accounts and authentication.
   - SolidJS, shadcn-solid, honojs, drizzle
 
-- https://github.com/stumpapp/stump /1.8kStar/MIT/202510/rust/ts
+- https://github.com/stumpapp/stump /2.4kStar/MIT/202605/rust/ts
   - https://stumpapp.dev/
   - open source comics, manga and digital book server with OPDS support (WIP)
+  - [Best self-hosted ebook server for a very large library (~150k books)? : r/selfhosted _202605](https://www.reddit.com/r/selfhosted/comments/1tlmmyn/best_selfhosted_ebook_server_for_a_very_large/)
+
+- https://github.com/bookorbit/bookorbit /AGPL/202605/ts/vue
+  - https://bookorbit.app/
+  - A self-hosted library management and reading platform for ebooks, PDFs, audiobooks, and comics.
 
 - https://github.com/jiisanda/docflow /MIT/202509/python/inactive
   - a powerful Document Management API designed to streamline document handling, including seamless uploading, downloading, organization, versioning, sharing, and more

@@ -396,6 +396,7 @@ modified: 2025-03-22T16:10:24.856Z
   - extraction
     - https://x.com/jerryjliu0/status/2026032764131451334
       - llamaindex: We built an AI agent that lets you vibe-code document 
+    - 高价值的元素: table, chart
   - office
     - multi-docs: work across documents
     - diff without git
@@ -858,6 +859,10 @@ modified: 2025-03-22T16:10:24.856Z
     - [『Elysiver公益站主贴』 ](https://linux.do/t/topic/1175087)
     - 2cx 指接入 Codex 使用
     - docs 指的是这是 claude 的文档 ai，不破限只会回答文档相关的内容
+  - [ Alpha _202605](https://gw2.oops.asia/dashboard)
+    - [『Alpha』公益站开站 _202605](https://linux.do/t/topic/2242621)
+    - [兑换码商店 · Alpha Codex](https://shop.oops.asia/)
+    - 不限量套餐: 限时、限并发
   - [SunRouter _202605](https://sun.meowai.net/console/personal)
     - [SunRouter 公益站，来源bai号池，无限 gemini ](https://linux.do/t/topic/2114421)ƒ
     - 限制每用户rpm为30，enjoy
@@ -1791,6 +1796,7 @@ modified: 2025-03-22T16:10:24.856Z
 ## paid-api 💰
 
 - tips
+  - 当购买一个商品有很多渠道时，有限选择可靠的平台，售后/质保/退款更方便
   - 中转商的价格每天都在变化, 套餐也在改变, 不要在一家花费过多
     - 很可能注册的第一天会显示低价，后面就恢复正常价格了，注意误导
     - 在5月13号，几乎所有成品号渠道都失效了，所有店铺(无论贵的还是便宜的)的源头渠道几乎相同，，，以后买便宜的就行了
@@ -2023,22 +2029,22 @@ modified: 2025-03-22T16:10:24.856Z
   - 账号发货格式 卡密|激活地址，卡密激活成功后，将自动获取账号信息， 支持下载 CPA / Sub2 JSON
   - 卡密必须在48小时内兑换，若在规定期限内未兑换，将直接封禁卡密，不予退款
 
-- [黑鹅小铺的小店 - 云猫寄售 ](https://www.ooeao.com/shop/ithte)
+- [黑鹅小铺的小店 - 云猫寄售 ](https://catfk.com/shop/ithte)
   - plus-¥2
   - 不包codex接码， 实测需要绑定手机号
   - https://plus3.yhmoai.online/?key=
-  - 夏蜉蝣 [gpt plus的小店 - 云猫寄售 ](https://www.ooeao.com/shop/2JXXIUKT)
+  - 夏蜉蝣 [gpt plus的小店 - 云猫寄售 ](https://catfk.com/shop/2JXXIUKT)
     - 成品号提货网站： http://gpt.airelay.cn.mt
     - 只支持json导入，不会用的不要拍
-  - [sanguine的小店 - 云猫寄售 ](https://www.ooeao.com/shop/sanguine)
+  - [sanguine的小店 - 云猫寄售 ](https://catfk.com/shop/sanguine)
     - at号4r，rt号5r
-  - [Gemini Pixel 设备认证 ](https://autopixel.qzz.io/wholesale)
-    - 品类多
-  - [风里的ai小铺的小店 - 云猫寄售 ](https://www.ooeao.com/shop/I7DPO2IK)
+  - [风里的ai小铺的小店 - 云猫寄售 ](https://catfk.com/shop/I7DPO2IK)
     - 很多接码
   - https://team.longxiadev.store/
-- [Antipro 的小店 - 云猫寄售 ](https://www.ooeao.com/shop/W5YJ6A0E)
+  - [Antipro 的小店 - 云猫寄售 ](https://catfk.com/shop/W5YJ6A0E)
 
+- [Gemini Pixel 设备认证 ](https://autopixel.qzz.io/wholesale)
+  - 品类多
 - [Lyla-精灵小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/lyla)
   - kiro周卡-18
   - cursot周卡-19
@@ -2065,9 +2071,11 @@ modified: 2025-03-22T16:10:24.856Z
     - 一天就上几个，引流的
 - [AI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/echo_dream)
   - https://gpt.aveve.xyz/ 
-  - 手机接码推荐：https://hero-sms.com/cn  找安哥拉+244地区，接码成功率高！
+  - 手机接码推荐：https://hero-sms.com/cn  找安哥拉+244地区，接码成功率高
 - [yimoAi-US的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/CQRJKJ0N)
   - 频道：https://t.me/songbai0420
+- [波哥小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/boge)
+  - 提取  https://yuyu.chiyiyi.cloud/ 
 - [天选AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/txai)
   - https://plus.oai.do/ 
   - [seven85777的小店 - 链动小铺  ](https://pay.ldxp.cn/shop/SEVEN857)
@@ -2109,6 +2117,8 @@ modified: 2025-03-22T16:10:24.856Z
   - 只发凭证，不发账号，自行导入使用，质保首登
   - 反代可用 claude opus
   - 低价kiro
+- [KiroSwitch官方直营店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Z3VSKEGC)
+  - pro
 
 - [Windsurf专卖4988的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/3FR7Y3PY)
   - 谷歌母号, 不质保，只保拍下立马登录满配额。有效期10天左右。
@@ -2249,9 +2259,9 @@ modified: 2025-03-22T16:10:24.856Z
 - [炒鸡变黑的AI店的小店 ](https://pay.ldxp.cn/shop/chaoji)
   - plus-无质保6
 
-- [KiroSwitch官方直营店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Z3VSKEGC)
-
 ### 发卡网
+
+- [月亮AI ](https://aimoonai.com/)
 
 - [发卡网 - 在线购买虚拟商品 ](https://sd.ncet.top/)
 
@@ -2266,10 +2276,10 @@ modified: 2025-03-22T16:10:24.856Z
 - [La shop的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/aisell)
   - 加拿大接码
 
-- [Rick的AI小铺 的小店 - 云猫寄售 ](https://www.ooeao.com/shop/rick)
+- [Rick的AI小铺 的小店 - 云猫寄售 ](https://catfk.com/shop/rick)
   - 美国paypal接码 有效期15-30天
   - 普遍接码10次以上，部分20-30次
-  - [某的号铺的小店 - 云猫寄售 ](https://www.ooeao.com/shop/mou)
+  - [某的号铺的小店 - 云猫寄售 ](https://catfk.com/shop/mou)
     - 各国接码
 
 - [AI源头-oak的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/oak)
@@ -2280,8 +2290,23 @@ modified: 2025-03-22T16:10:24.856Z
 - [SMS-AIShop的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/66666SMS)
   - ¥2+
 
+- [API聚合转发源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/QN3MH16E)
+  - Openai接码 经过测试最大3次
+  - 发货信息: 手机号----接码链接
+  - 里面可能会存在部分号有问题，介意勿买
+
+- [我要掀桌子的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/T1UUZFW4)
+  - gpt美区接码(速度超快-一号一次)
+
+- [ccc的小店 - 670K发卡网 ](https://shop.670k.com/shop/PIVBQN6T)
+  - 一码一接，不懂别来，小白请勿下单，只有接不到码售后
+
 - [ZhuSMS — 接码平台 ](https://zhusms.com/)
   - https://caowo.store/
+- [商家9272的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/cooree)
+  - 此商品为单次Codex接码额度卡 适用于Free/Plus/Pro接码
+  - 兑换地址:https://zhusms.com
+  - 超时无售后，接码失败直接点击换号
 
 - [Smz - 数字商品自动发卡平台 ](https://shop.smz6.com/)
   - pp-¥1.6

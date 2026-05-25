@@ -884,6 +884,26 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
+- ## 
+
+- ## 🆚 [Vision-capable LLMs vs. OCR for long-document (including charts, images, tables, etc.) QA : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1tlzooa/visioncapable_llms_vs_ocr_for_longdocument/)
+  - I benchmarked vision-capable LLMs (the "just attach the PDF and let the model read it" pattern) against OCR-based pipelines on 30 long, image-heavy PDFs from MMLongBench-Doc (https://github.com/mayubo2333/MMLongBench-Doc). There were 171 questions in total, using Claude Sonnet 4.5 as the LLM.
+  - https://www.surfsense.com/blog/agentic-rag-vs-long-context-llms-benchmark
+- Approach	Accuracy 	
+  - LlamaCloud premium + full-context	59.6%
+  - Azure premium + full-context	58.5%
+  - Agentic RAG	53.2%
+  - Native PDF (vision LLM)	52.0%
+- Two findings:
+  - Vision underperformed on chart-heavy and table-heavy pages, the territory that the "vision LLMs make OCR obsolete" claim most often points to. Premium OCR with layout extraction held up better there.
+  - The native-PDF arm had a 7% intrinsic failure rate (related to PDF file size) that survived retries. There were 27 first-pass failures, with 5 attempts of exponential backoff per failed query. 
+  - Caveats: 30 docs is a small sample. I ran McNemar's pairwise test to determine which gaps are real and which are within noise. Only 3 of 15 head-to-head gaps are statistically distinguishable at α = 0.05, so the order in the table is partly noise. The vision-versus-OCR finding survives the test.
+
+- how did you test the accuracy? Was this before doing embedding and retrieval? If not then, all the rest of the pipeline was similar for both? One other question I had was are you using a local VLM? 
+  - For accuracy, we only ran the benchmark questions, and we did not use a local VLM due to my machine's limitations. This whole benchmark took 4 hours to run on my machine.
+
+- Not suprised by this at all. Vision models still struggle to figure out dense table layouts, and paying 25 cents a query just to parse a pdf will absolutely kill you at scale.
+
 - ## open sourcing Marlin-2B - a tiny VLM to extract structured information from videos
 - https://x.com/HappyyPablo/status/2056839665551024474
   - Marlin is finetuned for two questions devs want to ask in their videos: what is happening, and when?

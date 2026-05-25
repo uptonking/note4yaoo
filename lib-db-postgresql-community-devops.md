@@ -39,6 +39,12 @@ modified: 2023-10-26T19:18:19.584Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [PostgreSQL 17 migration postmortem - (WAL recycling, replication lag, silent timeouts, and conservative tuning gone wrong) : r/PostgreSQL _202605](https://www.reddit.com/r/PostgreSQL/comments/1tlochm/postgresql_17_migration_postmortem_wal_recycling/)
+
 - ## I need to migrate a small Postgres database (around 900MB) to another host, is there a way to minimize the downtime
 - https://x.com/localhost_5173/status/1853433971721613765
 - et up replication from old to new, then deploy with updated connection config pointing to new db
@@ -73,7 +79,7 @@ modified: 2023-10-26T19:18:19.584Z
 
 - ## TIL, as a Postgres superuser, you can run: `SET ROLE other_user;` Then, start working as that user.
 - https://twitter.com/winsletts/status/1745504268973695371
-- You can also use `\c user=other_user`
+- You can also use `\c user=other_user` 
 
 - `psql -U your_username -t -c "SELECT datname FROM pg_database WHERE datname NOT IN ($EXCLUDEDBS)"`
 

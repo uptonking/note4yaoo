@@ -43,6 +43,28 @@ modified: 2026-03-05T19:32:00.353Z
 - ## 
 
 - ## 
+# discuss-django-fwk-alternatives
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Django REST Framework VS Django Ninja : r/django _202605](https://www.reddit.com/r/django/comments/1tmu7jj/django_rest_framework_vs_django_ninja/)
+- Some huge perks of Ninja:
+  - If you define your schema well--and it is possible to define it very well--you can push a huge amount of schema and even data validation to well before a line of your code is hit. And the default errors Ninja returns are extremely good. Far better and more consistent than any framework I've previously used.
+  - Documentation works out of the box.
+  - It's faster.
+  - Async support out of the box.
+  - A ton of other built-in features/support
+- DRF I've always found a bit of an antipattern and/or often unwieldy. I think it makes it far too easy to tightly couple API with database schema (fine for quick and dirty prototypes, insane otherwise), and I just find the whole framework complicated and difficult to reason about.
+
+- Have you heard about django-modern-rest?
+
+- Django Ninja probably is the more modern option, with a better library API. It implements many of the right decisions that made FastAPI successful.
+  - DRF is more used in industry and legacy systems, so that would probably be the main reason to learn it.
 # discuss-django-drf
 - ## 
 
