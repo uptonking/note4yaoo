@@ -115,16 +115,16 @@ you have worked on this problem several times but features are still lacking. Th
 ## hardoc(onlyoffice-pdf)
 
 onlyoffice-pdf-editor(code is at several git repos in current folder) implements renders, edits, annotates `.pdf` files in the browser, but it is AGPL licensed.
-- the final goal is to implement a new headless, extensible web pdf editor named hardoc with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
+- the final goal is to implement a new headless, extensible pdf editor named hardoc with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
 - hardoc pdf editor should be more of a headless client-server architecture, so that you can also build a hardoc sdk/cli. 
 - hardoc should be implemented in a modular and extensible architecture for core pdf features like viewing and editing, with functional programming style.
 
 - goals for pdf editing:
-01. modular and extensible architecture for pdf viewing and editing: you may design sub packages like state/view/command/transform/... when you need. you may design a sdk if you want.
-02. in-place text editing feature like adobe acrobat; undo/redo
-03. pdf highlights, annotations with simple shapes
-04. pdf file open and save
-05. in-place text editing is the most important feature to implement now, the following features can be planned, but unnecessary to implement at this moment: forms, ocr, collaboration, ai-editing, complicated shapes, search. any feature you feel unimportant to in-place text editing can be delayed to implement,  but architecture should be extensible enough to support them later.
+01.  modular and extensible architecture for pdf viewing and editing: you may design sub packages like state/view/command/transform/... when you need. you may design a sdk if you want.
+02.  in-place text editing feature like adobe acrobat; undo/redo
+03.  pdf highlights, annotations with simple shapes
+04.  pdf file open and save
+05.  in-place text editing is the most important feature to implement now, the following features can be planned, but unnecessary to implement at this moment: forms, ocr, collaboration, ai-editing, complicated shapes, search. any feature you feel unimportant to in-place text editing can be delayed to implement,  but architecture should be extensible enough to support them later.
 
 - tech stack needs to use open source libs/fwk:
 you may reference architecture and implementation details of onlyoffice pdf editor. 
@@ -156,7 +156,6 @@ one goal is to enhance hardoc pdf editor with more features:
 - ocr with llm
 
 project onlyoffice and project at `~/Documents/repos/office/all-pdf/open-pdf-studio` can be used as implementation reference, you can reference their architecture and code, but you should rewrite code to avoid licensing issue. 
-
 - git repo at `~/Documents/repos/office/all-pdf/open-pdf-studio` is a buggy and not-featureful pdf editor. please read related code and analyze architecture. do you think open-pdf-studio is good start point for implement a custom pdf editor?  compare the architecture of open-pdf-studio and onlyoffice.
   - 采用图片的方案
 
@@ -220,7 +219,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 ## grist-office
 
-Project Grist(in current folder) is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database. 
+Project `grist` (in current folder) is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database. 
 - The final goal is to implement an alternative modular, extensible react frontend webapp at folder `app/client-react` at the current git branch `feat/office-react`, with almost the same features as existing backbonejs frontend webapp at `app/client`, using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table without legacy backbonejs/knockoutjs. After you finished the react webapp,  `npm run start:app` should start the new react webapp, the legacy yarn toolchain/code should still be kept for backward compatibility, the legacy backonejs should still works, so you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please reuse as many code from main branch as possible.
 - The core goal is to rewrite most of the existing backbonejs ui/ux with modern react ui/ux, but you can prioritize the core speadsheet view/create/edit/save data flow, speadsheet-unrelated features may be delayed. 
 - react webapp should support all the routing urls of existing backbonejs webapp, using the same existing backend api.
@@ -400,6 +399,8 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 - prioritize and recheck/improve major features like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible-api, chat with local-model/cloud-llm-api-provider... in aichorage, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 - if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achived so that further improvements will be designed as separate goal/task.
 
+- recheck and improve it, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
+
 - 
 - 
 - 
@@ -407,13 +408,11 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 
 -------
 
-- unsloth-studio has very good support for openai-compatible api and gguf/mlx models, you may reference it. it also support tool calls and chat templates, you may reference the code and rewrite it for aichorage.
+- unsloth-studio has very good support for openai-compatible api and anthropic-compatible api and gguf/mlx models, you may reference it. it also support tool calls and chat templates, you may reference the architecture/code and rewrite it for aichorage.
 
 - local model testing/running can be very slow and take huge disk space.
 local model testing/running can be very slow.
 - please recheck implementation logic related to model/llm-runtime-backend downloading and related tests, improve it by making the downloaded models/binary/resources cached locally, so that later testing/running can reuse it directly if already existed. improve the cache logic, and update related data-flow/tests, make sure the implementation is correct, robust, extensible without unnecessary redownloading. 
-
-- recheck and improve it, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
 
 - 
 - 

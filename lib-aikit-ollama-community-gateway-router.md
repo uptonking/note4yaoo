@@ -24,11 +24,17 @@ modified: 2026-01-21T04:22:29.956Z
   - 搜索支持模型名模糊匹配
   - 支持按session id搜索， 可参考各种chat viewer的设计
 
+- load-balancing
+  - 优先级和权重分开设计显得繁琐
+  - 可支持小数如50.8， 整数部分是优先级，小数部分的权重用来负载均衡
+
 - ai-provier-issues
   - mistral api转换为 claude api 时, 出现异常 Expected last role User or Tool (or Assistant with prefix True) for serving but got assistant
   - 字节火山: [Transformer maxtoken field ineffective for Volcengine API with DeepSeek-v3 model ](https://github.com/musistudio/claude-code-router/issues/213)
     - The maxtoken transformer field in the configuration does not work properly when using the Volcengine API with the DeepSeek-v3 model, resulting in API call failures. However, the same configuration works correctly with the DeepSeek-R1 model.
     - 👀 仅deepseek-v3.2存在此问题, glm-4.7正常
+# ai-providers-devops
+- 当2api失效时，先不要怀疑是软件没更新或平台故障了， 先去主流论坛/交流群看看是否有同样问题，可能就是风控严格了
 # donehub/one-api
 - codex-cli的渠道接入很简单, 类型选custom， 添加模型名即可, 不需要开启 v1/responses 
 

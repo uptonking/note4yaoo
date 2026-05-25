@@ -24,6 +24,7 @@ modified: 2023-06-07T14:19:18.719Z
 - https://github.com/dujiao-next/dujiao-next /520Star/GPL/202605/go
   - https://dujiao-next.com/
   - Dujiao-Next Server 独角Next服务端
+  - Gin, GORM, SQLite / PostgreSQL
   - https://github.com/dujiao-next/user
     - Vue, Pinia
   - cases 🌰 

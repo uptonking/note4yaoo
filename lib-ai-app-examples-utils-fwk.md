@@ -428,6 +428,7 @@ modified: 2025-02-21T18:20:42.624Z
 
 - https://github.com/deanxv/done-hub /574Star/apache2/202601/go/js
   - https://github.com/MartialBE/one-hub/wiki/Deployment
+    - make
   - 基于one-hub二次开发而来的
   - 优先级大的优先调用，同优先级，基于权重轮询； 想要轮询的话还是同优先级设置权重
   - 目前与原版(最新镜像)的区别
@@ -970,10 +971,13 @@ modified: 2025-02-21T18:20:42.624Z
   - Open-source replay and regression testing for AI agents.
   - [Traceforge ：面向 AI Agent 的开源重放与回归测试工具 - LINUX DO _202604](https://linux.do/t/topic/1885756)
     - Traceforge 的目标是让 Agent 的运行过程可复现。 它会记录终端（terminal）、MCP 和浏览器（browser）工具里真实发生过的事情， 把一次运行打包成可移植的 trace 包（trace bundle），帮助你定位失败边界
-# model-proxy
+# model-proxy-tools
 - https://github.com/lymanzhao/Ollama-serve /202503/python
   - 一个 Ollama转发代理，用于为原生 Ollama 服务添加 API 密钥认证功能。
   - 该项目解决了 Ollama 官方不提供 API 密钥验证的问题，使您可以更安全地部署 Ollama 服务并防止未授权访问
+
+- https://github.com/maowuzz/chatgpt-session-forge /202605/js
+  - 一个本地运行的 ChatGPT 会话管理工具，用于导入 Outlook 账号、自动获取 OpenAI 邮箱验证码、批量完成 ChatGPT 登录，并导出 CPA / sub2api / Cockpit 可用的凭证 JSON。
 # model-2api
 - https://github.com/star5o/reverse-check /MIT/202504/js/vue
   - https://reverse-check.no-reverse-api.com/

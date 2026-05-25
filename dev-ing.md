@@ -292,6 +292,10 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 launchctl stop com.donehub && launchctl start com.donehub
 
+# DATA_DIR=~/sub2api-local-data ./sub2api -setup
+
+DATA_DIR=~/Documents/runappdata/sub2api2026 ./sub2api
+
 # auto checkin
 
 cd ~/Documents/repos/ai-ml-llm/metapi && npm start
@@ -332,6 +336,20 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - ?
 - dev-log
   - ?
+
+## 0524
+
+- [Codex 仍有额度但 OAuth client 被标记为 payment_required，随后 gpt-5.5 无可用 auth · Issue · router-for-me/CLIProxyAPI _202605](https://github.com/router-for-me/CLIProxyAPI/issues/3491)
+  - 根因看起来不是 Codex 账号额度真的不可用，而是 file-backed/OAuth Codex HTTP 请求把下游客户端的 User-Agent 透传给了上游 chatgpt.com/backend-api/codex/responses。比如 Cherry Studio 会带 Electron/Chrome 风格 User-Agent，上游返回 Cloudflare managed challenge HTML，CLIProxyAPI 再把这段 HTML 包进 403 permission_error / insufficient_quota 响应里。
+
+- [代理后异常报错：auth_unavailable · Issue · router-for-me/CLIProxyAPI _202604](https://github.com/router-for-me/CLIProxyAPI/issues/2687)
+  - 把文件删除，重新导入，获取可用模型后，就可以继续用需要的模型了
+
+- [v7.0.3 codex oa登录后 api调用、测试模型报错（降v7.0.2正常） · Issue · router-for-me/CLIProxyAPI _202605](https://github.com/router-for-me/CLIProxyAPI/issues/3351)
+
+- [Speed – Codex](https://developers.openai.com/codex/speed)
+  - Use /fast on, /fast off, or /fast status in the CLI to change or inspect the current setting. 
+  - You can also persist the default with service_tier = "fast" plus [features].fast_mode = true in config.toml
 
 ## 0523
 

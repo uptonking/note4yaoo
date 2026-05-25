@@ -10,6 +10,8 @@ modified: 2025-12-18T12:27:14.982Z
 # guide
 
 # codex-cli-xp
+- codex-cli
+  - 使用过程中不能切换base-url, 若手动改了config.toml，需要停止cli再重新启动， 不够灵活
 
 ```sh
 # alias --yolo
