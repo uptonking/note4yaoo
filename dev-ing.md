@@ -337,6 +337,15 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0525
+
+- [stream disconnected before completion: stream closed before response.completed · router-for-me/CLIProxyAPI · Discussion _202605](https://github.com/router-for-me/CLIProxyAPI/discussions/2138)
+  - 3个terminal同时运行codex, 2个正常，只有1个会出现此问题， 未找到原因
+  - 临时方案: 停止有问题的terminal，新开temrinal执行codex任务，就能正常执行了
+- [codex：报错Stream disconnected before completion: stream closed before response.completed - LINUX DO _202601](https://linux.do/t/topic/1415060)
+  - 哪里都不如大佬的一句话管用，弄了几个小时没搞定，没想到还真就差个/v1
+- [[已解决]CPA Codex “stream disconnected before completion: stream closed before response. completed” - LINUX DO _202603](https://linux.do/t/topic/1857877)
+
 ## 0524
 
 - [Codex 仍有额度但 OAuth client 被标记为 payment_required，随后 gpt-5.5 无可用 auth · Issue · router-for-me/CLIProxyAPI _202605](https://github.com/router-for-me/CLIProxyAPI/issues/3491)

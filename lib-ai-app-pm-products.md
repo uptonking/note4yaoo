@@ -375,6 +375,8 @@ modified: 2025-03-22T16:10:24.856Z
       - proofreading for word/excel/ppt
     - WebMCP for pdf/rich-editing
     - obsidian for pdf
+      - optional pdf uploading
+    - 可参考 Edit-Banana/design-to-code 编辑图片ppt的方案，来编辑pdf
     - 还原图文混排: 基于最新 pertext 还原复杂布局
       - 对于还原和提取都很有用
     - 提取 figure、表格
@@ -1846,12 +1848,15 @@ modified: 2025-03-22T16:10:24.856Z
   - [商家9052的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/LOA3IZW5)
     - plus账号极低价格， 10个-35
     - [商家9152的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/KHRR17MS)
+    - [白天鹅的小店 - 云猫寄售 ](https://catfk.com/shop/CGJZ429E)
   - [畅用plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/ooopp)
     - plus账号, 质保三天 
   - [猪猪AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/code)
     - 零售+批量
   - [商家5651的小店 ](https://pay.ldxp.cn/shop/AO4GDZSI)
     - 自助售后, 质保三天 
+  - [哇咔咔的AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/V2YZIFWM)
+    - 开发了ldxp扩展
   - [喜乐GPT plus xileyyds的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/KK5XQNYK)
     - https://api.xileyyds.xyz
     - 低价代理商
@@ -1863,6 +1868,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [普露米AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/plumire)
     - 低价号多
   - [OAI DO的小店 - 链动小铺](https://pay.ldxp.cn/shop/oai)
+  - [GPTPLUS的小店 - 云猫寄售 ](https://catfk.com/shop/LFQJHO5C)
 
 - [NexusVault 中转号池交易台(类似交易所) ](https://trade.livetools.top/workspace)
   - [协议登录测试台 ](https://token.livetools.top/)
@@ -1900,6 +1906,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [MLYF的AI工厂的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/TAFHH1PS)
     - 质保、非质保 分开
   - [GPT成品plus的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/FEO0CLZ6)
+  - [金幺の小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/911)
 - [AI源头-oak的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/oak)
   - tg频道：https://t.me/dabaizu 
   - 接码多, paypal
@@ -2042,6 +2049,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 很多接码
   - https://team.longxiadev.store/
   - [Antipro 的小店 - 云猫寄售 ](https://catfk.com/shop/W5YJ6A0E)
+  - [商家696的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Kegan04)
 
 - [Gemini Pixel 设备认证 ](https://autopixel.qzz.io/wholesale)
   - 品类多
@@ -2063,8 +2071,8 @@ modified: 2025-03-22T16:10:24.856Z
 - [XC的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/K9NFLN0C)
   - 账号----密码----邮箱----自行解决需要登入验证码的问题
   - 如果需要跳过手机号认证，只能使用本地中转方案
-  - [plus专卖店的小店 - 链动小铺](https://pay.ldxp.cn/shop/RNJDBGD4)
-    - PP渠道｜无质保，当日抛使用
+- [plus专卖店的小店 - 链动小铺](https://pay.ldxp.cn/shop/RNJDBGD4)
+  - PP渠道｜无质保，当日抛使用
 - [464的小店 - 链动小铺](https://pay.ldxp.cn/shop/7HVUEC3Y)
   - 通知频道：https://t.me/hdunzx
   - 质保两天
@@ -2086,8 +2094,6 @@ modified: 2025-03-22T16:10:24.856Z
   - [GPT小杂货铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YPFLK17T)
     - GPT plus账号(印尼），一般日抛，没有rt ，就at ，日抛要什么rt？ at能用10天
     - 发货格式是：  txt 文件 一行就是一个json
-  - [哇咔咔的AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/V2YZIFWM)
-    - 开发了ldxp扩展
   - [小NO plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/BWGFCYG1)
   - [秋刀鱼精品小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/qiudaoyu777)
     - 购买后需要手动联系来索取json
@@ -2285,10 +2291,13 @@ modified: 2025-03-22T16:10:24.856Z
 - [AI源头-oak的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/oak)
   - tg频道：https://t.me/dabaizu QQ群：996266572
 
+- [SMS-AIShop的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/66666SMS)
+  - 包售后，接不到不收费。稳定售后
+  - 3块接3次
+  - [gpt的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/IMNUA240)
+- [天天开心的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ED9POSCY)
 - [舒心的小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/AIZ3PXUW)
   - ¥1.5
-- [SMS-AIShop的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/66666SMS)
-  - ¥2+
 
 - [API聚合转发源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/QN3MH16E)
   - Openai接码 经过测试最大3次
@@ -2310,6 +2319,10 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [Smz - 数字商品自动发卡平台 ](https://shop.smz6.com/)
   - pp-¥1.6
+
+- [T佬的gmail批发渠道 ](https://ai666.dnxb.cc/)
+  - 全tg最便宜gmail邮箱批发
+  - Gemini专区：美区/随机2022--2024谷歌邮箱/指定地区gmail邮箱
 
 ### ip
 

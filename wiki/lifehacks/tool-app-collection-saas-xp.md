@@ -676,6 +676,10 @@ sudo systemctl start minidlna
     - [宝可梦机场 关于免费线路升级通知 ](https://linux.do/t/topic/1063626)
     - L站每月发放兑换码
     - 美区经常不可用
+  - [星链机场|星链VPN - 千兆跑满，只做最快 ](https://xship.top/dashboard/plan)
+    - 永久免费订阅（新增无风控防失联线路）， 无限浏览网页，使用APP，高清视频(1080P及以下 油管标准)
+    - 不限设备数，全平台通用
+    - 带宽总冗余超过200Gbps，不限速
   - [风萧萧公益机场](https://chanel.weyolo.com/#/dashboard)
     - 需要 lv2 + 不定时优惠券
   - 🌹 [马铃薯](https://mlshu.com/)

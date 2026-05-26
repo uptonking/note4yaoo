@@ -1077,6 +1077,16 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/aannoo/hcom /MIT/202602/python/rust
   - Connect Claude Code, Gemini CLI, and Codex so agents can message, watch, and spawn each other across terminals
 # cli-agent-coding/apps
+- https://github.com/earendil-works/pi /55.5kStar/MIT/202605/ts
+  - https://pi.dev/
+  - https://pi.dev/docs/latest
+  - Pi Agent Harness Mono Repo
+    - @earendil-works/pi-ai	Unified multi-provider LLM API (OpenAI, Anthropic, Google, etc.)
+    - @earendil-works/pi-agent-core	Agent runtime with tool calling and state management
+    - @earendil-works/pi-coding-agent	Interactive coding agent CLI
+    - @earendil-works/pi-tui	Terminal UI library with differential rendering
+  - 核心开发仅2人
+
 - https://github.com/1rgs/nanocode /1.7kStar/MIT/202601/python/单文件
   - Minimal Claude Code alternative. Single Python file, zero dependencies, ~250 lines.
   - Full agentic loop with tool use

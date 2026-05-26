@@ -95,9 +95,26 @@ app.get('/', (req, res) => {
 - How are AbortController and microtasks related? The abort call and listener notifications are synchronous.
   - We use microtasks to handle flushing updates. Co-ordinating aborts on event handlers needs to happen in the correct ordering for propagation
 
+# discuss-routing
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What's the big attraction of file system routing? · vikejs · Discussion _202404](https://github.com/orgs/vikejs/discussions/1609)
+- What I like about Filesystem Routing is that it gives you a rigid structure. It's Convention Over Configuration.
+
+- Main painpoint for me with file system routing is it make file search less intuitive in the IDEs cause many files have the same name.
 # discuss
 - ## 
+
 - ## 
+
+- ## 
+
+- ## 
+
 - ## 🆚️ An awesome website for comparing component syntax 
 - https://twitter.com/localhost_5173/status/1784255350805549247
   - https://component-party.dev/

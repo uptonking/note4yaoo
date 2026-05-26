@@ -150,6 +150,12 @@ modified: 2025-02-21T17:17:42.225Z
   - Deployment: Vercel (Frontend), EC2 (Backend)
   - Analytics: PostHog, Api-Analytics
 
+- https://github.com/basketikun/infinite-canvas /AGPL/202605/go/ts
+  - https://infinite-canvas-cpco.onrender.com/
+  - 面向AI创作的开源无限画布工作台，集成 AI 生图、参考图编辑、视频生成、画布编排、对话助手、提示词库和素材管理等功能、兼容OpenAI接口，支持chatgpt2api、grok2api、flow2api、newapi等接入。
+  - [【开源无限画布】统一AI创作网关：集成图/文生图/视频的无限画布，兼容2api项目和OpenAI接口 - LINUX DO _202605](https://linux.do/t/topic/2249309)
+    - render部署的会丢失数据，只简单演示用
+
 - https://github.com/fastaistack/OpenChat /MIT/202508/python/inactive
   - https://fastaistack.github.io/OpenChat/
   - 跨平台本地客户端，集成多模型聊天、网络检索、知识库与文档对话，开箱即用、稳定高效。
@@ -696,6 +702,15 @@ modified: 2025-02-21T17:17:42.225Z
   - 仅在 macOS 工作（依赖 Microsoft Word + 浏览器 + System Events 的 UI 自动化）。
   - [100%复刻word模版的skill - LINUX DO _202604](https://linux.do/t/topic/2068329)
 
+### pdf-skills
+
+- https://github.com/idinging/qpdf-pdf-ops /shell
+  - 基于 qpdf 的 Claude Code skill，提供无损的 PDF 页面级操作 —— 不重新渲染、不栅格化，保留原始内容流。
+  - [[开源推广] 利用qpdf进行pdf操作的skill - LINUX DO _202605](https://linux.do/t/topic/2246391)
+    - qpdf 这个命令行工具挺好使的，一行命令就能搞定大部分页面操作，而且是无损的，不会重新渲染你的 PDF，画质完全不降。但它有个毛病：命令语法有点绕，每次用都要查文档。
+    - 于是我就把它封装成了 Claude Code 的 skill，让 AI 帮你拼命令，你只需要说人话就行。
+    - 目前打包了 7 个常用脚本：替换页面、删除页面、提取页面、合并、拆分、PDF 信息查询、环境检测。旋转和重排这些直接让 AI 调 qpdf 原生命令就行，没单独封装。
+
 ## reader
 
 - https://github.com/codedogQBY/ReadAny /GPL/2026t03/ts
@@ -768,6 +783,10 @@ modified: 2025-02-21T17:17:42.225Z
   - https://openalice.ai/
   - Your one-person Wall Street. An AI trading agent covering equities, crypto, commodities, forex, and macro — from research through position entry, ongoing management, to exit.
 
+- https://github.com/liangdabiao/claudesdk-financial-chart-chat /MIT/202605/python/ts
+  - 基于 Claude Agent SDK 的 AI 财经图表对话助手。用户通过自然语言对话，自动查询 A 股上市公司财务数据并生成专业分析图表。
+  - [【开源】Agent帮你搞定财务分析-科学炒股-把技能做成产品-基于skill用 claude-agent-sdk - LINUX DO _202605](https://linux.do/t/topic/2242206)
+
 ## ecommerce
 
 - https://github.com/liangdabiao/amazon-sorftime-research-MCP-skill /MIT/202603/python
@@ -835,6 +854,10 @@ modified: 2025-02-21T17:17:42.225Z
   - Web: Next.js 16 + Supabase Auth/DB/Realtime. Channels, DMs, threads, tasks, agent management.
   - https://x.com/QingQ77/status/2052522615517204990
     - 频道里可以加 AI 队友。每个代理是本地跑的 Claude Code 进程，有独立工作目录和 MEMORY.md 来沉淀经验。
+# devops
+- https://github.com/liangdabiao/GEO-Content-Optimizer-Skill /MIT/202605/python
+  - GEO（Generative Engine Optimization）是面向 AI 搜索引擎的内容优化方法论。就像 SEO 优化 Google 排名，GEO 优化你的内容在 ChatGPT、Perplexity、Gemini、Google AI Overview 等 AI 引擎中的引用率。 本项目提供两个 Claude Code Skill，覆盖 GEO 全流程
+  - [【开源】GEO分析行动Skill - 从各方面改善目前的GEO - 让各种各样AI能够推荐自己 - LINUX DO _202605](https://linux.do/t/topic/2244581)
 # cv
 - https://github.com/IDEA-Research/Rex-Omni /1kStar/IDAE/202512/python/华人作者
   - https://rex-omni.github.io/

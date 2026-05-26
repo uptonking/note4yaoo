@@ -36,6 +36,7 @@ modified: 2026-04-07T12:53:38.419Z
   - 基于ocr的方案 相对于 基于代码的方案 的优点，用户能直接拖拽修改文本/图形
   - ❓ 是否要对ppt格式的pdf单独处理，因为包含的文本较少，背景图片及图形可能不完整
   - 还可以参考漫画manga的编辑/翻译方案
+  - 可参考 Edit-Banana/design-to-code 编辑图片ppt的方案，来编辑pdf
 
 - 💡 pdf的文本化
   - 将minerU/paddleocr识别的html结果转换为 prosemirror editor: html通过markdown转换而来， 布局已丢失

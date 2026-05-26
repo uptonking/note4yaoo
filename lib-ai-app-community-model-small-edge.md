@@ -89,7 +89,21 @@ modified: 2026-01-23T13:10:20.291Z
 
 - ## 
 
-- ## 
+- ## [香橙派+MiniCPM-V-4.6, 本地化的极致小模型推理方案 - LINUX DO _202605](https://linux.do/t/topic/2241870)
+  - 这次轮到手头的这个国产小板子（香橙派AI Pro，昇腾310B芯片）。由于国产生态问题，其实这个板子很少有人去适配模型
+  - 20TOPS版本大概2000块，8T版本更便宜，只要899。折合一下FP16算力差不多也有1080TI水平了，用的unified memory, 24GB内存。最近没啥人折腾，还是要祭出天才程序员，这次不是写CUDA，而是写AscendC自定义算子，把MiniCPM-V-4.6支持起来。
+  - 一个完全从零写的 C++/AscendC 推理引擎, 把 MiniCPM-V 4.6 跑在 Orange Pi AIPro 20T 板载的 Ascend 310B NPU 上。 文本和图像对话都完全跑在 NPU 上, Python 端只在 CPU 上做 tokenize 和图像预处理, 推理热路径完全不依赖 torch_npu。
+  - 通过三轮 cube unit / 自定义 kernel 工作, 单 batch 解码从 2.88 → 5.90 tokens/s(~2×), 跑的是完整 24 层 hybrid 线性 + full attention 模型(hidden 1024, vocab 248094, fp16)
+
+- 这是个边缘计算的板子吧？其实我没想明白它的家用场景。 如果只是低功耗长期运行的话，理论上ESP32+glm flash免费api就可以实现可用了，效果还会好点。
+
+- 这速度看起来还不如3*2T=6Tops的rk3588
+
+- 310p的性能依托，堪称昇腾界的k80，胶水核心，推理能力依托，严肃要求换成930，天才程序员一晚上才把驱动什么的打好，官网甚至没说驱动不支持高版本内核
+
+- 我的macmini m4 丐版 部署过几个本地模型后 发现基本没有什么可用性, 还是老老实实买套餐
+
+- 昇腾一直就不支持高版本linux内核……都是坑
 
 - ## We’re launching @huggingface Hardware: → trending GPUs & CPUs  _202605
 - https://x.com/julien_c/status/2057084823097794772

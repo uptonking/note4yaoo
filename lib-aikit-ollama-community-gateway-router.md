@@ -243,7 +243,10 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
-- ## 
+- ## [【HelloKimi】免费无限的KimAPI+0成本+工具调用 - LINUX DO _202605](https://linux.do/t/topic/2244578)
+  - 在之前，我们已经向DeepSeek，GLM清言，甚至Steam说出了"Hello"
+  - 使用了HelloTools2.0工具调用方案，Trae, CY可以正常使用。
+  - 支持的模型：kimi-k2-instruct-0905 、kimi-k2-instruct 好像没有2.6
 
 - ## 🔒 [询问关于 cpa 内自动刷新账号相关内容 - LINUX DO _202605](https://linux.do/t/topic/2111797)
   - 假期五六天没开电脑，电脑处于没关机但是也没联网的状态，cpa 内的 gpt free 账号会不会回去都失效了呢？这个自动刷新的逻辑是什么

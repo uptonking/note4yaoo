@@ -132,6 +132,33 @@ modified: 2024-09-25T15:20:00.070Z
 - You'll need to root, install the Xposed framework and add this module: `Disable-FLAG_SECURE` .
 - AFAIK, there isn't. This was made to avoid taking a screenshot of sensitive data as bank information. 
 
+# discuss-linux-mobile
+- tips
+  - 暂不考虑小众系统的phone, 主流app不会适配，甚至会风控
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Any Stable Linux Smartphone OS? : r/linuxquestions _202509](https://www.reddit.com/r/linuxquestions/comments/1nu64sm/any_stable_linux_smartphone_os/)
+- So android is essentially the same Linux. Take LineageOS. Which is stable and free from Google's telemetry.
+  - Distributions like Ubuntu, Debian, Fedora, Suse, etc. are unlikely to have any solutions for mobile, since mobile has a large zoo of hardware, and you need to write a driver for each one.
+- The big problem with phones and open source is the driver support. Or rather the lack of driver support. This is similar to the issues faced by projects like OpenWRT on routers & APs. It is possible to overcome this issue but it will probably require assistance & support from the companies that make the chips. I hope it happens because damn do we really need a functional alternative to iOS and Android.
+
+- Really Android itself is middleware. Think of it as a DE including mods (apps), except you have no access to the underlying system. Each app runs as a different user and the files are segregated.
+  - The actual kernel was very hacky originally to say nothing of hacks to “brand” AOSP Android. This was the way it was for years. So a vendor basically had to hack and modify everything. This made updating to a new version of Android a royal pain. Custom ROMs made further modifications but used existing binaries not source. 
+
+- Fedora has a Plasma-Mobile spin that is excellent on tablets, so does Mobian (Phosh is default). PostmarketOS has excellent support for both x86 and ARM tablets and phones with a dozen UI options - the mobile oriented ones are Phosh, Plasma-Mobile, and Gnome-Mobile.
+  - Droidian works well on select phone models, as does Ubuntu Touch. I'd select the Poco X3, or Fairphone 4 or 5 if you are in the US or otherwise need VoLTE - Volla if in Europe. There's also the Furi phone and Brax that are new.
+  - I have phones and tablets running Mobian and PostmarketOS with Waydroid for the Android apps that can't be converted to a webapp. It's a slightly different workflow from Android, but I prefer it. I don't use a lot of apps, so I have everything I need.
+
+- Maybe PureOS from the company behind the Librem 5 phone. I have no idea if it's actually stable on phones yet tbh but they've been at it for years now.
+
+- PostmarketOS with Gnome Mobile is fine but a Pinephone (non-pro) isn't fast enough
 # discuss-ios
 - ## 
 

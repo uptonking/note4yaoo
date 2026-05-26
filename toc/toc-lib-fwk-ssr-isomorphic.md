@@ -37,6 +37,13 @@ modified: 2020-12-19T13:04:40.865Z
     - you can use other rendering frameworks, not only React
     - development speed is better because is Vite based plugin (no bundling, native ESM)
     - you can use every possible routing library
+  - [is it possible to prerender a spa application built in vite and tanstack/react-router ? _202409](https://github.com/orgs/vikejs/discussions/1881)
+    - See notes at [React Router | Vike ](https://vike.dev/react-router). It also applies for TanStack Router.
+    - While it's possible to use Vike with React Router we recommend against it: Vike's built-in router has features that React Router doesn't offer.
+    - We believe routing should be completely owned by the frontend framework. Trying to separate concerns in that regard leads to a fundamental DX degradation.
+    - Example of using Vike with React Router (shallow integration without using onBeforeRoute())
+  - [What's the big attraction of file system routing? · vikejs · Discussion _202404](https://github.com/orgs/vikejs/discussions/1609)
+    - What I like about Filesystem Routing is that it gives you a rigid structure. It's Convention Over Configuration. That said, being able to define the entire Vike interface in a single file is on the radar
   - [Show HN: Vite-plugin-ssr – Do-one-thing-do-it-well alternative to Next.js/Nuxt | Hacker News _202210](https://news.ycombinator.com/item?id=33188372)
   - [Open Source Pricing | Vike](https://vike.dev/pricing)
     - The npm package vike will adopt a proprietary license requiring companies to get a license key when they see the pesky toaster. Vike's Git repository stays 100% MIT-licensed.

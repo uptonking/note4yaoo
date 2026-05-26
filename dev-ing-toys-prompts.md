@@ -194,7 +194,7 @@ please make a plan, then improve the core in-place text editing engine to make i
 
 - you have worked on this several times but still not solve it. 
 
-- you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
+- you may reference the upstream onlyoffice-pdf-editor code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 - you may even do a big code refactor to match major features of onlyoffice-pdf-editor in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design a feature parity doc at `upstream/parity/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream onlyoffice-pdf-editor should be put in folder `upstream`. you may even design a script to automate it.
@@ -216,6 +216,12 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 - prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, selection range/offset/caret, undo/redo for editing, pdf annotations/highlights... in hardoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
 - if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achived so that further improvements goal will be designed as separate goal/task.
+
+### draft-hardoc
+
+- ONLYOFFICE’s solution is good enough at the architecture level, not at the implementation level. The strong pattern in the local source is: one document-owned runtime, promotion/recognition when native editing gets unsafe, and native engine primitives for operations like scanPage, RedactPage, merge/split, form extraction, and appearance generation. 
+  - For hardoc, it seems the appropriate architecture might be a service-authoritative pdf runtime, rather than trying to force every parity-critical operation through pure TS logic. 
+  - hardoc should be more of headless client-server architecture. native/source first, promote only for unsafe contents/objects.
 
 ## grist-office
 

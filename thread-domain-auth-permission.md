@@ -166,9 +166,111 @@ modified: 2025-09-22T13:53:51.831Z
 
 - ## 
 
-- ## 
+- ## [2FA For Ente Auth Itself? : r/enteio _202502](https://www.reddit.com/r/enteio/comments/1ih3jrj/2fa_for_ente_auth_itself/)
+- I don’t think it is standard to have 2FA on your 2FA app. If you did you would then want another 2FA to protect that one, resulting in an endless line of 2FA apps protecting the previous 2FA app. Eventually you would end up with a 2FA app that you just can’t protect with 2FA. Best bet is to use an awesome password for Ente that you don’t use anywhere else and that you physically backup to some offline place like a safety deposit box or something.
+- Honestly it is confusing for me: Ente Photos allows you to enable 2FA. I would want 2FA on my Ente Photos because that is just common good practice. But not on my Ente Authenticator! That would be weird. Since it is the same acount. I have Bitwarden.eu as password manager, I could store my Ente account 2FA there but then, it again makes no sense, since to login to Bitwarden I would also need a 2FA code from Ente.. I end up in a loop and also, its not really 2FA anymore then.
+- 总有一个帐号不能添加2fa，否则就循环依赖了
 
-- ## 
+- To enable TOTP for Ente itself you have to enable it from the Photos app
+  - Just don’t store the 2fa for Ente only in Ente Auth, Make backups, always
+
+- you prob want to take a look at use of passkey  [Introducing Passkeys on Ente _202406](https://ente.com/blog/introducing-passkeys-on-ente/)
+
+- [2fa for ente auth : r/enteio _202604](https://www.reddit.com/r/enteio/comments/1sou2xc/2fa_for_ente_auth/)
+  - My ente auth account is not tied to my regular ente account. For that reason I don't use 2FA on the ente auth account but do on my main ente account. All passwords are stored in KeePassXC / KeePassDX.
+  - This separate account for auth and photos is even suggested by Ente when setting up Auth to ensure you don't end up in a loop of needing 2FA to login to photos but needing the same 2FA to login to auth. I think they call it enteception.
+
+- ## [Between ENTE, 2FAS, GAuth, Microsoft Auth, DUO and Authy, what are the best authenticator apps? : r/Bitwarden _202509](https://www.reddit.com/r/Bitwarden/comments/1nbdob3/between_ente_2fas_gauth_microsoft_auth_duo_and/)
+- Both ente and 2fas allow local backup. 
+- A nice feature of Ente is that it shows you both the current and the next code, so you never have to hurry.
+  - 2FAS also shows both codes when the time is less than 10 sec
+
+- Aegis
+  - No iOS version unfortunately. 
+
+- Google Authenticator, MS Authenticator, Duo, and Authy all use super duper sneaky secret source code. There is no way of knowing if thieves or a hostile government agency has compromised the app.
+  - Bitwarden Authenticator is very new, and it shows a lot of promise.
+  - Bitwarden Authenticator is very new, and it shows a lot of promise.
+  - Ente Auth covers all the bases. It has a zero knowledge cloud backing store. It allows you to export the datastore, so you are not relying on the vendor to not crash and lose your data.
+  - Ente also runs on Windows, Mac, Linux, Android, and iOS. The datastore is interoperable, unlike 2FAS where your backing store is EITHER Google or Apple, and there is no connection.
+
+- All apps from which you can store a local backup AND easily export your OTP-keys, if you ever need to change authenticator. Period.
+  - Microsoft, Google and the vast majority of the big tech apps, do not allow you to export your data. That is, you’ll be locked in and it’s a real hassle to renew all individual codes if you ever must change authenticator in the future. I’ve been there, I’ve done that.
+  - As for me, I settled with Ente. I was very close to go with 2FAS, but they fell short on no native desktop support, only relying on browser extensions (if I remember correctly). Proton has recently also released a 2FA app with the same properties (local copy and export), and would indeed have been another competitor back then.
+  - However, remember not to use an authenticator from the same provider you use for password management (with sync!). It’s the most common mistake people do. It defeats the purpose of 2FA. If bad people ever get hold of your master password for your passwords and secrets, they will also have access to your 2FA codes. Hence, it’s 2FA without being 2FA.
+
+- I would avoid the non open source ones: Google, Microsoft, DUO, and Authy are no go. It needs to be both open source and E2EE for syncing, or local syncing to me. That said, I personally use Ente Auth, but many people seem to enjoy 2FAS as well.
+
+- why not using the Bitwarden built-in TOTP feature? I know it's a paid feature, but I think it's worth it.
+  - The general idea is you keep your passwords separate from your totp. That way if one gets compromised they still can’t log in to your accounts.
+
+- Another advantage of Ente Auth is that you can share a link with your friends, allowing them to view the OTP once without you having to send it yourself
+
+- ## [Moved from Bitwarden in App TOTP to Ente Auth, here’s why : r/Bitwarden _202507](https://www.reddit.com/r/Bitwarden/comments/1m2in3l/moved_from_bitwarden_in_app_totp_to_ente_auth/)
+  - I’m a Bitwarden Premium user, and the main reason I subscribed back in February was for the built-in TOTP feature. I've been using it regularly since then and honestly, it works flawlessly. It autofills both my passwords and TOTP codes with zero hassle.
+  - But while browsing the Bitwarden community and reading up more on TOTP security, I noticed two main camps:
+  1. People who are fine storing passwords and TOTP in Bitwarden.
+  2. People who strongly advise separating them, using a dedicated 2FA app for TOTP.
+  - I started looking at it from a hacker's perspective. What if my Bitwarden vault is compromised? If both the password and TOTP are in there, then 2FA becomes useless. It’s no longer two factors, it's just one compromised vault = full account access.
+  - So I've moved all my TOTPs from Bitwarden in app TOTP to Ente Auth. I picked Ente because it syncs across devices, has end-to-end encryption, and gets regular security audits (Cure53 + Symbolic Software). Feeling a lot better now that my 2FA is stored separately.
+
+- Seperate BW account
+- You’ll need separate app for passkey, separate app for OTP, etc. I store my most important OTP on yubikey, and the rest in btw.
+  - Instead of thinking about securing tokens, people should secure entire system: updates, cookies, DNS, browser extensions, regular backups, etc.
+
+- Im opposite, im moving from Ente to Bitwarden but problem is that i cant import my codes. Bitwarden doesnt support those file types. I am using phone.
+  - Open in pc the ente app and scan everythin from your bitwarden 
+
+- Google Authenticator does not give you an easy way to export your accounts - you have to generate QR codes one by one and export that way. Ente does - you can export the vault to a json format which can be imported by Ente or other authenticatros like Aegis or 2FAS. This allows you to be safe from vendor lock-in.
+
+- [Bitwarden Authenticator vs. Ente Auth and Alternatives for Microsoft Authenticator : r/Bitwarden _202503](https://www.reddit.com/r/Bitwarden/comments/1j3q9s4/bitwarden_authenticator_vs_ente_auth_and/)
+- Microsoft's Authenticator is required for the proprietary 2FA used by some Microsoft Services
+- I recently switched to Ente Auth from 2FAS but ONLY because of the available desktop app. 
+
+- ## [Trying to move away from Microsoft Authenticator... : r/Bitwarden _202501](https://www.reddit.com/r/Bitwarden/comments/1ieedo3/trying_to_move_away_from_microsoft_authenticator/)
+- Neither Bitwarden Authenticator nor Ente Auth have the MS MFA push notification feature. That is a Microsoft proprietary technology. Only MS Authenticator will do that for you.
+  - I dislike MS Authenticator. It uses super duper sneaky secret closed private scary source code. It does not allow you to back up your TOTP keys to your own disk.
+  - IMO Ente Auth is still a bit further ahead of Bitwarden Authenticator. It has ports to more platforms. Its cloud storage is platform agnostic.
+  - If the MS push notifications are important to you, you need to keep MS Authenticator on your device. But I would recommend migrating your TOTP keys to Ente Auth.
+- Bitwarden has two different TOTP functions. There is the external app, which we have been talking about, and there is also an internal function that can even assist during autofill. The internal function is effectively INSIDE your vault, so it is not suitable for unlocking Bitwarden itself. It is also somewhat controversial, with some people arguing it weakens 2FA to an unacceptable degree.
+
+- Using MS Authenticator to login to Microsoft properties (e.g. Office 365) is a good choice. Since Microsoft controls both sides (the app and the "website"), they are not constrained by interoperability standards and can go above-and-beyond with proprietary things, such as "Push-notification with number matching". Plus, it avoids adding another entity into the security of those sites.
+  - I don't like using them as a TOTP store for non-MS sites, though. Primarily because the do not have good export/import capabilities, making it hard to move away from them if they do something to lose my trust. Also not a big fan that they do not publish 3rd party security assessments and/or publish source code for ad-hoc assessments (both of which Bitwarden does).
+  - My suggestion: If you have MS Authenticator installed for O365, also keep your Bitwarden TOTP in there so you have redundancy on that particular TOTP. And then keep all your TOTPs (including a second copy of Bitwarden's) in Bitwarden Password Manager, or Ente Auth -- depending on which basket you prefer -- "one well-protected basket" or "two baskets".
+
+- I decided to use Ente instead of putting all my TOTP codes inside Bitwarden, mainly because if someone was able to access my vault, they would have all my MFA codes as well and would be able to access all of my accounts stored in BW. I now use MSA for only my work and personal Outlook accounts, and for the MFA for Bitwarden.
+
+- I use 2FAS, and it syncs across devices. I have it installed on both my iPhone and iPad, so if I lost one device, I can still use the other device. And, you can enable it to back up to iCloud, so even if I lost both devices and got a new phone, I can restore 2FAS.
+
+- 202605: Bitwarden now works for Office 365. https://myaccount.microsoft.com/
+
+- ## [佬们都用的哪个2fa验证器？ - LINUX DO _202605](https://linux.do/t/topic/2250405)
+- Google、Apple 的 密码也有这个功能
+- 苹果自带的就非常好用，完全不需要第三方。
+
+- 不要选微软的，迁移麻烦
+
+- 千万别用微软的很垃圾，推荐谷歌的2fa可以云同步（自己一定要再备份一遍
+
+- 建议找个多端同步，可以自备份的，2fa丢失比较麻烦
+
+- aegis，自己手动导出备份到网盘
+- Aegis，不过好像只支持安卓，这是个二步验证工具
+- 我在用Aegis，感觉不错。开源项目，无需联网，可备份可导出可自定义图标包，可从其他软件导入。
+  - 如果想要云同步且不介意隐私问题的话可以用Google的，但是强烈不推荐微软的，微软的之前做的还行，后来改版后越来越狗屎。
+  - 另外，建议定期备份一下，因为一旦相关设备或者账号出问题，就只能靠所谓的恢复码了。
+
+- 冷知识：2FA 可以同时使用多个。所以我是用的自建 vaultwarden + Authy
+
+- 感觉谷歌的2fa挺方便的也更好迁移
+
+- 我觉得自建bitwarden最好用，个人认为，可以自动填充完用户名和密码然后自动复制2fa码到剪贴板，特别方便
+- 之前用的微软的，现在用的自建的bitwarden，自建用vaultwarden有2fa功能
+- bitwarden收费吧我记得好像是
+  - 可以自建vaultwarden
+- [BitwardenFree计划支持L站登录了！ - LINUX DO _202604](https://linux.do/t/topic/2066874)
+
+- 最简单的，微信小程序，腾讯身份验证器，超级方便
 
 - ## 🔒 [怪不得没人用微软的验证器Authenticator - LINUX DO _202605](https://linux.do/t/topic/2137113)
   - 我之前还疑惑，微软的验证器Authenticator不挺好用的吗，怎么没人用呢，也没见人提，甚至许多网站的2fa设置中建议的验证器都没有提到它的名字(我用微软的authenticator，而不用谷歌的验证器的原因就是，它可以在不翻墙的情况下打开使用)
@@ -187,6 +289,10 @@ modified: 2025-09-22T13:53:51.831Z
 
 - 微软认证器千万不能直接登陆，要从下面点击从备份中恢复才行
   - 为了靠谱，以后可以手动两步验证添加二维码，或者双验证app，现在只能申诉了
+
+- [Restore account credentials from Microsoft Authenticator | Microsoft Support ](https://support.microsoft.com/en-us/authenticator/restore-account-credentials-from-microsoft-authenticator)
+  - You can only backup and restore on the same device type. For example, accounts backed up using an iOS device cannot be restored on an Android device.
+  - android: Select either Restore from backup or Begin recovery links **before** signing in. If you have signed in, sign out before proceeding with account recovery.
 
 - 微软Authenticator 是个大坑，apple id 都没法恢复，换手机就没了，坑死人
 

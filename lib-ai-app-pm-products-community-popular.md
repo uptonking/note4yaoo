@@ -852,6 +852,25 @@ modified: 2026-02-20T17:36:40.796Z
 - Co-work is great, to be honest. If they cancel that, I’ll drop my Claude subscription. I use it to write confluence docs, edit pdfs, word docs, create contracts, amend them, do P&l stuff, powerpoint presentation, even google slides via chrome mcp. You’re using it wrong OP.
 
 - I think the idea is that many more non coders in the near future will do small coding activities in their jobs. If that’s not you, it’s not for you. But it might be for your replacement
+# discuss-ai-pm-rag
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [正在做一个NotebookLM 开源代替，佬们，有前途吗 - LINUX DO _202605](https://linux.do/t/topic/2231555)
+- 客户端感觉总没有在线方便，ima，cherry stduio 都很少打开，还要用token。 notebookllm 它免费啊
+
+- 期待！
+好多人一直呼吁notebooklm出API，但是一直没有，如果你能有API，那是很棒的！
+感觉notbooklm的护城河是高质量的rag而且不开源，这一点对应很多做open notebooklm的都是一个巨大的问题~
+我也想做ragl来着，但是可能水平不行，测试了几次，和notebooklm相比，真的差太多了~
+以为 传统rag+bm25+图 就可能不错了，但是和notebooklm相比，还是差很多！
+
+- notebookLM 的国内替代是ima，ima 有个开源版本
 # discuss-ai-pm-browser
 - ## 
 

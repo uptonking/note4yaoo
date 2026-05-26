@@ -188,7 +188,8 @@ modified: 2025-11-05T19:04:50.350Z
 
 - ## 
 
-- ## 
+- ## [【开源】Agent需要的不是更长的context，而是可追溯的state - LINUX DO _202605](https://linux.do/t/topic/2245221)
+  - 所以 State Engineering 关心的是一个更完整的链路： signal -> observation -> evidence -> reducer -> state -> decision -> outcome feedback
 
 - ## [The memory problem every AI agent has. And the 3 ways people are solving it. : r/better_claw _202605](https://www.reddit.com/r/better_claw/comments/1thl4yl/the_memory_problem_every_ai_agent_has_and_the_3/)
   - The problem: Most agent frameworks (OpenCLAW, Hermes, everything else) store memory in files. markdown, YAML, JSON. Your agent writes facts to a file. When it needs to remember something, it searches those files.
