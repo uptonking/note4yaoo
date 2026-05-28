@@ -594,6 +594,36 @@ Aegis 手动备份
 - Have you heard of the Ory stack https://ory.sh
 
 - We had a similar problem at my company. Used Keycloak for authentication only, but implemented RBAC in our Postgres database. Tried casbin, but it's not flexible enough.
+# discuss-solution-passkey
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [关于国行手机 cable 问题，寻找解决方案的过程 - LINUX DO _202605](https://linux.do/t/topic/2260141)
+- 使用过passkey/密码管理器 佬友肯定看到过电脑/手机，有一个扫码验证passkey 选项
+
+这个功能依赖系统、网络和蓝牙 支持。
+
+这个功能是一个被扫码设备出示二维码，扫码之后，需要云端和蓝牙交互以后，最终在本地通过蓝牙完成整个数据交换。
+
+国行手机功能异常关键，谷歌的域名被墙，导致云端握手出现问题。这就是你之前扫码一直转圈的关键
+安卓本身gms不支持 nfc ctap2
+
+我是如何解决的？
+我是查阅文档发现，决定云端交互的域名是扫码设备，那么也就是说，只要稍加修改，就能使用自己域名。
+
+那么开源社区对 安卓功能做修补的方案很多。
+
+于是我找到了现成的开源项目，把谷歌 cable 域名改成自己的，通过cf workers，一顿操作
+
+最后成功了，实体安全密钥使用场景稍微改善了一下
+
+比如电脑发起认证手机扫码，把NFC key，不依赖读卡器直接使用了。
+
+亦或者一个手机发起认为，用另外一个手机扫码，同样用usb key或者nfc key
+
 # discuss
 - ## 
 

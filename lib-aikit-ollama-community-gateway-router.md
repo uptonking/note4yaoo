@@ -241,7 +241,12 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
-- ## 
+- ## [开源了一个OpenAI/Codex的邮箱重新登录工具 - LINUX DO _202605](https://linux.do/t/topic/2262563)
+  - https://github.com/haeyupi/relogin-mail-manager
+  - 最近gpt/codex登录及其不稳定，因此需要工具进行大规模批量重登，所以relogin mail manager这个工具就孕育而生了。
+  - 它从你的邮箱资料中导出Outlook/Hotmail邮箱、邮箱refresh token、OpenAI密码和手机号，然后在本项目内完成邮箱验证码读取、重新登录、token保存和可选的远端上传。
+  - 项目不依赖外部邮箱池服务。所有账号资料都保存在本地 SQLite 数据库中。
+  - 目前我关于cpa的已经试过，sub2api还没测试过
 
 - ## [【HelloKimi】免费无限的KimAPI+0成本+工具调用 - LINUX DO _202605](https://linux.do/t/topic/2244578)
   - 在之前，我们已经向DeepSeek，GLM清言，甚至Steam说出了"Hello"

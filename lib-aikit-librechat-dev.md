@@ -49,6 +49,7 @@ modified: 2025-09-01T05:52:34.241Z
   - 支持多backends的架构可参考 
   - 有一类给website添加search的产品，可参考实现添加chat的产品，特别是支持主流ssg工具的 search/chat
   - 快捷常用语
+  - user-toc: 类似toc，但锚点是用户的提问
 
 - 🖼️ 对话时如何无缝插入图片(mistral网页版支持)
   - 方案1: 预置unsplash图片，或外部图片搜索工具/MCP

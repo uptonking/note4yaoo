@@ -75,6 +75,7 @@ modified: 2024-08-24T16:15:11.456Z
   - acp
 - roadmap
   - file/data-provider, 还可参考社区提供的另一种思路editor+mock-vscode-api
+    - s3-files for vscode
   - ripgrep for database
   - ext: comfyui
   - ui-skin as extension

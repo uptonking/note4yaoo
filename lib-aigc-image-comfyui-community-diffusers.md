@@ -328,6 +328,23 @@ problem is when software like InvokeAI or some else are using the diffusers form
   - For example, support for new models such as Cascade, SD3, PixArt, CosXL all appear first there (and some are still not supported with A1111). Same with fancy options such as AYS, PAG, IPAdapter, Faceid, etc.
 
 - Not as comprehensive but I use NMKD Stable Diffusion GUI locally. Its ok but it hasn't gotten an update in months. It doesn't have any of those newer features but it is fast
+# discuss-comfyui-toolchain
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [【开源-comfyui-good-anima】一个让LLM帮你从提示词构图到最终调用comfyui的一整套解决方案 - LINUX DO _202605](https://linux.do/t/topic/2258231)
+  - 最近兄弟一直在玩anima这个base模型，发现他的潜力真的非常大，但是看兄弟们还在傻傻的搞节点打开那个破WEBUI，拉线，我感觉就像原始人一样，所以我干脆把anima全自动构图的skills开源了，直接让生产力进步
+  - 以下是这玩意的介绍：让 AI 助手（Snow、Claude Code、Codex 这些）能理解构图和生图流程，不用你手撸 prompt 和调参数。它帮你做四件事
+  - 1. 构图规划 — 自动选画幅比例、镜头远近、构图方式、光影方向
+  - 2. 标签检索 — 你要画某个角色/画师，它能去索引里查 Danbooru 的有效 tag，不用你自己猜拼写
+  - 3. Prompt 组装 — 按 Anima 官方规范把正向负向 prompt 拼好
+  - 4. 工作流执行 — 直接调 ComfyUI 出图、放大、缓存一条龙
+  - https://github.com/ShiroEirin/comfyui-good-anima
+- 理论上可行，但是要看终端的bash支持不，因为我只在window上用，如果mac的话可能要改一下执行命令，可有一个问题，就是comfyui skills -cli这个插件你得看看能不能支持mac 他虽然是python写的
+
 # discuss-comfyui-like
 - ## 
 

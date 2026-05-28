@@ -38,36 +38,46 @@ modified: 2025-09-21T18:39:13.776Z
 
 - composable-markdown
   - import
-
+# markdown-flavors
 - markdown-extensions
-  - mdx
-  - [R Markdown](https://rmarkdown.rstudio.com/)
-  - [MyST(Markedly Structured Text)](https://github.com/executablebooks/markdown-it-myst)
-    - [MyST Overview](https://myst-parser.readthedocs.io/en/latest/index.html)
-    - who is using #MyST
-      - curvenote
-    - MyST is a rich and extensible flavor of Markdown.
-    - MyST is inspired by Sphinx, and comes with its own Sphinx parser.
-    - MyST markdown provides a markdown equivalent of the reStructuredText syntax
-  - [kramdown](https://github.com/gettalong/kramdown)
-    - kramdown is a fast, pure Ruby Markdown superset converter
-    - input formats: kramdown (a Markdown superset), Markdown, GFM, HTML
-    - output formats: HTML, kramdown, LaTeX (and therefore PDF), PDF via Prawn
-    - https://github.com/asciidoctor/kramdown-asciidoc
-      - a kramdown extension for converting Markdown documents to AsciiDoc. 
-  - [readmeio-markdown](https://github.com/readmeio/markdown)
-  - [jsxtreme-markdown](https://github.com/mapbox/jsxtreme-markdown)
-  - [vfm(Vivliostyle Flavored Markdown (VFM))](https://github.com/vivliostyle/vfm)
-    - a Markdown syntax optimized for book authoring. 
-    - It is standardized and published for Vivliostyle and its sibling projects.
-  - [Idyll markup](https://idyll-lang.org/docs/syntax)
-    - The main extensions are reactive variables, and components. 
-    - Together these two elements can be used to create dynamic, interactive articles.
+- mdx
+- [R Markdown](https://rmarkdown.rstudio.com/)
+- [MyST(Markedly Structured Text)](https://github.com/executablebooks/markdown-it-myst)
+  - [MyST Overview](https://myst-parser.readthedocs.io/en/latest/index.html)
+  - who is using #MyST
+    - curvenote
+  - MyST is a rich and extensible flavor of Markdown.
+  - MyST is inspired by Sphinx, and comes with its own Sphinx parser.
+  - MyST markdown provides a markdown equivalent of the reStructuredText syntax
+- [kramdown](https://github.com/gettalong/kramdown)
+  - kramdown is a fast, pure Ruby Markdown superset converter
+  - input formats: kramdown (a Markdown superset), Markdown, GFM, HTML
+  - output formats: HTML, kramdown, LaTeX (and therefore PDF), PDF via Prawn
+  - https://github.com/asciidoctor/kramdown-asciidoc
+    - a kramdown extension for converting Markdown documents to AsciiDoc. 
+- [readmeio-markdown](https://github.com/readmeio/markdown)
+- [jsxtreme-markdown](https://github.com/mapbox/jsxtreme-markdown)
+- [vfm(Vivliostyle Flavored Markdown (VFM))](https://github.com/vivliostyle/vfm)
+  - a Markdown syntax optimized for book authoring. 
+  - It is standardized and published for Vivliostyle and its sibling projects.
+- [Idyll markup](https://idyll-lang.org/docs/syntax)
+  - The main extensions are reactive variables, and components. 
+  - Together these two elements can be used to create dynamic, interactive articles.
 - more-format-references
-  - [Org mode for Emacs](https://orgmode.org/)
+- [Org mode for Emacs](https://orgmode.org/)
 
 - rmarkdown
   - [cheatsheet: dynamic, reproducible, citations](https://blog.rstudio.com/2021/08/23/cheat-sheet-updates/)
+
+- https://github.com/iamgio/quarkdown /15.2kStar/GPLv3/202605/kotlin
+  - https://quarkdown.com/
+  - a modern Markdown-based typesetting system, designed around the key concept of versatility, by seamlessly compiling a project into a print-ready book or an interactive presentation. 
+  - All through an incredibly powerful Turing-complete extension of Markdown
+  - Born as an extension of CommonMark and GFM, the Quarkdown Flavor brings functions to Markdown, along with many other syntax extensions.
+  - standard library offers layout builders, I/O, math, conditional statements and loops.
+  - Unlike traditional Markdown tools, Quarkdown adds scripting, functions, variables, layouts, and advanced document features while keeping a relatively clean Markdown syntax.
+    - 🤔 和mdx的方案有什么区别
+  - [Quarkdown, a modern, Turing-complete, Markdown-based typesetting system, now finally supports exporting to PDF : r/programming _202508](https://www.reddit.com/r/programming/comments/1joyi4l/quarkdown_a_modern_turingcomplete_markdownbased/)
 
 - ref
   - commonmark rfcs

@@ -520,6 +520,9 @@ modified: 2025-03-22T16:10:24.856Z
 - llm-playground - 使用公益api的效率工具+api统计分析
   - 公益版
   - 企业版
+
+- news-feed/crawler
+  - reddit/hacker-news上的热门讨论
 # 💎 ai-pdf/docs
 - revision history for pdf
 
@@ -759,6 +762,9 @@ modified: 2025-03-22T16:10:24.856Z
 - 免费的共享ChatGPT账号
   - [RawChat公益站点 ](https://sharedchat.cc/)
   - [RawChat公益站点](https://sharedchat.fun/)
+  - https://new.sharedchat.cc
+    - [codex公益站已开 继续每人免费100刀   _202605](https://linux.do/t/topic/2260900)
+    - 关t子或者用非us节点访问，ccswtich的不要获取模型，手填模型可以直接用
 
 - 中转站
   - 不需要用自己的gpt/claude账号
@@ -1911,6 +1917,8 @@ modified: 2025-03-22T16:10:24.856Z
     - Cursor Auto｜超账单｜库存号
     - Cursor Pro Plan 20$官方套餐【已用完高级模型额度】
     - 可Auto、Composer模型｜可对接Api
+  - [奥仔小铺的小店 - 链动小铺  ](https://pay.ldxp.cn/shop/aozai)
+    - windsurf低价
 - [AI源头-oak的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/oak)
   - tg频道：https://t.me/dabaizu 
   - 接码多, paypal
@@ -2108,7 +2116,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 高价plus
   - [一只狗子的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/2IG615LQ)
   - [Xun AI - 海外效率工具订阅的小店 - 链动小铺 5](https://pay.ldxp.cn/shop/XunAI)
-  - [壹码工坊的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1aicode)
   - [AI小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/HGQW9XKA)
   - [AICA的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/aica)
 - [卓建AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/THJ70HZO)
@@ -2149,6 +2156,14 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [极速的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/jishu)
   - Gmail母号 邮箱，正规账号，单账号独立注册。 可用opus4.6  4.7
+
+- [青蛙AI·低价源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/qingwaAA)
+  - plus成品team的，，只能反代codex。实测平均每个15刀
+  - [GanAI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ganai)
+    - Team稳定版 7日卡
+    - 有效期至 05-28 + 7 版本，稳定版车位有效期过了后一般可以继续用再 7 天，但是如果用不到要自行承担风险。
+  - [壹码工坊的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1aicode)
+  - [GPT TEAM 日抛号的小店 - QXVX Pay ](https://pay.qxvx.cn/shop/3V3CBG6P)
 
 - [度偶Ai专卖店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/G3EUVLR7)
   - gpt plus月订阅CPA json(质保3天)
@@ -2351,6 +2366,7 @@ modified: 2025-03-22T16:10:24.856Z
 - resources
   - [LinuxDo商家评价平台](https://rate.linux.do/)
   - [模型中转状态检测](https://check.linux.do/)
+  - [模型状态检测 御三家](https://jiankong.qianxing-ai.cc.cd/)
   - [AI中转站推荐 | Claude/Gemini/Codex中转站评测对比](https://www.helpaio.com/transit)
     - 评分结果与L站评分基本一致
     - 提供了很多折扣码

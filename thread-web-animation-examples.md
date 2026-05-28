@@ -102,6 +102,24 @@ modified: 2021-04-21T15:01:12.882Z
 - ## 
 
 - ## 
+# discuss-layout-animation
+- ## 
+
+- ## 
+
+- ## 
+
+- ## you can create a sticky navbar that morphs when you scroll with pure CSS, no JS or animation libraries required
+- https://x.com/mannupaaji/status/2060025609867387239
+  - header从sticky变为floating
+  - the browser now knows when a sticky element is stuck, all triggered by one container query
+  - 🐛 available only in chromium browsers only, no firefox or safari which is a shame
+
+- ## Added mipmaps to my WebGPU engine to keep images sharp when I play with layout transitions.
+- https://x.com/AristideBenoist/status/2008945364490133937
+  - What helped me most was building projects, gradually raising the difficulty, improving my skills, and making things from scratch so I could really understand how everything works. I’m still exactly here, learning, improving my tools, trying to find new interactions ideas.
+- Mipmapping is underrated outside of video game contexts. It improves quality and performance at the cost of slightly higher memory
+
 # discuss-shape-anime
 - ## 
 

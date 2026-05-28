@@ -337,6 +337,20 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0528
+
+- 🤔 what is the most popular agent harness built with python? research and provide overview/github-url/website for each. for example, claude code is built with ts, codex is built with rust.
+- https://github.com/huggingface/smolagents
+  - minimalist, "code-first" Python agent library
+- https://github.com/pydantic/pydantic-ai
+  - focuses entirely on type safety, structured outputs, flexible dependency injection, and model-agnosticism[
+- https://github.com/All-Hands-AI/OpenHands
+  - a massive open-source AI-powered software development platform and agent harness
+- https://github.com/paul-gauthier/aider
+  - AI pair programming in your terminal.
+- https://github.com/browser-use/browser-use /MIT/python
+  - Make websites accessible for AI agents. Automate tasks online with ease.
+
 ## 0527
 
 - 🤔 find some popular projects that are using pi coding agent like openclaw?  give a overview/github-url/url for each. if i want to build a custom agent for chat with docs, should i use pi or vercel ai sdk, compare them and help me choose

@@ -141,6 +141,22 @@ modified: 2023-02-20T19:41:08.506Z
   - 👀 注意大陆地区不支持此feature
 
 - In the Network panel, you can now right-click a column name in the requests table and select multiple `request headers` to add them as columns.
+# discuss-fingerprint/指纹浏览器
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [你敢信，浏览器需要实名认证 - LINUX DO _202605](https://linux.do/t/topic/2259725)
+- 什么是指纹浏览器？对于Chrome来说的优势是什么？
+  - 指纹浏览器就是多开呀，不被对方网站判定是一个人，电商可以开多个店之类的，不容易被封，底层基本也是谷歌浏览器开源版搞的
+
+- 用这种指纹浏览器的，电商欺诈的比例比普通浏览器高几个数量级都不止。开发商不想担风险，触犯“帮信罪”。所以一刀切，先实名再说。
+
+- Canvas指纹之类的隐私模式下面生成的还是同一个。 GPT没用这个策略，应该是风控等级还没那么高。一般是跟钱有关的银行、电商、广告、支付这类的会用。
 # discuss
 - ## 
 

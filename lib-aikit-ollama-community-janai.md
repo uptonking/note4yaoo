@@ -30,7 +30,7 @@ modified: 2026-01-14T19:05:15.969Z
   - omlx: mlx-lm + ui(PyObjC), 可参考迁移更多feature
 # draft
 - janai-cli like obsidian-cli, ollama-cli, lms-cli
-  - skills for janai-cli
+  - skills for janai-cli/lms-cli/ollama-cli
   - 直接兼容 lms-cli, 使用已下载的model
 
 - 参考janai支持切换llamacpp/mlx, 来实现支持切换 mineru/paddleocr/docling
@@ -73,7 +73,7 @@ modified: 2026-01-14T19:05:15.969Z
 - 
 - 
 
-# xp-llamafarm
+# xp-aichorage
 
 - 
 - 

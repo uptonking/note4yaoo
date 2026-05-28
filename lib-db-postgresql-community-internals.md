@@ -77,7 +77,11 @@ modified: 2023-10-28T13:46:14.957Z
 
 - ## 
 
-- ## 
+- ## [Shaun Thomas on "Why Postgres Lacks Transparent Data Encryption" : r/PostgreSQL _202605](https://www.reddit.com/r/PostgreSQL/comments/1tporac/shaun_thomas_on_why_postgres_lacks_transparent/)
+- There is an extension for that. Use an encrypted disk.
+
+- There’s an extension for that. https://github.com/percona/pg_tde I remind the geniuses demanding TDE that it only works in the simplest of database cases. So, your project is now 5x slower to complete and 2x more expensive to operate.
+  - As mentioned in the article, pg_tde depends on a proprietary fork by Percona. Frankly, they don't even make it easy to apply patches to base Postgres such that pg_tde works at all. Anyone who wants to run core Postgres, using PGDG-supplied packages, can not run pg_tde, or any other variant of TDE.
 
 - ## Did you know Postgres uses TWO in-memory caches?
 - https://x.com/BenjDicken/status/2024863773216133439

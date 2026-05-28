@@ -1181,11 +1181,32 @@ Code
 - OpenAI streaming has many peculiarities at production scale. e.g. you will get “half-chunks” occasionally which are not parseable on their own and must be concatenated with the previous or subsequent chunk for parsing.
 - should really be titled streaming output, as full duplex streaming isn't mentioned at all. that'd be necessary for things low latency things like speech etc.
 
+# discuss-pm-diff
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Introducing Diffs. A new way to review PRs, directly inside Linear.
+- https://x.com/linear/status/2060048202796040655
+  - Guided reviews with Al (beta)
+  - Threaded comments
+
+- https://x.com/artman/status/2060054961908588844
+  - Today we are launching the inaugural version of Linear Diffs, our take on code reviews. Diffs is meant to enable product teams to accelerate shipping by making code reviews fast, focused, and in context.
+  - We designed Diffs around what a code review should actually be: instant to open, stripped of noise, and deeply connected to the issue, project, and customer signal behind the change.
+  - It brings reviews inside Linear with smart prioritization, guided chapters for large diffs (following the logic of the work), structural highlighting that removes formatting churn, and rich context.
+  - Agents already handle most of the line-by-line correctness. This gives reviewers the space to focus on the judgment that actually matters: architecture, fit, and real customer problems.
 # discuss
 - ## 
+
 - ## 
+
 - ## 
+
 - ## 
+
 - ## [Text Editing, AI and Problems that Go Away _202508](https://terrycrowley.medium.com/text-editing-ai-and-problems-that-go-away-ad73a4993ca4)
 - The standard best-practice architecture for an interactive application (since the mid-seventies with full-screen display applications like emacs and VI and continuing into the GUI and web/mobile era of today) is one where the application maintains a data model that is rendered into a view. 
 - A rich component makes this basic architecture unworkable. 

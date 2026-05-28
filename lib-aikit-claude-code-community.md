@@ -78,7 +78,39 @@ modified: 2025-12-18T12:26:08.445Z
 - 虽然不知道是不是真的有用，但是我希望看到各大富可敌国的用户放出你们的评分截图
 
 - 应该还有一个路子可以测试，kiro 是不能完全支持所有 tools 的，比如 json，read_page 这些，我之前kiro转的调这些工具都会报错但也能模仿出来
+# discuss-issues
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [MCP 真的要被 CLI 和 SKLII 替代了吗 - LINUX DO _202605](https://linux.do/t/topic/2264048)
+  - 新加的MCP当前对话是不会生效，必须重新加载对话，Claude Code 限制——没有会话内热加载 MCP 工具的机制。真的很烦很难用，相对于 CLI 和 SKILL 真的没法比。之前 MCP 还很耗费 token 不过现在 claude code 经过优化不会一次性全部加载进来了，使用ToolSearch 工具搜索逐步使用，但是还是无法实时生效，没人注意这个问题吗，看都没人提到这个
+
+- 能用cli就不要用mcp了吧，不仅是上下文空间的问题，stdio类型的mcp每个对话都会开一个实例，开多了电脑也有点资源告急。
+  - 有的工具确实是只有 MCP 没有 CLI，都有的体验了确实是 CLI 更好用
+
+- Hermes有/reload-mcp命令所以这个热加载机制应该是可以实现的。
+
+- 其实我觉得站内有位佬总结的很好 开源用skill，闭源用mcp。简单来说就是通用需求用skill，内部业务走mcp。 比如查资料、跑脚本这些公开工具用skill 开箱即用的；但公司内部私有的业务和数据，封装成 mcp server才是正解，因为它本质上就是私网的统一大模型网关。
+- 不会被替代的，使用场景都不一样，有些服务端功能不能开源暴露给你的。另外比如模型想要访问真实世界，AI调用真人去做某些事情的时候，也需要MCP
+
+- 抛弃 mcp 确实是趋势，tool search 强行给 mcp 续了一命
+
+- MCP的价值不就是在于可以把服务部署到远端吗，Ai友好型接口调用
+
+- MCP能火的一个重要原因就是让很多应用都有了各种接口暴露给ai, 而且功能接口转为mcp可能更简单，因为都是json
+  - 你用cli，那是不是要多维护一套命令行的体系？
+
+- chrome-devtools 的mcp就比cli好用，cli总是想去用9222打开一个新的chrome 进程，各种不稳定。
+  - Antigravity 2.0那个browser 还是内置的chrome devtools mcp
+  - Codex 的computer use，browser use都是mcp
 # discuss-roadmap
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

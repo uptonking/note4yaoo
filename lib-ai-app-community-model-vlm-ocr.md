@@ -253,6 +253,13 @@ modified: 2025-11-06T18:49:13.977Z
     - Main takeaway: for standard OCR, smaller and older models match premium accuracy at a fraction of the cost.
   - there is a difference between OCR models and Vision models. I found that few models worked for OCR purposes as well the legacy Tesseract in my cases (no articles about that one.) In short, if you want to read the neon sign on a photo, you want a vision model, and if you give it a page, even with fairly specialized prompting, it has a tendency to describe the page rather than OCR it.
 
+- [Extend-AI/RealDoc-Bench · Datasets at Hugging Face _202605](https://huggingface.co/datasets/Extend-AI/RealDoc-Bench)
+  - [RealDoc-Bench: PDF parsing evals for agents : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1to8d4v/realdocbench_pdf_parsing_evals_for_agents/)
+  - A lot of parser evals focus on academic texts or simple PDFs which don’t reflect the docs agents struggle with in the real world. So this benchmark includes 1500 pages across logistics, healthcare, financial services, and real estate, including bills of lading, EOBs, mortgage 1003s, paystubs, and property disclosures.
+  - Two focuses:   
+  - 1. Layout accuracy: reading order, tables, forms, and document structure   
+  - 2. Document Q&A: objective questions against the parsed output using a fixed downstream QA setup, so we can measure whether the parse is actually useful to an agent. 
+
 - ## 
 
 - ## 
@@ -1125,6 +1132,29 @@ echo '{
 
 - Awesome. Florence is nice and small too, but could only really handle a finite list of specific prompts. It seems this small models retains the ability to ask free-form questions, which would make it extremely useful for mobile devices.
   - Florence 2 base is smaller. You can also fine tune it to work with any specific prompt you like if you have consistent prompts.
+# discuss-grounding
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Nvidia LocateAnything - Fast and High-Quality Vision-Language Grounding with Parallel Box Decoding. (10x faster than Qwen3-VL) : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1tpvldv/nvidia_locateanything_fast_and_highquality/)
+  - https://huggingface.co/spaces/nvidia/LocateAnything
+  - https://huggingface.co/spaces/nvidia/LocateAnything/tree/main
+  - Upload an image/video on the left, choose a task type, enter what you want to find, then click Run Inference. Results with bounding boxes will appear on the right.
+
+- This model is built using components from third-party models with their respective licenses:
+  - Language model: Qwen2.5-3B-Instruct (Qwen Research License)
+  - Vision encoder: MoonViT-SO-400M (MIT License)
+
+- This could be really good in manufacturing for visual quality control of production pipelines with SFT.
+  - The license doesn't permit this. Not unless you're an "nvidia affiliate" aka a paying customer
+
+- https://x.com/NVIDIAAI/status/2060058563544801787
+  - demo效果很好
+  - Meet LocateAnything: a vision-language detection model that rethinks bounding box prediction. For AI agents and robots, “seeing” is only useful if a model can pinpoint where something is fast enough to act.
+  - Trained on 138M high-quality samples, LocateAnything decodes bounding boxes in parallel instead of one coordinate at a time, improving localization accuracy while dramatically increasing throughput for visual grounding and detection. 
 # discuss-toolchain-vlm/cor
 - ## 
 

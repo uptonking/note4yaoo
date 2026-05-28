@@ -58,20 +58,6 @@ modified: 2021-01-08T17:14:34.841Z
 - ## One of the tricky things to get right in SVG path animations is picking the right `stroke-dasharray` , so I made this visual to help understand
 - https://x.com/nandafyi/status/1839319314220146753
 
-# discuss-layout-animation
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## Added mipmaps to my WebGPU engine to keep images sharp when I play with layout transitions.
-- https://x.com/AristideBenoist/status/2008945364490133937
-  - What helped me most was building projects, gradually raising the difficulty, improving my skills, and making things from scratch so I could really understand how everything works. I’m still exactly here, learning, improving my tools, trying to find new interactions ideas.
-- Mipmapping is underrated outside of video game contexts. It improves quality and performance at the cost of slightly higher memory
-
 # discuss
 - ## 
 
