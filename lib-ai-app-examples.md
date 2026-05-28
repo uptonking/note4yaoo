@@ -140,6 +140,25 @@ modified: 2023-02-08T07:20:48.475Z
     - 可以把她用作日常纯文字聊天（就像 ChatBox 一样）, 也可以给予她访问网络、操作手机的能力
     - 从深度研究 Deep Research 到逆向本机 APK 软件，Aether 全量支持 MCP、Skills，提供 Virtual Display 虚拟屏幕操作功能ww
     - Agent Mode 对标的是 ChatGPT 的 Computer Use 功能，通过创建虚拟屏幕，让 Agent 操作你的手机的同时不干扰前台焦点，用户仍然可以使用手机完成其他工作哦
+
+- https://github.com/thibautrey/chaton /202605/ts
+  - https://chatons.ai/
+  - Chatons is a native desktop app that brings AI-powered coding, writing, and project management into one elegant workspace. 
+  - it lets you chat with multiple AI providers, pick scoped or full model lists, manage skills/tools, and keep conversations organized in one place.
+  - All your data stays on your machine. No cloud sync, no telemetry by default.
+  - [Pi Integration ](https://docs.chatons.ai/pi-integration)
+  - Pi is responsible for: 
+    - Model and provider handling (registry, credentials, API compatibility)
+    - Tool execution inside conversations (read, write, edit, bash)
+    - Skills commands (install, uninstall, list)
+  - Chatons wraps Pi with:
+    - Electron IPC layer for cross-process communication
+    - Per-conversation runtime lifecycle management
+    - SQLite database for app-level persistence
+    - React UI and workspace state
+  - Cloud projects are the main exception to this local-runtime architecture. They do not create or use a local Pi runtime. In cloud mode, the desktop app is only a client for a remote Chatons runtime hosted by the cloud service, and provider credentials remain organization-owned in the cloud.
+  - [Cloud Architecture ](https://docs.chatons.ai/cloud-architecture)
+    - Cloud conversations may appear in the same workspace state, but they must not start a local Pi runtime. Their source of truth is the connected cloud instance plus its authenticated bootstrap payload. 
 # llm-impl/rewrite
 - https://github.com/ideaweaver-ai/qwen3-from-scratch /apache2/202509/python
   - A complete implementation of a Qwen3-based language model trained on the TinyStories dataset. 

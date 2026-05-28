@@ -30,6 +30,9 @@ modified: 2026-04-07T12:53:02.538Z
   - Multi-platform: Linux, macOS (Intel/ARM), Windows
   - https://github.com/run-llama/liteparse/tree/main/packages/python
     - Python wrapper for LiteParse 
+  - https://x.com/jerryjliu0/status/2059710330016817501  __202605
+    - Introducing LiteParse v2 - we rewrote the entire library into Rust and adapted it as native packages for Python and Node. 
+    - a custom WASM package enables browser and edge runtime usage
   - https://x.com/jerryjliu0/status/2034665976428724267
     - Introducing LiteParse - the best model-free document parsing tool for AI agents 
   - [PDF Parsing With Bounding Boxes: The Step That Takes Document AI From Demo to Production  _202604](https://themindfulai.dev/articles/parsing-pdfs-with-bounding-boxes)

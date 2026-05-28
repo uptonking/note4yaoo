@@ -1086,6 +1086,13 @@ modified: 2025-12-11T18:10:23.710Z
     - @earendil-works/pi-coding-agent	Interactive coding agent CLI
     - @earendil-works/pi-tui	Terminal UI library with differential rendering
   - 核心开发仅2人
+  - https://github.com/earendil-works/pi-chat
+    - A pi extension that bridges Discord and Telegram channels to a sandboxed pi session. Each connected channel gets its own Gondolin micro-VM with persistent workspace, shared storage, memory, and skills.
+    - Requirements
+    - QEMU installed (brew install qemu on macOS)
+    - Gondolin guest image (downloaded automatically on first connect)
+  - https://github.com/can1357/oh-my-pi /MIT
+    - AI Coding agent for the terminal — hash-anchored edits, optimized tool harness, LSP, Python, browser, subagents, and more
 
 - https://github.com/1rgs/nanocode /1.7kStar/MIT/202601/python/单文件
   - Minimal Claude Code alternative. Single Python file, zero dependencies, ~250 lines.

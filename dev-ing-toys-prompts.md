@@ -281,7 +281,9 @@ Project `grist` (in current folder) is a modern relational spreadsheet. It combi
 - the browser/nbrowser related features/tests like `npm run test:nbrowser:react-smoke` can be very slow.
 - please recheck related implementation-logic/tests, improve it by making the downloaded binary/resources cached locally, so that later testing/running can reuse it directly if already existed. improve the cache logic, and update related data-flow/tests, make sure the implementation is correct, robust, extensible without unnecessary redownloading.
 
-- the scripts/tests/commands you just run took huge memory and is very slow. please recheck related implementation-logic/tests, improve it and make it correct and fast.
+- the tests/scripts/commands you just run took huge memory and is very slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests. please recheck related implementation-logic/tests, improve it and make it correct and fast. 
+
+- the tests/scripts/commands for react webapp may take huge memory and be very slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests. please recheck core implementation-logic and tests, improve it and make it correct and fast.
 
 - recheck and improve it, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
 

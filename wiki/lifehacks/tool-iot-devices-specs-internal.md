@@ -22,7 +22,7 @@ modified: 2024-09-25T15:17:42.743Z
 
 - apple
   - [认证的翻新产品 - Apple (中国大陆)](https://www.apple.com.cn/shop/refurbished)
-# phone
+# phone 📱
 - cpu 根据使用场景确定性能需求
 - 内存
 - 存储
@@ -447,7 +447,7 @@ GPS丨Glonass丨BeiDou丨Galileo
   - https://zh.wikipedia.org/wiki/IPhone_6s
 - [iPhone 6s Plus](https://www.theiphonewiki.com/wiki/IPhone_6s_Plus)
 - [苹果iPhone 6S Plus（全网通）参数](http://detail.zol.com.cn/399/398690/param.shtml)
-# laptop
+# laptop 💻
 
 ## macbook air m4
 
@@ -666,10 +666,10 @@ CPU主频	2.3GHz
 - [惠普 ENVY 薄锐笔记本 - 15-as109tu 产品规格](https://support.hp.com/cn-zh/document/c05255263)
 - [HP ENVY - 15-as109tu Product Specifications](https://support.hp.com/us-en/product/hp-envy-15-as100-notebook-pc/12499192/model/13402468/document/c05255261)
 - [惠普ENVY 15-AS109TU(Y8H74PA)参数](http://detail.zol.com.cn/1156/1155399/param.shtml)
-# pc/mini
+# pc/mini 🖥️
 - 惠普 战99 台式机
   - 机箱的官方尺寸是 15L, 17.0×33.8×27.7 cm
-# watch
+# watch ⌚️
 - [反射屏或半反射屏的智能手表是不是都是垃圾，像华为手表都不用这种低端配置？ - 知乎](https://www.zhihu.com/question/461149092)
   - 这个主要用在户外专业运动手表上，大大节省屏幕的功耗，以提供更长的续航时间，以及电量供给给更需要的 GPS 定位。
   - 反射式屏幕主要是在户外太阳光很强烈的情况下看表才用的！如果要在户外活动，那些LED的屏幕瞬间被秒成渣渣。什么OLED屏幕，缺点都暴露无疑。
@@ -732,7 +732,16 @@ CPU主频	2.3GHz
   - /storage/emulated/0/Android/data/com.huami.watch.huamiwatchmanager/files/zepp/gpx/Zepp20220223231809.gpx
 
 - gpx
-# kitchen
+# kitchen 🏠
+- [风扇 F3-YOOBAO/羽博官网 ](http://yoobao.com/product/showproduct.php?id=197)
+  - 尺寸(高x宽x厚): 172x90x41mm
+  - 重量: 175g
+  - 功率: 3.0w(MAX)
+- [风扇 F1-YOOBAO/羽博官网 ](http://yoobao.com/product/showproduct.php?id=138)
+  - 尺寸(高x宽x厚): 320x167x132mm
+  - 重量: 610g
+  - 功率: 2.5w(MAX)
+
 - 半球小型电饭煲
   - 米白, 1.2L
   - 米水比例 1 : 1.2

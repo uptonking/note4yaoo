@@ -554,7 +554,7 @@ PP Speed: Q3 GGUF: 50 t/s
   - ▸ Decode: 26.85 tok/s, 2.23x faster (DFlash + DDTree, budget 22)
   - ▸ Prefill 16K: 20.2s, 3.05x faster (PFlash)
   - ▸ Wall clock, 16K prompt + 1K gen: 58s vs 147s
-  - https://github.com/Luce-Org/lucebox-hub /apache2/202605/cpp/python
+  - https://github.com/Luce-Org/lucebox-hub /2.2kStar/apache2/202605/cpp/python
 
 - strix halo + egpu when? 
 
@@ -679,6 +679,27 @@ PP Speed: Q3 GGUF: 50 t/s
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Folks running qwen 3.6 27b for agentic work. Do you dare to use q4_k_m? : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1tovx7i/folks_running_qwen_36_27b_for_agentic_work_do_you/)
+- It also depends on what you're doing. Having a play? q4 is fine. Building professional-use software for a high-stakes industry, then fp8 
+- For normal chat it’s usually fine. The problem is agents fail in annoying little ways. Not always “the answer is totally wrong, ” more like it forgets one instruction, picks the wrong file, misses an error message, or confidently goes down the wrong path.
+
+- I've been using unsloth's q4_k_xl for programming (pi) and haven't had any issues with it. What do you mean by "errors" here?
+
+- Yea, I think Qwen3.6-27B Q4_K_M is quite good for Python development. I used it for some time when I only had one RTX 3090 24G. I paired it with q8_0 KV cache and it did well with 128k context. It created minor bugs where a second or third pass cleared it up quickly. Even at Q5_K_M (what I'm using now) creates just as many bugs on its first pass, but I'm at a larger context now, so it's expected (both quants seems to degrade after ~128k context). Upvote 10 Downvote Reply
+
+- Q4KM? No. Q4KXL? Yes.
+
+- I use it, because it allows me to have 200k context. Or more importantly, two agents with 100k context each.
+
+- 
+- 
+- 
+- 
 
 - ## 🆚 [Qwen 3.6 27B BF16 vs Q4_K_M vs Q8_0 GGUF evaluation : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sxzqry/qwen_36_27b_bf16_vs_q4_k_m_vs_q8_0_gguf_evaluation/)
   - Evaluated Qwen 3.6 27B across BF16, Q4_K_M, and Q8_0 GGUF quant variants with llama-cpp-python using Neo AI Engineer.

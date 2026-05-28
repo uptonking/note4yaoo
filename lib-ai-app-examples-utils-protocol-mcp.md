@@ -323,6 +323,13 @@ modified: 2026-01-19T05:01:00.055Z
     - 不用尝试了，社交媒体网站会屏蔽所有headless浏览器，这种工具毫无意义
     - 我用cdp的模式比较可控
 # phone-use
+- https://github.com/omnimind-ai/OpenOmniBot /1.5kStar/AGPL/202605/dart/kotlin
+  - https://omnimind-ai.github.io/OmniBot-Docs/
+  - 你的端侧 AI 助手，她可以操作终端，也可以完成 Android 世界的广泛任务
+  - [【安卓Agent开源】1.5Kstar✨ 打造你的 AI OS - LINUX DO _202605](https://linux.do/t/topic/2256472)
+    - 本地化：本地的alpine系统+agent功能——>大厂不会做。
+    - 沙盒化：软件即agent系统，不会对手机系统造成任何损伤
+
 - https://github.com/wuwei-crg/AutoLXB /MIT/202605/java
   - 基于常驻守护进程的 Android 自动化框架，支持多任务定时执行
   - [【开源更新】AutoLXB 安卓自动化助手：任务及其路线可导入导出，探索跨设备复用的自动化流程 - LINUX DO _202605](https://linux.do/t/topic/2126610)

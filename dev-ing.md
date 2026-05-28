@@ -337,6 +337,22 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0527
+
+- 🤔 find some popular projects that are using pi coding agent like openclaw?  give a overview/github-url/url for each. if i want to build a custom agent for chat with docs, should i use pi or vercel ai sdk, compare them and help me choose
+- OpenClaw's architecture uses the Pi framework as its embedded agent runtime to manage tasks, execute code, and retain persistent cross-platform memory
+- https://github.com/Dicklesworthstone/pi_agent_rust
+  - Rust port of the Pi Agent CLI 
+- https://github.com/dimetron/pi-go
+  - fast adaptation of the Pi coding agent written entirely in Go
+- Choose Vercel AI SDK if:
+  - You're building a web-based chat interface (Next.js/React) and want the best streaming UX with minimal code
+  - You want to ship fast with an official RAG template and community examples
+- Choose Pi if:
+  - You want deep control over the agent harness itself—custom tool injection, system prompt engineering, session lifecycle management
+  - You're building something that needs to run outside a web browser (terminal, Slack bot, embedded in another app)
+  - If you're building a terminal/CLI doc-chat tool (internal dev tool, local knowledge base): Pi is the stronger choice. Its dynamic context injection, skills system, and extension hooks make it well-suited for plugging in RAG without building a whole web stack. Pi's dynamic context feature lets extensions inject messages before each turn, filter message history, implement RAG, or build long-term memory — exactly what "chat with docs" needs.
+
 ## 0525
 
 - [stream disconnected before completion: stream closed before response.completed · router-for-me/CLIProxyAPI · Discussion _202605](https://github.com/router-for-me/CLIProxyAPI/discussions/2138)
@@ -353,6 +369,9 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 
 - [代理后异常报错：auth_unavailable · Issue · router-for-me/CLIProxyAPI _202604](https://github.com/router-for-me/CLIProxyAPI/issues/2687)
   - 把文件删除，重新导入，获取可用模型后，就可以继续用需要的模型了
+- [提取无卡号的plus session导入中转平台的法子，是不是拉闸了？ - LINUX DO _202605](https://linux.do/t/topic/2243202)
+  - 今天起来一看cpa，我40多个号全部报红了，codex一对话就返回503:unexpected status 503 Service Unavailable: auth_unavailable: no auth available (providers=codex, model=gpt-5.5), 怎么办呀佬们
+- 今早就拉闸了，现在必须add phone了
 
 - [v7.0.3 codex oa登录后 api调用、测试模型报错（降v7.0.2正常） · Issue · router-for-me/CLIProxyAPI _202605](https://github.com/router-for-me/CLIProxyAPI/issues/3351)
 

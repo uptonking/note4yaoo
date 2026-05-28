@@ -29,6 +29,8 @@ codex --yolo resume --last
 - hotkeys
   - ctrl + u: 清空一行
     - This is a standard Unix/Mac terminal shortcut that deletes everything from your cursor to the beginning of the line. 
+# issues
+- 在使用CPA时，若全部账户处理cooling down状态，codex有时会不停reconnecting，浪费超多网络代理流量
 # discuss-stars
 - ## 
 

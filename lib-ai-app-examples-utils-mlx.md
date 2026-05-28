@@ -837,6 +837,13 @@ modified: 2025-11-01T10:54:26.044Z
   - a CLI tool written in Go that benchmarks how well Large Language Models (LLMs) run on your specific hardware. 
   - It measures real-world performance metrics via Ollama and tells you whether your "rig" is ready for AI workloads.
   - [I built a small CLI tool to help beginners see if their hardware can actually handle local LLMs : r/ollama](https://www.reddit.com/r/ollama/comments/1r8rgg8/i_built_a_small_cli_tool_to_help_beginners_see_if/)
+# inference-engine
+- https://github.com/Luce-Org/lucebox-hub /2.2kStar/apache2/202605/cpp/python
+  - https://www.lucebox.com/
+  - Fast LLM speculative inference server for specific consumer hardware.
+  - Local LLM inference server built for speed. Custom kernels, speculative prefill & decoding.
+    - DDTree, PFlash
+  - 🐛 支持的模型很有限
 # llm-server
 - https://github.com/danveloper/flash-moe /202603/oc
   - Running a big model on a small laptop

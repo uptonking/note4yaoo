@@ -22,6 +22,19 @@ modified: 2026-01-14T18:57:51.174Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Ollama v0.30.0 pre-release : r/ollama _202605](https://www.reddit.com/r/ollama/comments/1tnomhq/ollama_v0300_prerelease/)
+- they're moving from their in-house fork of GGML to the upstream llama.cpp so they don't have the maintenance overhead of keeping theirs in sync.
+
+- ollama uses llama.cpp under the hood yeah, but it stores models in its own blob format instead of plain GGUF files. so if you wanted to use the same model in both ollama and llama.cpp directly, you'd have to download it twice (or do hacky symlink stuff). this change should let them share the same GGUF files natively.
+
+- 
+- 
+- 
+
 - ## [Using Claude Code with Ollama local models : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qfwubh/using_claude_code_with_ollama_local_models/)
   - Ollama v0.14.0 and later are now compatible with the Anthropic Messages API, making it possible to use tools like Claude Code with open-source models.
 - Be aware of the long system prompts and set the context size accordingly. You can check out the system prompts below.

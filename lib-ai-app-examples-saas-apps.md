@@ -718,6 +718,12 @@ modified: 2025-02-21T17:17:42.225Z
   - An AI-powered e-book reader with semantic search, intelligent chat, and knowledge management
   - [【开源自荐】ReadAny：一款与AI 深度结合的开源跨端电子书阅读器  - LINUX DO _202603](https://linux.do/t/topic/1809537)
 
+## writing
+
+- https://github.com/dama-cyber/Distilled-Novel-Toolbox
+  - 一套面向网络小说作者的全链路创作知识库。覆盖从构思、写作、润色到发布的全流程，每个模块包含核心方法论（SKILL.md）和深度参考文档（references/）。
+  - [一个网文写作的技能工具箱 【开源推广】 - LINUX DO _202605](https://linux.do/t/topic/2253089)
+
 ## research
 
 - https://github.com/Agents2AgentsAI/ata /apache2/202602/rust/ts

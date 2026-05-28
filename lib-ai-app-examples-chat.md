@@ -466,7 +466,39 @@ modified: 2025-03-22T18:49:15.634Z
   - https://sqlchat.ai/
   - Chat-based SQL Client and Editor for the next decade
   - built by Next.js
-# chat-apps/domain
+# chat-apps
+- https://github.com/companion-inc/feynman /MIT/202605/ts
+  - https://feynman.is/
+  - The open source AI research agent.
+  - Four bundled research agents, dispatched automatically.
+    - Researcher — gather evidence across papers, web, repos, docs
+    - Reviewer — simulated peer review with severity-graded feedback
+    - Writer — structured drafts from research notes
+    - Verifier — inline citations, source URL verification, dead link cleanup
+  - Built on `Pi` for the agent runtime, alphaXiv for paper search and analysis, and CLI tools for compute and execution. 
+    - Runtime resources follow Pi's documented package model for packages, extensions, and skills. 
+
+- https://github.com/thibautrey/chaton /202605/ts
+  - https://chatons.ai/
+  - Chatons is a native desktop app that brings AI-powered coding, writing, and project management into one elegant workspace. 
+  - it lets you chat with multiple AI providers, pick scoped or full model lists, manage skills/tools, and keep conversations organized in one place.
+  - All your data stays on your machine. No cloud sync, no telemetry by default.
+  - [Pi Integration ](https://docs.chatons.ai/pi-integration)
+  - Pi is responsible for: 
+    - Model and provider handling (registry, credentials, API compatibility)
+    - Tool execution inside conversations (read, write, edit, bash)
+    - Skills commands (install, uninstall, list)
+  - Chatons wraps Pi with:
+    - Electron IPC layer for cross-process communication
+    - Per-conversation runtime lifecycle management
+    - SQLite database for app-level persistence
+    - React UI and workspace state
+  - Cloud projects are the main exception to this local-runtime architecture. They do not create or use a local Pi runtime. In cloud mode, the desktop app is only a client for a remote Chatons runtime hosted by the cloud service, and provider credentials remain organization-owned in the cloud.
+  - [Cloud Architecture ](https://docs.chatons.ai/cloud-architecture)
+    - Cloud conversations may appear in the same workspace state, but they must not start a local Pi runtime. Their source of truth is the connected cloud instance plus its authenticated bootstrap payload. 
+
+## domain-chat
+
 - https://github.com/PKU-YuanGroup/ChatLaw
   - https://chatlaw.cloud/lawchat/
   - 中文法律大模型

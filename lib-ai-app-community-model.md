@@ -1141,6 +1141,31 @@ Kimi K2	1000	32	3.2%
 - If it includes evaluating js driven websites, including images Then yes 
   - To really replicate that, you'd probably wanna just use puppeteer, save the whole page as an image, extract the info from that, and then crunch that data
 
+# discuss-model-reasoning/cot
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Unless you’re ready to spend serious time (and money) tuning hyperparameters, don’t mess with LLM reasoning traces.
+- https://x.com/bnjmn_marie/status/2059101681716260918
+  - I evaluated multiple reasoning budgets and BNF grammar / structured CoT settings on Qwen3.6 27B.
+  - The results are underwhelming.
+  - Yes, it can work: for a few specific tasks, it significantly reduces inference cost by shortening reasoning traces while preserving accuracy.
+  - But in most settings, simply disabling reasoning is better, both for token efficiency and accuracy.
+
+- how did you measure accuracy? do you think the drop after using grammars has to do with out of distribution tokens enforced on the model?
+- Maybe silly question: are those reasoning budgets meant for the whole eval session, or just per-turn??
+  - For these evaluations, it's per turn. All these benchmarks are single-turn
+
+- Was this with the reasoning end message? Because the llamacpp docs say that when limiting reasoning budget you need a reasoning end message with the flag like "Reasoning budget exceeded, let's answer now"
+
+- I disagree. I made a Claude Code based benchmark for Go tasks. Without reasoning Qwen 3.6 27B struggles to solve harder concurrency tasks. When I turn reasoning back on, it solves them.
+
+- better prompts and context beat thinking tokens everytime
 # discuss-model-routing
 - ## 
 

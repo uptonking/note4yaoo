@@ -1907,6 +1907,10 @@ modified: 2025-03-22T16:10:24.856Z
     - 质保、非质保 分开
   - [GPT成品plus的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/FEO0CLZ6)
   - [金幺の小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/911)
+  - [ParHom的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/parhom)
+    - Cursor Auto｜超账单｜库存号
+    - Cursor Pro Plan 20$官方套餐【已用完高级模型额度】
+    - 可Auto、Composer模型｜可对接Api
 - [AI源头-oak的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/oak)
   - tg频道：https://t.me/dabaizu 
   - 接码多, paypal
@@ -2050,8 +2054,10 @@ modified: 2025-03-22T16:10:24.856Z
   - https://team.longxiadev.store/
   - [Antipro 的小店 - 云猫寄售 ](https://catfk.com/shop/W5YJ6A0E)
   - [商家696的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Kegan04)
+- [旋律plus的小店 - 造梦企发Pro，造梦寄售平台 ](https://fh10.zmfaka.cn/shop/XGLVB89E)
+  - 低价plus
 
-- [Gemini Pixel 设备认证 ](https://autopixel.qzz.io/wholesale)
+- [Gemini Pixel 设备认证 ](https://autopixel.qzz.io/blackcat)
   - 品类多
 - [Lyla-精灵小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/lyla)
   - kiro周卡-18
@@ -2130,6 +2136,17 @@ modified: 2025-03-22T16:10:24.856Z
   - 谷歌母号, 不质保，只保拍下立马登录满配额。有效期10天左右。
 - [AI账号百货通的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/windsurf-test)
   - Windsurf 全新 纯谷歌邮箱账号 （wf 账号、密码发货）无质保（下单请思考）
+- [YOUC的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/INJXURRY)
+  - 临期windsurf很低价
+- [claude 供应商的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/73QTX1TH)
+  - 过期日期临期，剩余时间就3-7天随机
+- [AI账号百货通 962395845的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/windsurf-test)
+  - Windsurf 谷歌别名（子号） 自行研究 无质保
+- [A8 小店 购买账号 - 链动小铺 ](https://pay.ldxp.cn/shop/16888)
+  - 顶部售后群有切号软，可导入账号一键切号查看额度等 
+- [Windsurf专卖4988的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/3FR7Y3PY)
+  - 送免魔法登录插件
+
 - [极速的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/jishu)
   - Gmail母号 邮箱，正规账号，单账号独立注册。 可用opus4.6  4.7
 
