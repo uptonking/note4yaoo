@@ -873,7 +873,19 @@ It amazes me how people default to LLM calls when you can do it in a simple, fre
 
 - ## 
 
-- ## 
+- ## 🆚 [【开源自荐】Vibebench - 一个AI外行消费者做的LLM前端横评展示项目（Claude/GPT/Gemini/GLM/Kimi/Qwen/Minimax/Mimo... SOTA模型大乱斗） - LINUX DO _202605](https://linux.do/t/topic/2268453)
+  - 简单来说，就是让不同渠道的不同模型，做相同的赛题，然后展示出来
+  - 市面上的benchmark，其实更多的是面向AI的研究者，面向AI的厂商，面向媒体KOL，面向股价，而非消费者
+  - 真实渠道，测试AI在不同渠道的表现
+  - 完全透明，没有打分，只有展示与对比，唯一的评判标准是消费者的看法
+  - 一次定生死（One Shot测试） 没有pass@10，没有Best of N
+
+- 那么究竟有什么赛题？
+  - 工具类：base64转码、简单的密钥生成、时钟工具箱、cron翻译器、RGB渐变调色板……
+  - 视觉类：滚动叙事、无尽DOM套娃、字体博物馆、苹果风首页、人生选择地图……
+  - 游戏类：21点、24点、打地鼠、吃豆人、俄罗斯方块、打砖块、2048、贪吃蛇……
+  - 算法类：迷宫生成与求解、模拟万花尺、模拟高尔顿板、排序算法可视化……
+  - 复刻类：Amazoom、Readit、Spotifly、Epoch 游戏商城……
 
 - ## 🚀 We’re open sourcing ArrowJS 1.0: the first UI framework for coding agents.
 - https://x.com/jpschroeder/status/2036078689754992886

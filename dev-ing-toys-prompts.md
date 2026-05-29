@@ -100,7 +100,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 - prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support... in begonia, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
-- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achived so that further improvements goal will be designed as separate goal/task.
+- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements goal will be designed as separate goal/task.
 
 - docs/tests/scripts might be outdated, recheck code and data flow to improve begonia.
 
@@ -111,6 +111,11 @@ you have worked on this problem several times but features are still lacking. Th
 - there are many smoke tests, it seems messy. can you refactor/redesign the tests as common units that are eaiser to maintain? 
 
 - import/export
+
+### docx-editor
+
+project `superdoc` at folder `../superdoc` is also a paginated editor like `docx-editor` in current folder. analyze related code/docs/architecture/data-flow in superdoc, explain to me how does the core superdoc editor  implement the paginated editor layout engine architecture, whether superdoc editor supports multi-column layout, whether it supports virtualized rendering for huge document. 
+then compare the architecture/implementation of superdoc and docx-editor, explain the differences for core features like pagination, virtualized render, multi-column layout, track-change...
 
 ## hardoc(onlyoffice-pdf)
 
@@ -213,9 +218,11 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - please recheck migrated features and improve your implementation in hardoc. Analyze core data flow and implementation logic details for every major feature like document rendering/layout/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, ..., compare the implementation logic/code of hardoc with onlyoffice-pdf-editor logic/code to recheck and enhance the correctness of architecture and logic in hardoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in hardoc are correct, modular, extensible for long-term maintenance.
 
+- docs/tests/scripts might be outdated, recheck code and data flow to improve hardoc.
+
 - prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, selection range/offset/caret, undo/redo for editing, pdf annotations/highlights... in hardoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
-- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achived so that further improvements goal will be designed as separate goal/task.
+- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements goal will be designed as separate goal/task.
 
 ### draft-hardoc
 
@@ -272,7 +279,7 @@ Project `grist` (in current folder) is a modern relational spreadsheet. It combi
 
 - prioritize and recheck/improve major features like spreadsheet data-model and rich formatting, spreadsheet editing with undo/redo and history, custom-widget, formula, drag-and-drop-dashboard, incremental-imports... in react webapp, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
-- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achived so that further improvements goal will be designed as separate goal/task.
+- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements goal will be designed as separate goal/task.
 
 - RBAC or ui/ux is not important at the moment, related feature may be delayed, you can update the parity docs.
 
@@ -405,7 +412,7 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 - please recheck migrated features and improve your implementation in aichorage. Analyze core data flow and implementation logic details for every major feature like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible api, chat with local-model/cloud-llm-api-provider..., compare the implementation logic/code of aichorage with related jan/transformerlab-app/unsloth-studio logic/code to recheck and enhance the correctness of architecture and logic in aichorage, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in aichorage are correct, modular, extensible for long-term maintenance. 
 
 - prioritize and recheck/improve major features like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible-api, chat with local-model/cloud-llm-api-provider... in aichorage, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
-- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achived so that further improvements will be designed as separate goal/task.
+- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
 - recheck and improve it, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
 

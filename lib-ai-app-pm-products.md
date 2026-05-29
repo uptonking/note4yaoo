@@ -271,6 +271,14 @@ modified: 2025-03-22T16:10:24.856Z
 - toB-ai
   - 企业需要支持快速集成现有系统、权限、日志审计
 
+- rag
+  - pdf-vector bundle 格式, 
+    - 优点: 可以隐藏原文但支持搜索
+    - 缺点: 体积大，vector/dimension缺乏标准
+
+- pdf
+  - gitbook-like viewer
+
 - editor-heavy
   - pretext
   - ooxml editing
@@ -283,6 +291,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 对比阅读已有pdf的 原文 和 译文
 
 - rewrite 
+  - obsidian webclipper to vscode
   - open-canvas with langgraph
   - ~~replace vscode with codemirror, compatible with obsidian~~ (没收益)
   - Gemini file search API
@@ -621,6 +630,12 @@ modified: 2025-03-22T16:10:24.856Z
 # ai-coding
 - 玩具代码可用时，立即保存快照, 如果后面写乱了方便恢复
 
+- 现有coding agent的优点
+  - 功能丰富，比较稳定
+  - remote control, cloud task
+
+- 
+- 
 - 
 - 
 - 
@@ -775,6 +790,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
   - 🤔 与其花时间签到游戏，不如研究2api和反代; 比较 公益站的配置折腾 / 反代的配置及更新
   - coding方案还可使用 ccr 转换 qwen-code-cli
+  - 少数公益站支持投喂 plus 来换取无限额度1天的套餐， 在token需求大时可考虑付费支持以小换大
   - 是否需要统一管理公益站，不同站点的安全盾绕过方式不同，模型名不同，api分组名不同，key的有效期不同
   - 有的api不能显示thinking内容
   - 模型不断更新，落后的公益站会逐渐淘汰
@@ -1805,6 +1821,8 @@ modified: 2025-03-22T16:10:24.856Z
 
 - tips
   - 当购买一个商品有很多渠道时，有限选择可靠的平台，售后/质保/退款更方便
+    - 大站的售后可能被封控，如短信/邮箱的接码可能被限流
+  - 付费站和公益站都会有rpm的限制，甚至限制都很大
   - 中转商的价格每天都在变化, 套餐也在改变, 不要在一家花费过多
     - 很可能注册的第一天会显示低价，后面就恢复正常价格了，注意误导
     - 在5月13号，几乎所有成品号渠道都失效了，所有店铺(无论贵的还是便宜的)的源头渠道几乎相同，，，以后买便宜的就行了

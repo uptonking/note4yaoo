@@ -76,14 +76,19 @@ modified: 2026-05-28T20:48:22.013Z
   - It's not cheaper than API calls (OpenRouter is free for Gemma)
 - We're keeping it anyway. I think it's the future. Other browsers will add their own AI models. We'll get consistent cross-platform APIs. I also like the privacy aspects of local inference. The more we use it, the more we'll see optimizations from OS, browser, and hardware vendors.
 
-# discuss-small-llm-hot
+# discuss-models/small
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## [Released Soren-1-Small (Qwen3.5-2B) — 1M Context, SFT+DPO, Reasoning & Coding Focused : r/unsloth _202605](https://www.reddit.com/r/unsloth/comments/1tqv1vx/released_soren1small_qwen352b_1m_context_sftdpo/?sort=top)
+  - It's based on Qwen3.5-2B and was trained through a multi-stage SFT + DPO pipeline focused on reasoning, coding, instruction following, and reducing hallucinations while keeping the model practical to run locally.
+  - Training data: 22 datasets spanning reasoning, coding, instruction tuning, and preference optimization
+  - The goal wasn't to create another generic instruct model. I wanted a small model that prioritizes reasoning, honest answers, and complete code generation without pretending to know things it doesn't.
+  - One thing worth mentioning: this is still a 2B model. It can reason surprisingly well for its size, but sometimes you'll need to be explicit or "push" it a bit with your prompts to get the best results. Give it structure, ask it to think step-by-step when appropriate, and it generally performs much better than a typical one-shot prompt.
+  - https://huggingface.co/syntropy-ai/Soren-1-Small
 
 - ## [MiniCPM5 1B (now open source) benchmarks are kind of absurd : r/LLM _202605](https://www.reddit.com/r/LLM/comments/1tp1135/minicpm5_1b_now_open_source_benchmarks_are_kind/)
   - 1.08B params, tops the Artificial Analysis Intelligence I ndex for every open model under 2B, and somehow beats Qwen3.5 2B which has literally double the parameters.

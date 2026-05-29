@@ -159,6 +159,16 @@ modified: 2023-02-08T07:20:48.475Z
   - Cloud projects are the main exception to this local-runtime architecture. They do not create or use a local Pi runtime. In cloud mode, the desktop app is only a client for a remote Chatons runtime hosted by the cloud service, and provider credentials remain organization-owned in the cloud.
   - [Cloud Architecture ](https://docs.chatons.ai/cloud-architecture)
     - Cloud conversations may appear in the same workspace state, but they must not start a local Pi runtime. Their source of truth is the connected cloud instance plus its authenticated bootstrap payload. 
+# llm-mobile/edge/devices
+- https://github.com/alichherawalla/off-grid-mobile-ai /2.3kStar/MIT/202605/ts
+  - The Swiss Army Knife of Offline AI. Chat, Speak, and Generate Images - Privacy First, Zero Internet.
+  - Off Grid is a complete offline AI suite — text generation, image generation, vision AI, voice transcription, tool calling, and document analysis, all running natively on your phone's or Mac's hardware.
+  - [I open-sourced an offline AI app (LLMs + image gen + vision + Whisper, fully on-device). 2k stars later, here are the gnarliest bugs we fixed. : r/OpenSourceAI _202605](https://www.reddit.com/r/OpenSourceAI/comments/1tqnd9c/i_opensourced_an_offline_ai_app_llms_image_gen/?sort=top)
+    - Off Grid runs Qwen 3, Llama 3.2, Gemma 3, Phi-4 and any GGUF locally — no cloud, nothing leaves your phone. It also does on-device Stable Diffusion (NPU-accelerated on Snapdragon, Core ML on iOS), vision, and voice transcription.
+    - The interesting part wasn't getting inference working — it was everything around it on real devices: The ≤4GB RAM death spiral. On an iPhone XS / iPhone 8, Metal buffer allocation during LLM inference + CLIP warmup would call abort() and kill the app before JS could even catch it. We now auto-disable GPU layers and CLIP GPU on these devices. Quantization recommendation ended up being Q4_K_M as the sweet spot, Q5_K_M only if you've got 8GB+.
+    - Top 3 production crashes: a SIGSEGV, an NPE, and a Whisper race condition — all fixed in one pass.
+    - Remote server support if you don't want to run on-device: connect to any OpenAI-compatible server (Ollama, LM Studio, LocalAI) on your LAN.
+    - Offline AI sounds simple until every model, driver, and device combo becomes its own bug report. Respect for shipping through that mess.
 # llm-impl/rewrite
 - https://github.com/ideaweaver-ai/qwen3-from-scratch /apache2/202509/python
   - A complete implementation of a Qwen3-based language model trained on the TinyStories dataset. 

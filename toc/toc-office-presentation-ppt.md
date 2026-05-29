@@ -836,6 +836,12 @@ modified: 2021-04-30T20:14:17.669Z
 
 - [ChatSlide | Build your Slides and Videos from Documents in one click](https://chatslide.ai/landing)
 
+- https://github.com/op7418/guizang-ppt-skill /AGPL/202605/js
+  - 一个适配 Claude Code / Codex 等 Agent 环境的网页 PPT 技能, 用于生成单文件 HTML 横向翻页 PPT、PPT 配图和多平台封面。
+  - 内置两套视觉系统:
+    - Style A: 电子杂志 × 电子墨水。像 Monocle 贴上了代码,适合叙事、观点、分享、个人风格表达。
+    - Style B: 瑞士国际主义。网格至上、单一高饱和锚点色、直角、发丝线、极致字号对比,适合事实、产品、分析、方法论表达。
+
 ## ppt-image
 
 - https://github.com/JuneYaooo/gpt-image2-ppt-skills /apache2/202604/python

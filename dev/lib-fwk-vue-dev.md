@@ -14,6 +14,8 @@ modified: 2021-01-04T19:34:22.729Z
   - comfyui
   - PPTist
   - vue-fabric-editor
+  - directus
+  - opencloud
 # blogs-internals-vue
 
 ## [vue3源码分析二 生成ast（编译总览） - 掘金 _202012](https://juejin.cn/post/6911692308563886087)

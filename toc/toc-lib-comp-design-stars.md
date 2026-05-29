@@ -47,6 +47,9 @@ modified: 2021-01-12T18:48:52.713Z
   - https://ui.shadcn.com/docs/primitives/dropdown-menu
   - Beautifully designed components built with Radix UI and Tailwind CSS
   - 默认白色主题很有设计感
+  - https://github.com/shadcnstudio/shadcn-studio /1.6kStar/MIT/202602/ts
+    - https://shadcnstudio.com/
+    - open-source collection of copy-and-paste shadcn components, blocks, and templates - paired with a powerful theme generator to craft, customize, and ship faster.
 
 - https://github.com/skeletonlabs/skeleton /风格glassmorphism
   - https://skeleton.dev/

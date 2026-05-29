@@ -92,7 +92,57 @@ modified: 2021-08-16T06:56:53.061Z
   - the computation and annotation existing on the same layer is Very Cool
   - ["Programmable Ink" by Szymon Kaliski (Strange Loop 2022) - YouTube _202210](https://www.youtube.com/watch?v=ifYuvgXZ108)
 
+# discuss-books
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [I benchmarked 6 self-hosted book server apps up to 150K books (ingestion time + RAM/CPU) : r/selfhosted _202605](https://www.reddit.com/r/selfhosted/comments/1tqia6s/i_benchmarked_6_selfhosted_book_server_apps_up_to/?sort=top)
+  - I’ve been trying to find the best self-hosted app for managing my large library (~150K books). After seeing a lot of recommendations across Reddit, I decided to run the same repeatable load test across Grimmory, Kavita, BookOrbit, Stump, Komga, and Calibre-Web-Automated to compare their performance at scale.
+  - Results (interactive charts): https://htmlpreview.github.io/?https://github.com/kevin-s722/book-apps-benchmark/blob/main/reference/comparison.html
+  - Key results:
+  - Kavita stayed highly consistent across all runs up to 100K, maintaining some of the lowest peak RAM footprints while delivering great ingestion times.
+  - BookOrbit was neck and neck with Kavita on speed, but scaled significantly better on memory at the highest level. On the 150K run, BookOrbit held a much lower RAM footprint (524 MB idle) compared to Kavita (1.02 GB idle).
+  - Stump performed great for smaller libraries up to 10K, but slowed down heavily once the collection became large.
+  - Grimmory used significantly more peak RAM (4.91 GB for the 150K run) than Kavita and BookOrbit, representing up to 7x more peak memory than Kavita at smaller sizes, and nearly 5x more at 150K.
+  - Komga started with a high memory baseline (1.16 GB idle at 10K) and struggled to finish larger runs. It was manually stopped after running for 1 hour 51 minutes on the 50K library benchmark.
+  - Calibre-Web-Automated was too slow for this scale and was not practical for massive imports, processing only 1, 100 books in 91 minutes before the benchmark was stopped.
+- Here are the github repos of the projects mentioned:
+Kavita: https://github.com/Kareadita/Kavita
+BookOrbit: https://github.com/bookorbit/bookorbit
+Grimmory: https://github.com/grimmory-tools/grimmory
+Komga: https://github.com/gotson/komga
+Calibre-Web-Automated: https://github.com/crocodilestick/Calibre-Web-Automated
+
+Stump: https://github.com/stumpapp/stump
+
+- Not surprised that Grimmory was the worse performing one. I haven't used it, but it is the self proclaimed spiritual successor to Booklore, which was/is heavily AI coded. Won't call it slop, since people obviously like it, but it is known for their heavy use of AI in that project. I am sure it has the best UI though.
+  - I did try Booklore in the past and found it to be a memory hog. Grimmory is a bit better in comparison, but it still not suitable for ebook hoarders with "relatively" huge libraries.
+- Maintainers of Grimmory are definitely more mindful in their development practices than their predecessor, so I'm cautiously optimistic about the prospects of the project. However, it is still written in Java, which itself isn't very friendly resource-wise, so there are limitations that are harder to overlook.
+  - One of the grimmory devs here: Java as the culprit is very much a misconception, it's possible to get a lean memory footprint with a good architecture that uses pagination, caching etc. Unfortunately Booklore had none of that. The process of replacing it with a proper paginated architecture is well underway, just not currently active for users until all possible features (filtering, sorting, search, magic shelves etc) have reached feature parity with the current setup.
+
+- Looks like Grimmory remains saddled with much of the Booklore bloat. Good to see newcomer BookOrbit succeeding.
+  - Its pretty interesting considering that bookorbit is basically an ai powered rewrite of booklore in typescript
+
+- I forgot about audiobookshelf since it’s mainly for audiobooks. I’ll include it in the next run along with other projects people want benchmarked.
+
+- 
+- 
+- 
+- 
+- 
+
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

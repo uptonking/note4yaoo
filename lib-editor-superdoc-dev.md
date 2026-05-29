@@ -13,7 +13,8 @@ modified: 2026-04-20T00:35:08.788Z
   - pagination for editor
   - virtualized render
   - track-change / redline
-  - 支持多种layout: print/web, multi-column
+  - multi-column layout: supports unequal column widths
+  - 支持多种排版: vertical, horizontal, book, print/web
   - headless(renders, edits, and automates .docx files)
   - supports browser and nodejs
   - framework-agnostic: Works with React, Vue, and vanilla JS
@@ -21,6 +22,13 @@ modified: 2026-04-20T00:35:08.788Z
   - Agentic tooling — Runs headless in Node.js. Bring your own LLM for document automation, redlining, and template workflows.
     - 提供了MCP
     - risk-rater, playbook, clarity, bulk-updater
+  - DrawingBlock (vector shapes, shape groups, WordArt)
+  - RTL/Bidi
+  - Full SDT(structured document tag) support: block-level, inline, container SDTs with SdtMetadata, SdtBoundaryOptions, dataset attributes, inline wrappers, snapshot entities
+  - Separate style-engine package — cascade logic resolved at render time, not baked during import. Converter stores raw OOXML.
+  - zoom
+  - Canvas-based text measurement
+  - Paint snapshot system for structured content observation
 
 - cons
   - license: AGPL, Self-hosted — Runs entirely in the browser or nodejs
@@ -46,6 +54,22 @@ modified: 2026-04-20T00:35:08.788Z
   - Sign a PDF or DOCX document with a cryptographic signature.
 
 - tips
+  - ?
+# docx-editor
+- pros
+  - ?
+
+- cons
+  - Unequal widths are not supported
+  - layout modes: vertical only, no horizontal/book
+  - no zoom support
+  - no collab
+  - no Overlap handling in track change
+  - no DrawingBlock
+  - no RTL/Bidi
+  - no SDT(structured document tag) support
+
+- features
   - ?
 # issues
 - 如何解决同一个 .docx 文件在不同软件如 word/wps/onlyoffice/libreoffice 中的分页换行位置不同
