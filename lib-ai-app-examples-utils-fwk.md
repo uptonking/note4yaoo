@@ -1103,6 +1103,17 @@ modified: 2025-02-21T18:20:42.624Z
 
 - https://github.com/chaogei/Kiro-account-manager /AGPL/202605/ts
   - Quick account switching, auto token refresh, group/tag management, machine ID management and more
+
+## browser2api
+
+- https://github.com/xszwow/Chrome2api /MIT/202605/cpp
+  - OpenAI-compatible local API wrapper for Chrome Gemini Nano / ChromeML
+  - [Chrome2api无限爽用闭源gemini-nano-v3 - LINUX DO _202605](https://linux.do/t/topic/2276058)
+    - 把Chrome和内置闭源模型Gemini-Nano封装成OpenAI-compatible本地API了。破解了runner不用走chrome网页、不受chrome内置提示词影响、直接用ChromeMLruntime跑本地模型。做了OpenAI-api兼容。
+    - Chrome的模型weights.bin复制到model\OptGuideOnDeviceModel\2025.8.8.1141\weights.bin
+    - 可多图和语音输入、无限爽用。
+    - 官方建议电脑16g、安卓12g。我的性能比他好一点、他要运行在chrome框架上、我破解出来直接运行在google内置的ml上了、至少建议12g可以试试。btw这个模型只有3g多所以我的选择和google一样不要脸部署到用户电脑里、没计划上服务器哈哈哈。
+  - GOOGLE内置本地多模态模型，可以语音和文本，就是pixel手机和chrome上在用的那款。简单任务、能效还不错、我准备内置到我的应用里给用户用，没成本。
 # data-synthetic
 - https://github.com/NVIDIA-NeMo/DataDesigner /apache2/202605/python
   - https://nvidia-nemo.github.io/DataDesigner/

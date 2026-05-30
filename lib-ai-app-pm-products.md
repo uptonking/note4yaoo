@@ -35,15 +35,17 @@ modified: 2025-03-22T16:10:24.856Z
 
 - ai-harness
   - claude-code(ts)
-  - codex-cli(rust)
-  - gemini-cli/qwen-code(ts)
-  - opencode(ts)
-  - mistral-vibe(python)
+  - codex-cli(rust), openai-agent-sdk
+  - ~~gemini-cli/qwen-code~~ (ts) , deprecated
+  - opencode(ts), nanocoder(ts)
+  - mistral-vibe(python), openhands(python), aider
   - cursor-cli/sdk
   - vscode copilot-cli/sdk
-  - pi/pi-coding-agent(ts)
-  - cline
-  - openclaw/hermes
+  - cline(ts)
+  - openclaw(ts)
+  - hermes(python)
+  - fwk-ts: pi/pi-coding-agent(ts), vercel-ai-sdk, tanstack-ai
+  - fwk-python: langchain, smolagents, pydantic-ai
 
 - app vs browser
   - 不是每个用户都能免费使用word的审阅模式, 自定义webapp/app提供了可选方式
@@ -278,6 +280,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - pdf
   - gitbook-like viewer
+  - LiteParse Grid Projection Algorithm
 
 - editor-heavy
   - pretext
@@ -734,7 +737,7 @@ modified: 2025-03-22T16:10:24.856Z
 - 让ai将从日志平台复制来的残缺字符串补全为合法字符串并格式化缩进，速度很快很好用
 # ai/llm-api 👾
 - api-choices
-  - 支持的优质大模型、热门模型、vlm
+  - 支持热门模型、vlm
   - api稳定: production用的api稳定性必须要高，否则产品体验差
   - 速率限制
   - 工具集成支持: cline, roo, librechat
@@ -744,14 +747,20 @@ modified: 2025-03-22T16:10:24.856Z
   - 可采用类似 opus+sonnet+haiku 的 顶级+主流+轻量 组合架构
     - 一种轻量token方案: 使用gpt/中转站作为类似sonnet的高级模型, 类似haiku的普通模型可用nvidia/openrouter/ollama/opencode/longcat
   - 跳蚤市场经常有临期或拼车的惊喜
+  - 少数公益站支持投喂 plus 来换取无限额度1天的套餐， 在token需求大时可考虑付费支持以小换大
+  - 部分公益站和token-hub支持用LDC换低倍率的模型，可在ldstore用商品换LDC，再用LDC来换低倍率套餐
+  - 注意不同来源的号池不要混用， 否则会出现问题 Encrypted content could not be decrypted or parsed
 
 - resources
   - https://github.com/cheahjs/free-llm-api-resources
   - https://github.com/ShaikhWarsi/free-ai-tools
 
-- news
-  - [New API _202604](http://82.157.186.24:3000/console/personal)
-    - [公益 glm5 和千问 注册送160刀免费蹬，每天签到大概30吧 _202604](https://linux.do/t/topic/2023484)
+- [最新跳蚤市场话题 - LINUX DO ](https://linux.do/c/trade/10)
+  - [最新积分乐园话题 - LINUX DO ](https://linux.do/c/credit/106)
+  - [LD士多 - LinuxDo站点积分兑换中心](https://ldcstore.com/)
+    - [LD士多 - LDC积分商城](https://ldst0re.qzz.io/)
+
+- token-news
   - [Atomgit GLM5 无限 Token? ](https://linux.do/t/topic/1696331)
   - [华为云 CodeArts 试用期间开放GLM4.7与DeepSeek V3.2模型无限畅用，大善人还是小白鼠？ _202601](https://linux.do/t/topic/1536794/5)
 
@@ -761,6 +770,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 模型库里面有的模型可能不支持，k2好像也不行，试了glm4.5和qwen3都可以
 
 - [Token HUB](https://hub.linux.do/)
+  - 部分公益站和token-hub支持用LDC换低倍率的模型，可在ldstore用商品换LDC，再用LDC来换低倍率套餐
   - [讨论token银行的可行性 - LINUX DO _202604](https://linux.do/t/topic/2007302)
   - [L站的活跃佬友永远也不缺token花了，token自由已实现 _202605](https://linux.do/t/topic/2111825)
   - 置换的总体思想就是将你闲置的订阅套餐、朋友赠送的 Key、公司发的额度——闲着也是浪费。把它们上架成公开渠道，换成可以继续消费的 credits
@@ -768,10 +778,6 @@ modified: 2025-03-22T16:10:24.856Z
   - https://github.com/lhish/hub_pro
     - 一个用于 Linux.do Hub Marketplace 的用户脚本，主要增强 Channel Hub 的筛选和浏览体验
     - [【hub_pro：一个强大的hub.linux.do站的增强工具,解决大部分hub站痛点】<channel一页全部显示，根据热门度排序，根据接口筛选，根据支持模型筛选，只查看free channel，显示channel所有可用模型>  - LINUX DO _202604](https://linux.do/t/topic/2060896)
-
-- [LD士多 - LinuxDo站点积分兑换中心](https://ldcstore.com/)
-  - [LD士多 - LDC积分商城](https://ldst0re.qzz.io/)
-- [跳蚤市场话题 - LINUX DO](https://linux.do/c/trade/10)
 
 - [RawChat公益站点](https://chatgptplus.cn/)
 - 免费的共享ChatGPT账号
@@ -790,7 +796,6 @@ modified: 2025-03-22T16:10:24.856Z
   - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
   - 🤔 与其花时间签到游戏，不如研究2api和反代; 比较 公益站的配置折腾 / 反代的配置及更新
   - coding方案还可使用 ccr 转换 qwen-code-cli
-  - 少数公益站支持投喂 plus 来换取无限额度1天的套餐， 在token需求大时可考虑付费支持以小换大
   - 是否需要统一管理公益站，不同站点的安全盾绕过方式不同，模型名不同，api分组名不同，key的有效期不同
   - 有的api不能显示thinking内容
   - 模型不断更新，落后的公益站会逐渐淘汰
@@ -883,7 +888,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [『Elysiver公益站主贴』 ](https://linux.do/t/topic/1175087)
     - 2cx 指接入 Codex 使用
     - docs 指的是这是 claude 的文档 ai，不破限只会回答文档相关的内容
-  - [ Alpha _202605](https://gw2.oops.asia/dashboard)
+  - 📌 [ Alpha _202605](https://gw2.oops.asia/dashboard)
     - [『Alpha』公益站开站 _202605](https://linux.do/t/topic/2242621)
     - [兑换码商店 · Alpha Codex](https://shop.oops.asia/)
     - 不限量套餐: 限时、限并发
@@ -896,6 +901,10 @@ modified: 2025-03-22T16:10:24.856Z
     - [【干草铺】公益站开放注册啦 - LINUX DO _202605](https://linux.do/t/topic/2159952)
   - [果咪咪 aiinterface API](https://aiinterface.site/)
     - [【公益推广】GPT公益满血官转支持图片 - LINUX DO _202605](https://linux.do/t/topic/2160297)
+  - [HelloAI(CN+) _202605](https://hellofriend.eu.cc/console/personal)
+    - [【HelloAI CN+】公益继续，规则调整 ](https://linux.do/t/topic/2275490)
+    - 大部分模型渠道（GLM,Mimo,Qwen）都可以正常访问，只是MimiMax有点不稳定，DeepSeek没时间修复。
+    - 将放弃每日自动补充额度。之后将不会在以签到，套餐等任何方式向用户固定的增加额度。
   - 🗑️ [NihaoAPI _202603](https://nih.cc/console/personal)
     - cc
   - 🗑️ [Pond Hub 反重力号池 _202603](https://code.claudex.us.ci/panel/profile), 签到
@@ -1848,6 +1857,7 @@ modified: 2025-03-22T16:10:24.856Z
     - https://json.chatai.codes
     - [ChatGPT Session -> CPA / sub2api / Cockpit / AxonHub / Codex-Manager ](https://gtxx3600.github.io/GPTSession2CPAandSub2API/)
       - 只支持单向转换
+  - [Codex或CPA、sub2跳手机验证的解决方法-2026-05-29部分有效 - Feishu Docs _202605](https://millionweekend.feishu.cn/wiki/JS47wPzs6iDHLZkLMHAc8rhun0e)
 
 - latest
   - 可在google搜索 `GPT site:pay.ldxp.cn/shop`.

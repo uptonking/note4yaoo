@@ -102,6 +102,83 @@ modified: 2026-04-20T00:36:02.064Z
 ## view
 
 # 🆚 Comparison: SuperDoc vs. Docx-Editor
+- both projects have a real paginated layout engine, both support multi-column sections, and both support page-DOM virtualization for large documents. 
+- The big difference is architectural shape: docx-editor is a simpler dual-DOM editor centered on one hidden ProseMirror state plus one visible page painter, while superdoc is a more layered system with a PM adapter, measurement subsystem, layout engine, resolved-layout stage, painter adapter, and extra orchestration around notes/header-footer/collaboration/history.
+- docx-editor is explicit about its model: hidden ProseMirror is the editing truth, visible pages are a separate static DOM rebuilt from PM state 
+  - The layout engine itself is linear and page/column oriented: it collects section configs, paginates blocks, and uses a relatively small paginator abstraction
+  - Multi-column support is real, but the visible path is comparatively simple: toFlowBlocks emits section column metadata, and the paginator mostly works with count/gap/current column plus a “column region top” for continuous section breaks
+  - Virtualization exists, but only at paint time: after layout is computed, page shells are observed with IntersectionObserver, rendered near viewport, and depopulated when far away
+- superdoc is more layered. 
+  - That extra resolveLayout stage is important: painting, hit-testing, selection rectangles, notes, and navigation consume the same resolved output instead of painting directly from raw layout fragments. 
+  - Its column engine is also more advanced, and the engine can start new mid-page column regions and balance them
+  - Virtualization is materially stronger: default window: 5, overscan: 1, explicit top/bottom spacers, gap spacers, prefix offsets, binary-search anchor, pinned pages, zoom-aware scroll math, and external scroll-container support 
+
+## Layout Engine / Pipeline
+
+- docx-editor — Simpler, functional pipeline
+  - PM → toFlowBlocks → measureBlocks → layoutDocument → renderPage
+  - The pipeline is orchestrated by useLayoutPipeline.ts which calls four functions sequentially: toFlowBlocks, measureBlocks, layoutDocument, renderPages. Each function is stateless
+  - Strengths
+    - Easy to reason about — 4 functions, each < 400 lines
+    - rAF coalescing in useLayoutPipeline.ts prevents layout thrashing during fast typing
+    - Fingerprint-based incremental updates (buildSourceIdentityForFragment) avoid full re-renders
+  - Weaknesses
+    - measureBlock.ts dispatches by FlowBlock kind — each new block type needs manual wiring in React AND Vue
+    - Floating image exclusion zone calculation lives in the measurement layer, not the paginator — the paginator doesn't know about floats, making it harder to handle float-column interactions
+    - Column balancing is not implemented
+    - No ColumnRegion concept — can't track mid-page column configuration changes
+    - No vertical alignment, no drop caps, no drawing blocks
+
+- superdoc — Heavier, more modular
+  - PM → pm-adapter → FlowBlocks → measureBlock → layoutEngine → ResolvedLayout → DomPainter
+  - Strengths
+    - Full column support: unequal widths, ColumnRegion for mid-page column changes, column-balancing.ts with binary-search algorithm and orphan/widow control
+    - SectionState in section-breaks.ts tracks active/pending for ALL section properties 
+    - DrawingBlock support — vector shapes, charts, WordArt, SVG geometry, clip paths
+    - Strict package boundaries: painter must not import pm-adapter/style-engine/layout-bridge
+  - Weaknesses
+    - Significantly more code — measureParagraphBlock() alone is ~1800 lines (vs docx-editor's ~980)
+    - More complex cache invalidation: DirtyTracker, DebouncedPassManager, ParagraphLineCache, FontMetricsCache, measurementCache — 5 cache layers vs docx-editor's 3
+    - ColumnRegion adds complexity to every fragment rendering path
+
+- SuperDoc's layout engine is more robust and extensible — it handles the full OOXML section/column/drawing model. The extra complexity IS worth it for production DOCX fidelity (column balancing, vertical alignment, unequal columns, drawings). 
+  - For a simpler WYSIWYG editor targeting core Word features, docx-editor's approach is cleaner and easier to maintain.
+
+- Both projects use Canvas measureText()
+  - Key difference — font metrics accuracy: 
+    - docx-editor's singleLineRatio comes from a hardcoded lookup table of OS/2 metrics for known fonts (matching Word's behavior for those fonts). This is clever but limited to fonts in the table.
+    - SuperDoc's FontMetricsCache uses actualBoundingBoxAscent/Descent from Canvas directly, which gives real per-font metrics without needing a lookup table — more accurate for arbitrary/custom fonts.
+  - docx-editor uses a singleton canvas context, caches resolved font fallback/single-line ratio, and is very explicitly tuned around Word/OOXML line-height behavior
+  - superdoc also uses canvas, but has a broader measurement subsystem: configurable browser vs deterministic mode, LRU text-width cache, separate font-metrics cache, and more infrastructure for tables/lists/drawings
+  - docx-editor looks more directly tuned for Word pagination fidelity; superdoc looks more extensible and probably better cached for repeated large-doc measurement.
+
+- line breaking: 
+  - docx-editor uses binary search (findMaxFittingLength) for long words that exceed line width. This finds the exact split point in O(log n) calls to measureText. 
+  - SuperDoc uses greedy character-by-character accumulation for the same case. 
+  - Binary search is ~O(log n) vs O(n), but both are fast enough for real-world text.
+  - SuperDoc's measurement is more extensible (deterministic mode, wider test string, configurable fallback stack, Canvas actualBoundingBox for all fonts). 
+  - docx-editor's paragraph-level cache is a nice optimization but the binary search for line breaks and simpler cache structure make it slightly more performant for large documents. The 20k text width cache (vs 5k) is the bigger performance win for docx-editor.
+
+- ProseMirror Integration — Architecture Comparison
+- docx-editor — Extension-based schema
+  - PM is the hidden source of truth and the visible editor is not PM DOM at all
+  - StarterKit.ts bundles ~40 extensions (marks, nodes, features) into a composable set
+  - ExtensionManager collects all extensions, builds the PM schema from their schema properties, then initializes plugins post-EditorState creation
+  - Schema has 3 FlowBlock variants mapped to PM node types: paragraph → paragraph, table → table, image → image
+  - PM doc is always hidden (left: -9999px) — never shown to user
+  - Body has ONE hidden EditorView. Each header/footer rId gets its own hidden EditorView (via HiddenHeaderFooterPMs.tsx)
+- superdoc — Class-based editor + pm-adapter
+  - PM is wrapped behind Editor, PresentationEditor, Document API, collaboration/Yjs, history coordination, and multiple story/header-footer sessions 
+    - superdoc also still has a ProseMirrorRenderer path for non-layout-engine/fallback rendering
+  - SuperConverter (OOXML→PM) → Editor (PM state) → pm-adapter (PM→FlowBlocks) → layout/paint
+  - Editor class (in editors/v1/core/Editor.ts) extends EventEmitter, wraps a PM EditorState
+  - Extensions loaded via PM's native extension system (not a custom ExtensionManager)
+  - PM schema is separate from the layout schema — the pm-adapter reads PM state and resolves styles at render time. 
+    - style resolution is deferred to render time, not baked during import. The converter stores raw OOXML. This preserves document intent for round-trip fidelity.
+  - PM doc is also hidden — PresentationEditor bridges PM events into layout/paint state
+- SuperDoc's pm-adapter + deferred style resolution is architecturally superior for round-trip fidelity — baking styles during import loses document intent (e.g., a paragraph inheriting style from its parent vs. having inline formatting). 
+  - docx-editor's approach is simpler but risks overwriting style references with resolved values. 
+  - SuperDoc's document-api contract-first pattern for export operations is also more maintainable than docx-editor's direct fromProseDoc.
 
 ## Pagination
 
@@ -176,9 +253,44 @@ modified: 2026-04-20T00:36:02.064Z
 ## Virtualized Rendering
 
 - 🆚 Aspect: Implementation
-  - SuperDoc: DomPainter class with feature-flagged virtualization option. Configurable: window (default 5 pages), overscan (default 0), gap (default 72px), paddingTop. Uses scroll event listeners + spacer-based approach.
+- SuperDoc: DomPainter class with feature-flagged virtualization option. Configurable: window (default 5 pages), overscan (default 0), gap (default 72px), paddingTop. 
+  - Uses scroll event listeners + spacer-based approach.
+  - Spacer-based: top spacer + virtualPagesEl container + bottom spacer
+  - explicit virtual window, binary search over page offsets, pinned pages, and zoom-aware scroll conversion are more compatible with complex editor behavior 
+    - If the requirement is “virtualization must coexist with selection, dragging, notes, zoom, and nested scroll containers,” superdoc is better.
+  - Spacer heights = total offscreen content height (maintains correct scroll range)
+  - Only virtualWindow (default 5) pages mounted at any time + overscan (default 0)
+  - Pages are fully mounted or unmounted (not just content — the entire page element)
+  - updateVirtualWindow() called on scroll events — binary search to find anchor page, then mount/unmount
+  - scroll
+    - Manual calculation — potential for jitter during fast scroll
+    - Scroll container	Supports external scroll containers (scrollContainer option)
+  - superdoc's spacer approach is more flexible — supports external scroll containers, zoom without re-layout, pinned pages for selection, and multiple layout modes (horizontal/book). 
+    - The spacer approach is harder to get right (feedback loops, offset caching, zoom coordination) but more production-ready for complex scenarios. 
+    - For a straightforward vertical paginated editor, IntersectionObserver is better. 
+    - For a feature-rich editor with zoom, spread view, and external containers, the spacer approach is necessary.
+- Zoom
+  - No re-layout — zoom is CSS transform: scale(zoomFactor) on the mount element. Pages are not re-painted or re-measured.
+  - No re-layout, no re-measurement, no re-rendering — zoom is purely a CSS transform
+  - Computation cost: Essentially zero — just a CSS transform change + one scroll recalculation. The browser handles the visual scaling via GPU compositing. The only JS work is the scroll position recalculation on the next scroll event, which is O(log N) binary search.
+  - If the user zooms and then scrolls, spacer heights may need recalculation if the mount layout changes
+  - Zoom + virtual window shift = the most expensive case (new pages mount/unmount at scaled positions)
+  - DomPainter.setZoom() itself mainly updates the zoom factor and recalculates virtualization window math instead of re-measuring text on every zoom change
+    - zoom should usually feel fast enough, especially relative to full repagination, but it still triggers repaint work and the code explicitly warns that very high zoom may degrade performance.
 
-  - Docx-Editor: renderPages() function with `IntersectionObserver`. Fixed: VIRTUALIZATION_THRESHOLD = 8, VIRTUALIZATION_BUFFER = 2.
+- Docx-Editor: renderPages() function with `IntersectionObserver`. Fixed: VIRTUALIZATION_THRESHOLD = 8, VIRTUALIZATION_BUFFER = 2.
+  - All page shells are always mounted (correct dimensions for scroll position)
+    - memory: O(N) shells + O(window) content
+  - `IntersectionObserver` approach is elegant and small, but it depends more on browser observer timing, assumes viewport-root observation, and gives less direct control over selection/drag/zoom/scroll-container edge cases
+  - Content is lazy-loaded via IntersectionObserver with rootMargin: '1500px 0px 1500px 0px'
+  - Populated/depopulated dynamically — shells always exist for scroll stability
+  - Natural scroll — browser handles scroll position via DOM height
+    - No manual scroll calculation needed — IntersectionObserver fires automatically
+    - Scroll container	Window only
+  - Incremental updates:
+    - Fingerprint-based: each page gets a hash of (size, margins, fragments, block IDs)
+    - Only pages whose fingerprint changed get re-rendered
+  - docx-editor's IntersectionObserver approach is simpler and more performant for scroll — the browser handles all scroll math natively, no manual calculation needed.
 
 - Aspect: Activation
   - SuperDoc: Opt-in via options.virtualization.enabled = true (feature flag). Only vertical mode.

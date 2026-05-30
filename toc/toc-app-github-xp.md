@@ -386,6 +386,23 @@ language:JavaScript  language:TypeScript
 - https://github.com/capricorn86/happy-github-dependents /MIT/202602/ts
   - Uses Happy DOM to scrape GitHub dependents pages for a Github repository and generate a report sorted by stars in various formats (HTML, Markdown, JSON, CSV).
   - This tool doesn't require any API keys as it uses the public GitHub web interface to get the data.
+# discuss-github-enhancement
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [只想下载 github repo 的一部份, 试试这个 web 呢?  - LINUX DO _202605](https://linux.do/t/topic/2275050)
+  - GitSparse 解决的是一个很具体的需求：当你只需要下载 GitHub 仓库里的几个文件夹时，不想克隆整个项目，也不想把自己的 Token 交给乱七八糟的第三方中转服务。
+  - 它完全跑在浏览器(客户端侧, 无服务端)里，通过 GitHub API 帮你挑出想要的文件，然后吐出一段可以直接在终端运行的脚本。
+  - 如果你在处理类似 Monorepo 的大仓库，或者只需要下载某个特定的文档目录，这个工具就很管用。输入地址后，你可以手动勾选文件，也可以用 Glob 语法（比如 src/ **/* .ts）去过滤。
+- https://github.com/YuniqueUnic/gitsparse
+  - https://yuniqueunic.github.io/gitsparse/
+  - A 100% web client-side tool for granular selection, downloading, and shell script generation for GitHub repository directories and specific files. Powered by React, Vite, and Tailwind CSS.
+
 # discuss-xp-github
 - ## 
 

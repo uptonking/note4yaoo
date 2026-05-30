@@ -337,6 +337,27 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0530
+
+- [codex status_code=400, The encrypted content QVhO...og== could not be verified. Reason: Encrypted content could not be decrypted or parsed. - LINUX DO _202605](https://linux.do/t/topic/2051155)
+  - 这个问题我之前也遇到过。 后来发现是因为混用不同渠道的模型导致的。比如有OpenAI官方的，还有来自azure的渠道的。不同渠道的模型产生的加密块是互相不可解密的，所以就会出现你这样的情况。而你又用的是中转，很有可能是上游的中转站混用不同渠道的模型。这个目前来看应该是无解的。
+- 我之前研究的结果是，思考的过程会被加密。你可以理解为每个session中的上下文包含两部分，一部分就是JSON中完全没有加密的明文内容，也就是你的输入和你看到的大模型给你的反馈。而另一部分就是加密的思考过程。其实你是可以把一个session的JSON中的加密的内容全删掉的，这样你就可以继续那个session的对话了，只不过这样就会丢失部分上下文。
+  - 正解，我用cpa部署，一直在一个之前用其他api的session重试出现解密失败的情况，后来打开了新的session，完全没有问题
+
+- [更换渠道导致invalid_encrypted_content 的简单解决办法 - LINUX DO _202605](https://linux.do/t/topic/2188928)
+  - 更换了上游渠道，会触发invalid_encrypted_content
+  - {"error":{"message":"The encrypted content QVhO...Rw== could not be verified. Reason: Encrypted content could not be decrypted or parsed.","type":"invalid_request_error","param":"","code":"invalid_encrypted_content"}}
+  - 这时候一般就是只能切换session，对于没有git记录的小项目连贯性不好，可以复制当前会话的session id在新开的session中发送，让它去找会话文件继续
+
+- [pro号池和team/plus/free号池体验还是不一样的 - LINUX DO _202604](https://linux.do/t/topic/2018101)
+  - 要注意，假如有用不同渠道的gpt混合，例如说azure pro号池和一般号池，切忌做好对话分离，不要混用，不然出现
+{ “error”: { “message”: “The encrypted content xxxxx could not be verified. Reason: Encrypted content could not be decrypted or parsed.”, “type”: “invalid_request_error”, “param”: null, “code”: “invalid_encrypted_content” } }
+  - 那只能把对话复制出来重新开一个对话了
+
+- [any牌路由器使用gpt-5.5时'tools[15].tools'和encrypt问题的暂时解决方法 - LINUX DO _202605](https://linux.do/t/topic/2097170)
+  - 去掉所有MCP后不报tools这个错，但时不时还会报Encry这个错，现在使用其它公益站的5.5，any还是暂时老老实实使用他的claude算了
+  - [喜讯：any牌路由器gpt-5.5可以正常使用tools、MCP工具了，已经不会报错 - LINUX DO _202605](https://linux.do/t/topic/2252291)
+
 ## 0528
 
 - 🤔 what is the most popular agent harness built with python? research and provide overview/github-url/website for each. for example, claude code is built with ts, codex is built with rust.

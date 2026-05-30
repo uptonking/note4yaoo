@@ -426,7 +426,15 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
-- ## 
+- ## [The model was never the bottleneck. Got local RAG working on 8GB RAM with full citation accuracy! Here's what actually changed : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1trjl6p/the_model_was_never_the_bottleneck_got_local_rag/?sort=top)
+  - Stack: pdfplumber + ChromaDB + Ollama on the local side, Anthropic API for cloud toggle. Runs clean on an M2 MacBook 8GB.
+  - Here's what actually mattered when designing for constrained hardware: Swapped down to gemma4:e2b, 2 billion parameters, and citation accuracy didn't move. Ran a crosswind limitation query against a 400-page aviation AFM. Four page citations came back. Page 57, 357, 376, 459. All correct. The retrieval is doing the work, not the inference.
+  - Chunk boundaries matter more than chunk size. At 1800 characters with section-aware splits, a small model reads a clean retrieved chunk and formats a precise answer. Give it a badly split chunk and even a large model struggles. Spent more time on boundary logic than on anything else in the stack.
+  - Protected blocks can't be split. For safety-critical content; WARNING, CAUTION, DANGER blocks in aviation manuals, critical drug interaction notes in nursing textbooks, a chunk that splits mid-warning is worse than no answer. Made these atomic. Non-negotiable. Cloud toggle for students who need it. For machines that truly can't run local inference, routing to Claude Sonnet via API key gives the same retrieval quality with zero local compute. The vectors stay local. Only the question travels.
+
+- It is a slop post. No intricate details, no use case, no metrics. Inference from a model is always the bottleneck when running it locally or on borrowed hardware.
+
+- Agree the bottleneck is rarely the LLM — chunking, dedup, and canonical vs draft sources eat more time than embedding tuning.
 
 - ## [Spent a weekend debugging why my RAG pipeline gave garbage answers, turned out the problem wasn't the model at all : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1tibkrf/spent_a_weekend_debugging_why_my_rag_pipeline/)
   - Turned out the issue was how I was chunking documents.

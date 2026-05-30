@@ -150,6 +150,8 @@ modified: 2023-02-20T19:41:08.506Z
 
 - ## 
 
+- ## 
+
 - ## [你敢信，浏览器需要实名认证 - LINUX DO _202605](https://linux.do/t/topic/2259725)
 - 什么是指纹浏览器？对于Chrome来说的优势是什么？
   - 指纹浏览器就是多开呀，不被对方网站判定是一个人，电商可以开多个店之类的，不容易被封，底层基本也是谷歌浏览器开源版搞的
@@ -157,6 +159,39 @@ modified: 2023-02-20T19:41:08.506Z
 - 用这种指纹浏览器的，电商欺诈的比例比普通浏览器高几个数量级都不止。开发商不想担风险，触犯“帮信罪”。所以一刀切，先实名再说。
 
 - Canvas指纹之类的隐私模式下面生成的还是同一个。 GPT没用这个策略，应该是风控等级还没那么高。一般是跟钱有关的银行、电商、广告、支付这类的会用。
+
+- ## 🧩 [指纹浏览器全方案对比：10 款商业 + 7 款开源 - LINUX DO _202605](https://linux.do/t/topic/2271548)
+  - [指纹浏览器全方案对比（2026.05） | Hanchen's Wiki _202605](https://docs.20020519.xyz/books/68554/page/202605)
+- 指纹浏览器（Anti-Detect Browser）通过修改浏览器指纹参数（Canvas、WebGL、AudioContext、UA、时区、分辨率、字体等），为每个浏览器环境创建独立的"身份"，让网站认为是不同设备在访问。
+- 核心用途：
+  - 跨境电商多账号管理（Amazon、Shopify）
+  - 海外社媒矩阵运营（Facebook、Google Ads）
+  - AI 账号多开防降智（GPT Plus 共享）
+  - 批量注册服务（Gmail、GitHub、Outlook）
+  - Web3 空投/撸毛
+
+- Donut Browser
+  - 开源双引擎，免费无限本地 Profile；
+  - CDP 需 Pro $29/月
+  - 内核：Chromium（Wayfern，闭源）+ Firefox（Camoufox，开源）双引擎
+  - 无限本地 Profile、指纹隔离（100+参数）、每 Profile 独立代理 + WireGuard VPN、Cookie/扩展管理、REST API + MCP 服务器
+  - 优点：完全免费无限 Profile、双引擎（Chromium+Firefox）、零注册零遥测、MCP 支持可给 AI Agent 用、WireGuard per-Profile VPN 独一无二
+  - 缺点：项目仅 1 年、单人维护、Wayfern 引擎闭源、指纹深度检测（pixelscan/iphey）不通过、L 站零用户反馈、CDP 需 Pro $29/月
+  - [Is it anti-detect or just a profile manager · zhom/donutbrowser · Discussion _202511](https://github.com/zhom/donutbrowser/discussions/133)
+    - Do you have any plans to extend the anti-detect features to at least one of the Chromium-based browsers? Maybe you could look into adryfish/fingerprint-chromium ultrafunkamsterdam/undetected-chromedriver
+    - I do have plans to add support for a Chromium-based browser, but it is time-consuming. fingerprint-chromium is not really open source and the author does not provide binaries for all platforms that I support. undetected-chromedriver is only good for one chromium instance on one machine as it is only good for avoiding bot detection, not for changing the fingerprint.
+
+- RoxyBrowser — 少数支持Linux的商业方案之一
+  - 前身：LumiBrowser（2024），2025年初改名 Roxy 重新出发
+  - 平台：Windows / macOS / Linux（2025.12 上线，AUR 有包）
+  - 功能：指纹隔离、免费API（兼容 Selenium/Puppeteer）、代理管理、团队协作、Roxy AI Agent（自然语言驱动多窗口自动化）
+  - 优点：少数支持 Linux 的商业方案、API 免费且好用（Python + DrissionPage 自动化丝滑）、同 IP 下比 AdsPower 更快、官方在 L 站活跃反馈响应快
+  - 缺点：小团队、从免费转收费引发不满、2026.4 回收站“永久保留”改 30 天自动删除事件（官方道歉后恢复原政策）、内置代理合作商 PrivateProxy 质量差（谷歌撞人机）、多端登录互踢
+
+- 等大佬vibe一个完整开源的指纹浏览器吧，闭源商业的说实话不敢用，密码还是很重要的
+
+- 一直感觉除非是有多账号需要做隔离（比如批量注册新号，批量登陆账号，这种确实需要），否则没必要上指纹浏览器，自己的浏览器chrome/brave等就已经带有标准的浏览器指纹了，时区之类的也可以直接在系统里改。
+  - 一般是那种电商、TikTok等等这些需要
 # discuss
 - ## 
 

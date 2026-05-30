@@ -106,6 +106,8 @@ you have worked on this problem several times but features are still lacking. Th
 
 - please recheck migrated features and improve your implementation in begonia. Analyze core data flow and implementation logic details for every major feature , compare the implementation logic/code of begonia with superdoc logic/code to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. recheck and improve major features/architecture in begonia, make them correct and robust without guessing, the fewer bugs, the better.
 
+- prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, layout modes support vertical/horizontal/book, multi-column layout supports unequal column widths, virtualized-rendering should use scroll event listeners + spacer-based approach like superdoc and have good support for horizontal-layout/external-container, zoom in/out, Canvas-based text measurement, performant line-breaking, track-change/diff, overlap handling in track change.
+
 ### draft-begonia
 
 - there are many smoke tests, it seems messy. can you refactor/redesign the tests as common units that are eaiser to maintain? 

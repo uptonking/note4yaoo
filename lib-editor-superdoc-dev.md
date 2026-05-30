@@ -15,6 +15,7 @@ modified: 2026-04-20T00:35:08.788Z
   - track-change / redline
   - multi-column layout: supports unequal column widths
   - 支持多种排版: vertical, horizontal, book, print/web
+    - 能实现更强大的图文混排
   - headless(renders, edits, and automates .docx files)
   - supports browser and nodejs
   - framework-agnostic: Works with React, Vue, and vanilla JS
@@ -60,6 +61,7 @@ modified: 2026-04-20T00:35:08.788Z
   - ?
 
 - cons
+  - virtualized-rendering has bad support for horizontal-layout, external container
   - Unequal widths are not supported
   - layout modes: vertical only, no horizontal/book
   - no zoom support
@@ -68,6 +70,8 @@ modified: 2026-04-20T00:35:08.788Z
   - no DrawingBlock
   - no RTL/Bidi
   - no SDT(structured document tag) support
+  - 换行算法使用 binary search (findMaxFittingLength) for long words that exceed line width.
+  - 部分逻辑在view层实现，依赖react？
 
 - features
   - ?
@@ -77,6 +81,8 @@ modified: 2026-04-20T00:35:08.788Z
 # draft
 - 类似word的多种视图: print/web/outline/draft
 - multi-column布局示例
+
+- LiteParse Grid Projection Algorithm
 
 - code-block
 - database
