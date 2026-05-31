@@ -577,6 +577,10 @@ modified: 2025-12-11T18:10:23.710Z
   - OpenCodex是一个轻量级Codex运行环境，可以让你的任意设备通过Web使用你的电脑上的Codex
   - [OpenCodex第一版Release - LINUX DO _202605](https://linux.do/t/topic/2223341)
 
+- https://github.com/beltromatti/get-it /apache2/202605/ts
+  - The study companion that turns a PDF into a measurable mastery map. Built around the document, not in place of it.
+  - [We open-sourced a desktop study app that uses Codex CLI as the local AI engine : r/OpenSourceAI _202606](https://www.reddit.com/r/OpenSourceAI/comments/1ts843c/we_opensourced_a_desktop_study_app_that_uses/?sort=top)
+
 ## gemini/qwen-code-cli
 
 - https://github.com/Piebald-AI/gemini-cli-desktop /109Star/MIT/202512/rust/ts/tauri
@@ -1100,6 +1104,7 @@ modified: 2025-12-11T18:10:23.710Z
     - @earendil-works/pi-coding-agent	Interactive coding agent CLI
     - @earendil-works/pi-tui	Terminal UI library with differential rendering
   - 核心开发仅2人
+  - https://github.com/ayuayue/pi-desktop
   - https://github.com/earendil-works/pi-chat
     - A pi extension that bridges Discord and Telegram channels to a sandboxed pi session. Each connected channel gets its own Gondolin micro-VM with persistent workspace, shared storage, memory, and skills.
     - Requirements

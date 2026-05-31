@@ -53,7 +53,7 @@ modified: 2026-04-06T17:38:13.599Z
 
 - ## 
 
-- ## 
+- ## [Unsloth now works with CUDA 13.3 + Windows + MacOS properly. : r/unsloth _202606](https://www.reddit.com/r/unsloth/comments/1tsx5m1/unsloth_now_works_with_cuda_133_windows_macos/?sort=top)
 
 - ## Unsloth Studio now has auto speculative decoding & MTP support for GGUFs
 - https://x.com/danielhanchen/status/2056777199798440400

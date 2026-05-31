@@ -190,12 +190,19 @@ modified: 2026-04-07T12:53:38.419Z
     - 5-10x faster than markitdown. same output. better tables.
     - the gap is structural, bun vs python startup + runtime. markitdown can't close this.
 
-- https://github.com/datalab-to/surya /19kStar/GPL/202510/python
+- https://github.com/datalab-to/surya /20.1kStar/GPL > apache2/202605/python
   - https://www.datalab.to/
+  - [Surya OCR 2 | Papers with Code ](https://paperswithcode.co/paper/83835)
   - OCR, layout analysis, reading order, table recognition in 90+ languages
   - Works with PDF, images, word docs, and powerpoints
   - Our model weights use a modified AI Pubs Open Rail-M license (free for research, personal use, and startups under $2M funding/revenue) and our code is GPL. 
   - I've included a streamlit app that lets you interactively try Surya on images or PDF files. 
+  - Surya 2 runs layout, OCR, and table recognition through a single VLM. The inference manager will spawn one for you on first use
+    - The results.json file contains a dict keyed by input filename (no extension). Each value is a list of page dicts.
+  - Surya auto-spawns the server on first use, and you need vllm (NVIDIA GPU) or llama.cpp (CPU / Apple Silicon)
+  - I've included a streamlit app that lets you interactively try Surya on images or PDF files: pip install streamlit pdftext && surya_gui
+  - https://x.com/VikParuchuri/status/2059675773712167423
+    - 💰 The Surya code is licensed under Apache 2.0. The model weights use a modified AI Pubs Open Rail-M license (free for research, personal use, and startups under $5M funding/revenue).
 
 - https://github.com/datalab-to/marker /27.3kStar/GPLv3/202508/python
   - https://www.datalab.to/

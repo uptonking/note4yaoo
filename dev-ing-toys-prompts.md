@@ -100,13 +100,13 @@ you have worked on this problem several times but features are still lacking. Th
 
 - prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support... in begonia, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
-- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements goal will be designed as separate goal/task.
+- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
 - docs/tests/scripts might be outdated, recheck code and data flow to improve begonia.
 
 - please recheck migrated features and improve your implementation in begonia. Analyze core data flow and implementation logic details for every major feature , compare the implementation logic/code of begonia with superdoc logic/code to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. recheck and improve major features/architecture in begonia, make them correct and robust without guessing, the fewer bugs, the better.
 
-- prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, layout modes support vertical/horizontal/book, multi-column layout supports unequal column widths, virtualized-rendering should use scroll event listeners + spacer-based approach like superdoc and have good support for horizontal-layout/external-container, zoom in/out, Canvas-based text measurement, performant line-breaking, track-change/diff, overlap handling in track change.
+- prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, layout modes support vertical/horizontal/book like superdoc, multi-column layout supports unequal column widths like superdoc, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container like superdoc, zoom in/out, Canvas-based text measurement, performant line-breaking like superdoc, track-change/diff, overlap handling in track change like superdoc.
 
 ### draft-begonia
 
@@ -224,7 +224,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, selection range/offset/caret, undo/redo for editing, pdf annotations/highlights... in hardoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
-- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements goal will be designed as separate goal/task.
+- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
 ### draft-hardoc
 
@@ -281,7 +281,7 @@ Project `grist` (in current folder) is a modern relational spreadsheet. It combi
 
 - prioritize and recheck/improve major features like spreadsheet data-model and rich formatting, spreadsheet editing with undo/redo and history, custom-widget, formula, drag-and-drop-dashboard, incremental-imports... in react webapp, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
-- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements goal will be designed as separate goal/task.
+- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
 - RBAC or ui/ux is not important at the moment, related feature may be delayed, you can update the parity docs.
 

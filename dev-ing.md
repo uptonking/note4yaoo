@@ -339,6 +339,17 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 
 ## 0530
 
+- 🤔 popular rust programs often compiled to wasm like turso-db/automerge. can js/ts/python code be compiled to wasm so that it can be run in browser? explain to me and give me some popular wasm programs with github-url/overview for each
+- Python to Wasm
+  - You generally do not compile Python scripts directly into a Wasm binary. Instead, the standard C-based Python interpreter (CPython) is compiled into WebAssembly. When you load this in the browser, you are effectively running a miniature operating system environment that boots up the Python interpreter, which then executes your .py files.
+- ts/js to Wasm
+  - Standard TypeScript is fundamentally tied to JavaScript semantics and garbage collection, making direct compilation to Wasm inefficient. However, the community created AssemblyScript.
+  - AssemblyScript uses strict, statically-typed TypeScript syntax, but instead of transpiling to JavaScript, it compiles directly to WebAssembly. It is essentially a Wasm-first language built to look exactly like TypeScript.
+  - compiling JS to Wasm is very popular for serverless/edge computing and plugin systems. Tools like Javy take a lightweight C-based JS engine (like QuickJS), bundle it with your JS code, and output a single .wasm file. This allows you to run JS in any environment that supports Wasm, in a strictly sandboxed way.
+  - unplugin-use-wasm — A Vite/Rollup plugin that lets you mark a .ts file with a "use wasm" directive; it then compiles that file via AssemblyScript. This only works for AssemblyScript-compatible code, not full TypeScript.
+- Pyodide is a port of CPython to WebAssembly. It enables you to install and run Python packages directly in the browser. Crucially, it comes with the Python scientific stack pre-compiled (NumPy, Pandas, Matplotlib, SciPy). It bridges the gap between Python and JS, allowing Python code to manipulate the DOM and JS code to call Python functions. (This project powers the highly popular PyScript).
+- https://github.com/GoogleChromeLabs/squoosh — a browser image-compression app that processes images locally and uses wasm-based codecs
+
 - [codex status_code=400, The encrypted content QVhO...og== could not be verified. Reason: Encrypted content could not be decrypted or parsed. - LINUX DO _202605](https://linux.do/t/topic/2051155)
   - 这个问题我之前也遇到过。 后来发现是因为混用不同渠道的模型导致的。比如有OpenAI官方的，还有来自azure的渠道的。不同渠道的模型产生的加密块是互相不可解密的，所以就会出现你这样的情况。而你又用的是中转，很有可能是上游的中转站混用不同渠道的模型。这个目前来看应该是无解的。
 - 我之前研究的结果是，思考的过程会被加密。你可以理解为每个session中的上下文包含两部分，一部分就是JSON中完全没有加密的明文内容，也就是你的输入和你看到的大模型给你的反馈。而另一部分就是加密的思考过程。其实你是可以把一个session的JSON中的加密的内容全删掉的，这样你就可以继续那个session的对话了，只不过这样就会丢失部分上下文。

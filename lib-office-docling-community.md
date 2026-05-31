@@ -373,6 +373,35 @@ modified: 2025-09-21T13:57:50.332Z
 - ## [请问lite版和full版的主要差别 · opendatalab/MinerU _202411](https://github.com/opendatalab/MinerU/issues/1127)
 - lite是早期开发的时候测试用的，使用了paddleocr的PP-StructureV2作为layout模型，结合paddleocr本身的ocr能力，用来做可行性验证的，实际上结果并不准确，在正式版本中没有开放lite的使用能力。
 
+# discuss-surya
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Announcing Surya OCR 2: _20260528
+- https://x.com/VikParuchuri/status/2059675773712167423
+  - 650M params
+  - 83.3% olmocr bench score (top under 3B)
+  - Runs on CPU, GPU, MPS
+
+- What are the differences between Chandra OCR 2 and Marker/Surya?
+  - Surya/marker are faster, chandra is more accurate and has some features like image captioning
+- For digital PDFs, Marker/Surya should have an advantage because it can extract the actual embedded text from the PDF. In contrast, Chandra is LLM-based, so it could introduce hallucinations. I would have expected Chandra to be less accurate on digital PDFs.
+
+- how does it compare to tessaract?
+  - Slower but a lot more accurate
+
+- Does this work for music sheet?
+  - No, but this is something we're interested in generally.  Happy to discuss if you want
+
+- Does it work with Handwritten text and for Bengali language?
+  - I would recommend Chandra for that - surya does work with handwriting, but not always perfect
 # discuss-tesseract
 - ## 
 

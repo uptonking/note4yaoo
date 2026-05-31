@@ -424,7 +424,12 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
-- ## 
+- ## [spent way too long debugging RAG before realizing the chunking was the problem the whole time : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1trq724/spent_way_too_long_debugging_rag_before_realizing/?sort=top)
+- i thought thats why people use late chunking strategy? but of course need embedding model with high context windows
+
+- Classic RAG trap — retrieval looks fine in the notebook then fails in prod because chunk boundaries and metadata are wrong. What fixed it for you when you found the real issue?
+
+- hence semantic chunking, use an LLM to decide when an idea ends and another begins
 
 - ## [The model was never the bottleneck. Got local RAG working on 8GB RAM with full citation accuracy! Here's what actually changed : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1trjl6p/the_model_was_never_the_bottleneck_got_local_rag/?sort=top)
   - Stack: pdfplumber + ChromaDB + Ollama on the local side, Anthropic API for cloud toggle. Runs clean on an M2 MacBook 8GB.
@@ -563,7 +568,8 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
-- ## 
+- ## [Fine-tuned RAG: teaching your retriever which embedding dimensions matter (+11% hit rate, +12% completeness, +9% faithfulness) : r/Rag _202606](https://www.reddit.com/r/Rag/comments/1tsvly3/finetuned_rag_teaching_your_retriever_which/?sort=top)
+- Why not use LLMs to come up with search terms on ingestion? This leads to higher quality search texts and in turn embeddings. Anything else still leads to the problem of guessing which terms have the shortest vector distance to the desired text, which is prone to null searches when the actual qualitative data exists in the main doc.
 
 - ## 🤔 [Do we really need embeddings vectors? : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1tiztv7/do_we_really_need_embeddings_vectors/)
   - Re-embedding source documents that update 10+ times a day is incredibly expensive and slow. It's making me question if we actually need the embedding layer at all.

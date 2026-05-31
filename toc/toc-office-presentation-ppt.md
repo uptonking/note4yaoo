@@ -842,6 +842,9 @@ modified: 2021-04-30T20:14:17.669Z
     - Style A: 电子杂志 × 电子墨水。像 Monocle 贴上了代码,适合叙事、观点、分享、个人风格表达。
     - Style B: 瑞士国际主义。网格至上、单一高饱和锚点色、直角、发丝线、极致字号对比,适合事实、产品、分析、方法论表达。
 
+- https://github.com/GordenSun/GordenPPTSkill 
+  - [史上最强原生PPT Skill，更适合中国宝宝 - LINUX DO _202606](https://linux.do/t/topic/2278294)
+
 ## ppt-image
 
 - https://github.com/JuneYaooo/gpt-image2-ppt-skills /apache2/202604/python

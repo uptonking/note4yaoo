@@ -305,6 +305,9 @@ modified: 2025-03-22T16:10:24.856Z
 - local-reimpl
   - 比如支持minimax语言的api、mineru-ocr api，直接本地可用
 
+- chat-ai
+  - 主流ai的web-chat结果能快速对比
+
 - cleaner
   - 清理codex-cli/cc的对话历史，展示date/size/suggestion-to-clean
 # 💎🚀 aichorage - local llm with joy, 提供模型API、rag可靠性、pdf文本操作
@@ -338,6 +341,7 @@ modified: 2025-03-22T16:10:24.856Z
   - ✈️ local models support: mlx, lmstudio-alternative
     - 模型库: text模型, ocr模型, 翻译模型, t2i生图模型, tts, stt,  lmstudio在模型分类上做的不够好
     - affordable, 较少免费api的模型: ocr, stt
+    - ocr model choices: benchmarks
     - modes config for coding/ocr/translation/rag like cline-plan/act/ask
       - 内置场景化提示词
       - 内置场景参数, 支持disable thinking(qwen/nemotron)
