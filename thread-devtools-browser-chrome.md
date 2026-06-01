@@ -150,7 +150,12 @@ modified: 2023-02-20T19:41:08.506Z
 
 - ## 
 
-- ## 
+- ## [吐槽roxybrowser - LINUX DO _202606](https://linux.do/t/topic/2286343)
+  - 开机自动启动
+  - “强制”更新
+- 还他妈的时不时要重新登录，也是醉了
+
+- virtual browser挺好用的，roxy虽然功能挺多但是每次都更新太麻烦了
 
 - ## [你敢信，浏览器需要实名认证 - LINUX DO _202605](https://linux.do/t/topic/2259725)
 - 什么是指纹浏览器？对于Chrome来说的优势是什么？

@@ -108,6 +108,10 @@ you have worked on this problem several times but features are still lacking. Th
 
 - prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, layout modes support vertical/horizontal/book like superdoc, multi-column layout supports unequal column widths like superdoc, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container like superdoc, zoom in/out, Canvas-based text measurement, performant line-breaking like superdoc, track-change/diff, overlap handling in track change like superdoc.
 
+- prioritize and recheck/improve major features like document viewport/layout-engine(supports multi-column) like superdoc, toggling pagination, layout modes support vertical/horizontal/book like superdoc, multi-column layout supports unequal column widths like superdoc, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container like superdoc, zoom in/out, Canvas-based text measurement, performant line-breaking like superdoc. 
+- core implementation for major features should be framework-agnostic without react, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
+- you may deep research, and reference the upstream superdoc code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues. 
+
 ### draft-begonia
 
 - there are many smoke tests, it seems messy. can you refactor/redesign the tests as common units that are eaiser to maintain? 
@@ -167,6 +171,8 @@ project onlyoffice and project at `~/Documents/repos/office/all-pdf/open-pdf-stu
   - 采用图片的方案
 
 - the final goal is to implement from scratch a extensible web pdf editor named hardoc with in-place text editing features similar to onlyoffice/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues. 
+
+- 🐛
 - forms, ocr, collaboration, ai-editing, complicated shapes, search should be planned but implementation may be delayed, so that architecture should support these features later.
 - please make a plan for the extensible text editing editor first, then implement it at folder `./hardoc`.
 
@@ -179,8 +185,6 @@ recheck and migrate full features of True PDF text editing engine with annotatio
 - you have migrated/reimplemented some features from onlyoffice pdf editor to hardoc.
 
 - please recheck logic parity detail by detail for every major feature, the goal is to achieve major feature parity(ux can differ) like onlyoffice-pdf-editor for major features.
-
-- hardoc should have full feature parity matching onlyoffice-pdf-editor for important/major features like document rendering/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, plugin architecture and manager, pdf search, pdf page-thumbnails, bookmarks.
 
 - you have worked on this several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. 
 
@@ -218,11 +222,14 @@ You should implement hardoc pdf editor in a similar architecture of onlyoffice p
 
 DO NOT search the web for onlyoffice pdf api, you should find and read source code of onlyoffice pdf editor directly in current folder ~/Documents/repos/office/all-office/onlyoffice
 
+- hardoc should have full feature parity matching onlyoffice-pdf-editor for important/major features like document rendering/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, plugin architecture and manager, pdf search, pdf page-thumbnails, bookmarks.
+
 - please recheck migrated features and improve your implementation in hardoc. Analyze core data flow and implementation logic details for every major feature like document rendering/layout/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, ..., compare the implementation logic/code of hardoc with onlyoffice-pdf-editor logic/code to recheck and enhance the correctness of architecture and logic in hardoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in hardoc are correct, modular, extensible for long-term maintenance.
 
 - docs/tests/scripts might be outdated, recheck code and data flow to improve hardoc.
 
 - prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, selection range/offset/caret, undo/redo for editing, pdf annotations/highlights... in hardoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+- prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, selection range/offset/caret, undo/redo for editing, pdf annotations/highlights, pdf search, pdf page thumbnails and navigation, bookmarks... in hardoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
 - if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
@@ -372,6 +379,8 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 - multi-user/team/workspace concepts in tranfromerlab-app should be implemented in aichorage, you may borrow the good design/architecture of transformerlab-app, but strictly following is unnecessary. all custom backend plugins may be installed in global scope, but each team can only use plugin enabled in their team. a default workspace and username/password should be created so that user can use it easily by just click login.
 - aichorage backend/runtime/web should be extensible, configurable, flexible. Apart from good defaults value, a `.env.example` should be provided in related sub packages if you want. you may borrow some good design/config from upstream jan/transformerlab-app/unsloth-studio.
 - all llm backend/runtime should be optional that supports to install/uninstall/enable/disable, so that the architecture is extensible and flexible. but llama.cpp amd mlx-vlm are installed by default to make it easy to use out of the box. you may design a standalone llm-runtime package to make the architecture modular, resuable, extensible.
+- tasks that may be planned but delayed: RAG, full parity of Jan-style UI/UX, complicated multi-user/team/workspace/RBAC, anthropic-compatible api, embedding models.
+
 - some local models if you need: ~/.lmstudio/models/unsloth/LFM2.5-1.2B-Thinking-GGUF/LFM2.5-1.2B-Thinking-UD-Q5_K_XL.gguf, ~/.lmstudio/models/unsloth/gemma-4-E4B-it-UD-MLX-4bit, ~/.lmstudio/models.
 
 - tech stack for project aichorage needs to use open source libs/fwk:
@@ -431,6 +440,11 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 local model testing/running can be very slow.
 - please recheck implementation logic related to model/llm-runtime-backend downloading and related tests, improve it by making the downloaded models/binary/resources cached locally, so that later testing/running can reuse it directly if already existed. improve the cache logic, and update related data-flow/tests, make sure the implementation is correct, robust, extensible without unnecessary redownloading. 
 
+- try to improve/refactor the tests to make it faster so that full tests running within 10 minutes.
+- improve the slow/complicated/heavy parts of tests, you may refactor/reorganize the tests to make it correct, fast, robust, maintainable in the long term.
+
+- 
+- 
 - 
 - 
 - 
@@ -650,34 +664,29 @@ what should be done to macth the upstream? explain to me. if it it complicated, 
 - research and make a full plan, then implement ilove-pdf to match major features of ilove-bentopdf, or even better than ilove-bentopdf, without licensing issues.
 # code-review 👀
 
-```prompt
-
 for project hardoc, 
 please recheck migrated features and improve your implementation, make it runnable locally using npm without docker. Analyze core data flow and implementation logic details for major features, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations are correct, modular, extensible for long-term maintenance.
 - docs/tests/scripts might be outdated, recheck code and data flow to improve begonia.
 
 please recheck migrated features and implementations for possible licensing issues. if the code is too similar to upstream, you can adjust the risking code to avoid licensing issues. if features are already migrated under different names, it is unnecessary to design it as a standalone/separate tool as the upstream did, this also helps to avoid licensing issues.
 
-document what you have migrated from which commit id for future migration reference at file `doc/devlog-migrations.md`. you can also add some concise(less than 120 lines) migration guide/steps/tips in it to make it easy to do migrations later.
-```
+document what you have migrated from which commit id for future migration reference at file `doc/devlog-migrations.md` . you can also add some concise(less than 120 lines) migration guide/steps/tips in it to make it easy to do migrations later.
 
 # tests
 
-```
 you have migrated/implemented major features in project react web, but when you migrated/implemented features, tests are not taken good care of. please fix and update existing tests. 
 when you improve the tests, you can also improve the source code logic by fixing or refactoring code. DO NOT get locked to the risk code that has weak or wrong logic, you should fix them.
 finally make sure all tests run and pass locally with npm. you can update/fix tests file by file progressively. outdated or over-complicated or hard-to-maintain tests can be removed or rewritten. 
 
 you have improved the codebase several times, but running the tests/parity/scripts took a lot of time for your every improvement.  please refactor and improve the tests/parity/scripts/devops/ci to make it faster and more maintainable.  you may combine/deduplicate/reduce/clean/redesign some tests/parity/scripts/devops/ci/outdated/legacy if you need. update the readme/docs after your cleanup.
-```
 
+- improve the slowest part of tests first, you may refactor/reorganize the tests to make it correct, fast, robust, maintainable in the long term.
 # rafactor
 
-```prompt
 The goal is to refactor existing code and architecture to be more clear, extensible, functional-programming style, while improving logic correctness at the same time.
 One task is to remove `class extends` inheritance and js prototype. `class extends` inheritance and prototype MUST be avoided by refactoring and rewriting.
-es6 class may be used very very sparingly. No confusing `this`, no prototype. 
-Prefer to avoid relying on dynamic binding, `.bind()`, `.call()`, `.apply()`, or method context unless truly necessary. 
+es6 class may be used very very sparingly. No confusing `this` , no prototype. 
+Prefer to avoid relying on dynamic binding, `.bind()` , `.call()` , `.apply()` , or method context unless truly necessary. 
 
 Prefer composition over Inheritance: Replace class hierarchies with small, composable functions.
 Prefer pure functions, immutable data, explicit inputs/outputs, and small composable functions.
@@ -687,10 +696,10 @@ If a function is too large, decompose it into smaller pure functions composed to
 
 Prefer explicit parameters, local variables, closures, or plain objects.
 Prefer to reduce hidden state, side effects, mutation, and tightly coupled modules.
-Prefer to avoid mutating inputs. prefer immutable-style functions: `(state, action) => newState`.
+Prefer to avoid mutating inputs. prefer immutable-style functions: `(state, action) => newState` .
 Prefer to replace mutation with immutable transformations.
 Prefer to replace nested imperative logic with composition, mapping, filtering, or small helpers.
-Prefer `map/filter` if it is better than LOOP. `reduce` should be avoid, you may use LOOP to replace `reduce`.
+Prefer `map/filter` if it is better than LOOP. `reduce` should be avoid, you may use LOOP to replace `reduce` .
 
 No Side Effects in Core Logic: Separate core business logic from I/O (database calls, network requests, DOM access, console.log). Core business functions must be pure; side effects should be pushed to the edges of the application.
 Prefer to extract all side effects (logging, API calls, DOM updates) to the function's edges.
@@ -704,11 +713,7 @@ make a plan, refactor and improve the codebase progressively.
 Keep the existing code/architecture working. Do not rewrite the whole codebase at once. you may refactor and improve code progressively.
 
 yes, continue to refactor and improve towards more functional-programming style
-```
 
-
-
-```prompt
 for project begonia, please refactor code structure if you need, to make sure all source code and tests files should have less than **700** lines of code(other code-unrelated or unimportant files are not required). because if too many code exists in a single file, it will be hard to maintain. small files and modular architecture are always preferred.
 
 please refactor code to migrate from pnpm to npm.
@@ -723,7 +728,6 @@ it would be better if you could make a scripts like `npm run check:upstream-pari
 
 in project hardoc, 
 current code is under active development. please review and refactor code if you need to make code more clean, correct, and extensible. please refactor outdated/legacy code that contains something like `superdoc/v0/v1/v2/v3/Compat/legacy...` by keeping only the right architecture or good implementation in the long term and removing legacy/deprecated code, so that the latest code does not contain legacy code and the logic is more clean and easier to maintain in the long term.
-```
 
 - try to avoid circular dependencies
 

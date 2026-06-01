@@ -600,6 +600,18 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚 Midscene 和 Browser-Use 有什么区别？
+- https://x.com/quanruzhuoxiu/status/2061447938526920932
+  - 都是开源，都用视觉，都解决各自该解决的问题。下面是诚实对比，不是踩 Browser-Use。
+  - Browser-Use 是个 web agent，定位是「打开浏览器，把这件事做了」——单次自主探索。
+  - Midscene 是个 vision SDK，定位是「重复跑的脚本，要在 Web、iOS、Android、HarmonyOS、桌面应用上稳定工作」——重复执行 + 多平台。
+  - Browser-Use 的强项：10 行 prototype 一个 web agent、demo、研究类一次性任务。 它会撞墙的地方：CI 里跑 1000 次的脚本会脆、不支持移动端、不支持原生桌面应用。
+  - Midscene 的强项：长生命周期的 E2E 测试，UI 改了能存活、Web + 原生一套脚本、缓存复放让重跑成本几乎 = 0。 较弱的地方：自由探索式 web 任务不如 BU 那么 agent 化、BU 的 planning loop 更激进。
+
 - ## 🌰🤔 做 Midscene.js 这两年，我们做了一个迟来但关键的判断：UI 自动化迟早要从「理解 DOM」切到「看屏幕」，所以去年 12 月 1.0 版本我们直接砍掉了 DOM 兼容路径。
 - https://x.com/quanruzhuoxiu/status/2054924854588264559
   - 早期我们和大家一样，走的是 DOM + 视觉混合方案——能拿 DOM 的地方就拿，省 Token、定位稳。但跑得越深越发现：同一个产品现在要同时跑在 Web、iOS、Android、HarmonyOS、Mac、Windows、Linux 桌面端，再加上 Canvas、Electron、Qt 这些根本没有 DOM 的渲染层。如果元素定位还要为每个平台维护一套 DOM 适配，事情永远收敛不了。
@@ -761,7 +773,7 @@ AI 可以直接操作后台 UI，把复杂流程自动化。
   - Puppeteer
   - Playwright
   - Python 自动化
-- 这东西直接读DOM真的稳多了，我之前用截图Agent搞内部系统老是卡，换这种方式应该能省一大堆时间。 独立开发者做自动化工具的话，这个方向现在超有搞头。
+- 这东西直接读DOM真的稳多了，我之前用截图Agent搞内部系统老是卡，换这种方式应该能省一大堆时间。独立开发者做自动化工具的话，这个方向现在超有搞头。
 
 - 试过了，速度奇慢无比，体验太差了
 

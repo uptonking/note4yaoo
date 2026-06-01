@@ -754,6 +754,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 少数公益站支持投喂 plus 来换取无限额度1天的套餐， 在token需求大时可考虑付费支持以小换大
   - 部分公益站和token-hub支持用LDC换低倍率的模型，可在ldstore用商品换LDC，再用LDC来换低倍率套餐
   - 注意不同来源的号池不要混用， 否则会出现问题 Encrypted content could not be decrypted or parsed
+  - 公益站多帐号的兑换码一般未与用户绑定，可以兑换到其他用户，甚至延迟兑换，这样可以将兑换码的额度接力使用而不触发限流
 
 - resources
   - https://github.com/cheahjs/free-llm-api-resources
@@ -1473,7 +1474,10 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [Accio — Ask anything about B2B, find suppliers & inspiration](https://www.accio.com/)
 
-### video-gen
+## video-gen
+
+- [l0veyou](https://l0veyou.com/)
+  - [可能是全网第一个ai图生视频公益站，让佬友们实现做ai漫剧自由（l0veyou） - 福利羊毛 - LINUX DO _202606](https://linux.do/t/topic/2287218)
 
 - [Video Studio](https://doubao.happieapi.top/)
   - rpd: 30
@@ -1914,6 +1918,10 @@ modified: 2025-03-22T16:10:24.856Z
   - 买号补池: 余额提号与自动推送
   - 供应入池: 批量导入与质保上架
   - 售后结算: 退款核账与付款申请
+  - https://inbox.ignore.md  /ngcoffee
+    - 注意第二次接码无解 Gopay渠道 + Outlook邮箱 + 可接邮件
+  - https://email.xrfcloud.xyz /kaopu
+    - 支持邮箱验证、手机验证
 
 - [麦当当plus的小店 - 链动小铺](https://pay.ldxp.cn/shop/EOTZ17J2)
   - 交流: https://t.me/maidangdangplus

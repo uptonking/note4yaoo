@@ -82,6 +82,10 @@ modified: 2026-04-07T12:53:02.538Z
   - Dedoc can be integrated in a document contents and structure analysis system as a separate module.
   - https://x.com/wsl8297/status/2052735548364857741
     - 把各种文档自动“拆解+规整”，输出统一的结构化结果。
+
+- https://github.com/CyberCRI/refinedoc /apache2/202509/python/NoDeps/inactive
+  - Python library for extracting headers, footers and body from PDF post parsing file by the Learning Planet Institute.
+  - The idea behind this library is to enable post-extraction processing of unstructured text content, the best-known example being pdf files. The main idea is to robustly and securely separate the text body from its headers and footers.
 # extraction-vlm
 - https://github.com/ahnafnafee/local-llm-pdf-ocr /MIT/202604/python
   - [Building a Local LLM-Powered Hybrid OCR Engine _202604](https://www.ahnafnafee.dev/blog/local-llm-pdf-ocr)

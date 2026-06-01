@@ -337,6 +337,22 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0601
+
+- [Feature Request: session-sticky-round-robin routing strategy for stateful APIs (Codex / Responses API) · Issue · router-for-me/CLIProxyAPI _202604](https://github.com/router-for-me/CLIProxyAPI/issues/2594)
+  - This request is already covered by the existing session affinity routing support.
+  - session-affinity: true
+  - routing.session-affinity was introduced in v6.9.27.
+- 其实没用，我CPA自动更新的，也一直用的填充，结果今早三个plus都登出了，远程登出无解
+- CPA 的维护速度绝对比 sub2api 好
+
+- someone gives me some openai api keys, like  oai-m, oai-w... can you figure out what is the possible meaning and differences for these keys?
+  - -w (Web): This key is likely backed by a Web-to-API script. It takes your API requests and reverse-engineers them through the standard ChatGPT web browser interface.
+  - -m (Mobile): This key is likely backed by a Mobile-to-API script. It routes your API requests by simulating the ChatGPT mobile app (iOS or Android).
+  - The oai-w (Web) keys are often subject to strict browser-level bot protections (like Cloudflare Turnstile). If OpenAI updates their web security, web-based proxies often break temporarily. oai-m (Mobile) keys, on the other hand, use the mobile app's API endpoints. These are sometimes considered more stable by proxy providers because they use different authentication protocols (like Apple/Google app attestation) that have different anti-bot security.
+
+# dev-05
+
 ## 0530
 
 - 🤔 popular rust programs often compiled to wasm like turso-db/automerge. can js/ts/python code be compiled to wasm so that it can be run in browser? explain to me and give me some popular wasm programs with github-url/overview for each

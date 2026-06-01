@@ -408,6 +408,18 @@ modified: 2026-01-15T15:33:18.008Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Why can't they just slap 256GB ram on a 5090? : r/LocalLLM _202606](https://www.reddit.com/r/LocalLLM/comments/1tu2gfa/why_cant_they_just_slap_256gb_ram_on_a_5090/?sort=top)
+- Likely just physical constrains. Currently, the max GDDR7 chip size is 3GB, at least to my knowledge. Each memory module needs a 32bit data bus to run. You can use Clamshell Mode, so in theory you can connect 2x3GB modules per 32bit bus.
+  - So, you could manage, at the 512 bit bus of an RTX 5090 96GB of GDDR7 memory. But that would require placing and routing 32 GDD7 modules, with proper impedance and timing matching. GDDR7 is really hard to get right already, because they use not only normal binary signals, but PAM, where it actually encodes 3 levels per clock cycle, making it really hard.
+  - So, realistically, without going crazy, you could likely do 32 chips at 3GB, so 96 GB. And guess how much the RTX Pro 6000 has. It has 16 modules on the front, 16 modules on the back. And they are already monster chips.
+- This is the right technical answer. Another thing is that placing chips close to the actual chip makes the whole cooling situation very complicated. They achieved it first by placing chips on both sides on the 3090, first consumer GPU to have 24GB vram. Guess what? 4090 came back with ram modules ONLY one a single side. That is important because the 4090 chip doesn't inherently stop it from going to 48GB vram. And that's why you have This person who was able to do 24->48gb on his 4090. If you search hard enough, you'll find 5090s with 128GB VRAM. That's the maximum you can do with putting ram modules on both sides (I think). There's no more place on the PCB to put. So they gutted the 5090 for sure. But 128gb is the theoretical maximum and cooling it will not be fun.
+
+- PC Design and Power would be why. It'd probably be 3x to 4x larger PCB and wiring RAM chips to the GPU is very difficult at that scale. Hence why you see RAM chips very close to the GPU die. The further away, the more interference you get the less stable it'll be. Cooling that many RAM chips would be difficult too.
+
 - ## 💡 [NVIDIA recently announced significant performance improvements for open-source models on Blackwell GPUs. : r/StableDiffusion _202601](https://www.reddit.com/r/StableDiffusion/comments/1qam2kr/nvidia_recently_announced_significant_performance/)
 - NVIDIA’s architecture codenames are deliberately drawn from historical figures associated with mathematics, physics, computing, or engineering. 
 - Pascal Named after Blaise Pascal (1623–1662), a French mathematician, physicist, and early computer pioneer. Key associations: • Probability theory • Fluid mechanics • One of the first mechanical calculators (the Pascaline)
