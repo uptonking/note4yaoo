@@ -1104,6 +1104,7 @@ modified: 2025-12-11T18:10:23.710Z
     - @earendil-works/pi-coding-agent	Interactive coding agent CLI
     - @earendil-works/pi-tui	Terminal UI library with differential rendering
   - 核心开发仅2人
+  - [大模型应用开发：学习和整理Pi的LLM模块设计 - LINUX DO _202606](https://linux.do/t/topic/2293027)
   - https://github.com/ayuayue/pi-desktop
   - https://github.com/earendil-works/pi-chat
     - A pi extension that bridges Discord and Telegram channels to a sandboxed pi session. Each connected channel gets its own Gondolin micro-VM with persistent workspace, shared storage, memory, and skills.

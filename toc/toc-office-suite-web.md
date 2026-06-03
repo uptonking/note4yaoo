@@ -210,6 +210,13 @@ modified: 2023-03-09T13:47:07.317Z
   - [Please support PPT/PPTX files _202211](https://github.com/cweijan/vscode-office/issues/166)
     - I have done research on this, but due to the complexity of ppt/pptx, it is impossible to display it in js.
 
+- https://github.com/wh131462/file-preview /MIT/202606/ts/vue
+  - https://wh131462.github.io/file-preview/
+  - [[file-preview]一个比较全面的在线文件预览组件库-支持 react 和 vue - LINUX DO _202606](https://linux.do/t/topic/2293802)
+  - 基于伟大的开源社区能力，做了一个比较全面的文件预览组件库，支持大多数常见的文件预览常见并支持自定义文件预览注入。
+  - 支持弹窗和嵌入式渲染两种方式 方便你按需求以不同方式进行预览
+  - 已支持通过mcp context7进行精准的文档查询使用。
+
 - https://github.com/501351981/vue-office /MIT/202401/js/vue/react
   - https://501351981.github.io/vue-office/examples/docs/
   - 支持word(.docx)、excel(.xlsx)、pdf等各类型office文件预览的vue组件集合，提供一站式office文件预览方案

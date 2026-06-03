@@ -795,6 +795,13 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/mohamad-tohidi/texttools /MIT/202601/python
   - a high-level NLP toolkit built on top of LLMs.
   - utilities for translation, question detection, categorization, NER extraction, and more
+
+- https://github.com/Lianues/unified-llm-provider /202606/ts
+  - [【开源推广】将常用的几种LLM API格式进行大一统，支持思考签名+思考回传+工具调用，项目内部便只需维护一个格式 - LINUX DO _202606](https://linux.do/t/topic/2288705)
+  - 每个厂商的接口都有各自的思考签名格式，维护多种签名格式太麻烦了
+  - 开源和闭源模型的工具调用要求不同，开源要求回传思考内容，闭源要求回传思考签名
+  - 各家返回的token信息也不同，claude模型还包含了缓存时间等
+  - 因为我们自己日常开发要用所以应该会持续维护的，而且不是还能统一tts，image，video的格式吗？大有可为我说。
 # eval/prompt
 - bench-resources
   - omlx内置bench工具及ui

@@ -330,6 +330,20 @@ modified: 2024-08-24T16:17:26.715Z
   - You decide the rules (using regex patterns) for when each template should be suggested. 
   - when you make a new file, the extension suggests the right template based on your rules.
 
+- https://codeberg.org/hjdesulme/virtual-file-tree.git /MIT/202606/ts
+  - A VS Code extension that lets you build custom, task-focused file trees without moving any files on disk.
+  - Virtual Folders & Files: create folders and add files by path. Drag and drop from the native Explorer. Right-click any file to add it to a virtual folder.
+    - The Virtual File Tree view appears in the Activity Bar.
+    - Add files to virtual folders.
+  - Self-Healing Paths: if you rename or move a physical file, the extension updates the virtual links automatically.
+  - Conflict Resolution: broken links turn red. Right-click to find a new path or bulk-clean missing files.
+  - Dependency Engine: right-click a file and choose Generate Dependency Tree… to create a folder containing Upstream/Downstream
+    - The Dependency Engine relies on language server responsiveness; on very large projects it may time out gracefully.
+    - For the Dependency Engine, the relevant language server extension should be installed (e.g., Pylance (Python), rust-analyzer, or the built-in TypeScript language features).
+  - Extension API: other extensions can register custom upstream providers for languages the built‑in scanner doesn't cover.
+  - [Virtual File Tree VSCode Extension for Developers : r/vscode _202606](https://www.reddit.com/r/vscode/comments/1ttzsg4/virtual_file_tree_vscode_extension_for_developers/?sort=top)
+    - Based on the VSCode APIs used, v1.74.0 is the hard minimum required.
+
 ## ext-editor
 
 - https://github.com/patmood/rich-markdown-editor-vsc /202405/ts/inactive
@@ -888,3 +902,7 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/zardoy/vscode-extensions-control /MIT/202304/ts/inactive
   - Extremely powerful extension for VS Code to control (configure) providers of other installed extensions!
   - Currently, it can only disable specific extension providers for now.
+
+- https://github.com/LeekHub/leek-fund /3.7kStar/BSD/202606/ts
+  - https://leek.fund/
+  - 韭菜盒子VSCode插件，可以看股票、基金、期货等实时数据

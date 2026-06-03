@@ -224,6 +224,16 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Introducing Devin Desktop.  _202606
+- https://x.com/cognition/status/2061889596703551926
+  - Manage fleets of local and cloud agents from one surface. Plan, delegate, review, and ship without leaving your editor.
+  - Devin Desktop is built on Windsurf, with all the features you know and love.
+  - Devin Desktop supports the Agent Client Protocol (ACP): bring your own agents to work alongside Devin, all in one unified view.
+
 - ## [ACP: All AI edits are applied instantly without any diff view or approval : r/ZedEditor _202602](https://www.reddit.com/r/ZedEditor/comments/1r979j3/acp_all_ai_edits_are_applied_instantly_without/)
   - [Switch over to built-in Claude Code tools · Pull Request · zed-industries/claude-agent-acp](https://github.com/zed-industries/claude-agent-acp/pull/316)
   - Given a number of recent issues stemming from Claude Code using more subagents that don't play nicely with our custom mcp server, plus some slowly diverging behavior, we made the decision to just switch back over to the built-in tools and do more processing on the tool input/output

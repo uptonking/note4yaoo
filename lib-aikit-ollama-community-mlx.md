@@ -94,6 +94,13 @@ modified: 2026-01-14T18:59:01.949Z
   - TurboQuant KV cache — RHT-correct fast paths for leaner memory.
 - MLX-VLM is now a superset of MLX-Audio too so you can run audio models directly from mlx-vlm
 
+- https://x.com/Prince_Canuma/status/2061559360728281559
+  - MLX-VLM v0.6.0: speculative decoding that's ~2× faster and byte-for-byte exact.
+- Byte-for-byte exact speculative decoding is useful because it improves latency without changing outputs. That makes benchmarking cleaner, especially for local model workflows where wall time matters.
+- What is the acceptance by verifier?
+  - Roughly 2-3 tokens/round
+- how many tokens per draft step? 34→64 looks like around 3
+
 - ## We have achieved a milestone in MLX that all tests are passing in CUDA backend now. _202605
 - https://x.com/zcbenz/status/2054699392071016743
 

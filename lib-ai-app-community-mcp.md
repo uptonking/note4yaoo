@@ -1444,9 +1444,34 @@ Don’t want/can’t have external dependencies?
 
 - ## 
 
-- ## 
+- ## [No, MCP is definitely not dead. : r/mcp _202606](https://www.reddit.com/r/mcp/comments/1tu0w9d/no_mcp_is_definitely_not_dead/?sort=top)
+- I avoid MCP wherever I can. My harness has current zero MCP. But I know that there are use cases:
+  - simplicity
+  - tool with high start up and background processes
+  - low prerequisites -...
 
-- ## 
+- I especially agree that the “MCP is dead, CLIs are enough” take mostly comes from a developer-local / terminal-first perspective. One additional use case I’d add is frontend-first or browser-hosted agentic products. When the agentic experience runs from a browser frontend, it can work across devices without assuming shell access, local binaries, or a CLI setup. For that class of product, “just use a CLI” is not really a viable deployment model. 
+
+- Most MCPs which have like ONE tool called "conversational_search" work fantastically.
+
+- ## [Everything we learned building a remote MCP server (stdio → HTTP + OAuth) : r/mcp _202606](https://www.reddit.com/r/mcp/comments/1ttsx8z/everything_we_learned_building_a_remote_mcp/p)
+1. stdio is fine for week one, then it's a wall.
+The first version was the usual: clone the repo, uv sync, export an API key and a secret key, run python main.py. It works, but that's a lot to ask before someone sees a single useful result, and most people won't finish it. Moving to a hosted HTTP endpoint changed everything now it's one line (claude mcp add futureagi --transport http https://api.futureagi.com/mcp), no clone, no local process to keep alive. The stdio repo still exists for people who want to fork and add their own tools; it's just not how anyone onboards now.
+
+1. For a remote server, OAuth beats API keys.
+On stdio we asked for two keys up front, and that was the single biggest place people dropped off. On the remote server, login opens in the browser and there's nothing to paste. If you're going remote, build auth this way from the start, putting it on later is the painful version.
+
+1. Your tool descriptions are the real API.
+This one humbled us. The client picks a tool from its name and description, nothing else. If two tools read similarly, it'll pick the wrong one and sound completely sure about it. We rewrote descriptions far more than we expected the wording genuinely decides whether the right tool fires.
+
+1. A broad server makes tool selection harder.
+We put a lot behind one server: evals, datasets, traces and spans, prompt optimization, simulation runs, annotations. The more tools under one roof, the more work the client has to do to figure out which one you meant. It's a real trade-off, and we're still not sure we landed on the right side of it (there's a question on this at the end).
+
+1. Return small, structured results, not the raw blob.
+Eval results and traces can be enormous. Early on we returned everything and watched it swallow the context window, so the model couldn't reason over its own output. Now tools return a short, structured summary first and you drill in only if you want the detail. Treat the context window like it costs money, because it does.
+
+1. The payoff is a loop that still feels a little magic.
+Because evals and observability are both just tools now, the model can check its own work in the same chat. You ask for an answer, then ask "how grounded was that, and show me the trace" and it runs the eval and pulls the spans on itself. That was the moment all of it felt worth the trouble.
 
 - ## [I genuinely don’t understand the value of MCPs : r/mcp _202603](https://www.reddit.com/r/mcp/comments/1rw7z6l/i_genuinely_dont_understand_the_value_of_mcps/)
   - When MCP first came out I was excited. I read the docs immediately, built a quick test server, and even made a simple weather MCP that returned the temperature in New York. At the time it felt like the future — agents connecting to tools through a standardized interface.

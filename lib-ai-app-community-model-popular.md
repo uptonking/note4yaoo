@@ -712,7 +712,14 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [关于Qwen系列大模型的疑问 - LINUX DO _202606](https://linux.do/t/topic/2289867)
+- Qwen的模型size太小了，400B和1T以上的模型性能会差很多，不过似乎Qwen在训更大的模型。其次Qwen有overtrain的问题。
+
+- 因为不舍得给佬友们用（认真的），Qwen的策略就有问题，明明自己模型没有很强的优势，还搞 Token Plan 定价还那么贵，用量大的人都不舍得用。能去用的就是对模型要求低、用量小的，这样对应的就是任务复杂性和难度也低。
+
+- qwen的长上下文是用的YaRN来拉伸，这个方向上感觉已经走得有点到头了，YaRN无法完全解决 RoPE 频率分布问题，这就导致256K往上的幻觉
+  - 3.5、3.6的思维链让人感觉还在实验阶段，数不尽的bug直接让人想将其关闭，而根据我自己的实测和社区反馈，关闭思维链的表现效果一般都优于打开，如果让我在思维链和多模态中间选择保留一个，原生多模态的价值更大
+- 思维链这块太真实了，我自己跑benchmark以及实测，关闭思维链的效果确实是要好很多，而且今天发现27B在一些情况下存在overthink，很影响效率
 
 - ## [Qwen3.6-35B-A3B vs Gemma4-26B-A4B : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1tmbola/qwen3635ba3b_vs_gemma426ba4b/)
 - For non-coding Gemma is better in my testing.

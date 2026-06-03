@@ -73,6 +73,7 @@ modified: 2021-07-20T13:50:23.433Z
   - ai: 擅长text-gen
   - 考虑维护/fork旧版项目: codemirror5-lang/demo, atlaskit-editor-eg, mxgraph-demo
   - 考虑port主流项目: codemirror-go/rust
+  - browser embedding
   - ~~animation: motion(dom/svg)~~ 
 
 - 技术细节(editor): virtualized, draggable, table(eav)

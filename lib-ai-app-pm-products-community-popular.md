@@ -15,7 +15,12 @@ modified: 2026-02-20T17:36:40.796Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🤔 This is actually one of the main advantages startups have over frontier labs, as long as there's a healthy spectrum of open-weight to closed-weight models on the cost-performance curve.
+- https://x.com/jerryjliu0/status/2061933847630192899
+  - Building a model harness is fundamentally a bit different than building the underlying model. The last year has shown that an increase in model capabilities has led to an increase in sophistication around agent harnesses as well (e.g. just look at Claude Code ultracode) 
+  - Every startup has a meaningful advantage here - from Factory to Cognition to honestly us - if they're able to optimize and finetune the model set for the precise amount of intelligence needed to do a task. Same or higher accuracy at 2-10x lower cost and latency is a real advantage.
+
+- Part of the advantage for enterprises is also avoiding vendor lock-in
 
 - ## Codex /goal now has a native Kanban board.
 - https://x.com/tolibear_/status/2053859040556360116

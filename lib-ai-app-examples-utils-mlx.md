@@ -85,6 +85,9 @@ modified: 2025-11-01T10:54:26.044Z
   - [What happened to oQe? _202604](https://github.com/jundot/omlx/discussions/1019)
     - Short answer: the oQe quants already on HuggingFace aren't broken. They still load and run fine. But I'm not going to be re-uploading or refreshing them while the enhanced path is paused, so consider them frozen rather than actively maintained.
     - On why it's paused: in the few weeks before I disabled it, I tried several variants of the enhanced approach. GPTQ-style, AWQ-style, the original formulations, plus a few MoE-optimized variations of each. Across a handful of models and short benchmarks, the results were not consistent. Some models clearly improved with the enhanced path. Others actually regressed compared to the plain oQ baseline. I haven't found a single method that reliably improves quality across model architectures, so I'd rather keep it off in the UI than ship something that silently makes some models worse. Once I find an approach that holds up across architectures, I'll bring enhanced quantization back.
+  - https://x.com/jundotkim/status/2061863850874634242  _202606
+    - I just shipped oMLX v0.4.0, the first official release with the new native Swift macOS app.
+    - My goal is still the same: I want oMLX to be the app someone can open on a Mac and immediately try Local AI with, without needing to understand all the machinery first.
 
 - https://github.com/mlx-node/mlx-node /MIT/202512/rust/ts
   - MLX-Node brings Apple's MLX framework to JavaScript/TypeScript, enabling efficient on-device ML inference and training on Apple Silicon and CUDA devices. 
@@ -822,6 +825,15 @@ modified: 2025-11-01T10:54:26.044Z
   - a native AI chat client for Apple platforms, designed for speed, privacy, and power users. 
   - It provides a fluid, responsive interface to interact with a variety of AI models, right from your iPhone, iPad, and Mac.
   - 🧪 both the Mac app and iPhone app support testing model abilities including tool-calling, instruction-following, coding
+# model-specific-skills/workflows
+- https://github.com/google-gemma/gemma-skills /apache2/202605/python/js
+  - Skills for the Gemma and model/agent interactions
+  - [While I slept, my 5-year-old MacBook ran Gemma 4 locally and indexed a year of video — simbastack _202605](https://blog.simbastack.com/indexed-a-year-of-video-locally/)
+  - https://x.com/googlegemma/status/2061847854025703827
+    - AI video editors can't edit what isn't indexed. Learn how a developer used Gemma 4 31B locally on a 5-year-old laptop to process and index a year of raw, unlabeled video, making it fully searchable. A great look at building local-first tools.
+  - https://x.com/googlegemma/status/2061568650138747363
+    - It enables agents to build with Gemma, including using MTP to improve speed, choosing the right model size for your use case, and locating up-to-date resources.
+    - MTP support out of the box is the detail that makes this worth installing immediately
 # utils
 - https://github.com/waybarrios/vllm-mlx /apache2/202601/python
   - vLLM-like inference for Apple Silicon - GPU-accelerated Text, Image, Video & Audio on Mac

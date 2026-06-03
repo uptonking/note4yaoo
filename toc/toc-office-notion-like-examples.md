@@ -196,6 +196,11 @@ modified: 2023-11-28T14:48:45.911Z
   - Note: Requires Node v18 and up for development
   - 对数据的查询依赖 graphql.v15、graphql-compose-json
 
+- https://github.com/haohaoxue-site/SamePage-AI /202606/ts/vue
+  - [【开源自荐】SamePage-AI：一个 Notion Like 的 AI + 协作项目，支持自部署 - LINUX DO _202606](https://linux.do/t/topic/2292230)
+  - 目前项目已支持对话和文档编写、协作，文档内对话支持获取上下文对话
+  - Agent 优化：目前还缺乏记忆和多 Agent 的交互
+
 - https://github.com/tyleregeto/autoblock-editor
   - Very minimal multi-user block based document editor to play with CRDT in that context. 
   - Uses automerge for CRDT implementation. Doesn't do anything useful.
@@ -353,7 +358,7 @@ modified: 2023-11-28T14:48:45.911Z
   - Building travels and blocks , presentation like a doc, travel is written by react+ lit + yjs + vite + tailwind.css
 
 - https://anytype.io/
-  - Anytype is a next generation software that breaks down barriers between applications, **gives back privacy and data ownership to users**.
+  - Anytype is a next generation software that breaks down barriers between applications, **gives back privacy and data ownership to users** .
 
 - https://github.com/mraht-apps/notie
   - Notion-like workspace with offline mode and encryption

@@ -9,13 +9,21 @@ modified: 2024-01-23T02:52:23.932Z
 
 # guide
 - pros
-  - ?
+  - rich editor
+  - backlinks: 双链基于[[]]语法, 同名文件的写法是相对路径
+  - bases: 基于文件的多维表格
+  - publish
+  - canvas
+  - graph-view
+  - slides
+  - templates
+  - sync
 
 - cons
   - ?
 
-- features
-  - filetree, file-properties, search, file-recovery, note-merge/split, quick switcher, workspaces
+- features(来自ob app里面的 core/community plugins)
+  - filetree, file-properties, search, file-recovery, note-merge/split, quick switcher, workspaces-layout
   - backlinks, bases, bookmarks, outline, page-preview, footnotes, slash commands, outgoing-links, web viewer
   - canvas, slides, daily-notes, graph-view, tags view, 
   - templates

@@ -692,6 +692,8 @@ modified: 2023-09-02T09:17:22.992Z
     - 项目还附带 CubeVS，用 eBPF 做沙盒之间的网络隔离。
     - 规模化验证给了两个案例。Cube 原本跑在腾讯云 Serverless 体系里，承载过百亿级调用。元宝 AI 编程场景迁到 Cube 后，资源核时消耗降了 95.8%。外部客户里，MiniMax 在 Agentic RL 训练中靠 Cube 做到分钟级调度数十万沙箱实例。下一步规划是把事件级快照回滚也开源出去，提供百毫秒级状态回滚。
     - Cube 性能数字漂亮，但 E2B 在 SDK 生态和接口契约上的先发位置不是性能指标能翻掉的。Cube 完全兼容 E2B API 的设计已经默认这个判断。开源的主要影响集中在腾讯云内部元宝和 Serverless 的算力账，对外抢 E2B 份额是另一回事。
+  - https://x.com/TencentAI_News/status/2061764491805962612
+    - New in v0.3.0: snapshot, clone, and rollback
 
 - https://github.com/earendil-works/gondolin /1.2kStar/apache2/202605/ts/pi
   - https://earendil-works.github.io/gondolin

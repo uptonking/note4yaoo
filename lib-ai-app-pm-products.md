@@ -41,6 +41,9 @@ modified: 2025-03-22T16:10:24.856Z
   - mistral-vibe(python), openhands(python), aider
   - cursor-cli/sdk
   - vscode copilot-cli/sdk
+  - ✨ kilo-vscode的易用性很强, 不同模式如ask/code可设置默认model, chat可直接在editor区域打开, 还采用了client/server架构
+    - 隐藏左右侧边栏 加上 chat在editor区域打开后， 使用自定义模型api, 就可作为一个通用AI前端
+    - 甚至可用 codex-app-server 替换kilo的后端
   - cline(ts)
   - openclaw(ts)
   - hermes(python)
@@ -282,6 +285,9 @@ modified: 2025-03-22T16:10:24.856Z
   - gitbook-like viewer
   - LiteParse Grid Projection Algorithm
 
+- image
+  - 现在的llm缺少和image结合生成图文混排内容的能力, image不一定是ai生成 的，和已有的百科图片/开放图片/mermaid结合也有机会
+
 - editor-heavy
   - pretext
   - ooxml editing
@@ -307,6 +313,20 @@ modified: 2025-03-22T16:10:24.856Z
 
 - chat-ai
   - 主流ai的web-chat结果能快速对比
+
+- gui(cli is not enough)
+  - vision: pdf/image 操作更方便
+  - multi process/locations: cli过于混乱，ui操作更清晰
+    - 切换files/chat更清晰
+  - 需要获取页面元素的场景: 如用户选择的文本/浏览器tab
+  - browser embedding
+  - omni: audio
+  - ✨ kilo-vscode的交互易用性很强, 不同模式如ask/code可设置默认model, chat可直接在editor区域打开, 还采用了client/server架构
+    - 隐藏左右侧边栏 加上 chat在editor区域打开后， 使用自定义模型api, 就可作为一个通用AI前端
+
+- omni
+  - audio
+  - video
 
 - cleaner
   - 清理codex-cli/cc的对话历史，展示date/size/suggestion-to-clean
@@ -1854,6 +1874,9 @@ modified: 2025-03-22T16:10:24.856Z
   - [阿华的AI比价聚合站 ](https://ahua-ai-price-aggregator.onrender.com/)
   - [AI 商品库存聚合搜索工具 ](https://goods.moo.kim/)
     - [售票处的小店 - 链动小铺](https://pay.ldxp.cn/shop/T6UJ4L1M)
+  - [AI 比价雷达 _202606](https://priceai.cc/)
+    - https://github.com/physics-dimension/PriceAI
+    - [【开源推广】PriceAI：我vibe了一个ai订阅卡网渠道聚合比价平台，拒绝中间商赚差价 - LINUX DO _202606](https://linux.do/t/topic/2294440)
 
 - resources
   - GPT site:pay.ldxp.cn/shop
@@ -2134,6 +2157,9 @@ modified: 2025-03-22T16:10:24.856Z
 - [AI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/echo_dream)
   - https://gpt.aveve.xyz/ 
   - 手机接码推荐：https://hero-sms.com/cn  找安哥拉+244地区，接码成功率高
+  - 低价team子号
+  - [API聚合转发源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/QN3MH16E)
+  - team子号 有rt CPA json 无账密目前测试活三天
 - [yimoAi-US的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/CQRJKJ0N)
   - 频道：https://t.me/songbai0420
 - [波哥小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/boge)

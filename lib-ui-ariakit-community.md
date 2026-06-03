@@ -80,7 +80,13 @@ modified: 2023-06-22T05:33:12.658Z
 
 - ## 
 
-- ## 
+- ## Base UI Popover with the detached triggers API.
+- https://x.com/colmtuite/status/2061733626673332472
+  - It's a more verbose API that shines when want morphing, or when you're rendering the same component many times in tables/lists.
+  - it's an optional API for Popover, Menu, PreviewCard, Dialog, Tooltip etc.
+- if two separate triggers can open the same popover, which one gets focus back on close?
+  - Whichever one opened it last
+  - Or you can use the finalFocus prop to focus move focus wherever you want
 
 - ## v1.0.0-rc.0 _20251204
 - https://x.com/colmtuite/status/1996767313199083665
@@ -209,7 +215,7 @@ modified: 2023-06-22T05:33:12.658Z
 - @tannerlinsley has a few! Virtualizers, tables, oh my!
 
 - The dream is to get folks building such libraries with `Mitosis` which can be responsible for that adapter layer that changes for each web framework.
-  - Interesting. In order for you to support all the frameworks, you've chosen to **write DSL and convert it to JSON**. Not what I had in mind, but it seems like a good idea.
+  - Interesting. In order for you to support all the frameworks, you've chosen to **write DSL and convert it to JSON** . Not what I had in mind, but it seems like a good idea.
 
 - ember-headless-table is another headless ui library that doesn't render HTML on its own.
 Instead, it provides the math, calculations, and props for managing common table features (because no one needs to be re-implementing those every time they switch companies)

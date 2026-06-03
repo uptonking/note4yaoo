@@ -53,6 +53,14 @@ modified: 2026-04-06T17:38:13.599Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🚀 unsloth: We're excited to partner with @Microsoft to enable millions of developers run local models on Windows!
+- https://x.com/UnslothAI/status/2061925637892297122
+- Aion 1.0 Plan represents an evolution of what the Windows on-device AI platform is capable of at scale! Thrilled to partner with @UnslothAI on optimization across our silicon ecosystem.
+
 - ## [Unsloth now works with CUDA 13.3 + Windows + MacOS properly. : r/unsloth _202606](https://www.reddit.com/r/unsloth/comments/1tsx5m1/unsloth_now_works_with_cuda_133_windows_macos/?sort=top)
 
 - ## Unsloth Studio now has auto speculative decoding & MTP support for GGUFs

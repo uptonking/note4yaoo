@@ -109,8 +109,8 @@ you have worked on this problem several times but features are still lacking. Th
 - prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, layout modes support vertical/horizontal/book like superdoc, multi-column layout supports unequal column widths like superdoc, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container like superdoc, zoom in/out, Canvas-based text measurement, performant line-breaking like superdoc, track-change/diff, overlap handling in track change like superdoc.
 
 - prioritize and recheck/improve major features like document viewport/layout-engine(supports multi-column) like superdoc, toggling pagination, layout modes support vertical/horizontal/book like superdoc, multi-column layout supports unequal column widths like superdoc, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container like superdoc, zoom in/out, Canvas-based text measurement, performant line-breaking like superdoc. 
-- core implementation for major features should be framework-agnostic without react, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
 - you may deep research, and reference the upstream superdoc code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues. 
+- core implementation in begonia for major features should be framework-agnostic without react, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
 
 ### draft-begonia
 
@@ -379,7 +379,7 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 - multi-user/team/workspace concepts in tranfromerlab-app should be implemented in aichorage, you may borrow the good design/architecture of transformerlab-app, but strictly following is unnecessary. all custom backend plugins may be installed in global scope, but each team can only use plugin enabled in their team. a default workspace and username/password should be created so that user can use it easily by just click login.
 - aichorage backend/runtime/web should be extensible, configurable, flexible. Apart from good defaults value, a `.env.example` should be provided in related sub packages if you want. you may borrow some good design/config from upstream jan/transformerlab-app/unsloth-studio.
 - all llm backend/runtime should be optional that supports to install/uninstall/enable/disable, so that the architecture is extensible and flexible. but llama.cpp amd mlx-vlm are installed by default to make it easy to use out of the box. you may design a standalone llm-runtime package to make the architecture modular, resuable, extensible.
-- tasks that may be planned but delayed: RAG, full parity of Jan-style UI/UX, complicated multi-user/team/workspace/RBAC, anthropic-compatible api, embedding models.
+- tasks that may be planned but delayed(not in current goal): RAG, full parity of Jan-style UI/UX, complicated multi-user/team/workspace/RBAC, anthropic-compatible api, embedding models.
 
 - some local models if you need: ~/.lmstudio/models/unsloth/LFM2.5-1.2B-Thinking-GGUF/LFM2.5-1.2B-Thinking-UD-Q5_K_XL.gguf, ~/.lmstudio/models/unsloth/gemma-4-E4B-it-UD-MLX-4bit, ~/.lmstudio/models.
 
@@ -423,6 +423,7 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 - please recheck migrated features and improve your implementation in aichorage. Analyze core data flow and implementation logic details for every major feature like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible api, chat with local-model/cloud-llm-api-provider..., compare the implementation logic/code of aichorage with related jan/transformerlab-app/unsloth-studio logic/code to recheck and enhance the correctness of architecture and logic in aichorage, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in aichorage are correct, modular, extensible for long-term maintenance. 
 
 - prioritize and recheck/improve major features like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible-api, chat with local-model/cloud-llm-api-provider... in aichorage, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+- tasks that may be planned but delayed(not in current goal): RAG, full parity of Jan-style UI/UX, complicated multi-user/team/workspace/RBAC, anthropic-compatible api, embedding models, audio-related features.
 - if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
 - recheck and improve it, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
@@ -434,7 +435,7 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 
 -------
 
-- unsloth-studio has very good support for openai-compatible api and anthropic-compatible api and gguf/mlx models, you may reference it. it also support tool calls and chat templates, you may reference the architecture/code and rewrite it for aichorage.
+- unsloth-studio has very good support for openai-compatible api and anthropic-compatible api and gguf/mlx/vlm models, you may reference it if you need. it also support tool calls and chat templates, you may reference the architecture/code and rewrite/improve it for aichorage.
 
 - local model testing/running can be very slow and take huge disk space.
 local model testing/running can be very slow.

@@ -14,7 +14,16 @@ modified: 2021-01-08T17:14:34.841Z
 
 - ## 
 
-- ## 
+- ## 🧩 和 AI 描述动画的时候由于不知道专业术语，根本不知道想要的动画应该怎样描述，有了这个词汇表就方便特别多了。而且可以更好的理解这些动画效果。
+- https://x.com/vikingmute/status/2061618080934252630
+  - https://animations.dev/vocabulary
+
+- https://x.com/emilkowalski/status/2061426518333571576
+- Do you think "prompting animations" eventually becomes a core frontend skill, or just a temporary bridge until models infer intent automatically?
+  - Probably a temporary bridge, but I think you’ll always get better results by being more precise, regardless of how the technology evolves.
+
+- https://github.com/greenpeez/prompt-animations-skill
+  - made this a codex skill.
 
 - ## 🎯 After 5 years in the making, I'm very happy to finally release Anime.js v4 _202504
 - https://x.com/JulianGarnier/status/1907817228168257854

@@ -11,10 +11,12 @@ modified: 2026-05-28T17:50:54.646Z
 
 - goals
   - playground for local ocr/vlm models
-  - obsidian for pdf
+  - obsidian for pdf: editor, backlinks, bases, publish, graph-view
+  - port model-specific skills to aichorage
   - headless api/cli/skills
   - python-first
   - image/pdf ux
+  - embeddable web browser
 
 - non-goals
   - optimized for gpu, not cpu

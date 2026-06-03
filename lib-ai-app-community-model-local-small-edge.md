@@ -36,6 +36,8 @@ modified: 2026-05-28T20:48:22.013Z
   - BenchLoop is a local-first CLI + web app for benchmarking LLMs running on your own hardware. 
   - It scores models across seven repeatable suites — quality, speed, reliability, agentic tool use, coding, instruction following — and gives you receipts: per-task outputs, latency, token counts, machine info, scores.
   - No accounts, no telemetry, no API keys. Your model, your machine, your numbers.
+
+- [Which GPU Runs Which LLM? The Complete Hardware Guide — AgentSwarms _202605](https://agentswarms.fyi/blog/which-gpu-runs-which-llm-the-complete-guide)
 # discuss-stars
 - ## 
 

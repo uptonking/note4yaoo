@@ -989,6 +989,14 @@ modified: 2025-02-21T17:17:42.225Z
 
 ## vid2txt
 
+- https://github.com/google-gemma/gemma-skills /apache2/202605/python/js
+  - Skills for the Gemma and model/agent interactions
+  - [While I slept, my 5-year-old MacBook ran Gemma 4 locally and indexed a year of video — simbastack _202605](https://blog.simbastack.com/indexed-a-year-of-video-locally/)
+  - https://x.com/googlegemma/status/2061847854025703827
+    - AI video editors can't edit what isn't indexed. Learn how a developer used Gemma 4 31B locally on a 5-year-old laptop to process and index a year of raw, unlabeled video, making it fully searchable. A great look at building local-first tools.
+  - https://x.com/googlegemma/status/2061568650138747363
+    - It enables agents to build with Gemma, including using MTP to improve speed, choosing the right model size for your use case, and locating up-to-date resources.
+
 - https://github.com/maskgo68/YPBrief
   - [【开源】YPBrief，自托管 YouTube 播客与长视频简报工具，支持docker、GitHub Action部署 - LINUX DO _202604](https://linux.do/t/topic/2086869)
 

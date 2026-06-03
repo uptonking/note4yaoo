@@ -28,7 +28,11 @@ modified: 2025-12-16T06:25:32.663Z
 
 - ## 
 
-- ## 
+- ## TanStack Start now supports Rsbuild 2 alongside Vite, bringing the full Start feature set to the Rspack / Webpack ecosystem. _202606
+- https://x.com/tan_stack/status/2061840836116074523
+- Did you guys run the numbers? Which one is faster?
+  - i didn't test exhaustively, they are pretty close in our e2e tests. rsbuild has slightly smaller bundlesize (gzip).
+
 # discuss-tanstack-start/ssr
 - ## 
 

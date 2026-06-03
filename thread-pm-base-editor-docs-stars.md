@@ -16,7 +16,9 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
-- ## 
+- ## [【开源】AI小说网站 - LINUX DO _202606](https://linux.do/t/topic/2288714)
+  - 拿gpt5.5 vide coding了一个AI写作网站，搓了四五天吧
+  - 网站还是有很多功能是按了没反应的。我想法还是挺多的，比如短剧、图片、角色扮演都加进去，这样以后只需要在一个网站写好一部小说，自己做短剧或者拿自己小说去角色扮演或者拿去图片生成漫画
 
 - ## we’re introducing a new Legal Agent in @Microsoft Word, built to support the precision and rigor legal work demands. 
 - https://x.com/BradSmi/status/2049993319800066119
