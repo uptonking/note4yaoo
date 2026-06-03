@@ -1441,7 +1441,16 @@ modified: 2025-11-30T17:27:16.720Z
     - 登录：Next-Auth
     - 支付：Lemon Squeezy
     - 部署：Vercel
-# chat-pdf
+# chat-pdf/long-docs
+- https://github.com/Jacobinwwey/obsidian-NotEMD /MIT/202605/ts
+  - Notemd enhances your Obsidian workflow by integrating with various Large Language Models (LLMs) to process your multi-languages notes, automatically generate wiki-links for key concepts, create corresponding concept notes, perform web research, helping you build powerful knowledge graphs and more.
+  - [【开源推广】不是让 AI 替你读论文，而是把论文一点点织进知识库：作为一名在读物理博士，我现在怎么用 Obsidian + Notemd 做论文深读与长期积累 - LINUX DO _202606](https://linux.do/t/topic/2107293)
+    - 很多时候，我们在对话框里问了很多问题，AI 也回答得很快。可一周以后再回头看，真正留下来的往往只有一点模糊印象。那篇 paper 的核心概念、方法关系、实验设置、局限性、和我已有知识库的连接，最后还是散的。
+    - Notemd 就是在这个思路下比较顺手的一种做法。它不是一个“神奇的一键读懂论文机器”，而是一个把论文笔记、概念卡片、研究摘要、翻译、图表和工作流串起来的 Obsidian 工作台。
+    - Notemd 是一个开源的 Obsidian 社区插件。它不追求“帮你一键读懂论文”，而是把论文阅读过程里的概念链接、概念笔记、原文证据摘录、背景补充、翻译、图表和工作流，尽量都沉淀回你的知识库里。支持数十种语言的UI、README与转换
+    - 我想解决的，其实不是“读一篇”，而是“沉淀一批”
+    - 聊天式 AI 更擅长当场回答问题，Notemd 更擅长把结果沉淀进知识库。
+
 - https://github.com/WangQrkkk/PaperQuay 
   - [PaperQuay：一种新的文献阅读范式：瞬时跳转翻译、Agent管理文献、高亮批注导出、极低内存占用、兼容Zotero - LINUX DO _202604](https://linux.do/t/topic/2079732)
   - 它应用了一种新的翻译范式，对于每段原文提前翻译好（这个过程可以软件自动去做，或者挂机的时候去做），这样点击我要读的内容时，软件可以瞬间转到其翻译。而且借助Mineru可以很好地提取表格信息等等，方便和大模型交互。
@@ -1517,6 +1526,15 @@ modified: 2025-11-30T17:27:16.720Z
   - https://github.com/lfnovo/esperanto
     - Python library that provides a unified interface for interacting with various Large Language Model (LLM) providers.
     - All providers communicate directly via HTTP APIs using httpx - no bulky vendor SDKs required
+
+- https://github.com/suzen2613-glitch/open-research-notebook /MIT/202604/python/ts
+  - A customized Open Notebook derivative for source-first AI research workflows.
+  - a customized derivative of https://github.com/lfnovo/open-notebook /MIT
+  - [【开源推广】open-research-notebook：把 Zotero 论文库直接变成 LLM 可读的知识库 - LINUX DO _202604](https://linux.do/t/topic/1958282)
+    - 将其fork成了一个真正面向学术研究的版本，它保留了原项目自托管、多模型的核心，同时把重点彻底转向Zotero 驱动的论文知识工作流：把大量论文快速变成LLM可直接使用的结构化知识库。
+    - Zotero 一键导入
+    - 四栏研究笔记本 Sources(PDF转化成markdown的文件) / Summary (论文总结)/ Wiki Card(把总结变成一个一个的卡片，方便之后的知识库) / Notes(这里就是写笔记了) 这四个模块一目了然，阅读、提取、知识建模、写作彻底分开。
+    - 结构化 Wiki Card 每篇论文自动生成规范的知识卡片（concepts、questions、domains、relations、paper type、MOC 元数据），不是简单笔记，而是可检索、可对比、可导出 Obsidian 的标准知识对象。刷小红书和X刷到obsidian很好用，发现也能集成中使用。
 
 - https://github.com/eclaire-labs/eclaire /728Star/MIT/202512/ts
   - https://eclaire.co/

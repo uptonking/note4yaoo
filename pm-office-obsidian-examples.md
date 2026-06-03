@@ -77,4 +77,9 @@ modified: 2026-04-07T00:47:33.626Z
   - This brings a taste of Observable to Obsidian. 
   - give you an @observablehq -like experience with editable code blocks that run in isolated iframes.
   - Based on iframes: Everything you write is run within a sandboxed iframe, making it safer to do more creative coding within Obsidian without affecting the surrounding page.
+# import/export
+- https://github.com/ShrekBytes/advanced-pdf-export /GPL/202606/ts
+  - Export Obsidian notes as pixel-perfect PDFs with six style presets, manual page breaks, full layout control, and a live preview — all from a full-screen modal panel.
+  - Desktop only — requires the Obsidian desktop app (uses Electron's print pipeline).
+  - [I built an Obsidian plugin for proper PDF export — page breaks, live preview, style presets, and full layout control : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1tvtjjt/i_built_an_obsidian_plugin_for_proper_pdf_export/?sort=top)
 # more

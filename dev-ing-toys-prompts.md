@@ -96,7 +96,7 @@ you have worked on this problem several times but features are still lacking. Th
 - superdoc's overall architecture is good enough to follow. Mostly begonia should use similar architecture to superdoc.
 
 - please recheck migrated features and improve your implementation in begonia. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support..., compare the implementation logic/code of begonia with superdoc logic/code to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
-- core implementation for major features should be framework-agnostic without react, react should be used very sparingly.
+- core implementation for major features should be framework-agnostic without react, ui wrappers/bindings should be sub packages, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
 
 - prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support... in begonia, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
@@ -232,6 +232,8 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 - prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, selection range/offset/caret, undo/redo for editing, pdf annotations/highlights, pdf search, pdf page thumbnails and navigation, bookmarks... in hardoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
 - if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
+
+- core implementation for major features should be framework-agnostic without react, ui wrappers/bindings should be sub packages, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
 
 ### draft-hardoc
 

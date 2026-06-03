@@ -103,6 +103,28 @@ modified: 2024-08-24T16:14:33.275Z
 
 - ## 
 
+# discuss-issues-vscode
+- ##
+
+- ##
+
+- ##
+
+- ## 尝试过 3 次将编辑器从 VSCode 切换到 Zed, 但是都失败了
+- https://x.com/miantiao_me/status/2062060692572971196
+  - Zed 的 Git Diff 页面怎么用都不习惯，一滚动就到下一个文件去了，不知道当前看的是那个文件。
+  - 经常使用 VSCode SSH Remote 开发， `code dirname` 打开的新窗口是基于 SSH 远程目录打开的，几乎无感， npm run dev 启动的临时端口，会自动转发，本地可以直接打开。
+  - 这两个点可能会将我绑在 VSCode
+
+- 现在看 diff 双击就是单文件，单击就是总览，比以前好用多了
+
+- 感觉 diff 那个滚动到下一个文件有点像 BUG，有的时候暂存区改动内容多了看到一半就直接跳到其他文件的diff上了，很神奇
+
+- 还是喜欢 gitlens 那种，侧边栏显示文件，diff view 只有当前选中的文件。
+
+- 最难受的没有按照 staged分割，而是按照track分割，完全是git short的逻辑了，也不知道怎么想的。
+
+- Still, the fast speed allows me to overcome all the inconvenience.
 # discuss
 - ##
 

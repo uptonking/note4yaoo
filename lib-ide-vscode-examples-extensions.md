@@ -343,6 +343,7 @@ modified: 2024-08-24T16:17:26.715Z
   - Extension API: other extensions can register custom upstream providers for languages the built‑in scanner doesn't cover.
   - [Virtual File Tree VSCode Extension for Developers : r/vscode _202606](https://www.reddit.com/r/vscode/comments/1ttzsg4/virtual_file_tree_vscode_extension_for_developers/?sort=top)
     - Based on the VSCode APIs used, v1.74.0 is the hard minimum required.
+  - [Demo for Virtual File Tree VSCode Extension : r/vscode _202606](https://www.reddit.com/r/vscode/comments/1tv6wj6/demo_for_virtual_file_tree_vscode_extension/?sort=top)
 
 ## ext-editor
 

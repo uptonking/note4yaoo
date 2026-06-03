@@ -15,6 +15,7 @@ modified: 2024-08-24T16:15:11.456Z
   - 完善的编辑器和ide架构，包括 editor/workbench/fileTree/search/ext/cmd-palette/copilot-agent
     - 可提取出丰富的工具库
     - 提供了很多方案的参考实现，如browser/terminal
+    - 社区有很多尝试方案
   - 支持运行在多种环境，如 electron, web-memory, web-node-server, 
     - 提供了处理 cross-platform/browser 的参考架构
     - vscode对于本地c/s架构的参考价值高，web架构需要scale的价值不高
@@ -26,7 +27,9 @@ modified: 2024-08-24T16:15:11.456Z
   - 扩展生态丰富: 文件
   - 👾 ai: embeddable web browser
   - 支持ssh, 远程操作友好
+  - good for coding and writing
   - 有很多原理深度解析的技术博客
+  - 🔄 sync settings/extensions/chats
 
 - cons
   - insecure/non-sandboxed by design, 但微软设计就是如此，支持在本地或远程执行代码

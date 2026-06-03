@@ -1866,7 +1866,11 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## [随着开源大模型及RAG、Agent等能力的增长，大模型的微调是不是已经没用了？或者说效果不显著了 - LINUX DO _202606](https://linux.do/t/topic/2298434)
+- 至少生图（生视频）依然还有一大堆LORA，如果你是特指 自然语言，微调模型带来的提升很多时候不如提示词工程，而且基本都会导致模型在全局能力的下降
+- 我们项目中也遇到了微调后的模型，领域能力用户感觉增强不明显，其他能力反而下降
+
+- 不清楚其他人的使用场景，我目前的场景是用小模型微调，让小模型判断用户的意图，然后分配到对应的工作流
 
 - ## [The GB10 Solution Atlas is now open source, the inference engine made for the community with breakneck inference speeds (Qwen3.6-35B-FP8 100+ tok/s) : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1t5p2yv/the_gb10_solution_atlas_is_now_open_source_the/)
 

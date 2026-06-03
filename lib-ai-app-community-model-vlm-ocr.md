@@ -1139,7 +1139,30 @@ echo '{
 
 - ## 
 
-- ## [Nvidia LocateAnything - Fast and High-Quality Vision-Language Grounding with Parallel Box Decoding. (10x faster than Qwen3-VL) : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1tpvldv/nvidia_locateanything_fast_and_highquality/)
+- ## [英伟达新发布的视觉识别模型 LocateAnything-3B 识别物体极快极准 - LINUX DO _202606](https://linux.do/t/topic/2295689)
+- 官方有demo，直接跑官方的demo，不是vllm也不是sg，是transformers
+
+- 本地部署了一个，效果还行，但说抛弃yolo有点夸大事实了，yolo我可以跑在板载设备上，毫无压力， 这个肯定不行，这个模型光尺寸都3B+了
+- 看使用场景了，我在性能贼拉的板子上跑yolo都有30fps+。如果性能可以的情况且不想自己去微调模型的，肯定是这个好，如果要求精度高性能也有要求的肯定还是yolo
+- yolo玩小规模的边缘设备，这个可以上车机之类的，淘汰yolo过分了确实；yolo我记得也有大的来着
+- yolo现在开箱就用了，很多场景压根不需要去单独训练，无敌的很。
+
+- 我觉得和yolo不是竞争关系，完全可以在数据量少的时候用这个模型来快速生成一堆标注，然后用yolo训练部署
+  - 确实，yolo主打低延迟，这玩意识别得个一会
+
+- 上面的测试 数竹签 图片，用yolo要多轮微调，还只是接近，LocateAnything-3b 这个模型一次过，看应用场景及硬件宽裕度吧，有些描述，H100 GPU可以12.7 BPS吞吐量（实时视频流），速度是其他模型（如Qwen3-VL）十倍以上，解码吞吐量显著，号称比传统方法快10倍
+
+- 截了一个pcb原理图，说太大了 
+
+- 感觉可以用在computer use方面，快速定位目标元素进行操作
+
+- meta的sam3已经很准了，这个3b的参数量其实还挺大的。
+
+- 安防监控、物流统计、生产计数、物料识别、直至后续的世界模型…
+
+- 可惜不能商用啊，个人拿来玩玩还行。
+
+- ## ✨ [Nvidia LocateAnything - Fast and High-Quality Vision-Language Grounding with Parallel Box Decoding. (10x faster than Qwen3-VL) : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1tpvldv/nvidia_locateanything_fast_and_highquality/)
   - https://huggingface.co/spaces/nvidia/LocateAnything
   - https://huggingface.co/spaces/nvidia/LocateAnything/tree/main
   - Upload an image/video on the left, choose a task type, enter what you want to find, then click Run Inference. Results with bounding boxes will appear on the right.

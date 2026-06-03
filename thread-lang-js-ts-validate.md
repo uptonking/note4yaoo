@@ -24,7 +24,7 @@ modified: 2023-08-16T15:50:16.335Z
 - ## Did you know you can use the built-in browser validation API with JavaScript to control how error messages are rendered? Besides the simplicity, you also get i18n for free.
 - https://twitter.com/diegohaz/status/1526874008049811461
 
-# discuss-zod/arktype
+# discuss-zod
 - ## 
 
 - ## 
@@ -44,6 +44,25 @@ modified: 2023-08-16T15:50:16.335Z
 - In what situations would you use zod mini over regular? 
   - zod mini allows for a smaller bundle size, which is good for client side usage.
   - the main reason for continuing the "classic" API is preference - the creator of zod has said he still much prefers to use the original API.
+
+# discuss-arktype
+- ## 
+
+- ## 
+
+- ## 
+# discuss-valibot
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Same data, many shapes: DB row, sanitized frontend object, flat LLM struct.
+- https://x.com/FabianHiller/status/2062182881993146604
+  - Migrations and data transformations can be hard, but they don't have to be.
+  - With doba and Valibot, you can define them in a smart, type-safe way.
+  - [One Model, Many Views: Type-Safe Transforms with Valibot and doba | Valibot _202606](https://valibot.dev/blog/same-data-different-shapes/)
 
 # discuss
 - ## 

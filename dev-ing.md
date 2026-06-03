@@ -337,6 +337,20 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0603
+
+```
+
+TanStack Start + Rsbuild is a win-win for both communities
+
+Rspack users get a full-stack choice: 100% TanStack Start, with router, SSR, RSC, Server functions out of the box
+
+TanStack users can adopt the Rspack toolchain for stable bundled dev and first-class MF support
+
+```
+- what does MF mean?
+  - MF means Module Federation. In the Rspack/Rsbuild world, it refers to a way for multiple JavaScript apps to share code and load parts of each other at runtime, which is commonly used for micro-frontends. Rspack’s docs explicitly call out “first-class support for Module Federation.”
+
 ## 0601
 
 - [Feature Request: session-sticky-round-robin routing strategy for stateful APIs (Codex / Responses API) · Issue · router-for-me/CLIProxyAPI _202604](https://github.com/router-for-me/CLIProxyAPI/issues/2594)

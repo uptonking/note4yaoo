@@ -11,7 +11,8 @@ modified: 2026-05-28T17:50:54.646Z
 
 - goals
   - playground for local ocr/vlm models
-  - obsidian for pdf: editor, backlinks, bases, publish, graph-view
+  - obsidian for pdf: auto-toc, history/diff, proofreading, tools
+    - features-port: editor, backlinks, bases, publish, graph-view
   - port model-specific skills to aichorage
   - headless api/cli/skills
   - python-first
@@ -39,6 +40,9 @@ modified: 2026-05-28T17:50:54.646Z
   - 支持针对cpu优化的backend和模型
   - 参考msty，能统一管理 local/ollama/lmstudio/huggingface 的模型，释放空间
   - 支持多种类型的model: vlm, embedding, omni, tts
+
+- model-specific
+  - LocateAnything
 
 - speculative-decoding
   - draft model for dflash

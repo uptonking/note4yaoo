@@ -129,7 +129,10 @@ codex --yolo resume --last
 
 - ## 
 
-- ## 
+- ## [codex好像api模式可以直接使用插件了 - LINUX DO _202606](https://linux.do/t/topic/2299965)
+  - 刚刚试了一下插件和桌面控制发现可以直接使用了，用的公益API
+- 众所周知，Codex app就是Codex CLI套的壳子，之前是只可以用操控电脑（Mac）Chrome要登陆才行，后面Chrome和操控电脑都行了，还有就是它们都只是mcp，Codex App装了后你可以在CLI里也能调用～
+- 但是notion那些需要openai服务器的就不行了
 
 - ## openai-cli is released  _202605
 - https://x.com/jxnlco/status/2052497604764913732
@@ -175,6 +178,24 @@ codex --yolo resume --last
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [佬们聊一聊openclaw, 爱马仕, codex, claude 几个agent - LINUX DO _202606](https://linux.do/t/topic/2300016)
+- 我现在用爱马仕，codex和cc只是用cli接api写代码用，爱马仕接入新闻、推特等做消息关注
+
+- 这种做什么长期记忆的，感觉本质上还是读文件来恢复上下文, 不过选择把什么保留成上下文的选择就看各自的能力了
+
+- Hermes目前比Openclaw好用多了，我两个都装，但只用Hermes
+- hermes 会自动把工作流整理成 skill，某种程度上是给你做了 context engineering，你用 codex 的话 context 需要你自己管理
+  - 简单说来就是你可以直接开一个 hermes 对话和它说你想做什么，然后开始做，下次直接新开一个对话，说你想做什么东西，他可以给你接上，不用你自己去关心工作目录，上下文这些
+  - 好处是方便了，坏处是 hermes 响应非常慢，而且很费 token，你用 gpt 的话上下文很快就满了，我觉得是没有办法做大型开发的，日常对话，电脑的快捷键管理，小插件的开发可以用，以及一些轻量到你不想花精力去管理 context 的任务
+
+- 爱马仕 ≈ xxclaw + auto-skill，或者你可以认为是每loop一次给你做一次auto compact
+  - 实际场景里爱马仕很耗token，如果你的场景重复比较多的话长期有收益，如果纯粹chat级别那就是浪费token
+  - 不看重度不重度，看流程的可重复程度，创意类工作的话主要看你希不希望它每次创意的方向固定符合你的个人偏好
 
 - ## Kimi 自己基于 Python 写的 kimi-cli，在今天换成了基于 Typescript 和 pi-tui 写的新 kimi-code。
 - https://x.com/amehochan/status/2058738716840255990

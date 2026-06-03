@@ -147,7 +147,7 @@ modified: 2025-08-30T18:16:57.201Z
 
 - ## 
 
-- ## 
+- ## [让ai讲解内容很多的pdf有思路推荐么 - LINUX DO _202606](https://linux.do/t/topic/2299574)
 
 - ## [Show HN: RedactMyPDF.com - AI-assisted PDF redaction with human review | Hacker News](https://news.ycombinator.com/item?id=44930853)
   - uses AI (Gemini) + OCR + human review to make redaction fast but safe

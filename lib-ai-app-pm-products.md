@@ -794,7 +794,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [魔搭免费api接口支持Anthropic API可直接用于claude code附教程 _202508](https://linux.do/t/topic/876488)
     - 模型库里面有的模型可能不支持，k2好像也不行，试了glm4.5和qwen3都可以
 
-- [Token HUB](https://hub.linux.do/)
+- [Token HUB](https://hub.linux.do/), 封号严重
   - 部分公益站和token-hub支持用LDC换低倍率的模型，可在ldstore用商品换LDC，再用LDC来换低倍率套餐
   - [讨论token银行的可行性 - LINUX DO _202604](https://linux.do/t/topic/2007302)
   - [L站的活跃佬友永远也不缺token花了，token自由已实现 _202605](https://linux.do/t/topic/2111825)
@@ -2143,6 +2143,17 @@ modified: 2025-03-22T16:10:24.856Z
   - GPT TEAM 手工直拉 无质保， 35
   - GPT Cyber认证【Persona认证】， 100
 
+- [AI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/echo_dream)
+  - https://gpt.aveve.xyz/ 
+  - 手机接码推荐：https://hero-sms.com/cn  找安哥拉+244地区，接码成功率高
+  - 低价team子号
+  - [ai主理人的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/AV8G25IF)
+    - 低价team
+  - [API聚合转发源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/QN3MH16E)
+    - team子号 有rt CPA json 无账密目前测试活三天
+  - [青蛙AI·低价源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/qingwaAA)
+  - [远程技术服务站的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/yunduo)
+
 - [源头GPT的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1DM0L7CR)
   - 100个 free账号 Token（实时验活）CPA + sub2api格式
 - [XC的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/K9NFLN0C)
@@ -2154,12 +2165,6 @@ modified: 2025-03-22T16:10:24.856Z
   - 通知频道：https://t.me/hdunzx
   - 质保两天
     - 一天就上几个，引流的
-- [AI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/echo_dream)
-  - https://gpt.aveve.xyz/ 
-  - 手机接码推荐：https://hero-sms.com/cn  找安哥拉+244地区，接码成功率高
-  - 低价team子号
-  - [API聚合转发源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/QN3MH16E)
-  - team子号 有rt CPA json 无账密目前测试活三天
 - [yimoAi-US的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/CQRJKJ0N)
   - 频道：https://t.me/songbai0420
 - [波哥小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/boge)
@@ -2429,6 +2434,9 @@ modified: 2025-03-22T16:10:24.856Z
 
 ### 中转站
 
+- tips
+  - 很多中转站带有峰值倍率和闲时倍率, 夜间多用闲时倍率, 白天可用半公益站
+
 - resources
   - [LinuxDo商家评价平台](https://rate.linux.do/)
   - [模型中转状态检测](https://check.linux.do/)
@@ -2437,9 +2445,51 @@ modified: 2025-03-22T16:10:24.856Z
     - 评分结果与L站评分基本一致
     - 提供了很多折扣码
 
-- [稳问AI /sub2api](https://api.wenwenai.org)
+- [zzshu /New API ](https://zzshu.cc/pricing)  , 长期运营
+  - [吱吱鼠AI的小店 - 云猫寄售 ](https://catfk.com/shop/SXS913NA)
+  - 中转站仅支持gmail
+  - kiro--0.2
+  - plus--0.03
+
+- [刀刀刀-天才程序员 - /New API ](https://codexapis.com/pricing)
+  - [刀刀刀-天才程序员的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/6YQL25Q0/b6scwi)
+  - QQ群：740937090
+  - kiro--0.12/0.3
+  - plus--0.05
+- [cc-api  /New API](https://cc-api.chat/pricing)
+  - 专注于kiro中转
+  - kiro--0.12, 低缓和高缓都是0.12
+- [wangwang - /Sub2API ](https://wangwang.sbs/dashboard)
+  - kiro-0.18/0.2
+  - kiro分组多，还有cc
+
+- [超超 mouubox  - /Sub2API ](https://sub2api.mouubox.com/dashboard)
+  - plus--0.01
+
+- [mdkj  - /Sub2API ](https://mdkj.lol/dashboard)
+  - plus--0.025
+  - 注意倍率调整 
+
+- [naonao - /Sub2API ](https://gpt.qinnaonao.com/dashboard)
+  - codex分组--0.03
+  - 不可用
+
+- [cp中转站 /Sub2API](https://huozz.cn/dashboard)
+  - kiro--0.2
+  - plus--0.1
+
+- [Qmy2AI /sub2api](https://sub2api.qmytai.com/dashboard)
+  - 个人0.04x，中转站0.03x
+
+- [xem API ](https://ai.xem8k5.top/pricing)
+  - plus--0.2
+  - claude--0.3
+  - 赞助和额度充值入口：https://afdian.com/a/cong0707
+
+- [稳问AI /Sub2API](https://api.wenwenai.org)
   - 0.01是1块钱100刀
   - 并发才给5, 不然给人刷吗
+  - gpt, kiro
 
 - [PackyAPI](https://www.packyapi.com/pricing)
   - [Packy - 模型健康面板](https://check.linux.do/group/Packy)
@@ -2481,6 +2531,9 @@ modified: 2025-03-22T16:10:24.856Z
   - L站用户注册就送小小股东, $5/mon
     - right code 也是站内的一家主要做codex的中转站
   - o2a基本没有缓存?
+
+- [ApexCode API ](https://codeapx.com/console)
+  - 注意套餐价格变化
 
 - 🗑️ [帕帝AI](https://padi-shop.closeai.hk/), 已倒闭
   - [FreeAI - AI API Gateway](https://free.closeai.hk/)

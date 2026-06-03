@@ -834,6 +834,8 @@ modified: 2025-11-01T10:54:26.044Z
   - https://x.com/googlegemma/status/2061568650138747363
     - It enables agents to build with Gemma, including using MTP to improve speed, choosing the right model size for your use case, and locating up-to-date resources.
     - MTP support out of the box is the detail that makes this worth installing immediately
+  - https://github.com/google-deepmind/science-skills
+    - A collection of agent skills for scientific research tasks, spanning genomics, structural biology, cheminformatics, literature search, and more.
 # utils
 - https://github.com/waybarrios/vllm-mlx /apache2/202601/python
   - vLLM-like inference for Apple Silicon - GPU-accelerated Text, Image, Video & Audio on Mac

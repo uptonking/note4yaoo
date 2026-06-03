@@ -79,6 +79,9 @@ modified: 2026-04-20T00:35:08.788Z
 - 如何解决同一个 .docx 文件在不同软件如 word/wps/onlyoffice/libreoffice 中的分页换行位置不同
   - 其他软件也没有解决这个问题
 # draft
+- spec/format
+  - bridge typst to superdoc
+
 - 类似word的多种视图: print/web/outline/draft
 - multi-column布局示例
 

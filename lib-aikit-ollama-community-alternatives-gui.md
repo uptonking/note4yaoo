@@ -55,7 +55,11 @@ modified: 2026-04-06T17:38:13.599Z
 
 - ## 
 
-- ## 
+- ## [Calling it now Microsoft is buying Unsloth. : r/LocalLLaMA _202606](https://www.reddit.com/r/LocalLLaMA/comments/1tvhv4b/calling_it_now_microsoft_is_buying_unsloth/?sort=top)
+- 👷  we are not being acquired by Microsoft. We have actually received many acquisition offers and have declined over 30 from every large company you can name, and large startups. Our mission first and foremost as a team of 10ish people is to be open source first and serve everyone here!
+  - We also recently joined the PyTorch Ecosystem (which is owned by the Linux Foundation) to help our reach and neutrality for all parties/companies.
+
+- Correction: not today
 
 - ## 🚀 unsloth: We're excited to partner with @Microsoft to enable millions of developers run local models on Windows!
 - https://x.com/UnslothAI/status/2061925637892297122

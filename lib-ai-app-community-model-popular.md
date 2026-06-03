@@ -712,6 +712,35 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Google introduces Gemma 4 12B: a unified, encoder-free multimodal model : r/LocalLLM _202606](https://www.reddit.com/r/LocalLLM/comments/1tvx2h7/google_introduces_gemma_4_12b_a_unified/?sort=top)
+  - TLDR; 12B, in striking distance of 26B, & Multimodal w/ Audio.
+  - What makes Gemma 4 12B stand out is its streamlined approach to processing visual and audio inputs. Traditional multimodal models typically rely on separate encoders to translate images and audio before passing those representations to the language model. Because these split encoders add latency and increase memory usage, we trained Gemma 4 12B with an encoder-free architecture to integrate audio and vision input directly.
+  - Vision: We replaced Gemma 4’s vision encoder with a lightweight embedding module consisting of a single matrix multiplication, positional embedding and normalizations. This allows the LLM backbone to take over visual processing.
+  - Audio: We simplified audio processing even further. We removed the audio encoder entirely and projected the raw audio signal into the same dimensional space as text tokens."
+
+- https://x.com/ivanfioravanti/status/2062236428642230703
+  - What is Gemma 4 12B Assistant?
+- It's the MTP model.
+  - It’s meant to assist Gemma (by narrowing the scope of possible next tokens during generation), not the human. It’s also 400 million parameters
+
+- https://x.com/googlegemma/status/2062202706882883696
+  - A unified, encoder-free multimodal model designed to bring high-performance intelligence directly to your laptop, and released under an Apache 2.0 license.
+
+- https://x.com/Prince_Canuma/status/2062224761841672509
+  - We partnered with @GoogleDeepMind to bring and optimize their new dense and unifed multimodal model for Apple Silicon.
+  - Thinking mode (built-in reasoning)
+  - Vision: dynamic res, OCR, UI + charts
+  - Native audio: ASR + speech translation
+  - Text + image + audio, interleaved
+
+- [unsloth/gemma-4-12b-it-GGUF · Gemma 4 12B GGUF fails to load in LM Studio / llama-server on Windows _202606](https://huggingface.co/unsloth/gemma-4-12b-it-GGUF/discussions/6)
+  - When I try to load the model with mmproj-F32.gguf in the model folder I am getting above error.
+  - when I remove the mmproj-F32.gguf from the model folder model loader perfectly.
+
 - ## [关于Qwen系列大模型的疑问 - LINUX DO _202606](https://linux.do/t/topic/2289867)
 - Qwen的模型size太小了，400B和1T以上的模型性能会差很多，不过似乎Qwen在训更大的模型。其次Qwen有overtrain的问题。
 

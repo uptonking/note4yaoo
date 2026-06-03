@@ -21,6 +21,20 @@ modified: 2025-05-11T08:44:21.140Z
 - ## 
 
 - ## 
+# discuss-tools-ai 👾
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [【开源自荐】AI信息，自动爬取 GitHub Trending、Hacker News、OpenAI、Anthropic、InfoQ AI 等AI信息 - LINUX DO _202606](https://linux.do/t/topic/2300464)
+  - https://github.com/wenbochang888/github-trending-spider
+  - 周末写了一个AI信息网站，自动爬取 GitHub Trending、Hacker News、OpenAI、Anthropic、InfoQ AI 等AI信息，并且利用AI GPT-4o 总结关键点并且翻译为中文。
+  - 最让我满意的点 引入了GPT-4 来进行总结，而不是直接获取原文，让GPT来帮我总结提取最精炼的给到我，并且翻译为中文。
+
 # discuss-marketing
 - ## 
 
