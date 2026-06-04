@@ -24,6 +24,18 @@ modified: 2026-05-21T15:37:00.694Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Highlighting recent advances in multi-GPU and tensor parallel support in llama.cpp 
+- https://x.com/ggerganov/status/2062443065214702027
+  - Over the last few months llama.cpp maintainers and engineers from NVIDIA collaborated to improve the multi-GPU performance in ggml. This resulted in significant performance gains on RTX systems and laid the groundwork for hardware-agnostic tensor parallelism in ggml.
+
+- The real story here isn't just raw speed, it's that we can finally run tensor parallel inference across consumer GPUs without the PCIe bottleneck completely killing our token rate.
+
 - ## The work to bring full-fledged WebGPU support in llama.cpp started about an year and a half ago. _202605
 - https://x.com/ggerganov/status/2057668450076520811
 - Why do this? Certainly WebGPU is worse than direct CUDA.

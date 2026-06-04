@@ -340,7 +340,12 @@ modified: 2026-04-07T11:51:51.225Z
   - https://github.com/pascalorg/editor /9.8kStar/MIT/202604/ts
     - A 3D building editor built with React Three Fiber and WebGPU.
 # docs/wiki
-
+- https://github.com/Nutlope/pdf-to-interactive-lesson /202606/ts
+  - https://www.pdftolesson.com/
+  - https://x.com/nutlope/status/2062570629128196136
+  - Introducing PDF to Lesson!
+  - Upload any PDF and get an interactive course based on the content in the PDF. The courses also come with a bunch of components (Q&A, drag & drop, flow charts, info sections, ect...).
+  - Powered by GPT OSS on @togethercompute .
 # examples
 
 # more

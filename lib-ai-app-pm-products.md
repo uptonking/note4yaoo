@@ -44,6 +44,7 @@ modified: 2025-03-22T16:10:24.856Z
   - ✨ kilo-vscode的易用性很强, 不同模式如ask/code可设置默认model, chat可直接在editor区域打开, 还采用了client/server架构
     - 隐藏左右侧边栏 加上 chat在editor区域打开后， 使用自定义模型api, 就可作为一个通用AI前端
     - 甚至可用 codex-app-server 替换kilo的后端
+    - 甚至可用 opencode-desktop 替换codex-cli的前端
   - cline(ts)
   - openclaw(ts)
   - hermes(python)
@@ -321,8 +322,10 @@ modified: 2025-03-22T16:10:24.856Z
   - 需要获取页面元素的场景: 如用户选择的文本/浏览器tab
   - browser embedding
   - omni: audio
-  - ✨ kilo-vscode的交互易用性很强, 不同模式如ask/code可设置默认model, chat可直接在editor区域打开, 还采用了client/server架构
+  - ✨ kilo-vscode的易用性很强, 不同模式如ask/code可设置默认model, chat可直接在editor区域打开, 还采用了client/server架构
     - 隐藏左右侧边栏 加上 chat在editor区域打开后， 使用自定义模型api, 就可作为一个通用AI前端
+    - 甚至可用 codex-app-server 替换kilo的后端
+    - 甚至可用 opencode-desktop 替换codex-cli的前端
 
 - omni
   - audio
@@ -566,6 +569,12 @@ modified: 2025-03-22T16:10:24.856Z
 
 - 无需打开文档就支持展示image/docs/pdf的元数据
 
+- elements
+- table
+  - 处理跨页的table
+
+- 
+- 
 - 
 - 
 - 
@@ -917,6 +926,11 @@ modified: 2025-03-22T16:10:24.856Z
     - [『Alpha』公益站开站 _202605](https://linux.do/t/topic/2242621)
     - [兑换码商店 · Alpha Codex](https://shop.oops.asia/)
     - 不限量套餐: 限时、限并发
+  - [Dk _202606](https://apideepseek.com/console/personal)
+    - [DeepSeek公益站！支持缓存，完整原生支持 - LINUX DO _202606](https://linux.do/t/topic/2302675)
+    - 10 LDC : 1 元用量 【DeepSeek 0.5倍率】（相当于 5 LDC = 1 元用量）
+    - 渠道：第三方平台 + DeepSeek 官方API 兜底
+    - 无签到，仅LDC兑换，用多少换多少
   - [SunRouter _202605](https://sun.meowai.net/console/personal)
     - [SunRouter 公益站，来源bai号池，无限 gemini ](https://linux.do/t/topic/2114421)ƒ
     - 限制每用户rpm为30，enjoy
@@ -2464,6 +2478,10 @@ modified: 2025-03-22T16:10:24.856Z
   - kiro分组多，还有cc
 
 - [超超 mouubox  - /Sub2API ](https://sub2api.mouubox.com/dashboard)
+  - [/Sub2API ](https://api.mouubox.com/home)
+    - 一个主站一副站, 副站sub2api.mouubox.com,
+    - 现在好像sub2api这个要绿一点
+  - [秒速 5 厘米的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/UJ3XQ6VC)
   - plus--0.01
 
 - [mdkj  - /Sub2API ](https://mdkj.lol/dashboard)
@@ -2474,12 +2492,19 @@ modified: 2025-03-22T16:10:24.856Z
   - codex分组--0.03
   - 不可用
 
+- [钧澈API ](https://vip.lcodex.cn/pricing)
+  - team--0.03
+  - plus/pro号池多, 0.04-0.07
+
 - [cp中转站 /Sub2API](https://huozz.cn/dashboard)
   - kiro--0.2
   - plus--0.1
 
 - [Qmy2AI /sub2api](https://sub2api.qmytai.com/dashboard)
   - 个人0.04x，中转站0.03x
+
+- [C-API. CC /sub2api](https://c-api.cc/dashboard)
+  - plus--0.05
 
 - [xem API ](https://ai.xem8k5.top/pricing)
   - plus--0.2

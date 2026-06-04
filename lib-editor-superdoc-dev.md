@@ -56,7 +56,9 @@ modified: 2026-04-20T00:35:08.788Z
 
 - tips
   - ?
-# docx-editor
+
+## docx-editor
+
 - pros
   - ?
 
@@ -79,6 +81,9 @@ modified: 2026-04-20T00:35:08.788Z
 - 如何解决同一个 .docx 文件在不同软件如 word/wps/onlyoffice/libreoffice 中的分页换行位置不同
   - 其他软件也没有解决这个问题
 # draft
+- editing
+  - 兼容分页和不分页2种模式
+
 - spec/format
   - bridge typst to superdoc
 

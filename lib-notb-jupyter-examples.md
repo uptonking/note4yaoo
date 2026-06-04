@@ -228,13 +228,18 @@ modified: 2024-06-30T03:20:21.444Z
 - https://github.com/jupyterlab/jupyterlab-git /BSD/202407/python/ts
   - A JupyterLab extension for version control using Git
 # publish
-- https://github.com/quarto-dev/quarto-cli /MIT/202407/ts
+- https://github.com/quarto-dev/quarto-cli /5.7kStar/MIT/202606/ts
   - https://quarto.org/
   - Open-source scientific and technical publishing system built on Pandoc
-  - Author using Jupyter notebooks or with plain text markdown in your favorite editor.
-  - Create dynamic content with Python, R, Julia, and Observable.
-  - https://github.com/quarto-dev/quarto
+    - Pandoc is licensed under GPL
+  - Quarto documents are authored using Markdown, an easy to write plain text format.
+  - Embedding code and output from Python, R, Julia, and JavaScript via integration with Jupyter, Knitr, and Observable.
+  - A variety of extensions to Pandoc Markdown useful for technical writing including cross-references, sub-figures, layout panels, hoverable citations and footnotes, callouts, and more.
+  - A project system for rendering groups of documents at once, sharing options across documents, and producing aggregate output like websites and books.
+  - https://github.com/quarto-dev/quarto /AGPL+MIT
     - Quarto documents are authored using markdown
+  - [Open Source License – Quarto ](https://quarto.org/license.html)
+    - The Quarto VS Code extension and the visual editor used in VS Code, Positron, and RStudio are licensed under the GNU AGPL v3.
 # examples
 - https://github.com/sspaeti-com/practical-data-engineering
   - This is a practical example of a data engineering project with real-estates.

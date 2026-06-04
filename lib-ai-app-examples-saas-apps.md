@@ -916,6 +916,19 @@ modified: 2025-02-21T17:17:42.225Z
   - 广泛的框架兼容：专为 Agent 打造，已在 OpenClaw, Hermes, Codex, Claude Code 等主流框架深度验证
   - [【开源】开源一个专为跨境电商服务的生图skill，可以生成主图和详情页 - LINUX DO _202605](https://linux.do/t/topic/2146113)
 # video/mtv
+- https://github.com/heygen-com/hyperframes /15.7kStar/apache2/202605/ts
+  - Write HTML. Render video. Built for agents.
+  - open-source video rendering framework that lets you create, preview, and render HTML-based video compositions — with first-class support for AI agents.
+  - This teaches your agent (Claude Code, Cursor, Gemini CLI, Codex) how to write correct compositions, GSAP timelines, Tailwind v4 browser-runtime styles, and first-party adapter animations.
+
+- https://github.com/nexu-io/html-video /apache2/202606/ts
+  - HTML→Video meta-layer for coding agents
+  - https://x.com/tuturetom/status/2062470358687498470
+    - 通过写 html轻松做出世界级水准的产品宣传、知识解说视频，成本极低
+    - 支持20多套顶尖视频风格模板，分页编辑，mp4 导出，支持包括Claude Code、Codex、hermes、cursor等主流 Agent接入即用
+    - html-video 项目基于 hyperframes 框架构建, 由 Open Design 团队原班人马打造
+    - html-video 支持分页预览、分页编辑和帧文字编辑，修改视频更快更方便，不用每改一次就要导出一次看效果
+
 - https://github.com/zapdos-labs/unblink /182Star/AGPL/202512/ts
   - Unblink is a camera monitoring application that runs AI vision models on your camera streams in real-time
   - Object detection

@@ -1032,8 +1032,13 @@ modified: 2025-02-21T18:20:42.624Z
       - 由于外接了Kiro、CodeBuddy、Copilot等第三方供应商，受DMCA警告，已删库跑路。直接装 cliproxyapi吧
     - [现在不支持 plus 了么... 仓库都删了  _202604](https://github.com/router-for-me/CLIProxyAPI/issues/2951)
       - CPA不会接入没有自主模型的二道贩子
-  - https://github.com/kaitranntt/CLIProxyAPIPlus
+  - https://github.com/kaitranntt/CLIProxyAPIPlus /MIT
+  - https://github.com/jc01rho/CLIProxyAPIPlus /MIT
+    - openai-compatibility providers (DeepSeek-like, Mistral, Xiaomi)
   - https://github.com/HsnSaboor/CLIProxyAPIPlus
+    - This fork adds the following enhancements on top of upstream jc01rho/CLIProxyAPIPlus
+    - CodeBuddy International Support
+    - Cline OAuth Support
   - https://github.com/KooshaPari/cliproxyapi-plusplus
   - https://github.com/dongshuyan/CPA-Dashboard 
     - 控制面板 - 服务管理与账户监控 Web 界面

@@ -1893,6 +1893,18 @@ Q8（8 位）	    16GB+	   接近原始版本
 
 - ## 
 
+- ## 
+
+- ## [字节良心发现、开源小Seedance2.0，基于wan2.2 Bernini视频模型 - LINUX DO _202606](https://linux.do/t/topic/2303146)
+  - Bernini 视频模型，替换、动作迁移、多图参考 、视频编辑，效果真可以，质量差点意思， 开源模型又可以折腾一段时间了，相信很快会出来各种微调模型。
+
+- 基于WAN2.2开源再开源
+- 确实要等微调，而且还要等Comfyui的工作流稳定配套，前两天看到效果图，光线还是差点意思，如果以后可以搭配WAN2.2 animate的Relight LoRA，估计能改善不少。
+
+- 视频开源模型目前还是ltx和wan效果最好，但是也吃显卡，未来还是闭源模型的天下啊。
+
+- LTX2.3高动态场景的效果目前还比不上WAN2.2，崩的厉害。不过个人还是持续关注LTX系列的后续发展，毕竟WAN2.2后阿里选择了闭源。
+
 - ## 🌰 [I did all this using 4GB VRAM and 16 GB RAM : r/StableDiffusion _202512](https://www.reddit.com/r/StableDiffusion/comments/1pf7986/i_did_all_this_using_4gb_vram_and_16_gb_ram/)
   - I was wondering what can be done with AI these days on a low-end computer, so I tested it on my older laptop with 4GB VRAM (NVIDIA Geforce GTX 1050 Ti) and 16 GB RAM (Intel Core i7-8750H).
   - I used Z-Image Turbo to generate the images. At first I was using the gguf version (Q3) and the images looked good, but then I came across an all-in-one model (https://huggingface.co/SeeSee21/Z-Image-Turbo-AIO) that generated better quality and faster - thanks to the author for his work. 

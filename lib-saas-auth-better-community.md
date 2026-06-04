@@ -81,7 +81,27 @@ modified: 2025-09-24T14:53:03.421Z
 - ## 
 
 - ## 
+# discuss-auth-solutions/vendors
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Cloudflare now supports self-managed OAuth clients. Build third-party apps that integrate securely with Wrangler and granular scopes.
+- https://x.com/CFchangelog/status/2062279751117439052
+- Do you support all permissions yet?
+  - Yeah all API scopes exist already
+
+- https://x.com/threepointone/status/2062288961041506728
+  - Big news. Login with Cloudflare is here.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

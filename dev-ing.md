@@ -291,6 +291,7 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 # this project is running locally by "./dist/one-api --config config.yaml". the log is at folder `~/Documents/runlog/donehublocal` .
 
 launchctl stop com.donehub && launchctl start com.donehub
+launchctl stop com.cpap && launchctl start com.cpap
 
 # DATA_DIR=~/sub2api-local-data ./sub2api -setup
 

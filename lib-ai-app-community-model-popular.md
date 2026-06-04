@@ -714,7 +714,8 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [Gemma 4 12B vs Qwen3.5-9B - which small model actually earns its VRAM? : r/AIToolsPerformance _202606](https://www.reddit.com/r/AIToolsPerformance/comments/1twdury/gemma_4_12b_vs_qwen359b_which_small_model/?sort=top)
+- I think Gemma 4 12b still uses that sliding window attention, so it's not going to be viable for coding, or anything that requires accurate attention.
 
 - ## [Google introduces Gemma 4 12B: a unified, encoder-free multimodal model : r/LocalLLM _202606](https://www.reddit.com/r/LocalLLM/comments/1tvx2h7/google_introduces_gemma_4_12b_a_unified/?sort=top)
   - TLDR; 12B, in striking distance of 26B, & Multimodal w/ Audio.

@@ -407,6 +407,10 @@ mineru paddleocr site:github.com -inurl:"github.com/opendatalab/" -inurl:"github
 - [离大谱，装telegram居然必须安装gnome桌面 - LINUX DO _202605](https://linux.do/t/topic/2196366)
   - 可在kde下使用，但无法在kde下移除gnome
   - telegram开发用了gnome来做ui吧, 也算正常, 毕竟linux的ui生态很难评
+
+- [telegram 公开频道信息很多 有什么方案可以只看高红心项目么 - LINUX DO _202606](https://linux.do/t/topic/2294719)
+  - 使用了一个转发项目达成需求 将指定频道消息转发到自己的新建的频道。转发时过滤红心数量大于设定值
+  - https://github.com/CCRSRG/TG_ZF
 # discord
 - [Use SOCKS5 proxy with Discord on Linux](https://gist.github.com/mzpqnxow/ca4b4ae0accf2d3b275537332ccbe86e)
 

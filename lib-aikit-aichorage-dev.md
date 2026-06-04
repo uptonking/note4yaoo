@@ -18,11 +18,13 @@ modified: 2026-05-28T17:50:54.646Z
   - python-first
   - image/pdf ux
   - embeddable web browser
+  - multiple-client/ui
 
 - non-goals
   - optimized for gpu, not cpu
     - cpu works for ocr/translation
   - cloud rag
+  - multiple-server/remotes
 # draft
 - janai-cli like obsidian-cli, ollama-cli, lms-cli
   - skills for janai-cli/lms-cli/ollama-cli
@@ -43,6 +45,9 @@ modified: 2026-05-28T17:50:54.646Z
 
 - model-specific
   - LocateAnything
+
+- custom-backend(开箱即用的后端)
+  - 针对ocr的 ppOcrv5
 
 - speculative-decoding
   - draft model for dflash

@@ -14,6 +14,27 @@ modified: 2021-06-02T15:26:39.741Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Markdown for large, complex, technical docs published as PDFs : r/Markdown _202606](https://www.reddit.com/r/Markdown/comments/1tvmt60/markdown_for_large_complex_technical_docs/?sort=top)
+  - Wondering if anyone is publishing large, complex, technical docs in PDF format, where documents have lot of technical drawings, drawings and tables having admonitions, complex formatting in large tables spanning across pages
+  - We've been recommended the usage of Asciidoc for this, but R&D has made a strong pushback against Asciidoc saying that it is so much harder compared to Markdown and reading it is like reading HTML to understand content. With Asciidoc, I've already done a pilot and generating good quality PDF is proven, but I tend to agree with R&D engineer feedback on Asciidoc being harder on eyes.
+
+- I am sure you will eventually conclude that Markdown is not suitable for your application. It is not sufficiently rigorous as a language to handle complex documents. Something similar - you have probably already come across it, so apologies for this (and I am in no way associated) is `Typst`. Better defined than markdown. Sightly more technical to use. But has a similar feature set to LaTeX and easier for the technical writer. There will be a learning curve, of course, but it can be eased if you start with some well-designed templates.
+
+- I suggest Quarto. It's specifically made for reproducible technical writing, and you can have code cell that get executed at the rendering step, so you can have truly a smart document.
+
+- I have been using Markdown to write scientific and technical manuscripts and I concluded that Markdown is just not designed for this. Sure, it is easy and convenient to write, and of course Markdown files are very portable. But that's where it stops.
+  - The documents I write includes figures, tables, charts and bibliography. Markdown is horribly cumbersome at all of this. 
+  - There are extended Markdown versions which can link figures, and create a mess of graphic files in your folder. There goes the portability. A single ODT or DOCX is now more portable.
+  - Then there are references that can be handled via Pandoc - sort of. But popular reference managers like Zotero have great integration with word processors for cite as you write. 
+  - Tables in Markdown are wierdly uncustomizable....the list goes on.
+  - So in the end, while I like the idea of using Markdown for writing large complex documents, the stack is just not there yet. It is in the end much better to use a proper Word processor for this.
+
+- Autype is free for writers. You may need to upgrade if you want to automate something at a higher scale. In the cloud the free tier is just limited to the documents number, in VS code its unlimited
+
 - ## 💫 [Fine-grained Markdown | Code Hike _202407](https://v1.codehike.org/blog/fine-grained-markdown)
 - You want a richer medium to present your content. Let me show you what I mean, and how Code Hike can help you solve this problem.
 

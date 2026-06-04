@@ -50,6 +50,15 @@ modified: 2026-04-07T12:53:02.538Z
     - It supports single-file parsing and page screenshotting. 
     - An example of how to use it with built-in rate limiting (Redis), distributed tracing (OpenTelemetry → Jaeger), and metrics (OpenTelemetry → Prometheus → Grafana) is available here.
 
+- https://github.com/run-llama/parse-flow /202606/python/ts
+  - A document-processing workflow engine with a visual designer, an async worker, and a live event dashboard.
+  - https://x.com/llama_index/status/2062567059402137722
+    - It puts four document processing primitives at the center of a visual workflow designer:
+    - Parse — clean markdown and text from raw documents
+    - Classify — assign documents to user-defined categories
+    - Split — segment documents into typed chunks
+    - Extract — pull structured JSON against a schema
+
 - http://github.com/simonw/liteparse /apache2/202604/python/ts
   - https://simonw.github.io/liteparse/
   - A fast, helpful, and open-source document parser
@@ -439,6 +448,9 @@ modified: 2026-04-07T12:53:02.538Z
   - Automatically identifies and extracts compound structures and biological activity data (e.g., IC50, EC50, Ki) from PDF documents.
   - dots_ocr as OCR Engine
   - Modern Web UI: A React-based frontend with FastAPI backend for intuitive PDF processing, real-time progress tracking, and interactive result visualization.
+
+- https://github.com/qingpy/zotero-pdf2md /
+  - [Zotero接minerU插件：PDF自动转Markdown、批量导出附加文件 - LINUX DO _202606](https://linux.do/t/topic/2302537)
 # utils
 - https://github.com/TylerMorrison21/paperflow /MIT/202603/python/js
   - https://paperflowing.com/

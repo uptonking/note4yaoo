@@ -30,6 +30,7 @@ modified: 2024-08-24T16:15:11.456Z
   - good for coding and writing
   - 有很多原理深度解析的技术博客
   - 🔄 sync settings/extensions/chats
+  - multiple-windows: 默认支持多开窗口
 
 - cons
   - insecure/non-sandboxed by design, 但微软设计就是如此，支持在本地或远程执行代码

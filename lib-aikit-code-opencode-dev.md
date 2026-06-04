@@ -40,6 +40,11 @@ modified: 2026-01-17T22:40:27.013Z
 - 或许复用并增强opencode-webui的逻辑如改造底层支持codex-cli/claude-code-cli 的架构更适合cowork/app
 
 - obsidian-cli by opencode-cli
+
+- ✨ kilo-vscode的易用性很强, 不同模式如ask/code可设置默认model, chat可直接在editor区域打开, 还采用了client/server架构
+  - 隐藏左右侧边栏 加上 chat在editor区域打开后， 使用自定义模型api, 就可作为一个通用AI前端
+  - 甚至可用 codex-app-server 替换kilo的后端
+  - 甚至可用 opencode-desktop 替换codex-cli的前端
 # dev-xp
 - 基于coding-cli封装/二次开发app的缺点, coding场景内置大量system prompt, 本地小模型效果很差
   - 而使用自定义提示词的RAG app, 使用小模型的效果较好, 所以要根据场景选择性使用coding-cli agent

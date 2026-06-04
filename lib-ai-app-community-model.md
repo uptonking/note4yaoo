@@ -335,6 +335,27 @@ modified: 2023-10-30T07:34:03.602Z
   - Both build on each other's breakthroughs. 
   - Both keep shipping frontier LLMs w far less & nerfed NVIDA GPUs. 
 
+# discuss-llm-streaming
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## DeepSeek v4 PRO running via SSD streaming on my 128GB MacBook m5 max. 1.6 trillion parameters. _202606
+- https://x.com/antirez/status/2062536214675067322
+  1. It is slow, obviously, but not unusably slow if for some reason I'm cut out of frontier AI.
+  2. The goal here was to make this working slow but optimize it enough to have Flash good enough on 64GB systems. I'll ask somebody to check what performances it reaches. I don't have a 64GB machine.
+
+- Won’t this destroy the longevity of the SSD?
+
+- 
+- 
+- 
+- 
+
 # discuss-llm-architecture
 - ## 
 
@@ -342,7 +363,30 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## llm 之前的互联网基建和最佳实践都是围绕着无/轻状态和水平扩展来建设的，比如 jwt，但 llm 是个特别吃状态的东西，比如 kv cache
+- https://x.com/LaiskyCai/status/2062349419844948164
+  - 所以我在想整个 infra 可能都要从上到下改一遍，然后infra的局限又会从下往上反过来影响 llm 本身
+- llm的状态和传统业务的业务数据有什么本质区别么
+  - 区别在于llm的状态太重了，把这个状态丢了之后，成本会高到无法承受
+  - 你想 codex claude infra一出问题， 我们的token用量明显就会有一个非常恐怖的消耗
+- llm的kv存储和传统的有状态和无状态不一样，这是作为一整个服务里的必要计算
+
+- 应用层无状态 + 基建层有状态，一向如此。你看那么追求本地化的 claw 也在开始往无状态上演进了，所谓“存算分离”。
+
+- LLM之前大家已经在推有状态了，比如Durable Objects。LLM之后，MCP就是有状态的, 有状态的性能和成本优势太大了
+
+- 同意，我觉得llm相关的kv cache 、sandbox环境、session 连续性、中间文件等等应该会要重塑一下infra，再叠加一些mcp、tool 相关增量概念
+
+- https://x.com/Ehco1996/status/2062372635485573573
+- 还有很多流量爆炸的，比如用户可能只是提供了一个 URL，但是为了计费/兼容性/审计，网关会把图片先下载下来和格式转换。 同样，用户可能发了几个字，然后 API 返回一个巨大的图片或视频。 还有任务队列也是，以前只有文字，现在还要塞图片和视频…
+
+- 甚至cdn可能都不应该给人用了。for ai的cdn可能surge类的更好
+
+- 我同意 infra 需要重建/升级，但这个例子不太合适，这我觉得其实是个架构问题或者说业务场景不同。
+  - 如果之前是做UGC的，也同样会有直接传图片/视频的需求，在架构设计上也会来权衡是客户端传还是服务端存，和现在也没有本质区别。
+  - 对于 gateway 而言，也就一直都有接入网关，API网关，静态资源网关等
+
+- 如果从web或app后端的角度看确实似乎是这样。但是如果你换做游戏服务器的角度，其实没有什么新问题，Web 后端通常通过保持无状态、把大 payload 推给对象存储来绕开它们；但游戏服务器 / 实时基础设施早就长期在处理高吞吐、低延迟、有状态会话、流式 payload、背压、分片，以及断线重连 / 恢复这类问题。
 
 - ## 聊一聊 Agent 的存算分离架构设计
 - https://x.com/idoubicc/status/2061670587043610688

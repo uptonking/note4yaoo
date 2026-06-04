@@ -515,6 +515,24 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## DFlash can be faster than MTP. But there is no universal winner.
+- https://x.com/bnjmn_marie/status/2061961211571519718
+  - It depends on the model, the hardware, the task, the workload, and many other details.
+  - I benchmarked MTP vs DFlash with vLLM and llama.cpp across math, coding, and chat workloads.
+  - For Qwen3.6 27B, DFlash delivered up to a 4x speedup. MTP was not far behind, once tuned, but DFlash reached the highest peak performance. 
+  - 有广告风险
+
+- that's a narrow window into one use case, but we've seen the opposite with kaigen's ai agents sometimes MTP is still the faster choice, depending on the specific workload and model architecture
+  - Yes that's my observation too. Depends on the task.
+
+- Just need concurrency and NVFP4 working with MTP or DFlash on llama.cpp or vllm and I would be a happy camper.
+
+- Another thing we haven't fully confirmed yet is how DFlash boosts the performance of some fine-tuned models.
+
 - ## I tested 4bit with Dflash-MLX super fast but quality is much lower 
 - https://x.com/ivanfioravanti/status/2055228524764467626
   - 66.7% in ~ 50 mins.
@@ -2126,6 +2144,9 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 - ## 
 
 - ## 
+
+- ## [New KV-Cache quant method: 3-4x compression, 1.3x speedup in vLLM, full accuracy : r/LocalLLM _202606](https://www.reddit.com/r/LocalLLM/comments/1twlmj8/new_kvcache_quant_method_34x_compression_13x/?sort=top)
+  - a new KV-Cache quantization method in vLLM (fork) by Huawei. It beats e.g. TurboQuant by a lot in accuracy and speed (and is even faster than the fp16 baseline). 
 
 - ## [Inference provider tiers by Cache-hit rates, using openrouter data : r/LLM _202605](https://www.reddit.com/r/LLM/comments/1tlppan/inference_provider_tiers_by_cachehit_rates_using/)
 - Interesting ! How did you compute it ?

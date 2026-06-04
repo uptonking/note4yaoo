@@ -151,7 +151,31 @@ modified: 2023-01-14T17:22:00.810Z
 - 必定是 webview，和 capacitor 差不多
 - 国内Rom碎片化太严重了，WebView也不能像原生Rom一样随时更新。
 
+# discuss-tauri-examples/showcase 🌰
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Raycast 用起来丝滑得像原生应用，但它底层其实是 WebView + Node.js。 有人直接反编译了 Raycast http://Beta.app，把答案扒了出来
+- https://x.com/guangGitHub/status/2062391395915120900
+  - native-feel-skill 是一个 Agent Skill，专门教你怎么设计跨平台桌面应用，让它在 macOS 和 Windows 上运行时的体验跟原生应用几乎没有区别。
+  - 作者 yetone 也是 avante.nvim 插件的作者。
+  - 这个 Skill 的知识来源有两个： 一是 Raycast 团队公开的技术深度剖析文章，二是作者对 Raycast Beta v0.60.0 的逆向工程分析。
+  - 有人在 X 上说已经把这套方法论应用到了自己的 Tauri + Svelte + Rust 代码编辑器项目里。
+
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## Tauri 2 的权限系统太苛刻了。窗口默认不能拖动，sidecar (vendor binaries) 默认不接受参数，诸如此类

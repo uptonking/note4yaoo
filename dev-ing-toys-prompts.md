@@ -430,6 +430,8 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 
 - recheck and improve it, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
 
+- docs/tests/scripts might be outdated, recheck code and data flow to improve aichorage.
+
 - 
 - 
 - 

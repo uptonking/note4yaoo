@@ -9,6 +9,11 @@ modified: 2025-12-18T12:27:14.982Z
 
 # guide
 
+# draft
+- ✨ kilo-vscode的易用性很强, 不同模式如ask/code可设置默认model, chat可直接在editor区域打开, 还采用了client/server架构
+  - 隐藏左右侧边栏 加上 chat在editor区域打开后， 使用自定义模型api, 就可作为一个通用AI前端
+  - 甚至可用 codex-app-server 替换kilo的后端
+  - 甚至可用 opencode-desktop 替换codex-cli的前端
 # codex-cli-xp
 - codex-cli
   - 使用过程中不能切换base-url, 若手动改了config.toml，需要停止cli再重新启动， 不够灵活
@@ -547,6 +552,25 @@ codex --yolo resume --last
 - ## 
 
 - ## 
+
+- ## 
+
+- ## ✨ 一直习惯使用ctrl+c的方式退出codex cli，现在终于尝到恶果，发现服务器持续cpu占有率100%，一检查都是过去几个月留下的codex进程在后台霍霍，正确的退出方式是/exit 
+- https://x.com/LuckyJoe198x/status/2062219230423203924
+- Claude Code CLI 不会有这个问题。       Claude Code 接收到Ctrl+C（SIGINT）时会正常清理并退出，不会留下僵尸进程。你可以验证一下：# 正常运行时只会有一个主进程ps aux | grep claudeCtrl+C和/exit都能干净退出。Codex CLI 那个问题是它自己的进程管理缺陷。
+  - 是的，我检查了，Claude code没这个问题，codex的这些孤儿进程把我的服务器cpu占满了2个月，我才发现，我勒个去。
+
+- 重启就没事了，我的服务器几个月没重启，后台全是codex孤儿进程。
+
+- 生产服务器上也踩过这坑，一堆僵尸进程把内存吃满了才发信。后来写了个cron定时清理，lsof | grep codex 一查吓一跳
+
+- ## [Windows开发的立刻换WSL开发吧。。 - LINUX DO _202606](https://linux.do/t/topic/2303543)
+  - 之前一直用Windows的Claude, 没发现问题
+  - 最近用Codex很舒服, 但是我就是发现涉及到部署、跨服务器调用、跨语言调用的时候, 任务总是特别慢
+  - 最后发现是Windows用Powershell用Codex的时候会有很多嵌套、转义问题
+  - 换了WSL之后， 之前以为Codex慢是正常的，但是现在处理速度3x都不止
+
+- 确实，每次都有乱码，转义的问题，powershell的编码和codex不太兼容。又拉又耗token
 
 - ## [公司给开了火山的Coding Plan，好像没办法接入CodeX - LINUX DO _202605](https://linux.do/t/topic/2224299)
 - codex应该是需要支持oai responses api的，可以看看接口转换的一些开源项目，转成chat/messages的应该就可以了

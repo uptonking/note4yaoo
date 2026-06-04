@@ -81,6 +81,19 @@ modified: 2025-09-21T18:39:13.776Z
 
 - ref
   - commonmark rfcs
+
+- https://github.com/quarto-dev/quarto-cli /5.7kStar/MIT/202606/ts
+  - https://quarto.org/
+  - Open-source scientific and technical publishing system built on Pandoc
+    - Pandoc is licensed under GPL
+  - Quarto documents are authored using Markdown, an easy to write plain text format.
+  - Embedding code and output from Python, R, Julia, and JavaScript via integration with Jupyter, Knitr, and Observable.
+  - A variety of extensions to Pandoc Markdown useful for technical writing including cross-references, sub-figures, layout panels, hoverable citations and footnotes, callouts, and more.
+  - A project system for rendering groups of documents at once, sharing options across documents, and producing aggregate output like websites and books.
+  - https://github.com/quarto-dev/quarto /AGPL+MIT
+    - Quarto documents are authored using markdown
+  - [Open Source License – Quarto ](https://quarto.org/license.html)
+    - The Quarto VS Code extension and the visual editor used in VS Code, Positron, and RStudio are licensed under the GNU AGPL v3.
 # table-md
 - 参考textbundle格式的csv来与表格交互
 

@@ -60,6 +60,15 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## OpenCode Desktop v2 is coming VERY soon. Part of that includes WSL out of beta finally
+- https://x.com/LukeParkerDev/status/2062368537445064945
+- It's great but PLEASE add a reasoning level selector for the love of God
+  - lol I merged that today.
+
 - ## 💰 OpenCode Go 看起来上面的 DeepSeek 不是自托管模型，而是买的官方 API。
 - https://x.com/9hills/status/2052679682840310124
   - 下午碰到了 429，OpenCode 在 DeepSeek 那边的并发达到了 500 被限流了。那用满的话还蛮赚的。
