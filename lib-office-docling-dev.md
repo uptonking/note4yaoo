@@ -135,9 +135,12 @@ modified: 2025-09-21T13:58:08.942Z
     - Chart Parsing Module (Optional)
 # 📌 mineru
 
+# issues
+- 有些拍照产生的文档，一张图片可能就是书摊开的2页，还原时如何还原？
+  - mineru官方示例还原为单页文档, 更好的方案是还原为双页文档
 # dev-xp
-
 - 检查 vlm/pipeline 模式下输出的html是否包含分栏
+  - 实测vlm和pipeline模式的展示效果都不包含分栏，❓ 输出元数据中是否包含分栏数据待确认
 
 ## docs
 

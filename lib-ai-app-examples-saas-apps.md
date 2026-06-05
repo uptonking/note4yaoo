@@ -929,6 +929,19 @@ modified: 2025-02-21T17:17:42.225Z
     - html-video 项目基于 hyperframes 框架构建, 由 Open Design 团队原班人马打造
     - html-video 支持分页预览、分页编辑和帧文字编辑，修改视频更快更方便，不用每改一次就要导出一次看效果
 
+- https://github.com/TriasJ/notebooklm-to-video /MIT/202605/python/ts
+  - Claude Code skill: Convert NotebookLM slide decks into animated Remotion videos via MinerU OCR + HTML bbox editor + OpenCV inpainting
+  - A Claude Code skill that converts NotebookLM slide decks into animated Remotion videos.
+  - NotebookLM Notebook
+    → Generate slide deck (MCP)
+    → Download PDF
+    → Extract 300 DPI PNGs (PyMuPDF)
+    → MinerU layout detection + OCR
+    → HTML bbox editor (manual corrections + inpainting preview)
+    → Export corrected_content_list.json
+    → prepare_slides.py (OpenCV inpainting + priority-clipped layers)
+    → Remotion animated video (adaptive stagger, type-specific animations)
+
 - https://github.com/zapdos-labs/unblink /182Star/AGPL/202512/ts
   - Unblink is a camera monitoring application that runs AI vision models on your camera streams in real-time
   - Object detection

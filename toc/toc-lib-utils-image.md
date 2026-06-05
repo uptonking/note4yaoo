@@ -599,6 +599,9 @@ modified: 2023-04-04T22:39:45.442Z
   - FileManager: Browse your pictures conveniently and save them directly to the output directory.
   - https://huggingface.co/spaces/Sanster/iopaint-lama
 
+- https://github.com/njjbwl/claude-skill-read-image /202606/python
+  - 通过本地 Python 工具（Pillow + Tesseract OCR）+ DeepSeek 视觉 API，实现图片元数据提取、颜色分析、OCR 文字识别和图像内容理解
+
 ## img-gen
 
 - https://github.com/Tansuo2021/gemini-3-pro-image-preview /MIT/202601/js

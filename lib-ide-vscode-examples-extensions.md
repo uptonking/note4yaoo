@@ -624,6 +624,10 @@ modified: 2024-08-24T16:17:26.715Z
   - You can compare (diff) text selections within a file, across different files, or to the clipboard.
   - User defined text normalization rules to reduce the noise in the diff (e.g. replace tab characters to spaces).
 
+- https://github.com/RioNoir/GitCharm /MIT/202606/ts
+  - Jetbrains-style Git management for VS Code — Commit panel, Multi-repo, Shelf, Stash, Git Log with graph, multi-repo and more.
+  - [GitCharm – a JetBrains-style Git panel for VS Code (commit graph, shelves, tag management, and more) : r/vscode _202606](https://www.reddit.com/r/vscode/comments/1twoflv/gitcharm_a_jetbrainsstyle_git_panel_for_vs_code/?sort=top)
+
 ## ext-history
 
 - https://github.com/nagavineerpasam/code-time-machine /202509/ts

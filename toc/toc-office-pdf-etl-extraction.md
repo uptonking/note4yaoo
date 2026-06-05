@@ -95,6 +95,11 @@ modified: 2026-04-07T12:53:02.538Z
 - https://github.com/CyberCRI/refinedoc /apache2/202509/python/NoDeps/inactive
   - Python library for extracting headers, footers and body from PDF post parsing file by the Learning Planet Institute.
   - The idea behind this library is to enable post-extraction processing of unstructured text content, the best-known example being pdf files. The main idea is to robustly and securely separate the text body from its headers and footers.
+
+- https://github.com/xiexikang/skill-pdf-content-extractor /MIT/202601/python/inactive
+  - 一个功能完整的 PDF 处理工具，支持文本/表格/元数据提取、图片提取、PDF 合并、注释添加以及去水印等功能，并在文本不足时提供 OCR 兜底。
+  - 使用 pdfplumber 进行精确文本定位, 表格提取
+  - 基于 PyMuPDF 的 redaction/编辑能力
 # extraction-vlm
 - https://github.com/ahnafnafee/local-llm-pdf-ocr /MIT/202604/python
   - [Building a Local LLM-Powered Hybrid OCR Engine _202604](https://www.ahnafnafee.dev/blog/local-llm-pdf-ocr)

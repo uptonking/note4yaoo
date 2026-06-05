@@ -469,6 +469,17 @@ modified: 2026-01-19T05:01:00.055Z
 - https://github.com/openai/skills /python
   - Agent Skills are folders of instructions, scripts, and resources that AI agents can discover and use to perform at specific tasks. Write once, use everywhere.
 
+- https://github.com/zai-org/GLM-skills /apache2/202604/python
+  - Official skills for the GLM family of models, designed for agent architectures including Claude Code, OpenCode, OpenClaw, AutoClaw, and other AI coding agents.
+
+- https://github.com/iflytek/iFly-Skills /apache2/202606/python
+  - Official collection of iFLYTEK skills for speech, OCR, translation, proofreading, and multimodal AI capabilities.
+  - PDF/Image OCR
+  - Speed Transcription
+  - Text Proofread
+  - Machine Translation
+  - Hyper TTS
+
 - https://github.com/bobmatnyc/mcp-skillset /MIT/202603/python
   - mcp-skillset is a standalone Python application that provides intelligent, context-aware skills to code assistants through hybrid RAG (vector + knowledge graph). 
   - Unlike static skills that load at startup, mcp-skillset enables runtime skill discovery, automatic recommendations based on your project's toolchain

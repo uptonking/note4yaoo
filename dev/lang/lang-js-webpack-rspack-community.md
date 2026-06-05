@@ -139,7 +139,25 @@ modified: 2024-01-03T16:14:53.804Z
   - Therefore, we considered rewriting Esbuild & Rollup in Rust (2022.3). At this time, 3 infrastructure teams merged with various frameworks (libraries, mobile web, pc web, Lynx, microfrontends ..) and thousands of old webpack projects to support. 
   - we also encountered some limitations in the Rollup API (such as filter support and transform composability), so we decided to unify the build tools and solve the performance issues together with easy migration path, which leads to Rewrite webpack in Rust (2022.8) . And you know the rest of the story.
 
+# discuss-swc/oxc
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## deno is migrating from swc to oxc _202606
+- https://x.com/guilhermeotina/status/2062660359446565177
+  - sets us up to use oxlint/oxfmt, better perf in some pathological cases
+
+- makes sense. swc was a heroic solo effort but oxc came in with team resources and LSP-first architecture from day one. for a runtime like Deno that needs tight editor integration, the choice was clear once oxc hit feature parity
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

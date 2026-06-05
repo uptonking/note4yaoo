@@ -211,7 +211,7 @@ modified: 2025-11-01T10:54:26.044Z
     -  When the backend starts for the first time, It creates a default admin user (unsloth) with a randomly generated diceware passphrase, This passphrase is saved to a file .bootstrap_password beside auth.db.
     - The backend's _inject_bootstrap() function (main.py:410-435) inserts the bootstrap password into the HTML. But this injection only happens when the backend serves the frontend as static files — i.e., when you visit :8888 directly. The setup_frontend() function (main.py:438-457) mounts the frontend/dist/ directory and calls _inject_bootstrap() on every HTML response.
     - The Vite dev server on :5173 serves its own index.html — it never passes through the backend's _inject_bootstrap() function
-  - [[Feature] MLX Support  _202602](https://github.com/unslothai/unsloth/issues/4061)
+  - 已支持_202606 [[Feature] MLX Support  _202602](https://github.com/unslothai/unsloth/issues/4061)
     - We're working on it as we speak. Will be released within 2 months I'd say
   - [Introducing Unsloth Studio  _202603](https://unsloth.ai/docs/new/studio)
     - [Introducing Unsloth Studio | Unsloth Documentation](https://unsloth.ai/docs/new/studio)

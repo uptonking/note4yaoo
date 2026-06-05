@@ -117,7 +117,16 @@ modified: 2024-05-27T09:12:06.925Z
 
 - ## 
 
-- ## 
+- ## [GitCharm – a JetBrains-style Git panel for VS Code (commit graph, shelves, tag management, and more) : r/vscode _202606](https://www.reddit.com/r/vscode/comments/1twoflv/gitcharm_a_jetbrainsstyle_git_panel_for_vs_code/?sort=top)
+  - GitCharm, an extension that brings a JetBrains-like Git experience to VS Code.
+  - Commit Panel — staged/unstaged file list, per-file diff preview, rollback, commit selected files only, Commit & Push, Amend, and optional AI commit message generation via GitHub Copilot
+  - Push Tab — lists unpushed commits across all repos, undo HEAD commit, publish new branches
+  - Shelve & Stash — patch-based shelves (create, apply, partial apply, delete) + native stash support
+  - Git Log Panel — commit graph with branch visualization, author avatars, filters by text/author/branch/date, per-file diffs, and full branch operations from the sidebar
+  - Multi-repo workspaces — per-project colors, grouped commit flow, common branch actions across all repos at once
+  - https://github.com/RioNoir/GitCharm /MIT/202606/ts
+
+- my goal was to have the same experience I had with PhpStorm, and for anyone looking for something similar, I think this is the best solution. 
 
 - ## [佬友们有没有好用的Git可视化工具推荐 - LINUX DO _202605](https://linux.do/t/topic/2249951)
 

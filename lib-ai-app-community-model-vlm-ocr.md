@@ -177,6 +177,8 @@ modified: 2025-11-06T18:49:13.977Z
     - Can you point out children in blue T-shirts in the image and provide the bounding boxes of their location?
     - Tell me what you see within the designated area [[086,540,400,760]] in the picture.
     - Format of coordination: The bounding box coordinates in the model's input and output use the format [[x1, y1, x2, y2]], with the origin at the top left corner, the x-axis to the right, and the y-axis downward. (x1, y1) and (x2, y2) are the top-left and bottom-right corners, respectively, with values as relative coordinates multiplied by 1000 (prefixed with zeros to three digits).
+  - https://github.com/Wcowin/zhipu-OCR-skill /MIT/202603/python
+    - 基于 GLM-4V-Flash 模型的图片文字识别工具，支持命令行和 Agent Skill 两种使用方式。
 
 - llama3.2-vision-11b
   - 似乎不支持中文
@@ -440,7 +442,25 @@ modified: 2025-11-06T18:49:13.977Z
 - I also experimented with with tessaract and was heavily disappointed. I agree that local VLM is the way to go, but that latency is kinda off putting. 
 
 - Not only on-device recognition is not on par, but it is also too slow to be usable. Doing OCR, exporting the file somewhere, looking it up on the computer, etc... too slow and pointless. And it does nothing for my memory retention.
+# discuss-extract
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Introducing LFM2.5-VL-1.6B-Extract and LFM2.5-VL-450M-Extract: Vision-language models that return structured JSON, not free-form text.
+- https://x.com/liquidai/status/2062686748291846307
+  - Pass in an image and a list of fields. Get back a clean JSON object.
+  - Built for structured data use cases
+
 # discuss-solutions
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

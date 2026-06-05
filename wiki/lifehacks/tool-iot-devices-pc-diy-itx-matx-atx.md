@@ -27,6 +27,22 @@ modified: 2026-01-15T16:10:18.077Z
 - ## 
 
 - ## 
+# discuss-epyc/threadripper
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [AMD 线程撕裂者与EPYC霄龙CPU介绍 _哔哩哔哩 _202510](https://www.bilibili.com/video/BV1Rv4uzeEnj/?spm_id_from=333.337.search-card.all.click&vd_source=deff4d2e2efa3273948dd6911a08fd39)
+- epyc可以装到机箱里的，感谢超微和技嘉提供主板，还能组双路
+- 还有个冷门的同泰怡，深圳那边的
+  - 同泰怡那个主板，单路的有5个完整X16的PCIE插槽，一些BUG修的有些慢，可以作为超微主板的下位替代
+- ATX的话，同泰怡或者超微的单路主板都可以哈
+
+- 线程撕裂者 hedt 是个人极限装机人群 pro是商务版
 # discuss
 - ## 
 
@@ -168,7 +184,7 @@ modified: 2026-01-15T16:10:18.077Z
   - 内存：佰维DW100 DDR5 6800C32
   - 显卡：公版RTX 4080
   - 硬盘：系统盘·西部数据SN750 500GB；游戏盘·致态TiPro9000 4TB
-  - 机箱：机械大师C34 Pro, 429*205*349mm, 30.6L
+  - 机箱：机械大师C34 Pro, 429 *205* 349mm, 30.6L
   - CPU散热器：追风者Polar伯乐T6
   - 电源：安耐美白金竞蝠PK1000W
   - 机械大师C34 Pro这个机箱正面金属质感尽显，看起来极为优雅
@@ -251,7 +267,7 @@ modified: 2026-01-15T16:10:18.077Z
   - C34是整个C系列中最大的存在，也是唯一一个标配没有带提手的型号，因为他相较与另外三款机箱，装满后会比较重
 
 -  🌹 [C34 Pro](http://www.m-master.cn/pd.jsp?id=22)
-  - 429mm x205mm x349mm, 30.6L; 产品尺寸 429*205*403mm, 35.4L
+  - 429mm x205mm x349mm, 30.6L; 产品尺寸 429 *205* 403mm, 35.4L
     - 🎒 特大号的双肩包的高度可以满足450mm, 底部长宽难以满足 205x403
   - 显卡支持 420mm以内
   - 主板支持 ATX/EATX/MATX/ITX
@@ -372,14 +388,14 @@ modified: 2026-01-15T16:10:18.077Z
 - M-ATX机箱推荐
 
 - 方糖机械大师 C+Max
-  - 392*185*284mm, 20.5L
+  - 392 *185* 284mm, 20.5L
   - 支持M-ATX和ITX主板。
   - 电源可以用SFX或14cm长的ATX电源。
   - 支持240水冷或162mm高的风冷
   - 价格小贵，在800元附近
 
 - [乔思伯 Z20](https://www.jonsbo.com/products/Z20--.html)
-  - 370*186*295mm, 20.3L
+  - 370 *186* 295mm, 20.3L
   - 显卡支持长度：≤363mm
   - 支持240水冷，或最高160mm的风冷
   - 1个机械硬盘位
@@ -389,7 +405,7 @@ modified: 2026-01-15T16:10:18.077Z
   - 显卡: ≤  300mm-335mm
 
 - 先马（SAMA）趣造I'm Mini
-  - 391（长）*185（宽）*303（高）mm, 21.9L
+  - 391（长） *185（宽）* 303（高）mm, 21.9L
   - 显卡限长：≤33cm
   - 支持M-ATX和ITX主板
 
@@ -399,18 +415,18 @@ modified: 2026-01-15T16:10:18.077Z
   - 最长支持415mm的显卡。底部支持安装一个机械硬盘
 
 - 华硕AP201 冰立方
-  - 205mm*350mm*460mm, 33L
+  - 205mm *350mm* 460mm, 33L
   - 显卡（连供电头总长度）限长≤32cm
   - 硬盘位3个
   - 支持的主板：M-ATX，ITX, 🐛 不支持ATX
   - 支持的是M-ATX主板，总体布局和乔思伯D30类似，但是华硕AP201采用的是全打孔面板，且顶部支持360水冷，散热非常的不错，支持TYPE-C USB 3.2 GEN2（乔思伯D30的type-C是和USB并在一起的）。
 
 - 乔思伯 D31 mesh 🌹
-  - 产品尺寸：205 (宽) *347.5 (高) *440mm (深)（31.3L） 
-    - 205mm（宽）*363mm（高）*452mm（深）（机箱总尺寸）
+  - 产品尺寸：205 (宽) *347.5 (高) * 440mm (深)（31.3L） 
+    - 205mm（宽） *363mm（高）* 452mm（深）（机箱总尺寸）
   - 显卡长度：330-400mm
   - 主板支持：ITX / DTX / M-ATX, 🐛 不支持atx
-  - 机械硬盘位：2.5〞SSD*2 + 3.5〞HDD*1
+  - 机械硬盘位：2.5〞SSD *2 + 3.5〞HDD* 1
   - PCI扩展槽：4
   - 电源类型：ATX
 
@@ -423,24 +439,24 @@ modified: 2026-01-15T16:10:18.077Z
   - 兼容主板：MINI-ITX / MICRO-ATX标准型 / MICRO-ATX背插型(机箱需切换至B模式)
 
 - 乔思伯 D40 /无mesh导致散热差
-  - 204mm (W) *401mm (D) *386mm (H), 31.51L
-  - 硬盘位：2.5〞*3+3.5〞*1 or 2.5〞*4
+  - 204mm (W) *401mm (D) * 386mm (H), 31.51L
+  - 硬盘位：2.5〞 *3+3.5〞*1 or 2.5〞* 4
   - 显卡支持长度：293-374mm
   - 主板支持：ATX/M-ATX
-  - 前置接口：USB3.2 Gen 1 Type-C*1(5Gbps)     USB3.2 Gen 1 Type-A*1(5Gbps)     复合式音频接口*1
+  - 前置接口：USB3.2 Gen 1 Type-C *1(5Gbps)     USB3.2 Gen 1 Type-A*1(5Gbps)     复合式音频接口* 1
   - PCI扩展槽：7
   - 电源：ATX PSII≤140-200mm
 
-- 乔思伯 D41 mesh 🌹 /~~放不进背包~~
-  - 205mm (宽) *392mm (高) *440mm (深)（容积：35.4L）
-    - 总尺寸  205mm*407mm*452mm, 37.7L
+- 乔思伯 D41 mesh 🌹 / ~~放不进背包~~ 
+  - 205mm (宽) *392mm (高) * 440mm (深)（容积：35.4L）
+    - 总尺寸  205mm *407mm* 452mm, 37.7L
   - 显卡支持长度: 330-400mm
   - 主板支持：ATX / M-ATX
   - 电源：ATX电源
   - CPU散热器：168mm
-  - 水冷支持：顶部：240/280/360*1        后部：120*1      底部：240/360*1
-  - 硬盘位：2.5〞SSD*3 + 3.5〞HDD*2
-  - 前置接口：USB3.2 Gen 2 Type-C*1         USB3.0*1/Audio & Mic*1
+  - 水冷支持：顶部：240/280/360 *1        后部：120*1      底部：240/360* 1
+  - 硬盘位：2.5〞SSD *3 + 3.5〞HDD* 2
+  - 前置接口：USB3.2 Gen 2 Type-C *1         USB3.0*1/Audio & Mic* 1
   - 净重：6.6KG        外箱+机箱：7.6KG
 
 - 乔思伯 U4 Pro
@@ -454,9 +470,9 @@ modified: 2026-01-15T16:10:18.077Z
   - 优点在于散热好，ATX机箱基本都支持240及360水冷，对大型双塔风冷散热的支持也更好。扩展位多，方便安装更多的硬盘等设备。
 
 - 先马（SAMA）朱雀se 🌹 /前板网孔散热
-  - 3.96*2.15*4.82mm, 41.03L
+  - 3.96 *2.15* 4.82mm, 41.03L
   - 主板兼容: ATX/MATX/ITX
-  - hdd*2, ssd*1
+  - hdd *2, ssd* 1
   - 显卡限长 345mm
   - 散热限高 163cm
   - 水冷支持 360/280/240
@@ -496,7 +512,7 @@ modified: 2026-01-15T16:10:18.077Z
   - 主板兼容	Micro-ATX, Mini-ITX, ATX
   - 显卡限长	360mm
   - CPU散热器限高	160mm
-  - 硬盘位	1*HDD+2*SSD
+  - 硬盘位	1 *HDD+2* SSD
   - 电源支持	顶部前支架, ATX PS2
   - 净重	3.83kg
 
@@ -514,8 +530,8 @@ modified: 2026-01-15T16:10:18.077Z
   - MATX
 
 - 分形 North /支持全mesh且无玻璃
-  - 4.33*2.15*4.5, 41.9L; 
-    - 整机尺寸 4.47*2.15*4.69, 45.07L
+  - 4.33 *2.15* 4.5, 41.9L; 
+    - 整机尺寸 4.47 *2.15* 4.69, 45.07L
 
 - 长城（Great Wall）商逸R40/R41
   - 4.09×2.03×4.4, 36.5L
@@ -529,7 +545,7 @@ modified: 2026-01-15T16:10:18.077Z
   - 显卡限长 340mm
 
 - 爱国者（aigo）A15
-  - 3.7*1.9*4.38, 30.8L
+  - 3.7 *1.9* 4.38, 30.8L
 
 - 爱国者 yogo t21
   - 4.08×2.3×4.6, 43.1L
@@ -914,13 +930,13 @@ modified: 2026-01-15T16:10:18.077Z
 - 本文推荐的所有机箱，个人都只推荐装双风扇显卡。 双风扇显卡，长度一般不会超过300毫米，多数机箱，都可以放下。
 
 - 机械大师 cmax ◇99
-  - 尺寸：392*185*284mm, 20.5L
+  - 尺寸：392 *185* 284mm, 20.5L
   - 显卡：385*160mm以内
   - 散热：162毫米风冷 或 240水冷
   - 材质：内框：1mmSPCC钢材 ；外框：2mm铝合金
   - 主板支持 MATX/ITX
   - 电源支持 SFX/SFX-L/（140mm以内）ATX
-  - 风扇支持 顶部：12cm*2；尾部：12cm*1；前面板：8/9cm*1
+  - 风扇支持 顶部：12cm *2；尾部：12cm*1；前面板：8/9cm* 1
   - 2.5寸硬盘位 至多3个
   - 3.5寸硬盘位 至多1个
 
@@ -929,7 +945,7 @@ modified: 2026-01-15T16:10:18.077Z
   - 显卡：360x150限长
   - 散热：160毫米风冷 或 240水冷
   - 材质：1.2毫米 镀锌钢板
-  - 侧板：~~玻璃~~
+  - 侧板： ~~玻璃~~ 
   - 电源：ATX电源，170mm以内
   - 主打的就是便宜，99，还能走背线，让机箱内更美观一些，虽然能走的不多
 
@@ -1007,7 +1023,7 @@ modified: 2026-01-15T16:10:18.077Z
   - 2.2更具性价比且更紧凑，推荐U45。U45有个缺点就是前面板没有风扇位，所以建议CPU和显卡的规格要下降一些，以防机箱闷罐。此外，U45右边那个挡板设计，虽然方便了理线和藏线，但我是真的欣赏不来这设计。
 
 - ## [Quad 4090 48GB + 768GB DDR5 in Jonsbo N5 case : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m9uwxg/quad_4090_48gb_768gb_ddr5_in_jonsbo_n5_case/)
-  - JONSBO N5 NAS Pc Case: W355*D403*H350mm
+  - JONSBO N5 NAS Pc Case: W355 *D403* H350mm
   - GPUs -- Quad 4090 48GB (Roughly 3200 USD each, 450 watts max energy use)
   - CPUs -- Intel 6530 32 Cores Emerald Rapids (1350 USD)
   - So some additional information. I'm located in China, where "top end" PC hardware can be purchased quite easily.
@@ -1109,7 +1125,7 @@ modified: 2026-01-15T16:10:18.077Z
 - 这u降压单塔也能压，一般双塔都是够的，只要不降频没啥好焦虑 你这个温度高主要是机箱差+乱装风扇，前置电源小箱本身进风受阻风道难构，底下也没有风扇进风纯靠显卡抽风(显卡下超过3cm，完全可以尝试上15mm薄扇进风)，上部的风扇尤其是前部的更是把cpu所剩不多的冷气抽走，cpu直接无气可用巧妇难为无米之炊，pa120的塔体是很优秀的
 
 - [2024 伦敦自用手提4090 小主机 - 小红书](https://www.xiaohongshu.com/explore/6766dd2400000000130083af?xsec_token=ABboPWE_YbGyIsohkIYlHUozqKDRjLeUQCouU2QZY1chQ=&xsec_source=pc_search&source=web_search_result_notes)
-  - 机箱：乔思伯 Z20, 180mm*298mm*370mm, 20L 📌
+  - 机箱：乔思伯 Z20, 180mm *298mm* 370mm, 20L 📌
   - 风扇：乔思伯 ZK120W x3 + ZK120WR x3
   - 厂家应该出个带屏幕的风冷，把这个显示温度的换掉
 
@@ -1363,8 +1379,8 @@ modified: 2026-01-15T16:10:18.077Z
 - 能不能出个mesh板，把玻璃换成网孔
 
 - ## [机箱说¹ - 乔思伯和机械大师谁赢了 - 小红书](https://www.xiaohongshu.com/explore/66a61571000000002701010c?xsec_token=AB-NVtDH_xyoN48IVgN-otrQDhbPhG6D8S77xA6fATSDM=&xsec_source=pc_search&source=web_search_result_notes)
-  - c+max尺寸:392mm*284mm*185mm  20.5l体积
-  - z20  尺寸:370mm*295mm*186mm  20l体积
+  - c+max尺寸:392mm *284mm* 185mm  20.5l体积
+  - z20  尺寸:370mm *295mm* 186mm  20l体积
   - z20最好的方案是风冷+atx的组合
   - c+max最佳方案是水冷+atx的组合
   - c28在安装240水冷的情况下，大部分主板不支持atx电源。
@@ -1388,7 +1404,7 @@ modified: 2026-01-15T16:10:18.077Z
   - 电源这个纠结最久，按理说考虑兼容性应该一步到位sfx。但是sfx850w坑太多了。最后选了这个鑫谷的，这个电源好处是120mm，和sfxl一样长，电源线出口不太容易和显卡干上
 
 - ## [乔思伯Z20 or 机械大师C26 - 小红书](https://www.xiaohongshu.com/explore/66d70459000000001f01e720?xsec_token=ABFpKqSuGzHOELX8EkCIc8ArGFoGzwbK104D0gsq2YzyU=&xsec_source=pc_search&source=web_search_result_notes)
-  - 机械大师C26: 315*160*265mm, 13.3L
+  - 机械大师C26: 315 *160* 265mm, 13.3L
   - 乔思伯T6: 13.7L
   - 就玩下黑悟空是选择12600kf还是12490f，然后就是机箱乔思伯Z20 or 机械大师C26，怎么看都好看就是不知道怎么选了
 
@@ -1513,7 +1529,7 @@ modified: 2026-01-15T16:10:18.077Z
   - 风扇干了小两千
 
 - [十代CPU，黑苹果最后的倔强 - 小红书](https://www.xiaohongshu.com/explore/65499801000000002202c90b?xsec_token=AB-kwWy_ndn0QOUFCU234Q6f2t_yjutR9JJFSe8XxQYy4=&xsec_source=pc_search&source=web_search_result_notes)
-  - 机械大师c28: 342*185*284mm, 18L 📌
+  - 机械大师c28: 342 *185* 284mm, 18L 📌
   - 这个机箱不错啊，进3出3，外加塔式，其实塔式后面还能放个风扇组成9风扇，起码散热不用愁
   - 只是在itx里散热还不错而已，跟塔式没得比。风扇多噪音也大，小机箱理线也难（这机箱装机半小时理线3小时），一切都是为了颜值的妥协
   - 这个正好，比很多大闷罐好看多了，这个散热不差，你在给散热器加个风扇双塔三风扇，兼顾美观和散热，挺好的，我现在机箱就是9个风扇的matx, 酷冷至尊 MCB-Q500L-KANN-S00 : 386 x 230 x 381mm, 33L, 也就打游戏散热还行，topaz该螺旋桨还是螺旋桨，还是得开侧板
@@ -1527,11 +1543,11 @@ modified: 2026-01-15T16:10:18.077Z
   - 散热器尺寸为120 X 135 X 94（mm），迷你双塔，白色涂装，搭配 TL-D12PRO-G 伺服级风扇，不管是性能还是尺寸都很满足我这套主机的散热需求
 
 - [电脑小机箱该怎么选？ - 小红书](https://www.xiaohongshu.com/explore/66518b9a0000000005007b1f?xsec_token=ABgsZawth9QaYeqFGFhvroUrQnp2-uJiFwrxEDnmydBiE=&xsec_source=pc_search&source=web_search_result_notes)
-- 乔思伯(JONSBO) Z20， 主体尺寸长宽高 370*186*295 约20L, 
+- 乔思伯(JONSBO) Z20， 主体尺寸长宽高 370 *186* 295 约20L, 
   - 支持240水冷 163mm双塔风冷
   - 支持限长363mm高性能显卡&全尺寸MATX主板
   - 支持背走线 电源支持ATX电源侧装 竖装
-- 华硕AP 201, 主体尺寸长宽高460*205*350, 33L
+- 华硕AP 201, 主体尺寸长宽高460 *205* 350, 33L
   - 支持360水冷 17cm风冷
   - 显卡支持358mm 6面通风 4个硬盘位
 

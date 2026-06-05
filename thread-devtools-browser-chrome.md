@@ -141,6 +141,47 @@ modified: 2023-02-20T19:41:08.506Z
   - 👀 注意大陆地区不支持此feature
 
 - In the Network panel, you can now right-click a column name in the requests table and select multiple `request headers` to add them as columns.
+# discuss-headless-browser
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [服务器运行浏览器怎么优化内存占用 - LINUX DO _202606](https://linux.do/t/topic/2305122)
+  - 我的服务器里跑了那个 Chromium。然后现在内存占用还是比较大，有什么优化的办法吗？是无头。或者是有没有什么替代的方案？因为我现在是需要，就是开一个浏览器来执行任务。或者是说能不能进行一些内存上的优化？现在动辄大几百 mb 小鸡吃不消 
+  - 因为我在做一个自动化流程，纯协议过不了 cf 盾，如果开浏览器的话，自己就过了，所以说才让小鸡上跑浏览器
+  - 有什么Chromium的简洁替代品，我用了以下两个，都无法正常运行：
+  - Obscura（Rust 编写）：专为 AI agents 和 scraping 设计，声称 ~30-70MB 内存、80ms 左右加载，支持真实 V8 JS 执行和 Chrome DevTools Protocol (CDP)，可作为 Puppeteer/Playwright drop-in 替代（几乎零代码改动）。
+  - Lightpanda（Zig 编写）：已有多组基准，25 并发任务时 ~123-215MB vs Chrome 2GB+（部分实测约 4x 优势，非总能达宣传的 16x）。同样 CDP 兼容，适合高并发 agent/自动化。仍在快速迭代，兼容性需验证。
+
+- 那么其实不一定非要启动完整的浏览器引擎， 盾主要检测的是TLS指纹和HTTP/2指纹。如果你就是要保留现有的Chromium架构，可以通过追加启动参数来关闭非核心的一些功能。
+
+```sh
+--headless
+--disable-gpu
+--disable-software-rasterizer
+--disable-dev-shm-usage
+--no-sandbox
+--disable-background-networking
+--disable-extensions
+--disable-sync
+--mute-audio
+--blink-settings=imagesEnabled=false
+--js-flags="--max-old-space-size=128"
+```
+
+- WebSocket(WSS)升级失败报403，上下文断层问题。
+  - 1、浏览器的真实行为，当你在Chromium中通过CF验证并建立会话后，随后的WSS连接大概率是复用了之前与CF边缘节点建立的那个底层的TCP/TLS连接
+  - 2、你的在请求HTTP API时用了一个连接，而在发起WSS时，应该是发起了一个全新的TCP连接。对于CF，这个新连接没有经历过之前的上下文，所以即使你带上了Cookie和Token，依然会被判定为高风险机器行为直接403
+  - 最简单的方法将过盾和长连接保持拆分开，使用FlareSolverr或远程代理，要不就小鸡纯协议直连。
+  - 尝试Golang。使用cycletls（伪造 JA3）配合底层的连接池管理，强制WSS和之前的HTTP API 请求复用同一个底层的TCP/TLS Connection
+  - 服务器装个codex，就给你搞定了哈哈，开玩笑
+
+- 过cf盾关键在于 `cf_clearance` 这个cookie，其实你只要拿到能过盾的cookie, 后面就不需要浏览器了，request都替换成带这个cookie就行。当然这个cookie一段时间就会过期，不过那是之后的事情了。
+
+- 我建议哈，既然NetLog⁠都在手里了，你可以直接把Chromium成功的WSS Client Hello⁠包和HTTP请求头跟你脚本发出的包进行字节级的对比，重点看一下密码套件、扩展和HTTP头顺序
+  - 然后就是你现在发起WSS连接的是哪一个具体的库，判断一下是不是第一个TLS导致的割裂
 # discuss-fingerprint/指纹浏览器
 - ## 
 

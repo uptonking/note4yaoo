@@ -127,15 +127,15 @@ then compare the architecture/implementation of superdoc and docx-editor, explai
 
 onlyoffice-pdf-editor(code is at several git repos in current folder) implements renders, edits, annotates `.pdf` files in the browser, but it is AGPL licensed.
 - the final goal is to implement a new headless, extensible pdf editor named hardoc with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
-- hardoc pdf editor should be more of a headless client-server architecture, so that you can also build a hardoc sdk/cli. 
+- hardoc pdf editor should be more of a headless client-server architecture, so that a hardoc pdf web/cli/sdk can be built on the same architecture. 
 - hardoc should be implemented in a modular and extensible architecture for core pdf features like viewing and editing, with functional programming style.
 
 - goals for pdf editing:
-01.  modular and extensible architecture for pdf viewing and editing: you may design sub packages like state/view/command/transform/... when you need. you may design a sdk if you want.
-02.  in-place text editing feature like adobe acrobat; undo/redo
-03.  pdf highlights, annotations with simple shapes
-04.  pdf file open and save
-05.  in-place text editing is the most important feature to implement now, the following features can be planned, but unnecessary to implement at this moment: forms, ocr, collaboration, ai-editing, complicated shapes, search. any feature you feel unimportant to in-place text editing can be delayed to implement,  but architecture should be extensible enough to support them later.
+01.   modular and extensible architecture for pdf viewing and editing: you may design sub packages like state/view/command/transform/... when you need. you may design a sdk if you want.
+02.   in-place text editing feature like adobe acrobat; undo/redo
+03.   pdf highlights, annotations with simple shapes
+04.   pdf file open and save
+05.   in-place text editing is the most important feature to implement now, the following features can be planned, but unnecessary to implement at this moment: forms, ocr, collaboration, ai-editing, complicated shapes, search. any feature you feel unimportant to in-place text editing can be delayed to implement,  but architecture should be extensible enough to support them later.
 
 - tech stack needs to use open source libs/fwk:
 you may reference architecture and implementation details of onlyoffice pdf editor. 
@@ -244,26 +244,28 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 ## grist-office
 
 Project `grist` (in current folder) is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database. 
-- The final goal is to implement an alternative modular, extensible react frontend webapp at folder `app/client-react` at the current git branch `feat/office-react`, with almost the same features as existing backbonejs frontend webapp at `app/client`, using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table without legacy backbonejs/knockoutjs. After you finished the react webapp,  `npm run start:app` should start the new react webapp, the legacy yarn toolchain/code should still be kept for backward compatibility, the legacy backonejs should still works, so you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please reuse as many code from main branch as possible.
-- The core goal is to rewrite most of the existing backbonejs ui/ux with modern react ui/ux, but you can prioritize the core speadsheet view/create/edit/save data flow, speadsheet-unrelated features may be delayed. 
-- react webapp should support all the routing urls of existing backbonejs webapp, using the same existing backend api.
+- The final goal is to implement an alternative modular, extensible react frontend webapp in folder `./app/client-react` at the current git branch `feat/office-react`, with almost the same features as existing backbonejs frontend webapp at `app/client`, using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table, @tanstack/react-router without legacy backbonejs/knockoutjs. After you finished the react webapp,  `npm run start:app` should start the new react webapp, the legacy yarn toolchain/code should still be kept for backward compatibility, the legacy backonejs should still works, so you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please reuse as many code from main branch as possible.
+- The core goal is to rewrite most of the existing backbonejs ui/ux with modern react ui/ux.
+- react webapp should support all the routing urls of existing backbonejs webapp with @tanstack/react-router, using the same existing backend api.
+
+- you can prioritize the core speadsheet view/create/edit/save data flow, speadsheet-unrelated features may be delayed. 
 
 - please read and analyze git commits/code if you need, then explain to me what major features are in backbonejs webapp but missing in react webapp.
 
-- the following features can be planned, but implemention may be delayed if you want:
-01.   Can be displayed on a static website with grist-static.
-02.   A self-contained desktop app for viewing and editing locally: grist-desktop.
-03.   Native forms. Create forms that feed directly into your spreadsheet.
-04.   Sandboxing options for untrusted documents
-05.   AI Formula Assistant 
-06.   integrations to airtable/...
+- the following features are not top priority for react webapp, might be planned but delayed if you want:
+01. displayed on a static website with grist-static.
+02. A self-contained desktop app for viewing and editing locally: grist-desktop.
+03. Native forms. Create forms that feed directly into your spreadsheet.
+04. Sandboxing options for untrusted documents
+05. AI Formula Assistant 
+06. integrations to airtable/...
 
 - tech stack for react webapp needs to use open source libs/fwk:
   - use npm workspaces, typescript, reactjs(not vue), tailwindcss, zustand, no jquery/knockoutjs/backbone.
   - for ui components, you can use base-ui, source clone is at `~/gh-mirror/mui/base-ui` for your reference.
   - use floating-ui instead of @popperjs/core, source code is here for your reference `~/gh-mirror/floating-ui/floating-ui`.
   - you can reuse existing dependencies for easier feature migration.
-  - for spreadshhet table, you should use @tanstack/react-table. the source code is cloned at folder `~/gh-mirror/tanstack` for your reference.
+  - for spreadshhet table, you should use @tanstack/react-table. the source code for @tanstack/react-table and @tanstack/react-router is cloned at folder `~/gh-mirror/tanstack` for your reference.
   - you may use zustand for state management in framework-agnostic core package, the source code is at folder `~/gh-mirror/pmndrs/zustand` for your reference.
 
 - the most important feature in react webapp is a modular, extensible, headless spreadsheet view/editing engine with undo/redo history support like backbonejs webapp. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please reuse as many code from main branch as possible.
@@ -445,7 +447,7 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 local model testing/running can be very slow.
 - please recheck implementation logic related to model/llm-runtime-backend downloading and related tests, improve it by making the downloaded models/binary/resources cached locally, so that later testing/running can reuse it directly if already existed. improve the cache logic, and update related data-flow/tests, make sure the implementation is correct, robust, extensible without unnecessary redownloading. 
 
-- try to improve/refactor the tests to make it faster so that full tests running within 10 minutes.
+- try to improve/refactor the full tests to make it faster so that full tests running within 10 minutes.
 - improve the slow/complicated/heavy parts of tests, you may refactor/reorganize the tests to make it correct, fast, robust, maintainable in the long term.
 
 - 
@@ -684,6 +686,8 @@ when you improve the tests, you can also improve the source code logic by fixing
 finally make sure all tests run and pass locally with npm. you can update/fix tests file by file progressively. outdated or over-complicated or hard-to-maintain tests can be removed or rewritten. 
 
 you have improved the codebase several times, but running the tests/parity/scripts took a lot of time for your every improvement.  please refactor and improve the tests/parity/scripts/devops/ci to make it faster and more maintainable.  you may combine/deduplicate/reduce/clean/redesign some tests/parity/scripts/devops/ci/outdated/legacy if you need. update the readme/docs after your cleanup.
+
+- run the full tests and fix the bugs
 
 - improve the slowest part of tests first, you may refactor/reorganize the tests to make it correct, fast, robust, maintainable in the long term.
 # rafactor

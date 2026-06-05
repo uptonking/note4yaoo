@@ -353,7 +353,7 @@ modified: 2026-04-07T12:53:38.419Z
   - Ingest — Build and maintain a LLM wiki from raw documents, following the Karpathy LLM Wiki pattern
   - Developed by the MinerU team, building on `QMD` and Karpathy's LLM Wiki.
   - https://github.com/opendatalab/MinerU-Document-Explorer/tree/main/demo
-    - The demo/ folder contains a complete end-to-end example — an AI agent automatically reads ~10 arXiv papers on RAG, builds an interlinked wiki knowledge base, and writes a research survey. 
+    - 🌰 The demo/ folder contains a complete end-to-end example — an AI agent automatically reads ~10 arXiv papers on RAG, builds an interlinked wiki knowledge base, and writes a research survey. 
 
 - https://github.com/RapidAI/RapidDoc /apache2/202604/python/非VLM
   - RapidDoc 是一个轻量级、专注于文档解析的开源框架，支持 OCR、版面分析、公式识别、表格识别和阅读顺序恢复 等多种功能。
@@ -695,7 +695,33 @@ modified: 2026-04-07T12:53:38.419Z
   - Local web UI for PaddleOCR‑VL via Docker (PDF/Image OCR, preview, logs, downloads)
   - I’m not a programmer, and this entire project was built with the help of AI.
 
+- https://github.com/eonewg/pdf-ocr-searchable /MIT/202605/python
+  - skill package and helper scripts for turning scanned PDFs into searchable OCR PDFs, with optional PaddleOCR-VL layout and Markdown extraction.
+  - Produces searchable PDFs with OCRmyPDF + Tesseract.
+  - Uses the official PaddleOCR-VL async job API for structured Markdown/layout extraction.
+  - Documents a hybrid OCRmyPDF + PaddleOCR overlay pattern for better Chinese phrase search.
+
 ## utils
+
+- https://github.com/PaddlePaddle/PaddleOCR/tree/main/skills
+  - the official PaddleOCR Agent Skills.
+  - paddleocr-text-recognition: text recognition for images and PDF files
+  - paddleocr-doc-parsing: document parsing and structured output
+
+- https://github.com/galaxygx1983/paddleocr_skill /MIT/202604/python
+  - OCR wrapper for PaddleOCR 3.x
+  - 支持中文、英文及多语言文档
+  - Windows 路径编码处理
+  - JSON 输出（含文本位置和置信度）
+  - 批量处理
+  - 高精度/快速模式切换
+
+- https://github.com/Aidenwu0209/PP-OCRv5-claude-code-Skill /MIT/202601/python/inactive
+  - 基于 PP-OCRv5 的 Claude Code Skill 实现，用于文字识别
+  - Auto mode optimizes recognition strategy automatically, no manual tuning
+  - PNG / JPG / PDF and more, works with both URLs and local files
+  - Fast / Quality / Auto - flexible for different scenarios
+  - Paddle AI Studio account (for API credentials)
 
 - https://github.com/yunwoong7/aws-ocr-vision-lab /MIT/202604/python/ts
   - A serverless OCR playground for testing PaddleOCR models on AWS infrastructure. Features PP-OCRv5, PP-StructureV3, and PaddleOCR-VL with React frontend and SageMaker GPU inference.
@@ -744,6 +770,20 @@ modified: 2026-04-07T12:53:38.419Z
   - Cross-Architecture Support: Uses PaddleOCR-converted ONNX models, rebuilt for deployment on both ARM and x86 architecture computers
   - Multilingual Support: Single model supports 5 language types: Simplified Chinese, Traditional Chinese, Chinese Pinyin, English, and Japanese.
   - Model Accuracy: Consistent with PaddleOCR models.
+
+- https://github.com/Luolingli/ocr-md-to-pdf /MIT/202606/python
+  - Compile a PaddleOCR-VL markdown export into a fully vector, selectable-text PDF book with XeLaTeX.
+  - The OCR of a scanned Chinese / math textbook gives you a *.pdf_by_PaddleOCR-VL-*.md (math in $ ... $ / $$ ... $$, tables as raw `<table>`, figures as remote `<img>`), plus a sibling * .json. This tool turns that into a clean, typeset PDF where every character is real text — searchable and copyable, not a scanned image.
+  - Inline / display math with stray spaces, and CJK characters inside math (each CJK run is wrapped in \text{} so the math font never shows tofu).
+
+- https://github.com/thanush0/DocuLens /MIT/202605/python
+  - OCR pipeline that converts PDFs into structured JSON. Using PaddleOCR and OpenCV, it handles image preprocessing, layout-aware text extraction, and intelligent parsing to identify entities like names, skills, and contact info.
+  - Streamlit UI for real-time PDF processing and JSON visualization.
+  - Batch Processing: Command-line support for processing entire directories of documents.
+  - OCR Engine: PaddleOCR
+  - Image Processing: OpenCV, NumPy, pdf2image(Poppler)
+  - Streamlit
+  - Parsing: Regular Expressions (RE)
 # mineru
 - https://github.com/liuhuapiaoyuan/MinerU-webui /202412/python/inactive
   - 本项目为其提供一个简化版本的WebUI，方便用户上传PDF文件，并实时展示提取结果。
@@ -823,6 +863,9 @@ modified: 2026-04-07T12:53:38.419Z
 
 ## utils
 
+- [MinerU 开发者生态 | Agent Skills · MCP Server · CLI/SDK · RAG 框架集成 ](https://mineru.net/ecosystem)
+  - https://github.com/opendatalab/MinerU-Ecosystem/blob/main/skills/SKILL.md
+
 - https://github.com/LeoLin990405/mineru-skill /MIT/202603
   - https://github.com/LeoLin990405/mineru-skill/blob/main/SKILL.md
   - skill for MinerU document parsing API - convert PDF/DOC/PPT/images to Markdown/JSON
@@ -834,19 +877,35 @@ modified: 2026-04-07T12:53:38.419Z
   - Batch Processing	Parse up to 200 files per request
   - CLI Script	mineru-parse.sh for quick command-line usage
   - https://github.com/openclaw/skills/tree/main/skills/mineru-extract
+  - https://github.com/xiaoxue153/mineru-parse-skill
+    - 一键将 PDF/DOCX/PPTX 解析为 Markdown（MinerU）
+
+- https://github.com/guajun/datasheet-post-processing-skill /MIT/2026065/python
+  - Skill and example script for post-processing MinerU datasheet Markdown
+  - MinerU output varies a lot between PDFs, so this repository does not try to provide a universal parser. It captures a repeatable workflow and includes a sample script learned from a few real datasheet cleanups
+  - Merge one or more raw Markdown chunks in document order.
+  - Detect numbered datasheet headings such as 12.0, 12.2, and 12.14.60.1 even when all headings were converted to #.
+  - Ignore common table-of-contents lines and unnumbered OCR headings that should stay inside their parent section.
+  - Split content into a progressive file tree.
+  - Preserve parent-section prose as `00_<section>.md` before child sections.
+  - Download remote MinerU images into assets/images/.
+  - https://github.com/linger-alpha/trans2md
+    - 自动把产物落在“源文件同目录”，并且 Markdown 文件名与源文件一致（仅后缀变为 .md）
+    - 有图片引用：创建 `<stem>_trans2md/`，输出 `<stem>_trans2md/<stem>.md + <stem>_trans2md/images/`（md + images/ 可直接渲染）
 
 - https://github.com/Nebutra/MinerU-Skill /MIT/202602/python
   - https://smithery.ai/skills/nebutra/mineru-skill
   - Skill that transforms PDFs into clean Markdown using MinerU's VLM engine. 
   - Supports LaTeX formulas, tables, images, and batch async processing.
   - Single File, Batch Directory, Direct to Obsidian
-  - Visit MinerU, Create free API token
+  - zero-dependency, agent-native convenience layer over MinerU's cloud API, 
+    - Need more power? export `MINERU_TOKEN=...` and the same command auto-upgrades to the Standard API for 200 MB / 200-page files, parallel batches
 - https://github.com/nilecui/mineru-parser-skills /202512/python/inactive
   - parsing tool based on Claude Agent SDK and MinerU Skill
   - only supports online version. PDF documents must be accessed via URL. Local file upload is not supported.
   - MINERU_API_KEY environment variable (required)
 
-- https://github.com/CSlawyer1985/mineru-converter-skill /shell
+- https://github.com/CSlawyer1985/mineru-converter-skill /202602/shell/inactive
   - 一个专业的 PDF 转 Markdown 工具，基于开源项目 MinerU (magic-pdf) 开发，专为法律人和知识工作者打造。通过方案A++策略实现防死机优化，支持 GPU 加速，提供完全独立封装的 CLI 工具和 Claude Skill，让 PDF 文档转换为 AI 可直接理解和分析的 Markdown 格式。
   - 完全独立封装 - 3.4GB 虚拟环境封装在 skill 内，零外部依赖
   - 方案A++策略 - 每文件独立进程，自动内存释放，防止死机
@@ -879,22 +938,48 @@ modified: 2026-04-07T12:53:38.419Z
 
 - https://github.com/1596941391qq/anything-to-md /MIT/202605/python
   - 把任何文件变成 AI 能吃的 Markdown。PDF、Office、图片、音视频、YouTube — 一个命令搞定。
-  - PDF 三级引擎 这是核心差异化能力。
+  - ✨ PDF 三级引擎 这是核心差异化能力。
     - MinerU	OCR + 布局检测 + 表格识别 + 图片提取
     - MarkItDown	快速文本提取
     - pypdf	基础文本提取
     - MinerU 首次运行会下载 ~2GB 模型（后续秒开）。如果你的 PDF 是纯文本英文，MarkItDown 就够了；但凡涉及中文、扫描件、表格 — MinerU 是质的飞跃。
   - 视频智能路由: PROBE → DECIDE → EXTRACT → FUSE
+  - https://github.com/xtyooo/mineru-doc-to-markdown-skill
+    - 把 pdf、doc、docx、ppt、pptx、图片、html 转成稳定的 Markdown
+    - 精准模式：调用 MinerU 精准解析 API，需要 MINERU_API_TOKEN
+    - 轻量模式：调用 MinerU Agent API，不需要 token
+    - 自动降级：没有 token 时自动切到轻量模式
+    - 精准模式通常会下载 MinerU 返回的 zip，并从中提取 full.md。 轻量模式一般直接拿 markdown_url，不一定有 zip。
+    - https://github.com/whliao5am/MinerU-skill
+      - Parse PDF, Office documents, HTML, and images into Markdown using MinerU's API.
 
 - https://github.com/bshlee/extractPDF-skill /202604
   - skill that extracts a PDF to Markdown + figures using the local MinerU pipeline (CPU).
   - CPU-only, ~1 page/sec on an M-series Mac.
   - Scanned PDFs route through OCR automatically (English + Chinese by default).
-- https://github.com/loqz99156/pandoc_to_markdown
+- https://github.com/loqz99156/pandoc_to_markdown /202604/python
   - 一个把本地文档统一转换成 Markdown 的工具集，封装了 pandoc、Marker 和 MinerU，同时提供 CLI 和 Claude Code skill。
   - 非 PDF 文档走 pandoc
   - PDF 文档可选 Marker 或 MinerU
   - 首次执行 PDF 转换时需要联网下载对应模型
+
+- https://github.com/hawkongz/mineru-pdf /202606
+  - 为 Claude Code 补充复杂 PDF 的高精度内容解析能力
+  - Claude Code's default pdf skill relies on pypdf + pdfplumber. Fine for simple documents, but falls short on complex ones
+  - pip install "mineru[pipeline]": Pulls in torch, transformers, etc. First install takes 3-5 minutes.
+
+- https://github.com/Fisfzy/minerU2draw.io-skill /202605/python
+  - skill，可以将banana等软件生成出的不可编辑流程图转换成可编辑的draw.io格式 （标准 mxGraph XML 格式）。
+  - 基于 MinerU 结构提取（精确 bbox 坐标）+ Agent Vision 语义增强（形状类型和箭头连接，可选）。
+  - 详见 SKILL.md 的「坑」章节，包含 MinerU API 调用、CDN 下载 SSL 修复、坐标缩放、字体选择等完整说明。
+
+- https://github.com/LKong92/MinerU-LaTeX-PDF-to-PPT /202605/python
+  - Convert MinerU LaTeX ZIP exports into editable PowerPoint decks.
+  - contains a Codex skill and standalone Python scripts for rebuilding slide PDFs from MinerU output. It is intended for math-heavy slide decks where a pure Markdown-to-PPT or raw LaTeX-to-PPT conversion tends to leave broken formulas or visible LaTeX source in the deck.
+  - The primary input is the LaTeX ZIP exported by MinerU: MinerU_latex_*.zip
+  - The converter uses the ZIP as the user-facing input, then uses MinerU's structured block coordinates and the source PDF to preserve formulas, charts, and fragile visual blocks.
+  - This is intentionally not a pure LaTeX renderer. For slide decks, visual correctness of formulas is usually more important than making every formula glyph editable.
+  - If the matching JSON/PDF files are missing, the script falls back to a LaTeX-only flow. That fallback is less faithful because LaTeX alone does not preserve the original PDF slide coordinates.
 
 - https://github.com/linxule/mineru-mcp /MIT/202602/ts/代码少
   - MCP server for MinerU document parsing API — extract text, tables, and formulas from PDFs, DOCs, and images.
@@ -903,7 +988,7 @@ modified: 2026-04-07T12:53:38.419Z
   - Batch processing — Parse up to 200 documents at once
   - Optimized for Claude Code — 73% token reduction vs alternatives
 
-- https://github.com/TriasJ/notebooklm-to-video /MIT/202605/python
+- https://github.com/TriasJ/notebooklm-to-video /MIT/202605/python/ts
   - Claude Code skill: Convert NotebookLM slide decks into animated Remotion videos via MinerU OCR + HTML bbox editor + OpenCV inpainting
   - A Claude Code skill that converts NotebookLM slide decks into animated Remotion videos.
   - NotebookLM Notebook
@@ -1131,6 +1216,21 @@ modified: 2026-04-07T12:53:38.419Z
   - IndexedDB 持久化 — OCR 结果通过 Dexie.js 存入浏览器数据库
   - 客户端图片压缩 — Web Worker + OffscreenCanvas 后台压缩，不阻塞主线程；不支持时自动回退
   - [[开源] 做了一个用LLM来OCR的工具，欢迎各位佬友使用！ - LINUX DO _202604](https://linux.do/t/topic/1888946)
+# ocr-vlm
+- https://github.com/yejinlei/pdf-ocr-skill /MIT/202604/python
+  - 一个支持多种OCR引擎的PDF文字提取技能，可以从影印版PDF文件和图片文件中提取文字内容。
+  - 自动将PDF页面转换为图片进行识别
+  - 支持多种图片格式的文字识别（JPG、PNG、BMP、GIF、TIFF、WEBP）
+  - 三引擎支持：
+    - RapidOCR（本地引擎，默认）：无需API密钥，免费使用，识别速度快
+    - RapidDoc（增强引擎）：支持版面分析、表格识别、公式识别和阅读顺序恢复
+    - 硅基流动API（云端引擎）：使用大模型进行OCR识别
+  - 智能引擎切换：当RapidOCR初始化失败时自动切换到硅基流动API
+
+- https://github.com/Wcowin/zhipu-OCR-skill /MIT/202603/python
+  - 基于 GLM-4V-Flash 模型的图片文字识别工具，支持命令行和 Agent Skill 两种使用方式。
+  - 支持多种图片格式：JPG、PNG、GIF、BMP、WebP
+  - 支持批量识别多张图片
 # utils-ocr
 - https://github.com/yigitkonur/llm-based-ocr /AGPL/202511/python
   - PDF-to-Markdown OCR API using LLMs with vision capabilities. 

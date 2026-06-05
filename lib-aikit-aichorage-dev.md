@@ -30,6 +30,9 @@ modified: 2026-05-28T17:50:54.646Z
   - skills for janai-cli/lms-cli/ollama-cli
   - 直接兼容 lms-cli, 使用已下载的model
 
+- workflow
+  - export ocr/translation workflow as skill programmatically
+
 - 参考janai支持切换llamacpp/mlx, 来实现支持切换 mineru/paddleocr/docling
 
 - runtime/backend

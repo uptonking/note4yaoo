@@ -13,6 +13,9 @@ modified: 2026-04-07T11:52:43.122Z
   - 翻译类型产品的形态需要根据场景进行设计，可双栏/上下紧邻/点击切换原文和译文
   - mt llm comparison/playground
 # popular
+- https://github.com/iflytek/iFly-Skills /apache2/202606/python
+  - Official collection of iFLYTEK skills for speech, OCR, translation, proofreading, and multimodal AI capabilities.
+
 - https://github.com/xunbu/docutranslate /747Star/MPLv2/202601/python
   - 文档（小说、论文、字幕）翻译工具（支持 pdf/word/excel/json/epub/srt...）
   - 基于大语言模型的轻量级本地文件翻译工具
@@ -555,6 +558,17 @@ modified: 2026-04-07T11:52:43.122Z
     - 调用 MinerU 在线解析 PDF
     - 使用 OpenAI 兼容接口翻译提取出的 Markdown
     - 通过浏览器无头打印，把译文重新渲染成最终 PDF (布局丢失)
+- https://github.com/zyheal-xing/pdf-parsing-and-translation-skills /MIT/202605/python
+  - PDF 结构化解析文本与图片，并基于 MinerU 输出生成严格中文文献译文的 skills release
+  - 先解析，再翻译
+  - 本机需要可用的 mineru 命令
+  - 默认只处理单篇 PDF；多篇 PDF 需要明确要求逐篇处理。
+  - 🐛 示例会丢失双栏布局
+- https://github.com/xinghuo7953-netizen/pdf-md-pdf-translate /202605/python
+  - a PDF-to-Markdown-to-PDF translation workflow for English economics papers. It is packaged as a Codex skill, but the helper scripts are also usable from Claude Code or other agent / CLI setups that can run Python commands.
+  - It is designed for papers with formulas, citations, figures, tables, and structured academic prose where formatting fidelity matters.
+  - uses MinerU's Precision API path for high-quality parsing, so a MinerU token is required
+  - The default one-command translation path in this repository uses DeepSeek
 
 - https://github.com/mozilla/firefox-translations
   - a webextension that enables client side translations for web browsers.

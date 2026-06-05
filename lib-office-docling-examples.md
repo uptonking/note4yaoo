@@ -214,6 +214,12 @@ modified: 2025-09-21T13:58:46.548Z
   - a library that defines core data types and transformations in Docling.
   - Docling Core provides the foundational `DoclingDocument` data model and API, as well as additional APIs for tasks like serialization and chunking
   - Docling Core defines the `DoclingDocument` as a Pydantic model, allowing for advanced data model control, customizability, and interoperability.
+
+- https://github.com/realraelrr/docling-skill /MIT/202606/python
+  - a local, agent-first ingestion layer built on top of Docling. It converts local documents into a stable `source.*` sidecar contract that LLM agents can inspect before consuming.
+  - Use it when an agent needs risk-aware local PDF, Office, image, HTML, text, or Markdown conversion before downstream reasoning, retrieval, wiki ingestion, or handoff. The key output is not just Markdown; it is an inspectable manifest with minimum viability gates, risk level, warnings, and a pointer to on-demand evidence.
+  - Legacy .doc and .ppt files are intentionally not supported. Save them as .docx/.pptx or PDF before ingestion.
+  - docling-skill intentionally does not fetch remote URLs, chunk documents, or emit downstream knowledge fields such as tags, keywords, categories, or summaries.
 # ocr/vlm
 - https://github.com/emcf/thepipe /1.5kStar/MIT/202510/python/inactive
   - a package that can scrape clean markdown, multimodal media, and structured data from complex documents.

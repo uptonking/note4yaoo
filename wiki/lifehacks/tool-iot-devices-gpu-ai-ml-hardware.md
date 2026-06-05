@@ -623,6 +623,42 @@ modified: 2026-01-15T15:44:10.647Z
 
 - The model will overflow into RAM, so it will run, but very slowly, dependent on your RAM bandwidth. Most people have only dual channel RAM setups so it'll be very slow, even on DDR5.
 
+- ## [AI MAX+395还能有什么形态？ITX主板和NAS是铭凡给出的答案 _哔哩哔哩 _202601](https://www.bilibili.com/video/BV1wV6UBgEq5/)
+- 那个pcie x 16插槽， 还是不能支持显卡对吧？
+  - Strix halo平台默认不支持EGPU，MS-S1 MAX的PCIEx16插槽直插独显验证过不识别，通过OCulink或USB4方式可以正常驱动
+- 那是主板的支持问题，不是cpu的问题，怎么可能oculink可以正常pcie不可以，oculink就是pcie4.0协议啊
+
+- 这个itx主板要是散热能压住的话，跑分会不会比FAEX1还高？
+  - 不太可能，395的R23多核跑分极限就在41000分
+- 真做生产力，这个的扩展性又太捉急了啊，2个m2给谁用啊，真需要内存通道肯定满血县城撕裂者pro，比lpddr残雪强太多了，而且还有一点，吃内存带宽的也吃cpu大缓存，395不一定有优势，我个人感觉395更适合掌机，这种能上显卡的浪费8060s了
+- 永远绕不开，生产力需要拓展性的问题，就算内存够，硬盘，网口这些，单5G网口，接内网NAS不好使啊
+
+- 这玩modt怎么解决四通道内存？焊死？？ 要论体积和性能，既然都有pcie槽了插张5060lp刀卡不得了吗？比395性能强啊。
+  - 395只能用lpddr5板载，不考虑拆装弄到主板背面就可以了（视频正面也没看到内存颗粒，大概率还真在背面）
+- aimax只能焊死 好像没看到过能插内存的
+- 395没做DDR5支持，而且ddr5四通道布线成本很高。真做出来要么价格更贵要么性能更拉（服务器DDR5很多主板四通道八通道甚至只能跑D5 3600，可想布线很麻烦）
+- PCIE X16不是给独显留的，铭凡这块MODT的PCIEX16默认大概率插上独显也会不识别
+- 服务器12通道随便6400，你说的8通道3600也太垃了
+  - 那都是cudimm和csdimm出来之后的事情了。要CKD时钟驱动器才能做到，消费级24年9月才出cudimm接着25年2月发布395 ，395设计那会肯定赶不上适配，395又是主卖移动端型号，所以才直接放弃DDR5用LPDDR5的。
+- 毕竟395设计那会cudimm还没有确定消息，万一时间偏差内存出的慢了，首发直接缺内存不更尴尬。而且cudimm和csdiomm在没涨价之前也不便宜，D5 6400对比LPDDR5 8000也没特别大的性能优势，稳妥+省钱考虑不支持也算正常操作。
+- 我还搜了一下桌面端的X870芯片组的cudimm支持也是在24年9月附近。说到底还是AMD时间赶不上了，毕竟25年2月发布395max，芯片设计和生产怎么也要一年（也就是23年底左右，这会cudimm消费级量产时间还不确定）
+- 395的PCIEx16是分割开的，最多组844或者4444。接独显最多给你个x8。
+- intel的显存可以动态划分，amd的显存在bios里分完了系统里就改不了了
+
+- 这个也是板载内存吧？颗粒压在均热板下？
+  - 所有395主板的8个内存颗粒都有用CPU散热器辅助排热
+
+- 接口有点太少，扩展性一般
+
+- [超级核显395迷你主机什么时候上市？MODT ITX更具性价比？\_哔哩哔哩 _202502](https://www.bilibili.com/video/BV1tLP7ehEbo/?spm_id_from=333.337.search-card.all.click&vd_source=deff4d2e2efa3273948dd6911a08fd39)
+- oculink的本质就是一个pcieX4的插槽, 这主板不是自带了吗? 你买个pcie转换卡就行啊!pcieX4, oculink, M.2, 本质上没区别. 走的都是pcieX4通道. 就是接口样子不一样而已, 买个转接卡, 可以提供无损转换.
+  - 不是这么说的，转接我当然知道。但这种主机背板都是各自定制的，不自己动刀开孔是没法上转接卡的。买这种主机的人对外观往往还有要求，就算有动手能力一般也不会去开。但凡它是个itx形态，别说转oculink 了，pcie x16都有办法全速转出来，想怎么玩就怎么玩。
+- 如果买个这cpu，自己能diy itx主机吗，有合适的主板吗
+  - 够呛，framework有这个的itx主板但是估计不会公开单独售卖，这个得和AMD合作定制的
+- 这个其实是笔记本CPU，是直接焊在主板上的，用的内存也是直接焊在主板上的lpddr5内存。你就是单独买到这个CPU也用不了。
+
+- 这么牛的核显，显示接口太少了，应该做成5-6个显示接口。方便多屏用户选择
+
 - ## [[TweakTown] Minisforum BD395i MAX motherboard at CES 2026: built-in AMD Strix Halo APU, use your own GPU : r/hardware](https://www.reddit.com/r/hardware/comments/1q8jo44/tweaktown_minisforum_bd395i_max_motherboard_at/)
 - The dGPU can offload the compute intensive attention part of a large MoE LLM model while retaining most of the memory usage on the iGPU.
 

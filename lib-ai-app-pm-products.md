@@ -805,6 +805,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [Token HUB](https://hub.linux.do/), 封号严重
   - 部分公益站和token-hub支持用LDC换低倍率的模型，可在ldstore用商品换LDC，再用LDC来换低倍率套餐
+  - hub.linux.do深夜福利的cc倍率也能达到0.02, 而付费的cc普遍在0.3, 所以可以适当留好余额在hub用cc
   - [讨论token银行的可行性 - LINUX DO _202604](https://linux.do/t/topic/2007302)
   - [L站的活跃佬友永远也不缺token花了，token自由已实现 _202605](https://linux.do/t/topic/2111825)
   - 置换的总体思想就是将你闲置的订阅套餐、朋友赠送的 Key、公司发的额度——闲着也是浪费。把它们上架成公开渠道，换成可以继续消费的 credits
@@ -2450,6 +2451,8 @@ modified: 2025-03-22T16:10:24.856Z
 
 - tips
   - 很多中转站带有峰值倍率和闲时倍率, 夜间多用闲时倍率, 白天可用半公益站
+  - hub.linux.do深夜福利的cc倍率也能达到0.02, 而付费的cc普遍在0.3, 所以可以适当留好余额在hub用cc
+  - 少数中转站会用非常短暂的低倍率吸引充值, 充完后取消低倍率只剩高倍率, 所以不要充多了
 
 - resources
   - [LinuxDo商家评价平台](https://rate.linux.do/)
@@ -2463,13 +2466,13 @@ modified: 2025-03-22T16:10:24.856Z
   - [吱吱鼠AI的小店 - 云猫寄售 ](https://catfk.com/shop/SXS913NA)
   - 中转站仅支持gmail
   - kiro--0.2
-  - plus--0.03
+  - plus--0.031
 
 - [刀刀刀-天才程序员 - /New API ](https://codexapis.com/pricing)
   - [刀刀刀-天才程序员的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/6YQL25Q0/b6scwi)
   - QQ群：740937090
   - kiro--0.12/0.3
-  - plus--0.05
+  - plus--0.035
 - [cc-api  /New API](https://cc-api.chat/pricing)
   - 专注于kiro中转
   - kiro--0.12, 低缓和高缓都是0.12
@@ -2477,28 +2480,25 @@ modified: 2025-03-22T16:10:24.856Z
   - kiro-0.18/0.2
   - kiro分组多，还有cc
 
-- [超超 mouubox  - /Sub2API ](https://sub2api.mouubox.com/dashboard)
+- [超超 mouubox  - /Sub2API ](https://sub2api.mouubox.com/dashboard) , 已充值
   - [/Sub2API ](https://api.mouubox.com/home)
     - 一个主站一副站, 副站sub2api.mouubox.com,
     - 现在好像sub2api这个要绿一点
   - [秒速 5 厘米的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/UJ3XQ6VC)
-  - plus--0.01
+  - plus--0.02
 
-- [mdkj  - /Sub2API ](https://mdkj.lol/dashboard)
+- [mdkj  - /Sub2API ](https://mdkj.lol/dashboard), 已充值
   - plus--0.025
   - 注意倍率调整 
 
-- [naonao - /Sub2API ](https://gpt.qinnaonao.com/dashboard)
-  - codex分组--0.03
-  - 不可用
-
-- [钧澈API ](https://vip.lcodex.cn/pricing)
-  - team--0.03
+- [钧澈API ](https://vip.lcodex.cn/pricing), 已充值
+  - plus--0.025
+  - team--0.01
   - plus/pro号池多, 0.04-0.07
 
-- [cp中转站 /Sub2API](https://huozz.cn/dashboard)
-  - kiro--0.2
-  - plus--0.1
+- [naonao - /Sub2API ](https://gpt.qinnaonao.com/dashboard), 已充值
+  - codex分组--0.03
+  - 不可用
 
 - [Qmy2AI /sub2api](https://sub2api.qmytai.com/dashboard)
   - 个人0.04x，中转站0.03x
@@ -2506,10 +2506,25 @@ modified: 2025-03-22T16:10:24.856Z
 - [C-API. CC /sub2api](https://c-api.cc/dashboard)
   - plus--0.05
 
+- [豆子Ai /sub2api ](https://top.douziai.xyz/dashboard)
+  - plus--0.05
+  - kiro--0.5
+
+- [Codex不限量 /sub2api](https://codex.0u0o.com/dashboard)
+  - plus-0.06
+
 - [xem API ](https://ai.xem8k5.top/pricing)
   - plus--0.2
   - claude--0.3
   - 赞助和额度充值入口：https://afdian.com/a/cong0707
+
+- [AI-Relay ](https://www.ai-relay.org/dashboard)
+  - plus--0.1
+  - claude--0.7
+
+- [cp中转站 /Sub2API](https://huozz.cn/dashboard)
+  - kiro--0.2
+  - plus--0.1
 
 - [稳问AI /Sub2API](https://api.wenwenai.org)
   - 0.01是1块钱100刀
