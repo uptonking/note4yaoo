@@ -892,6 +892,13 @@ modified: 2025-02-21T17:17:42.225Z
   - Supervision was designed to be model agnostic. Just plug in any classification, detection, or segmentation model.
     - we have created connectors for the most popular libraries like Ultralytics, Transformers, or MMDetection.
 # image 
+- https://github.com/yuzhworkhard-wq/image-to-code-skill
+  - [【设计图完美转code/figma】焚诀来了！我把自己炼成了skill！ - LINUX DO _202606](https://linux.do/t/topic/2314994)
+    - 目前我的真实工作流程就是先用image 2生成图，我再自己对图片进行修改、去除字体、抠出背景…感觉自己都要成了流水线工人了，再加上很多佬友发帖想要更好审美的vibe coding（其实我一直觉得提示词再怎么优化，ai也没有审美）
+    - 于是，我把自己炼化成了焚诀，先做了一版简易的image-to-code的skill。
+    - 切图前将每个资源目标的位置、大小等都画出来
+    - 目前只适用于手机端，后续我会再搞一版电脑端的，不过因为电脑端适配尺寸较多，自适应可能会比较麻烦
+
 - https://github.com/dwzhu-pku/PaperBanana /6.2kStar/apache2/202604/python/js
   - https://dwzhu-pku.github.io/PaperBanana/
   - PaperBanana: Automating Academic Illustration For AI Scientists

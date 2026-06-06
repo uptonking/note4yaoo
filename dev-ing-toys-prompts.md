@@ -127,7 +127,7 @@ then compare the architecture/implementation of superdoc and docx-editor, explai
 
 onlyoffice-pdf-editor(code is at several git repos in current folder) implements renders, edits, annotates `.pdf` files in the browser, but it is AGPL licensed.
 - the final goal is to implement a new headless, extensible pdf editor named hardoc with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
-- hardoc pdf editor should be more of a headless client-server architecture, so that a hardoc pdf web/cli/sdk can be built on the same architecture. 
+- hardoc pdf editor should be more of a headless client-server architecture, so that a hardoc pdf web/cli/sdk can be built on the same architecture. the hard web pdf editor ui/ux may be similar to onlyoffice-pdf-editor.
 - hardoc should be implemented in a modular and extensible architecture for core pdf features like viewing and editing, with functional programming style.
 
 - goals for pdf editing:
@@ -441,7 +441,7 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 
 -------
 
-- unsloth-studio has very good support for openai-compatible api and anthropic-compatible api and gguf/mlx/vlm models, you may reference it if you need. it also support tool calls and chat templates, you may reference the architecture/code and rewrite/improve it for aichorage.
+- unsloth-studio has very good support for openai-compatible api and anthropic-compatible api and gguf/mlx/vlm, text, vision, TTS audio, embedding models, you may reference it if you need. it also support auto inference settings, chat templates editing, self-healing tool-calling, advanced web search, code execution, you may reference the architecture/code and rewrite/improve it for aichorage.
 
 - local model testing/running can be very slow and take huge disk space.
 local model testing/running can be very slow.

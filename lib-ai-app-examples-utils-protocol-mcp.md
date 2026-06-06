@@ -236,6 +236,15 @@ modified: 2026-01-19T05:01:00.055Z
 - https://github.com/Yuzc-001/grasp /MIT/202603/js
   - Grasp runs locally, keeps a dedicated chrome-grasp profile, and gives agents a browser session they can reuse instead of restarting from scratch every time.
   - [Grasp v0.5：完全重塑，从浏览器运行时到 AI 浏览器网关  - LINUX DO _202603](https://linux.do/t/topic/1803722)
+
+## browser-utils
+
+- https://github.com/AhYi8/browser-ai-assistant
+  - [【开源推广】一个本地可控的浏览器 AI 助手：能读网页、看截图、自动化分析 Network 请求 - LINUX DO _202606](https://linux.do/t/topic/2315400)
+  - 这个项目是浏览器侧边栏 AI 助手插件。
+  - 可以读取当前网页的标题、URL、可见文本、HTML、截图作为上下文进行 AI 对话；
+  - 支持自定义渠道，支持配置 NewAPI 模型，同时，支持视觉理解模型，支持图片上传、图片理解；
+  - 支持Chrome Sync/WebDAV/S3 远程备份、恢复；
 # computer/container-use
 - https://github.com/bytedance/UI-TARS-desktop /28.8kStar/apache2/202603/ts
   - https://agent-tars.com/
