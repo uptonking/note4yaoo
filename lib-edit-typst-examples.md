@@ -432,6 +432,10 @@ modified: 2025-12-25T19:55:10.911Z
   - Typst support, which compiles via Typst installed on the user's device and embeds as SVG / HTML, thus all Typst features are available. 
   - Organize Markdown files in the manner of Jon Sterling's Forester.
 
+- https://github.com/vincentarelbundock/calepin /MIT/202606/rust
+  - strongly inspired by Quarto, but is intended to be a Typst-first design.
+  - [Calepin: Computational notebooks in Typst : r/typst _202606](https://www.reddit.com/r/typst/comments/1txkdqu/calepin_computational_notebooks_in_typst/?sort=top)
+
 - https://github.com/hanwenguo/weibian /GPL/202512/rust
   - https://hanwenguo.github.io/weibian/
   - 韦编: A Note System Powered by Typst
@@ -872,4 +876,8 @@ modified: 2025-12-25T19:55:10.911Z
     - https://phesoca.com/kanbun-html/
     - a kanbun kundoku (漢文訓読) HTML display solution (probably the best) supporting both fixed inter-character spacing setting (アキ組) and solid setting (ベタ組) setting. It converts annotated kanbun text to HTML and displays it.
     - ✨ 竖排文字， 每个文字可在右下角或右侧显示翻译
+# ai-docs
+- https://github.com/ndpvt-web/latex-document-skill /202606/python/tex
+  - Universal LaTeX document skill for Claude Code: 27 templates, 27 scripts, 26 reference guides.
+  - Turn handwritten notes, scanned textbooks, and raw data into publication-ready LaTeX -- without knowing a single LaTeX command.
 # more

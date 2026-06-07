@@ -227,6 +227,22 @@ modified: 2026-01-14T18:59:01.949Z
 - 
 - 
 
+# discuss-mlx-gui-omlx
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Would it help your workflow if oMLX supported MarkItDown natively?
+- https://x.com/jundotkim/status/2062838413590675511
+  - At least for me, I think it'll be a huge help going forward. (It's built right into oMLX, and works both as a Markdown Converter you can call through the OpenAI API endpoint as a single model, and as an automatic document converter when you attach documents to an LLM request.)
+
+- ## For oMLX there's some overhead from boundary caching and the sampler, so it being slightly slower than native mlx-vlm is expected 
+- https://x.com/jundotkim/status/2063344398038077548
+  - Qwen models on the VLM path had a regression where single-row decode was falling into the slower batched cache path, so internal benchmarks (LM path) looked fine while real chat/server throughput dropped.
+  - I fixed it by updating the Qwen VLM batching and singleton decode handling, so single-row decode no longer falls into the slower batched cache path.
+
 # discuss-mlx-gui
 - ## 
 
@@ -246,10 +262,6 @@ modified: 2026-01-14T18:59:01.949Z
 - Benchmarking inference is brutal. Half the time you aren't even testing the hardware, you're just benchmarking the engine's default KV cache allocation policy.
 
 - I find quantisation and vision support are the hardest. Most of the Apple Silicon sit on top of mlx-vlm so seem pointless to compare. Benchmarks though are difficult, there’s always something you forgot.
-
-- 
-- 
-- 
 
 - ## 🆚 MLX: there are far too many servers now: vMLX, oMLX, Osaurus, LMStudio, mlx-lm, mlx-vlm.
 - https://x.com/ivanfioravanti/status/2042855890219327650

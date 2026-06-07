@@ -50,7 +50,31 @@ modified: 2020-12-22T12:41:57.687Z
   - /etc/sudoers
     - 将 %sudo ALL=(ALL:ALL)ALL 修改为  %sudo ALL=(ALL:ALL)NOPASSWD:ALL
 - [在win10的WSL中设置前端开发环境](https://juejin.cn/post/6844903892564574222)
+# discuss-win-bash/shell
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Coreutils for Windows - a set of Linux-like command line utilities that run natively on Windows
+- https://x.com/msdev/status/2061855342833885336
+  - https://github.com/microsoft/coreutils /MIT/rust
+  - WSL containers - a built-in way to create, run and interact with Linux containers using familiar CLI & API
+- I mean it's time to stop to do like Linux but do directly Linux. Windows need to migrate as UNIX-like kernel with POSIX actually. Simulate Linux with aliases between Linux commands and PS commands, using WSL, it's too fat.
+
+- why_is_this_700MB_.txt
+
+- I mean it's time to stop to do like Linux but do directly Linux. Windows need to migrate as UNIX-like kernel with POSIX actually. Simulate Linux with aliases between Linux commands and PS commands, using WSL, it's too fat.
+
+- Powershell has some weird quirks that aren’t always super intuitive, but it is absolutely the most powerful shell hands down
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

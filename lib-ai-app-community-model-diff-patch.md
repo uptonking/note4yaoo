@@ -209,6 +209,14 @@ modified: 2025-10-10T02:45:45.941Z
 
 ## diff-utils
 
+- https://github.com/nkzw-tech/codiff /MIT/202606/ts
+  - Codiff is a beautiful, minimal, local diff viewer for reviewing staged and unstaged Git changes before committing.
+  - Run codiff -w to ask Codex or Claude Code to give you a review order and more context.
+  - Inline Review Comments: Comment directly on changed lines and copy all review comments as Markdown for follow-ups.
+- https://github.com/franklioxygen/doff /202604/ts
+  - Local-first, offline-ready diff workspace for text, images, documents, spreadsheets, and folders.
+  - doff runs entirely in your browser — no uploads, no accounts, no servers. Compare files privately and instantly.
+
 - https://github.com/ace-diff/ace-diff /MIT/202507/js/inactive
   - https://ace-diff.github.io/ace-diff/
   - A diff/merging wrapper for Ace Editor built on google-diff-match-patch

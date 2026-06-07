@@ -67,6 +67,16 @@ modified: 2026-04-07T12:33:48.087Z
   - https://github.com/qdrant/qdrant-edge-demo
     - https://qdrant.tech/edge/
     - POC visual search with smart glasses and Qdrant Edge.
+
+- https://github.com/virgiliojr94/book-to-skill /MIT/202605/python
+  - Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work.
+  - Running `/book-to-skill your-book.pdf` (or a folder, glob, or list of files) creates a full skill at` ~/.claude/skills/<slug>/`:
+    - Once installed, you just type /your-book-slug replication and Claude reads the right chapter and answers from the actual content. No hallucination. No digging through PDFs. 
+    - Chapter files are loaded on-demand — they don't count against the skill budget until you ask about that topic.
+  - Isn't this just RAG?
+    - RAG works at query time: chunk the book → embed everything → find similar vectors → inject into prompt. It's optimized for "find me the part that talks about X."
+    - book-to-skill works at compile time: one deep analysis run extracts the author's actual frameworks, names them, describes when to use each, captures the anti-patterns. The output is structure the author spent years building — not a similarity search over their sentences.
+    - For searching across 50+ books, RAG wins. For going deep on one book and using its frameworks while you work, a skill wins.
 # rag-memory/context
 - https://github.com/zilliztech/memsearch /109Star/MIT/202602/python
   - https://zilliztech.github.io/memsearch/

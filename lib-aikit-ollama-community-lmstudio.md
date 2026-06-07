@@ -105,6 +105,23 @@ modified: 2026-01-14T18:58:32.523Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 1.8.5 KV Cache on disk added to LM Studio _202606
+- https://x.com/ivanfioravanti/status/2063139918902100469
+- The real win here isn't just saving VRAM, it's latency arbitrage. NVMe is slow, but restoring a serialized cache at 6 GB/s is way faster than re-running a massive prefill on consumer GPUs.
+
+- [ "Improving LM Studio's MLX Engine for Agentic Workflows" / X _202606](https://x.com/ostensiblyneil/status/2063006720616734835)
+  - This update dramatically improves performance for repeated, long-context agentic workflows by checkpointing your KV cache. It also adds continuous batching for VLM requests
+  - In this post, I’ll explain the cache-reuse problem this solves, why current open-source LLM models make rewinding harder, and how the new disk-backed cache works. 
+  - Our benchmarks show up to 80% lower extra RAM usage, up to 2x more throughput, and up to 3.5x faster processing for image requests.
+  - MLX Engine (mlx-engine) is an MIT-licensed inference engine optimized for Apple silicon. It was created and maintained by LM Studio. It uses Apple's MLX machine learning library, and builds on projects such as mlx-lm and mlx-vlm. MLX Engine is LM Studio's backend for all MLX inferencing.
+  - Two of the most popular open-source models right now are Qwen 3.5 (and 3.6) and Gemma 4. As part of each model's architecture, they use some nifty tricks to reduce the size of the KV cache at large context lengths. Qwen 3.5 uses a hybrid architecture and Gemma 4 uses a sliding window architecture. These attention strategies reduce memory usage at large context lengths, but they make the KV cache not arbitrarily rewindable. 
+  - We devised a solution for KV cache rewinding for these agentic use cases. By saving and restoring prompt cache to disk, the KV cache for follow-up requests does not need to be recomputed.
+  - We designed the disk cache to clean itself up after the model is unloaded. In other words, the cache is temporary and will not leave persistent files.
+
 - ## pr已合并 [Add Presence Penalty · Pull Request · lmstudio-ai/lmstudio-js _202603](https://github.com/lmstudio-ai/lmstudio-js/pull/552)
   - ? 似乎只支持llama.cpp， 不支持 mlx
 

@@ -98,6 +98,13 @@ modified: 2026-01-19T05:01:00.055Z
   - https://x.com/drawio/status/2039807042865504621
     - search_shapes lets your LLM search 10,000+ specialized shapes — AWS, Azure, GCP, Kubernetes, Cisco, P&ID, electrical, BPMN and more — and use them directly when generating diagrams
 
+- https://github.com/Agents365-ai/drawio-skill /MIT/202606/python
+  - A skill that turns natural-language descriptions into `.drawio` XML and exports them to PNG / SVG / PDF / JPG via the native draw.io desktop CLI. 
+  - It can also turn an existing codebase (Python / JS-TS / Go / Rust) into an auto-laid-out structure diagram. 
+  - Works with Claude Code, Cursor, Copilot, OpenClaw, Codex, Hermes
+  - 🆚 提供了与同类方案的对比
+  - 6 diagram type presets — ERD, UML Class, Sequence, Architecture, ML/Deep Learning, Flowchart
+
 - https://github.com/magicyuan876/mineru-tianshu /apache2/202601/python/ts/vue
   - 天枢 - 企业级 AI 数据预处理平台，将非结构化数据转换为 AI 可用的结构化格式
   - 支持文档、图片、音频等多模态数据处理 | GPU 加速 | MCP 协议

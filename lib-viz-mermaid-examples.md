@@ -59,6 +59,18 @@ modified: 2025-11-19T17:59:15.580Z
       - 4、mermiad 太重了，不适合轻量级的 web app 使用
       - 5、AI 其实对 mermiad 支持度一般，在输出语法时经常出错，之前做过的几个项目，我需要反复修改提示词才能勉强保住 AI 对 mermiad 输出可以被正常渲染
       - 6、mermiad 没有天然的 AI 支持，勉强可以流式输出，但无内置 AI 输入框，需要额外开发。
+
+- https://github.com/Agents365-ai/mermaid-skill /MIT/202606
+  - https://agents365-ai.github.io/mermaid-skill/
+  - A skill that turns natural-language requests into .mmd source, validates syntax before export, and renders to PNG / SVG / PDF via the mmdc CLI or the Kroki HTTP API. 
+  - Works with Claude Code, Cursor, Copilot, OpenClaw, Codex, Hermes
+
+- https://github.com/Agents365-ai/drawio-skill /MIT/202606/python
+  - A skill that turns natural-language descriptions into `.drawio` XML and exports them to PNG / SVG / PDF / JPG via the native draw.io desktop CLI. 
+  - It can also turn an existing codebase (Python / JS-TS / Go / Rust) into an auto-laid-out structure diagram. 
+  - Works with Claude Code, Cursor, Copilot, OpenClaw, Codex, Hermes
+  - 🆚 提供了与同类方案的对比
+  - 6 diagram type presets — ERD, UML Class, Sequence, Architecture, ML/Deep Learning, Flowchart
 # examples
 - https://github.com/skovy/llm-markdown /MIT/202309/ts/inactive
   - https://llm-markdown.vercel.app/
@@ -85,12 +97,10 @@ modified: 2025-11-19T17:59:15.580Z
   - Zero lock-in: Pure spec—works with any Markdown parser + any UI framework
   - [Show HN: Turn Markdown into React/Svelte/Vue UI at runtime, zero build step | Hacker News _202508](https://news.ycombinator.com/item?id=45024532)
 # alternatives
-
 - https://github.com/Nimblesite/typeDiagram /MIT/202604/ts
   - http://typediagram.dev/
   - typeDiagram is a tiny, language-neutral DSL for diagramming data types. Write type, union, alias — get a beautiful, auto-laid-out SVG. No drag, no drop, no proprietary format.
   - https://x.com/CFDevelop/status/2045103139934900648
   - So you created a clone of PlantUML and Mermaid?
     - It’s a language independent markup language for defining algebraic data types. You can build DTOs across languages and codegen in both languages, all while having a visual representation of the model. 
-
 # more

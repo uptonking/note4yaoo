@@ -14,6 +14,7 @@ modified: 2026-05-28T17:50:54.646Z
   - obsidian for pdf: auto-toc, history/diff, proofreading, tools
     - features-port: editor, backlinks, bases, publish, graph-view
   - port model-specific skills to aichorage
+  - easy local model xp: single-model, dual-models, hot-models
   - headless api/cli/skills
   - python-first
   - image/pdf ux
@@ -57,6 +58,12 @@ modified: 2026-05-28T17:50:54.646Z
 - faster
   - mtp
 
+- translation
+  - ✨ 在原文中显示四六级词汇的翻译。 
+    - ❓ 如何在不改变布局或减少reflow的目标下实现ux
+    - 可配置调整译文的位置， 上下左右移动
+  - 部分翻译， 仅翻译难理解的语句/四六级词汇
+
 - bench
   - omlx-benchmark可迁移
 
@@ -68,6 +75,8 @@ modified: 2026-05-28T17:50:54.646Z
 
 - lite
   - 去掉llama.cpp/mlx后端的纯客户端版本
+
+- KV Cache on disk added to LM Studio
 # pm
 
 # dev-xp

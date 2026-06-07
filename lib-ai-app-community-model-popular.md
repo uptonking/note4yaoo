@@ -712,8 +712,6 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
-
 - ## [Gemma 4 12B vs Qwen3.5-9B - which small model actually earns its VRAM? : r/AIToolsPerformance _202606](https://www.reddit.com/r/AIToolsPerformance/comments/1twdury/gemma_4_12b_vs_qwen359b_which_small_model/?sort=top)
 - I think Gemma 4 12b still uses that sliding window attention, so it's not going to be viable for coding, or anything that requires accurate attention.
 

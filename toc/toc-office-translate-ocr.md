@@ -131,6 +131,10 @@ modified: 2026-04-07T11:52:43.122Z
     - pdf2zh 桌面版, Win + Mac 双平台
     - 公式排版完美保留 · Zotero 深度联动
     - OnnxRuntime 8 秒超时机制
+- https://github.com/fanxing-6/pdf2zh-skill /python
+  - Convert academic PDF papers or arXiv/LaTeX sources into Chinese PDF outputs while preserving LaTeX structure as much as practical.
+  - Parse regular PDFs into TeX projects with DOC2X
+    - Segment translatable prose while preserving fragile LaTeX blocks
 
 - https://github.com/wxyhgk/retain-pdf /MIT/202604/python/rust/js
   - [RetainPDF：PDF 保留排版翻译工具 - LINUX DO _202604](https://linux.do/t/topic/1891990)
@@ -377,6 +381,16 @@ modified: 2026-04-07T11:52:43.122Z
   - [开源了一个 PPT“逆向”工具，图片直接转可编辑 PPT _202512](https://linux.do/t/topic/1368469)
     - 代码都是AI写的！我也不咋能看懂，慢慢学习嘛
 # translation
+- https://github.com/deusyu/translate-book /MIT/202605/python
+  - Claude Code skill that translates entire books (PDF/DOCX/EPUB) into any language using parallel subagents
+  - Inspired by claude_translater. The original project uses shell scripts as its entry point, coordinating the Claude CLI with multiple step scripts to perform chunked translation. This project restructures the workflow as a Claude Code Skill, using subagents to translate chunks in parallel
+  - Calibre ebook-convert → HTMLZ → HTML → Markdown
+    - Split into chunks (chunk0001.md, chunk0002.md, ...)
+    - Parallel subagents (8 concurrent by default)
+    - Validate (manifest hash check, 1:1 source↔output match)
+    - Merge → Pandoc → HTML (with TOC) → Calibre → DOCX / EPUB / PDF
+    - Each chunk gets its own independent subagent with a fresh context window. This prevents context accumulation and output truncation that happen when translating a full book in a single session.
+
 - https://github.com/michaelbeijer/Supervertaler /16Star/MIT/202512/python/PyQt6
   - https://supervertaler.com/
   - AI-powered translation workbench with multi-LLM support (GPT-4, Claude, Gemini, Ollama).

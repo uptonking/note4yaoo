@@ -1408,6 +1408,16 @@ modified: 2026-04-07T12:53:38.419Z
 - [Docling Visual grounding](https://docling-project.github.io/docling/examples/visual_grounding/)  
   - [Visual Grounding from Docling _202504](https://alain-airom.medium.com/visual-grounding-from-docling-74a0ee078981)
 
+- https://github.com/metedata/pdf-proof /MIT/202604/python
+  - skill that turns "the AI said so" into visual proof — screenshot crops, highlighted values, and confidence scores, straight from the source PDF.
+  - Given a PDF and a value to verify, the skill:
+    - Finds the exact text coordinates using `PyMuPDF`'s text search
+    - Crops a readable section of the page around the match
+    - Highlights the value with a translucent orange highlight
+    - Verifies by reading text back from the highlighted region to confirm correctness
+    - Assembles an HTML proof page with a summary table and per-value proof cards
+    - The result is a standalone HTML file with embedded screenshots — a visual audit trail you can keep, share, or attach to a filing.
+
 - https://github.com/hypothesis/pdf.js-hypothes.is /403Star/bsd/202501/js/专注于标注/inactive
   - https://web.hypothes.is/
   - This is a copy of Mozilla's PDF.js viewer with Hypothesis annotation tools added.

@@ -15,6 +15,7 @@ modified: 2021-01-04T17:26:43.784Z
     - 💡 可参考 overleaf, 支持典型的latex文本编辑、富文本编辑
   - pdf标注可参考 office-drawing, 还可参考: okular, foxit, canva, xournal, 各类电子书阅读器
   - 提取pdf中插图/图表的思路是分步执行, vlm返回bbox, 然后通过pymupdf裁剪
+  - pdf的操作/工具还可从 zotero 中寻找灵感
 
 - pdf-editor
   - stirling-pdf
@@ -366,9 +367,6 @@ modified: 2021-01-04T17:26:43.784Z
 - ilovepdf
   - [ArmorPDF - Free Browser-Based PDF Tools, 100% Private](https://armorpdf.com/)
 
-- https://github.com/superpilot69/pdf-trad-to-simp-preserve-layout-kit
-  - PDF traditional-to-simplified Chinese conversion kit with layout-preserving scripts, Codex skill, and example source/output PDFs.
-
 - https://github.com/mrmn2/PdfDing /1.7kStar/AGPL/202604/python
   - https://www.pdfding.com/
   - a selfhosted PDF manager, viewer and editor offering a seamless user experience on multiple devices.
@@ -706,6 +704,29 @@ modified: 2021-01-04T17:26:43.784Z
   - Supports OpenAI and OpenRouter through LiteLLM
   - Flexible CLI: Both file-based and pipe-based usage modes
   - Modular Architecture: Clean, maintainable codebase with separation of concerns
+
+- https://github.com/lovstudio/any2pdf /MIT/202605/python/中文优化
+  - Markdown to professionally typeset PDF — an agent skill for AI coding assistants
+  - any2pdf is the sweet spot: one Python file, one dependency (`reportlab`), zero config — and it handles every CJK/Latin edge case because we hit them all building real 200-page Chinese technical reports.
+  - For CJK Users — Battle-Tested on Real Reports
+  - Canvas CJK: Dates like "2026年4月1日" render correctly everywhere — cover, headers, footers
+  - Book-quality fonts: Palatino + 宋体 (macOS), Times + SimSun (Windows) — not Arial + fallback
+  - Rich Markdown blocks: Obsidian callouts, inline images, emoji, and LaTeX-style formulas render instead of disappearing
+  - Merged heading recovery: Input like # Part## Chapter on one line? Auto-split before parsing
+  - Cross-Platform, Zero Config
+
+- https://github.com/molefrog/skills /MIT/202602/ts
+  - skill for generating PDF documents with React-PDF (@react-pdf/renderer).
+  - Libraries like ReportLab, WeasyPrint, or fpdf2 work, but React-PDF has real advantages for AI-generated documents:
+    - Flexbox & grid layout — powered by Yoga (Facebook's layout engine). 
+    - SVG primitives — `<Svg>, <Path>, <Circle>` are first-class components. Draw charts and icons inline without a separate graphics library.
+    - Google Fonts support — register any TrueType font 
+    - Knuth-Plass line breaking — the same algorithm used by TeX. 
+    - Smart page breaks — wrap, break, minPresenceAhead control content flow across pages
+    - Emoji support — register Twemoji assets and use emoji directly in text. No custom rendering logic needed.
+
+- https://github.com/superpilot69/pdf-trad-to-simp-preserve-layout-kit /MIT/202604/python
+  - PDF traditional-to-simplified Chinese conversion kit with layout-preserving scripts, Codex skill, and example source/output PDFs.
 
 - https://github.com/USEPA/pdf-data-extraction /js
   - The purpose of this project is to further the research and development of tools that NCEA can use in their creation of machine-readable datasets and machine learning research. 

@@ -95,6 +95,25 @@ modified: 2023-01-09T15:41:17.179Z
 
 - https://x.com/flybayer/status/1928441254678806614
   - I think re-using a name for something totally new is a huge mistake. Redwood has done this recently too. 
+# discuss-routing-extensions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## IntentObserver network demo
+- https://x.com/jjenzz/status/2062835765378232758
+- Backend dev screams at having to support aborted requests better than they currently do
+
+- https://github.com/spaansba/ForesightJS /MIT/202605/ts
+  - a lightweight JavaScript library that predicts user intent to prefetch content before it's needed. It works completely out of the box without configuration, supporting both desktop and mobile devices with different prediction strategies.
+
+- https://github.com/mathisonian/premonish /MIT/201612/js/inactive
+  - https://mathisonian.github.io/premonish
+  - Predict which DOM element a user will interact with next.
 # discuss
 - ## 
 

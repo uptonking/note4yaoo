@@ -565,6 +565,9 @@ modified: 2025-02-21T17:17:42.225Z
   - https://github.com/ItMeDiaTech/Documentation_Hub/releases/tag/v2.0.0
     - dmg
 
+- https://github.com/huangserva/servasyy_skills /MIT/202602/python/inactive
+  - AI驱动的多媒体内容生产平台。14个集成技能：document-writer（5种写作风格）、illustration-generator（20种配图风格）、ppt-generator（22种PPT风格）、podcast-generator（3种TTS引擎）、remotion-dev（视频制作）、twitter-crawler（推文爬取）、markdown-illustrator（Markdown配图）、comic-generator（漫画生成）、media-downloader（媒体下载）、tts-script-generator（TTS脚本）、md-to-pdf（文档转换）、wechat-formatter（微信格式化）、humanizer-zh（中文人性化）、shared-lib（核心API库）。
+
 - https://github.com/iiinnovation/Solidify /MIT/202603/ts
   - 一款专为非研发背景实施人员打造的轻量级 AI 工具，专注文档生成、演示准备和知识管理。
   - 9 个内置技能 - 需求分析、方案设计、演示文稿、测试方案等
@@ -709,6 +712,18 @@ modified: 2025-02-21T17:17:42.225Z
   - 仅在 macOS 工作（依赖 Microsoft Word + 浏览器 + System Events 的 UI 自动化）。
   - [100%复刻word模版的skill - LINUX DO _202604](https://linux.do/t/topic/2068329)
 
+- https://github.com/tfriedel/claude-office-skills /202604/python
+  - Office document creation and editing skills for Claude Code - PPTX, DOCX, XLSX, and PDF workflows with automation support
+  - update 2026-04-01: This repo was published before Anthropic made these skills public themselves. For anyone interested in this I suggest you rather have a look at the official repo as the skills there may be getting updates
+
+- https://github.com/appautomaton/document-SKILLs /202603/python
+  - A collection of Claude Code / Codex skills for document manipulation — PDF extraction/forms, Excel analysis/formulas, Word, and PowerPoint.
+  - Based on Anthropic's official skills.
+
+- https://github.com/quzhi-ai/logo2docs /MIT/202605/python
+  - Turn any company logo into consistently branded Excel, Word, PPT, PDF, flowcharts & handbooks. 
+  - Upload a company logo — get consistently branded Excel, Word, PowerPoint, HTML slides, PDF, flowcharts & handbooks. All design-system-driven. All editable. No Figma, no templates, no design skills needed.
+
 ### pdf-skills
 
 - https://github.com/idinging/qpdf-pdf-ops /shell
@@ -718,6 +733,10 @@ modified: 2025-02-21T17:17:42.225Z
     - 于是我就把它封装成了 Claude Code 的 skill，让 AI 帮你拼命令，你只需要说人话就行。
     - 目前打包了 7 个常用脚本：替换页面、删除页面、提取页面、合并、拆分、PDF 信息查询、环境检测。旋转和重排这些直接让 AI 调 qpdf 原生命令就行，没单独封装。
 
+- https://github.com/ComPDFKit/compdf-skills /paid
+  - agent-ready PDF processing skills for Claude Code, Cursor, Copilot, OpenCode
+  - As part of the KDAN ecosystem, ComPDF Skills work with 39+ AI coding agents including Claude Code, Cursor, GitHub Copilot, OpenCode, Windsurf, Gemini CLI, and more.
+
 ## reader
 
 - https://github.com/codedogQBY/ReadAny /GPL/2026t03/ts
@@ -726,6 +745,18 @@ modified: 2025-02-21T17:17:42.225Z
   - [【开源自荐】ReadAny：一款与AI 深度结合的开源跨端电子书阅读器  - LINUX DO _202603](https://linux.do/t/topic/1809537)
 
 ## writing
+
+- https://github.com/bahayonghang/academic-writing-skills /NC/202606/python
+  - https://bahayonghang.github.io/academic-writing-skills/
+  - AI-powered post-writing toolkit for academic papers — format validation, grammar/style polishing, de-AI editing, reference checking, and reviewer-style paper audits. 
+  - 5 skills for LaTeX, Typst & PDF. 
+  - Post-writing polish and validation for academic papers: format checks, bibliography search and verification, grammar analysis, de-AI editing, and experiment narrative review. Focused on improving existing drafts, not writing papers from scratch.
+  - Source-editing suggestions should preserve LaTeX and Typst syntax and mark required evidence as pending instead of filling it in.
+  - Online checks are optional. When current venue rules or external metadata matter, verify them from the original source before treating them as binding.
+
+- https://github.com/ShZhao27208/Aut_Sci_Write /MIT/202606/python
+  - Skills suite for the full academic research lifecycle
+  - automates the entire academic research and writing lifecycle — from literature discovery and deep PDF analysis to figure extraction, review writing, and professional PPT generation.
 
 - https://github.com/dama-cyber/Distilled-Novel-Toolbox
   - 一套面向网络小说作者的全链路创作知识库。覆盖从构思、写作、润色到发布的全流程，每个模块包含核心方法论（SKILL.md）和深度参考文档（references/）。
@@ -935,6 +966,14 @@ modified: 2025-02-21T17:17:42.225Z
     - 支持20多套顶尖视频风格模板，分页编辑，mp4 导出，支持包括Claude Code、Codex、hermes、cursor等主流 Agent接入即用
     - html-video 项目基于 hyperframes 框架构建, 由 Open Design 团队原班人马打造
     - html-video 支持分页预览、分页编辑和帧文字编辑，修改视频更快更方便，不用每改一次就要导出一次看效果
+
+- https://github.com/kapishdima/remocn /MIT/202606/ts
+  - https://remocn.dev/
+  - Production-ready animations, transitions, backgrounds, and scenes for Remotion. 
+  - A shadcn registry that lets you `npx shadcn add` polished video components into any Remotion project. Built for solo builders shipping demo videos fast
+  - Open core — primitives and base compositions are free forever. Premium blocks and a video builder are on the roadmap.
+  - https://x.com/kapish_dima/status/2062596204546953688
+    - @shadcn registry with ready-to-use, free animations for your Remotion videos
 
 - https://github.com/TriasJ/notebooklm-to-video /MIT/202605/python/ts
   - Claude Code skill: Convert NotebookLM slide decks into animated Remotion videos via MinerU OCR + HTML bbox editor + OpenCV inpainting

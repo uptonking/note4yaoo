@@ -747,7 +747,7 @@ modified: 2021-04-30T20:14:17.669Z
     - 导出的是真实文本框，并非 SVG 或图片
     - 并发生成	5 张图同时生成，速度提升 3-5 倍
 
-- https://github.com/hugohe3/ppt-master /913Star/MIT/202512/python
+- https://github.com/hugohe3/ppt-master /24.8kStar/MIT/202606/python
   - https://hugohe3.github.io/ppt-master/
   - 基于 AI 的智能视觉内容生成系统，通过多角色协作，将源文档转化为高质量的 SVG 内容，支持演示文稿、社交媒体、营销海报等多种格式。
   - 多格式画布支持（PPT 16:9/4:3、小红书、朋友圈、Story 等 10+ 格式）
@@ -757,6 +757,10 @@ modified: 2021-04-30T20:14:17.669Z
   - PPT 不认 rgba、不认组透明、不认图片透明
   - [PPT-master 一个用AI生成真正可编辑的高质量PPT的工具 _202512](https://linux.do/t/topic/1305492)
     - 使用 mineru 对 pdf 进行了提取，然后用 md 文档重新生成一份含有企业预警通图标和封面图的 ppt，因为时间更空余，生成的比视频里面的更精美多了
+  - https://github.com/zouchenzhen/thesis-defense-pptx-skill
+    - ppt-master 是一个优秀的开源项目，主打从 PDF、Word、Markdown、网页等资料生成原生可编辑 PPTX。它更适合从资料出发重新生成一套 AI 设计的可编辑 PPT。
+    - 本 Skill 的目标更窄：生成毕业论文答辩 PPT，并尽量严格沿用用户已有的 PowerPoint 模板。
+    - 在保留现有模板的基础上生成答辩 PPTX, 直接复制用户原始 PPTX 模板页并在其上替换内容
 
 - https://github.com/vigorX777/ppt-svg-generator /MIT/202601/js
   - https://mp.weixin.qq.com/s/0KhNkuoFkT9zq9I9COVnSg
@@ -845,11 +849,27 @@ modified: 2021-04-30T20:14:17.669Z
 - https://github.com/GordenSun/GordenPPTSkill 
   - [史上最强原生PPT Skill，更适合中国宝宝 - LINUX DO _202606](https://linux.do/t/topic/2278294)
 
+- https://github.com/kdnsna/ultimate-ppt-master-skill /MIT/202606/python/ts
+  - https://kdnsna.github.io/ultimate-ppt-master-skill/
+  - 可视化网页工作台 + 本机连接器：把 PDF、Word、PPT、URL 一键整理成本地 AI 助手可接手的 PPT 项目包，输出可编辑 PPTX 或杂志风网页演示
+  - 把经营复盘、咨询方案、培训课件和学术答辩先整理成清晰任务；网页只保留下一步，本地 Skill 和 AI 助手负责最终质量。
+
 ## ppt-image
 
 - https://github.com/JuneYaooo/gpt-image2-ppt-skills /apache2/202604/python
   - 任何 .pptx 模板"抄"成你的 PPT：gpt-image-2 仿版式、你换内容，另含 10 套精选风格
 - [【开源自荐】gpt-image2-ppt-skills：丢一张 .pptx 模板进去，AI 仿版式换内容 - 开发调优 - LINUX DO _202604](https://linux.do/t/topic/2053515)
+
+- https://github.com/ningzimu/image-to-editable-ppt-skill /MIT/202606/python
+  - 面向 Codex 的图片、PDF、图片版PPT 转可编辑 PowerPoint 的 skill。它先把输入归一化为逐页任务，再由 page subagent 重建为 .pptx：可读文字尽量恢复为原生文本框，简单几何尽量恢复为 PowerPoint 形状，复杂视觉元素保留为带来源记录的独立图片资产。
+  - 它适合把截图式或图片式幻灯片变成更容易二次编辑的 PPT，让文字、简单形状和视觉素材尽量分开调整。
+  - 目前该skill 采用了多智能体协作复原流程，有着复杂的流程控制，不是轻量转换器。AI 会执行“重建 → 自我验证 → 自我修复”的循环，并可能进行多轮迭代，直到它认为结果足够接近原图
+  - 推荐 ChatGPT Pro 用户使用；Plus 用户请谨慎使用。 复原一个 10 页 PPT 有可能消耗完你的 5 小时额度。单页PPT复原时间可能在10min以上，强烈建议先拿其中一页试效果，不要一上来就转换全部页的PPT。 将一个图片PPT转换成可编辑PPT的成本，可能是生成图片PPT成本的2-3倍。
+    - 更轻量的做法是直接使用 gpt-image-2 的图像编辑能力：把你不满意的那一页 PPT 图片发给它，让它针对性修改，并返回修改后的图片。
+  - 本 skill 针对 Codex 进行深度适配，目前不支持其他 agent。
+  - 本 skill 不负责从文章、报告、大纲或想法直接生成全新 PPT。如果你要做的是“生成一份 PPT”，可以使用  
+  - https://github.com/ningzimu/codex-ppt-skill /MIT
+    - 本 skill 负责从文章、报告、大纲或想法生成图片式 PPT，适合强视觉表达，但页面元素本身不可直接编辑。
 # ai-canvas
 - https://github.com/open-webui/open-webui /104kStar/BSD+LOGO/python/ts/svelte
   - https://openwebui.com/

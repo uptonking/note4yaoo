@@ -20,6 +20,16 @@ modified: 2026-04-07T11:51:51.225Z
   - https://frontman.sh/
   - open-source AI coding agent that lives in your browser. It hooks into your dev server as middleware and sees the live DOM, component tree, CSS styles, routes, and server logs.
 # ai-designer/lovable
+- https://github.com/nexu-io/open-design /60.3kStar/apache2/202606/ts
+  - https://open-design.ai/
+  - Local-first, open-source Claude Design alternative
+  - Native desktop app for macOS and Windows.
+  - 150 brand-grade DESIGN.md systems
+  - Generates web · desktop · mobile prototypes, live dashboards / artifacts, decks, images, video, plus HyperFrames motion graphics.
+  - Sandboxed iframe preview · HTML / PDF / PPTX / MP4 export.
+  - Runs on Claude Code · OpenClaw · Codex · Cursor · OpenCode · Qwen · Copilot · Hermes · Kimi · Antigravity and 21 local CLIs, or any OpenAI-compatible endpoint via BYOK.
+  - It's also the Figma alternative for the agent era — instead of pushing pixels on a canvas, it delivers single-page artifacts in real CSS, real fonts, real components, exported straight to HTML / PDF / PPTX / MP4
+
 - https://github.com/Amery2010/open-builder /GPL/202603/ts
   - https://builder.u14.app/
   - Open Builder is an open-source AI-powered app generator. Build web applications through natural language conversations.

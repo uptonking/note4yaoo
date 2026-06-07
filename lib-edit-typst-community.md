@@ -15,6 +15,17 @@ modified: 2025-12-25T19:54:56.482Z
 - ## 
 
 - ## 
+# discuss-news-typst 🆕
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [The day has come: variable fonts work in Typst : r/typst _202606](https://www.reddit.com/r/typst/comments/1ty908f/the_day_has_come_variable_fonts_work_in_typst/?sort=top)
+  - the well-known axes (wght, slnt, wdth, opsz...) get set automatically from weight / style / stretch / size like you'd expect — but you can still override them
+  - custom axes go through a new variations dict, keyed by the case-sensitive 4-letter tag
+
 # discuss-layout
 - ## 
 
@@ -106,9 +117,11 @@ modified: 2025-12-25T19:54:56.482Z
 
 - ## 
 
-- ## 
+- ## [Calepin: Computational notebooks in Typst : r/typst _202606](https://www.reddit.com/r/typst/comments/1txkdqu/calepin_computational_notebooks_in_typst/?sort=top)
+  - https://github.com/vincentarelbundock/calepin /MIT/202606/rust
+  - strongly inspired by Quarto, but is intended to be a Typst-first design.
 
-- ## 
+- ## [Typst in Obsidian : r/typst _202606](https://www.reddit.com/r/typst/comments/1tywt7y/typst_in_obsidian/?sort=top)
 
 - ## [Otter Docs: a pure Typst documentation generator (requires nightly Typst) : r/typst _202606](https://www.reddit.com/r/typst/comments/1tvfsyc/otter_docs_a_pure_typst_documentation_generator/?sort=top)
   - Documentation in pure Typst. No external tools required. Typst and Typst only.

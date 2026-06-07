@@ -661,6 +661,35 @@ sudo systemctl start minidlna
 - tips
   - 一直在活跃社区里面使用活跃的公益机场也是轻度使用的一种方案
 
+- 机场paid
+  - [良心云 ](https://xn--9kqz23b19z.com/#/dashboard)
+    - 2¥/月: 100G，按月重置流量
+    - 支持新疆，河南，福建，用户使用，毫无影响
+    - 所有节点1.0倍率，无高倍线路
+    - 支持同时在线8台设备使用
+    - 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿
+  - TAG(154/1年200g，iepl一线200+)
+    - 永久官网(会自动跳转) https://tagxx.vip
+      - https://tagweb.vip
+    - https://tagss.pro/#/shop
+    - ¥185/季: 250G/月 
+    - ¥162/年: 200GB/年，用完可手动重置流量 92 CNY /次
+      - ¥260/年: 400GB/年
+    - 最多【5】个设备同时链接使用，分享订阅将会限制冻结或永久封号
+    - 服务仅限于中国大陆海外&新疆无法使用（包括港澳台）
+    - 250+ 条高速加速线路，覆盖全球 100+ 个国家和地区(含卫星网络)
+    - 解锁ChatGPT、Claude、 Gemini、Cursor等主流 AI 工具的区域限制
+  - [FlowerCloud ](https://flowercloud.net/cart.php)
+    - [huacloud](https://huacloud.dev/product.html)
+    - 128￥/年: 20G/月, 选实验性节点可用100G/月
+    - 39¥/月: 150G/月, 346¥/年
+    - 低等级套餐没有性价比，但是他家有0.2倍率的实验性节点，也就是说你只用实验性节点的话流量可以按照5倍来看。
+    - 0.2倍率的实验性节点三条线路也是广港+沪日，这点很良心。
+    - 最高 1000Mbps 速率可用
+    - 开业时间: 2020
+      - [FlowerCloud - 国际网络加速服务，致力于提高网络质量！](https://huacloud.net/)
+      - [购物车 - FlowerCloud](https://flowercloud.net/cart.php)
+
 - 机场free
   - 🌹 https://ikuuu.club/
     - 免费版: 50G/月, 签到随机赠送流量, 大部分节点限速50M(6MB/s)
@@ -758,16 +787,7 @@ sudo systemctl start minidlna
 
 - 机场gfw
   - [VPS虚拟主机测评_IDC主机测评](https://shuziren.github.io/ssrvps/)
-  - [FlowerCloud - 产品套餐](https://huacloud.dev/product.html)
-    - 128￥/年: 20G/月
-    - 低等级套餐没有性价比，但是他家有0.2倍率的实验性节点，也就是说你只用实验性节点的话流量可以按照5倍来看。
-    - 0.2倍率的实验性节点三条线路也是广港+沪日，这点很良心。
-    - 开业时间: 2020
-    - domains
-      - [FlowerCloud - 国际网络加速服务，致力于提高网络质量！](https://huacloud.net/)
-      - [购物车 - FlowerCloud](https://flowercloud.net/cart.php)
-  - [TAG Internet](https://tagss01.pro)
-    - 154￥/年: 200G/年
+
   - [泡泡云PRO](https://ppy.buzz/)
     - 168￥/年: 1024G/月
     - 85￥/年: 256G/年
@@ -913,6 +933,15 @@ export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890
   - [tun模式无法上网[Bug] _202312](https://github.com/MetaCubeX/ClashX.Meta/issues/48)
   - [[Feature]图形界面中，更多设置中，Tun DNS： 这个设置的值与配置文件中DNS设置的关系 ](https://github.com/MetaCubeX/ClashX.Meta/issues/103)
     - 图形界面默认的 tun dns 是 8.8.8.8, 会导致都被解析成 ip, 基于域名的规则失效, 改成一个假的就正常了
+
+- https://github.com/MetaCubeX/ClashMetaForAndroid /40.9kStar/GPL/202606/kotlin
+  - A Graphical user interface of Clash. Meta for Android
+  - [请修复bug yaml:mapping values are not allowed in this context _202407](https://github.com/MetaCubeX/ClashMetaForAndroid/discussions/271)
+    - 最新的alpha版从url导入配置文件的时候会报错： yaml：mapping values are not allowed in this context
+    - 但是从浏览器把相同url的yaml文件下载下来、再导入到app后，app的运行一切正常，说明配置文件本身没有影响运行的问题
+    - 👷 实测手动下载yaml文件导入clash确实能解决问题。 之后又测试，手机上使用花云的网络代理扫码来导入配置就能导入成功，似乎是之前手机扫码用的网络不行
+  - [clash 配置文件 更新错误 “托管配置文件格式不正确: yaml: line 11: mapping values are not allowed in this context” ](https://github.com/freefq/free/issues/55)
+    - 刚试了下问题原因是不允许出现相同的节点名字
 # law
 - [中国执行信息公开网](http://zxgk.court.gov.cn/index.jsp)
 

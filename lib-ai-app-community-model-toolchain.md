@@ -517,7 +517,40 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
-- ## 
+- ## [Gemma 4 QAT GGUFs from Unsloth : r/LocalLLaMA _202606](https://www.reddit.com/r/LocalLLaMA/comments/1txpheq/gemma_4_qat_ggufs_from_unsloth/?sort=top)
+- Is unsloth saying that their QAT improves upon Google's QAT? Or are they saying their QAT improves upon the non-QAT q4?
+  - Unsloth doesn't improve on the QAT, they use google's QAT. Google publishes both a q4 .safetensors file and a q4 .gguf file. Unsloth converts the .safetensors file to .gguf and manages to get a smaller file.
+  - So unsloth's quants (q4_k_xl) is what possibly outperforms google's quants (q4_0).
+
+- ## [Gemma-4 QAT Unsloth Accuracy Recovery for GGUFs : r/unsloth _202606](https://www.reddit.com/r/unsloth/comments/1txqnyq/gemma4_qat_unsloth_accuracy_recovery_for_ggufs/?sort=top)
+- Top-1% refers to top-1 accuracy (as a percentage) on the evaluation benchmark(s) used for Gemma-4.
+  - In ML terms, this is the percentage of cases where the model's single highest-confidence prediction is correct. The chart and table compare how well each quantization method recovers that accuracy relative to the original BF16 QAT model (higher = better recovery). The Unsloth versions consistently show higher top-1 accuracy than the naive Q4_0 conversions while also being smaller in several cases.
+
+- [Google releases new Gemma 4 QAT models! : r/unsloth _202606](https://www.reddit.com/r/unsloth/comments/1txpacy/google_releases_new_gemma_4_qat_models/?sort=top)
+  - There is a difference when using normal QAT GGUFs vs. Unsloth's. Not only are ours are smaller, but ours are also more accurate.
+
+- From what I understand, QAT models are still BF16, they are just trained in such a way as to preserve as much quality as possible after being quantized to q4_0? Do we have benchmarks for KLD between original Gemma 4 models and QAT models? It would be great to see KLD comparisons of all 3 options - Q4_0 of the original Gemma 4 models, Q4_0 of the QAT models, and the KLD between original BF16 and QAT BF16.
+  - the main issue is converting from QAT BF16 to llama.cpp's Q4_0 format is not lossless. llama.cpp uses F16 scales, whilst QAT BF16 is BF16 scales, and the scales are not determined optimally in llama.cpp land. Naive conversion gets 24.77% byte exactness to BF16 QAT, whilst we found we can push it to 99.96% using some hacks
+
+- https://x.com/UnslothAI/status/2062931482746994755
+-  I’ll look at decode, because prefill is always fast
+- TPS = tokens per second
+E2B:
+S26 Ultra GPU: 52 TPS
+iPhone 17 Pro GPU: 56.5 TPS
+
+E4B:
+S26 Ultra GPU: 22 TPS
+iPhone 17 Pro GPU: 25 TPS
+
+- For comparison, E2B gets ~160 TPS on MacBook Pro M4 Max GPU.
+- And on RTX 5090, community Ollama benchmarks show ~295–310 TPS.
+
+- [120 tok/s on 12GB VRAM with Gemma 4 12B QAT MTP : r/LocalLLaMA _202606](https://www.reddit.com/r/LocalLLaMA/comments/1typjmc/120_toks_on_12gb_vram_with_gemma_4_12b_qat_mtp/?sort=top)
+  -  loading Unsloth's gemma-4-12B-it-qat-GGUF quant and Google's gemma-4-12B-it-qat-q4_0-unquantized-assistant QAT assistant / draft model
+  - it's a 2x increase with MTP
+
+- [Gemma 4 QAT Q4_0 Bench on Strix Halo : r/StrixHalo _202606](https://www.reddit.com/r/StrixHalo/comments/1ty9gwy/gemma_4_qat_q4_0_bench_on_strix_halo/?sort=top)
 
 - ## DFlash can be faster than MTP. But there is no universal winner.
 - https://x.com/bnjmn_marie/status/2061961211571519718
@@ -714,11 +747,6 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - I use it, because it allows me to have 200k context. Or more importantly, two agents with 100k context each.
 
-- 
-- 
-- 
-- 
-
 - ## 🆚 [Qwen 3.6 27B BF16 vs Q4_K_M vs Q8_0 GGUF evaluation : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sxzqry/qwen_36_27b_bf16_vs_q4_k_m_vs_q8_0_gguf_evaluation/)
   - Evaluated Qwen 3.6 27B across BF16, Q4_K_M, and Q8_0 GGUF quant variants with llama-cpp-python using Neo AI Engineer.
   - Benchmarks used: HumanEval: code generation, HellaSwag: commonsense reasoning, BFCL: function calling
@@ -744,7 +772,20 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - Unsloth's K_XL is per tensor. GGUF supports mixed tensor sizes since it's inception. Each tensor can have it's own quantization, and that's what Unsloth have been exploring since they introduced their dynamic quants.
 
-- ## 🆚 [Qwen3.5-35B-A3B Q4 Quantization Comparison : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rfds1h/qwen3535ba3b_q4_quantization_comparison/)
+- ## 🤔 [Gemma 4 31B QAT Q4 vs standard Q4 — Top1 KLD benchmark results have me confused. Someone please explain or poke holes in this. : r/LocalLLaMA _202606](https://www.reddit.com/r/LocalLLaMA/comments/1tyxu55/gemma_4_31b_qat_q4_vs_standard_q4_top1_kld/?sort=top)
+  - The result that has me confused
+  - Standard Q4_0 beats QAT Q4_0 by ~13% top-1 accuracy. And Q4_K_M beats both.
+
+- I'll chime in and say that kld is useless in this case as the qat is, in fact, trained and not just quantized (therefore this is not a straight information loss problem, real world benchmarks should reflect the difference in performance much better). 
+  - If you're planning to compare the kld of Q4 qat with respect to bf16 qat VS kld of normal quants with respect to original bf16 then i'm afraid that won't be of much help, i believe comparing klds of different models with different references can't really give you any useful information
+
+- In this case, when you are trying to compare between two different baselines, even perplexity would probably be a more useful measure than KLD.
+
+- All I know is QAT is giving me faster processing and t/s
+
+- QAT is still training, the QAT models are finetunes of the original model
+
+- ## 🆚🧩 [Qwen3.5-35B-A3B Q4 Quantization Comparison : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rfds1h/qwen3535ba3b_q4_quantization_comparison/)
   - The goal is to give people a data-driven basis for picking a file rather than just grabbing whatever is available.
   - KLD (KL Divergence): "Faithfulness." It shows how much the quantized model's probability distribution drifts from a baseline (the probability distribution of the original weights). Lower = closer.
   - PPL (Perplexity): Used to measure the average uncertainty of the model when predicting the next token. It is derived from the total information loss (Cross Entropy). Lower = more confident.

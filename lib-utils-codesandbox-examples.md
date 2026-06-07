@@ -15,6 +15,21 @@ modified: 2023-09-02T09:17:22.992Z
 - fans-sandbox
   - https://github.com/mcuking/vitesandbox-client
 # popular
+- https://github.com/vercel-labs/just-bash /152Star/apache2/202601/ts
+  - A simulated bash environment with an in-memory virtual filesystem, written in TypeScript.
+  - Designed for AI agents that need a secure, sandboxed bash environment.
+  - Supports optional network access via curl with secure-by-default URL filtering.
+  - 能执行curl
+  - ❓ 能执行安装依赖/binary包吗
+  - https://x.com/cramforce/status/2004992618913251786
+  - I'm introducing my holiday project: just-bash _20251228
+    - just-bash is a pretty complete implementation of bash in TypeScript designed to be used as a bash tool by AI agents. Because it turns out agents love exploring data via shell scripts, even beyond coding.
+    - It comes with grep, sed, awk and the 99th percentile features that an agent like Claude Code or Cursor would use. In fact, Claude Code can use it for secure bash execution.
+    - An overlay filesystem to feed files to your agent securely
+    - A Vercel Sandbox compatible API, so you can quickly upgrade to a real VM if you need to run binaries
+    - It was essentially entirely written by Opus 4.5. Coding agents love bash and they are good at reproducing it. They are also great at text-book recursive descent parsers and AST tweet-walk interpreters. 
+    - It has cURL already
+
 - https://github.com/coplane/localsandbox /MIT/202601/python/ts
   - Lightweight AgentFS sandbox that runs bash and python.
   - A Python SDK for sandboxed filesystem operations, built on just-bash, AgentFS, and Pyodide. Provides AI agents with a persistent, isolated environment backed by SQLite.
@@ -32,6 +47,56 @@ modified: 2023-09-02T09:17:22.992Z
     - Install pure Python packages via micropip
     - Native Integration: Direct Pyodide and just-bash integration (no subprocess bridge)
     - Bash and Python share the same workspace filesystem
+
+- https://github.com/macaly/almostnode /191Star/MIT/202602/ts
+  - http://almostnode.dev/
+  - lightweight, browser-native Node.js runtime environment. 
+  - Run Node.js code, install npm packages, and develop with Vite or Next.js - all without a server.
+  - Built by the creators of Macaly.com — a tool that lets anyone build websites and web apps, even without coding experience. Think Claude Code for non-developers.
+  - Virtual File System - Full in-memory filesystem with Node.js-compatible API
+  - Node.js API Shims - 40+ shimmed modules (fs, path, http, events, and more)
+  - Install and run real npm packages in the browser
+  - Service Worker Architecture - Intercepts requests for seamless dev experience
+  - Optional Web Worker Support - Offload code execution to a Web Worker for improved UI responsiveness
+  - Built-in Vite and Next.js development servers
+  - First-class TypeScript/TSX transformation via esbuild-wasm
+  - Secure by Default - Cross-origin sandbox support for running untrusted code safely
+  - https://x.com/PetrBrzek/status/2020161329470828932
+    - Vibe coded an open-source library that runs Node.js entirely in the browser. 
+    - Full virtual filesystem with POSIX-compatible API (using just-bash from @cramforce )
+    - No server. No backend. No cold starts.
+    - was it really vibe-coded in a sense that you let it run autonomously and make decisions, or did you replace coding by hand in favor of explaining in natural language what you wanted to code?
+      - I said "Let's make it possible to run Express.js in the browser". It had a test environment ready and just kept iterating in a feedback loop until the Express example actually worked. Then I said "Cool, now let's run the Next.js dev server" same thing. Loop until it works.
+    - how does the http server listen on a port if it's running in the browser?
+      - it shims Node's http module using browser APIs like Service Workers to intercept and handle requests virtually, without binding to real ports
+    - It’s basically an open alternative to webcontainer
+    - But why would you run Node.js in the browser?
+      - Before AI coding, the answer was niche: show library examples in docs, or quick prototyping on StackBlitz. 
+      - With AI coding platforms like Macaly, it's a different story. If you're building an AI coding platform (Bolt, Lovable, our platform Macaly), your users are generating Next.js apps, React + Vite projects, using Supabase, Convex, etc. 
+      - You need to run that code somewhere. Two options:
+      - Cloud sandboxes ( @e2b , etc.) — full Linux VM, most flexible, but expensive. Every user session costs you money.
+      - Run it in the browser — fake Node.js environment, zero server cost. That's what WebContainers do inside Bolt.
+      - The problem: WebContainers aren't open source.
+      - With a TDD approach and enough shims, you can get Next.js, Vite, and Express dev servers running entirely in the browser.
+      - I didn't write a single line of code in this project. All vibe coded.
+      - It's experimental, it has bugs, but it works. And it's fully open source.
+    - I would just use emscriptem. emscripten already has the fs shims. 
+      - Got it. You can definitely do it in WASM as well. WebContainers work like that. I didn’t have a strong preference, I was just orchestrating it.
+
+- https://github.com/iamleonie/elasticsearch-fs /apache2/202605/ts
+  - This project is a proof-of-concept implementation of a virtual filesystem over Elasticsearch using just-bash, a virtual Bash environment with an in-memory filesystem written in TypeScript for AI agents.
+  - [Implementing a virtual filesystem over Elasticsearch – Leonie Monigatti _202605](https://leoniemonigatti.com/blog/virtual-filesystem-elasticsearch.html)
+  - https://x.com/helloiamleonie/status/2051634317097414833
+    - I built a ChromaFS implementation exactly like the one in the article, using it for LangChain DeepAgents
+
+- https://github.com/withastro/flue /4.7kStar/apache2/202606/ts/astro
+  - https://www.flueframework.com/
+  - a TypeScript framework for building the next generation of agents, designed around a built-in agent harness. It's like Claude Code, but 100% headless and programmable. There's no baked-in assumption like requiring a human operator to function. No TUI. No GUI. Just TypeScript.
+  - Flue isn't another AI SDK. It's a proper runtime-agnostic framework — think Astro or Next.js, but for agents. Write once, build, and deploy your agents anywhere (Node.js, Cloudflare, GitHub Actions, GitLab CI/CD, etc).
+  - Unless you opt-in to initializing a full container sandbox, Flue will default to a virtual sandbox for every agent, powered by `just-bash`. 
+  - https://x.com/boshen_c/status/2062849192637432159
+    - Meanwhile Cloudflare itself launched Project Think, I am compairing them.
+    - It looks good and I really like the smolvm integration
 # js-sandbox
 - https://github.com/codesandbox/codesandbox-client /12.9kStar/GPLv3+apache2/202404/js
   - https://codesandbox.io/
@@ -539,27 +604,6 @@ modified: 2023-09-02T09:17:22.992Z
     - 我大致看了下，感觉这个沙箱主要是创建了一个在登陆界面隐藏的使用随机密码的用户，然后获取该用户令牌后进行 XP 时期提供的创建受限令牌操作，Job Objects 限制基本没做啥……就个人感觉隔离程度有但还没有令人放心到放手一搏的地步（强度比 Chromium 沙盒和 Sandboxie 低很多）
     - 我很多年前倒是在 NSudo 研究过通过创建受限令牌降权到 UAC 提升之前的方式，关于我的研究最终发现还是获取 Linked Token 最好，倒是 Codex 那个沙盒的受限令牌创建 LUA 实现我之前在 NSudo 实现过类似的（只是创建受限令牌的时候我没有引入 DISABLE_MAX_PRIVILEGE 和 WRITE_RESTRICTED）
 
-- https://github.com/vercel-labs/just-bash /152Star/apache2/202601/ts
-  - A simulated bash environment with an in-memory virtual filesystem, written in TypeScript.
-  - Designed for AI agents that need a secure, sandboxed bash environment.
-  - Supports optional network access via curl with secure-by-default URL filtering.
-  - 能执行curl
-  - ❓ 能执行安装依赖/binary包吗
-  - https://x.com/cramforce/status/2004992618913251786
-  - I'm introducing my holiday project: just-bash _20251228
-    - just-bash is a pretty complete implementation of bash in TypeScript designed to be used as a bash tool by AI agents. Because it turns out agents love exploring data via shell scripts, even beyond coding.
-    - It comes with grep, sed, awk and the 99th percentile features that an agent like Claude Code or Cursor would use. In fact, Claude Code can use it for secure bash execution.
-    - An overlay filesystem to feed files to your agent securely
-    - A Vercel Sandbox compatible API, so you can quickly upgrade to a real VM if you need to run binaries
-    - It was essentially entirely written by Opus 4.5. Coding agents love bash and they are good at reproducing it. They are also great at text-book recursive descent parsers and AST tweet-walk interpreters. 
-    - It has cURL already
-
-- https://github.com/iamleonie/elasticsearch-fs /apache2/202605/ts
-  - This project is a proof-of-concept implementation of a virtual filesystem over Elasticsearch using just-bash, a virtual Bash environment with an in-memory filesystem written in TypeScript for AI agents.
-  - [Implementing a virtual filesystem over Elasticsearch – Leonie Monigatti _202605](https://leoniemonigatti.com/blog/virtual-filesystem-elasticsearch.html)
-  - https://x.com/helloiamleonie/status/2051634317097414833
-    - I built a ChromaFS implementation exactly like the one in the article, using it for LangChain DeepAgents
-
 - https://github.com/rivet-dev/agent-os /1.4kStar/apache2/202604/ts/rust
   - https://www.rivet.dev/agent-os
   - A portable open-source operating system for agents. 
@@ -845,41 +889,6 @@ modified: 2023-09-02T09:17:22.992Z
   - https://node-in-browser.pages.dev/
   - An experiment to bootstrap Node.js (version 8.0.0) in the browser in order to run Node apps or npm libraries unmodified.
   - [How to run Node.js (apps) in the browser? | by Johannes Bader | CloudBoost _201711](https://blog.cloudboost.io/how-to-run-node-js-apps-in-the-browser-3f077f34f8a5)
-
-- https://github.com/macaly/almostnode /191Star/MIT/202602/ts
-  - http://almostnode.dev/
-  - lightweight, browser-native Node.js runtime environment. 
-  - Run Node.js code, install npm packages, and develop with Vite or Next.js - all without a server.
-  - Built by the creators of Macaly.com — a tool that lets anyone build websites and web apps, even without coding experience. Think Claude Code for non-developers.
-  - Virtual File System - Full in-memory filesystem with Node.js-compatible API
-  - Node.js API Shims - 40+ shimmed modules (fs, path, http, events, and more)
-  - Install and run real npm packages in the browser
-  - Service Worker Architecture - Intercepts requests for seamless dev experience
-  - Optional Web Worker Support - Offload code execution to a Web Worker for improved UI responsiveness
-  - Built-in Vite and Next.js development servers
-  - First-class TypeScript/TSX transformation via esbuild-wasm
-  - Secure by Default - Cross-origin sandbox support for running untrusted code safely
-  - https://x.com/PetrBrzek/status/2020161329470828932
-    - Vibe coded an open-source library that runs Node.js entirely in the browser. 
-    - Full virtual filesystem with POSIX-compatible API (using just-bash from @cramforce )
-    - No server. No backend. No cold starts.
-    - was it really vibe-coded in a sense that you let it run autonomously and make decisions, or did you replace coding by hand in favor of explaining in natural language what you wanted to code?
-      - I said "Let's make it possible to run Express.js in the browser". It had a test environment ready and just kept iterating in a feedback loop until the Express example actually worked. Then I said "Cool, now let's run the Next.js dev server" same thing. Loop until it works.
-    - how does the http server listen on a port if it's running in the browser?
-      - it shims Node's http module using browser APIs like Service Workers to intercept and handle requests virtually, without binding to real ports
-    - It’s basically an open alternative to webcontainer
-    - But why would you run Node.js in the browser?
-      - Before AI coding, the answer was niche: show library examples in docs, or quick prototyping on StackBlitz. 
-      - With AI coding platforms like Macaly, it's a different story. If you're building an AI coding platform (Bolt, Lovable, our platform Macaly), your users are generating Next.js apps, React + Vite projects, using Supabase, Convex, etc. 
-      - You need to run that code somewhere. Two options:
-      - Cloud sandboxes ( @e2b , etc.) — full Linux VM, most flexible, but expensive. Every user session costs you money.
-      - Run it in the browser — fake Node.js environment, zero server cost. That's what WebContainers do inside Bolt.
-      - The problem: WebContainers aren't open source.
-      - With a TDD approach and enough shims, you can get Next.js, Vite, and Express dev servers running entirely in the browser.
-      - I didn't write a single line of code in this project. All vibe coded.
-      - It's experimental, it has bugs, but it works. And it's fully open source.
-    - I would just use emscriptem. emscripten already has the fs shims. 
-      - Got it. You can definitely do it in WASM as well. WebContainers work like that. I didn’t have a strong preference, I was just orchestrating it.
 
 - https://github.com/lifo-sh/lifo /MIT/202602/ts
   - https://lifo.sh/

@@ -1211,6 +1211,17 @@ modified: 2025-12-11T18:10:23.710Z
   - 📱 [Mobile port _202506](https://github.com/hotovo/aider-desk/issues/242)
     - 👷 202511: Server solution has been added some time ago, so it's possible to use running AiderDesk instance from mobile.
 
+- https://github.com/Rose22/openlumara /GPL/202606/python/js
+  - a modular, token-efficient AI agent framework written from scratch in Python. 
+  - Unlike many other AI agents out there, this one is local-first, lightweight, modular, and very fast. The system prompt can be extremely small, as little as around 4000 tokens with normal use. This makes it very well-suited for local use, but it also results in drastically reduced token use when used with public API's.
+  - It pairs well with llamacpp and koboldcpp.
+  - Currently supports: WebUI (for use in your browser), CLI (terminal interface), Telegram, Discord, Matrix (with encryption support!). More coming.
+  - [OpenLumara - A different kind of AI agent, written from scratch, not vibecoded. Extremely token-efficient, super small system prompt, made for local models. Everything is modular. : r/LocalLLaMA _202606](https://www.reddit.com/r/LocalLLaMA/comments/1txxgpq/openlumara_a_different_kind_of_ai_agent_written/?sort=top)
+    - pi is commandline-only, lumara has a very fancy webui with a way to see all your previous sessions, toolcalls, and toolcall results. you can search through all your previous sessions to find stuff, and you can tag, label, and categorize any of your sessions to be able to find them easily later - or your AI can do that for you if you ask it to.
+    - lumara also has support for other channels, such as telegram, discord, and experimental support for matrix 
+    - pi can only edit code by searching and replacing. lumara can target classes, functions, and class methods (all called "symbols") directly, read them, and edit them. 
+  - i measured its ram use for some people in the localllama discord. with the webui turned off, total ram use is about 135MB. with the webui on, its around 450MB
+
 - https://github.com/MoonshotAI/kimi-cli /1.9kStar/apache2/202510/python
   - a new CLI agent that can help you with your software development tasks and terminal operations.
   - https://x.com/yihong0618/status/1982032672559096232

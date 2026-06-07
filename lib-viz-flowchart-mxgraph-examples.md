@@ -92,6 +92,20 @@ modified: 2023-05-29T17:33:33.600Z
   - This project demonstrates collaborative diagram editing using the mxGraph open source diagraming framework integrated with Convergence
 - https://github.com/convergencelabs/mxgraph-adapter /202107/ts
   - An adapter between mxGraph and Convergence
+# ai-drawio
+- https://github.com/Agents365-ai/drawio-skill /MIT/202606/python
+  - A skill that turns natural-language descriptions into `.drawio` XML and exports them to PNG / SVG / PDF / JPG via the native draw.io desktop CLI. 
+  - It can also turn an existing codebase (Python / JS-TS / Go / Rust) into an auto-laid-out structure diagram. 
+  - Works with Claude Code, Cursor, Copilot, OpenClaw, Codex, Hermes
+  - 🆚 提供了与同类方案的对比
+  - 6 diagram type presets — ERD, UML Class, Sequence, Architecture, ML/Deep Learning, Flowchart
+  - Visualize a codebase — extract and auto-lay-out the structure of a Python / JS-TS / Go / Rust project (import graphs) or a Python class hierarchy 
+  - Self-check + auto-fix — reads its own PNG output and auto-fixes overlaps, clipped labels, stacked edges, and more (up to 2 rounds)
+  - Iterative feedback loop — up to 5 rounds of targeted refinement
+  - Style presets — capture your visual style from a .drawio file or image, reuse on demand
+  - Clean layout — grid-aligned, spacing scales with diagram size, connectors routed clear of nodes
+# ai-flow/graph
+
 # utils
 - https://github.com/jwyGithub/maxGraph-composition-api
   - Building web with composite api

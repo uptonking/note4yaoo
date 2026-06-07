@@ -50,4 +50,7 @@ modified: 2023-10-26T15:30:18.297Z
   - LSN: Log Sequence Number.
     - In PostgreSQL, it is a position marker in the WAL (Write-Ahead Log). You can think of it as a unique “offset” or “bookmark” that identifies a specific point in the database’s change stream.
     - LSN is a specific coordinate or "timestamp" in the database's internal transaction log. It acts as a unique, ever-increasing ID for every single change made to the database.
+# async
+- https://github.com/microsoft/pg_durable /1.2kStar/PGLic/202606/rust
+  - Durable Execution inside PostgreSQL
 # more

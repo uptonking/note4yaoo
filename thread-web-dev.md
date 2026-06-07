@@ -39,6 +39,17 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
+- ## IntentObserver network demo
+- https://x.com/jjenzz/status/2062835765378232758
+- Backend dev screams at having to support aborted requests better than they currently do
+
+- https://github.com/spaansba/ForesightJS /MIT/202605/ts
+  - a lightweight JavaScript library that predicts user intent to prefetch content before it's needed. It works completely out of the box without configuration, supporting both desktop and mobile devices with different prediction strategies.
+
+- https://github.com/mathisonian/premonish /MIT/201612/js/inactive
+  - https://mathisonian.github.io/premonish
+  - Predict which DOM element a user will interact with next.
+
 - ## html tip: You can use the `translate="no"` attribute to specify whether the content of an element should be translated by the browser's translation features.
 - https://x.com/Shefali__J/status/2053003615628153270
 

@@ -34,6 +34,15 @@ modified: 2021-04-27T09:19:37.711Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Out-of-order streaming HTML is coming to a browser near you!
+- https://x.com/dannymoerkerke/status/2062881045943337008
+  - This means you can stream HTML to the browser in any order, which enables web apps to send the most important HTML first, regardless of where it is in the document.
+  - Supported in Chrome 148, WebKit already announced support, and Firefox is positive.
+
 - ## Use `new Notification()` to send browser notifications natively  (no app needed).
 - https://x.com/denicmarko/status/2051241186854420956
 - Most people say no to a browser level notification, and once that's a "No" your domain can't re-request. You might instead want to first get an application layer question asked before triggering the browser notification 

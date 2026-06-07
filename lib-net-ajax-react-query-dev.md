@@ -136,7 +136,7 @@ modified: 2023-03-05T08:55:03.696Z
   - zero is as aggressive as it gets, and I think too aggressive for most apps. I mostly advised to set a default staleTime globally, and overwrite it when needed.
   - It's what allows you to call `useQuery` wherever you want to without fetching every time. It's what makes window focus refetching great, because it won't happen _every time_. That feature is turned off prematurely(提前的；过早的), largely b/c of staleTime:0.
 - Why 30s though? Is this a random value?
-  - It's a metric I borrowed from the nextJs team - they use that value for the **Router Cache**. For navigations happening in that timeframe between routes, it's better UX to see the page as it was when you left it, even if that data is outdated. I tend to agree with that.
+  - It's a metric I borrowed from the nextJs team - they use that value for the **Router Cache** . For navigations happening in that timeframe between routes, it's better UX to see the page as it was when you left it, even if that data is outdated. I tend to agree with that.
 
 - make sure its documented in a big banner with bold text, to avoid the issues NextJS had by surprising everyone with their 30s caching that wasn't anywhere until a few days ago.
   - Will do. The big problem in nextjs is that you have absolutely no way to opt out of that 30s cache. Query always lets you customize everything 
@@ -253,7 +253,28 @@ modified: 2023-03-05T08:55:03.696Z
 
 - 💡 do initial fetches on the server (e.g. next), but do refetches on the client (react-query). 
   - Same as rendering really: initially on the server, but then on the client only.
+# discuss-fetch-examples/cases
+- ## 
+
+- ## 
+
+- ## 
+
+- ## IntentObserver network demo
+- https://x.com/jjenzz/status/2062835765378232758
+- Backend dev screams at having to support aborted requests better than they currently do
+
+- https://github.com/spaansba/ForesightJS /MIT/202605/ts
+  - a lightweight JavaScript library that predicts user intent to prefetch content before it's needed. It works completely out of the box without configuration, supporting both desktop and mobile devices with different prediction strategies.
+
+- https://github.com/mathisonian/premonish /MIT/201612/js/inactive
+  - https://mathisonian.github.io/premonish
+  - Predict which DOM element a user will interact with next.
 # discuss-stream
+- ## 
+
+- ## 
+
 - ## 
 
 - ## What if @Tan_Stack Query supported streams?
@@ -476,7 +497,7 @@ modified: 2023-03-05T08:55:03.696Z
   - First you have the low-level data loading. An async helper that calls the fetch() method to load data from an API.
   -  You await the fetch(), then you await the json() parsing, then you return the result or throw an error.
   - Second you have a helper hook that loads your data. You should use React Query or similar for this part.
-  - **To avoid re-fetching the same data for every component, libraries like React Query and ApolloGraphQL use an internal global cache**. The shared cache leads to ridiculously snappy UI.
+  - **To avoid re-fetching the same data for every component, libraries like React Query and ApolloGraphQL use an internal global cache** . The shared cache leads to ridiculously snappy UI.
   - Third you have to handle loading states everywhere.
 - · turns async states into first-class citizens of React. You don't have to think about it. 
   - You'll need React 18.x and a suspense-enabled library like `react-fetch` . The library would rely on suspense `<Cache>` internally.
@@ -578,7 +599,7 @@ modified: 2023-03-05T08:55:03.696Z
   - 2. - When you catch an error, the outer function is no longer in a throwing state. A return === success. You should rethrow
 
 - How does it replace redux state management?
-  - It replaces the management of *server state/cache*. 
+  - It replaces the management of *server state/cache* . 
   - So if you are like a majority of app developers, a vast majority of your "global state" is server cache. 
   - Once you put that into React Query, what you're left with is usually a tiny bit of app state that you can manage via React
 
@@ -650,18 +671,18 @@ modified: 2023-03-05T08:55:03.696Z
   - Yes, you can get around it by manual prefetching. That also doesn’t scale. It works for a small app but it doesn’t work for hundreds or thousands of components, each of which may want to read some data. If we don’t solve that scale, it doesn’t count.
   - Relay has a scalable solution. It avoids waterfalls automatically by composing queries at compile time. So the root query always “knows” what children are going to want before their code even loads. But Relay isn’t for everyone. So we want to build a more generic version.
   - The easiest way to avoid client waterfalls is to move them to the server. Low latency. This is conceptually exactly what GraphQL does, but you don’t need GraphQL for that. It’s just a single server endpoint behind which may several different APIs for different components.
-  - That also gives you ability to code-split based on *data*. Why load LogedOffNavbar if user is logged in? Why load GifCommentImage when the comment did not include a GIF?
+  - That also gives you ability to code-split based on *data* . Why load LogedOffNavbar if user is logged in? Why load GifCommentImage when the comment did not include a GIF?
   - If you centralize data fetching on the server then its response can include *code* chunks. Code is data.
   - I just found the framing a little misleading (“Suspense is just declarative loading states”). It’s more that it’s everything else that makes this possible without big sacrifices.
   - I’d also say that consistency between async data in the tree that’s requested by different components is vastly underappreciated. That’s the core new benefit of that paradigm but people miss it largely because not much else (except Relay) offers anyting similar today.
   - By visual consistency I mean that you shouldn’t ever have a situation where A display data from oldId but B displays data from newId. Or the other way around. They should always be consistent with each other as siblings, just like React guarantees for synchronous rendering.
-  - In this situation, you are correct. **React Query would potentially show old/new data mixed, depending on raced conditions.**
+  - In this situation, you are correct. **React Query would potentially show old/new data mixed, depending on raced conditions.** 
   - Now imagine hundreds of components. Each doing its own data fetching requirements without coordinating with others at every level. Inconsistencies at that scale would lead to very jumpy UI and crashes from mistaken assumptions (eg some prop from parent didn’t match child’s data).
   - I just wanted to be clear *that’s* the problem we are working to solve. On that scale, consistency isn’t nice-to-have but it’s table stakes. Everything breaks down without it.
   - ReactQuery is doing the best it can do but React needs to empower it to be able to do more.
   - I just want the “suspense is a thing to not show a spinner” meme to die a little bit. That’s not really what it is.
-  - Which, to be fair, is our fault for introducing it this way! Spinners seemed like a catchy way to describe it but it’s **more about read data anywhere without screwing(弄坏，弄乱) up the UI**.
-  - **How many apps don't need anything more than route-level data fetching**?
+  - Which, to be fair, is our fault for introducing it this way! Spinners seemed like a catchy way to describe it but it’s **more about read data anywhere without screwing(弄坏，弄乱) up the UI** .
+  - **How many apps don't need anything more than route-level data fetching** ?
     - The latest @ReactPodcast about  @remix_run basically came to this conclusion. 
     - But then the "route-y" boys think everything is about routes. (and they're right)
   - But for the ones that do need more and run into the waterfall requests, do you envision most if not all of those apps jumping for Suspense for Data + CM when it's released? Like... is the pain that bad? Clearly it was for FB. But what does your research say for everyone else?
@@ -700,7 +721,7 @@ can(2020)
   - Curious if there's an alternative xstate API that wouldn't force to give unminifiable names to states themselves. Understand if it's not a priority (I guess prod introspection is useful). But I wonder if other takes on this that use plain variables (for minification) exist.
   - I was a little cheeky, just pointing out the difficulty of visually parsing inside-out: `uppercase(toString(add(mult(2, 3))))`
   Versus left-to-right:
- `mult().add().toString().uppercase`
+`mult().add().toString().uppercase` 
 
   - The pipe operator is one way to get the readability, without the builder pattern (fluent api).
   - When working with a team, I prefer this:

@@ -81,6 +81,18 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## AI agent 要跑沙箱隔离，但冷启动微VM太慢了。这个项目干脆把预热好的父 VM snapshot 当进程 fork：子 VM 共享内存直到写时才复制，100 个 KVM 隔离的沙箱 100ms 就能全出来。
+- https://x.com/vintcessun/status/2062755543811588448
+  - 相当于把 fork 的开销套在 VM 身上，还保留了硬件隔离，思路挺离谱的。
+  - https://github.com/deeplethe/forkd  /apache2/202606/rust
+- 我的思路是假设 Claude/codex/pi 环境，通过 skill 调用 sandbox-cli 来操作沙箱。虽然我感觉很傻，本地就可以跑沙箱，但是不代表远程沙箱不能用。另外，我到现在也没有体会到沙箱的真正应用场景在哪里。跑程序这个有点虚。 K8E Sandbox Matrix
+
+- copy-on-write goes out the window once the agent starts writing logs
+
 - ## Codex on Windows has a sandbox built for the way coding agents run!
 - https://x.com/reach_vb/status/2054655421013434510
   - By default, Codex needs to read files across the environment, write inside the workspace, run normal tools like shells/Git/Python/package managers, and keep network access constrained unless the user allows it.

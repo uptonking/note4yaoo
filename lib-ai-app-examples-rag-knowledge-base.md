@@ -1704,6 +1704,16 @@ modified: 2025-11-30T17:27:16.720Z
     - 出于身边同学对论文翻译的需求，所以开发了这个项目，除了论文我也用来对一些AI教程文档进行翻译
     - 灵感来自于MinerU, PDF格式还支持对照翻译
 
+- https://github.com/metedata/pdf-proof /MIT/202604/python
+  - skill that turns "the AI said so" into visual proof — screenshot crops, highlighted values, and confidence scores, straight from the source PDF.
+  - Given a PDF and a value to verify, the skill:
+    - Finds the exact text coordinates using `PyMuPDF`'s text search
+    - Crops a readable section of the page around the match
+    - Highlights the value with a translucent orange highlight
+    - Verifies by reading text back from the highlighted region to confirm correctness
+    - Assembles an HTML proof page with a summary table and per-value proof cards
+    - The result is a standalone HTML file with embedded screenshots — a visual audit trail you can keep, share, or attach to a filing.
+
 - https://github.com/stanford-oval/WikiChat /1.5kStar/apache2/202504/python/inactive
   - https://wikichat.genie.stanford.edu/
   - WikiChat is an improved RAG. It stops the hallucination of large language models by retrieving data from a corpus.
@@ -1897,6 +1907,12 @@ modified: 2025-11-30T17:27:16.720Z
   - The citation verification API. 
   - Show proof for every AI citation.
   - React components to help you build production-ready attribution systems. 
+
+- https://github.com/JuneYaooo/lineage-skill /NC/202606/python
+  - 给 Agent 使用的课程蒸馏 Skill。它把一整套视频课、训练营、讲座、PDF 讲义、板书、截图、转录和学习笔记，转化成一个可安装、可调用、可溯源的课程导师 Skill。
+  - 你可以直接告诉 Agent 想要哪种用途，也可以让它自己判断。课程范围、证据严格度、是否记录学习进度是另外的维度，不和角色混在一起。
+  - https://github.com/JuneYaooo/nihaisha-tcm
+    - 倪海厦中医课程资料的 Agent Skill。来源包含 100GB+ 视频课程材料，最终沉淀成可触发、可检索、可溯源的专门领域 Skill，支持课程检索、方证穴位辨析、学习笔记整理与板书截图证据索引。
 # examples/apps
 - https://github.com/dmayboroda/minima /MPL/202512/python/ts
   - On-premises conversational RAG with configurable containers

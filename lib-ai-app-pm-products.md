@@ -283,7 +283,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 缺点: 体积大，vector/dimension缺乏标准
 
 - pdf
-  - gitbook-like viewer
+  - gitbook-like viewer, mdBook
   - LiteParse Grid Projection Algorithm
 
 - image
@@ -319,6 +319,7 @@ modified: 2025-03-22T16:10:24.856Z
   - vision: pdf/image 操作更方便
   - multi process/locations: cli过于混乱，ui操作更清晰
     - 切换files/chat更清晰
+    - tasks progress
   - 需要获取页面元素的场景: 如用户选择的文本/浏览器tab
   - browser embedding
   - omni: audio
@@ -326,6 +327,15 @@ modified: 2025-03-22T16:10:24.856Z
     - 隐藏左右侧边栏 加上 chat在editor区域打开后， 使用自定义模型api, 就可作为一个通用AI前端
     - 甚至可用 codex-app-server 替换kilo的后端
     - 甚至可用 opencode-desktop 替换codex-cli的前端
+
+- why-gui-app
+  - 用类似 claude-design 的思路来实现 ui/编辑器 类型的产品
+  - too many options: 
+    - models/quants, cloud api, 处理速度不同
+    - text/image pdf ocr, 源文件处理方式不同
+    - vlm, pipeline, 识别方法不同
+    - versions/comparison
+    - citation or not
 
 - omni
   - audio
@@ -563,6 +573,14 @@ modified: 2025-03-22T16:10:24.856Z
 - news-feed/crawler
   - reddit/hacker-news上的热门讨论
 # 💎 ai-pdf/docs
+- pdf
+  - gitbook-like viewer, mdBook
+  - LiteParse Grid Projection Algorithm
+
+- translation
+  - 基于ai的翻译对比阅读， 支持部分翻译(四六级)
+  - 对比阅读已有pdf的 原文 和 译文
+
 - revision history for pdf
 
 - spinedigest: 一次处理完，所有中间结果（Chunk、图谱、Snake、总结）全部打包进一个 .sdpub 文件。以后想重新导出成 Markdown、EPUB、纯文本……完全不需要再跑 LLM，秒级完成。
@@ -2281,6 +2299,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 不支持代中代, 就是再放到sub2api里面使用
 
 - [松松的小店，招代理的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/gpt_songsong)
+  - [松松 AI ](https://songsongcard.shop/)
   - 交流群: https://t.me/+5UfugtLTLq40ZGQ0
   - 无低价号
   - plus-35
@@ -2392,61 +2411,6 @@ modified: 2025-03-22T16:10:24.856Z
 - [鹰鹰发卡](https://fk.apiway.cc/)
   - 下单前请检测自己的号有没有试用资格，如果拿没有试用资格的普号导致无法升级
 
-### sms/code
-
-- [superman的小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/superman)
-  - codex接码 一个号码可以接三次，小概率号码无效，不一定能接到，无质保，如果连续三个有问题，找我退款问题账号
-
-- [La shop的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/aisell)
-  - 加拿大接码
-
-- [Rick的AI小铺 的小店 - 云猫寄售 ](https://catfk.com/shop/rick)
-  - 美国paypal接码 有效期15-30天
-  - 普遍接码10次以上，部分20-30次
-  - [某的号铺的小店 - 云猫寄售 ](https://catfk.com/shop/mou)
-    - 各国接码
-
-- [AI源头-oak的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/oak)
-  - tg频道：https://t.me/dabaizu QQ群：996266572
-
-- [SMS-AIShop的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/66666SMS)
-  - 包售后，接不到不收费。稳定售后
-  - 3块接3次
-  - [gpt的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/IMNUA240)
-- [天天开心的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ED9POSCY)
-- [舒心的小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/AIZ3PXUW)
-  - ¥1.5
-
-- [API聚合转发源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/QN3MH16E)
-  - Openai接码 经过测试最大3次
-  - 发货信息: 手机号----接码链接
-  - 里面可能会存在部分号有问题，介意勿买
-
-- [我要掀桌子的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/T1UUZFW4)
-  - gpt美区接码(速度超快-一号一次)
-
-- [ccc的小店 - 670K发卡网 ](https://shop.670k.com/shop/PIVBQN6T)
-  - 一码一接，不懂别来，小白请勿下单，只有接不到码售后
-
-- [ZhuSMS — 接码平台 ](https://zhusms.com/)
-  - https://caowo.store/
-- [商家9272的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/cooree)
-  - 此商品为单次Codex接码额度卡 适用于Free/Plus/Pro接码
-  - 兑换地址:https://zhusms.com
-  - 超时无售后，接码失败直接点击换号
-
-- [Smz - 数字商品自动发卡平台 ](https://shop.smz6.com/)
-  - pp-¥1.6
-
-- [T佬的gmail批发渠道 ](https://ai666.dnxb.cc/)
-  - 全tg最便宜gmail邮箱批发
-  - Gemini专区：美区/随机2022--2024谷歌邮箱/指定地区gmail邮箱
-
-### ip
-
-- [静态IP的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/HLT0XHF9)
-  - 共享ip 或 单人
-
 ### 中转站
 
 - tips
@@ -2479,6 +2443,7 @@ modified: 2025-03-22T16:10:24.856Z
 - [wangwang - /Sub2API ](https://wangwang.sbs/dashboard)
   - kiro-0.18/0.2
   - kiro分组多，还有cc
+  - plus--0.04
 
 - [超超 mouubox  - /Sub2API ](https://sub2api.mouubox.com/dashboard) , 已充值
   - [/Sub2API ](https://api.mouubox.com/home)
@@ -2492,13 +2457,22 @@ modified: 2025-03-22T16:10:24.856Z
   - 注意倍率调整 
 
 - [钧澈API ](https://vip.lcodex.cn/pricing), 已充值
-  - plus--0.025
+  - plus--0.03
   - team--0.01
   - plus/pro号池多, 0.04-0.07
 
 - [naonao - /Sub2API ](https://gpt.qinnaonao.com/dashboard), 已充值
   - codex分组--0.03
   - 不可用
+
+- [青熵 ](https://api.qs89hub.com/keys)
+  - [青熵的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/P9HPIPWA)
+  - 渠道多
+  - plus--0.02
+
+- [松松 AI ](https://ai.songsongcard.shop/keys)
+  - [松松 AI ](https://songsongcard.shop/)
+  - plus--0.02
 
 - [Qmy2AI /sub2api](https://sub2api.qmytai.com/dashboard)
   - 个人0.04x，中转站0.03x
@@ -2690,6 +2664,61 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [subgo /sub2api](https://code.subgo.qzz.io/)
 
+### sms/code
+
+- [superman的小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/superman)
+  - codex接码 一个号码可以接三次，小概率号码无效，不一定能接到，无质保，如果连续三个有问题，找我退款问题账号
+
+- [La shop的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/aisell)
+  - 加拿大接码
+
+- [Rick的AI小铺 的小店 - 云猫寄售 ](https://catfk.com/shop/rick)
+  - 美国paypal接码 有效期15-30天
+  - 普遍接码10次以上，部分20-30次
+  - [某的号铺的小店 - 云猫寄售 ](https://catfk.com/shop/mou)
+    - 各国接码
+
+- [AI源头-oak的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/oak)
+  - tg频道：https://t.me/dabaizu QQ群：996266572
+
+- [SMS-AIShop的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/66666SMS)
+  - 包售后，接不到不收费。稳定售后
+  - 3块接3次
+  - [gpt的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/IMNUA240)
+- [天天开心的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ED9POSCY)
+- [舒心的小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/AIZ3PXUW)
+  - ¥1.5
+
+- [API聚合转发源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/QN3MH16E)
+  - Openai接码 经过测试最大3次
+  - 发货信息: 手机号----接码链接
+  - 里面可能会存在部分号有问题，介意勿买
+
+- [我要掀桌子的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/T1UUZFW4)
+  - gpt美区接码(速度超快-一号一次)
+
+- [ccc的小店 - 670K发卡网 ](https://shop.670k.com/shop/PIVBQN6T)
+  - 一码一接，不懂别来，小白请勿下单，只有接不到码售后
+
+- [ZhuSMS — 接码平台 ](https://zhusms.com/)
+  - https://caowo.store/
+- [商家9272的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/cooree)
+  - 此商品为单次Codex接码额度卡 适用于Free/Plus/Pro接码
+  - 兑换地址:https://zhusms.com
+  - 超时无售后，接码失败直接点击换号
+
+- [Smz - 数字商品自动发卡平台 ](https://shop.smz6.com/)
+  - pp-¥1.6
+
+- [T佬的gmail批发渠道 ](https://ai666.dnxb.cc/)
+  - 全tg最便宜gmail邮箱批发
+  - Gemini专区：美区/随机2022--2024谷歌邮箱/指定地区gmail邮箱
+
+### ip
+
+- [静态IP的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/HLT0XHF9)
+  - 共享ip 或 单人
+
 ## video/movie
 
 - [OmniBox - 在线观影](https://omnibox.wangchao.uno/)
@@ -2725,6 +2754,9 @@ modified: 2025-03-22T16:10:24.856Z
   - [公益免费单机游戏站 ](https://linux.do/t/topic/1561998)
   - 免登录享受 4000 款单机游戏
   - 支持国内全主流网盘：百度，夸克，迅雷，123，天翼。天翼盘是可以做到免费不限速，真正不花一分钱。
+
+- [Hello Code ](https://code.hellofriend.eu.cc/explore)
+  - [【HelloCode】加入内测，与我们一起共建代码平台。 - LINUX DO _202606](https://linux.do/t/topic/2317331)
 # ai-products-hunt
 
 # more

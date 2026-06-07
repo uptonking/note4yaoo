@@ -127,7 +127,7 @@ then compare the architecture/implementation of superdoc and docx-editor, explai
 
 onlyoffice-pdf-editor(code is at several git repos in current folder) implements renders, edits, annotates `.pdf` files in the browser, but it is AGPL licensed.
 - the final goal is to implement a new headless, extensible pdf editor named hardoc with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
-- hardoc pdf editor should be more of a headless client-server architecture, so that a hardoc pdf web/cli/sdk can be built on the same architecture. the hard web pdf editor ui/ux may be similar to onlyoffice-pdf-editor.
+- hardoc pdf editor should be more of a headless client-server architecture, so that a hardoc pdf web/cli/sdk can be built on the same architecture. the hard web pdf editor ui/ux might be similar to onlyoffice-pdf-editor.
 - hardoc should be implemented in a modular and extensible architecture for core pdf features like viewing and editing, with functional programming style.
 
 - goals for pdf editing:
@@ -244,7 +244,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 ## grist-office
 
 Project `grist` (in current folder) is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database. 
-- The final goal is to implement an alternative modular, extensible react frontend webapp in folder `./app/client-react` at the current git branch `feat/office-react`, with almost the same features as existing backbonejs frontend webapp at `app/client`, using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table, @tanstack/react-router without legacy backbonejs/knockoutjs. After you finished the react webapp,  `npm run start:app` should start the new react webapp, the legacy yarn toolchain/code should still be kept for backward compatibility, the legacy backonejs should still works, so you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please reuse as many code from main branch as possible.
+- The final goal is to implement an alternative modular, extensible react frontend webapp in folder `./app/client-react` at the current git branch `feat/office-react`, with almost the same features as existing backbonejs frontend webapp at `app/client`, using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table, @tanstack/react-router without legacy backbonejs/knockoutjs. After you finished the react webapp,  `npm run start:app` should start the new react webapp, the legacy yarn toolchain/code should still be kept for backward compatibility, the legacy backonejs should still works, so you should implement the react webapp in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please reuse as many code from main branch as possible.
 - The core goal is to rewrite most of the existing backbonejs ui/ux with modern react ui/ux.
 - react webapp should support all the routing urls of existing backbonejs webapp with @tanstack/react-router, using the same existing backend api.
 
@@ -262,9 +262,9 @@ Project `grist` (in current folder) is a modern relational spreadsheet. It combi
 
 - tech stack for react webapp needs to use open source libs/fwk:
   - use npm workspaces, typescript, reactjs(not vue), tailwindcss, zustand, no jquery/knockoutjs/backbone.
+  - you can reuse existing dependencies for easier feature migration, avoid GPL-like deps.
   - for ui components, you can use base-ui, source clone is at `~/gh-mirror/mui/base-ui` for your reference.
   - use floating-ui instead of @popperjs/core, source code is here for your reference `~/gh-mirror/floating-ui/floating-ui`.
-  - you can reuse existing dependencies for easier feature migration.
   - for spreadshhet table, you should use @tanstack/react-table. the source code for @tanstack/react-table and @tanstack/react-router is cloned at folder `~/gh-mirror/tanstack` for your reference.
   - you may use zustand for state management in framework-agnostic core package, the source code is at folder `~/gh-mirror/pmndrs/zustand` for your reference.
 
