@@ -75,13 +75,13 @@ modified: 2026-05-21T15:37:00.694Z
 
 - ## 
 
-- ## llama.cpp now has a BUILT-IN model router  _202605
+- ## 📡 llama.cpp now has a BUILT-IN model router  _202605
 - https://x.com/fahdmirza/status/2057353958377828581
   - it completely replaces Ollama + Open WebUI for model switching
   - One server, one config file, any model on disk. Full per-model control via a simple INI file
   - Switch models instantly without restarting anything
 
-- How does this compare with llama-swap?
+- 🆚 How does this compare with llama-swap?
   - It looks the same. All they do really is check the http request model header and start a new server process. But as it's integrated into llama.cpp they can make it faster to load and other optimizations in the runtime. 
   - Ok I was wrong, they're essentially the same, they run a parent process that listens for http request, then child processes for the models. There is no beneficial deeper integration into the runtime.
   - The fundamental architecture is the same in principle: Both `llama-swap` and the `llama.cpp` router use a parent process that manages child processes, with each model running in its own `llama-server` instance (or equivalent). There is no shared memory between models. `llama-swap` is an external Go proxy that starts/stops these processes, while the `llama.cpp` router has the same logic built directly into `llama-server` (multi-process architecture). It's the same core idea — separate processes per model instead of a single server swapping models in one process.

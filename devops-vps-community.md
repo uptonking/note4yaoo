@@ -499,6 +499,46 @@ https://dlercloud.com/user/shop
   - 青云梯：96/年，60G/月
   - 肥猫云：72/年，60G/月
   - HK-BEUP:69/年（兑换码优惠），100G/月
+# discuss-vpn-client/clash/v2ray
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [佬们，mac 用啥代理软件呀 - LINUX DO _202606](https://linux.do/t/topic/2326970)
+  - 之前用 surge 然后机场更新了不支持 anytls 换了 singbox，但是配置太麻烦了，又换了 clash verge 但是微信钉钉图片加载不出来也发不出去，佬们有啥推荐的软件吗
+- 我用的Clash Verge, 微信发图片很慢需要把ipv6给关了就好了.
+
+- 如果是M芯片的话，就用小火箭吧，简单方便, 小火箭一次付費，用到現在還可以Mac和iOS共用性價比高。
+
+- v2rayn，很好用，之前windows一直用的这个，现在也出mac版本了，和windows上的体验差不多
+
+- surge 6.0版本是支持anytls协议的呢。
+- 之前一直都用的surge，但是一直等不到vless，然后ios上转小火箭了，mac上也是转v2rayN
+- 我之前也是用的surge，和您遇到了同样的不支持问题，现在用的stash 支持anytls协议，感觉也挺好用
+
+- singbox开源的可以了解一下, 配合guiforsingbox我觉得可以平替surge部分功能
+
+- ## 📌 [各平台代理工具汇总（半年一更） - LINUX DO _202501](https://linux.do/t/topic/375351)
+- v2rayn还能自定义分流。。我也是今天才知道
+  - 在设置——>路由设置——>预定义规则列表中可以自定义
+- V2rayN是真的好用，可惜的是现在不支持Clash内核了，差一点完美
+
+- mihomo内核作为客户端出站协议比其他几家都全面很多，其他客户端需要vless与anytls时需分开使用xray与sing-box
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # discuss-vpn-net/proxy
 - ## 
 

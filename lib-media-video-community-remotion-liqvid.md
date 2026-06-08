@@ -162,6 +162,17 @@ modified: 2024-06-21T09:53:44.956Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [[开源自荐]一款轻量化NAS媒体库管理服务器-兼容Emby协议以及Jy协议 - LINUX DO _202606](https://linux.do/t/topic/2339503)
+  - MediaStationGo是一款轻量、漂亮、NAS 友好的私人媒体中心。Go 单二进制后端 + React 前端，覆盖媒体库管理、刮削、播放、订阅下载、Emby API 兼容、AI 搜索与推荐。
+  - 经过测试部署在本地NAS使用Infuse、VidHub等播放器播放是秒播状态
+  - 暂时阉割掉了增加多用户的功能
+  - https://github.com/ShukeBta/MediaStationGo
+  
+
 - ## [Emby 和 Jellyfin，大家最后都选了谁？ - LINUX DO _202605](https://linux.do/t/topic/2155784)
 - Emby：
 客户端成熟

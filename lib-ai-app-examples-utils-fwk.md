@@ -802,6 +802,12 @@ modified: 2025-02-21T18:20:42.624Z
   - 开源和闭源模型的工具调用要求不同，开源要求回传思考内容，闭源要求回传思考签名
   - 各家返回的token信息也不同，claude模型还包含了缓存时间等
   - 因为我们自己日常开发要用所以应该会持续维护的，而且不是还能统一tts，image，video的格式吗？大有可为我说。
+
+## filter/privacy/safety
+
+- https://github.com/packyme/privacy-filter /MIT/202605/go
+  - 在文本进入 LLM 之前，过滤掉用户的敏感信息（PII / 密钥）。 纯 Go、无模型、无 GPU、无 CGO —— 单个静态二进制，任何长度文本都是毫秒级。
+  - [在中转妖魔鬼怪都存在的时代，你们可能需要隐私过滤，于是我们开源了 - LINUX DO _202606](https://linux.do/t/topic/2337755)
 # eval/prompt
 - bench-resources
   - omlx内置bench工具及ui

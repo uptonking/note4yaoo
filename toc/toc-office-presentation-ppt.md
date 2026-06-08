@@ -868,8 +868,17 @@ modified: 2021-04-30T20:14:17.669Z
     - 更轻量的做法是直接使用 gpt-image-2 的图像编辑能力：把你不满意的那一页 PPT 图片发给它，让它针对性修改，并返回修改后的图片。
   - 本 skill 针对 Codex 进行深度适配，目前不支持其他 agent。
   - 本 skill 不负责从文章、报告、大纲或想法直接生成全新 PPT。如果你要做的是“生成一份 PPT”，可以使用  
-  - https://github.com/ningzimu/codex-ppt-skill /MIT
-    - 本 skill 负责从文章、报告、大纲或想法生成图片式 PPT，适合强视觉表达，但页面元素本身不可直接编辑。
+- https://github.com/ningzimu/codex-ppt-skill /MIT
+  - 本 skill 负责从文章、报告、大纲或想法生成图片式 PPT，适合强视觉表达，但页面元素本身不可直接编辑。
+  - [【开源推广】分享一个做PPT的Skill，针对Codex深度适配，同时也支持主流agent接入 - LINUX DO _202606](https://linux.do/t/topic/2324211)
+- https://github.com/GordenSun/GordenSuperPPTSkills /Link/202606/python
+  - 使用GPT生成豪华的图片格式PPT，然后转换为完全可编辑的PPTX文件
+  - 核心使用的是GPT的生图能力和视觉解析能力。 大致步骤是：依次提取PPT图片的背景图、框架图、图标和装饰图、文本。最后在PPT里按坐标拼装起来。当然为了实现完美的效果，做了很多细节验证和约束规则。 使用过程中，你能看到GPT生成的过程图片。
+  - [AI PPT赛道终结者，史上最最最强 PPT Skill：图片PPT转可编辑PPTX文档 - LINUX DO _202606](https://linux.do/t/topic/2327040)
+    - 佬这个转化是不是做了优化，我用ppt-master生成ppt图片后用微软自带的转可编辑样式老是对不准
+      - ppt-master 做的流程不是 svg 转 pptx 的么？因为他的 svg 转 pptx 是解析 openxml 自己实现的，所以可能这就是位置不准的原因吧。
+    - 只提取为框架图是不是不太合理，感觉框架图分成一个个元素更合理一些啊
+      - 也支持拆分框架的，Github里有写，默认不拆分。因为大多数人不调整框架的。现在已经速度挺慢了，拆框架速度更慢。
 # ai-canvas
 - https://github.com/open-webui/open-webui /104kStar/BSD+LOGO/python/ts/svelte
   - https://openwebui.com/

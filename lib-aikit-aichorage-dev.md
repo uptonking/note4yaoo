@@ -13,6 +13,7 @@ modified: 2026-05-28T17:50:54.646Z
   - playground for local ocr/vlm models
   - obsidian for pdf: auto-toc, history/diff, proofreading, tools
     - features-port: editor, backlinks, bases, publish, graph-view
+  - built-in image/pdf/ocr for chatting with documents
   - port model-specific skills to aichorage
   - easy local model xp: single-model, dual-models, hot-models
   - headless api/cli/skills
@@ -75,6 +76,13 @@ modified: 2026-05-28T17:50:54.646Z
 
 - lite
   - 去掉llama.cpp/mlx后端的纯客户端版本
+
+- models
+  - reproducible ai/rag/ocr
+    - 不同版本的向量模型生成的数据空间维度大小是不一致的会导致后续查询数据处理啥的有问题
+    - 另一种思路是通过类似jupyter的重代码工具去实现
+    - 可以兼容comfyui的导出json，直接在aichorage打开
+  - I really wish someone would just publish the optimal llamacpp command for all models with our hardware. We all have the same thing so we should all benefit from the same best command per model
 
 - KV Cache on disk added to LM Studio
 # pm

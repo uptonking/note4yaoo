@@ -37,8 +37,6 @@ project `superdoc` at folder `../superdoc` implements renders, edits, and automa
 - the final goal is to implement a framework-agnostic, modular, extensible, headless ai docx editing solution named `begonia` similar to `superdoc` in current folder to avoid the licensing issues.
 - begonia should be implemented in a modular and extensible architecture for core features, with functional programming style.
 
-- in superdoc, running `pnpm dev:super-editor` shows a mininal editor demo that supports to toggle pagination. running `pnpm dev` shows a powerful editor demo that supports to toggle pagination, zoomable, toolbars, sidebars. please migrate the examples to begonia without licensing issues, and make it runnable locally in begonia. you should migrate all superdoc examples/features to a standalone package at `apps/playground`, the basic ux can be a list of editor example names at left sidebar, when click one example name, the demo will show on the right.
-
 - feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
 - in your implementation, you can also improve the code logic for features and make your implementation correct and extensible. tests are not necessary for your implementation.
 - the most important feature to implement at first step is ai editing with track change support, other features can be implemented later progressively. a runnable ai editing example with track change should be provided.
@@ -59,7 +57,7 @@ please continue to migrate features related to ooxml editing with ai agent progr
 
 - these are the most important features now, the goal is to achieve major feature pairity or even better.
 
-you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issue.  
+you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issue.
 you have worked on this problem several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. make a plan and implement it to match major features of upstream without licensing issues.
 
 - to achieve major feature parity with superdoc, help me choose the best option for long-term.
@@ -114,6 +112,9 @@ you have worked on this problem several times but features are still lacking. Th
 
 ### draft-begonia
 
+- in superdoc, running `pnpm dev:super-editor` shows a mininal editor demo that supports to toggle pagination, and running `pnpm dev` shows a powerful editor demo that supports to toggle pagination, zoomable, toolbars, sidebars. please migrate the superdoc examples to begonia without licensing issues, and make it runnable locally in begonia. you should migrate all superdoc examples/features to a standalone package at `apps/playground`, the basic ux can be a list of editor example names at left sidebar, when click one example name, the demo will show on the right, so that it is easy to view and switch examples.
+- please continue to improve and enhance begonia editor, and also improve the examples, you may add more modular examples to showcase the editing features.
+
 - there are many smoke tests, it seems messy. can you refactor/redesign the tests as common units that are eaiser to maintain? 
 
 - import/export
@@ -131,11 +132,11 @@ onlyoffice-pdf-editor(code is at several git repos in current folder) implements
 - hardoc should be implemented in a modular and extensible architecture for core pdf features like viewing and editing, with functional programming style.
 
 - goals for pdf editing:
-01.   modular and extensible architecture for pdf viewing and editing: you may design sub packages like state/view/command/transform/... when you need. you may design a sdk if you want.
-02.   in-place text editing feature like adobe acrobat; undo/redo
-03.   pdf highlights, annotations with simple shapes
-04.   pdf file open and save
-05.   in-place text editing is the most important feature to implement now, the following features can be planned, but unnecessary to implement at this moment: forms, ocr, collaboration, ai-editing, complicated shapes, search. any feature you feel unimportant to in-place text editing can be delayed to implement,  but architecture should be extensible enough to support them later.
+01. modular and extensible architecture for pdf viewing and editing: you may design sub packages like state/view/command/transform/... when you need. you may design a sdk if you want.
+02. in-place text editing feature like adobe acrobat; undo/redo
+03. pdf highlights, annotations with simple shapes
+04. pdf file open and save
+05. in-place text editing is the most important feature to implement now, the following features can be planned, but unnecessary to implement at this moment: forms, ocr, collaboration, ai-editing, complicated shapes, search. any feature you feel unimportant to in-place text editing can be delayed to implement,  but architecture should be extensible enough to support them later.
 
 - tech stack needs to use open source libs/fwk:
 you may reference architecture and implementation details of onlyoffice pdf editor. 
@@ -427,7 +428,7 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 - please recheck migrated features and improve your implementation in aichorage. Analyze core data flow and implementation logic details for every major feature like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible api, chat with local-model/cloud-llm-api-provider..., compare the implementation logic/code of aichorage with related jan/transformerlab-app/unsloth-studio logic/code to recheck and enhance the correctness of architecture and logic in aichorage, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in aichorage are correct, modular, extensible for long-term maintenance. 
 
 - prioritize and recheck/improve major features like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible-api, chat with local-model/cloud-llm-api-provider... in aichorage, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
-- tasks that may be planned but delayed(not in current goal): RAG, full parity of Jan-style UI/UX, complicated multi-user/team/workspace/RBAC, anthropic-compatible api, embedding models, audio-related features.
+- tasks that may be planned but delayed(not in current goal): RAG, full parity of Jan-style UI/UX, complicated multi-user/team/workspace/RBAC, anthropic-compatible api.
 - if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
 - recheck and improve it, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
@@ -450,6 +451,16 @@ local model testing/running can be very slow.
 - try to improve/refactor the full tests to make it faster so that full tests running within 10 minutes.
 - improve the slow/complicated/heavy parts of tests, you may refactor/reorganize the tests to make it correct, fast, robust, maintainable in the long term.
 
+- lm studio can load multiple models at the same time, and it also supports Parallel Requests, Multiple requests to the same model or different models can be processed simultaneously, this feature is powerful and increase productivity. core engine source code of lm studio is at folder `~/Documents/repos/ai-ml-llm/all-runtime-mlx/mlx-engine` and `~/Documents/repos/ai-ml-llm/all-runtime-mlx/lms` for your reference. you may analyze code in lm studio core engine, unsloth-studio and transformerlab-app , then you may get some ideas from their code and implement something like Parallel Requests in aichorage.
+- lm studio also supports to show model working log that can display the prompt processing or token generation progress(lm studio has this feature as developer logs). if there is something like this in the lmstudio code or unsloth-studio code or transformerlab-app code, you may get some ideas from their code and implement something like model logs in aichorage.
+- please continue to improve and enhance aichorage, and add the two features above.
+
+- in jan app, there is a download manager that supports to show download progress and provide download related features. please refer to the code of jan(at folder `../jan` ) and reimplement it in aichorage. you might reuse ui of jan, but the downloading backend should be rewritten in python.
+- for every ai message in jan chat, token generation speed can be shown under the ai message, please refer to related code and migrate this feature to aichorage.
+
+- 
+- 
+- 
 - 
 - 
 - 

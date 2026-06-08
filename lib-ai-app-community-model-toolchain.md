@@ -1510,7 +1510,18 @@ iPhone 17 Pro GPU: 25 TPS
 
 - ## 
 
-- ## 
+- ## [any prompt processing tweaks? : r/StrixHalo _202606](https://www.reddit.com/r/StrixHalo/comments/1tzxoik/any_prompt_processing_tweaks/?sort=top)
+  - Token generation is good enough for me but the PP degrades so much when context length grows. Is there anything I can do to optimize PP? Anything on the roadmap for ROCM?
+
+- just use the Vulkan/RADV build. On gfx1151 it's been the better prefill path in my testing, and it sidesteps the ROCm memory-cap and version-regression headaches. If you're on AMDVLK, switch to RADV
+
+- you can get an eGPU and direct the PP to that device and then TG on strix.
+
+- Newer models have linear attention varieties that scale with context length much more effectively. Qwen3.6 has 3 layers of GatedDeltaNet attention (a linear variety) and 1 layer of standard MH attention (flash attention), but that last standard attention scales poorly. You have to research which types of attention a model has now a days for this kind of thing.
+
+- From testing on my setup vulkan is faster at refill and pp both, all the way up to an ~80% loaded 256k ctx
+
+- I really wish someone would just publish the optimal llamacpp command for all models with our hardware. We all have the same thing so we should all benefit from the same best command per model
 
 - ## [(Llama.cpp) In case people are struggling with prompt processing on larger models like Qwen 27B, here's what helped me out : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rnrxsv/llamacpp_in_case_people_are_struggling_with/)
   - ~~TLDR: I put the --ubatch-size to my GPU's L3 cache is (in MB).~~ 

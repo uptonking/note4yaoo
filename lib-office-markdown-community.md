@@ -224,6 +224,23 @@ FrontPage.getInitialProps = async ({ req }) => {
 export default FrontPage
 ```
 
+# discuss-md-editor/pm
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Why there is no simple markdown editor in the whole world? : r/Markdown _202606](https://www.reddit.com/r/Markdown/comments/1tzfvg4/why_there_is_no_simple_markdown_editor_in_the/?sort=top)
+  - Do I really need something impossible: WSYWG, split screen with synchronization when you scroll each pane, search and replace, table and LaTeX support, import and export to .docx?
+  - Panwriter - no scroll sync, known issue since 2022, no search and replace.
+  - Obsidian - no split screen sync scroll (or me too stooped to switch it on), no export, many incompatibilities with standard notation (e.g., quotations).
+- Obsidian does have split screen. after you split the screen you can right click a tab and choose “link with another tab”, you will have synced scrolling.
+
+- The purpose of Markdown is to replace WYSIWYG editors like MS Word, and render later.
+  - Wanting features of a rich live visual editor plus advanced rendering like LaTeX built on top of markdown defeats the purpose as it would be very slow. Obsidian is a pig as it is.
 # discuss-md-json
 - ## 
 

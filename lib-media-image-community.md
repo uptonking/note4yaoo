@@ -267,6 +267,29 @@ modified: 2024-09-16T11:11:14.989Z
 - Django QR Code can generate QR codes on the fly in views. https://pypi.org/project/django-qr-code/
 
 - The comments not taking into account that you want to create a dynamic qr code. Create a short link that redirects to the target, then generate a qr code from the short link. Example : app.com/shortlink/[id] --> redirects to the target link (url, social media ...) And you generate a qr code from the short link in client side using a library, it will be the same all time which means the the same qr code generated for the same short link , that redirects to the actual target you want.
+# discuss-image-gif
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [有好用的GIF压缩工具吗 想压缩到指定大小以下 - LINUX DO _202606](https://linux.do/t/topic/2326124)
+- 有一个叫做screentogif的软件还挺好用的，我经常用来录屏转gif，出来的内容也不算粗糙，你可以试试看。 
+  - 这个我也有在用 压缩不了大小 只能录制呢 如果用这个翻录的话帧数对不上错开了会卡卡的
+
+- 软件的话，最吊的应该是 honeycam（但是要钱），网站的话一般用 https://imagestool.com 凑活一下
+
+- gif压缩率一般的，大小下来了会变得很糊, 可以试试avif
+
+- 现在一般生成gif的时候都是优化过的了，后面还想进一步压缩只能降帧数降画质降分辨率了。
+
+- 用这个 Animated GIF optimizer and compressor 或者让 ai 给你个 ffmpeg 的命令
+
+- https://github.com/kohler/gifsicle
+  - 很久之前测试过，压缩选项+压缩效果都能把控的比较好的开源的命令行工具的
 # discuss
 - ## 
 

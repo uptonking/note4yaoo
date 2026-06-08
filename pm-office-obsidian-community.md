@@ -329,13 +329,22 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Obsidian Teams inc? : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1tyy1wn/obsidian_teams_inc/?sort=top)
+- Pushing your markdown to github with a pull request gets you all of this
+  - Google docs supports parallel editing in real time. GitHub supports merging. Not the same. 
+- Not really, because github is not in real time. However, putting it in a dropbox folder gets a good chunk of it.
+
 - ## 这三个东西凑齐之后，Obsidian已经不是一个笔记软件了。
 - https://x.com/yanhua1010/status/2052720961531879779
 1. Obsidian Web Clipper 
 浏览器看到好东西一键剪进库，原生 .md 格式。
-2. Obsidian CLI 
+1. Obsidian CLI 
 让Claude Code直接接管整个仓库：读、写、搜、改、建双链等等。
-3. Obsidian Skills 
+1. Obsidian Skills 
 最狠的一个，让Agent知道什么时候应该写 .md 笔记，建 .base 表格，或者生成一张 .canvas 画板。
 
 - 都在用啦~~~不过实际效果，还没有完全体会到精妙之处

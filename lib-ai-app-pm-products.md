@@ -312,6 +312,12 @@ modified: 2025-03-22T16:10:24.856Z
 - local-reimpl
   - 比如支持minimax语言的api、mineru-ocr api，直接本地可用
 
+- models
+  - reproducible ai/rag/ocr
+    - 不同版本的向量模型生成的数据空间维度大小是不一致的会导致后续查询数据处理啥的有问题
+    - 另一种思路是通过类似jupyter的重代码工具去实现
+    - 可以兼容comfyui的导出json，直接在aichorage打开
+
 - chat-ai
   - 主流ai的web-chat结果能快速对比
 
@@ -332,6 +338,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 用类似 claude-design 的思路来实现 ui/编辑器 类型的产品
   - too many options: 
     - models/quants, cloud api, 处理速度不同
+    - parallel requests for local models/ocr
     - text/image pdf ocr, 源文件处理方式不同
     - vlm, pipeline, 识别方法不同
     - versions/comparison

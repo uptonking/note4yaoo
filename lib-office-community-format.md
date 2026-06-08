@@ -47,6 +47,19 @@ modified: 2024-12-29T18:09:21.233Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [An open letter to office suite users, just before the Euro-Office announcement : r/libreoffice _202606](https://www.reddit.com/r/libreoffice/comments/1u00lie/an_open_letter_to_office_suite_users_just_before/?sort=top)
+  - In recent days you will have read various articles announcing the arrival of Euro-Office, which is being “marketed” as the first open-source office suite developed in Europe. We feel compelled — reluctantly, since open source should rest on transparency, not deception — to correct this claim. The first open-source office suite developed in Europe was OpenOffice.org in 2001, based on StarOffice’s source code, followed by LibreOffice from 2010.
+  - These are two genuine open-source office suites, built from source code that originated in Europe. They are not a freeware clone of MS Office whose code provenance is undisclosed
+  - It is worth remembering that many of those who champion Digital Sovereignty today were silent back in 2006, when the open ISO/IEC ODF standard — the pillar of Digital Sovereignty — was announced: not only did they not listen to us during all these years, but in some cases they greeted us with a condescending smile.
+  - Document formats are a subject still rife with misinformation. This is understandable on the part of Microsoft, which developed and controls the horrible proprietary OOXML format, designed precisely to prevent Digital Sovereignty by maintaining content lock-in. It is far less understandable on the part of companies that claim to advocate open source, such as those promoting Euro-Office.
+  - Euro-Office defaults to the fully proprietary OOXML document format, developed and controlled solely by Microsoft. This makes it a de facto ally of Microsoft in its content lock-in strategy, with control remaining firmly in Redmond and far from Europe.
+
 - ## [The biggest blocker to LibreOffice adoption? LibreOffice (2023) | Hacker News _202411](https://news.ycombinator.com/item?id=42225260)
 - Microsoft really doesn't want anyone to reliably copy their formats. Their standard is purposefully complicated and convoluted, it was almost rejected by ISO for this reason and it took heavy lobbying before it passed (I know of this personally as the ISO vote went through national ISO bodies).
 

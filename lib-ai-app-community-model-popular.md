@@ -712,6 +712,13 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [What version of Gemma 4:12b should I run on Macos : r/ollama _202606](https://www.reddit.com/r/ollama/comments/1u08jtc/what_version_of_gemma_412b_should_i_run_on_macos/?sort=top)
+- I tried gemma4:12b and gemma4:12b-mlx and decided to stick with the gemma4:12b model for now because it uses less RAM and also seemed slightly faster on my MacBook Air (M4, 16GB RAM). Also, there didn't seem to be much difference in the quality of the responses between the two models in the few cases that I tested. I tried one of the smaller Qwen models but gave up on it after it couldn't answer a fairly simple probability question because it couldn't count the number of letters in a word.
+
 - ## [Gemma 4 12B vs Qwen3.5-9B - which small model actually earns its VRAM? : r/AIToolsPerformance _202606](https://www.reddit.com/r/AIToolsPerformance/comments/1twdury/gemma_4_12b_vs_qwen359b_which_small_model/?sort=top)
 - I think Gemma 4 12b still uses that sliding window attention, so it's not going to be viable for coding, or anything that requires accurate attention.
 

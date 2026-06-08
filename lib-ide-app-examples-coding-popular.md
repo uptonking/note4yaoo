@@ -576,6 +576,10 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/RyensX/OpenCodex /AGPL/202605/ts
   - OpenCodex是一个轻量级Codex运行环境，可以让你的任意设备通过Web使用你的电脑上的Codex
   - [OpenCodex第一版Release - LINUX DO _202605](https://linux.do/t/topic/2223341)
+  - [OpenCodex 2.0版本！新架构！随时随地AI Coding _202606](https://linux.do/t/topic/2339794)
+    - 新版本不再需要繁琐的实现IPC，最大程度兼容Codex！Codex更新也不会导致功能大面积失效！还提高了数据加载速度和完全兼容MacOS(Arm64)和Windows！（但Linux还没测试过，可以命令行跑一下试试）
+    - OpenCodex 是一个Codex Desktop中间层，它可以让你使用手机、平板或另一台电脑通过浏览器里访问并操作目标机器上的 Codex，适合在局域网或远程局域网环境中持续AI Coding。
+    - 对比官方还是有一些使用场景上的优势： 无需魔法上网。 无需外区Google Play/苹果账号，直接Web 支持 Codex 的完整功能，例如文件树、终端、审查等，便于随时随地 AI Coding。
 
 - https://github.com/beltromatti/get-it /apache2/202605/ts
   - The study companion that turns a PDF into a measurable mastery map. Built around the document, not in place of it.
@@ -1150,7 +1154,7 @@ modified: 2025-12-11T18:10:23.710Z
     - non-tool-calling models now work a lot better than before with little instances of looping and re-prompting as of Release 1.11.0.
   - pr已合并 [Feature Request: Skills Support - Modular Capabilities with Progressive Disclosure _202511](https://github.com/Nano-Collective/nanocoder/issues/91)
   - 📡 
-  - [[Feature] Add Agent Client Protocol (ACP) Support _202603](https://github.com/Nano-Collective/nanocoder/issues/401)
+  - 已支持_202606 [[Feature] Add Agent Client Protocol (ACP) Support _202603](https://github.com/Nano-Collective/nanocoder/issues/401)
     - Implement Agent Client Protocol support so nanocoder can be used as a coding agent inside any ACP-compatible editor 
     - Nanocoder already has the core primitives ACP needs. The gap is a transport layer — nanocoder needs a JSON-RPC stdin/stdout entry point and ACP method handlers.
   - 已合并 [[Feature] Small Model Mode _202603](https://github.com/Nano-Collective/nanocoder/issues/391)

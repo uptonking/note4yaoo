@@ -443,6 +443,24 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Hermes Agent相比于OpenClaw的一些优势 - LINUX DO _202606](https://linux.do/t/topic/2334197)
+- openclaw只有jsonl文件在维护会话，每次一个会话，都是一个jsonl文件，里面有用户的问题，ai助手的工具调用信息，ai助手的回答。管理起来很简单，但也会遇到一些问题：
+  - 有时候第二天问龙虾一个前一天深入聊过的一个话题，它完全没反应，想失忆了一样。原因是在当前的jsonl文件中根本没有前一天的会话历史。（openclaw和hermes-agent都默认每天会开启一个新会话。）
+  - 但是hermes-agent，它除了有jsonl文件之外，还把所有的会话存在了sqlite里面。可以借助关键词搜索，它把session_search_tool注册成了一个tool, LLM会主动调用session_search这个工具，去sqlite中搜索对应的关键词，这个关键词，也是LLM根据用户的提问和它的自身理解，生成了几个关键搜索词，并非是用户的原始问题。然后将搜索到的结果填充到当前上下文中，所以，即便是两三个月前聊的某个事情，在hermes-agent里面，它都记得。（好像最长三个月会自动清理，也可以设置更长时间。）
+  - 所以，hermes-agent在这方面体验确实好，你问他一个很久以前聊过的话题，它都能快速的接上，体验感直接拉满。（openclaw我的一个使用心得是，当你和它聊到一个重要的事情，或者你告诉它一个重要的信息，你感觉后面这个事情还需要反复聊，你特别想让它记得，就得告诉它，让它把这个记忆到memory.md当中，但是有些小事，你并不一定需要让它沉淀到Memory.md的时候，hermes-agent的这种session_search工具就特别好用）
+- 在长期记忆管理方面，hermes-agent也有很多创新，openclaw纯粹就靠那几个markdown文件，Memory.md, Identity.md, SOUL.md, TOOLS.md, USER.md. 它的做法是，一开始在系统提示词中，就把上述md文件加载到系统提示词里面。然后还有一个差异点，openclaw用的是标准的markdown文件，而且貌似对长度没有限制，可以无限扩充。
+  - 在hermes-agent，虽然也叫MEMORY.md, 但是它的格式和openclaw完全不同，它是一条一条记忆，用§符号隔开。而且有长度限制，最大2200字符，约800个token, 如果超了，它会进行压缩和替换，这个我其实没搞清楚，为什么要这么设计，我感觉轻轻松松就会把2200个字符给用掉。为什么不放开限制? 有知道的佬友，可以给讲解下，为什么这样设计。
+  - 同时，hermes-agent除了MEMORY.md和USER.md之外，还支持八种外接的记忆插件，比如mem0之类的，记忆可以存放在三方记忆平台上，支持通过api的方式存储记忆、检索记忆，三方记忆可以支持更高维度的记忆查询，比如浅层语义的检索通过向量数据库既可以处理，深层语义上的检索要用到neo4j等图数据库的存储和检索方式。而且还要考虑到记忆的衰退，记忆的冲突等。加入了外接记忆后，hermes-agent在记忆层面确实确实是很完善了。
+- 当hermes-agent处理完一个复杂的任务，超过五次工具调用，踩了很多坑才完成，它会自己沉淀成一个skill，这样下次再遇到同样类型的任务时，它会复用之前的skill, 避免同样的错误，多次折腾，浪费时间，还浪费Token。hermes-agent自动化更高，openclaw相当于半自动甚至是手动，用openclaw的时候，当它经过九牛二虎之力终于完成一个复杂任务的时候，我会主动叮嘱让它把这些经验存入到TOOLS.md当中，这样下次就不会再浪费时间去“探索”了。相比而言，hermes-agent智慧化程度更高，对普通用户更友好。
+
+- hermes的记忆长度是能改的，我用的hermes studio网页端，改成了5000
+
+- hermes 限制还挺多的，比如 codex 原生的网页搜索它就不支持。说白了只需要让 agent 之间能互相聊天，再搭个 telegram bot 就完事了，这些直接让 codex 帮你搞就行。
+
 - ## [openclaw最近热度去哪里了? 有使用场景吗 - LINUX DO _202605](https://linux.do/t/topic/2204533)
 - 还是不如CodeX，CodeX啥都能干，官方开发的插件还比openclaw做得好。
 
@@ -720,7 +738,18 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## [大家在工作中都形成了什么自己好用的工作流呢 - LINUX DO _202606](https://linux.do/t/topic/2326102)
+- 我现在大多是在 Codex 里面开发的，日常流程是这样的：
+
+简单问题 不是很复杂的 ： 直接就裸对话来处理了, 大多数情况下都是这样。
+
+小需求、求快速迭代的 ：直接对话 + grill-me，比如我要加个小功能，需求不是很明确，我就可以用grill-me 快速确认需求然后直接开始让ai开发。
+
+中等项目、有一定规范的 ：那就是grill-me + Trellis，比如我需要先用 grill-me 把需求问清楚
+
+多人协作的大项目：可以用推荐的Superpowers，听说很厉害，流程比较重（费Token），这个我没用过，有用过的佬友说一下
+
+AI知识库的积累：当AI熟练项目后，需要积累大量的知识库，比如项目中很过专业的知识如何用AI来识别等场景下，推荐使用的llm-wiki来构建AI知识库，方便项目使用
 
 - ## [Obsidian is great for notes, but what are you using for PDFs, screenshots, bookmarks, and videos? : r/ObsidianMD _202605](https://www.reddit.com/r/ObsidianMD/comments/1tc9p1g/obsidian_is_great_for_notes_but_what_are_you/)
 - Zotero is a great solution. You can search, make notes, tag, and link one entry to another. When you need, send the notes to Obsidian using the plugins. Zotero also has a desktop and phone app so you can access all those notes anywhere. Only put your notes in Obsidian.
