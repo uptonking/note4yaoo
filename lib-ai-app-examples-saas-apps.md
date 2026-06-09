@@ -523,6 +523,16 @@ modified: 2025-02-21T17:17:42.225Z
 
 ## office
 
+- https://github.com/extend-hq/ui /MIT/202606/ts
+  - https://ui.extend.ai/
+  - Open source document components created by Extend. Extend UI gives product teams the building blocks for document processing interfaces: PDF viewers, file uploads, thumbnails, citations, OCR blocks, human review, document splitting, and e-signature flows.
+  - https://x.com/kushalbyatnal/status/2064369696187502732
+    - 14 components & examples for PDF, DOCX, and XLSX viewers, plus bounding box citations, file upload, e-signature, and more
+    - fully customizable
+    - React PDF viewer component with bounding box citation support, page controls, zoom, search, text selection, thumbnails, uploads, and responsive document layouts
+    - React Excel viewer component for previewing XLSX workbooks with sheet tabs, frozen panes, formulas, large-grid navigation, and cell selection
+    - React DOCX editor component for editing Word documents with a Word-style toolbar, import and export, formatting controls, page thumbnails, links, images, tables, and tracked changes
+
 - https://github.com/zhu1090093659/minister /apache2/202603/ts
   - 把 Claude Code 塞进飞书，给你的团队加一个全能同事。
   - 丞相是一个基于 Claude Code 的飞书 AI 助手框架，为企业团队打造。它不是又一个聊天机器人——它是一个住在飞书里的同事，能直接帮你发消息、建任务、写文档、排日程、操作多维表格，说完就办，不用你再动手。

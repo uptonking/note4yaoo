@@ -808,6 +808,9 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/packyme/privacy-filter /MIT/202605/go
   - 在文本进入 LLM 之前，过滤掉用户的敏感信息（PII / 密钥）。 纯 Go、无模型、无 GPU、无 CGO —— 单个静态二进制，任何长度文本都是毫秒级。
   - [在中转妖魔鬼怪都存在的时代，你们可能需要隐私过滤，于是我们开源了 - LINUX DO _202606](https://linux.do/t/topic/2337755)
+  - https://x.com/cccchuizi/status/2063903164601098317
+    - 支持三种接入方式：import 包、HTTP 接口、gRPC
+  - 两层检测机制：结构化 PII 识别 + Gitleaks 全套 222 条规则
 # eval/prompt
 - bench-resources
   - omlx内置bench工具及ui

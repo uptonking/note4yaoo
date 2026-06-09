@@ -36,7 +36,12 @@ modified: 2021-04-27T09:19:37.711Z
 
 - ## 
 
-- ## 
+- ## TIL that there are browser APIs to check Storage access
+- https://x.com/sebastienlorber/status/2064341547143885288
+  - document.hasStorageAccess()
+  - document.requestStorageAccess()
+  - If you ever got unexpected errors due to using localStorage + iframes like me, this is useful 
+  - Now Baseline Widely Available! (in every modern browser)
 
 - ## Out-of-order streaming HTML is coming to a browser near you!
 - https://x.com/dannymoerkerke/status/2062881045943337008

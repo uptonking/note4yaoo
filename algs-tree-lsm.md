@@ -12,16 +12,22 @@ modified: 2023-04-20T08:05:44.256Z
 # guide
 - who is using #LSM-Tree
   - LevelDB
-  - RocksDB: TiKV, CockroachDB, MyRocks(MySQL-fork)
-  - HBase, Cassandra
+  - RocksDB: TiKV, MyRocks(MySQL-fork)
+  - SlateDB
+  - CockroachDB
+  - HBase, Cassandra, ScyllaDB
   - Kafka
+  - turbopuffer
+  - RisingWave
   - ClickHouse中的MergeTree也是LSM树的思想
   - Flink Table Store目前采用了类似于 RocksDB 的通用合并策略
   - 新的InfluxDB的存储引擎看起来和LSM树很像
   - couchbase-magma
+  - YugabyteDB
 
 - resources
   - [LSM-Tree 论文的中文翻译](https://github.com/tangwz/LSM-Tree-CN/blob/main/LSM-Tree-CN.md)
+  - [RisingWave on X: "LSM Trees power a huge portion of today's modern data infrastructure. " / X _202606](https://x.com/RisingWaveLabs/status/2063961352763298296)
 # blogs
 
 ## 🌲☕️ [Log-Structured Merge Tree overview | Medium](https://medium.com/@tomfran/log-structured-merge-tree-a79241c959e3)
@@ -38,7 +44,7 @@ modified: 2023-04-20T08:05:44.256Z
 
 - 讲LSM树之前，需要提下三种基本的存储引擎，这样才能清楚LSM树的由来：
 - #️⃣ 哈希存储引擎
-  - 是哈希表的持久化实现，支持增、删、改以及随机读取操作，但**不支持顺序扫描**，对应的存储系统为key-value存储系统。
+  - 是哈希表的持久化实现，支持增、删、改以及随机读取操作，但 **不支持顺序扫描** ，对应的存储系统为key-value存储系统。
   - 对于key-value的插入以及查询，哈希表的复杂度都是O(1)，明显比树的操作O(n)快, 如果不需要有序的遍历数据，哈希表就是your Mr. Right
 - 🌲 B树存储引擎
   - 是B树的持久化实现，不仅支持单条记录的增、删、读、改操作，还支持顺序扫描（B+树的叶子节点之间的指针），对应的存储系统就是关系数据库（Mysql等）。

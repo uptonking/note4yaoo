@@ -422,3 +422,6 @@ modified: 2026-03-29T13:03:35.455Z
   - This one line of CSS will fix the annoying layout shift that scrollbars cause.
   - With that, space is reserved for the scrollbar before it even appears.
   - Use `both-edges` if your content is centered.
+
+- https://x.com/flornkm/status/2064007292136067208
+  - this one saved me from so many layout-shift headaches. pair it with `scrollbar-gutter: stable both-edges;` if you center your content, because stable alone only reserves space on one side, and centered layouts can still nudge over.

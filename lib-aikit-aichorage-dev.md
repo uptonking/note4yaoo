@@ -33,6 +33,7 @@ modified: 2026-05-28T17:50:54.646Z
   - 直接兼容 lms-cli, 使用已下载的model
 
 - workflow
+  - comfyui-compatible node
   - export ocr/translation workflow as skill programmatically
 
 - 参考janai支持切换llamacpp/mlx, 来实现支持切换 mineru/paddleocr/docling
@@ -87,8 +88,12 @@ modified: 2026-05-28T17:50:54.646Z
 - KV Cache on disk added to LM Studio
 # pm
 
+## llm-iot
+
+- 智能音箱目前缺少官方api的支持, 因为用户很少为月租token付费, 而适合使用本地的stt/tts/小模型
 # dev-xp
 
 # more
 
 # devlog
+- I verified against LM Studio’s current docs that their parallel-request feature is explicitly llama.cpp- first, with MLX “coming soon.”

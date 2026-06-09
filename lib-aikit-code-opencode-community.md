@@ -62,7 +62,10 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## in the next version of @opencode , file search is powered by fff
+- https://x.com/nexxeln/status/2064039757668303036
+  - files the agent opens start ranking higher
+  - tool calls reuse the same search layer instead of starting cold
 
 - ## OpenCode Desktop v2 is coming VERY soon. Part of that includes WSL out of beta finally
 - https://x.com/LukeParkerDev/status/2062368537445064945

@@ -207,6 +207,18 @@ mineru paddleocr site:github.com -inurl:"github.com/opendatalab/" -inurl:"github
   - https://lobste.rs/
   - [Brian Lovin](https://brianlovin.com/)
 
+- https://github.com/upstash/hacker-trends /202606/ts
+  - https://hacker-trends-eight.vercel.app/
+  - https://hackernewstrends.com/
+  - A search + trends explorer over 45 million Hacker News posts and comments. 
+  - This whole UI is a thin shell over a handful of `@upstash/redis` search calls. There's no separate search cluster: you store plain Redis hashes and define an index over them.
+    - [Upstash Redis Search Introduction ](https://upstash.com/docs/redis/search/introduction)
+    - Upstash Redis Search is our first extension beyond the official Redis spec. 
+    - Using the Rust-based `Tantivy` under the hood, we provide an extremely fast way to search through Redis data.
+  - https://x.com/upstash/status/2064366745968623918
+    - We indexed all of Hacker News into Upstash Redis Search 
+    - Millisecond queries w/ Rust-based search
+
 - [Lobsters vs Hacker News vs Other Similar Platforms_202310](https://medium.com/@saverio3107/lobsters-vs-hacker-news-vs-other-similar-platforms-6db5b5778dc2)
   - Lobsters and Hacker News are both platforms that serve as a communal space for sharing and discussing various topics. 
   - Lobsters: Primarily technology-focused with a community centered around link aggregation and discussion​.

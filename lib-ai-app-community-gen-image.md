@@ -885,7 +885,11 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 
 - ## 
 
-- ## 
+- ## [现在最好的开源文生图模型是什么 - LINUX DO _202606](https://linux.do/t/topic/2352640)
+- 真实人像：Z-image-turbo
+  - 二次元： 光辉，Anima
+  - MJ美学风格：ideogram 4
+  - 生态目前最好的肯定是Z-image-turbo，但Anima前途可期
 
 - ## [[慢讯]动漫风格开源文生图模型Anima出 base v1.0 了 - LINUX DO _202605](https://linux.do/t/topic/2192647)
   - 这模型挺小的，40 系的 6G 卡也能跑

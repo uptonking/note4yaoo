@@ -527,6 +527,22 @@ export COMMANDLINE_ARGS="--skip-torch-cuda-test --disable-nan-check --upcast-sam
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Comfy Desktop is here -  one app for every Comfy. _202606
+- https://x.com/ComfyUI/status/2064093003590111314
+  - We rebuilt the desktop experience from the ground up. 
+  - Your existing workflows, custom nodes, models, and settings carry over untouched. Same name, completely new app.
+  - Multiple ComfyUI instances — different custom nodes, different versions, all managed in one place
+  - Automatic snapshots before every update and custom node change, with one-click rollback if something breaks
+  - Day-0 ComfyUI releases — the moment a new version or nightly drops, you can update immediately
+
+- They just changed it to try and shove cloud "features" on your face (so you will pay future subscriptions), made it clunkier and more corporate looking and killed a good amount of community nodes in the process.
+
 - ## 🎯 [ComfyUI 2025: Quick Recap : r/comfyui _202512](https://www.reddit.com/r/comfyui/comments/1poeled/comfyui_2025_quick_recap/)
 - If they have stayed within the Blender model, it would grow them success in the long run, Blender foundation made it, but never compromised on their integrity, even over 20+ years. And they STILL run that model, and is one of the most used pieces of graphics software in the world.
   - No commercial integration

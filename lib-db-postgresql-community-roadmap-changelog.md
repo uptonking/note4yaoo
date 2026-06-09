@@ -15,6 +15,25 @@ modified: 2023-10-28T17:53:23.397Z
 - ## 
 
 - ## 
+# discuss-news-pg
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## PostgreSQL 19 Beta 1 adds ON CONFLICT DO SELECT.
+- https://x.com/KaraBharat/status/2064222684813349357
+  - Insert a row. If it already exists, return it. 
+  - Atomic get-or-create, finally.
+
+- the bigger win is skipping noop updates that bloat wal and fire triggers
+
+- the downstream effect that matters: orms can finally expose get-or-create as one atomic method instead of a retry loop. that eliminates a whole category of phantom-row bugs that are notoriously hard to reproduce in production
 # discuss
 - ## 
 

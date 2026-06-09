@@ -485,6 +485,11 @@ modified: 2025-03-22T16:10:24.856Z
 - pm-eval/bench
   - 模型文档及参数都是on-paper, 可直接运行的测试集加上量化版本更适合实际效果, 是否存在产品空间
 
+- free-models
+  - nvidia, openrouter
+  - modelscope
+  - xunfei
+
 - 基本参数(card)
   - 模型列表
 - 评测模型类别: text, ocr, image, embedding
@@ -2472,14 +2477,19 @@ modified: 2025-03-22T16:10:24.856Z
   - codex分组--0.03
   - 不可用
 
-- [青熵 ](https://api.qs89hub.com/keys)
+- [松松 AI ](https://ai.songsongcard.shop/keys), 已充值
+  - [松松 AI ](https://songsongcard.shop/)
+  - plus--0.02
+
+- [青熵 ](https://api.qs89hub.com/keys), 中转已关
   - [青熵的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/P9HPIPWA)
   - 渠道多
   - plus--0.02
 
-- [松松 AI ](https://ai.songsongcard.shop/keys)
-  - [松松 AI ](https://songsongcard.shop/)
-  - plus--0.02
+- [ApexCode API ](https://codeapx.com/models/pricing)
+  - 注意套餐价格变化, 还提供了包月 ¥188--$55/day
+  - 特价分组gpt--0.03
+  - 常规分组gpt--0.18
 
 - [Qmy2AI /sub2api](https://sub2api.qmytai.com/dashboard)
   - 个人0.04x，中转站0.03x
@@ -2552,9 +2562,6 @@ modified: 2025-03-22T16:10:24.856Z
   - L站用户注册就送小小股东, $5/mon
     - right code 也是站内的一家主要做codex的中转站
   - o2a基本没有缓存?
-
-- [ApexCode API ](https://codeapx.com/console)
-  - 注意套餐价格变化
 
 - 🗑️ [帕帝AI](https://padi-shop.closeai.hk/), 已倒闭
   - [FreeAI - AI API Gateway](https://free.closeai.hk/)

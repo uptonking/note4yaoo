@@ -11,6 +11,9 @@ modified: 2025-11-01T10:54:26.044Z
 
 - tips
   - 不必执着于lmstudio的替代, 采用client/server架构后, 普通后端都可以支持定制前端
+
+- resources
+  - [LeetLLM - Learn LLM & AI Concepts ](https://leetllm.com/learn)
 # dev-xp
 - mlx-4bit 模型通常比 gguf-Q4_K_XL 速度快，但质量更差
 - mlx模型的fixes/updates通常无人维护, 连lmstudio社区的模型都很少维护， 远不如gguf
@@ -851,6 +854,17 @@ modified: 2025-11-01T10:54:26.044Z
   - a CLI tool written in Go that benchmarks how well Large Language Models (LLMs) run on your specific hardware. 
   - It measures real-world performance metrics via Ollama and tells you whether your "rig" is ready for AI workloads.
   - [I built a small CLI tool to help beginners see if their hardware can actually handle local LLMs : r/ollama](https://www.reddit.com/r/ollama/comments/1r8rgg8/i_built_a_small_cli_tool_to_help_beginners_see_if/)
+# apple-mlx/ANE
+- https://github.com/maderix/ANE /MIT/202603/c/oc
+  - Training neural networks on Apple Neural Engine via reverse-engineered private APIs
+  - https://x.com/0x0SojalSec/status/2064056868931281093
+    - Reverse-engineered Apple's Neural Engine and trained a neural network on it.
+    - ANE is inference-only, cracked it open anyway.
+    - Why it matters: 
+    - M4 ANE 6.6 TFLOPS/W vs 0.08 for an A100 (80× more efficient)
+    - 38 TOPS is a lie : real throughput is 19 TFLOPS FP16
+    - Your Mac mini has this chip sitting mostly idle
+  - 🐛 The problem is that its use is too limited. Almost none of the mainstream, useful models can run perfectly on the ANE. Only model architectures specifically designed for the ANE are likely to make full use of it.
 # inference-engine
 - https://github.com/Luce-Org/lucebox-hub /2.2kStar/apache2/202605/cpp/python
   - https://www.lucebox.com/

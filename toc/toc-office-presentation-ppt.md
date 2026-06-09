@@ -879,6 +879,12 @@ modified: 2021-04-30T20:14:17.669Z
       - ppt-master 做的流程不是 svg 转 pptx 的么？因为他的 svg 转 pptx 是解析 openxml 自己实现的，所以可能这就是位置不准的原因吧。
     - 只提取为框架图是不是不太合理，感觉框架图分成一个个元素更合理一些啊
       - 也支持拆分框架的，Github里有写，默认不拆分。因为大多数人不调整框架的。现在已经速度挺慢了，拆框架速度更慢。
+- https://github.com/LearnAIHubC/LearnDeck
+  - [生成可编辑元素的PPTX - LINUX DO _202606](https://linux.do/t/topic/2356513)
+  - GPT5.5 + codex
+  - 提示词： 使用LearnDeck 写一个ppt ，随便一个demo，酷炫一点
+  - 我的流程差不多，先风格母版，然后母版生成每页对应图片，然后每页图片精修可编辑ppt
+    - 是的，先弄一个模板，然后按照模板设置PPT颜色，位置之类的。这样和模板有9.5成像，勉强够用 
 # ai-canvas
 - https://github.com/open-webui/open-webui /104kStar/BSD+LOGO/python/ts/svelte
   - https://openwebui.com/

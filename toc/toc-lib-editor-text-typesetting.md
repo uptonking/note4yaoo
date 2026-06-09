@@ -264,6 +264,13 @@ modified: 2024-11-16T08:23:40.617Z
   - 调整浏览器宽度时, svg容器宽度需要保持不变， 否则in-place模式下上下两层文本会错位导致视觉混乱
   - in place mode: texts can also be layouted directly from an existing div with content. original content in red, and svg text in blue.
 
+- https://github.com/raphaelsalaja/calligraph /MIT/202603/ts
+  - https://calligraph.raphaelsalaja.com/
+  - Fluid text transitions powered by Motion.
+  - https://x.com/ZaynHao/status/2064258876900573505
+    - 推荐一个好用、制作精良的用于支持流畅文本和数字动画过渡效果的库
+    - 不仅提供了丰富的示例、试验场、还提供了与其他同类库的对比。
+
 - https://github.com/KurtGokhan/tegaki /MIT/202604/ts
   - http://gkurt.com/tegaki
   - Tegaki (手書き) turns any Google Font into animated handwriting. No manual path authoring. No native dependencies. Just pick a font.

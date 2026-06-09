@@ -313,7 +313,9 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## Langchain DeepAgents 的 Harness Profile 功能不错，为不同的模型开启不同的提示词、工具，这样你选择不同的模型，就会自动应用不同的 Profile.
+- https://x.com/9hills/status/2064156876821192980
+  - 比如对于gpt-5.5，将 edit_file 改成 apply_patch 工具，将execute 工具 改成 shell_command，从而和 codex 保持一致。
 
 - ## Announcing experimental Workflows & Orchestrators for TanStack AI 
 - https://x.com/tan_stack/status/2060084223470612572

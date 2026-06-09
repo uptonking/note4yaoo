@@ -67,6 +67,12 @@ modified: 2021-04-21T15:01:12.882Z
 
 - ## 
 
+- ## 
+
+- ## Static cards are dead. We make bento animations that move.
+- https://x.com/AshikArtistry/status/2063981245558907103
+  - 卡片内容展示动画的效果
+
 - ## With tools like @LottieFiles , @rive_app , and @jittervideo designers can easily integrate smooth, lightweight animations.
 - https://x.com/Deconinck_co/status/1900494369934708806
 - What tool did you use for this animations?

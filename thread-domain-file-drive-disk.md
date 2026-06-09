@@ -192,7 +192,22 @@ modified: 2024-08-03T20:00:33.414Z
   - Yeah, this is why I usually recommend OwnCloud or NextCloud. I am not comfortable with an abstracted file system that relies on a database to make sense. If something goes wrong with my OwnCloud install, I can just copy files out of the individual user folders, and recreate it. I can also back it up and get files out of the backup without restoring the entire SeaFile instance.
 
 - Worth noting that "Nextcloud being slow" is solved by used Nextcloud AIO (a setup that uses docker containers). This is my current setup and I've been loving it.
-# discuss-filesync
+# discuss-filesync 🔄
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [想问问各位有没有推荐的备份软件 - LINUX DO _202606](https://linux.do/t/topic/2341427)
+- 一方面用syncthing将重要文件同步在我的两台电脑和一个手机之间同步
+  - 一方面用synctoy，在一台24小时开机的电脑上，定时把文件同步到另一块硬盘
+  - 一方面用openlist+taosync，定时把文件同步到网盘
+
+- PC端的FreeFileSync, 有差量备份, 感觉还挺不错的, 手机端一般都是用云服务, 或者隔一段时间就从手机拷贝到电脑上
+# discuss-filesync-devops
 - ## 
 
 - ## 

@@ -67,6 +67,23 @@ modified: 2026-02-19T14:38:28.823Z
   - Already seeing 1.25x inference speed increase on mlx with the sam2.1-small model. Quantized versions soon.
 
 - Ive played with mlx vlm sam-3.1! I wanted to do some off the cuff experiments for a new project. I’m mainly doing it with Sam 2 and soon some grounding Dino and pointing models.
+# discuss-tools-opencv
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## OpenCV 5 is  here _202606
+- https://x.com/mfranz_on/status/2064379347478163704
+  - Brand new DNN engine with 80%+ ONNX coverage
+  - Built-in LLM & VLM support
+  - Faster performance (often beating ONNX Runtime)
+  - Better 3D vision, Python integration, and hardware acceleration 
+
+- cv is the other face of the AI but it can be used also without an ML approach. You can obtain production ready results just with the old but gold cv algos
 # discuss
 - ## 
 

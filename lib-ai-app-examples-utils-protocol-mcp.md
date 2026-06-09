@@ -431,6 +431,7 @@ modified: 2026-01-19T05:01:00.055Z
   - [ClawHub 中国官方镜像站](https://cn.clawhub-mirror.com/)
   - [clawskills.sh — Curated OpenClaw Skill Discovery](https://clawskills.sh/)
   - [SkillHub-专为中国用户优化的Skills社区 ](https://skillhub.tencent.com/)
+  - [囤囤鼠的站内SKILL资源收集汇总（自用，希望能长期更新维护……） - LINUX DO _202603](https://linux.do/t/topic/1781755)
 
 - https://github.com/vercel-labs/skills /13.5kStar/MIT/202604/ts
   - https://skills.sh/

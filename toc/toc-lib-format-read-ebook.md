@@ -225,6 +225,11 @@ modified: 2023-09-19T07:26:04.103Z
   - [Devourer 2.0 - A self hosted client / server combination for books, manga and comics. : r/selfhosted _202604](https://www.reddit.com/r/selfhosted/comments/1s83f0b/devourer_20_a_self_hosted_client_server/)
     - what happened to Booklore... happened... and I decided to clean up my little project and publish a new version.
 
+- https://github.com/bookwyrm-social/bookwyrm /NC/202606/python
+  - http://joinbookwyrm.com/
+  - a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. 
+  - Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.
+
 ## epub
 
 - https://github.com/futurepress/epub.js /bsd/202305/js/inactive

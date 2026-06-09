@@ -743,7 +743,22 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [How are you evaluating RAG quality beyond RAGAS in production? (Especially for hallucinated answers that sound grounded) : r/Rag _202606](https://www.reddit.com/r/Rag/comments/1u0ynxn/how_are_you_evaluating_rag_quality_beyond_ragas/?sort=top)
+- Stack we landed on:
+
+RAGAS for the baseline scoring (faithfulness, answer relevance, context precision/recall)
+
+TestMu's Agent to Agent for adversarial hallucination testing (evaluator agents probe with intentionally misleading questions, edge cases, ambiguous queries)
+
+TruLens for the production observability side
+
+Custom factuality checks against our knowledge base for high-stakes response
+
+Probably overbuilt for basic RAG, but we're in a regulated industry so the cost is justified.
+
+- Honestly the "sounds right, isn't right" failure mode is what pushed us to layered eval. RAGAS is layer 1 (faithfulness scoring), then we added an LLM-as-judge for semantic correctness, then we added TestMu's Agent to Agent Testing Cloud for adversarial probing.
+
+- What helped us more than any tool: better source citation in the UI itself. We started showing the exact chunk that informed each part of the response. Users started catching hallucinations themselves because they could see when the source didn't actually support the claim. Reduced our reliance on automated hallucination detection. Same conceptual approach works for internal QA review.
 
 - ## [What metrics do you use to evaluate production RAG systems? : r/Rag _202603](https://www.reddit.com/r/Rag/comments/1rspagy/what_metrics_do_you_use_to_evaluate_production/)
 - The most bottom-line metrics to me are: total latency, factual accuracy and cost per query. 

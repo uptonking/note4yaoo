@@ -128,6 +128,10 @@ modified: 2023-11-17T10:12:06.357Z
     - a nested object CRDT (code)
     - a rich-text CRDT (code, example integration with quill, visualization of the data structure)
   - [Local-first database: RxDB + PouchDB_202005](https://jaredforsyth.com/posts/local-first-database-rxdb-pouchdb/)
+  - https://x.com/jaredforsyth/status/2064193027975827898
+    - [Block Rich Text CRDT ](https://block-crdt.quick.jaredforsyth.com/)
+    - rich text CRDT (peritext-based)
+    - movable blocks with split & join, retaining provenance and collaborative editing
 
 - IDBSideSync /8Star/MIT/202104/ts
   - https://github.com/clintharris/IDBSideSync

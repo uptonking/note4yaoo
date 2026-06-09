@@ -956,7 +956,11 @@ def slugify(text):
 
 - ## 
 
-- ## 
+- ## Introducing Cohere's first open-source coding model: North Mini Code
+- https://x.com/Prince_Canuma/status/2064437722689962242
+  - a 30B param MoE model with 3B active. It runs at ~66 tok/s in BF16, truly impressive speeds before any compression.
+  - uv run mlx_vlm.server --model CohereLabs/North-Mini-Code-1.0
+  - Open Source: Apache 2.0 license so developers can experiment, test, and build their way.
 
 - ## [Gemma 4 seems to work best with high temperature for coding : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sg8r4l/gemma_4_seems_to_work_best_with_high_temperature/)
 - I just tested it on 26B A3B and 31B. This is insane. I used temp 1.5 and they're passing the carwash test easily now. They're using agentic tools in VSCode properly as well.

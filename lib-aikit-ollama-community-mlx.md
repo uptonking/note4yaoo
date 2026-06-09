@@ -119,6 +119,53 @@ modified: 2026-01-14T18:59:01.949Z
   - MLX + NVFP4 Backend (qwen3.5:35b-a3b-coding-nvfp4)
     - Prompt Eval (TTFT): 2.57 seconds, Generation Speed: 71.45 tokens/second
   - The combination of Apple's MLX framework (avoiding CPU/GPU memory copying), the NVFP4 quantization, and the model's sparse Mixture-of-Experts architecture is incredibly efficient on Apple's unified memory.
+# discuss-news-mlx-apple
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Foundation Models has a CLI
+- https://x.com/Jchammond_/status/2064206029370630529
+
+- https://github.com/Arthur-Ficial/apfel /MIT/202606/swift
+  - https://apfel.franzai.com/
+  - Apple Silicon Macs ship a built-in LLM via Apple FoundationModels. apfel exposes it as a UNIX tool and a local OpenAI-compatible server. 100% on-device. No API keys, no cloud.
+
+- ## Apple shipped a 20B parameter on-device. 
+- https://x.com/awnihannun/status/2064202168618422396
+  - You can't put 20B parameters in RAM at any reasonable precision. To make it work they are using pretty exotic architecture by today's standards.
+  - A small model predicts from the query (or prompt) which experts to load from Nand into RAM. The key distinction from a typical MoE is that you do this once per query and then generate all the tokens with the same experts (instead of switching the experts for every token).
+
+- We benchmarked similar query-routing approaches internally — expert prefetch latency from NAND hovers ~8ms, which is tolerable if your TTFT budget is >200ms. Tight but shippable.
+
+- its almost like each expert is a memory page & depending on the code being executed the os moves the required page into fast ram. Like a 1970's IBM Mainframe 
+  - except that prediction was incredibly dumb, it just prefetched the next block and assumed you read sequentially
+
+- perhaps the KV cache is simply sharded across experts, making the per-expert cost manageable.
+
+- ## [Apple announced new on device inference engine for Apple Silicon : r/LocalLLaMA _202606](https://www.reddit.com/r/LocalLLaMA/comments/1u1516w/apple_announced_new_on_device_inference_engine/?sort=top)
+  - Apple announced CoreAI on WWDC which is basically a future replacement for CoreML and an alternative to MLX/llama.cpp/torch for on-device optimized inference, especially on phones and tablets.
+  - The model weights need to be converted similarly to CoreML via python script, atm the list of supported models is mostly from mid 2025 year though https://github.com/apple/coreai-models/tree/main/models . 
+  - For anyone wondering how is that anything new - CoreML out of the box didn't even support models beyond a few billion params and had very limited supported operations pool. This implies big update to ANE ops too.
+
+- I assume this is their API to make models run on the NPU/neural-engine. Very likely not for running 200B+ behemoths, but possibly useful to run <30B models using single digit watt power, which is not nothing.
+
+- Interesting that Apple is essentially acknowledging CoreML was never really fit for purpose for LLMs. The limited ops pool and param ceiling always felt like it was designed for CV tasks and never caught up.
+  - The lazy-loaded MoE angle for larger on-device models is the most interesting part, if they can make 20B feel like a small model from an app developer's perspective that's a bigger deal than the inference framework itself.
+
+- ## CoreAI looks like a nice upgrade from CoreML, with more practical coverage for modern LM workloads like dynamic input shapes and better mutable buffer handling for kv caches. The tooling is still early but excited to see where it goes.
+- https://x.com/lllucas/status/2064124900789703145
+  - The beta release has Pytorch model conversion, but nothing for MLX yet, so I started a project to convert models from mlx-lm to see what the performance looks like (requires macOS 27 beta): `pip install mlx2coreai` .
+  - https://github.com/lucasnewman/mlx2coreai
+  - Experimental MLX to CoreAI conversion.
+  - [Core AI | Apple Developer Documentation ](https://developer.apple.com/documentation/coreai/)
+
 # discuss-roadmap
 - ## 
 

@@ -30,6 +30,9 @@ modified: 2020-11-11T13:15:43.417Z
   - 每天可免费下载5条数据, VIP会员没有下载限制
 
 - [ChinaXiv.org 中国科学院科技论文预发布平台](https://chinaxiv.org/home.htm)
+  - https://chinaxiv.org/user/search.htm
+  - [ChinaRxiv ](https://chinarxiv.org/)
+    - Papers are sourced from original repositories including ChinaXiv. Most records are machine-translated; some are originally in English.
   - [中国心理学预印本平台PsyChinaXiv](http://psych.chinaxiv.org/server/index.htm)
     - PsyChinaXiv为ChinaXiv的子平台，为中国科学院心理研究所与ChinaXiv共建，由中国心理科学信息中心实际运营，已经与《心理学报》《心理科学进展》建立了全面合作关系。
 

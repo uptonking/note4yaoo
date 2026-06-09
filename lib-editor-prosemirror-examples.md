@@ -594,6 +594,16 @@ modified: 2022-08-18T16:57:46.405Z
   - Extensibility through the use of ProseMirror and CodeMirror engines.
   - 依赖 prosemirror, @diplodoc/transform, react, react-dom, @gravity-ui/uikit, @gravity-ui/components 
 # ai-editor(可参考vscode ai)
+- https://github.com/extend-hq/ui /MIT/202606/ts
+  - https://ui.extend.ai/
+  - Open source document components created by Extend. Extend UI gives product teams the building blocks for document processing interfaces: PDF viewers, file uploads, thumbnails, citations, OCR blocks, human review, document splitting, and e-signature flows.
+  - https://x.com/kushalbyatnal/status/2064369696187502732
+    - 14 components & examples for PDF, DOCX, and XLSX viewers, plus bounding box citations, file upload, e-signature, and more
+    - fully customizable
+    - React PDF viewer component with bounding box citation support, page controls, zoom, search, text selection, thumbnails, uploads, and responsive document layouts
+    - React Excel viewer component for previewing XLSX workbooks with sheet tabs, frozen panes, formulas, large-grid navigation, and cell selection
+    - React DOCX editor component for editing Word documents with a Word-style toolbar, import and export, formatting controls, page thumbnails, links, images, tables, and tracked changes
+
 - novel /13.7kStar/apache2/202501/ts/inactive
   - https://github.com/steven-tey/novel
   - https://novel.sh/

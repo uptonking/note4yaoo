@@ -602,7 +602,26 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## We rebuilt Browser Use from scratch (in Rust)   _202606
+- https://x.com/gregpr07/status/2064111630653476999
+  - Old Browser Use: predefined action spaces, browser abstractions, brittle workflows
+  - The model never knew why it failed
+  - So the new Browser Use gives the model the full browser
+  - Direct CDP control
+  - Full browser action space
+  - Self-recovers from failures
+- Did you stick to a headless approach or are you piping the accessibility tree directly?
+  - No the LLM can chose whatever it wants (there is no predefined html extraction layer anymore)!
+
+- why not just give agent python repl + playwright + simplified DOM?
+  - Browser Harness is something like that - but simplified DOM actually confuses the model. It's not aligned with how the models are trained!
+- Wait so is browser harness now outdated or replaced? Is there a way to use this new agent on a local custom harness in addition to the cloud service or is this cloud service only?
+  - This just brings browser harness to browser use (we basically built LLM harness around browser harness) - but works very similar to codex + browser harness!
+- Is this built on browser harness?
+  - Yes basically!
+
+- What are the speed stats compared to previous harness? Direct CDP control must have increased the task completion latency?
+  - It's slower than previous - mostly because it needs more output tokens to complete steps. BUT it's worth the boost in accuracy. Next goal is to get it cheaper and faster as well!
 
 - ## 🆚 Midscene 和 Browser-Use 有什么区别？
 - https://x.com/quanruzhuoxiu/status/2061447938526920932
@@ -1078,6 +1097,12 @@ AI 可以直接操作后台 UI，把复杂流程自动化。
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## [Why MCP when we have REST APIs? : r/mcp _202605](https://www.reddit.com/r/mcp/comments/1t8sjho/why_mcp_when_we_have_rest_apis/)
 - LLMs are trained on tool calling, and MCP is the way that the industry has decided to expose MCP tooling. It’s a CLI with discoverability baked in. Therefore achieving the same result without MCP is an engineering effort of an uphill battle.
 - If you have OpenAPI spec or another full doc, you can quickly generate a skill with a script to use the API
@@ -1179,6 +1204,14 @@ Chrome: Ships anyway.
 - 我也有这个需求，现在只是简单的把每个 prompt 当作 commit message push 上去, 这个看起来还有丢丢麻烦，要是对话完验收代码之后一键全搞定就好了
 
 - 如果你用 @AmpCode 的话， 它默认会把 thread 链接直接带上 commit，比 Simon 这个好看一些， 不过它数据是存储在 Amp 自己的网站上的
+
+- ## i never really cared about the agents​.md vs claude​.md stuff because you can just do 
+- https://x.com/RhysSullivan/status/2063028253179424809
+  - ln -s agents.md claude​.md
+- the real config complexity isn't file naming. it's tool access policies, context window budgets, and skill routing across models. the symlink trick solves the easiest 1% of the problem.
+
+- works until one wants repo context and the other wants agent constraints. same file, different readers, eventually different content.
+- works until an agent rewrites its own memory file: the moment Claude edits CLAUDE.md it swaps the symlink for a real file and they silently desync. windows checkouts flatten it too (core.symlinks=false). two honest files beat one that rots quietly.
 
 - ## agent.md + skills - both open standards, and can combined with an agent harness (claude code, codex, deepagents) can pretty much define a custom agent
 - https://x.com/hwchase17/status/2003599022871777467

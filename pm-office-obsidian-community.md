@@ -329,9 +329,15 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## Research 1.3 is out now with our new annotator
+- https://x.com/TGUPJ/status/2064397799521767928
+  - 类似于卡片标注
 
-- ## 
+- ## [Notebook Navigator 3.1 brings Scrivener-style sidebars to Obsidian! : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1tz3qlq/notebook_navigator_31_brings_scrivenerstyle/?sort=top)
+  - One of the main issues when moving from Scrivener to Obsidian is losing that attached writing context. If you use Scrivener, you probably rely on the Inspector notes panel, where you can keep scene notes, reminders, and scratch text beside the section you are writing. Ulysses has a similar sense of structure with sheets inside groups, but Obsidian has never really had a native way to make folder context follow you around while browsing your vault.
+  - Notebook Navigator 3.1 brings this workflow to Obsidian with two new features: Open folder notes in right sidebar and Right sidebar: Show closest folder note. 
+  - 类似于 文件夹备注说明
+  - Also, when a Base is set as a folder note, and Open folder notes in is set to Right Sidebar, navigating to a folder inside the folder note creates a new split of the Base in the right sidebar every time. This doesn't happen with standard and Canvas folder notes.
 
 - ## [Obsidian Teams inc? : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1tyy1wn/obsidian_teams_inc/?sort=top)
 - Pushing your markdown to github with a pull request gets you all of this

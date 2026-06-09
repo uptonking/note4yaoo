@@ -75,6 +75,18 @@ modified: 2026-05-21T15:37:00.694Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## llama.cpp just added video input support  _202606
+- https://x.com/osanseviero/status/2063985470489448887
+  - You can now enjoy Gemma 4 video understanding capabilities in your chat completions endpoint and via mtmd-cli
+
+- This is great. Earlier I used to break Video to Image FPS and pass it along VLM ( Gemma 4EB) .  Check this out:  https://huggingface.co/spaces/AXONVERTEX-AI-RESEARCH/private-pocket-vision-relay
+
+- what exactly does video understanding mean here? frames analysis, direct timestamp reference, or something weirder
+
 - ## 📡 llama.cpp now has a BUILT-IN model router  _202605
 - https://x.com/fahdmirza/status/2057353958377828581
   - it completely replaces Ollama + Open WebUI for model switching

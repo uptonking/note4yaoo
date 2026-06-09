@@ -195,7 +195,7 @@ modified: 2023-02-06T09:14:40.114Z
   - client to client (via the server)
 - By default, publish/subscribe routing semantics are applied to the channels.
 - Delivery of asynchronous messages from the server to a web client is often described as server push. 
-- The combination of server push techniques with an AJAX web application has been called **Comet**. 
+- The combination of server push techniques with an AJAX web application has been called **Comet** . 
 - CometD is a project by the Dojo Foundation to provide multiple implementation of the Bayeux protocol in several programming languages.
 - Bayeux seeks to reduce the complexity of developing Comet web applications by allowing implementers to more easily interoperate, 
   - to solve common message distribution and routing problems, 
@@ -282,7 +282,12 @@ modified: 2023-02-06T09:14:40.114Z
 
 - ## 
 
-- ## 
+- ## NEVER make `/logout` a GET request
+- https://x.com/kaishan_ding/status/2064418357265523032
+  - Nextjs Links prefetches GET requests
+
+- don't make your /signout endpoints GET. route with side effects should be POST
+  - used a `<Link>` component for GET /signout. in prod, Next.js will prefetch links so if the user clicks the next screen will appear faster
 
 - ## [Network features reference  |  Chrome DevTools](https://developer.chrome.com/docs/devtools/network/reference#save-as-har)
 - `HAR` (HTTP Archive) is a file format used by several HTTP session tools to export the captured data. 
@@ -489,7 +494,7 @@ modified: 2023-02-06T09:14:40.114Z
   - well, depends on how you treat it. if you use reactive/declarative way, it can be sideEffect. if you use imperative way, it can be a callback. both work. 
   - I wouldn't recommend using useEffect. To do that, it would become an effect triggered by a state-change, which would also cause an unnecessary re-render. Callbacks are inherently side-effects when they are triggered by a user-action
 - You don't need an effect to send a request on button click, instead what you need is just a handler method which you can optimise using `useCallback` method
-  - Tracking request using variable with `useEffect` is not a correct pattern because you may set state to call api using `useEffect` , but an additional render due to some other change will **cause the request to go in a loop**
+  - Tracking request using variable with `useEffect` is not a correct pattern because you may set state to call api using `useEffect` , but an additional render due to some other change will **cause the request to go in a loop** 
 - In functional programming, any async function should be considered as a side effect.
   - When dealing with side effects you need to separate the logic of starting the side effect and the logic of the result of that side effect (similar to redux saga).
   - Basically, the button responsibility is only triggering the side effect, and the side effect responsibility is to update the dom.

@@ -43,6 +43,18 @@ modified: 2022-08-21T10:19:58.756Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## TanStack Table V9 is now in Beta!
+- https://x.com/tan_stack/status/2063956390633181404
+  - State management with TanStack Store - (yes, compatible with React Compiler finally)
+  - Advanced re-render management with state subscriptions
+  - Better feature/plugin extensibility
+  - TanStack Table V9 is available for the latest versions of React, Preact, Angular, Solid, Vue, Svelte, and Lit.
+  - A lot of these improvements were directly inspired by TanStack Form.
+
 - ## Now that TanStack Table V9 is built on top of TanStack Store, it allows you to fine-tune re-renders with subscriptions to state slices or individual atoms.
 - https://x.com/KevinVanCott/status/2052806850135929272
   - This might be a huge deal performance-wise for certain situations in React or Preact.

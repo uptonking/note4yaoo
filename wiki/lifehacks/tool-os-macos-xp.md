@@ -348,6 +348,13 @@ redis-cli shutdown
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [[开源推广]macOS触控板增强工具Swooshy - LINUX DO _202606](https://linux.do/t/topic/2348413)
+  - 一款开源的 macOS 触控板增强软件，旨在尽量不误触的前提下，减少使用触控板时需要打开右键菜单与精确点击的次数，让用户可以用直觉化的手势，从 Dock 和标题栏操控应用窗口。
+
 - ## [佬们有没有Mac上比较好用的隐藏状态栏顶部图标的软件推荐啊？ - LINUX DO _202605](https://linux.do/t/topic/2273849)
 - ice 二开的 thaw，这个我用起来挺好的
 

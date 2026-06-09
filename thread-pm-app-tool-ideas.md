@@ -78,6 +78,7 @@ modified: 2022-11-07T10:58:24.512Z
 - 学术相关数据
   - 论文一条龙: arxiv/paper, huggingface-data, github-code
   - 中科院PubScholar公益学术平台
+  - [ChinaXiv.org 中国科学院科技论文预发布平台](https://chinaxiv.org/home.htm)
 
 - 版权过期文档
   - [免费阅览全文！国图等6家联合发布古籍数字资源 - 资源分享 - FreeMdict Forum](https://forum.freemdict.com/t/topic/18274)

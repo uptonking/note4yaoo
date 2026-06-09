@@ -65,7 +65,19 @@ modified: 2024-04-14T12:19:52.096Z
   - In browser, convert Video to GIF, with cropping and speed accelerating features
   - 做了一个在浏览器里「视频转 GIF 」的工具。 使用 WebCodec 解码视频，转换速度还是有保障的。而且还可以自定义颜色、抖动等参数，提高转换效果
 # examples
-
+- https://github.com/AIEraDev/Clypra /MIT/202606/rust/ts
+  - https://clypra.abdulkabirmusa.com/
+  - A modern video editor built with Tauri, React, and TypeScript. 
+  - Focus on building free capabilities of premium capcut functionalities
+  - https://x.com/IndieDevHailey/status/2063078388903125148
+    - 用 Tauri + React + TypeScript 打造，专注把 CapCut / 剪映 Pro 的付费高级功能全部本地免费化。
+    - 跨平台（macOS/Windows/Linux），FFmpeg 驱动，原生性能。
+    - 本地专业时间线：多轨 + 标尺 + 播放头 + 帧精确，像 NLE 一样流畅，却轻量桌面级
+    - 免费复刻 CapCut Pro：高端文字、模板、特效快速跟进，再也不用为 Pro 按钮掏钱
+    - 纯本地 FFmpeg 处理：导出飞快，隐私安全，素材永远只在你硬盘里
+  - 想最像 CapCut 的体验 应该优先 OpenCut （浏览器秒开，最接近）
+    - 想要稳定、可长期用的桌面工具 选Shotcut（轻量首选）或 Kdenlive（功能党首选）。
+    - Clypra 本身 可以继续 Star 关注，它轻量+原生桌面是优势，未来 PR 社区迭代可能会追上来，但短期内不是最优生产方案。
 # ffmpeg
 
 ## ffmpeg-ui
