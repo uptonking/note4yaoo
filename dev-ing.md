@@ -338,6 +338,52 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0611
+
+- mac security policy, the operation couldn't be completed. SDErrorDomain error 104.
+
+- ['Startup Security Policy' — cannot go bac… - Apple Community ](https://discussions.apple.com/thread/253580441?sortBy=rank)
+  - if you want to go from 'Full Security' to 'Reduced Security', NO Internet connection is needed
+  - BUT, if you want to go back from 'Reduced Security' to 'Full Security', you DO need an Internet connection …
+
+- csrutil disable 
+  - failed to update security configuration . manifest verification failed
+
+- [macos - Local policy error when disabling SIP on Big Sur/M1 - Ask Different ](https://apple.stackexchange.com/questions/408016/local-policy-error-when-disabling-sip-on-big-sur-m1)
+  - you can reset the SIP configuration to its default state and try to disable it again.
+  - csrutil clear
+  - csrutil disable
+
+- [macos - How to install Xcode from a .xip file - Stack Overflow ](https://stackoverflow.com/questions/43663097/how-to-install-xcode-from-a-xip-file)
+  - sudo xcode-select -switch /Applications/Xcode_12.1.app
+  - /usr/bin/xcodebuild -version
+
+- [cannot enable SIP on M1 - Apple Community _202206](https://discussions.apple.com/thread/253961895?sortBy=rank)
+  - On Macs with Apple silicon, System Integrity Protection is tied directly to the Secure Boot policy.  
+  - When you ran "csrutil disable" in macOS Recovery, it automatically downgraded your Secure Boot settings to Permissive Security, and disabled SIP. 
+  - Now, when you're trying to run "csrutil enable" and consent to raising system security, your Mac is trying to return to Full Security (and lock in SIP as fully enabled). Part of that process involves contacting the Apple servers and personalizing macOS to your Mac, which requires an Internet connection.
+
+- [Failed to install macOS 27 Beta : r/MacOSBeta _202606](https://www.reddit.com/r/MacOSBeta/comments/1u0jrux/failed_to_install_macos_27_beta/?sort=top)
+  - What did the trick for me was to reboot into recovery mode (holding down power button), and then use Startup Security Utility in the recovery environment to change my Macintosh HD from “Reduced Security” to “Full Security”. I guess I still had it set on “Reduced” from years ago when some audio utilities used to require that. Anyway, after doing that, the macOS 27 beta is now installing.
+- Update to latest tahoe beta, then try. It worked for me
+  - This worked for me as well. I also have lower security because I use Paragon's NTFS software, and updating first to 26.6 and then upgrading to 27 worked fine.
+
+- [Failed to install 27 Beta : r/MacOSBeta _202606](https://www.reddit.com/r/MacOSBeta/comments/1u1xrce/failed_to_install_27_beta/?sort=top)
+- Shut down your Mac completely.
+Press and hold the power button until you see “Loading startup options,” then let go.
+Click Options, then Continue to get into Recovery Mode.
+In the menu bar, go to Utilities → Terminal.
+Type csrutil enable and hit Enter.
+Restart your Mac and try the update again.
+
+- [Bypass macOS 27 New Siri AI Waitlist Instantly (No SIP Disable – Safe & Reversible) : r/Siri _202606](https://www.reddit.com/r/Siri/comments/1u21aci/bypass_macos_27_new_siri_ai_waitlist_instantly_no/?sort=top)
+  - [Enable Siri AI on Mac without Recovery Mode : r/mac _202606](https://www.reddit.com/r/mac/comments/1u1ub8w/enable_siri_ai_on_mac_without_recovery_mode/?sort=top)
+
+- https://x.com/SamGuichelaar/status/2064085596180509089
+  - Can we no longer disable SIP in MacOS 27, or what is going on here?
+- https://x.com/Little_34306/status/2064245588389134798
+- it seems a stock bug, you need to deal with it until beta 2 i guess
+
 ## 0603
 
 ```

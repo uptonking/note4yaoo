@@ -77,7 +77,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 - you have worked on this several times but features are still lacking. They are the most important features at this moment. DO NOT stop untill you achieve full feature parity. 
 
-- you may deep research, and reference the upstream superdoc code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
+- you may deep research, and reference the upstream superdoc code(at folder `../superdoc`), you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 - you may even do a big code refactor to match major features of superdoc in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design feature parity docs at `upstream/superdoc/reports`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream superdoc should be put in folder `upstream`. you may even design a script to automate it.
@@ -205,7 +205,7 @@ please make a plan, then improve the core in-place text editing engine to make i
 
 - you have worked on this several times but still not solve it. 
 
-- you may reference the upstream onlyoffice-pdf-editor code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
+- you may reference the upstream onlyoffice-pdf-editor code(code is at several git repos in current folder), use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 - you may even do a big code refactor to match major features of onlyoffice-pdf-editor in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design a feature parity doc at `upstream/parity/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream onlyoffice-pdf-editor should be put in folder `upstream`. you may even design a script to automate it.
@@ -397,7 +397,7 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 
 - you have migrated/reimplemented some features from jan to aichorage.
 
-- you may deep research and reference the upstream code, you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
+- you may deep research and reference the code of upstream projects(jan, unsloth-studio, transformerlab-app), you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
 - you may even do a big code refactor to match major feature of jan in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream jan/transformerlab-app/unsloth-studio should be put in folder `upstream`. you may even design a script to automate it.
@@ -412,7 +412,7 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 - these are the most important features now, the goal is to achieve major feature pairity or even better.
 - make a plan, then migrate and improve major feature pairity, without licensing issues
 
-- please deep research jan, then can you design a similar solution in aichorage to improve it? is jan's solution good enough? if yes, solve it in a similar way for begonia.
+- please deep research jan(at folder `../jan` ), then can you design a similar solution in aichorage to improve it? is jan's solution good enough? if yes, solve it in a similar way for begonia.
 
 - research and make a full plan, then implement aichorage to match major features of jan, or even better than jan, without licensing issues.
 
@@ -475,6 +475,8 @@ local model testing/running can be very slow.
 - 
 - 
 - 
+
+- 优化数据库的结构
 
 - 对并行执行的支持度如何? 同时运行多个backend/runtime? 同一个runtime运行多个模型? 多个请求的queue?
 
@@ -691,16 +693,15 @@ please recheck migrated features and implementations for possible licensing issu
 document what you have migrated from which commit id for future migration reference at file `doc/devlog-migrations.md` . you can also add some concise(less than 120 lines) migration guide/steps/tips in it to make it easy to do migrations later.
 
 # tests
-
-you have migrated/implemented major features in project react web, but when you migrated/implemented features, tests are not taken good care of. please fix and update existing tests. 
-when you improve the tests, you can also improve the source code logic by fixing or refactoring code. DO NOT get locked to the risk code that has weak or wrong logic, you should fix them.
-finally make sure all tests run and pass locally with npm. you can update/fix tests file by file progressively. outdated or over-complicated or hard-to-maintain tests can be removed or rewritten. 
-
-you have improved the codebase several times, but running the tests/parity/scripts took a lot of time for your every improvement.  please refactor and improve the tests/parity/scripts/devops/ci to make it faster and more maintainable.  you may combine/deduplicate/reduce/clean/redesign some tests/parity/scripts/devops/ci/outdated/legacy if you need. update the readme/docs after your cleanup.
-
 - run the full tests and fix the bugs
 
 - improve the slowest part of tests first, you may refactor/reorganize the tests to make it correct, fast, robust, maintainable in the long term.
+
+- you have migrated/implemented major features in project react web, but when you migrated/implemented features, tests are not taken good care of. please fix and update existing tests. 
+when you improve the tests, you can also improve the source code logic by fixing or refactoring code. DO NOT get locked to the risk code that has weak or wrong logic, you should fix them.
+finally make sure all tests run and pass locally with npm. you can update/fix tests file by file progressively. outdated or over-complicated or hard-to-maintain tests can be removed or rewritten. 
+
+- you have improved the codebase several times, but running the tests/parity/scripts took a lot of time for your every improvement.  please refactor and improve the tests/parity/scripts/devops/ci to make it faster and more maintainable.  you may combine/deduplicate/reduce/clean/redesign some tests/parity/scripts/devops/ci/outdated/legacy if you need. update the readme/docs after your cleanup.
 # rafactor
 
 The goal is to refactor existing code and architecture to be more clear, extensible, functional-programming style, while improving logic correctness at the same time.

@@ -478,6 +478,15 @@ modified: 2025-03-22T18:49:15.634Z
   - Built on `Pi` for the agent runtime, alphaXiv for paper search and analysis, and CLI tools for compute and execution. 
     - Runtime resources follow Pi's documented package model for packages, extensions, and skills. 
 
+- https://github.com/DEEIX-AI/DEEIX-Chat /apache2/202606/go/ts
+  - https://deeix.com/
+  - https://demo.deeix.com/
+  - [「DEEIX Chat v0.2.0」高颜值WebUI - 兑换码、HTML渲染上线！模型管理、图片生成增强 - LINUX DO _202606](https://linux.do/t/topic/2310086)
+  - 轻量且全能的开源 Web UI，能统一接入、管理和使用多协议 AI 能力，将模型路由、多模态对话、文件上下文、MCP 工具、计费、身份安全和运维管理整合到同一个系统中，静态运行时占用仅为 34 MB。
+  - Artifacts 在线预览：代码、HTML、结构化内容可以以更接近工作区的方式展示、预览和下载。
+  - 公告系统：站点通知、模型调整、维护提醒可以直接在后台发布，支持置顶、定时展示和 Markdown 内容。
+  - lz 这个占用空载才几十MB, OWU 起步都得百兆
+
 - https://github.com/thibautrey/chaton /202605/ts
   - https://chatons.ai/
   - Chatons is a native desktop app that brings AI-powered coding, writing, and project management into one elegant workspace. 

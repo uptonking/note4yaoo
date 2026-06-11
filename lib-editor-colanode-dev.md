@@ -58,6 +58,8 @@ modified: 2025-06-21T19:10:57.709Z
 - roadmap
   - prosemirror-database-plugin
 
+- ❓ huge content streaming
+
 - ✅ 完全本地部署的架构
 
 - 🛢️ 应用层数据库的设计非常简洁且弱耦合，表之间外键都很少用

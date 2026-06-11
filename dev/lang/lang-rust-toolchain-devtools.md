@@ -29,6 +29,20 @@ modified: 2025-04-09T02:49:51.857Z
 - ## 
 
 - ## 
+
+- ## [Tracking Issue for garbage collection · Issue · rust-lang/cargo _202309](https://github.com/rust-lang/cargo/issues/12633)
+
+- ## [cargo clean ~/.cargo · Issue · rust-lang/cargo _201611](https://github.com/rust-lang/cargo/issues/3289)
+- it looks like you can safely delete `~/.cargo/registry` and the binaries under `~/.cargo/bin` will keep working. At least they did when I moved the registry directory elsewhere.
+
+- `rm -rf ~/.cargo` blows away your rustup binaries in PATH, I do not recommend.
+
+```
+
+rm -rf ~/.cargo/registry/src/ */*/ ~/.cargo/registry/cache/* /
+
+```
+
 # discuss-compiler/rustc
 - ## 
 

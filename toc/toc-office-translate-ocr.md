@@ -46,6 +46,22 @@ modified: 2026-04-07T11:52:43.122Z
   - Advanced PDF/Document Translator with interactive comparison. Built on IBM Docling.
   - 双栏对比布局, 能高亮同一段文本, 翻译悬浮显示
 
+- https://github.com/zt6453928/ailat-translation /MIT/202601/python/js
+  - https://mineru.net/apiManage/docs
+  - AI-Powered Document Translation Tool
+  - A web-based PDF document parsing and translation tool that supports intelligent document parsing, multi-language translation, and various export formats.
+  - Supports PDF, DOCX and other document formats, extracts text, images, tables, and formulas
+  - Export to PDF, Markdown, HTML, DOCX, JSON, LaTeX
+  - Multiple Translation Engines: Supports DeepLX and OpenAI-compatible APIs
+  - Real-time Preview: Side-by-side comparison of original and translated content
+  - 🛝
+    - 采用 vlm 方案
+    - pdf原文件上传后保存在 `outputs/<task_id>/original.pdf` .
+    - mineru解析后的文本内容仅在memory, 未持久化
+  - [开源一个支持多格式文档翻译应用 ](https://linux.do/t/topic/1511535)
+    - 出于身边同学对论文翻译的需求，所以开发了这个项目，除了论文我也用来对一些AI教程文档进行翻译
+    - 灵感来自于MinerU, PDF格式还支持对照翻译
+
 - https://github.com/chaosen315/AIwork4translator /MIT/202512/python
   - 一个专业的文档翻译工具，通过专有名词识别和正则过滤方法，确保大模型翻译时准确使用专业术语。它能够智能处理各种格式的技术文档，保留原文格式和专有名词，提供高质量的翻译结果
   - 实现了全新的并发翻译架构，Queue + Worker Pool模式：采用asyncio. Queue + 工作池架构，支持6并发工作线程

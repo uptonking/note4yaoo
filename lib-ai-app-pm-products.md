@@ -313,7 +313,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 比如支持minimax语言的api、mineru-ocr api，直接本地可用
 
 - models
-  - reproducible ai/rag/ocr
+  - reproducible ai/rag/ocr(nice-to-have, not-required)
     - 不同版本的向量模型生成的数据空间维度大小是不一致的会导致后续查询数据处理啥的有问题
     - 另一种思路是通过类似jupyter的重代码工具去实现
     - 可以兼容comfyui的导出json，直接在aichorage打开
@@ -1934,6 +1934,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [ChatGPT Session -> CPA / sub2api / Cockpit / AxonHub / Codex-Manager ](https://gtxx3600.github.io/GPTSession2CPAandSub2API/)
       - 只支持单向转换
   - [Codex或CPA、sub2跳手机验证的解决方法-2026-05-29部分有效 - Feishu Docs _202605](https://millionweekend.feishu.cn/wiki/JS47wPzs6iDHLZkLMHAc8rhun0e)
+  - [鲸商城鲸软JingSoft - 专业软件解决方案服务商【鲸软】 ](https://www.jingsoft.com/)
 
 - latest
   - 可在google搜索 `GPT site:pay.ldxp.cn/shop`.
@@ -1952,9 +1953,11 @@ modified: 2025-03-22T16:10:24.856Z
   - [KEDAYA的小店 - 链动小铺](https://pay.ldxp.cn/shop/kedaya)
     -  https://gpt.kedaya.xyz    /支持用购买的卡密一个一个提取账号
     - https://shop.kedaya.xyz/
+    - 中转站: https://sub.kedaya.xyz/keys
+      - https://sub1.kedaya.xyz/keys
+      - https://api.kedaya.xyz/
     - https://t.me/kedaya_888
     - https://t.me/gpt_kedaya   讨论组里面大多是代理商, 点击头像就能看到店铺链接
-    - 中转站: https://api.kedaya.xyz/
   - [商家9052的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/LOA3IZW5)
     - plus账号极低价格， 10个-35
     - [商家9152的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/KHRR17MS)
@@ -2481,12 +2484,30 @@ modified: 2025-03-22T16:10:24.856Z
   - [松松 AI ](https://songsongcard.shop/)
   - plus--0.02
 
+- [白山中转站 ](https://baishanai.club/dashboard)
+  - 注意倍率
+
 - [青熵 ](https://api.qs89hub.com/keys), 中转已关
   - [青熵的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/P9HPIPWA)
   - 渠道多
   - plus--0.02
 
-- [ApexCode API ](https://codeapx.com/models/pricing)
+- [Xybbz ](https://sub2api.xybbz.xyz/dashboard)
+  - plus--0.045
+
+- [180txt.cn ](https://ccb.180txt.cn/dashboard)
+  - [中转站的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/L466CII9/5szz1p)
+  - qq群 1102515021 , 仅3人 
+  - plus--0.03
+- [132q /new-api](https://132q.dpdns.org/pricing)
+  - [中转站的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/L466CII9/6s6fmo)
+  - 人少
+  - plus-0.035
+
+- [777358 /New API ](https://newapi.777358.xyz/)
+  - plus-0.04
+
+- [ApexCode API ](https://codeapx.com/models/pricing), 已充值
   - 注意套餐价格变化, 还提供了包月 ¥188--$55/day
   - 特价分组gpt--0.03
   - 常规分组gpt--0.18

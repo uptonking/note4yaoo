@@ -40,6 +40,9 @@ go clean -modcache
 # clean Build Cache(~/Library/Caches/go-build)
 go clean -cache
 
+# automatic daily cleaning, 仅支持nightly版本
+cargo clean gc
+
 ```
 
 - https://github.com/vashpan/xcode-dev-cleaner
@@ -222,6 +225,9 @@ redis-cli shutdown
 - https://github.com/Gary-zy/dev-env-installer /202601/ts/vue
   - 基于 Electron + Vue 3 + TypeScript 构建的 macOS 桌面应用，旨在帮助开发者一键配置开发环境。
   - [macOS 开发环境一键安装工具，新电脑配环境再也不头疼 ](https://linux.do/t/topic/1407819)
+# mac-ai 👾
+- https://github.com/SkyBlue997/enableMacosAI /202606
+  - 一个极简内核扩展(kext), 在 IORegistry 源头把设备区域码从 CH/A 改成 LL/A(美版), 让 MobileGestalt 对全系统每个进程都返回美版区域, 从而在国行机 (本机 Mac15, 9 / M3 Max / macOS 27 26A5353q)上启用完整的 Apple Intelligence—— 端侧 + Private Cloud Compute 云端全功能(写作工具含语气改写、图乐园、Genmoji、 Foundation Models、ChatGPT 扩展)。
 # mac-apps
 - appstore
   - [MacKed - 专注于Mac破解资源的分享与下载](https://macked.app/)
@@ -364,12 +370,18 @@ redis-cli shutdown
 - https://github.com/ColeMei/openwith /MIT/202604/rust
   - 可尝试开发ui
 
-# discuss-macos-tricks
+# discuss-macos-tips/tricks
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Safari Tab Suspension?  _202410](https://talk.macpowerusers.com/t/safari-tab-suspension/38676)
+  - I keep a lot of tabs open and tab suspension helps with memory/battery. I didn’t see this any explicit setting in safari. Does safari support tab suspension? Any extension that does it?
+- I think the OS will suspend ‘automatically’… in Activity Monitor, you will see that Safari has “App Nap = yes” Under Energy tab., you could expand the toggle and see all the tabs and whether they have App Nap or not, but I don’t think you can individually turn it on or off.
 
 - ## [艹！Chrome花了半年背着我给我电脑拉了足足250G的屎！ - LINUX DO _202605](https://linux.do/t/topic/1584944)
   - 路径通用结构：/private/var/folders/xx/随机字符/X/com.google. Chrome.code_sign_clone。

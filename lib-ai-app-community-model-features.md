@@ -533,7 +533,14 @@ modified: 2025-11-05T19:04:50.350Z
 
 - ## 
 
-- ## 
+- ## [Foliole：一款现代的渐进阅读软件，让阅读真正完成（Windows Alpha） - LINUX DO _202606](https://linux.do/t/topic/2361920)
+  - 动手做 Foliole，主要是自己在使用 SuperMemo、Readwise Reader、Obsidian 过程中遇到了一些痛点。再结合个人对深度阅读和长期学习的一些理解，最后慢慢做成了这款个人觉得更现代、更易用的渐进阅读工具。
+  - 渐进阅读可以先简单理解为更关注阅读后半程的处理：让材料在合适的时候出现，让再次出现的材料更容易理解，让理解更好地进入记忆。
+  - 原生支持渐进阅读：践行 Piotr Woźniak 的渐进阅读理念，支持在深度阅读中摘录、挖空和持续重构。
+  - 汇聚阅读材料：可集中处理各种来源的阅读材料，包括本地文件、网页文档、Obsidian 管理的笔记、Readwise Reader 导出的材料等。
+  - 支持复杂材料：支持 Markdown、PDF、EPUB 等文件格式，以及数学公式（LaTeX）、代码块等内容渲染。
+
+- 可以当阅读器和笔记工具用，但 Foliole 主要功能是把不同来源的阅读材料汇入自己的内部数据库，在软件内部进行系统的阅读、标注、整理、调度、回顾。同时软件会提供内部文档的 Markdown 镜像，方便外部工具调用。 目前导入格式上支持 Markdown、EPUB、PDF，集成来源支持本地文件夹、Obsidian 和 Readwise Reader
 
 - ## [分享一下看论文的焚绝 - LINUX DO _202605](https://linux.do/t/topic/2200416)
 
@@ -656,6 +663,14 @@ You never use unicode to render math expressions, ALWAYS use LaTeX.
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [【开源】InkOS（入选首批KIMI开源伙伴）v1.5，开放世界，用想象力游玩 - LINUX DO _202606](https://linux.do/t/topic/2361872)
+  - InkOS是一个文字内容创作的agent系统，已经支持了长短篇小说，互动游戏等内容（剧作正在快速测试中），已经迭代了很多个版本，走到今天快3个月的时间也收获了7000+star，中间也有很多不足在慢慢改进，感谢佬们的关注和使用，之前的重点是在管理提示词和往里面塞各种各样的功能，1.5版本通过agent架构的统一改进了指令遵循（主要是工具权限），还增强了记忆和上下文管理功能，也引入了上下文压缩能力，还有Studio的UIUX的全面改进，三个交互方式的agent内核统一。
+  - 目前支持了两种模式，还是类似分支的互动模式和纯自由对话的模式。
 
 - ## [Orison Space V0.1.0，从灵感到实现，与AI一起协作——针对创作者的小说工作台。关于项目介绍与个人的碎碎念 - LINUX DO _202606](https://linux.do/t/topic/2318986)
   - https://github.com/LumenStorm/OrisonSpace
