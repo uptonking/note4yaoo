@@ -593,16 +593,119 @@ modified: 2022-08-18T16:57:46.405Z
   - Support for the basic Markdown and YFM syntax.
   - Extensibility through the use of ProseMirror and CodeMirror engines.
   - 依赖 prosemirror, @diplodoc/transform, react, react-dom, @gravity-ui/uikit, @gravity-ui/components 
-# ai-editor(可参考vscode ai)
+# ai-editor 👾
 - https://github.com/extend-hq/ui /MIT/202606/ts
   - https://ui.extend.ai/
   - Open source document components created by Extend. Extend UI gives product teams the building blocks for document processing interfaces: PDF viewers, file uploads, thumbnails, citations, OCR blocks, human review, document splitting, and e-signature flows.
+  - DOCX Viewer/Editor 都支持分页、缩放, 基于DOM实现，感觉很卡
+  - excel/csv viewer/editor基于glide-data-grid实现， 渲染为canvas
+  - pdf基于react-pdf实现， ? 整体是canvas，文字不可选
+  - 依赖基于pretext的editor、glide-data-grid、@pierre/diffs、@pierre/treess、base-ui、dnd-kit、nextjs、jotai、fumadocs-mdx、marked、remark-gfm
   - https://x.com/kushalbyatnal/status/2064369696187502732
     - 14 components & examples for PDF, DOCX, and XLSX viewers, plus bounding box citations, file upload, e-signature, and more
     - fully customizable
     - React PDF viewer component with bounding box citation support, page controls, zoom, search, text selection, thumbnails, uploads, and responsive document layouts
     - React Excel viewer component for previewing XLSX workbooks with sheet tabs, frozen panes, formulas, large-grid navigation, and cell selection
     - React DOCX editor component for editing Word documents with a Word-style toolbar, import and export, formatting controls, page thumbnails, links, images, tables, and tracked changes
+  - https://github.com/extend-hq/react-docx /MIT
+    - https://react-docx-playground.vercel.app/
+    - simple read-only viewer for rendering .docx files 
+    - editor/controller API for building custom DOCX editing UIs
+    - 依赖 pretext、@tanstack/react-virtual、fast-png、utif
+  - https://github.com/extend-hq/react-xlsx /MIT
+    - https://react-xlsx-playground.vercel.app/
+    - React components and hooks for viewing XLSX workbooks with worksheet rendering, charts, chartsheets, embedded images, selection state, zoom, and editing helpers.
+    - 依赖@dukelib/sheets-wasm、@tanstack/react-virtual、d3-scale、d3-shape、fflate
+    - Regular worksheet rendering with frozen panes, tables, and selection state
+    - Embedded charts on worksheets and dedicated chartsheet tabs
+    - Optional editing, copy/paste, CSV/XLSX export, chart/image manipulation, and zoom controls
+    - Primary support is for OOXML .xlsx workbooks
+
+- https://github.com/superdoc-dev/superdoc /AGPL/202604/ts
+  - https://superdoc.dev/
+  - https://demos.superdoc.dev/
+  - Renders, edits, and automates .docx files in the browser, headless on the server, and within AI agent workflows.
+  - Works with React, Vue, and vanilla JS.
+  - Built on ProseMirror, Yjs, JSZip, and Vite.
+  - Real DOCX, not rich text — Built on OOXML. Real pagination, section breaks, headers/footers. Not a contenteditable wrapper with export bolted on.
+  - Runs entirely in the browser. 
+  - collaboration — Yjs-based CRDT. Multiplayer editing with comments, tracked changes
+  - Agentic tooling — Runs headless in Node.js. Bring your own LLM for document automation, redlining, and template workflows.
+  - Dual licensed — AGPLv3 for community use. Commercial license for proprietary deployments.
+  - **Separate Layout Engine** : Pure calculation, separate from PM
+    - https://github.com/superdoc-dev/superdoc/tree/main/packages/layout-engine/layout-engine
+    - Takes measured FlowBlocks (paragraphs, tables, lists, images, drawings) and layouts them into paginated fragments.
+    - Handles multi-column layouts, section breaks, page breaks, headers/footers, anchored/floating objects, and column/page advancement. 
+    - ProseMirror Doc → pm-adapter → FlowBlock[] → layout-engine → painter-dom → DOM
+    - `export type LayoutMode = 'vertical' | 'horizontal' | 'book'`;
+    - virtualization is hardcoded to only work with `vertical` mode
+    - Each page is independent DOM tree
+  - ✨ Virtualization: implemented in the DOM painter, not in the pure layout algorithm, enabled by default
+    - virtualizes rendered pages, not the document model.
+    - In paginated vertical mode, the DOM painter mounts only a sliding window of pages and uses top/ bottom spacer elements to preserve total scroll height.
+    - it does not paginate ProseMirror by directly laying out PM DOM. It paginates a derived intermediate model
+    - PM document is converted to flow blocks via pm-adapter, layout-engine computes page layout from those blocks, layout-resolved and painter-dom turn that into positioned page fragments, layout-bridge maps page geometry back to PM positions for selection, hit-testing, cursor behavior, and remeasurement
+  - 🐛 
+    - Vuejs UI framework coupling
+  - 🌹 
+    - Section Awareness: Widow/Orphan, Section Breaks,Headers/Footers
+    - Columns
+    - Tables
+    - collab: yjs
+    - Bidirectional
+  - [fix: prep for multi editor versions - no logical changes. structure only _202603](https://github.com/superdoc-dev/superdoc/pull/2591)
+  - 已支持 [Feature: support rendering of line between columns _202602](https://github.com/superdoc-dev/superdoc/issues/2067)
+  - [Open source MS Word GPT redlining add-in for contract review : r/legaltech _202510](https://www.reddit.com/r/legaltech/comments/1nv8c0u/open_source_ms_word_gpt_redlining_addin_for/)
+    - We uniquely unzip the DOCX and edit the raw XML which allows us to keep the formatting intact, a must for legal tech.
+  - [Deliberately violating REST for developer experience - a case study : r/programming _202508](https://www.reddit.com/r/programming/comments/1miogsp/deliberately_violating_rest_for_developer/)
+    - After 15 years building APIs, I made a decision that my younger self would hate: using GET requests to mutate state.
+    - The API component handles document tooling (e.g. DOCX to PDF, etc.) without the full editor.
+  - [Can it support paper sizes such as A2, A3, A4, A5, letter paper, etc., or custom sizes? _202511](https://github.com/superdoc-dev/superdoc/issues/1204)
+    - 👷 202603: It has been awhile since you filed this but SuperDoc already supports different page sizes - if you open an A4, A3, Legal, or any custom-sized document, it will display and export at the correct dimensions. What we don't have yet is a UI dropdown to change the page size or switch between portrait/landscape from within the editor - that's on our roadmap as a separate feature.
+  - https://github.com/superdoc-dev/ooxml-dev /MIT/202604/ts
+    - https://ooxml.dev/
+    - Interactive OOXML (ECMA-376) reference explained by people who actually implemented it
+    - Every page combines XML structure, live rendered previews, and implementation notes that tell you what the spec doesn't.
+    - The ECMA-376 spec is 5,000+ pages and it lies. Word's actual behavior diverges from the standard in ways you only discover by building against it. The knowledge to implement OOXML correctly is locked inside a handful of companies that have no incentive to share it.
+  - https://github.com/superdoc-dev/demos
+    - Working demos built with SuperDoc
+- https://github.com/yuch85/contract-playbook-ai /AGPL/inactive
+  - Generate playbooks using AI from contracts, and review contracts using AI against playbooks, with changes tracked in native docx redlines.
+  - [Built an open-source Contract Playbook AI tool with native .docx tracked-changes editing : r/legaltech _202604](https://www.reddit.com/r/legaltech/comments/1pfd17e/built_an_opensource_contract_playbook_ai_tool/)
+  - It uses the Superdoc open-source library under AGPLv3 to bring full online .docx editing into the workflow.
+  - https://docx.tools/
+    - Convert, redact, compare, and view Word documents — entirely in your browser.
+    - Built on SuperDoc — DOCX editing and tooling
+
+- https://github.com/eigenpal/docx-editor /834Star/apache2/202605/ts
+  - https://docx-editor.dev/
+  - https://www.docx-editor.dev/editor
+  - Open-source WYSIWYG .docx editor library with canonical OOXML, tracked changes, and real-time collaboration.
+  - core依赖prosemirror、xml-js、docxtemplater、jszip、pizzip
+  - 依赖aisdk
+  - 🍴 forks
+  - https://github.com/reductoai/docx-editor
+
+- https://github.com/samwillis/premirror /MIT/202603/ts
+  - https://samwillis.uk/premirror/
+  - Premirror is a library for building Word-class page-layout editors on the web. 
+  - It layers deterministic pagination and composition on top of ProseMirror, giving you paper-style page breaks, widow/orphan control, and fragment-level text positioning — all while keeping ProseMirror as the single source of truth for document content and editing.
+  - 仅提供了分页示例，未提供分栏布局的示例
+  - ProseMirror owns the document model and all editing operations. Premirror's composer takes a measured snapshot of the document and produces a deterministic layout: pages, frames, line boxes, and placed runs. A React rendering layer then projects those fragments into absolute positions inside page-chrome viewports, producing a word-processor-style paged view with a single contenteditable surface.
+  - Text measurement is handled by @chenglou/pretext, which provides segment-aware width calculation and line fitting.
+  - 🐛 
+    - Single-Root: Uses one contenteditable (multi-root deferred)
+    - No Columns: Multi-column
+    - No page virtualization
+    - No Tables/Footnotes
+  - 🌹 
+    - Deterministic: Same input → same output
+    - Performant: Measurement cached, composition is pure arithmetic
+    - i18n: Proper CJK, Arabic, Thai, emoji handling
+    - Inspectable: Every break has a reason, metrics available
+    - Light DOM operations(decorations)
+  - https://x.com/samwillis/status/2038209756268048771
+    - Document layout with page breaks
 
 - novel /13.7kStar/apache2/202501/ts/inactive
   - https://github.com/steven-tey/novel

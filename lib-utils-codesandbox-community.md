@@ -83,7 +83,17 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
-- ## 
+- ## Stop using Docker to sandbox AI agents.
+- https://x.com/abhijithneil/status/2064462294155952297
+  - Docker and devcontainers strip away a lot of what makes an agent useful. Auth has to be forwarded, API keys end up in environment variables, updating means rebuilding images, and everything still shares the same kernel.
+  - VMs give stronger isolation, but every task starts from a blank slate. You lose the local context sitting on your machine and pay a cold start penalty every time.
+  - firejail and seccomp help, until the agent needs to install packages, run build tools, or do anything outside a carefully curated syscall list.
+  - Then there are approval prompts. They work for a single agent. Once you have ten agents running in parallel, everybody eventually clicks "allow all" and moves on with their day.
+  - The agent is something you chose, configured, authenticated, and connected to your tools. The risky part is the model-generated shell command that just got written five seconds ago. That command might contain a bug, a prompt injection, or something outright hostile.
+  - Temenos (https://github.com/vitalops/temenos) splits the system at exactly that boundary.
+  - The agent stays on the host with access to auth, MCP servers, updates, and model APIs.
+  - Execution happens inside a rootless gVisor sandbox with its own userspace kernel. The host filesystem only appears where you explicitly mount it. Network access can be switched off with a flag.
+  - The separation is enforced by the toolchain itself.
 
 - ## AI agent 要跑沙箱隔离，但冷启动微VM太慢了。这个项目干脆把预热好的父 VM snapshot 当进程 fork：子 VM 共享内存直到写时才复制，100 个 KVM 隔离的沙箱 100ms 就能全出来。
 - https://x.com/vintcessun/status/2062755543811588448

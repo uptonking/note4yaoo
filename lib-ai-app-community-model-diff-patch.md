@@ -1194,7 +1194,18 @@ Code
 
 - ## 
 
-- ## 
+- ## 🚀 [Introducing DeltaDB: Software is made between commits : r/ZedEditor _202606](https://www.reddit.com/r/ZedEditor/comments/1u33vj6/introducing_deltadb_software_is_made_between/?sort=top)
+  - Great software always took shape in conversation, not the commit. With agents, the conversation that generates the code is becoming the true source of our software. And Git can't keep up. So we built something that can.
+  - DeltaDB is a new kind of version control. Where Git captures a snapshot at each commit, DeltaDB captures every keystroke and operation in between as a fine-grained delta, each with its own stable identity.
+
+- https://x.com/zeddotdev/status/2065089004048105675
+  - Source code and the conversation that produced it live in the same place. Jump from any line of code to the prompt that created it. Or from a past conversation to that code as it stands now, or the moment the agent wrote it.
+  - Never forget to commit or push again and skip the PR ceremony. Jump into a teammate's thread while the work is still live, talk to the agent that wrote it, and comment or branch from there.
+
+- Most of CI/CD technology is built on top of git versioning. How will DeltaDB interop with traditional version control for outer loop SDLC workflows?
+  - It is Git-compatible by design. Git's discretized snapshots are a subset of DeltaDB's continuous history.
+
+- not sure git is the actual bottleneck when i ship with agents, reviewing 600-line diffs kills me way before version control does. is deltadb solving the tracking side or the review side?
 
 - ## Introducing Diffs. A new way to review PRs, directly inside Linear.
 - https://x.com/linear/status/2060048202796040655

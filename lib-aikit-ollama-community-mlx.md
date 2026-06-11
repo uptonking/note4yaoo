@@ -19,6 +19,18 @@ modified: 2026-01-14T18:59:01.949Z
 
 - ## 
 
+- ## 
+
+- ## Hot take: given up PyTorch on Mac as a first-class of library is a strategic mistake on Apple part.
+- https://x.com/liuliu/status/2064748729027141763
+  - You simply cannot build PyTorch on top of CoreAI. If I were Apple, I would actually double-down on PyTorch support, probably even help to use Steel under the hood so it shares the basics with MLX.
+  - Use the platform as a inference only deployment target is not a multi-year winning strategy. You need to support people to learn, to experiment, and the most importantly, to try new stuff without waiting for some benevolent entity doing it yearly.
+
+- https://github.com/apple/coreai-torch /BSD/202606/python
+  - Bridges PyTorch and Core AI. Convert existing models to Core AI IR, or author new ones from PyTorch via composite ops, custom op lowerings, and inline Metal GPU kernels.
+- I was under the impression that these are for deployment (tracing / export a existing PyTorch model). I am more thinking along the line to help out-of-the-box PyTorch experience, including torch.compile().
+  - It feels very messy/confusing having pytorch-mps, pytorch-mlx, and now pytorch-to-coreAI
+
 - ## [Whats up with MLX? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rvy3nk/whats_up_with_mlx/)
   - I am a Mac Mini user and initially when I started self-hosting local models it felt like MLX was an amazing thing. It still is performance-wise, but recently it feels like not quality-wise.
   - from what I see GGUF community seem to be very active: they update templates, fix quants, compare quantitation and improve it; however in MLX nothing like this seem to happen - I copy template fixes from GGUF repos
@@ -182,7 +194,36 @@ modified: 2026-01-14T18:59:01.949Z
 - ## 
 
 - ## 
-# discuss-internals
+# discuss-internals-metal
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## All devices on Metal4 get block-scaling formats (fp4/fp8) support.
+- https://x.com/zcbenz/status/2064490636649369945
+  - The mpp::tensor_ops API also support the new formats, i.e. M5 get hardware-accelerated scaled gemm.
+
+- I could not find any info on the docs neither, had to ping the guys working on Metal to figure out.
+  - All Metal4 devices get hardware-accelerated for fp4/fp8.
+  - M5 can do hardware scaled gemm on fp4/fp8, I don't know internally whether it is using fp16 tensor cores but it is definitely much faster than fp16xfp16 gemm.
+  - Other hardware just get native fp4/fp8 types and can only do gemm with SIMT kernels.
+
+- 不太理解，所以我的 M4 Max 在 macOS27 直接使用 FP16 它就會自己縮放格式來獲得加速嗎嗎？
+  - It is supported in hardware and driver, but someone has to write software support. Apps using Metal like MLX and llama.cpp need to write their implementations, CoreAI should support it directly though.
+- M4 doesn't have Neural Accelerator, so using Tensor Ops matmul is almost same as simdgroup_multiply_accumulate
+
+- 
+- 
+- 
+- 
+
+# discuss-internals-mlx
 - ## 
 
 - ## 

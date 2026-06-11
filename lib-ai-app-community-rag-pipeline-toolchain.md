@@ -116,7 +116,42 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
-- ## 
+- ## 最近在研究 AI Agent 联网搜索，整理下目前主流方案
+- https://x.com/Lonely__MH/status/2064492236520444296
+- 先说结论，我目前在用：Tavily！体感舒适🥳
+
+在 AI Agent 开发中，Search API 直接影响 RAG 的检索质量、响应速度与成本。目前主流方案大致可分为四类：
+
+1. 国内直连，开箱即用
+- Bing：通用首选，国内网络可直接访问。
+- Metaso：国内体验友好，每日提供 100 次免费调用。
+
+2. AI 原生，擅长直接回答
+- Perplexity：语义理解与信息整合能力强，适合深度问答。
+- Exa：面向 AI 的原生搜索，每月 1000 次免费调用。
+- Ollama：提供云端网页搜索，可与本地私有化生态结合。
+
+3. 免费额度高，开发者友好
+- Brave：拥有独立搜索索引，每月 2000 次免费调用。
+- Tavily：专为 LLM 和 Agent 优化，每月 1000 次免费调用。
+
+4. 开源自托管
+SearXNG：开源元搜索引擎，数据自主可控，隐私性强。
+
+选型建议：
+快速落地、国内直连：Bing 或 Metaso。
+追求 RAG 质量与语义能力：Perplexity 或 Tavily。
+低成本、高调用额度：Brave 搭配 Exa。
+数据合规与私有化部署：SearXNG。
+
+没有绝对最好的搜索方案，只有最适合业务场景的组合。
+
+- 我自己也是 Tavily 为主。 不过用下来体感是，搜索源换来换去对最终 RAG 质量影响没想象中大，真正影响质量的是检索回来之后的步骤：怎么 rerank、怎么把结果压进上下文。换源能提升的部分，常常被这步吃掉。 所以我现在选搜索 API 主要看延迟和额度，效果提升花在 rerank 上。
+
+- Tavily + Exa + SearXNG 兜底, Tavily + Exa 搞一个API池+ 10个账号轮训, 妥妥的够用了
+
+- Tavily 的优势确实在工程体验上，少折腾抓取和清洗，Agent 才能把预算花在判断而不是补洞上。
+- Tavily 体感认同，不过两点加一下：它今年二月被 Nebius 收购，定价策略后续大概率会动；另外 agent 真跑起来 1000 免费额度耗得比想象快，Research 端点单次能吃 250 credits。Exa 的 highlights 参数把送给 LLM 的 token 压了 50~75%，多跳链路下算总成本差挺多——有没有在实际场景跑过它俩的对比？
 
 - ## [No more www google searches by January 2027. : r/LocalLLM _202605](https://www.reddit.com/r/LocalLLM/comments/1taj621/no_more_www_google_searches_by_january_2027/)
 - I somehow didn't even know Google could be used with local llms. I've been using both Brave and Tavily that have 1000 free per month. I never hit those limits. Both much better companies than Google if you're handing out your search data.

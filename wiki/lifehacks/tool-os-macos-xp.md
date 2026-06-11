@@ -349,6 +349,21 @@ redis-cli shutdown
 - https://github.com/SolitaryJune/TempBarApp /BSD/202604/swift
   - macOS 菜单栏温度监控工具，适用于 Apple Silicon Mac
   - Universal Binary（支持 arm64）
+# discuss-news-mac
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## In macOS Golden Gate 27 you can now record your screen WITH system audio. 
+- https://x.com/ClassicII_MrMac/status/2064877464443064718
+- They added Core Audio taps in Sonoma 14.2, so it would’ve been trivial for them to add system audio to screen recording. It’s actually insane that it took this long!
+
 # discuss-macos-apps/tools
 - ## 
 
@@ -767,7 +782,24 @@ CREATE DATABASE mydatabase;
 - 我发现直接Time Machine传的话，偶尔会出现把不必要的配置传过去导致续航有问题的情况。
 
 - dotfiles 我用 stow 管了几年，新机第一次 zsh -l 还是会被某个漏掉的 export 卡住。SSH 反向迁移这思路确实简单粗暴，sudo 和磁盘权限那一段倒是省不掉。
+# discuss-internals
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Confirmed: *OS 27 DSC headers grew new CPU type/subtype/reserved fields.
+- https://x.com/blacktop__/status/2064523577882517847
+- Possible SVE2 based armv9?
+
 # discuss-hardware
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

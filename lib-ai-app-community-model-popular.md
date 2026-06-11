@@ -29,11 +29,15 @@ modified: 2025-09-16T19:59:57.856Z
 - awesome-models
   - [LLM Explorer: A Curated LLM List ](https://llm-explorer.com/)
 # model-bench
+- [OpenCode Data ](https://opencode.ai/data)
+  - See which models are winning real usage
+- [OpenRouter LLM Rankings](https://openrouter.ai/rankings)
+  - real usage data from millions of users accessing models through OpenRouter.
+
 - leaderboard-llm
   - [Artificial Analysis LLM Leaderboard - Comparison of over 100 AI models from OpenAI, Google, DeepSeek & others](https://artificialanalysis.ai/leaderboards/models)
   - [Vellum LLM Leaderboard 2025](https://www.vellum.ai/llm-leaderboard)
   - [SEAL LLM Leaderboards: Expert-Driven Evaluations](https://scale.com/leaderboard)
-  - [OpenRouter LLM Rankings](https://openrouter.ai/rankings)
   - [LiveBench](https://livebench.ai/)
   - [LMArena Leaderboard](https://lmarena.ai/leaderboard)
   - https://huggingface.co/open-llm-leaderboard /archived

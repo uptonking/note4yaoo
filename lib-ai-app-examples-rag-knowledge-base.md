@@ -1450,6 +1450,7 @@ modified: 2025-11-30T17:27:16.720Z
     - Notemd 是一个开源的 Obsidian 社区插件。它不追求“帮你一键读懂论文”，而是把论文阅读过程里的概念链接、概念笔记、原文证据摘录、背景补充、翻译、图表和工作流，尽量都沉淀回你的知识库里。支持数十种语言的UI、README与转换
     - 我想解决的，其实不是“读一篇”，而是“沉淀一批”
     - 聊天式 AI 更擅长当场回答问题，Notemd 更擅长把结果沉淀进知识库。
+  - [【开源推广】不是让 AI 替你读论文，而是把论文一点点织进知识库：作为一名在读物理博士，我现在怎么用 Obsidian + Notemd 做论文深读与长期积累 - LINUX DO _202606](https://linux.do/t/topic/2379015)
 
 - https://github.com/WangQrkkk/PaperQuay 
   - [PaperQuay：一种新的文献阅读范式：瞬时跳转翻译、Agent管理文献、高亮批注导出、极低内存占用、兼容Zotero - LINUX DO _202604](https://linux.do/t/topic/2079732)

@@ -578,6 +578,17 @@ modified: 2024-03-31T17:45:16.789Z
   - FUSE-based file system backed by Amazon S3
   - s3fs allows Linux, macOS, and FreeBSD to mount an S3 bucket via FUSE(Filesystem in Userspace).
   - s3fs makes you operate files and directories in S3 bucket like a local file system.
+
+- https://github.com/Barre/ZeroFS /AGPL/202606/rust
+  - https://www.zerofs.net/
+  - File systems AND block devices on S3 storage
+  - It provides file-level access via NFS and 9P and block-level access via NBD.
+  - NFS Server - Mount as a network filesystem on any OS
+  - 9P Server - High-performance alternative with better POSIX semantics
+  - NBD Server - Access as raw block devices for ZFS, databases, or any filesystem
+  - Web UI - File manager, real-time monitoring, and in-browser terminal
+  - Always Encrypted - XChaCha20-Poly1305 encryption with LZ4 or Zstd compression
+  - Works with any S3-compatible storage
 # webdav
 - https://github.com/cs3org/reva /197Star/apache2/202510/go
   - https://reva.link/

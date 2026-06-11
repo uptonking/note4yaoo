@@ -364,6 +364,8 @@ modified: 2025-03-22T16:10:24.856Z
       - citation, backlinks: 提升rag的准确度, 优化搜索结果中的code/text/image
       - pdf-editing: typst, formula, chart
       - 优化 windows版 coding-agent、模型推理、 rag依赖库
+      - sandbox: mac-container, just-bash
+      - lovable/design: easy ux
       - acp/WebMCP for pdf/rich-editing
       - translation
       - extraction

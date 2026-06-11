@@ -734,6 +734,13 @@ modified: 2025-02-21T17:17:42.225Z
   - Turn any company logo into consistently branded Excel, Word, PPT, PDF, flowcharts & handbooks. 
   - Upload a company logo — get consistently branded Excel, Word, PowerPoint, HTML slides, PDF, flowcharts & handbooks. All design-system-driven. All editable. No Figma, no templates, no design skills needed.
 
+- https://github.com/Nicevva/glm-excel-custom /MIT/202606/python
+  - https://glm-excel-web.vercel.app/zh
+  - 让 Excel 连接任意 AI — OpenAI / Claude / GLM / 任何兼容端点
+  - 本项目是基于 GLM in Excel（Beta）重写的开源本地 Excel 插件，和 GLM 官方无关
+  - 本项目是基于「GLM in Excel」官方 Office 插件的开源本地补丁，解锁了 OpenAI / Anthropic Claude / 任意 OpenAI 兼容端点支持，通过本地 HTTPS 服务器提供服务（替代官方 CDN）。GLM（智谱AI）作为可选后端保留。
+  - 官方插件每次使用时都从 office-addin.bigmodel.cn 加载前端，无法直接修改。本项目： 将前端包保存到本地 public/ 目录
+
 ### pdf-skills
 
 - https://github.com/idinging/qpdf-pdf-ops /shell

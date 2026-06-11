@@ -340,6 +340,9 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 
 ## 0611
 
+- fm respond 'What is Swift?'
+  - Error: This device does not support Apple Intelligence.
+
 - mac security policy, the operation couldn't be completed. SDErrorDomain error 104.
 
 - ['Startup Security Policy' — cannot go bac… - Apple Community ](https://discussions.apple.com/thread/253580441?sortBy=rank)
@@ -383,6 +386,14 @@ Restart your Mac and try the update again.
   - Can we no longer disable SIP in MacOS 27, or what is going on here?
 - https://x.com/Little_34306/status/2064245588389134798
 - it seems a stock bug, you need to deal with it until beta 2 i guess
+
+- https://x.com/afastaudir8/status/2064407217709686804
+  - How to bypass the new Siri waitlist (Mac only)
+- How did you even disable SIP? It’s completely broken in macOS 27
+  - I think changing the security level is broken on M4+ from my and other people’s testing.
+- https://x.com/i0n1c/status/2064368549540295134
+- There was a similar bug in 26.5 beta too, pretty sure they backported this bug to 27.0
+  - Bputil shows the error cleaner. Exclavecore cannot be validated
 
 ## 0603
 

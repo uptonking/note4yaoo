@@ -55,6 +55,22 @@ modified: 2024-08-24T16:15:47.613Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Mermaid diagrams are now built directly into @Code . _202606
+- https://x.com/code/status/2064470732457869555
+  - No extra extension required.
+- Mermaid being native means one less context switch between writing and visualizing. Architecture diagrams, flowcharts, and sequence diagrams living right next to the code is exactly how it should work.
+  - but the issues is when it comes to architecture diagrams, mermaid is very basic
+
+- Since v1.121, it is a merge of Matt Bierner's Markdown Preview Mermaid Support
+
 - ## The VS Code Private Marketplace is now generally available _202511
 - https://x.com/code/status/1990827386430992403
   - Enterprises can finally self-host and control extension distribution for their dev teams. Secure, compliant, and seamless - right inside @code .

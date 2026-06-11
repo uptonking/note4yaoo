@@ -323,6 +323,9 @@ modified: 2025-12-25T19:55:10.911Z
     - Bilingual Support: Whether Chinese or English
     - Local Offline Inference: No internet connection required
 
+- https://codeberg.org/InkyCap/app /LiLiQ/202606/rust/ts
+  - [InkyCap is a PKM tool based on Typst : r/typst _202606](https://www.reddit.com/r/typst/comments/1u2e156/inkycap_is_a_pkm_tool_based_on_typst/?sort=top)
+
 ## eg-templates
 
 - https://github.com/henchoznoe/Typify /MIT/202512/typst

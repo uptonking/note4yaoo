@@ -21,6 +21,24 @@ modified: 2023-10-31T11:48:54.805Z
 - ## 
 
 - ## 
+# discuss-security-config/env/files
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## You likely didn't know that Docker is building a native Secrets Engine.
+- https://x.com/psviderski/status/2064675044681503086
+  - The idea is to stop hardcoding plaintext secrets in .env or compose files. 
+  - `docker run -e API_KEY=se://my/secret/key` ...
+  - Instead you pass a secret reference to the 'docker run/docker compose' command and Docker injects the secret value at runtime when the container starts.
+  - Secrets are sourced from a pluggable provider.
+  - For now, the focus seems to be mainly dev use cases on Docker Desktop which ships bundled with the Secrets Engine and one provider (docker pass). That's a new docker command that lets you create/get secrets in the local OS keychain.
+
+- It's weird that it took so long for docker to build this natively. 1Password and other pw managers have also done a great job with implementing developer related features.
 # discuss-security
 - ## 
 

@@ -71,7 +71,7 @@ modified: 2024-01-03T16:14:53.804Z
 - https://x.com/hardfist_1/status/1886376769122652230
   - and don't meet too much problems, what if we interpret more JavaScript syntax as native syntax ?
 
-# discuss-author/news
+# discuss-news/author
 - ## 
 
 - ## 
@@ -79,6 +79,19 @@ modified: 2024-01-03T16:14:53.804Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## Rspack keeps pushing forward with support for the latest language features.
+- https://x.com/jiahan_c/status/2065013057571676389
+  - After `import defer` , we're now adding `import source` for Wasm, following the TC39 Source Phase Imports proposal. It lets you import a compiled Wasm module directly.
+
+- how does it handle async init?
+  - It only gives you the compiled Wasm module. You still control instantiation and any async init yourself.
+
+- ## Rspack + tsgo cut overall build time by 60% in our benchmark
+- https://x.com/jiahan_c/status/2064557502671515693
+  - Type checking during builds is often one of the biggest build-time costs.
 
 - ## 📡 Rstack could offer a unified toolchain experience similar to Vite Plus as well, and huge respect to the Vite Plus team for exploring that direction.
 - https://x.com/jait_chen/status/2032723214472991123

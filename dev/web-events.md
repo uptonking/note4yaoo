@@ -125,7 +125,8 @@ modified: 2021-04-23T17:10:52.920Z
   - This constructor is supported in most modern browsers (with Internet Explorer being the exception)
 - To add more data to the event object, the `CustomEvent` interface exists and the `detail` property can be used to pass custom data
 - The older approach to creating events uses APIs inspired by Java
-  - `const event = document.createEvent('Event'); `
+  - `const event = document.createEvent('Event');`
+
 - Elements can listen for events that haven't been created yet by eventName
 
 - `EventTarget` is a DOM interface implemented by objects that can receive events and may have listeners for them.
@@ -264,7 +265,7 @@ function getOffsetX(event) {
     - element.scrollHeight - element.scrollTop === element.clientHeight
 
 - scrollTop
-  - **可读写**，其他client? 和offset? 都只读
+  - **可读写** ，其他client? 和offset? 都只读
   - 设置或获取一个元素不可见部分的顶部距离盒子border-top的距离
   - 当一个元素的容器没有产生垂直方向的滚动条, 那它的scrollTop的值默认为0
   - 设置scrollTop的值小于0，scrollTop被设为0
@@ -292,7 +293,7 @@ function getOffsetX(event) {
 
 - clientHeight
   - 返回元素内部的高度，单位像素，只读
-  - 包含content和padding，**不包含滚动条**、border和margin
+  - 包含content和padding， **不包含滚动条** 、border和margin
   - `clientHeight = content height + padding - scrollbarHeight`
   - 对于inline的元素这个属性一直是0
   - 在没有滚动条时，scrollHeight===clientHeight恒成立
@@ -308,7 +309,7 @@ function getOffsetX(event) {
 ## offsetHeight
 
 - offsetHeight
-  - 包含content、padding、滚动条、border，**不包括margin**
+  - 包含content、padding、滚动条、border， **不包括margin** 
   - 标准盒模型采用，设置style的height即这里
   - 对于inline的元素这个属性一直是0
 
@@ -356,7 +357,7 @@ function getOffsetX(event) {
   - mousedown is fired the moment the button is initially pressed.
   - 如果在某个地方按下鼠标后移开鼠标在另外一个地方松开鼠标会触发onmousedown事件，但是onclick事件却不会被触发
 - `onmousedown`
-  - mousedown event fires when the user depresses the mouse button **按下时**
+  - mousedown event fires when the user depresses the mouse button **按下时** 
   - mousedown event is fired at an Element when a pointing device button is pressed while the pointer is inside the element.
   - onmousedown > onmousemove > onmouseup
 - `onclick`
@@ -366,7 +367,8 @@ function getOffsetX(event) {
   - The click event is raised when the user clicks on an element.
   - It fires **after** both the mousedown and mouseup events have fired, in that order.
   - When using the click event to trigger an action, also consider adding this same action to the `keydown` event, to allow the use of that same action by people who don't use a mouse or a touch screen.
-  - `target.onclick = functionRef; `
+  - `target.onclick = functionRef;`
+
     - functionRef is a function name or a function expression. 
     - functionRef receives a MouseEvent object as its sole argument. 
     - Within the function, `this` will be the element upon which the event was triggered.        
@@ -384,7 +386,8 @@ function getOffsetX(event) {
     - https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event
   - The dblclick event is raised when the user double clicks an element. 
   - It fires **after** two click events (and by extension, after two pairs of mousedown and mouseup events)..
-  - `target.ondblclick = functionRef; `
+  - `target.ondblclick = functionRef;`
+
   - Only one ondblclick handler can be assigned to an object at a time. 
     - You may prefer to use the EventTarget.addEventListener()
 - double click vs click
@@ -417,7 +420,7 @@ function getOffsetX(event) {
   - 它们代表的是开始进行字的输入的开始、更新与结束
   - 也就是代表开始以输入法编辑器来组合键盘上的英文字符，选字或刷新字的组合，到最后输出字到真实DOM中的文本输入框中
   - 每个中文字在输入时，compositionstart与compositionend都只会会被触发一次，而compositionupdate则是有可能多次触发
-- 可以利用CompositionEvent作为一个信号，如果正在使用IME输入中文时，change事件中的代码就先不要运行，**等到compositionend触发时，接着change事件才可以运行**其中的代码，运作的原理就是这样简单而已
+- 可以利用CompositionEvent作为一个信号，如果正在使用IME输入中文时，change事件中的代码就先不要运行， **等到compositionend触发时，接着change事件才可以运行** 其中的代码，运作的原理就是这样简单而已
 - 在React应用中，如果是一个"Uncontrolled"(不受控制的)的input组件，它与网页上真实DOM中的input元素的事件行为无差异，也就是说，直接使用CompositionEvent的解决方式，就可以解决这个输入法的问题
 
 - Chrome浏览器在2016年的版本53之后，更改了change与compositionend的触发顺序
@@ -508,6 +511,25 @@ function getOffsetX(event) {
 
 - How did you debug this?
   - When the officially recommended options 1) and 2) both failed to work, I felt the only avenue left was to call `preventDefault()` somewhere. I tried it on "click" and "touchstart" events without any luck, before finally taking a chance on "dblclick".
+# discuss-scroll
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## TIL that DOM scroll() methods will return a Promise
+- https://x.com/sebastienlorber/status/2064673108179464418
+  - More reliable than "scrollEnd" events 
+  - Particularly useful for scrollIntoView()
+  - Chrome already in v150 beta
+  - Safari/WebKit 👍 position
+  - Firefox 👎 position
+
 # discuss
 - ## 
 

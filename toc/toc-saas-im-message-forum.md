@@ -914,4 +914,8 @@ modified: 2021-05-14T15:04:15.333Z
   - https://github.com/thematters/matters-server /apache2/202402/ts
     - Server code
     - 依赖@apollo/server、graphql、knex
+# sms
+- https://github.com/happyfox-dot/Msg2Computer /NC/202606/kotlin/js
+  - 一个跨设备验证码与消息同步工具。它由 Android 手机端和 Windows 桌面端组成，用于把手机收到的验证码短信、普通短信、App 通知，以及本机保存的 TOTP 动态验证码，同步到你授权的设备节点。
+  - [[开源分享] 验证码流转工具，将消息推送给多个电脑/手机，避免每次打开手机看验证码 - LINUX DO _202606](https://linux.do/t/topic/2376521/6)
 # more

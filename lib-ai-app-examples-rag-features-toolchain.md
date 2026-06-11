@@ -191,11 +191,13 @@ modified: 2026-04-07T12:33:48.087Z
 
 - https://github.com/GiovanniPasq/chunky /MIT/202604/python/ts
   - Convert and validate your Markdown, then choose the best chunking strategy for your RAG pipeline.
+  - local toolkit focused on the document-preparation stage before indexing
   - Most RAG pipelines fail silently — Chunky is a local, open-source tool that gives you full visibility at both stages — validate your Markdown, validate your chunks, fix what's wrong before it reaches your vector store.
   - Upload a PDF or Markdown file, pick a splitting strategy (Token, Recursive Character, Character, Markdown Header), and inspect every chunk color-coded side-by-side with the source
   - Edit, enrich chunks directly in the UI without re-running the whole pipeline
   - Export clean, validated chunks as JSON ready for your vector store
   - Six PDF → Markdown converters: PyMuPDF, Docling, MarkItDown, LiteParse, VLM, Cloud API
+  - [Chunky: an open-source toolkit for inspecting and improving RAG document preparation : r/Rag _202606](https://www.reddit.com/r/Rag/comments/1u19fp0/chunky_an_opensource_toolkit_for_inspecting_and/?sort=top)
 
 - https://github.com/HaroldConley/chunk-norris /MIT/202604/python
   - Evaluate and compare chunking strategies for RAG pipelines

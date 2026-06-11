@@ -427,6 +427,25 @@ modified: 2025-08-23T11:43:35.904Z
     - 已耗尽的 Token 会被记录，当天不再使用
   - Flow 模式 - 可视化批量生成画布 (实验性)
 
+- https://github.com/RingoCaviar/CainFlow /GPL/202606/python/js
+  - [[开源项目] CainFlow，轻量的本地无限画布 - LINUX DO _202606](https://linux.do/t/topic/2372159)
+  - 受 ComfyUI 启发的轻量级节点式的调用API的绘图工具。前端用的js和css，后端用python
+  - 支持google和openai两种API格式的图片生成或者对话
+  - 有图片对比 良好的历史记录功能
+  - 节点式操作 可以搭建属于自己的工作流
+  - 有一定的视频生成能力（测试的比较少）
+  - 本地保存工作流与历史数据，默认不依赖云端托管
+  - 提供 Windows 和macos两个版本
+
+- https://github.com/RoseKhlifa/Image-Studio /AGPL/202606/go/ts11
+  - https://prompts.sorry.ink
+  - 开源图像生成 / 编辑客户端 
+  - Wails(Go + React/TS) 桌面端 + Android WebView 壳层 
+  - 支持 Responses API SSE / WebSocket mode 与标准 Images API
+  - https://github.com/RoseKhlifa/Image-Prompts /MIT
+    - 一个为 AI 图像创作者打造的中英双语提示词聚合站,Image-Studio 生态的「灵感源」一侧
+  - [[开源推广]Image-Prompts 开源生图提示词聚合网站 已录入3w+提示词   - LINUX DO _202606](https://linux.do/t/topic/2369398)
+
 - https://github.com/google-gemini/gemini-image-editing-nextjs-quickstart /484Star/apache2/202505/ts/inactive
   - https://ai.google.dev/gemini-api/docs/image-generation
   - Nextjs quickstart for to generating and editing images with Google Gemini 2.0 Flash
@@ -1463,6 +1482,16 @@ modified: 2025-08-23T11:43:35.904Z
   - Embed scripts into workflows. Alter the node's input/outputs with python.
   - Write Python code that executes when the workflow is queued
   - The stdout/err (e.g., prints, error tracebacks) are displayed in the node.
+
+## image2prompt
+
+- https://github.com/cocktailpeanut/image-to-prompt /202606/python/js
+  - The easiest way to install and run Image to Prompt is with  [Image to Prompt on Pinokio ](https://pinokio.co/apps/github-com-cocktailpeanut-image-to-prompt)
+  - Image to Prompt is a minimal local web app that turns an uploaded image into editable Ideogram 4 JSON prompt.
+  - Florence-2 drafts the scene, object boxes, region captions, and OCR regions. 
+  - The UI lets you drag, resize, rename, duplicate, delete, hide, add zones, and optionally add a structured style_description before copying or exporting the JSON.
+  - [I made a tool to turn any image into Ideogram JSON prompt : r/StableDiffusion _202606](https://www.reddit.com/r/StableDiffusion/comments/1u28ram/i_made_a_tool_to_turn_any_image_into_ideogram/?sort=top)
+    - You can get pretty good results just plugging Florence into the KJ's node - but not bbox magic.
 # integrations
 - https://github.com/nomcycle/comfyui-dev /MIT/202506
   - A secure, remote, and persistent development environment for ComfyUI that works with cloud GPU services. 
