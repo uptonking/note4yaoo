@@ -25,6 +25,31 @@ modified: 2026-04-06T17:38:13.599Z
 - ## 
 
 - ## 
+# discuss-llm-gui
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What's the llamacpp alternative for TTS, STT and image generation? : r/LocalLLM _202606](https://www.reddit.com/r/LocalLLM/comments/1u4ajng/whats_the_llamacpp_alternative_for_tts_stt_and/?sort=top)
+- Worth mentioning that https://lemonade-server.ai/ is OSS and basically implements all of these engines in a single manager with a single endpoint. So you get image, tts, stt, and regular LLM support all from a single service - if you need all in one that is the place.
+  - Lemonade's just a wrapper for other tools. It's got llama.cpp, stable diffusion, vllm, and others.
+
+- StableDiffusion.cpp - image gen
+- I like invoke ai for image gen
+
+- No affiliation, but this guy has implemented Qwen Tts, OmniVoice and acestep off ggml: https://github.com/ServeurpersoCom
+
+- Kokoro for TTS, whisper.cpp for TTS, and sd.cpp are all the standard options for those *However* depending on the models you want to run, that stack may vary.
+
+- Stt: whisper.cpp Imagegen requires fp16 vae so cpp variants are not quite effective. Also ggml is not that effecient in convolutional layers that builds the Unet. So for image gen pytorch is the standard, I believe.
+
+- I’ve had good results (clarity, good cloning quality, and speed) with F5-TTS, and like many others I’m using whisper for STT. i tried parakeet STT for awhile, but the transcription seemed to have more errors than whisper.
 # discuss-mlx-gui
 - ## 
 

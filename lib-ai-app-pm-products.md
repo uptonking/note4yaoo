@@ -338,6 +338,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 用类似 claude-design 的思路来实现 ui/编辑器 类型的产品
   - too many options: 
     - models/quants, cloud api, 处理速度不同
+    - model thinking: 需要会话级、模型级的快速开关
     - parallel requests for local models/ocr
     - text/image pdf ocr, 源文件处理方式不同
     - vlm, pipeline, 识别方法不同
@@ -897,7 +898,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 无充值，邀请注册来获得更多额度
     - tg群讨论的内容看，作者似乎精力不在anyrouter而在开发商用产品
     - 用户较多，有提供vscode插件无法使用的解决方案
-  - [xem API](https://ai.xem8k5.top/console/personal)
   - [Agent Router](https://agentrouter.org/console), 每日签到
     - 转向商业了
     - 模型支持 Claude Code、Codex、RooCode、Qwen Code、Gemini Cli 等多款工具， 仅支持coding工具，不支持使用api聊天
@@ -2454,6 +2454,7 @@ modified: 2025-03-22T16:10:24.856Z
   - QQ群：740937090
   - kiro--0.12/0.3
   - plus--0.035
+  - 找找看 cc-0.06
 - [cc-api  /New API](https://cc-api.chat/pricing)
   - 专注于kiro中转
   - kiro--0.12, 低缓和高缓都是0.12
@@ -2486,6 +2487,15 @@ modified: 2025-03-22T16:10:24.856Z
   - [松松 AI ](https://songsongcard.shop/)
   - plus--0.02
 
+- [suncode API ](https://ai.suncode.space/keys), 已充值
+  - [Sun-ai的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/SunAPi)
+  - 交流群 469032841
+  - plus/pro
+
+- [yypyyj- Sub2API ](https://sub2api.yypyyj.com/keys), 已充值
+  - [max9527的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/2KFETVZG)
+  - ip限制严格，不支持jms/ikuuu
+
 - [白山中转站 ](https://baishanai.club/dashboard)
   - 注意倍率
 
@@ -2495,7 +2505,7 @@ modified: 2025-03-22T16:10:24.856Z
   - plus--0.02
 
 - [Xybbz ](https://sub2api.xybbz.xyz/dashboard)
-  - plus--0.045
+  - plus--0.045, 算是低价，有点中等价格
 
 - [180txt.cn ](https://ccb.180txt.cn/dashboard)
   - [中转站的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/L466CII9/5szz1p)

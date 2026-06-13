@@ -696,6 +696,8 @@ sudo systemctl start minidlna
     - 128￥/年: 20G/月, 选实验性节点可用100G/月
     - 39¥/月: 150G/月, 346¥/年
     - 低等级套餐没有性价比，但是他家有0.2倍率的实验性节点，也就是说你只用实验性节点的话流量可以按照5倍来看。
+    - 🛝
+      - 导入订阅总是下载失败， 可尝试复制url到浏览器手动下载yaml文件，然后移动到clash配置目录
     - 0.2倍率的实验性节点三条线路也是广港+沪日，这点很良心。
     - 最高 1000Mbps 速率可用
     - 开业时间: 2020
@@ -937,6 +939,8 @@ export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890
   - ClashX / ClashX Pro / ClashX Meta 只是一个代理工具，不提供任何代理服务器
   - Clash. Meta Core
   - Tun mode support
+  - 💡 [新手教程 · Issue _202405](https://github.com/MetaCubeX/ClashX.Meta/issues/80)
+    - build from source
   - [[Bug]Tun模式选项无法保存 _202401](https://github.com/MetaCubeX/ClashX.Meta/issues/58)
     - 1.3.7的时候就反馈过了,tun模式在更改配置文件的时候会被配置文件覆盖
     - 每次关闭应用后重新打开都要重新再把TUN模式勾选上，在config里把tun明确写出也不行
@@ -954,6 +958,12 @@ export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890
     - 👷 实测手动下载yaml文件导入clash确实能解决问题。 之后又测试，手机上使用花云的网络代理扫码来导入配置就能导入成功，似乎是之前手机扫码用的网络不行
   - [clash 配置文件 更新错误 “托管配置文件格式不正确: yaml: line 11: mapping values are not allowed in this context” ](https://github.com/freefq/free/issues/55)
     - 刚试了下问题原因是不允许出现相同的节点名字
+
+- 🤔 for clash config on mac, under `rules`, explain to me  DOMAIN vs  DOMAIN-SUFFIX
+  - DOMAIN (Exact Match)
+  - DOMAIN-SUFFIX (Suffix / Subdomain Match)
+  - 
+
 # law
 - [中国执行信息公开网](http://zxgk.court.gov.cn/index.jsp)
 

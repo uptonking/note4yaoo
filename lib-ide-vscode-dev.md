@@ -155,6 +155,15 @@ modified: 2024-08-24T16:15:11.456Z
   - Github Light Default能将python的from-import渲染为不同颜色，Github Light不能
   - Github Light Default在import部分多褐色，Github Light多紫色
 
+## integrated-browser
+
+- html文件默认打开 file:///a.html, 本地文件夹的css会失效, 但在线cdn的css可以正常显示
+
+- how browser data (cookies, cache, storage) is shared between browser views.
+  - global
+  - workspace
+  - ephemeral
+
 ## hot-keys
 
 - Navigate back:     Ctrl-Alt--
@@ -179,4 +188,7 @@ modified: 2024-08-24T16:15:11.456Z
 - 
 - 
 
+# vscodium-xp
+- 开启 word wrap 时， 软换行的下一行会从一行开头处开始，而不是从所在的缩进层级处开始； vscode没有此问题
+  - 没找到原因，在disable所有extensions后再恢复extensions，此问题消失了
 # more

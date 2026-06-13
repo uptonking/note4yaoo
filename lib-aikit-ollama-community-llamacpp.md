@@ -77,7 +77,8 @@ modified: 2026-05-21T15:37:00.694Z
 
 - ## 
 
-- ## 
+- ## [PWA Support has been merged : r/LocalLLaMA _202606](https://www.reddit.com/r/LocalLLaMA/comments/1u40m26/pwa_support_has_been_merged/?sort=top)
+  - llama-server UI can now behave more like a native app: installable to your desktop/home screen, standalone window mode, proper icons etc.
 
 - ## llama.cpp just added video input support  _202606
 - https://x.com/osanseviero/status/2063985470489448887

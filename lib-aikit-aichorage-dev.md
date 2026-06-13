@@ -21,16 +21,19 @@ modified: 2026-05-28T17:50:54.646Z
   - image/pdf ux
   - embeddable web browser
   - multiple-client/ui
+  - browser-use
 
 - non-goals
   - optimized for gpu, not cpu
     - cpu works for ocr/translation
+  - computer-use
   - cloud rag
   - multiple-server/remotes
 # draft
 - janai-cli like obsidian-cli, ollama-cli, lms-cli
   - skills for janai-cli/lms-cli/ollama-cli
   - 直接兼容 lms-cli, 使用已下载的model
+  - 侧重应用层的skills如ocr， 简单实现类似ollama-skills， 容易产生先有鸡还是先有蛋的问题
 
 - workflow
   - comfyui-compatible node
@@ -86,6 +89,13 @@ modified: 2026-05-28T17:50:54.646Z
   - I really wish someone would just publish the optimal llamacpp command for all models with our hardware. We all have the same thing so we should all benefit from the same best command per model
 
 - KV Cache on disk added to LM Studio
+
+## local-models
+
+- port model-specific skills to aichorage
+
+- [skills for Deploy MiniCPM5-1B with LM Studio](https://github.com/OpenBMB/MiniCPM/blob/main/skills/minicpm5-deploy-lmstudio/SKILL.md)
+  - [skills for Deploy MiniCPM5-1B with Ollama](https://github.com/OpenBMB/MiniCPM/blob/main/skills/minicpm5-deploy-ollama/SKILL.md)
 # pm
 
 ## llm-iot

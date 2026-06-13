@@ -286,9 +286,9 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 ```sh /llm
 
-# cd ~/Documents/repos/ai-ml-llm/done-hub-local && dist/one-api --config config.yaml
+# running locally by "./dist/one-api --config config.yaml". the log is at folder `~/Documents/runlog/donehublocal` .
 
-# this project is running locally by "./dist/one-api --config config.yaml". the log is at folder `~/Documents/runlog/donehublocal` .
+# cd ~/Documents/repos/ai-ml-llm/done-hub-local && dist/one-api --config config.yaml
 
 launchctl stop com.donehub && launchctl start com.donehub
 launchctl stop com.cpap && launchctl start com.cpap
@@ -337,6 +337,25 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - ?
 - dev-log
   - ?
+
+## 0613
+
+- uv run --directory: 
+  - Change to the given directory prior to running the command.
+  - Relative paths are resolved with the given directory as the base.
+  - See --project to only change the project root directory.
+  - May also be set with the `UV_WORKING_DIR` environment variable.
+
+- aichorage: improve the devops workflow
+  - change default backend port to 5678
+  - change default webapp port to 5771
+  - change default desktop app port to 5772, so that webapp and desktop can run at the same time
+  - make these ports configurable in config files like server/.env.example, or apps/web/.env.example, or other config files
+  - for js/ts sub packages in this monorepo, the main bundling output should be esm by default instead of cjs. so the `main` field in package.json should not point to cjs files.
+  - migrate devops/testing scripts from .mjs to .ts, making it easier to maintain in the long time, also reducing ts types complaints in vscode.
+
+- migrate webapp bundling toolchain from vite to rspack without rsbuild.
+  - 暂时不要迁移， tanstack-router 对于rspack的支持不成熟
 
 ## 0611
 

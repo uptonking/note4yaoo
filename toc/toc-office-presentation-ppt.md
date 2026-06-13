@@ -854,6 +854,17 @@ modified: 2021-04-30T20:14:17.669Z
   - 可视化网页工作台 + 本机连接器：把 PDF、Word、PPT、URL 一键整理成本地 AI 助手可接手的 PPT 项目包，输出可编辑 PPTX 或杂志风网页演示
   - 把经营复盘、咨询方案、培训课件和学术答辩先整理成清晰任务；网页只保留下一步，本地 Skill 和 AI 助手负责最终质量。
 
+## ppt-template-based
+
+- https://github.com/CxyZyr/PPTX-Template-Skills 
+  - [让Agent使用PPT模板生成新的PPT - LINUX DO _202606](https://linux.do/t/topic/2385973)
+  - 本项目实际包含两个skill, 一个负责解析模板，一个负责使用解析后的产物适配并生成新的PPT。项目对PPT中的大部分可填元素进行了全面的解析，非解析部分遵循模板。支持自动替换图像以及Icon图标，图像部分采用Tavily API，配置对应api-key即可。
+  - 模板.pptx ─[解析]→ spec.json ─[生成]→ 填好的新 PPT
+  - 解析 skill：把模板的每个形状分类（标题/正文/卡片/图标/logo/配图/图表/表格），识别每页角色，输出一份机器可读的「填充契约」spec.json
+  - 生成 skill：读契约，按页填文字 → 图标 → logo → 配图，保留模板原本的几何、对齐、主题色、段落样式
+  - 配合 Claude Code / Codex 这类带 skill 机制的 agent 用 —— 把仓库里 skills/ 丢进 skill 目录，直接跟它说「按 skill 流程，用这个模板生成 PPT」就行
+  - 图像部分建议预先作为材料提供给Agent，优先使用已有图像。如果未提供，skill的执行过程中会使用API从网络检索图像（匹配机制较为严格，实际很难命中），图像未命中则保持模板图像不变
+
 ## ppt-image
 
 - https://github.com/JuneYaooo/gpt-image2-ppt-skills /apache2/202604/python

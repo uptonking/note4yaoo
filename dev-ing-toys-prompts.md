@@ -371,7 +371,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 - goals
   - 重后端、弱前端
 
-project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-like tauri app that supports to Download and run LLMs, Connect to cloud llm api, install custom llm backend like custom llama.cpp.
+project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-like tauri app that supports to download and run LLMs, Connect to cloud llm api, install custom llm backend like custom llama.cpp.
 - project transformerlab-app(at folder `../all-runtime-llamacpp/transformerlab-app-electron`) is a AGPL-licensed electron app that supports to train, fine-tune, chat with your own model locally. it can be used to train/tune local model, but it also supports to import local models, install custom llm backend plugin, run and chat with local model.
 - project unsloth-studio(at folder `../unsloth`) is a AGPL-licensed webapp that supports to run and train text, audio, embedding, vision models on Windows, Linux and macOS. It supports to run local gguf/mlx models, but it cannot install custom llm backend. It also supports auto detect locally downloaded models in local huggingface-cache/ollama/lmstudio.
 

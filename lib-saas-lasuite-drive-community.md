@@ -35,6 +35,17 @@ modified: 2025-09-30T08:59:53.837Z
   - So, the good answer depends of the level of convenience expected for the users vs the effort that can be spent on that task. I hope it helps.
 
 - https://github.com/nextcloud/desktop is using Webdav to sync. Maybe a good starting point?
+# discuss-changelog
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Implement more WOPI actions _202601](https://github.com/suitenumerique/drive/issues/483)
+  - For now it is only possible to edit, using WOPI, an existing file uploaded on Drive. We would also like to create new files using the same protocol
+  - 202606已合并
+
 # discuss-internals
 - ## 
 

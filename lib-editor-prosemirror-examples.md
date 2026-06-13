@@ -601,12 +601,6 @@ modified: 2022-08-18T16:57:46.405Z
   - excel/csv viewer/editor基于glide-data-grid实现， 渲染为canvas
   - pdf基于react-pdf实现， ? 整体是canvas，文字不可选
   - 依赖基于pretext的editor、glide-data-grid、@pierre/diffs、@pierre/treess、base-ui、dnd-kit、nextjs、jotai、fumadocs-mdx、marked、remark-gfm
-  - https://x.com/kushalbyatnal/status/2064369696187502732
-    - 14 components & examples for PDF, DOCX, and XLSX viewers, plus bounding box citations, file upload, e-signature, and more
-    - fully customizable
-    - React PDF viewer component with bounding box citation support, page controls, zoom, search, text selection, thumbnails, uploads, and responsive document layouts
-    - React Excel viewer component for previewing XLSX workbooks with sheet tabs, frozen panes, formulas, large-grid navigation, and cell selection
-    - React DOCX editor component for editing Word documents with a Word-style toolbar, import and export, formatting controls, page thumbnails, links, images, tables, and tracked changes
   - https://github.com/extend-hq/react-docx /MIT
     - https://react-docx-playground.vercel.app/
     - simple read-only viewer for rendering .docx files 
@@ -620,6 +614,17 @@ modified: 2022-08-18T16:57:46.405Z
     - Embedded charts on worksheets and dedicated chartsheet tabs
     - Optional editing, copy/paste, CSV/XLSX export, chart/image manipulation, and zoom controls
     - Primary support is for OOXML .xlsx workbooks
+  - https://github.com/extend-hq/extend-cli /go
+    - Run the interactive wizard; it picks your region, validates the API key, and saves it to ~/.config/extend/config.json
+  - https://x.com/kushalbyatnal/status/2064369696187502732
+    - 14 components & examples for PDF, DOCX, and XLSX viewers, plus bounding box citations, file upload, e-signature, and more
+    - fully customizable
+    - React PDF viewer component with bounding box citation support, page controls, zoom, search, text selection, thumbnails, uploads, and responsive document layouts
+    - React Excel viewer component for previewing XLSX workbooks with sheet tabs, frozen panes, formulas, large-grid navigation, and cell selection
+    - React DOCX editor component for editing Word documents with a Word-style toolbar, import and export, formatting controls, page thumbnails, links, images, tables, and tracked changes
+  - https://x.com/kushalbyatnal/status/2065458879442375147
+    - we're open sourcing the Extend CLI
+    - it comes with a built-in agent skill, so claude code/codex/cursor know how to drive it out of the box
 
 - https://github.com/superdoc-dev/superdoc /AGPL/202604/ts
   - https://superdoc.dev/

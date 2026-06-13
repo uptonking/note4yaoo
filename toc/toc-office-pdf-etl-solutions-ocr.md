@@ -660,6 +660,9 @@ modified: 2026-04-07T12:53:38.419Z
 
 ## utils
 
+- skills
+  - [Extract text content from images using Tesseract OCR via Python](https://github.com/benchflow-ai/skillsbench/blob/main/tasks/jpg-ocr-stat/environment/skills/image-ocr/SKILL.md)
+
 - https://github.com/asottile/tessdata /MIT/202604/python
   - pip installable versions of tesseract-ocr data
 # paddleocr
@@ -1232,6 +1235,9 @@ modified: 2026-04-07T12:53:38.419Z
   - 支持多种图片格式：JPG、PNG、GIF、BMP、WebP
   - 支持批量识别多张图片
 # utils-ocr
+- skills
+  - [Extract text from PDFs/scans (pymupdf, marker-pdf).](https://github.com/NousResearch/hermes-agent/blob/main/skills/productivity/ocr-and-documents/SKILL.md)
+
 - https://github.com/yigitkonur/llm-based-ocr /AGPL/202511/python
   - PDF-to-Markdown OCR API using LLMs with vision capabilities. 
   - The LLM-powered OCR engine that turns any PDF into beautifully formatted Markdown. 

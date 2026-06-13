@@ -94,6 +94,12 @@ modified: 2025-09-21T18:39:13.776Z
     - Quarto documents are authored using markdown
   - [Open Source License – Quarto ](https://quarto.org/license.html)
     - The Quarto VS Code extension and the visual editor used in VS Code, Positron, and RStudio are licensed under the GNU AGPL v3.
+
+- https://github.com/GoogleCloudPlatform/knowledge-catalog 
+  - https://cloud.google.com/products/knowledge-catalog?e=48754805
+  - Knowledge Catalog (formerly Dataplex), is an AI-powered data catalog and metadata management platform. It provides a dynamic knowledge graph of all your data, structured and unstructured, to provide semantics and business context to AI agents
+  - [How the Open Knowledge Format can improve data sharing | Google Cloud Blog _202606](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/)
+    - If you've used Obsidian, Notion, Hugo, or any of the LLM wiki patterns that have emerged over the past year, the shape will feel familiar. OKF formalizes the small set of conventions needed to make these patterns interoperable.
 # table-md
 - 参考textbundle格式的csv来与表格交互
 

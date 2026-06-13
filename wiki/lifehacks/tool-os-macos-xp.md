@@ -67,11 +67,11 @@ cargo clean gc
 - 最大化当前窗口没有快捷键
   - fn+f 可全屏当前窗口
   - Control-Command-F 全屏
-  - [macos - Keyboard Shortcut to maximize a window? - Ask Different](https://apple.stackexchange.com/questions/421443/keyboard-shortcut-to-maximize-a-window)
+  - [Keyboard Shortcut to maximize a window? - Ask Different](https://apple.stackexchange.com/questions/421443/keyboard-shortcut-to-maximize-a-window)
   - [How do you maximize windows in MacOS? : r/MacOS](https://www.reddit.com/r/MacOS/comments/15t7gdc/how_do_you_maximize_windows_in_macos/)
 
 - open settings
-  - alt + any-fn-keys
+  - alt + f2
 
 - 截屏 cmd + shift + 3/4
   - 📷 截指定窗口 cmd +shift + 4 + space
@@ -89,7 +89,7 @@ cargo clean gc
 - 按住Command，可以选择并移动顶部菜单栏图标
 
 - [Mac新手使用技巧——设置Finder(访达)快捷键](https://blog.51cto.com/u_15127651/4081089)
-  - 系统偏好设置，点击键盘，快捷键选项卡，在左侧找到聚焦，看到右侧的显示访达
+  - 系统偏好设置，点击键盘，快捷键选项卡，在左侧找到聚焦，看到右侧的显示访达 cmd+opt+space
 
 - [Mac 键盘快捷键 - 官方 Apple 支持 (中国)](https://support.apple.com/zh-cn/102650)
 - [Use Multi-Touch gestures on your Mac - Apple Support](https://support.apple.com/en-us/102482)
@@ -102,7 +102,19 @@ cargo clean gc
   - You have to add `->` without any spaces in-between the menu title fields.
 
 - [Have your Mac speak text that’s on the screen - Apple Support ](https://support.apple.com/guide/mac-help/have-your-mac-speak-text-thats-on-the-screen-mh27448/15.0/mac/15.0)
-  - To have your Mac start speaking, press the specified keyboard shortcut (the default key combination is Option-Esc).
+  - To have your Mac start speaking, press the specified keyboard shortcut (the default key combination is Option-Esc). mac内置的tts语音很差
+  - 欧路词典内置的朗读更好用 cmd+shift+s
+
+- [How to Toggle WiFi On and Off with a Keyboard Shortcut on Mac _202502](https://www.wikihow.com/Toggle-WiFi-On-and-Off-with-a-Keyboard-Shortcut-on-Mac)
+  - 基于 automator-quick-action(run-shell) + 自定义快捷键实现
+
+```sh
+# get the number that shows the WiFi
+networksetup -listnetworkserviceorder
+
+# run shell
+networksetup -getairportpower en0 | grep "On" && networksetup -setairportpower en0 off || networksetup -setairportpower en0 on
+```
 
 ### finder/files-explorer
 

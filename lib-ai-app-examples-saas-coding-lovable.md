@@ -9,6 +9,10 @@ modified: 2026-04-07T11:51:51.225Z
 
 # guide
 
+- 基于coding的方案
+  - 速度是否比基于image/video-model的方案更慢
+
+- 基于image/video-model的方案
 # popular
 - https://github.com/WyRainBow/Resume-Agent /MIT/202604/python/ts
   - 一句话输入、生成可编辑、可导出的专业简历。

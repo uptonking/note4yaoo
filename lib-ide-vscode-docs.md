@@ -47,6 +47,24 @@ modified: 2024-12-01T18:13:48.944Z
 - Can I host the VS Code Server as a service?
   - No, hosting it as a service is not allowed, as specified in the VS Code Server license.
 
+## [Integrated browser ](https://code.visualstudio.com/docs/debugtest/integrated-browser)
+
+- Use it to preview web applications, test authentication flows, and select page elements to add as context to your AI chat prompts.
+- Agents can read and interact with pages in the integrated browser by using built-in browser tools. 
+- The Live Preview extension can use the integrated browser for previewing web pages. 
+- Move the browser to its own floating window by right-clicking the editor tab and selecting Move into New Window. 
+
+- The browser toolbar has an Add to Chat split button with actions that let you capture different types of context from the current page and attach them to your chat prompt. 
+- Select elements from a web page to add them as context to your chat prompt. This is useful for getting help with specific HTML elements, CSS styles, or debugging UI issues.
+- Capture a screenshot of the page and attach it as an image to your chat prompt. Use this to ask about layout issues, get feedback on a design, or show the current state of your web app. The screenshot is captured before the chat panel opens, so it reflects the page as you see it.
+- Capture the console output from the current page and attach it as context to your chat prompt.
+
+- The integrated browser keeps a history of the pages you visit so you can revisit them later. History is available in all session storage modes except ephemeral.
+
+- command (⇧⌘A) to quickly switch between open browser tabs. 
+
+- You can debug web applications directly in the integrated browser by using the editor-browser debug type in your launch.json configuration. 
+
 - 
 - 
 - 

@@ -177,6 +177,19 @@ codex --yolo resume --last
 - 因为围绕tmux来构建人机交互根本不需要构建，tmux直接硬控。我就是tmux硬控，让pane A的agent直接run tmux send-keys和tmux capture-pane来给另一个pane的agent发消息，或者看对方在干嘛。而且这么用一阵子，直接让它写个tmux skill就行了
 
 - tmux在解决一个问题的同时又带来很多新问题，例如和macOS touchID & clickable link的兼容性 
+# discuss-alternatives-local/lite
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [I want OpenCode, but with Pi's stripped down system prompts. : r/LocalLLM _202606](https://www.reddit.com/r/LocalLLM/comments/1u3mfy4/i_want_opencode_but_with_pis_stripped_down_system/?sort=top)
+- Look at little-coder and oh-my-pi. Both use pi under the hood, but are a little closer to OpenCode
+
+- Stripping those guardrails is a massive risk. The model becomes faster, sure, but it's far more likely to charge ahead and break things without that workflow encoding. I'd rather wait for the tokens than deal with the fallout.
 # discuss-alternatives
 - ## 
 

@@ -71,6 +71,12 @@ modified: 2024-08-24T16:15:47.613Z
 
 - Since v1.121, it is a merge of Matt Bierner's Markdown Preview Mermaid Support
 
+- ## [VSCode Integrated Browser Support · Issue · microsoft/vscode-js-debug _202602](https://github.com/microsoft/vscode-js-debug/issues/2317)
+- the integrated browser already has CDP support internally via BrowserViewCDPProxyServer and BrowserViewGroup; the missing piece is that extensions/debug adapters don’t currently have a way to obtain that CDP endpoint.
+  - My current thought is to mirror the existing companion browser flow (browserLaunchLocation: "ui"). In that flow, the adapter starts a WebSocket server and ultimately just talks to something CDP-speaking on the other end.
+
+- You should be able to modify an existing chrome / edge config and switch it to use "type": "editor-browser".
+
 - ## The VS Code Private Marketplace is now generally available _202511
 - https://x.com/code/status/1990827386430992403
   - Enterprises can finally self-host and control extension distribution for their dev teams. Secure, compliant, and seamless - right inside @code .

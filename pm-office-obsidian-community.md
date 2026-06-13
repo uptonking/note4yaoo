@@ -329,6 +329,17 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [What are the latest cool stuff you have adopted in Obsidian? : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1u32eot/what_are_the_latest_cool_stuff_you_have_adopted/?sort=top)
+- Use Webclipper (Browser Extension) to bring stuff like Wikipedia articles into your notes and link directly in/out of of them.
+
+- The latest "cool" thing I adopted was Dataview. It was a while back. DV helps me most with finding similarities, making connections, keeping everything organized and such. Much faster, better and cleaner than before using it.
+
+- Bases and Tasks plugin. I define all my ongoing projects with custom properties like status, area, dates, then create a base to filter them: work, personal, house, etc. Each project contains an action items list where I put my todos. Then with the Tasks plugin I pull all tasks for this week into the current weekly note. For my work as a manager, I also pull tasks from projects in the specific person's note so I can quickly see the stuff they need to deliver. It works really well!
+
 - ## Research 1.3 is out now with our new annotator
 - https://x.com/TGUPJ/status/2064397799521767928
   - 类似于卡片标注

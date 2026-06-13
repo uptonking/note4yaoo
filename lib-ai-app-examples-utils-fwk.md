@@ -443,7 +443,7 @@ modified: 2025-02-21T18:20:42.624Z
     - [渠道支持多个密钥 _202405](https://github.com/MartialBE/one-hub/issues/203)
       - 现在批量添加密钥， 逻辑是新增的时候有多个密钥就会自动增加多个渠道，要是能一个渠道下能支持多个密钥就更加方便了
       - 暂时 不会在同一个渠道中 配置 多个key， 因为 这里面有负载均衡，可以配置 优先级和权重，如果不拆分，这些不好配置。
-      - 🛝: 凑合能用，使用tag管理多个密钥的ux比较奇怪
+  - 🛝: 凑合能用，使用tag管理多个密钥的ux比较奇怪
   - [同渠道多API轮询功能 ](https://github.com/MartialBE/one-hub/issues/791)
     - 用tag就行了
     - 在一个tag下的渠道，是随机还是轮询？
@@ -1058,9 +1058,26 @@ modified: 2025-02-21T18:20:42.624Z
   - Built on CLIProxyAPIPlus, it handles OAuth authentication, token management, and API routing automatically. One click to authenticate, zero friction to code.
   - 👀 注意 msty studio 内置并自动开启了Vibe CLI Proxy, 会导致通过系统包管理器安装的cliproxyapi出现端口冲突而不可用
 
-- https://github.com/justlovemaki/AIClient2API
-  - https://github.com/decolua/9router
-  - https://github.com/diegosouzapw/OmniRoute
+- https://github.com/jlcodes99/cockpit-tools /CC-NC/202606/go/rust/ts
+  - 通用 AI IDE 账号管理工具：多账号切换、配额监控、自动唤醒与多开实例管理
+  - 十二平台支持：同时展示 Antigravity IDE、Codex、GitHub Copilot、Windsurf、Kiro、Cursor、Gemini Cli、CodeBuddy、CodeBuddy CN、Qoder、Trae 与 Zed 的账号状态
+  - 本地 Codex API 服务由内置 `CLIProxyAPI` sidecar 驱动，Cockpit Tools 负责账号同步、配置投影、状态与用量统计；Base URL、API Key 与用户操作方式保持不变。
+
+- https://github.com/decolua/9router /MIT/202606/js
+  - https://9router.com/#providers
+  - Unlimited FREE AI coding. Connect Claude Code, Codex, Cursor, Cline, Copilot, Antigravity to FREE Claude/GPT/Gemini via 40+ providers. 
+  - 🐛 不支持 trae, codebuddy, zed
+  - free-providers: kiro, opencode, vertex
+  - CLIProxyAPI — original Go implementation that inspired this JavaScript port.
+
+- https://github.com/justlovemaki/AIClient2API /GPL/202606/js
+  - 模拟AI客户端请求并提供统一API服务
+  - [提供商池配置 ](https://aiproxy.justlikemaki.vip/zh/docs/advanced-config/provider-pools.html)
+    - 支持的provider不多
+
+- https://github.com/diegosouzapw/OmniRoute /MIT/202606/ts
+  - https://omniroute.online/
+  - Connect any AI-powered IDE or CLI tool through OmniRoute — free API gateway for unlimited coding.
 
 - https://github.com/zhalice2011/ProxyLLM /MIT/202601/ts
   - Electron 应用，用于捕获 LLM 网站的浏览器会话，并在本机暴露 OpenAI 兼容 API
