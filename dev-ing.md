@@ -340,7 +340,7 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 
 ## 0613
 
-- uv run --directory: 
+- `uv run --directory`: 
   - Change to the given directory prior to running the command.
   - Relative paths are resolved with the given directory as the base.
   - See --project to only change the project root directory.

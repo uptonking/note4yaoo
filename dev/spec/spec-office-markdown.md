@@ -286,7 +286,35 @@ and here
 
 - 64% of AI agent queries already favor structured markdown over plain web pages. OKF just makes that official.
 
-- 
+- https://x.com/rohit4verse/status/2065816216388899143
+- google just turned karpathy's llm-wiki gist into a spec today: the open knowledge format. markdown files, one required field.
+
+the format question is now settled. the hard part still isn't.
+
+- what it changes:
+  - portability. a bundle is a tarball or a git repo. it moves between orgs and tools with no translation layer.
+  - version control. knowledge lives beside the code it describes, with diffs and history for free.
+  - decoupling. a human writes the bundle, an agent reads it, with no shared tooling between them.
+  - no SDK, no account. you read and write plain markdown.
+
+- what it leaves to you:
+  - staleness. timestamp is a field. retiring a dead fact is a call the format won't make.
+  - contradiction resolution. a new source fights an old claim. OKF stores both and never says which wins.
+  - merge policy. which page a fact lands on, what gets forked or overwritten. the producer agent owns it.
+  - retrieval. index.md holds for a few hundred pages. past that you need hybrid search and a reranker.
+
+- Interesting move from Google, but the real challenge is still getting agents to actually use these standards consistently
+- The issue is that these are conventions, nothing forces the agents to follow them. If anyone is interested in a tool that helps to manage KBs as databases, check out this CLI I'm working on https://github.com/edochi/mdvs
+
+- https://github.com/tcballard/requirements-as-code?v=3
+  - Lore keeps your team's recorded knowledge — requirements, decisions, designs, roadmaps, and prompts — as typed Markdown in your repo and serves it read-only to Claude Code, Cursor, and Claude Desktop over MCP, so the agent cites your decisions instead of violating them. It is built on RAC — Requirements as Code, the open-source engine underneath
+
+- https://x.com/nash_su/status/2065719677582774724
+  - 我的那个 llm_wiki 项目看来要跟这个赶紧做个兼容，现在 11k star 了，得加紧更新
+  - https://github.com/nashsu/llm_wiki /GPL/202606/ts/rust/tauri
+- [Pebbles Specification v0.3.0-draft](https://github.com/m31uk3/uku-pebbles/blob/main/_specs/pebbles.spec.md)
+  - Universal Knowledge Unit – Schema for Sovereign Personal & Interspecies Memory
+
 - 
 - 
 - 

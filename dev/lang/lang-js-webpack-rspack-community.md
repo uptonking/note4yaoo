@@ -80,7 +80,13 @@ modified: 2024-01-03T16:14:53.804Z
 
 - ## 
 
-- ## 
+- ## We’re building a new Rust-based compiler & optimizer for TypeScript, using static type info from typescript-go. 
+- https://x.com/jiahan_c/status/2065630866668453898
+  - Think Google Closure Compiler for TS: smaller/faster apps & libs, targeting ~10–20% bundle size reduction. It’s still private, but we plan to open source it.
+- isn't  rspack already doing it? what is the relationship between your new compiler  and the existing rspack?
+  - The optimizer integrates with Rspack as a loader: it uses TypeScript static type info to optimize modules first, then Rspack bundles the optimized output.
+  - Similar to React Compiler + Rspack: the compiler optimizes the code, and Rspack handles bundling.
+- So it will replace swc in rspack?
 
 - ## Rspack keeps pushing forward with support for the latest language features.
 - https://x.com/jiahan_c/status/2065013057571676389

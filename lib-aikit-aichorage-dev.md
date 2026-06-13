@@ -49,7 +49,7 @@ modified: 2026-05-28T17:50:54.646Z
 - model-manager
   - mlx后端不支持自定义安装最新mlx-lm/mlx-vlm版本
   - 支持针对cpu优化的backend和模型
-  - 参考msty，能统一管理 local/ollama/lmstudio/huggingface 的模型，释放空间
+  - 参考msty，能统一管理 local/ollama/lmstudio/huggingface/modelscope 的模型，释放空间
   - 支持多种类型的model: vlm, embedding, omni, tts
 
 - model-specific

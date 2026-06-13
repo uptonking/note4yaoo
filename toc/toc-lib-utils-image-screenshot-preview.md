@@ -50,9 +50,9 @@ modified: 2023-04-16T13:34:33.706Z
 
 - https://github.com/rsify/pico /2kStar/MIT/202004/ts/inactive
   - Pico's goal is to produce high precision screenshots of any viewport entirely client side.
-  - This is different from simply capturing a webpage using Puppeteer or a similar tool in that the **screenshot taking happens entirely client side**.
+  - This is different from simply capturing a webpage using Puppeteer or a similar tool in that the **screenshot taking happens entirely client side** .
   - This program renders whatever is displayed in the given `Window` into an image, thanks to svg's `<foreignObject>`.
-  - **No server side code is required to produce the screenshot**.
+  - **No server side code is required to produce the screenshot** .
   - Render the given `Window` to a PNG image and return it as an object URL.
   - Pico's selling point is representing the whole viewport as accurately as possible. If you want to render a single DOM node instead, consider using one of the above libraries.
   - Pico is built using `Fluture` and in addition to the Promise also provides a direct API to Fluture via functions suffixed with Fluture
@@ -281,7 +281,33 @@ modified: 2023-04-16T13:34:33.706Z
 # more
 - https://github.com/antfu/broz
   - A simple, frameless browser for screenshots
-# discuss
+# discuss-video-shot
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Is OBS still the best screen recorder? : r/screenrecorders _202606](https://www.reddit.com/r/screenrecorders/comments/1u3lx7w/is_obs_still_the_best_screen_recorder/?sort=top)
+- Depends on your preferences. In recent times many new tools have appeared that make screen recording much more polished.
+  - Tella has made big progress in terms of layouts with the camera. They even have dynamic layouts. That's pretty cool.
+  - Screen Studio or Screen Charm made tools focused on polished product demos with zoom effects.
+  - But terms of simplicity and affordability yes, OBS is still the best, open-sourced and free compared to the tools I mentioned above
+
+- Yes it still is the best screen recorder overall, it just got the most features and functions one could want (stable too), even better that its free to use and open source. I just bold overall since it can be used in everything, however it doesn't mean you should use it in everything *.* 
+  - For the next question, no, so far there aren't any tool at all that comes close
+
+- probably a fork of OBS like Streamlabs.
+
+- OBS is great for many things, but unfortunately recording multiple streams (e.g. camera and screen) to separate files is still clunky. You can do it with plugins, but last I tried, it still felt hacky, didn't work well with pause/resume, etc.
+  - I ended up moving back to Bandicam. It's very basic, but it handles multiple streams just fine.
+
+- „Best“ always depends on your use case. I‘m using Flashback instead of OBS for most things as it is at the perfect „simplicity/speed vs. feature-rich“ sweet spot for me. OBS has (many) more features, but us clunkier in editing.
+# discuss-image-shot
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

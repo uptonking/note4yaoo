@@ -262,6 +262,12 @@ modified: 2025-11-06T18:49:13.977Z
   - 1. Layout accuracy: reading order, tables, forms, and document structure   
   - 2. Document Q&A: objective questions against the parsed output using a fixed downstream QA setup, so we can measure whether the parse is actually useful to an agent. 
 
+- [Visual Understanding Model Rankings | Roboflow Playground](https://playground.roboflow.com/evals)
+  - Visual Understanding
+  - OCR
+  - Detection
+  - Segmentation
+
 - ## 
 
 - ## 

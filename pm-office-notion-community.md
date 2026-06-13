@@ -559,6 +559,13 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Notion is switching to native SwiftUI. No more electron app! : r/Notion _202606](https://www.reddit.com/r/Notion/comments/1u4ieol/notion_is_switching_to_native_swiftui_no_more/?sort=top)
+  - This move should improve Notion preference on MacOS and iOS by a lot.
+
 - ## ✨ notion tabs（可简单理解为浏览器 tabs） _202603
 - https://x.com/howie_serious/status/2037850552659492905
   - notion 新引入的一个block类型，之前仅限 notion 团队内部使用。非常好理解，就是类似 chrome 浏览器的 tabs，把 notion page 也引入了 tabs 概念。

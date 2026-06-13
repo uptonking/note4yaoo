@@ -791,6 +791,13 @@ modified: 2023-09-02T09:17:22.992Z
   - It provides sandboxed execution environments that protect your data, credentials, and infrastructure — governed by declarative YAML policies that prevent unauthorized file access, data exfiltration, and uncontrolled network activity.
   - A supported host — macOS, Windows with WSL 2, or Linux.
   - A local runtime — Docker, Podman, or host virtualization enabled for MicroVM-backed sandboxes.
+
+## mac-sandbox
+
+- https://github.com/juliensimon/canopy /AGPL/202606/swift
+  - Ship faster with parallel Claude Code sessions — one native macOS window, git worktrees, sandboxes, auto-resume, merge & finish, token dashboard.
+  - https://x.com/julsimon/status/2065680590943277233
+    - sandbox Claude in an isolated container via Apple's open-source container runtime. No Docker Desktop, and session resume still works.
 # playground
 - https://github.com/nalgeon/codapi /1.2kStar/apache2/202411/go
   - https://codapi.org/

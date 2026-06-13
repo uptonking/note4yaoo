@@ -271,6 +271,10 @@ modified: 2024-11-16T08:23:40.617Z
     - 推荐一个好用、制作精良的用于支持流畅文本和数字动画过渡效果的库
     - 不仅提供了丰富的示例、试验场、还提供了与其他同类库的对比。
 
+- https://github.com/Danilaa1/slot-text /MIT/202606/ts
+  - https://textmotion.dev/
+  - Dependency-free text roll animation for vanilla JS, React, and Vue.
+
 - https://github.com/KurtGokhan/tegaki /MIT/202604/ts
   - http://gkurt.com/tegaki
   - Tegaki (手書き) turns any Google Font into animated handwriting. No manual path authoring. No native dependencies. Just pick a font.

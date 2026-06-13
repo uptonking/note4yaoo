@@ -153,6 +153,24 @@ modified: 2024-11-16T10:52:53.263Z
 - 是便宜还是说集成生态方便呢？
   - 最具杀伤力的还是便宜，这个没的说。就域名注册而言，大家也没啥区别。反而CF家还有一些限制比如DNS必须用他家的。集成方便也是真的。
 
+# discuss-cloudflare-awesome
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [[开源自荐] CF-Server-Monitor 部署在Cloudflare Workers的免费探针 - LINUX DO _202606](https://linux.do/t/topic/2391991)
+  - 一个基于 Cloudflare Workers + D1 的多服务器监控探针系统，支持实时监控、历史数据查看、延迟追踪、地图展示等功能。兼容主流Linux系统，Alpine Linux，Windows系统。
+  - https://github.com/huilang-me/CF-Server-Monitor /MIT/202606/js/vue
+  - https://tz.dashdeep.dpdns.org/
+  - 实时监控：CPU、内存、磁盘、网络、进程数、连接数、负载均衡
+- 实测可用，现在可以把哪吒卸载了。
+
 # discuss-vps-awesome
 - resources
   - https://github.com/cloudcommunity/Cloud-Free-Tier-Comparison
