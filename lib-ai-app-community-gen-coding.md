@@ -866,7 +866,49 @@ It amazes me how people default to LLM calls when you can do it in a simple, fre
 - I do not use any IDE/editor's AI feature for coding. They feel pretty much useless even with full context. My personal opinion is, a developer should fully understand their code before committing, AI powered editors destroys this habit
 
 - I’ve had much better luck with keeping the AI open in a browser and chatting with it, then manually editing the code in an IDE. 
+# discuss-gen-video-by-coding
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [mimo token用不完？来跑解说视频剪辑，skill完全开源无其他依赖，可导出到剪映 - LINUX DO _202606](https://linux.do/t/topic/2399113)
+  - 全程仅依赖ffmpeg和mimo-2.5-pro、mimo-2.5、mimo-2.5-tts、mimo-2.5-asr全家桶，再也不用担心token用不完啦
+  - 这套流程做成了一个claude code插件video-recap-skills。装好之后，把视频丢给它，顺手给点剧情背景就行
+  - 给 /path/to/video.mp4 做个解说。这是《庆余年》第一集，主角是范闲。
+  - 会自己跑完：场景切分、ASR 转写、VLM 看画面、写解说词、TTS 配音、字幕、动态混音，最后出一条带字幕的成片。
+  - 还支持把工程导出到剪映 
+- demo还是上个版本的，用mimo之后效果更好了。最近在小红书上做了两个号，一个1.2万粉，一个1.6万粉了， 就是没什么收益，放出来给大家用吧 
+- 跑一个 10 分钟的视频，大概要多少 token
+  - mimo大概会花200-300万token吧
+
+# discuss-gen-image-by-coding
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [codex对AutoCAD好像起不了什么作用？ - LINUX DO _202606](https://linux.do/t/topic/2397995)
+- 我老师最近接了一个国企的项目，就是搞cad拆板和编排业务的，我负责cad拆板部分，可以用开源的cad mcp，这个工具覆盖挺全的，不过免费版autocad在cad智能体编排层传递这一步很受限，专业版可以通过很多方式，我申请了教育版本，是用的com方式连通，目前来看，虽然编排层和执行层打通了，但是最大的问题是在于autocad太重了，速度太慢，不知道怎么去并行处理
+- 目前应该是可以辅助你做一些重复性 或者统计类的工作 但你要让他彻底给你干活还有点难
+
+- 这个我试过，codex可以生成dxf文件，autocad可以用的，我本身是做室内设计的嘛，我想让他根据我提供给它的平面图，生成可cad编辑的文件，只需要画墙体，然后给我画的图，只能说是毫无关系，应该是图片识别不准确吧。
+
+- 我记得freecad是有mcp服务的，autocad应该不行，但是freecad和autocad之间文件转换好像有点麻烦，之前折腾了一半没继续下去了
+- AutoCAD有lisp可以用，看看能不能从这个地方入手。个人搞点小东西我都用openscad，画点零件啥的
+
+- 我之前用codex调用过SLDWORKS，他当时的流程是写一个宏文件，然后sw直接用就行。cad也许可行可以试试
+
+- 昨天在用codex做GIS地图的时候发现这个库里面有cad的skill，佬可以自测一下，我只装了GIS的skill
 # discuss-gen-ui
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

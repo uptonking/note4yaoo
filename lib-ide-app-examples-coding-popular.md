@@ -561,6 +561,15 @@ modified: 2025-12-11T18:10:23.710Z
   - OMX turns Codex from a single-session agent into a coordinated system
   - Inspired by oh-my-claudecode, adapted for Codex CLI.
 
+- https://github.com/zhukunpenglinyutong/desktop-cc-gui /MIT/202606/ts/rust
+  - https://www.mossx.ai/
+  - CC GUI 客户端（专为开发者打造的VibeCoding平台
+  - [CC GUI 客户端版 正式发布 - LINUX DO _202604](https://linux.do/t/topic/1959236)
+  - 聚焦打造一个专门给开发者使用的Vibecoding客户端产品，所以一些功能可能比较偏向程序员实用，而非适合所有人；后续将往hermes 可视化客户端方向发展
+  - 同时支持四个主流: cc, codex, opencode, gemini
+  - 支持看板模式
+  - 具有和Jetbrains CC GUI 插件相似的UI结构， 支持文件树，任务，子代理，等细节展示
+  - 本项目初始基于CodexMonitor进行二次开发，CodexMonitor架构对本项目起到了基底作用
 - https://github.com/Dimillian/CodexMonitor /3.1kStar/MIT/202603/ts/tauri
   - a Tauri app for orchestrating multiple Codex agents across local workspaces. 
   - It provides a sidebar to manage projects, a home screen for quick actions, and a conversation view backed by the Codex app-server protocol.

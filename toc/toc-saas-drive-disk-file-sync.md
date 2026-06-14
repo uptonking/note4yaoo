@@ -724,6 +724,8 @@ modified: 2024-03-31T17:45:16.789Z
 - https://github.com/localsend/localsend /dart
   - https://localsend.org/
   - An open source cross-platform alternative to AirDrop
+  - 在线版(不可用) https://web.localsend.org
+  - 有时发现不了设备, 可能是网络问题而不是软件问题, 临时方案是使用其他wifi或手机热点网络作为wifi来传输数据
 
 - https://github.com/LANDrop/LANDrop /cpp
   - https://landrop.app/

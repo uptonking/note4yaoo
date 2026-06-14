@@ -687,7 +687,20 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [DeepSeek v4 Pro is too big for such a "midrange" performance, or am I missing something? : r/LocalLLaMA _202606](https://www.reddit.com/r/LocalLLaMA/comments/1u4yvqy/deepseek_v4_pro_is_too_big_for_such_a_midrange/?sort=top)
+  - DeepSeek v4 Pro has 1.6T parameters, probably the largest in open models, or at least one of the largest.
+  - GLM 5.1 with 750B parameters is less than half the size of it, but is considered by many "an opus" in open models. So is Kimi K2.6, with 1T models, still far less than 1. T of DSv4 Pro. Now we have K2.7 and GLM 5.2, apparently of the same size as their predecessors, but improving the performance even further.
+
+- The prevailing consensus in the Chinese LLM community is that there’s insufficient post-training applied to DSv4Pro (plus it’s just a preview, anyway)
+
+- GLM 5.1 is not less than half the size of DeepSeek v4 Pro, since DS4 is a native fp4/fp8 model. Full GLM 5.1 is 16-bit per weight, and is actually bigger than the original DS4 Pro
+- GLM 5.1 is actually much bigger than DeepSeek v4 Pro: GLM 5.1 benchmarked and released with FP16, so 1.51 TB
+  - DeepSeek v4 Pro was benchmarked and released with mostly 4-bit parameters, so "only" 865 GB
+
+- While comparing parameters makes sense, but size matters more. DS V4 Pro native precision is like 850GB. Iirc GLM 5.1 is native BF16, so 1.5TB, even FP8 is 750GB (FP8 is what their API serves afaik) - so, comparable size (imo). 
+
+- Practically most of V4's weights are natively FP4.
+  - V4's compute and memory scales with context much better than other open models out there due to its novel attention architecture. Even on small context sizes, AFAIK, V4 has far lower compute requirements than other models.
 
 - ## [自建的GPT中转站被挂马，AI回复内容出现彩票广告，如何处理？ - LINUX DO _202604](https://linux.do/t/topic/2082118)
 - GPT 5 换了新的 tokenizer，因为训练的时候用的语料很差，练了很多小广告，tokenizer 就把“天天中彩票”作为了一个 token，然后导致 -codex 系列小模型在推理时有概率输出这个 token，然后就成这样了呗。

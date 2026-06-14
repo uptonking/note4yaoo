@@ -97,12 +97,18 @@ modified: 2026-01-14T18:59:01.949Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## Today we're shipping our biggest MLX-VLM release yet: v0.6.0 _202606
 - https://x.com/Prince_Canuma/status/2061541992790683726
   - This one's about turning your Apple devices into real local agent machines. From your desk to your pocket. 
   - Speculative decoding everywhere — Gemma 4 EAGLE3 + DFlash, Qwen MTP, DeepSeek V4 MTP. Faster tokens, less waiting.
   - Image gen & editing — FLUX.2 (base + klein), PrismML Bonsai.
-  - Audio in — Qwen3 Omni, Gemma 4 audio, base64 chat audio.
+  - 🔊 Audio in — Qwen3 Omni, Gemma 4 audio, base64 chat audio.
   - TurboQuant KV cache — RHT-correct fast paths for leaner memory.
 - MLX-VLM is now a superset of MLX-Audio too so you can run audio models directly from mlx-vlm
 
@@ -112,6 +118,9 @@ modified: 2026-01-14T18:59:01.949Z
 - What is the acceptance by verifier?
   - Roughly 2-3 tokens/round
 - how many tokens per draft step? 34→64 looks like around 3
+
+- https://x.com/ivanfioravanti/status/2065519637211578620
+  - You can now call any audio model and build custom pipelines from mlx-vlm 
 
 - ## We have achieved a milestone in MLX that all tests are passing in CUDA backend now. _202605
 - https://x.com/zcbenz/status/2054699392071016743

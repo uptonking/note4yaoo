@@ -11,6 +11,7 @@ modified: 2026-05-28T17:50:54.646Z
 
 - goals
   - playground for local ocr/vlm models
+    - mlx supports stt, 可迁移实现audio-app
   - obsidian for pdf: auto-toc, history/diff, proofreading, tools
     - features-port: editor, backlinks, bases, publish, graph-view
   - built-in image/pdf/ocr for chatting with documents
@@ -22,6 +23,7 @@ modified: 2026-05-28T17:50:54.646Z
   - embeddable web browser
   - multiple-client/ui
   - browser-use
+  - coding-based solutions: comfyui也需要custom node/scripts, 视频生产也需要剪辑和拼接
 
 - non-goals
   - optimized for gpu, not cpu

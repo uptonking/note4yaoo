@@ -51,7 +51,7 @@ modified: 2023-04-11T02:24:25.572Z
 
 - 不要过于执着寻找linux下对应的windows软件体验，双系统切换使用省时省力
   - 录屏时显示键盘按键，类似screenkey，但wayland不支持，可解决
-  - 腾讯会议~~不支持wayland~~，已支持
+  - 腾讯会议 ~~不支持wayland~~ ，已支持
 
 - 查看已安装
   - apt list --installed
@@ -143,7 +143,7 @@ modified: 2023-04-11T02:24:25.572Z
   - [给flatpak添加国内镜像源](https://seekstar.github.io/2021/12/30/%E7%BB%99flatpak%E6%B7%BB%E5%8A%A0%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90/)
     - sudo flatpak remote-add --if-not-exists flathub https://mirror.sjtu.edu.cn/flathub/flathub.flatpakrepo
   - 应用图标不可见的问题
-    - /var/lib/flatpak/app/*application_name*/current/active/files/share/applications 拷贝到 /usr/share/applications
+    - /var/lib/flatpak/app/ *application_name* /current/active/files/share/applications 拷贝到 /usr/share/applications
     - /var/lib/flatpak/app/org.mozilla.firefox/current/active/export/share/applications/
 
 - nvm 国内安装
@@ -483,7 +483,7 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 - mac-apps-loved
   - pkg-manager: [Homebrew/Linuxbrew 镜像使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
-  - appstore: localsend
+  - appstore: localsend, 有时发现不了设备, 可能是网络问题而不是软件问题, 临时方案是使用其他wifi或手机热点网络作为wifi来传输数据
   - https://github.com/buresdv/Cork
 
 - brew install

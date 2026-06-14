@@ -53,7 +53,7 @@ cargo clean gc
 
 - mac-apps-loved
   - pkg-manager: homebrew, cork
-  - apps: localsend
+  - apps: localsend, 有时发现不了设备, 可能是网络问题而不是软件问题, 临时方案是使用其他wifi或手机热点网络作为wifi来传输数据
 
 ### hotkeys
 

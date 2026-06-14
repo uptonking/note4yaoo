@@ -951,7 +951,7 @@ Model decides what to do next via system prompt. Can call tool use, ask clarifyi
 
 - ## 
 
-- ## 
+- ## [Wrote up the failure modes that kept breaking my RAG system: chunking, stale index, hybrid search, the works : r/Rag _202606](https://www.reddit.com/r/Rag/comments/1u5biop/wrote_up_the_failure_modes_that_kept_breaking_my/?sort=top)
 
 - ## [Your RAG system is probably slow not because of the model… but because you’re recomputing everything : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1t2sqxe/your_rag_system_is_probably_slow_not_because_of/)
   - While building a RAG system for a biomass use case, I expected most improvements to come from better models or retrieval tuning. Turns out… that wasn’t the case.

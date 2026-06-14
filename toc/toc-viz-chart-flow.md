@@ -10,14 +10,14 @@ modified: 2020-10-22T10:22:55.878Z
 # guide
 
 - requirements
-  - **auto-layout**
+  - **auto-layout** 
   - undo/redo
   - transaction(like prosemirror/mxgraph)
 
 - usecase
   - 自动化任务
 
-- workflow/automation/pipeline/**rpa**
+- workflow/automation/pipeline/ **rpa** 
   - workflow/flowchart progress animation
   - ⚖️ workflow specification: bpmn, MCP, JSON Canvas
     - n8n/activepieces/trigger 对bpmn的讨论度都不高
@@ -222,7 +222,7 @@ modified: 2020-10-22T10:22:55.878Z
   - 自动布局的不足：首先能用的业务场景有限，一般用于树型结构（如脑图）或者布局有规律的场景。
   - 树布局直接使用了https://github.com/antvis/hierarchy 
   - 流程图会存在环这种结构。这个时候直接用树布局是不合适的，所以我们使用dagre布局。发现https://github.com/antvis/layout提供的dagre布局最好用（G6里面的dagre布局也是用的这个）
-  - **一键美化的实现思路和自动布局类似，都是把LogicFlow中的图数据传给布局库，然后再把得到的新的图数据重新使用LogicFlow渲染**
+  - **一键美化的实现思路和自动布局类似，都是把LogicFlow中的图数据传给布局库，然后再把得到的新的图数据重新使用LogicFlow渲染** 
   - 由于一键美化这种纯系统布局的不够人性化，我们增加了一种半系统半人工的布局方式，也就是选区美化。
   - [流程图布局在项目中的实践 - 掘金](https://juejin.cn/post/7145653979119091720)
 - https://github.com/towersxu/draft-flow
@@ -471,6 +471,12 @@ modified: 2020-10-22T10:22:55.878Z
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
 # flow-ai 👾
+- https://github.com/tt-a1i/archify /MIT/202606/js
+  - https://tt-a1i.github.io/archify/
+  - Any agent Skill: generate beautiful architecture diagrams with dark/light theme toggle and PNG/JPEG/WebP/SVG export
+  - https://x.com/geekbb/status/2065963576419029438
+    - 这条路线最值钱的其实不是“省掉生图模型”，而是把视觉生成拆成“语义规划(JSON) + 确定性渲染(SVG)”后，可测试性和可复现性都会高很多。好奇你们后面怎么处理约束冲突，比如文本溢出、层级和留白，是让 LLM 重写结构，还是交给渲染器做二次修正？
+
 - https://github.com/DayuanJiang/next-ai-draw-io /11.3kStar/apache2/202512/ts
   - https://next-ai-drawio.jiang.jp/
   - A next.js web application that integrates AI capabilities with draw.io diagrams. 
@@ -523,7 +529,7 @@ modified: 2020-10-22T10:22:55.878Z
   - 轻松对比/回滚不同修改版本之间的差异
   - 基于XPath的精准删改查工具，效果好省token
   - 完全自定义drawio画布，修改其默认外观主题
-  - 不再需要描述“最右边的几个xxx”，直接鼠标框选，会话会自动解析画布元素到上下文中***
+  - 不再需要描述“最右边的几个xxx”，直接鼠标框选，会话会自动解析画布元素到上下文中 *** 
   - [AI DrawIO 流程图工具：AI编辑，版本管理/对比/回滚 _202512](https://linux.do/t/topic/1322324)
     - 基于XPath/Drawio元素ID的AI drawio编辑(理论上比直接操控XML更省token)
     - 版本对比/智能对比

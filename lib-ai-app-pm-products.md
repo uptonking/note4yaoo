@@ -2761,6 +2761,21 @@ modified: 2025-03-22T16:10:24.856Z
   - 全tg最便宜gmail邮箱批发
   - Gemini专区：美区/随机2022--2024谷歌邮箱/指定地区gmail邮箱
 
+### accounts
+
+- [海外社媒批发的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/GVF3KJWI)
+  - fb
+  - ins
+
+- [豀南小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/N33RKBWR)
+  - tg
+  - appleid
+  - twitter/x
+
+- [阿北AI会员的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/abei)
+  - ai
+  - twitter
+
 ### ip
 
 - [静态IP的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/HLT0XHF9)

@@ -103,6 +103,9 @@ modified: 2022-11-07T10:26:22.510Z
   - wps note/google keep
   - netdisk
   - emarket
+
+- localsend
+  - 有时发现不了设备, 可能是网络问题而不是软件问题, 临时方案是使用其他wifi或手机热点网络作为wifi来传输数据
 # im-wechat
 - https://github.com/lovechoudoufu/wechat_for_linux
   - 安装包丢在Releases中了，一共三个版本：wechat-beta_1.0.0.145_amd64.deb, wechat-beta_1.0.0.150_arm64.deb, wechat-beta_1.0.1.212_loongarch64.deb
