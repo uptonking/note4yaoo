@@ -405,6 +405,9 @@ modified: 2026-01-14T18:58:32.523Z
   - No projects folder option like in lm studio/ chatgpt 
 
 - Jan AI if you want an all-in-one desktop app that runs both the AI and the GUI. Open source and looks very nice. Best LM Studio alternative IMO.
+- Jan doesn't have RAG to chat with document files 
+  - qwen 3 30b a4b runs at 3 t/s instead of 17 on lm studio. 
+  - No projects folder option like in lm studio/chatgpt 
 
 - KoboldCPP feels more like LM Studio because it's available as a single binary.
   - If only it wasn't ugly as all hell. Really needs.. some.. no.. A LOT.. of UI work.

@@ -47,10 +47,39 @@ modified: 2024-11-16T10:52:53.263Z
 - 建议小号，真封了很麻烦。优选也是。
 
 - VPS，IP 不乱跳才是最重要的啊！有一些网站服务检测到 IP 变化，就得重新登录。 而且 VPS 自己搭建的也安全啊！
-# discuss-tunnel/gateway
+# discuss-tunnel/forwarding
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [佬们，除了花生壳还有其他可以免费使用的内网穿透平台吗？ - LINUX DO _202606](https://linux.do/t/topic/2404538)
+- 花生壳是真的挺不好用的, 不如免费的蒲公英, 虽然免费给很抠, 但算是挺稳定的; 
+
+- frp可以试试也挺好用的支持win linux
+
+- Cloudflare Tunnels 最省事, 前提是访问cf没有问题, frp需要一个公网服务器, 或者买服务商的, tailscale和EasyTier是组网的自己用挺方便的, 以前EasyTier有官方公开节点, 现在没了还得自己整服务器或者用别人的共享的
+- 推荐试试 cloudflare。可以留 sakura frp 做个备选
+
+- 我一般用ngrok，谷歌登录很方便。不过建议还是cf大善人吧(
+
+- EasyTier 节点平等且独立，无需中心化服务
+
+- natapp，之前用过的一个平台。地址：https://natapp.cn/
+  - 这个临时用还不错，就是重启会变域名
+
+- 那我就按照你组建局域网的思路。带有公网ip的服务器用zerotier跟你需要内网穿透的服务器组内网，然后在公网ip服务器上进行反代，正常来说速度比cf快
 
 - ## Vercel Labs 做了个端口转发工具，用稳定的命名 .localhost URL 替换 localhost:3000 这些端口号，让人类和 AI 代理都能轻松访问本地服务。
 - https://x.com/geekbb/status/2023645651092075008

@@ -190,6 +190,8 @@ modified: 2025-11-06T18:49:13.977Z
     - 在线版目前没有结构化提取，如需要使用本地部署
     - "请按下列JSON格式输出图中信息:\n{\n    \"id_number\": \"\",\n    \"last_name\": \"\",\n    \"first_name\": \"\",\n    \"date_of_birth\": \"\",\n    \"address\": {\n        \"street\": \"\",\n        \"city\": \"\",\n        \"state\": \"\",\n        \"zip_code\": \"\"\n    },\n    \"dates\": {\n        \"issue_date\": \"\",\n        \"expiration_date\": \"\"\n    },\n    \"sex\": \"\"\n}"
   - https://github.com/zai-org/GLM-OCR /441Star/apache2/202602/python/ts
+    - https://github.com/zai-org/GLM-OCR/blob/main/skills/glmocr/SKILL.md
+    - https://github.com/zai-org/GLM-OCR/blob/main/skills/glmocr-table/SKILL.md
     - a multimodal OCR model for complex document understanding, built on the GLM-V encoder–decoder architecture. I
     - It introduces Multi-Token Prediction (MTP) loss and stable full-task reinforcement learning to improve training efficiency, recognition accuracy, and generalization.
     - The model integrates the CogViT visual encoder pre-trained on large-scale image–text data, a lightweight cross-modal connector with efficient token downsampling, and a GLM-0.5B language decoder

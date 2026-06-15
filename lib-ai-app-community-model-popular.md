@@ -2357,6 +2357,24 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
   - Tech Stack: - VLM: Qwen 3.6 - Depth Estimation: Depth Anything 3 - Metric Large
   - https://github.com/MercuriusTech/Odyseus-Spatial-VLM
 
+# discuss-abliterared/uncensored/heretic
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Introducing the Heretic Grimoire: The takedown-resilient, local-first backup system that keeps uncensored models available forever : r/LocalLLaMA _202606](https://www.reddit.com/r/LocalLLaMA/comments/1u5lmge/introducing_the_heretic_grimoire_the/?sort=top)
+  - https://github.com/p-e-w/heretic /24.7kStar/AGPL/202606/python
+  - https://heretic-project.org/
+  - Heretic is a tool that removes censorship (aka "safety alignment") from transformer-based language models without expensive post-training. It combines an advanced implementation of directional ablation, also known as "abliteration" (Arditi et al. 2024, Lai 2025 (1, 2)), with a TPE-based parameter optimizer powered by Optuna.
+
 # discuss
 - ## 
 

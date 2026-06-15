@@ -165,6 +165,9 @@ modified: 2025-12-11T18:10:23.710Z
   - https://covibes.ai/
   - Your autonomous engineering team in a CLI. Point Zeroshot at an issue, walk away, and return to production-grade code. Supports Claude Code, OpenAI Codex, OpenCode, and Gemini CLI.
 # terminal-ai
+- https://github.com/omnigent-ai/omnigent /1.6kStar/apache2/202606/python
+  - https://omnigent.ai/
+  - A meta-harness for all your AI agents. Omnigent provides a common layer over Claude Code, Codex, Pi, and the agents you write yourself: swap or combine harnesses without rewriting, keep them in check with policies and sandboxing, and collaborate in real time on the same live session, from any device.
 
 ## claude-cli
 
@@ -303,7 +306,8 @@ modified: 2025-12-11T18:10:23.710Z
   - 完全本地化Claude AI 对话历史管理和分析工具
   - 工作区管理 - 灵活的工作区配置
 
-- https://github.com/wesm/agentsview /444Star/MIT/202603/go/ts/svelte
+- https://github.com/kenn-io/agentsview /444Star/MIT/202603/go/ts/svelte
+  - https://github.com/wesm/agentsview /renamed
   - https://agentsview.io/
   - A local web application for browsing, searching, and analyzing AI agent coding sessions. 
   - Supports Claude Code, Codex, and Gemini CLI. A next-generation rewrite of agent-session-viewer in Go.
@@ -852,7 +856,83 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/Opencode-DCP/opencode-dynamic-context-pruning /AGPL/202602/python/ts
   - Automatically reduces token usage in OpenCode by removing obsolete content from conversation history.
   - Dynamic context pruning plugin for OpenCode - intelligently manages conversation context to optimize token usage
+
+## pi
+
+- https://github.com/earendil-works/pi /55.5kStar/MIT/202605/ts
+  - https://pi.dev/
+  - https://pi.dev/docs/latest
+  - Pi Agent Harness Mono Repo
+    - @earendil-works/pi-ai	Unified multi-provider LLM API (OpenAI, Anthropic, Google, etc.)
+    - @earendil-works/pi-agent-core	Agent runtime with tool calling and state management
+    - @earendil-works/pi-coding-agent	Interactive coding agent CLI
+    - @earendil-works/pi-tui	Terminal UI library with differential rendering
+  - 核心开发仅2人
+  - [Pi: The Minimal Agent Within OpenClaw  _202601](https://lucumr.pocoo.org/2026/1/31/pi/)
+  - [Learn Agents by Building One: The Minimal Agent pi _202602](https://www.vandee.art/blog/2026-02-11-learn-agents-by-building-one-the-minimal-agent-pi.html)
+  - [Pi – A minimal terminal coding harness | Hacker News _202602](https://news.ycombinator.com/item?id=47143754)
+  - [Add a Python SDK for `pi-agent-core` and `pi-ai` _202605](https://github.com/earendil-works/pi/issues/4174)
+    - sorry, this is entirely out of scope for pi itself. but nothing stops you from building this as your own project.
+  - [大模型应用开发：学习和整理Pi的LLM模块设计 - LINUX DO _202606](https://linux.do/t/topic/2293027)
+  - https://github.com/ayuayue/pi-desktop
+  - https://github.com/earendil-works/pi-chat
+    - A pi extension that bridges Discord and Telegram channels to a sandboxed pi session. Each connected channel gets its own Gondolin micro-VM with persistent workspace, shared storage, memory, and skills.
+    - Requirements
+    - QEMU installed (brew install qemu on macOS)
+    - Gondolin guest image (downloaded automatically on first connect)
+  - https://github.com/Xplo8E/piai /MIT/202603/python
+    - Python port of pi-ai 
+  - https://github.com/vamsi/pi /MIT/202602/python
+    - A modular AI agent toolkit written in Python
+  - https://github.com/solvit-team/py-pimono
+    - a local coding agent and a Python reimplementation of pi-mono.
+  - https://github.com/atveit/mojopi /MIT/202604/python
+    - A Mojo/MAX port of pi-mono 
+    - Port maintained against Mojo 26.2 and the MAX nightly channel.
+  - https://github.com/Dicklesworthstone/pi_agent_rust /MIT/202606/rust
+    - a from-scratch Rust port of Pi Agent 
+    - Single binary, instant startup, stable streaming, and 8 built-in tools.
+- https://github.com/can1357/oh-my-pi /12.6kStar/MIT/202606/rust/ts
+  - https://omp.sh/
+  - AI Coding agent for the terminal — hash-anchored edits, optimized tool harness, LSP, Python, browser, subagents, and more
+  - Fork of Pi. Originally built on Mario Zechner's wonderful Pi, omp adds everything you're missing.
+  - 40+ providers · 32 built-in tools · 14 lsp ops · 28 dap ops · ~55k lines of Rust core.
+  - https://x.com/geekbb/status/2065979536471417341
+    - 从 Tau 分出来的一个分支，专门给 Pi 编码代理做了个 Codex 风格的客户端。把 Pi 运行时直接打包进应用里，装完就能用，不用额外装命令行工具。
+  - https://github.com/goncalossilva/tau /MIT/202606/ts
+    - a batteries-included distribution for Pi
+    - It takes Pi's minimal core and turns it into an opinionated, complete, polished experience, adding a websearch tool to complement the four default built-in tools, plus several useful skills and tasteful extensions, split into purpose-driven packages
+
+- https://github.com/itayinbarr/little-coder /1.5kStar/apache2/202606/ts
+  - https://itayinbarr.github.io/little-coder/
+  - A coding agent tuned for small local models, built on top of pi.
+  - pi is the minimal substrate — agent loop, multi-provider API, TUI, session tree, compaction, extension model. Four built-in tools (read / write / edit / bash) and a ~1000-token system prompt.
+  - little-coder is pi + 20 extensions + 30 skill markdown files + a Python benchmark harness. 
+
+- https://github.com/0xku/kon /323Star/MIT/202606/python
+  - Kon is a minimal coding agent focused on a tiny core prompt, a small built-in toolset, and project-specific context layered on top only when you want it. 
+  - The default system prompt stays under 270 tokens, and even including the built-in tool descriptions and parameter schemas
+  - ❓ 是否不支持extension
+  - Kon takes significant inspiration from `pi` coding-agent, especially around philosophy and UI direction.
+    - Kon also borrows ideas from Amp, Claude Code, and other terminal coding agents.
+
+- https://github.com/heyhuynhgiabuu/openpi /MIT/202606/ts/electron
+  - [OpenPi - a desktop workbench for the Pi coding agent : r/PiCodingAgent _202605](https://www.reddit.com/r/PiCodingAgent/comments/1tcrb2v/openpi_a_desktop_workbench_for_the_pi_coding_agent/)
+  - a desktop workbench for the Pi coding agent. It’s meant to make Pi feel more at home as a desktop app: session sidebar, conversation view, command palette, source control panel, file search, diff viewer, and terminal/output in one place.
+  - It uses pi-coding-agent under the hood 
+
+- https://github.com/shixin-guo/pi-studio /MIT/202606/ts
+  - Local Codex-style desktop GUI for the Pi coding agent
 # cli-aggregator/wrapper
+- https://github.com/jazzenchen/VibeAround /MIT/202606/rust/ts
+  - https://vibearound.ai/
+  - [【开源】VibeAround：一键启动 Claude/Codex 等 Coding Agent + AI API 接入 + 飞书/微信 远程控制 - LINUX DO _202606](https://linux.do/t/topic/2401003)
+  - 一键启动 Codex/Claude 的 CLI 或者桌面版，以及 Pi/OpenCode 等多个常用 Coding Agent。
+  - 管理和保存不同 Provider 的 API Profile，并通过本地 API Bridge 做协议转接，让不同的模型接口可以在本地 Coding Agent 中使用，于是一些原本不直接兼容的国内模型接口也能在 Codex 等工具里使用。
+  - 把所有的 Coding Agent 都集中到同一个 UI，在本地浏览器里查看和操作和管理 Agent、配置、会话、工作目录等，还可以直接打开 Web Terminal，不再需要在多个 Coding Agent 窗口中切来切去。 查看所有coding工具的会话记录。
+  - 打通飞书/Lark、Discord、Slack、微信、钉钉等消息应用，出门在外也能控制 AI Coding Agent，配置 Cloudflare、Ngrok 等 Tunnel 之后，还可以直接访问 Web 控制台。
+  - 因为我自己的主力开发环境是 macOS，Windows 和 Linux 包目前通过 GitHub Actions 构建，虽然会做基础验证，但测试覆盖可能还不够充分。
+
 - https://github.com/superset-sh/superset /1.5kStar/apache2 > elastic/202602/ts
   - https://superset.sh/
   - A Terminal Built for Coding Agents
@@ -1108,25 +1188,6 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/aannoo/hcom /MIT/202602/python/rust
   - Connect Claude Code, Gemini CLI, and Codex so agents can message, watch, and spawn each other across terminals
 # cli-agent-coding/apps
-- https://github.com/earendil-works/pi /55.5kStar/MIT/202605/ts
-  - https://pi.dev/
-  - https://pi.dev/docs/latest
-  - Pi Agent Harness Mono Repo
-    - @earendil-works/pi-ai	Unified multi-provider LLM API (OpenAI, Anthropic, Google, etc.)
-    - @earendil-works/pi-agent-core	Agent runtime with tool calling and state management
-    - @earendil-works/pi-coding-agent	Interactive coding agent CLI
-    - @earendil-works/pi-tui	Terminal UI library with differential rendering
-  - 核心开发仅2人
-  - [大模型应用开发：学习和整理Pi的LLM模块设计 - LINUX DO _202606](https://linux.do/t/topic/2293027)
-  - https://github.com/ayuayue/pi-desktop
-  - https://github.com/earendil-works/pi-chat
-    - A pi extension that bridges Discord and Telegram channels to a sandboxed pi session. Each connected channel gets its own Gondolin micro-VM with persistent workspace, shared storage, memory, and skills.
-    - Requirements
-    - QEMU installed (brew install qemu on macOS)
-    - Gondolin guest image (downloaded automatically on first connect)
-  - https://github.com/can1357/oh-my-pi /MIT
-    - AI Coding agent for the terminal — hash-anchored edits, optimized tool harness, LSP, Python, browser, subagents, and more
-
 - https://github.com/1rgs/nanocode /1.7kStar/MIT/202601/python/单文件
   - Minimal Claude Code alternative. Single Python file, zero dependencies, ~250 lines.
   - Full agentic loop with tool use
@@ -1203,6 +1264,12 @@ modified: 2025-12-11T18:10:23.710Z
   - [Aider does not work with lm studio on mac, linux, or windows _202508](https://github.com/Aider-AI/aider/issues/4396)
   - You need an underscore `lm_studio/...` in the prefix
   - `aider --model lm_studio/<your-model-name>`
+  - 🍴 forks
+  - https://github.com/cecli-dev/cecli
+    - yet another cli agent crafted for extensibility and customization.
+    - Originally a fork of the Aider AI pair programming tool, we aim to make agentic coding as maximally effective as it can be based on the growing capabilities of large language models.
+  - [Aider-ce is the new Aider ( easiest way to learn how a barebones AI coding CLI works ) : r/ChatGPTCoding _202512](https://www.reddit.com/r/ChatGPTCoding/comments/1pra6jr/aiderce_is_the_new_aider_easiest_way_to_learn_how/)
+    - Is Aider-ce really worth it now that we have opencode?
 
 - https://github.com/hotovo/aider-desk /973Star/apache2/202512/ts/electron
   - https://aiderdesk.hotovo.com/

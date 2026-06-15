@@ -283,7 +283,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 缺点: 体积大，vector/dimension缺乏标准
 
 - pdf
-  - gitbook-like viewer, mdBook
+  - gitbook-like viewer, mdBook, sharing without editing
   - LiteParse Grid Projection Algorithm
 
 - image
@@ -589,7 +589,7 @@ modified: 2025-03-22T16:10:24.856Z
   - reddit/hacker-news上的热门讨论
 # 💎 ai-pdf/docs
 - pdf
-  - gitbook-like viewer, mdBook
+  - gitbook-like viewer, mdBook, sharing without editing
   - LiteParse Grid Projection Algorithm
 
 - translation

@@ -24,7 +24,8 @@ modified: 2023-10-28T17:53:23.397Z
 
 - ## 
 
-- ## 
+- ## PostgreSQL 19 introduces GROUP BY ALL.
+- https://x.com/KaraBharat/status/2066419046443258342
 
 - ## PostgreSQL 19 Beta 1 adds ON CONFLICT DO SELECT.
 - https://x.com/KaraBharat/status/2064222684813349357

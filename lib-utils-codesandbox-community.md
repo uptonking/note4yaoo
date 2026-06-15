@@ -762,7 +762,34 @@ window.document.getElementById("baidu-container").onload = function() {
 - ## [[Feature Request] Multi-user support _202203](https://github.com/codesandbox/sandpack/issues/405)
 - I was able to get it working with firepad. It gives live text updates, and cursor positions, and I am able to see the changes in the iframe as well.
 
+# discuss-tips
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Why does it matter if sandboxes start up in 0.0001 nanoseconds if I then spend the next 20s downloading the git repo?
+- https://x.com/chronark/status/2066047324715905217
+- git can be cached
+- Sandbox image can be built with the git repo.
+  - That sounds like it would go stale really quickly
+- It can listen to main branch push event and update accordingly
+  - you can update the image every hour or so and/or do a shallow   git fetch to update with recent commits
+  - rebuild images every 24 hours from main and use git clone --reference inside the sandbox
+
+- B/c they selling compute, and compute limit by cpu already. So they have to compete another minor features to hide the same.
+
+- git repo should be colocated on the host, so sandbox with up to date git repo is possible in 0.01 nano secounds (in our case 400ms).
+
+- can't you mount that repo from disk?
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## [Lazy, lightweight sandbox for embedding on sites _201712](https://github.com/codesandbox/codesandbox-client/issues/381)

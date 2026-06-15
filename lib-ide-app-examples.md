@@ -674,6 +674,12 @@ modified: 2024-08-24T16:30:20.218Z
     - introducing Pullfrog — the open source CodeRabbit alternative that runs in GitHub Actions
     - BYOK (or use our at-cost model router)
     - does PR review, issue triage, coding tasks, etc (just tag @pullfrog)
+
+- https://github.com/alibaba/open-code-review /7kStar/apache2/202606/go
+  - https://alibaba.github.io/open-code-review/
+  - AI-powered code review CLI tool. It originated as Alibaba Group's internal official AI code review assistant 
+  - https://x.com/Smartpigai/status/2066010490602459542
+    - 它能读取 Git diff，结合上下文分析代码变更，生成带行级定位的结构化审查意见。
 # code-security
 - https://github.com/lintsinghua/DeepAudit /5kStar/AGPL/202602/python/ts
   - DeepAudit：人人拥有的 AI 黑客战队，让漏洞挖掘触手可及。国内首个开源的代码漏洞挖掘多智能体系统。

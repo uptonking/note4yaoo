@@ -12,6 +12,9 @@ modified: 2026-05-28T20:48:22.013Z
 # local-models
 - local-hardware
   - [Hardware – Hugging Face](https://huggingface.co/hardware)
+  - [LLM Fit Check — VRAM & RAM Calculator for Local LLMs ](https://llmfitcheck.com/)
+    - [Created a small website to check what can run on your hardware to find new models you can run easily : r/LocalLLM _202606](https://www.reddit.com/r/LocalLLM/comments/1u4nlxg/created_a_small_website_to_check_what_can_run_on/?sort=top)
+  - [CanItRun — Can my GPU run this LLM? VRAM calculator + hardware checker ](https://canitrun.dev/)
 
 - local-model
   - [GPU Poor LLM Arena - a Hugging Face Space by k-mktr](https://huggingface.co/spaces/k-mktr/gpu-poor-llm-arena)

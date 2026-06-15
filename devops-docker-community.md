@@ -158,6 +158,35 @@ modified: 2024-06-30T11:17:28.971Z
   - 试了下调大 udp_mem 吞吐量上升了不少，不过profile瓶颈还是在这块，应该是buffer多大最终都被占满了。估计是同主机通信数据包进了接收队列就等另一边去拿了，另一侧处理不过来buf就满了，跨主机直接扔出去buf就不会满了
 - 在uds dgram也碰到过类似的情况 多个客户端通过uds dgram往服务端写数据 当recv buf满的时候客户端会加到sock waitq上, 这个过程会拿锁 因为conetless 没有建连 都在一个sock上导致竞争 后来就改成了stream
 
+# discuss-docker-win/mac/linux
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Microsoft just made Docker Desktop optional on Windows. _202606
+- https://x.com/twtayaan/status/2065683838349480083
+  - WSL Containers was announced at Build 2026 and it is coming to public preview this month.
+  - Linux containers will now run natively inside WSL. No Docker Desktop. No third party runtime. No background service eating your RAM. Just WSL.
+  - Here is what it actually does:
+  - → Run any OCI compatible Linux container directly on Windows through WSL
+  - → A new CLI called wslc.exe ships with the next WSL update automatically. Same syntax as Docker so zero learning curve.
+  - → A full developer API lets Windows apps run Linux containers silently in the background without the user ever touching a terminal
+  - → Enterprise ready out of the box. Works with MBE, Intune and every enterprise management tool your IT team already uses
+  - → No separate installation. It arrives as part of your next regular WSL update.
+  - WSL started as a way to run Linux tools on Windows. With WSL Containers the line between the two keeps getting thinner.
+  - Docker Desktop costs $21 per month per developer for commercial use. WSL Containers is built into Windows and costs nothing.
+
+- running linux containers natively through wsl instead of the docker desktop vm cuts the memory overhead and the licensing headache that pushed a lot of teams off docker desktop in the first place
+
+- Containers alone are getting commoditized, which is why they're expanding into the broader developer workflow.
+
+- It's a matter of time before Microsoft makes Windows run as a container inside Linux by default
 # discuss-gui-manager
 - ## 
 

@@ -431,6 +431,38 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [MTP with Gemma-4-12b or Qwen3.5-9b : r/unsloth _202606](https://www.reddit.com/r/unsloth/comments/1u5n4dx/mtp_with_gemma412b_or_qwen359b/?sort=top)
+  - I tested various of models including Gemma-4-12b or Qwen3.5-9b + MTP.
+  - Is it possible that MTP models doesn’t make any good impact or even make it slower?
+  - Any suggestions for other models for agentic tasks? My expierence: gemma-4-12b is super slow. Q4. Qwen3.5-9b also very slow and not smart enough for my tasks. Seems its ruining what it builds. Tried qwen3.5-9b-q6 maybe a bit better, performance is the same as Q4.
+
+- If you're in the MLX world (Apple Silicon, mlx-lm) rather than llama.cpp/GGUF, mlx-optiq does MTP speculative decoding for both of those. Same draft→verify→accept loop, two draft sources: Qwen3.5-9B uses the model's bundled MTP head, Gemma-4-12B uses Google's -assistant drafter.
+  - Measured greedy (same methodology unsloth publishes), M-series: Qwen3.5-9B ~1.32× at 66% acceptance, Gemma-4 ~1.18×. Rule of thumb from their tests: 4B and up consistently win, sub-2B isn't worth the overhead.
+  - One Apple-Silicon gotcha: depth-1 (one drafted token/cycle) is optimal on Metal. Depth 2–4 lose, because Metal's K-token verify scales ~linearly with K whereas on CUDA it's nearly free on Tensor Cores. That's also why Mac MTP gains land a bit below the CUDA/GGUF headline numbers, it's hardware not method.
+  - Full per-model tables + acceptance: https://mlx-optiq.com/docs/mtp · quants load in stock mlx-lm (the *-OptiQ-4bit repos on huggingface.co/mlx-community).
+
+- From what I've seen, it depends on the type of prompt, and your draft tokens. You should see anywhere from at least 1.5x to 5x speed increase (the max speed increase is limited by your draft tokens and the minimum would be based on the type of prompt).
+  - The reason I bring up the type of prompt is because for things that are very deterministic, like code, the rejections for the multi-token prediction would be lower than something creative. Whenever a rejection happens, it only takes the next token rather than taking multiple with it. So, MTP is supposed to either net you minimal performance increase or a drastic performance increase, but it really depends.
+  - The draft tokens you set also affects this. It determines what your ceiling is for performance, but it will also increase rejections the higher you make it. Consider this:
+  - Draft tokens set to 6: It predicts the next six tokens. What are the odds that the next six tokens would be exactly what the model would have generated otherwise? Very low. Therefore, rejections are hugely increased. Meaning you might have close to non-MTP performance with random spikes maybe 1-2 times per response.
+  - Draft tokens set to 2: It predicts only the next two tokens. The odds are relatively high, depending on the task that the next two tokens it predicts would match. Therefore, you get significantly lower rejections. Let's say half of your response is rejections. You basically net a 1.5x performance increase. (my math may be wrong, but you get what I mean). But for the best case scenario, let's say there are absolutely no rejections in this prompt. That would be the ceiling, so you would get 2x performance.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 - ## 🆚 [GGUF with MTP vs MLX without. Is mlx still the way to go for mac users? : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1tgj2if/gguf_with_mtp_vs_mlx_without_is_mlx_still_the_way/)
   - LM Studio has bad caching for mlx. And not MTP of course.
 

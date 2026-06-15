@@ -151,6 +151,23 @@ codex --yolo resume --last
 
 - https://x.com/bozhou_ai/status/2052596459753914446
   - 直接调 Responses API，云端工具（网页搜索、代码解释器）开箱即用，输出 JSON/YAML 可以管道接 jq、grep，图像生成和语音转录也都是单行命令
+# discuss-cli-ai-devops
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [有什么软件可以查看agent发送了什么内容 - LINUX DO _202606](https://linux.do/t/topic/2400736)
+- 只要可以配置第三方 api 的，理论上都可以用代理服务拿提示词
+
+- codex在用户目录.codex/session文件夹中会记录session，里面可以看到所有的请求内容
+  - 不完整，有一部分是加密的，我前几天想看，每次请求的上下文，解析了这个文件，发现有部分是加密的。
+- 有 session 文件可以参考，但它不一定等价于“实际发给模型的完整请求”。 像 Codex 这种本地记录里会有一部分被压缩/加密/脱敏，适合回看会话，不太适合当完整抓包用。
+  - 如果目标是看每次请求的 payload，最稳还是把 agent 的 API endpoint 指到本地代理/中转层，让代理记录 request/response 再转发上游。上面提到的 claude-tap、PrismCat、AxonHub 基本都是这个思路；前提是对应工具支持自定义 base URL/API key。
+  - 顺手推荐一个我自己的项目：VibeAround 也有 API Profiles & Bridge，可以一键启动 Claude Code / Codex CLI / Gemini CLI / Pi / OpenCode 等，并把不同 API 形态做本地转接。 Launch 里还有 Bridge recorder，可以实时看走 VibeAround API Bridge 的 Original request、Bridge request、Server response、Bridge response。
 # discuss-cli-agent-tools
 - ## 
 
@@ -433,7 +450,32 @@ codex --yolo resume --last
 - 写代码这件事情上，还是有IDE窗口更加直观。习惯了cursor，cli不如cursor。
   - 另外近期在研究调用AI生成一些报告，这一块调用claude -p挺好用，这一点也算是cli工具的优势了吧。
   - 为什么采用这种方式，因为工作环境会有很多代码、数据，需要AI进行分析，OpenApi的方式不够友好了
+# discuss-pi
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Pi coding agent is amazing (or how I learned to stop worrying and leave OpenCode) : r/LocalLLM _202605](https://www.reddit.com/r/LocalLLM/comments/1ta2tzz/pi_coding_agent_is_amazing_or_how_i_learned_to/)
+  - following Pi’s philosophy of “if you need extra features, ask Pi to build them”
+- It is really hard to understand. Can someone explain why? As far as I understand, tools like OpenCode, Pi, or even Claude are just wrappers. The actual reasoning capability comes from the LLM. I know each tool uses different system prompts, but can that really create such a huge difference that one tool succeeds while another completely fails at the same task? It feels similar to humans. The brain is the most important part. Whether the arms or legs are slightly stronger or weaker should only affect working speed a little, not completely ruin the result.
+  - The harness can make a big difference. It's doing more than just a system prompt, there's memory management, there's broader context management, there's how tools, mcps, skills, etc are exposed to the agent, session management, and more. Check out terminal-bench, they have benchmark scores by harness+LLM which sort of highlights the difference a harness can make.
+- Think of a harness like managers, LLMs as your development team members.
+  - harnesses. Think of it like managing a team of house movers. If you just let them go, they'll grab what they see and throw it in the truck. If you put them in harnesses with moving straps, they'll go move the big furniture in first, because that's what those harnesses are for.
+- models are trained to use certain tools, so which tools are exposed through harness, matters.
+
+- SLMs and smaller LLMs are not as incapable as we think, they just can't handle heavyweight harnesses.
+  - Harnesses with huge system prompts and lots of skills/mcp tools loaded will need more capable models to run it.
 # discuss-opencode
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

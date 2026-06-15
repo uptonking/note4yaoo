@@ -471,6 +471,9 @@ modified: 2020-10-22T10:22:55.878Z
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
 # flow-ai 👾
+- tips
+  - workflow已被skills取代， 也包含steps， 也能reproduce，甚至能引入依赖
+
 - https://github.com/tt-a1i/archify /MIT/202606/js
   - https://tt-a1i.github.io/archify/
   - Any agent Skill: generate beautiful architecture diagrams with dark/light theme toggle and PNG/JPEG/WebP/SVG export

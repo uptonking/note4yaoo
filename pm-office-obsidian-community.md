@@ -331,7 +331,8 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## [Custom Views has literaly changed my Obsidian Vault : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1u56bn3/custom_views_has_literaly_changed_my_obsidian/?sort=top)
+  - Between Bases and this plugin I feel like I really can do anything I want 
 
 - ## [What are the latest cool stuff you have adopted in Obsidian? : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1u32eot/what_are_the_latest_cool_stuff_you_have_adopted/?sort=top)
 - Use Webclipper (Browser Extension) to bring stuff like Wikipedia articles into your notes and link directly in/out of of them.

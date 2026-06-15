@@ -1235,9 +1235,6 @@ modified: 2026-04-07T12:53:38.419Z
   - 支持多种图片格式：JPG、PNG、GIF、BMP、WebP
   - 支持批量识别多张图片
 # utils-ocr
-- skills
-  - [Extract text from PDFs/scans (pymupdf, marker-pdf).](https://github.com/NousResearch/hermes-agent/blob/main/skills/productivity/ocr-and-documents/SKILL.md)
-
 - https://github.com/yigitkonur/llm-based-ocr /AGPL/202511/python
   - PDF-to-Markdown OCR API using LLMs with vision capabilities. 
   - The LLM-powered OCR engine that turns any PDF into beautifully formatted Markdown. 
@@ -1392,6 +1389,13 @@ modified: 2026-04-07T12:53:38.419Z
     - So I built a C++/CUDA inference server around Paddle's PP-OCRv5 models with FP16 inference. It takes images and PDFs via HTTP/gRPC and returns bounding boxes and text.
     - Results: 100+ img/s on text-heavy pages, 1,000+ on sparse ones.
   - Trade-offs: this sacrifices layout fidelity for speed. If you need perfect layout detection, multi-column reading order, or complex table extraction, you're better off with VLM-based OCR like GLM-OCR or PaddleOCR-VL.
+# ocr-skills
+- skills
+  - [Extract text from PDFs/scans (pymupdf, marker-pdf).](https://github.com/NousResearch/hermes-agent/blob/main/skills/productivity/ocr-and-documents/SKILL.md)
+
+- https://github.com/deepread-tech/skills /MIT/202606
+  - Teach any AI agent how to use the DeepRead OCR API.
+  - Form Fill, PII Redaction, and BYOK APIs. 
 # ocr-visual-grounding 🆚
 - qwen3-vl
   - qwenvl html 指令使用时，不能开thinking, 只支持图片，不支持pdf

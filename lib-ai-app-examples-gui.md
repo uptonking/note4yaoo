@@ -141,10 +141,11 @@ modified: 2026-04-06T22:42:11.263Z
 
 ## gpt-apps
 
-- https://github.com/enricoros/big-AGI /6.6kStar/MIT/202508/ts
+- https://github.com/enricoros/big-AGI /7kStar/MIT/202606/ts
   - https://big-agi.com/
   - AI suite powered by state-of-the-art models and providing advanced AI/AGI functions
   - New AIX framework lets us scale features we couldn't before
+  - with Beam & Merge for multi-model de-hallucination, native search, and bleeding-edge AI models like Opus 4.7 1M, GPT 5.5, 
 
 - https://github.com/n4ze3m/dialoqbase /MIT/202401/ts
   - https://dialoqbase.n4ze3m.com/

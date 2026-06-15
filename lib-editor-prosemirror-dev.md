@@ -100,6 +100,9 @@ modified: 2021-05-06T09:39:53.522Z
   - diff for pdf editing
   - prosemirror-diff 和 office-word 相互转换, headless模式
   - unified-diff-view, side-by-side-diff-view
+- track-change / redline
+  - unified-view/split-view
+  - 支持 paginated editor
 
 - ✨ custom-elements
 - code

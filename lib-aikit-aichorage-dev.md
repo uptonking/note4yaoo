@@ -14,23 +14,33 @@ modified: 2026-05-28T17:50:54.646Z
     - mlx supports stt, 可迁移实现audio-app
   - obsidian for pdf: auto-toc, history/diff, proofreading, tools
     - features-port: editor, backlinks, bases, publish, graph-view
+    - sharing by mdbook
+  - wiki format: okf(open-knowledge-format), obsidian-bases
+  - aistudio: chat/image/video, laptop/minipc厂商都希望内置本地模型
   - built-in image/pdf/ocr for chatting with documents
+    - image/pdf ux
   - port model-specific skills to aichorage
   - easy local model xp: single-model, dual-models, hot-models
   - headless api/cli/skills
-  - python-first
-  - image/pdf ux
-  - embeddable web browser
+  - python-first for mlx/office
   - multiple-client/ui
-  - browser-use
-  - coding-based solutions: comfyui也需要custom node/scripts, 视频生产也需要剪辑和拼接
+  - embeddable web browser
+    - browser-use
+  - coding-based solutions
+    - comfyui也需要custom node/scripts, 视频生产也需要剪辑和拼接
+  - reproducible
+    - model/llamacpp config
+  - tiered/hybrid-llm
+    - 支持cloud与local混合的模式
+  - compact prompt mode
 
 - non-goals
-  - optimized for gpu, not cpu
+  - good llm xp on cpu, but optimized for gpu
     - cpu works for ocr/translation
   - computer-use
   - cloud rag
   - multiple-server/remotes
+  - web-search
 # draft
 - janai-cli like obsidian-cli, ollama-cli, lms-cli
   - skills for janai-cli/lms-cli/ollama-cli
@@ -99,6 +109,10 @@ modified: 2026-05-28T17:50:54.646Z
 - [skills for Deploy MiniCPM5-1B with LM Studio](https://github.com/OpenBMB/MiniCPM/blob/main/skills/minicpm5-deploy-lmstudio/SKILL.md)
   - [skills for Deploy MiniCPM5-1B with Ollama](https://github.com/OpenBMB/MiniCPM/blob/main/skills/minicpm5-deploy-ollama/SKILL.md)
 # pm
+
+## pm-issues
+
+- chat-projects 和 task-folder/workspace 如何区分
 
 ## llm-iot
 

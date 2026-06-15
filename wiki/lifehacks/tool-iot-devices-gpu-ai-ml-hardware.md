@@ -14,6 +14,64 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
+- ## 
+
+- ## [【解密Jetson Thor系列3】你的边缘AI项目该用哪款？AGX Thor、IGX Thor、DGX Spark 适用场景大揭秘 - 知乎 _202511](https://zhuanlan.zhihu.com/p/1974122118397576254)
+- ​Jetson AGX Thor​ 主要适用于机器人和嵌入式 AI 系统。它提供了极高的灵活性，允许用户根据不同的设备形态（form factor）​和应用场景（use case）​来高度定制平台。
+  - 它不仅拥有 ​iGPU（集成 GPU）​，还搭载了 ​dGPU（独立 GPU）​。其中，​dGPU 算力最高可达 3, 511 TFLOPS，加上 iGPU 的 ​2 petaFLOPS（2000+ TFLOPS）​，整体算力可以达到 ​约 5, 500 TFLOPS（5.5 千万亿次浮点运算）​，这是非常高的计算性能。
+  - 网络带宽非常强，接近 ​100 GbE，具体包括 ​4 个 25 GbE 接口；
+  - 使用的是 ​JetPack OS，主要侧重于硬件平台支持，​社区支持较多，但没有企业级支持（honor price 支持）​。
+- IGX Thor​ 是 AGX Thor 的工业级版本，具备功能安全认证（functional safety）​，支持实时操作系统（RTOS）​，具有高可靠性，并且集成了传感器实时处理能力。它适用于对稳定性、安全性要求更高的工业与医疗边缘场景。
+  - 由于采用了 ​ConnectX-7 网卡，其网络带宽最高可达 400 GbE；
+  - 配备了 ​IGX OS，这是一个企业级软件平台，包含 ​NVIDIA 的 Enterprise AI 软件栈，并且提供商业级技术支持，非常适合对稳定性与安全性要求高的工业环境。
+- ​DGX Spark​ 则是面向个人边缘计算、超级计算机应用以及通用边缘部署的设备。但相比前两者，它的设备形态灵活性较低。DGX Spark 通常由像 ​HP、Dell 和ASUS 这样的主流 OEM 厂商提供，主要面向希望直接购买现成设备、用于个人超级计算或者边缘推理部署的消费级或轻量级企业用户。
+  - 算力为 ​1 petaFLOPS​，整体定位更偏向通用用途。
+  - 网络带宽为 ​200 GbE。
+  - 使用的是 ​DGX Base OS，可以运行类似 NVIDIA Metropolis 或其他 Blueprint 解决方案，适合研究和通用 AI 推理任务。
+  - Jetson Thor SoC设计功耗120瓦，NVIDIA GB10 SoC则达到140瓦。
+  - Thor官方内存带宽为204GB/s，但实测还不到标称值一半。
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- ## [I have a 5k budget for a personal LLM server. What are the best options and what performance can I expect compared to commercial models for coding? : r/LocalLLM _202606](https://www.reddit.com/r/LocalLLM/comments/1u5m6i1/i_have_a_5k_budget_for_a_personal_llm_server_what/?sort=top)
+- Before spending $5k, spend $10 on an API account for a site that serves open-source models. Test out the spread of options, as well as the software you want to use to code (e.g. OpenCode, Continue.dev).
+  - Try the models in the actual cases you plan to use them in. See how they succeed or fail. Then take the ones you like, and use it's hardware requirements to help you figure out what you need. 
+
+- Nvidia just released the Thor, 128GB unified memory and 2070 TFLOPS FP4 for $3, 500, and it only uses up to 130W (MAX-N profile) 
+  - Jetpack is just an nvidia tweaked ubuntu distro.
+- The VRAM is a bit slower since it's unified, LPDDR5X, but it's also surface mount not dimm so that helps make up for it via a drop in latency.
+
+- If you're not scared of tinkering with ROCm (or taking a small performance hit running Vulkan) this is the best value currently for a DIY setup that I've been able to find:
+
+For the motherboard + CPU, there are two solid options:
+
+Gigabyte MC62-G40 ($650, ebay) + 3945WX ($100, ebay), you can check Digital Spaceport's video on this.
+
+HUANANZHI H12D-8D ($460, ebay / $350-400 on Aliexpress sale days with coupons) + EPYC 7532 ($200, ebay)
+
+Both setups have their pros and cons. The EPYC 7532 system gives you full 8 channels of memory bandwidth, where as the 3945WX suffers from the chiplet issue. The EPYC 7532 requires RDIMM memory, where as the 3945WX with the Gigabyte board is very flexible with the memory you can use (DDR4 ECC/Non-ECC UDIMM/RDIMM/LRDIMM).
+
+The memory is a bit of a mixed bag and hard to budget for in the current market, but you could get by with the cheapest 8x DDR4 4GB (32GB total) for doing GPU only. Even $100 would be grossly overpaying for this (4GB sticks still are literal e-waste tier), but it is what it is.
+
+For the GPUs there are two good value options left:
+
+AMD Radeon Pro V620 32GB, which multiple people have bought recently around $350-400 from ebay by making an offer.
+
+AMD Radeon Instinct MI50 16GB, which can be had at around $120 (Alibaba) or a bit higher from ebay by making an offer to a seller.
+
+For doing actual coding work, I'd be aiming at running Qwen 27B / Gemma 4 31B at Q8. With the worst case pricing on the above you'd be looking at: ~$900 for the CPU+Board+Memory, ~$600 / $800 for the GPUs (4x MI50 16GB / 2x V620 32GB) and another ~$500-1000 for the PSU, case and cooling. For half of your budget you could get this sort of performance (numbers from my own MI50 setup):
+
+Gemma 4 31B Q8, FP16 KV (no MTP) ~100k context prompt (you can use up to around 200k)
+
 - ## [Why I'm holding out until late 2027 to spend money on a local LLM rig : r/LocalLLM _202605](https://www.reddit.com/r/LocalLLM/comments/1t6iiph/why_im_holding_out_until_late_2027_to_spend_money/)
   - Here's the math: A100 SXM4 80gb cards are currently $2, 500–4, 000 used, but we're at the inflection point where enterprises are upgrading to H100s and B200s. By late 2027, we'll see massive A100 liquidation hitting the used market. Historical precedent (V100 went from $5K in 2017 to $300–600 by 2024) suggests A100 80GB cards will bottom out around $1, 000 per card by then, and HGX-A100 baseboards will drop to $400–700. That means a 4× A100 80GB system (320GB VRAM) for around $4k and decreasing as time passes. Vastly outperforming anything I can build today.
   - 2028 models will almost certainly be sparse/MoE (following V4 Flash's pattern), which means you don't need 640GB for a "10T model"—you need it to hold all the expert weights while only computing 200–300B active parameters per token. A 4× A100 system handles this at 20–35 tok/sec, with reasonable quant.

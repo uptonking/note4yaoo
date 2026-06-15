@@ -265,7 +265,7 @@ and here
 - I can’t imagine why you’d use markdown links for internal note links.
   - If you’re always using unique note names (which obsidian enforces in a vault) you’ll never have ambiguity.
   - edit: obsidian doesn't enforce unique note names in a vault, just in folders
-# discuss-spec
+# discuss-bundle/knowlege-spec ⚖️
 - ## 
 
 - ## 
@@ -274,7 +274,27 @@ and here
 
 - ## 
 
-- ## 
+- ## @Karpathy predicted the power of the "LLM Wiki." Google just formalized it.
+- https://x.com/DataChaz/status/2065747550226075836
+  - Traditional wikis fail because humans inevitably abandon the tedious work of updating them.
+  - As Andrej Karpathy pointed out recently, LLMs don't get bored. They don't forget to update a cross-reference, and they can touch 15 files in a single pass.
+  - OKF standardizes the interoperability layer so agents can actually do that heavy lifting autonomously.
+  - Because the format is minimally opinionated, it doesn't dictate what you write, it just dictates how it's structured. You get:
+  - → Human-readable documents that live right alongside your code in version control
+  - → Cross-links that map out complex entity relationships without needing a graph database
+  - → A system that survives moving between different tools and organizations
+
+- with this LLM Wiki concept, you can take things a step further by having an LLM-powered AI agent generate a knowledge graph deployed in Semantic Web form.
+  - Remember, LLMs have no difficulty producing RDF documents, and RDF-Turtle—think compact, human-readable structured sentences—is particularly well suited to this approach.
+  - Any combination of Markdown and YAML can be transformed by an LLM into RDF. Once you do that, the benefits of a Semantic Web for context engineering, context sharing, and AI-agent harnessing become off the charts.
+  - The Semantic Web project’s deliverables become particularly powerful in the age of LLMs because they provide a machine-computable framework for understanding that complements natural language processing. The combination is remarkably effective.
+
+- What Karpathy and Google didn't include:
+  - synthesizing knowledge
+  - surfacing contradictions
+  - quality of each claim (e.g., data vs. opinion vs. decision)
+  - observation > hypothesis > rule 
+  - forgetting on purpose 
 
 - ## ⚖️ Google introduced the Open Knowledge Format (OKF) - a standardized way to store information in a directory of markdown files. 
 - https://x.com/Marie_Haynes/status/2065531158356717721
@@ -314,6 +334,10 @@ the format question is now settled. the hard part still isn't.
   - https://github.com/nashsu/llm_wiki /GPL/202606/ts/rust/tauri
 - [Pebbles Specification v0.3.0-draft](https://github.com/m31uk3/uku-pebbles/blob/main/_specs/pebbles.spec.md)
   - Universal Knowledge Unit – Schema for Sovereign Personal & Interspecies Memory
+
+- https://x.com/wey_gu/status/2066074034631246030
+  - Open Knowledge Format 非常棒，标准化了 LLM-Wiki inspired 的分层级、有关系的 textual 知识的结构，我非常喜欢这个标准
+  - @NowledgeMem supported OKF
 
 - 
 - 

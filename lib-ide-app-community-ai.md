@@ -700,6 +700,20 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Why are so many new AI/agent repos switching from Python to TypeScript? : r/LLMDevs _202604](https://www.reddit.com/r/LLMDevs/comments/1sl2az6/why_are_so_many_new_aiagent_repos_switching_from/)
+  - From what I understand: Python is still dominant for training, ML, etc. 
+  - But these newer tools (agents, workflow builders, copilots) seem to lean heavily toward TypeScript
+- though Python can be type annotated, which accomplishes most of the same goals from the coding-agent perspective. Typescript is generally better here though as the typedefs and compile time checking add even more/better support than pure static analysis of annotations.
+  - Also, there is no language with a better type system for JSON than typescript since it's native to the language
+
+- The biggest reason isn't the language itself. It's where the users are. Python dominated when the consumers were researchers; TS is dominating now that the consumers are app developers.
+
+- Python is the language of choice for data scientist. Much of software engineering is made with other languages, and TypeScript is very used to interact with API and built web apps.
+
 - ## 软件开发的矛盾，已经从 “写代码费时费力”, 转换成了 “海量高质量代码，跑得通 且有一点小问题，但很难 review 和修改”
 - https://x.com/real_kai42/status/2017066919464227263
   - 我觉得下一代 IDE (或许就不是 IDE 形态)，应该是一个更好的促进人和 agent 的协作的形态，如何让人类 review 海量代码，并且有信心的去交付 Agent 的产出，这个形态肯定不是 CLI。

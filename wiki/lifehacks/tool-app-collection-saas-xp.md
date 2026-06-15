@@ -227,10 +227,9 @@ mineru paddleocr site:github.com -inurl:"github.com/opendatalab/" -inurl:"github
   - Commenting System: Both platforms have built-in commenting systems, but Lobsters has tags and transparent moderation which might contribute to better organization​.
   - Lobsters: Open Source platform developed by Joshua Stein, it’s more lightweight and has a clean design​.
   - Hacker News: Developed by Y Combinator, it’s a free platform but not open source​.
-
-## reddit
-
-# twitter
+# reddit
+- 修改一个帖子内的评论排序 best/top/new 会导致其他帖子的排序也会变化, 也就是修改是全局的
+# twitter/x
 - search
   - [How to use advanced search – find posts, hashtags, and more](https://help.x.com/en/using-x/x-advanced-search)
   - 搜索关键词时，可加上'min_replies:1'的条件，筛选出被讨论过的质量更高的内容
@@ -680,20 +679,9 @@ sudo systemctl start minidlna
     - 所有节点1.0倍率，无高倍线路
     - 支持同时在线8台设备使用
     - 高达1Gbps带宽，晚高峰观看8K 60fps不卡顿
-  - TAG(154/1年200g，iepl一线200+)
-    - 永久官网(会自动跳转) https://tagxx.vip
-      - https://tagweb.vip
-    - https://tagss.pro/#/shop
-    - ¥185/季: 250G/月 
-    - ¥162/年: 200GB/年，用完可手动重置流量 92 CNY /次
-      - ¥260/年: 400GB/年
-    - 最多【5】个设备同时链接使用，分享订阅将会限制冻结或永久封号
-    - 服务仅限于中国大陆海外&新疆无法使用（包括港澳台）
-    - 250+ 条高速加速线路，覆盖全球 100+ 个国家和地区(含卫星网络)
-    - 解锁ChatGPT、Claude、 Gemini、Cursor等主流 AI 工具的区域限制
-  - [FlowerCloud ](https://flowercloud.net/cart.php)
+  - 📌 [FlowerCloud ](https://flowercloud.net/cart.php)
     - [huacloud](https://huacloud.dev/product.html)
-    - 128￥/年: 20G/月, 选实验性节点可用100G/月
+    - 128￥/年: 20G/月, 选实验性节点可用100G/月, 当月流量用完后，可手动重置
     - 39¥/月: 150G/月, 346¥/年
     - 低等级套餐没有性价比，但是他家有0.2倍率的实验性节点，也就是说你只用实验性节点的话流量可以按照5倍来看。
     - 🛝
@@ -703,6 +691,17 @@ sudo systemctl start minidlna
     - 开业时间: 2020
       - [FlowerCloud - 国际网络加速服务，致力于提高网络质量！](https://huacloud.net/)
       - [购物车 - FlowerCloud](https://flowercloud.net/cart.php)
+  - 📌 [TAG](https://tagss.pro) 
+    - 永久官网(会自动跳转) https://tagxx.vip
+      - https://tagweb.vip
+    - https://tagss.pro/#/shop
+    - ¥185/季: 250G/月 
+    - ¥162/年: 一次性发放 200G，用完可手动重置流量 92 CNY /次
+      - 162+92 = 254 可用400GB, 高价量少，不如试试良心云机场
+    - 最多【5】个设备同时链接使用，分享订阅将会限制冻结或永久封号
+    - 服务仅限于中国大陆海外&新疆无法使用（包括港澳台）
+    - 250+ 条高速加速线路，覆盖全球 100+ 个国家和地区(含卫星网络)
+    - 解锁ChatGPT、Claude、 Gemini、Cursor等主流 AI 工具的区域限制
 
 - 机场free
   - 🌹 https://ikuuu.club/

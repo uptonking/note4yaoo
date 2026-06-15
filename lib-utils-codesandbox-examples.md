@@ -1022,6 +1022,11 @@ modified: 2023-09-02T09:17:22.992Z
   - This app uses WebRTC to stream a desktop inside of a docker container
   - It is not only limited to a browser; it can run anything that runs on linux (e.g. VLC). Browser only happens to be the most popular and widely used use-case.
   - Compared to clientless remote desktop gateway (e.g. Apache Guacamole or websockify with noVNC), installed with remote desktop server along with desired program (e.g. linuxserver/firefox) provides neko additionally: built-in audio, Multi-participant control
+# sandbox-apps
+- https://github.com/Gloridust/WechatOnCloud /202606/ts
+  - 在自己的 NAS / 服务器上运行「服务端微信」，多端浏览器共享同一会话
+  - 不止微信——还能开 Chromium 浏览器实例，登录 Telegram / X / Instagram 等网页版社媒，常驻云端、多端同步
+  - 原理：每个实例 = 一个容器，里面跑 `Xvfb` 虚拟显示 + 一个应用（官方原版微信，或 Chromium 浏览器），`KasmVNC` 把画面串到浏览器；同一实例被多个浏览器连 = 共享同一个会话。前面一层自研面板是唯一对外入口，经 docker.sock 按需创建/销毁实例并反向代理。
 # more
 - https://github.com/BrowserBox/BrowserBox /AGPLv3/js
   - https://dosyago.com/

@@ -32,6 +32,9 @@ modified: 2025-02-21T17:17:42.225Z
   - an open-source AI-native creation engine powered by 13+ leading AI models. 
   - Its intuitive free-form canvas interface integrates multi-threaded conversations, multimodal inputs (text/images/files), RAG 
 # workflow-ai
+- tips
+  - workflow已被skills取代， 也包含steps， 也能reproduce，甚至能引入依赖
+
 - https://github.com/FlowiseAI/Flowise /42.5kStar/apache2+EE/202510/ts
   - https://flowiseai.com/
   - https://docs.flowiseai.com/
@@ -68,7 +71,7 @@ modified: 2025-02-21T17:17:42.225Z
   - 依赖django、langchain、pgvector、Vue
   - Flexible Orchestration: Equipped with a powerful workflow engine, function library and MCP tool-use, enabling the orchestration of AI processes to meet the needs of complex business scenarios.
 
-- https://github.com/PySpur-Dev/PySpur /5.4kStar/apache2/202507/python/ts
+- https://github.com/PySpur-Dev/PySpur /5.7kStar/apache2/202507/python/ts/inactive
   - https://www.pyspur.dev/
   - A visual playground for agentic workflows: use it to build agents, execute them step-by-step and inspect past runs.
   - Build the agent in Python code or via UI
@@ -80,6 +83,11 @@ modified: 2025-02-21T17:17:42.225Z
   - By default, this will start PySpur app at http://localhost:6080 using a sqlite database.
   - Using Local Models with Ollama: PySpur only works with models that support structured-output and json mode. Most newer models should be good
   - [ComfyUI for LLMs : r/comfyui _202412](https://www.reddit.com/r/comfyui/comments/1hgfy3g/comfyui_for_llms/)
+    - open-source tool that provides a graph-based interface for LLM workflows, taking inspiration from ComfyUI
+    - First off, we’re big fans of ComfyUI. We previously developed a design generator product that combined stable diffusion with LLMs to produce product photos. While working on the diffusion side, we used Comfy to iterate and fine-tune workflows. We found this experience so much more intuitive than writing code for it that we started craving the same for LLMs—but we didn't find the LLM nodes inside Comfy sufficient, eg., to use certain prompting techniques like few-shot prompting or best-of-N sampling.
+    - Graph-based interface: We can lay out an LLM workflow as a node graph. A node can be an LLM call, a function call, a parsing step, or any logic component. Just like Comfy, we can see the configuration and output of a node on the graph itself.
+    - Integrated debugging: When something fails, we can pinpoint the problematic node, tweak it, and re-run it on some test cases right in the UI.
+    - Evaluate at the node level: We can assess how node changes affect performance downstream.
 
 - https://github.com/nocode-js/sequential-workflow-designer /1.2kStar/MIT/202502/ts/NoDeps
   - https://nocode-js.com/

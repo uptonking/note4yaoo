@@ -40,6 +40,22 @@ modified: 2025-08-08T07:36:31.265Z
 - check out smol agents for a middleground option.
 
 - If you want the benefits of a framework with the leanness of an SDK (and being able to have defined REST APIs), you should check out Letta (runs an agents service that manages state/context on top of LLM providers). We support both Node and Python SDKs.
+# discuss-aisdk-alternatives
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## The AI SDK vs TanStack AI comparison is useful, but not because I need a winner.
+- https://x.com/elvin_chauvel/status/2066109848874311702
+  - For a React/Go SaaS, I mostly care about where the agent stops and where the backend has to stay boring and explicit.
+  - [Vercel AI SDK vs TanStack AI | Vercel Knowledge Base _202606](https://vercel.com/kb/guide/vercel-ai-sdk-vs-tanstack-ai)
+
 # discuss-internals-aisdk
 - ## 
 
@@ -513,7 +529,7 @@ modified: 2025-08-08T07:36:31.265Z
 - You can use prepareStep and implement this idea now
 
 - ## [Groq API always returns 404 - Forum - Groq Community _202507](https://community.groq.com/t/groq-api-always-returns-404/426)
-  - For quite some reason, when I do requests to the API, I always get this: `{ error: { message: 'Not Found' } }`
+  - For quite some reason, when I do requests to the API, I always get this: `{ error: { message: 'Not Found' } }` 
 
 - 👷: 实测groq api请求有时失败，有时成功
 

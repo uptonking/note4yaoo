@@ -60,6 +60,13 @@ modified: 2023-02-08T07:20:48.475Z
 
 ## benchmarks-llm
 
+- https://github.com/benchflow-ai/skillsbench /1.4kStar/apache2/202606/python
+  - https://www.skillsbench.ai/
+  - The first benchmark for evaluating how well AI agents use skills.
+  - SkillsBench measures how effectively agents leverage skills—modular folders of instructions, scripts, and resources—to perform specialized workflows. We evaluate both skill effectiveness and agent behavior through gym-style benchmarking.
+  - 主要测试闭源模型
+  - [[feature request] add open-sourced LLM as backbone model _202604](https://github.com/benchflow-ai/skillsbench/issues/708)
+
 - https://github.com/groq/openbench /740Star/MIT/202512/python/inactive
   - https://openbench.dev/
   - Provider-agnostic, open-source evaluation infrastructure for language models
@@ -70,6 +77,8 @@ modified: 2023-02-08T07:20:48.475Z
   - Provider-agnostic: Works with 30+ model providers out of the box
   - 🍴 forks
   - https://github.com/ivanfioravanti/mlx-openbench
+
+### coding-bench
 
 - https://github.com/bigcode-project/bigcodebench /apache2/202408/python
   - https://bigcode-bench.github.io/
