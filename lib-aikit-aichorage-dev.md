@@ -12,9 +12,11 @@ modified: 2026-05-28T17:50:54.646Z
 - goals
   - playground for local ocr/vlm models
     - mlx supports stt, 可迁移实现audio-app
+    - large-pdf
   - obsidian for pdf: auto-toc, history/diff, proofreading, tools
     - features-port: editor, backlinks, bases, publish, graph-view
     - sharing by mdbook
+  - version-history
   - wiki format: okf(open-knowledge-format), obsidian-bases
   - aistudio: chat/image/video, laptop/minipc厂商都希望内置本地模型
   - built-in image/pdf/ocr for chatting with documents

@@ -293,6 +293,9 @@ modified: 2025-03-22T18:49:15.634Z
   - When users prompt for UI, you need guarantees. json-render gives AI a constrained vocabulary so output is always predictable
   - https://x.com/rauchg/status/2011605996561649720
     - Why not AI -> UI? Code is more flexible than JSON.
+  - https://x.com/ctatedev/status/2066555279295008908
+    - Your agent renders real UI for users while it works in a sandbox
+    - Powered by AI SDK's experimental HarnessAgent + json-render
 - https://github.com/vercel-labs/visual-json /apache2/202604/ts
   - https://visual-json.dev/
   - The Visual JSON Editor. Schema-aware, embeddable, extensible.

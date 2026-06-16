@@ -25,7 +25,7 @@ modified: 2022-12-31T20:13:33.307Z
 
 ## v26
 
-- [v26.0.0 (Current) _202605](https://nodejs.org/en/blog/release/v26.0.0)
+- [v26.0.0  _202605](https://nodejs.org/en/blog/release/v26.0.0)
   - Temporal API is now enabled by default
   - V8 engine is updated to version 14.6.202.33, which is part of Chromium 146.
   - Undici has been updated to version 8.0.2, bringing new features and improvements to Node.js's HTTP client implementation.
@@ -33,7 +33,22 @@ modified: 2022-12-31T20:13:33.307Z
 
 ## v24
 
-- [v23.1.0 (Current) _2024-10-24](https://nodejs.org/en/blog/release/v23.1.0)
+- [24.0.0 _202505](https://nodejs.org/en/blog/release/v24.0.0)
+  - V8 JavaScript engine to version 13.6: Float16Array, WebAssembly Memory64, RegExp.escape, Explicit resource management
+  - Node.js 24 comes with npm 11, AsyncLocalStorage defaults to AsyncContextFrame
+  - URLPattern as a global
+  - --experimental-permission to simply --permission
+  - The test runner module now automatically waits for subtests to finish, eliminating the need to manually await test promises. 
+  - Node.js 24 includes Undici 7, which brings numerous improvements to the HTTP client capabilities, including better performance and support for newer HTTP features.
+  - 🗑️ 
+  - Runtime deprecation of url.parse() - use the WHATWG URL API instead
+  - Runtime deprecation of SlowBuffer
+  - Deprecation of passing args to spawn and execFile in child_process
+
+- [v23.6.0  _202501](https://nodejs.org/en/blog/release/v23.6.0)
+  - Unflagging --experimental-strip-types: This release enables the flag --experimental-strip-types by default. Node.js will be able to execute TypeScript files without additional configuration.
+
+- [v23.1.0  _2024-10-24](https://nodejs.org/en/blog/release/v23.1.0)
   - When a Buffer is created using a resizable `ArrayBuffer`, the Buffer length will now correctly change as the underlying ArrayBuffer size is changed.
   - MockTimers, introduced in April 2023, has just reached stable status. 
   - JSON modules and import attributes are now stable
@@ -41,7 +56,7 @@ modified: 2022-12-31T20:13:33.307Z
 
 ### [v23.0.0_20241016](https://openjsf.org/blog/announcing-node.js-23-key-features-and-enhancement)
 
-- [v23.0.0 (Current)](https://nodejs.org/en/blog/release/v23.0.0)
+- [v23.0.0 ](https://nodejs.org/en/blog/release/v23.0.0)
 
 - ✨ Support for loading native ES modules using `require()`.
 - 🗑️ Dropped Support for Windows 32-bit Systems
@@ -69,19 +84,19 @@ modified: 2022-12-31T20:13:33.307Z
   - Official binaries for Node.js 22.x currently include OpenSSL 3.0.x (more specifically, the quictls OpenSSL fork). 
   - Other than updating metadata, such as the process.release object, to reflect that the release is LTS, no further changes from Node.js 22.10.0 are included.
 
-- [v22.10.0 (Current) _2024-10-16](https://nodejs.org/en/blog/release/v22.10.0)
+- [v22.10.0  _2024-10-16](https://nodejs.org/en/blog/release/v22.10.0)
   - introduces a "module-sync" exports condition that's enabled when require(esm) is enabled, so packages can supply a synchronous ES module to the Node.js module loader, no matter if it's being required or imported
   - `node --run` is now stable
   - module: support loading entrypoint as url
 
-- [v22.8.0 (Current)_2024-09-03](https://nodejs.org/en/blog/release/v22.8.0)
+- [v22.8.0 _2024-09-03](https://nodejs.org/en/blog/release/v22.8.0)
   - adds a new API `module.enableCompileCache()` that can be used to enable on-disk code caching of all modules loaded after this API is called. 
     - This is a built-in alternative to the v8-compile-cache/v8-compile-cache-lib packages, but have better performance and supports ESM.
   - New option for `vm.createContext()` to create a context with a freezable globalThis
   - Support for coverage thresholds
 
 - [v22.7.0_20240821](https://github.com/nodejs/node/releases/tag/v22.7.0)
-  - [v22.7.0 (Current)](https://nodejs.org/en/blog/release/v22.7.0)
+  - [v22.7.0 ](https://nodejs.org/en/blog/release/v22.7.0)
   - With the new flag `--experimental-transform-types` it is possible to enable the transformation of TypeScript-only syntax into JavaScript code.
     - This feature allows Node.js to support TypeScript syntax such as Enum and namespace
   - Module syntax detection (the `--experimental-detect-module` flag) is now enabled by default. 
@@ -97,7 +112,7 @@ modified: 2022-12-31T20:13:33.307Z
     - Network inspection is limited to the http and https modules only.
 
 - ### v22.0.0_20240424
-  - [Node.js — Node v22.0.0 (Current)](https://nodejs.org/en/blog/release/v22.0.0)
+  - [Node.js — Node v22.0.0 ](https://nodejs.org/en/blog/release/v22.0.0)
 
 - Highlights include require()ing ESM graphs, WebSocket client, updates of the V8 JavaScript engine, and more
 - ✨ module: support require()ing synchronous ESM graphs 

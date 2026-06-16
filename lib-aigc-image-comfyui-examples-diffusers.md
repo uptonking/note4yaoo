@@ -369,7 +369,11 @@ modified: 2025-08-23T11:43:35.904Z
 
 - https://github.com/basketikun/infinite-canvas /AGPL/202605/go/ts
   - https://infinite-canvas-cpco.onrender.com/
+  - https://canvas.best
   - 面向AI创作的开源无限画布工作台，集成 AI 生图、参考图编辑、视频生成、画布编排、对话助手、提示词库和素材管理等功能、兼容OpenAI接口，支持chatgpt2api、grok2api、flow2api、newapi等接入。
+  - 无限画布现在支持Agent自主操作，目前有两种形式，一个是网页版的(没开发完先不要用)，一个是连接本地Codex来操作画布的，这个现在可以用
+    - 可以直接在codex app里操作画布，也可以在网页右侧的对话里操作画布，双向互通
+  - 画布工具现在支持局部编辑，功能参考ChatGPT官方的编辑功能，可选择画布对某个区域选择后编辑
   - [【开源无限画布】统一AI创作网关：集成图/文生图/视频的无限画布，兼容2api项目和OpenAI接口 - LINUX DO _202605](https://linux.do/t/topic/2249309)
     - render部署的会丢失数据，只简单演示用
 # ai-image-generator

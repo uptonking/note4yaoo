@@ -346,18 +346,25 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## 
+
+- ## [Experimental POC: streaming a ~160GB DeepSeek-V4-Flash-class MoE model on an 8GB VRAM laptop : r/LocalLLM _202606](https://www.reddit.com/r/LocalLLM/comments/1u6j5a3/experimental_poc_streaming_a_160gb/)
+  - The current best coherent path is now significantly faster: a 24-token Hungarian response that previously took around 5+ minutes to generate is now down to about 3.1 minutes, while keeping the output coherent. A shorter 12-token sanity test now generates in about 85–86 seconds after a ~41s prefill.
+- if I’m getting this right, you’re basically treating the 160GB model like a game engine treats textures by just loading the experts you actually need for each token straight from the SSD into the GPU instead of trying to fit the whole thing in memory? And the SSD speed is the wall you keep hitting? 
+  - Yeah, that’s basically the idea. The runtime treats selected MoE experts more like streamed GPU assets: load only the experts needed for the current path from NVMe into reusable GPU-resident buffers, instead of trying to keep the whole checkpoint in memory.
+  - The SSD/streaming is a big bottleneck, but not the only one. With the current DirectStorage/D3D12 path I can stream roughly around 5GB/s from SSD toward VRAM, which is a big advantage, but recent profiling also shows common/attention work and base decode pass cost as major walls.
+  - Right now the resident GPU slots are reused, but the expert contents are mostly temporary and can be overwritten. A smarter “hot expert stays resident if likely needed again” cache is not implemented yet.
+  - And yes, expert co-occurrence / predictive prefetch is definitely a future direction. MTP currently helps draft/verify tokens; it is not yet being used to predict and prefetch expert groups, but that would fit the architecture well.
+
+- MTP i understood is/was a tradeoff of memory for speed, since by streaming you want to work around the *memory* bottleneck, wouldn’t it be if nothing else simpler to forget about MTP?
+  - In my case MTP is not meant to solve the model residency/memory problem. The SSD→VRAM streaming path is for that. MTP/speculative decoding is a separate experiment to reduce the number of full 43-layer base decode passes per response.
+
 - ## DeepSeek v4 PRO running via SSD streaming on my 128GB MacBook m5 max. 1.6 trillion parameters. _202606
 - https://x.com/antirez/status/2062536214675067322
   1. It is slow, obviously, but not unusably slow if for some reason I'm cut out of frontier AI.
   2. The goal here was to make this working slow but optimize it enough to have Flash good enough on 64GB systems. I'll ask somebody to check what performances it reaches. I don't have a 64GB machine.
 
 - Won’t this destroy the longevity of the SSD?
-
-- 
-- 
-- 
-- 
-
 # discuss-llm-architecture
 - ## 
 
@@ -1327,6 +1334,42 @@ Kimi K2	1000	32	3.2%
 - ## [关于大模型智能路由相关技术调研 - LINUX DO _202605](https://linux.do/t/topic/2197257)
 - 我记得以前做这个方向的多一点，我记得竞技场有些相关工作 [RouteLLM: An Open-Source Framework for Cost-Effective LLM Routing - LMSYS Blog | LMSYS Org _202407](https://www.lmsys.org/blog/2024-07-01-routellm/)
   - 现在越来越少了，Agent / tool-use 时代这是吃力不讨好的活，基本也就 chatbot 上能有点用（还得是 single turn 或者很少的对话量）
+
+# discuss-distill
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 蒸馏这个词的理解
+- https://x.com/MaxForAI/status/2066738482891145472
+
+这个词其实很大，目前有两种
+
+- 第一种：白盒蒸馏
+
+能拿到 teacher model 的 logits、hidden states、attention、内部推理轨迹，甚至训练分布，然后训练 student model 去拟合它。
+
+这种对闭源 API 模型基本做不了，因为API不会返回那些数据。
+
+所以 antirez 说说“API 蒸馏不可能”是对的。
+
+- 第二种：黑盒蒸馏 / response distillation / imitation learning
+
+只能通过 API 调用模型，让它输出答案、解释、CoT 风格文本、偏好排序、代码结果，然后把这些返回结果整理成 SFT/RLHF/RLAIF 数据去训练另一个模型。
+
+这种当然可以，而且非常常见。
+
+虽然它不等于复制原模型能力，但足够把某些任务能力、风格、格式、解题模式迁移过去。
+
+所以其实是用 API 做不了白盒蒸馏，拿不到 logits、hidden states 和真实内部推理过程。
+
+但用 API 生成答案、解释、CoT 风格数据，再拿这些 response 构建训练集，当然也属于广义上的蒸馏，或者说黑盒蒸馏/response distillation。
+
+所以双方其实都没完全错，只是在说不同层级的“蒸馏”。
+
+后者虽然没法复刻原模型，但已经非常有用了。
 
 # discuss-deep-research
 - ## 

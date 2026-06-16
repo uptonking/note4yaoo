@@ -22,6 +22,15 @@ modified: 2025-12-25T19:54:56.482Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Typst 0.15 Released : r/typst _202606](https://www.reddit.com/r/typst/comments/1u6n3qx/typst_015_released/)
+  - 0.15 released with MathML support, variable fonts, bundle export (experimental), multiple bibliographies, among many other additions.
+- Still lacking functional wrapped figures unfortunately
+- All good but the major journals still don't accept it. I wanted to use it but because of this single fact, had to install several gigabytes of LaTeX engine only to write a paper.
+
 - ## [The day has come: variable fonts work in Typst : r/typst _202606](https://www.reddit.com/r/typst/comments/1ty908f/the_day_has_come_variable_fonts_work_in_typst/?sort=top)
   - the well-known axes (wght, slnt, wdth, opsz...) get set automatically from weight / style / stretch / size like you'd expect — but you can still override them
   - custom axes go through a new variations dict, keyed by the case-sensitive 4-letter tag

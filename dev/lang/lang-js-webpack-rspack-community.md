@@ -80,6 +80,15 @@ modified: 2024-01-03T16:14:53.804Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Did you know Tailwind CSS officially provides a loader for webpack, Rspack, and Turbopack?
+- https://x.com/jiahan_c/status/2066787367793611048
+  - No more PostCSS. Up to 30% faster.
+  - Rsbuild now ships a new plugin that integrates the loader out of the box:
+
 - ## We’re building a new Rust-based compiler & optimizer for TypeScript, using static type info from typescript-go. 
 - https://x.com/jiahan_c/status/2065630866668453898
   - Think Google Closure Compiler for TS: smaller/faster apps & libs, targeting ~10–20% bundle size reduction. It’s still private, but we plan to open source it.

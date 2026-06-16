@@ -145,6 +145,19 @@ modified: 2022-11-06T11:21:27.612Z
   - A framework-agnostic syncing solution that auto-connects any DB/API with your local data store and has optimistic-UI built in
   - Magnetar has 2-way sync database integration for Google Firestore (and others coming). You do not need to learn to work with the database SDK.
 # db-client
+- https://github.com/t8y2/dbx /5.6kStar/apache2/202606/rust/ts/vue/tauri
+  - https://dbxio.com/
+  - 轻量级跨平台数据库客户端、数据库管理工具。
+  - 支持 MMySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, ClickHouse, SQL Server, Oracle, Elasticsearch, MariaDB, TiDB, OceanBase, openGauss, GaussDB, KingBase, Vastbase, GoldenDB, Doris, SelectDB, StarRocks, Redshift, DM, TDengine, CockroachDB, Access, HighGo，H2, Snowflake, Trino, Hive, DB2, Informix, Neo4j, Cassandra, BigQuery, Kylin, SunDB等40+种数据库
+  - 不用再在 Navicat、RedisInsight、MongoDB Compass、DBeaver 之间来回切了。
+  - OceanBase、GoldenDB、TiDB → 兼容 MySQL 协议，选 MySQL 类型直接连
+  - 磐维、openGauss、KingBase、GaussDB → 兼容 PostgreSQL 协议，选 PostgreSQL 类型直接连
+  - [15MB 干翻 Navicat！开源全能数据库管理工具 DBX，支持多种数据库 - LINUX DO _202604](https://linux.do/t/topic/2083459)
+    - CodeMirror 6 编辑器，语法高亮
+    - AI 辅助生成 SQL（支持 Claude / OpenAI）
+    - 虚拟滚动，万行数据不卡
+    - SSH 隧道连接
+
 - https://github.com/Rohithgilla12/data-peek /1.6kStar/MIT/202604/ts
   - https://www.datapeek.dev/
   - A minimal, fast, database client desktop application. 

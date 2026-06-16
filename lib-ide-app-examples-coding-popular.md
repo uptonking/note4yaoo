@@ -921,6 +921,12 @@ modified: 2025-12-11T18:10:23.710Z
   - a desktop workbench for the Pi coding agent. It’s meant to make Pi feel more at home as a desktop app: session sidebar, conversation view, command palette, source control panel, file search, diff viewer, and terminal/output in one place.
   - It uses pi-coding-agent under the hood 
 
+- https://github.com/agegr/pi-web /MIT/202606/ts
+  - pi 编程智能体 的网页界面。在浏览器中浏览会话、与智能体对话、分叉对话、切换消息分支。
+  - 会话内分支 — 回退到任意节点继续对话，在同一文件内创建分支
+  - https://github.com/Chasen-Liao/pi-agent-desktop
+    - 基于 Electron 的 Pi 编程智能体桌面客户端 (衍生自 pi-web)
+
 - https://github.com/shixin-guo/pi-studio /MIT/202606/ts
   - Local Codex-style desktop GUI for the Pi coding agent
 # cli-aggregator/wrapper

@@ -26,6 +26,12 @@ modified: 2026-02-01T08:25:22.883Z
 
 - ## 
 
+- ## 
+
+- ## tired of waiting for books to be translated into my language, so I built BookTranslator.
+- https://x.com/DottChen/status/2066748909909885064
+  - [Translate Your Book Online — Upload PDF, EPUB or DOCX | BookTranslator ](https://www.booktranslator.app/translate-book)
+
 - ## [腾讯混元离线大模型翻译APP来了 - LINUX DO _202605](https://linux.do/t/topic/2184185)
   - 腾讯专门为手机CPU设计的STQ内核，该方案实现了对SIMD指令集的完美适配。最终，3.3GB的原始模型被进一步压缩至440MB，轻松常驻后台，让内存紧张的普通手机也能顺滑进行高质量离线翻译。
   - https://huggingface.co/AngelSlim/Hy-MT1.5-1.8B-1.25bit-GGUF
@@ -56,6 +62,18 @@ modified: 2026-02-01T08:25:22.883Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [【翻译 Skill 分享】将任何格式、任意长度的外文材料变为母语译本 - LINUX DO _202606](https://linux.do/t/topic/2409217)
+  - 读外文资料时，常被翻译步骤卡住。 现有的翻译服务（如沉浸式翻译 BabelDOC PDF、DeepL），速度快，但质量一般。
+  - 尝试用 web 工具 将长文分片后再并行调用 LLM 翻译。有所改善，但还是有缺点： 不够方便。提取与清洗文本、术语表整理和提示词设计都得自己来。 翻译质量一般。因为分片之间的风格一致性和逻辑连贯性不太好
+  - 直到发现这个项目 baoyu-translate skill。我在该项目的基础上，按自身需求不断调整，得到了现在的版本：longtext-translate skill
+  - https://github.com/zlhhhh8901/longtext-translate
+  - https://compare-gules.vercel.app/
+  - PDF / EPUB / WORD 支持只翻译指定页码或章节范围的内容
+  - 运行模型：deepseek-v4-pro（推理强度 High，ClaudeCode 环境），走完「翻译 + 审校 + 精编」全流程
+
 # discuss-models-mt
 - ## 
 

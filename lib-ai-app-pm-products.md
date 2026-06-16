@@ -470,6 +470,7 @@ modified: 2025-03-22T16:10:24.856Z
     - progressive doc processing: 边处理/翻译，边查看，能展示文件被处理如翻译的进度和内容交互
   - translation+proofreading: 包括pdf文件, 普通文档、网页
     - 输出不同模型的翻译版本，供用户比对, 参考promptfoo
+    - partial-translate, 仅四六级
   - audio
     - 远端分析youtube/b站视频
   - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
@@ -2788,6 +2789,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [MoonTVPlus](https://moontv.662778.xyz/)
   - [𝔔𝔦𝔫𝔤 𝔖𝔥𝔢𝔫𝔤 -公益MoonTVPlus - LINUX DO _202605](https://linux.do/t/topic/2126755)
   - [𝓙𝓲𝓪1 𝓣𝓿 ](https://moontv.jia1.de/)
+  - [【影视库】自建MoonTV PLUS - LINUX DO _202606](https://linux.do/t/topic/2415308)
+    - https://tv.094264.xyz
 
 ## hosting
 

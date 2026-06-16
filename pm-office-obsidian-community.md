@@ -345,6 +345,9 @@ modified: 2024-01-23T02:52:23.932Z
 - https://x.com/TGUPJ/status/2064397799521767928
   - 类似于卡片标注
 
+- https://x.com/TGUPJ/status/2066573785008898479
+  - themed pages are back by popular demand
+
 - ## [Notebook Navigator 3.1 brings Scrivener-style sidebars to Obsidian! : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1tz3qlq/notebook_navigator_31_brings_scrivenerstyle/?sort=top)
   - One of the main issues when moving from Scrivener to Obsidian is losing that attached writing context. If you use Scrivener, you probably rely on the Inspector notes panel, where you can keep scene notes, reminders, and scratch text beside the section you are writing. Ulysses has a similar sense of structure with sheets inside groups, but Obsidian has never really had a native way to make folder context follow you around while browsing your vault.
   - Notebook Navigator 3.1 brings this workflow to Obsidian with two new features: Open folder notes in right sidebar and Right sidebar: Show closest folder note. 

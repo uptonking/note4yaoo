@@ -52,8 +52,10 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/rootiest/obsidian-ai-image-ocr /MIT/202509/ts/inactive
   - Obsidian plugin for AI-powered text extraction from images
 
-- https://github.com/jritzi/ocr-extractor /MIT/202604/ts
+- https://github.com/jritzi/ocr-extractor /MIT/202606/ts
   - Obsidian plugin to extract text from documents, images, etc. and store it as Markdown in notes
+  - [OCR Extractor - Now with support for local models : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1u6v7xr/ocr_extractor_now_with_support_for_local_models/)
+    - extracts text from PDFs, documents, images, etc. embedded in your notes and inserts it below the attachment as an expandable callout. This means that the text will be searchable via Obsidian's built-in search, other search plugins, and even your operating system's native file search.
 
 - https://github.com/qidianlinjin1990/multi-ocr /NonOpen
   - 一个支持AI OCR和OCR服务商的Obsidian插件

@@ -18,6 +18,10 @@ modified: 2021-01-08T17:14:34.841Z
 - https://x.com/vikingmute/status/2061618080934252630
   - https://animations.dev/vocabulary
 
+- https://x.com/vikingmute/status/2066697429555245401
+  - [Say precisely what you mean. ](https://index.how/to/articulate)
+  - 整理了设计师在讨论视觉、UI/UX 时常用的专业术语，按类别分节，便于快速查阅和精准沟通。每条术语都附带简洁、实用的解释，同时还有 skills，方便 AI 使用。
+
 - https://x.com/emilkowalski/status/2061426518333571576
 - Do you think "prompting animations" eventually becomes a core frontend skill, or just a temporary bridge until models infer intent automatically?
   - Probably a temporary bridge, but I think you’ll always get better results by being more precise, regardless of how the technology evolves.

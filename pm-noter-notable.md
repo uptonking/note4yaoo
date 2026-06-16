@@ -163,7 +163,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 🤔 产品的价值是否足以吸引用户付费, 否则可持续发展性很弱
   - 如大模型、支持最新大模型的comfyui, 并且大模型种类多更新多
   - ai coding产品如cline, 每次新模型的发布的限免时段, 都会很快更新最新模型并免费使用, 还可以搜集使用评价与反馈
-  - 能为其他产品提供infra或tools，如nvidia
+  - 能为其他产品提供infra/tools，如nvidia
     - openclaw的广泛使用能推广硬件如mac-mini、模型厂商、模型聚合商、自媒体
   - 能为其他用户用户提供二创素材，如视频、图片
   - 做合并功能如llm支持vlm/asr/tts, stirling-pdf聚合功能, claude自己做plugins/skills, vsocode内置部分插件, 或者做闭源功能的开放版
@@ -196,6 +196,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 📌 obsidian-bases
   - 📌 citations: notebooklm doc search with citations
     - ❓ search/rag 如何做出竞争力与特色
+    - open knowledge format
   - 📌 ocr router like openrouter/mineru/paddleocr/new-api
   - obsidian for pdf/ocr
   - https://github.com/PDFMathTranslate/PDFMathTranslate /保留排版的 PDF 文档全文双语翻译
@@ -207,7 +208,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
   - [GoAmzAI - 个人、团队、企业私有化、运营的AIGC平台解决方案](https://d.goamzai.com/)
   - ⚖️ 支持中国知网的 caj 格式
-  - realtime collab + resumable-stream
+  - ~~realtime collab + resumable-stream~~ 
   - ❓ remote-control/openclaw 如何做出特色
   - ❓ pdf/image-editing 如何做出特色
 

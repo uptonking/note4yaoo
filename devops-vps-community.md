@@ -191,7 +191,72 @@ modified: 2024-11-16T10:52:53.263Z
 
 - ## 
 
-- ## 
+- ## Cloudflare 最强技术栈总结
+- https://x.com/realchendahuang/status/2066514264656097571
+
+Cloudflare Pages适合托管静态站等前端项目。也可以配 Pages Functions 做轻量后端逻辑。
+
+Workers 是 Cloudflare 的核心 Serverless 运行时。可以理解为一段按需跑的 Node JS 函数。搭配 Hono框架可以实现基本完整的 API 后端。
+
+Cloudflare DNS 可以用来管理域名记录，可以配置缓存这些东西。
+
+Durable Objects，理解为可以持久存储的状态对象。适合处理强一致的小范围状态。比如聊天室、协同编辑、实时连接、用户会话、房间状态、AI Agent 状态、WebSocket 协调。
+
+Containers，可以理解为 Docker 容器。用来跑各种各样的 Docker。但是它是按时间收费的。适合跑一些重型的任务。批量音频处理、复杂爬取、PDF/图片批处理、Agent 沙箱。
+
+Queues 是消息队列，用来把请求和后台任务解耦。用来跑一些异步任务消息。
+
+Workflows 是 Durable Execution，也就是可恢复、可重试、可持续几分钟到几周的多步骤任务。
+
+R2 是 Cloudflare 的对象存储，类似 S3，用来放图片、音频、视频片段、备份、日志、数据集、模型文件、静态资源等。把它理解成一个很强大的网盘，免费用户有 10 个 G。
+
+D1 是 Cloudflare 的 serverless SQL 数据库，把它理解成一个免费的 SQLite，免费用户有 5 个 G。
+
+KV 是全球低延迟 key-value 存储。把它理解为免费的 Redis。
+
+Hyperdrive，把它理解为自己托管的 数据库的免费连接池，可以加快自己数据库的连接，不需要每次每次请求都创建连接。在边缘端维护一个连接池。
+
+Pipelines 负责把流式数据摄入、转换、写入 R2，可以写成 Parquet 或 Apache Iceberg 表。
+
+R2 SQL 是 Cloudflare 对 R2 Data Catalog 里 Iceberg 表的 serverless 分析查询引擎。
+
+Workers AI 是 Cloudflare 的 serverless GPU 推理平台，可以在 Workers、Pages 或 API 中调用模型。
+
+Models 是 Cloudflare 的模型目录，包含 Workers AI 托管模型，也包含通过 AI Gateway 访问的外部 provider。
+
+AI Gateway，是一个免费的 大模型 API 网关。可以把它官方的，包括你自己的一些模型的供应商聚合在一起。一起调用还有一，很强大的监测功能。
+
+Vectorize 是 Cloudflare 的向量数据库，可以从 Workers 直接做 embedding 检索。
+
+AI Search 是 Cloudflare 新的托管搜索/RAG 能力，可以连接网站、R2、上传文档，并支持自然语言搜索、混合搜索、metadata filtering。
+
+Cloudflare Agents 是基于 Workers、Durable Objects 等能力的 Agent 开发框架，支持聊天、语音、邮件、Slack、webhooks、工具调用、持久身份、本地 SQL 状态、实时连接和可恢复执行。
+
+Browser Run，是 Cloudflare 的浏览器自动化能力，可以跑 headless Chrome。
+
+Cloudflare Images 可以在边缘动态 resize、优化、转换图片，避免你为每个尺寸存多份图片。
+
+Stream 是 Cloudflare 的视频平台，负责上传、存储、编码、播放直播和点播视频。
+
+Realtime 是 Cloudflare 的 WebRTC 相关产品，包括 RealtimeKit、Realtime SFU、TURN Service，用于音视频通话、实时互动、数据通道等。
+
+Turnstile 是 Cloudflare 的验证码替代方案，可以保护表单、登录、注册、评论、API。
+
+WAF 用于保护网站和 API，支持自定义规则、托管规则、Rate Limiting、安全事件分析。
+
+Access 和 Tunnel 适合保护后台、数据库面板、内部服务、MinIO、监控面板、Admin。如果你自己部署的一些东西，你通过它，你就不用额外的再去做健全了。直接用自己的邮箱登录注册就行。
+
+这些东西要么都非常便宜，要么有非常慷慨的免费额度。好好的利用 Cloudflare，基本上每个月都不怎么有服务器花费，这是在 AI 时代，我们每一个想开发产品的人省钱的利器。
+
+关键是你别看现在这些功能这么多，你用 Codex 结合 Cloudflare 的插件，可以全自动的，按照你自己的需求。
+
+帮你搭配好最佳实践，不需要你去操心，你只需要用豆包输入法口喷出来你的需求就行。
+
+具体的执行由 Codex 来做。
+
+但这一切的前提是你需要知道有这些东西。你要知道有了 Cloudflare，有这些东西才能让 Codex 去做。
+
+所以在 AI 时代，知道 know how 也是一种很强大的技能。
 
 - ## [[开源自荐] CF-Server-Monitor 部署在Cloudflare Workers的免费探针 - LINUX DO _202606](https://linux.do/t/topic/2391991)
   - 一个基于 Cloudflare Workers + D1 的多服务器监控探针系统，支持实时监控、历史数据查看、延迟追踪、地图展示等功能。兼容主流Linux系统，Alpine Linux，Windows系统。
@@ -555,7 +620,21 @@ https://dlercloud.com/user/shop
 
 - ## 
 
-- ## 
+- ## [机场专属客户端的优化真有这么厉害？延迟92ms变7ms - LINUX DO _202606](https://linux.do/t/topic/2415184)
+- 我通过cx逆向了，不同客户端请求，返回的地址不一样，而且还有加密
+
+- 选的什么地区啊，我广东连香港也才10ms 
+
+- 两种手段：
+  - 开了 unified-delay，这种不算作弊，能达到 7ms 也算很厉害了
+  - 测速劫持到机场自己的服务器上，这种纯属作弊
+
+- 两种可能
+  - 1. 显示的是你本地到中转服务器/专线入口之间的延迟。
+  - 2. 自家的客户端当然想怎么写就怎么写，反正你又感觉不出来
+  - 顺便一提，能有7ms那一般是广东到香港的延迟，其他地方做不到
+
+- 92ms为clash 测试的真实HTTP 延迟， 7ms 为客户端测试的到国内中转的TCP延迟
 
 - ## [佬们，mac 用啥代理软件呀 - LINUX DO _202606](https://linux.do/t/topic/2326970)
   - 之前用 surge 然后机场更新了不支持 anytls 换了 singbox，但是配置太麻烦了，又换了 clash verge 但是微信钉钉图片加载不出来也发不出去，佬们有啥推荐的软件吗

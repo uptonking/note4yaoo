@@ -38,9 +38,25 @@ modified: 2025-09-21T18:39:13.776Z
 
 - composable-markdown
   - import
-# markdown-flavors
+# markdown-flavors ⚖️
 - markdown-extensions
 - mdx
+
+- [GitHub Flavored Markdown Spec ](https://github.github.com/gfm/)
+  - table
+  - Task list items 
+  - Strikethrough
+  - Autolinks 
+  - Disallowed Raw HTML
+
+- [Obsidian Flavored Markdown](https://obsidian.md/help/obsidian-flavored-markdown)
+  - [[Link]]	Internal links
+  - ![[Link]]	Embed files
+  - ![[Link#^id]]	Block references
+  - ^id	Defining a block
+  - [^id]	Footnotes
+  - > [!note]	Callouts
+
 - [R Markdown](https://rmarkdown.rstudio.com/)
 - [MyST(Markedly Structured Text)](https://github.com/executablebooks/markdown-it-myst)
   - [MyST Overview](https://myst-parser.readthedocs.io/en/latest/index.html)
