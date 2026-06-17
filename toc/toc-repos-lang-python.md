@@ -108,6 +108,15 @@ modified: 2025-02-26T15:04:15.883Z
   - 管理员功能（NEW）
   - FastAPI / MongoDB (Motor) / JWT / SMTP
   - TypeScript / Vite / Tailwind CSS / Zustand
+
+- https://github.com/benavlabs/crudauth /MIT/202606/python
+  - https://benavlabs.github.io/crudauth/
+  - Batteries-included, transport-agnostic authentication for FastAPI.
+  - crudauth gives you one CRUDAuth object that wires cookie sessions, JWT bearer tokens, OAuth, and email flows (verify / reset / change) - with CSRF, escalating login lockout, sudo mode, and multi-device session management - over your own SQLAlchemy User model. 
+  - Transport-agnostic: cookie sessions and JWT bearer tokens behind a single Principal; first credential present wins, and authorization code never depends on which transport authenticated.
+  - Your model, your schema: works over your existing SQLAlchemy User via a logical-field column_map - no forced renames, no second user table.
+  - Pluggable backends: in-memory for dev, Redis for production - for sessions, CSRF, lockout counters, and one-time tokens.
+  - Fully typed & async: ships py.typed, built on SQLAlchemy 2.0 and Pydantic v2.
 # django
 
 ## django-fwk

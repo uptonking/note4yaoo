@@ -1443,6 +1443,21 @@ modified: 2025-12-11T18:10:23.710Z
   - I got tired of typing long prompts to LLMs. Speaking is faster, so I built this tool to transcribe my voice directly to the clipboard with a hotkey.
   - Voice transcription to clipboard with system-wide hotkeys (Cmd+Shift+R on macOS)
   - All agents in this tool are designed to run 100% locally. Your data, whether it's from your clipboard, microphone, or files, is never sent to any cloud API. 
+
+- https://github.com/esengine/deepseek-reasonix /22.7kStar/MIT/202606/go
+  - http://reasonix.io/
+  - DeepSeek-native AI coding agent for your terminal. 
+  - Engineered around prefix-cache stability — leave it running.
+  - v1.0 is a ground-up rewrite in Go — The earlier 0.x TypeScript releases are legacy
+  - A config- and plugin-driven harness — a single static Go binary, tuned around DeepSeek's prefix cache so token costs stay low across long sessions.
+  - Config-driven. Providers, the agent, enabled tools, and plugins are all declared in reasonix.toml. No hardcoded models.
+  - Multi-model & composable. DeepSeek (flash/pro) and MiMo ship as presets; any OpenAI-compatible endpoint is a config entry, Optionally run two models together (executor + planner) in separate, cache-stable sessions. 
+  - Plugin-driven. External tools run as subprocesses over stdio JSON-RPC (MCP-compatible). Built-in tools self-register at compile time.
+  - [谁用过Reasonix？是deepseek是官方开发的吗？ - LINUX DO _202605](https://linux.do/t/topic/2244997)
+    - 长会话的情况下能把缓存命中率做到 95% 以上，1亿 token 大概也就 10十块钱
+    - DS的缓存命中成本低，更利于长任务就是显著优势啊，为什么DeepSeek-TUI不被看好，很大的原因就是BUG多且缓存命中效率低下。
+    - 桌面版还可以用 只是没有滚回 回退的 cli有但是感觉终端画面很奇怪 bug也有不少了
+    - 我用这个搭配v4flash,咔咔快啊，非常爽，就是有个问题，感觉对话管理功能不太完善，compact后，感觉没咋压缩上下文，还是80%上下文警告不给继续对话了
 # cli-utils
 - https://github.com/rivet-dev/sandbox-agent /536Star/apache2/202602/rust/ts
   - https://sandboxagent.dev/

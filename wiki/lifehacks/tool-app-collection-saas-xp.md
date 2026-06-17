@@ -15,7 +15,7 @@ modified: 2022-11-07T10:25:12.034Z
   - [names.org - The Meaning Of Names](https://www.names.org/)
   - address
     - West Hollywood Park: 647 N San Vicente Blvd, West Hollywood, CA 90069
-      - +1 323 8486534
+      - +1 3238486534
       - West Hollywood is a city in Los Angeles County, California, United States
     - 佛山市顺德区
       - 528311
@@ -33,6 +33,12 @@ modified: 2022-11-07T10:25:12.034Z
 - https://github.com/iamadamdev/bypass-paywalls-chrome
   - help bypass paywalls for selected sites.
   - Bypass the following sites' paywalls: bloomberg, fortune, glassdoor, medium, national geographic, quora, vanity fair, vulture
+# yaoo-habit
+- saas, pricing, renew
+  - vpn-justmysocks, $27.4/year, 0922
+  - vpn-flowercloud, ¥130/year, 0603
+  - vps-dartnod-2c4g, $30/year, 0618
+  - domain-netcup-dtk, $5/year, 0618
 # tech-community
 - discord
   - tiptap

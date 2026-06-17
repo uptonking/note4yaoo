@@ -142,6 +142,16 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/verazuo/jailbreak_llms
   - A dataset consists of 15, 140 ChatGPT prompts from Reddit, Discord, websites, and open-source datasets (including 1, 405 jailbreak prompts).
   - 开源了论文中使用的 15, 140 个 ChatGPT 提示，其中包括 1, 405 个越狱提示，收集于 Reddit、Discord、网站和开源数据集。
+
+## prompt-management
+
+- https://github.com/YellowSeaa/PromptWorks /apache2/202606/python/ts/vue
+  - [【开源】PromptWorks-一个简单的Prompt管理与测试平台 - LINUX DO _202510](https://linux.do/t/topic/1036516)
+  - 由于在工作中有Prompt编写与调优的需求，看了一下目前的一些开源工具，发现有佬写了Prompt管理工具和测试工具，但没有将Prompt管理与测试结合起来的工具，于是打算自己Vibe Coding一个，于是就有了这个项目。
+  - Prompt 管理：支持提示词的创建、版本迭代与标签归类，保留完整审计信息。
+  - 版本对比：提供差异视图，快速识别提示词更新带来的内容变化。
+  - 评估测试：后端暴露实验执行、指标记录能力，前端可快速发起测试任务并查看或导出测试结果。
+  - 测试支持：支持选择不同的模型、prompt、参数、轮次、变量进行测试，评估不同 Prompt、模型、参数组合下输出的一致性、质量、性能和成本。
 # ai-client-gui
 - https://github.com/Zhou-Shilin/Aether /GPL/202605/kotlin
   - A stunning, localized, general-purpose AI Agent for Android.

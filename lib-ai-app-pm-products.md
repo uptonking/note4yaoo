@@ -486,8 +486,12 @@ modified: 2025-03-22T16:10:24.856Z
   - gui
     - better revert/checkpoint
 # 💎 modelpedia - 模型参数对比, 历史评测结果, 能免费对比最新参数及上一个版本
+- free-model-today
+  - 基于 github-action 自动更新各平台的免费模型
+
 - pm-eval/bench
   - 模型文档及参数都是on-paper, 可直接运行的测试集加上量化版本更适合实际效果, 是否存在产品空间
+  - prompt-management/evals 是否值得扩展为产品
 
 - free-models
   - nvidia, openrouter

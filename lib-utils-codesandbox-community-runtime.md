@@ -868,6 +868,24 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Apple Container 与 Docker 区别：Docker Desktop 用共享 VM + Linux 内核模拟；Apple 版隔离更好、启动更快、更Mac原生，但生态新、功能少。
+- https://x.com/jaywcjlove/status/2066708332048760908
+  - ？是否正确
+
+- ## container machines, allowing your Mac to run a lightweight, persistent Linux environment with your home directory and repos automatically mounted
+- https://x.com/timsneath/status/2064448862597869761
+  - Container machines are a brand new capability this year. They build on the container support we shipped last year.
+  - At WWDC25, we introduced generalized container support with an open-source containerization framework and a container CLI. Container *machines* , introduced at WWDC26, extend that, enabling a seamless, highly integrated Linux environment on macOS.
+  - They’re lightweight like a container, sharing an image across multiple environments. But they’re persistent, not ephemeral, like a VM. And they can share the host environment, including shared home directory and configuration. 
+
+- aka they copied WSL instead of just giving us native Linux boot by opening their drivers.
+
 - ## NanoClaw moved from Apple Containers to Docker _202602
 - https://x.com/Gavriel_Cohen/status/2025603982769410356
   - When I built NanoClaw, it was my personal project. I use a Mac, I loved the idea of using lightweight Apple Containers that are optimized for Apple Silicon, so that's what I shipped. 
@@ -892,24 +910,6 @@ modified: 2024-05-12T17:20:03.132Z
   - Works with OpenAI, Anthropic, or any LLM. Pay only for compute time.
   - not open source yet - but if there's enough interest, we can cover it in a blog post
 
-# discuss-sandbox-mac
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## container machines, allowing your Mac to run a lightweight, persistent Linux environment with your home directory and repos automatically mounted
-- https://x.com/timsneath/status/2064448862597869761
-  - Container machines are a brand new capability this year. They build on the container support we shipped last year.
-  - At WWDC25, we introduced generalized container support with an open-source containerization framework and a container CLI. Container *machines* , introduced at WWDC26, extend that, enabling a seamless, highly integrated Linux environment on macOS.
-  - They’re lightweight like a container, sharing an image across multiple environments. But they’re persistent, not ephemeral, like a VM. And they can share the host environment, including shared home directory and configuration. 
-
-- aka they copied WSL instead of just giving us native Linux boot by opening their drivers.
 # discuss-sandbox-ai 👾
 - ## 
 

@@ -821,6 +821,15 @@ Probably overbuilt for basic RAG, but we're in a regulated industry so the cost 
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [for production RAG systems, how do you handle document updates? Re-embed entire documents, diff chunks, or something else? : r/Rag _202606](https://www.reddit.com/r/Rag/comments/1u7oqfg/for_production_rag_systems_how_do_you_handle/)
+- temporal versioning. you process the updated document, and flag the previous version as 'superseded_by'. gotta have 'as of' data freshness in your indexing.
+
+- The chunk-hash approach is the right instinct, the pain is real once your corpus actually changes under you. The thing that bit me wasn't the embedding cost though, it was that a changed chunk can invalidate the relations a neighboring chunk implied even if that neighbor's text never moved. So hashing tells you what to re-embed but not what to re-evaluate. I ended up keeping a small provenance link per chunk so an edit could mark its dependents stale, otherwise you get a quietly inconsistent index that still hashes clean.
+
 - ## [RAG开发落地求助, 佬友们救我救我 - LINUX DO _202606](https://linux.do/t/topic/2304602/9)
 - 干了很久的rag了。目前的经验是切片策略需要一事一议。不是给什么文档就是一顿chunk，而是需要分析文档格式、文档的内容结构，然后设计相匹配的切片策略。之前也做了一堆excel格式的文档 把表格转换为自然语言描述，然后再做chunk。检索召回率非常高。可以尝试下。
 

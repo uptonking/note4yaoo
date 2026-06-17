@@ -1180,6 +1180,10 @@ modified: 2025-11-30T17:27:16.720Z
     - One of the main reasons I started KnowNote was that many similar projects (including open-notebook) rely on Docker-based setups, which can be a bit intimidating for non-technical users.
     - My goal here was to explore a lighter, desktop-first approach using Electron, so people can just download and run it without dealing with containers.
 
+- https://github.com/liangdabiao/llm-wiki /202604/ts
+  - 基于 [Karpathy llm-wiki]方法论，利用 AI 持续构建和维护你的个人知识库。支持从多种素材源（网页、推特、公众号、小红书、知乎、YouTube、PDF、本地文件）自动整理为结构化的 wiki，并通过 Quartz 发布为静态wiki知识库网站。 并通过 claude_agent_sdk 调用 claude agent 使用 llm-wiki , 提供api接口对外访问服务 。
+  - [【开源】利用我的llm-wiki 展示怎样把400篇阮一峰周报转为wiki网站和知识库 - LINUX DO _202606](https://linux.do/t/topic/2420761)
+
 - https://github.com/Panda-995/wechat-editor /apache2/202601/ts
   - 专为微信公众号创作者打造的极致像素风 Markdown 编辑器，内置 Google Gemini AI 强大助手
   - [告别排版地狱！不只是NAS，更是写作助手、排版大师和美学设计师 ](https://linux.do/t/topic/1506017)

@@ -353,6 +353,17 @@ modified: 2023-01-02T10:30:19.459Z
 - ## 
 
 - ## 
+# discuss-cef
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Electrobun 这个神器：纯 TypeScript + Bun 写跨平台桌面应用，系统 WebView 模式打包仅 ~14MB
+- https://x.com/xicilion/status/2066842898839310546
+- CEF 就算了，每升级一个版本，so 接口就二进制不兼容。
+
 # discuss
 - ## 
 

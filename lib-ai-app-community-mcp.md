@@ -604,7 +604,62 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## Three Ways Codex Can Use a Computer
+- https://x.com/jxnlco/status/2066970432855581052
+- There are three ways for Codex to use a computer: Computer Use, the Chrome extension, and the in-app browser. 
+
+- 1. Everything is @Computer
+Computer Use is the broadest of the three surfaces. It lets Codex see and operate graphical interfaces on macOS and Windows by working with windows, menus, keyboard input, and the clipboard in apps you approve.
+It is also usually the slowest. A structured plugin can call an API directly; Computer Use has to look at the interface, decide where to click, wait for the app to respond, and inspect the next state. That visual loop costs time, but it means Codex can work with apps that expose no useful API at all.
+On macOS, slow does not necessarily mean disruptive. Computer Use can operate approved apps in the background while you keep using the rest of your computer, often times I'll be using codex and open up an app and realized codex has been working quietly through some workflow.
+Depending on what is installed and approved on your computer, that can include Spotify, XCode, System Settings, an iOS simulator, or even the iPhone Mirroring app to control your iPhone! It can also move between apps when one workflow spans several of them.
+Use it when the task depends on:
+a native desktop app such as Spotify or a finance app
+an iOS simulator, iPhone Mirroring, or another GUI-only flow
+system or application settings
+a data source with no plugin or API
+a workflow that moves between several apps
+a missing action in an otherwise useful structured integration
+To install it, open Settings > Computer Use in Codex and click Install.
+To trigger it, mention @Computer, or explicitly ask Codex to use Computer Use, as our models get better it'll be able to call it all on its own when needed
+It is also the broadest trust boundary of the three. Give it one clear app or flow at a time. Keep sensitive apps closed when they are not part of the task, review permission prompts, and stay present for financial, account, payment, credential, privacy, and system-security changes.
+
+- 2. @Chrome for Multiple Tabs and Auth
+- The Codex Chrome extension gives Codex access to your signed-in Chrome state. Use it when the task depends on the account, cookies, browser profile, or authenticated tabs you already have.
+- To install it, open Plugins in Codex, add Chrome, and follow the setup flow. Codex will guide you through installing the Codex Chrome extension and approving Chrome's permissions. When the extension says Connected, start a new thread.
+- To trigger it, mention @Chrome or explicitly ask Codex to use your signed-in Chrome browser
+- Chrome tasks run in tab groups, which helps keep the tabs for one Codex thread together. Unlike the in-app browser, this surface carries your browser identity. That makes it more capable and more sensitive.
+- The other major advantage is multi-tab control. Chrome can keep several tabs associated with the same task, read context in one, compare it with another, and continue the workflow in a third. Computer Use can drive a browser visually, but Chrome understands the work as a browser workflow rather than a sequence of screen coordinates.
+- In one recent thread, I handed Codex an already-open Strudel Composer tab and asked it to make the music more interesting. Chrome gave it the selected tab and the page's WebMCP tools. Codex inspected the composition, rewrote the harmony and four-minute form, changed the tempo, saved the track, and left it playing.
+- The trust boundary matters. Websites may treat Codex's clicks, form submissions, and messages as actions taken by you. Page content is also untrusted input. Keep consequential steps explicit: research, navigate, and draft automatically; require your review before sending, publishing, purchasing, or submitting.
+- If the whole task stays in the browser, prefer Chrome over Computer Use. Chrome has the browser-native context the task needs without opening access to the rest of the desktop.
+
+- 3. In app @browser for websites you are building
+- The in-app browser is a browser that lives inside a Codex thread. You and Codex share the same rendered page, so it is especially good for building and debugging web apps.
+- This is where I start for:
+local development servers
+file-backed previews
+public pages that do not require sign-in
+reproducing visual bugs
+checking responsive layouts
+leaving element-level design feedback
+The important constraint is isolation. The in-app browser does not use your normal browser profile, cookies, extensions, signed-in sessions, or existing tabs. That is a limitation when the task needs an account, but a useful boundary when it does not.
+- To set it up, open Plugins in Codex, add the Browser plugin, and enable it.
+To trigger it, mention @Browser in your prompt or explicitly ask Codex to use the in-app browser
+This creates a tight feedback loop: Codex can edit the code, operate the page, inspect the rendered state, take a screenshot, and repeat the flow after the fix.
+- My favorite part is annotation. When I am reviewing a local app, I can click directly on an element or select an area and leave a comment. The style controls also let me preview and send more precise feedback about text, fonts, spacing, and color. I tend to combine this with voice input and steering: I review the page, leave comments, and queue more feedback while Codex works through it. The page becomes the specification.
+- That loop feels much closer to working with a designer in the same canvas than passing screenshots and prose back and forth.
+- The in-app browser is also useful as a starting point for a mixed workflow. In another thread, I opened an X post in the in-app browser and asked Codex to investigate the discussion. The visible page established which post I meant; Codex then switched to the Twitter CLI and retrieved 38 replies, including nested responses that the browser view had hidden. That is the narrowest-surface rule in practice: use the browser for the context on screen, then use a structured tool for the deeper retrieval.
+- There is a tradeoff. The isolation that makes the in-app browser a good development surface also means it is the wrong place to fight with Google login, a passkey, or a site that depends on your browser extensions. When identity matters, move to Chrome.
+
+- An Appshot is not a fourth way for Codex to control a computer. It is a way to point Codex at the context already in front of you.
+  - On a Mac, press both CMD+CMD  keys to capture the last window. Codex attaches an image and any available text to a thread. You can Appshot an error, an email, a design, a settings panel, or an unfamiliar form 
+  - Appshots are how you point to something on your computer. Browser, Chrome, and Computer Use are how Codex acts.
+  - Appshots are currently created from the Codex app on macOS. They capture the frontmost window, not the entire desktop, which makes them a useful way to provide focused context without granting control of the app.
+
+- Each mode carries different latency and reliability tradeoffs. Computer Use is most general but slowest; 
+  - in-app browser is fastest but sandboxed. 
+  - The harder skill is knowing when to use which — and when to chain them for a single task.
 
 - ## 🆚 Codex 操作浏览器有两种模式，一种是 Chrome 插件，一种是内置浏览器。用了一段时间之后，我总结一下两者的差异和各自适合的场景。
 - https://x.com/dotey/status/2065857399425032522

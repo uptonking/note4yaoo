@@ -26,7 +26,12 @@ modified: 2026-06-10T08:53:24.884Z
 
 - ## 
 
-- ## 
+- ## Open Design: Point. Comment. Mark. Edit. Capture and remix.
+- https://x.com/OpenDesignHQ/status/2067192475853180997
+  - Let AI design everything for you. Take control anytime.
+  - Use Open Design inside Cursor. Or use it directly.
+
+- @OpenDesignHQ do you natively support utilizing local LLMs ?
 
 - ## [我的前端管理平台 shadcn UI开发最佳实践，写了很多个项目总结出来的最快，最没有AI味的管理UI设计方案 - LINUX DO _202606](https://linux.do/t/topic/2219562)
   - 如果大家不排斥这个shadcn的UI风格的话，所有的管理后台都可以采用shadcn来写
@@ -150,6 +155,19 @@ modified: 2026-06-10T08:53:24.884Z
 - ## 
 
 - ## 
+# discuss-ui-testing
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [claude如何实现自动化流程测试呢（UI+功能） - LINUX DO _202606](https://linux.do/t/topic/2419475)
+- 不管是playwright或者cdp, 都只能做浅一点的UI测试，看下我的  https://github.com/weekitmo/browser-cdp-enhancement  当然，这都是看模型的强度了，我这个指的是web上的，如果其他方面客户端的，还是得借助adb等工具，或者flutter的话现有应该也有对应的mcp或者skill
+
+- 目前playwright mcp做自然描述语言自动化可行，设计测试场景，还是非AI时代的设计模式：setup、testcase、teardown。优点：零代码功底，不用维护脚本；缺点：烧token
 # discuss
 - ## 
 

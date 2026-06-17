@@ -9,7 +9,7 @@ modified: 2026-05-28T17:50:54.646Z
 
 # guide
 
-- goals
+- 📌 goals
   - playground for local ocr/vlm models
     - mlx supports stt, 可迁移实现audio-app
     - large-pdf
@@ -19,10 +19,15 @@ modified: 2026-05-28T17:50:54.646Z
   - version-history
   - wiki format: okf(open-knowledge-format), obsidian-bases
   - aistudio: chat/image/video, laptop/minipc厂商都希望内置本地模型
+  - tiered-models: sonnet+haiku, 还可参考 roo/kilo/ohmyopencode 
+  - caching heavily: 可参考lmstudio-disk-caching, reasonix-prefix-caching
   - built-in image/pdf/ocr for chatting with documents
     - image/pdf ux
   - port model-specific skills to aichorage
   - easy local model xp: single-model, dual-models, hot-models
+  - tiered/hybrid-llm
+    - 支持cloud与local混合的模式
+    - cloud only works
   - headless api/cli/skills
   - python-first for mlx/office
   - multiple-client/ui
@@ -32,11 +37,12 @@ modified: 2026-05-28T17:50:54.646Z
     - comfyui也需要custom node/scripts, 视频生产也需要剪辑和拼接
   - reproducible
     - model/llamacpp config
-  - tiered/hybrid-llm
-    - 支持cloud与local混合的模式
   - compact prompt mode
 
-- non-goals
+- free-model-today
+  - 基于 github-action 自动更新各平台的免费模型
+
+- 📌 non-goals
   - good llm xp on cpu, but optimized for gpu
     - cpu works for ocr/translation
   - computer-use
