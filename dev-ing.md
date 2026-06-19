@@ -338,6 +338,15 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0618
+
+- So after typing /word1 and pressing Enter, use n / N to move through all matches quickly.
+
+- i have bought a vps on https://dartnode.com/ and installed ubuntu 24.04 on it. the ip of vps is 166.88.1xx.xxx.
+  - i have installed nginx on my ubuntu vps, and i can visit http://166.88.1xx.xxx:8080 and see the normal nginx info page.
+  - i have a domain `playx.dpdns.org` on cloudflare.
+  - please explain to me step by step what should i do and configure to make visiting http://web1.playx.dpdns.org show the content of http://166.88.1xx.xxx:8080 . please make the configuration flexible so that i can make visiting http://web2.playx.dpdns.org to show content of http://OtherVpsIp:Port in the future.
+
 ## 0613
 
 - `uv run --directory`: 

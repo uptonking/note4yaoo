@@ -233,6 +233,21 @@ modified: 2026-06-17T07:27:04.608Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [cloudflare免费版大概能用到什么程度会被要求升级？ _202606](https://www.nodeseek.com/post-783209-1)
+  - 2个域名一个是自建S3存储一个是图床。
+  - 图床全缓存，网盘只回源不缓存，主要作用是只藏IP/并保证更好的回源线路。
+  - 图床和网盘下载的流量估计28或37开，每个月可能5-10T流量，会被封号或者要求升级吗。
+  - 如果被升级的话$20的可以吗。还是一定要企业版？
+
+- 别怕，每天7T还是活的好好的
+
+- 只有不违规，流量随便造
+  - 比如优选ip，流量大了会封号。缓存文件多确实可能会要求升级，但你5-10T流量的量应该是远远达不到的。
+
 - ## The Cloudflare $5/mo plan is honestly absurd
 - https://x.com/fayazara/status/2053774461934191032
 Workers - 10M requests
@@ -323,6 +338,25 @@ Access 和 Tunnel 适合保护后台、数据库面板、内部服务、MinIO、
   - https://tz.dashdeep.dpdns.org/
   - 实时监控：CPU、内存、磁盘、网络、进程数、连接数、负载均衡
 - 实测可用，现在可以把哪吒卸载了。
+
+# discuss-netspeed
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [这个是什么工具，找了一圈也找到半点踪迹 _202606](https://www.nodeseek.com/post-782556-1)
+- [Impart公益测速Bot已上线 免费为你的订阅测速 同时招后端  _202505](https://www.nodeseek.com/post-350094-1)
+  - https://t.me/Impart_Chat
+  - [Miaoko ](https://www.miaoko.net/)
+  - 一个自动化测试节点连通性的机器人，并会自动生成连通报告以方便使用者运维。
 
 # discuss
 - ## 

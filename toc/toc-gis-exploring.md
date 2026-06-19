@@ -7,12 +7,13 @@ modified: 2021-01-04T16:21:06.635Z
 
 # toc-gis-exploring
 
-# geo-apps
+# mapping-apps
 
+- [Washington, D. C. location on the U. S. Map - Ontheworldmap.com ](https://ontheworldmap.com/usa/city/washington-dc/washington-dc-location-on-the-us-map.html)
+# geo-apps
 - [Three Kingdoms - OverSimplified](https://www.youtube.com/watch?v=26EivpCPHnQ)
 
 - https://github.com/tmshv/sphere
   - General purpose GIS Desktop Application
   - Tauri + rust-analyzer
-
 # more-apps

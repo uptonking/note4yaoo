@@ -394,7 +394,31 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 - collection
 
-## dev
+## dev-starter
+
+- web server
+  - [ubuntu - How to start nginx via different port(other than 80) - Stack Overflow ](https://stackoverflow.com/questions/10829402/how-to-start-nginx-via-different-portother-than-80)
+
+```sh
+
+sudo apt install -y vim
+
+sudo apt install -y nginx
+sudo systemctl status nginx
+sudo systemctl start nginx
+sudo systemctl stop nginx
+sudo systemctl enable nginx
+
+sudo apt install -y certbot python3-certbot-nginx
+sudo certbot --nginx -d web1.playx.dpdns.org -d web2.playx.dpdns.org
+
+# List all service units (filter by type)
+systemctl list-units --type=service
+
+# Reload unit files without restarting running services
+sudo systemctl daemon-reload
+
+```
 
 - ubuntu-mysql
   - [ubuntu20.04安装MySQL以及MySQL-workbench可视化工具](https://blog.csdn.net/delilahy123/article/details/124834998)

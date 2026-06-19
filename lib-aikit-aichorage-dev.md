@@ -28,6 +28,7 @@ modified: 2026-05-28T17:50:54.646Z
   - tiered/hybrid-llm
     - 支持cloud与local混合的模式
     - cloud only works
+  - 纯云端模式方便mobile/async
   - headless api/cli/skills
   - python-first for mlx/office
   - multiple-client/ui

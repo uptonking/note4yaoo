@@ -102,6 +102,10 @@ docker volume prune
 - 
 
 # docs
+- [Install Docker Engine on Ubuntu | Docker Docs ](https://docs.docker.com/engine/install/ubuntu/)
+  - If you use ufw or firewalld to manage firewall settings, be aware that when you expose container ports using Docker, these ports bypass your firewall rules. 
+  - Docker is only compatible with iptables-nft and iptables-legacy. Firewall rules created with nft are not supported on a system with Docker installed. 
+
 - [Environment variables precedence | Docker Docs](https://docs.docker.com/compose/how-tos/environment-variables/envvars-precedence/)
   - When the same environment variable is set in multiple sources, Docker Compose follows a precedence rule to determine the value for that variable in your container's environment.
 - The order of precedence (highest to lowest 👇) is 

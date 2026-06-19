@@ -1,29 +1,38 @@
 ---
-title: devops-deploy-community-vps
-tags: [deploy, devops, vps]
+title: devops-deploy-community-vps-mjj
+tags: [deploy, devops, mjj, vps]
 created: 2026-06-17T05:42:26.194Z
-modified: 2026-06-17T05:42:37.573Z
+modified: 2026-06-19T06:15:35.007Z
 ---
 
-# devops-deploy-community-vps
+# devops-deploy-community-vps-mjj
 
 # guide
 
 - tips
-  - 分析需求: 想要更强的CPU、更大的RAM、更多的流量、CN线路优化
+  - 分析需求: 想要更强的CPU、更大的RAM、更多的流量、CN线路优化、升降配置
   - 公开与分享的需求不强时，没必要上顶级vps
   - 可以先月付便宜的vps，等到活动或论坛有人抛售时再获取长期vps
   - dedirock性价比高，但口碑不好
   - 是否能多次免费更换ip
+  - 支持7天无理由退款的很方便
 
 - comparison
   - [VPS值得买！ 产品库存状态 ](https://stock.vpszdm.com/)
   - [Cheap VPS Deals ](https://serverdeals.cc/)
+  - [PoorVPS - VPS 导航 ](https://poorvps.com/)
+    - [HostDzire CN | HostDzire Deals Monitor ](https://hostdzire.cn/)
+    - [RackNerd Plus | RackNerd Deals Monitor ](https://racknerd.plus/)
 
 - resources
   - https://github.com/cloudcommunity/Cloud-Free-Tier-Comparison
     - Comparing the free tier offers of the major cloud providers like AWS, Azure, GCP, Oracle Cloud etc.
+
+- forums
+  - [LowEndTalk – Web Hosting Forum & Community ](https://lowendtalk.com/discussions)
 # vps-xp
+- 如何隐藏服务器ip
+
 - usecases
   - blogs
   - new-api, sub2api
@@ -49,8 +58,8 @@ modified: 2026-06-17T05:42:37.573Z
   - email server
   - text search
 # vps-vendors
-- [DediRock ](https://billing.dedirock.com/index.php/store/promo-vp)
-  - 美西、美东 价格不同
+
+## dartnode
 
 - [DartNode - Affordable Cloud Hosting, Dedicated Servers & VPS Solutions ](https://dartnode.com/warehouse-deals)
   - 美东boston
@@ -65,6 +74,37 @@ modified: 2026-06-17T05:42:37.573Z
   - DartNode 成立于 2023年，总部位于休斯顿技术中心的中心地带，是 Snaju® Inc. 的一个部门，在 NASA 约翰逊航天中心附近运营着一个 24/7/365 网络运营中心。
   - 提供带宽  1 Gb/s 不限流量的 vps 套餐，其中 VPS-1 Plan 每月仅需 2 美元，对于经常看 Netflix、youtube 或需要大量下载的小伙伴，终于不用担心流量用超的问题了。
 
+- [How to Add a Domain and SSL Certificate](https://help.dartnode.com/server-setup/web-servers/setup-ssl-certbot)
+  - 
+
+- [How to Create, Restore, and Delete Snapshots (Backups)](https://help.dartnode.com/cloud-compute/cloud-compute/manage-snapshots-backups)
+  - View your current snapshot count, total slots (3 free, or 30 with the premium addon), and auto-schedule status.
+  - Warning: Restoring a snapshot overwrites your current server state and reboots the server.
+  - Premium Backups ($4.95/month): Upgrade from 3 to 30 snapshot slots with auto-scheduling by enabling the backup addon.
+
+- [How to Grow a Partition on Ubuntu](https://help.dartnode.com/how-to/linux/how-to-grow-a-partition-on-ubuntu)
+  - If your Ubuntu server was installed using a default partition layout, and it's not using the full capacity of the physical disk, you can manually expand the partition and filesystem to utilize all available space.
+  - This guide will walk you through the process using common tools like lsblk, growpart, and resize2fs or xfs_growfs, depending on your file system.
+
+- docs
+  - [Does DartNode block ports?](https://help.dartnode.com/faq/does-dartnode-block-ports)
+    - By default, DartNode does not block any ports — you're free to use any port you need. However, we do monitor for abuse and maintain protections to ensure network health. Our filter list is updated every hour, automatically.
+  - [DDifference Between VPS, VDS, and Dedicated Servers](https://help.dartnode.com/faq/what-is-the-difference-between-vps-vds-and-dedicated-servers)
+    - A VPS(Virtual Private Server) is a virtual machine that runs on shared physical hardware, giving you dedicated slices of CPU, memory, and disk space — but the underlying infrastructure is shared.
+    - A VDS(Virtual Dedicated Server) is a step up from VPS. While still virtualized, it provides guaranteed CPU cores and RAM, offering near-dedicated performance.
+    - A Dedicated Server gives you control over an entire physical machine — 100% of the hardware is yours, with no sharing.
+  - [How to Reinstall the Operating System](https://help.dartnode.com/cloud-compute/reinstall-os)
+
+- pricing
+  - [Can I Transfer a Service to Another User?](https://help.dartnode.com/faq/can-i-transfer-a-service-to-another-user)
+    - Yes! DartNode allows you to transfer services to another user — completely free of charge
+    - Open a support ticket with our Accounting department.
+
+## popular
+
+- [DediRock ](https://billing.dedirock.com/index.php/store/promo-vp)
+  - 美西、美东 价格不同
+
 - [Hosteroid ](https://www.hosteroid.uk/store/special-deals)
   - 2c4g - $20.9/year
   - 可选: London, New Jersey(US), Amsterdam, 很多欧区
@@ -75,6 +115,24 @@ modified: 2026-06-17T05:42:37.573Z
     - 还不错，闲置了半年了，很稳，老板人也很好说话。
   - [【测评+已出勿念】hosteroid 闪购鸡7.24欧1年 2C4G50G ](https://www.nodeseek.com/post-246683-1)
     - cpu和RN的差不多。内存给的很大。硬盘性能非常不错，基本上第一梯队了吧。ip质量不错，解锁啥的也很全。网络10g口。结合这个价格，性价比没得说。为啥出：鸡太多从买来到现在一直吃灰。
+
+- [HostDZire :: Premium And Affordable Web Hosting Solutions ](https://hostdzire.com/billing/index.php?rp=/store/usa-cloud-vps-services)
+  - [HostDzire CN | HostDzire Deals Monitor ](https://hostdzire.cn/)
+  - [LAX-USA Cloud VPS #1 ( Triennially-Special )](https://hostdzire.com/billing/cart.php?a=confproduct&i=3)
+    - 4c6g - $64/3year, $21.3/year
+    - 100 GB NVMe
+    - Bandwidth :- 25TB/mon
+    - Ip :- 1 IPv4
+    - No Refunds | No Replacement | No Transfer Policy
+  - [HostDzire 闪购活动，最低至 $66 三年付 - 情报 - IDC Flare _202511](https://idcflare.com/t/topic/37061)
+    - Leaseweb 是 1997 年成立的，只卖给大户，分销商 HostDzire 也卖了十年了
+    - 有代理需求的佬友退让了，这家到国内线路基本不可用，跑服务和网站还行
+    - 这家是建站和服务用，没有任何优化，大部分都绕路
+    - No Refunds这条有点硬，三年付万一中途出问题就只能认了
+    - 这价格九月就有了
+    - 我有个洛杉矶的，搭了节点网速不行，ip进不了gpt，能进奈飞。 晚上有时候谷歌都打不开，youtue限速。 iperf3测速，tcp到国内最高70兆，udp能跑满500兆，但是我搭hy2的udp节点只能跑到50兆不知道为什么。 说实话我不是很想要这个vps了。
+  - [求教，hostdzire的用家，可以升級內存 - IDC Flare _202606](https://idcflare.com/t/topic/91112/3)
+    - 不可以，因为是分销上游的，上游不支持
 
 - [GreenCloud ](https://greencloudvps.com/billing/store/budget-kvm-sale)
   - 1c2g - $15
@@ -100,6 +158,8 @@ modified: 2026-06-17T05:42:37.573Z
     - 线路和带宽一样，2222用的ZEN4，内存少2g但能三年付最低叠到60，Bucket用的ZEN3，内存多2G但只能年付25，其他一样，说是2222性价比更高
     - 绿云所有机器都没有中国优化，只有日本软银和iij这两个能直连的勉强能用，其他全都是纯纯的落地或建站机
 
+## more-vps
+
 - [Chunkserve - LET VM Special ](https://billing.chunkserve.com/index.php?rp=/store/let-vm-special)
   - 1c3g - $9/year
   - 3c3g - $12/year
@@ -108,6 +168,8 @@ modified: 2026-06-17T05:42:37.573Z
   - [chunkserve：便宜荷兰VPS，低至$1.3/月，1G内存/1核/15gNVMe/2T流量/1Gbps带宽 ](https://www.zhujiceping.com/75476.html)
     - 2022年成立的荷兰公司， 自有网络AS214481，当前主要运作荷兰和波兰数据中心的VPS、独立服务器、设备托管… 这里介绍下荷兰vps，低至$1.3/月，采用E5-2690v4、DDR4、NVMe SSD阵列，1-10Gbps带宽、CPU、内存、硬盘、IP在下单的时候都是可以自由定制和扩展的…官方支持PayPal、Stripe、加密货币、支付宝、Apple pay等。
     - KVM虚拟，NVMe SSD阵列，1Gbps-10Gbps带宽，自带一个IPv4
+  - [[Chunkserve] Payment done, server not delivered, no support response — LowEndTalk _202606](https://lowendtalk.com/discussion/218301/chunkserve-payment-done-server-not-delivered-no-support-response)
+    - Chunkserve's stuff is on vacation now please come back in September or October, in October is better. Thank you for your support and patience.
   - [ChunkServe 争议退款了，这也太灵了... _202606](https://www.nodeseek.com/post-757933-1)
     - 刚买就失联，5/15开始又失联
     - 工单是不回的，virtualizor面板是用不了的，discord都是催工单的
@@ -146,6 +208,16 @@ modified: 2026-06-17T05:42:37.573Z
 - ## 
 
 - ## 
+
+- ## [买哪些平台的落地机算是毕业机呢? - 求助 - IDC Flare _202606](https://idcflare.com/t/topic/93773/1)
+  - 最近想买一个4c8g的服务器作为落地机部署一些服务，现在我有dmit的机子可以作为中转，想问一下各位佬有什么推荐的平台么，
+  - 我看了ovh，netcup，rn等等，ovh目前是不准我买，拒绝了，netcup是一个月110多又点超出预期价格了，rn是只有年费的，没买过，不知道好不好用。我的预期是一个月80左右吧，年付600以内。
+
+- 一般来说，部署服务的叫建站机吧，落地机应该是个人流量出口。
+  - 主要还是看你用户量，可以先便宜的用着，做好备份，用户量大了扛不住就迁移到Netcup
+
+- 需求不变的前提下 最多1年 试试3、5个鸡就知道留哪几个啦，学费要交。
+  - 需求变化的情况下，就多来看看论坛，大家很热心的推荐 也有厂家直销哦
 
 - ## 刚买了个 vps，权限丢给 AI，让它建一个 Clash 节点，安装 certbot 并通过 Let's Encrypt 给 Trojan 所需的域名定期申请证书，同时生成 Clash 的 yaml 配置文件，并测试内外网带宽……AI 一气呵成
 - https://x.com/gidot/status/1987554615920033814
@@ -320,6 +392,59 @@ modified: 2026-06-17T05:42:37.573Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [dartnode过排队思路 _202606](https://www.nodeseek.com/post-781010-1)
+  - 判断了这个参数是claim就弹出抢购页面，但是我没有claim_url怎么办？
+  - 灵机一动，去排队另外两台月付几十刀的，人很少，一下就拍到了，抓到返回参数把商品id换成173
+  - 实际抢购地址：https://dartnode.com/wh-session/173/claim
+
+- 这是后端鉴权吧，哪有把逻辑放前端的, 肯定过不了
+
+- ## [Dartnode 13.99 休士頓 _202606](https://www.nodeseek.com/post-781019-1)
+一、 核心短板：CPU 性能较弱
+配置：Intel Xeon Gold 6148 (2.40GHz)，分配了 2 核 2 线程。
+
+表现：Geekbench 5 的单核得分 612，多核得分 1021。这个分数在目前的服务器市场中属于偏低水平。
+
+影响：不适合用来跑重度计算、大型游戏服务端、复杂的实时视频转码，或者高并发的大型动态网站。如果负载过高，这颗 CPU 会成为明显的系统瓶颈。
+
+二、 绝对亮点：极其优异的硬盘 I/O
+配置：100GB 容量，测试显示大概率为 NVMe 固态硬盘。
+
+表现：顺序读取（SEQ1M）高达 ~2585 MB/s，顺序写入高达 ~2900 MB/s。更关键的 4K 随机读写（RND4K）也有 50+ MB/s 和 13k+ 的 IOPS。
+
+影响：这是这台机器最拉分的地方（击败了大部分同类检测库里的硬盘）。这意味着极快的系统启动速度、极其丝滑的系统重装与恢复过程，以及非常优秀的数据库（如 MySQL/PostgreSQL）读写响应。它在处理海量小文件时会非常从容。
+
+三、 中规中矩：内存与网络设施
+内存：总容量约 4GB（实际可用 3.8GB）。对于运行 Debian 12 来说非常充裕。配合 100GB 的硬盘，用来跑 Docker 容器、搭建几个中小型网站环境、或者作为测试节点是完全绰绰有余的。
+
+底层架构：KVM 虚拟化，并且支持 VT-x 和 AES-NI 指令集。这意味着如果你需要在里面跑一些需要加密解密的代理服务，或者进行轻量级的嵌套虚拟化测试，底层是完全支持的。
+
+- ## [求推荐服务器，大带宽无限流量每月 200-300 美元左右，最高可到 3K/月以内 - IDC Flare _202606](https://idcflare.com/t/topic/98226)
+- RN这两款带宽最大1Gbps，流量不够直接+70刀/月买100T流量，或者可以+199刀/月升级为无限流量。缺点是带宽无法升级，优点是流量可以加，CPU也不错，同时工单很快。
+  - HostDzire优点是带宽大，缺点是无法加流量，也没有无限制流量选项，CPU也略差
+
+- ## [DartNode这个7刀年付貌似也没啥性价比啊 _202606](https://www.nodeseek.com/post-782223-1)
+- 一般，除了无限流量，我为什么不选dedirock呢? 还是1h2g 30G的硬盘，虽然流量只有4T，但是正常建站玩机也足够了吧
+- 如果是洛杉矶放货的话肯定很快就被抢光。
+
+- 不如dedirock, 人dedirock工单回的也快，服务态度没的说
+  - dartnode买了一天都没部署好，工单隔了老久回了一下，但也就是回了一下，啥问题没解决
+
+- [DartNode的美南7刀鸡没人买吗？ _202606](https://www.nodeseek.com/post-782192-1)
+- 买了美中了，可惜没抢到美西
+- 库存多，放了115台，另外很多人都在等美西放货。
+
+- ## [Let's discuss their service attitude. dartnode.com — LowEndTalk _202408](https://lowendtalk.com/discussion/196839/lets-discuss-their-service-attitude-dartnode-com)
+  - dartnode.com They offered a very tempting price, and I don’t doubt the quality of their servers.
+  - But as for their service quality, have any of you experienced something similar to what I have?
+  - When you submit a support ticket, they hardly ever respond. They’re extremely lazy.
+
+- I can't reach them from anywhere right now. If any of you know them, please help me find them. My server has been unreachable for several days, and there is very important data on it. This damn server is disrupting my work. I’ll say it again, I don’t want to damage their reputation, but if they see my post, please contact me as soon as possible.
 
 - ## [做中转站推荐用哪个机？目前知晓以下4个鸡 - LINUX DO _202605](https://linux.do/t/topic/2238660)
 - 看你用户数量，一般推荐HostDZire，但是有缺点，就是三年付绑定太长了，而且由于是分销商，所以无法更换ip，如果ip出问题了很难换，不过性能肯定是最强的，

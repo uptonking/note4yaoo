@@ -1,11 +1,11 @@
 ---
-title: devops-deploy-community
-tags: [community, deploy, devops]
+title: devops-deploy-community-vps-paas
+tags: [community, deploy, devops, vps]
 created: 2024-11-16T16:54:04.677Z
-modified: 2024-11-16T16:54:18.953Z
+modified: 2026-06-19T06:17:17.268Z
 ---
 
-# devops-deploy-community
+# devops-deploy-community-vps-paas
 
 # guide
 
@@ -41,7 +41,7 @@ modified: 2024-11-16T16:54:18.953Z
 - 🌰 https://github.com/vercel/examples/tree/main/solutions/node-hello-world
 
 - [How to deploy Node.js server on Vercel properly? - Stack Overflow](https://stackoverflow.com/questions/78929927/how-to-deploy-node-js-server-on-vercel-properly)
-# discuss-cloudflare
+# discuss-cloudflare-devops
 - ## 
 
 - ## 

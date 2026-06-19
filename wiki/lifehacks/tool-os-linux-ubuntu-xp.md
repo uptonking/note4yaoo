@@ -43,7 +43,6 @@ modified: 2021-01-01T22:26:57.773Z
 - https://github.com/ohmybash/oh-my-bash
   - https://ohmybash.github.io/
   - A delightful community-driven framework for managing your bash configuration
-
 - https://github.com/magicmonty/bash-git-prompt /不推荐，功能少，直接用ohmybash
   - An informative and fancy bash prompt for Git users
 
@@ -233,29 +232,6 @@ modified: 2021-01-01T22:26:57.773Z
   - Wayland breaks AppImages that don't ship a special Wayland Qt plugin
   - Wayland prevents GUI applications from running as root
 
-# discuss-dist-nixos
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## [古法编程时代过来的程序员，用了快 2 个月 NixOS ，预感这就是 AIOS 的基座，记录下经验和感受  - LINUX DO _202604](https://linux.do/t/topic/1947667)
-  - 最重要的还是落到开发环境上，最初让我接触到 NixOS 的那个问题自然也解决了，现在每次进入一个项目后，先 devenv shell 启动开发环境，要运行就 devenv up，再也不用管各种项目的环境了，统一扔给 Coding Agent + devenv 就好了。目前还没踩到啥坑，devenv 也是用的 Nix 语法来配置的，所以也给我一种 NixOS 的生态很规整的感觉 
-  - 当时选择 devenv 也是纠结了挺久，尤其是 direnv 确实是有种cd出env随的言出法随效果，但我不一定进文件夹就是为了开发，也可能是为了摸鱼或者纯手误。
-
-# discuss-dist-archlinux
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
 # discuss-dist-ubuntu
 - refs
   - [Latest Desktop/Team Updates](https://discourse.ubuntu.com/c/desktop/team-updates/23)
