@@ -101,32 +101,32 @@ modified: 2021-07-20T13:50:23.433Z
   - sourcegraph
   - 支持输出canvas，为了分享或安全
 - 🛢️ 数据存储架构
-  - file-first
-    - usecases: vscode, obsidian, notable, ssg(hexo), llamaindex, claude-code
+  - 📌 file-first
+    - usecases: vscode, obsidian, notable, ssg(hexo), llamaindex, claude-code, openclaw-memory
     - pros: open and portable, agent-memory
     - cons: not scale well, conflicts, large-file-read/write
-  - db-first
+  - 📌 db-first
     - usecases: RAG, git, joplin, siyuan, 多维表格/nocodb, logseq
     - pros: advanced-query, collab/sync, easier history, client/server-arch, auth, validate, graph-relations
     - cons: complex-infra
-  - hybrid-file-db
+  - 📌 hybrid-file-db
     - git
     - hive, iceberg, deltalake
   - 代码文件与数据库紧密结合的方案示例，可参考git/docx-zip
   - 代码与数据库结合来更新应用程序(app/webapp)的方案，可参考aquameta/couchapp/reka/sourcegraph
-- server-first
+- 📌 server-first
   - vscode/cline-cli(从客户端重构为c/s架构) 都从本地计算迁移到了服务端计算
   - codesandbox从nodebox(纯浏览器客户端)转向devbox(服务端)
   - apitable(前同事liuyi告知从浏览器转向服务端), affine(server-native-rafactor)
   - lmstudio-v0.4: core of the LM Studio packaged to be server-native
   - powersync
   - replicache/zerosync
-- client-first
+- 📌 client-first
   - usecases: webcontainer/nodebox
   - claude-code, codex
   - client-first对于多实例的场景，注意处理database-lock, 比如chrome/edge访问访问网站的场景
     - 还对协作冲突处理不友好
-- cli-first
+- 📌 cli-first
   - 很多项目都迁移到了cli, 如lmstudio, claude-cowork, codex-app
 
 - 🚀 产品落地

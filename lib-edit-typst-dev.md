@@ -44,3 +44,12 @@ modified: 2025-12-25T19:53:44.941Z
 # latex
 
 # more
+- [Typst Bundle export ](https://typst.app/docs/reference/bundle/)
+  - Bundle output is useful for creating multi-page websites with HTML export, but it is not limited to HTML export. 
+  - You can create bundles containing any combination of HTML pages, PDFs, PNGs, SVGs, and arbitrary assets.
+  - A bundle is a collection of files. Each of these bundle files falls into one of two categories: Document or asset. 
+    - A document takes content that is exported with one of Typst’s other export formats. 
+    - Meanwhile, an asset takes raw byte data of your choice that will be written to disk as-is. 
+  - Typst’s built-in linking mechanism natively supports cross-document links and resolves the correct relative paths for you. 
+  - Documents and assets are normal elements, so you can use them with Typst’s usual scripting, styling, and introspection mechanisms.
+  - Introspections always observe the full bundle rather than individual documents. For instance, querying for headings will give you all headings in all documents rather than the ones in the current document.

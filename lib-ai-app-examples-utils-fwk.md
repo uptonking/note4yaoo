@@ -664,6 +664,13 @@ modified: 2025-02-21T18:20:42.624Z
   - Switch models on-the-fly within Claude Code using the /model command.
   - The `activate` command allows you to set up environment variables globally in your shell, enabling you to use the claude command directly or integrate Claude Code Router with applications built using the Agent SDK.
     - `eval "$(ccr activate)"`
+
+## router-cn
+
+- https://github.com/CrisXie4/ModelBridge /apache2/202606/python
+  - 国产模型优先的 AI Coding Agent + 兼容 CLI。
+  - 直接运行 mbridge 进入持续会话 (像 Claude Code) — AI 可以读 / 写 / 编辑项目文件，需要时也能跑 shell。管理类操作 (添加模型、自检、路由、成本、预算、缓存) 走子命令。
+  - 支持 DeepSeek / Qwen / Kimi / MiMo / GLM / MiniMax / Ollama / vLLM / LM Studio。Provider Adapter 层吸收国产模型字段差异 (reasoning_content、thinking、tool_calls)。
 # crawler-ai
 - https://github.com/mendableai/firecrawl /AGPLv3/202502/python/rust/ts
   - https://firecrawl.dev/

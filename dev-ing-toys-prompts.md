@@ -471,6 +471,10 @@ local model testing/running can be very slow.
 
 ### draft-aichorage
 
+- cloud-only version: mineru-api, openai-like api
+
+- 
+- 
 - 
 - 
 - 

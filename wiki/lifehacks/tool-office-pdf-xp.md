@@ -67,6 +67,26 @@ modified: 2020-12-29T17:52:48.584Z
 - bugs
   - 高亮后的颜色可能不同，在win平台或使用不同的pdf阅读软件如acrobat
 # pdf-editor
+
+## acrobat
+
+- docs
+  - [Keyboard shortcuts in Acrobat on desktop ](https://helpx.adobe.com/acrobat/desktop/get-started/preferences-and-settings/keyboard-shortcuts.html)
+  - F4 > toggle side nav
+  - Alt + Left/Right > go forward/backward in navigation history
+  - Ctrl + B > add bookmark
+  - U > highlight
+  - Shift + U > cycle highlight/underline/strikethrough
+  - V > select
+  - H > hand
+  - S > comment
+  - Z > zoom
+
+- [How do I move this side panel on new PDF program to show pages at the top of the screen like before? : r/Adobe _202401](https://www.reddit.com/r/Adobe/comments/199v35y/how_do_i_move_this_side_panel_on_new_pdf_program/)
+- Just drop new Acrobat and go back to the old Acrobat interface from the View menu. New Acrobat is trash.
+
+## more-pdf-editor
+
 - pdfgear [Extract PDF Pages Online Free](https://www.pdfgear.com/extract-pdf-pages/)
 
 - [JOPDF | Free & Fast PDF Editor for Windows, Mac & Linux](https://www.jopdf.com/)

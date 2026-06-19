@@ -39,6 +39,7 @@ modified: 2026-05-28T17:50:54.646Z
   - reproducible
     - model/llamacpp config
   - compact prompt mode
+  - later: hybrid-ai-with-ssd-caching, eidting-with-brower-use, sandbox-with-just-bash, db-derived-files-sync
 
 - free-model-today
   - 基于 github-action 自动更新各平台的免费模型

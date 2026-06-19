@@ -26,7 +26,7 @@ modified: 2026-04-07T12:53:38.419Z
 
 - pdf/ppt/image-editor
   - 编辑的一种思路: 图片 > html > svg, 其中图片转html的思路可参考 design to code
-    - 此时编辑ppt的需求可转换为编辑html代码
+    - 此时编辑ppt的需求可转换为编辑html代码, 此方案也可用于 design2code/pdf2text
     - 基于代码的方案交互性强
   - 编辑的一种思路: 生成图片后，(用inpaint)remove所有文字，然后再把文本渲染到bbox
     - 基于图片的方案方便缩放

@@ -323,6 +323,17 @@ modified: 2021-05-25T09:40:55.797Z
   - https://trailbase.io/
   - open-source application server with type-safe APIs, built-in WebAssembly runtime, realtime, auth, and admin UI built on Rust, SQLite & Wasmtime.
   - single-executable Firebase alternative with type-safe REST & realtime APIs, built-in WebAssembly runtime, SSR, auth and admin UI built on Rust, SQLite & Wasmtime.
+# backend-ai
+- https://github.com/Jamailar/OPG /NC/202606/ts
+  - [OPG：自用了半年的“一人集团”AI应用服务端今天开源了 - LINUX DO _202606](https://linux.do/t/topic/2431692)
+  - 我自己独立开发已经很长时间了，过程做了很多的项目，这里最头疼的就是AI应用的服务端，功能都差不多，但是每次都要重新做。
+  - 所以我就把常用的服务端功能，做成了一个多租户平台，将对象存储、AI供应商管理、积分、支付、会员订阅、邮件、短信、第三方登陆这些功能，做成公共能力。
+  - 这样，每一次做新的app，就只要在平台上新建，共用一个api url就行了。
+  - app之间做数据隔离。
+  - 也开发了一个cli工具，npm安装后，直接登陆，就可以直接让Codex来操作这个服务端，也可以直接操作数据库。
+  - 这套系统，我自己用了半年，在这个基座上开发了四五款ai app，比较稳定，就拿出来开源了。
+  - 希望在这个项目的帮助下，可以让把更多时间花在业务上，而不是重复性的后端搭建上。
+  - 我这个系统现在也有卡密生成和兑换功能，方便用户对app进行推广
 # more
 - https://github.com/nils-simons/spackoDB /202206/js/starter
   - Firestore Alternative

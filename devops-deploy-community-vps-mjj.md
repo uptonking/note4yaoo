@@ -62,8 +62,7 @@ modified: 2026-06-19T06:15:35.007Z
 ## dartnode
 
 - [DartNode - Affordable Cloud Hosting, Dedicated Servers & VPS Solutions ](https://dartnode.com/warehouse-deals)
-  - 美东boston
-  - 美西wdc
+  - vps规格多， 主要是美区，美东/美西都有
   - ✨ 
     - No bandwidth caps or overage fees. Use as much as you need within fair use policy.
     - Full Root Access: Install anything, configure everything. 
@@ -73,9 +72,6 @@ modified: 2026-06-19T06:15:35.007Z
   - [DartNode 无限流量 vps 注册申请教程 ](https://www.hicairo.com/post/71.html)
   - DartNode 成立于 2023年，总部位于休斯顿技术中心的中心地带，是 Snaju® Inc. 的一个部门，在 NASA 约翰逊航天中心附近运营着一个 24/7/365 网络运营中心。
   - 提供带宽  1 Gb/s 不限流量的 vps 套餐，其中 VPS-1 Plan 每月仅需 2 美元，对于经常看 Netflix、youtube 或需要大量下载的小伙伴，终于不用担心流量用超的问题了。
-
-- [How to Add a Domain and SSL Certificate](https://help.dartnode.com/server-setup/web-servers/setup-ssl-certbot)
-  - 
 
 - [How to Create, Restore, and Delete Snapshots (Backups)](https://help.dartnode.com/cloud-compute/cloud-compute/manage-snapshots-backups)
   - View your current snapshot count, total slots (3 free, or 30 with the premium addon), and auto-schedule status.
@@ -89,7 +85,7 @@ modified: 2026-06-19T06:15:35.007Z
 - docs
   - [Does DartNode block ports?](https://help.dartnode.com/faq/does-dartnode-block-ports)
     - By default, DartNode does not block any ports — you're free to use any port you need. However, we do monitor for abuse and maintain protections to ensure network health. Our filter list is updated every hour, automatically.
-  - [DDifference Between VPS, VDS, and Dedicated Servers](https://help.dartnode.com/faq/what-is-the-difference-between-vps-vds-and-dedicated-servers)
+  - [Difference Between VPS, VDS, and Dedicated Servers](https://help.dartnode.com/faq/what-is-the-difference-between-vps-vds-and-dedicated-servers)
     - A VPS(Virtual Private Server) is a virtual machine that runs on shared physical hardware, giving you dedicated slices of CPU, memory, and disk space — but the underlying infrastructure is shared.
     - A VDS(Virtual Dedicated Server) is a step up from VPS. While still virtualized, it provides guaranteed CPU cores and RAM, offering near-dedicated performance.
     - A Dedicated Server gives you control over an entire physical machine — 100% of the hardware is yours, with no sharing.

@@ -11,6 +11,7 @@ modified: 2020-07-14T09:27:30.503Z
 
 - classic-examples-python
   - tips: 数据与ai计算的主力语言，也能快速开发业务
+  - infra: numpy, pandas, pytorch, mlx-lm
   - editor: lasuite-docs, jupyter(framework)
   - ai: 🌹 langgraph, comfyui, mlx, label-studio, ragflow, mlx-lm
     - huggingface模型库里的启动/测试脚本都是python

@@ -10,6 +10,7 @@ modified: 2023-08-28T06:08:27.303Z
 # guide 🐭
 - classic-examples-golang
   - tips: 比js擅长底层, 比rust擅长应用(gitea, answer); 擅长存储层/网络层开发
+  - infra: tsgo, traefik
   - office: focalboard, usememos(flomo-like)
   - crdt
   - git-like: 🌹 gitea, git-lfs, dolt, zoekt(code-search)

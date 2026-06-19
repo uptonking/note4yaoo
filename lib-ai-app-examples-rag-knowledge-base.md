@@ -443,6 +443,13 @@ modified: 2025-11-30T17:27:16.720Z
       - individual file, multiple files and folder
     - Would also like to know if it allows users to connect to an existing ollama instance over LAN? Would it allow me to connect to my ollama API on my network? So I can use this on my laptop and connect to my AI server in the basement? Can you put a custom IP/port? 
       - this is the most requested feature 
+
+- https://github.com/scub-france/Docling-Studio /MIT/202604/python/vue
+  - https://scub-france.github.io/Docling-Studio/
+  - A visual document analysis studio powered by Docling. 
+  - Upload a PDF, configure the extraction pipeline, and visualize the results — text, tables, images, formulas, bounding boxes — all from your browser.
+  - [Is anyone still running pure vector RAG in production in 2026, and is it actually holding up? : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1t9v93f/is_anyone_still_running_pure_vector_rag_in/)
+  - We built oss tool to make visual debugging of our chunk an re-injection
 # rag-examples
 - https://github.com/opendatalab/MinerU-Document-Explorer /MIT/202604/python/ts
   - Agent-native knowledge engine with MCP tools for document indexing, wiki organization, fast retrieval and deep reading across PDF/DOCX/PPTX/Markdown

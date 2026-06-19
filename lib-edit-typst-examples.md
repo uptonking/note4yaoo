@@ -649,6 +649,15 @@ modified: 2025-12-25T19:55:10.911Z
   - [PPTypst: Bring the power of Typst to PowerPoint : r/typst](https://www.reddit.com/r/typst/comments/1r6ey1l/pptypst_bring_the_power_of_typst_to_powerpoint/)
     - insert your Typst equations in PowerPoint and get editable SVGs
 
+- https://github.com/boe1900/deepprint /apache2/202606/rust/ts
+  - 新一代自托管 Web 打印开放平台。专为订单、标签及票据场景打造，摆脱传统插件限制；未来将支持 AI 自然语言生成模板，让排版与开发更高效、更智能。
+  - [【开源推广】基于 Rust + Typst 的WEB打印引擎 DeepPrint - LINUX DO _202606](https://linux.do/t/topic/2433477)
+  - DeepPrint 是一个面向私有部署的 Web 打印中心，主要想解决内网业务系统里的打印链路问题，比如订单、标签、票据、PDF 文件等场景。
+  - Web 控制台管理打印中心、模板、打印机、打印记录、用户和 API Key
+  - 使用 Typst 模板 + JSON 数据生成 PDF 并打印
+  - 通过 CUPS 对接虚拟打印机、局域网打印机或 Linux USB 打印机
+  - 我自己目前主要在 CUPS-PDF 和 ARM NAS 环境里做了链路验证，真实物理打印机还需要更多实机测试。如果有佬友刚好有类似需求，欢迎试用、提 issue 或给建议。
+
 ## format/markdown-typst
 
 - https://github.com/RayZ3R0/typst-raster /MIT/202512/ts

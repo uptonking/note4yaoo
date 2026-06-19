@@ -15,26 +15,6 @@ modified: 2025-12-25T19:54:56.482Z
 - ## 
 
 - ## 
-# discuss-news-typst 🆕
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## [Typst 0.15 Released : r/typst _202606](https://www.reddit.com/r/typst/comments/1u6n3qx/typst_015_released/)
-  - 0.15 released with MathML support, variable fonts, bundle export (experimental), multiple bibliographies, among many other additions.
-- Still lacking functional wrapped figures unfortunately
-- All good but the major journals still don't accept it. I wanted to use it but because of this single fact, had to install several gigabytes of LaTeX engine only to write a paper.
-
-- ## [The day has come: variable fonts work in Typst : r/typst _202606](https://www.reddit.com/r/typst/comments/1ty908f/the_day_has_come_variable_fonts_work_in_typst/?sort=top)
-  - the well-known axes (wght, slnt, wdth, opsz...) get set automatically from weight / style / stretch / size like you'd expect — but you can still override them
-  - custom axes go through a new variations dict, keyed by the case-sensitive 4-letter tag
-
 # discuss-layout
 - ## 
 
@@ -56,6 +36,23 @@ modified: 2025-12-25T19:54:56.482Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Combining mdbook and typst : r/typst _202508](https://www.reddit.com/r/typst/comments/1mxgkq4/combining_mdbook_and_typst/)
+  - The problem is that mdbook has only basic support for table of contents, reference definition / bibliography management, conversion to PDF, and no scripting.
+  - I am considering incorporating typst in my toolchain. I want to keep publishing both online and as a PDF and need the ability to `play` example code in the online version (by sending it to the Rust Playground).
+
+- Markdown is a great tool for simple documents. Yes you can do some slightly more complicated stuff but the more complicated it becomes the more of a pain in the arse the solutions become. Decide what you want your final document to be and then, if it’s pdf/physical, you really should use the right tool for the job.
+  - Quarto is based on md but it allows much more functionality than mdbook by being able to weave code blocks (and their output) into the document - which means you can pretty much have any functionality you want. 
+  - It also supports typst so you don’t lose any of that, and has functionality to build websites. And it can export (using pandoc and its own functionality) to several output formats so you can write your qmd file and export to pdf, html etc etc But this is a highly complicated option - and you need to know what features aren’t inter compatible with all formats / how to write the content in such a way they are - because of all that functionality and may slow your book writing while you learn.
+  - tl; dr that’s a lot of options and there are many more. But the key advice is for you to decide what output format(s) you want and what features you need before you start. Then spend some time testing the options to ensure they suit your needs. All of that should be done before starting.
+
+- shiroa is heavily inspired by mdBook, but it is considered to be more adapted to Typst style, hence no guarantee of compatibility with mdBook. Compared with mdBook, we utilize typst’s advantages to bring a more flexible writing experience, such as scripting and package.
 
 - ## [From LaTeX to Typst? Whatabout Markdown : r/typst _202604](https://www.reddit.com/r/typst/comments/1sx2eez/from_latex_to_typst_whatabout_markdown/)
 - Markdown isn't especially standardised. There are many things that work in (for example) Reddit-flavoured Markdown which won't work in GitHub-flavoured markdown, which won't work in Discord-flavoured markdown. Commonmark, the closest thing to an actual standard has comparatively very few features. Rather than bringing along the enormous amount of inconsistency and resultant confusion when it comes to Markdown, it is better (in my opinion) to create a standard which is similar but is tailored towards the project's specific goals (document preparation).

@@ -44,7 +44,7 @@ modified: 2022-11-07T10:25:12.034Z
 - saas, pricing, renew
   - vpn-justmysocks, $27.4/year, 0922
   - vpn-flowercloud, ¥130/year, 0603
-  - vps-dartnod-2c4g, $30/year, 0618
+  - vps-dartnod-2c4g, $30/year, 0601
   - domain-netcup-dtk, $5/year, 0618
 # tech-community
 - discord

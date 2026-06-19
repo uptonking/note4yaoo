@@ -17,6 +17,11 @@ modified: 2023-09-21T20:28:45.175Z
   - wordpress
 # dev
 
+# bundling-solutions
+
+- [Typst Bundle export ](https://typst.app/docs/reference/bundle/)
+  - Bundle output is useful for creating multi-page websites with HTML export, but it is not limited to HTML export. 
+  - You can create bundles containing any combination of HTML pages, PDFs, PNGs, SVGs, and arbitrary assets.
 # blogs
 
 ## [Welcome to TextBundle.org!](http://textbundle.org/)

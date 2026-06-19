@@ -929,6 +929,14 @@ modified: 2025-12-11T18:10:23.710Z
 
 - https://github.com/shixin-guo/pi-studio /MIT/202606/ts
   - Local Codex-style desktop GUI for the Pi coding agent
+
+- https://github.com/pithings/pi-vscode /MIT/202604/ts
+  - 🍴 forks
+  - [在VSCode中深度集成Pi Agent经验分享 - LINUX DO _202606](https://linux.do/t/topic/2432358/7)
+  - 终端即本体 — pi 跑在 VS Code 内置终端里，不是 GUI 包装器，没有 shell 转义地狱
+  - 侧边栏管理 — Sessions、Models、Settings 三合一，Providers / OAuth / API Keys 一站式配置
+  - 极简，省token。系统提示词就5k，4个tools，配置简单但是可扩展能力强，也是openclaw核心sdk。
+  - 其实是vscode的终端打开pi，还的原生tui，插件只是简化操作。vscode终端和编辑器是两套快捷键，不冲突。
 # cli-aggregator/wrapper
 - https://github.com/jazzenchen/VibeAround /MIT/202606/rust/ts
   - https://vibearound.ai/

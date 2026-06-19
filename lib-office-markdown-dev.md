@@ -116,6 +116,10 @@ modified: 2025-09-21T18:39:13.776Z
   - Knowledge Catalog (formerly Dataplex), is an AI-powered data catalog and metadata management platform. It provides a dynamic knowledge graph of all your data, structured and unstructured, to provide semantics and business context to AI agents
   - [How the Open Knowledge Format can improve data sharing | Google Cloud Blog _202606](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/)
     - If you've used Obsidian, Notion, Hugo, or any of the LLM wiki patterns that have emerged over the past year, the shape will feel familiar. OKF formalizes the small set of conventions needed to make these patterns interoperable.
+
+- [Typst Bundle export ](https://typst.app/docs/reference/bundle/)
+  - Bundle output is useful for creating multi-page websites with HTML export, but it is not limited to HTML export. 
+  - You can create bundles containing any combination of HTML pages, PDFs, PNGs, SVGs, and arbitrary assets.
 # table-md
 - 参考textbundle格式的csv来与表格交互
 

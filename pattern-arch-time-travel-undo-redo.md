@@ -147,7 +147,7 @@ modified: 2023-09-12T09:36:25.608Z
 - Persistent Data Structures preserve previous versions of themselves allowing us to revisit and audit any historical version. 
 
 - Depending on the operations allowed on the previous versions, persistence is classified into three categories
-- **Partially Persisten**t Data Structures allows access to all the historical versions but allows modification to only the newest one. 
+- **Partially Persisten** t Data Structures allows access to all the historical versions but allows modification to only the newest one. 
   - This typically makes historical versions of the data structure immutable (read-only).
 - **Fully Persistent** Data Structures allows access and modification to all the historical versions. 
   - It does not restrict any modifications whatsoever. 
@@ -279,7 +279,7 @@ modified: 2023-09-12T09:36:25.608Z
 - The XHR itself isn't significant by itself in terms of a replay; 
   - in fact all Javascript code is ignored during replay.
   - Recording of network activity (and e.g. the console logging) is useful for diagnostics, but is not core to rrweb.  
-  - I know there is a console plugin, and believe there is some sort of network plugin?  Otherwise you could work out how to intercept the XHR and add your own custom event to the rrweb events at record time using `addCustomEvent`
+  - I know there is a console plugin, and believe there is some sort of network plugin?  Otherwise you could work out how to intercept the XHR and add your own custom event to the rrweb events at record time using `addCustomEvent` 
 
 - ## [iframe录制与回放 · Issue #654 · rrweb-io/rrweb _202108](https://github.com/rrweb-io/rrweb/issues/654)
 - 回放的时候不会执行 JS 代码。
@@ -408,7 +408,36 @@ modified: 2023-09-12T09:36:25.608Z
   - Substantial work goes into sandboxing replay environments and limiting PII. Defense in depth is particularly important here. Enterprise level research, auditing, monitoring and care should be taken seriously.
 
 - You should offer a commercial and open source version. The commercial service could provide a few extra features at a modest price point, but support development of the open source platform. Perhaps it could pay your bills and be a cheaper alternative to the existing expensive commercial offerings.
+# discuss-video-record/replay
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [寻求解决方案：监控+回放 - LINUX DO _202606](https://linux.do/t/topic/2433461)
+  - 老人想在线看老家的房子，因为种了一些庄稼和菜，还想能回放。之前办的移动相关业务，慢刀割肉，每月宽带（好像是15）+云存储费用（20），不划算。
+
+- 买一个监控，配置好自动上传云盘备份就行了
+
+- 闲鱼上淘 海康的 摄像头, 然后 关于硬盘录像机 有两种选择， 第一种就是 直接买海康的录像机， 第二种就是 做存储， 然后部署开源系统， 对 rtsp 进行 多种玩法， 前者省心， app 直接 看， 后者适合 折腾 有想法的人 搞
+
+- 便宜二手海康，支持onvif，配合黑群晖dvr
+
+- 前几天朋友说太阳能板+4g+无线存储摄像头也不贵，好像是200多吧。你的需求足够了，又不用太长时间的回放，清晰度也不用什么太高的。
+
+- 要求不高的话就随便淘个摄像头，插tf卡就行吧。如果想数据安全，备份久一点什么的就得搞台旧电脑当服务器，加机械硬盘了。
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## we brought time travel to replit
