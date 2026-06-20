@@ -1271,6 +1271,17 @@ modified: 2025-12-11T18:10:23.710Z
       - ink's exit() doesn't terminate the process
     - [feat: implement parallel tool execution for better performance _202602](https://github.com/Nano-Collective/nanocoder/pull/352)
 
+- https://github.com/SWE-agent/mini-swe-agent /5.3kStar/MIT/202606/python
+  - https://mini-swe-agent.com/
+  - he 100 line AI agent that solves GitHub issues or helps you in your command line. Radically simple, no huge configs, no giant monorepo—but scores >74% on SWE-bench verified!
+  - Minimal: Just some 100 lines of python for the agent class (and a bit more for the environment, model, and run script) — no fancy dependencies!
+  - Compatible: Supports all models via litellm, openrouter, portkey, and more. Support for /completion and /response endpoints, interleaved thinking etc.
+
+- https://github.com/Doorman11991/smallcode /MIT/202605/js
+  - AI coding agent optimized for small LLMs (8B-35B parameters)
+  - 87% benchmark with 4B-active model.
+  - Recommended model size: 8B-35B parameters. Smaller models (≤4B) struggle with multi-step tool use and lose context across turns. Larger models (>35B) don't need SmallCode's adaptations and are better served by tools designed for frontier models.
+
 - https://github.com/Aider-AI/aider /37.1kStar/apache2/202508/python
   - https://aider.chat/
   - https://aider.chat/docs/leaderboards/

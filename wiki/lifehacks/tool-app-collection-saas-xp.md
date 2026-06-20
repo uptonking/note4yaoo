@@ -28,6 +28,12 @@ modified: 2022-11-07T10:25:12.034Z
         - Lindsley Park
         - 7115 Lindsley Ave, Dallas, TX 75223
         - R756+4H Dallas, Texas
+    - guangzhou fengchi
+      - Longxi Bus Baoyangchang
+      - No.5 Yuhai Road Longxi Street, Liwan District, Guangzhou, Guangdong Province, China, 510378
+      - 合力轮胎店 Heli Tire Store
+      - 13710198827
+      - 广东省 广州市 荔湾区 40 米 邮政编码: 510378
 
 - 提高feed内容流中有效信息的密度
   - 暂停浏览较长时间后，平台recsys推荐流的信息更有效

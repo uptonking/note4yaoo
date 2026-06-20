@@ -259,12 +259,16 @@ modified: 2022-11-07T10:26:22.510Z
 # company
 - https://github.com/xuthus5/fedora-packager
   - 目前维护了 fedora 下的 wechat, wxwork, deepin-wine6-stable, deepin-wine-helper 等.
-# os-ip
+# ip-address
 - [站长工具 - 站长之家](https://tool.chinaz.com/)
   - 首页默认显示ip地址，还有单独页面 https://ip.chinaz.com/
 
 - [ip138.com iP地址查询--手机号码查询归属地](https://www.ip138.com/)
   - [iP测漏 - 全方位检测您的IP地址](https://ipcelou.com/)
+
+- [IP Lookup | Find Your Public IP Address Location ](https://www.iplocation.net/ip-lookup)
+
+- [ip2location](https://www.ip2location.com/demo)
 # download
 - https://github.com/agalwood/Motrix
   - https://motrix.app/

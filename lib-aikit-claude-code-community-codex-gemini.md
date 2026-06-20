@@ -618,7 +618,21 @@ codex --yolo resume --last
 
 - ## 
 
-- ## 
+- ## [OpenAI Codex 日志写入异常，社区反映或严重损耗 SSD 寿命 - LINUX DO _202606](https://linux.do/t/topic/2438231)
+- 最危险的不是文件大小 而是它在持续写入 不停的轮转 不停的磨硬盘
+
+- 省流版本：2T的消费级别SSD，写入6000T左右，这个盘寿命就差不多了，也就是这个盘就快坏了，这是消费级SSD物理规则决定的。这时候SSD硬盘坏了的话，数据是基本无法找回的(不像机械硬盘那样可以通过常规手段修复，恢复成功率相对机械硬盘非常非常低。
+- 当然，SSD还有其他参数，最常用的是：
+TBW：Total Bytes Written，总写入量
+DWPD：Drive Writes Per Day，每天可全盘写几次，企业级常见指标
+其他不太常用的是：
+写入放大，Write Amplification
+预留空间，Over-Provisioning
+磨损均衡效率
+主控水平
+ECC 纠错能力
+坏块管理
+厂家保守标称
 
 - ## [Codex插件市场在Api登录的情况下很多插件看不到的解决办法 - LINUX DO _202606](https://linux.do/t/topic/2317697)
   - 这个工具中的页面增强-插件市场解锁功能，可以恢复大部分插件的可见性

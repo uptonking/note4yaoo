@@ -16,10 +16,13 @@ modified: 2025-09-16T19:59:57.856Z
   - open-source database of AI model specifications, pricing, and capabilities
   - We also use it internally in opencode.
   - ux是一个巨大的宽表table
+  - The data is stored in the repo as `TOML` files; organized by provider and model. The logo is stored as an SVG. 
   - [OpenCode开发了一个所有AI模型(LLM)的数据库，完全开源并且可以免费通过API使用 - 知乎](https://www.zhihu.com/pin/1955588229391709336)
     - 按价格从低到高排序，你就能发现各个供应商都提供大量的免费模型。当然，免费模型都一定的额度限制。
     - 可以通过一个API路由（比如New-API：链接 ），来轮流使用这些免费模型，额度耗尽就自动切换下一家
     - 对Agent应用来说，获得一个模型的参数，比如上下文大小，可以作为程序决策的依据
+  - [feat(cline): add OpenAI-compatible Cline provider · Pull Request _202606](https://github.com/anomalyco/models.dev/pull/2048)
+    - I don't think the Cline team wants this, it probably also violates their TOS, unless they state otherwise im going to keep closed
 
 - https://github.com/charmbracelet/catwalk /MIT/202605/go
   - https://catwalk.charm.land/v2/providers
@@ -58,6 +61,12 @@ modified: 2025-09-16T19:59:57.856Z
   - 👥
   - 我记得之前GPT不是动了医药复合体的蛋糕吗，立马就认怂，这是要搞法律这些吗？我觉得各家估计是不会测的 
   - 所以这家没有放榜说是，等着别人贴数据
+
+## more-bench
+
+- https://github.com/SWE-bench/swe-bench.github.io /NC/202603/js
+  - https://www.swebench.com/
+  - Landing page + leaderboard for SWE-Bench benchmark
 # discuss-stars
 - ## 
 

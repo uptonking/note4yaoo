@@ -12,37 +12,36 @@ modified: 2026-05-28T17:50:54.646Z
 - 📌 goals
   - playground for local ocr/vlm models
     - mlx supports stt, 可迁移实现audio-app
-    - large-pdf
-  - obsidian for pdf: auto-toc, history/diff, proofreading, tools
+    - ocr for large-pdf
+    - latest runtime
+  - obsidian for pdf with editing: auto-toc, history/diff, proofreading, tools
     - features-port: editor, backlinks, bases, publish, graph-view
-    - sharing by mdbook
-  - version-history
+    - sharing by typst-html/mdbook
   - wiki format: okf(open-knowledge-format), obsidian-bases
+  - version-history
   - aistudio: chat/image/video, laptop/minipc厂商都希望内置本地模型
   - tiered-models: sonnet+haiku, 还可参考 roo/kilo/ohmyopencode 
-  - caching heavily: 可参考lmstudio-disk-caching, reasonix-prefix-caching
-  - built-in image/pdf/ocr for chatting with documents
-    - image/pdf ux
-  - port model-specific skills to aichorage
-  - easy local model xp: single-model, dual-models, hot-models
-  - tiered/hybrid-llm
+    - tiered/hybrid-llm, 云端与本地结合，能较高质量完成任务同时节省成本
     - 支持cloud与local混合的模式
-    - cloud only works
+    - cloud only works， 方便实现saas
+  - caching heavily: 可参考lmstudio-disk-caching, reasonix-prefix-caching
+  - built-in image/pdf/ocr for chatting with documents rag
+    - image/pdf ux
+  - port model-specific skills to aichorage like gemma-skills
+  - easy local model xp: single-model, dual-models, hot-models
+    - compact prompt mode
   - 纯云端模式方便mobile/async
+    - 后端逻辑需要支持纯本地/纯云端
   - headless api/cli/skills
   - python-first for mlx/office
-  - multiple-client/ui
+  - multiple-clients/windows
   - embeddable web browser
     - browser-use
   - coding-based solutions
     - comfyui也需要custom node/scripts, 视频生产也需要剪辑和拼接
   - reproducible
     - model/llamacpp config
-  - compact prompt mode
-  - later: hybrid-ai-with-ssd-caching, eidting-with-brower-use, sandbox-with-just-bash, db-derived-files-sync
-
-- free-model-today
-  - 基于 github-action 自动更新各平台的免费模型
+  - later: hybrid-ai-with-ssd-caching, eidting-with-brower-use, sandbox-with-just-bash, db-derived-files-sync-dbfs
 
 - 📌 non-goals
   - good llm xp on cpu, but optimized for gpu
@@ -51,6 +50,19 @@ modified: 2026-05-28T17:50:54.646Z
   - cloud rag
   - multiple-server/remotes
   - web-search
+  - reranking models
+
+## free-model-today
+
+- pm
+  - model-xp-store? top free? top paid?
+  - ux交互偏向于 ebay? twitter? wikipedia? modelscope?
+  - 结合当期benchmark快照，可以设计类似历史排行榜的知识库
+
+- alternatives
+  - [Models.dev — An open-source database of AI models ](https://models.dev/)
+
+- 基于 github-action 自动更新各平台的免费模型
 # draft
 - janai-cli like obsidian-cli, ollama-cli, lms-cli
   - skills for janai-cli/lms-cli/ollama-cli

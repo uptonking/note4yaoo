@@ -391,7 +391,11 @@ modified: 2026-06-19T06:15:35.007Z
 
 - ## 
 
-- ## 
+- ## [海外服务器购买，有哪些推荐，以及哪些坑需要注意？ - V2EX _202606](https://v2ex.com/t/1196279)
+- 稳定且性价比高选 Netcup 、便宜大碗选 racknerd
+
+- 如果你要稳定性、又要性价比，因为 KYC 莫名其妙被封号的，排除 Hetzner （ KYC 严格、涨价、贵）、OVH （ KYC 严格，不欢迎中国人、涨价、贵）。
+  - 可以看看 Netcup
 
 - ## [dartnode过排队思路 _202606](https://www.nodeseek.com/post-781010-1)
   - 判断了这个参数是claim就弹出抢购页面，但是我没有claim_url怎么办？

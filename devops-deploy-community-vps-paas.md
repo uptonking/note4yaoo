@@ -15,10 +15,23 @@ modified: 2026-06-19T06:17:17.268Z
 - ## 
 
 - ## 
-# discuss-saas
+# discuss-paas
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [茶的服务器公益平台即将开站！ - LINUX DO _202606](https://linux.do/t/topic/2438362)
+  - https://github.com/388python/serve-share-platform
+- 共享服务器吗？是什么虚拟化呢？lxc还是kvm还是docker呢
+  - lxc, kvm可能开
+
+- 但共享的是服务器的话这个用量该怎么计算啊？性能消耗不像是tokens那样能简单量化
+
+- mjj们的闲置/灵车小鸡可以拿来造福了各位吗 
 
 - ## 自部署的话，就别再用宝塔、1panel什么的啦, 我觉得 dokploy 和 coolify 是更好的选择
 - https://x.com/javayhuwx/status/1856696509431271863
