@@ -63,14 +63,52 @@ modified: 2026-04-07T00:47:33.626Z
     - 开发原由是因为常用的yolo暂时不支持多模态，而在Obsidian上发现了两个插件ai-image-ocr和ocr-extractor，所以将二者综合了一下。
     - 支持添加多个AI OCR供应商和自动抓取所有模型并进行选择，方便添加，自定义提示词，自定义json参数。
     - 支持四大OCR服务商，包括MinerU、TextIn、Paddle OCR-VL和Mistral OCR。支持OCR服务商OCR参数设置
+# feat-backlinks
+- https://github.com/AkiSantin/Nodian /MIT/202606/ts
+  - plugin that automatically syncs bidirectional relations in YAML frontmatter.
+  - When you add a wikilink to a property in one file, the plugin writes a backlink in the target file's corresponding property — and removes it when you delete the link.
+  - Relation pairs — define which properties are paired (e.g. Mail ↔ Person, Artist ↔ Songs)
+  - Tag-based matching — each pair requires tags; sync only fires when both property and tag match
+  - New file support — creating a file from a wikilink auto-adds tags and backlinks
+  - Works well with Obsidian Bases
+
+- https://github.com/penfieldlabs/obsidian-wikilink-types /AGPL/202605/ts
+  - plugin that adds typed relationships to wikilinks. 
+  - Type @ in a wikilink alias to autocomplete relationship types, synced automatically to YAML frontmatter.
+  - 给linking添加关系 supports/contradicts
+  - https://github.com/jackvaughan09/obsidian-auto-backlink
+# feat-publish
+- https://github.com/jackyzha0/quartz /12.6kStar/MIT/202606/ts
+  - https://quartz.jzhao.xyz/
+  - a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites
+  - Quartz is a set of tools that helps you publish your digital garden and notes as a website for free. 
+  - Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
+  - [Backlinks ](https://quartz.jzhao.xyz/features/backlinks)
+    - Links in the backlink pane also feature rich popover previews
+  - [Bases Support ](https://quartz.jzhao.xyz/features/bases)
+    - .base files as interactive database-like views. 
+
+- https://github.com/trip2g/trip2g /MIT/202606/go/ts
+  - https://trip2g.com/
+  - Open-source MCP knowledge mesh - self-host your second brain, expose it to AI agents, federate with peers.
+  - Wikilinks ([[note]]), backlinks, outlinks — global resolution, just like Obsidian
+  - Obsidian plugin — one-click sync, hash-based diff, only changed files are uploaded.
+  - Federation: Peer hubs with trusted people or orgs. Each hub controls access per base. 
+  - [2025 Obsidian Publish Alternatives Review : r/ObsidianMD _202506](https://www.reddit.com/r/ObsidianMD/comments/1l02uxc/2025_obsidian_publish_alternatives_review/)
+
+- https://github.com/yoursamlan/pubsidian /MIT/202207/python/inactive
+  - https://yoursamlan.github.io/pubsidian
+  - An Obsidian-Publish alternative but it's FREE
 # feat-canvas
 
 # alternatives
-
 - https://github.com/tionis/vulcan /202605/rust
   - A wiki cli to be used with obsidian style knowledge bases
   - Vulcan is a headless Rust toolkit for Obsidian-style vaults and plain Markdown directories. It indexes notes into a rebuildable local SQLite cache, then exposes search, graph queries, Dataview/Bases-style metadata, TaskNotes workflows, static publishing, scripting, MCP tools, and safe note mutations without requiring Obsidian to be running.
   - The long-term shape is a reusable Markdown/vault library stack plus a polished CLI. The current focus is a strong single-vault CLI and MCP server; the next major phase is a multi-vault daemon built on the shared vulcan-core and vulcan-app crates.
+# examples-vault
+- https://github.com/pricklywiggles/niamos
+  - A personal Obsidian vault running a modified PARA method, plus the templates, queries, and Claude Code skills that make it work day-to-day.
 # examples
 
 # utils/plugins

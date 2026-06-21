@@ -53,11 +53,13 @@ modified: 2021-01-04T17:26:25.032Z
   - **Markdoc has its own dedicated rendering architecture rather than relying on markdown-it to generate its output** . 
     - Developing an independent rendering system was necessary in order to handle Markdoc's custom tags and support multiple output formats.
 
-- https://github.com/jackyzha0/quartz /MIT/202401/ts
+- https://github.com/jackyzha0/quartz /12.6kStar/MIT/202606/ts
   - https://quartz.jzhao.xyz/
   - a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites
   - Quartz is a set of tools that helps you publish your digital garden and notes as a website for free. 
   - Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
+  - [Backlinks ](https://quartz.jzhao.xyz/features/backlinks)
+    - Links in the backlink pane also feature rich popover previews
 
 - https://github.com/microsoft/markitdown /MIT/202411/python
   - Python tool for converting files and office documents to Markdown.

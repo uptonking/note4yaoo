@@ -302,16 +302,95 @@ modified: 2022-06-03T21:34:54.893Z
   - Exposes an MCP server — Claude Code, Cursor, or any MCP client can query and add to your knowledge base
   - [I built and open sourced a local Obsidian alternative (sqlite) : r/PKMS](https://www.reddit.com/r/PKMS/comments/1r7tgl4/i_built_and_open_sourced_a_local_obsidian/)
 
-- https://github.com/superdoc-dev/superdoc /AGPL/202604/ts
-  - https://superdoc.dev/
-  - Renders, edits, and automates .docx files in the browser, headless on the server, and within AI agent workflows.
-  - Works with React, Vue, and vanilla JS.
-  - Built on ProseMirror, Yjs, JSZip, and Vite.
-  - Real DOCX, not rich text — Built on OOXML. Real pagination, section breaks, headers/footers. Not a contenteditable wrapper with export bolted on.
-  - Runs entirely in the browser. 
-  - collaboration — Yjs-based CRDT. Multiplayer editing with comments, tracked changes
-  - Agentic tooling — Runs headless in Node.js. Bring your own LLM for document automation, redlining, and template workflows.
-  - Dual licensed — AGPLv3 for community use. Commercial license for proprietary deployments.
+- https://github.com/whateverforever/zettelcon /MIT/202201/python/inactive
+  - CLI tool for Zettlr note collections to automatically add backlinks to your note files. Edits files in-place, so be careful and try on a copy of your files first. 
+  - The backlink section is the last thing of a page
+# backlinks
+- https://github.com/jackyzha0/quartz /12.6kStar/MIT/202606/ts
+  - https://quartz.jzhao.xyz/
+  - a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites
+  - Quartz is a set of tools that helps you publish your digital garden and notes as a website for free. 
+  - Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
+  - [Backlinks ](https://quartz.jzhao.xyz/features/backlinks)
+    - Links in the backlink pane also feature rich popover previews
+  - [Bases Support ](https://quartz.jzhao.xyz/features/bases)
+    - .base files as interactive database-like views. 
+
+- https://github.com/d12frosted/vulpea /GPL/202606/emacs
+  - Database layer for org-mode notes with async indexing, rich queries, backlink discovery, and external change detection. Scales to 100k+ notes.
+  - A database layer for your org-mode notes. Vulpea indexes your notes and provides fast queries for tags, links, metadata, and full-text search - all without blocking your workflow.
+
+- https://github.com/zakirullin/files.md /3.7kStar/MIT/202606/go/js
+  - https://files.md/
+  - Private, quiet space for thinking. Simple app for .md files.
+  - Local-first, files don't leave your device
+  - Portable, no build systems, no Electron, just open web/index.html
+  - The server is just one binary (or use iCloud/Dropbox/Google Drive for sync)
+  - Open a local folder to persist changes: Chrome-based browsers are best at File System API support.
+  - Backlinks are now inserted automatically whenever we link a note. For our workspace to be cross-platform (so you can view it even in GitHub), we insert backlinks on the fly, and not infer them dynamically. That way from any viewer backlinks would work.
+
+- https://github.com/emad-elsaid/xlog /MIT/202605/go
+  - https://xlog.emadelsaid.com/
+  - https://xlog.emadelsaid.com/docs/Backlinks/
+  - Fast, Git-native framework for building knowledge bases
+  - XLog is a static site generator optimized for digital gardens and personal wikis. 
+  - Written in Go with 37 built-in extensions for backlinks, hashtags, search, and more.
+  - Automatic Page Linking - Just mention a page name and XLog converts it to a link automatically. No more [syntax](/required)
+  - Live Preview - Embedded web server with hot-reload shows changes instantly
+  - Bidirectional Backlinks - Automatic backlinks show all pages linking to the current page
+  - Git-Native - Filesystem-based, works with any text editor and version control
+  - Extensible - 37 built-in extensions for photos, todos, search, and more
+
+- https://github.com/typemd/typemd /MIT/202604/go
+  - A local-first CLI knowledge management tool inspired by Anytype and Capacities.
+  - Your knowledge base is made of Objects — not files. Markdown is just the storage format.
+  - TypeMD lets you think in Objects — books, people, ideas, meetings — connected by Relations. The structure emerges from your knowledge, not from a folder tree.
+  - Wiki-links & Backlinks — link objects inline with [[type/name-ulid]] syntax, with automatic backlink tracking
+  - TUI — Three-panel interface powered by Bubble Tea
+  - Web UI — Browser-based interface via tmd serve, with three-panel layout, property editing, and object creation
+  - Local-first — everything lives on your machine as plain Markdown files
+
+- https://github.com/matzalazar/rhizome /MIT/202605/python
+  - Rhizome reads your vault, embeds every note with a multilingual sentence transformer, and writes a `## Related Notes` section at the bottom of each file. 
+    - ## Related Notes section with [[wikilinks]]
+  - 🤔 类似于相似文章推荐， 不一定用backlink的概念
+  - No cloud API, no database, no daemon — the knowledge graph lives entirely in the filesystem and syncs with the rest of your vault.
+  - Fully local — ONNX Runtime on CPU, no GPU or network call after first run
+  - Long-document aware — notes exceeding 512 tokens are split into overlapping chunks; chunk embeddings are averaged so every section of the note influences its semantic representation
+  - Dry-run mode — preview every proposed link without touching a single file
+  - Extensible — a four-method VaultReader Protocol is the only contract a new adapter needs
+  - Before modifying any files, rhizome run prompts to create a timestamped backup. Backups are stored at {vault}/../.rhizome_backups/backup_YYYYMMDD_HHMMSS/ and include a manifest with vault path, timestamp, note count, and rhizome version.
+  - [I built a tool that automatically adds semantic backlinks to your vault — fully local, no cloud, no API key : r/ObsidianMD _202603](https://www.reddit.com/r/ObsidianMD/comments/1s46wxu/i_built_a_tool_that_automatically_adds_semantic/)
+    - I checked it out, and I think it is not possible to run this on a single file, which i would like that to test it out. I do not want every note in my entire vault to have wikilinks to its related notes.
+    - This may pair well with Wikilink Types. Rhizome finds that notes are related; Wikilink Types lets you specify how they are related (supersedes, contradicts, supports, etc.) via typed @ syntax, synced to YAML frontmatter.
+- https://github.com/kgourgou/machine-learning-zettelkasten /MIT/202605/python
+  - Insert backlinks to markdown documents by using sklearn and cosine similarity.
+
+- https://github.com/wende/codebook /202601/python
+  - Markdown documentation system with live code references
+  - Write docs in markdown. CodeBook keeps them in sync with your codebase. Turn changes into tasks for AI to implement.
+  - Live Updates: Automatically resolve code references from your backend service
+  - File Watching: Auto-regenerate documents when files change with thread-safe debouncing
+  - Bidirectional Links: Automatic backlink generation between markdown files
+    - CodeBook automatically generates backlinks when you link to other markdown files
+    - When rendered, api.md will have a backlinks section added
+
+- https://github.com/siddsdixit/nanobrain /MIT/202605/ts
+  - https://nanobrain.app/
+  - your second brain in markdown 
+  - nanobrain is a faithful, code-shaped implementation of Andrej Karpathy's LLM Wiki gist (April 2026): three-layer corpus (raw / wiki / schema), immutable raw firehose, LLM-owned wiki, schema co-evolution via ADRs, git-native, source-dated entries.
+  - What Karpathy described as a personal pattern, nanobrain ships as a framework: same structure, same discipline, plus the capture loop, lint, index, log, and graph machinery that keep the corpus honest at scale.
+
+- https://github.com/oratis/Markup /MIT/202606/rust/ts/swift/tauri
+  - A fast, native, open-source Markdown editor for macOS — read your Markdown like a web page, edit on demand. Tauri 2, vault + backlinks + full-text search.
+
+- https://github.com/kennedyraju55/personal-knowledge-base /202604/python/inactive
+  - AI-powered personal knowledge base using local Gemma 4 LLM via Ollama - 100% private
+  - AI-enhanced knowledge management system featuring semantic search, automatic backlink discovery, tag clouds, note templates, and Markdown import/export — your second brain, powered by local AI.
+
+- https://github.com/flyisland/markbase /202604/rust
+  - Agent-ready, Obsidian-compatible CLI for structured Markdown note workflows.
+  - markbase is built for a specific workflow: keep writing notes as normal Markdown, keep the vault Obsidian-compatible, use templates and note verify to keep agent-written notes structurally consistent, and let agents, CLI tools, and the web operate directly on the Markdown vault.
 # confluence-like
 - MrDoc /2.1kStar/GPLv3/202403/js/python/Django/仅网页版
   - https://github.com/zmister2016/MrDoc
@@ -673,6 +752,13 @@ modified: 2022-06-03T21:34:54.893Z
     - If I spent more than 5 minutes figuring something out, those are five minutes I never want to spend again figuring out the same problem.
     - But this is difficult to do in practice.
     - My solution is something I call hierarchical note taking.
+
+- https://github.com/appsoftwareltd/as-notes /202606/ts/js
+  - AS Notes brings markdown and [[wikilink]] editing for notes, documentation, blogs and wikis directly into VS Code and compatible editors
+  - AS Notes provides productivity tooling that turns your favourite IDE into a personal knowledge management system (PKMS), including a backlinks view, task management, journals, a kanban board, markdown editing tools, mermaid, LaTeX math support and Jekyll / Hugo like publishing.
+
+- https://github.com/lostintangent/wikilens /202111/ts
+  - a VS Code extension that adds a Roam/Obsidian-like editing experience on top of a GitHub repo and markdown files. This provides an excellent companion to github.dev, and allows you to manage your notes/knowledge base, directly from the browser and using your existing/customized editor setup (e.g. Vim bindings, color theme) 
 
 - https://github.com/TevinLi/amWiki /885Star/MIT/201711/js/NoDeps
   - http://amwiki.org/doc

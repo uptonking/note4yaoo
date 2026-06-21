@@ -12,7 +12,7 @@ modified: 2026-06-20T15:49:57.019Z
 
 # awesome-models
 - core-features
-  - 基于backlink的架构来实现，而不是普通crud后端
+  - 可采用基于backlink的架构来实现，而不是普通crud后端, 还能基于文档的架构统一writing和chat
   - latest-free-models today
   - model-wiki+comparison: 最重要的部分是双链
   - model-bench with history
