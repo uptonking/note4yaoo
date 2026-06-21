@@ -34,7 +34,32 @@ modified: 2024-08-11T07:21:05.619Z
 
 - ## 
 
-- ## 
+- ## Bear: Meet Lettera. A native, file-based Markdown editor for Mac.
+- https://x.com/NathanFlurry/status/2067737695947026841
+  - At the moment we want to make things right on Mac before thinking about the next step. iOS version is something we'd love to have, but not in a short time.
+  - Lettera already supports YAML frontmatter with --- delimiters. 
+- how is this different from the current Bear app?
+  - Bear stores all your notes inside the app, while Lettera is file-based, your documents live in folders on your Mac. That means you can open any md. file on your Mac to edit straightaway with Lettera
+- It's a different app. Bear keeps all your notes inside the app, while Lettera is file-based, your documents live in folders on your Mac. That means you can open any md. file on your Mac to edit with Lettera
+  - Compared to Bear, Lettera doesn't include the tag system, folding, or wikilink/backlink support. Everything else is identical. Of course feel free to give any feedback on the editor
+
+- Have you actually been using Bear for 10 years? That's wild. What do you like about it? Been considering switching
+- pros:
+  - mobile is phenominal (most important to me)
+  - never slow: no loading, no render flashes, no forced updates
+  - professional looking pdf export
+  - just md on disk
+  - the keybinds work as you'd expect
+  - good enough organization
+  - don't try to make you organize your whole life, good for chaotic people
+- cons:
+  - no collaboration
+  - apple ecosystem only
+  - can't put my finger on what, but there's a gap between bear and my agent workflows where i eventually export to md to iterate with claude 
+
+- why would anyone use it over Obsidian? What’s the unique advantage that would make pellle choose lettera instead of 9000 apps like this?
+  - Lettera is a very simple Markdown editor. No import, no setup. Open any Markdown file on your Mac and start editing, or open a folder as your workspace for bigger projects. It is a tool, and the goal is to stay out of your way so you can focus on the words.
+- Obsidian literally can’t do this. For Obsidian to work, a file needs to be in a vault, otherwise it can’t be viewed or edited.
 
 - ## height: calc-size(auto); 
 - https://x.com/jh3yy/status/1812970312407130397

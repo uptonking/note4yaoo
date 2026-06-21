@@ -17,7 +17,7 @@ modified: 2026-05-28T17:50:54.646Z
   - obsidian for pdf with editing: auto-toc, history/diff, proofreading, tools
     - features-port: editor, backlinks, bases, publish, graph-view
     - sharing by typst-html/mdbook
-  - wiki format: okf(open-knowledge-format), obsidian-bases
+  - wiki format with references/citation: okf(open-knowledge-format), obsidian-bases
   - version-history
   - aistudio: chat/image/video, laptop/minipc厂商都希望内置本地模型
   - tiered-models: sonnet+haiku, 还可参考 roo/kilo/ohmyopencode 
@@ -41,7 +41,8 @@ modified: 2026-05-28T17:50:54.646Z
     - comfyui也需要custom node/scripts, 视频生产也需要剪辑和拼接
   - reproducible
     - model/llamacpp config
-  - later: hybrid-ai-with-ssd-caching, eidting-with-brower-use, sandbox-with-just-bash, db-derived-files-sync-dbfs
+  - later: hybrid-ai-with-ssd-caching, eidting-with-brower-use, sandbox-with-just-bash, db-derived-files-sync-dbfs+backlinks, ai-design/lovable
+  - ? ai loves all-in-one 
 
 - 📌 non-goals
   - good llm xp on cpu, but optimized for gpu
@@ -54,9 +55,16 @@ modified: 2026-05-28T17:50:54.646Z
 
 ## free-model-today
 
+- features
+  - latest free models
+  - model-wiki: 最重要的部分是双链
+  - benchmark/leaderboard
+
 - pm
-  - model-xp-store? top free? top paid?
+  - model-xp-store? 
+    - top free? top paid?  不适合, 非标准商品参数
   - ux交互偏向于 ebay? twitter? wikipedia? modelscope?
+    - 偏向于news/twitter
   - 结合当期benchmark快照，可以设计类似历史排行榜的知识库
 
 - alternatives

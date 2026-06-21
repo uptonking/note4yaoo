@@ -1407,6 +1407,13 @@ https://makerich.club/ chong 这个渠道不是源头，也是流传最久的渠
 
 - ## 
 
+- ## 
+
+- ## [最近总结的免费用 GLM 5.2 / DeepSeekV4 的几个方法 - LINUX DO _202606](https://linux.do/t/topic/2441446)
+
+- ## [怪不得copilot 积分用的这么快 _202606](https://www.nodeseek.com/post-786737-1)
+  - 我把copilot接入了中转。之后使用了一段时间，结果发现缓存命中率只有60左右（CODEX应该是要到90%）
+
 - ## [华为出code cli了，无限用GLM5.1 - LINUX DO _202606](https://linux.do/t/topic/2405921)
   - https://gitcode.com/openharmony-sig/deveco-code /MIT
   - 面向 HarmonyOS 开发场景的 AI Agent 工具，支持代码编写、编译构建、设备运行、文档查阅、运行时调试及 ArkTS 问题修复等能力。
@@ -1618,13 +1625,13 @@ Hugging Face 🇺🇸 Llama 3.3 70B, Qwen2.5 72B, Mistral 7B +many more. $0.10/m
 - 一个是卖钱的正式版，一个是对话用于训练的免费公测版。测试版不一定弱，但 Ta 是测试版。
 
 - ## 💡 [【长期更新-授人以鱼不如授人以渔】公益站渠道公示（人人都可搭公益？） _202601](https://linux.do/t/topic/1477161)
-  01.                           q2api(claude)
-  02.                           英伟达ai平台（大部分开源模型）
-  03.                           hf抱脸（大部分开源模型）
-  04.                           groq平台
-  05.                           硅基流动平台
-  06.                           富可敌国平台（duck已许可分发付费站anti, 正在申请分发max）
-  07.                           杂七杂八的短效羊毛平台（国外）
+  01.                               q2api(claude)
+  02.                               英伟达ai平台（大部分开源模型）
+  03.                               hf抱脸（大部分开源模型）
+  04.                               groq平台
+  05.                               硅基流动平台
+  06.                               富可敌国平台（duck已许可分发付费站anti, 正在申请分发max）
+  07.                               杂七杂八的短效羊毛平台（国外）
 
 - [还有可以白嫖opus的平台嘛  ](https://linux.do/t/topic/1510785)
 

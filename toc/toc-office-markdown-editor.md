@@ -25,6 +25,16 @@ modified: 2022-11-09T11:53:13.093Z
   - zettlr
   - mermaid
 # markdown-editor
+- https://github.com/opral/flashtype /MIT/202606/ts
+  - https://flashtype.com/
+  - The markdown editor for Claude & Codex
+  - Agents edit. You review the diff. Nothing lands without you.
+  - https://x.com/samuelstroschei/status/2068003421106663457
+    - use Claude/Codex to edit markdown, track every change, and see the diffs
+    - flashtype uses the claude/codex cli's. 
+    - flashtype has out of the box version control and claude/codex integrations.
+    - It would be nice if, like Obsidian, it could also support small HTML artifacts inside it. That would allow Claude to generate diagrams, visual explanations, and things like that directly within the workspace.
+
 - web-editor-markdown /392Star/MIT/202211/ts/vanillajs/NoDeps/inactive
   - https://github.com/Ben-love-zy/web-editor-markdown
   - 基于 Web 浏览器，即时渲染的 Markdown 编辑器

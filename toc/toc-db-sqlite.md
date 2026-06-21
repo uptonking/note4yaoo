@@ -151,7 +151,8 @@ modified: 2021-08-30T18:56:18.632Z
   - https://sqlitestudio.pl/
   - multi-platform SQLite database manager written in C++, with use of Qt framework
 # powered-by-sqlite
-- https://github.com/datopian/markdowndb /MIT/202401/ts/sqlite
+- https://github.com/flowershow/markdowndb /490Star/MIT/202605/ts/sqlite
+  - https://github.com/datopian/markdowndb
   - https://markdowndb.com/
   - JS library to turn markdown files into structured queryable database (SQL-based and simple JSON). 
   - It helps you build rich markdown-powered sites easily

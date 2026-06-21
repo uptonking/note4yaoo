@@ -383,7 +383,7 @@ redis-cli shutdown
 
 - ## 
 
-- ## 
+- ## [What are some not well known, but powerful apps that you haven’t found anything like? : r/macapps _202606](https://www.reddit.com/r/macapps/comments/1u7ulwk/what_are_some_not_well_known_but_powerful_apps/)
 
 - ## [[开源推广]macOS触控板增强工具Swooshy - LINUX DO _202606](https://linux.do/t/topic/2348413)
   - 一款开源的 macOS 触控板增强软件，旨在尽量不误触的前提下，减少使用触控板时需要打开右键菜单与精确点击的次数，让用户可以用直觉化的手势，从 Dock 和标题栏操控应用窗口。

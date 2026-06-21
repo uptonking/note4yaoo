@@ -12,21 +12,41 @@ modified: 2026-06-20T15:49:57.019Z
 
 # awesome-models
 - core-features
-  - model-today
-  - model-wiki+comparison
+  - 基于backlink的架构来实现，而不是普通crud后端
+  - latest-free-models today
+  - model-wiki+comparison: 最重要的部分是双链
   - model-bench with history
   - news-report/submit
+  - alternatives: 和 股票分析类saas/huggingface/gitea 相似
+
+- non-goals
+  - comments: 类似editor的行内评论足够了，类似github-issues/discussion的评论太重了，不是当前重点
 
 - features
   - 
 
 # model-api-resources
+- https://github.com/12britz/awesome-free-models /202606
+  - A curated list of free AI models, APIs, and tools you can use without paying a cent.
+
 - https://github.com/vava-nessa/free-coding-models /202606/js
   - https://freecodingmodels.vercel.app/
   - Find, benchmark and install in CLI 170+ FREE coding LLM models across 15+ providers in real time
 # awesome/leaderboard/benchmark
 - [llm-stats AI Leaderboard 2026: Compare & Rank 300+ Top AI Models by Intelligence, Speed & Price ](https://llm-stats.com/)
   - Your idle credits are losing value every day. Connect them to LLM Stats and earn 50% on every inference request we route through your keys.
+
+- https://github.com/wenbochang888/github-trending-spider /20.8kStar/MIT/202606/ts
+  - https://newsnow.busiyi.world/
+  - 优雅地阅读实时热门新闻
+  - 当前版本为 DEMO，仅支持中文。正式版将提供更好的定制化功能和英文内容支持。
+  - 支持 GitHub 登录及数据同步
+  - 根据内容源更新频率动态调整抓取间隔（最快每 2 分钟），避免频繁抓取导致 IP 被封禁
+  - 本项目主推 Cloudflare Pages 以及 Docker 部署， Vercel 需要你自行搞定数据库，其他支持的数据库可以查看 https://db0.unjs.io/connectors 。
+  - roadmap
+    - 多语言支持（英语、中文，更多语言即将推出）
+    - 个性化选项（基于分类的新闻、保存的偏好设置）
+    - 扩展 数据源 以涵盖多种语言的全球新闻
 
 - https://github.com/wenbochang888/github-trending-spider /MIT/202606/python/vue
   - https://www.gdufe888.top/ai/
@@ -48,6 +68,16 @@ modified: 2026-06-20T15:49:57.019Z
 - https://github.com/harbor-framework/terminal-bench /apache2/202601/python
   - https://www.tbench.ai/
   - A benchmark for LLMs on complicated tasks in the terminal
+
+- https://github.com/run-llama/ParseBench /apache2/202606/python
+  - https://parsebench.ai
+  - a benchmark for evaluating how well document parsing tools convert PDFs into structured output that AI agents can reliably act on.
+
+- https://github.com/getomni-ai/benchmark /MIT/202510/python/ts
+  - https://github.com/getomni-ai/benchmark/tree/main/dashboard  /streamlit
+  - https://getomni.ai/ocr-benchmark
+  - A benchmarking tool that compares OCR and data extraction capabilities of different large multimodal models such as gpt-4o, evaluating both text and json extraction accuracy. 
+  - The goal of this benchmark is to publish a comprehensive benchmark of OCRaccuracy across traditional OCR providers and multimodal Language Models. 
 
 - https://github.com/NanoNets/idp-leaderboard-benchmarks /apache2/202603/python
   - https://idp-leaderboard.org  /排行榜白色ui友好
@@ -73,6 +103,20 @@ modified: 2026-06-20T15:49:57.019Z
     - benchmark.js for JavaScript/TypeScript projects
     - pytest-benchmark for Python projects with pytest
     - JMH for Java projects
+
+- https://github.com/pingcap/ossinsight /apache2/202402/ts
+  - https://ossinsight.io/
+  - OSS Insight is a powerful tool that provides comprehensive, valuable, and trending insights into the open source world by analyzing 5+ billion rows of GitHub events data.
+  - OSS Insight's Data Explorer provides a new way to explore GitHub data. Simply ask your question in natural language and **Data Explorer will generate SQL** , query the data, and present the results visually.
+  - Simply ask your question in natural language and Data Explorer will generate SQL, query the data, and present the results visually. 
+    - It's built with Chat2Query, a GPT-powered SQL generator in TiDB Cloud.
+
+- https://github.com/iloveitaly/openbook /MIT/202310/ts/inactive
+  - https://www.dolthub.com/repositories/iloveitaly/venture_capital_firms
+  - Like pitchbook, but open. An open source investor/venture capital database
+  - Open source databases have always been interesting to me. There's lots of open source code, but not much open source data. 
+  - Scraping with GPT: This repo has some interesting code which uses langchain + openai to return JSON results from a webpage by converting the raw HTML to simplified markdown. 
+  - 仓库代码是爬取公司数据并清洗
 # ai/llm-api 👾
 - api-choices
   - 支持热门模型、vlm
@@ -236,7 +280,7 @@ modified: 2026-06-20T15:49:57.019Z
     - 10 LDC : 1 元用量 【DeepSeek 0.5倍率】（相当于 5 LDC = 1 元用量）
     - 渠道：第三方平台 + DeepSeek 官方API 兜底
     - 无签到，仅LDC兑换，用多少换多少
-  - [7r.fit ](https://api.7r.fit/console/personal)
+  - [九幺 7r.fit ](https://api.7r.fit/console/personal)
     - 价格贵
     - [【九幺】我们也有claude了 ](https://linux.do/t/topic/2439721)
   - [SunRouter _202605](https://sun.meowai.net/console/personal)

@@ -341,7 +341,7 @@ modified: 2022-11-25T15:50:48.226Z
     - In contrast, **kappa architecture centers on a primitive called the "append-only log"** as its single source of truth.
     - Each entry in a log is addressable by its "sequence number" (starting at 0, then 1, 2, 3, ...). In the case of kappa-core, which uses hypercore underneath
   - kappa-core still uses tables like the above, though. 
-    - However, instead of being the source of truth, these **tables are generated (or materialized) from the log data**, providing a view of the log data in a new or optimized context. 
+    - However, instead of being the source of truth, these **tables are generated (or materialized) from the log data** , providing a view of the log data in a new or optimized context. 
     - These are called materialized views.
 
 - https://github.com/lideming/btrdb /MIT/202302/ts/inactive
@@ -389,7 +389,8 @@ modified: 2022-11-25T15:50:48.226Z
   - CreamDB 假设你只有一个 "标签页"。当你同时打开多个"标签页"时，CreamDB 。这意味着，如果你使用 Electron 时，需要限制用户只能打开一个进程，且你的 CreamDB 位于主进程中
   - 如果你需要处理多"标签页"间数据同步的情况，这种情况下，RxDB 是一个更好的选择，CreamDB 创作的初衷，是因为 RxDB 使用起来较为繁琐，并且，目前 RxDB 不支持 React Native、Capacitor、Taro、MiniProgram 等环境。
 # db-json
-- https://github.com/datopian/markdowndb /MIT/202401/ts/sqlite
+- https://github.com/flowershow/markdowndb /490Star/MIT/202605/ts/sqlite
+  - https://github.com/datopian/markdowndb
   - https://markdowndb.com/
   - JS library to turn markdown files into structured queryable database (SQL-based and simple JSON). 
   - It helps you build rich markdown-powered sites easily
@@ -461,7 +462,7 @@ modified: 2022-11-25T15:50:48.226Z
   - https://github.com/orbitjs/orbit
   - https://orbitjs.com/
   - Orbit is a composable data framework for managing the complex needs of today's web applications.
-  - Although Orbit is **primarily used as a flexible client-side ORM**, it can also be used server-side in Node.js.
+  - Although Orbit is **primarily used as a flexible client-side ORM** , it can also be used server-side in Node.js.
   - Interact with data from a variety of sources: a REST server, a WebSocket stream, an IndexedDB backup, an in-memory store, etc.
   - Work offline, work online, and seamlessly transition between both modes.
   - Support undo、redo

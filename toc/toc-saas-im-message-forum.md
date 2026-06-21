@@ -20,6 +20,7 @@ modified: 2021-05-14T15:04:15.333Z
   - forum的核心也是ugc内容，所以和blog功能相似度高
   - 💡 cms中的内容评论也可以作为forum
   - 商城app-store类产品的开发和imdb类似，偏向搜索
+  - 许多产品都提供forum功能，类似工单/gitea/文档评论也是, 区别在于article/comments的产品设计和重要程度
 
 - 论坛选型参考
   - 尽量选择开源产品，方便自定义
@@ -67,11 +68,15 @@ modified: 2021-05-14T15:04:15.333Z
   - https://meta.answer.dev/
   - A Q&A platform software for teams at any scales. 
   - Plugins: redis/es/algolia
-  - 依赖注入使用wire
+  - 依赖注入使用 wire
   - 依赖gin、xorm
   - [Elasticsearch is a good candidate for the underlying database? _202210](https://github.com/apache/answer/issues/29)
     - In Answer project, we use XORM to be the abstraction layer of database, so all data operations are designed for relational database. 
     - If you want to use ElasticSearch, you need to write your own data access layer. 
+- https://github.com/rocboss/paopao-ce /4.5kStar/MIT/202604/go/vue
+  - https://paopao-demo.vercel.app/
+  - scalable social community platform powered by Gin backend and modern TypeScript/Vue frontend
+  - ux一股codex大圆角卡片的味道
 - https://github.com/casbin/casnode /apache2/202312/go
   - Open-Source Forum and Social Platform, Alternative to StackOverflow & Flarum
   - Go (Beego) + MySQL

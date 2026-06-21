@@ -63,6 +63,11 @@ modified: 2025-04-17T08:17:04.770Z
 
 - https://github.com/qaware/cloud-native-weather-golang /MIT/202208/go/inactive
   - A simple weather REST service using Golang, Gin and GORM.
+
+- https://github.com/linux-do/credit /apache2/202606/go/ts/gin/gorm
+  - https://credit.linux.do/
+  - Linux Do Community Credit Service Platform
+  - Go Backend + Redis Cache + PostgreSQL Database
 # web-fwk
 - https://github.com/gin-gonic/gin /81.8kStar/MIT/202504/go
   - https://gin-gonic.com/

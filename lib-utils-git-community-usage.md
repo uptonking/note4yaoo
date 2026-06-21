@@ -115,7 +115,9 @@ modified: 2024-05-27T09:12:06.925Z
 
 - ## 
 
-- ## 
+- ## gitru: Git graph with timeline
+- https://x.com/ruru_1x/status/2068021793173172351
+  - [Gitru ](https://gitru.app/)
 
 - ## [GitCharm – a JetBrains-style Git panel for VS Code (commit graph, shelves, tag management, and more) : r/vscode _202606](https://www.reddit.com/r/vscode/comments/1twoflv/gitcharm_a_jetbrainsstyle_git_panel_for_vs_code/?sort=top)
   - GitCharm, an extension that brings a JetBrains-like Git experience to VS Code.

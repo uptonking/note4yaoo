@@ -30,8 +30,12 @@ modified: 2026-06-10T08:53:24.884Z
 - https://x.com/OpenDesignHQ/status/2067192475853180997
   - Let AI design everything for you. Take control anytime.
   - Use Open Design inside Cursor. Or use it directly.
+  - It works for web, desktop, and mobile prototypes today
 
 - @OpenDesignHQ do you natively support utilizing local LLMs ?
+  - Yes! Open Design supports local LLM workflows, including 22 local agent / model paths
+
+- I really want an inspector window too, so rather than typing, I can change properties/styles just by toggling some values, like Figma or framer properties panel 
 
 - ## [我的前端管理平台 shadcn UI开发最佳实践，写了很多个项目总结出来的最快，最没有AI味的管理UI设计方案 - LINUX DO _202606](https://linux.do/t/topic/2219562)
   - 如果大家不排斥这个shadcn的UI风格的话，所有的管理后台都可以采用shadcn来写

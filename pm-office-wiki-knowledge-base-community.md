@@ -161,6 +161,26 @@ modified: 2021-07-27T16:35:20.057Z
 
 - I use obsidian. I’ve come across the idea of using a moc (map of contents?) idea.
   - This would look like something like: Fundamental heading List of fundamental ideas- basically linking the page
+# discuss-patterns
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Karpathy's LLM Wiki setup : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1uai1w2/karpathys_llm_wiki_setup/)
+  - I've been using Karpathy's LLM Wiki setup (Obsidian + Claude Code) for about two weeks, and I'm pretty impressed so far.
+  - It feels like a different approach to knowledge management. Instead of spending time organizing notes, I'm focusing more on collecting information and letting the AI handle much of the structure and linking.
+  - For those who've been using it for a few months or longer, has it meaningfully improved your work or thinking? What do you use it for, and what benefits or drawbacks have you discovered over time?
+- Honest question - if you now only collect information and all the linking, refining etc. is done through the AI - how exactly shall this improve your thinking? Its a good technique for managing code documentation - but i fail to see how this, in any way, improves pure knowledge work. 
+  - The goal here is not to improve your thinking. It is to improve the LLM's knowledge of you and its memory and thinking. Obsidian in this model is just a tool for the LLM to store detailed memories of you and your projects.
+  - It is also building a memory that is not agent-dependent. It can go with you between different AI agents.
+- The goal of OP was stated clearly : does it improve your work and thinking.
+- You must never forget: This is a great way to separate what's important from what's not. But it's not a way to learn at all. To learn, you have to connect your own neurons—not the AI.
+
+- Karpathy’s method is a context-management strategy for LLMs. It’s not “shortcut Zettelkasten.” A Karpathy-style wiki could be a useful reference source. You could draw from it or be inspired by it. But the manual part of note-making and connection-finding in, say, an evergreen notes approach is the whole point. A tool for thinking by definition can’t do the thinking for you. It’s the difference between learning from watching a computer play chess and playing chess yourself.
+
+- Karpathy took a point of view that the agent manages the wiki. He thought it would be too onerous for a human to do it. But I've been maintaining a second brain/wiki for 5 years before AI showed up. In my case, I am letting AI write and read from my second brain which makes it incredibly useful - it's like a "shared brain". I wrote about my perspective here if useful: From Second Brain to Shared Brain
 # discuss
 - ## 
 
@@ -185,7 +205,7 @@ modified: 2021-07-27T16:35:20.057Z
 - https://x.com/pontusab/status/1924091702832517357
   ◇ Generate PNG
   ◇ Cache in Vercel CDN
-  ◇ Use `<Image />`
+  ◇ Use `<Image />` 
 
 - don't like Vercel `<Image/>`, litteraly a wrapper around `<img />` but it charges you money and doesn't work if you deploy out of Vercel
   - Next.js will still optimise your image using sharp

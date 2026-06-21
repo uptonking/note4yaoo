@@ -79,6 +79,25 @@ modified: 2022-10-04T23:32:30.824Z
 - https://github.com/cwwojin/CRDT-text-editor /MIT/202501/ts
   - Real-time document editor based on Yjs, Prosemirror, MongoDB, Redis, Next.js
 # diff/track-change
+- https://github.com/opral/lix /695Star/MIT/202606/rust/ts
+  - https://lix.dev/
+  - Embeddable & universal version control system for AI agents
+  - Lix is a library you import. Get branching, diff, rollback in your existing stack
+  - Tracks semantic changes — diffs, blame, and history are queryable via SQL
+  - Lix tracks, reviews, branches, merges, and rolls back changes across Markdown, DOCX, XLSX, JSON, PDFs, and custom file formats.
+  - Supports any file format. Create drafts, branches, checkpoints, and releases for Markdown, DOCX, XLSX, JSON, PDFs, and custom formats.
+  - In Lix, semantic changes are stored as first-class records at write time, so diffs, audit trails, and rollback are native and queryable.
+    - Unlike Git's line-based diffs, Lix understands file structure through plugins. 
+  - Lix can track: JSON, CSV, Excel
+  - Lix uses SQL databases as query engine and persistence layer. Virtual tables like `file` and `file_history` are exposed on top
+    - When a file is written, a plugin parses it and detects entity-level changes. 
+    - These changes (deltas) are stored in the database, enabling branching, merging, and audit trails.
+  - [Comparison to Git | Lix Documentation](https://lix.dev/docs/comparison-to-git)
+    - Use Git for source code. Use Lix when you need version control as a library.
+    - Git stores snapshots and derives diffs by comparing versions. Lix stores semantic changes (deltas) as data, so diffs, audit trails, and rollback are native and queryable.
+    - Git diff drivers can improve display for some formats, but Git remains snapshot-first and toolchain-oriented. 
+    - Lix is a library: semantic deltas, approvals, and queryable history as data.
+
 - https://github.com/handlewithcarecollective/prosemirror-suggest-changes /28Star/MIT/202507/ts
   - https://handlewithcarecollective.github.io/prosemirror-suggest-changes/
   - A ProseMirror library for enabling Google Docs-style suggestions

@@ -274,7 +274,25 @@ modified: 2024-08-03T20:00:33.414Z
   - [Options for self-hosting? · Issue · huggingface/xet-core _202506](https://github.com/huggingface/xet-core/issues/398)
     - No, we currently do not have an option to self-host the Xet Storage backend.
     - the underlying Xet tech is all open source and we'll work on packaging it into a reusable bundle at some point in the future but we need to focus on finishing the migration first.
+# discuss-large-file
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [[D] Alternatives to HF or a path forward for the OSS community? : r/MachineLearning _202307](https://www.reddit.com/r/MachineLearning/comments/15dsuhn/d_alternatives_to_hf_or_a_path_forward_for_the/)
+- github + bit torrent.
+
+- There's not really anywhere that allows you upload/download 100GB+ weights and datasets for free. And bandwidth is expensive if you scale a service like this, making it hard to bootstrap without funding. I almost feel like we need a torrent tracker for ML, but with a way to support git at the same time.
+- Someone should start an open source project for this. Make it the Steam of Machine learning models. With peer to peer sharing, community etc.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

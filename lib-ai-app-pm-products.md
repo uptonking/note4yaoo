@@ -359,8 +359,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 对同一场景, 如翻译/ocr, 针对不同模型内置合理的参数且支持配置
     - pdf: ocr(提取table/chart), editing(proof/布局), rag(citation)
     - pm: llamaparse-extract( **mineru/paddleocr**/mistral/本地/远程), cowork(docx-xml/databases/**ilovepdf** ), notebooklm
-    - later: GPU硬件+model量化(ai难取代), Image, TableAI, Audio, 翻译, 多维表格, pretext-edit
-      - hybrid-ai-with-ssd-caching, eidting-with-brower-use, sandbox-with-just-bash, db-derived-files-sync-dbfs
+    - later: GPU硬件+model量化(ai难取代), Image, TableAI, Audio, 翻译, 多维表格, ai-design/lovable, pretext-edit
+      - hybrid-ai-with-ssd-caching, eidting-with-brower-use, sandbox-with-just-bash, db-derived-files-sync-dbfs+backlinks
     - roadmap: 
       - agentic场景优化: ocr-vlm/pipeline, translation
       - citation, backlinks: 提升rag的准确度, 优化搜索结果中的code/text/image

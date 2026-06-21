@@ -606,12 +606,13 @@ modified: 2023-08-29T10:12:22.345Z
   - Supported Coding Agents call Git AI and mark the lines they insert as AI-generated.
     - On commit, Git AI saves the final AI-attributions into a Git Note. These notes power AI-Blame, AI contribution stats, and more. The CLI makes sure these notes are preserved through rebases, merges, squashes, cherry-picks, etc.
 
-- https://github.com/opral/lix /MIT/202602/ts
+- https://github.com/opral/lix /695Star/MIT/202606/rust/ts
   - https://lix.dev/
   - Embeddable & universal version control system for AI agents
   - Lix is a library you import. Get branching, diff, rollback in your existing stack
   - Tracks semantic changes — diffs, blame, and history are queryable via SQL
-  - Approval workflows for agents — agents propose changes in isolated versions, humans review and merge
+  - Lix tracks, reviews, branches, merges, and rolls back changes across Markdown, DOCX, XLSX, JSON, PDFs, and custom file formats.
+  - Supports any file format. Create drafts, branches, checkpoints, and releases for Markdown, DOCX, XLSX, JSON, PDFs, and custom formats.
   - In Lix, semantic changes are stored as first-class records at write time, so diffs, audit trails, and rollback are native and queryable.
     - Unlike Git's line-based diffs, Lix understands file structure through plugins. 
   - Lix can track: JSON, CSV, Excel

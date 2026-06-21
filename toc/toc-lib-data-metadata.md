@@ -24,6 +24,12 @@ modified: 2024-03-31T17:51:32.162Z
   - 依赖antlr4, dropwizard
   - Powered by a centralized metadata store based on Open Metadata Standards/APIs, supporting connectors to a wide range of data services
   - A pluggable framework for integrating tools and ingesting metadata to the metadata store, supporting about 55 connectors
+  - usecases 🌰
+  - [Show HN: OpenMetadata – OSS platform for data discovery observability governance | Hacker News _202407](https://news.ycombinator.com/item?id=40987501)
+  - How does this compare to DataHub? 
+    - It seems like DataHub has an async Kafka ingestion approach while OpenMetadata is API
+    - It seems that the data model of OpenMetadata can be extended/modified by API calls while DataHub only allows for changes to be made in code (in a forked version, no less) and deployed.
+    - It seems that DataHub comes with more data types out-of-the-box such as JSON Schema
 
 - https://github.com/datahub-project/datahub /java/python/ts
   - https://datahubproject.io/

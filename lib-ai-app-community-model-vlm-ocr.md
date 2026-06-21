@@ -212,7 +212,7 @@ modified: 2025-11-06T18:49:13.977Z
   - [Open VLM Leaderboard - a Hugging Face Space by opencompass](https://huggingface.co/spaces/opencompass/open_vlm_leaderboard)
 
 - [ParseBench — Document Parsing Benchmark for AI Agents](https://www.parsebench.ai/)
-  - https://github.com/run-llama/ParseBench /apache2/202605/python
+  - https://github.com/run-llama/ParseBench /apache2/202606/python
   - a benchmark for evaluating how well document parsing tools convert PDFs into structured output that AI agents can reliably act on.
 
 - [OpenDataLab OmniDocBench](https://opendatalab.com/omnidocbench)

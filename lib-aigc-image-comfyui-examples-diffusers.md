@@ -651,6 +651,14 @@ modified: 2025-08-23T11:43:35.904Z
   - Built with Next.js, TypeScript, and Framer Motion
   - Text-to-Image: Generate stunning images from text descriptions using Gemini 2.5 Flash
   - Image Editing: Edit existing images with text prompts - add, remove, or modify elements
+
+- https://github.com/tianjiangqiji/nova-image-studio /AGPL/202606/ts
+  - https://image.ccode.vip/
+  - 自托管的 AI 图像生成工作台 · 自定义模型 · 多模式 · PWA · 实时任务 支持Agent模式，工作台模式，无限画布，反推提示词，提示词广场，GIF生成。前后端任务机制轻量后端；三端兼容 UI：桌面端、平板端、移动端自适应布局
+  - 个面向个人/团队的 AI 图像生成工作台。
+  - 前端使用 Next.js 16 + React 19 静态导出（PWA），
+  - 后端是轻量 Node.js 服务（server.js + SQLite + WebSocket），统一调度任务并代理图像生成 API。
+  - [【开源】Agent/无限画布/工作台-自托管的 AI 图像生成工作台 · 自定义模型 · 多模式 · PWA · 实时任务机制支持三端兼容 UI：桌面端、平板端、移动端自适应布局 - 开发调优 - LINUX DO _202606](https://linux.do/t/topic/2442811)
 # examples
 - https://github.com/d4N-87/ComfyUI-Workflow-Inspector /7Star/MIT/202508/ts
   - https://d4n-87.github.io/ComfyUI-Workflow-Inspector/

@@ -46,12 +46,6 @@ modified: 2022-11-07T10:25:12.034Z
 - https://github.com/iamadamdev/bypass-paywalls-chrome
   - help bypass paywalls for selected sites.
   - Bypass the following sites' paywalls: bloomberg, fortune, glassdoor, medium, national geographic, quora, vanity fair, vulture
-# yaoo-habit
-- saas, pricing, renew
-  - vpn-justmysocks, $27.4/year, 0922
-  - vpn-flowercloud, ¥130/year, 0603
-  - vps-dartnod-2c4g, $30/year, 0601
-  - domain-netcup-dtk, $5/year, 0618
 # tech-community
 - discord
   - tiptap
@@ -160,6 +154,12 @@ modified: 2022-11-07T10:25:12.034Z
     - [手把手教你怎么用 Cloudflare Tunnel 穿透 HTTP / SSH / TCP 服务 _202510](https://linux.do/t/topic/1091998)
     - [使用 Cloudflare Tunnel 作為低成本的 ngrok 替代品：可自訂 domain 的 reverse tunneling 解決方案，讓外網連上本地 server | Medium](https://medium.com/@zetavg/%E4%BD%BF%E7%94%A8-cloudflare-tunnel-%E4%BD%9C%E7%82%BA%E4%BD%8E%E6%88%90%E6%9C%AC%E7%9A%84-ngrok-%E6%9B%BF%E4%BB%A3%E5%93%81-6b0aaef97557)
 # habit-recheck
+- saas, pricing, renew
+  - vpn-justmysocks, $27.4/year, 0922
+  - vpn-flowercloud, ¥130/year, 0603
+  - vps-dartnd-2c4g, $14/year, 0617
+  - dns-netcup-acrg, $1.5/year, 0620
+
 - dpdns域名需要在截止日期180天内续期, 截止日期是每年 1027
   - https://dash.domain.digitalplat.org/auth/login?next=%2F
 # search-google

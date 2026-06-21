@@ -438,6 +438,13 @@ modified: 2025-12-25T19:55:10.911Z
 - https://github.com/vincentarelbundock/calepin /MIT/202606/rust
   - strongly inspired by Quarto, but is intended to be a Typst-first design.
   - [Calepin: Computational notebooks in Typst : r/typst _202606](https://www.reddit.com/r/typst/comments/1txkdqu/calepin_computational_notebooks_in_typst/?sort=top)
+  - [Calepin: Website builder for Typst : r/typst _202606](https://www.reddit.com/r/typst/comments/1uaf1jj/calepin_website_builder_for_typst/)
+    - Can you briefly explain how Calepin works? Is it a preprocessor for Typst-like directives? Or do the directives actually run Typst functions that modify the document? Or perhaps they register metadata for the preprocessor? 
+    - Calepin has two components: a Rust app that mirrors the Typst CLI interface (`calepin compile`, `calepin watch`, etc.), and a set of Typst functions that control rendering.
+    - For notebooks, the `calepin` app is basically just a code runner. `calepin` calls `typst eval` to find code chunks and other settings in a `.typ` file. Calepin should never edits your `.typ` file in place. Your source stays exactly as you wrote it, and we insert generated artefacts at compile time via Typst functions.
+    - For website generation, `calepin` app is used for "orchestration." You point it at a directory of `.typ` documents and it: Uses `typst` to render each document to HTML individually (with smart cache for incremental re-builds). `calepin` also has other convenience things like a local server for previewing, so you can call `calepin serve my_site`, for example.
+    - there's a Calepin-specific extension on both the VS-Code and VSX marketplaces. That only does live preview, so you can use tinymist for everything else. For transparency, I'll say that the extension still has rough edges, but cleaning those up is on the medium term roadmap.
+    - we are using the standard HTML export of Typst. 
 
 - https://github.com/hanwenguo/weibian /GPL/202512/rust
   - https://hanwenguo.github.io/weibian/

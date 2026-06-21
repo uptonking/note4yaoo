@@ -141,6 +141,8 @@ modified: 2022-11-07T10:58:24.512Z
   - [2023各平台年终报告](https://www.yuque.com/paidaxin/dkopg8/gqpfgysdw0wiqwmh)
 
 - 版权过期统计资料的数据分析平台
+
+- 数据转换器: ckan, dataverse
 # 国内替代/open-alternatives
 - obsidian
 

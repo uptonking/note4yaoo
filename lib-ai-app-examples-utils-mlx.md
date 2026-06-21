@@ -91,6 +91,13 @@ modified: 2025-11-01T10:54:26.044Z
   - https://x.com/jundotkim/status/2061863850874634242  _202606
     - I just shipped oMLX v0.4.0, the first official release with the new native Swift macOS app.
     - My goal is still the same: I want oMLX to be the app someone can open on a Mac and immediately try Local AI with, without needing to understand all the machinery first.
+  - https://github.com/ashhart/TensorFold /MIT/202606/python
+    - [Run MoE LLMs that your Apple Silicone machine should not normally be able to run. : r/oMLX _202606](https://www.reddit.com/r/oMLX/comments/1uakdc7/run_moe_llms_that_your_apple_silicone_machine/)
+    - MLX-first local runtime for running sparse MoE language models under tight memory budgets.
+    - It keeps model files intact, folds the active expert path into bounded resident memory, and pages the rest with explicit telemetry.
+    - The point is not to make small models faster. The point is to run models the machine should not normally be able to host.
+    - TensorFold is Apple Silicon / MLX-first today. The low-memory serving path and the measured Qwen profile were developed around local MLX checkpoints, unified memory, and Apple Metal-backed execution.
+    - Linux support is split by surface. the release tooling is ordinary Python, but the low-memory serving path is not yet a Linux product claim. 
 
 - https://github.com/mlx-node/mlx-node /MIT/202512/rust/ts
   - MLX-Node brings Apple's MLX framework to JavaScript/TypeScript, enabling efficient on-device ML inference and training on Apple Silicon and CUDA devices. 

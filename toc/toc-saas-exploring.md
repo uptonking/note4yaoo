@@ -60,7 +60,19 @@ modified: 2021-05-14T14:30:22.685Z
   - Reddit 数据抓取: 自动抓取相关帖子和评论数据（使用用户输入作为搜索关键词）
   - [【开源】Reddit 生意调研Agent: 收集和分析数据来解析市场需求 ](https://linux.do/t/topic/1417660)
 
+- https://github.com/666ghj/BettaFish /34.1kStar/GPL/202601/python
+  - https://deepwiki.com/666ghj/BettaFish
+  - 微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌
+  - 构建了从 BettaFish（数据收集与分析）到 MiroFish（全景预测）的完整链路
+# newsfeed-crawler
+- https://github.com/liyown/ai-trend-publish /3kStar/MIT/202606/ts
+  - https://liyown.github.io/ai-trend-publish/
+  - TrendPublish 是一个面向微信公众号的自动化选题与发布系统。它从你指定的数据源中抓取内容，用 AI 做选题、证据补全、排序、标题、正文生成、审稿、排版和配图，最后生成可预览的 dry-run 产物或创建微信公众号草稿。
+  - 项目当前聚焦一条主链路：微信文章自动发布。本地、Docker 和 Cloudflare 都使用同一套 TypeScript 配置模型；Dashboard 中可编辑数据源、文章方案、共享能力和定时规则，下一次运行即时生效，密钥仍留在部署环境中。
+  - 日更类公众号真正耗时的不是“让模型写一段摘要”，而是稳定地完成这些事情：TrendPublish 的设计目标就是把这些步骤变成一条清晰的自动化流程：AI 可以参与选题和创作，但每一步都可追踪、可配置、可 dry-run。
+
 - https://github.com/sansan0/TrendRadar /42.7kStar/GPL/202601/python
+  - https://sansan0.github.io/TrendRadar/
   - 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 + RSS 订阅，支持关键词精准筛选
   - 全网热点聚合 知乎 抖音 bilibili 热搜 华尔街见闻 贴吧 财联社热门 今日头条
     - 默认监控 11 个主流平台，也可自行增加额外的平台
@@ -69,8 +81,13 @@ modified: 2021-05-14T14:30:22.685Z
     - 远程云存储：GitHub Actions 环境默认，支持 S3 兼容协议（R2/OSS/COS 等），数据存储在云端，不污染仓库
     - 本地 SQLite 数据库：Docker/本地环境默认，数据完全可控
     - 自动后端选择：根据运行环境智能切换存储方式
+  - 多渠道多账号推送 支持企业微信(+ 微信推送方案)、飞书、钉钉、Telegram、邮件、ntfy、Bark、Slack、通用 Webhook（可对接 Discord、IFTTT 等任意平台），消息直达手机和邮箱
+  - AI 多语言翻译
+  - https://github.com/joyce677/TrendRadar
+    - https://news.fengpt.eu.org/
+    - 最快30秒部署的热点助手 —— 告别无效刷屏，只看真正关心的新闻资讯
+    - TrendRadar的基础上增加 api 接口方便调用
 
-- https://github.com/666ghj/BettaFish /34.1kStar/GPL/202601/python
-  - https://deepwiki.com/666ghj/BettaFish
-  - 微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌
-  - 构建了从 BettaFish（数据收集与分析）到 MiroFish（全景预测）的完整链路
+- https://github.com/koala73/worldmonitor /57.7kStar/AGPL/202606/ts
+  - https://worldmonitor.app/
+  - Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface

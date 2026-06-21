@@ -97,6 +97,12 @@ modified: 2024-01-03T16:14:53.804Z
   - Similar to React Compiler + Rspack: the compiler optimizes the code, and Rspack handles bundling.
 - So it will replace swc in rspack?
 
+- https://x.com/jiahan_c/status/2067393834322112630
+  - Love this direction. Augmenting Node.js instead of trying to replace it feels like the right bet.
+  - We’ve had similar thoughts internally too: tsgo for full TS support, with opt-in type checking, plus sandboxing capabilities agents need. Excited to see Nub pushing this forward.
+- Why not just nodes native ts support and tsc for type checking?
+  - Node native TS support works well for many cases. The tsgo angle is more about going beyond type stripping: 100% TS support, faster opt-in type checks, tsconfig/project graph support
+
 - ## Rspack keeps pushing forward with support for the latest language features.
 - https://x.com/jiahan_c/status/2065013057571676389
   - After `import defer` , we're now adding `import source` for Wasm, following the TC39 Source Phase Imports proposal. It lets you import a compiled Wasm module directly.

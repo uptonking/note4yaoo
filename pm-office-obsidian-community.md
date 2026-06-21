@@ -639,7 +639,52 @@ modified: 2024-01-23T02:52:23.932Z
 
 - Can the Base file also query text inside the note itself? like collecting open checkboxes under a specific header of a note?
   - Currently no.
+# discuss-sync
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [佬们都用什么方案同步 Obsidian？求推荐 - LINUX DO _202606](https://linux.do/t/topic/2441916)
+- 之前试过 Github，坚果云，因为是苹果全家桶，现在用的苹果 ICloud，实测秒同步很方便。
+
+- 之前用 Remotely Save + Cloudflare R2，现在用 Git 了，自动生成提交并推送
+
+- tailscale + syncthing, 日常使用够用，直接把这两个弄成windows服务在后台了
+
+- 我使用的是onedrive，5GB足够我用了，平时同步也没啥问题，
+
+- Windows、iPad、安卓手机混合用户，用的坚果云同步，但是插件同步有时候会出问题
+
+- 如果自己有NAS或者VPS的话，推荐fast-note-sync-service
+- 有条件服务器或者自建的话，fast note sync真的是降维打击
+
+- 我认为最合适的方式就是将 obsidian 的数据文件夹变成 git 仓库，使用GitHub Desktop 来手动同步，不限容量，又做了历史版本管理，真的是非常的香，我现在就是这么用的
+
+- 我obsidian vault 在 7G 左右，你看你的 vault 多大，正常如果你 icloud 没有其他照片什么的，买个 6 块一个月 50G 够用了，甚至内容少也可以先用免费 5G 试试。win上我记得微软商店里有 icloud 的软件，不过我没试过。总之苹果全家桶是很顺畅的，你电脑手机登同个 ID，把 vault 放在 icloud 里，记得打开保留下载就行了。
+
+- 用的阿里的s3存储服务，一年也就几块钱，很稳定省心
+
+- git: 能够网页预览，版本管理, 能忽略文件夹。支持Linux、mac、win
+坚果云：能够网页预览，无版本管理，不能忽略文件夹。支持Linux、mac、win
+iCloud：无法网页预览，能同步到Iphone, 无版本管理，不能忽略文件夹。支持mac、win
+
+坚果云和iCloud不能忽略文件夹，就会把一些配置文件夹或者不想同步的内容也同步。
+跨平台时快捷键或者啥的冲突，就会在配置文件夹生成很多冲突文件。
+
+最推荐的还是git, git+双链，git提供了纵向的以时间顺序的迭代记录，双链提供了当前时间点横向的各个文档的关联。
+
+我目前是git手动提交+icloud。obsidian的git插件如果你不用其他同步手段可以使用防止忘记提交。
+
+- onedrive→webdave云盘→自建webdav→飞牛同步，现在感觉飞牛同步用的很舒服。
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

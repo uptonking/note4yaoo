@@ -15,9 +15,14 @@ modified: 2021-01-01T16:02:50.598Z
 - CKAN /3.6kStar/AGPLv3/202301/python/js
   - https://github.com/ckan/ckan
   - https://ckan.org/
+  - https://ckan.org/showcase
   - CKAN is an open-source DMS (data management system) for powering data hubs and data portals. 
   - CKAN makes it easy to publish, share and use data. 
   - who is using #ckan
+    - [ata.gov.au ](https://data.gov.au/data/dataset)
+    - [data.gov.sg ](https://data.gov.sg/datasets)
+    - [Energi Data Service | Datasets ](https://www.energidataservice.dk/datasets)
+    - [National Energy System Operator ](https://www.neso.energy/search#tab=Data%20Portal&f-content_type=Dataset)
     - [英国政府数据网站](https://data.gov.uk/)
     - [巴西政府数据网站](https://dados.gov.br/)
     - [Research Data Repository of the University of Porto](https://ckan-rdm.up.pt/)
@@ -26,8 +31,13 @@ modified: 2021-01-01T16:02:50.598Z
 
 - DKAN /320Star/GPLv2/202301/php/js
   - https://github.com/GetDKAN/dkan
-  - An Open Data Catalog built on Drupal 8
-  - [Comparing DKAN and CKAN](https://dkan.readthedocs.io/en/latest/introduction/dkan-ckan.html)
+  - https://dkan.readthedocs.io/
+  - DKAN is an open-source open-data platform inspired by CKAN and built on top of the very popular Drupal CMS
+  - DKAN is a Drupal module that adds data management functionality.
+  - [Comparing DKAN v7 and CKAN ](https://dkan.readthedocs.io/en/7.x-1.x/introduction/dkan-ckan.html)
+    - CKAN has powerful publishing, auditing, and harvesting features for open datasets. Those using CKAN often choose to pair it with Drupal, Wordpress, Django, or other content management systems (CMS) or web publishing platforms to create pages, blogs and other content.
+    - DKAN takes a different approach by integrating open data catalog features into an existing CMS. Datasets are treated as content that can unlock rich workflows. Drupal also provides a user interface for many site management activities. 
+    - Again, DKAN is a complementary effort to CKAN in enabling people to publish open data using open source tools.
 
 - datopian-portaljs /2.2kStar/MIT/202509/ts
   - https://github.com/datopian/portaljs
@@ -38,8 +48,18 @@ modified: 2021-01-01T16:02:50.598Z
   - portal assumes a "decoupled" approach where the frontend is a separate service from the backend and interacts with backend(s) via an API. 
   - It can be used with any backend and has out of the box support for CKAN.
   - Portal.js used to be Recline(JS)
+  - [FAQs about DataHub _202405](https://github.com/datopian/portaljs/discussions/1166)
+    - DataHub can be used as a complement to CKAN. Specifically, DataHub PortalJS allows you to rapidly building powerful data portal frontends and integrates directly with CKAN. It is inspired by the "headless" CMS model and uses CKAN as a headless DMS.
+    - It can be used to create a alternative frontend to CKAN using modern frontend tooling and integrate alternative content sources.
+    - DataHub can also be used as a full replacement for CKAN if you want to manage your metadata and content differently than CKAN. DataHub offers its own native metadata management but it also provides an innovative integration with GitHub as well as connectors to other metadata management solutions 
+    - DataHub's real power is it allows you to mix and match especially in the backend. 
+    - DataHub can use many different data "backends" i.e. sources for data and metadata. For example, you can use CKAN, S3 etc. However, Git(hub) is our favorite and default backend.
   - https://www.datopian.com/solutions/open-data-portals
     - 👷🏻 Our team is proud to be led by the creator of CKAN
+  - https://www.portaljs.com/data-portals
+    - https://opendatanepal.com/dataset
+    - https://fivethirtyeight.portaljs.org
+
 - https://github.com/datopian/frontend-v2
   - Data Portal frontend. Designed for CKAN but usable anywhere. 
   - Microservice architecture so you can run and customize it standalone and connect to your backend of choice. 

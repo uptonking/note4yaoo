@@ -23,10 +23,12 @@ modified: 2025-06-21T19:10:57.709Z
 
 - cons
   - version-history不支持
-  - export不支持
+  - export 不支持
+  - comment 不支持
   - ~~docs中的图片需要手动点击才会下载和显示~~ 
-  - docs不支持分享，每个doc没有单独的url
+  - ~~docs不支持分享，每个doc没有单独的url~~ 
   - 多tab的设计，没有自动关闭tab很烦
+  - 编辑器的水平宽度似乎固定，水平滚动很奇怪
   - database支持inline和fullPage, ~~不支持查看和编辑，需要在单独tab操作~~ 
     - table不支持在中间位置插入row/column
     - 不支持拖拽改变行顺序, 首列的最小宽度过大

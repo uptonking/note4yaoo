@@ -885,6 +885,13 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 
 - ## 
 
+- ## 
+
+- ## [3 open-source infographic models you should try : r/OpenSourceAI _202606](https://www.reddit.com/r/OpenSourceAI/comments/1u8z8qr/3_opensource_infographic_models_you_should_try/)
+  - SenseNova-U1-8B-MoT-Infographic — Apache 2.0, Fully Open
+  - HiDream-O1-Image (8B) — Open Weights
+  - Ideogram 4.0 (9.3B) — Open Weights, Non-Commercial
+
 - ## [现在最好的开源文生图模型是什么 - LINUX DO _202606](https://linux.do/t/topic/2352640)
 - 真实人像：Z-image-turbo
   - 二次元： 光辉，Anima
