@@ -91,6 +91,14 @@ modified: 2023-01-09T11:03:32.533Z
 - https://github.com/Goran-Vukadinovic/xlsx2docx /202308/js
   - From .xls cell value into .doc files
 
+- https://github.com/FunYoung-code/web-to-doc /GPL/202606/js
+  - An open-source browser extension that exports selected webpage content to Word documents.
+  - [【开源推广】Web to Doc-网页导出助手：快速将网页导出为Word文档 - LINUX DO _202606](https://linux.do/t/topic/2446186)
+  - 快速将网页内容导出为Word文档，支持预设文档排版格式，并支持保存表格、图片、超链接等元素，解决网页转Word格式错乱、手动排版耗时、文档归档混乱等难题
+  - 初衷就是因为每次都得花半天调Word文档格式
+  - 之前有用过简阅助手，一个插件，能支持md、pdf、doc等格式导出，还能沉浸阅读之后精简导出，用起来还是蛮不错的，楼主可以借鉴下思路
+  - 都支持word了，不如支持个pdf格式把。都支持导出了，不如来个webdav同步保存网页副本。
+
 - https://github.com/mwilliamson/mammoth.js /BSD/202307/js
   - designed to convert .docx documents, such as those created by Microsoft Word, Google Docs and LibreOffice, and convert them to HTML.
   - aims to produce simple and clean HTML by using semantic information in the document, and ignoring other details

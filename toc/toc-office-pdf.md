@@ -836,7 +836,7 @@ modified: 2021-01-04T17:26:43.784Z
   - a service for generating PDF file from HTML (via URL) on server. It integrates electron-pdf with express and lowdb to serve client as a REST API.
   - https://github.com/fraserxu/electron-pdf
 
-- https://github.com/RyotaUshio/obsidian-pdf-plus /MIT/202508/ts
+- https://github.com/RyotaUshio/obsidian-pdf-plus /MIT/202508/ts/inactive
   - https://ryotaushio.github.io/obsidian-pdf-plus/
   - the most Obsidian-native PDF annotation & viewing tool ever.
 

@@ -110,6 +110,14 @@ modified: 2023-05-29T17:33:33.600Z
 - https://github.com/jwyGithub/maxGraph-composition-api
   - Building web with composite api
 
+- https://github.com/V1rg1lee/svg-to-drawio /MIT/202606/ts
+  - https://v1rg1lee.github.io/svg-to-drawio/
+  - converts each SVG element into an individually editable draw.io cell
+  - One engine, three ways in - the CLI, the Python API, and the desktop app all share the exact same conversion logic, so results are identical everywhere.
+  - It converts SVG elements (paths, rectangles, circles, text, groups, etc.) into native draw.io shapes whenever possible, while preserving colors and structure. Features that draw.io doesn't support (such as some filters, masks, or clip paths) automatically fall back to embedded SVGs instead of being lost.
+  - [I built an open-source tool to convert SVGs into fully editable draw.io diagrams : r/svg _202606](https://www.reddit.com/r/svg/comments/1u9iy6q/i_built_an_opensource_tool_to_convert_svgs_into/)
+    - I looked at a few existing SVG-to-drawio converters, but many were no longer maintained, lacked support for more complex SVG features, or didn't preserve editability very well. That motivated me to build a more complete solution.
+
 - https://github.com/SciumoTech/mxgraphdata
   - Parses Draw.io or diagrams.net file that may be compressed into pure JSON.
   - You must include Pako

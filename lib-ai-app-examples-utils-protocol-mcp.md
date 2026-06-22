@@ -156,6 +156,12 @@ modified: 2026-01-19T05:01:00.055Z
     - yes! we even offer exactly that - called bux! you get a computer in the cloud only for you and you can ping it from telegram. If you already have one, you can just tell your agent to add browser-harness.
   - browser harness is the easy half. the failure mode hits the second a flow bounces into a native auth sheet or a desktop app, the harness has nothing to grab there. accessibility tree on the OS layer is what holds up past that boundary.
 
+- https://github.com/briqt/my-agent-browser /202606/js
+  - [chrome-devtools-mcp增强包装，共享实例+故障自愈+自动化指纹降低 - LINUX DO _202606](https://linux.do/t/topic/2451355)
+  - 我大量场景都需要使用浏览器能力，各个 Agent 一般都带有内置的浏览器能力，也有 chrome-devtools-mcp、playwright cli 的通用工具，还有新兴起的云端浏览器方案，但是没有一个完美满足我的需求的： 数据目录持久化+能看到界面+浏览器指纹与日常浏览器几乎一致+所有 agent 共享实例
+  - 所以我就包了一层 chrome-devtools-mcp 做成 mcp + skill，我的 Hermes、Claude code、Codex 都是使用这个项目作为统一的浏览器能力，迭代了几个月趋于稳定，所以分享一下，也希望多反馈问题我再修复
+  - 相对于 chrome-devtools-mcp 做了：浏览器实例自动发现、浏览器进程生命周期管理、崩溃恢复、配置驱动反爬、面向 Agent 友好的使用提示，并且不失去任何 chrome-devtools-mcp 的原生能力，只做增强
+
 - https://github.com/microsoft/playwright-mcp /27.2kStar/apache2/202602/ts
   - A Model Context Protocol (MCP) server that provides browser automation capabilities using Playwright. 
   - This server enables LLMs to interact with web pages through structured accessibility snapshots, bypassing the need for screenshots or visually-tuned models.

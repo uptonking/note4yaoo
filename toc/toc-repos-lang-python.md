@@ -160,6 +160,10 @@ modified: 2025-02-26T15:04:15.883Z
   - Free Django SaaS Boilerplate to sell digital products
   - [10 months ago, I shared my Django boilerplate and it went thru major updates since : r/django](https://www.reddit.com/r/django/comments/1qegnl0/10_months_ago_i_shared_my_django_boilerplate_and/)
 
+- https://github.com/saaspegasus/django-boilerplate /MIT/202606/python
+  - The original SaaS Boilerplate for Django, trusted by thousands.
+  - [SaaS Pegasus—the original Django boilerplate—now has an open source edition : r/django _202606](https://www.reddit.com/r/django/comments/1ucjqut/saas_pegasusthe_original_django_boilerplatenow/)
+
 ## django-devops
 
 - https://github.com/mherrmann/djevops /MIT/202602/python

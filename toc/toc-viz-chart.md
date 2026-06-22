@@ -257,6 +257,10 @@ modified: 2020-10-22T10:22:33.292Z
   - https://pancake-charts.surge.sh/
   - Pancake is a charting library for Svelte applications that allows you to visualize data with a combination of HTML, SVG and (soon) canvas/WebGL.
   - Unlike most charting libraries, Pancake is designed with server-side rendering in mind, meaning you can create beautiful responsive charts that may not even need JavaScript to render. 
+# ai-charts
+- https://github.com/TseringYuu/anyviz /MIT/202606/python/js
+  - 面向 AI 时代的数据可视化规范与工作流库 — specification & workflow library for AI-era data visualization
+  - [[开源] 「数据可视化」anyviz — 让 AI 画的图别那么「默认 ECharts 味」 - LINUX DO _202606](https://linux.do/t/topic/2449298)
 # css chart
 - https://github.com/ChartsCSS/charts.css
   - https://chartscss.org/

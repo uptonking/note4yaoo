@@ -17,7 +17,8 @@ modified: 2026-05-28T17:50:54.646Z
   - obsidian for pdf with editing: auto-toc, history/diff, proofreading, tools
     - features-port: editor, backlinks, bases, publish, graph-view
     - sharing by typst-html/mdbook
-  - wiki format with references/citation: okf(open-knowledge-format), obsidian-bases
+  - wiki format with backlinks/references/citation: okf(open-knowledge-format), obsidian-bases
+    - bounding-box
   - version-history
   - aistudio: chat/image/video, laptop/minipc厂商都希望内置本地模型
   - tiered-models: sonnet+haiku, 还可参考 roo/kilo/ohmyopencode 
@@ -41,8 +42,11 @@ modified: 2026-05-28T17:50:54.646Z
     - comfyui也需要custom node/scripts, 视频生产也需要剪辑和拼接
   - reproducible
     - model/llamacpp config
-  - later: hybrid-ai-with-ssd-caching, eidting-with-brower-use, sandbox-with-just-bash, db-derived-files-sync-dbfs+backlinks, ai-design/lovable
   - ? ai loves all-in-one 
+  - later: hybrid-ai-with-ssd-caching, eidting-with-brower-use, sandbox-with-just-bash, 
+    - db-derived-files-sync-dbfs+backlinks, portaljs/filebrowser-multi-backend, bases
+    - translation-partial,
+    - ai-design/lovable
 
 - 📌 non-goals
   - good llm xp on cpu, but optimized for gpu
@@ -105,7 +109,7 @@ modified: 2026-05-28T17:50:54.646Z
 - faster
   - mtp
 
-- translation
+- translation-partial
   - ✨ 在原文中显示四六级词汇的翻译。 
     - ❓ 如何在不改变布局或减少reflow的目标下实现ux
     - 可配置调整译文的位置， 上下左右移动
@@ -138,6 +142,15 @@ modified: 2026-05-28T17:50:54.646Z
 
 - [skills for Deploy MiniCPM5-1B with LM Studio](https://github.com/OpenBMB/MiniCPM/blob/main/skills/minicpm5-deploy-lmstudio/SKILL.md)
   - [skills for Deploy MiniCPM5-1B with Ollama](https://github.com/OpenBMB/MiniCPM/blob/main/skills/minicpm5-deploy-ollama/SKILL.md)
+
+## low-memory/VRAM
+
+- https://github.com/atharva557/Prompt-Chaining
+  - It's a Streamlit app that chains two models into a single pipeline:
+  - A small, fast Prompter (e.g. Phi-4 Mini) rewrites it into a detailed prompt
+  - You review and optionally edit the refined prompt
+  - VRAM is automatically swapped — Prompter unloads, Coder loads
+  - A larger, code-focused model (e.g. Qwen 2.5 Coder 14B) generates the code
 # pm
 
 ## pm-issues

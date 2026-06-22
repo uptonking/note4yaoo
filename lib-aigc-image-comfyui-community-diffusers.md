@@ -328,6 +328,21 @@ problem is when software like InvokeAI or some else are using the diffusers form
   - For example, support for new models such as Cascade, SD3, PixArt, CosXL all appear first there (and some are still not supported with A1111). Same with fancy options such as AYS, PAG, IPAdapter, Faceid, etc.
 
 - Not as comprehensive but I use NMKD Stable Diffusion GUI locally. Its ok but it hasn't gotten an update in months. It doesn't have any of those newer features but it is fast
+# discuss-comfyui-tool-mlx/mac
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [anyone else generating images/videos using MLX and Comfy Desktop? : r/AppleMLX _202606](https://www.reddit.com/r/AppleMLX/comments/1u6zybk/anyone_else_generating_imagesvideos_using_mlx_and/)
+  - I'm working with a M1 MBP Max 64GB machine with 400GB/s memory bandwidth. These image generation models are only <10 GB each. But it takes me 45 minutes to generate an image using Ideogram4. Someone with a 5090 is doing it in 45 seconds (no exaggeration).
+
+- I had so much trouble with Comfy on my Mac that I decided to build something else. This is a desktop app built in Rust. There are no python or torch requirements. All models that are supported are pure MLX Apple metal.
+  - https://github.com/SceneWorks/SceneWorks
+  - It's still a work in progress, not everything works yet, and some UI elements are still unrefined, particularly the Ideogram json element support, but all models render correctly, LoRA/LoKR support is in place. LoRA training works, the character editor works pretty well, though it needs some refinement.
 # discuss-comfyui-toolchain
 - ## 
 

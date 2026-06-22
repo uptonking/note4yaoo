@@ -142,10 +142,26 @@ modified: 2021-01-04T17:26:25.032Z
   - It helps you build rich markdown-powered sites easily
   - Parses your markdown files to extract structured data (frontmatter, tags etc) and creates an index in a local `SQLite` database
   - Provides a lightweight javascript API for querying the database and importing files into your application
+  - 在github code search搜索使用场景，很少用
+    - 用在了 portaljs 的启动脚本 `"dev": "npm run mddb && next dev"` .
+  - https://github.com/evalscience/deepgov-wiki-poc
+    - DeepGov Wiki Proof-of-Concept
+    - MDX (Markdown) for project pages
+    - MarkdownDB to index markdown files
 
 - https://github.com/lukesrw/md-database /202109/ts
   - Middleware for producing SQL queries from Markdown
   - Currently only SQLite is fully supported, with support for MySQL being worked on.
+
+- https://github.com/sdorra/content-collections /1.2kStar/MIT/202606/ts
+  - https://content-collections.dev/
+  - Transform your content into type-safe data collections. Eliminate the need for manual data fetching and parsing.
+  - Type-safe: Your content is parsed and validated during the build process, guaranteeing accuracy and currency. Content Collections offers a type-safe API to access your content.
+  - Transformation: Content Collections allows you to transform your content before it enters your app. You can use it to modify your content, join two collections or even fetch data from a server.
+
+- https://github.com/zce/velite /MIT/202606/ts
+  - http://velite.js.org/
+  - Turns Markdown / MDX, YAML, JSON, or others into app's data layer with Zod schema.
 
 - https://github.com/fictorial/gg /201903/js
   - Markdown-backed database with queries, user-defined actions, validators, variable expansion, and reporters in JavaScript

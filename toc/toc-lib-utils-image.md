@@ -325,12 +325,24 @@ modified: 2023-04-04T22:39:45.442Z
   - https://mirador-dev.netlify.app/__tests__/integration/mirador/
   - web based, multi-window image viewing platform with the ability to zoom, display, compare and annotate
   - 偏向于图片查看，标注功能少
-# image-upload
+# image-upload/图床(非普通文件上传)
 - https://github.com/charlzyx/rush
   - 图片压缩 & 直传图床工具
   - 拖拽批量压缩图片, 支持格式 jpg/png/gif
   - 拖拽批量上传图片到对象存储, 并默认开启图片压缩
   - 支持 阿里云 OSS、 腾讯云 COS、 七牛云 Qiniu、 Github
+
+- https://github.com/Molunerfinn/PicGo /26.8kStar/MIT/202606/ts/vue
+  - https://picgo.app/
+  - PicGo aims to make image uploading a seamless part of your creative workflow.
+  - Supported Image hosts
+    - China cloud vendors: Qiniu, Tencent Cloud COS, UPYUN, Alibaba Cloud OSS
+    - International / open platforms: GitHub, SM.MS(S.EE), Imgur
+    - More options via plugins: AWS S3, Cloudflare R2, MinIO, and more
+    - https://github.com/PicGo/PicGo-Core /MIT
+    - https://docs.picgo.app/core/
+    - The ultimate image uploading engine. Both CLI & API supports.
+    - A tool for image uploading. Both CLI & api supports. It also supports plugin system, please check Awesome-PicGo to find powerful plugins.
 
 - https://github.com/elninotech/uppload /MIT/202308/ts
   - https://uppload.js.org/

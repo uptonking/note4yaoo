@@ -13,7 +13,7 @@ modified: 2026-06-20T15:49:57.019Z
 # awesome-models
 - core-features
   - 可采用基于backlink的架构来实现，而不是普通crud后端, 还能基于文档的架构统一writing和chat
-  - latest-free-models today
+  - latest-free-models today: free, paid(各种coding plan额度测算, 这就是信息差)
   - model-wiki+comparison: 最重要的部分是双链
   - model-bench with history
   - news-report/submit
@@ -35,6 +35,8 @@ modified: 2026-06-20T15:49:57.019Z
 # awesome/leaderboard/benchmark
 - [llm-stats AI Leaderboard 2026: Compare & Rank 300+ Top AI Models by Intelligence, Speed & Price ](https://llm-stats.com/)
   - Your idle credits are losing value every day. Connect them to LLM Stats and earn 50% on every inference request we route through your keys.
+
+- [codingplans.cc — AI Coding Plans ](https://codingplans.cc/)
 
 - https://github.com/wenbochang888/github-trending-spider /20.8kStar/MIT/202606/ts
   - https://newsnow.busiyi.world/
@@ -958,6 +960,20 @@ modified: 2026-06-20T15:49:57.019Z
     - The OpenRouter API now supports a web search feature, available for all models. 
   - [OpenRouter Charges for FREE models, why? : r/openrouter _202605](https://www.reddit.com/r/openrouter/comments/1t0kr36/openrouter_charges_for_free_models_why/)
     - Web search always has been charged, disable that and enjoy the freebies
+
+- [OpenCode Go ](https://opencode.ai/docs/go)
+  - If you reach the usage limit, you can continue using the free models.
+  - Model	requests per 5 hour	requests per week	requests per month
+  - GLM-5.2	880	2, 150	4, 300
+  - Kimi K2.7 Code	1, 350	4, 630	9, 250
+  - MiniMax M3	3, 200	8, 000	16, 000
+  - Qwen3.7 Plus	4, 300	10, 800	21, 600
+  - DeepSeek V4 Pro	3, 450	8, 550	17, 150
+  - DeepSeek V4 Flash	31, 650	79, 050	158, 150
+
+- [Neuralwatt Pricing - Energy-Based Inference API ](https://portal.neuralwatt.com/pricing)
+  - $5.00 /kWh
+  - $20 /month: 6 kWh, 
 
 - 📌 [Ollama Cloud models](https://ollama.com/search?c=cloud)
   - Hourly + Weekly limits

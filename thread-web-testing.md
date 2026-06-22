@@ -46,6 +46,24 @@ modified: 2021-08-28T11:49:05.730Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [I’ve been auditing vibe-coded apps — here are the 8 things that break most often, all testable by you in an afternoon : r/vibecoding _202606](https://www.reddit.com/r/vibecoding/comments/1ub3yag/ive_been_auditing_vibecoded_apps_here_are_the_8/)
+- If you built on Lovable, Bolt, Replit, or Base44 and you’re not technical, run these 8 checks before real users find the problems for you. None need a developer.
+1. Open browser dev tools → Network tab, click around your app. If you see other users’ emails/IDs in the responses, anyone can read your whole user table. Most common issue I see.
+2. Make two test users. Log in as A, copy a URL with their data, paste it while logged in as B. If B sees A’s stuff, your app has login but no ownership rules.
+3. Trigger a Stripe refund. Does the user lose access? Usually not — most builds handle the checkout success path and ignore refunds, cancellations, and failed payments entirely. This is the #1 thing I end up fixing.
+4. Kill your wifi mid-action and submit a form. White screen or infinite spinner = no error handling. Users in weak signal churn silently.
+5. Search your AI chat history for “key” or “password.” Ever pasted a Stripe key or DB password to debug? Rotate every one — they’re sitting in a transcript.
+6. Open it on an old Android. Works on your MacBook, chokes on a mid-range phone most of your users have.
+7. Sort your workflows and look for duplicates. The reprompt loop creates two onboarding flows that double-fire emails.
+8. Type /admin while logged out, then as a normal user. If anything loads, you have no role check.
+- Pass all 8 and you’re ahead of ~90% of vibe-coded apps. 
+
+- Claude is pretty good about recommendations to security and potential vulnerabilities as long as you prompt it properly
+
 - ## ⚖️ Prediction: Deterministic Simulation Testing (DST) will completely change the way reliable software is written.
 - https://x.com/LewisCTech/status/1916407192946938076
   - Given the same inputs, you get the same outputs, always. This part is deterministic.

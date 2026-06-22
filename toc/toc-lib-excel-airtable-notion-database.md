@@ -460,20 +460,21 @@ modified: 2022-08-21T10:02:05.129Z
   - A realtime, powerful, lightweight alternative to Airtable/Excel
   - 依赖firebase-admin、supabase、trpc、prisma、tiptap、next-auth、zustand
 # notion-database-like
-- obsidian dataview /5.8kStar/MIT/202312/ts
+- obsidian dataview /9.1kStar/MIT/202504/ts/inactive
   - https://github.com/blacksmithgu/obsidian-dataview
   - https://blacksmithgu.github.io/obsidian-dataview/
   - A high-performance data index and query language over Markdown files, for obsidian
   - Treat your Obsidian Vault as a database which you can query from. 
   - Provides a JavaScript API and pipeline-based query language for filtering, sorting, and extracting data from Markdown pages.
-  - **Dataview generates data from your vault by pulling information from Markdown frontmatter and Inline fields**.
+  - **Dataview generates data from your vault by pulling information from Markdown frontmatter and Inline fields** .
   - Markdown frontmatter is arbitrary YAML enclosed by `---` at the top of a markdown document which can store metadata about that document.
   - Inline fields are a Dataview feature which allow you to write metadata directly inline in your markdown document via `Key:: Value` syntax.
   - [Obsidian Dataview: Turn Obsidian Vault into a database you can query from | Hacker News_202205](https://news.ycombinator.com/item?id=31407781)
   - https://github.com/obsidianmd/obsidian-releases
     - Obsidian is not open source software and this repo DOES NOT contain the source code of Obsidian. 
     - However, if you wish to contribute to Obsidian, you can easily do so with our extensive plugin system.
-  - https://github.com/blacksmithgu/datacore /MIT
+  - https://github.com/blacksmithgu/datacore /2.2kStar/MIT/202606/ts
+    - https://blacksmithgu.github.io/datacore/
     - Datacore is a work-in-progress re-imagining of Dataview with a focus on 2-10x better query and rendering performance, as well as fully interactible views.
     - Datacore is fundamentally the same thing as dataview - an index over Markdown files that supports live-updating views and metadata. 
     - However, Datacore focuses on substantial index changes for performance, as well as a new sleek UI which completely replaces traditional Dataview queries. 
@@ -481,6 +482,10 @@ modified: 2022-08-21T10:02:05.129Z
     - WYSIWYG Views: Datacore queries now use a responsive table view and can be manipulated with a table editor much more akin to what you would see in places like Notion and Airtable.
     - Live Editing: Values inside of table views can now be edited; task views include more nuanced rendering of metadata like due date and more operations for manipulating tasks directly.
     - Live Editing: Values inside of table views can now be edited; task views include more nuanced rendering of metadata like due date and more operations for manipulating tasks directly.
+  - https://github.com/alas-poor-ophelia/windrose-md /MIT/202605/ts
+    - a simple TTRPG-focused mapping tool for Obsidian, built on Datacore. It started as something like graph paper in Obsidian and then... grew? Supports both traditional grid based maps as well as hex maps
+    - Windrose supports both grid (square) maps and hex maps — including radial hex grids, nested sub-maps, and definable regions. 
+    - Windrose is distributed as a "compiled" Datacore script, which just means it's been all packaged up in a single Markdown file, for nice and easy use.
   - https://github.com/RafaelGB/obsidian-db-folder
     - Obsidian Plugin to Allow Notion like database based on folders
 

@@ -503,6 +503,28 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Obsidian Bases — now available to everyone! : r/ObsidianMD _202508](https://www.reddit.com/r/ObsidianMD/comments/1mtxh52/obsidian_bases_now_available_to_everyone/)
+  - Bases is a core plugin that lets you turn any set of notes into a powerful database. With bases you can organize everything from projects to travel plans, reading lists, and more.
+  - Using a base you can view, edit, sort, and filter files and their properties. 
+  - Each base can have several views, and different layouts such as tables and cards. 
+  - Below is an example of table view where each row is a file, and each column is a property of that file.
+- Bases are filtered and sortable Table and Card views of note Properties and Tags. It is a configurable "view" of various Properties of Notes in your Vault.
+- A Base can be a standalone file (with a .base extension) and can be viewed directly or embedded like any other Note using the format ![[PathToNote]]
+- Base code can also be embedded directly into a note to render the Base.
+
+- [PSA: Some Clarity on Bases : r/ObsidianMD _202508](https://www.reddit.com/r/ObsidianMD/comments/1mvfoys/psa_some_clarity_on_bases/)
+
+- Yeah at first glance I thought it was like a built in spreadsheet for any data but it's more like my notes are the rows.
+  - Notes are the rows (records).
+  - Properties are the columns (fields).
+  - A Base is a view that renders the rows and columns. What displays in the rows and columns is controlled by Filters and Property selection.
+
+- I think the core plugin Bases only works with YAML properties or explicit file metadata (created date, modified date, path, etc). It does work with inline tags, but not Dataview inline properties (the propertyname::value syntax you allude to). I think the devs have said that this is technically feasible and so a community plugin could be used to access Dataview properties, but I haven't seen one yet.
+
 - ## [How to make obsidian bases beatiful, Notion style example? : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1so8pj2/how_to_make_obsidian_bases_beatiful_notion_style/)
 - Pretty Properties plugin. (Nvm)
 
@@ -722,6 +744,64 @@ iCloud：无法网页预览，能同步到Iphone, 无版本管理，不能忽略
 我目前是git手动提交+icloud。obsidian的git插件如果你不用其他同步手段可以使用防止忘记提交。
 
 - onedrive→webdave云盘→自建webdav→飞牛同步，现在感觉飞牛同步用的很舒服。
+
+- ## [Easiest alternative to Obsidian Sync? : r/ObsidianMD _202510](https://www.reddit.com/r/ObsidianMD/comments/1ohrlyw/easiest_alternative_to_obsidian_sync/)
+- Syncthing. A note of caution is that Syncthing is good at huge sizes, not low latency. So if you have lots of frequent tiny edits that you need to keep immediately, probably not for you. I only ever edit on one client at a time, so I don't care about latency as long as they "eventually" synchronize, so Syncthing is really good.
+- You’ll want to exclude the .obsidian folder on syncthing.
+  - No need to exclude the whole folder, just exclude workspaces and plugins
+
+- Git Sync Plug-in
+  - It's a good plugin. However the mobile version is still unstable.
+- And that's why we have Git Sync as a separate app
+
+- The best cloud is the one you have already paid for. Onedrive suits me as I subscribe to Office365. iCloud, Google drive, Dropbox, WebDAV, etc if you already have paid for them.
+
+- ## [Which cloud sync do you use with Obsidian? (and what are the pros/cons?) : r/ObsidianMD _202508](https://www.reddit.com/r/ObsidianMD/comments/1mw3dav/which_cloud_sync_do_you_use_with_obsidian_and/)
+  - poll, votes(685)
+  - official, 210
+  - icloud, 122
+  - g-drive/dropbox, 103
+  - git, 84
+  - syncthing, 112
+  - other, 54
+- Obsidian Sync—I just want to support the team at Obsidian for all the hard work they put into developing and designing an amazing product
+
+- obsidian-livesync https://github.com/vrtmrz/obsidian-livesync I use it with self-hosted CouchDB. Works fine for me.
+
+- Git (via https://github.com/Vinzent03/obsidian-git ), have to ignore some obsidian files to avoid repeated conflicts but I just set everything up on one device, commited it all, pulled it on other devices and .gitignore the workspace. I already run a gitea instance so data all goes to that. So far so good. Only downside is I haven't fully sorted mobile and I find that interface hugely clunky for anything that's not notes
+
+- Not perfect. Syncthing local only discovery with devices using tailscale magicdns names as tcp connections. That way I never have to use the syncthing relays as I use tailscale anyway.
+
+- I selfhost my vault in my NAS. 
+
+- I use git.
+
+Pros:
+
+Free and open source tool widely used by millions of developers
+
+Extremely portable. Git runs on everything.
+
+Zero vendor lock in. You can start with a cloud host, and later move to any other service, or host your own git server.
+
+Not only syncs my data, but preserves the history of the vault.
+
+Every copy is a full backup of the whole history
+
+Cons:
+
+None.
+
+- https://github.com/ViscousPot/GitSync Supports automated background syncing of a git repo, made specifically with Obsidian in mind. Freely available on Android and iOS through the respective stores
+
+- I don't use Obsidian on mobile, but there are mobile git clients.
+
+- Rsync + SSH between desktop and laptop. My vaults are not and won't ever be online.
+
+- OneDrive usually works like a charm for me. Occasionally an older version of a note will overwrite a newer version but I can just go into note history and get the version I need.
+- My Vault exists peacfully in an OneDrive-Folder. From there it's synced to my smartphone and also to my linux server machine, where my AI is able to have a direct eye and hand in all my .md contents.
+
+- running a WebDAV server is a simple server to run, but you also need a way to access it when you're away from home and not on your network. To do that I run another simple App in my Homelab called Wireguard. It creates a VPN that I connect with when I'm away. Once I connect to the VPN, it's just like I'm on my home network and I have access to all the services I host.
 # discuss
 - ## 
 

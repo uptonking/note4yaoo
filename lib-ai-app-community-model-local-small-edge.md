@@ -787,6 +787,44 @@ console.log(reply);
 - llms are very bad at image recognition, give it a civ or other strategy game screenshot and it gets nearly everything wrong.
 
 - Benchmarks. There has been little to no progress in the past two years regarding how LLMs are evaluated. It’s still mostly huge catalogues of questions with predetermined answers. That’s a very poor system for testing intelligence.
+# discuss-cons-local
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [现在的模型越来越强大，是不是到了可以囤一波卡整个私有化部署？比如8*A100-SXM4-80GB - LINUX DO _202606](https://linux.do/t/topic/2449663)
+- 电费要不要钱, 就算电费不要钱, 你这一套下来按市价算可以开好几十年的gpt pro 20x了吧 
+
+- 自己部署各种问题，电也是问题，部署的效率也是问题，肯定没有云厂商的稳定+效率高
+
+- 问题是你不卖算力也赚不到米啊，自己用绝对用不回本。卖算力你又竞争不过逆向、中转、coding plan、deepseek啊
+
+- A100已经比较过时了，像最新的glm这些都是用了dsa的，从架构上gpu不支持（虽然也有邪修），但是想要优化比较好的话至少得hopper，最好上blackwell，A6000是个比较好的选择
+
+- 有这个钱，直接梭哈美股，运气好永久实现token自由
+# discuss-low-memory-tricks
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [I Built a tool to stop manually swapping models on my 8GB GPU, chains a small Prompter and a large Coder into one pipeline with automatic VRAM swap : r/ollama _202606](https://www.reddit.com/r/ollama/comments/1ubtzjr/i_built_a_tool_to_stop_manually_swapping_models/)
+  - While trying out different LLMs I noticed that giving them precise, detailed prompts produced way better results than typing a one line sentence. To get those detailed prompts I'd use a smaller, faster model first - but with only 8GB VRAM I can't keep two models loaded at once, so switching between them was a constant pain for me .
+  - So I built Prompt-Chain to automate the whole thing.
+  - https://github.com/atharva557/Prompt-Chaining
+  - It's a Streamlit app that chains two models into a single pipeline:
+  - A small, fast Prompter (e.g. Phi-4 Mini) rewrites it into a detailed prompt
+  - You review and optionally edit the refined prompt
+  - VRAM is automatically swapped — Prompter unloads, Coder loads
+  - A larger, code-focused model (e.g. Qwen 2.5 Coder 14B) generates the code
+
 # discuss
 - ## 
 

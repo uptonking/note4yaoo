@@ -34,6 +34,11 @@ modified: 2026-04-07T11:51:51.225Z
   - Runs on Claude Code · OpenClaw · Codex · Cursor · OpenCode · Qwen · Copilot · Hermes · Kimi · Antigravity and 21 local CLIs, or any OpenAI-compatible endpoint via BYOK.
   - It's also the Figma alternative for the agent era — instead of pushing pixels on a canvas, it delivers single-page artifacts in real CSS, real fonts, real components, exported straight to HTML / PDF / PPTX / MP4
 
+- https://github.com/alchaincyf/huashu-design /19.4kStar/MIT/202606/js
+  - 在你的 agent 里打一句话，拿回一份能交付的设计。
+  - 跨 agent 通用——Claude Code、Cursor、Codex、OpenClaw、Hermes 都能装。
+  - 自 2026-05-14 起本 skill 完全开源（MIT License），个人和商用都免费，
+
 - https://github.com/Amery2010/open-builder /GPL/202603/ts
   - https://builder.u14.app/
   - Open Builder is an open-source AI-powered app generator. Build web applications through natural language conversations.

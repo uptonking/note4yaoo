@@ -338,6 +338,10 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0622
+
+- is there any open source alternative
+
 ## 0618
 
 - So after typing /word1 and pressing Enter, use n / N to move through all matches quickly.

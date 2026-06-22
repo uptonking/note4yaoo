@@ -101,6 +101,7 @@ modified: 2021-07-20T13:50:23.433Z
   - sourcegraph
   - 支持输出canvas，为了分享或安全
 - 🛢️ 数据存储架构
+  - ❓ git-based cms 是哪种架构
   - 📌 file-first
     - usecases: vscode, obsidian, notable, ssg(hexo), llamaindex, claude-code, openclaw-memory
     - pros: open and portable, agent-memory

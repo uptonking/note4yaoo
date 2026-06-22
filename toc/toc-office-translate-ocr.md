@@ -41,6 +41,18 @@ modified: 2026-04-07T11:52:43.122Z
   - Q: 内网/离线环境使用？ A: 可以。使用本地 LLM（Ollama/LM Studio）和本地 minerU 或 docling。
   - Q: PDF 缓存机制？ A: MarkdownBasedWorkflow 在内存中缓存解析结果（最近 10 次）。可通过 DOCUTRANSLATE_CACHE_NUM 配置。
 
+- https://github.com/Tongzhao9417/GlossReader /MIT/202606/ts
+  - 一个带有 AI 行内注释的桌面学术 PDF 阅读器
+  - PDF 渲染 — 基于 PDFium WASM 引擎（EmbedPDF），支持双栏、公式、表格等复杂学术排版
+  - AI 释义 — 选中单词或短语，右键查询，释义以 ruby text 形式直接标注在原文上方
+  - 句子翻译 — 选中句子，右键翻译，译文显示在侧边栏
+  - 多 AI 服务商 — 支持 Anthropic Claude、OpenAI、DeepSeek，以及本地 Ollama
+  - 多标签页 — 同时打开多个 PDF，标签页切换
+  - 自定义 Prompt — 可覆盖默认的释义和翻译 prompt 模板
+  - [【开源推广】 读文献了——AI驱动的PDF阅读器 - LINUX DO _202606](https://linux.do/t/topic/2444376)
+    - Gloss是行间注释的意思，当你翻译了某个单词之后，这个单词的含义就会出现在段落之间。这样你既能流畅、快速的阅读整段文献的内容，也不会像那些将整篇文献都使用大模型翻译的工具一样，你只记得中文，不知道原文是怎么写的
+    - 有点意思，但对于我等英文不熟练的还是想全文翻译，选取原文的单词或句子高亮时译文对应的单词或句子也高亮。
+
 - https://github.com/gyunggyung/docling-translate /apache2/202512/python
   - https://gyunggyung.github.io/docling-translate/
   - Advanced PDF/Document Translator with interactive comparison. Built on IBM Docling.

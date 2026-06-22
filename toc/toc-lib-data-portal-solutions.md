@@ -59,6 +59,13 @@ modified: 2021-01-01T16:02:50.598Z
   - https://www.portaljs.com/data-portals
     - https://opendatanepal.com/dataset
     - https://fivethirtyeight.portaljs.org
+  - https://github.com/datopian/portal-dbs /202511/ts
+    - https://portaljs-cloud-frontend-template.vercel.app/
+    - https://portal-dbs.vercel.app/
+    - customizable frontend template for building high-performance CKAN-based data portals
+    - Powered by Next.js, React, and Tailwind CSS
+  - https://github.com/transport-data/portal
+    - https://portal.transport-data.org/
 
 - https://github.com/datopian/frontend-v2
   - Data Portal frontend. Designed for CKAN but usable anywhere. 

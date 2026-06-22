@@ -33,6 +33,17 @@ modified: 2024-09-16T11:11:14.989Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [关于AI图片及AIGC生成检测问题 - LINUX DO _202606](https://linux.do/t/topic/2451479)
+  - 有没有网站或者平台可以直接提供ai图片检测，最好可以直接告诉我是哪个厂商或者图片生成模型生产的这个图片
+
+- 如果是image-2或者nano banana的话，官方有提供syncID检测。 国产的一般都有硬水印吧
+
+- https://openai.com/zh-Hans-CN/research/verify/
+
 - ## Pika 新活，将你的照片变成任何图片中的人物，感觉是首尾帧加 ID 保持
 - https://x.com/op7418/status/1900477755416056007
 - 可灵快跟上

@@ -545,6 +545,14 @@ modified: 2025-02-21T17:17:42.225Z
     - React Excel viewer component for previewing XLSX workbooks with sheet tabs, frozen panes, formulas, large-grid navigation, and cell selection
     - React DOCX editor component for editing Word documents with a Word-style toolbar, import and export, formatting controls, page thumbnails, links, images, tables, and tracked changes
 
+- https://github.com/FunYoung-code/web-to-doc /GPL/202606/js
+  - An open-source browser extension that exports selected webpage content to Word documents.
+  - [【开源推广】Web to Doc-网页导出助手：快速将网页导出为Word文档 - LINUX DO _202606](https://linux.do/t/topic/2446186)
+  - 快速将网页内容导出为Word文档，支持预设文档排版格式，并支持保存表格、图片、超链接等元素，解决网页转Word格式错乱、手动排版耗时、文档归档混乱等难题
+  - 初衷就是因为每次都得花半天调Word文档格式
+  - 之前有用过简阅助手，一个插件，能支持md、pdf、doc等格式导出，还能沉浸阅读之后精简导出，用起来还是蛮不错的，楼主可以借鉴下思路
+  - 都支持word了，不如支持个pdf格式把。都支持导出了，不如来个webdav同步保存网页副本。
+
 - https://github.com/zhu1090093659/minister /apache2/202603/ts
   - 把 Claude Code 塞进飞书，给你的团队加一个全能同事。
   - 丞相是一个基于 Claude Code 的飞书 AI 助手框架，为企业团队打造。它不是又一个聊天机器人——它是一个住在飞书里的同事，能直接帮你发消息、建任务、写文档、排日程、操作多维表格，说完就办，不用你再动手。
