@@ -28,7 +28,9 @@ modified: 2026-05-28T17:50:54.646Z
   - caching heavily: 可参考lmstudio-disk-caching, reasonix-prefix-caching
   - built-in image/pdf/ocr for chatting with documents rag
     - image/pdf ux
-  - port model-specific skills to aichorage like gemma-skills
+  - port model-specific skills to aichorage
+    - gemma-skills
+    - afm
   - easy local model xp: single-model, dual-models, hot-models
     - compact prompt mode
   - 纯云端模式方便mobile/async

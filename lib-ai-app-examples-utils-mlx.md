@@ -846,6 +846,36 @@ modified: 2025-11-01T10:54:26.044Z
     - MTP support out of the box is the detail that makes this worth installing immediately
   - https://github.com/google-deepmind/science-skills
     - A collection of agent skills for scientific research tasks, spanning genomics, structural biology, cheminformatics, literature search, and more.
+# apple-afm
+- https://github.com/sambitcreate/Swift-Foundation-Models-Skills /MIT/202603/js
+  - Agent Skills for building iOS/macOS applications with Apple's Foundation Models framework 
+  - https://github.com/alessiorubicini/Apple-Foundation-Models-Agent-Skill
+    - Add expert Apple Foundation Models guidance to your AI coding tool 
+
+- https://github.com/lukataylo/halen /MIT/202606/swift
+  - https://halen.dev/
+  - Halen is a writing assistant that lives in your menubar.
+  - Apple Foundation Models · Gemma 4 · Qwen 2.5 · Ollama.
+  - install from the Plugin Store: Burnout Copilot (focus suggestions from your calendar and tone history), Meeting Prep (a one-page brief 15 minutes before each meeting), Reasoning Compactor (compacts verbose LLM chain-of-thought on-device to save tokens, ⌃⌥K), and Mother (hardcore, local discipline that keeps you off the apps and sites you blocked — and means it).
+
+- https://github.com/Techopolis/AFM-Studio /open/202606/swift
+  - open-source Mac and iOS app for trying, comparing, and benchmarking language models through Apple's Foundation Models framework.
+  - built for the OS 27 / Xcode 27 beta cycle. It focuses on the Apple Foundation Models path first: system models, Private Cloud Compute, and Core AI model bundles loaded through the Foundation Models provider support. 
+  - MLX support is intentionally not wired into the app right now
+
+- https://github.com/bucketshopvasovasostomy504/AFM-Studio
+  - Test, compare, and benchmark language models on macOS and iOS using Apple’s Foundation Models framework.
+
+- https://github.com/jerynv/FoundationCode /MIT/202606/python
+  - On-device coding agent powered by Apple's Foundation Models (via the fm CLI). 
+  - Private, offline, no API key, no tokens.
+  - Apple's model doesn't have native tool-calling, so FoundationCode uses guided generation (fm respond --schema) to force the model to emit a single, schema-valid JSON action every turn. 
+- https://github.com/schnaitter/pifm
+  - pi-coding-agent provider extension for Apple Foundation Models via fm CLI
+
+- https://github.com/entro314-labs/tauri-apple-intelligence /MIT/202606/swift/rust
+  - Native Tauri commands for Apple Intelligence (Foundation Models) with streaming + tool calling support.
+  - Companion JS transport: https://github.com/entro314-labs/apple-intelligence-sdk
 # utils
 - https://github.com/waybarrios/vllm-mlx /apache2/202601/python
   - vLLM-like inference for Apple Silicon - GPU-accelerated Text, Image, Video & Audio on Mac

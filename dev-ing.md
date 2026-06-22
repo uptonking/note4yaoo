@@ -340,7 +340,7 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 
 ## 0622
 
-- is there any open source alternative
+- [macOS 27 beta：以下为Apple Intelligence 已出现，但 Siri 仍是旧版的补充修复步骤 · Issue · SkyBlue997/enableMacosAI _202606](https://github.com/SkyBlue997/enableMacosAI/issues/20)
 
 ## 0618
 

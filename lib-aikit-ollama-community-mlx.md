@@ -149,8 +149,6 @@ modified: 2026-01-14T18:59:01.949Z
 
 - ## 
 
-- ## 
-
 - ## Foundation Models has a CLI
 - https://x.com/Jchammond_/status/2064206029370630529
 
@@ -425,6 +423,30 @@ modified: 2026-01-14T18:59:01.949Z
   - MLX Vulkan backend just passed both CPP AND Python test suites!!
 - Vulkan kinda supports all cards these days. Thing is I develop and test only on my own hardware which is AMD Strix Halo. 
 
+# discuss-afm-apple-foundation-models
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Introducing the Third Generation of Apple’s Foundation Models : r/apple _202606](https://www.reddit.com/r/apple/comments/1u17v5w/introducing_the_third_generation_of_apples/)
+- Presumably 1st gen was iOS 18, 2nd gen was 26, and 3rd gen is now 27. The models get updates every new software release, much like how Apple updates its native apps once a year with software releases.
+
+- Apple and Google have entered into a multi-year collaboration under which the next generation of Apple Foundation Models will be based on Google's Gemini models and cloud technology.
+  - Of course it is not Gemini rebranded, but this implies custom tuning of Gemini and/or contribution of Apple's proprietary training data in the process. So, significant dependence on Google's expertise and infrastructure.
+- I think afm uses a native multimodal transformer architecture now, which is adapted from gemini's proprietary architecture. Additionally, Apple used TPUs for training due to the short time they had
+- The smaller models are tuned versions of Gemma4, the final big model running on Nvidia hardware is Gemini. All obviously heavily modified though. It was in once of their announcements, it was straight from them. Model a & b are local, model c is Apple hardware servers, model d is Nvidia hardware in Google’s datacenters.
+
+- The fact that they were able to get AFM 3 Core Advanced with 20-billion parameters working on-device is pretty cool, but yet it doesn't enable any groundbreaking features. Most of the cool stuff is done via Private Cloud Compute or the AFM 3 Core model.
 # discuss
 - ## 
 
