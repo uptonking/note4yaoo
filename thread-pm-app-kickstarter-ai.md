@@ -479,7 +479,11 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 
 
-- ## 
+- ## [DeepSeek raises $7.4B USD at $60B valuation. Remarkably, Liang Wenfeng invests $3B in DeepSeek himself. : r/LocalLLaMA _202606](https://www.reddit.com/r/LocalLLaMA/comments/1ucwyes/deepseek_raises_74b_usd_at_60b_valuation/)
+- What cracks me up is how Cursor was “sold” for this same $60B
+  - forked VS Code + Fine-Tuned Kimi (with no credits to company that made the model) can make wonders in Silicon Valley
+
+- The VSCode fork was sold to Musk for 60Bn using funds of people who invested  on belief that we are about to became multi planet life form for some reason.  It is hard to tell for sure what exactly wrong here. 
 
 - ## 每天2亿多人使用的豆包，应用每天收入不足百万元，主要来自电商佣金。 _202606
 - https://x.com/oran_ge/status/2066836748819394766

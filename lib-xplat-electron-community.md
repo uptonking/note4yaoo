@@ -16,7 +16,10 @@ modified: 2023-01-02T10:30:19.459Z
 
 - ## 
 
-- ## 
+- ## Deno Desktop，可以将 Deno 项目桌面应用程序，输出是每个平台独立的二进制文件。
+- https://x.com/vikingmute/status/2069239735617507793
+  - 和 Tauri 一样，默认使用系统原生 WebView，可选 CEF每当你需要跨平台渲染一致性时切换。
+  - 我怎么记得和之前的那个 Electrobun 很思路非常相似呢？一个运行时是 Bun，一个运行时是 Deno。
 
 - ## 🆚 Migrated an Electron app to be a PWA. Six months later my conclusion is: not worth it. Migrating back.
 - https://x.com/kettanaito/status/2041467464970633585

@@ -269,6 +269,14 @@ modified: 2025-12-25T19:55:10.911Z
   - Self-host a collaborative workspace for Typst.
   - [Introducing Collabst, a self-hosted collaborative workspace for Typst. : r/typst _202605](https://www.reddit.com/r/typst/comments/1tjl560/introducing_collabst_a_selfhosted_collaborative/)
 
+- https://github.com/twarge/typeset /apache2/202606/swift
+  - https://twarge.com/typeset
+  - Typst document creation for Apple devices.
+  - a document-based SwiftUI app for macOS and iOS that opens .typeset package folders. A package is just a directory with a .typeset extension containing one or more Typst source files plus images and other compilation assets.
+  - [Typeset : r/typst _202606](https://www.reddit.com/r/typst/comments/1ud267k/typeset/)
+    - I didn't like using VSCode and friends to edit Typst, and the preview situation with `typst watch` wasn't ergonomic with Preview resetting the view on every compile. So I made a Typst editor for Apple devices called Typeset. 
+    - It runs on macOS, iPad OS, and iPhone. It's completely free and open source. 
+
 - https://github.com/XWBarton/glyph /202604/ts
   - Desktop Typst editor for macOS, Windows, and Linux. 
   - Write in a Monaco-powered source panel, see the compiled PDF update live alongside it.
@@ -746,6 +754,9 @@ modified: 2025-12-25T19:55:10.911Z
     - 跟市面上那些靠正则（Regex）硬替换的脚本不一样，Tylax 走了正道，基于 mitex 和 typst-syntax 搞了完整的 AST（抽象语法树）解析。这意味着处理嵌套结构、各种环境定义还有复杂的数学公式时，稳得一批，不会因为少个括号就原地爆炸。
     - 表格不乱：智能处理 \multicolumn 和 \multirow
     - 持把 LaTeX 的 TikZ 代码直接转成 CeTZ
+
+- https://github.com/gunasekar/imprint
+  - Turn Markdown into branded, typeset PDFs — specs, design docs, and reports that look official.
 # latex
 - overleaf /10.5kStar/AGPLv3/202211/js/latex/ace>codemirror
   - https://github.com/overleaf/overleaf

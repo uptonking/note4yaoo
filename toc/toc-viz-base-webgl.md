@@ -127,6 +127,14 @@ modified: 2020-10-05T06:18:29.671Z
   - Procedural tree generator written with JavaScript and Three.js
   - 可调整参数来查看不同的生长状态
 
+## threejs-earth
+
+- https://github.com/knight-L/sc-datav /apache2/202603/ts
+  - https://github.com/knight-L/sc-datav
+  - Three.js 可视化大屏，地理轮廓精确呈现3D地图
+  - https://x.com/yyyole/status/2068349815159930946
+    - 大屏可视化项目的报价单我见过不少，真正的钱从来不在这个炫的界面Demo，在底下那排拼接屏和现场集成。一块55寸工业级LCD拼接屏单价就大几千，一面墙拼下来，硬件加施工要占到报价的六七成。那张数据可视化的界面，过去外包出去也就几万块，AI现在确实几分钟能生成。但客户掏六位数买的从来不是那张图，是后面那堵墙，和出了问题有人上门给他修。
+
 ## r3f
 
 - https://github.com/try-triplex/triplex

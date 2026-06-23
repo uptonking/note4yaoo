@@ -117,6 +117,12 @@ modified: 2023-08-29T10:12:22.345Z
   - Collaborative rich text editing over git, with conflict-free (GDocs-style) merging and cherry-picking.
   - Made with list-positions / @list-positions/formatting, Quill, and Electron.
 # git-like
+- https://github.com/EpicGames/lore /5.8kStar/MIT/202606/rust
+  - https://lore.org/
+  - Lore is a next-generation, open source version control system
+  - https://x.com/QingQ77/status/2067980220167045245
+    - Epic Games 出品的版本控制系统，用 Rust 写的。核心思路是内容寻址 + Merkle 树，存大文件时自动分块去重，不用下载全部就能工作。分支很轻量，切换快，适合游戏这种代码加超大资源的项目。
+
 - https://github.com/GerritCodeReview/jgit /EDL(BSD)/202310/java
   - https://eclipse.dev/jgit/
   - An implementation of the Git version control system in pure Java.
@@ -231,6 +237,15 @@ modified: 2023-08-29T10:12:22.345Z
 
 - https://github.com/extrawurst/gitui /MIT/202408/rust
   - fast terminal-ui for git written in rust
+
+- https://github.com/RioNoir/GitCharm /MIT/202606/ts
+  - Jetbrains-style Git management for VS Code — Commit panel, Multi-repo, Shelf, Stash, Git Log with graph, multi-repo and more.
+  - [GitCharm – a JetBrains-style Git panel for VS Code (commit graph, shelves, tag management, and more) : r/vscode _202606](https://www.reddit.com/r/vscode/comments/1twoflv/gitcharm_a_jetbrainsstyle_git_panel_for_vs_code/?sort=top)
+
+- https://github.com/DetachHead/rebased /apache2/202606/java/kotlin
+  - A git client based on the IntelliJ platform
+  - [Jetbrains 家的 Git 管理工具 - LINUX DO _202606](https://linux.do/t/topic/2453866)
+    - 移出了社区版本能上除了git的所有功能
 
 - https://github.com/Auto-Explore/GitComet /AGPL/202603/rust
   - https://gitcomet.dev/

@@ -305,7 +305,7 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/whateverforever/zettelcon /MIT/202201/python/inactive
   - CLI tool for Zettlr note collections to automatically add backlinks to your note files. Edits files in-place, so be careful and try on a copy of your files first. 
   - The backlink section is the last thing of a page
-# backlinks
+# backlinks/graph
 - https://github.com/jackyzha0/quartz /12.6kStar/MIT/202606/ts
   - https://quartz.jzhao.xyz/
   - a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites
@@ -391,6 +391,14 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/flyisland/markbase /202604/rust
   - Agent-ready, Obsidian-compatible CLI for structured Markdown note workflows.
   - markbase is built for a specific workflow: keep writing notes as normal Markdown, keep the vault Obsidian-compatible, use templates and note verify to keep agent-written notes structurally consistent, and let agents, CLI tools, and the web operate directly on the Markdown vault.
+
+- https://github.com/clarkelucianot2-eng/knowledge-graph-cli /MIT/202606/python
+  - A versioned, local-first knowledge graph for notes, code, and people.
+  - Plain-text nodes, plain-text edges, git-versioned. No SaaS, no LLM required.
+  - Obsidian, Notion, and Roam are great for notes — but they don't give you a real graph you can query, version, or own. They're locked in their own formats, behind their own sync, and most "graph" features are an afterthought.
+  - This CLI gives you: A real property graph (nodes + typed edges), stored as Markdown + YAML
+  - Queryable (Cypher-lite subset, plus plain jq over the JSON export)
+  - Obsidian-compatible (every node is a .md file with frontmatter)
 # confluence-like
 - MrDoc /2.1kStar/GPLv3/202403/js/python/Django/仅网页版
   - https://github.com/zmister2016/MrDoc

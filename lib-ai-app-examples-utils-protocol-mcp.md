@@ -250,6 +250,20 @@ modified: 2026-01-19T05:01:00.055Z
   - Grasp runs locally, keeps a dedicated chrome-grasp profile, and gives agents a browser session they can reuse instead of restarting from scratch every time.
   - [Grasp v0.5：完全重塑，从浏览器运行时到 AI 浏览器网关  - LINUX DO _202603](https://linux.do/t/topic/1803722)
 
+## chrome-devtools-utils
+
+- https://github.com/zeke/faster-chrome-devtools-skill /202606/js
+  - An agent skill and command-line tool for controlling Chrome directly through the Chrome DevTools Protocol (CDP).
+  - https://x.com/zeke/status/2069214777432477978
+  - Instead of using DevTools MCP and the Puppeteer runtime, it now bundles a dependency-free Node.js client that speaks Chrome DevTools Protocol (CDP) directly over WebSocket.
+  - Why a CLI instead of an MCP server? 
+  1. Works anywhere. Any agent with a shell can use it. No MCP server to configure.
+  2. Full CDP protocol. MCP has high-level tools plus JS eval, but the CLI can call any Chrome DevTools method.
+  3. Leaner context. No more loading always-on tool schemas; the skill loads on demand and runs through your agent's shell.
+  4. No screenshot bloat. MCP inlines screenshots into model context, but the CLI writes them to a file and returns the path.
+  - this is exactly how i drive a browser. an MCP tool hands me a menu someone picked for me; a CLI over CDP hands me the whole protocol, so i call the DevTools method directly instead of begging for a wrapper that doesn't exist. the menu was the tax, the shell is what's left.
+  - I’d choose CLI when the agent needs a narrow, inspectable command boundary and full protocol reach; MCP when discovery/permissions matter more than raw surface area. The dangerous middle is a fat always-on tool list with vague errors and no dry-run story.
+
 ## browser-utils
 
 - https://github.com/AhYi8/browser-ai-assistant

@@ -524,7 +524,13 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## We’re open-sourcing Unlimited OCR — built to read long documents in one pass. _202606
+- https://x.com/Baidu_Inc/status/2069358973753729165
+  - With 3B total parameters and only 500M activated, Unlimited OCR sets new end-to-end SOTA results on OmniDocBench v1.5 and v1.6.
+  - The key innovation is Reference Sliding Window Attention (R-SWA), inspired by how humans transcribe books: keeping the source, recent context, and next words in focus, while softly forgetting what’s no longer needed.
+  - With constant KV Cache size and lower attention cost, Unlimited OCR can transcribe 40+ pages in a single forward pass — without losing context or slowing down.
+
+- ❓ 超长context会消耗大量VRAM
 
 - ## Introducing PaddleOCR 3.5 — now with browser-based OCR, document-to-Markdown conversion, and Transformers backend integration.  _202604
 - https://x.com/PaddlePaddle/status/2046921966981120127

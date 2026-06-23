@@ -39,6 +39,16 @@ modified: 2023-03-01T14:10:06.993Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Hermes怎么感觉不如豆包办公模式？ - LINUX DO _202606](https://linux.do/t/topic/2452295)
+  - 试了一下豆包办公模式，没想到完成任务和做Word文档的效果非常好，我需要完成一个Word里面需要部署项目的截图，办公模式没有权限部署环境它就自己直接写了HTML页面来给我截图（虽然Hermes也问了这个方案），而且排版效果非常好，截图效果也不错。就是额度用完了，于是转战Hermes。Hermes不知道是我用太少了，没做什么优化，我还特意说了让它先去看看word相关的skills安装一下。结果等交付的时候我直接傻眼了，什么排版都是乱七八糟，甚至界面直接用了英文写。
+- 豆包还有网易的那个针对办公的场景单独做了一些tool上去，比如ppt workd等，hermes就没这么精细了，这个也是一些用户安装hermes感觉有点不好用的地方
+
+- 我用下来是感觉没有很好的docx-mcp吧，hermes毕竟是开源的需要靠其他人开源的mcp或者skill。 我自己是装了个docx-mcp，也是觉得排版不行，后来基本都是我写一些，让后hermes 帮我改文字。或者让其生成白底黑字的网页然后网页转pdf
+
 - ## Interpreter. It's a desktop agent that can fill PDFs, edit your Excel and Word docs, and learn new skills. 
 - https://x.com/hellokillian/status/2024227639087813035
   - Runs offline, works with any model, and it's free.
@@ -178,7 +188,7 @@ modified: 2023-03-01T14:10:06.993Z
 - ## Stoxy is something I've been working on lately
 - https://twitter.com/jaredcwhite/status/1323321554093006848
   - I'm trying to come up with a nice way to handle mutable data like translations and session data with the DX of Web Components.
-- Maybe the interpolated values inside text could use a familiar syntax like `{{ key.value }}`
+- Maybe the interpolated values inside text could use a familiar syntax like `{{ key.value }}` 
 
 - I was considering using some kind of a templating syntax, 
   - but a big motivator here was to make the markdown as clean and fluent to write as possible, so I opted out of it
@@ -275,7 +285,7 @@ modified: 2023-03-01T14:10:06.993Z
   - A user must be given the option to choose a file from their file system knowingly.
 - This is not really possible or recommended for security reasons.
   - If this is only being used on your personal computer or for testing reasons, you can add an option for your browser to allow file access, 
-  - `--allow-file-access-from-files`
+  - `--allow-file-access-from-files` 
 
 - It is not possible to access the users file system.
   - However with the `FileSystem` API you can get a temporary or persistent private file system where you can store stuff for you application (cached images for example). 

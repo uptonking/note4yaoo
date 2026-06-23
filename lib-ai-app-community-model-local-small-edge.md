@@ -796,6 +796,26 @@ console.log(reply);
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [What is stopping enterprises from just using their own self hosted AI? : r/SelfHostedAI _202606](https://www.reddit.com/r/SelfHostedAI/comments/1u9dku9/what_is_stopping_enterprises_from_just_using/)
+- If you haven't spent 12 months explaining tons of details and filling out endless documents to satisfy IT and security teams to deploy anything internally, then you haven't worked in corporate.  
+  - The diffusion of responsibilities in big companies leading to non sensical decisions is one of the most frustrating things.
+
+- Simple: they don't want to deal with it, even if they can afford it. This is what consulting or outsourcing companies do. 
+
+- I speak from experience: bureaucracy. You've got a DPO breathing down your neck, corporate wants to outsource as much as possible, especially risk. We could have set up a locally hosted server within a month, but nobody had the balls to greenlight it. Six months down the line, we're going to settle for API access to a commercial model, and I hate it.
+- It's expensive to run and manage. The permissioning in a large enterprise environment is a big hurdle. There are few, if any, good enterprise-level tools to manage this kind of heft. The providers can build this tooling on their datacenters (and they will) to accomodate the multinationals if they go with SaaS.
+
+- I suspect this is what European companies will start doing in 2027, led by outside consultancy companies. Nobody wants to send their company data to the US and private clouds still rely on a closed model.
+  - Problem: you need people that can set up the infra, software stack, tune models AND build the automations.
+  - All the focus is on coding right now because its the lowest hanging fruit, 99% of economic potential of Agentic AI is left untapped.
+
+- for anything coding-level you need 8 of the GOOD GPUs. not cheap
+  - Good thing 99% of the economic potential is not even in coding. Coding was just the lowest hanging fruit.
+
 - ## [现在的模型越来越强大，是不是到了可以囤一波卡整个私有化部署？比如8*A100-SXM4-80GB - LINUX DO _202606](https://linux.do/t/topic/2449663)
 - 电费要不要钱, 就算电费不要钱, 你这一套下来按市价算可以开好几十年的gpt pro 20x了吧 
 

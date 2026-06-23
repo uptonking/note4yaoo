@@ -916,6 +916,16 @@ modified: 2025-12-11T18:10:23.710Z
   - Kon takes significant inspiration from `pi` coding-agent, especially around philosophy and UI direction.
     - Kon also borrows ideas from Amp, Claude Code, and other terminal coding agents.
 
+- https://github.com/justhil/pi-app /202606/ts
+  - 面向个人开发者的 pi 桌面 GUI：在 Electron 里跑 pi SDK，复用 ~/.pi/agent 的认证、配置与会话 JSONL，用时间线、工具卡片、改动审查和扩展兼容层替代终端里那套 TUI 交互。
+  - [【π】pi-app，兼容pi插件生态，优雅的 pi 桌面 GUI 开源实现 - LINUX DO _202606](https://linux.do/t/topic/2452715)
+    - 抄的codex app
+    - 内置 SDK 或复用已有 pi 环境; 自动检测已有会话, GUI 与 TUI 会话双向非实时同步(同一份 JSONL)。
+    - 兼容 pi 现有插件生态——通过单文件 JSON 适配器把 TUI 界面适配到 GUI, AI 可一键生成; 应用内置主流插件适配, 且支持外置覆盖。
+    - pi配置模型不是直接让ai来就好了吗 
+    - 公式渲染支持的如何? 我有个朋友(真)总是和我抱怨TUI不好看公式.
+    - jerryan/pi-hashline-edit 这个插件 然后就是pi-tool-display 这个插件会提供原版的编辑工具的差异更改 反正都挺好看的
+
 - https://github.com/heyhuynhgiabuu/openpi /MIT/202606/ts/electron
   - [OpenPi - a desktop workbench for the Pi coding agent : r/PiCodingAgent _202605](https://www.reddit.com/r/PiCodingAgent/comments/1tcrb2v/openpi_a_desktop_workbench_for_the_pi_coding_agent/)
   - a desktop workbench for the Pi coding agent. It’s meant to make Pi feel more at home as a desktop app: session sidebar, conversation view, command palette, source control panel, file search, diff viewer, and terminal/output in one place.
@@ -937,6 +947,21 @@ modified: 2025-12-11T18:10:23.710Z
   - 侧边栏管理 — Sessions、Models、Settings 三合一，Providers / OAuth / API Keys 一站式配置
   - 极简，省token。系统提示词就5k，4个tools，配置简单但是可扩展能力强，也是openclaw核心sdk。
   - 其实是vscode的终端打开pi，还的原生tui，插件只是简化操作。vscode终端和编辑器是两套快捷键，不冲突。
+
+- https://github.com/ayuayue/PiDeck /MIT/202606/ts
+  - https://ayuayue.github.io/PiDeck/
+  - Desktop workbench for managing multiple pi coding-agent sessions across project folders.
+
+- https://github.com/1jehuang/jcode /7.6kStar/MIT/202606/rust
+  - The next generation coding agent harness to raise the skill ceiling.
+  - Built for multi-session workflows, infinite customizability, and performance.
+  - [I made my own coding agent harness : r/PiCodingAgent _202606](https://www.reddit.com/r/PiCodingAgent/comments/1ud9vrh/i_made_my_own_coding_agent_harness/)
+    - It has somewhat of a similar spirit of PI, but much more performance/efficiency focused.
+
+- https://github.com/zosmaai/pi-llm-wiki /MIT/202606/ts
+  - Self-maintaining, Obsidian-compatible knowledge base for pi. Follows Andrej Karpathy's LLM Wiki pattern.
+  - Turn raw sources (URLs, PDFs, markdown, JSON, XML) into a durable, interlinked, LLM-maintained wiki that compounds over time.
+  - Turn raw sources (URLs, PDFs, markdown, JSON, XML) into a durable, interlinked, LLM-maintained wiki that compounds over time.
 # cli-aggregator/wrapper
 - https://github.com/jazzenchen/VibeAround /MIT/202606/rust/ts
   - https://vibearound.ai/

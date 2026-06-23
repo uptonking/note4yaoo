@@ -30,7 +30,7 @@ modified: 2021-05-25T09:41:29.066Z
   - Dashboard pages with CRUD operations on users/teams
   - Basic RBAC with Owner and Member roles
   - Email/password authentication with JWTs stored to cookies
-# saas-multi-tenant
+# multi-tenant
 - [How To Build A Multi-Tenant App With Payload](https://payloadcms.com/blog/how-to-build-a-multi-tenant-app-with-payload)
 
 - [现在主流的saas软件所有租户共用一个数据库吗？ - 知乎](https://www.zhihu.com/question/43650948)

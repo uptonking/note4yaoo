@@ -45,7 +45,14 @@ modified: 2022-08-21T10:19:58.756Z
 
 - ## 
 
-- ## 
+- ## Here's the surprisingly simple way that TanStack Table V9 can use a little as 10% memory as it used to.
+- https://x.com/KevinVanCott/status/2069088393598820813
+  - it takes advantage of Object prototypes
+  - [How an Underrated Refactor Saved 90% Memory Usage | TanStack Blog _202606](https://tanstack.com/blog/tanstack-table-v9-memory-performance)
+- Wrong way to solve the problem tho
+
+- We used prototypes and Object.create for some nice perf wins in Joist orm as well
+  - Wow, I didn't realize how much faster Object.create could also be. I didn't measure that at all. Although, we're not replacing class constructors, we're just modifying how we create a new javascript object like `const foo = {...}`, so maybe the difference wouldn't have been as large for us.
 
 - ## TanStack Table V9 is now in Beta!
 - https://x.com/tan_stack/status/2063956390633181404

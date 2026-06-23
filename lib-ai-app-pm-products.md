@@ -352,6 +352,9 @@ modified: 2025-03-22T16:10:24.856Z
 - cleaner
   - 清理codex-cli/cc的对话历史，展示date/size/suggestion-to-clean
 # 💎🚀 aichorage - local llm with joy, 提供模型API、rag可靠性、pdf文本操作
+
+> hybrid local/cloud ai assistant/harness designed to work with documents and mitigate your token anxiety.
+
 - selling-points
   - non-goals: local image gen
   - 易用性: 模型推荐 + 场景优化的提示词 + 多模型/多版本对比
@@ -361,6 +364,7 @@ modified: 2025-03-22T16:10:24.856Z
     - pm: llamaparse-extract( **mineru/paddleocr**/mistral/本地/远程), cowork(docx-xml/databases/**ilovepdf** ), notebooklm
     - later: GPU硬件+model量化(ai难取代), Image, TableAI, Audio, 翻译, 多维表格, ai-design/lovable, pretext-edit
       - hybrid-ai-with-ssd-caching, eidting-with-brower-use, sandbox-with-just-bash, db-derived-files-sync-dbfs+backlinks
+      - doc-ask, doc-mgmt like paperless-ngx
     - roadmap: 
       - agentic场景优化: ocr-vlm/pipeline, translation
       - citation, backlinks: 提升rag的准确度, 优化搜索结果中的code/text/image

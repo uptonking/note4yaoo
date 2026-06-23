@@ -170,7 +170,7 @@ modified: 2023-09-17T17:37:19.913Z
 - https://x.com/iavins/status/1900220354985169332
   - We also decided to write our own asynchronous runtime implementation (instead of using `Tokio` ) for reasons. Now this bad boy is all bare bones, we don't use Rust's `async` yet.
   - For disk or network we use io_uring (of course). Since it's a database, that's pretty much all it does: talk with io. And that requires a state machine. You submit a request, wait for some time to poll or for callback to trigger. That means, a function doesn't always have a result ready; sometimes it says, my friend wait for sometime, I don't have result ready yet: `Ok(None)` . When it's done you get: `Ok(Some(T))` .
-  - The entire codebase is pretty much `Result<Option<T>>`
+  - The entire codebase is pretty much `Result<Option<T>>` 
 
 - Fallible Iterators also use Result`<Option<T>>. Ok(Some(T))`: when there's valid next item. Ok(None) when iteration's complete.
 
@@ -243,7 +243,26 @@ modified: 2023-09-17T17:37:19.913Z
 - 
 - 
 
+# discuss-multi-tenants
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Multi-tenant SaaS Architecture: PostgreSQL Schema per Tenant vs Shared Database vs Database per Tenant : r/PostgreSQL _202606](https://www.reddit.com/r/PostgreSQL/comments/1ucs1ap/multitenant_saas_architecture_postgresql_schema/)
+- Row level security to make it impossible to access data that is not yours, and table partitioning per tenant for large amounts of data. This also reduces the need for indexes on the tenant id since all data in the partition belongs to a single tenant.
+
+- We do both. Free users get shared database with low specs, we also route the requests to specific instances. Premium users get premium stuff. Per tenant database and depending on size, per tenant instances. Pretty easy to manage nowadays.
 # discuss-db-in-memory
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 
@@ -706,7 +725,7 @@ Scaling isn't a destination. It's a continuous series of bottleneck discoveries.
   - Lastly, if you use the Apartment gem, you are at the mercy of a poorly supported library that has deep ties into ActiveRecord. The company behind it abandoned this approach as described here
 
 - Echoing this as well, I worked for Influitive and was one of the original authours of apartment (sorry!)
-- There are **a lot of headaches involved with the "tenant per schema" approach**. Certainly it was nice to never have to worry about the "customer is seeing data from another customer" bug (a death knell if you're in enterprisish B2B software), but it added so many problems:
+- There are **a lot of headaches involved with the "tenant per schema" approach** . Certainly it was nice to never have to worry about the "customer is seeing data from another customer" bug (a death knell if you're in enterprisish B2B software), but it added so many problems:
   - Migrations become a very expensive and time-consuming process, and potentially fraught with errors. Doing continious-deployment style development that involves database schema changes is close to impossible without putting a LOT of effort into having super-safe migrations.
   - You'll run into weird edge cases due to the fact that you have an absolutely massive schema (since every table you have is multiplied by your number of tenants). We had to patch Rails to get around some column caching it was doing.
   - Cloud DB hosting often doesn't play nice with this solution. We continually saw weird performance issues on Heroku Postgres, particularly with backup / restores (Heroku now has warnings against this approach in their docs)
@@ -715,7 +734,7 @@ Scaling isn't a destination. It's a continuous series of bottleneck discoveries.
 - I still think there's maybe an interesting approach using partioning rather than schemas that eliminates a lot of these problems, but apartment probably isn't the library to do it (for starters, migrations would be entirely different if partioning is used over schemas)
 
 - Can confirm, here be dragons. I did a DB per tenant for a local franchise retailer and it was the worst design mistake I ever made, which of course seemed justified at the time (different tax rules, what not), but we never managed to get off it and I spent a significant amount of time working around it, building ETL sync processes to suck everything into one big DB, and so on.
-  - **Instead of a DB per tenant, or a table per tenant, just add a TenantId column on every table from day 1**.
+  - **Instead of a DB per tenant, or a table per tenant, just add a TenantId column on every table from day 1** .
 
 - Nutshell does this! We have 5, 000+ MySQL databases for customers and trials. Each is fully isolated into their own database, as well as their own Solr "core."
   - We've done this from day one, so I can't really speak to the downsides of not doing it. The piece of mind that comes from some very hard walls preventing customer data from leaking is worth a few headaches.

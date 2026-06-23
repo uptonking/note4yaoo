@@ -31,6 +31,11 @@ modified: 2024-01-23T02:52:23.932Z
   - publish
   - sync
 # draft
+- architecture
+  - 内容文件与配置文件分离的思路: 如表格内容与样式分离
+
+- mermaid-chart + bases
+
 - ide和cli主流的ux都与启动文件夹相关联，而chat并不会自带文件夹而是需要上传文件
   - 可将vscode的文件书隐藏，将chat移到左边来实现目前主流chat的产品ux，没必要单独开发electron app for chat.
 - 基于vscode的方案的优点
@@ -43,6 +48,14 @@ modified: 2024-01-23T02:52:23.932Z
 
 - database的技术方案可参考agentfs+just-bash, 以数据库作为数据源，到处markdown方便ai理解
 # dev-xp
+- 对markdown文件的import需求很少，因为可以手动复制粘贴内容
+
+- ob-bases基于文件的设计，似乎很符合grist
+
+- 
+- 
+- 
+- 
 
 # discuss-stars
 - ## 

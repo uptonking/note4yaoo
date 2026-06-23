@@ -2245,6 +2245,21 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
+- ## 
+
+- ## Offloading KV cache to NVMe SSDs wastes 70% of GPU cycles on stalls. 
+- https://x.com/sakurayukiai/status/2069179520519717347
+  - The bottleneck isn't SSD bandwidth, but the CPU choking on thousands of tiny I/Os for vLLM's fragmented pages. Tutti running io_uring directly on the GPU proves CPU-centric storage is the real bottleneck??
+- Can you better manage the CPU bottleneck by writing your own I/O queues and adding a better scheduling policy? I've seen that work on the SSD bottleneck issue when weights are checkpointed all once onto an NFS during a training run.
+  - yeah. it’s kind of a choice/skill issue to stall the gpu. harder problem is not killing ssds with writes once you get this flying
+
+- 🤼 deepseek v4 大量使用
+  - [Deep|DeepSeek V4: The Inflection Point for Large-Scale NAND-Based KV Cache _202604](https://fundaai.substack.com/p/deepdeepseek-v4-the-inflection-point)
+  - In our previous article we discussed DeepSeek V4’s architectural customization on non-NVIDIA hardware and the first round of API price cuts at 75% off. This article focuses on V4’s second round of cuts: DeepSeek separately took the input cache-hit tier further down to 1/10 of list, stacked on top of the 75% off from the previous round, with the floor at ¥0.025 per million tokens. This widens the cache hit / cache miss spread from 1/12 to 1/120 (cache hit ¥0.025 vs. cache miss ¥3). 
+  - DeepSeek V4’s real-world cache hit rate in agent settings has reached 95%+, and based on our research, DeepSeek’s current SSD configuration and utilization have stepped up materially versus before. 
+  - Behind this is V4 compressing KV cache size to 10% of V3.2’s, plus DeepSeek’s accumulated engineering work on SSD-based KV cache, which together migrate KV cache from expensive, capacity-limited DRAM / HBM onto larger and cheaper SSD at scale. 
+  - We believe DeepSeek V4’s cache-hit repricing implies upside for SSD, with NAND demand set to grow exponentially.
+
 - ## [New KV-Cache quant method: 3-4x compression, 1.3x speedup in vLLM, full accuracy : r/LocalLLM _202606](https://www.reddit.com/r/LocalLLM/comments/1twlmj8/new_kvcache_quant_method_34x_compression_13x/?sort=top)
   - a new KV-Cache quantization method in vLLM (fork) by Huawei. It beats e.g. TurboQuant by a lot in accuracy and speed (and is even faster than the fp16 baseline). 
 

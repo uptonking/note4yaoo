@@ -7,8 +7,9 @@ modified: 2026-05-28T17:50:54.646Z
 
 # lib-aikit-aichorage-dev
 
-# guide
+> hybrid local/cloud ai assistant/harness designed to work with documents and mitigate your token anxiety.
 
+# guide
 - 📌 goals
   - playground for local ocr/vlm models
     - mlx supports stt, 可迁移实现audio-app

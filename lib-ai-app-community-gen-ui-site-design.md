@@ -9,6 +9,10 @@ modified: 2026-06-10T08:53:24.884Z
 
 # guide
 
+# benchmark-deisgn
+- [Design Arena | Leaderboards ](https://www.designarena.ai/leaderboard)
+  - [Human Evaluation of GLM-5.2 : r/LocalLLaMA _202606](https://www.reddit.com/r/LocalLLaMA/comments/1udaq2e/human_evaluation_of_glm52/)
+  - this is what OpenRouter bases its benchmarks numbers on.. and it's human voting based
 # discuss-stars
 - ## 
 

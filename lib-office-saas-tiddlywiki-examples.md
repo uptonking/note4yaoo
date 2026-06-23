@@ -32,6 +32,8 @@ modified: 2023-12-15T17:50:41.213Z
   - https://tidgi.fun/
   - 「 太记 」是一个基于「 太微 TiddlyWiki 」的知识管理桌面应用，能保护隐私内容、高级自动化、自动Git云备份、部署为博客，且可通过RESTAPI与Anki等应用连接。
   - 太微的NodeJS版本有无缝的自动保存体验，这是利用 SyncAdaptor 技术（而不是 Saver ）带来的的优势，太记对 NodeJS wiki 有更好的支持，而 TD 主要支持 HTML 版单文件 WIKI，各有优势
+  - https://github.com/tiddly-gittly/TidGi-Mobile /MIT/202606/ts
+    - A Note App that is local-first, uses tid/md pure text file, all-in-one with calendar/todo/diary widget, lazy-loading, backlink & outline & Zettelkasten, and syncs with the open-source TidGi-Desktop.
 
 - https://github.com/jokroese/tiddlyroam /202005/html/inactive
   - https://tiddlyroam.org/
@@ -69,7 +71,7 @@ modified: 2023-12-15T17:50:41.213Z
   - Feather Wiki is a lightning fast infinitely extensible tool for creating personal non-linear notebooks, databases, and wikis that is entirely self-contained, runs in your browser, and is only 55 kilobytes. 
   - The idea is that it's like TiddlyWiki but as small as possible.
   - 👉🏻 The app and all of the content you create using it are stored within the single HTML file generated when you save your wiki. 
-  - Publishing your content is as simple as uploading that file to a web server, and **updating is as simple as overwriting the file**.
+  - Publishing your content is as simple as uploading that file to a web server, and **updating is as simple as overwriting the file** .
   - Tiddlyhost is a free hosting platform that offers the ability to save your Feather Wiki directly instead of needing to download a copy!
   - [Feather Wiki: app for creating personal non-linear notebooks, databases, wikis | Hacker News_202205](https://news.ycombinator.com/item?id=31474062)
 

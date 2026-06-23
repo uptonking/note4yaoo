@@ -338,6 +338,12 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0623
+
+- apple introduces container on latest mac - https://github.com/apple/container. i want to download and install it on my mac, on the release page, which one should i download: container-1.0.0-installer-signed.pkg or container-dSYM.zip ?
+  - container-1.0.0-installer-signed.pkg: This is the standard macOS installer file. You simply double-click it, and it will guide you through the setup process, placing all the necessary files in the correct directories on your Mac (usually /usr/local/bin and related system folders).
+  - container-dSYM.zip: This file contains Debugging Symbols (dSYM). It does not contain the actual software or the installer. It is only used by software developers who need to translate raw crash logs into readable code if the program crashes. You do not need this file to run the containers.
+
 ## 0622
 
 - [macOS 27 beta：以下为Apple Intelligence 已出现，但 Siri 仍是旧版的补充修复步骤 · Issue · SkyBlue997/enableMacosAI _202606](https://github.com/SkyBlue997/enableMacosAI/issues/20)

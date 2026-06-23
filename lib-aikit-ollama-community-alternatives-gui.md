@@ -78,7 +78,9 @@ modified: 2026-04-06T17:38:13.599Z
 
 - ## 
 
-- ## 
+- ## [Roadmap for Unsloth Studio? : r/unsloth _202606](https://www.reddit.com/r/unsloth/comments/1ubjayu/roadmap_for_unsloth_studio/)
+- Firstly we need to announce support for lots of archs like AMD, Windows, Apple etc. they're all technically in studio but haven't been announced yet and are in beta mode. And obvious multigpu training support - multigpu inference should already work.
+  - Next up we have our desktop app which we're working on! And ofc something else we're working on the side.
 
 - ## [Calling it now Microsoft is buying Unsloth. : r/LocalLLaMA _202606](https://www.reddit.com/r/LocalLLaMA/comments/1tvhv4b/calling_it_now_microsoft_is_buying_unsloth/?sort=top)
 - 👷  we are not being acquired by Microsoft. We have actually received many acquisition offers and have declined over 30 from every large company you can name, and large startups. Our mission first and foremost as a team of 10ish people is to be open source first and serve everyone here!

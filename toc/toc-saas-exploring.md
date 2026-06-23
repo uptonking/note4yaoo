@@ -91,3 +91,7 @@ modified: 2021-05-14T14:30:22.685Z
 - https://github.com/koala73/worldmonitor /57.7kStar/AGPL/202606/ts
   - https://worldmonitor.app/
   - Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface
+
+- https://github.com/FavorPan/ai-daily-pulse /MIT/202606/python/ts
+  - https://ai-daily-pulse.top/
+  - 每日自动聚合 44 RSS 源，LLM 智能评分去重，输出 Obsidian 格式中文日报。聚焦 AI 赚钱案例、电商、工具流、新模型、融资动态。

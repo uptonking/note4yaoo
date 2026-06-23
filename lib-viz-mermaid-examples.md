@@ -82,6 +82,11 @@ modified: 2025-11-19T17:59:15.580Z
 - https://github.com/1jehuang/mermaid-rs-renderer /MIT/202601/rust/NoDeps
   - A fast native Rust Mermaid diagram renderer. No browser required. 500-1000x faster than mermaid-cli.
   - mmdr renders diagrams 100-1800x faster than mermaid-cli by eliminating browser overhead.
+
+- https://github.com/jasonworden/mermaid-lint /MIT/202606/ts
+  - https://jasonworden.com/mermaid-lint
+  - Validate Mermaid diagrams in Markdown! Catch real syntax errors using the official parser, built for CI.
+  - [Introducing mermaid-lint: what if in-repo docs but never pushing a broken mermaid diagram again!? : r/Markdown _202606](https://www.reddit.com/r/Markdown/comments/1u9bra9/introducing_mermaidlint_what_if_inrepo_docs_but/)
 # integrations
 - https://github.com/apache/echarts-from-mermaid /202503/ts/inactive
   - A plugin that enables Apache ECharts to render charts using Mermaid-like syntax.

@@ -116,6 +116,15 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
+- ## 
+
+- ## [browser-search — three tools, zero cost, and your AI agent learns to search and browse the web : r/PiCodingAgent _202606](https://www.reddit.com/r/PiCodingAgent/comments/1ucm80t/browsersearch_three_tools_zero_cost_and_your_ai/)
+  - SearXNG — metasearch engine that queries dozens of search engines at once
+  - Camofox — full browser via REST API, always warm, for browsing and interacting
+  - CloakBrowser — stealth browser for when the site has Cloudflare, Akamai, or DataDome
+
+- Provate TinySearch : https://github.com/MarcellM01/TinySearch - A tiny local-first web research engine for MCP agents.
+
 - ## 最近在研究 AI Agent 联网搜索，整理下目前主流方案
 - https://x.com/Lonely__MH/status/2064492236520444296
 - 先说结论，我目前在用：Tavily！体感舒适🥳
@@ -126,16 +135,16 @@ modified: 2026-02-18T04:15:19.228Z
 - Bing：通用首选，国内网络可直接访问。
 - Metaso：国内体验友好，每日提供 100 次免费调用。
 
-2. AI 原生，擅长直接回答
+1. AI 原生，擅长直接回答
 - Perplexity：语义理解与信息整合能力强，适合深度问答。
 - Exa：面向 AI 的原生搜索，每月 1000 次免费调用。
 - Ollama：提供云端网页搜索，可与本地私有化生态结合。
 
-3. 免费额度高，开发者友好
+1. 免费额度高，开发者友好
 - Brave：拥有独立搜索索引，每月 2000 次免费调用。
 - Tavily：专为 LLM 和 Agent 优化，每月 1000 次免费调用。
 
-4. 开源自托管
+1. 开源自托管
 SearXNG：开源元搜索引擎，数据自主可控，隐私性强。
 
 选型建议：

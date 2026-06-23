@@ -1342,6 +1342,28 @@ Kimi K2	1000	32	3.2%
 
 - ## 
 
+- ## 
+
+- ## Someone asked how a Chinese company managed to catch up to Codex and Claude Code in coding. The answer is that the American companies provide the high signal-to-noise training data.
+- https://x.com/burkov/status/2068434453463023654
+- The way it works is as follows (all is scripted, no human in the loop):
+
+1. You take a large enough base model and finetune it using a combination of reinforcement learning and supervised finetuning.
+
+2. To get training examples, you ask some LLM to introduce a subtle bug into an existing codebase and provide a test script that would only return True when the bug is fixed.
+
+3. You use Codex/Claude Code to fix the bug. When they do that, you record all LLM inputs and outputs.
+
+4. You use these inputs/outputs for supervised finetuning of your model.
+
+5. You use the test script result (True/False) for reinforcement learning.
+
+Supervised finetuning trains the conversational part of the problem solving. Reinforcement learning trains the actual problem-solving part.
+
+This way, you don't train a weaker student. Verifiable results (True/False) combined with a solution space exploration technique is what eventually makes the student stronger than the teacher.
+
+Coding LLMs is a solved problem and everyone will end up having the same solution.
+
 - ## 蒸馏这个词的理解
 - https://x.com/MaxForAI/status/2066738482891145472
 

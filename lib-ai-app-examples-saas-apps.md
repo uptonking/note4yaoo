@@ -791,6 +791,12 @@ modified: 2025-02-21T17:17:42.225Z
   - Source-editing suggestions should preserve LaTeX and Typst syntax and mark required evidence as pending instead of filling it in.
   - Online checks are optional. When current venue rules or external metadata matter, verify them from the original source before treating them as binding.
 
+- https://github.com/Peter-So/Agentic-Writing-Workbench /MIT/202606/python/js
+  - [【开源】Agentic Writing Workbench：一个面向长篇创作的本地优先 Agentic 写作工作台 - LINUX DO _202606](https://linux.do/t/topic/2456597)
+  - 本地优先的智能创作工作台，面向长篇小说、电影短片脚本和灵感随想等长期创作项目。
+  - 整个过程从单Aagent CLI → Aagent + SKILLS → Hermes Agent + SKILLS → LangGraph + Aagent + 网页模型 + 项目治理 + 知识沉淀，经历了一轮毒打，事实证明LLM搞创作，就是拉一大坨，特别是国外的模型对中文创作，甚至没有国内的网页模式生成的好。另外长期创作最大的问题不止是“模型不会写”，还有上下文、材料、版本膨胀和确认流程经常失控。
+  - 现在项目以更工程化的创作系统：让模型先理解任务，再按项目结构找材料；让生成内容先被审查和确认，再写回文件；让中断的任务能恢复，而不是刷新页面后流程丢失。
+
 - https://github.com/ShZhao27208/Aut_Sci_Write /MIT/202606/python
   - Skills suite for the full academic research lifecycle
   - automates the entire academic research and writing lifecycle — from literature discovery and deep PDF analysis to figure extraction, review writing, and professional PPT generation.
@@ -867,6 +873,12 @@ modified: 2025-02-21T17:17:42.225Z
 - https://github.com/liangdabiao/claudesdk-financial-chart-chat /MIT/202605/python/ts
   - 基于 Claude Agent SDK 的 AI 财经图表对话助手。用户通过自然语言对话，自动查询 A 股上市公司财务数据并生成专业分析图表。
   - [【开源】Agent帮你搞定财务分析-科学炒股-把技能做成产品-基于skill用 claude-agent-sdk - LINUX DO _202605](https://linux.do/t/topic/2242206)
+
+- https://github.com/shy3130/tickflow-stock-panel /MIT/202606/python/ts
+  - 自托管、零运维的 A 股「选股 + 监控 + 回测」量化工作台 
+  - 基于 TickFlow 数据 | 能力驱动适配全档位订阅 | 自由接入第三方扩展数据(Tushare 等)
+  - [【开源推广】个人A股智能量化工作台开源啦 - LINUX DO _202606](https://linux.do/t/topic/2458048)
+  - 核心功能、选股、回测、盯盘等
 
 ## ecommerce
 
@@ -1115,6 +1127,12 @@ modified: 2025-02-21T17:17:42.225Z
 
 - https://github.com/maskgo68/YPBrief
   - [【开源】YPBrief，自托管 YouTube 播客与长视频简报工具，支持docker、GitHub Action部署 - LINUX DO _202604](https://linux.do/t/topic/2086869)
+
+- https://github.com/lycohana/BiliSum /MIT/202606/python/ts
+  - 为 Bilibili、YouTube 及本地视频提供 AI 视频摘要和知识库
+  - 深度优化 B 站体验，同时支持 YouTube 与本地视频。自动转写、总结、图文笔记、思维导图、知识库 RAG 问答，数据全部落本地。
+  - VLM 理解型图文笔记是一版从零设计的笔记生成方式
+  - 导出：Markdown、Obsidian 格式，一键打包笔记和截图
 
 ## subtitle
 

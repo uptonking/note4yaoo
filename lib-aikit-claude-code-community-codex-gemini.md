@@ -214,7 +214,8 @@ codex --yolo resume --last
 
 - ## 
 
-- ## 
+- ## [I just switched from Claude Code to Open Code and I regret not doing it sooner : r/opencode _202606](https://www.reddit.com/r/opencode/comments/1u9vfgy/i_just_switched_from_claude_code_to_open_code_and/)
+- the model-swap freedom is the headline, but the thing that actually changed my daily loop was decoupling the agent loop from the terminal itself. 
 
 - ## [不懂就问，有人测了GLM 5.2 在Claude 里更强还是在 Codex里更强 - LINUX DO _202606](https://linux.do/t/topic/2395716/11)
 - GLM 的coding plan 不支持在codex里面使用，之前我和我同事都被封禁警告了（没封调用，只是套餐上显示封禁中的提示）。 别碰官方不支持的工具，不然会变得不幸
@@ -618,7 +619,29 @@ codex --yolo resume --last
 
 - ## 
 
-- ## [OpenAI Codex 日志写入异常，社区反映或严重损耗 SSD 寿命 - LINUX DO _202606](https://linux.do/t/topic/2438231)
+- ## 
+
+- ## Codex is quietly killing your SSD.
+- https://x.com/hqmank/status/2069020259097735231
+  - It writes diagnostic logs to disk non-stop, even when you're not doing anything. Your SSD has a write limit. Codex is burning through it in the background.
+  - sqlite3 ~/.codex/logs_2.sqlite "CREATE TRIGGER IF NOT EXISTS block_log_inserts BEFORE INSERT ON logs BEGIN SELECT RAISE(IGNORE); END; "
+  - This adds a rule that silently drops all new log entries. Your conversations are in a different file, completely safe.
+- Make it a cron job so that you don't have to keep remembering it.
+
+- https://x.com/reach_vb/status/2069202270168772997
+  - This is now fixed along with the latest v0.142.0 release of Codex! Make sure to upgrade your codex installation to the latest version via npm or bash installer
+
+- https://x.com/buildwithhassan/status/2069264733920715185
+  - ~/.codex/logs_2.sqlite
+  - ~/.codex/logs_2.sqlite-wal
+  - ~/.codex/logs_2.sqlite-shm
+  - since february, codex has been writing every single websocket event and telemetry trace to a local SQLite database at TRACE level. estimated write volume: ~640TB per year. on your SSD.
+  - the file looks small because it constantly deletes and rewrites itself. your disk thinks it's fine. your SSD lifespan disagrees.
+  - but the crazy part is that when your disk gets full during a /goal session, codex starts deleting your actual files just to free up space. Your own code. Your own folders. Just like that, they’re gone.
+  - go check. delete those files. 
+- 3 files matter but -wal is what eats disk until checkpoint
+
+- ## 🐛 [OpenAI Codex 日志写入异常，社区反映或严重损耗 SSD 寿命 - LINUX DO _202606](https://linux.do/t/topic/2438231)
 - 最危险的不是文件大小 而是它在持续写入 不停的轮转 不停的磨硬盘
 
 - 省流版本：2T的消费级别SSD，写入6000T左右，这个盘寿命就差不多了，也就是这个盘就快坏了，这是消费级SSD物理规则决定的。这时候SSD硬盘坏了的话，数据是基本无法找回的(不像机械硬盘那样可以通过常规手段修复，恢复成功率相对机械硬盘非常非常低。

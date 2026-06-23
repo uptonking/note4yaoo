@@ -115,10 +115,11 @@ modified: 2022-11-09T11:53:13.093Z
   - 依赖antd、highlight.js、md-it
   - [基于markdown-it打造的markdown编辑器](https://songlh.top/2022/10/12/%E5%9F%BA%E4%BA%8Emarkdown-it%E6%89%93%E9%80%A0%E7%9A%84markdown%E7%BC%96%E8%BE%91%E5%99%A8/)
 
-- https://github.com/doocs/md /MIT/202502/ts/vue
+- https://github.com/doocs/md /12.9kStar/MIT/202606/ts/vue
   - https://doocs.github.io/md/
+  - https://md.doocs.org/
   - 一款高度简洁的微信 Markdown 编辑器：支持 Markdown 语法、色盘取色、多图上传、一键下载文档、自定义 CSS 样式、一键重置等特性
-  - 依赖codemirror5、vue3、vueuse、pinia、highlight.js
+  - 依赖codemirror6、vue3、vueuse、pinia、highlight.js、marked、mermaid、@antv/infographic
 
 - yfm-editor /3Star/MIT/202211/ts/md-it
   - https://github.com/yandex-cloud/yfm-editor
