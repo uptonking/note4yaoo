@@ -22,7 +22,8 @@ modified: 2026-05-28T17:50:54.646Z
     - bounding-box
   - version-history
   - aistudio: chat/image/video, laptop/minipc厂商都希望内置本地模型
-  - tiered-models: sonnet+haiku, 还可参考 roo/kilo/ohmyopencode 
+  - model-router: 内置路由, 是否可参考oh-my-opencode
+    - tiered-models: sonnet+haiku, 还可参考 roo/kilo/ohmyopencode 
     - tiered/hybrid-llm, 云端与本地结合，能较高质量完成任务同时节省成本
     - 支持cloud与local混合的模式
     - cloud only works， 方便实现saas
@@ -52,6 +53,7 @@ modified: 2026-05-28T17:50:54.646Z
     - ai-design/lovable
 
 - 📌 non-goals
+  - ocr for arbitrary image
   - good llm xp on cpu, but optimized for gpu
     - cpu works for ocr/translation
   - computer-use

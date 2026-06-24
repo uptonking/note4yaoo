@@ -37,6 +37,19 @@ modified: 2023-09-17T18:10:33.050Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [想要咨询一个类似于帆软finedatalink 的etl 开源工具 - LINUX DO _202606](https://linux.do/t/topic/2466302)
+  - 支持拖拽资源如数据库，并且支持交集并集筛选等操作，可以友好二开的
+
+- 纯etl可以datax，如果带点调度可以上dolphinscheduler，至少ds带点图形化界面
+
+- 稳的，我们部署的dolphinscheduler，3个节点，1master 2worker，3年了，几百个调度，每天上亿条数据的ETL，没出过问题。
+
 - ## Why is it that there's so little code reuse in the data transformation layer/ETL?
 - https://x.com/mistercrunch/status/1841875802092405059
 - I've been involved in several data interoperability standards committees over the years. In my experience (which is admittedly outdated) only power ($, legislation, etc..) drives adoption (e.g. medicare, walmart)
@@ -71,7 +84,7 @@ modified: 2023-09-17T18:10:33.050Z
 
 - ## Do you want a #database that can:
 - https://twitter.com/OnlyXuanwo/status/1725494564755325036
-  - SELECT * FROM 'gdrive://*.csv'
+  - SELECT * FROM 'gdrive://* .csv'
   - COPY FROM 'dropbox://*.xlsx' INTO table
 - It seems that @duckdb supports both features. It may not support `gdrive://` or `dropbox://` scheme, but with the help of fuse i think it is possible to perform IO directly over these webdrivers
   - Yep, many databases support load data from services like s3. As known as data lake house 
@@ -95,7 +108,7 @@ modified: 2023-09-17T18:10:33.050Z
 - Manipulating the data? Sure, use SQL, as long as you're operating on data from one database. Trying to collate(收集, 整理; 校对, 核对 ) data from multiple databases may have unpredictable performance issues even in the engines that support it.
 - Moving data? There are much better options. And the same caveat as for orchestration applies here: every RDBMS vendor has its own idea of what external query's should look like (openrowset, external tables, linked servers) with their own performance considerations.
 - Even on the manipulation side I tend to disfavor sql.
-  - Even though it’s improved a lot the testing situation in sql is still not where a more traditional programming language is, modularity comes either in the form of ever nested cte, stored procs or dbt style templates. And **sql types are wholly dependent on the sql engine, which can lead to wacky transforms**.
+  - Even though it’s improved a lot the testing situation in sql is still not where a more traditional programming language is, modularity comes either in the form of ever nested cte, stored procs or dbt style templates. And **sql types are wholly dependent on the sql engine, which can lead to wacky transforms** .
   - Sql is great for adhoc analysis. If something isn’t adhoc, there is almost always a better tool.
 
 - How do you test some SQL logic in isolation?
@@ -119,7 +132,7 @@ modified: 2023-09-17T18:10:33.050Z
 
 - I would strongly recommend reconsidering the suggestion that SQL serve as a data engineering pipeline default. We use SQL heavily at our organization, and use it for broad, significant ELT workloads. 
   - In essence, we use SQL, largely via DBT, where appropriate.
-  - However, everywhere else, which comprises(包含；构成；组成) a significant collection of data pipeline services, uniform where possible but definitely heterogenous, we default to Clojure; we also utilize Python where more appropriate. Of these 3 languages **SQL clearly has the least generality, least testability, least API integration capability**, and definitely the most awkward data processing capability. I feel it is naive to suggest it could serve as a default language for data engineering pipelines, particularly given the need to interact with cloud services and third parties.
+  - However, everywhere else, which comprises(包含；构成；组成) a significant collection of data pipeline services, uniform where possible but definitely heterogenous, we default to Clojure; we also utilize Python where more appropriate. Of these 3 languages **SQL clearly has the least generality, least testability, least API integration capability** , and definitely the most awkward data processing capability. I feel it is naive to suggest it could serve as a default language for data engineering pipelines, particularly given the need to interact with cloud services and third parties.
 
 - I’ve found that sql pipelines end up depending heavily on a specific database (ssis packages for sqlserver) so really suck when you don’t want to use that database any more, or still need something to coordinate and run all the sql.
 

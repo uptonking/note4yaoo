@@ -135,7 +135,7 @@ modified: 2021-09-14T18:58:58.275Z
   - 非版权
   - 项目作品适合商业用途
   - 被许可方可以修改项目
-  - 被许可方**必须提供引用说明**
+  - 被许可方 **必须提供引用说明** 
   - 被许可方可以根据不同条款重新分配衍生作品
   - 被许可方不必将其衍生作品和源代码一起分发
 
@@ -176,7 +176,7 @@ modified: 2021-09-14T18:58:58.275Z
   - 项目工作适合商业用途
   - 被许可方可以修改项目
   - 被许可方必须将源代码与衍生作品一起发布
-  - **衍生作品必须以相同的条款发布**
+  - **衍生作品必须以相同的条款发布** 
 
 - you have to release source code if you link against and distribute the binary, but don't if you just provide a service
 - 应用广泛
@@ -208,7 +208,7 @@ modified: 2021-09-14T18:58:58.275Z
   - 版权约束较弱（受限于动态关联的程序库）
   - 项目作品适合商业用途
   - 被许可方可以修改项目
-  - 被许可方**必须将源代码与衍生工作一起开源发布**
+  - 被许可方 **必须将源代码与衍生工作一起开源发布** 
   - 如果你修改了项目，则必须以相同的条款发布修改后的作品
   - 如果你使用项目作品，无需以相同的条款发布衍生作品
 
@@ -227,17 +227,17 @@ modified: 2021-09-14T18:58:58.275Z
   - However, this requirement applies to a narrower set of code than the “regular” GPL.
   - A strong copyleft license (GPL v3, for instance) applies to the entire software program, including linked libraries and other components.
   - If you were to modify that LGPL-library and distribute it, then you’d have to release the changes. 
-  - But **if your program simply uses the LGPL-library, there’s no need to share your source code for your part of the program**. 
+  - But **if your program simply uses the LGPL-library, there’s no need to share your source code for your part of the program** . 
   - You could even make your part of the program proprietary if you wanted to.
 - The LGPL has different requirements depending on how the library is integrated with the remainder of the program. 
   - Generally, dynamic linking of LGPL code is considered best practice, as static linking makes meeting the license requirements more complicated. 
   - While it is possible to comply with LGPL code that is integrated into proprietary code as a statically linked library, it requires more effort. 
   - There is a kind of safe harbor for using LGPL code as a dynamically linked library; 
-  - **for statically linked libraries, a distributor must offer access to not only the library’s source code, but other information or materials necessary to rebuild the program**. 
+  - **for statically linked libraries, a distributor must offer access to not only the library’s source code, but other information or materials necessary to rebuild the program** . 
   - However, many programming languages have no equivalent of static linking, so that makes the dynamic linking safe harbor extremely helpful and effective in LGPL compliance.
 - Like GPL, LGPL imposes no conditions on using the code in software that’s sold commercially.
 
-- **LGPL is slightly different from other weak copyleft licenses, like the Mozilla Public License or Eclipse Public License, due to its special safe harbor for dynamic linking integration**.
+- **LGPL is slightly different from other weak copyleft licenses, like the Mozilla Public License or Eclipse Public License, due to its special safe harbor for dynamic linking integration** .
 
 - The LGPL does not permit sublicensing of the code, nor does it allow contributors to be held liable for legal issues or damages.
   - Like the MPL and CDDL, the EPL allows for sublicensing. 
@@ -275,11 +275,11 @@ modified: 2021-09-14T18:58:58.275Z
 - ## [LGPL is more business friendly than GPL; it's literally "lesser" GPL.](https://news.ycombinator.com/item?id=35461088)
   - You can use LGPL in commercial, closed-source projects as long as you keep the LGPL code in a separate dynamically linked library, e.g. a DLL, and provide a way for users to swap it out for their own patched DLL if they wish. (Plus some other license terms.)
   - Also, you can always use LGPL code under the terms of the GPL, so there's no way LGPL is more restrictive than GPL.
-  - Beware that you may need to be careful using LGPL code in a browser: JavaScript is source code not object code, arguing WASM is a DLL wouldn’t help, **most JavaScript minifiers perform static linking**, and sending LGPL code to the browser could be considered distribution. I always avoided all LGPL licensed libraries when doing commercial front-end work.
+  - Beware that you may need to be careful using LGPL code in a browser: JavaScript is source code not object code, arguing WASM is a DLL wouldn’t help, **most JavaScript minifiers perform static linking** , and sending LGPL code to the browser could be considered distribution. I always avoided all LGPL licensed libraries when doing commercial front-end work.
 # MPL (Mozilla Public License)
 - ref
   - 修改后的源码必须同样以LGPL发布
-  - 产物可以不同license发布，**对修改友好**
+  - 产物可以不同license发布， **对修改友好** 
   - 可以兼容GPL
   - https://tldrlegal.com/license/mozilla-public-license-2.0-(mpl-2)
 
@@ -301,7 +301,7 @@ modified: 2021-09-14T18:58:58.275Z
   - 被许可方必须提供引用说明
   - 被许可方可以根据不同条款重新发布衍生作品
   - 被许可方不得重新许可MPL许可的资源
-  - 被许可方**必须将其衍生作品与MPL许可的源代码一起分发**
+  - 被许可方 **必须将其衍生作品与MPL许可的源代码一起分发** 
 
 - [MPL 2.0 FAQ — Mozilla](https://www.mozilla.org/en-US/MPL/2.0/FAQ/)
   - The MPL's "file-level" copyleft is designed to encourage contributors to share modifications they make to your code, while still allowing them to combine your code with code under other licenses (open or proprietary) with minimal restrictions.
@@ -327,11 +327,11 @@ modified: 2021-09-14T18:58:58.275Z
 - ## [Mozilla Public License 2.0 - FOSSA](https://fossa.com/blog/open-source-software-licenses-101-mozilla-public-license-2-0/)
 - Weak copyleft licenses like the Mozilla Public License 2.0 also require users to disclose their changes to the source code, but requires sharing of a narrower set of code. 
   - If an author reworks any of the original files, they have to release those updates when distributing the code and license them under the MPL.
-  - 👉🏻 However, **if the author keeps the MPL’d code in separate files, they can combine that code with closed-source code to create an aggregate work**. 
-  - The new code files can be kept proprietary or released **under a different license**.
+  - 👉🏻 However, **if the author keeps the MPL’d code in separate files, they can combine that code with closed-source code to create an aggregate work** . 
+  - The new code files can be kept proprietary or released **under a different license** .
   - This is sometimes referred to as file-based copyleft.
 - MPL 2.0 obligates users to state that the code is under the MPL license and share where they can find the license
-- Sublicense binaries. **A developer may place binaries under a different license in the context of an aggregate work**.
+- Sublicense binaries. **A developer may place binaries under a different license in the context of an aggregate work** .
 
 - ### mpl vs lgpl
 - Unlike the MPL, the LGPL does not allow users to sublicense the code. 
@@ -396,7 +396,7 @@ modified: 2021-09-14T18:58:58.275Z
   - 较弱的版权约束（受限于软件“模块”）
   - 项目作品适合商业用途
   - 被许可方可以修改项目
-  - 如果你修改了作品，则**必须以相同的条款发布修改后的作品**
+  - 如果你修改了作品，则 **必须以相同的条款发布修改后的作品** 
   - 如果你使用了作品，无需以相同的条款发布衍生作品
   - 软件的商业分销商必须在因商业用途导致的诉讼/损害中保护或赔偿原始EPL贡献者
 
@@ -405,7 +405,7 @@ modified: 2021-09-14T18:58:58.275Z
 - A core requirement of the EPL — one that’s not part of permissive licenses — is that derivative works of EPL-licensed code must also be licensed under the EPL. 
   - (As such, anyone who distributes a program that constitutes such a derivative work must also make their source code available.)
 - 👉🏻 However, the EPL’s definition for a derivative work is narrower than GPL’s.
-  - **Under the EPL, if you simply use — rather than modify — an EPL-licensed component and keep it in a separate file, that would not constitute a derivative work, and you would not be required to make available your source code**. 
+  - **Under the EPL, if you simply use — rather than modify — an EPL-licensed component and keep it in a separate file, that would not constitute a derivative work, and you would not be required to make available your source code** . 
   - With the GPLs, however, any use (modified or not) of the licensed code would create a derivative work.
 - Users can rework the code, but if they distribute these modifications, they must release these updates in source code form.
 - Users can add a Secondary License to enable compatibility with GPL v2 or later
@@ -421,18 +421,39 @@ modified: 2021-09-14T18:58:58.275Z
 - ## What are the major changes between EPL-1.0 and EPL-2.0?
 - The term of art is now referred to as "file" rather than "module"; 
 - The choice of law provisions has been removed; 
-- The license is **now suitable for scripting languages such as JavaScript**; and
+- The license is **now suitable for scripting languages such as JavaScript** ; and
 - The license now includes an option to add a secondary license for GPL-2.0+ compatibility.
 
 - ## [EPL-Licensed Library with Closed-Source Commercial Product](https://softwareengineering.stackexchange.com/questions/152983/epl-licensed-library-with-closed-source-commercial-product)
 - EPLv1 is copyleft, because it requires you to release any changes you made to the EPL code while working on your main app. 
-- **The difference from GPL is that it's a commercial-friendly copyleft, requiring you only to make those changes available and only if you distribute your commercial app**. 
-  - **And if you made no changes, no source code to release**
+- **The difference from GPL is that it's a commercial-friendly copyleft, requiring you only to make those changes available and only if you distribute your commercial app** . 
+  - **And if you made no changes, no source code to release** 
 
 - You need to mention it includes EPL code, and allow them to request access to the source code of the EPL code if they want, including any modifications you've made to it. Your own code though, which only uses the EPL code in an import for example, does not need to be made EPL, and you do not have to give its source away
 
 - ## Is my EPL-2.0 licensed project GPL compatible by default?
 - No. EPL-2.0 licensed projects may explicitly add GPL compatibility by way of adding a Secondary License
+# EUPL(European Union Public License) 欧盟花式协议, 类似AGPL但可LINK
+- [FAQs | Interoperable Europe Portal ](https://interoperable-europe.ec.europa.eu/collection/eupl/faqs)
+- Closing the SaaS/ASP loophole
+  - EUPL assimilates(吸收) "communication to the public" to "distribution" and therefore targets and covers SaaS (software as a service) and the ASP (application service provider) activity.
+  - The EUPL covers not only the classical software distribution, but also the "communication to the public" through remote access, or the provision of SaaS (software as a service) through the Internet. On this specific point, the EUPL is like the AGPL.
+- The EUPL is not viral(病毒性的): according to the provision of European Law (Directive EC 2009/24 recitals 10 & 15), static and dynamic linking can be implemented with other programs without barriers or conditions. On this specific point, le EUPL works like the LGPL. 
+- The EUPL is a "software license" by design, but it covers "the Work" and what could be considered as its components or derivatives:  documentation, ancillary data or even hardware in case it includes the Work.
+
+- [What are your thoughts on the EUPL licence? : r/opensource _202408](https://www.reddit.com/r/opensource/comments/1eht9p0/what_are_your_thoughts_on_the_eupl_licence/)
+- What's the difference with AGPLv3?
+  - Probably "common law" vs "civil law" problem. AGPL has never been tested in court, but court decisions are central in common law systems. so we don't know how it would really go. EU is civil law-centric, so the license is kind of already approved by the government, result in court is pretty already known. In the end it's probably exactly the same, it's just that the philosophy of justice is different between Europe and US so they had to publish something official for their own use.
+
+- The EUPL does NOT allow you to "relicense" (aka changing the license of the code without being the owner of said code). It DOES allow you to distribute a combined work under a different license.
+  - When you have a EUPL licensed application and add a GPLv3-only licensed component to it, you CAN redistribute the whole (EUPL+GPL-3) under the GPL. BUT, all of the EUPL code stays EUPL. So as soon as a user comes to know that parts of the GPL product are EUPL licensed, they have the right to get that code under the EUPL.
+
+- It is OK with static linking and incorporation of the code in contrast to GPLv3 for example.
+
+- EUPL allows relicensing to a bunch of other licenses, which means it has rather weak copyleft. I think you're better off with a license that matches your intention, either (A)GPL for strong copyleft or MPL for mild copyleft.
+
+- [EUPL: European Union Public License | Lobsters _202603](https://lobste.rs/s/msjuyz/eupl_european_union_public_license)
+  - The EUPL as far as licenses go is an improvement over the MPL in my opinion, it provides the guaranteed of the LGPL without the downsides of GPL, it's versatile and protects you from hostile forks.
 # CDDL
 - ref
   - [The CDDL (Common Development and Distribution License) - FOSSA](https://fossa.com/blog/open-source-licenses-101-cddl-common-development-distribution-license/)
@@ -475,7 +496,7 @@ modified: 2021-09-14T18:58:58.275Z
 - ## Why did you base the SSPL on GPL v3 instead of AGPL?
   - The AGPL is a modified version of GPL v3. 
   - The only additional requirement of AGPL is in section 13: if you run a modified program on a server and let other users communicate with it there, you must open source the source code corresponding to your modified version, known as the “Remote Network Interaction” provision of AGPL.
-  - 👉🏻 **There is some confusion in the marketplace about the trigger and scope of the Remote Network Interaction provision of AGPL**.
+  - 👉🏻 **There is some confusion in the marketplace about the trigger and scope of the Remote Network Interaction provision of AGPL** .
   - As a result, we decided to base the SSPL on GPL v3 and to add a new section 13 which clearly and explicitly sets forth the conditions to offering the licensed program as a third-party service.
 
 - ## What specifically is the difference between the GPL and the SSPL?
@@ -497,7 +518,7 @@ modified: 2021-09-14T18:58:58.275Z
   - 被许可方可以根据不同条款重新发布衍生作品 
   - 被许可方不必将其衍生作品和源代码一起发布 
   - 被许可方不得使用原作者名称或商标来为衍生作品背书（3句版和4句版BSD）
-  - 被许可方必须在提及此项目功能或用途的所有广告材料中**致谢项目原作者**（4句版BSD）
+  - 被许可方必须在提及此项目功能或用途的所有广告材料中 **致谢项目原作者** （4句版BSD）
 
 - 较为宽松，两个变种
   - 要求 协议和版权信息

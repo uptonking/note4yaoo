@@ -253,7 +253,9 @@ modified: 2023-01-02T10:30:19.459Z
 
 - ## 
 
-- ## 
+- ## Electron Framework 中的多语言支持可以在打包之后都删掉只留一个 en 就行，能省 ~30M 体积
+- https://x.com/leon7hao/status/2069760895270756572
+- 踩坑了，之前进行 electron 打包体积瘦身时把语言文件都干掉了。结果在 windows 系统下如果没有语言文件， `<input type=file>` 会直接导致应用崩溃。
 
 - ## [Forge vs Builder, as new electron dev : r/electronjs _202412](https://www.reddit.com/r/electronjs/comments/1hd70zu/forge_vs_builder_as_new_electron_dev/)
 - I'd suggest to go with electron-builder due to larger community, customisation, easy to adapt and if you need to change autoupdate mechanism in the later part , you can achieve with this.

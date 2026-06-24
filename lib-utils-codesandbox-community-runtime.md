@@ -917,6 +917,15 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
+- ## 
+
+- ## Crabbox: gives each local agent its own cloud box
+- https://x.com/jasonzhou1993/status/2069753641129689272
+  - sync uncommitted changes in seconds
+  - run the full stack in isolation
+  - return screenshots / videos as proof
+  - openclaw作者开发的方案，业界讨论度不高
+
 - ## Introducing the Agent Virtual Machine (AVM)
 - https://x.com/varun_mathur/status/2036140875991097356
   - AI agents are currently running on your computer with no unified security, no resource limits, and no visibility into what data they're sending out. Every agent framework builds its own security model, its own sandboxing, its own permission system. You configure each one separately. You audit each one separately. You hope you didn't miss anything in any of them.

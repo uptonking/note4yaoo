@@ -15,6 +15,27 @@ modified: 2026-04-07T00:47:33.626Z
   - https://github.com/Easonnotsing/VaultForge
     - AI agent skill for Obsidian — auto-build atomic note knowledge bases from PDFs and Markdown. Features wikilinks, MOCs, learning roadmaps,…
 
+- https://github.com/Nystik-gh/ignis /523Star/AGPL/202606/js/svelte
+  - Run Obsidian as a self-hosted web app. Not remote desktop, an actual web app.
+  - Ignis is a compatibility shim that provides browser-compatible implementations of the Electron APIs used by Obsidian, allowing Obsidian to run in a standard browser while keeping your vault on the server.
+  - Ignis provides an alternative for users who want to access their own copy of Obsidian from a browser, in a close-to-native format.
+  - the project has grown into a usable browser-based client with multi-vault support, file upload and download, workspaces opened across browser tabs, and live sync between tabs. 
+  - Plugin compatibility depends on what APIs a plugin uses; most plugins built on Obsidian's plugin API work, anything requiring Node native modules or child_process doesn't.
+  - Ignis currently ships as a self-hosted server but I have plans for a desktop plugin. 
+  - All core editor features: markdown, canvas, bases, and the command palette.
+  - Most community plugins built on Obsidian's plugin API.
+  - What Ignis adds on top of default Obsidian features
+    - Custom UI for Obsidian's multi-vault support, allowing create, open, switch, rename, and delete.
+    - Different vaults can be loaded in different browser tabs.
+    - Live file sync between browser tabs via WebSocket
+  - 🐛 What doesn't work
+    - Plugins that depend on Node native modules or child_process won't load.
+    - Streaming zlib classes (createGzip, createDeflate, etc.) aren't implemented. The synchronous and callback variants work via pako.
+    - safeStorage is passthrough by design: isEncryptionAvailable() returns false and encrypt/decrypt are no-ops. Anything plugins store via safeStorage ends up as plaintext on disk. A server-side encrypted option is planned but not yet implemented;
+  - 📡 Roadmap
+    - Continued shim work to support more community plugins.
+    - Multi-user support with OIDC for self-hosted shared deployments.
+
 - https://github.com/atomicstrata/llm-wiki-compiler /1.6kStar/MIT/202606/ts
   - https://llmwiki.atomicstrata.ai/
   - The knowledge compiler. Raw sources in, interlinked wiki out. Inspired by Karpathy's LLM Wiki pattern.
@@ -259,17 +280,71 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/davidvkimball/obsidian-bases-cms /MIT/202605/ts
   - plugin for Obsidian inspired by Dynamic Views and Multi-Properties that provides CMS-like functionality to bases. 
   - Transform your Obsidian bases into a powerful content management system with card-based views, bulk operations, and smart content management features.
+  - Made for Vault CMS
 
-- https://github.com/banisterious/obsidian-draft-bench /MIT/202605/ts
-  - https://draftbench.io/
-  - A full creative writing workflow for Obsidian: projects, scenes, manuscripts, and versioned drafts. Frontmatter-native and Bases-compatible.
-  - inspired by Longform, with added emphasis on per-scene draft history as first-class files, rich metadata via frontmatter, and a compile system that requires no JavaScript knowledge.
+- https://github.com/davidvkimball/vaultcms /MIT/202606/js
+  - https://vaultcms.org/
+  - Use Obsidian as a content management system for your Astro website.
+  - The open-source headless content management system that turns Obsidian into a publishing platform for your Astro website.
+  - Detects your Astro routes and content structure automatically.
+  - CMS-like homepage: See your content in a visual grid and perform bulk actions.
+  - Compatability: Works with almost any Astro theme.
+    - 遍历md生成astro相关的配置、主题
+  - https://github.com/davidvkimball/vaultcms-website
+    - The official website for Vault CMS, built with Astro and Tailwind CSS.
+  - https://github.com/davidvkimball/obsidian-vault-cms
+    - plugin for setup and configuration management of Vault CMS. Provides a setup wizard, automatic project detection, and plugin configuration management.
+  - https://github.com/davidvkimball/vaultcms-presets
+
+- https://github.com/livingpixelio/volcano /MIT/202602/ts
+  - Volcano is a JavaScript query API for Obsidian. You can read the contents of your vault as structured data. 
+  - The primary use-case is to use Obsidian as a content management system in a Node.js, Deno, or Bun-backed website.
+
+- https://github.com/Abdulkader-Safi/obsidian-crm-plugins /BSD/202606/ts/svelte
+  - A lightweight CRM that lives inside Obsidian. 
+  - Track clients, deals, and projects, log every interaction, and keep your to-dos, without leaving your vault and without a cloud account.
+  - [I built a CRM that lives entirely in your vault as plain markdown notes : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1ue6bfh/i_built_a_crm_that_lives_entirely_in_your_vault/)
 
 - https://github.com/michael-berardi/liberty-crm /202606/ts
   - Obsidian-compatible CRM with CLI, API, and agent integrations for Next.js
   - Obsidian Vault Sync: Connects directly to GitHub-hosted Obsidian vaults
   - Web-Based Editor: CodeMirror 6 markdown editor with block editing
   - Live Preview: Split-pane preview with wikilink support
+
+- https://github.com/CLSherrod/crm-markdown /GPL/202606
+  - https://christophersherrod.com/crm/
+  - simple, local-first CRM in Markdown for tracking contacts, conversations, follow-ups, and relationships—without SaaS lock-in.
+  - The system is intentionally simple: one person = one contact note.
+    - Each contact note includes the person’s profile, relationship type, relationship tier, follow-up rhythm, next contact date, and communication log.
+  - One Markdown file per person
+  - One communication log per person
+  - Monthly, quarterly, yearly, and custom follow-up cadences
+  - Obsidian Bases dashboards for reminders
+
+- https://github.com/anykeyguru/md-docs-cms-obsidian-plugin /MIT/202604/ts
+  - Turn Obsidian into a real CMS for docs-as-code repositories: visual tree with both drafts and public side-by-side, drag-and-drop weight reordering, translation matrix, image picker, draft promotion with preflight, frontmatter form, broken-link health check, VS-Code-style commit / sync panel, schema-driven layout configurable per project, first-run setup wizard, structure-integrity checker with auto-fix, and a settings panel for engine config.
+
+- https://github.com/banisterious/obsidian-draft-bench /MIT/202605/ts
+  - https://draftbench.io/
+  - A full creative writing workflow for Obsidian: projects, scenes, manuscripts, and versioned drafts. Frontmatter-native and Bases-compatible.
+  - inspired by Longform, with added emphasis on per-scene draft history as first-class files, rich metadata via frontmatter, and a compile system that requires no JavaScript knowledge.
+
+- https://github.com/kyoung-jnn/nextjs-obsidian-blog-kit /MIT/202605/ts
+  - Next.js blog kit powered by Obsidian as a headless CMS. 
+  - Write markdown locally, manage posts with a Notion-like dashboard
+
+- https://github.com/wesswart77/obsidian-cadence /MIT/202606/js
+  - A unified Obsidian plugin for CRM, PRM, project management, daily planning, and reminders — all on top of plain markdown. 
+  - No server, no sync service, no lock-in. Your vault stays your vault.
+  - Most "second brain" plugins do one thing well. Cadence is the opposite: a coherent workspace that brings together the surfaces a working person actually moves between every day — today's tasks, the week ahead, deals in flight, contacts, projects, recurring reminders — and presents them in a single tab with one familiar nav.
+  - Module toggles. Turn off CRM, PRM or Planner if you only want some of it.
+  - Cadence lets you define custom frontmatter properties for any of your core entities (Contact, Company, Project, Deal, Activity, Partner, etc.) to model your specific business workflows directly inside Obsidian.
+
+- https://github.com/gospecter/specter /AGPL/202606/ts/swift
+  - Open-source local sync for CMS content. 
+  - SpecterSync DIY syncs Ghost, WordPress, and Shopify content down to a folder of plain markdown files on your hard drive. Run your own editor or AI tools over those files. Push changes back through direct local CMS connections with dry-run preview and conflict detection.
+  - SpecterSync DIY (spectersync.diy) is the AGPLv3
+  - SpecterSync Pro (spectersync.com) is the official commercial product with signed installers, license activation, automatic updates, managed connectors, hosted AI transformation workflows, and support.
 # feat-ai
 - https://github.com/Nexus-JPF/note-companion /MIT/202604/ts
   - https://notecompanion.ai/
@@ -414,6 +489,13 @@ modified: 2026-04-07T00:47:33.626Z
   - https://yoursamlan.github.io/pubsidian
   - An Obsidian-Publish alternative but it's FREE
 
+- https://github.com/airenare/inkstone /NC/202606/python
+  - https://antonbakulin.com/inkstone
+  - Turn your Obsidian vault into a website — no export step, no build pipeline. 
+  - Write in Obsidian, push to GitHub, see it live - no export step, no build pipeline, no CMS.
+  - A lightweight Python/Flask server that turns an Obsidian vault into a website.
+  - Notes placed in the vault root (no subfolder) are served at /slug with no section prefix. 
+
 - https://github.com/oleeskild/obsidian-digital-garden /MIT/202604/ts/Svelte
   - Turn your Obsidian vault into a beautiful website. Free, open-source, and entirely yours.
 
@@ -430,6 +512,34 @@ modified: 2026-04-07T00:47:33.626Z
   - https://ryotaushio.github.io/obsidian-pdf-plus/
   - the most Obsidian-native PDF annotation & viewing tool ever.
 # feat-docs/excel/files
+- https://github.com/tescolopio/Obsidian_FolderBridge /MIT/202606/ts
+  - adds external folders to your Obsidian vault as seamless, native‑feeling directories. 
+  - It creates virtual mount points that map real filesystem paths into the vault, enabling multi‑root workspaces without moving or duplicating files.
+  - Zero duplication — files are always read and written from their real locations on disk or on the remote backend
+  - Multi-root workspaces — mount as many folders as you want at any virtual path inside one vault
+  - Full Obsidian integration — mounted files participate in the file explorer, Quick Switcher, Search, graph-adjacent indexing workflows, embeds, and normal vault commands
+  - embedded images and PDFs inside mounted folders render correctly
+  - Security allowlist — only explicitly approved real paths can be accessed
+  - Mount Types
+    - Local folder mounts — mount any directory from your local filesystem, external drive, NAS share, UNC path, or WSL-exposed folder
+    - WebDAV mounts — mount folders from Nextcloud, ownCloud, Synology, or any generic WebDAV server
+    - S3-compatible mounts — mount Amazon S3, Backblaze B2, MinIO, Cloudflare R2
+  - Background file watcher — file changes from mounted folders appear in Obsidian in real time when the backend supports it
+
+- https://github.com/abcamus/obsidian-sync-vault-ce /paid/202606/ts
+  - https://sync-vault.com/
+  - Professional cloud sync & VFS for Obsidian. Features zero-space VFS, 4K streaming, MCP AI engine, and P2P collaboration. 
+  - 连接 TB 级网盘与 Obsidian AI 大脑，跨设备免本地存储轻松同步、链接一切资源。
+  - 支持双向同步和单向同步，自动识别文件删除 & 移动操作。
+  - 🤔 是否实现成了网盘客户端
+
+- https://github.com/otaviof/obsidian-vfs /apache2/202605/ts
+  - Virtual file-system sharing Obsidian notes with VSCode and Claude Code
+  - Read-only virtual filesystem exposing an Obsidian vault via the obs:// protocol. 
+  - Three entrypoints — a VS Code extension, a Claude Code plugin, and a CLI — built on a shared core engine.
+  - allowed and blocked restrict general vault content
+    - blocked is evaluated first (deny wins). When a path matches both allowed and blocked, it is blocked. 
+
 - https://github.com/ljcoder2015/obsidian-sheet-plus /apache2/202606/ts
   - https://docs.ljcoder.com/
   - A full-featured spreadsheet experience, built on `Univer`, directly inside your Obsidian vault.
@@ -599,6 +709,13 @@ modified: 2026-04-07T00:47:33.626Z
   - no login, cloud sync service, telemetry, remote storage, account system, or plugin system. Your vault is just a folder on disk, and if you want sync, plain Git works nicely.
   - Click Markdown links and [[wikilinks]] in preview to open linked notes.
 
+- https://github.com/gamosoft/NoteDiscovery /2.6kStar/MIT/202606/python/js
+  - https://gamosoft-notediscovery-demo.hf.space/
+  - a lightweight, self-hosted note-taking application, all running on your own server.
+  - 似乎不支持bases
+  - [NoteDiscovery: New free and open source self hosted alternative to Obsidian : r/selfhosted _202511](https://www.reddit.com/r/selfhosted/comments/1opxmud/notediscovery_new_free_and_open_source_self/)
+    - For now allows markdown editing, automatic saving, undo/redo, custom themes, plugins (basic support for now)...
+
 - https://github.com/lokus-ai/lokus /FairCode>MIT/202606/js/rust/tauri
   - https://lokusmd.com/
   - A modern, intuitive note-taking application with powerful editing capabilities
@@ -641,6 +758,16 @@ modified: 2026-04-07T00:47:33.626Z
   - 提供评论管理页，方便查看和处理近期评论
   - AI 检索笔记功能：结合 AI查询改写+embedding 检索+BM25F 稀疏检索+PageRank 加权+RRF 融合排序+rerank 精排与对话模型生成报告，帮助你更精准地定位相关笔记和学习路径！
 
+- https://github.com/CLSherrod/crm-markdown /GPL/202606
+  - https://christophersherrod.com/crm/
+  - simple, local-first CRM in Markdown for tracking contacts, conversations, follow-ups, and relationships—without SaaS lock-in.
+  - The system is intentionally simple: one person = one contact note.
+    - Each contact note includes the person’s profile, relationship type, relationship tier, follow-up rhythm, next contact date, and communication log.
+  - One Markdown file per person
+  - One communication log per person
+  - Monthly, quarterly, yearly, and custom follow-up cadences
+  - Obsidian Bases dashboards for reminders
+
 - https://github.com/bairihai/Obsidian-template-vault /GPL/202606
   - obsidian打包预制模板仓库。样板间，拎包入住。持续更新至今已三年。
 
@@ -662,6 +789,14 @@ modified: 2026-04-07T00:47:33.626Z
   - Point it at a folder of Markdown files and edit your notes from any browser — with a CodeMirror editor, live preview, wikilinks, an interactive graph, full-text search, GitHub sync (incl. Git LFS), an API for AI agents, and community-plugin support.
   - It is single-user and self-hosted: one master password protects the whole app, all configuration lives in a plain data/settings.json (no database engine), and the entire stack runs from a single docker compose up.
 # utils-markdown/yaml
+- https://github.com/flowershow/markdowndb /490Star/MIT/202605/ts/sqlite
+  - https://github.com/datopian/markdowndb
+  - https://markdowndb.com/
+  - JS library to turn markdown files into structured queryable database (SQL-based and simple JSON). 
+  - It helps you build rich markdown-powered sites easily
+  - Parses your markdown files to extract structured data (frontmatter, tags etc) and creates an index in a local `SQLite` database
+  - Provides a lightweight javascript API for querying the database and importing files into your application
+
 - https://github.com/intellectronica/mdbasequery /MIT/202602/ts
   - an Obsidian Bases-compatible query engine for Markdown vaults.
 
@@ -678,6 +813,19 @@ modified: 2026-04-07T00:47:33.626Z
   - A data retrieval tool for Markdown and other text files with metadata. It just grubs fast through a big data field.
   - YAML code blocks in Markdown are usually used as code examples. grubber treats them as structured data records that live next to their context, across an entire directory of files. Think dataview without Obsidian.
 
+- https://github.com/k-lar/dynomark /MIT/202505/go/单文件/inactive
+  - Dynomark strives to be a markdown query language engine, similar to obsidian's Dataview plugin.
+  - This program can be used with editors like neovim, vscode and emacs to provide a similar experience to Dataview (but very barebones for now).
+
+- https://github.com/eristoddle/mdquery /MIT/202509/python/ts/inactive
+  - Universal markdown querying tool with SQL-like syntax for searching and analyzing markdown files across different note-taking systems and static site generators.
+  - Full-Text Search: Fast content search with SQLite FTS5
+  - Wikilinks, Nested Tags, Frontmatter
+
+- https://codeberg.org/SebastianRzk/Looksyk /AGPL/202606/rust/ts
+  - https://sebastianrzk.codeberg.page/looksyk
+  - A simple personal knowledge platform with a focus on clean markdown files, simple queries and a journal.
+
 - https://github.com/mnaoumov/obsidian-nested-properties
   - Obsidian plugin that allows to view/edit nested frontmatter properties.
 
@@ -686,6 +834,13 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/Jeff-Kazzee/braincheck
   - A typechecker for Markdown knowledge bases - enforce one schema across all YAML frontmatter (zero-dependency Python CLI).
+
+- https://github.com/dstengle/markdown-queries /MIT/202401/ts/inactive
+  - VScode extension to add dynamic frontmatter and content sql queries to markdown previews
+  - heavily influenced by Obsidian Dataview
+  - This is more POC at this point, but it is possible to put a sql query against a specific sqlite database created by MarkdownDB
+    - The extension declares that it extends the `markdown-it` processor in the standard markdown extension.
+    - It provides a highlighter plugin to the markdown parser that calls a service object to run queries on the sql.js database that is loaded into memory on initialization from the `markdown.db` file in the workspace.
 # utils-import/export
 - https://github.com/neuralsignal/obsidian-import /MIT/202606/python
   - https://neuralsignal.github.io/obsidian-import/
@@ -753,6 +908,12 @@ modified: 2026-04-07T00:47:33.626Z
 # integrations
 - https://github.com/CinquinAndy/notes-to-strapi-export-article-ai /MIT/202606/ts
   - plugin that streamlines your content creation process by seamlessly exporting your notes to Strapi CMS. With its AI-powered image handling and SEO optimization features
+
+- https://github.com/diegoeis/ghost-writer-manager-plugin /MIT/202605/ts
+  - Obsidian plugin to manage and edit Ghost CMS publication directly you Obsidian vault.
+  - One-way synchronization from Obsidian to Ghost CMS with post scheduling, YAML metadata control, automatic sync, and an editorial calendar view.
+  - One-way sync from Obsidian to Ghost (keeps Ghost as your publishing platform)
+  - YAML frontmatter control - Manage all Ghost metadata directly in Obsidian
 # okf(open knowledge format)
 - https://github.com/yzfly/awesome-okf /MIT/202606/python
   - 开放知识格式(OKF)的中文资料整理, 以及几个把飞书、Obsidian、Notion、GitHub 等转成 OKF 的小工具

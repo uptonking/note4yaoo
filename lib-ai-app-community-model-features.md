@@ -666,7 +666,8 @@ You never use unicode to render math expressions, ALWAYS use LaTeX.
 
 - ## 
 
-- ## 
+- ## [分享一个自己的开源库：一些用于大模型提示词模仿写作或语言特征的json - LINUX DO _202505](https://linux.do/t/topic/648794)
+  - 人物特征json+想要让怎么输出的提示
 
 - ## [【开源】InkOS（入选首批KIMI开源伙伴）v1.5，开放世界，用想象力游玩 - LINUX DO _202606](https://linux.do/t/topic/2361872)
   - InkOS是一个文字内容创作的agent系统，已经支持了长短篇小说，互动游戏等内容（剧作正在快速测试中），已经迭代了很多个版本，走到今天快3个月的时间也收获了7000+star，中间也有很多不足在慢慢改进，感谢佬们的关注和使用，之前的重点是在管理提示词和往里面塞各种各样的功能，1.5版本通过agent架构的统一改进了指令遵循（主要是工具权限），还增强了记忆和上下文管理功能，也引入了上下文压缩能力，还有Studio的UIUX的全面改进，三个交互方式的agent内核统一。

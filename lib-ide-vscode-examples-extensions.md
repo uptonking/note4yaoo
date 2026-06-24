@@ -713,6 +713,13 @@ modified: 2024-08-24T16:17:26.715Z
 
 ## ext-db/sqlite
 
+- https://github.com/dstengle/markdown-queries /MIT/202401/ts/inactive
+  - VScode extension to add dynamic frontmatter and content sql queries to markdown previews
+  - heavily influenced by Obsidian Dataview
+  - This is more POC at this point, but it is possible to put a sql query against a specific sqlite database created by MarkdownDB
+    - The extension declares that it extends the `markdown-it` processor in the standard markdown extension.
+    - It provides a highlighter plugin to the markdown parser that calls a service object to run queries on the sql.js database that is loaded into memory on initialization from the `markdown.db` file in the workspace.
+
 - https://github.com/qwtel/sqlite-viewer-vscode  /202501/ts
   - https://sqliteviewer.app/
   - easy SQLite viewer for VSCode, inspired by DB Browser for SQLite and Airtable.

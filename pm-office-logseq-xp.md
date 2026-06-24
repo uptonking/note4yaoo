@@ -55,7 +55,32 @@ modified: 2022-06-02T06:11:16.758Z
   - However, another effort is underway, see discuss.logseq.com/t/building-a-self-hostable-sync-implementation/21850 and bcspragu/logseq-sync
 
 - [Will Logseq remain fully open-source in the future and will the synchronization feature be self-hostable?  _202210](https://discuss.logseq.com/t/will-logseq-remain-fully-open-source-in-the-future-and-will-the-synchronization-feature-be-self-hostable/11951)
+# discuss-databases
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Migrating to Obsidian as Logseq DB is heading in the wrong direction : r/logseq _202606](https://www.reddit.com/r/logseq/comments/1ucfanx/migrating_to_obsidian_as_logseq_db_is_heading_in/)
+  - With Logseq DB sure I can have better search, faster query, or snappier performance but I don't think I will be able to as easily modify my existing notes as I can my existing plain text notes.
+
+- For many people the database version is the right direction and little by little obsidian is addings things to that direction as well. The fact is a graph in plain text files quickly reaches its limits especially when hundreds of files need to be edited just because you renamed a note. So there will always be a divide in the immunity between knowledge feature and storage format
+
+- the big problem was the poor performance of the desktop app - an issue that has persisted over the years, for which there are still open GitHub tickets from various users. I'm grateful to the developers for all their work, but I think the overall project leadership has been subpar. They spent a massive amount of time developing an entirely new backend with very little communication and pretty much no maintenance of the exising app. Even though the DB backend is now apparently ready, it remains unreleased, and they keep delaying it while working on new features. This is quite problematic, because every time someone complaints here that the app is slow/unmaintained
+  - Furthermore, keeping my entire knowledge base in Markdown files is a fundamental goal for me, and Obsidian seems to work well with that. Unfortunately, I don't believe in the idea of Logseq maintaining dual backends in DB and Markdown. Keeping two backends in sync is hard, and the development team has already shown us that continuous maintenance is difficult for them.
+
+- Not an OP, but I have been contemplating a similar decision for six months now. For me, the main reason is that I don't believe the development team will be able to maintain two separate backends of the application. Already the repository split suggest that they want both projects to develop independently, as they could have refactor the application to encapsulate DB/MD choice and keep one repository. They are already stretched thin, which we can observe by the delayed DB backend and lack of maintenance. Adding on top of that maintenance and development of two separate implementations is very likely too much: keeping two backends in sync is a hard problem on its own, and it also doubles the work for them.
+  - I'm afraid the most likely scenario for the Logseq-OG (MD backend) is that it will receive less support, bug fixes will be delayed, and at some point, the DB version will start receiving features unsupported in MD at all. That would be my estimation for any project, and for Logseq it is specifically a very likely outcome.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

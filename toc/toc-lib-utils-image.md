@@ -396,6 +396,14 @@ modified: 2023-04-04T22:39:45.442Z
   - Display PDFs in your React app as easily as if they were images.
   - For React-PDF to work,  `PDF.js` worker needs to be provided.
 
+- https://github.com/imgly/background-removal-js /GPLv3/ts
+  - Remove backgrounds from images directly in the browser environment with ease and no additional costs or privacy concerns
+
+- https://github.com/willnguyen1312/zoom-image /MIT/202404/ts
+  - https://willnguyen1312.github.io/zoom-image/
+  - powerful framework agnostic headless library to zoom images on the web
+  - Examples are written with Preact, React, Svelte, Vanilla JS and Vue.
+# open-graph-image
 - https://github.com/vercel/satori /MPLv2/202411/ts
   - https://og-playground.vercel.app/
   - Enlightened library to convert HTML and CSS to SVG
@@ -408,13 +416,25 @@ modified: 2023-04-04T22:39:45.442Z
     - This library (satori-html) bridges that gap, generating the necessary VDOM object from a string of HTML.
     - Please use inline styles rather than class-based styling
 
-- https://github.com/imgly/background-removal-js /GPLv3/ts
-  - Remove backgrounds from images directly in the browser environment with ease and no additional costs or privacy concerns
+- https://github.com/kane50613/takumi /2kStar/MIT/202606/rust
+  - https://takumi.kane.tw/
+  - Render JSX, HTML, and CSS to SVG or images without a headless browser. 
+  - OG cards, animated GIFs, and video frames from Node.js, edge runtimes, browsers, or Rust. Drop-in next/og replacement.
+  - https://x.com/kanewang_/status/2069594925059244539
+    - On-demand Google Fonts: load only the subsets your content uses, as it uses them
+    - Language-aware text (ja/zh/ko Han unification)
+    - I was getting tired of Satori, and Takumi has a lot of features I wish Satori had
+  - how does this compare to satori?
+    - grid display, RTL text, proper multilingual content rendering, better stylesheet/Tailwind 4 support. a lot more CSS properties that works
 
-- https://github.com/willnguyen1312/zoom-image /MIT/202404/ts
-  - https://willnguyen1312.github.io/zoom-image/
-  - powerful framework agnostic headless library to zoom images on the web
-  - Examples are written with Preact, React, Svelte, Vanilla JS and Vue.
+- https://github.com/Aniket-508/better-og /MIT/202603/ts
+  - https://better-og.vercel.app/
+  - Betterrrrrr Open Graph image toolkit
+  - Unified Core Engine: Shared logic for layout, font resolution, and asset handling.
+  - Platform Aware: Automatic detection of request source (Twitter, Open Graph) with safe-area calculations.
+  - Runtime Adapters: Optimized for Next.js (Node/Edge), Cloudflare Workers, and more.
+  - Flexible Layouts: Support for various aspect ratios and script-aware font resolution.
+  - High Performance: Minimal overhead with support for specialized renderers like Takumi (WASM).
 # codec
 - https://github.com/GoogleChromeLabs/squoosh /25kStar/apache2/202408/ts/inactive
   - https://squoosh.app/

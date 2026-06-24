@@ -42,7 +42,7 @@ modified: 2021-07-17T03:00:02.268Z
   - Isomorphic Core: Runs anywhere, Node.js CLI, CI/CD pipelines, or directly in the browser.
   - Rich Content: Built-in support for Callouts, Cards, Tabs, Steps, Changelogs, and Mermaid diagrams.
 
-- https://github.com/getzola/zola /12.3kStar/MIT/202402/rust
+- https://github.com/getzola/zola /17.2kStar/MIT > EUPL/202606/rust
   - https://www.getzola.org/
   - A fast static site generator in a single binary with everything built-in
   - This tool and the template engine it is using were born from an intense(强烈的，极度的) dislike of the (insane) Golang template engine and therefore of Hugo that I was using before for 6+ sites.
@@ -76,9 +76,14 @@ modified: 2021-07-17T03:00:02.268Z
   - ransforms a directory of templates (of varying types) into HTML.
   - Works with HTML, Markdown, Liquid, Nunjucks, Handlebars, Mustache, EJS, Haml, Pug, and JavaScript Template Literals.
 
-- https://github.com/getpelican/pelican
-  - /10.1kStar/AGPLv3/202012/python
+- https://github.com/getpelican/pelican /13.3kStar/AGPLv3/202604/python
   - Static site generator that supports Markdown and reST syntax. Powered by Python.
+  - Simple command-line tool (re)generates HTML, CSS, and JS from your source content
+  - Chronological content (e.g., articles, blog posts) as well as static pages
+  - Site themes (created using Jinja2 templates)
+  - Fast rebuild times due to content caching and selective output writing
+  - Extensible via a rich plugin ecosystem: Pelican Plugins
+
 - https://github.com/react-static/react-static /9.2kStar/MIT/202011/js/inactive
   - 原作者已转向next.js
   - A progressive static site is a website where every statically exported HTML page is an entry point to a fully-featured automatically-code-split React application.

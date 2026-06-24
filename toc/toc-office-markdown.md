@@ -176,7 +176,9 @@ modified: 2021-01-04T17:26:25.032Z
 
 - https://github.com/subramanya1997/markdownfs /MIT/202604/rust
   - A high-performance, in-memory virtual file system for Markdown files. Unix-like commands, Git-style versioning, content-addressable storage, and multi-user permissions — built in Rust.
-  - Only Markdown (.md) files are supported by design.
+  - Only Markdown (.md) files are supported by design: mdfs only stores .md files. Every file you create must have the .md extension
+  - MarkdownFS gives agents a fast in-memory filesystem with built-in commits, permissions, and a REST API 
+  - mdfs is also a strong fit for agent workspace use cases: durable markdown memory, inspectable artifacts, search, permissions, commits, and rollback in one shared surface.
 # tools
 - monotome /151Star/AGPLv3/202208/js
   - https://github.com/cblgh/monotome

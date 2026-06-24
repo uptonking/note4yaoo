@@ -9,6 +9,24 @@ modified: 2023-01-20T21:59:47.792Z
 
 # guide
 
+- file-first
+  - 缺点
+    - 不支持user/auth/permission
+  - 优点
+    - 个人使用方便
+  - DecapCMS/NetlifyCMS
+  - tinacms
+  - keystatic
+  - flowershow
+  - mkdocs
+
+- db-first
+  - strapi, directus
+  - Ghost, payloadcms
+  - wagtail
+  - emdash
+  - Wiki.js
+
 - cms-pm
   - 考虑以calendar/timeline/project/chat为核心，而不是editor
   - notion-like
@@ -17,6 +35,9 @@ modified: 2023-01-20T21:59:47.792Z
   - cms和admin管理系统的界限不是互斥的，可在一个框架fwk上实现cms或admin
   - cms业务架构一般分为 服务端、管理端、展示端
   - 管理端交互的核心通常是编辑器
+
+- tips
+  - alternatives: cms, crm, documentation, static-site-generator
 
 - [w3techs: Usage Statistics and Market Share of Content Management Systems](https://w3techs.com/technologies/overview/content_management)
   - WordPress, Wix, Squarespace, Joomla, Drupal, Adobe, PrestaShop, Webflow, TYPO3, Weebly, Gatsby, Hugo, Zendesk, Ghost, 🔥 Odoo, 🔥 MediaWiki, Gitbook, Jekyll, Salesforce
@@ -136,7 +157,7 @@ modified: 2023-01-20T21:59:47.792Z
     - You can preview, restore, and assign labels to specific versions;
     - You can use the diff view to see differences between different versions
 
-- tinacms /8.3kStar/apache2/202301/ts/git
+- tinacms /13.6kStar/apache2/202606/ts/git
   - https://github.com/tinacms/tinacms
   - https://tina.io/
   - headless CMS for Markdown, MDX, and JSON.
@@ -155,6 +176,29 @@ modified: 2023-01-20T21:59:47.792Z
     - need to manually import the react-tinacms-editor(依赖prosemirror) plugin
   - [Unify .md & .mdx implementations](https://github.com/tinacms/tinacms/discussions/2869)
     - react-tinacms-editor editor also uses prosemirror, while the default rich-text editor uses slate.
+
+- https://github.com/Thinkmill/keystatic /2.2kStar/MIT/202605/ts
+  - https://keystatic.com/
+  - First-class CMS experience, TypeScript API, Markdown & YAML/JSON based, no DB.
+  - Built with DNA from Keystone, connects directly to GitHub and doesn’t mess with your source code. 
+  - Conceived(构想；设想) for modern front-end frameworks like Next.js, Remix and Astro, designed to fit into your workflow.
+  - keystatic is not built on top of Keystone. they are "sibling" projects. Both are created and maintained by Thinkmill, an Australian software consultancy. Because they are built by the same team, they share a lot of "DNA" and design philosophies. For instance, they share similar developer ergonomics (like using a TypeScript API to define your content schema), and Keystatic's modern Admin UI uses a design system (Keystar UI) that is also being integrated into Keystone.
+  - [What are Thinkmill's plans for Keystatic in 2025 _202508](https://github.com/Thinkmill/keystatic/discussions/1442)
+    - Thinkmill is applying Keystatic in several behind-the-scenes projects, including Thinkmill's own public website and Keystone's documentation. Keystar UI (it's design system) is also now integrated directly into Keystone 6's new Admin UI.
+  - [Any plans for GraphQL API?  _202403](https://github.com/Thinkmill/keystatic/discussions/979)
+    - As of now there are no concrete plans for this. Worth mentioning, what you're describing (having a DB + API) sounds a lot like Keystatic's older cousin Keystone, built by the same team.
+    - For more ambitious and CRUD-capable projects, you might want to look into that as well!
+
+- https://github.com/flowershow/flowershow /1.1kStar/AGPL/202606/ts
+  - https://flowershow.app/docs/getting-started
+  - https://flowershow.app/
+  - Publish markdown (and html) websites, docs, wikis and websites in seconds. Integrates with your AI.
+  - https://flowershow.app itself is built and published with Flowershow
+  - 类似 git-based cms, 不依赖git
+  - 输入文件 ob-vault/github-repo/dnd-upload/cli
+  - 🐛
+    - 在线编辑不方便
+    - 更新是全量
 
 - webiny-js /6.3kStar/MIT/202301/ts/graphql/文档清晰/代码量大(很多包)
   - https://github.com/webiny/webiny-js
@@ -186,12 +230,6 @@ modified: 2023-01-20T21:59:47.792Z
 - https://github.com/microfeed/microfeed
   - a lightweight content management system (CMS) self-hosted on Cloudflare. 
   - microfeed is built by Listen Notes and is hosted on Cloudflare's Pages, R2, D1, and Zero Trust.
-
-- https://github.com/Thinkmill/keystatic /MIT/202311/ts
-  - https://keystatic.com/
-  - First-class CMS experience, TypeScript API, Markdown & YAML/JSON based, no DB.
-  - Built with DNA from Keystone, connects directly to GitHub and doesn’t mess with your source code. 
-  - Conceived(构想；设想) for modern front-end frameworks like Next.js, Remix and Astro, designed to fit into your workflow.
 
 - alinea /654Star/MIT/202403/ts/tiptap
   - https://github.com/alineacms/alinea
@@ -386,11 +424,12 @@ modified: 2023-01-20T21:59:47.792Z
     - https://jansmolders86.github.io/gh-cms-starter-template/
     - A starter template for a website managed with GH-CMS
 # git-based-cms
-- netlify/decap-cms /16kStar/MIT/202204/js
+- decap/netlify-cms /19.2kStar/MIT/202606/js
+  - https://github.com/decaporg/decap-cms
   - https://github.com/netlify/netlify-cms
-  - https://github.com/decaporg/decap-cms /js
   - https://decapcms.org/
   - A Git-based CMS for Static Site Generators
+  - It presents a clean UI for editing content stored in a Git repository.
   - 依赖redux、react-dnd、immutable3、react15
   - 核心功能是提供了通过ui操作执行读写github的能力、文件编辑器、自动构建和发布
     - 文件内容可保存在本地或github
@@ -400,7 +439,7 @@ modified: 2023-01-20T21:59:47.792Z
   - https://www.staticcms.org/
   - A Git-based CMS for Static Site Generators
 
-- https://github.com/avitorio/outstatic /MIT/202402/ts
+- https://github.com/avitorio/outstatic /3.1kStar/MIT > FSL/202606/ts
   - https://outstatic.com/
   - A static CMS for Next.js
   - No need for databases, external services, or complicated setups. 
@@ -416,6 +455,17 @@ modified: 2023-01-20T21:59:47.792Z
     - compiles to a ~10 MB binary via Perry
     - role-aware UI by construction
     - CLI ≡ API ≡ Admin
+
+- https://github.com/emdash-cms/emdash /10.9kStar/MIT/202606/ts/astro
+  - https://emdashcms.com/
+  - a full-stack TypeScript CMS based on Astro and Cloudflare; the spiritual successor to WordPress
+  - EmDash takes the ideas that made WordPress dominant -- extensibility, admin UX, a plugin ecosystem -- and rebuilds them on serverless, type-safe foundations. Plugins run in sandboxed Worker isolates
+  - EmDash depends on Dynamic Workers to run secure sandboxed plugins. Dynamic Workers are currently only available on paid accounts
+  - WordPress stores rich text as `HTML` with metadata embedded in comments -- tying your content to its DOM representation. 
+    - EmDash uses Portable Text, a structured JSON format that decouples content from presentation. Your content can render as a web page, a mobile app, an email, or an API response without parsing HTML.
+  - EmDash ships with agent skills for building plugins and themes, a CLI that lets agents manage content and schema programmatically, and a built-in MCP server so AI tools like Claude and ChatGPT can interact with your site directly.
+  - EmDash uses portable abstractions at every layer -- Kysely for SQL, S3 API for storage -- that work with SQLite, D1, Turso, PostgreSQL, R2, AWS S3, or local files. It runs best on Cloudflare, but it's not locked to it.
+  - Content types are defined in the database, not in code. Non-developers create and modify collections through the admin UI. Each collection gets a real SQL table with typed columns.
 
 - https://github.com/fiatjaf/coisas /317Star/MIT/201907/js/inactive
   - a headless CMS specifically designed to let you edit files hosted in a GitHub repository. 

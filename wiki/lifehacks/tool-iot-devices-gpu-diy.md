@@ -26,7 +26,16 @@ modified: 2026-06-23T09:00:34.414Z
 
 - ## 
 
-- ## 
+- ## [Has anyone tried setting up eGPU with halo strix through OCuLink? : r/StrixHalo _202606](https://www.reddit.com/r/StrixHalo/comments/1udnym5/has_anyone_tried_setting_up_egpu_with_halo_strix/)
+- as long as there is nvme slot, egpu is most likely possible
+- Yes, I used nvme to oculink. On Fedora it worked no problem.
+
+- I've done it, albeit with TB4 rather than occulink. Works fine now, I'm using an aoostar ag02 with a RTX5080.
+- I havent bothered with oculink but I have a blackwell 5000 working over tb4.
+
+- Yea, I have an old RX 6600 XT connected via oculink via a PCIE 4.0 x4 to Oculink card on my framework desktop mainboard. I use it to run embedding and reranker models and it has been working great so far on Fedora 44 & RADV llama.cpp vulkan backend.
+
+- Can do. My devices: Strix Halo -> NVMe -> OCuLink -> V100 GPU. The Ubuntu update feature automatically installed the 580 driver, and I then manually installed CUDA 12.8. I tried this because CUDA performs much better in many scenarios.
 
 - ## [Has anyone used a NVME to PCIe riser successfully with Strix Halo? : r/StrixHalo _202606](https://www.reddit.com/r/StrixHalo/comments/1uctbiw/has_anyone_used_a_nvme_to_pcie_riser_successfully/)
 - https://strixhalo.wiki/Guides/External_GPU

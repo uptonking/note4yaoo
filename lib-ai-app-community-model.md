@@ -251,6 +251,29 @@ modified: 2023-10-30T07:34:03.602Z
 - https://twitter.com/FinanceYF5/status/1730912502312296935
   - [国产大模型188个list - Feishu Docs](https://zw73xyquvv.feishu.cn/wiki/WXLmwBbYuiTobkkJ6Ojc2cxqnj0?sheet=2XjJlJ&table=tblS2Jv7isKtSODz&view=vewfCdOf0U)
 
+# discuss-llm-roadmap
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [佬们如何看待skill后续的形态 - LINUX DO _202606](https://linux.do/t/topic/2465159)
+- 个人感觉skill以后的形态可能改变。未来模型能力越强，一些琐碎简单的skill直接被模型本身能力覆盖了，比如处理上下文、表格、ppt、跨设备同步等，模型后台直接安排明白了。
+但是一些会进化，比如个人自建skill，随着你用ai越来越长期，记录和更新自己的习惯和行为也是长期的事情。
+还有深度结合ai的企业，规定的业务流程和安全边界，skill变成了一种资产了， 搞不好大公司再出个skill维护岗位。
+
+- 工具的出现是为了解决实际需求，而不是本末倒置的为了用工具而强行制造需求
+
+- 好的skill，都会内化，吸收，skill只是一个中间产物。最终还是会 到 环境工程上
+
+- 在我看来，skill 目前与 mcp 类似，都属于某种中间层方案。不过区别在于，mcp是属于模型与服务之间的沟通协议，而skill是模型进行作业的一个SOP规范指导，类似一个说明书的存在。例如，为了便于开发，社区中出现了Superpowers等各类 skill，相信各位在站内也见过不少这类的开源skill。还有比如为了发帖、自动爬取信息并总结而制作的skill，供agent自动操作。从这个角度来看，skill的生态位相比mcp而言没那么稳固。
+
+- 我觉得与其说skill会如何发展，倒不如说skill他承载了我们希望的什么能力，又能在什么方向被替代或者是增强，单从技术来说，一定会化为史书的一点注脚，但是这个构建的思想是会被继承和发展的。
 # discuss-llm-internals
 - ## 
 

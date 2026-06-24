@@ -22,7 +22,9 @@ modified: 2023-10-28T17:53:23.397Z
 
 - ## 
 
-- ## 
+- ## 19 is getting graph queries.
+- https://x.com/alxshp/status/2069494262878863772
+  - With SQL/PGQ, you can query relationships directly in SQL
 
 - ## PostgreSQL 19 introduces GROUP BY ALL.
 - https://x.com/KaraBharat/status/2066419046443258342

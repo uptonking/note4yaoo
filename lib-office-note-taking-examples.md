@@ -525,7 +525,7 @@ modified: 2024-01-30T20:56:45.773Z
   - A high-performance data index and query language over Markdown files, for obsidian
   - Treat your Obsidian Vault as a database which you can query from. 
   - Provides a JavaScript API and pipeline-based query language for filtering, sorting, and extracting data from Markdown pages.
-  - **Dataview generates data from your vault by pulling information from Markdown frontmatter and Inline fields**.
+  - **Dataview generates data from your vault by pulling information from Markdown frontmatter and Inline fields** .
   - Markdown frontmatter is arbitrary YAML enclosed by `---` at the top of a markdown document which can store metadata about that document.
   - Inline fields are a Dataview feature which allow you to write metadata directly inline in your markdown document via `Key:: Value` syntax.
   - [Obsidian Dataview: Turn Obsidian Vault into a database you can query from | Hacker News_202205](https://news.ycombinator.com/item?id=31407781)
@@ -614,7 +614,7 @@ modified: 2024-01-30T20:56:45.773Z
   - [Show HN: Open-source obsidian.md sync server | Hacker News_202308](https://news.ycombinator.com/item?id=37247767)
     - Obsidian is a small company, we're not VC backed (100% user-supported), so the Sync pricing helps us stay in business and keep the lights on. 
 
-- https://github.com/gamosoft/NoteDiscovery /MIT/202511/python/js
+- https://github.com/gamosoft/NoteDiscovery /2.6kStar/MIT/202606/python/js
   - https://gamosoft-notediscovery-demo.hf.space/
   - a lightweight, self-hosted note-taking application, all running on your own server.
   - [NoteDiscovery: New free and open source self hosted alternative to Obsidian : r/selfhosted _202511](https://www.reddit.com/r/selfhosted/comments/1opxmud/notediscovery_new_free_and_open_source_self/)

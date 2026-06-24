@@ -923,4 +923,10 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/happyfox-dot/Msg2Computer /NC/202606/kotlin/js
   - 一个跨设备验证码与消息同步工具。它由 Android 手机端和 Windows 桌面端组成，用于把手机收到的验证码短信、普通短信、App 通知，以及本机保存的 TOTP 动态验证码，同步到你授权的设备节点。
   - [[开源分享] 验证码流转工具，将消息推送给多个电脑/手机，避免每次打开手机看验证码 - LINUX DO _202606](https://linux.do/t/topic/2376521/6)
+# email
+- https://github.com/LanQin996/LanQin-Email /MIT/202606/go/ts
+  - 自建邮箱 Webmail 全栈方案：前端使用 React + TypeScript + shadcn/ui，后端使用 Go + SQLite，部署时可用单容器集成 API、Web、Nginx、Postfix、Dovecot、Rspamd。
+  - 多域名/多邮箱：域名管理、DKIM 密钥生成、DNS 记录展示与检测、邮箱账号、别名转发、无人收件开关。
+  - 邮件服务栈：Postfix 投递、Dovecot IMAP/POP3、Rspamd 反垃圾与 DKIM 签名、Maildir 到 SQLite 同步。
+  - [【开源】LanQin Email：一个可收发件、可管理、开箱即用的开源邮箱系统 - LINUX DO _202606](https://linux.do/t/topic/2467989)
 # more

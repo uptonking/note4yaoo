@@ -277,6 +277,8 @@ modified: 2026-06-20T15:49:57.019Z
     - [『Alpha』公益站开站 _202605](https://linux.do/t/topic/2242621)
     - [兑换码商店 · Alpha Codex](https://shop.oops.asia/)
     - 不限量套餐: 限时、限并发
+  - [123nhh API ](https://api.123nhh.com/profile), 只能签到得额度
+    - [[nhh站]随时跑路和关闭注册 _202606](https://linux.do/t/topic/2468396)
   - [Dk _202606](https://apideepseek.com/console/personal)
     - [DeepSeek公益站！支持缓存，完整原生支持 - LINUX DO _202606](https://linux.do/t/topic/2302675)
     - 10 LDC : 1 元用量 【DeepSeek 0.5倍率】（相当于 5 LDC = 1 元用量）
@@ -1243,6 +1245,8 @@ modified: 2026-06-20T15:49:57.019Z
   - 当购买一个商品有很多渠道时，有限选择可靠的平台，售后/质保/退款更方便
     - 大站的售后可能被封控，如短信/邮箱的接码可能被限流
   - 付费站和公益站都会有rpm的限制，甚至限制都很大
+  - 廉价的套餐如lite-plan也可能慢/卡/不可用, 抢不到不必执着
+    - 优先买容易退款的
   - 比较 主流coding-plan 和 中转/非正规套餐如cursor/devin 的价格/token额度, 灵活选择，没必要执着
     - 1亿token大概花费多少, 算起来比较通用
   - 中转商的价格每天都在变化, 套餐也在改变, 不要在一家花费过多
@@ -1755,6 +1759,9 @@ modified: 2026-06-20T15:49:57.019Z
   - plus-无质保6
 
 ## 发卡网
+
+- [Plati. Market : digital goods marketplace ](https://plati.market/)
+  - 很多俄罗斯大佬卖ai
 
 - [月亮AI ](https://aimoonai.com/)
 

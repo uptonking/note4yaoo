@@ -34,6 +34,10 @@ modified: 2024-01-23T02:52:23.932Z
 - architecture
   - 内容文件与配置文件分离的思路: 如表格内容与样式分离
 
+- markdown-query
+  - 可参考 codebase-ast-wiki/graph 的思路来实现 markdown-databases
+  - 🤔 实现原理是否与 经典rag流程 `chunking > vectordb ` 类似
+
 - mermaid-chart + bases
 
 - ide和cli主流的ux都与启动文件夹相关联，而chat并不会自带文件夹而是需要上传文件
@@ -48,6 +52,9 @@ modified: 2024-01-23T02:52:23.932Z
 
 - database的技术方案可参考agentfs+just-bash, 以数据库作为数据源，到处markdown方便ai理解
 # dev-xp
+- 偏ui的plugin，在headless的场景下可能读不到配置，需要在vault中存一份配置，然后server运行时支持相关逻辑
+  - headless方案可参考vscode-server
+
 - 对markdown文件的import需求很少，因为可以手动复制粘贴内容
 
 - ob-bases基于文件的设计，似乎很符合grist
@@ -520,23 +527,14 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## [Obsidian Bases — now available to everyone! : r/ObsidianMD _202508](https://www.reddit.com/r/ObsidianMD/comments/1mtxh52/obsidian_bases_now_available_to_everyone/)
-  - Bases is a core plugin that lets you turn any set of notes into a powerful database. With bases you can organize everything from projects to travel plans, reading lists, and more.
-  - Using a base you can view, edit, sort, and filter files and their properties. 
-  - Each base can have several views, and different layouts such as tables and cards. 
-  - Below is an example of table view where each row is a file, and each column is a property of that file.
-- Bases are filtered and sortable Table and Card views of note Properties and Tags. It is a configurable "view" of various Properties of Notes in your Vault.
-- A Base can be a standalone file (with a .base extension) and can be viewed directly or embedded like any other Note using the format ![[PathToNote]]
-- Base code can also be embedded directly into a note to render the Base.
+- ## [How do I recreate this in Obsidian? : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1uds99o/how_do_i_recreate_this_in_obsidian/)
+  - 典型的多维表格
+- bases don't work like databases in Notion. they fetch the notes you've already created, and you need to adjust the sorting and filtering to what you need. the base you showed here seems pretty easy to recreate in bases.
+  - make a folder for your books, all the columns in your base are the Metadata, and then you make a base to make a table. you could even add the book covers as images and make a book gallery.
+- A note per book is exactly how you should be using Obsidian. It's not messy at all, and is exactly how Obsidian is designed to work, out of the box. With a note per book and the properties for all of the metadata, that view you want can easily be done as a Base, no third-party plugins necessary.
+- Just FYI, each of those was a note in Notion, too. Maybe you didn't use the note part, but it was a note.
 
-- [PSA: Some Clarity on Bases : r/ObsidianMD _202508](https://www.reddit.com/r/ObsidianMD/comments/1mvfoys/psa_some_clarity_on_bases/)
-
-- Yeah at first glance I thought it was like a built in spreadsheet for any data but it's more like my notes are the rows.
-  - Notes are the rows (records).
-  - Properties are the columns (fields).
-  - A Base is a view that renders the rows and columns. What displays in the rows and columns is controlled by Filters and Property selection.
-
-- I think the core plugin Bases only works with YAML properties or explicit file metadata (created date, modified date, path, etc). It does work with inline tags, but not Dataview inline properties (the propertyname::value syntax you allude to). I think the devs have said that this is technically feasible and so a community plugin could be used to access Dataview properties, but I haven't seen one yet.
+- I'm using this plugin called Notion Bases for Obsidian, and it works great for me: https://github.com/bgarciamoura/obsidian-notion-bases-plugin
 
 - ## [How to make obsidian bases beatiful, Notion style example? : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1so8pj2/how_to_make_obsidian_bases_beatiful_notion_style/)
 - Pretty Properties plugin. (Nvm)
@@ -583,6 +581,24 @@ modified: 2024-01-23T02:52:23.932Z
 - Virtual Content. You can add specific base views to files based on their property values without actually typing them in the note. It's great because if you want to change something in that base view, you can do it through the plugin settings tab and the change will happen in every file. Also, it doesn't alter the Markdown files.
 
 - ## [Obsidian Bases support in Flowershow (Alpha) : r/ObsidianMD _202512](https://www.reddit.com/r/ObsidianMD/comments/1pevh7g/obsidian_bases_support_in_flowershow_alpha/)
+
+- ## [Obsidian Bases — now available to everyone! : r/ObsidianMD _202508](https://www.reddit.com/r/ObsidianMD/comments/1mtxh52/obsidian_bases_now_available_to_everyone/)
+  - Bases is a core plugin that lets you turn any set of notes into a powerful database. With bases you can organize everything from projects to travel plans, reading lists, and more.
+  - Using a base you can view, edit, sort, and filter files and their properties. 
+  - Each base can have several views, and different layouts such as tables and cards. 
+  - Below is an example of table view where each row is a file, and each column is a property of that file.
+- Bases are filtered and sortable Table and Card views of note Properties and Tags. It is a configurable "view" of various Properties of Notes in your Vault.
+- A Base can be a standalone file (with a .base extension) and can be viewed directly or embedded like any other Note using the format ![[PathToNote]]
+- Base code can also be embedded directly into a note to render the Base.
+
+- [PSA: Some Clarity on Bases : r/ObsidianMD _202508](https://www.reddit.com/r/ObsidianMD/comments/1mvfoys/psa_some_clarity_on_bases/)
+
+- Yeah at first glance I thought it was like a built in spreadsheet for any data but it's more like my notes are the rows.
+  - Notes are the rows (records).
+  - Properties are the columns (fields).
+  - A Base is a view that renders the rows and columns. What displays in the rows and columns is controlled by Filters and Property selection.
+
+- I think the core plugin Bases only works with YAML properties or explicit file metadata (created date, modified date, path, etc). It does work with inline tags, but not Dataview inline properties (the propertyname::value syntax you allude to). I think the devs have said that this is technically feasible and so a community plugin could be used to access Dataview properties, but I haven't seen one yet.
 
 - ## [Obsidian bases are great, but is making a separate note for each item practical? : r/ObsidianMD _202509](https://www.reddit.com/r/ObsidianMD/comments/1nq0mci/obsidian_bases_are_great_but_is_making_a_separate/)
   - I really like Obsidian bases in terms of automation, customization and overall look. It's pretty and functional. 
@@ -815,6 +831,29 @@ None.
 - My Vault exists peacfully in an OneDrive-Folder. From there it's synced to my smartphone and also to my linux server machine, where my AI is able to have a direct eye and hand in all my .md contents.
 
 - running a WebDAV server is a simple server to run, but you also need a way to access it when you're away from home and not on your network. To do that I run another simple App in my Homelab called Wireguard. It creates a VPN that I connect with when I'm away. Once I connect to the VPN, it's just like I'm on my home network and I have access to all the services I host.
+# discuss-tags
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [I use links and notes instead of tags : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1ue3fi1/i_use_links_and_notes_instead_of_tags/)
+  - I don’t use tags at all in my Vault. Instead, I use links in place of tags
+  - Advantage: Since they’re notes, I can add details
+  - While you can name tags, the downside is that you can’t add any additional information about what the tag actually means. I think this can become a pretty critical problem over the long term.
+- I had previously thought I could use tags for note status, but theoretically, I could do the same thing you’re saying here and just set a base in the note that filters for the appropriate notes. 
+- Tags are good for filtering datasets. So if you use bases then tags are a great complement.
+   - Links are good for mapping relationships.
+   - 2 notes could be linked but not share the same tag. 2 notes could share the same tag but not be linked.
+   - Tags get more useful as you have more notes. Like in the thousands.
+   - They make it possible to categorise your whole note graph, multi dimensionally, for quick filtering or traversal.
+
+- Because you focus only on concepts and definitions. You just group notes by explaining them. Tags are for properties and classification so group notes by common labels. Using tags you can find and filter then - anywhere. Do you know that you can (should?) use both? Using only links forces you sometimes to use fake concepts like TODO or IMPORTANT - this are tags.
+
+- I am also trying to move away from tags, As a first step I am now only keeping tags for status, like #pending #TODO #on_going #complete so I can use them in bases. So I can quickly pull a list of notes that are on going for example.
 # discuss
 - ## 
 

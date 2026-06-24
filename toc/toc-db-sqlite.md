@@ -159,6 +159,12 @@ modified: 2021-08-30T18:56:18.632Z
   - Parses your markdown files to extract structured data (frontmatter, tags etc) and creates an index in a local `SQLite` database
   - Provides a lightweight javascript API for querying the database and importing files into your application
 
+- https://github.com/sdorra/content-collections /1.2kStar/MIT/202606/ts
+  - https://content-collections.dev/
+  - Transform your content into type-safe data collections. Eliminate the need for manual data fetching and parsing.
+  - Type-safe: Your content is parsed and validated during the build process, guaranteeing accuracy and currency. Content Collections offers a type-safe API to access your content.
+  - Transformation: Content Collections allows you to transform your content before it enters your app. You can use it to modify your content, join two collections or even fetch data from a server.
+
 - https://github.com/dpapathanasiou/simple-graph /sql
   - This is a simple graph database in SQLite, inspired by "SQLite as a document database"
   - The schema consists of just two structures: Nodes(json) and Edges({id:json})

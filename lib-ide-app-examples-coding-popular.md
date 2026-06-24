@@ -937,6 +937,10 @@ modified: 2025-12-11T18:10:23.710Z
   - https://github.com/Chasen-Liao/pi-agent-desktop
     - 基于 Electron 的 Pi 编程智能体桌面客户端 (衍生自 pi-web)
 
+- https://github.com/jmfederico/pi-web /MIT/202606/ts
+  - https://pi-web.dev/
+  - Web UI for Pi Coding Agent that keeps sessions alive in real workspaces.
+
 - https://github.com/shixin-guo/pi-studio /MIT/202606/ts
   - Local Codex-style desktop GUI for the Pi coding agent
 

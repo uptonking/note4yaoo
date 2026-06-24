@@ -371,6 +371,12 @@ export ANTHROPIC_SMALL_FAST_MODEL="claude-sonnet-4-5-20250929"
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚 [Claude Code 和 Codex 的 Agent 设计有什么主要区别 - LINUX DO _202606](https://linux.do/t/topic/2463140)
+
 - ## Claude Code 程序的分发采用的是 Bun 作为运行时，源码通过 esbuild 打包成一个 JS bundle，并编译成 JavaScriptCore 字节码（JSC bytecode）装载在分发包中。
 - https://x.com/Barret_China/status/2045752834126434456
   - Bun 打包的时候有一个 fallback 策略，如果 JSC 加载失败，会去加载源码，因此分发包不仅包含了字节码，源码也保留了一份。
