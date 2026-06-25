@@ -1885,7 +1885,9 @@ Q8（8 位）	    16GB+	   接近原始版本
 
 - ## 
 
-- ## 
+- ## [Looking for guidance on NSFW image editing : r/comfyui _202606](https://www.reddit.com/r/comfyui/comments/1uez7s4/looking_for_guidance_on_nsfw_image_editing/)
+- I've been having success with klein and snofs at 10 steps 1 to 1.5 cfg. The only thing is that sometimes i have a finger missing or the face isn't consistent, so i tend to faceswap at the end (with BFS).
+  - Previously i used qwen edit 2509 with snofs and that was more consistent but felt a bit too artificial, but the face consistency is very good and i've never had any body dismorphia with that model. I think this is the best model for beginners for the goal you're describing.
 
 - ## [Editing images without masking or inpainting (Qwen's layered approach) : r/StableDiffusion _202512](https://www.reddit.com/r/StableDiffusion/comments/1prus2k/editing_images_without_masking_or_inpainting/)
   - After spending 2 days with Qwen‑Image‑Layered, I think I finally understand why. Treating editing as repeated whole‑image regeneration is not it.
@@ -1904,7 +1906,33 @@ Q8（8 位）	    16GB+	   接近原始版本
 
 - ## 
 
-- ## 
+- ## 视频生成是一个特别特别贵的赛道：视频生成算力消耗远超大模型文字、图像模型，呈指数级上涨。
+- https://x.com/sukie234/status/2069900297174974884
+首先是训练成本：
+
+新一代DiT架构视频模型，完整训练需要数千片H100/H200集群；单轮完整训练电费、硬件租赁成本千万级别。1段10秒高清视频的算力消耗≈数千次ChatGPT问答，推理成本极高。
+
+字节背靠火山引擎自有大规模智算集群，能持续投喂Seedance迭代；可灵、MiniMax这类创业公司、海外中小厂商只能租赁算力，高端GPU长期供不应求、租金持续上涨，持续大规模迭代资金压力极大。
+
+其次是推理成本：
+
+想要稳定开放给用户使用，必须7×24小时维持海量推理卡池，1024张B300可以勉强满足这个需求，单张b300要55万美金，还是在没有加价的情况，那么进入这个赛道的入门门槛是5427 万美元。
+
+Seedance依托抖音、豆包、红果、广告，通过庞大变现场景摊薄算力单位成本。
+
+其他厂商付费用户，广告，变现体量不足，频繁大版本更新、开放高清长视频只会持续亏损，只能放缓迭代、缩量灰度测试。
+
+没有充足的算力，只能进行微调，而且seedance 2.5 发布更是让大家不敢投入任何产能去赌这个赛道，因为你开发一半的时候，已经烧了几千万美金，字节随时发布一个模型就可以让你的钱都白花了。
+
+我以前说这个赛道只有谷歌、meta、字节三个玩家，现在看起来谷歌成了北美豆包，meta一坨，只有字节在赢的路上一直赢赢麻了。
+
+虽然短期aigc是现金牛，但长期LLM会成为搜索入口处，反馈在股价和估值上更为显著，更何况，目前LLM的战场是gpt claude根本不敢发布牛逼的模型，一是烧不起，二是随时被开源模型蒸馏赶超。
+
+但是视频这个赛道，没办法就是没办法，没有deepseek时刻。
+
+- 有个数据补充一下，字节的推理卡保守估计在150万张，消费级应用，推理卡的数量更重要，这个赛道也只有马斯克能烧的起了
+
+- 真正卡脖子的是推理，不是训练。训练贵，大厂咬咬牙一次性扛下来就行；但视频是每多出一秒都在烧钱，用的人越多亏得越快。短期更可能先跑通B端和广告片，C端靠免费走量这条路基本走不通。
 
 - ## [字节良心发现、开源小Seedance2.0，基于wan2.2 Bernini视频模型 - LINUX DO _202606](https://linux.do/t/topic/2303146)
   - Bernini 视频模型，替换、动作迁移、多图参考 、视频编辑，效果真可以，质量差点意思， 开源模型又可以折腾一段时间了，相信很快会出来各种微调模型。

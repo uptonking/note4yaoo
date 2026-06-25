@@ -86,7 +86,11 @@ modified: 2026-06-24T16:51:57.846Z
 
 - ## 
 
-- ## 
+- ## LMCache multiprocess (MP) mode now supports cross-node tensor parallelism (TP)
+- https://x.com/lmcache/status/2069872640614174933
+  - When a large model can't fit on a single machine, for example TP=16 split across two 8-GPU nodes, the model’s KV cache is also physically split across nodes.
+  - LMCache MP mode now mirrors that layout: each node runs its own LMCache server, keeps its KV cache local, and coordinates cache lookups across nodes.
+  - The key idea is simple: a prefix is reused only when every node still has its corresponding KV slice. This keeps reuse correct while avoiding heavy cross-node KV traffic. This means large multi-node TP deployments can now benefit from LMCache KV reuse, with support for both MLA models such as DeepSeek-V2 and dense models.
 
 - ## We just published a starter guide for developing vLLM + LMCache on a MacBook.
 - https://x.com/lmcache/status/2069513016174100663

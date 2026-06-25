@@ -210,13 +210,13 @@ modified: 2023-10-26T21:54:54.201Z
 # discuss-pm-airtable
 - ## 
 
-- ## [It's time to add Databases now that Tables are fully supported - Time to overthrow Notion! - Help - Obsidian Forum _202403](https://forum.obsidian.md/t/its-time-to-add-databases-now-that-tables-are-fully-supported-time-to-overthrow-notion/78428)
-- 202403: Recently, SiYuan launched this database feature which I think is the ultimate replacement for Notion. It is fully open source and also supports PDF annotation, one of the most requested features in Obsidian
-- you’re talking about ~siyuan~ being very slow with 50 row tables?
-- Siyuan notes are JSON, so that’s a massive drawback, in my opinion.
+- ## 
 
-- the dataview/datacore effort is well thought out. Nobody else is as knowledgeable or fluent about doing sql like querying of markdown data using the Obsidian api.
-- the dynamic view is developed by the Obsidian team, and Datacore by the author of the Dataview plugin.
+- ## 
+
+- ## 
+
+- ## 
 
 - ## [Docmost is one of the best open source notion alternative out there : r/selfhosted _202502](https://www.reddit.com/r/selfhosted/comments/1iyfig5/docmost_is_one_of_the_best_open_source_notion/)
 - No, it's absolutely not a Notion alternative. It's a good note taking app and wiki, but it has nothing of what makes Notion special. It doesn't even have databases, which is one of the major features of Notion.
@@ -497,7 +497,7 @@ modified: 2023-10-26T21:54:54.201Z
 - ## [Wildcard: Spreadsheet-Driven Customization of Web Applications | Hacker News_202002](https://news.ycombinator.com/item?id=22439141)
 - Wow, I absolutely love this concept.
   - It is messy and overly ambitious, but promises something like a return to the "view source" mindset of the old web - where data was in plain sight and anyone curious and a little tenacious could reshape the web for their own needs.
-  - I have gone partway down this path for a related concept, and **browser extensions are really the only way to go**. 
+  - I have gone partway down this path for a related concept, and **browser extensions are really the only way to go** . 
   - The biggest risk and hassle is a reliance on brittle, site-specific logic to make things work well. I haven't dug into this project yet to see how automated any of this is or might become, but if there is an element of community sourcing (like a ruleset for scraping AirBnB effectively) it opens up a potential attack vector like any GreaseMonkey-tyoe script, especially if passed routinely to less technical users. 
   - Not a huge issue on day 1 but not an easily solvable issue.
 
@@ -506,14 +506,14 @@ modified: 2023-10-26T21:54:54.201Z
 - I've been following this lab's work for a while and actually suggested to them that the implementation for this be based on an RDF style data model. 
   - Ontology languages are the level of abstraction up from a spreadsheet and are an atomic unit in semantic web technologies. 
   - It looks like the way this fits in to the existing architecture is that the site adapters would extract data as RDF triples.
-- **Please don't bring RDF out of its coffin. It has been tried and failed because it's overly complex and verbose**. It's terrible, and technologies which still use it are terrible to interact with to this day.
+- **Please don't bring RDF out of its coffin. It has been tried and failed because it's overly complex and verbose** . It's terrible, and technologies which still use it are terrible to interact with to this day.
 - Interestingly enough I think that the core of rdf (the subject predicate object triple) is a quite elegant abstraction for knowledge graph representation.
   - I do agree that the layered system of different ontology languages as present in current semantic web standards is not beginner friendly, but it doesn’t mean they can’t be improved on.
 
 - I've said it a few times here on HN that I think the best UX for many web apps (particularly business apps) would be a spreadsheet connected to an API (or better yet, multiple APIs). Of course most web apps don't expose an API, so here we are.
 - Spreadsheet-Driven Customization is a great way to enable non-technical users to customize and configure software.
 
-- Obviously **the main challenge, is that not all of the data is present on the frontend**. Also, user cannot permanently change the app, **since just the DOM is changed and that is not persisted anywhere**, am I right?
+- Obviously **the main challenge, is that not all of the data is present on the frontend**. Also, user cannot permanently change the app, **since just the DOM is changed and that is not persisted anywhere** , am I right?
   - But the whole idea to be able to peek "under the hood" of an app and customise/edit it sounds very appealing to me! I am actually working on the open source project that has that aim, to "understand" the web app from within.
 
 - Seems like you'd want to look into eavt databases for a universal schema, Datomic has a lot of resources explaining it's schema

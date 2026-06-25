@@ -1318,6 +1318,18 @@ Kimi K2	1000	32	3.2%
 - If it includes evaluating js driven websites, including images Then yes 
   - To really replicate that, you'd probably wanna just use puppeteer, save the whole page as an image, extract the info from that, and then crunch that data
 
+# discuss-model-prd/requirements
+- ## 
+
+- ## 
+
+- ## 
+
+- ## /grill-me 的核心差异： 每次只问一个问题，给出几个方案让你选， 慢就是快。
+- https://x.com/LinearUncle/status/2070014945941709045
+  - 它会刨根问底，从产品细节到技术细节，逐个解决决策树的每一个分支。我大概花了 15 分钟纯聊天，把所有细节聊透之后，才让它根据对话内容生成需求文档和技术文档，然后开始执行。
+- 所以你其实不需要这个skill, 只要把那几句话加到你的全局 agents.md 里就可以了
+
 # discuss-model-reasoning/cot
 - ## 
 

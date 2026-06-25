@@ -226,12 +226,6 @@ modified: 2021-01-04T17:26:25.032Z
   - extensible with plugs, and you can customize it
   - [Silver Bullet: Markdown-based extensible open source personal knowledge platform | Hacker News_202212](https://news.ycombinator.com/item?id=33843009)
 
-- https://github.com/k-lar/dynomark /MIT/202411/go
-  - Dynomark strives to be a markdown query language engine, similar to obsidian's Dataview plugin.
-  - This program can be used with editors like neovim, vscode and emacs to provide a similar experience to Dataview (but very barebones for now).
-  - https://github.com/k-lar/vscode-dynomark
-    - This extension is a wrapper around that engine, and provides a simple way to query your markdown files.
-
 - https://github.com/RICHQAQ/PasteMD /MIT/202512/python
   - 一个常驻托盘的小工具： 从 剪贴板读取 Markdown，调用 Pandoc 转换为 DOCX，并自动插入到 Word/WPS 光标位置。
   - 智能识别 Markdown 表格，一键粘贴到 Excel

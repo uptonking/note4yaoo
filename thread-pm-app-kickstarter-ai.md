@@ -479,6 +479,15 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 去年 lovart 的投资人问我们, 你们做生图这个方向怎么跟 lovart 打, 今天看文章才知道，lovart 的初始整个团队都走光了, 世界变化真快 _202606
+- https://x.com/oran_ge/status/2069952975574118742
+- Manus火的时候，带动了一波投资应用 Agent 的热潮。 现在又回冷了，投应用的太少了。行业数据不再是护城河，应用层正被快速上涨的大模型能力从下往上吞噬。
+  - 是的 投资人基本不投应用了 因为投的几个都太差了
+
 - ## [DeepSeek raises $7.4B USD at $60B valuation. Remarkably, Liang Wenfeng invests $3B in DeepSeek himself. : r/LocalLLaMA _202606](https://www.reddit.com/r/LocalLLaMA/comments/1ucwyes/deepseek_raises_74b_usd_at_60b_valuation/)
 - What cracks me up is how Cursor was “sold” for this same $60B
   - forked VS Code + Fine-Tuned Kimi (with no credits to company that made the model) can make wonders in Silicon Valley

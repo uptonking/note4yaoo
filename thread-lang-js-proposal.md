@@ -168,6 +168,13 @@ modified: 2023-11-10T08:05:25.474Z
 
 - ## 
 
+- ## 
+
+- ## 'as const' + 'keyof typeof' is all you need
+- https://x.com/KaraBharat/status/2070013696554995730
+  - Define the data. Derive the types. Your codebase stays clean.
+  - No enums. No separate Record maps
+
 - ## Enums add hidden code to your final file, while `as const` adds zero code.
 - https://x.com/thinkbuildnext/status/1988305467463135697
 - Or just string unions: Much better dev UX as well since you don’t have to register those on your component first before you can use them in a template

@@ -26,6 +26,26 @@ modified: 2026-06-20T15:49:57.019Z
   - 
 
 # model-api-resources
+- https://github.com/tashfeenahmed/freellmapi /12.3kStar/MIT/202606/ts
+  - https://freellmapi.co/
+  - OpenAI-compatible proxy that stacks the free tiers of 16 LLM providers (~1.7B tokens/month) behind one /v1 endpoint — plus any custom OpenAI-compatible endpoint. 
+  - Smart routing, automatic failover, encrypted keys. Personal experimentation only.
+  - Aggregate the free tiers from Google, Groq, Cerebras, NVIDIA, Mistral, OpenRouter, GitHub Models, Cohere, Cloudflare
+  - Every serious AI lab now offers a free tier — a few million tokens a month, a few thousand requests a day. On its own each tier is a toy. Stacked together, they add up to roughly 1.7 billion tokens per month of working inference capacity, across 100+ models from small-and-fast to reasonably capable.
+  - /v1/chat/completions and GET /v1/models work with the official OpenAI SDKs and any OpenAI-compatible client 
+  - /v1/responses (the wire format current Codex CLI versions require) is implemented as a translating shim over the same router, with full streaming events and tool calls.
+  - /v1/messages (plus /v1/messages/count_tokens) speaks Anthropic's wire format over the same router
+  - /v1/images/generations and POST /v1/audio/speech route across the providers that serve media models. 
+  - /v1/embeddings with family-based routing: failover only ever happens between providers serving the same model
+  - Automatic fallover — If the chosen provider returns a 429, 5xx, or times out, the router skips it, puts the key on a short cooldown, and retries on the next model in your fallback chain (up to 20 attempts).
+  - Admin dashboard — React + Vite UI to manage keys, reorder the fallback chain, inspect analytics, and run prompts in a playground
+  - Not yet supported
+    - n > 1 (multiple completions per request)
+    - Per-user billing / multi-tenant auth — single-user by design
+  - https://x.com/geekbb/status/2069978295320690888
+    - 这玩意有融合模式，可以让一组模型并行作答，再由评审模型综合出更优的答案。
+    - 只是 API key 要一个个添加有点麻烦，作者可能也没想到有些人有几百上千个 key
+
 - https://github.com/12britz/awesome-free-models /202606
   - A curated list of free AI models, APIs, and tools you can use without paying a cent.
 
@@ -1242,13 +1262,16 @@ modified: 2026-06-20T15:49:57.019Z
   - 可用模型：minimax-2.5（其他模型陆续上线）
 # paid-api 💰
 - tips
-  - 当购买一个商品有很多渠道时，有限选择可靠的平台，售后/质保/退款更方便
+  - 当购买一个商品有很多渠道时，优先选择可靠的平台，售后/质保/退款更方便
     - 大站的售后可能被封控，如短信/邮箱的接码可能被限流
+    - 特别在金额较大时，售后防止损失
   - 付费站和公益站都会有rpm的限制，甚至限制都很大
   - 廉价的套餐如lite-plan也可能慢/卡/不可用, 抢不到不必执着
     - 优先买容易退款的
   - 比较 主流coding-plan 和 中转/非正规套餐如cursor/devin 的价格/token额度, 灵活选择，没必要执着
     - 1亿token大概花费多少, 算起来比较通用
+  - 利用bug的包月套餐不要买, 突然修复后可能直接高倍率刷光余额
+  - 小众模型的中转站也可以考虑，比如grok
   - 中转商的价格每天都在变化, 套餐也在改变, 不要在一家花费过多
     - 很可能注册的第一天会显示低价，后面就恢复正常价格了，注意误导
     - 在5月13号，几乎所有成品号渠道都失效了，所有店铺(无论贵的还是便宜的)的源头渠道几乎相同，，，以后买便宜的就行了
@@ -1367,7 +1390,6 @@ modified: 2026-06-20T15:49:57.019Z
   - [MLYF的AI工厂的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/TAFHH1PS)
     - 质保、非质保 分开
   - [GPT成品plus的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/FEO0CLZ6)
-  - [金幺の小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/911)
   - [ParHom的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/parhom)
     - Cursor Auto｜超账单｜库存号
     - Cursor Pro Plan 20$官方套餐【已用完高级模型额度】
@@ -1590,33 +1612,6 @@ modified: 2026-06-20T15:49:57.019Z
   - 频道：https://t.me/lucky_fores
   - 1r 带rt的plus，json发货，带rt可以自行刷新at，支持cpa sub2，直接私我
 
-- [AI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/XWTVY86A)
-  - kiro
-- [AI服务站的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ikun666)
-  - 发货账号为谷歌邮箱: 账号----密码----辅助邮箱----2fa密钥
-  - kiro官网选择谷歌邮箱登录，输入账号密码登录，选择身份验证器验证，去2fa.fun网站输入2fa密钥获取6位数验证码
-- [蒲美丽のAI副食店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YXCTJAH4)
-  - 只发凭证，不发账号，自行导入使用，质保首登
-  - 反代可用 claude opus
-  - 低价kiro
-- [KiroSwitch官方直营店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Z3VSKEGC)
-  - pro
-
-- [Windsurf专卖4988的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/3FR7Y3PY)
-  - 谷歌母号, 不质保，只保拍下立马登录满配额。有效期10天左右。
-- [AI账号百货通的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/windsurf-test)
-  - Windsurf 全新 纯谷歌邮箱账号 （wf 账号、密码发货）无质保（下单请思考）
-- [YOUC的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/INJXURRY)
-  - 临期windsurf很低价
-- [claude 供应商的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/73QTX1TH)
-  - 过期日期临期，剩余时间就3-7天随机
-- [AI账号百货通 962395845的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/windsurf-test)
-  - Windsurf 谷歌别名（子号） 自行研究 无质保
-- [A8 小店 购买账号 - 链动小铺 ](https://pay.ldxp.cn/shop/16888)
-  - 顶部售后群有切号软，可导入账号一键切号查看额度等 
-- [Windsurf专卖4988的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/3FR7Y3PY)
-  - 送免魔法登录插件
-
 - [青蛙AI·低价源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/qingwaAA)
   - plus成品team的，，只能反代codex。实测平均每个15刀
   - [GanAI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ganai)
@@ -1758,10 +1753,117 @@ modified: 2026-06-20T15:49:57.019Z
 - [炒鸡变黑的AI店的小店 ](https://pay.ldxp.cn/shop/chaoji)
   - plus-无质保6
 
+## ide/vendors
+
+- tips
+  - ? 大厂的优惠活动更多
+
+- cursor内置的都是非常高级的模型claude/haiku/gpt/gpt-mini/composer/gemini/grok/glm/kimi, 所以用auto模型完成普通开发也可考虑
+  - 咸鱼上的cursor-pro废号可考虑，保证登录官网且是Pro号，可以自己修改账号密码，有效期15以上
+    - 优先考虑账密登录， 不考虑 发货格式：SessionToken/AccessToken 
+    - 👀 部分号来自速刷cursor pro, 刷完了再转卖
+    - 速刷号速刷号！非月号非月号，在1天内使用完毕
+    - 部分号是拼车收过来的号 不可能保证一定一个人用 部分账号两人共享使用。
+  - 高级模型额度已用完，只剩Auto+Composer模型额度，大概在100刀额度。 
+  - 可在账户余量界面看到剩余composer/auto的用量，来估算余量
+  - ✨ 有商家甚至推出了自动换号的月卡， 价格合适也可考虑
+    - 不考虑 不是直接给账号密码，不是Pro号，按激活时间，24小时50个号，不会一小时内50个号一下放开
+    - 不是pro，不是插件，不是直接给cursor账号，需要软件来换号
+
+- supergrok支持 grok-composer-2.5-fast, fast的价格是2.5的6倍，
+  - 所以 ¥25的supergrok 提供的composer模型 不如 ¥20的cursor pro提供的100刀auto池
+  - supergrok不能包能用到一个月, 也不稳定
+
+- [Cursor 专卖的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/cursor-pro)
+  - cursor--¥80
+    - 质保十五天！支付宝支付，正价充值
+    - 邮箱----密码----Token
+    - 当前商品是提前预制，非现场激活，有效时限 25 - 30 天左右
+- [黑客AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Loong)
+  - [词元神 - 全球AI聚合平台 ](https://ciyuanshen.top/)
+  - cursor--¥50
+    - 日抛速刷号无质保，默认一天内掉Pro订阅，token登录
+- [小小工头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/IFMZTI8P)
+  - 品类多
+
+- [AI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/XWTVY86A)
+  - kiro
+- [AI服务站的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ikun666)
+  - 发货账号为谷歌邮箱: 账号----密码----辅助邮箱----2fa密钥
+  - kiro官网选择谷歌邮箱登录，输入账号密码登录，选择身份验证器验证，去2fa.fun网站输入2fa密钥获取6位数验证码
+- [蒲美丽のAI副食店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/YXCTJAH4)
+  - 只发凭证，不发账号，自行导入使用，质保首登
+  - 反代可用 claude opus
+  - 低价kiro
+- [KiroSwitch官方直营店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Z3VSKEGC)
+  - pro
+
+- [Gemini源头供货商的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/pixelshop)
+  - gemini年卡--¥18
+- [gemini专家的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/gemini123)
+  - 反重力--¥18
+- [AKMOZ-魔卡AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/AKMOZ)
+  - gemini年卡--¥65
+- [Gemini丨Telegram的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Pro)
+  - gemini产品多
+- [Antipro（请看店铺公告）的小店 - 云猫寄售 ](https://catfk.com/shop/Antipro)
+  - Gemini PRO一年会员成品 （随机地区，不包gcp）, ¥13
+    - 仅质保首登，2fa验证码可以去  https://2fa.fun/ 获取验证码
+    - 如果你说奔着反重力来的，想便宜些去买美区pro，想省事就买反重力pro
+- [金幺の小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/911)
+  - 反重力--¥22
+- [奥特曼丨ChatGPT的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/atmgpt)
+  - 品类多
+  - 反重力--¥46
+
+- [Windsurf专卖4988的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/3FR7Y3PY)
+  - 谷歌母号, 不质保，只保拍下立马登录满配额。有效期10天左右。
+- [Pine12345的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/PY91LPJ0)
+  - devin70美刀账号
+- [AI账号百货通的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/windsurf-test)
+  - Windsurf 全新 纯谷歌邮箱账号 （wf 账号、密码发货）无质保（下单请思考）
+- [YOUC的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/INJXURRY)
+  - 临期windsurf很低价
+- [claude 供应商的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/73QTX1TH)
+  - 过期日期临期，剩余时间就3-7天随机
+- [AI账号百货通 962395845的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/windsurf-test)
+  - Windsurf 谷歌别名（子号） 自行研究 无质保
+- [A8 小店 购买账号 - 链动小铺 ](https://pay.ldxp.cn/shop/16888)
+  - 顶部售后群有切号软，可导入账号一键切号查看额度等 
+- [Windsurf专卖4988的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/3FR7Y3PY)
+  - 送免魔法登录插件
+
+- [AI万能工具箱的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/grok)
+  - grok品类多
+  - SuperGrok 独享账号 一月会员, ¥55
+  - SuperGrok 独享账号 三个月会员, ¥100
+  - SuperGrok 独享账号 一年会员 官方渠道, ¥240
+- [ai源头批发的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ATURU7MU)
+  - SuperGrok 30天, ¥35, 质保1天，质保5天45
+    - 账号模式是3天试用然后自动续费
+    - 不能包能用到一个月，小白建议拍120直充款，稳定不掉订阅
+- [云边小铺（招代理）的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/one)
+  - x premium + 赠送3/6/12个月的grok
+- [Ai2You智友社，让更多的人用上更好的AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/282D9KDL)
+  - Super Grok 稳定特殊渠道季卡独享成品号, ¥88
+- [金金Ai源头批发（招实力代理）的小店 - 云猫寄售 ](https://catfk.com/shop/jinjin)
+  - Grok Super直充月卡（30刀，质保不掉订阅版）, ¥65
+- [聊聊AI ](https://talkai.cyou/)
+  - gork
+
+- [GGgrok ](https://ggrokheavy.xyz/pricing)
+  - 旧版 [New API ](https://newapi.neokoaigc.com/pricing)
+
 ## 发卡网
 
 - [Plati. Market : digital goods marketplace ](https://plati.market/)
   - 很多俄罗斯大佬卖ai
+
+- [KnauHip-Ai — 高级 AI 工具发卡站 ](https://www.payline.pics/)
+  - 很多低价帐号如kiro/cursor都是10个起购
+
+- [聊聊AI ](https://talkai.cyou/)
+  - gork
 
 - [月亮AI ](https://aimoonai.com/)
 
@@ -1810,6 +1912,7 @@ modified: 2026-06-20T15:49:57.019Z
     - 一个主站一副站, 副站sub2api.mouubox.com,
     - 现在好像sub2api这个要绿一点
   - [秒速 5 厘米的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/UJ3XQ6VC)
+  - 新发卡网 [WogHub ](https://fk.woghub.com/)
   - plus--0.02
 
 - [mdkj  - /Sub2API ](https://mdkj.lol/dashboard), 已充值
@@ -1868,6 +1971,9 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [Qmy2AI /sub2api](https://sub2api.qmytai.com/dashboard)
   - 个人0.04x，中转站0.03x
+
+- [Global Model API Transfer Station ](https://api.mosshubs.com/pricing)
+  - cc低价
 
 - [C-API. CC /sub2api](https://c-api.cc/dashboard)
   - plus--0.05

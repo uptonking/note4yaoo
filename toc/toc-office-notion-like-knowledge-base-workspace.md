@@ -119,6 +119,10 @@ modified: 2022-06-03T21:34:54.893Z
   - It is an open-source alternative to Confluence and Notion.
   - Diagrams (Draw.io, Excalidraw and Mermaid)
   - Permissions management
+  - [Docmost - greedy pricing and hiding source code : r/selfhosted _202606](https://www.reddit.com/r/selfhosted/comments/1uew3ev/docmost_greedy_pricing_and_hiding_source_code/)
+    - Docmost started its journey on here as a small web-based self-hostable knowledgebase and documentation tool. 
+    - However, as we see too often, once a developer gets a "product" past the initial stages of acceptance and adoption, they start to get greedy. In 2025 they implemented multi-factor authentication, a security feature relevant for everyone. But they paywalled the feature behind their enterprise edition
+    - They also went astray from their open source roots and have hidden the enterprise code. It is no longer available in their GitHub. But they still use GitHub and receive FREE PRs from unpaid contributors.
   - [Show HN: I am building an open-source Confluence and Notion alternative | Hacker News _202406](https://news.ycombinator.com/item?id=40832146)
     - We are still using Confluence on-prem (behind VPN). To switch, we need the following: 
       - An export function (PDFs). 

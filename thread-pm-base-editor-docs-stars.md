@@ -16,6 +16,19 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Introducing Sundial!! A brand new text editor built from the ground up for working with agents.
+- https://x.com/belindmo/status/2069840897676812669
+  - What I like most about Sundial is the review panel. We're used to text editors with a basic history tab, but given the amount of work we're getting done with agents, we need better tracking and attribution across multiple threads.
+  - Comments are also immensely helpful since they are easier to use than chats for targeted changes.
+  - In Sundial each change is linked to the chat turn that produced it, so agents can build on top of each other's work while you keep the final say on what stays and what goes.
+
+- the honest answer is that most text editors aren't designed for working with code that's generating code. sundial's real innovation is in the feedback loop, letting you iterate on the meta-programming itself.
+  - and being able to track exactly what happened so while the agents self-improve you know what they did
+
 - ## [【开源】AI小说网站 - LINUX DO _202606](https://linux.do/t/topic/2288714)
   - 拿gpt5.5 vide coding了一个AI写作网站，搓了四五天吧
   - 网站还是有很多功能是按了没反应的。我想法还是挺多的，比如短剧、图片、角色扮演都加进去，这样以后只需要在一个网站写好一部小说，自己做短剧或者拿自己小说去角色扮演或者拿去图片生成漫画

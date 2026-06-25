@@ -1012,6 +1012,33 @@ It amazes me how people default to LLM calls when you can do it in a simple, fre
   - I agree, the contributors are not maintainers mostly
 
 - i get it. the problem isnt ai its people submitting code they dont understand. open source worked when contributors actually learned the codebase. now its just paste the error into claude and submit whatever it spits out
+# discuss-ai-slop-code
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [如何维护AI代码 越来越屎山，有啥skill推荐嘛 - LINUX DO _202606](https://linux.do/t/topic/2465847)
+- 就算是古法，不也得进行不间断的重构和防腐吗？一样的。需求中优化就好了。
+
+- 推荐使用sentrux+repowise, 前者可以实时评估代码质量, 后者可以让模型感知整个仓库的结构。 持续开发也不会让代码质量迅速下降
+  - 我个人不是很建议用skill去解决整体代码腐化的问题, 因为现在llm的痛点, 还是上下文不够, 它不可能把整个项目全部读一遍放在上下文里, skill顶多就是让它在开发的时候发现腐化代码当场重构一下以及规范化开发, 这并不足以让模型理解整个项目的架构设计, 还是需要引入mcp或者其他方案让它感知整个项目架构才能做到开发树不腐化
+
+- 各种语言和各种框架都有代码静态检查工具，每次迭代前都把静态检查和单元测试全都过一遍，没任何错误或者警告就行了，基本上不会屎山到哪去，至少不会有死代码。
+
+- ## i found a really good way to measure how much a codebase is suffering from vibe coding
+- https://x.com/thdxr/status/2069927201638682976
+  - rg -o 'isRecord' . | wc -l
+- Count the number of null guards . Sure fire way to detect slop ware. Rational people usually have a  function or 2 for it. Ai will null guard every single function to death
+
+- “Fallback” is also a great slop indicator
 # discuss
 - ## 
 

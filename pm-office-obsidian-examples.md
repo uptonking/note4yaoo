@@ -163,6 +163,13 @@ modified: 2026-04-07T00:47:33.626Z
   - https://github.com/seventhxiv/obsidian-board-view
     - Interactive board view for obsidian bases, use as Kanban or Gallery, with grouping for rows and columns.
 
+- https://github.com/Trietment/obsidian-kanban /MIT/202606/js
+  - A Kanban board for Obsidian that collects tasks from every note in your vault. Tasks are plain markdown checkboxes with optional metadata; the plugin shows them as draggable cards in columns. Works on desktop and mobile.
+  - [New plugin - kanban 2.0 : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1uekxse/new_plugin_kanban_20/)
+  - Aren't we about to get a native implementation of kanban in Bases?
+    - Isn’t that only relevant for linked notes? For some of us, we have a mix between plain text and linked notes within our kanban setup, so I’m unsure if bases will fill the niche I’m looking for (unless I’m mistaken)
+  - the outlook sync is something i didn't know i needed until just now
+
 - https://github.com/obsidian-community/obsidian-kanban /GPL/202603/ts
   - Create markdown-backed Kanban boards in Obsidian.
   - https://github.com/ewerx/obsidian-bases-kanban
@@ -816,6 +823,8 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/k-lar/dynomark /MIT/202505/go/单文件/inactive
   - Dynomark strives to be a markdown query language engine, similar to obsidian's Dataview plugin.
   - This program can be used with editors like neovim, vscode and emacs to provide a similar experience to Dataview (but very barebones for now).
+  - https://github.com/k-lar/vscode-dynomark
+    - This extension is a wrapper around that engine, and provides a simple way to query your markdown files.
 
 - https://github.com/eristoddle/mdquery /MIT/202509/python/ts/inactive
   - Universal markdown querying tool with SQL-like syntax for searching and analyzing markdown files across different note-taking systems and static site generators.
