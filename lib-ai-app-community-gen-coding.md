@@ -1012,7 +1012,7 @@ It amazes me how people default to LLM calls when you can do it in a simple, fre
   - I agree, the contributors are not maintainers mostly
 
 - i get it. the problem isnt ai its people submitting code they dont understand. open source worked when contributors actually learned the codebase. now its just paste the error into claude and submit whatever it spits out
-# discuss-ai-slop-code
+# discuss-ai-coding-lts
 - ## 
 
 - ## 
@@ -1023,7 +1023,13 @@ It amazes me how people default to LLM calls when you can do it in a simple, fre
 
 - ## 
 
-- ## 
+- ## [ai写的代码越来越多，什么样代码算是健康？ - LINUX DO _202606](https://linux.do/t/topic/2481660)
+  - 忽然发现代码量已经上升到50万行这样量级，心里很忐忑，老实说这一天是可以预料，因为我其实已经不在去审计ai代码，所以代码膨胀是可以预期，但是50万还是太快，尤其是现在1flowbase其实也仅仅是开发三分之一而已
+  - 定期跑ci和cd做质量门禁
+
+- 我之前发过类似的贴子，大概是你改需求之后他为了不打破之前的测试原代码就不删除，解法是agent.md中写明白不要兼容旧测试
+
+- 实际AI代码算健康就一个条件：出问题自己知道哪里找问题、要改代码自己能准确定位，不是问AI哪里有问题、要改哪里。
 
 - ## [如何维护AI代码 越来越屎山，有啥skill推荐嘛 - LINUX DO _202606](https://linux.do/t/topic/2465847)
 - 就算是古法，不也得进行不间断的重构和防腐吗？一样的。需求中优化就好了。

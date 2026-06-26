@@ -49,6 +49,10 @@ modified: 2026-06-20T15:49:57.019Z
 - https://github.com/12britz/awesome-free-models /202606
   - A curated list of free AI models, APIs, and tools you can use without paying a cent.
 
+- https://github.com/cheahjs/free-llm-api-resources
+  - services that provide free access or credits towards API-based LLM usage.
+  - https://github.com/ShaikhWarsi/free-ai-tools
+
 - https://github.com/vava-nessa/free-coding-models /202606/js
   - https://freecodingmodels.vercel.app/
   - Find, benchmark and install in CLI 170+ FREE coding LLM models across 15+ providers in real time
@@ -155,10 +159,6 @@ modified: 2026-06-20T15:49:57.019Z
   - 部分公益站和token-hub支持用LDC换低倍率的模型，可在ldstore用商品换LDC，再用LDC来换低倍率套餐
   - 注意不同来源的号池不要混用， 否则会出现问题 Encrypted content could not be decrypted or parsed
   - 公益站多帐号的兑换码一般未与用户绑定，可以兑换到其他用户，甚至延迟兑换，这样可以将兑换码的额度接力使用而不触发限流
-
-- resources
-  - https://github.com/cheahjs/free-llm-api-resources
-  - https://github.com/ShaikhWarsi/free-ai-tools
 
 - [最新跳蚤市场话题 - LINUX DO ](https://linux.do/c/trade/10)
   - [最新积分乐园话题 - LINUX DO ](https://linux.do/c/credit/106)
@@ -1261,6 +1261,12 @@ modified: 2026-06-20T15:49:57.019Z
   - 刚刚发现暂时只可用oai协议
   - 可用模型：minimax-2.5（其他模型陆续上线）
 # paid-api 💰
+- ai-plan2606
+  - codex - gateway -- ¥50
+  - claude - opencode + antigravity  -- ¥40
+  - cursor - composer/auto  -- ¥30
+  - kiro - claude  -- ¥50
+
 - tips
   - 当购买一个商品有很多渠道时，优先选择可靠的平台，售后/质保/退款更方便
     - 大站的售后可能被封控，如短信/邮箱的接码可能被限流
@@ -1542,12 +1548,6 @@ modified: 2026-06-20T15:49:57.019Z
 - [旋律plus的小店 - 造梦企发Pro，造梦寄售平台 ](https://fh10.zmfaka.cn/shop/XGLVB89E)
   - 低价plus
 
-- [Gemini Pixel 设备认证 ](https://autopixel.qzz.io/blackcat)
-  - 品类多
-- [Lyla-精灵小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/lyla)
-  - kiro周卡-18
-  - cursot周卡-19
-
 - [Tora-雪诺AI源头分销小铺的小店 - 链动小铺](https://pay.ldxp.cn/shop/Tora)
   - 通知 https://t.me/Tora_AiShop
   - 提供正规充值 gpt/claude 的方式
@@ -1757,6 +1757,7 @@ modified: 2026-06-20T15:49:57.019Z
 
 - tips
   - ? 大厂的优惠活动更多
+  - 二手号: 速刷号掉号快, 不会多人用, 质保掉号还是几天, 优先账密而不是token登录
 
 - cursor内置的都是非常高级的模型claude/haiku/gpt/gpt-mini/composer/gemini/grok/glm/kimi, 所以用auto模型完成普通开发也可考虑
   - 咸鱼上的cursor-pro废号可考虑，保证登录官网且是Pro号，可以自己修改账号密码，有效期15以上
@@ -1769,6 +1770,18 @@ modified: 2026-06-20T15:49:57.019Z
   - ✨ 有商家甚至推出了自动换号的月卡， 价格合适也可考虑
     - 不考虑 不是直接给账号密码，不是Pro号，按激活时间，24小时50个号，不会一小时内50个号一下放开
     - 不是pro，不是插件，不是直接给cursor账号，需要软件来换号
+  - [cursor订阅原来不支持本地provider吗 - LINUX DO _202606](https://linux.do/t/topic/2476713/1)
+    - 要对公网开放。我的方案是服务器部署Sub2API
+    - 其实也不算特别奇怪() 毕竟允许自定义 provider 就相当于允许查看完整的 agent harness 和提示词工程了，可以分析出很多东西来
+
+```
+你好, 我想买个划算的用完了高级模型的 cursor pro。
+1. 请问你这个是不是用漏洞的速刷号，据说速刷号掉号快, 发给我的是正常账密，还是token？
+2. 买好后是我一个人用吗，还是多人用, 我不想买共享的
+3. 下个月几号到期, auto模型用了多少了， 用的不多我能接受
+4. 我不会反代，就正常用auto模型， 如果掉号会质保换号对吗
+提前问清楚了，免得售后麻烦，大家都方便 🌹
+```
 
 - supergrok支持 grok-composer-2.5-fast, fast的价格是2.5的6倍，
   - 所以 ¥25的supergrok 提供的composer模型 不如 ¥20的cursor pro提供的100刀auto池
@@ -1784,6 +1797,13 @@ modified: 2026-06-20T15:49:57.019Z
   - cursor--¥50
     - 日抛速刷号无质保，默认一天内掉Pro订阅，token登录
 - [小小工头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/IFMZTI8P)
+  - 品类多
+- [Lyla-精灵小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/lyla)
+  - cursor 天卡/周卡/月卡 - 5/19/50
+    - Cursor月卡=【激活后30天内有效+75个账号（共计15000积分，每次换号消耗200积分）Auto模型+无感秒换号+两台设备+支持win、mac、linux系统】
+  - kiro 天卡/周卡/月卡 - 6/19/50
+    - 插件只支持win10以上电脑，支持mac,而且支持ssh
+- [Gemini Pixel 设备认证 ](https://autopixel.qzz.io/blackcat)
   - 品类多
 
 - [AI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/XWTVY86A)

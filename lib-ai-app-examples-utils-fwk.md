@@ -706,6 +706,9 @@ modified: 2025-02-21T18:20:42.624Z
   - https://www.agentfs.ai/
   - AgentFS is a filesystem explicitly designed for AI agents. Just as traditional filesystems provide file and directory abstractions for applications, AgentFS provides the storage abstractions that AI agents need
   - AgentFS Specification - SQLite-based agent filesystem specification.
+  - Mount AgentFS on host filesystem with FUSE on Linux and NFS on macOS.
+  - [Better windows support with hyperlight? _202601](https://github.com/tursodatabase/agentfs/discussions/242)
+    - 似乎无计划
   - [pg-fs: Postgres backed filesystem for AI Agents : r/VercelAISDK](https://www.reddit.com/r/VercelAISDK/comments/1qzbfcv/pgfs_postgres_backed_filesystem_for_ai_agents/)
   - https://github.com/oldshensheep/sqlitefs /MIT/202604/rust
     - sqlitefs is an experimental SQLite-backed FUSE filesystem with snapshots, chunk-level deduplication, and configurable compression.

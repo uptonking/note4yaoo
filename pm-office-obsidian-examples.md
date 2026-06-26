@@ -75,15 +75,21 @@ modified: 2026-04-07T00:47:33.626Z
   - https://github.com/obsidianmd/obsidian-releases
     - Obsidian is not open source software and this repo DOES NOT contain the source code of Obsidian. 
     - However, if you wish to contribute to Obsidian, you can easily do so with our extensive plugin system.
-  - https://github.com/blacksmithgu/datacore /2.2kStar/MIT/202606/ts
-    - https://blacksmithgu.github.io/datacore/
-    - Datacore is a work-in-progress re-imagining of Dataview with a focus on 2-10x better query and rendering performance, as well as fully interactible views.
-    - Datacore is fundamentally the same thing as dataview - an index over Markdown files that supports live-updating views and metadata. 
-    - However, Datacore focuses on substantial index changes for performance, as well as a new sleek UI which completely replaces traditional Dataview queries. 
-    - Datacore supports all query operations that Dataview does, with some extra functionality.
-    - WYSIWYG Views: Datacore queries now use a responsive table view and can be manipulated with a table editor much more akin to what you would see in places like Notion and Airtable.
-    - Live Editing: Values inside of table views can now be edited; task views include more nuanced rendering of metadata like due date and more operations for manipulating tasks directly.
-    - Live Editing: Values inside of table views can now be edited; task views include more nuanced rendering of metadata like due date and more operations for manipulating tasks directly.
+  - https://github.com/dsebastien/obsidian-dataview-serializer /MIT/202606/ts
+    - https://dsebastien.github.io/obsidian-dataview-serializer/
+    - plugin that gives you the power of Dataview, but generates Markdown, making it compatible with Obsidian Publish, and making the links appear on the Graph.
+    - Thanks to this, the output of your queries is saved in the notes, and the links actually appear on the Graph
+    - The Dataview plugin MUST be installed for this plugin to function correctly.
+
+- https://github.com/blacksmithgu/datacore /2.2kStar/MIT/202606/ts
+  - https://blacksmithgu.github.io/datacore/
+  - Datacore is a work-in-progress re-imagining of Dataview with a focus on 2-10x better query and rendering performance, as well as fully interactible views.
+  - Datacore is fundamentally the same thing as dataview - an index over Markdown files that supports live-updating views and metadata. 
+  - However, Datacore focuses on substantial index changes for performance, as well as a new sleek UI which completely replaces traditional Dataview queries. 
+  - Datacore supports all query operations that Dataview does, with some extra functionality.
+  - WYSIWYG Views: Datacore queries now use a responsive table view and can be manipulated with a table editor much more akin to what you would see in places like Notion and Airtable.
+  - Live Editing: Values inside of table views can now be edited; task views include more nuanced rendering of metadata like due date and more operations for manipulating tasks directly.
+  - Live Editing: Values inside of table views can now be edited; task views include more nuanced rendering of metadata like due date and more operations for manipulating tasks directly.
   - https://github.com/alas-poor-ophelia/windrose-md /MIT/202605/ts
     - a simple TTRPG-focused mapping tool for Obsidian, built on Datacore. It started as something like graph paper in Obsidian and then... grew? Supports both traditional grid based maps as well as hex maps
     - Windrose supports both grid (square) maps and hex maps — including radial hex grids, nested sub-maps, and definable regions. 
@@ -364,6 +370,11 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/dsebastien/obsidian-transcriber /MIT/202604/ts
   - An Obsidian plugin that transcribes images to Markdown using local Ollama vision models.
+
+- https://github.com/yiiwang118/obsidian-glossa
+  - [Glossa：Obsidian的AI agent侧边栏插件 - LINUX DO _202606](https://linux.do/t/topic/2482587)
+  - 项目拥有一般ai侧边栏的所有功能，支持api调用模型，也支持调用本地的codex，claude code的能力来达到效果(还不够稳定)，推荐API的形式。
+  - 主要的长处在于阅读操作文档，包括obsidian的md文档以及pdf等各种形式的文档，适配划词选中等等。
 # feat-ocr/rag
 - https://github.com/rootiest/obsidian-ai-image-ocr /MIT/202509/ts/inactive
   - Obsidian plugin for AI-powered text extraction from images
@@ -546,6 +557,14 @@ modified: 2026-04-07T00:47:33.626Z
   - Three entrypoints — a VS Code extension, a Claude Code plugin, and a CLI — built on a shared core engine.
   - allowed and blocked restrict general vault content
     - blocked is evaluated first (deny wins). When a path matches both allowed and blocked, it is blocked. 
+
+- https://github.com/Signynt/virtual-content /MIT/202606/ts
+  - Display markdown text (including dataview queries or Bases) at the bottom, top or in the sidebar for all notes which match a specified rule, without modifying them.
+  - Set rules to add markdown text to files based on rules. This text gets rendered normally, including dataview blocks or Obsidian Bases. Your notes don't get modified or changed, the given markdown text is simply rendered "virtually". 
+    - define rules using folderes, tags and properties
+    - Lets you select wether the "virtual content" gets added as a footer (end of file), a header (below properties) or in the sidebar
+  - useful if you have many files with the same dataview block. Instead of pasting the dataview codeblock into every note, you can simply add it with this plugin. 
+  - Works with Dataview, Datacore and native Obisidan Bases
 
 - https://github.com/ljcoder2015/obsidian-sheet-plus /apache2/202606/ts
   - https://docs.ljcoder.com/

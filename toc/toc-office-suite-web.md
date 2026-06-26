@@ -68,6 +68,22 @@ modified: 2023-03-09T13:47:07.317Z
   - Euro-Office is based on the ONLYOFFICE Open Source, an AGPL codebase. This code base is being extensively reviewed and cleaned up, with the goal of making it easy to build and contribute to. 
   - Why did we resort to a fork, rather than collaborate? Of course, forking should be a last resort. Unfortunately, open collaboration with ONLYOFFICE was not possible
 
+- https://github.com/flyfish-dev/file-viewer /319Star/apache2/202606/ts
+  - https://file-viewer.app/
+  - https://demo.file-viewer.app/
+  - 面向企业后台、内网和私有化系统的纯前端文件预览组件。
+  - 无需服务端转码，在浏览器端预览 Office、PDF/OFD、CAD、压缩包、邮件、图片、音视频、代码等常见业务附件。支持 Vue、React、Svelte、jQuery 和 Web Components。
+  - File Viewer 是面向业务系统的浏览器原生文件预览组件。它的核心场景是企业后台、OA、知识库、工单系统、附件中心、工程资料库和私有化交付项目中的附件预览。
+  - 无需后端转码服务，也不要求把私有文件交给云端转换。一个组件、一套 API，覆盖 Office、PDF、OFD、Typst、CAD、XMind、压缩包、邮件、绘图、音视频、代码、PSD、字体和结构化数据。当前内置 206+ 扩展名映射和 24 条预览链路。
+  - 覆盖广。 206+ 扩展名，24 条预览链路，覆盖常见办公、工程、设计、数据和代码附件。
+  - 纯前端。 浏览器内解析和渲染，支持离线、内网、Docker、私有 CDN 和严格资源自托管。
+  - 按需加载。 PDF、Office、CAD、Typst、压缩包、图纸、PSD、Mermaid 等重型能力只在命中格式时加载。
+  - 操作完整。 搜索、高亮、缩放、打印、导出 HTML、下载、水印、主题、生命周期钩子和按钮前置校验都走统一 API。
+  - [【开源推广】我做了一个纯前端 File Viewer 组件，想请大家帮忙测测真实文件的兼容性 - LINUX DO _202606](https://linux.do/t/topic/2473933)
+    - 服务端转码其实是最常见的路线，也有很多成熟方案，比如kkfileview。但在一些内网、私有化、离线部署场景里，服务端转码会带来不少额外的负担，比如：转换服务的部署和维护, 字体、编码和格式兼容
+    - File Viewer 目前就是围绕这个方向做的：纯前端、TypeScript、尽量不依赖服务端转码；比较重的能力通过 Worker / WASM / renderer 按需加载；不同格式拆成独立模块，业务侧可以根据需要选择接入。
+    - 项目现在没有把所有能力都塞进一个大包里，而是拆成了 core、renderer、preset 和不同前端框架组件。
+
 - https://github.com/ranuts/document /1.6kStar/AGPL/202512/js
   - https://ranuts.github.io/document/
   - 基于 OnlyOffice 的本地网页文档编辑器，让您直接在浏览器中编辑文档，无需服务器端处理

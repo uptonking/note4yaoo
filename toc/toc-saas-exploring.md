@@ -95,3 +95,8 @@ modified: 2021-05-14T14:30:22.685Z
 - https://github.com/FavorPan/ai-daily-pulse /MIT/202606/python/ts
   - https://ai-daily-pulse.top/
   - 每日自动聚合 44 RSS 源，LLM 智能评分去重，输出 Obsidian 格式中文日报。聚焦 AI 赚钱案例、电商、工具流、新模型、融资动态。
+
+- https://github.com/Done-0/hotdaily-skill 
+  - https://hotdaily.top/
+  - 让 AI Agent 直接读取 HotDaily 的科技与创业精选日报和趋势分析。
+    - https://api.hotdaily.top/

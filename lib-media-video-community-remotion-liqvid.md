@@ -36,7 +36,11 @@ modified: 2024-06-21T09:53:44.956Z
 
 - ## 
 
-- ## 
+- ## [各位佬友 失业被裁的我基于Hyperframes开发了一款一句话就可以生成视频的web应用 可以评价一下吗 - LINUX DO _202606](https://linux.do/t/topic/2479893/12)
+  - 后续的方向大概是弱化PPT风格 比如让AI基于素材生成/自动截取一些插图 放进视频中
+  - 暂时还是PPT视频 后面会向真实视频的方向靠
+
+- ppt 演示动画特别容易限流，看看能不能生成线稿动画
 
 - ## Codex + HyperFrame is eating vedio editors
 - https://x.com/Saccc_c/status/2051145377865204222

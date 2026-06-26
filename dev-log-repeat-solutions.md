@@ -107,8 +107,8 @@ modified: 2021-07-20T13:50:23.433Z
     - pros: open and portable, agent-memory
     - cons: not scale well, conflicts, large-file-read/write
   - 📌 db-first
-    - usecases: RAG, git, joplin, siyuan, 多维表格/nocodb, logseq
-    - pros: advanced-query, collab/sync, easier history, client/server-arch, auth, validate, graph-relations
+    - usecases: RAG, git, joplin, siyuan, 多维表格/nocodb, logseq, wiki.js
+    - pros: advanced-query, collab/sync, version-history, client/server-arch, auth, validate, graph-relations, 方便存储加密信息(md文本难存放)
     - cons: complex-infra
   - 📌 hybrid-file-db
     - git

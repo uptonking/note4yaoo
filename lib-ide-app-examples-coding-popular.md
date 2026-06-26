@@ -905,9 +905,10 @@ modified: 2025-12-11T18:10:23.710Z
 
 - https://github.com/itayinbarr/little-coder /1.5kStar/apache2/202606/ts
   - https://itayinbarr.github.io/little-coder/
-  - A coding agent tuned for small local models, built on top of pi.
+  - A coding agent tuned for small local models, built on top of `pi`.
   - pi is the minimal substrate — agent loop, multi-provider API, TUI, session tree, compaction, extension model. Four built-in tools (read / write / edit / bash) and a ~1000-token system prompt.
   - little-coder is pi + 20 extensions + 30 skill markdown files + a Python benchmark harness. 
+    - It doesn't fork pi or shadow its CLI — pi is a plain dependency in package.json, and everything little-coder-specific lives under .pi/extensions/, skills/, and benchmarks/. 
 
 - https://github.com/0xku/kon /323Star/MIT/202606/python
   - Kon is a minimal coding agent focused on a tiny core prompt, a small built-in toolset, and project-specific context layered on top only when you want it. 
@@ -1306,10 +1307,17 @@ modified: 2025-12-11T18:10:23.710Z
   - Minimal: Just some 100 lines of python for the agent class (and a bit more for the environment, model, and run script) — no fancy dependencies!
   - Compatible: Supports all models via litellm, openrouter, portkey, and more. Support for /completion and /response endpoints, interleaved thinking etc.
 
-- https://github.com/Doorman11991/smallcode /MIT/202605/js
+- https://github.com/Doorman11991/smallcode /1.9kStar/MIT/202605/js
   - AI coding agent optimized for small LLMs (8B-35B parameters)
   - 87% benchmark with 4B-active model.
   - Recommended model size: 8B-35B parameters. Smaller models (≤4B) struggle with multi-step tool use and lose context across turns. Larger models (>35B) don't need SmallCode's adaptations and are better served by tools designed for frontier models.
+
+- https://github.com/dirac-run/dirac /1.3kStar/apache2/202606/ts
+  - https://dirac.run/
+  - Coding Agent singularly focused efficiency and context curation. 
+    - Reduces API costs by 50-80% vs other agent AND improves the code quality at the same time. 
+    - Uses Hash Anchored edits, massively parallel operations, AST manipulation and many many other optimizations.
+  - Our goal: Optimize for bang-for-the-buck on tooling with bare minimum prompting instead of going blindly minimalistic.
 
 - https://github.com/Aider-AI/aider /37.1kStar/apache2/202508/python
   - https://aider.chat/

@@ -338,6 +338,73 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0626
+
+- 🤔 there are many cms or documentation-centric website that are built on top of database like sqlite/postgresql/... but it is not intuitive to view or manage the content in db as common files. is there any open source solutions that can map/derive the content from db to files to make it easy to interact with contents? deep research related solutions/ideas, if you found any open source solutions or inspiration projects, provide overview/github-repo/website for each.
+  - To solve the friction of managing database-backed content, developers have created ingenious solutions that bridge the gap between relational databases (like PostgreSQL/SQLite) and the hierarchical POSIX filesystem.
+  - These solutions generally fall into two categories: Live Virtual Filesystems (FUSE) that mount the database directly to your OS, and Bi-directional Sync Tools that export database rows into Markdown files and sync them back.
+- 📌 FUSE virtual filesystem bridges
+  - 此方法不支持windows
+- Filesystem in Userspace (FUSE) allows developers to write custom file systems. These tools intercept standard file commands (like cat, ls, or saving a file in VS Code) and translate them into SELECT, INSERT, and UPDATE SQL queries in real-time.
+  - FUSE-based solutions (e.g. TigerFS, libsqlfs) allow live editing but require Linux/macOS support and careful synchronization
+- AgentFS (by Turso): a standard SQLite schema and FUSE driver that represents a filesystem. While initially built to give AI agents an isolated sandbox to read/write files that are safely stored in a single SQLite database, it serves beautifully as a way to manage SQLite content as standard files. It supports "Copy-on-Write overlays", meaning you can branch your content like Git
+- TigerFS (by Timescale): TigerFS is a groundbreaking FUSE filesystem explicitly backed by PostgreSQL. It allows you to mount a Postgres database to a directory (e.g., /mnt/db). Tables become directories, rows become nested folders based on their Primary Keys, and columns become files. You can literally grep your database, or edit a text column using Vim, and it translates to atomic, fully reversible PostgreSQL transactions
+  - it provides a mount on Linux/macOS where each DB row is a file (supporting edits, search, undo).
+- wddbfs (SQLite to WebDAV): wddbfs takes a clever cross-platform approach: it mounts a SQLite database as a WebDAV filesystem. Once mounted, you can open it in standard file managers (like macOS Finder or Windows Explorer) or text editors. Tables appear as files (like .csv or .jsonl), and it allows seamless browsing of the database contents natively in the OS.
+- PostgreSQLFS / PGFS: community implementations of Postgres-to-FUSE mappers. 
+
+- 📌 Hybrid CMS: DB + Git 2way sync
+- If you don't want a live mount, but rather want to extract your database into physical Markdown files, edit them locally, and push the changes back, these tools automate the synchronization.
+- Hybrid DB+Git is the sweet spot for existing CMS systems. 
+  - Wiki.js has a native Git storage module where all content in the DB is continuously output to files in a local repository, and changes committed to the repo are synced back — bidirectional, configurable sync interval. with a native bidirectional Git storage module, When enabled, every wiki page is continuously synced to a Git repository as a Markdown file. You can edit the Markdown files directly, push to the remote, and Wiki.js pulls the changes on the next sync interval. The DB handles users, sessions, and search indexes; Git handles the actual page content.
+  - The https://github.com/bcc-code/directus-schema-sync extension automatically exports and imports both the schema and data between a Directus instance and JSON files in a Git repository, with auto-import on startup useful for CI/CD environments. 
+- Ghost (the Node.js CMS, https://ghost.org) stores content in a SQLite/MySQL database. While no single canonical OSS plugin exists for bidirectional sync, the pattern of Ghost ↔ Markdown Git is well-documented:
+  - ghost-to-md exports Ghost's export JSON to Markdown files
+  - MD2Ghost publishes a directory of Markdown files to Ghost via the Admin API
+- Simon Willison's Datasette project is built on a philosophy that SQLite databases are "files that behave like APIs"—portable, diffable, shareable. 
+  - sqlite-diffable dumps every SQLite table to a directory of newline-delimited JSON files designed to be git-diffable — Simon uses it to keep a public daily backup of his blog's PostgreSQL database where every content edit shows up as a readable git diff. 
+  - The pipeline is: PostgreSQL → db-to-sqlite → sqlite-diffable → files in Git. 
+- https://github.com/pausan/syncdbdocs /GPL/202107/go/inactive
+  - a tool to help you keep your database documented with a single source of truth
+  - This project aims to provide a simple command to generate a textual representation (in txt, markdown or dbml) of the database structure and be able to comment on it and keep the documentation updated easily.
+  - The original intend was to be able to sync back the documentation onto the database, and while still possible and probably not hard to do, I've decided that synching comments back to the database is not worth it due to the different constraints of some databases of limiting comment length and/or comment availability altogether.
+- flowcommerce/readme-sync, which syncs local Markdown files with frontmatter up to a documentation database
+  - Inspiration: You can build a simple Node.js/Python script that runs on a Git hook: it parses your .md files (extracting title, tags, and content from YAML frontmatter) and performs an UPSERT on your Postgres/SQLite database.
+
+- 📌 Files → DB indexing layer
+- these solutions store content natively as Markdown files (backed by Git) and generate a local database/index for fast querying.
+- MarkdownDB transforms Markdown content into a queryable SQLite database — files are the source of truth, the SQLite is a derived read index — exposing frontmatter, tags, links, and tasks as SQL-queryable fields. 
+- Velite (the actively maintained successor to Contentlayer) turns Markdown/MDX/YAML/JSON files into type-safe data using Zod schema validation, outputting typed JSON at build time.
+- Contentlayer: The original "files as typed data layer" SDK for Next.js. Transformed Markdown/MDX files into type-safe JSON via a contentlayer.config.ts schema. 
+- PoloDB / GroundDB concepts: Experimental architectures where the database engine itself uses Markdown files (with YAML frontmatter) as its raw storage medium, exposing a SQL layer on top for querying
+- TinaCMS: It treats Git as the database, but compiles a local SQLite/GraphQL index of your files so developers can query the Markdown exactly like a relational database.
+  - internal "data layer" backed by SQLite that makes the Markdown files queryable via GraphQL
+
+- 📌 File-native CMS (no database)
+- These systems eliminate the database entirely. Every piece of content lives as a Markdown, YAML, or JSON file in a directory 
+- Keystatic: connects to your GitHub repository and reads/writes strictly to Markdown/JSON files, completely eliminating the need for a relational database for content storage.
+  - Keystatic is a TypeScript API, Markdown and YAML/JSON-based CMS with no database — schema defined in code, content committed directly to Git. 
+  - Schema is defined in a keystatic.config.ts file; content is stored as Markdown, YAML, or JSON files directly in the repository. 
+  - Ships with a built-in visual admin UI that operates entirely against the local filesystem (or GitHub API in "GitHub mode"). No server required.
+- Decap CMS (formerly Netlify CMS)
+  - A single-page React app that serves as a visual editor for Markdown files in a Git repository. 
+  - No backend server required beyond the Git provider's API. Content changes become Git commits. 
+  - Supports GitHub, GitLab, Bitbucket, and Gitea as backends.
+- Grav: A flat-file PHP CMS—no database at all. Content is a folder of Markdown files + YAML. Pages, config, themes, and plugins all live as files. Fully Git-versionable. 2025 saw a major 2.0 release with a new SvelteKit admin UI and REST API.
+
+- Version Control Systems (Fossil, Git as DB) – SQLite’s own version control system Fossil is an example of a content-addressed, versioned store (though designed for code/data under SQLite). One could also use Git smudge/clean filters or custom diff drivers to store a SQL dump in Git. These are patterns (e.g. storing schema+DML as SQL text), but there is no widespread OSS tool that fully syncs a live DB with Git.
+
+- Many headless CMS (Strapi, Directus, Drupal JSON API, etc.) use SQL databases to store content. Some provide export or “push to Git” capabilities via plugins. For example, Strapi (Postgres/MySQL) has community tools to generate Markdown (e.g. jekyll-strapi plugin) or dump JSON for static sites. These are typically framework-specific and outside pure DB-to-file scope, but are in the same spirit.
+
+- The Shift Toward Flat-File Architectures
+  - Because databases introduce hosting, scaling, and deployment dependencies, many engineering teams are moving toward flat-file content architectures. 
+  - For example, the engineering team at Cursor migrated their documentation, product changelogs, and blogs from a database-backed API CMS to raw Markdown files inside their codebase. This migration reduced build times, eliminated database connection failures, and allowed the team to use standard development tools (such as grep, git log, and git blame) directly against their content.
+
+- 
+- 
+- 
+- 
+
 ## 0623
 
 - apple introduces container on latest mac - https://github.com/apple/container. i want to download and install it on my mac, on the release page, which one should i download: container-1.0.0-installer-signed.pkg or container-dSYM.zip ?

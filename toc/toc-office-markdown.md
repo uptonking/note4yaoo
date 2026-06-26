@@ -149,9 +149,15 @@ modified: 2021-01-04T17:26:25.032Z
     - MDX (Markdown) for project pages
     - MarkdownDB to index markdown files
 
-- https://github.com/lukesrw/md-database /202109/ts
-  - Middleware for producing SQL queries from Markdown
-  - Currently only SQLite is fully supported, with support for MySQL being worked on.
+- https://github.com/timlrx/contentlayer2 /MIT/202505/ts/inactive
+  - https://contentlayer.dev/
+  - Contentlayer turns your content into data - making it super easy to import MD(X) and CMS content in your app
+  - Live reload on content changes
+  - Fast and incremental builds
+  - Simple but powerful schema DSL to design your content model (validates your content and generates types)
+  - Supported Content Sources: Local content (Markdown, MDX, JSON, YAML), Contentful, (later: notion, sanity)
+  - Supported env: nextjs, (later: astro, sveltekit)
+  - a maintained Contentlayer fork  of https://github.com/contentlayerdev/contentlayer
 
 - https://github.com/sdorra/content-collections /1.2kStar/MIT/202606/ts
   - https://content-collections.dev/
@@ -159,9 +165,35 @@ modified: 2021-01-04T17:26:25.032Z
   - Type-safe: Your content is parsed and validated during the build process, guaranteeing accuracy and currency. Content Collections offers a type-safe API to access your content.
   - Transformation: Content Collections allows you to transform your content before it enters your app. You can use it to modify your content, join two collections or even fetch data from a server.
 
-- https://github.com/zce/velite /MIT/202606/ts
+- https://github.com/zce/velite /787Star/MIT/202606/ts
   - http://velite.js.org/
   - Turns Markdown / MDX, YAML, JSON, or others into app's data layer with Zod schema.
+
+- https://github.com/mbailey/sqldown /MIT/202511/python/inactive
+  - Bidirectional markdown-sqlite converter - query your docs with SQL, export results as markdown.
+  - Bidirectional markdown ↔ SQLite conversion - Load markdown files into SQLite, query with SQL, and export back to markdown.
+  - Dynamic schema generation from YAML frontmatter and markdown structure
+  - Import markdown collections into queryable SQLite databases
+  - Export database rows back to markdown files
+  - Watch mode for auto-refresh on file changes
+  - Gitignore-aware file filtering
+  - Smart change detection (skip unchanged files)
+
+- https://github.com/mpazik/binder /MIT/202605/ts
+  - https://binder.do/
+  - Headless knowledge base with bidirectional Markdown sync
+  - Binder stores your data as a graph of entities: each one a flexible collection of field-value pairs classified by a type like Task, Decision, or Contact. Fields are defined once and reused across types. References link entities directly, forming the graph. Types and fields are defined in .binder/types.yaml
+    - Editors, scripts, and agents all write to the same data. 
+    - Binder records every change as an immutable transaction, attributed to its source. Full history, undo and redo, replay to any past state.
+  - Markdown files are a view over this graph. Navigation rules define where each entity lives on disk. Change a field value and Binder moves the file automatically
+  - Open any Markdown file in your coding editor to read, adjust, and review. Binder's LSP provides validation, autocomplete, and navigation across all entity files.
+  - Roadmap
+    - Full-text and semantic search
+    - Transaction log compaction
+    - Cross-device synchronisation
+    - E2E encrypted backup
+    - Encrypted fields
+    - Web / Mobile UI
 
 - https://github.com/fictorial/gg /201903/js
   - Markdown-backed database with queries, user-defined actions, validators, variable expansion, and reporters in JavaScript
@@ -179,6 +211,10 @@ modified: 2021-01-04T17:26:25.032Z
   - Only Markdown (.md) files are supported by design: mdfs only stores .md files. Every file you create must have the .md extension
   - MarkdownFS gives agents a fast in-memory filesystem with built-in commits, permissions, and a REST API 
   - mdfs is also a strong fit for agent workspace use cases: durable markdown memory, inspectable artifacts, search, permissions, commits, and rollback in one shared surface.
+
+- https://github.com/lukesrw/md-database /GPL/202109/ts/inactive
+  - Middleware for producing SQL queries from Markdown
+  - Currently only SQLite is fully supported, with support for MySQL being worked on.
 # tools
 - monotome /151Star/AGPLv3/202208/js
   - https://github.com/cblgh/monotome

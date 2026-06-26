@@ -35,6 +35,8 @@ modified: 2024-01-23T02:52:23.932Z
   - 内容文件与配置文件分离的思路: 如表格内容与样式分离
 
 - markdown-query
+  - 2way sync of obsidian files and ~~wiki.js~~ 
+  - 基于 agentfs 来bash files
   - 可参考 codebase-ast-wiki/graph 的思路来实现 markdown-databases
   - 🤔 实现原理是否与 经典rag流程 `chunking > vectordb ` 类似
 
@@ -45,6 +47,8 @@ modified: 2024-01-23T02:52:23.932Z
 - 基于vscode的方案的优点
   - 直接使用基于git的同步
 # pm
+- 支持公开子目录作为site
+
 - 部分内容需要加密的场景，如何解决
   - 需要在cli侧解决
 

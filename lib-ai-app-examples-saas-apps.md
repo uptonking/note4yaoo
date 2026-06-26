@@ -553,6 +553,15 @@ modified: 2025-02-21T17:17:42.225Z
   - 之前有用过简阅助手，一个插件，能支持md、pdf、doc等格式导出，还能沉浸阅读之后精简导出，用起来还是蛮不错的，楼主可以借鉴下思路
   - 都支持word了，不如支持个pdf格式把。都支持导出了，不如来个webdav同步保存网页副本。
 
+- https://github.com/iOfficeAI/OfficeCLI /8.1kStar/apache2/202606/csharp
+  - https://officecli.ai/
+  - the first and best Office suite purpose-built for AI agents to read, edit, and automate Word, Excel, and PowerPoint files. 
+  - Free, open-source, single binary, no Office installation required.
+- https://github.com/xintaofei/codeg /apache2/202606/rust/ts
+  - [[开源] Codeg V0.18.0：日常办公模式来了（幻灯片、表格和文档都支持）｜多智能体协作工作台 - LINUX DO _202606](https://linux.do/t/topic/2480502)
+    - 最近迭代有点快了，特性一个接着一个来，先是多智能体协作、自动化，现在日常办公模式它来了，目前支持9个Agent生成创作幻灯片、表格和文档，支持边编辑边预览，实时查看Agent编辑的最新效果
+    - OfficeCLI，办公文件的生成和预览都是使用此cli
+
 - https://github.com/zhu1090093659/minister /apache2/202603/ts
   - 把 Claude Code 塞进飞书，给你的团队加一个全能同事。
   - 丞相是一个基于 Claude Code 的飞书 AI 助手框架，为企业团队打造。它不是又一个聊天机器人——它是一个住在飞书里的同事，能直接帮你发消息、建任务、写文档、排日程、操作多维表格，说完就办，不用你再动手。
@@ -639,6 +648,13 @@ modified: 2025-02-21T17:17:42.225Z
       - GB2312 的字体确实更粗一些更适合看，但我个人觉得方正仿宋也挺好看的，你会发现越是更上层的机关就越少用 GB2312，你看沪府的文件，我感觉就很像方正仿宋，大部分的看着也直接是电脑自带的仿宋。当然，绝大部分正式的公文，或者说 GB/T 9704 是给印刷公文使用的，用专业排版软件才能完美符合，普通人用办公软件制作符合格式的公文不能简单套用参数。
       - 顺带一提其实也没要求英文和数字要求新罗马，甚至要求页码的 - 1 -，用的是宋体，当然了这些都是习惯了，而且新罗马电脑都有，且不会出现缺失这种情况。
     - 我们现在还是沿用 GB2312，数字新罗马。 另外提个 BUG， 引号 “ 现在是新罗马，要改成中文字体
+
+- https://github.com/linhut/document-ai-assistant /MIT/202606/python/ts
+  - https://www.linhut.cn/
+  - AI 公文智能优化助手 — 基于 GB/T 9704 的公文格式智能检测与优化
+  - [【开源】AI公文智能优化助手-公文文档优化器[支持GB/T9704全标准检测与修复] - LINUX DO _202606](https://linux.do/t/topic/2482582)
+  - 基于国家标准 GB/T 9704 的公文格式智能检测与修复
+  - 1、应用本地化 2、数据本地化 3、多模型选换
 
 - https://github.com/amluckydave/shiyu /MIT/202603/ts/vue/tauri
   - https://amluckydave.github.io/shiyu/
@@ -804,6 +820,11 @@ modified: 2025-02-21T17:17:42.225Z
 - https://github.com/dama-cyber/Distilled-Novel-Toolbox
   - 一套面向网络小说作者的全链路创作知识库。覆盖从构思、写作、润色到发布的全流程，每个模块包含核心方法论（SKILL.md）和深度参考文档（references/）。
   - [一个网文写作的技能工具箱 【开源推广】 - LINUX DO _202605](https://linux.do/t/topic/2253089)
+
+### academic
+
+- https://github.com/xu0106/latex-paper-writer-skill
+  - [codex写论文工作流 - LINUX DO _202606](https://linux.do/t/topic/2480460)
 
 ## research
 
@@ -1002,6 +1023,15 @@ modified: 2025-02-21T17:17:42.225Z
   - 一键出图：根据简单描述自动生成 5 张主图 + 7~9 张详情页图片（默认），全自动交付。
   - 广泛的框架兼容：专为 Agent 打造，已在 OpenClaw, Hermes, Codex, Claude Code 等主流框架深度验证
   - [【开源】开源一个专为跨境电商服务的生图skill，可以生成主图和详情页 - LINUX DO _202605](https://linux.do/t/topic/2146113)
+
+- https://github.com/Jamailar/RedBox /1.1kStar/NC/202606/ts
+  - https://beav.me/
+  - 原RedBox，现更名为Beav，自媒体素材库+AI工作台，AI自媒体资产底座，AI写作+图片自动编排，小红书版OpenClaw，AI剪视频、AI剪博客、自媒体素材库+AI工作台，支持小红书图文+评论区下载、小红书AI创作、自媒体AI创作、抖音AI创作、AI运营
+  - [开源项目商业化心得分享 - LINUX DO _202606](https://linux.do/t/topic/2480513)
+    - 项目持续维护了快一年了，在一周多以前开始尝试商业化，非常感谢朋友们的支持，目前一周多的时间，做到了2W美元的ARR
+    - Beav主要是为自媒体创作者，尤其是小红书创作者提供一个本地的AI资产底座，用户可以将自己喜欢的帖子、视频、笔记通过浏览器插件保存进知识库，进而在之后的选题和创作中使用。
+    - 盈利方式是使用买断制，但是后续使用ai功能仍然需要继续消耗积分和充值。买断的只是app的功能。
+    - 然后在开源上，开源版本会比正式版本落后几个版本，但是框架完整，可以正常给技术人员进行交流学习。
 # video/mtv
 - https://github.com/heygen-com/hyperframes /15.7kStar/apache2/202605/ts
   - Write HTML. Render video. Built for agents.
@@ -1114,6 +1144,12 @@ modified: 2025-02-21T17:17:42.225Z
   - 视频导出 — COS 签名 URL 直接下载
   - 积分系统 — 注册送积分，各操作消耗积分
   - [【开源推广】开源AI短剧创作平台 - LINUX DO _202605](https://linux.do/t/topic/2211107)
+
+- https://github.com/liangdabiao/AI-generated-English-podcast-videos /MIT/202606/python
+  - 一键生成英文教育短视频 - 自动生成双人流畅对话、语音讲解、教育单词图片。AI生成英语对话的播客视频！一键生成，下载视频，学英语，发抖音
+  - [【开源】一键生成英文教育短视频 - 自动生成双人流畅对话、语音讲解、教育单词图片 - LINUX DO _202606](https://linux.do/t/topic/2473564)
+    - 项目需要配置的是 minimax key ，nano banana 的key (项目使用了apimart)
+    - 我这里全部api就是minimax， 一个搞定， 而生图就利用nano banana，因为信息图容易生成，音标也准确，费用也经济
 
 ## vid2txt
 

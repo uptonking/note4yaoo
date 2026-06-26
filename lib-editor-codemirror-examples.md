@@ -2727,11 +2727,13 @@ modified: 2023-06-23T12:46:53.288Z
   - 对源码生成截图时支持多种theme
   - 依赖codemirror5、puppeteer-core、morphmorph
 
-- https://github.com/massCodeIO/massCode /AGPLv3/202401/ts/vue
+- https://github.com/massCodeIO/massCode /AGPLv3/202606/ts/vue
   - https://masscode.io/
   - A free and open source code snippets manager for developers
   - 依赖codemirror5、d3、dom-to-image、electron-store、marked
   - 202208: I am excited that v3.0.0-beta.1 is out which now uses Codemirror instead of Ace
+  - [Markdown Vault Storage | massCode ](https://masscode.io/documentation/storage.html)
+    - massCode stores your data locally on your computer. Snippets and notes live in a Markdown Vault, so your content stays as plain Markdown files on disk instead of being locked into a cloud service or a private database format.
 
 - https://github.com/github/codemirror-contrib /archived
   - CodeMirror community contributions as used by GitHub.

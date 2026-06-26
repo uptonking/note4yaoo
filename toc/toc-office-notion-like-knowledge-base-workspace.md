@@ -686,6 +686,18 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/Requarks/wiki /22.5kStar/AGPLv3/202310/js/vue
   - https://js.wiki/
   - A modern and powerful wiki app built on Node.js
+  - changelog
+    - v1 (2017–2019): Built around MongoDB + Git
+    - v2 (2019–present stable): Git-first → Database-first. 
+      - highly extensible module system allowing users to pick and choose different Editors (Markdown, WYSIWYG, Code), Authentication providers (SAML, LDAP, OAuth, Social logins), and Search engines (Elasticsearch, Algolia, etc.)
+      - Moved to a single-page application architecture using Vue.js, replacing the server-rendered approach.
+    - v3(2026): dropping support for MySQL, MariaDB, MS SQL Server, and SQLite
+      - Switch to a full SPA model for navigation: 3 transitions the entire wiki frontend to a full SPA utilizing the Quasar Vue framework
+      - v3 decouples asset/page management from the editor
+      - Multi-tenant / Multi-site: v3 introduces the ability to host multiple independent wikis under a single Wiki.js instance
+      - Blocks System: Native support for Web Components ("blocks") to replace custom CSS classes and enable modular page building.
+      - Real-time collaborative editing in both the Visual and Markdown editors, with offline sync support.
+  - [Roadmap | Wiki.js ](https://docs.requarks.io/releases/roadmap?utm_source=chatgpt.com)
   - [Wiki.js | Hacker News_202007](https://news.ycombinator.com/item?id=23904193)
 
 - https://github.com/ryanlelek/Raneto /MIT/202311/js

@@ -694,7 +694,16 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [买了一年的gemini pro，感觉好像没啥用啊 - LINUX DO _202606](https://linux.do/t/topic/2479695)
+- antigravity里用它写前端了，还有就是antigravitytools把大概600Wtoken的克劳德用了 
+
+- 有600W吗？ 刚用它改个gemini 生成的的小bug，思考了9分钟，然后用完了！
+  - 一次大概150 然后等五小时重置，然后重置变到一周的时候 前前后后一共600W好像 
+
+- 现在基本上闲置了，antigravity 的量太少了，几分钟就用完了
+
+- 当心理医生用了，gemini情绪给的很足，心情低落的时候，聊聊挺好的
+- 说实话，我目前把它当作心理按摩用，夸人可甜了。工作的话宁愿用chatgpt网页版，和claud免费版。
 
 - ## [DeepSeek v4 Pro is too big for such a "midrange" performance, or am I missing something? : r/LocalLLaMA _202606](https://www.reddit.com/r/LocalLLaMA/comments/1u4yvqy/deepseek_v4_pro_is_too_big_for_such_a_midrange/?sort=top)
   - DeepSeek v4 Pro has 1.6T parameters, probably the largest in open models, or at least one of the largest.

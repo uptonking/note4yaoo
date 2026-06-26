@@ -540,7 +540,7 @@ modified: 2024-03-31T17:45:16.789Z
 - https://github.com/Scille/parsec-cloud /BSL/202503/rust/ts/vue
   - https://parsec.cloud/
   - Open source Dropbox-like file sharing with full client encryption
-# s3/minio
+# s3-like
 - Zenko CloudServer /1.5kStar/apache2/202401/js
   - https://github.com/scality/cloudserver
   - https://www.zenko.io/cloudserver
@@ -573,6 +573,10 @@ modified: 2024-03-31T17:45:16.789Z
   - a distributed POSIX file system built on top of Redis and S3.
   - The data, stored via JuiceFS, will be persisted in Object Storage (e.g. Amazon S3), and the corresponding metadata can be persisted in various compatible database engines such as Redis, MySQL, and TiKV based on the scenarios and requirements.
   - Supported Object Storage: s3, minio, Ceph RGW, Redis, Local disk
+
+- https://github.com/Kodiqa-Solutions/VaultS3 /AGPL/202606/go
+  - Lightweight, S3-compatible object storage server with built-in web dashboard. 
+  - Single binary, low memory, <80MB RAM, encryption at rest.
 
 - https://github.com/s3fs-fuse/s3fs-fuse /GPLv2/202312/cpp
   - FUSE-based file system backed by Amazon S3

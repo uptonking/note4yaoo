@@ -458,7 +458,13 @@ codex --yolo resume --last
 
 - ## 
 
-- ## 
+- ## 🆚 [Pi vs Opencode : r/PiCodingAgent _202606](https://www.reddit.com/r/PiCodingAgent/comments/1uf6uqb/pi_vs_opencode/)
+  - I like Pi for its light weight and endless expandability options. I like Opencode for providing most of what I need out of the box, but not a big fan of huge system prompts.
+- You can dramatically reduce OpenCodes system prompts by just overwriting the default build and plan agents with your own agents
+
+- try oh my pi. it has more features than opencode and its super customizable and still more efficient when you set it up right.
+
+- i used OC for a while until i finally installed pi. have not gone back to OC since. pair pi + zed acp and i miss nothing about OC.
 
 - ## [Pi coding agent is amazing (or how I learned to stop worrying and leave OpenCode) : r/LocalLLM _202605](https://www.reddit.com/r/LocalLLM/comments/1ta2tzz/pi_coding_agent_is_amazing_or_how_i_learned_to/)
   - following Pi’s philosophy of “if you need extra features, ask Pi to build them”
