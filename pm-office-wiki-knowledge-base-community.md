@@ -168,6 +168,27 @@ modified: 2021-07-27T16:35:20.057Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [What's the benefit of date stamp or Zettelkasten-style id prefixes for digital notes? : r/PKMS _202606](https://www.reddit.com/r/PKMS/comments/1ugc2lk/whats_the_benefit_of_date_stamp_or/)
+  - I'm just wondering what the advantages/disadvantages are for prefixes for notes such as YYYYMMDDHHmm or Zettelkasten ID. To me it seems less useful for digital notes but I'd love to hear opinions.
+- Its a matter of preference if you need it as a prefix. But timebased UID is very useful and gives your note a fixed adress. I prefer YYMMDD-hhmm. 260626-1852 is instantly readable and tells a story. 202606261852 not so much.
+- what happens if you need to update? Do you update the time and date stamp as well?
+  - Its in the bottom of all markdownfiles with the tags, and never changes, so the file have a fixed position from start. I normally only have titles/filenames without UID to make things more relaxed. For me the only way to make sure I always have the date of a file.
+
+- I like having a creation date and time stamp in the text body of my notes, just for the sake of knowing when I had the thought or whatever.
+
+If the note is of the type where the date and time of an update is important, I might add that to the update text.
+
+Both of these things are easily done in Obsidian, with templates and hotkeys.
+
+A ZK id really isn't needed for a digital ZK system. LInks and Backlinks take the place of the ZK id in digital systems. The id is a holdover from analog, paper based systems.
+
+- I don’t prefix note names, and can still sort my notes by date(文件系统本身就提供了mtime)
+- My understanding of Zettlekasten-style prefix is to relate notes to each other
+
 - ## [Karpathy's LLM Wiki setup : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1uai1w2/karpathys_llm_wiki_setup/)
   - I've been using Karpathy's LLM Wiki setup (Obsidian + Claude Code) for about two weeks, and I'm pretty impressed so far.
   - It feels like a different approach to knowledge management. Instead of spending time organizing notes, I'm focusing more on collecting information and letting the AI handle much of the structure and linking.

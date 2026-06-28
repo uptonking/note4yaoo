@@ -190,7 +190,8 @@ modified: 2023-11-28T14:48:45.910Z
 - 🧩 vibe-writing/document/building/creating
   - proof-writing/reading: 支持添加额外的元数据，交互实现上可隐藏或末尾文献
   - pic2text/port2text/rewashed/selfie(cloning): 将文本作为元数据或附件嵌入扫描版pdf
-    - text as attachments
+    - file-selfie, not only for pdf, also for docx/xlsx
+    - text as ~~attachments~~ : 附件方式不通用, docx似乎不支持
 
 - willing-to-sponsor ❤️
   - 📌 obsidian-bases

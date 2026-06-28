@@ -27,6 +27,7 @@ modified: 2026-05-28T17:50:54.646Z
     - tiered/hybrid-llm, 云端与本地结合，能较高质量完成任务同时节省成本
     - 支持cloud与local混合的模式
     - cloud only works， 方便实现saas
+  - tiered-prompts: 本地不适合长prompt
   - caching heavily: 可参考lmstudio-disk-caching, reasonix-prefix-caching
   - built-in image/pdf/ocr for chatting with documents rag
     - image/pdf ux

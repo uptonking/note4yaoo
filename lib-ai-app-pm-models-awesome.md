@@ -56,6 +56,12 @@ modified: 2026-06-20T15:49:57.019Z
 - https://github.com/vava-nessa/free-coding-models /202606/js
   - https://freecodingmodels.vercel.app/
   - Find, benchmark and install in CLI 170+ FREE coding LLM models across 15+ providers in real time
+
+- [有没有一个网站收集顶级科技公司的大模型名单 - LINUX DO _202606](https://linux.do/t/topic/2488815)
+  - [AI大模型列表 - 评测结果、参数与价格汇总 | DataLearnerAI ](https://www.datalearner.com/ai-models/pretrained-models)
+  - [Models Table (10, 000+ LLM data points) – Dr Alan D. Thompson – LifeArchitect.ai ](https://lifearchitect.ai/models-table/)
+  - [All Large Language Models Directory - All LLMs ](https://llmmodels.org/)
+  - https://llm-models.org
 # awesome/leaderboard/benchmark
 - [llm-stats AI Leaderboard 2026: Compare & Rank 300+ Top AI Models by Intelligence, Speed & Price ](https://llm-stats.com/)
   - Your idle credits are losing value every day. Connect them to LLM Stats and earn 50% on every inference request we route through your keys.
@@ -166,6 +172,7 @@ modified: 2026-06-20T15:49:57.019Z
     - [LD士多 - LDC积分商城](https://ldst0re.qzz.io/)
 
 - token-news
+  - [每月50刀免费额度 支持glm5.2 邮箱注册即可 - LINUX DO _202606](https://linux.do/t/topic/2489020)
   - [Atomgit GLM5 无限 Token? ](https://linux.do/t/topic/1696331)
   - [华为云 CodeArts 试用期间开放GLM4.7与DeepSeek V3.2模型无限畅用，大善人还是小白鼠？ _202601](https://linux.do/t/topic/1536794/5)
 
@@ -1269,9 +1276,12 @@ modified: 2026-06-20T15:49:57.019Z
 
 - tips
   - 当购买一个商品有很多渠道时，优先选择可靠的平台，售后/质保/退款更方便
+    - 提供多天 model health status 的平台更可靠
     - 大站的售后可能被封控，如短信/邮箱的接码可能被限流
     - 特别在金额较大时，售后防止损失
+    - 优先买提供售后交流群的, 能及时发现和反馈问题, 有交流群的也会跑路, 优先qq而不是tg
   - 付费站和公益站都会有rpm的限制，甚至限制都很大
+  - 注意中转站的缓存命中率, 正常需要在90%以上， 部分低倍率的渠道缓存命中很低
   - 廉价的套餐如lite-plan也可能慢/卡/不可用, 抢不到不必执着
     - 优先买容易退款的
   - 比较 主流coding-plan 和 中转/非正规套餐如cursor/devin 的价格/token额度, 灵活选择，没必要执着

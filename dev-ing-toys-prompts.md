@@ -506,7 +506,7 @@ local model testing/running can be very slow.
     - 第三方插件: obsidian-homepage, obsidian-outliner, obsidian-iconize, obsidian-admonition
   - knowledge-base
 
-project `directus` (at folder `../directus` ) is a source-available licensed, powerful, flexible, headless backend platform that helps users to build projects better/faster. It provides rest api, working with new or existing databases, content versioning, draft/publish content, support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions and marketplace, user account/auth, Policy-based Access Control, a visual admin management Studio, workflow automations, SDK, AI Assistant, horizontal scaling.
+project `directus` (at folder `../directus` ) is a source-available licensed, powerful, flexible, headless backend platform that helps users to build projects better/faster. It provides rest api, working with new or existing databases, content versioning, draft/publish content, support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions and marketplace, user account/auth, Policy-based Access Control, a visual admin management Studio, horizontal scaling, workflow automations, SDK, AI Assistant.
 
 - The final goal for this project `redmansion` is to implement an directus-like backend platform with headless, extensible, flexible architecture in current folder with similar features as directus core features, but built using modern tech stacks like npm workspaces, expressjs, knex(for db crud), reactjs, @tanstack/react-router, @base-ui/react, typescript, tailwindcss, oxlint, oxfmt. you should implement the goal in a way to make it easy to migrate code changes/features from directus to redmansion in the future.
 - The core goal is to reimplment most of the existing directus features, like rest api, working with new or existing databases, content versioning, draft/publish content, i18n, support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, simple user account/auth, simple Policy-based Access Control, simple admin ui, horizontal scaling. since directus is source-available, you might refer to its architecture/data-flow/logic/code, but you should rewrite it in redmansion to avoid license issue. backend architecture of directus is really extensible, you should borrow the good design and data flow, admin frontend of directus should be rewritten in react, @tanstack/react-router, @base-ui/react.
@@ -524,13 +524,29 @@ project `directus` (at folder `../directus` ) is a source-available licensed, po
 - you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream directus should be put in folder `upstream`. you may even design a script to automate it.
 
 - these are the most important features now, the goal is to achieve major feature pairity or even better.
-- make a plan, then migrate and improve major feature pairity, without licensing issues
+- research and make a plan, then migrate and improve major feature pairity, without licensing issues
 
 - please deep research directus(at folder `../directus` ), then can you design a similar solution in redmansion to improve it? is directus's solution good enough? if yes, solve it in a similar way for redmansion.
 
 - research and make a full plan, then implement redmansion to match major features of directus, or even better than directus, without licensing issues.
 
 - research and make a good design, then implement redmansion to match major features of directus, or even better than directus, without licensing issues.
+
+------
+
+- you may refer to how directus implements/solves it, then do a similar or better implementation in redmansion without licensing issue.
+
+- directus's overall architecture is good enough to follow. Mostly redmansion should use similar architecture to directus.
+- you may borrow good deisgn from to upstream directus(at folder `../directus`) and rewrite it in functional-programming style to avoid licensing issues.
+
+- please recheck migrated features and improve your implementation in redmansion. Analyze core data flow and implementation logic details for every major feature like rest api, working with new or existing databases, content versioning, draft/publish content, i18n, data model relationships like one2many/many2one/many2many/many2any/translations, support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions..., compare the implementation logic/code of redmansion with related directus logic/code to recheck and enhance the correctness of architecture and logic in redmansion, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in redmansion are correct, modular, extensible for long-term maintenance. 
+
+- prioritize and recheck/improve major features like rest api, working with new or existing databases, content versioning, draft/publish content, i18n, support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions... in redmansion, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
+
+- recheck and improve it, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
+
+- docs/tests/scripts might be outdated, recheck code and data flow to improve redmansion.
 
 ### draft-redmansion
 

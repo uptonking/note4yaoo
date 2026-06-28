@@ -60,7 +60,13 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## in OpenCode v2 all instances of the tui and desktop and web share the same backend
+- https://x.com/thdxr/status/2071007637487894883
+  - so everything is synced by default and resource usaged is minimized no matter how many windows you have open
+
+- I thought you guys started with the client/server model from the start, what took so long to get this right?
+  - we could have done this a while ago but i wanted to wait until we were happy with our api + the way we modeled everything.
+  - always on agent means a lot more gets built on it and has to be able to hot reload everything
 
 - ## in the next version of @opencode , file search is powered by fff
 - https://x.com/nexxeln/status/2064039757668303036
