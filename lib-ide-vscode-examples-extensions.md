@@ -465,11 +465,6 @@ modified: 2024-08-24T16:17:26.715Z
   - It is powered by the markdownlint library for Node.js (which was inspired by markdownlint for Ruby). 
   - Linting is performed by the `markdownlint-cli2` engine
 
-- memo /843Star/MIT/202303/ts/vscode/inactive
-  - https://github.com/svsool/memo
-  - Markdown knowledge base with bidirectional [[link]]s built on top of VSCode
-  - Inspired by Obsidian.md and RoamResearch.
-
 - https://github.com/Clikengo/markdown-print-tools /MIT/201904/ts/inactive
   - Tools to nicely print markdown document (vscode extension, markdown it extension, pdf generation)
 
@@ -498,13 +493,6 @@ modified: 2024-08-24T16:17:26.715Z
   - 兼容性强：数据保存为本地Markdown文件；拓展功能尽量用 Markdown 原有的语法实现。
   - 支持用户编写自己的插件来拓展编辑器的功能。
   - 加密文件的加密解密操作均在前端完成，请务必牢记自己的密码。一旦密码丢失，只能暴力破解了。
-
-- https://github.com/kortina/vscode-markdown-notes /GPLv3/202407/ts/inactive
-  - Use [[wiki-links]], backlinks, #tags and @bibtex-citations for fast-navigation of markdown notes.
-  - Bring some of the awesome features from apps like Notational Velocity, nvalt, Bear, FSNotes, Obsidian to VS Code, where you also have (1) Vim key bindings and (2) excellent extensibility.
-- https://github.com/binyamin/vscode-backlinks-panel /MIT/202012/ts
-  - View all markdown documents linking to current document.
-  - this extension depends on the wikilink extension by kortina
 
 - https://github.com/imlinhanchao/vsc-markdown-image /MIT/202411/ts
   - An extension for conveniently inserting pictures in Markdown, which supports storing pictures in local or third-party CDN service.
@@ -719,6 +707,26 @@ modified: 2024-08-24T16:17:26.715Z
   - This is more POC at this point, but it is possible to put a sql query against a specific sqlite database created by MarkdownDB
     - The extension declares that it extends the `markdown-it` processor in the standard markdown extension.
     - It provides a highlighter plugin to the markdown parser that calls a service object to run queries on the sql.js database that is loaded into memory on initialization from the `markdown.db` file in the workspace.
+
+- https://github.com/sn3akiwhizper-vscode/dataview-vscode /MIT/202301/ts/inactive
+  - This project is an attempt to port the obisidian-dataview project over to an extension for Visual Studio Code. 
+  - goal: to enable a query language to search over a collection of markdown files and provide enhanced data insights about the collection.
+
+- memo /843Star/MIT/202303/ts/vscode/inactive
+  - https://github.com/svsool/memo
+  - Markdown knowledge base with bidirectional [[link]]s built on top of VSCode
+  - Inspired by Obsidian.md and RoamResearch.
+
+- https://github.com/kortina/vscode-markdown-notes /GPLv3/202407/ts/inactive
+  - Use [[wiki-links]], backlinks, #tags and @bibtex-citations for fast-navigation of markdown notes.
+  - Bring some of the awesome features from apps like Notational Velocity, nvalt, Bear, FSNotes, Obsidian to VS Code, where you also have (1) Vim key bindings and (2) excellent extensibility.
+
+- https://github.com/nwbort/vscode-bases
+  - VS Code extension that brings Obsidian Bases to VS Code — database-like table, cards, and list views over a folder of Markdown notes, driven by Obsidian-compatible .base files.
+
+- https://github.com/binyamin/vscode-backlinks-panel /MIT/202012/ts
+  - View all markdown documents linking to current document.
+  - this extension depends on the wikilink extension by kortina
 
 - https://github.com/qwtel/sqlite-viewer-vscode  /202501/ts
   - https://sqliteviewer.app/

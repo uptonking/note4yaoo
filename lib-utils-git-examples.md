@@ -122,6 +122,10 @@ modified: 2023-08-29T10:12:22.345Z
   - Lore is a next-generation, open source version control system
   - https://x.com/QingQ77/status/2067980220167045245
     - Epic Games 出品的版本控制系统，用 Rust 写的。核心思路是内容寻址 + Merkle 树，存大文件时自动分块去重，不用下载全部就能工作。分支很轻量，切换快，适合游戏这种代码加超大资源的项目。
+  - https://x.com/twtayaan/status/2070394629250601330
+    - Git was never built for game development. When you are working on a project like Unreal Engine or Fortnite you are mixing source code with massive binary files. 3D models. Textures. Audio. Build outputs. Files that are gigabytes in size.
+    - Git handles large binary files through a bolted-on add-on called Git LFS. Perforce handles them better but it needs a live server connection for everything and nobody outside your company can build tools on top of it.
+    - Epic said none of the existing systems solved all three problems together. Large binary handling, offline work and an open specification. So they spent years building one themselves.
 
 - https://github.com/GerritCodeReview/jgit /EDL(BSD)/202310/java
   - https://eclipse.dev/jgit/

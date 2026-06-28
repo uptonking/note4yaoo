@@ -40,7 +40,7 @@ modified: 2026-06-23T09:00:34.414Z
 - ## [Has anyone used a NVME to PCIe riser successfully with Strix Halo? : r/StrixHalo _202606](https://www.reddit.com/r/StrixHalo/comments/1uctbiw/has_anyone_used_a_nvme_to_pcie_riser_successfully/)
 - https://strixhalo.wiki/Guides/External_GPU
 
-# discuss
+# discuss-gpu-mod
 - ## 
 
 - ## 
@@ -51,7 +51,10 @@ modified: 2026-06-23T09:00:34.414Z
 
 - ## 
 
-- ## 
+- ## [96gb+ 4090's and 5090 are literally a scam. I mods these cards myself : r/LocalLLaMA _202606](https://www.reddit.com/r/LocalLLaMA/comments/1uh1lc7/96gb_4090s_and_5090_are_literally_a_scam_i_mods/)
+  - I run a small gpu lab in the USA and work closely with two factories in china designing/producing 48gb 4090 PCB's.
+  - The only recent card weve gotten was the 32gb 4080 super.
+- Nobody can mod 5090 adding extra VRAM at the moment. No leaked VBIOS and many other issues and the memory shortage isn’t even at the top of the list.
 
 - ## [V100 4-card AI large model, Tesla 128G server : r/LocalLLaMA _202606](https://www.reddit.com/r/LocalLLaMA/comments/1udd8a9/v100_4card_ai_large_model_tesla_128g_server/)
   - cost for USD 3687.76 V100 128G Liquid-Cooled Graphics Card Dock, 360° Liquid Cooling for the Entire System.

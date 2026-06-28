@@ -47,6 +47,38 @@ modified: 2026-05-28T20:48:22.013Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+# discuss-local-config/bundle
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## shower thought: AI inference engines like vLLM/SGLang might be the hardest “server”-shaped OSS to configure, ever made.
+- https://x.com/ekzhang1/status/2070626846517993666
+  - Like it’s probably harder to configure them optimally than even Postgres, Nginx, Kubernetes, maybe even Kafka/Zookeeper … just in terms of all the issues, bugs, crashes, scheduler dynamics, kernels etc and it changes every month
+- yes, but I was also surprised how well abstracted they are. many 4-5x speedups (non trivial) are just arg changes
+  - Agent loops to change vLLM configs and benchmark, let it run for a bit and you’re golden
+
+- Not to mention the loading time with optimisations on every try!
+
+- even making version compatible for PyTorch and CUDA with each other, forces 80% of the people to quit
+
+- It's because vLLM is basically a real-time scheduler pretending to be an API. One wrong tweak to `gpu_memory_utilization` and you either OOM at 3am or waste half your throughput.
+
+- They constantly evolve, so they break. The systems you mentioned in comparison were redesigned many times to make them simpler and easier to use.
+
+- laughs in Kubernates
+- vLLM/slang config is a whole new level of 'database admin'  way more variables than rows and columns
+
+- Maybe because Postgres had time to develop and learn from previous database? I feel those inference engine add new model, paper and tricks every week with amazing speed but maybe less stabilisation?
+- postgres exposes stable workload knobs. these expose the kernel and scheduler directly because that's where the perf is... is that why the config never sits still?
 # discuss-browser-ai
 - ## 
 

@@ -62,6 +62,16 @@ modified: 2022-08-18T16:57:15.296Z
     - We are planning to open source sync server early next month.
   - [A fully open-source and end-to-end encrypted note taking alternative to Evernote | Hacker News_202209](https://news.ycombinator.com/item?id=32708019)
 
+- https://github.com/Dhravya/notty /MIT/202606/ts/rust
+  - https://notty.page/
+  - minimal notes app that syncs everywhere.
+  - Editor — Built on Novel (TipTap/ProseMirror). Slash commands, bubble toolbar
+  - Real-time sync — Every note is a Yjs CRDT document. Edits sync over WebSocket in real time between all your devices and collaborators
+  - Offline-first — Notes persist to IndexedDB locally. 
+  - Desktop app — Native macOS app via Tauri. Local SQLite database, bidirectional markdown sync to ~/Documents/Notty/, and cloud sync when available. Works fully offline.
+    - 手动 export + import
+  - Note locking — Lock sensitive notes behind passkey (WebAuthn) verification. Locked notes require biometric/PIN authentication to view or edit
+
 - bear-plus /5Star/ISC/202008/js/ejs
   - https://github.com/yk9331/bear-plus
   - https://bear-plus.yenchenkuo.com/@bear-plus/features

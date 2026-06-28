@@ -195,6 +195,60 @@ modified: 2021-01-04T17:26:25.032Z
     - Encrypted fields
     - Web / Mobile UI
 
+- https://github.com/mdcms-ai/mdcms /MIT/202606/ts
+  - https://www.mdcms.ai/
+  - https://docs.mdcms.ai/
+  - open-source CMS that's Markdown-first.
+  - MDCMS treats a PostgreSQL database as the source of truth. Content files are synced between the database and your local filesystem via CLI commands (mdcms push / mdcms pull), keeping your repository clean and your content workflow independent of your deployment pipeline.
+  - Developers define schemas in code and sync via CLI. Editors get a visual Studio they never have to leave. AI agents process content through the same API. 
+  - Author content in Markdown or MDX with custom component support
+  - ⏳ Versioning and publishing: Full draft/publish lifecycle with immutable version history
+  - Extensible modules	First-party module system for extending server and CLI behavior
+  - Code-first schema: Define content types, fields, and references in TypeScript with Zod validation
+  - Embeddable React admin interface with a rich document editor, schema browser, and environment management
+  - Auth and RBAC	Session auth, OIDC/SAML SSO, API keys, and role-based access control
+  - 📡 roadmap
+    - Live preview - Real-time content preview in your frontend
+    - Live collaboration - Live co-editing with conflict resolution
+    - Media management - Upload, organize, and serve media assets via MinIO/S3
+    - Full-text search - Search across content with indexing and ranking
+    - Bulk operations - Batch publish, unpublish, and delete actions
+  - [Self-Hosting - MDCMS ](https://docs.mdcms.ai/guide/self-hosting)
+    - starts the MDCMS server along with PostgreSQL, Redis, MinIO, and Mailhog. Migrations run automatically on first boot.
+
+- https://github.com/Dhravya/notty /MIT/202606/ts/rust
+  - https://notty.page/
+  - minimal notes app that syncs everywhere.
+  - Editor — Built on Novel (TipTap/ProseMirror). Slash commands, bubble toolbar
+  - Real-time sync — Every note is a Yjs CRDT document. Edits sync over WebSocket in real time between all your devices and collaborators
+  - Offline-first — Notes persist to IndexedDB locally. 
+  - Desktop app — Native macOS app via Tauri. Local SQLite database, bidirectional markdown sync to ~/Documents/Notty/, and cloud sync when available. Works fully offline.
+    - 手动 export + import
+  - Note locking — Lock sensitive notes behind passkey (WebAuthn) verification. Locked notes require biometric/PIN authentication to view or edit
+
+- https://github.com/auxclawdbot/taskflow /MIT/202603/js/inactive
+  - Structured project and task management for OpenClaw agents — markdown-first, SQLite-backed, zero dependencies.
+  - syncs your markdown files, and optionally installs a macOS LaunchAgent for automatic 60-second sync.
+  - Markdown-first — PROJECTS.md and `tasks/<slug>-tasks.md` are the source of truth; edit them directly in any editor or agent session
+  - SQLite-backed — bidirectional sync keeps a derived index for fast querying, dashboards, and exports
+  - Bidirectional sync — files-to-db and db-to-files modes; check for drift with sync check
+  - JSON export — full project/task snapshot to stdout, ready for dashboards and integrations
+  - LaunchAgent (macOS) — automatic 60s background sync via launchctl; Linux cron instructions included
+  - Zero dependencies — pure Node.js, uses the built-in node:sqlite module (no npm install)
+
+- https://github.com/brysontang/DeltaTask /MIT/202502/python/inactive
+  - A powerful, locally-hosted task management application with Obsidian integration and a Model Context Protocol (MCP) server.
+  - Smart Task Management: Create tasks with urgency levels and effort estimates
+  - Prioritization Engine: Automatically sorts tasks by urgency and effort
+  - Tagging System: Organize tasks with custom tags
+  - Local Storage: All data stored locally in SQLite database, 3 tables as todos, tags, todo_tags
+  - Obsidian Integration: Bi-directional sync with Obsidian markdown files
+  - DeltaTask creates and maintains a structured Obsidian vault:
+    - Task files with frontmatter metadata
+    - Tag-based views for filtering tasks
+    - Statistics dashboard
+    - Bi-directional sync between Obsidian markdown and SQLite database
+
 - https://github.com/fictorial/gg /201903/js
   - Markdown-backed database with queries, user-defined actions, validators, variable expansion, and reporters in JavaScript
   - gg is a CLI to import, query, act on, and report on local Markdown files with support for user-defined JavaScript extensions.

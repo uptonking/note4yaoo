@@ -556,9 +556,12 @@ modified: 2024-03-14T13:51:11.429Z
   - directus-sync organizes backups into multiple files, significantly improving readability and making it easier to track and review changes. 
   - directus-sync operates on a tagging system similar to Terraform, where each trackable element within Directus is assigned a unique synchronization identifier (SyncID). This system is key to enabling version control for the configurations and schema within Directus.
 
-- https://github.com/bcc-code/directus-schema-sync /apache2/202402/ts
+- https://github.com/bcc-code/directus-schema-sync /apache2/202606/ts
   - The better way to sync your Directus schema, configuration and selected data between environments.
   - Automatically export and import both the schema and data when you make changes via Directus or in the json data files
+  - Upon installing, configure what data you wish to export from the DB and be able to commit to your repository. Then on the other environments you can import the schema and data automatically.
+    - View and edit the schema-sync/*config.js file to include the collections you want to sync.
+  - Auto Import the schema and data when Directus starts up. Using a locking mechanism, only one instance of Directus will import the schema and data.
 
 - https://github.com/hamilton-lima/directus-sandbox /MIT/202401/js
   - This is a collection of assets and solutions to Directus real life problems

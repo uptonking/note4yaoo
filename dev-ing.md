@@ -338,7 +338,58 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
-## 0626
+## 0628
+
+- 🤔 is there any good prompt or popular projects that helps to rewrite a AGPL license open source project to new code to avoid license issue with AI ?  deep research related solutions/ideas, if you found any open source solutions or inspiration projects, provide overview/github-repo/website for each.
+  - Based on the chardet rewrite docs and Malus's architecture, the working methodology (often called "vibe-porting" or AI clean room) follows this pattern
+  - Phase 1 — Specification (the "dirty" team, who may know the original)
+  - Phase 2 — Implementation (the "clean" AI agent, isolated from source)
+
+## 0627 - db-file-sync
+
+- 🤔 Bidirectional Markdown ↔ Database Sync seems to be the best solution for my use case. is there any open source solutions that use similar idea? deep research related solutions/ideas, if you found any open source solutions or inspiration projects, provide overview/github-repo/website for each.
+
+- The three hard subproblems
+  - Change detection. On the file side: a filesystem watcher (chokidar, inotify, FSEvents) detects .md saves. On the database side: Change Data Capture via the WAL (Debezium), database triggers, or timestamp-based polling detects row mutations. Both sides need to be reliably watched without polling overhead.
+  - Identity anchoring. A Markdown file and a database row have no intrinsic relationship. You must create one — typically by storing the database row's primary key in the file's YAML frontmatter (e.g. db_id: abc123). Every tool in this document solves this differently
+  - Conflict resolution. When a file and its corresponding DB row are both modified between syncs, which wins? Common strategies: last-write-wins by mtime vs updated_at; Git merge (conflicts become merge conflicts in a PR); CRDT-based merge (block-level LWW for text); or simply making one side the canonical authority and treating the other as a derived mirror.
+
+- Wiki.js stores content in a PostgreSQL database but optionally syncs pages to a Git repository and the Git storage module forces all content currently in the DB to be output to files in the local repository, with bidirectional **sync on a configurable interval** . It's the most production-ready open source implementation of the full pattern.
+  - The sync is genuinely bidirectional: committing Markdown files directly to the Git repo is a supported authoring workflow — Wiki.js pulls the changes and imports them into the database on the next sync interval (default 5 minutes, configurable).
+  - the DB is the runtime source of truth (fast queries, ACLs, search), and the Git repo is the archival/editing source of truth (diffs, branching, editor tooling). Conflict resolution uses last-write-wins with a force-sync option.
+- Outline Wiki (community scripts)
+  - Outline stores content in PostgreSQL and does not have native file-based sync. 
+  - However, the community has built solid tooling for pushing Markdown files to Outline's PostgreSQL-backed document store using the Admin API. 
+- Logseq as a cautionary study. The community is living through exactly the tradeoff you're facing. In the file version, the files are always canonical. In the DB version, while you will be able to export to markdown files, the database version is always canonical — in the MD version you can modify your graph by editing the MD files directly, but in the DB version you cannot do this. Logseq crossed this line because their file-based approach hit a hard performance ceiling at ~2,000 pages. 
+
+- Obsidian DB Folder renders a Notion-style table view where each row is a Markdown file, and each column maps to a YAML frontmatter field. 
+  - Edits made in the table UI are written back to the frontmatter of the corresponding file — fully bidirectional. Supports relations between databases, rollups, formulas, dropdowns, ratings, checkboxes, and nested subdirectory organization.
+  - This is an entire bidirectional sync engine, just scoped to a local vault rather than a remote DB.
+
+- directus-schema-sync exports the database schema and selected content collections to JSON files in a Git repository, and imports them back on startup.
+
+- The ID anchoring pattern. Every robust implementation stores the DB primary key in the file's frontmatter. 
+  - The outline-sync-action uses a frontmatter block at the top of the source-controlled markdown docs to set the metadata for the Outline document and store the document ID when created — this is the universal anchor that makes a stable roundtrip possible. 
+  - The Telefonica team built a bidirectional sync library for Markdown ↔ Confluence (a PostgreSQL-backed wiki). Pages are identified by Confluence page IDs stored in frontmatter
+
+- [Content sources overview | Netlify Docs ](https://docs.netlify.com/manage/visual-editor/content-sources/overview/)
+  - Content Source Interface (CSI) provides a two-way synching mechanism between the visual editor and your content source(s) (API-based CMS, remote database, files, etc.).
+  - CSI defines methods to load the content and its schema from the underlying content source, perform CRUD operations (create/read/update/delete) on the content, upload assets, and other content-related operations.
+  - The following modules are supported directly by Visual Editor: Contentful, DatoCMS, Git CMS
+  - Because content source modules are defined as instantiated JavaScript classes in the configuration file, you can bring your own content source, even if not officially supported by Visual Editor.
+  - 👀 Netlify does publish and maintain many open-source projects, but the core SaaS platform and Visual Editor are proprietary.
+
+- Build-your-own primitives. For a custom sync daemon: gray-matter (JS) or python-frontmatter (Python) handles the serialization boundary; chokidar watches for file changes; Debezium or PostgreSQL triggers + an outbox table handle DB-side CDC. 
+  - The trickiest part is the "echo suppression" — preventing a DB write from triggering a file write which triggers another DB write. The standard solution is a sync-in-progress flag that skips change events while writing.
+
+- Developers want the query speed and relational structure of a database (PostgreSQL/SQLite), but the portability, ease-of-editing, and version control of standard Markdown files.
+  - Instead of dealing with OS-level virtual file systems (like FUSE), the modern approach is Dual-Storage / Event-Driven Synchronization.
+
+- Key Design Idea: Event Log
+  - Instead of syncing files and DB directly, Every change becomes a log
+  - Markdown files, Database rows, Search index, Embeddings, Git commits are derived from the same event stream.
+
+## 0626 - db-file-cms-comparisoon
 
 - 🤔 there are many cms or documentation-centric website that are built on top of database like sqlite/postgresql/... but it is not intuitive to view or manage the content in db as common files. is there any open source solutions that can map/derive the content from db to files to make it easy to interact with contents? deep research related solutions/ideas, if you found any open source solutions or inspiration projects, provide overview/github-repo/website for each.
   - To solve the friction of managing database-backed content, developers have created ingenious solutions that bridge the gap between relational databases (like PostgreSQL/SQLite) and the hierarchical POSIX filesystem.

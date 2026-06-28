@@ -262,10 +262,10 @@ Project `grist` (in current folder) is a modern relational spreadsheet. It combi
 
 - tech stack for react webapp needs to use open source libs/fwk:
   - use npm workspaces, typescript, reactjs(not vue), tailwindcss, zustand, no jquery/knockoutjs/backbone.
-  - you can reuse existing dependencies for easier feature migration, avoid GPL-like deps.
+  - you can reuse upstream/existing dependencies for easier feature migration, avoid GPL-like deps.
   - for ui components, you can use base-ui, source clone is at `~/gh-mirror/mui/base-ui` for your reference.
   - use floating-ui instead of @popperjs/core, source code is here for your reference `~/gh-mirror/floating-ui/floating-ui`.
-  - for spreadshhet table, you should use @tanstack/react-table. the source code for @tanstack/react-table and @tanstack/react-router is cloned at folder `~/gh-mirror/tanstack` for your reference.
+  - for data table, you should use @tanstack/react-table. the source code for @tanstack/react-table and @tanstack/react-router is cloned at folder `~/gh-mirror/tanstack` for your reference.
   - you may use zustand for state management in framework-agnostic core package, the source code is at folder `~/gh-mirror/pmndrs/zustand` for your reference.
 
 - the most important feature in react webapp is a modular, extensible, headless spreadsheet view/editing engine with undo/redo history support like backbonejs webapp. you should implement it in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please reuse as many code from main branch as possible.
@@ -412,7 +412,7 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 - these are the most important features now, the goal is to achieve major feature pairity or even better.
 - make a plan, then migrate and improve major feature pairity, without licensing issues
 
-- please deep research jan(at folder `../jan` ), then can you design a similar solution in aichorage to improve it? is jan's solution good enough? if yes, solve it in a similar way for begonia.
+- please deep research jan(at folder `../jan` ), then can you design a similar solution in aichorage to improve it? is jan's solution good enough? if yes, solve it in a similar way for aichorage.
 
 - research and make a full plan, then implement aichorage to match major features of jan, or even better than jan, without licensing issues.
 
@@ -505,14 +505,32 @@ local model testing/running can be very slow.
     - 如何兼容obsidian的plugin: 下载后 批量替换api? 自动转换?
     - 第三方插件: obsidian-homepage, obsidian-outliner, obsidian-iconize, obsidian-admonition
   - knowledge-base
-  - Replace Monaco's core editing feature (text buffer, cursor, selection, basic operations) with CodeMirror v6, while keeping most existing VS Code code unchanged for easier future merges from main branch to feat/codemirror branch.
 
-project `vscode` in current folder is a popular, open-source, powerful coding ide that provides editor, workbench, fileTree, global/in-file search, extension, cmd-palette, copilot-agent. 
+project `directus` (at folder `../directus` ) is a source-available licensed, powerful, flexible, headless backend platform that helps users to build projects better/faster. It provides rest api, working with new or existing databases, content versioning, draft/publish content, support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions and marketplace, user account/auth, Policy-based Access Control, a visual admin management Studio, workflow automations, SDK, AI Assistant, horizontal scaling.
 
-- codemirror v6 source code is at folder `~/gh-mirror/codemirror` for your reference.
-- text editor can be implemented with codemirrror v6, diff editor can be implemented with `@codemirror/merge` package at `~/gh-mirror/codemirror/merge`.
+- The final goal for this project `redmansion` is to implement an directus-like backend platform with headless, extensible, flexible architecture in current folder with similar features as directus core features, but built using modern tech stacks like npm workspaces, expressjs, knex(for db crud), reactjs, @tanstack/react-router, @base-ui/react, typescript, tailwindcss, oxlint, oxfmt. you should implement the goal in a way to make it easy to migrate code changes/features from directus to redmansion in the future.
+- The core goal is to reimplment most of the existing directus features, like rest api, working with new or existing databases, content versioning, draft/publish content, i18n, support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, simple user account/auth, simple Policy-based Access Control, simple admin ui, horizontal scaling. since directus is source-available, you might refer to its architecture/data-flow/logic/code, but you should rewrite it in redmansion to avoid license issue. backend architecture of directus is really extensible, you should borrow the good design and data flow, admin frontend of directus should be rewritten in react, @tanstack/react-router, @base-ui/react.
 
-- features/code that can be ignored: jsoncanvas
+- project directus-schema-sync(at folder `../directus-schema-sync`, apache 2 licensed) implements a way to sync Directus schema, configuration and selected data between environments. similar feature should be implemented as a sub package in redmansion. you may reuse the apache 2 code if you want.
+
+- features that may be planned but delayed(not in current goal): full parity of directus-style admin UI/UX, rich-views like kanban/calendar/map, complicated multi-user/team/workspace/access-control, sso auth, workflow automations, SDK, extension marketplace, AI Assistant, MCP server for AI.
+- features that may be ignored in redmansion: GraphQL API.
+
+- you have migrated/reimplemented some features from upstream directus to redmansion.
+
+- you may deep research and refer to the architecture/data-flow/code of upstream directus, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional-programming style without licensing issues.
+- you may even do a big code refactor to match major feature of directus in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+
+- you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream directus should be put in folder `upstream`. you may even design a script to automate it.
+
+- these are the most important features now, the goal is to achieve major feature pairity or even better.
+- make a plan, then migrate and improve major feature pairity, without licensing issues
+
+- please deep research directus(at folder `../directus` ), then can you design a similar solution in redmansion to improve it? is directus's solution good enough? if yes, solve it in a similar way for redmansion.
+
+- research and make a full plan, then implement redmansion to match major features of directus, or even better than directus, without licensing issues.
+
+- research and make a good design, then implement redmansion to match major features of directus, or even better than directus, without licensing issues.
 
 ### draft-redmansion
 
@@ -534,7 +552,23 @@ project `vscode` in current folder is a popular, open-source, powerful coding id
 - 
 - 
 
+### directus 🛢️
+
 ### vscode-research
+
+- goals
+  - ~~replace monaco with codemirror6~~ , 可替换的文本编辑器似乎价值不大
+  - 📈 obsidian bases: with agentfs
+  - obsidian rich-editor and plugin: 内置了很多核心插件(实现方式不一定是插件，只提供了开关)如filetree/search/backlinks/bases, canvas, slides, graph-view
+    - 如何兼容obsidian的plugin: 下载后 批量替换api? 自动转换?
+    - 第三方插件: obsidian-homepage, obsidian-outliner, obsidian-iconize, obsidian-admonition
+  - knowledge-base
+  - Replace Monaco's core editing feature (text buffer, cursor, selection, basic operations) with CodeMirror v6, while keeping most existing VS Code code unchanged for easier future merges from main branch to feat/codemirror branch.
+
+project `vscode` in current folder is a popular, open-source, powerful coding ide that provides editor, workbench, fileTree, global/in-file search, extension, cmd-palette, copilot-agent. 
+
+- codemirror v6 source code is at folder `~/gh-mirror/codemirror` for your reference.
+- text editor can be implemented with codemirrror v6, diff editor can be implemented with `@codemirror/merge` package at `~/gh-mirror/codemirror/merge`.
 
 - The custom editor API path is NOT viable. Custom editors use webviews (iframe isolation) which prevents synchronous model updates, direct access to decorations/diagnostics, native find/replace, undo/redo integration, and language service features. The only viable path is to replace the internal editor widget implementation.
   - The custom-editor is an alternative editor association built on webviews and separate resolver inputs, not a drop-in replacement layer for the built-in text editor stack.

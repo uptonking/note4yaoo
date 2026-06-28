@@ -155,6 +155,8 @@ modified: 2022-06-03T21:34:54.893Z
   - https://logseq.com/
   - A local-first, non-linear, outliner notebook for organizing and sharing your personal knowledge base.
   - A privacy-first, open-source platform for knowledge management and collaboration
+  - https://github.com/martinkoutecky/tine /AGPL/202606/rust/ts
+    - local, Logseq-compatible outliner.
 - https://github.com/athensresearch/athens /EPL/202212/Clojure/ts/inactive
   - https://athensresearch.github.io/athens
   - open-source, collaborative knowledge graph

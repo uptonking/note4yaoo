@@ -15,6 +15,23 @@ modified: 2025-01-01T17:05:58.461Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## Epic Games got tired of Git. Introducing Lore
+- https://x.com/twtayaan/status/2070394629250601330
+  - Git was never built for game development. When you are working on a project like Unreal Engine or Fortnite you are mixing source code with massive binary files. 3D models. Textures. Audio. Build outputs. Files that are gigabytes in size.
+  - Git handles large binary files through a bolted-on add-on called Git LFS. Perforce handles them better but it needs a live server connection for everything and nobody outside your company can build tools on top of it.
+  - Epic said none of the existing systems solved all three problems together. Large binary handling, offline work and an open specification. So they spent years building one themselves.
+- Here is what Lore actually does differently:
+→ Works completely offline. Commits, branches, switching — all happen on your machine without touching a server.
+→ Every file gets a unique fingerprint. Identical data is never stored twice across files or branches.
+→ Large files are broken into chunks. Edit one part of a multi-gigabyte file and only that chunk gets re-uploaded.
+→ Your machine only holds files you are actually using. Everything else gets pulled down on demand.
+→ Built in Rust. Core library, server and CLI all use the same interface. No special privileged commands.
+→ Official SDKs for JavaScript, Python, C# and Go ship with it.
+
+- This is very much needed. Git is awesome, but sucks for game binaries. P4 is a racket, and lacks many good branching features of git. SVN is ancient and branching sucks. This is the only part of the state of Unreal I'm looking forward to.
 # discuss
 - ## 
 
@@ -339,7 +356,7 @@ modified: 2025-01-01T17:05:58.461Z
 
 - ## [Why I'm using Fossil SCM instead of other source control systems (2016) | Hacker News_202206](https://news.ycombinator.com/item?id=31634560)
 - I’m just waiting for the next VCS that brings significant changes. We’d absolutely switch over if there was some feature we wouldn’t get elsewhere. But it’d need a couple of months/years of sustained advocacy.
-  - The next big thing will be semantic code versioning. I.e. a tool that **understands language syntax and can track when a symbol is changed**.
+  - The next big thing will be semantic code versioning. I.e. a tool that **understands language syntax and can track when a symbol is changed** .
   - There are already experiments in this area, but I don't think any are ready for mass adoption yet.
   - The fact that it's 2022 and we're still working with red/green line-based diffs is absurd. Our tools should be smarter and we shouldn't have to handhold them as much as we do with Git. It wouldn't surprise me if the next big VCS used ML to track code changes and resolve conflicts. I personally can't wait.
 

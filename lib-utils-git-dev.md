@@ -84,6 +84,8 @@ modified: 2023-08-29T10:11:26.348Z
 - event/patch-based
 
 - [Write yourself a Git](https://wyag.thb.lt/)
+# git-alternatives
+- 对大文件的支持可参考 huggingface-xet, epic-lore
 # fossil
 - features
   - 支持离线编辑和合并，可以基于通用的数据结构和传输协议自己实现

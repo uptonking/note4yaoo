@@ -41,6 +41,18 @@ modified: 2024-02-12T03:22:23.769Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I've been writing a @DurableStreams server in Rust to see how fast it can be.
+- https://x.com/samwillis/status/2070554595105841610
+- Rewrite it in Rust... It helps, but really it's about architecture, using sys calls to stay in the kernel layer, and knowing to use patterns like batched flushes to a WAL. Our @DurableStreams server now does 1M appends/second!
+
+- turns out good design beats language hype every time
+
 - ## StreamDB - a reactive database in a Durable Stream. Designed for AI apps and agentic session state.
 - https://x.com/ElectricSQL/status/2037534799238455443
   - [StreamDB — a reactive database in a Durable Stream | Electric _202603](https://electric-sql.com/blog/2026/03/26/stream-db)

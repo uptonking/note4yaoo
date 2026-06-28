@@ -256,7 +256,42 @@ modified: 2023-10-26T21:54:54.201Z
   - Every database entry is also a page, so an entry in “Saved Articles” can have notes or links to other similar articles
   - Very easy to share a database or page, similar to Google Drive
 - Yeah full text search, saving an archived text based version of the page behind the link and local storage (export) would make it interesting for me.
+# discuss-internals
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Why It's So Hard to Add a Column in the Middle of a PostgreSQL Table : r/PostgreSQL _202606](https://www.reddit.com/r/PostgreSQL/comments/1ug42ne/why_its_so_hard_to_add_a_column_in_the_middle_of/)
+- Postgres stores each row as a packed tuple, and most data types carry an alignment requirement. An 8-byte bigint must begin at an offset divisible by 8, a 4-byte int at a multiple of 4, and so on. When the next column does not naturally land on its boundary, Postgres inserts padding bytes to push it there. Padding is pure waste, paid on every single row.
+  - In 27+ years of working with PostgreSQL over hundreds of installations, this has literally never mattered.
+- What about running PG on top of BTRFS or ZFS with compression? Padding overhead is simply compressed then, isn't it?
+- I'm fully aware of this, but reorganizing large tables to optimize space isn't free either. You have to rewrite the entire table and all its partitions when using table partitioning (or inheritance). Storage is cheap and fast. I'm not sure it's still worth worrying too much about alignment.
+
+- Solution: Don't depend on table column order. Don't use SELECT * for stuff where order matter.
+  - This is why I hated ORMs - they would use SELECT * most of the time. Then I had to debug performance issues where the ORM would gobble up a table with 50 columns to show only three.
+- There is nothing in any spec that says that column order is guaranteed with a "select *".
+  - MySQL supports adding a column after another, but like a lot of misguided features MySQL supports, this is one that seems cool and useful to the naive user, but really it is something that probably shouldn't even exist. Then the naive user switches to another database and say, "OH MY GOD I CAN'T BELIEVE THIS DB DOESN'T EVEN SUPPORT THING."
+
+- Or create a view and use it if you have no choice for whatever weird reason.
+
+- If you saw what microsoft sql does to make this feature happen you will just want to just add the fields to the end.
+MS, create a new table with the new structure, then copy the contents of the old table to the new table drop the old table, rename the new table to the old table name.
+How many times have I seen this blow up over the years, plenty, missing indexes, constraints / relationships broken.
+Add fields to the end, no one cares about the ordinal position, it used to be a thing with views that they baked in the ordinal position into the view in MS so changing the order of the fields often meant rebuilding the views.
+As others have said select * is the problem, if you explicitly name your fields after the select who cares how they are actually stored in the db.
+
+- Because SQL is supposed to not care about column ordering. Behind the scenes, the database should be able to store the data in any structure it likes, as long as you can select out data efficiently. Besides, it’s not that hard. Create the new correct table, move the data over, rearrange the names.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

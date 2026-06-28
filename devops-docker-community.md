@@ -383,6 +383,45 @@ modified: 2024-06-30T11:17:28.971Z
 
 - ## [Docker镜像加速服务整理 - LINUX DO _202507](https://linux.do/t/topic/789917)
 
+# discuss-docker-deploy
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How do you deploy your apps? Any tools or plain docker or compose : r/selfhosted _202606](https://www.reddit.com/r/selfhosted/comments/1ugd8h8/how_do_you_deploy_your_apps_any_tools_or_plain/)
+  - Docker made it easy for deploying apps but managing and installing on the vps needs another set of tools.
+  - I know tools like coolify and dokploy exist but i feel it makes me locked with it. Also ram usage seems on higher side since these tools do so much stuff on top.
+
+- I don't run a ton of Docker containers (most of my stuff is deployed in k8s), but for those that I do, I have the docker compose stacks committed to a Github repository, and deploy them via Komodo to their respective machine. This works well because I have central, version controlled storage of all my templates, I have renovate which handles updates against those compose files as new images are released, and it's only a couple of clicks for the initial deployment and then I basically won't touch it again outside of the repository.
+  - So basically you would commit all docker compose which you want to deploy and any change trigger a deployment pipeline deploys it though komodo?
+- Basically. Every time there's a commit to main, Github makes a webhook call to Komodo, then Komodo pulls the new version of the template from the repo and deploys the changes.
+  - I don't touch Komodo outside of the initial configuration of the stack. Every update past that point is done through git. When I want to make changes to an existing stack, I write them, commit it to the repository, and those deploy automatically. For updates, Renovate is constantly scanning and creates a PR with the change whenever there's any image with an update. From there I can just merge the PR once I've reviewed it, and again those changes will automatically deploy out.
+
+- I migrated from portainer community to Komodo almost a year ago.
+  - Some things are a bit more manual such as GitOps workflows where you commit changes to compose files in a git repo > webhook signals Komodo to re-pull repo > re deploy any changed stacks.
+  - Overall I have been more than happy with the switch. Portainer just felt messy.
+  - Also… if your “deployment mechanism with versioning” question is about GitOps setups, then atleast when I still used portainer they did have a way do to this, however it worked on polling and not webhooks.
+
+- Podman Quadlets. Basically systemd units. Rootless and easy to maintain. Using cockpit to see them in a GUI. Set it and forget it.
+
+- Portainer will be your best bet as its easy to use and configure and you can install in docker container as well and then use portainer to deploy other apps.
+  - Portainer can used to manage as well, you simply create stacks using your docker compose files. Simply upload them in portainer or paste them in portainer and create new stack.
+- Unfortunately portainer doesn't support local compose file management. Meaning all the stacks are in portainer's database and cannot be managed as compose files. This rather unfortunate if something breaks in portainer you would have to rewrite all your stacks or have the composes in git server.
+  - Shout out to sencho. You just point it to the top level folder containing all your compose files and it lets you edit them and basically do everything else you can do in portainer.
+
+- I think you should look more into how docker works. You don't install images you pull or build and that is based by the config of the project. Portainer is as any other dokge/komodo manager.
+
+- I run a bunch of docker containers across 3 servers. I use Portainer/docker compose and stacks for most of it. It's nice to be able to have a view of it all in once place and see what needs updates, restart, etc. I still launch some without Portainer stacks, but it still lets me see the state of those containers. Big fan.
+
+- NixOS modules in qemu vms grouped by domain (media, *arr, infra, etc)
+
+- I've been using dokploy lately. The ability to configure volume backups and database backups is great. And a built in console to the containers
 # discuss
 - ## 
 

@@ -189,6 +189,27 @@ modified: 2023-01-20T21:59:47.792Z
     - As of now there are no concrete plans for this. Worth mentioning, what you're describing (having a DB + API) sounds a lot like Keystatic's older cousin Keystone, built by the same team.
     - For more ambitious and CRUD-capable projects, you might want to look into that as well!
 
+- https://github.com/mdcms-ai/mdcms /MIT/202606/ts
+  - https://www.mdcms.ai/
+  - https://docs.mdcms.ai/
+  - open-source CMS that's Markdown-first.
+  - MDCMS treats a PostgreSQL database as the source of truth. Content files are synced between the database and your local filesystem via CLI commands (mdcms push / mdcms pull), keeping your repository clean and your content workflow independent of your deployment pipeline.
+  - Developers define schemas in code and sync via CLI. Editors get a visual Studio they never have to leave. AI agents process content through the same API. 
+  - Author content in Markdown or MDX with custom component support
+  - ⏳ Versioning and publishing: Full draft/publish lifecycle with immutable version history
+  - Extensible modules	First-party module system for extending server and CLI behavior
+  - Code-first schema: Define content types, fields, and references in TypeScript with Zod validation
+  - Embeddable React admin interface with a rich document editor, schema browser, and environment management
+  - Auth and RBAC	Session auth, OIDC/SAML SSO, API keys, and role-based access control
+  - 📡 roadmap
+    - Live preview - Real-time content preview in your frontend
+    - Live collaboration - Live co-editing with conflict resolution
+    - Media management - Upload, organize, and serve media assets via MinIO/S3
+    - Full-text search - Search across content with indexing and ranking
+    - Bulk operations - Batch publish, unpublish, and delete actions
+  - [Self-Hosting - MDCMS ](https://docs.mdcms.ai/guide/self-hosting)
+    - starts the MDCMS server along with PostgreSQL, Redis, MinIO, and Mailhog. Migrations run automatically on first boot.
+
 - https://github.com/flowershow/flowershow /1.1kStar/AGPL/202606/ts
   - https://flowershow.app/docs/getting-started
   - https://flowershow.app/

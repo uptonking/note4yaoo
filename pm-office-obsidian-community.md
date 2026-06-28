@@ -34,6 +34,9 @@ modified: 2024-01-23T02:52:23.932Z
 - architecture
   - 内容文件与配置文件分离的思路: 如表格内容与样式分离
 
+- db-based-architecture
+  - sync: file > db > webapp
+
 - markdown-query
   - 2way sync of obsidian files and ~~wiki.js~~ 
   - 基于 agentfs 来bash files
@@ -42,15 +45,26 @@ modified: 2024-01-23T02:52:23.932Z
 
 - mermaid-chart + bases
 
-- ide和cli主流的ux都与启动文件夹相关联，而chat并不会自带文件夹而是需要上传文件
-  - 可将vscode的文件书隐藏，将chat移到左边来实现目前主流chat的产品ux，没必要单独开发electron app for chat.
-- 基于vscode的方案的优点
-  - 直接使用基于git的同步
+- 
+
 # pm
 - 支持公开子目录作为site
 
 - 部分内容需要加密的场景，如何解决
   - 需要在cli侧解决
+
+- documentation-ideas
+  - docusaurus
+  - Starlight
+
+- 如何支持外部文件
+
+- ide和cli主流的ux都与启动文件夹相关联，而chat并不会自带文件夹而是需要上传文件
+  - 可将vscode的文件书隐藏，将chat移到左边来实现目前主流chat的产品ux，没必要单独开发electron app for chat.
+- 基于vscode的方案的优点
+  - 直接使用基于git的同步
+
+- multi-user/workspace的设计
 
 ## ob-bases
 

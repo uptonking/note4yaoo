@@ -355,7 +355,7 @@ modified: 2021-07-21T18:07:43.056Z
   - Leveraging the power of Markdown and Vue.
   - No build process, website is generated on the fly.
 
-- https://github.com/mkdocs/mkdocs /21.9kStar/BSD/202510/python/ts
+- https://github.com/mkdocs/mkdocs /22.2kStar/BSD/202510/python/js/inactive
   - https://www.mkdocs.org/
   - Project documentation with Markdown built with python
   - static site generator that's geared towards building project documentation

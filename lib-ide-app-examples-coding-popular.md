@@ -2819,4 +2819,11 @@ modified: 2025-12-11T18:10:23.710Z
   - Universal API Compatibility: Anthropic (/messages) and OpenAI (/chat/completions) compatible endpoints - use Claude Code, Codex or any LLM client seamlessly
   - Headless AI Agent Control: Create and manage tasks through REST APIs for Roo Code and Cline extensions
   - Parallel Execution: Run up to 20 concurrent RooCode (and its variants like Kilo Code) tasks with built-in MCP server integration
+# rewrite
+- https://github.com/joshpxyne/gpt-migrate /7kStar/MIT/202409/python/inactive
+  - Easily migrate your codebase from one framework or language to another.
+
+- https://github.com/openrewrite/rewrite /3.6kStar/apache2/202606/java
+  - https://docs.openrewrite.org/
+  - The OpenRewrite project (managed by Moderne) is an open-source automated refactoring ecosystem for source code, enabling developers to effectively eliminate technical debt within their repositories.
 # more

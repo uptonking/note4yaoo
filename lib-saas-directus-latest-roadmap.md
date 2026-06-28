@@ -16,6 +16,51 @@ modified: 2024-03-02T13:33:54.693Z
   - [Releases · directus/directus](https://github.com/directus/directus/releases)
   - [Breaking Changes | Directus Docs](https://docs.directus.io/releases/breaking-changes.html)
 
+## [v12.0.0 _202606](https://github.com/directus/directus/releases/tag/v12.0.0)
+
+- [v12 - A Backend for Everyone on Your Team | Directus _20260526](https://directus.com/resources/v12-built-for-the-whole-team)
+  - v12 has native editorial workflows, AI-assisted translations, a redesigned Studio for non-technical users, and enterprise-grade authentication for AI-connected workflows.
+- [Evolving Our License for Long-Term Sustainability | Directus _20260422](https://directus.com/resources/directus-v12-license-change)
+  - Innovation Grant: Individuals and organizations under the threshold (under $5M in annual revenue and 50 employees) can use the Directus platform completely free.
+  - Free Core Tier: Even above those thresholds, you can still explore and build on Directus for free within our Core tier limits.
+  - 4-Year Open Source Conversion: Every version automatically becomes fully open source (GPLv3) after 4 years.
+  - Software Keys: We’re introducing registration keys to replace the previous honor system and ensure consistency.
+  - SDKs Stay MIT: Our SDKs and other open-source projects like rstore and vue-split-panel remain under the MIT license.
+  - Under BSL, we included a “usage grant” directly inside the license that allowed companies under $5M in “total finances” to use Directus for free. In practice, that language created gray areas.
+
+- v12 introduces active license enforcement: Relicensed from BUSL-1.1 to MSCL-1.0-GPL (Monospace Sustainable Core License, Version 1.0).
+  - [Add licensing _20260529](https://github.com/directus/directus/pull/27417)
+  - Free commercial use is available through the Open Innovation Grant for entities with less than $5M in annual revenue and fewer than 50 employees.
+  - Self-hosted instances run on the Core tier by default. Higher limits and additional features require a valid license. 
+  - This change affects instances previously using features that now require a license, including: SSO, Custom permission rules, Custom or self-hosted LLMs, AI Translations
+
+- Added auto-save for version editing
+- Added AI-powered translations to the translations interface
+- Added Publish without Review action
+- Added JSON filtering, alias and sorting support 
+- Added support for item-less versions
+
+- 
+- 
+- 
+- 
+
+## [v11.0.0 _202408](https://github.com/directus/directus/releases/tag/v11.0.0)
+
+- 
+- 
+
+- v11 contains a brand new permissions system that's based on policies. This is a big release, which changes the paradigm on how permissions are attached and executed. 
+
+- Added a new policy based permissions system
+- Added new types and modified existing types required for Policies
+- Added new dynamic variables to parseFilter and added the processChunk helper 
+
+- 
+- 
+- 
+- 
+
 ## [v10.0.0_20230427](https://github.com/directus/directus/releases/tag/v10.0.0)
 
 - [v10.10.0_20240306](https://github.com/directus/directus/releases/tag/v10.10.0)
@@ -101,7 +146,7 @@ modified: 2024-03-02T13:33:54.693Z
 
 - [Sustainable Open Source: Why We're Relicensing Directus _20230426](https://directus.io/blog/why-we-are-relicensing-directus)
 
-## [v9.0.0_20211105](https://github.com/directus/directus/releases/tag/v9.0.0)
+## [v9.0.0 _20211105](https://github.com/directus/directus/releases/tag/v9.0.0)
 
 - Remove collection listing option from role settings
 - Removes "Collections Navigation" setting from roles detail page
@@ -122,6 +167,14 @@ modified: 2024-03-02T13:33:54.693Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Question about Flows in v12 and Pricing : r/Directus _202605](https://www.reddit.com/r/Directus/comments/1te9t32/question_about_flows_in_v12_and_pricing/)
+- Flows is NOT being feature-gated — all triggers and operations of this automation feature are available across all v12 software tiers.
+  - However, similar to users/collections, there are certain limits to how many flows you can create on certain tiers
 
 - ## 🛒 our Leap Week 02 keynote was yesterday. Here's the full recording, but check out the thread for key announcements _20240305
 - https://twitter.com/directus/status/1765014721294397655

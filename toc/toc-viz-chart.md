@@ -293,6 +293,15 @@ modified: 2020-10-22T10:22:33.292Z
     - It also runs in completely static settings, so you can host a million-point scatterplot over something like Github Pages.
   - https://twitter.com/benmschmidt/status/1646549908546113537
 # examples
+- https://github.com/TanStack/tanstack.com/tree/main/src/routes/stats
+  - https://tanstack.com/stats/npm
+  - 比较多个npm包的下载量
+  - https://x.com/tan_stack/status/2070630416797864176
+    - GIF/WebM export
+    - Snapshot + Timeline modes
+    - playback/scrubbing
+    - timeline zoom scrubber
+
 - 可通过滑块调整百分比的饼状图
   - https://codepen.io/leaverou/pen/KKrEvVj
 

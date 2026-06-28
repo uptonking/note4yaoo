@@ -163,7 +163,34 @@ jobs:
 - spaceship 四块几毛钱（不过是六个数字.xyz）
 
 - https://tld-list.com 这里可以对比价格
+# discuss-cicd-local
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Problem: Your CI server is slow, but your dev machines are fast. 
+- https://x.com/housecor/status/2070608867268911340
+  - Solution: Use your dev machine to run checks quickly instead of waiting on slow CI.
+
+- "tests pass on my machine"
+  - Yep genuine risk - env vars are primary risk to me
+
+- I’ve started doing the same. I’ve got a lot of respect for GH, but as an industry we’ve backed ourselves up in a stupid corner with the centralised ci. Local running isn’t for every project, but it is for most.
+
+- Yes. Tart has been quite useful on macOS for Linux/macOS and QEMU for Windows. 
 # discuss-cicd-mac
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 
