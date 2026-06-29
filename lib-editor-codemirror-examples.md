@@ -338,7 +338,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/imzbf/md-editor-extension
     - Common extensions for md-editor-v3 and md-editor-rt
 
-- https://github.com/Type-32/codemirror-rich-obsidian /202508/ts
+- https://github.com/Type-32/codemirror-rich-obsidian /MIT/202604/ts/vue
   - Obsidian-Flavored WYSIWYG Markdown Editor using CodeMirror 6
 
 - https://github.com/emdashcodes/codemirror-markdown-canvas /MIT/202506/ts

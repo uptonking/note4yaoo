@@ -73,4 +73,10 @@ modified: 2025-04-19T09:56:06.705Z
 - https://github.com/mozilla/fxemoji /201903/inactive
   - http://mozilla.github.io/fxemoji/
   - a friendly emoji set from Mozilla, Formerly the Firefox OS emoji set
+
+- https://github.com/CST-Cat/capoo-vault
+  - [Capoo Vault：给 10000+ 张咖波表情包做了标注和搜索【开源推广】 - LINUX DO _202606](https://linux.do/t/topic/2495684)
+  - https://cst-cat.github.io/capoo-gallery/
+  - 前几天在sigstick网站抓取了 354 个 tg 表情包的下载链接，用 tg bot 批量下载了，一共是 10238 张，但默认文件命名只是序号，感觉想搜出想要的表情包并不容易，就用mimo2.5 批量逐张标注了
+  - 感觉 80% 以上的标注还是可以的，再加上一个服务网页方便搜索和直接预览合集
 # more

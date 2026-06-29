@@ -111,6 +111,8 @@ you have worked on this problem several times but features are still lacking. Th
 
 ### draft-begonia
 
+- 编辑器导出pdf: 内置FlowBlock的分页 如何实现 typst-pdf 的效果
+
 - in superdoc, running `pnpm dev:super-editor` shows a mininal editor demo that supports to toggle pagination, and running `pnpm dev` shows a powerful editor demo that supports to toggle pagination, zoomable, toolbars, sidebars. please migrate the superdoc examples to begonia without licensing issues, and make it runnable locally in begonia. you should migrate all superdoc examples/features to a standalone package at `apps/playground`, the basic ux can be a list of editor example names at left sidebar, when click one example name, the demo will show on the right, so that it is easy to view and switch examples.
 - please continue to improve and enhance begonia editor, and also improve the examples, you may add more modular examples to showcase the editing features.
 
@@ -519,7 +521,7 @@ project `directus` (at folder `../directus` ) is a source-available licensed, po
 - you have migrated/reimplemented some features from upstream directus to redmansion.
 
 - you may deep research and refer to the architecture/data-flow/code of upstream directus, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional-programming style without licensing issues.
-- you may even do a big code refactor to match major feature of directus in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor for redmansion to match major feature of directus in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream directus should be put in folder `upstream`. you may even design a script to automate it.
 
@@ -534,10 +536,11 @@ project `directus` (at folder `../directus` ) is a source-available licensed, po
 
 ------
 
-- you may refer to how directus implements/solves it, then do a similar or better implementation in redmansion without licensing issue.
+- you may refer to how directus(source code at folder `../directus`) implements/solves it, then do a similar or better implementation in redmansion without licensing issue.
 
 - directus's overall architecture is good enough to follow. Mostly redmansion should use similar architecture to directus.
-- you may borrow good deisgn from to upstream directus(at folder `../directus`) and rewrite it in functional-programming style to avoid licensing issues.
+- you may analyze related architecture/code and borrow good deisgn from upstream directus(source code at folder `../directus`) and rewrite it in functional-programming style for redmansion to avoid licensing issues.
+- it is unnecessary to search the web for directus details, just analyze the source code at folder `../directus`.
 
 - please recheck migrated features and improve your implementation in redmansion. Analyze core data flow and implementation logic details for every major feature like rest api, working with new or existing databases, content versioning, draft/publish content, i18n, data model relationships like one2many/many2one/many2many/many2any/translations, support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions..., compare the implementation logic/code of redmansion with related directus logic/code to recheck and enhance the correctness of architecture and logic in redmansion, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in redmansion are correct, modular, extensible for long-term maintenance. 
 
@@ -750,6 +753,8 @@ document what you have migrated from which commit id for future migration refere
 - run the full tests and fix the bugs
 
 - improve the slowest part of tests first, you may refactor/reorganize the tests to make it correct, fast, robust, maintainable in the long term.
+
+- tests files in each package should existing as sibling folder of `src`. for example, all tests for `packages/core/src` should be put at ``packages/core/__tests__` , tests files like `parse.test.ts` should not be put inside `src` folder.
 
 - you have migrated/implemented major features in project react web, but when you migrated/implemented features, tests are not taken good care of. please fix and update existing tests. 
 when you improve the tests, you can also improve the source code logic by fixing or refactoring code. DO NOT get locked to the risk code that has weak or wrong logic, you should fix them.

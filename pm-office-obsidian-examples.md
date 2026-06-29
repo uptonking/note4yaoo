@@ -9,6 +9,9 @@ modified: 2026-04-07T00:47:33.626Z
 
 # guide
 
+- resources
+  - [Latest Share & showcase topics - Obsidian Forum ](https://forum.obsidian.md/c/share-showcase/9)
+  - [#bases-showcase | Discord](https://discord.com/channels/686053708261228577/1407099010787049482)
 # popular
 - https://github.com/kepano/obsidian-skills /MIT
   - Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas.
@@ -75,6 +78,10 @@ modified: 2026-04-07T00:47:33.626Z
   - A modular Obsidian vault leveraging native Bases to replicate Notion-like database functionality for personal project and task management.
   - Obsidian Base Hub is a comprehensive vault template built on the KISS principle (Keep It Simple, Stupid) that transforms Obsidian into a powerful project management system. It provides interconnected databases similar to Notion, specifically designed for managing complex and dynamic work environments.
   - Unlike team management tools, this system focuses on individual workflow optimization while maintaining flexibility for evolving project requirements.
+  - [New open-source project: Obsidian Base Hub as simple Notion Alternative : r/ObsidianMD _202510](https://www.reddit.com/r/ObsidianMD/comments/1o40btl/new_opensource_project_obsidian_base_hub_as/)
+    - A vault template that leverages Obsidian's new native Bases to create a complete project and knowledge management system.​​
+    - Modular management of projects, areas, and tasks
+    - Databases for people, meetings, daily notes, and tasks (grouped into projects or areas)​​
 
 - https://github.com/bgarciamoura/obsidian-notion-bases-plugin /GPL/202603/ts
   - Turn any folder in your vault into a powerful database — right inside Obsidian.
@@ -86,6 +93,9 @@ modified: 2026-04-07T00:47:33.626Z
   - Load cards while scrolling rather than all at once
   - https://github.com/maxpower24/bases-card-redirect
     - Override click behaviour in Obsidian Bases card view based on note properties.
+  - https://github.com/k4fn/keep-bases-view /MIT/202606/js
+    - A custom Bases view plugin for Obsidian that displays .base results in a Google Keep-style card layout.
+    - [Plugin: Keep Bases View - Google Keep-style masonry grid layout for Obsidian Bases _202606](https://forum.obsidian.md/t/plugin-keep-bases-view-google-keep-style-masonry-grid-layout-for-obsidian-bases/114852)
 
 - https://github.com/andrewmcodes/obsidian-objects /MIT/202606/ts
   - https://andrewmcodes.github.io/obsidian-objects/
@@ -391,6 +401,9 @@ modified: 2026-04-07T00:47:33.626Z
   - CMS-like homepage: See your content in a visual grid and perform bulk actions.
   - Compatability: Works with almost any Astro theme.
     - 遍历md生成astro相关的配置、主题
+  - [Introducing Vault CMS: use Obsidian to write and publish blog posts : r/ObsidianMD _202512](https://www.reddit.com/r/ObsidianMD/comments/1pf2csa/introducing_vault_cms_use_obsidian_to_write_and/)
+    - Works with Astro templates out of the box (Slate, Chiri, and Starlight respectively)
+    - Perlite / Astro Spaceship / Quartz etc. are much more focused on taking your second brain and having the website "look" more like Obsidian. Vault CMS is far more flexible - you can basically plug it in to any Astro template you want so you're not locked into just one design.
   - https://github.com/davidvkimball/vaultcms-website
     - The official website for Vault CMS, built with Astro and Tailwind CSS.
   - https://github.com/davidvkimball/obsidian-vault-cms
@@ -655,6 +668,12 @@ modified: 2026-04-07T00:47:33.626Z
   - Self-hosted Knowledge-Context-Server for Markdown vaults. Browse, edit, and share your Obsidian-compatible notes from any browser.
   - No database — everything is filesystem-based, easy to backup and migrate
   - Multi-user — share vaults with others, with granular read/write permissions
+
+- https://github.com/DangerBlack/obsidian-web-viewer /202604/js/inactive
+  - A static web page that allows you to view Obsidian-style markdown files from S3-compatible storage.
+  - S3-compatible storage: Load files from any S3-compatible bucket via URL fragment configuration
+  - Authentication: Uses x-secret-key header for secure access to private buckets
+  - File list: Browse all known files in the sidebar
 # feat-pdf
 - https://github.com/RyotaUshio/obsidian-pdf-plus /MIT/202508/ts/inactive
   - https://ryotaushio.github.io/obsidian-pdf-plus/
@@ -956,6 +975,45 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/mukiwu/canvas-note-preview /MIT/202606/ts
   - A Heptabase-like note preview feature for Obsidian Canvas. 
   - When you click on a note node in Canvas, it automatically displays the note content in a sidebar panel.
+# feat-ob-flavored-markdown
+- https://github.com/Type-32/codemirror-rich-obsidian /MIT/202604/ts/vue
+  - Obsidian-Flavored WYSIWYG Markdown Editor using CodeMirror 6
+
+- https://github.com/quartz-community/obsidian-flavored-markdown /MIT/202606/ts
+  - https://quartz.jzhao.xyz/plugins/obsidianflavoredmarkdown
+  - Quartz's default obsidian flavored markdown plugin.
+  - Transforms Obsidian-specific markdown syntax including wikilinks, callouts, highlights, mermaid diagrams, tags, and media embeds.
+
+- https://github.com/ngtrio/mdian /apache2/202606/ts
+  - https://ngtrio.github.io/mdian/
+  - Obsidian Flavored Markdown support for unified, remark, rehype, and React Markdown.
+  - mdian adds Obsidian-style links, embeds, callouts, highlights, comments, and anchor behavior to Markdown pipelines without taking over the rest of your Markdown stack. 
+  - Use it with plain unified pipelines, or use the React preset when rendering with react-markdown.
+
+- https://github.com/nicholaswagner/remark-obsidious /202605/ts
+  - Remark.js plugin for transforming Obsidian-flavored Markdown ASTs into a structured format, making callouts, highlights, and embeds
+- https://github.com/heavycircle/remark-obsidian /MIT/202507/js/inactive
+  - A remark plugin to extend support to Obsidian-flavored Markdown.
+
+- https://github.com/MoritzRS/obsidian-ext /MIT/202411/ts/inactive
+  - Extensions and utilities regarding Obsidian Flavored Markdown (OFM) and the Obsidian.md ecosystem.
+  - Callouts, Tags, Wikilinks
+  - json canvas (validate, parse, transform)
+  - This repository started out as simple extensions to micromark, mdast and remark to support Obsidian Flavored Markdown (OFM). 
+  - Solutions like quartz did already support OFM, but I disliked their regex based approach. While working on it, I also realized problems in the way Obsidian itself parses markdown (especially whitespaces in wikilinks) which lead me to create my own set of extensions to micromark and mdast. After a short while I also wanted to work with the JSON Canvas format, so I added utilities for that as well.
+
+- https://github.com/agdevhq/silica /202606/ts
+  - https://silica-docs.vercel.app/
+  - a framework for publishing Obsidian-flavored markdown vaults as polished, authenticated, server-rendered knowledge sites.
+  - @silicajs/remark-obsidian: Neutral remark plugin for Obsidian-flavored Markdown: wikilinks, embeds, callouts, highlights, comments, block IDs, and tags.
+  - shadcn-style component library (Base UI + Tailwind v4). Authored via the shadcn CLI.
+  - Next.js runtime adapter — generated routes, server loaders, proxy, and templates.
+  - silica build emits a standalone Next.js production app in .silica/next/.next/. 
+
+- https://github.com/octopusengine/md_transform /js
+  - converts Obsidian-flavored Markdown into clean HTML
+- https://github.com/Mathijssch/oxidian /rust
+  - Rust-based tool for converting Obsidian-flavored Markdown to html in real-time.
 # alternatives-ob
 - https://github.com/slimhk45/awesome-obsidian-alternatives /md
   - free and open-source Obsidian clones and the technologies used to build them.
@@ -1016,6 +1074,16 @@ modified: 2026-04-07T00:47:33.626Z
   - 这是一个面向 CS 学习者与工程实践者 的长期维护型计算机知识笔记库，整体风格倾向于 概念理解、知识结构与可复用判断。
   - 所有笔记均使用 Markdown 编写，可直接在 GitHub 上按目录的自然分类进行阅读
   - 若希望获得更好的体验（双链、反向链接、知识网络），推荐使用 Obsidian或在 VS Code 中配合 Foam 插件，可将项目根目录下的 Obsidian-README.md 当做入口文档进行阅读。
+
+- https://github.com/BryanHogan/obsidian-vault-template /202603
+  - A clean, durable Obsidian Vault setup, focussing on simplicity, bottom-up approaches, using as little as possible plugins or similar adjustments. 
+  - It's what I use for daily for writing, research, projects and collections for books or games.
+  - Stable, future-proof: Sticks to plain Markdown and Obsidian core features.
+  - Lightweight: Minimal folder count, minimal plugins, zero CSS snippets.
+  - Bottom-up: Notes grow into Maps of Content (MOCs) organically.
+  - Multi-purpose: Works for writing, research, personal projects, and collections.
+  - Why one vault instead of many? Cross-linking is the superpower. Multiple vaults fragment knowledge and slow you down.
+  - [Obsidian vault setup tour _202509](https://bryanhogan.com/blog/obsidian-vault)
 
 - https://github.com/blueraina/group-vault /202606/ts
   - https://group-vault.pages.dev/
@@ -1156,6 +1224,8 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/sidequery/mdlint /rust
   - A markdown linter for knowledge bases. Supports backlinks, frontmatter, etc.
+- https://github.com/codeafix/mdlint-obsidian /python
+  - A Python library and CLI tool for linting Obsidian Flavored Markdown. Catches unclosed wikilinks, invalid frontmatter, broken links
 
 - https://github.com/Jeff-Kazzee/braincheck
   - A typechecker for Markdown knowledge bases - enforce one schema across all YAML frontmatter (zero-dependency Python CLI).
@@ -1197,6 +1267,8 @@ modified: 2026-04-07T00:47:33.626Z
   - https://neuralsignal.github.io/obsidian-import/
   - Extract files (PDF, DOCX, PPTX, XLSX, CSV, JSON, YAML, images) into Obsidian-flavored Markdown.
   - The mirror of obsidian-export: where obsidian-export converts Obsidian notes to PDF/DOCX, obsidian-import converts external documents into Obsidian-ready markdown with YAML frontmatter.
+  - https://github.com/neuralsignal/obsidian-export
+    - Convert Obsidian-flavored Markdown to PDF and DOCX
 
 - https://github.com/ShrekBytes/advanced-pdf-export /GPL/202606/ts
   - Export Obsidian notes as pixel-perfect PDFs with six style presets, manual page breaks, full layout control, and a live preview — all from a full-screen modal panel.

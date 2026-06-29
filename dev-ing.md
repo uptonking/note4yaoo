@@ -340,6 +340,18 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 
 ## 0628
 
+- [Session header can show "Agents.md: <none>" even though the workspace AGENTS.md is loaded later · Issue · openai/codex _202604](https://github.com/openai/codex/issues/17781)
+  - session starts before AGENTS.md exists, AGENTS.md is created later
+  - this persisted after later resuming/reopening the same session
+
+- 🤔 in a typical typescript monorepo project using npm workspaces , can different sub packages use typescript module declaration to declare the same module name? is there syntax error? is it valid? deep research related docs/discussions/issues, explain to me with code examples. for examples, `./packages` contains utils, `./apps/webapp` contain main web app using tanstack router module declaration for routes in main webapp, `./apps/admin` contain admin web app also using tanstack router module declaration for routes in admin webapp.
+  - TypeScript module augmentation (declare module) is scoped to the compilation unit — meaning it only merges within the set of files that a single tsconfig.json compiles together. This comes directly from how TypeScript project references work.
+  - TypeScript project references treat each project as its own isolated piece of code. 
+  - Declaration merging works on a TS config level. So you could even have different typed router in the same application if you put multiple tsconfig.json files. 
+- There's an open TanStack Router discussion specifically about this: how do you get type-safe `<Link>` inside a shared library when the augmentation only exists in each app's own compilation unit?
+  - The solution is to make the shared component generic over the router type rather than relying on the ambient augmentation
+  - Then in each app, you instantiate it with the local router type
+
 - 🤔 is there any good prompt or popular projects that helps to rewrite a AGPL license open source project to new code to avoid license issue with AI ?  deep research related solutions/ideas, if you found any open source solutions or inspiration projects, provide overview/github-repo/website for each.
   - Based on the chardet rewrite docs and Malus's architecture, the working methodology (often called "vibe-porting" or AI clean room) follows this pattern
   - Phase 1 — Specification (the "dirty" team, who may know the original)

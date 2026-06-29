@@ -57,6 +57,9 @@ modified: 2024-01-23T02:52:23.932Z
   - docusaurus
   - Starlight
 
+- 类似wiki的场景
+  - 可参考 books/library
+
 - 如何支持外部文件
 
 - ide和cli主流的ux都与启动文件夹相关联，而chat并不会自带文件夹而是需要上传文件
@@ -353,6 +356,10 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
+- ## 
+
+- ## [A Bases Template for Project Tracking or Task Management - Share & showcase  _202508](https://forum.obsidian.md/t/a-bases-template-for-project-tracking-or-task-management/104249)
+
 - ## [Combined all notes/writing apps I've ever used into a single vault : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1rdpwmw/combined_all_noteswriting_apps_ive_ever_used_into/)
   - graph关系图，样式友好
 
@@ -534,7 +541,7 @@ modified: 2024-01-23T02:52:23.932Z
 - The only good opensource alternative to Obsidian right now is Logseq. I don't think it supports sync though.
 
 - I've been using Zim Desktop for a while now and it's great for note taking and keeping things organized. The one thing it's missing is node-graph linking. 
-# discuss-feat-database/bases
+# discuss-feat-bases/database
 - ## 
 
 - ## 
@@ -544,6 +551,21 @@ modified: 2024-01-23T02:52:23.932Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [One base many views : r/ObsidianMD _202605](https://www.reddit.com/r/ObsidianMD/comments/1t20rfb/one_base_many_views/)
+- I prefer to have separate bases for separate topics. But each topic base has multiple views to offer options for embedding or various contexts. If all of that would be in one base with many views, it would get messy quick
+
+- I like to view multiple bases without having to switch from window to window. I ended up linking my bases ( w/ ![[FILENAME]] ) to an overview page instead, since you cannot attach properties to a base file.
+
+- I use inline bases to filter each note linked to the note in which the inline base is (filtered by name of the note)
+
+- ## [Starting Obsidian today - What folder structure works best with Home bases : r/ObsidianMD _202512](https://www.reddit.com/r/ObsidianMD/comments/1pwfkuf/starting_obsidian_today_what_folder_structure/)
+- Work in Obsidian before you worry about how to work on it or structure your system. Yes, changes take work, but until you have a use case and understand it, it’s putting your carriage before your horse to dwell on the “best system” for it.
+  - I use a different system for every distinct vault I use, because each vault reflects a particular work space and mindset and workflow. I don’t need the same structure in my Digimon Encyclopedia as I do in my Conlangs, and even there: specific conlangs may have slightly different requirements to their language structure based on the features of that conlang.
+
+- I’d take a step back first. You’re looking at a clean slate to your notetaking with a view to a simple structure. I’d argue that your notetaking should mirror what you want out of life
 
 - ## [How do I recreate this in Obsidian? : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1uds99o/how_do_i_recreate_this_in_obsidian/)
   - 典型的多维表格
@@ -597,6 +619,15 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## [What are the best plugins in relation to bases already created for Obsidian so far? : r/ObsidianMD _202512](https://www.reddit.com/r/ObsidianMD/comments/1pp25ul/what_are_the_best_plugins_in_relation_to_bases/)
 - Virtual Content. You can add specific base views to files based on their property values without actually typing them in the note. It's great because if you want to change something in that base view, you can do it through the plugin settings tab and the change will happen in every file. Also, it doesn't alter the Markdown files.
+
+- ## [Bases: data source from CSV instead of note properties? : r/ObsidianMD _202505](https://www.reddit.com/r/ObsidianMD/comments/1kw4yai/bases_data_source_from_csv_instead_of_note/)
+  - Is there a way for a Base to grab data from a CSV (or other tabular-data format)?
+
+- No. Because the core idea of bases, is presenting a view of MD files.. with smart query & filters based on those MD files. That’s it.
+
+- I thought it was silly at first, but I’ve gone the thousands of notes route and haven’t had trouble yet. There’s a CSV/JSON importer plugin available to make a note per entry.
+
+- SQLseal plugin is read-only, correct? I can't make changes to the table and have them write back into the csv file?
 
 - ## [Obsidian Bases support in Flowershow (Alpha) : r/ObsidianMD _202512](https://www.reddit.com/r/ObsidianMD/comments/1pevh7g/obsidian_bases_support_in_flowershow_alpha/)
 

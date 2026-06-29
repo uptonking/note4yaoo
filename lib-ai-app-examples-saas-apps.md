@@ -1178,6 +1178,15 @@ modified: 2025-02-21T17:17:42.225Z
   - https://x.com/nutlope/status/2041199444855492790
     - Powered by Whisper on @togethercompute and @FFmpeg via fluent-ffmpeg.
 
+- https://github.com/deusjin/subforge /rust
+  - [【开源】Rust 字幕工具： SubForge，从转录、翻译到烧字幕一条命令完成【win 和 Linux 已验证 - LINUX DO _202606](https://linux.do/t/topic/2279238)
+  - 本地 faster-whisper 转录，支持 GPU
+  - FFmpeg 硬烧字幕，也可软封
+  - Rust CLI，跨平台（Linux和Windows已验证），支持Linux/macOS/Windows
+  - 只想生成字幕，不烧录可以
+  - [有没有那种能直接把英文视频加上中文字幕的软件？（免费的） - LINUX DO _202606](https://linux.do/t/topic/2492832)
+  - 这样的开源项目不少 videolingo videosubx
+
 - https://github.com/timminator/VideOCR /MIT/202604/python
   - Extract hardcoded subtitles from videos via a simple GUI using machine learning. Supports 200+ languages.
   - VideOCR supports both 100% local processing utilizing the PaddleOCR engine, as well as a hybrid cloud-based approach using Google Lens for highly accurate text recognition. Everything can be easily configured via a few clicks.

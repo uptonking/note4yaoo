@@ -1275,6 +1275,7 @@ modified: 2026-06-20T15:49:57.019Z
   - kiro - claude  -- ¥50
 
 - tips
+  - 直接在电报搜索倍率如 0.08 , 能快速找到候选商家, 优先选提供交流群和通知频道的, 在频道可以查看历史倍率是否正常
   - 当购买一个商品有很多渠道时，优先选择可靠的平台，售后/质保/退款更方便
     - 提供多天 model health status 的平台更可靠
     - 大站的售后可能被封控，如短信/邮箱的接码可能被限流
@@ -1282,6 +1283,8 @@ modified: 2026-06-20T15:49:57.019Z
     - 优先买提供售后交流群的, 能及时发现和反馈问题, 有交流群的也会跑路, 优先qq而不是tg
   - 付费站和公益站都会有rpm的限制，甚至限制都很大
   - 注意中转站的缓存命中率, 正常需要在90%以上， 部分低倍率的渠道缓存命中很低
+    - 0.01的倍率差距不重要, 缓存命中率在93%以上时, 费用更低
+    - 轮询的渠道不要太多，感觉会降低缓存命中率? 或者是new-api的缓存命中比sub2api默认就低? (实测sub2api高达94%)
   - 廉价的套餐如lite-plan也可能慢/卡/不可用, 抢不到不必执着
     - 优先买容易退款的
   - 比较 主流coding-plan 和 中转/非正规套餐如cursor/devin 的价格/token额度, 灵活选择，没必要执着
@@ -1917,13 +1920,13 @@ modified: 2026-06-20T15:49:57.019Z
     - 评分结果与L站评分基本一致
     - 提供了很多折扣码
 
-- [zzshu /New API ](https://zzshu.cc/pricing)  , 长期运营
+- [zzshu /NewAPI ](https://zzshu.cc/pricing)  , 长期运营
   - [吱吱鼠AI的小店 - 云猫寄售 ](https://catfk.com/shop/SXS913NA)
   - 中转站仅支持gmail
   - kiro--0.2
   - plus--0.031
 
-- [刀刀刀-天才程序员 - /New API ](https://codexapis.com/pricing)
+- [刀刀刀-天才程序员 - /NewAPI ](https://codexapis.com/pricing)
   - [刀刀刀-天才程序员的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/6YQL25Q0/b6scwi)
   - QQ群：740937090
   - kiro--0.12/0.3
@@ -1937,24 +1940,45 @@ modified: 2026-06-20T15:49:57.019Z
   - kiro分组多，还有cc
   - plus--0.04
 
-- [超超 mouubox  - /Sub2API ](https://sub2api.mouubox.com/dashboard) , 已充值
-  - [/Sub2API ](https://api.mouubox.com/home)
+- [超超 mouubox  - /Sub2API ](https://sub2api.mouubox.com/dashboard) , 已充值, 副站
+  - [/Sub2API ](https://api.mouubox.com/home), 主站
     - 一个主站一副站, 副站sub2api.mouubox.com,
     - 现在好像sub2api这个要绿一点
+  - 主站更新倍率更及时, 副站有时不会降到活动倍率
   - [秒速 5 厘米的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/UJ3XQ6VC)
   - 新发卡网 [WogHub ](https://fk.woghub.com/)
   - plus--0.02
 
-- [mdkj  - /Sub2API ](https://mdkj.lol/dashboard), 已充值
+- [mdkj  - /Sub2API ](https://mdkj.lol/dashboard), 已充值, 廉价但很不稳定
   - plus--0.025
   - 注意倍率调整 
 
-- [钧澈API ](https://vip.lcodex.cn/pricing), 已充值
+- [Xybbz /Sub2API](https://sub2api.xybbz.xyz/dashboard)
+  - plus--0.045, 算是低价，有点中等价格
+
+- [钧澈API /NewAPI ](https://vip.lcodex.cn/pricing), 已充值, 深夜低价
   - plus--0.03
   - team--0.01
   - plus/pro号池多, 0.04-0.07
 
-- [naonao - /Sub2API ](https://gpt.qinnaonao.com/dashboard), 已充值
+- [NikoAPI /NewAPI](https://nikoapi.xyz/pricing), 已充值
+  - 充值地址 https://nikoapi.xyz/shop
+  - 加群可领取1刀体验
+
+- [莫比乌斯 2Chat /Sub2API](https://2chat.cc/keys)
+  - 低倍率渠道， 夜晚可用性低
+
+- [Code-Plan  /NewAPI](https://code-plan.site/pricing)
+  - [GPT-源头供货-招代理的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/IY16OXB7)
+  - AMD 顶级服务器 + 10Gbps 带宽
+
+- [土豆 /Sub2API](https://zz.211b.site/keys)
+  - 注意倍率变动
+
+- [YCY API /NewAPI](https://ycyapi.cn/pricing) , 长期运营, 较贵
+  - [YCYAPI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ycyapi)
+
+- [naonao - /Sub2API ](https://gpt.qinnaonao.com/dashboard), 已充值, 已跑路
   - codex分组--0.03
   - 不可用
 
@@ -1967,20 +1991,15 @@ modified: 2026-06-20T15:49:57.019Z
   - 交流群 469032841
   - plus/pro
 
-- [yypyyj- Sub2API ](https://sub2api.yypyyj.com/keys), 已充值
+- 🗑️ [yypyyj- Sub2API ](https://sub2api.yypyyj.com/keys), 已充值, 高价, 缓存低
   - [max9527的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/2KFETVZG)
   - ip限制严格，不支持jms/ikuuu
-
-- [白山中转站 ](https://baishanai.club/dashboard)
+- 🗑️ [白山中转站 ](https://baishanai.club/dashboard), 已跑路
   - 注意倍率
-
-- [青熵 ](https://api.qs89hub.com/keys), 中转已关
+- 🗑️ [青熵 ](https://api.qs89hub.com/keys), 中转已关
   - [青熵的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/P9HPIPWA)
   - 渠道多
   - plus--0.02
-
-- [Xybbz ](https://sub2api.xybbz.xyz/dashboard)
-  - plus--0.045, 算是低价，有点中等价格
 
 - [180txt.cn ](https://ccb.180txt.cn/dashboard)
   - [中转站的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/L466CII9/5szz1p)
