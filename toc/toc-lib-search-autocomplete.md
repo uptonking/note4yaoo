@@ -591,6 +591,18 @@ modified: 2023-01-01T13:24:35.994Z
 - https://github.com/weijiehan3/multi-source-search /MIT/202603/python
   - Agent-neutral multi-source search skill for Claude Code, Codex, and OpenClaw.
   - Combine host web search + Exa + Tavily + Grok for high-coverage retrieval, thread pulling for deep context, and MinerU for anti-crawler page parsing.
+
+- https://github.com/Johell1NS/browser-search /MIT/202606/js
+  - [browser-search — three tools, zero cost, and your AI agent learns to search and browse the web : r/unsloth _202606](https://www.reddit.com/r/unsloth/comments/1uilsyc/browsersearch_three_tools_zero_cost_and_your_ai/)
+  - It's three open source tools orchestrated by a skill, fully self-hosted:
+  - SearXNG — metasearch engine that queries dozens of search engines at once
+  - Camofox — full browser via REST API, always warm, for browsing and interacting
+  - CloakBrowser — stealth browser for when the site has Cloudflare, Akamai, or DataDome
+  - The agent decides which tool to use. Zero human intervention. Zero API keys. Zero subscriptions.
+  - It's a skill, not a plugin — works with any agent that can read instructions
+  - Automatic navigation escalation: if Camofox gets blocked, it switches to CloakBrowser
+  - Deep Research mode: the agent is instructed to go beyond surface-level answers, cross-verify sources, cover every aspect
+  - Integrated Readability.js for clean article extraction (~70% token savings)
 # search-web
 - https://github.com/searxng/searxng /AGPL/202510/python
   - https://docs.searxng.org/

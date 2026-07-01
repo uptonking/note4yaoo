@@ -138,6 +138,22 @@ modified: 2023-10-28T13:38:46.522Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 看了 SQLite 论战，好有意思, 各种观点
+- https://x.com/alswl/status/2072094812376097259
+  1. 数据归属：结构化数据 vs Plain Text。
+  2. 工程结构：RDBMS vs AOF。
+  3. 实现选择：成熟外部工具引入 vs 自建协议库。
+  4. 关注点：讨论工程 vs 信任权威
+  - PS：我站 SQLite，考虑长期功能诉求和可维护性，总有需要引入一套复杂数据结构，不是自己写就是用别人的。
+
+- 数据主权，用户有没有权利以开放格式访问自己的聊天数据？
+
 - ## SQLite in the backend is a terrible choice!
 - https://x.com/CFDevelop/status/1904623460447641786
   - It suffers from the same problem as document dbs. There are only a handful of data types so you can’t do powerful querying 

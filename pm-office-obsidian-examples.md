@@ -24,26 +24,35 @@ modified: 2026-04-07T00:47:33.626Z
   - Access your vault through the REST API or the built-in MCP server — both interfaces expose the same core capabilities, so scripts, browser extensions, and AI agents all speak the same language.
   - Read, create, update, or delete notes — full CRUD on any file in your vault, including binary files
   - Surgically patch specific sections — target a heading, block reference, or frontmatter key and append, prepend, or replace just that section without touching the rest of the file
-  - Search your vault — simple full-text search or structured JsonLogic queries against note metadata (frontmatter, tags, path, content)
+  - Search your vault — simple full-text search or structured `JsonLogic` queries against note metadata (frontmatter, tags, path, content)
   - Extend the API — other plugins can register their own routes via the API extension interface
+  - List and execute commands — trigger any Obsidian command as if you'd used the command palette
+  - Access the active file — read or write whatever note is currently open in Obsidian
+  - Open files in Obsidian — tell Obsidian to open a specific note in its UI
+  - Inspired by https://github.com/Vinzent03/obsidian-advanced-uri , with the goal of expanding automation options beyond the constraints of custom URL schemes.
+- https://github.com/livingpixelio/volcano /MIT/202602/ts
+  - Volcano is a JavaScript query API for Obsidian. You can read the contents of your vault as structured data. 
+  - The primary use-case is to use Obsidian as a content management system in a Node.js, Deno, or Bun-backed website.
 
 - https://github.com/Nystik-gh/ignis /523Star/AGPL/202606/js/svelte
   - Run Obsidian as a self-hosted web app. Not remote desktop, an actual web app.
   - Ignis is a compatibility shim that provides browser-compatible implementations of the Electron APIs used by Obsidian, allowing Obsidian to run in a standard browser while keeping your vault on the server.
   - Ignis provides an alternative for users who want to access their own copy of Obsidian from a browser, in a close-to-native format.
+  - Ignis currently ships as a self-hosted server but I have plans for a desktop plugin. 
   - the project has grown into a usable browser-based client with multi-vault support, file upload and download, workspaces opened across browser tabs, and live sync between tabs. 
   - Plugin compatibility depends on what APIs a plugin uses; most plugins built on Obsidian's plugin API work, anything requiring Node native modules or child_process doesn't.
-  - Ignis currently ships as a self-hosted server but I have plans for a desktop plugin. 
   - All core editor features: markdown, canvas, bases, and the command palette.
   - Most community plugins built on Obsidian's plugin API.
-  - What Ignis adds on top of default Obsidian features
+  - ✨ What Ignis adds on top of default Obsidian features
     - Custom UI for Obsidian's multi-vault support, allowing create, open, switch, rename, and delete.
     - Different vaults can be loaded in different browser tabs.
     - Live file sync between browser tabs via WebSocket
+    - Adds a plugin system inside the server itself, separate from Obsidian's community plugin system (WIP).
   - 🐛 What doesn't work
     - Plugins that depend on Node native modules or child_process won't load.
     - Streaming zlib classes (createGzip, createDeflate, etc.) aren't implemented. The synchronous and callback variants work via pako.
     - safeStorage is passthrough by design: isEncryptionAvailable() returns false and encrypt/decrypt are no-ops. Anything plugins store via safeStorage ends up as plaintext on disk. A server-side encrypted option is planned but not yet implemented;
+    - Full functionality requires a secure context (HTTPS, or localhost). Over plain HTTP at a non-localhost origin the browser disables the crypto and clipboard APIs Obsidian needs, breaking graph view, the outline, Sync, and more;
   - 📡 Roadmap
     - Continued shim work to support more community plugins.
     - Multi-user support with OIDC for self-hosted shared deployments.
@@ -52,19 +61,27 @@ modified: 2026-04-07T00:47:33.626Z
   - https://llmwiki.atomicstrata.ai/
   - The knowledge compiler. Raw sources in, interlinked wiki out. Inspired by Karpathy's LLM Wiki pattern.
   - llmwiki is now an Open Knowledge Format (OKF) producer and consumer, aligning compiled agent knowledge with Google Cloud's emerging standard for portable knowledge sharing.
+    - Export and import OKF bundles for portable, markdown-native knowledge exchange. 
+    - Other portable exports. Export JSON, JSON-LD, GraphML, Marp slides, and llms.txt for downstream systems.
   - Compile raw sources into an interlinked, citation-traceable markdown wiki that agents and humans can browse, query, lint, export, and reuse.
+    - Compiled wiki, not chunks. A two-phase LLM pipeline extracts concepts, then generates typed pages: concept, entity, comparison, and overview.
   - llmwiki implements the LLM Wiki pattern: instead of re-discovering knowledge from raw files at query time, compile it once into durable pages that accumulate structure, provenance, review state, and retrieval metadata over time.
+  - Hybrid retrieval. Semantic chunk search, BM25 reranking, and wikilink graph expansion 
+  - llmwiki view opens a read-only browser UI with search, page metadata, graph exploration, source-freshness badges, and citation chips.
   - https://github.com/colin4k/obsidian-wiki-compiler
     - plugin that compiles notes into a structured Wiki using LLMs, inspired by Karpathy's LLM Knowledge Bases
 # feat-bases/kanban
-- https://github.com/callumalpass/mdbase-spec /MIT/202605/python/js
+- https://github.com/callumalpass/mdbase-spec /81Star/MIT/202605/python/js
   - https://mdbase.dev/
   - A specification for treating a folder of markdown files with YAML frontmatter as a typed, queryable data collection.
   - If you use Obsidian (or a similar tool) and you've accumulated notes for meetings, contacts, projects, reading, journal entries, and so on, each with frontmatter fields, your vault is functioning as a database. The property system encourages this: you define fields, assign types, and the tool enforces them across files. But the tooling for managing that structure is limited. 
   - There is no schema file that lives alongside your notes. 
   - This means each tool that touches your vault---Obsidian itself, an editor, a templating plugin, an AI agent---has to independently work out what your types are, or you have to tell each one separately. 
-  - mdbase-spec tries to address this. The core idea is that types are defined as files---markdown files in a _types/ folder, where the frontmatter declares the schema and the body can document the type in prose. 
-  - Implementations can claim partial conformance. Each level requires all previous levels.
+  - 💡 mdbase-spec tries to address this. The core idea is that types are defined as files---markdown files in a _types/ folder, where the frontmatter declares the schema and the body can document the type in prose. 
+    - A template becomes a consequence of a type definition rather than a substitute for one, and validation can happen at write time rather than only at creation time. 
+  - The spec defines how those type files, and the collections they describe, should be interpreted, so that different tools can treat them consistently.
+  - A collection is a folder containing an mdbase.yaml config file, a _types/ folder with type definitions (themselves markdown files), and any number of markdown content files. 
+  - Conformance levels: Implementations can claim partial conformance. Each level requires all previous levels.
   - https://discord.com/channels/1219902517304098836/1219902517304098841/1507266524291793019
     - Interesting YAML query language for markdown
     - Deriving directly from .base format might still be better for familiarity tho.
@@ -72,7 +89,9 @@ modified: 2026-04-07T00:47:33.626Z
     - https://github.com/callumalpass/mdbase /ts
     - https://github.com/callumalpass/mdbase-rs /rust
   - examples 🌰
-    - https://github.com/callumalpass/mdbase-workouts
+  - https://github.com/callumalpass/mdbase-workouts
+    - A workout tracking application that stores all data as markdown files with YAML frontmatter, managed by mdbase.
+    - This project is an implementation of mdbase-spec.
 
 - https://github.com/rafafields/Obsidian-Base-Hub
   - A modular Obsidian vault leveraging native Bases to replicate Notion-like database functionality for personal project and task management.
@@ -87,6 +106,8 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/bgarciamoura/obsidian-notion-bases-plugin /GPL/202605/ts/inactive
   - Turn any folder in your vault into a powerful database — right inside Obsidian.
   - CSV import/export, Formulas, Relations & Lookups, Image columns, Aggregation row, Number formatting, Bulk actions
+  - Obsidian's built-in Bases plugin is great for tables and has its own expression-based formula system. Notion Bases focuses on a different set of trade-offs — more views, more column types, and a spreadsheet-style formula syntax.
+  - Everything lives in your vault as plain Markdown: Schema & view config	Frontmatter of `_database.md`.
   - [I built a Notion-like database plugin for Obsidian — 6 views, fully local, no external tools : r/ObsidianMD _202603](https://www.reddit.com/r/ObsidianMD/comments/1rtwcja/i_built_a_notionlike_database_plugin_for_obsidian/)
   - why build workarounds and only sample from a folder when you could do this with views for bases that would allow for very flexible filtering, sorting, and grouping on their own?
     - Cause bases doesn't have all features that Notion have, the most important to me is the relations and lookups. And I want to have control over everything I'm doing, not extending from something I don't have control.
@@ -108,6 +129,7 @@ modified: 2026-04-07T00:47:33.626Z
   - https://andrewmcodes.github.io/obsidian-objects/
   - Schema-driven, object-based note-taking for Obsidian using native Markdown, Properties, and Bases.
   - Define object types like Person, Project, or Meeting, create structured notes through a modal, and browse them with native Bases. Everything lives in plain Markdown with Properties, so your notes stay fully readable even if you disable or uninstall the plugin.
+  - Schema-driven objects: each type defines its folder, filename template, properties, body templates, and validation rules. 手写会非常复杂
   - Native Bases: the Generate Bases command writes .base files with table and card views that filter on the type property. Obsidian renders them, so there's no custom view code.
   - Dashboard: a sidebar view lists every object grouped by type for quick browsing.
   - Local-first: no external services and no proprietary storage.  
@@ -131,7 +153,7 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/vitalybe/obsidian-advanced-list-bases-view /svelte
   - Adds a advanced list layout to Obsidian Bases so you can display notes as an interactive list view.
 
-- https://github.com/scottTomaszewski/obsidian-folder-bases
+- https://github.com/scottTomaszewski/obsidian-folder-bases /MIT/202606/ts
   - Open a folder's associated Base by clicking it in the file explorer — like the Folder Notes community plugin, but for .base files instead of notes.
   - https://github.com/Fertion/Bases_Link_Structure
     - plugin for managing link-based note hierarchies. Adds a Structure view for Bases that displays notes as a draggable tree, built on the up property.
@@ -143,6 +165,7 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/TfTHacker/group-enhancer-for-bases /MIT/202603/ts
   - Enhances the base functionality of bases group features
+  - group可折叠
   - https://x.com/TfTHacker/status/2035123231628087726
     - group collapsing in Obsidian Bases
 
@@ -154,8 +177,13 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/ghyatt/bases-collapsing-group-table
   - add a Table that supports collapsable groups. Also: on demand, accordion, and collapse all.
 
-- https://github.com/grub-basket/CSV-to-Obsidian-Properties-for-Bases
-  - Convert CSV files to individual Markdown Notes with Obsidian-compatible frontmatter properties.
+- https://github.com/grub-basket/CSV-to-Obsidian-Properties-for-Bases /202606/js
+  - csv2bases:  https://fork-archive-hub.github.io/CSV-to-Obsidian-Properties-for-Bases/
+  - bases2csv:  https://bases-to-csv.netlify.app/
+  - offline-capable browser tool that converts CSV or TSV spreadsheet data into Obsidian-ready .md files with YAML frontmatter — one file per row, downloaded as a ZIP.
+  - No install. No account. No internet required once saved locally. Open the HTML file and go.
+- https://github.com/technohiker/obsidian-multi-properties /MIT/202605/ts/svelte
+  - Plugin for Obsidian that allows user to add properties to multiple notes at once.
 
 - https://github.com/PlayerMiller109/obsidian-sheets-basic /202408/js
   - merge markdown table cells after Obsidian v1.5.0
@@ -173,6 +201,8 @@ modified: 2026-04-07T00:47:33.626Z
   - Render bases formulas in your notes, define global formulas and functions, and more formula-related features.
   - You can render formulas in your notes in inline code or a codeblock. These formulas will automatically re-render when metadata changes.
 
+- https://github.com/obsidian-community/obsidian-kanban /4.4kStar/GPL/202603/ts
+  - Create markdown-backed Kanban boards in Obsidian.
 - https://github.com/xiwcx/obsidian-bases-kanban /MIT/202605/ts
   - A kanban-style drag-and-drop custom view for Obsidian Bases that allows you to organize your notes into columns based on any property.
 
@@ -203,10 +233,8 @@ modified: 2026-04-07T00:47:33.626Z
     - Isn’t that only relevant for linked notes? For some of us, we have a mix between plain text and linked notes within our kanban setup, so I’m unsure if bases will fill the niche I’m looking for (unless I’m mistaken)
   - the outlook sync is something i didn't know i needed until just now
 
-- https://github.com/obsidian-community/obsidian-kanban /GPL/202603/ts
-  - Create markdown-backed Kanban boards in Obsidian.
-  - https://github.com/ewerx/obsidian-bases-kanban
-    - Kanban view for Obsidian Bases. Display notes as draggable cards organized in columns by any property.
+- https://github.com/ewerx/obsidian-bases-kanban
+  - Kanban view for Obsidian Bases. Display notes as draggable cards organized in columns by any property.
   - https://github.com/sleroq/cumban
     - Kanban support for Obsidian bases
   - https://github.com/PythonJobOnline/obsidian-bases-kanban
@@ -226,10 +254,11 @@ modified: 2026-04-07T00:47:33.626Z
   - Plugin that adds a View option to Bases that displays the notes in a scrollable feed with a thumbnail image.
   - Currently ships with the Timeline view — more views planned.
 
-- https://github.com/TimoBechtel/obsidian-block-view
+- https://github.com/TimoBechtel/obsidian-block-view /MIT/202605/ts
   - A Bases view for Obsidian that turns your notes into a database of blocks.
   - lets you list and filter the content of your notes - "blocks" - across your entire vault.
   - Because it works as a Bases view, you can still use the standard features like file filtering, sorting, and grouping. Block View then divides each file's content into blocks, so you can filter and display specific sections from multiple notes in the same view.
+  - Examples: daily log, tasks, code snippets, 适合希望将多个文件内容合并显示的场景
 
 - https://github.com/Real1tyy/BasesImprovements
   - https://real1tyy.github.io/BasesImprovements/
@@ -241,16 +270,19 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/yut0takagi/obsidian-deck-dashboard
   - A Composable dashboard plugin for Obsidian. Compose widgets (tasks, Dataview queries, Bases, calendars) in a draggable grid.
 
-- https://github.com/zobweyt/obsidian-charts /MIT/202606/ts
+- https://github.com/zobweyt/obsidian-charts /MIT/202606/ts/svg
   - Adds a chart layout to bases so you can display notes as interactive bar or line charts.
+  - Built with pure SVG and zero dependencies
+  - 似乎不是mermaid的方案
 
-- https://github.com/haiqiang-zhang/obsidian-bases-charts
+- https://github.com/haiqiang-zhang/obsidian-bases-charts /GPL/202604/ts
   - Interactive chart views (Data Charts + AI Chart) for Obsidian Bases, powered by Apache ECharts.
   - https://github.com/mkobit/obsidian-bases-charts
     - By leveraging the Obsidian Bases API for data querying and Apache ECharts for rendering, this plugin allows you to create dynamic visualizations driven directly by the properties in your notes.
 
 - https://github.com/mProjectsCode/obsidian-bases-charts-plugin /GPL/202605/ts/svelte
   - adds three new bases views: Scatter Charts, Line Charts, and Bar Charts.
+  - 依赖svelteplot
   - https://github.com/PythonJobOnline/obsidian-charts
     - Adds a chart layout to bases so you can display notes as interactive bar or line charts.
 
@@ -292,11 +324,17 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/code-of-chaos/ColoredTagsWrangler.obmd /GPL/202606/ts
   - This plugin allows the user to apply different colors to different tags. 
+  - Integration with the Kanban plugin.
+  - issue: if a Kanban card, canvas card, or a folder note, has more than one colored tag within it, it isn't always clear why CSS chooses the given color.
 
-- https://github.com/rafjaf/obsidian-colored-bases-properties 
-  - plugin to color property lists in Bases
-  - https://github.com/olegbrovchenko/bases-tag-colors
-    - Bring life to your tags. Per-base color configs for Obsidian Bases — no global tag soup.
+- https://github.com/rafjaf/obsidian-colored-bases-properties /GPL/202605/ts
+  - plugin that automatically detects and colors property values in Bases files, embedded bases, supporting list properties (multi-select pills), formula properties (rendered values), and inline tags.
+  - Works in Bases view, file properties pane, embedded bases, and markdown views
+- https://github.com/olegbrovchenko/bases-tag-colors /MIT/202605/ts
+  - Bring life to your tags. Per-base color configs for Obsidian Bases — no global tag soup.
+  - Obsidian Bases has zero native pill colors. Bases Tag Colors fixes that — each .base file gets its own color palette stored in a sibling `.colors.json`.
+  - Per-base palettes — each .base file gets a sibling .colors.json
+  - Visual settings UI — color picker, hex input, search bar. No manual JSON editing
 
 - https://github.com/theol0403/obsidian-bases-new-with-template
   - plugin to automatically apply templates when creating new entries with the Bases plugin
@@ -328,9 +366,6 @@ modified: 2026-04-07T00:47:33.626Z
   - Markdown frontmatter is arbitrary YAML enclosed by `---` at the top of a markdown document which can store metadata about that document.
   - Inline fields are a Dataview feature which allow you to write metadata directly inline in your markdown document via `Key:: Value` syntax.
   - [Obsidian Dataview: Turn Obsidian Vault into a database you can query from | Hacker News_202205](https://news.ycombinator.com/item?id=31407781)
-  - https://github.com/obsidianmd/obsidian-releases
-    - Obsidian is not open source software and this repo DOES NOT contain the source code of Obsidian. 
-    - However, if you wish to contribute to Obsidian, you can easily do so with our extensive plugin system.
 - https://github.com/dsebastien/obsidian-dataview-serializer /MIT/202606/ts
   - https://dsebastien.github.io/obsidian-dataview-serializer/
   - plugin that gives you the power of Dataview, but generates Markdown, making it compatible with Obsidian Publish, and making the links appear on the Graph.
@@ -362,7 +397,6 @@ modified: 2026-04-07T00:47:33.626Z
   - However, Datacore focuses on substantial index changes for performance, as well as a new sleek UI which completely replaces traditional Dataview queries. 
   - Datacore supports all query operations that Dataview does, with some extra functionality.
   - WYSIWYG Views: Datacore queries now use a responsive table view and can be manipulated with a table editor much more akin to what you would see in places like Notion and Airtable.
-  - Live Editing: Values inside of table views can now be edited; task views include more nuanced rendering of metadata like due date and more operations for manipulating tasks directly.
   - Live Editing: Values inside of table views can now be edited; task views include more nuanced rendering of metadata like due date and more operations for manipulating tasks directly.
   - https://github.com/alas-poor-ophelia/windrose-md /MIT/202605/ts
     - a simple TTRPG-focused mapping tool for Obsidian, built on Datacore. It started as something like graph paper in Obsidian and then... grew? Supports both traditional grid based maps as well as hex maps
@@ -403,11 +437,25 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/Val-49/Obsidian-Dataview-Templates
   - css
+
+## bases-ai
+
+- https://github.com/hobbs/basecli /202607/python
+  - A headless renderer for Obsidian Bases .base files. 
+  - Obsidian has no headless renderer for Bases — the engine only runs inside the GUI app — so basecli reimplements that engine in Python so AI agents (and humans) can read, reason about, and collaborate on the rows of a .base report from the command line.
+  - The primary consumer is an AI agent, so the default output is structured JSON and every row carries the underlying file path (file.path + file.abspath) so the agent can then open or edit the source note.
+
+- https://github.com/aliou/obsidian-flint /202606/ts
+  - AI agent inside your Obsidian vault — reads, writes, searches, and queries Bases directly from the sidebar 
+  - Flint embeds a Pi agent in the Obsidian sidebar. It can read and write notes, search your files, query Obsidian Bases, and export conversations as Markdown — all without leaving Obsidian.
 # cms
 - https://github.com/davidvkimball/obsidian-bases-cms /MIT/202605/ts
   - plugin for Obsidian inspired by Dynamic Views and Multi-Properties that provides CMS-like functionality to bases. 
   - Transform your Obsidian bases into a powerful content management system with card-based views, bulk operations, and smart content management features.
   - Made for Vault CMS
+  - Card-Based CMS View: Display your base entries as cards with thumbnails, snippets
+  - Bulk Operations Toolbar: Select multiple items and perform batch operations including publish/draft status management, tag management, property setting/removal, and deletion.
+  - Draft Status Management: Toggle publish/draft status for multiple files at once, with visual indicators on cards.
 
 - https://github.com/davidvkimball/vaultcms /MIT/202606/js
   - https://vaultcms.org/
@@ -425,10 +473,6 @@ modified: 2026-04-07T00:47:33.626Z
   - https://github.com/davidvkimball/obsidian-vault-cms
     - plugin for setup and configuration management of Vault CMS. Provides a setup wizard, automatic project detection, and plugin configuration management.
   - https://github.com/davidvkimball/vaultcms-presets
-
-- https://github.com/livingpixelio/volcano /MIT/202602/ts
-  - Volcano is a JavaScript query API for Obsidian. You can read the contents of your vault as structured data. 
-  - The primary use-case is to use Obsidian as a content management system in a Node.js, Deno, or Bun-backed website.
 
 - https://github.com/Abdulkader-Safi/obsidian-crm-plugins /BSD/202606/ts/svelte
   - A lightweight CRM that lives inside Obsidian. 
@@ -451,6 +495,13 @@ modified: 2026-04-07T00:47:33.626Z
   - Monthly, quarterly, yearly, and custom follow-up cadences
   - Obsidian Bases dashboards for reminders
 
+- https://github.com/wesswart77/obsidian-cadence /MIT/202606/js
+  - A unified Obsidian plugin for CRM, PRM, project management, daily planning, and reminders — all on top of plain markdown. 
+  - No server, no sync service, no lock-in. Your vault stays your vault.
+  - Most "second brain" plugins do one thing well. Cadence is the opposite: a coherent workspace that brings together the surfaces a working person actually moves between every day — today's tasks, the week ahead, deals in flight, contacts, projects, recurring reminders — and presents them in a single tab with one familiar nav.
+  - Module toggles. Turn off CRM, PRM or Planner if you only want some of it.
+  - Cadence lets you define custom frontmatter properties for any of your core entities (Contact, Company, Project, Deal, Activity, Partner, etc.) to model your specific business workflows directly inside Obsidian.
+
 - https://github.com/anykeyguru/md-docs-cms-obsidian-plugin /MIT/202604/ts
   - Turn Obsidian into a real CMS for docs-as-code repositories: visual tree with both drafts and public side-by-side, drag-and-drop weight reordering, translation matrix, image picker, draft promotion with preflight, frontmatter form, broken-link health check, VS-Code-style commit / sync panel, schema-driven layout configurable per project, first-run setup wizard, structure-integrity checker with auto-fix, and a settings panel for engine config.
 
@@ -463,18 +514,14 @@ modified: 2026-04-07T00:47:33.626Z
   - Next.js blog kit powered by Obsidian as a headless CMS. 
   - Write markdown locally, manage posts with a Notion-like dashboard
 
-- https://github.com/wesswart77/obsidian-cadence /MIT/202606/js
-  - A unified Obsidian plugin for CRM, PRM, project management, daily planning, and reminders — all on top of plain markdown. 
-  - No server, no sync service, no lock-in. Your vault stays your vault.
-  - Most "second brain" plugins do one thing well. Cadence is the opposite: a coherent workspace that brings together the surfaces a working person actually moves between every day — today's tasks, the week ahead, deals in flight, contacts, projects, recurring reminders — and presents them in a single tab with one familiar nav.
-  - Module toggles. Turn off CRM, PRM or Planner if you only want some of it.
-  - Cadence lets you define custom frontmatter properties for any of your core entities (Contact, Company, Project, Deal, Activity, Partner, etc.) to model your specific business workflows directly inside Obsidian.
-
 - https://github.com/gospecter/specter /AGPL/202606/ts/swift
   - Open-source local sync for CMS content. 
   - SpecterSync DIY syncs Ghost, WordPress, and Shopify content down to a folder of plain markdown files on your hard drive. Run your own editor or AI tools over those files. Push changes back through direct local CMS connections with dry-run preview and conflict detection.
+  - The CmsAdapter seam: Adapters convert HTML ↔ markdown at the seam — engine code never touches platform-native body formats. 
   - SpecterSync DIY (spectersync.diy) is the AGPLv3
   - SpecterSync Pro (spectersync.com) is the official commercial product with signed installers, license activation, automatic updates, managed connectors, hosted AI transformation workflows, and support.
+  - The Mac shell and the daemon communicate only via `state.json`. One-shot CLI commands (pull, push, sync) spawn a fresh daemon process; the long-running watcher is a separate supervised process. 
+  - Specter started as a local Obsidian plugin in May 2026 to scratch the "edit Ghost in Obsidian without going through their web editor" itch; it's grown into a CMS-agnostic sync tool because the workflow turned out to apply far beyond Ghost.
 # feat-ai
 - https://github.com/Nexus-JPF/note-companion /MIT/202604/ts
   - https://notecompanion.ai/
@@ -1228,6 +1275,11 @@ modified: 2026-04-07T00:47:33.626Z
   - A data retrieval tool for Markdown and other text files with metadata. It just grubs fast through a big data field.
   - YAML code blocks in Markdown are usually used as code examples. grubber treats them as structured data records that live next to their context, across an entire directory of files. Think dataview without Obsidian.
 
+- https://github.com/Yakitrak/notesmd-cli /1.5kStar/MIT/202606/go
+  - this project has been renamed from "Obsidian CLI" to "NotesMD CLI" 
+  - NotesMD CLI works without requiring Obsidian to be running, making it perfect for scripting, automation, and terminal-only environments.
+  - 
+
 - https://github.com/k-lar/dynomark /MIT/202505/go/单文件/inactive
   - Dynomark strives to be a markdown query language engine, similar to obsidian's Dataview plugin.
   - This program can be used with editors like neovim, vscode and emacs to provide a similar experience to Dataview (but very barebones for now).
@@ -1242,6 +1294,13 @@ modified: 2026-04-07T00:47:33.626Z
     - command line tool to query markdown documents which have yaml frontmatter.
   - https://github.com/pkarpovich/ovq /rust
     - Query Obsidian vault files by frontmatter properties using Dataview-style syntax. Built for Claude Code integration.
+
+- https://github.com/mfarragher/obsidiantools /BSD/202507/python/inactive
+  - a Python package for getting structured metadata about your Obsidian.md notes and analysing your vault
+  - Access a networkx graph of your vault (vault.graph)
+  - Get summary stats about your notes & files, e.g. number of backlinks and wikilinks, in a `Pandas` dataframe
+  - Retrieve detail about your notes' links and metadata as built-in Python types
+  - The JSON content of each canvas file is stored as a Python dict in vault.canvas_content_index
 
 - https://codeberg.org/SebastianRzk/Looksyk /AGPL/202606/rust/ts
   - https://sebastianrzk.codeberg.page/looksyk
@@ -1275,13 +1334,6 @@ modified: 2026-04-07T00:47:33.626Z
   - It reads folders on your computer and creates Dataview-compatible index notes inside your vault. 
   - The plugin is meant to make Obsidian work as an index for files that remain outside Obsidian.
 
-- https://github.com/mfarragher/obsidiantools /BSD/202507/python/inactive
-  - a Python package for getting structured metadata about your Obsidian.md notes and analysing your vault
-  - Access a networkx graph of your vault (vault.graph)
-  - Get summary stats about your notes & files, e.g. number of backlinks and wikilinks, in a `Pandas` dataframe
-  - Retrieve detail about your notes' links and metadata as built-in Python types
-  - The JSON content of each canvas file is stored as a Python dict in vault.canvas_content_index
-
 - https://github.com/FreeGrid/dataview_site /202511/python/inactive
   - Transform the knowledge base currently managed in the table into individual Markdown files for each line. Display the knowledge table on a webpage and list the notes corresponding to each line. 
   - Take knowledge in csv, convert them to YAML-rich documents, and surface the whole corpus as interactive comparison tables—no Obsidian required.
@@ -1293,7 +1345,8 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/h-sphere/sql-seal /MIT/202605/ts
   - https://hypersphere.blog/sql-seal/
-  - SQLSeal allow you to query for files, tags and tasks in your vault using familar SQL syntax. It also enables you to preview any CSV file in your vault as a database. It brings fully featured database into your vault!
+  - SQLSeal allow you to query for files, tags and tasks in your vault using familar SQL syntax. 
+  - It also enables you to preview any CSV file in your vault as a database. It brings fully featured database into your vault!
   - you can use it by creating sqlseal codeblocks in your notes. 
 # utils-import/export
 - https://github.com/neuralsignal/obsidian-import /MIT/202606/python
@@ -1378,6 +1431,11 @@ modified: 2026-04-07T00:47:33.626Z
   - A CLI toolkit for Obsidian vaults and markdown knowledge bases.
   - Track content freshness. Rename files safely. Generate indexes. Manage tags.
   - Zero API dependency. Works offline. CI-friendly.
+
+- https://github.com/Vinzent03/obsidian-advanced-uri /MIT/202601/ts/inactive
+  - allows you to control many different features in Obsidian just by opening some URIs. Because they are just text and don't require any mouse clicks or keyboard inputs, they are perfect to automate your Obsidian workflow.
+  - Append content from the clipboard to today's daily note `obsidian://adv-uri?vault=<your-vault>&daily=true&clipboard=true&mode=append`
+  - Export a file to PDF by calling the command "Export to PDF" via its command ID `obsidian://adv-uri?vault=<your-vault>&filepath=<your-file>&commandid=workspace%3Aexport-pdf`
 
 - https://github.com/chrisgrieser/shimmering-obsidian
   - Alfred workflow with dozens of features for controlling your Obsidian vault.

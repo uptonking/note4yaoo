@@ -870,7 +870,11 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
-- ## 
+- ## WSL 出了自己的 container runtime
+- https://x.com/wey_gu/status/2072138539802992780
+  - 另一边 Apple Container 最近也 1.0 了
+
+- 可惜两边都没有官方的 compose 实现还
 
 - ## microsandbox@0.6 now runs natively on windows x86-64 and arm64. no WSL needed.
 - https://x.com/microsandbox/status/2071644818300965034

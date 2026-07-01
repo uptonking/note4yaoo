@@ -169,6 +169,7 @@ modified: 2026-06-20T15:49:57.019Z
   - 部分公益站和token-hub支持用LDC换低倍率的模型，可在ldstore用商品换LDC，再用LDC来换低倍率套餐
   - 注意不同来源的号池不要混用， 否则会出现问题 Encrypted content could not be decrypted or parsed
   - 公益站多帐号的兑换码一般未与用户绑定，可以兑换到其他用户，甚至延迟兑换，这样可以将兑换码的额度接力使用而不触发限流
+  - 在ldstore卖兑换码的公益站就是活着的，按销量排序就能去试用了
 
 - [最新跳蚤市场话题 - LINUX DO ](https://linux.do/c/trade/10)
   - [最新积分乐园话题 - LINUX DO ](https://linux.do/c/credit/106)
@@ -176,9 +177,8 @@ modified: 2026-06-20T15:49:57.019Z
     - [LD士多 - LDC积分商城](https://ldst0re.qzz.io/)
 
 - token-news
+  - [商汤送免费的glm5.2了 - LINUX DO _202607](https://linux.do/t/topic/2504080)
   - [每月50刀免费额度 支持glm5.2 邮箱注册即可 - LINUX DO _202606](https://linux.do/t/topic/2489020)
-  - [Atomgit GLM5 无限 Token? ](https://linux.do/t/topic/1696331)
-  - [华为云 CodeArts 试用期间开放GLM4.7与DeepSeek V3.2模型无限畅用，大善人还是小白鼠？ _202601](https://linux.do/t/topic/1536794/5)
 
 - claude-news
   - [Ollama v0.14.0 and later are now compatible with the Anthropic Messages API _202601](https://ollama.com/blog/claude)
@@ -1279,7 +1279,10 @@ modified: 2026-06-20T15:49:57.019Z
   - kiro - claude  -- ¥50
 
 - tips
+  - 重度开发时间，优先买天卡(10元/天)， 按量太贵
+    - 不要花过多时间比价, 一般1亿token在2-4元就已经是业内非常划算的了, 节省时间去做研发
   - 直接在电报搜索倍率如 0.08 , 能快速找到候选商家, 优先选提供交流群和通知频道的, 在频道可以查看历史倍率是否正常
+  - 站内直接充值时三思， 冲进去可能就跑路了退不了， 平台有保障
   - 当购买一个商品有很多渠道时，优先选择可靠的平台，售后/质保/退款更方便
     - 提供多天 model health status 的平台更可靠
     - 大站的售后可能被封控，如短信/邮箱的接码可能被限流
@@ -1774,7 +1777,7 @@ modified: 2026-06-20T15:49:57.019Z
 ## ide/vendors
 
 - tips
-  - ? 大厂的优惠活动更多
+  - ? 大厂的优惠活动更多, 优先cursor/kiro/antigravity
   - 二手号: 速刷号掉号快, 不会多人用, 质保掉号还是几天, 优先账密而不是token登录
 
 - cursor内置的都是非常高级的模型claude/haiku/gpt/gpt-mini/composer/gemini/grok/glm/kimi, 所以用auto模型完成普通开发也可考虑
@@ -1976,6 +1979,17 @@ modified: 2026-06-20T15:49:57.019Z
 - [Code-Plan  /NewAPI](https://code-plan.site/pricing)
   - [GPT-源头供货-招代理的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/IY16OXB7)
   - AMD 顶级服务器 + 10Gbps 带宽
+
+- [AI来了 ](https://api.ailaile.site/)
+  - [littleKK的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/BVGUTB12)
+  - 注册需要花1元买邀请码
+  - 日卡 10元--$100
+- [小蓝AI ](https://www.inroi.shop/)
+  - 禁止大陆ip
+  - 日卡倍率 4x-6x
+- [HCAI ](https://ai.hctopup.com/)
+  - 日卡，仅限周末
+  - 倍率0.25
 
 - [土豆 /Sub2API](https://zz.211b.site/keys)
   - 注意倍率变动

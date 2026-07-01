@@ -40,8 +40,8 @@ modified: 2026-06-30T17:32:43.131Z
 # redmansion
 - goals
   - publish/site
-  - api
   - editing: web, app, obfm editor
+  - api
   - compatible with obsidian: obfm, obsidian, config(attachment, .trash)
 
 - 
@@ -54,6 +54,13 @@ modified: 2026-06-30T17:32:43.131Z
 - 
 
 # draft
+- .base 的自定义后缀不够方便, 不如用 .base.yml
+
+- bases auto converter: csv <> bases
+- 用户手写table, 通过ui自动/手动转换成bases
+
+- ob-cli alternative
+
 - architecture
   - 内容文件与配置文件分离的思路: 如表格内容与样式分离
 

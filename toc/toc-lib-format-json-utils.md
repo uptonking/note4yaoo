@@ -54,6 +54,13 @@ modified: 2022-11-06T15:45:36.913Z
   - It's designed for React/Redux/Flux apps. Inspired by Normalizr.
   - We can transform the whole Redux store, that can incude complex nested json objects, into a simple flat structure using Simplifr.
   - https://github.com/krispo/redux-json-tree
+
+- https://github.com/jwadhams/json-logic-js /MIT/202407/js/inactive
+  - https://jsonlogic.com/
+  - If you’re looking for a way to share logic between front-end and back-end code, and even store it in a database, JsonLogic might be a fit for you.
+  - JsonLogic isn’t a full programming language. It’s a small, safe way to delegate one decision. You could store a rule in a database to decide later. You could send that rule from back-end to front-end so the decision is made immediately from user input. Because the rule is data, you can even build it dynamically from user actions or GUI input.
+  - JsonLogic has no setters, no loops, no functions or gotos. One rule leads to one decision, with no side effects and deterministic computation time.
+  - Terse: {"operator" : ["values" ... ]} Always.
 # spec-format
 - https://github.com/CondeNast/atjson /ts
   - https://atjson.condenast.io/docs/getting-started

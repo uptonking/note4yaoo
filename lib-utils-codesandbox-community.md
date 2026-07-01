@@ -74,14 +74,20 @@ modified: 2024-01-25T13:33:23.267Z
 - Wow, just single DB for such huge workload! Must be a huge machine.
   - It's not huge! 4 cores and 24GiB RAM (actually I believe 16GiB would be fine too). Plus we also store sandbox pageviews (hourly, daily, weekly, monthly)/users/teams etc...
 - Incredible! I am using a little bigger machine for a much lesser scale application.  Likely I am doing something wrong.
-# discuss-sandbox-agent 👾
+# discuss-box-agent 👾
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## [sandboxing pi : r/PiCodingAgent _202607](https://www.reddit.com/r/PiCodingAgent/comments/1uke0s1/sandboxing_pi/)
+- Really depends on what environment you’re in. Bubblewrap (Linux) Seatbelt (Mac, check agent-safehouse) are good isolation. You can always just run a VM, or even better use a remote environment. I have an LXC on Proxmox just for this.
+
+- Check out gondolin By the guys who made/maintain pi
+
+- I suggest you clearly identify the security model you want to work with and the constraints within which you will be operating.
+  - My implementation: Everything is custom. I compiled and built Apple container without sudo access and I run a flavor of Debian on it without any shared access to directories on the system. There's exactly one directory within the instance which is git controlled and it disallows internet connectivity except for Jira/Confluence/GitHub and brave for web searches.
 
 - ## Stop using Docker to sandbox AI agents.
 - https://x.com/abhijithneil/status/2064462294155952297

@@ -65,7 +65,13 @@ modified: 2023-03-05T02:27:52.126Z
 
 - ## 
 
-- ## 
+- ## 浏览器泄露自己是中国用户有很多没法改的特征，要干净真得用干净的系统真的很麻烦
+- https://x.com/FarSideOfMoonvy/status/2072228174533149074
+- https://github.com/yArna/isChinaUser /202607/ts
+  - https://yarna.github.io/isChinaUser/
+  - 在浏览器中利用各种信息来源判断用户是否是中国用户
+
+- 因为装了ms Office 2013自带了中文字体给默认成了中文用户
 
 - ## 浏览器支持分词：即有一段话，你鼠标双击这段话的时候，它会自动匹配一个词并选中它。我之前一直挺好奇chrome是如何实现的。
 - https://x.com/hanawa_hinata/status/2018506129110868033

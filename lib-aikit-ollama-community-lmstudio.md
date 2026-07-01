@@ -122,6 +122,10 @@ modified: 2026-01-14T18:58:32.523Z
   - We devised a solution for KV cache rewinding for these agentic use cases. By saving and restoring prompt cache to disk, the KV cache for follow-up requests does not need to be recomputed.
   - We designed the disk cache to clean itself up after the model is unloaded. In other words, the cache is temporary and will not leave persistent files.
 
+- ## [0.4.14 _202605](https://lmstudio.ai/changelog/lmstudio-v0.4.15)
+  - LM Studio Engine Protocol beta
+  - New architecture to enable us to ship more frequent engine updates
+
 - ## pr已合并 [Add Presence Penalty · Pull Request · lmstudio-ai/lmstudio-js _202603](https://github.com/lmstudio-ai/lmstudio-js/pull/552)
   - ? 似乎只支持llama.cpp， 不支持 mlx
 

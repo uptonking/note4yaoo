@@ -743,6 +743,7 @@ modified: 2023-09-02T09:17:22.992Z
   - https://earendil-works.github.io/gondolin
   - Local Linux micro-VMs with programmable network and filesystem control.
   - Gondolin runs that code inside a fast local Linux micro-VM (QEMU by default, with an optional experimental krun backend) while keeping network and filesystem access under host-side policy control. That policy layer can be customized via JavaScript.
+  - Linux and macOS are supported. ARM64 is the most tested runtime path today. Linux x86_64 make krun-runner is covered by CI smoke builds.
 
 - https://github.com/boxlite-ai/boxlite /apache2/202601/rust
   - https://boxlite-ai.github.io/website/

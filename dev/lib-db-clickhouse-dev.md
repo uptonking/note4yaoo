@@ -46,7 +46,37 @@ modified: 2023-12-15T18:01:18.391Z
 - Photon runs inside of Spark as an accelerator for parts of the pipeline, not as a standalone engine, per se.
 
 - @sunchao 's Rust-based Comet project looks awesome and is an open-source alternative to Photon (only available in Databricks Cloud)
+# discuss-wasm
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Introducing chDB-Wasm 
+- https://x.com/auxten/status/2072232611284762874
+  - https://wasm.chdb.io/
+  - A complete ClickHouse OLAP engine, compiled to WebAssembly, running fully client-side. No server. No install. Just open a tab and run SQL.
+- Under the hood:
+  • Full ClickHouse SQL
+  • Reads Parquet, CSV, JSON directly
+  • Query remote sources (S3, URLs) from the browser
+  • Runs entirely in WebAssembly, no backend
+
+- Most modern browsers support multi threaded wasm.
+
+- ❓ 和 duckdb 相比如何
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 5 years operating ClickHouse

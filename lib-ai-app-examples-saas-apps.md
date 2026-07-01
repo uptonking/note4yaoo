@@ -1088,6 +1088,9 @@ modified: 2025-02-21T17:17:42.225Z
   - https://github.com/chatfire-AI/huobao-canvas
     - 火宝无限画布；支持文生图，图生图，图生视频，多模型切换。兼容 openai标准格式
     - [【开源自荐】花两天时间做了一个无限画布，开源了一个 乞丐版 lovart _202601](https://linux.do/t/topic/1438600)
+  - [AI火宝短剧接下来下半年的路线 - LINUX DO _202607](https://linux.do/t/topic/2502765)
+    - 目前国内短剧爆发式的场景下，我们未能拿到海外的融资
+    - 目前在开源短剧平台项目中豆包的搜索我们是第一名，也是我们非常开心的事。上半年我们是短剧平台，和开源项目一起更新，但因此更新进度有时候一拖再拖，所以！我们团队重新定了路线，后续开发只围绕开源项目和api站，而我们的短剧平台则只维护。
 
 - https://github.com/Stonewuu/ai-fusion-video /MIT/202604/java/ts
   - [基于 Agent 的AI短剧漫剧创作平台：融光 - LINUX DO _202604](https://linux.do/t/topic/1986023)
