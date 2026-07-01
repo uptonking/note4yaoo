@@ -131,6 +131,17 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Anthropic embedded spyware in Claude Code — and attempted to hide it from you : r/ClaudeCode _202606](https://www.reddit.com/r/ClaudeCode/comments/1ujilqt/anthropic_embedded_spyware_in_claude_code_and/)
+- since Opus 4.5, by default in Claude Code, Anthropic retains thinking blocks across turns. At high reasoning effort settings on complex codebases, this could easily eat up 50%+ of your context window.
+The key is that Anthropic keys this on the model string.
+They do this because thinking blocks aren't compatible across models, but the key is that we can exploit this to do manual thinking block management.
+
 - ## [Claude Code v2.1.150 now allows Anthropic to perform remote system prompt injection : r/ClaudeCode _202605](https://www.reddit.com/r/ClaudeCode/comments/1tmizuy/claude_code_v21150_now_allows_anthropic_to/)
   - I often patch the system prompts on my Claude Code executable in order to make Claude more effective. Every time I upgrade, I ask Claude himself to dissect the new binary and look for problematic system prompts to modify. Was upgrading to v2.1.150 today and discovered something that's rather alarming: Claude Code now allows Anthropic to perform remote system prompt injection via the network.
   - Two data sources. First, API call to api.anthropic.com/api/claude_cli/bootstrap at startup, which also gets cached to disk. Second, a GrowthBook feature flag (tengu_heron_brook) that refreshes every 60 seconds with background sync. Any string returned by these endpoints gets injected into the system prompt of the LLM model with shell access.

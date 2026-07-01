@@ -64,6 +64,24 @@ modified: 2023-01-17T19:13:01.845Z
   - This is a functional implementation of a web sync engine, optimized for single-user scenarios (not real-time collaboration). 
     - The focus is on providing reliable data synchronization while maintaining offline capabilities.
 
+- https://github.com/anolilab/lunora /FSL(apache2)/202606/ts
+  - https://lunora.sh/
+  - Type-safe, real-time backend framework on your own Cloudflare account — Workers, Durable Objects, D1, R2, Queues. Convex-style DX, Vite-first.
+  - https://x.com/_prisis_/status/2071892044952256779
+    - lunora now ships a Zero-class sync engine
+    - shapes — declarative partial replication
+      - A shape is a table + a predicate + an optional projection. 
+      - The client picks which partition to replicate; the server decides which rows it may see — the where runs with an unforgeable ctx, so it doubles as a read-permission
+      - Legacy subscribe re-runs a query and diffs the result. A shape subscription pokes row-ops over the same hibernatable WebSocket: on each write the DO reads the op page once and sends only the membership diff, applied atomically.
+      - The DO never runs a dataflow pipeline — the client does, via TanStack DB.
+    - custom mutators — optimistic, server-authoritative
+      - A mutator pairs an optimistic client write with an authoritative server write. The row renders with zero latency, then rebases over the server's result with no flicker
+    - a poke diff protocol — row-ops, not re-run queries
+    - offline outbox + live WebSocket sync
+    - TanStack DB collections, on-device
+    - Instant, offline, real-time. On infra you own.
+    - Optimistic UI, offline writes, and live sync usually mean a SaaS sync service (Convex, Zero, Linear's backend). lunora now does it on your own Cloudflare Durable Objects. Same DX, your infrastructure.
+
 - https://github.com/anyproto/any-sync /MIT/202506/go
   - Any-Sync is an open-source protocol that enables local first communication and collaboration based on CRDTs.
   - It is focused on bringing high-performance communication and collaboration at scale
@@ -107,7 +125,7 @@ modified: 2023-01-17T19:13:01.845Z
   - Get undo/redo for free
   - Server agnostic
   - State management libraries agnostic (a container interface)
-  - **Resolve conflicts (not implemented yet)**
+  - **Resolve conflicts (not implemented yet)** 
   - [Patches | Immer](https://immerjs.github.io/immer/patches/)
     - The generated patches are similar (but not the same) to the RFC-6902 JSON patch standard, except that the path property is an array, rather than a string. 
 

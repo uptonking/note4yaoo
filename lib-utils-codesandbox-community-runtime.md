@@ -861,6 +861,22 @@ modified: 2024-05-12T17:20:03.132Z
 - LXC does it better, you can even have virtualization
   - The difference here is that katacontainers are OCI and CRI complaint - meaning that it can immediately be used with K8s, Nomad and possibly others. You get all the features of these orchestration platforms. LXC doesn't have that (it actually predates OCI and CRI).
   - There are other orchestration systems that can use LXC - LXD, libvirt, Proxmox, and may be others. Also, LXC doesn't have traditional virtualization - that's a feature of LXD using KVM. (Do you mean system containers, as opposed to regular app containers?)
+# discuss-windows-container
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## microsandbox@0.6 now runs natively on windows x86-64 and arm64. no WSL needed.
+- https://x.com/microsandbox/status/2071644818300965034
+  - backed by the windows hypervisor platform on both archs, so you get lightweight linux microVMs straight on windows 10 & 11.
+  - programmable network policies and secrets protection, baked in. available via the CLI and every SDK.
+
 # discuss-apple-container 🍎
 - ## 
 

@@ -828,6 +828,25 @@ plan_mode_reasoning_effort = "high"
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [是否可以在国外 vps 上部署一个包含 claude code 的 docker 镜像，在 docker 中使用 claude code？ - LINUX DO _202606](https://linux.do/t/topic/2503525)
+  - 最近 A/ 疯了，各种封禁账号，我在想如果 A/ 的封号逻辑是基于 IP、系统时区、语言等信息来构建用户画像的话，如果直接在国外 vps 上部署一个包含 claude code 的 docker 镜像，在 docker 中使用 claude code 的话，是否可以避免绝大部分的特性检测呢？
+  - 这种方式是否可以大幅度降低封号的风险
+
+- Linux本来就能直接运行，为啥还要再套一个docker。 反而Linux对这种支持是最好的吧
+  - 隔离运行环境，避免 Claude Code 发疯把 vps 核心文件给删了
+
+- 其实正常开梯子，直接SSH过去就好了，IP不用回程太好的
+
+- vps 这种机房 ip 早就进高危名单了吧
+
 - ## [如今各大Coding-CLI官方自带的远程操作都已经成熟起来，自己开发远程的还有必要吗？ - LINUX DO _202605](https://linux.do/t/topic/2212892)
 - 智谱自己开发的zcode走的有点类似于你说的方向。集成了cc, codex, gemini, opencode的Cli
   - 智谱的Z Code我本身也会用一下下，我自己也是智谱的重度用户，但是他这个不开源也不能在服务器部署，就有点难受

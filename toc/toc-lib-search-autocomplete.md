@@ -591,6 +591,26 @@ modified: 2023-01-01T13:24:35.994Z
 - https://github.com/weijiehan3/multi-source-search /MIT/202603/python
   - Agent-neutral multi-source search skill for Claude Code, Codex, and OpenClaw.
   - Combine host web search + Exa + Tavily + Grok for high-coverage retrieval, thread pulling for deep context, and MinerU for anti-crawler page parsing.
+# search-web
+- https://github.com/searxng/searxng /AGPL/202510/python
+  - https://docs.searxng.org/
+  - SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.
+- https://github.com/felladrin/MiniSearch /480Star/apache2/202510/ts
+  - https://felladrin-minisearch.hf.space/
+  - A minimalist web-searching app with an AI assistant that runs directly from your browser.
+  - Cross-platform: Models run inside the browser, both on desktop and mobile
+  - Efficient: Models are loaded and cached only when needed
+  - Customizable: Tweakable settings for search results and text generation
+  - Can I use custom models via OpenAI-Compatible API?
+    - Yes! For this, open the Menu and change the "AI Processing Location" to Remote server (API). Then configure the Base URL, and optionally set an API Key and a Model to use.
+  - It's a docker-based web app built upon SearXNG.
+- https://github.com/1broseidon/ketch /202606/go/vue
+  - [Ketch - Best Search Tool for local models : r/PiCodingAgent _202606](https://www.reddit.com/r/PiCodingAgent/comments/1uiwid0/ketch_best_search_tool_for_local_models/)
+    - I were using firecrawl or brave-search, but found them very decent(好的, 出色的), so I went to SearXNG, which is fine, but lacks some features of firecrawl, which has montly limits + self-hosting it requires too much resources
+    - I paired it with my local searxng instance and I was amazed how good it performes, compared to firecrawl and brave and scratch searxng.
+    - Feeding HTML into an LLM is wasting tokens if you read it for the content. There are many online services that make a web page AI friendly, but it's overkill. Tools like this work just fine and are easy to implement since all it needs to use is a binary executable.
+    - The easiest way is simply tell your pi agent to use the ketch CLI, something like “run ketch --help to learn how to use ketch for search” then just search after that
+    - Ketch is good for single searches and scraping. Been using it for a while. It's not very popular considering how much it can do. The output is pretty rich too.
 # more-search
 - https://github.com/typicode/json-server
   - Get a full fake REST API with zero coding

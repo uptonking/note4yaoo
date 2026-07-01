@@ -967,7 +967,7 @@ For the parity refactor, which live edit authority should the plan assume for fo
 
 ## 0403
 
-- 🤔 i am using my m4 macbook now. From both clashx pro network monitor and NetSpeedMonitor.app, it shows download speed is 2.9~10.1 MB/s, it keeps showing this network speed for hours. please find which processes/apps are downloading and eating my network. the reason may not be chrome browser, because when i close chrome, it still showed the download speed. from both clashx pro network monitor and NetSpeedMonitor.app, now it is showing download speed is 2.9~10.1 MB/s. please analyze the root cause and tell me how to fix it step by step.
+- 🤔 i am using my m4 macbook now. From both clashx meta network monitor and NetSpeedMonitor.app, it shows download speed is 1.2-3.2 MB/s, it keeps showing this network speed for hours. please find which processes/apps are downloading and eating my network. the reason may not be chrome browser, because when i close chrome, it still showed the download speed. from both clashx pro network monitor and NetSpeedMonitor.app, now it is showing download speed is 1.2-3.2 MB/s. please analyze the root cause and tell me how to fix it step by step.
   - ❓ 手动强制退出 ClashX Pro 再打开， 网络自动恢复正常， 所以可能是这个闭源代理软件自身的问题
   - This is a known issue with proxy clients - they can get stuck in connection loops, especially with unreliable proxy servers 
 

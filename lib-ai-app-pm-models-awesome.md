@@ -26,6 +26,10 @@ modified: 2026-06-20T15:49:57.019Z
   - 
 
 # model-api-resources
+- [Model Pricing for Kilo Code – Compare LLM Model Pricing & Capabilities ](https://kilocodepricing.com/?freeOnly=1)
+  - [I built a free Kilo AI model pricing browser - feedback welcome : r/kilocode _202606](https://www.reddit.com/r/kilocode/comments/1tvb84z/i_built_a_free_kilo_ai_model_pricing_browser/)
+  - I pulled the live model list from `api.kilo.ai/api/gateway/models` and wrapped it in a quick browser.
+
 - https://github.com/tashfeenahmed/freellmapi /12.3kStar/MIT/202606/ts
   - https://freellmapi.co/
   - OpenAI-compatible proxy that stacks the free tiers of 16 LLM providers (~1.7B tokens/month) behind one /v1 endpoint — plus any custom OpenAI-compatible endpoint. 
@@ -1284,7 +1288,8 @@ modified: 2026-06-20T15:49:57.019Z
   - 付费站和公益站都会有rpm的限制，甚至限制都很大
   - 注意中转站的缓存命中率, 正常需要在90%以上， 部分低倍率的渠道缓存命中很低
     - 0.01的倍率差距不重要, 缓存命中率在93%以上时, 费用更低
-    - 轮询的渠道不要太多，感觉会降低缓存命中率? 或者是new-api的缓存命中比sub2api默认就低? (实测sub2api高达94%)
+  - 轮询的渠道不要太多，感觉会降低缓存命中率? 或者是new-api的缓存命中比sub2api默认就低? (实测sub2api高达94%)
+    - 无人值守时才多号轮询, 人工干预时不需要多号
   - 廉价的套餐如lite-plan也可能慢/卡/不可用, 抢不到不必执着
     - 优先买容易退款的
   - 比较 主流coding-plan 和 中转/非正规套餐如cursor/devin 的价格/token额度, 灵活选择，没必要执着

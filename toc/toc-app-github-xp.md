@@ -112,6 +112,9 @@ language:JavaScript  language:TypeScript
   - 仓库根目录加 `.gitattributes`，写入 ` *.md linguist-detectable=true`、`*.py linguist-detectable=false`、`* .html linguist-detectable=false`，commit 推上去后 GitHub 语言条就会显示 Markdown。
   - Linguist 默认把 Markdown 归为 prose 排除在统计外，需要手动标记为 detectable。
 
+- 搜索fork
+  - https://github.com/search?q=fastcontext%20fork%3Aonly&type=repositories
+
 ## not-yet
 
 - readme的多语言切换，有什么主流扩展

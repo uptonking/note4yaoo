@@ -76,6 +76,7 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/rafafields/Obsidian-Base-Hub
   - A modular Obsidian vault leveraging native Bases to replicate Notion-like database functionality for personal project and task management.
+  - 核心概念: Projects, Areas, People, Daily Notes
   - Obsidian Base Hub is a comprehensive vault template built on the KISS principle (Keep It Simple, Stupid) that transforms Obsidian into a powerful project management system. It provides interconnected databases similar to Notion, specifically designed for managing complex and dynamic work environments.
   - Unlike team management tools, this system focuses on individual workflow optimization while maintaining flexibility for evolving project requirements.
   - [New open-source project: Obsidian Base Hub as simple Notion Alternative : r/ObsidianMD _202510](https://www.reddit.com/r/ObsidianMD/comments/1o40btl/new_opensource_project_obsidian_base_hub_as/)
@@ -83,9 +84,15 @@ modified: 2026-04-07T00:47:33.626Z
     - Modular management of projects, areas, and tasks
     - Databases for people, meetings, daily notes, and tasks (grouped into projects or areas)​​
 
-- https://github.com/bgarciamoura/obsidian-notion-bases-plugin /GPL/202603/ts
+- https://github.com/bgarciamoura/obsidian-notion-bases-plugin /GPL/202605/ts/inactive
   - Turn any folder in your vault into a powerful database — right inside Obsidian.
+  - CSV import/export, Formulas, Relations & Lookups, Image columns, Aggregation row, Number formatting, Bulk actions
   - [I built a Notion-like database plugin for Obsidian — 6 views, fully local, no external tools : r/ObsidianMD _202603](https://www.reddit.com/r/ObsidianMD/comments/1rtwcja/i_built_a_notionlike_database_plugin_for_obsidian/)
+  - why build workarounds and only sample from a folder when you could do this with views for bases that would allow for very flexible filtering, sorting, and grouping on their own?
+    - Cause bases doesn't have all features that Notion have, the most important to me is the relations and lookups. And I want to have control over everything I'm doing, not extending from something I don't have control.
+    - you can achieve similar results in core Bases using formulas with map/filter over properties. The end result is comparable. The difference is mostly ergonomic. With Relations and Lookups, there's no formula to write — you just pick the source database, the display field, and the join column from dropdown menus. It's a point-and-click setup that mirrors how Notion does it. For people coming from Notion, it feels familiar. For people comfortable writing expressions, core Bases formulas are just as capable (and arguably more flexible since you can do regex, map/reduce, etc.). It's really a matter of preference — visual configuration vs expression-based. Both get you there.
+  - I don't think it's accurate to say core Bases doesn't have formulae. It does, it just works very differently than Notions Formula fields do, and it doesn't show up in the front matter.
+    - I should have been more precise there. Core Bases does have a solid formula system with if(), string/date/list functions, and even map/filter/reduce. The difference is more about syntax style: Notion Bases uses spreadsheet-like syntax closer to how Notion does it (if(status = "done", 1, 0)), while core Bases uses expression-based dot notation closer to JavaScript (status == "Done"). I'll update the comparison to reflect this properly — thanks for pointing it out!
 
 - https://github.com/churnish/dynamic-views /GPL/202605/ts
   - plugin that adds elegant grid and masonry card views for Bases.
@@ -113,6 +120,13 @@ modified: 2026-04-07T00:47:33.626Z
   - Built with FullCalendar for a robust and feature-rich calendar experience.
   - https://github.com/mtellin/obsidian-bases-calendar
     - multiple time views, Google Calendar colors, timed events, and drag-to-reschedule
+
+- https://github.com/FrancescoUmberto/GoodBases /MIT/202606/ts
+  - A custom Bases view for Obsidian that renders your databases as a Notion-style table: clean chrome, hover-reveal OPEN buttons, colored value pills, and inline cell editing.
+  - [I built a Bases view that makes your tables look exactly like Notion databases : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1u2zfuu/i_built_a_bases_view_that_makes_your_tables_look/)
+    - this is NOT a separate database system. It's just a view on top of the native Bases engine, so all your filters, formulas, sorting and .base files work untouched. (Different approach from the "Notion Bases" plugin, which is its own database engine.)
+    - Roadmap: column resizing, per-column Calculate footer, custom tag colors, a proper select-style pill editor.
+    - makes huge bases laggy; also, it would have been great if the columns were resizable and their positions could be changed
 
 - https://github.com/vitalybe/obsidian-advanced-list-bases-view /svelte
   - Adds a advanced list layout to Obsidian Bases so you can display notes as an interactive list view.
@@ -273,6 +287,8 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/dsebastien/obsidian-bookshelf
   - plugin that adds a Bookshelf view type to Obsidian Bases, letting you display notes as a visual bookshelf
+  - https://github.com/MichaBrugger/booksidian_plugin
+    - A plugin to connect your Goodreads shelves to your Obsidian vault.
 
 - https://github.com/code-of-chaos/ColoredTagsWrangler.obmd /GPL/202606/ts
   - This plugin allows the user to apply different colors to different tags. 
@@ -594,6 +610,9 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/flowershow/flowershow /1.1kStar/AGPL/202606/ts
   - https://flowershow.app/docs/getting-started
   - https://flowershow.app/
+  - demos
+    - https://demo-wiki.flowershow.app   /经典的文档网站, 左中右布局
+    - https://demo.flowershow.app/data+rich+documents/global-co2-emissions-analysis   /多样性博客，包含数据表
   - Publish markdown (and html) websites, docs, wikis and websites in seconds. Integrates with your AI.
   - https://flowershow.app itself is built and published with Flowershow
   - 类似 git-based cms, 不依赖git
@@ -628,6 +647,9 @@ modified: 2026-04-07T00:47:33.626Z
   - https://github.com/Glaciercoool/digital_garden /MIT/202511/ts
     - https://digitalgarden-azure.vercel.app/
     - Flowershow template
+- https://github.com/flowershow/demo /202603/mdx
+  - https://demo.flowershow.app/
+  - Explore Flowershow's features and options in this live demo
 
 - https://github.com/qiyangdev/vaultpress /MIT/202606/ts
   - https://vaultpress.qiyang.dev/
@@ -1066,6 +1088,17 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/loreapp-io-dev/LoreNote
   - open-source alternative to Obsidian. Local-first, lightning fast, and fully extensible. Your data, your control.
+
+- https://github.com/refactoringhq/tolaria /9.4kStar/AGPL/202605/ts/rust
+  - https://tolaria.md/
+  - a desktop app for macOS, Windows, and Linux for managing markdown knowledge bases.
+  - Files-first — Your notes are plain markdown files. They're portable
+  - Git-first — Every vault is a git repository. You get full version history, the ability to use any git remote, and zero dependency on Tolaria servers.
+  - Offline-first, zero lock-in — No accounts, no subscriptions, no cloud dependencies. 
+  - Standards-based — Notes are markdown files with YAML frontmatter. No proprietary formats, no locked-in data. Everything works with standard tools if you decide to move away from Tolaria.
+  - Types as lenses, not schemas — Types in Tolaria are navigation aids, not enforcement mechanisms. There's no required fields, no validation, just helpful categories for finding notes.
+  - [有人用过爆火的Tolaria笔记么? - LINUX DO _202605](https://linux.do/t/topic/2106096)
+    - 感觉ui不是很好看，重复造轮子，大概率不如 obsidian
 # examples-vault
 - https://github.com/obsidian-pkm-vault/awesome-obsidian-vault /md
   - Awesome list of obsidian vaults

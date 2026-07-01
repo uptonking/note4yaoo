@@ -43,7 +43,24 @@ modified: 2022-08-21T10:19:58.756Z
 
 - ## 
 
-- ## 
+- ## 🎯 [Migrating to TanStack Table v9 (React) _202606](https://tanstack.com/table/beta/docs/framework/react/guide/migrating)
+- Custom feature plugins with full type safety
+  - Features are tree-shakeable
+- State Management: Three-layer atom architecture: Each state slice (sorting, pagination, rowSelection, etc.) lives in its own atom rather than a single monolithic state object. 
+  - Internally, the library writes to per-slice baseAtoms
+  - Default full-state subscription, optional narrower selectors
+  - v9's state system is built on TanStack Store and exposes three read surfaces on the table instance
+  - Bring your own atoms (optional): For advanced use cases, you can own individual state slices by passing your own writable atoms via the new atoms option. 
+- tableOptions: New utilities let you compose and share table configurations.
+  - Create custom table hooks with pre-bound features, row models, and components, similar to TanStack Form's createFormHook. 
+- Improved Type Safety (No More Declaration Merging)
+  - Function registries replace declare module augmentation: Custom filter, sort, and aggregation functions are registered by name 
+  - Per-table meta slots: The type-only tableMeta, columnMeta, and filterMeta slots declare meta types for a single table instead of merging into a global interface. 
+
+- The Good News: Most Upgrades Are Opt-in
+  - Don't want to think about tree-shaking? Import stockFeatures to include all features, just like v8.
+  - Don't want to optimize renders yet? Do nothing special. The default selector selects all registered state, so rendering works like v8.
+  - Table markup is largely unchanged. How you render `<table>, <thead>, <tr>, <td>`, etc. remains the same.
 
 - ## Here's the surprisingly simple way that TanStack Table V9 can use a little as 10% memory as it used to.
 - https://x.com/KevinVanCott/status/2069088393598820813

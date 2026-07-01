@@ -38,6 +38,7 @@ modified: 2026-05-28T17:50:54.646Z
     - compact prompt mode
   - 纯云端模式方便mobile/async
     - 后端逻辑需要支持纯本地/纯云端
+    - 还要支持 NO AI 的精简模式
   - headless api/cli/skills
   - python-first for mlx/office
   - multiple-clients/windows
@@ -52,6 +53,7 @@ modified: 2026-05-28T17:50:54.646Z
     - db-derived-files-sync-dbfs+backlinks, portaljs/filebrowser-multi-backend, bases
     - translation-partial,
     - ai-design/lovable
+  - textwork/worktext
 
 - 📌 non-goals
   - ocr for arbitrary image

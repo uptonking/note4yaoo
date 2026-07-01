@@ -38,6 +38,24 @@ modified: 2021-09-30T07:43:25.286Z
 - ReadMe-flavored markdown 
   - https://rdmd.readme.io/docs/syntax-extensions
   - Code Tabs, Callouts, @embed
+# elements
+
+## code-block
+
+- Fenced code blocks
+- A code fence is a sequence of at least three consecutive backtick characters (\`) or tildes (~). (Tildes and backticks cannot be mixed.) 
+  - A fenced code block begins with a code fence, indented no more than three spaces.
+  - To display triple backticks in a fenced code block, wrap them inside quadruple backticks or Tildes
+
+~~~markdown
+
+```
+Look! You can see my backticks.
+- wrapped inside quadruple backticks or Tildes
+```
+
+~~~
+
 # [mdx](https://mdxjs.com/getting-started/)
 - ref
   - I'm not an expert in JSX or MDX, but looking at the code example I would think MDX could also handle Web Components.

@@ -8,82 +8,6 @@ modified: 2024-01-23T02:52:23.932Z
 # pm-office-obsidian-community
 
 # guide
-- pros
-  - rich editor
-  - backlinks: 双链基于[[]]语法, 同名文件的写法是相对路径
-  - bases: 基于文件的多维表格
-  - publish
-  - canvas
-  - graph-view
-  - slides
-  - templates
-  - sync
-
-- cons
-  - ?
-
-- features(来自ob app里面的 core/community plugins)
-  - filetree, file-properties, search, file-recovery, note-merge/split, quick switcher, workspaces-layout
-  - backlinks, bases, bookmarks, outline, page-preview, footnotes, slash commands, outgoing-links, web viewer
-  - canvas, slides, daily-notes, graph-view, tags view, 
-  - templates
-  - command-palette
-  - publish
-  - sync
-# draft
-- architecture
-  - 内容文件与配置文件分离的思路: 如表格内容与样式分离
-
-- db-based-architecture
-  - sync: file > db > webapp
-
-- markdown-query
-  - 2way sync of obsidian files and ~~wiki.js~~ 
-  - 基于 agentfs 来bash files
-  - 可参考 codebase-ast-wiki/graph 的思路来实现 markdown-databases
-  - 🤔 实现原理是否与 经典rag流程 `chunking > vectordb ` 类似
-
-- mermaid-chart + bases
-
-- 
-
-# pm
-- 支持公开子目录作为site
-
-- 部分内容需要加密的场景，如何解决
-  - 需要在cli侧解决
-
-- documentation-ideas
-  - docusaurus
-  - Starlight
-
-- 类似wiki的场景
-  - 可参考 books/library
-
-- 如何支持外部文件
-
-- ide和cli主流的ux都与启动文件夹相关联，而chat并不会自带文件夹而是需要上传文件
-  - 可将vscode的文件书隐藏，将chat移到左边来实现目前主流chat的产品ux，没必要单独开发electron app for chat.
-- 基于vscode的方案的优点
-  - 直接使用基于git的同步
-
-- multi-user/workspace的设计
-
-## ob-bases
-
-- database的技术方案可参考agentfs+just-bash, 以数据库作为数据源，到处markdown方便ai理解
-# dev-xp
-- 偏ui的plugin，在headless的场景下可能读不到配置，需要在vault中存一份配置，然后server运行时支持相关逻辑
-  - headless方案可参考vscode-server
-
-- 对markdown文件的import需求很少，因为可以手动复制粘贴内容
-
-- ob-bases基于文件的设计，似乎很符合grist
-
-- 
-- 
-- 
-- 
 
 # discuss-stars
 - ## 
@@ -92,19 +16,7 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 🤔 [10, 000 notes in Obsidian. I think it's just not working for me anymore. : r/PKMS _202602](https://www.reddit.com/r/PKMS/comments/1qvnvxu/10000_notes_in_obsidian_i_think_its_just_not/)
-  - Been using Obsidian since 2020 pretty much since public launch. 10, 000+ notes now.
-  - I have an inbox in a completely different app because getting stuff into Obsidian feels like too much. I add ## Log sections with dates to notes because I never know where to put new thoughts on old ideas. Half my thinking now happens in Claude or ChatGPT and never makes it to Obsidian.
-  - As a result more and more things end up outside of my knowledge base. I looked at the stats and the number of notes I'm creating dropped to almost just a couple of notes per month. And I didn't stop my work and consuming materials, so clearly something is not working.
-  - I started looking into other stuff: notebooklm, mem, outliners (feel like a great idea but I haven't found a decent implementation) but nothing really feels right. And I don't want to abandon my 4 years of notes.
-
-- I have 8819 notes, it is working fine for me. I use PARA as a methodology.
-
-- Of those 10, 000+ notes, how many are basically web clippings (with or without annotation, markup) and how many of them are original writings?
-  - The reason for asking is that I've noticed a connection between large vaults and struggles similar to yours.
-  - Data hoarding is a thing. And just like those who hoard physical things, it becomes impossible to find the things you have. Whether it is an inbox or "uncataloged" folder, it shouldn't be a dumping ground, but a queue of things to be processed.
-  - If you are consistently adding to it faster than you are processing it then perhaps the things you are adding aren't as important as you initially thought.
-  - My vault is a little over 2400+ notes (all but about 50 are original writings) spanning 49 years. I use the Johnny Decimal method for my folder/notebook hierarchy and make generous but deliberate use of links (approx. 5200 links in the vault)... nearly all are internal to the vault. Tags are the 3rd ligaments of connection.
+- ## 
 
 - ## The future is plain text files — it's just not evenly distributed
 - https://x.com/kepano/status/2007461645438849484
@@ -282,73 +194,6 @@ modified: 2024-01-23T02:52:23.932Z
 - it seems if you sandbox obsidian, the plugins don't work.
 
 - On macOS, the sandboxing can be configured in many details. So in theory, I could generate a configuration for Obsidian running specific plugins allowing just the access it needs.
-# discuss-author
-- ## 
-
-- ## 
-
-- ## if you're wondering why this or that feature hasn't been added to Obsidian, remember we only have three full-time developers (and not trying to grow the team)
-- https://x.com/kepano/status/1908728301700735439
-  - everyone that we have hired was once an active community contributor, including myself. That's always where we look first.
-
-- People keep looking for new features in notetaking apps as productivity procrastination, whereas, if they actually do real work they realise obsidian doesn’t need anything more. It does the job. Let’s keep it simple !
-
-- Adding most of those features would not make Obsidian better anyway. Focus.
-# discuss-roamdap
-- ## 
-
-- ## 
-
-- ## 
-
-- ## [Obsidian new plugins review waiting line is huge : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1surv34/obsidian_new_plugins_review_waiting_line_is_huge/)
-- I bet you 75% of those PRs are vibe coded trash fires. Which means someone has to take the time and close the PR. It’s a waste of everyone’s time.
-
-- It was mentioned a few times. The team is working on a new system to handle reviewing plugins. There is no ETA. But it is in the works. Once ready it should help unblock then backlog
-
-- While vibe coded projects are an issue, the main problem is lack of long term support. It takes a lot of effort to properly support a GitHub repository. Even small ones. Most people, including myself, don’t have the patience or attention span
-
-- ## 一旦进入充满pptx和docx的世界，就发现Obsidian一点都不能用
-- https://x.com/TooooooBug/status/2033116556511842680
-  - 小脑筋又开始思考“笔记软件”，或者是“资料库”软件……
-
-- pptx和docx，本质上是一个压缩包，里面是xml和素材，obsidian换个角度就是一个超大的word文档
-# discuss-news-obsdmd
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 🔌 The future of Obsidian plugins
-- https://x.com/obsdmd/status/2054234821875146898
-  - Today we’re excited to launch Obsidian Community, the new directory and developer dashboard for Obsidian plugins and themes.
-  - Since the Obsidian API release in 2020, more than 4, 000 plugins and themes have been created by our amazing community. Incredibly, Obsidian plugins have passed 120 million total downloads!
-
-- ## [1 Year Later: Data on how making commercial use free affected Obsidian's revenue - up to $1, 100, 000/year in lost revenue from enterprise : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1shm3ym/1_year_later_data_on_how_making_commercial_use/)
-  - A year ago, commercial use became free, shifting the use of Obsidian at work from a mandatory legal requirement of $50/user/year to an optional supporter license.
-  - Commercial license numbers on the day the change was announced: at least 18, 900, at most 47, 902
-  - Commercial license numbers today: at least 16, 150, at most 25, 818
-  - Obsidian lost at least 2, 750 (14.5% decrease), at most 22, 084 (46% decrease) commercial license subscribers, which at $50/user/year represents a net revenue loss of $137, 500/year at the minimum or $1, 104, 200/year at the maximum.
-  - Amazon remains the bedrock (puns intended) of Obsidian's enterprise supporters, paying for more commercial licenses than all other companies combined
-  - the company's business model, philosophy, and success continues to be the flagship force against the VC "growth at all costs" approach, serving as a prime example for what's possible when the vision isn't to please investors, but users.
-  - For added clarity, here's the list of companies and my calculations for anyone curious.
-
-- 👷: Making the license optional aligns it with the reality that companies were only optionally paying. Yes, it means a lot of potential lost revenue, but it aligns better with our Manifesto's goals to make Obsidian available to everyone for free.
-  - many companies are still happy to support us. In the future maybe we could have another service like Sync or Publish that is designed for companies, but it's not something we've been working on yet.
-- It would be better if the developers took money from those who have it – entrepreneurs and companies – and made synchronization free for ordinary users.
-  - I disagree because it changes the priorities. If only businesses are paying, you end up priortizing features for businesses. This ends up hurting the experience for regular people. There are many examples of apps that went down this path, and the results speak for themselves.
-
-- I have a catalyst one, but I realize that only goes so far for the team. Sync is recurring, and it actually gets me something useful.
-
-- Tbh, Obsidian should offer a lower price for startups. Something like 10 USD with some support would make Replicats a great customer for them.
-  - I say that because Notion charges twice as much, and it is a pain in the a$$ for start-up management.
-
-- ## one fun thing in Obsidian 1.8 is that it lets you browse the web in plain text — the "reader mode" is persistent as you click links
-- https://x.com/kepano/status/1885022352209306085
-
 # discuss-showcase-ob
 - ## 
 
@@ -358,8 +203,6 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## [A Bases Template for Project Tracking or Task Management - Share & showcase  _202508](https://forum.obsidian.md/t/a-bases-template-for-project-tracking-or-task-management/104249)
-
 - ## [Combined all notes/writing apps I've ever used into a single vault : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1rdpwmw/combined_all_noteswriting_apps_ive_ever_used_into/)
   - graph关系图，样式友好
 
@@ -367,378 +210,6 @@ modified: 2024-01-23T02:52:23.932Z
   - my plugin that turns your vault into a semantic map. Notes embedded, projected into 2D via UMAP, and clustered into thematic zones. 
   - the overlapping zone issue. I still really like the original (now called “Star Map”), so instead of redesigning I added a new mode: “World Map.”
 
-# discuss-pm-ob
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## [Custom Views has literaly changed my Obsidian Vault : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1u56bn3/custom_views_has_literaly_changed_my_obsidian/?sort=top)
-  - Between Bases and this plugin I feel like I really can do anything I want 
-
-- ## [What are the latest cool stuff you have adopted in Obsidian? : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1u32eot/what_are_the_latest_cool_stuff_you_have_adopted/?sort=top)
-- Use Webclipper (Browser Extension) to bring stuff like Wikipedia articles into your notes and link directly in/out of of them.
-
-- The latest "cool" thing I adopted was Dataview. It was a while back. DV helps me most with finding similarities, making connections, keeping everything organized and such. Much faster, better and cleaner than before using it.
-
-- Bases and Tasks plugin. I define all my ongoing projects with custom properties like status, area, dates, then create a base to filter them: work, personal, house, etc. Each project contains an action items list where I put my todos. Then with the Tasks plugin I pull all tasks for this week into the current weekly note. For my work as a manager, I also pull tasks from projects in the specific person's note so I can quickly see the stuff they need to deliver. It works really well!
-
-- ## Research 1.3 is out now with our new annotator
-- https://x.com/TGUPJ/status/2064397799521767928
-  - 类似于卡片标注
-
-- https://x.com/TGUPJ/status/2066573785008898479
-  - themed pages are back by popular demand
-
-- ## [Notebook Navigator 3.1 brings Scrivener-style sidebars to Obsidian! : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1tz3qlq/notebook_navigator_31_brings_scrivenerstyle/?sort=top)
-  - One of the main issues when moving from Scrivener to Obsidian is losing that attached writing context. If you use Scrivener, you probably rely on the Inspector notes panel, where you can keep scene notes, reminders, and scratch text beside the section you are writing. Ulysses has a similar sense of structure with sheets inside groups, but Obsidian has never really had a native way to make folder context follow you around while browsing your vault.
-  - Notebook Navigator 3.1 brings this workflow to Obsidian with two new features: Open folder notes in right sidebar and Right sidebar: Show closest folder note. 
-  - 类似于 文件夹备注说明
-  - Also, when a Base is set as a folder note, and Open folder notes in is set to Right Sidebar, navigating to a folder inside the folder note creates a new split of the Base in the right sidebar every time. This doesn't happen with standard and Canvas folder notes.
-
-- ## [Obsidian Teams inc? : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1tyy1wn/obsidian_teams_inc/?sort=top)
-- Pushing your markdown to github with a pull request gets you all of this
-  - Google docs supports parallel editing in real time. GitHub supports merging. Not the same. 
-- Not really, because github is not in real time. However, putting it in a dropbox folder gets a good chunk of it.
-
-- ## 这三个东西凑齐之后，Obsidian已经不是一个笔记软件了。
-- https://x.com/yanhua1010/status/2052720961531879779
-1. Obsidian Web Clipper 
-浏览器看到好东西一键剪进库，原生 .md 格式。
-1. Obsidian CLI 
-让Claude Code直接接管整个仓库：读、写、搜、改、建双链等等。
-1. Obsidian Skills 
-最狠的一个，让Agent知道什么时候应该写 .md 笔记，建 .base 表格，或者生成一张 .canvas 画板。
-
-- 都在用啦~~~不过实际效果，还没有完全体会到精妙之处
-
-- Obsidian + Agent 整合最大的解锁是从被动笔记变成主动 retrieval。Web Clipper 收, CLI 让 agent 写, Skills 决定什么形式。瓶颈在最后一步, agent 选错形式 (该建表却建画板) 反而比没整合还难受。
-
-- Obsidian Web Clipper  其实并不好用，混合公式类文章容易出现格式错误，长文章有时候只能截取到一张图...
-
-- ## [Obsidian helped me most when I stopped trying to make it impressive : r/ObsidianMD _202605](https://www.reddit.com/r/ObsidianMD/comments/1t036y1/obsidian_helped_me_most_when_i_stopped_trying_to/)
-  - My vault got better when I stopped chasing the perfect graph and started writing ugly useful notes.
-  - One note per problem. One daily note. Links only when they actually help. No pretending a beautiful system means I did the work.
-  - The biggest win has been noticing patterns I used to miss, especially around distraction. A few blunt notes about when I pick up my phone taught me more than any screen time report.
-
-- It helps when you accept that customising your vault is a separate hobby, often barely related to daily use of your vault.
-
-- As your vault expands, you’ll eventually feel the need to distill meaningful insights from these fragments to truly accumulate knowledge. At that point, you might shift your Obsidian workflow to better support long-term synthesis. That is when you’ll truly discover how powerful links could be
-
-- I agree with your premise… my obsidian is best when it’s just a place for all of my notes. The only extra handholding I use is inter-note links. However I hate daily notes. A separate note for each day is a place for daily notes to die and never be seen again. I have a ‘daily notes 2026’ note for the entire year; one header per day. To review the week I hit page down and page up.
-
-- Similar for me too re: plugins; tasks, git, excalidraw.. that's it. Originally I had about 20, spent far too much time noodling around with them instead of just using the app!
-
-- ## [Migrating out of Obsidian : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1ss6v8k/migrating_out_of_obsidian/)
-- CyberSec identified few risks with Obsidian and quarantined it (put a hold on new installs).
-  - Embedded Commands in the Vault (i.e. unauthorized script execution)
-  - Publish/Sync Feature can be used to bypass Data Loss Prevention measures
-  - Unregulated Community Plugins install
-  - Community Plugins prone to supply chain risk
-- Obsidian should consider releasing a specially secured business variant of their app.
-  - Yep. I have talked to our IT, and the plugins are the main issue, and locking down storage to a certain location on our servers is a must.
-- IT department can already do this by controlling access to the config both at the file system level and network level 
-
-- We plan to have a special edition of Obsidian that has plugins and other features off by default.
-
-- ## [What do you feel Obsidian is currently lacking? : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1snrrrz/what_do_you_feel_obsidian_is_currently_lacking/)
-- Literally the most downloaded 10 or 20 plugins should make it painfully obvious what features people want...
-
-- really needs a better search function, and while I know it's a burden on the app I think it'd be really cool if bases could read the note body for things like inline properties
-
-- try omnisearch
-
-- Official support for Kanban view
-  - It's on their "Planned" Roadmap, but I wish it were prioritized higher in development. The Bases core plugin is their silver bullet that, if developed fully, could really amp up Obsidian's functions.
-
-- ## [Can Obsidian do something like this? (Notion dashboard) : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1salt9e/can_obsidian_do_something_like_this_notion/)
-- There’s a very useful CSS snippet called MCL that lets you build multi-column pages like this. Most other things on here can be done with bases or dataviews.
-
-- ## 看大家都在推 Obsidian。但一翻比较后我选择了 @tryOctarine , 30MB 左右，相比 Obsidian 小了一个数量级。
-- https://x.com/1ronben/status/2035978760827322578
-  - 作者对性能要求严格，响应速度很快。
-  - 采用本地 md 保存，适合 Agent 利用。应用本身也还内置了智能对话功能。
-  - 多 Workspace，数据库模式，todo 模式，日记模式，模版，git 备份...
-  - 难得的是作者基本日更，坚持很长时间了，是一款非常有潜力的产品。
-
-- ## [Do you use Daily Notes in Obsidian? Is this something you would want? : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1q8zw78/do_you_use_daily_notes_in_obsidian_is_this/)
-  - 热力图换成了背景图
-- I don't have images on my daily notes but would definitely start if there was a feature like this!
-
-- Yes, that would be very useful! I’ve already been using something very similar with the Diarian plugin, but it’s not quite there yet.
-
-- ## [How have you ACTUALLY benefitted from linking/tagging notes? : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1slxf7d/how_have_you_actually_benefitted_from/)
-- I find embedding of subheadings or paragraphs from other notes super useful, which works through links. I also find myself adding and using links to make index pages, which then summarize and link to online or local resources. I tag my notes as I use a very shallow folder tree, but so far, I haven't benefited from tags for searching much, other than being a hub-seed in my graph view. I do use the graph view for surfing my vault, which I find not only pleasing but which also reduces methodic drift and has me rediscover old projects, so that's neat.
-
-- I use links to refer to notes that are references, aka notes that are written like a Wikipedia article about a topic/system. I then use tags to refer to the topics of the note. Finally I use folders for the primary topic of the note. That way it's easy to find a note if you know the topic, all reference information gets collected into the reference notes, and I can still find things manually though the folder structure (my brain defaults to traversing folders instead of the search bar and I've given up trying to change that).
-  - The tags particularly are really useful when you have a slight memory of something, but even the context is gone. Aka you remember Bob mentioned something important about whales but can't really remember what he said and in which financial reporting meeting.
-
-- Linking is essential to a Zettelkasten system
-- As a Game Master and thus world builder for a cortex Prime campaign: I use linking all the time. The Zettelkasten won’t work without it. Other than that, tags are used for broad areas, like „playerCharacter“ or „NPC“ or „Location“ or „Plotline“.
-
-- ## [Project Folders now available in Lovely Bases Plugin : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1q89nct/project_folders_now_available_in_lovely_bases/)
-  - I didn't do the design, I reused this component from shadcn and adapted it to work within Obsidian
-  - https://github.com/aitorllj93/obsidian-lovely-bases
-
-- Is there a way to show an image itself? E.g. A base that filters on png files and the view type is infinite gallery. I tried with thr file path but that didn't seem to work.
-
-- ## 🆚 [Folders vs tags vs links vs you name it - what actually works after 2+ years of PKMS? : r/PKMS _202603](https://www.reddit.com/r/PKMS/comments/1rxy6ua/folders_vs_tags_vs_links_vs_you_name_it_what/)
-- The systems that survive 2+ years have one thing in common: they're optimized for retrieval, not for capture.
-  - PARA survives because the top-level question ("what am I actively working on?") maps directly to how you look for things later. 
-  - Zettelkasten survives because every note is forced to link out, so any retrieval path leads somewhere useful.
-  - What collapses: folder trees deeper than 2 levels (you never remember which branch you filed something under), tag vocabularies without a fixed schema (that note is tagged #productivity or #work or #tasks - pick one and stick to it), and any system where the number of entry points grows faster than the content.
-- The 2-year test isn't "do I still have this system running" - it's "how long does it take me to find a specific thing I captured 18 months ago." Most people don't audit on that metric until the system has already broken.
-
-- I started with folders more than 30 years ago. I still use them. Now I also connect notes with links. Tags are only there when there's some state to track, otherwise they mostly serve to get some statistics (how many notes with #y2025? How many notes in my #journal?).
-  - I don't use indices / MOCs, except very rarely when I have a sequence of individual things that are used together, such as a series of articles. I might have about 10 of these...
-
-- "folders vs tags vs links" is an unnecessary debate as if they are in conflict with each other.
-
-- ## 🤔 [I know many folks do not use folders… : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1ppcmic/i_know_many_folks_do_not_use_folders/)
-- Use folders. Stop worrying about what others do. Your assumption is on point. Obsidian can dissapear and even tho there are some other tools that can be an 'alternative', it's not the same. Folders will give you the peace of mind that even in a file browser you will find your files more easily than a bunch of files together. Don't overthink.
-
-- Folders are the way to go. Stop treating your own notes like you need a google spider to crawl, tag, index, and find them for you. 
-
-- The same logic used in the folder-less method can be applied with a very simple bash script to generate directories and assign files to them, should Obsidian vanish one day.
-
-- ## [What's one improvement you'd like to see in Obsidian in 2026? : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1pogn6w/whats_one_improvement_youd_like_to_see_in/)
-- A good, comprehensive attachements/media management tool. 
-  - I know there are some good plugins out there, but imo it should be built in, to make sure it's properly maintain over time
-- Clean up orphaned attachments (using sync storage)
-
-- Lightweight for mobile would be my top choice, it’s too clunky and sync takes too long, and control too complicated to be used for mobile
-
-- Better search would be nice. Not only better relevance ranking but to be able to search for symbols like colons in between terms. And also presentation of results in the center of the screen.
-
-- advanced outliner options like nested code blocks, callouts etc. Obsidian can do a lot to make better UX regarding outline approach
-
-- editable block embeds is #1 for me
-
-- Embeddings that can be modified in-place would be lovely. I miss them from Roam, I loved them as a part of my workflows.
-
-- In general I’d like to see more work done to improve the experience of embedding one note in another. The ability to embed notes in other notes is one of Obsidian’s core strengths. But it’s like you are 90% of the way there and then the last 10% really stops me from being able to use this feature seriously.
-
-- All I want is a Kanban view for bases so I can make my Now Playing/Break/Finished notion Kansan again, and do my tier lists for what I played. (I know I can sort of get it with Kanban status updater but it's not the same)
-
-- Look forward to native PDF support for highlights and comments.
-
-- Make everything faster, even with plugins.
-
-- ## [Do you all know how I can get something like this? : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1p7qs4p/do_you_all_know_how_i_can_get_something_like_this/)
-  - 类似仪表大盘
-
-- With the Dataview plugin you can query your vault and render whatever content you want with it with JavaScript. The sky's the limit if you're willing to put in the time.
-  - there's not a lot of actual dataview code online, at least not on public repos. I would suggest referring to the dataview plugin's documentation and trying by yourself. 
-
-- Don't hold me to this because its been awhile since I looked at financial type plugins but there used to be a couple called Obsidian Ledger and another Hledger but I don't know if they are still active.
-
-- Google sheet looks sufficient for this
-
-- ## [Obsidian alternatives that are open source (free) and sync feature as well : r/ObsidianMD _202209](https://www.reddit.com/r/ObsidianMD/comments/x95y56/obsidian_alternatives_that_are_open_source_free/)
-- The only good opensource alternative to Obsidian right now is Logseq. I don't think it supports sync though.
-
-- I've been using Zim Desktop for a while now and it's great for note taking and keeping things organized. The one thing it's missing is node-graph linking. 
-# discuss-feat-bases/database
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## [One base many views : r/ObsidianMD _202605](https://www.reddit.com/r/ObsidianMD/comments/1t20rfb/one_base_many_views/)
-- I prefer to have separate bases for separate topics. But each topic base has multiple views to offer options for embedding or various contexts. If all of that would be in one base with many views, it would get messy quick
-
-- I like to view multiple bases without having to switch from window to window. I ended up linking my bases ( w/ ![[FILENAME]] ) to an overview page instead, since you cannot attach properties to a base file.
-
-- I use inline bases to filter each note linked to the note in which the inline base is (filtered by name of the note)
-
-- ## [Starting Obsidian today - What folder structure works best with Home bases : r/ObsidianMD _202512](https://www.reddit.com/r/ObsidianMD/comments/1pwfkuf/starting_obsidian_today_what_folder_structure/)
-- Work in Obsidian before you worry about how to work on it or structure your system. Yes, changes take work, but until you have a use case and understand it, it’s putting your carriage before your horse to dwell on the “best system” for it.
-  - I use a different system for every distinct vault I use, because each vault reflects a particular work space and mindset and workflow. I don’t need the same structure in my Digimon Encyclopedia as I do in my Conlangs, and even there: specific conlangs may have slightly different requirements to their language structure based on the features of that conlang.
-
-- I’d take a step back first. You’re looking at a clean slate to your notetaking with a view to a simple structure. I’d argue that your notetaking should mirror what you want out of life
-
-- ## [How do I recreate this in Obsidian? : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1uds99o/how_do_i_recreate_this_in_obsidian/)
-  - 典型的多维表格
-- bases don't work like databases in Notion. they fetch the notes you've already created, and you need to adjust the sorting and filtering to what you need. the base you showed here seems pretty easy to recreate in bases.
-  - make a folder for your books, all the columns in your base are the Metadata, and then you make a base to make a table. you could even add the book covers as images and make a book gallery.
-- A note per book is exactly how you should be using Obsidian. It's not messy at all, and is exactly how Obsidian is designed to work, out of the box. With a note per book and the properties for all of the metadata, that view you want can easily be done as a Base, no third-party plugins necessary.
-- Just FYI, each of those was a note in Notion, too. Maybe you didn't use the note part, but it was a note.
-
-- I'm using this plugin called Notion Bases for Obsidian, and it works great for me: https://github.com/bgarciamoura/obsidian-notion-bases-plugin
-
-- ## [How to make obsidian bases beatiful, Notion style example? : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1so8pj2/how_to_make_obsidian_bases_beatiful_notion_style/)
-- Pretty Properties plugin. (Nvm)
-
-- You're going to have to be good at CSS + HTML to achieve this without a plugin. I highly recommend reading through Bases-CSS-Guide. You're going to have to recreate this table view yourself with the classification based on the status/role to change colors.
-  - The easiest method dataview which is a plugin. That way you can write embed inside the CSS you'd like. But if you're going to use plugins, might as well use Pretty Properties plugin.
-
-- ## [Bases : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1sd4zfa/bases/)
-  - Trying to understand how people are actually using Bases in Obsidian.
-
-- Once I realized you can embed them in notes and scope them to pull data from the note they are embedded in to do queries and such, I was able to completely replace Dataview.
-
-- I have a dynamic base that, when embedded into a note, reads the first tag of the note and then show a table of all notes with that tag.
-
-- Right now I exclusively use tags + bases to organize my vault. Its really simple, but it works and is low friction. I tag my notes and have one base per tag which I usually embed into my home page for quick access.
-
-- Each folder contains a "bases" file with the same name as the folder. This file typically displays all the notes from that folder in a list format. For notes about games, books, movies, and TV shows, they are displayed in a gallery format with covers.
-
-- 
-- 
-
-- ## [Should I move to Obsidian Bases or Datacore, as a Dataview user? : r/ObsidianMD _202603](https://www.reddit.com/r/ObsidianMD/comments/1s3i73c/should_i_move_to_obsidian_bases_or_datacore_as_a/)
-- In priority of preference
-- Obsidian Bases
-  - Why? Core Plugin, LTS
-  - Why Not? Still missing some advanced features
-- Obsidian Dataview
-  - Why? 3.8 million downloads, lots of community support
-  - Why Not? Not dynamic in live view
-- Obsidian DataCore
-  Why? You like complex scripts to setup a database
-  Why Not? It's a Niche plugin that you either love or hate
-
-- I use both because Bases have a fatal flaw which devs aren’t planning to mitigate: there’s no way to change cell size and adjust it to fit the contents. If you want accurate tables, use Datacore.
-
-- It depends on how you've been doing things. I found I could replace most of my dataview tables with bases and it's way better/more streamlined, however I'm also using a lot of inline properties in my daily notes, which bases cannot pickup on, so I still have to use dataview for those tables.
-
-- Data(View/Core) is obviously more flexible and powerful, but much harder to learn.
-- Datacore uses a different syntax from Dataview. But will largely have the same features.
-
-- Dataview has good documentation and there's a bunch of pre-made queries online. LLMs are somewhat trained on it at this point, so especially for dataviewjs queries, you can prompt your way there pretty easily. 
-
-- ## [What are the best plugins in relation to bases already created for Obsidian so far? : r/ObsidianMD _202512](https://www.reddit.com/r/ObsidianMD/comments/1pp25ul/what_are_the_best_plugins_in_relation_to_bases/)
-- Virtual Content. You can add specific base views to files based on their property values without actually typing them in the note. It's great because if you want to change something in that base view, you can do it through the plugin settings tab and the change will happen in every file. Also, it doesn't alter the Markdown files.
-
-- ## [Bases: data source from CSV instead of note properties? : r/ObsidianMD _202505](https://www.reddit.com/r/ObsidianMD/comments/1kw4yai/bases_data_source_from_csv_instead_of_note/)
-  - Is there a way for a Base to grab data from a CSV (or other tabular-data format)?
-
-- No. Because the core idea of bases, is presenting a view of MD files.. with smart query & filters based on those MD files. That’s it.
-
-- I thought it was silly at first, but I’ve gone the thousands of notes route and haven’t had trouble yet. There’s a CSV/JSON importer plugin available to make a note per entry.
-
-- SQLseal plugin is read-only, correct? I can't make changes to the table and have them write back into the csv file?
-
-- ## [Obsidian Bases support in Flowershow (Alpha) : r/ObsidianMD _202512](https://www.reddit.com/r/ObsidianMD/comments/1pevh7g/obsidian_bases_support_in_flowershow_alpha/)
-
-- ## [Obsidian Bases — now available to everyone! : r/ObsidianMD _202508](https://www.reddit.com/r/ObsidianMD/comments/1mtxh52/obsidian_bases_now_available_to_everyone/)
-  - Bases is a core plugin that lets you turn any set of notes into a powerful database. With bases you can organize everything from projects to travel plans, reading lists, and more.
-  - Using a base you can view, edit, sort, and filter files and their properties. 
-  - Each base can have several views, and different layouts such as tables and cards. 
-  - Below is an example of table view where each row is a file, and each column is a property of that file.
-- Bases are filtered and sortable Table and Card views of note Properties and Tags. It is a configurable "view" of various Properties of Notes in your Vault.
-- A Base can be a standalone file (with a .base extension) and can be viewed directly or embedded like any other Note using the format ![[PathToNote]]
-- Base code can also be embedded directly into a note to render the Base.
-
-- [PSA: Some Clarity on Bases : r/ObsidianMD _202508](https://www.reddit.com/r/ObsidianMD/comments/1mvfoys/psa_some_clarity_on_bases/)
-
-- Yeah at first glance I thought it was like a built in spreadsheet for any data but it's more like my notes are the rows.
-  - Notes are the rows (records).
-  - Properties are the columns (fields).
-  - A Base is a view that renders the rows and columns. What displays in the rows and columns is controlled by Filters and Property selection.
-
-- I think the core plugin Bases only works with YAML properties or explicit file metadata (created date, modified date, path, etc). It does work with inline tags, but not Dataview inline properties (the propertyname::value syntax you allude to). I think the devs have said that this is technically feasible and so a community plugin could be used to access Dataview properties, but I haven't seen one yet.
-
-- ## [Obsidian bases are great, but is making a separate note for each item practical? : r/ObsidianMD _202509](https://www.reddit.com/r/ObsidianMD/comments/1nq0mci/obsidian_bases_are_great_but_is_making_a_separate/)
-  - I really like Obsidian bases in terms of automation, customization and overall look. It's pretty and functional. 
-  - However, there are cases where making a note for each entry can be a bit excessive. Do you think it's possible to have multiple items from one note?
-  - Example use case: movies to watch, games to play. Say you want to have 200 entries, do you really have to make 200 notes? If you make lists like this you end up with potentially thousands of empty notes (besides the metadata).
-
-- The Bases core plugin is not a database. It provides filtered views, generally based on Properties. If you need true database functionality, Obsidian might not be the right solution.
-  - The idea of Bases is to provide a managed jumping-off point to dig deeper. (Heck, a Base is, arguably, a Map of Contents.) The way that Bases' Table and Card views aggregate information amps up Obsidian's capabilities, so how the data (notes) are handled behind the scenes really depends on what you are trying to do.
-
-- Why not both? For example, I’ll create a note for each book that I want to create a note for. I separately have a note called “Books consumed” that just has a bulleted list of books that I’ve read by year, which may or may not link to a note.
-
-- This is why I still use dataview, too, not only bases. For some notes I need to collect pieces from notes that contain many things.
-
-- Remember Base is just a view and not a database. It doesn't change anything nor depends on how your notes are made. It just style so to speak what's already in your vault (for simplicity sake).
-  - So write and organize your notes however you want. Experiment to discover what works for you, and it might be the same or different for each use case. You can always tweak and change.
-- Yes, Base doesn't display the content of a note, rather it displays the properties or YAML.
-
-- In some cases Dataview is still a better fit (and probably Datacore, although this is still unexplored territory for me) if you want to use the note's contents instead of the YAML frontmatter properties.
-
-- This has me thinking that the community could use a plugin that converts each line in a table into a note with metadata, and then generates a Base for those notes with the same look as the original table. Then you can start modest and there's no FOMO of not starting it as a Base. Because you're right, a lot of knowledge management starts smaller than what a Base is.
-
-- ## [Obsidian Bases | Hacker News _202508](https://news.ycombinator.com/item?id=44945532)
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
-- ## Obsidian Bases can be exported to CSV or copy-pasted anywhere — as Markdown, or even into your favorite spreadsheet app
-- https://x.com/kepano/status/1927501007480582467
-- 
-- 
-
-- ## [Introduction to Bases | Lobsters _202505](https://lobste.rs/s/nxroup/introduction_bases_obsidian_help)
-- but when you really lock-in with bases or obsidian plugins like tasks and dataview, you really rely on thing, not being that easily to replicate if obsidian would go paid or something else.
-
-- This is very interesting. In 2019 I wrote a small hack using Pandoc that parsed a Markdown file and:
-  - Detected tables and dumped them into a SQLite database.
-  - Detected SQL code blocks, run the SQL on the SQLite database and replaced the code block with the query results as a table.
-  - I was obviously inspired by Notion (2016) and Coda (2019). I still think that the slow death of Access and similar tools, the abuse of spreadsheets, and a couple of other factors are a severe drag on global productivity. Easy CRUD on relational databases is an overlooked problem
-  - I wanted to start a similar project based on some more modern lightweight markup language (such as Djot) and likely on some Datalog variant, but I stalled
-
-- ## [Obsidian Bases | Hacker News _202505](https://news.ycombinator.com/item?id=44058972)
-- They are using a yaml file with `.base` extension for this.
-  - I believe their `.canvas` format is also just JSON.
-
-- Bases seem like a great alternative to Dataview but better supported and with simpler syntax than literally writing inline JavaScript for more complicated stuff.
-
-- Are there any good ways to attach files to notes? I often want to tie a memo or email to a note but have not found a convenient way.
-  - Default way is drag and drop which adds a copy of the file to your attachments.
-  - Another way is to put a file reference into your note (in a link). Your file stays where it is and you have a link to it in a note. Links are opened by default apps as per your OS config.
-
-- ## 📈 [Obsidian 1.9.0 (early access): Introducing Bases! Turn any set of notes into a powerful database. : r/ObsidianMD _202505](https://www.reddit.com/r/ObsidianMD/comments/1ks0ebr/obsidian_190_early_access_introducing_bases_turn/)
-  - Introducing Bases, a new core plugin that lets you turn any set of notes into a powerful database. With Bases you can organize everything from projects to travel plans, reading lists, and more.
-  - All the data in a base is backed by your local Markdown files and properties stored in YAML. 
-  - To support Bases, we're introducing the `.base` file format and syntax.
-
-- Is this `.base` an open source file format that can work outside of Obsidian also?
-  - All the data in a base is stored in your Markdown files. You can also export a view to CSV or copy the content as a plain Markdown table. Any app that can read/edit Markdown files can interoperate with Bases.
-  - The `.base` file stores the query information, like SQL or Dataview. It is a new open format based on YAML. It can also be used in code blocks similar to Dataview.
-  - You can edit .base files in any code editor, and the format is completely open for any app to implement.
-- Maybe Im misunderstanding but why have two files? and not just use frontmatter to contain the YAML like format for base query info, and the body of the markdown for the data?
-  - It's not two files, it's one base file and an arbitrary number of markdown files. Bases use your existing markdown files.
-
-- Does this kill Dataview?
-  - Base will probably be more useful for standard database things, just showing stuff in tabular form. Possibly even editing the stuff on the spot? That'd be helluva useful. I use Dataview for much more advanced purposes, so Dataview will probably stay.
-- I think this will more completely replace DB Folder than it does Dataview, but, like you said, it's going to replace many of Dataview's common use cases.
-- Not at all but mostly. When this see the light of day I will move my journaling to base!
-  - bases isn’t gonna run JavaScript. It’s not gonna do inline psuedojs functions.
-- Nope, this more likely to kill "Projects" plugin. Dataview is still way more flexible, relies on text queries vs UI clicking around + works with tasks and inline properties. 
-
-- o7 dataview kanban and projects ur time has come but ur time was well served
-- I use Dataview in ways that it's barely table-based anymore, so I don't think its time has come yet. Unless Base can go jam multiple values together in one cell, formatted to my liking.
-- whether there will be anything like in-line bases yet.
-  - There is. The docs mention embedding bases into notes as well as inline “code block” bases
-
-- Kanban still works plenty well and it is in MD format, not Yaml disguishes as MD so still this cannot replace kanban for me.
-  - any property you add to a markdown file is stored as yaml. The YAML portion is just a comment in the source markdown file in of itself? So it’s still markdown. This can easily replace Kanban. Confirmed that this works with note properties
-
-- inline properties is the biggest thing missing for me currently. Until Properties are properly viewable in Publish, I still have a need for inline values, which means DB Folder will be have a place in my setup for the time being.
-  - Since inline properties were a concept from Dataview, and Obsidian doesn't support them in the core product or core plugins, I bet this will have to come as a community plugin like you said.
-
-- Currently you can edit the base file directly in any code editor. But yes, perhaps at some point it would make sense to have something like "source mode" for base files.
-
-- You can also create Bases as codeblocks within existing Markdown notes, which is how I mostly expect to be using the feature (how I use Dataview today). In that case, you can see and work with the code directly without opening in an external editor.
-
-- Can the Base file also query text inside the note itself? like collecting open checkboxes under a specific header of a note?
-  - Currently no.
 # discuss-feat-backlinks
 - ## 
 
@@ -903,6 +374,48 @@ None.
 - Because you focus only on concepts and definitions. You just group notes by explaining them. Tags are for properties and classification so group notes by common labels. Using tags you can find and filter then - anywhere. Do you know that you can (should?) use both? Using only links forces you sometimes to use fake concepts like TODO or IMPORTANT - this are tags.
 
 - I am also trying to move away from tags, As a first step I am now only keeping tags for status, like #pending #TODO #on_going #complete so I can use them in bases. So I can quickly pull a list of notes that are on going for example.
+# discuss-large/massive
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🤔 [10, 000 notes in Obsidian. I think it's just not working for me anymore. : r/PKMS _202602](https://www.reddit.com/r/PKMS/comments/1qvnvxu/10000_notes_in_obsidian_i_think_its_just_not/)
+  - Been using Obsidian since 2020 pretty much since public launch. 10, 000+ notes now.
+  - I have an inbox in a completely different app because getting stuff into Obsidian feels like too much. I add ## Log sections with dates to notes because I never know where to put new thoughts on old ideas. Half my thinking now happens in Claude or ChatGPT and never makes it to Obsidian.
+  - As a result more and more things end up outside of my knowledge base. I looked at the stats and the number of notes I'm creating dropped to almost just a couple of notes per month. And I didn't stop my work and consuming materials, so clearly something is not working.
+  - I started looking into other stuff: notebooklm, mem, outliners (feel like a great idea but I haven't found a decent implementation) but nothing really feels right. And I don't want to abandon my 4 years of notes.
+
+- I have 8819 notes, it is working fine for me. I use PARA as a methodology.
+
+- Of those 10, 000+ notes, how many are basically web clippings (with or without annotation, markup) and how many of them are original writings?
+  - The reason for asking is that I've noticed a connection between large vaults and struggles similar to yours.
+  - Data hoarding is a thing. And just like those who hoard physical things, it becomes impossible to find the things you have. Whether it is an inbox or "uncataloged" folder, it shouldn't be a dumping ground, but a queue of things to be processed.
+  - If you are consistently adding to it faster than you are processing it then perhaps the things you are adding aren't as important as you initially thought.
+  - My vault is a little over 2400+ notes (all but about 50 are original writings) spanning 49 years. I use the Johnny Decimal method for my folder/notebook hierarchy and make generous but deliberate use of links (approx. 5200 links in the vault)... nearly all are internal to the vault. Tags are the 3rd ligaments of connection.
+
+- ## [My vault is too big : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1uiqawe/my_vault_is_too_big/)
+  - I've got a little more than 12, 000 notes.
+  - It's starting to get heavy, specially on my phone. I'm considering nested vaults. Any suggestions or alternative solutions?
+  - I haven't measured, but startup takes about a minute. But it's not rebuilding index. At least i don't get the message.
+  - And sometimes it kind of freezes in a note. I can use that specific note, but can't navigate to others by any means.
+  - I have some images and excalidraw drawings. 755 less than 100kb webp images, 185 jpeg, 128 png. No pdfs, videos or audios. Everything within the vault, no external links.
+
+- With this amount of notes i can assure you, no other software will help you. You need to consider some form of refactor. Maybe merge some notes? Delete or archive? Multiple vaults?
+
+- Yeah, I'm considering multiple vaults. But since they recommend against it, I'm studying possibilities and hownto properly use multiple vaults without screwing something up
+  - A lot of us have lots of vaults for different reasons. The program is even set up to switch between them easily.
+
+- Have you tried stripping out all the images and non-plain text files and hosting them elsewhere so you link to them in your notes rather than have them in your vault. I've been doing this for a few years now and my vaults load very quickly.
+  - I used to do that in the beginning. Then I had to use it offline and noticed it wouldn't be all that rare. Besides the google photos links didn't last forever. So I gave up that strategy a long time ago.
+
+- I’m well over 50k and don’t have an issue. Could by hardware as well potentially, and I do not use on my phone.
+  - One thing that worked really well for me was using Claude code and I spent about 2 weeks on a cloned vault and with Claude just simply rearchitecting for stronger discovery, better performance, tag management and cleaning up orphans.
+
+- I have close to 40, 000 notes in my vault. But it’s not bigger than your vault. All my notes are about something that does not reside in the vault. Using it without any issues on my mobile phone (iPhone), macOS, and Windows PC. I use Obsidian Sync.
 # discuss
 - ## 
 

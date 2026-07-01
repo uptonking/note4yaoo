@@ -199,6 +199,10 @@ modified: 2025-12-11T18:10:23.710Z
     - https://x.com/gitlawb/status/2039063488468000835
     - We forked the leaked Claude Code source and made it work with ANY LLM: GPT, DeepSeek, Gemini, Llama, MiniMax. Open source.
 
+- https://github.com/Windy3f3f3f3f/claude-code-from-scratch /ebook
+  - https://windy3f3f3f3f.github.io/claude-code-from-scratch
+  - Claude Code 开源了 50 万行代码，读不动？用 ~4000 行 TypeScript / Python 从零复现核心架构，11 章分步教程带你理解 coding agent 精髓
+
 - https://github.com/ultraworkers/claw-code /193kStar/MIT/202605/python/rust
   - https://github.com/instructkr/claude-code
   - Better Harness Tools, not merely storing the archive of leaked Claude Code but also make shit things done.
