@@ -1279,6 +1279,7 @@ modified: 2026-06-20T15:49:57.019Z
   - kiro - claude  -- ¥50
 
 - tips
+  - 有时api请求慢, 可能不是卖家/服务器的问题, 换个ip看看
   - 重度开发时间，优先买天卡(10元/天)， 按量太贵
     - 不要花过多时间比价, 一般1亿token在2-4元就已经是业内非常划算的了, 节省时间去做研发
   - 直接在电报搜索倍率如 0.08 , 能快速找到候选商家, 优先选提供交流群和通知频道的, 在频道可以查看历史倍率是否正常
@@ -1980,6 +1981,8 @@ modified: 2026-06-20T15:49:57.019Z
   - [GPT-源头供货-招代理的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/IY16OXB7)
   - AMD 顶级服务器 + 10Gbps 带宽
 
+- [数智AI ](https://api.xpluse.plus/pricing)
+- [DataCodex ](https://api.datacodex.net/keys)
 - [AI来了 ](https://api.ailaile.site/)
   - [littleKK的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/BVGUTB12)
   - 注册需要花1元买邀请码
@@ -1997,7 +2000,7 @@ modified: 2026-06-20T15:49:57.019Z
 - [YCY API /NewAPI](https://ycyapi.cn/pricing) , 长期运营, 较贵
   - [YCYAPI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ycyapi)
 
-- [naonao - /Sub2API ](https://gpt.qinnaonao.com/dashboard), 已充值, 已跑路
+- 🗑️ [naonao - /Sub2API ](https://gpt.qinnaonao.com/dashboard), 已充值, 已跑路
   - codex分组--0.03
   - 不可用
 
@@ -2009,6 +2012,9 @@ modified: 2026-06-20T15:49:57.019Z
   - [Sun-ai的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/SunAPi)
   - 交流群 469032841
   - plus/pro
+
+- [梦幻API /sub2api](https://api.mhapi.cn/keys) 
+  - [顶级 AI 铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/5O4RQJM1)
 
 - 🗑️ [yypyyj- Sub2API ](https://sub2api.yypyyj.com/keys), 已充值, 高价, 缓存低
   - [max9527的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/2KFETVZG)

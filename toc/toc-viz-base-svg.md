@@ -30,6 +30,15 @@ modified: 2020-10-05T06:18:21.639Z
   - Code Generation - React (JSX/TSX), Vue, Svelte, React Native, Flutter
   - Transformations - Rotate, flip, resize with proportional scaling
   - Visual Preview - Real-time preview with zoom (20%-400%) and pan
+
+- https://github.com/a1stok/img2svg-animation /MIT/202607/ts
+  - https://img2svg-animation.vercel.app/
+  - drop in a picture. get back line art that draws itself
+  - [I built a tool that turns any image into self-drawing SVG line art : r/svg _202607](https://www.reddit.com/r/svg/comments/1ukulvb/i_built_a_tool_that_turns_any_image_into/)
+    - anime.js has this feature, but getting it to work properly and converting an image into a clean SVG paths (with the right threshold and other settings) may take some time. So I built a tool for it.
+    - You drop in a photo or logo -> it converts it into SVG paths -> animates those paths(they draw themselves like a pen sketch)
+  - [Anime.js createDrawable | SVG | Documentation ](https://animejs.com/documentation/svg/createdrawable)
+  - [motion SVG Animation in React | Paths, Morph & Line Drawing  ](https://motion.dev/docs/react-svg-animation)
 # svg-utils
 - https://github.com/vercel/satori /MPLv2/202411/ts
   - https://og-playground.vercel.app/
@@ -109,8 +118,11 @@ modified: 2020-10-05T06:18:21.639Z
 
 - https://github.com/ismail-kattakath/svg-generator-mcp /MIT/202507/python/ts/inactive
   - AI-powered MCP server for generating high-quality SVG illustrations using FLUX/MFLUX with automatic dependency management.
-# toolchain
-
+# utils
+- https://github.com/maziars/svgym /MIT/202606/python/js
+  - https://maziars.github.io/svgym/app/
+  - SVG optimization that goes beyond SVGO — deterministic-first, with an optional AI mode.
+  - [I built SVGym, an open-source SVG optimizer that goes beyond SVGO and verifies every change : r/svg _202606](https://www.reddit.com/r/svg/comments/1uesps3/i_built_svgym_an_opensource_svg_optimizer_that/)
 # more-repos
 - https://github.com/ngti/svg-grabber /MIT/201803/js/inactive
   - Open source chrome extension to quickly preview, download or copy inline or embedded SVG images from a website

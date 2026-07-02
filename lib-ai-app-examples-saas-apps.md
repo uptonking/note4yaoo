@@ -1046,6 +1046,15 @@ modified: 2025-02-21T17:17:42.225Z
     - html-video 项目基于 hyperframes 框架构建, 由 Open Design 团队原班人马打造
     - html-video 支持分页预览、分页编辑和帧文字编辑，修改视频更快更方便，不用每改一次就要导出一次看效果
 
+- https://github.com/ciouskeila-hue/cybercode-cli /MIT/202607/python
+  - [我写了个能自己生成视频的AI工具，一句话出片，还免费用GLM-5.2 - LINUX DO _202607](https://linux.do/t/topic/2509999)
+  - 先说重点：它能自己写代码、自己跑、自己改bug，还能一句话生成带旁白的视频。今天主要讲视频生成这块，是我自己觉得最好玩的一个功能。
+  - 调用内置的 gpt-image-2 模型，画出几张场景图, 用语音合成把文案念出来，存成音频
+  - 把 gpt-image-2 生成的图片喂给 HyperFrames，写一份HTML组合文件，里面标好每一段动画什么时候开始、什么时候结束，配上音画对齐的时间点, 调用ffmpeg，把图片、动画、音频一起合成一个MP4, 合成完自己检查一遍：时长对不对、分辨率是不是1080p、有没有音频
+  - 如果检查发现不对，它会自己改，不用我盯着。图片生成和视频合成这两步是连起来的，gpt-image-2出的图直接进HyperFrames的时间轴，不用我自己下载图片再导入到别的软件里。
+  - 出来的视频不算专业剪辑师那种精细度，但对付日常需要的短视频、产品介绍、讲解类内容，一句话就能出片，确实比自己开软件剪快很多。
+  - 这个项目是我自己写的，核心的Agent架构——包括整个的执行循环、9个工具怎么设计、多层记忆的思路——借鉴了 lsdefine 开源的 GenericAgent 项目（MIT协议），在这个基础上我加了流式的模型调用层、多模型网关、HyperFrames视频引擎、语音合成，还有现在这套Web界面。想看原始架构思路的可以去看看那个项目。
+
 - https://github.com/kapishdima/remocn /MIT/202606/ts
   - https://remocn.dev/
   - Production-ready animations, transitions, backgrounds, and scenes for Remotion. 

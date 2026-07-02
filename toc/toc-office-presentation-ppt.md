@@ -896,6 +896,11 @@ modified: 2021-04-30T20:14:17.669Z
   - 提示词： 使用LearnDeck 写一个ppt ，随便一个demo，酷炫一点
   - 我的流程差不多，先风格母版，然后母版生成每页对应图片，然后每页图片精修可编辑ppt
     - 是的，先弄一个模板，然后按照模板设置PPT颜色，位置之类的。这样和模板有9.5成像，勉强够用 
+
+- https://github.com/ilioner/ppt-craft-editable /202607/python
+  - [【开源Skill】高质量的可编辑的AIPPT生成方式 - LINUX DO _202607](https://linux.do/t/topic/2512642)
+  - 基于NyxTide大佬的ppt-image-first 的二次扩展
+  - ppt-image-first 已经很优秀了，基于编辑图片的方式生成最终图片形式的ppt视觉质量因为背靠AI所以一流 但是存在一个问题，如果后期需要对上面的文案进行编辑就很不方便了，于是我在此基础上将ppt-image-first 的最终稿件当做效果图，从而生成风格尽可能高度还原或者贴近（看模型能力）的背景，然后再让模型通过计算将文案填充至合适的位置进行渲染。
 # ai-canvas
 - https://github.com/open-webui/open-webui /104kStar/BSD+LOGO/python/ts/svelte
   - https://openwebui.com/

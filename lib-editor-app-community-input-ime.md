@@ -73,6 +73,11 @@ modified: 2023-03-05T02:27:52.126Z
 
 - 因为装了ms Office 2013自带了中文字体给默认成了中文用户
 
+- https://github.com/B1anYu/misAnthropic /AGPL/202607/js
+  - 检测你是不是中国人
+  - MisAnthropic 扫描本机环境中可能被用于地域识别的配置痕迹：时区、locale、中国软件残留、镜像源、中国 AI 提供商配置等。它只读本地文件，不做任何网络请求，结果也不上传。
+  - [[开源]misAnthropic——检测你是不是中国人 - LINUX DO _202607](https://linux.do/t/topic/2514152)
+
 - ## 浏览器支持分词：即有一段话，你鼠标双击这段话的时候，它会自动匹配一个词并选中它。我之前一直挺好奇chrome是如何实现的。
 - https://x.com/hanawa_hinata/status/2018506129110868033
   - 直到今天我翻了一下choromium源代码，发现了一个cjdict.txt

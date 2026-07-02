@@ -47,7 +47,7 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## [Strapi Hide Content Type - Stack Overflow](https://stackoverflow.com/questions/65846609/strapi-hide-content-type)
 - You can extend the content type plugin to make updates to the content-type's schema.
-  - In Strapi v4 it is `"visible": false`
+  - In Strapi v4 it is `"visible": false` 
 
 - ## 🔒 [Customise hide areas of the Admin interface per roles _201804](https://github.com/strapi/strapi/issues/931)
 - your can
@@ -362,6 +362,24 @@ modified: 2023-12-15T17:04:36.589Z
 - 1 all strapi instances need to be in sync content-type wise so you get no DB fights.
   - 2 you can’t use cron jobs unless you have red lock plugin.
 
+# discuss-devops
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [You're crazy with this pricing. $45/month for a CMS? : r/Strapi _202607](https://www.reddit.com/r/Strapi/comments/1ukpdbi/youre_crazy_with_this_pricing_45month_for_a_cms/)
+- I have hosted several Strapi projects on a $20/month Railway account, and most of them have not even reached $5 each individually. I also run a separate VPS that costs around $24/month with 4 CPU cores, 16 GB RAM, a 10 Gbps network, and 320 GB SSD.
+  - That said, every hosting option is different. When you self-host Strapi, you are responsible for everything: server setup, updates, security, backups, scaling, monitoring, uptime, database management, and troubleshooting when something breaks.
+  - So while $45/month may seem high compared to raw server pricing, Strapi Cloud is not just selling CPU and RAM. They are charging for the managed hosting experience and doing a lot of the heavy lifting for each account holder. For teams that do not want to manage infrastructure themselves, that can be a fair trade-off.
+
+- The Growth plan costs $45 per month; it's Strapi's entry-level plan offering premium features like Live preview, Content history, AI features, and Basic support.
+  - Strapi Cloud starts from 15$ per month on the yearly plan (the cheapest plan)
 # discuss
 - ## 
 
@@ -400,7 +418,7 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## Is there an `/alive` or other endpoints typically used in docker/kubernetes to know if a container is ready? 
 - https://discord.com/channels/811989166782021633/1095091586452426824/1226630834812092506
-- For v5, it looks to be `yarn strapi routes:list` and the endpoint is `/_health`
+- For v5, it looks to be `yarn strapi routes:list` and the endpoint is `/_health` 
 
 - It's `HEAD /_health`
 

@@ -498,7 +498,10 @@ local model testing/running can be very slow.
   - cons: 内置runtime需要支持多种格式如 /v1/chat/completions, /v1/responses， 还要考虑本地ollama的版本、模型版本， 带来的问题比收益多
   - 参考很多主流开放性ai的产品如cursor/cherry-studio, 都支持用户配置api，所以通过平台/系统来管理本地的工具是非必要的
 
-## redmansion(vscode-obsidian/zotero)
+## redmansion/dreamansions(vscode-obsidian/zotero)
+
+- tips
+  - 可用域名 dreamansions
 
 - goals
   - ~~replace monaco with codemirror6~~ , 可替换的文本编辑器似乎价值不大
