@@ -12,6 +12,7 @@ modified: 2021-05-06T09:38:31.520Z
 - pros
   - MIT
   - 可扩展性很强, ext支持设置优先级
+    - wordgard 采用了类似codemirror facet 的设计
   - collab有官方支持, 基于ot算法变体
   - 支持selective undo
   - 🆚 diff-view的示例有官方开发，其他编辑器很少提供, 支持上下布局/左右双栏布局
@@ -209,10 +210,10 @@ modified: 2021-05-06T09:38:31.520Z
   - autocomplete
   - lezer-highlight vs highlightjs
   - EditorView.requestMeasure
-  - ~~stateField invertedEffects~~
-  - ~~Cascading dispatch triggers another dispatch~~
-  - ~~undo/addToHistory~~
-  - ~~load new document~~
+  - ~~stateField invertedEffects~~ 
+  - ~~Cascading dispatch triggers another dispatch~~ 
+  - ~~undo/addToHistory~~ 
+  - ~~load new document~~ 
 - ❓🆚 transaction vs changeSet
 
 - extensions-to
@@ -288,7 +289,7 @@ edd.contentDOM.cmView.view === edd // true
 
 - 基于transactionExtender的ext，
   - 🤔 后注册的会先执行
-  - ~~只能返回单个effect，不能返回数组~~, 看清楚.of的返回值类型时StateEffect或Anno，而不是Transaction
+  - ~~只能返回单个effect，不能返回数组~~ , 看清楚.of的返回值类型时StateEffect或Anno，而不是Transaction
   - 处理changes推荐用transactionFilter
 
 - 在github页面，每行代码的行号是确定的，不会显示软换行
@@ -326,7 +327,7 @@ edd.contentDOM.cmView.view === edd // true
   - command-palette
 
 - 💬 实现评论时考虑是否支持评论协作、undo/redo， 一般将评论数据内容放在编辑器内容doc之外
-  - ~~减少doc体积，~~方便支持自定义评论的形状颜色
+  - ~~减少doc体积，~~ 方便支持自定义评论的形状颜色
   - 方便实现非行内的跨block的评论，行内评论和块级评论
   - 复制文本时不需要带上评论数据, 处理复制粘贴更简单
 
@@ -404,14 +405,14 @@ edd.contentDOM.cmView.view === edd // true
   - 使用打字机动画修改unchanged的行时，先修改再交换行，避免视图跳跃
   - 高亮变更内容的粒度是整行，太粗了，但适合代码编辑场景
   - 已经实现了字符级的添加和删除，能高亮新插入的字符，但修改单个字符有时会高亮整个单词(符合左右布局)
-  - ~~不支持 collapseUnchanged~~
+  - ~~不支持 collapseUnchanged~~ 
   - 未实现行内渲染change和操作
   - 在红色部分前面的行末尾回车，有时新行会跑到红色之下，其实也符合预期
   - 插入换行符时会高亮整行作为新增，不符合预期，但这个是通过api修改的方式，通过ui修改是符合预期的
 
 - 隐藏diff-view绿色行的实现方案
   - 思路0: 通过line-decoration给绿色行按条件添加隐藏、动画样式类
-  - ~~思路0: 通过widget-decoration直接替换元素，但需要手动实现atomicRanges~~
+  - ~~思路0: 通过widget-decoration直接替换元素，但需要手动实现atomicRanges~~ 
   - 思路1: 自定义 cold-folding 组件的显示元素，使得fold后显示空
   - 思路2: 通过replace-decoration隐藏元素
   - 其他
@@ -467,8 +468,7 @@ edd.contentDOM.cmView.view === edd // true
 # styling
 
 ```CSS
-/* 选区在页面失焦后显示灰色 */
-.cm-selectionBackground {
+/ * 选区在页面失焦后显示灰色 * / .cm-selectionBackground {
   background: #d9d9d9;
 }
 ```

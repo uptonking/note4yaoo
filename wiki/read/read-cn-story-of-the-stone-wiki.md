@@ -56,6 +56,12 @@ modified: 2020-12-08T14:45:31.008Z
   - 梦坡斋 Su Dong-po Rooms; Mengpo Studio
   - 柳叶渚 Willow Walk
 
+- 《红楼梦》里的"海棠诗社"，在英语世界主要有两种译法，分别来自两大权威译本：
+  - The Crab-Flower Club： 霍克思（David Hawkes）译本, 霍克思的翻译风格偏意译、讲究英文的流畅和意境，"海棠"在这里译成了 "crab-flower"（即海棠花，crabapple blossom 的简称说法），整个诗社的名字简洁上口，也是西方汉学界和英语读者最常引用的说法。
+  - Begonia Poetry Club（或写作 "Begonia Garden Poetry Club"）, 更贴近直译，"海棠"译为 "begonia"，这也是国内英语教学、维基百科中文条目英译等场合更常见的说法。
+  - 中国古代"海棠"实际上多指蔷薇科苹果属（ Malus halliana 等），更接近 flowering crabapple。
+  - 严格从植物学角度说，"海棠"（Malus spectabilis）其实是蔷薇科苹果属的"垂丝海棠/西府海棠"，与英语中的 begonia（秋海棠科植物）并非同一种植物，只是花形花色相似。霍克思用 "crab-flower"（对应 crabapple）更接近植物学上的准确对应，而 "begonia" 则是约定俗成、更广为流传的译法。
+
 - [英文版《红楼梦》对亭台轩馆等的翻译 _202605](https://www.douban.com/group/topic/17731753/)
 # 红楼梦 庚辰本 目录
 

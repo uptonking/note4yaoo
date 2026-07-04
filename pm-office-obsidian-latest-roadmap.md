@@ -79,6 +79,15 @@ modified: 2026-06-30T22:55:02.169Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Obsidian WEB version : r/ObsidianMD _202509](https://www.reddit.com/r/ObsidianMD/comments/1n8qetr/obsidian_web_version/)
+- Logseq is local first and you can run it via the browser; it does it through a browser api that lets the website access your local files in a way as if it were a native app.
+
+- I have Obsidian in a docker container that points to my domain via Cloudflare tunnel so I can access my personal Obsidian at work and such
+
 - ## [Obsidian new plugins review waiting line is huge : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1surv34/obsidian_new_plugins_review_waiting_line_is_huge/)
 - I bet you 75% of those PRs are vibe coded trash fires. Which means someone has to take the time and close the PR. It’s a waste of everyone’s time.
 

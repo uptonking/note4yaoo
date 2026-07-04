@@ -14,7 +14,7 @@ modified: 2026-06-30T17:32:43.131Z
   - backlinks: 双链基于[[]]语法, 同名文件的写法是相对路径
   - bases: 基于文件的多维表格
     - Convert CSV records to individual Markdown files and Bases.
-    - 支持导出csv
+    - 支持 导入/导出 csv/excel, 提供独立的webapp
   - publish
   - canvas
   - graph-view
@@ -28,6 +28,7 @@ modified: 2026-06-30T17:32:43.131Z
     - 不支持拖拽排序, 不能在指定位置插入行/列
     - 不支持拖拽导致不支持kanban
   - settings-sync 
+  - 未提供统一的多语言切换方案
 
 - features(来自ob app里面的 core/community plugins)
   - filetree, file-properties, search, file-recovery, note-merge/split, quick switcher, workspaces-layout
@@ -39,12 +40,16 @@ modified: 2026-06-30T17:32:43.131Z
   - sync
 # redmansion
 - goals
-  - publish/site
+  - publish/site: github for obsidian bases
   - editing: web, app, obfm editor
-  - api
-  - compatible with obsidian: obfm, obsidian, config(attachment, .trash)
+  - api: md, bases
+  - compatible with obsidian: obfm, bases, plugins, config(attachment, .trash)
+    - 兼容和扩展plugins在bases方面的能力
+  - 不要过于依赖ob的runtime, 充分利用文件系统的优势
 
-- 
+- cms-platform
+  - github for obsidian bases
+
 - 
 - 
 - 
@@ -104,12 +109,18 @@ modified: 2026-06-30T17:32:43.131Z
 
 ## ob-bases
 
-- database的技术方案可参考agentfs+just-bash, 以数据库作为数据源，到处markdown方便ai理解
+- bases list view的使用场景: news-feed, 简单评论是否也可以采用list
+
+- 
+- 
+- 
+
+- database的技术方案可参考agentfs+just-bash, 以数据库作为数据源，导出文件如markdown方便ai理解
 # dev-xp
+- ob公开的 api 包含很多 codmeirror 相关的类型定义
+
 - 偏ui的plugin，在headless的场景下可能读不到配置，需要在vault中存一份配置，然后server运行时支持相关逻辑
   - headless方案可参考vscode-server
-
-- 对markdown文件的import需求很少，因为可以手动复制粘贴内容
 
 - ob-bases基于文件的设计，似乎很符合grist
 
@@ -117,7 +128,11 @@ modified: 2026-06-30T17:32:43.131Z
 - 
 - 
 - 
+- 
+- 
+- 
 
+- 对markdown文件的import需求很少，因为可以手动复制粘贴内容
 # usage-workarounds
 - 文件及文件夹不支持自定义排序, 可用带wikilink的文档来指定顺序, 类似 toc目录
 # usage-tips

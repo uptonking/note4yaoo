@@ -276,6 +276,7 @@ modified: 2025-12-16T06:25:12.641Z
   - Static Site Generator Built On Tanstack-Start, TailwindCSS, Vite, React
   - Prestige is a documentation framework Built on Tanstack Start, Vite, Tailwind and React
   - MD, MDX, and GFM compilation integrated out of the box. Extend capabilities via `rehype` and `remark` plugins.
+  - 不支持多语言版本的内容
   - Algolia DocSearch integration.
   - Collection-based architecture. Different collections can have independent navigation menus and sidebars, such as /docs/ * and /api/* .
   - Hot reloading. Markdown changes appear in the UI immediately during development.

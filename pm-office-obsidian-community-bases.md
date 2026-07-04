@@ -42,6 +42,22 @@ modified: 2026-06-30T23:04:11.000Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Provide API access to the results of Bases view - Developers: Plugin & API - Obsidian Forum _202601](https://forum.obsidian.md/t/provide-api-access-to-the-results-of-bases-view/110660)
+  - Bases is a fantastic first‑party way for users to define cohorts of notes. Allowing plugins to get a list of notes from a Base without the plugin being implemented as a Base view would significantly expand what plugins can do with Bases.
+  - Many plugins implement their own query language, search system, or filtering to compile lists of notes, which requires users to re-write their custom filters across plugins. If users could point such plugins to a Base#view, they could reuse a native feature of Obsidian instead.
+
+- ## [Bases are great, the Bases API will make them fantastic : r/ObsidianMD _202508](https://www.reddit.com/r/ObsidianMD/comments/1mxatpc/bases_are_great_the_bases_api_will_make_them/)
+  - I've really enjoyed exploring how Bases can change up how I display certain kinds of data in my vault, especially views of related data. They feel familiar as someone moving over from Notion, even though I'm doing more with inline tags and the Tasks plugin versus individual files for everything.
+  - But once the Bases API is available and plugin authors can start hooking into it, I think we're going to see some really fantastic ways to use it and its interface. Specifically imagining dynamic Bases views of Task data, rather than using the inline queries and functions.
+  - Maybe even outputting Dataview results into a Bases-styled table with sorting, dynamic filters, and other functionality?
+
+- A pretty simple one honestly. If I'm viewing a Base, I want to be able to click new note, and have tags or things applied automatically. Or when I set up the properties it moves the note to the right folder etc. Right now it just goes in the root etc and requires manual moving.
+
+- Does Dataview currently have an API ?
+  - It appears to! Even an integration that renders dynamic Dataview queries would be neat, but probably ways to take advantage of connecting the two at the API layer
 # discuss
 - ## 
 

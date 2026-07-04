@@ -228,7 +228,7 @@ Gemma 4 31B Q8, FP16 KV (no MTP) ~100k context prompt (you can use up to around 
 
 - ## 
 
-- ## 
+- ## [Ryzen AI Max (Strix Halo) Mobile Devices, as of the end of June 2026. : r/StrixHalo _202607](https://www.reddit.com/r/StrixHalo/comments/1ul7jbg/ryzen_ai_max_strix_halo_mobile_devices_as_of_the/)
 
 - ## [Ryzen AI Max+ 495 (Gorgon Halo) with 192GB VRAM! : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1t3duwm/ryzen_ai_max_495_gorgon_halo_with_192gb_vram/)
 - While I'm sure some people will enjoy the extra memory, a couple notes from someone's that done very extensive testing on Strixt Halo (and a lot of kernel work on RDNA3):

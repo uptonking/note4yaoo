@@ -43,7 +43,39 @@ modified: 2021-04-12T18:07:01.092Z
 - 👷 202201: It's not on the core team roadmap because it's not something we need ourselves
   - 202410: Unfortunately, our team does not have time to implement, test, and maintain multiple implementations that we aren't using internally to Adobe.
 
+# discuss-news/author
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Why you should use React Aria:
+- https://x.com/devongovett/status/2073069909551276105
+• It has 50+ components, including complex ones like data tables, trees, date pickers, color pickers, and tons more. No need to combine multiple libraries to build your app.
+
+• It has complex interactions like accessible drag and drop, keyboard multi select, form validation, virtualization, and table column resizing built in.
+
+• It is optimized to feel great on touch screens. No weird sticky hover states, conflicts with text selection, etc.
+
+• It’s battle tested for accessibility across devices including mobile, going far beyond the ARIA Practices guide.
+
+• It has internationalization built in, including localized strings, support for many calendar and numbering systems, etc.
+
+• It has a compositional API. Combine components together to create custom patterns.
+
+• You get full control. The components are already pretty flexible but if you need even more you can drop down to the hook layer and customize everything.
+
+• Great documentation including interactive examples, guides, agent skills, etc.
+
+I’m biased but nothing else comes close to this level of functionality, quality, and customizability in one package.
+Everything I listed is something other libraries including Base UI don’t have.
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

@@ -22,6 +22,8 @@ modified: 2026-04-07T00:47:33.626Z
   - https://coddingtonbear.github.io/obsidian-local-rest-api/
   - A secure REST API and Model Context Protocol (MCP) server for your vault.
   - Access your vault through the REST API or the built-in MCP server — both interfaces expose the same core capabilities, so scripts, browser extensions, and AI agents all speak the same language.
+  - 🐛 
+    - 似乎不支持bases
   - Read, create, update, or delete notes — full CRUD on any file in your vault, including binary files
   - Surgically patch specific sections — target a heading, block reference, or frontmatter key and append, prepend, or replace just that section without touching the rest of the file
   - Search your vault — simple full-text search or structured `JsonLogic` queries against note metadata (frontmatter, tags, path, content)
@@ -30,9 +32,22 @@ modified: 2026-04-07T00:47:33.626Z
   - Access the active file — read or write whatever note is currently open in Obsidian
   - Open files in Obsidian — tell Obsidian to open a specific note in its UI
   - Inspired by https://github.com/Vinzent03/obsidian-advanced-uri , with the goal of expanding automation options beyond the constraints of custom URL schemes.
+  - 无回应 [Bases API as an airtable replacement  _202506](https://github.com/coddingtonbear/obsidian-local-rest-api/discussions/159)
 - https://github.com/livingpixelio/volcano /MIT/202602/ts
   - Volcano is a JavaScript query API for Obsidian. You can read the contents of your vault as structured data. 
   - The primary use-case is to use Obsidian as a content management system in a Node.js, Deno, or Bun-backed website.
+
+- https://github.com/xnohat/webobsidian /MIT/202606/ts
+  - A self-hosted, Obsidian-compatible web app for your Markdown "second brain".
+  - a web application that gives you an Obsidian-like experience over a real folder of Markdown files living on your server. 
+  - Point it at a folder of Markdown files and edit your notes from any browser — with a CodeMirror editor, live preview, wikilinks, an interactive graph, full-text search, GitHub sync (incl. Git LFS), an API for AI agents, and community-plugin support.
+  - It is single-user and self-hosted: one master password protects the whole app, all configuration lives in a plain data/settings.json (no database engine), and the entire stack runs from a single docker compose up.
+  - Editor & rendering — CodeMirror 6 with live / source / reading views; wikilinks [[note]], embeds ![[file]], tags #tag
+  - Backlinks & outline — right sidebar tab strip: Backlinks (linked and unlinked mentions), Outgoing links (resolved/unresolved), Tags and Outline.
+  - QMD search — fast full-text + fielded search (
+  - Public sharing — turn any note into a read-only, server-rendered (SEO-friendly) public page
+  - install Obsidian plugins from GitHub; loaded against an Obsidian-API compatibility shim (subset support).
+  - Pure-JSON config — everything lives in data/settings.json. No database.
 
 - https://github.com/Nystik-gh/ignis /523Star/AGPL/202606/js/svelte
   - Run Obsidian as a self-hosted web app. Not remote desktop, an actual web app.
@@ -43,6 +58,16 @@ modified: 2026-04-07T00:47:33.626Z
   - Plugin compatibility depends on what APIs a plugin uses; most plugins built on Obsidian's plugin API work, anything requiring Node native modules or child_process doesn't.
   - All core editor features: markdown, canvas, bases, and the command palette.
   - Most community plugins built on Obsidian's plugin API.
+  - 🛝 
+    - The core docs are docs/ARCHITECTURE.md and apps/ignis-server/README.md
+    - this repo does not use Obsidian.app directly; it expects an extracted Obsidian asset directory via OBSIDIAN_ASSETS_PATH
+    - Ignis is three pieces working together. The browser runs unmodified Obsidian plus a shim that fakes Electron/Node APIs and forwards filesystem, IPC, and proxy work to the Express server over HTTP/WebSocket
+    - The server serves its own index.html, reads Obsidian’s index.html from extracted app assets, injects the expected Obsidian scripts, and exposes /api/fs, /api/ vault, /api/bootstrap, /api/proxy, and WebSocket sync
+      - Ignis serves its own HTML shell from apps/ignis-server/server/assets/index.html:1. That file is the actual page response. It contains the loading splash, loads shim-loader.js and ignis-ui.js first, and then dynamically appends Obsidian’s scripts afterward
+      - The original Obsidian index.html is not served directly to the browser. The server reads it only to discover which `<script src=...>` tags Obsidian expects, then copies that script list into Ignis’s own HTML response
+      - It does not modify Obsidian’s source bytes. It modifies the runtime that Obsidian executes inside.
+      - The shim installs a fake Electron/Node environment.
+      -  When Obsidian asks for fs or electron, it gets Ignis’s shim.
   - ✨ What Ignis adds on top of default Obsidian features
     - Custom UI for Obsidian's multi-vault support, allowing create, open, switch, rename, and delete.
     - Different vaults can be loaded in different browser tabs.
@@ -619,6 +644,9 @@ modified: 2026-04-07T00:47:33.626Z
   - plugin that stores backlink cache to speed up app.metadataCache.getBacklinksForFile().
   - It's mostly useful for users with the large vaults. On smaller vaults the difference might be unnoticeable.
 # feat-publish
+- tips
+  - [Render your Obsidian vaults in Fumadocs](https://www.fumadocs.dev/docs/integrations/obsidian)
+
 - pulished-sites
   - [Obsidian Garden Gallery — Sites Built with Obsidian ](https://vaults.obsidian-community.com/)
   - [Quartz Showcase ](https://quartz.jzhao.xyz/showcase)
@@ -635,8 +663,18 @@ modified: 2026-04-07T00:47:33.626Z
   - [Bases Support ](https://quartz.jzhao.xyz/features/bases)
     - .base files as interactive database-like views. 
   - 已合并 [perf: incremental rebuild (--fastRebuild v2 but default) _202503](https://github.com/jackyzha0/quartz/pull/1841)
+  - [Web-editor for GitHub _202503](https://github.com/jackyzha0/quartz/issues/1864)
+    - out of scope for Quartz, it is intended as a static site generator not the a CMS
   - dev-xp
     - ? 似乎未使用ssr
+  - 🐛 
+    - 不支持多语言版本的内容 [Support for displaying Content in multiple languages ("Localization and Internationalization")  _202602](https://github.com/jackyzha0/quartz/issues/2297)
+    - [Multilanguage support per note _202402](https://github.com/jackyzha0/quartz/issues/803)
+    - https://github.com/dynamotn/digital-garden-publisher /v4/inactive
+  - [What's New in Quartz ](https://quartz.jzhao.xyz/getting-started/whats-new)
+  - v5: a ground-up rearchitecture of Quartz focused on extensibility, performance, and Obsidian compatibility. 
+    - The biggest change in v5 is the move to a community plugin ecosystem.
+    - BasesPage: Renders Obsidian Bases files as database-style views.
 - https://github.com/saberzero1/quartz-syncer /MIT/202606/ts/svelte
   - https://saberzero1.github.io/quartz-syncer-docs/
   - plugin for managing and publishing notes to Quartz, the fast, batteries-included static-site generator that transforms Markdown content into fully functional websites.
@@ -927,6 +965,10 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/PixeroJan/obsidian-storyline /MIT/202606/ts
   - StoryLine transforms your Obsidian vault into a complete book planning and writing tool. 
   - Organize scenes, build characters, manage locations, track plotlines, and monitor your progress, all inside Obsidian.
+
+- https://github.com/nothingislost/obsidian-hover-editor /MIT/202604/ts
+  - This plugin enhances the core "Page Preview" plugin by turning the hover popover into a full featured editor instance.
+  - preview弹窗可拖动，内容可编辑
 # feat-themes/views/ui
 - https://github.com/Kigrok/obsidian-library-plugin /MIT/202606/ts
   - plugin that organizes movies, series, and other media as visual cards with automatic metadata.
@@ -1064,6 +1106,13 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/heavycircle/remark-obsidian /MIT/202507/js/inactive
   - A remark plugin to extend support to Obsidian-flavored Markdown.
 
+- https://github.com/kenforthewin/atomic-editor /MIT/202606/ts
+  - https://kenforthewin.github.io/atomic-editor/
+  - CodeMirror 6 markdown editor with Obsidian-style inline live preview.
+  - 类似typora的inline编辑
+  - It's the writing surface behind Atomic, a personal knowledge base 
+  - Tables render WYSIWYG. Click a cell to edit in place — inline markdown inside cells reveals its delimiters only when your cursor enters
+
 - https://github.com/MoritzRS/obsidian-ext /MIT/202411/ts/inactive
   - Extensions and utilities regarding Obsidian Flavored Markdown (OFM) and the Obsidian.md ecosystem.
   - Callouts, Tags, Wikilinks
@@ -1083,6 +1132,8 @@ modified: 2026-04-07T00:47:33.626Z
   - converts Obsidian-flavored Markdown into clean HTML
 - https://github.com/Mathijssch/oxidian /rust
   - Rust-based tool for converting Obsidian-flavored Markdown to html in real-time.
+  - 
+
 # alternatives-ob
 - https://github.com/slimhk45/awesome-obsidian-alternatives /md
   - free and open-source Obsidian clones and the technologies used to build them.
@@ -1246,10 +1297,7 @@ modified: 2026-04-07T00:47:33.626Z
   - https://icewind.quest/
   - icewind.quest is a hosted Zettelkasten-style notebook. 
 # examples
-- https://github.com/xnohat/webobsidian /MIT/202606/ts
-  - A self-hosted, Obsidian-compatible web app for your Markdown "second brain".
-  - Point it at a folder of Markdown files and edit your notes from any browser — with a CodeMirror editor, live preview, wikilinks, an interactive graph, full-text search, GitHub sync (incl. Git LFS), an API for AI agents, and community-plugin support.
-  - It is single-user and self-hosted: one master password protects the whole app, all configuration lives in a plain data/settings.json (no database engine), and the entire stack runs from a single docker compose up.
+
 # utils-markdown/yaml
 - https://github.com/flowershow/markdowndb /490Star/MIT/202605/ts/sqlite
   - https://github.com/datopian/markdowndb
@@ -1340,6 +1388,11 @@ modified: 2026-04-07T00:47:33.626Z
   - This repo bundles everything needed to go from CSV → Markdown → JSON → MkDocs
   - Render: serve the site with MkDocs + Material, where a Dataview-inspired JS/CSS pair turns fenced dataview blocks into Excel-style tables (search, filters, pagination, CSV export).
 
+- https://github.com/izag8216/mdvigil /MIT/202604/python
+  - A CLI toolkit for Obsidian vaults and markdown knowledge bases.
+  - Track content freshness. Rename files safely. Generate indexes. Manage tags.
+  - Zero API dependency. Works offline. CI-friendly.
+
 - https://github.com/jobindjohn/obsidian-publish-mkdocs
   - A Template to Publish Obsidian/Foam Notes on Github Pages (uses MkDocs)
 
@@ -1426,11 +1479,6 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/vsme/astro-obsidian-blog /MIT/202606/ts/astro
   - https://bgo.me/
   - 高性能，使用 Obsidian 进行文章管理，纯自用的博客源码 
-
-- https://github.com/izag8216/mdvigil /MIT/202604/python
-  - A CLI toolkit for Obsidian vaults and markdown knowledge bases.
-  - Track content freshness. Rename files safely. Generate indexes. Manage tags.
-  - Zero API dependency. Works offline. CI-friendly.
 
 - https://github.com/Vinzent03/obsidian-advanced-uri /MIT/202601/ts/inactive
   - allows you to control many different features in Obsidian just by opening some URIs. Because they are just text and don't require any mouse clicks or keyboard inputs, they are perfect to automate your Obsidian workflow.

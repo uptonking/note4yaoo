@@ -198,6 +198,9 @@ modified: 2023-01-20T21:59:47.792Z
   - Author content in Markdown or MDX with custom component support
   - ⏳ Versioning and publishing: Full draft/publish lifecycle with immutable version history
   - Extensible modules	First-party module system for extending server and CLI behavior
+  - ? 是否完全开源, 能看到源码, 但文档里面标注private
+    - @mdcms/server	Private	Backend API server (Elysia + PostgreSQL)
+    - @mdcms/modules	Private	First-party module registry
   - Code-first schema: Define content types, fields, and references in TypeScript with Zod validation
   - Embeddable React admin interface with a rich document editor, schema browser, and environment management
   - Auth and RBAC	Session auth, OIDC/SAML SSO, API keys, and role-based access control

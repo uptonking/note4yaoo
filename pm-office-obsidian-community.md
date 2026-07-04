@@ -351,6 +351,26 @@ None.
 - My Vault exists peacfully in an OneDrive-Folder. From there it's synced to my smartphone and also to my linux server machine, where my AI is able to have a direct eye and hand in all my .md contents.
 
 - running a WebDAV server is a simple server to run, but you also need a way to access it when you're away from home and not on your network. To do that I run another simple App in my Homelab called Wireguard. It creates a VPN that I connect with when I'm away. Once I connect to the VPN, it's just like I'm on my home network and I have access to all the services I host.
+# discuss-multi-lang
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Pages in multiple languages - Feature requests _202108](https://forum.obsidian.md/t/pages-in-multiple-languages/22063)
+  - Current workaround: 
+  - A user could always simply use multiple pages, one for each language, and link them between each other. However, this would bloat the browser and the graph, and the links associated with the page in one language would be separate from those associated with the page in another language.
+  - An alternative is to put the various languages together on the same page, but that is rather inconvenient and inelegant, especially for pages with a lot of text.
+- 
+- 
+- 
+- 
+- 
+- 
+
 # discuss-tags
 - ## 
 
@@ -359,6 +379,39 @@ None.
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Categories vs tags : r/ObsidianMD _202607](https://www.reddit.com/r/ObsidianMD/comments/1ulcw1k/categories_vs_tags/)
+- properties are more versatile and can be tailored to each case. Tags can't. But, tags have an implicit search, properties don't.
+
+- A native tag is essentially a text label used for filtering. A category note is an object in the vault with its own content, links, and metadata. Because it's a note, it can serve as a hub or Map of Content (MOC). You can document what belongs in that category, describe how you use it, or record conventions that would otherwise exist only in your head. In other words, the category carries meaning, not just a name.
+
+- Tags are built in to Obsidian's functionality, and work very well. Doing the same thing will Links, Properties and Bases requires a lot more work on your part.
+
+- ## [Why I use folders over tags or categories : r/ObsidianMD _202607](https://www.reddit.com/r/ObsidianMD/comments/1ukpxu1/why_i_use_folders_over_tags_or_categories/)
+  - Speed. 
+  - When using Dataview or inline Javascript to build tables or other views, giving the script a specific place to look dramatically speeds things up (in my experience). I have 30K+ notes in my vault, so some queries can take a bit to run if they target the entire vault. If I had a flat hierarchy, saying "show me all the notes with #meeting between dateX and dateY" means it scans the metadata of 30k notes to find all the #meeting notes with the proper dates.
+  - With a folder structure, saying "look in Meetings/2026/06 for notes between dateX and dateY" means it scans at most a few dozen notes for dates. Narrowing the scope is just plain faster. It's the difference between a second or two and instant.
+
+- I consider my Obsidian vault a system that must be easily consulted even without Obsidian itself, so I try to use folders if possible, which are accessible and can be organised even without Obsidian and a little less tags that instead need Obsidian to be able to be consulted, filtered and searched with ease
+
+- I use both folder structures and tags. Tags are used when building dashboards using bases, and then folder structures can be used when going through files using AI agents. Both have their own use cases and value.
+- Tags annotate and label content. Folders chunk related content by a unit.
+
+- This works if your folder structures remain pretty static. If you tend to rearrange folders, folder queries break unless you manually update them each new folder path, which is very annoying. Its why I am using tags more myself.
+
+- I have a folder structure two levels deep, no more. First level is broad, second much less so, but still not specific. Anything more specific comes from metadata as needed. Similar to your setup. My tables and searches can be broad, vault-wide, or directed as needed. Metadata templates are useful for this.
+
+- don't have 15 more folders under that because then you spend more time organizing than you do creating notes which is what the thing is actually for. I work in IT and in almost every situation search is faster than clicking through to where something lives.
+
+- Most of my folder sorting is done by default when I choose a template, so it's just simple stuff like person or company or movie or book, but it makes these files manageable in my actual computer operating system which at some point would struggle with a flat storage system.
+
+- Flat structure is against everything I got used to. I think it's kepano's effect that flat structure is so popular.
+
+- Too many things fit in more than one category, so I can't use folders, unless it is for very specific things. Having to reorganize a vault because a folder name takes on a new meaning would be far too hard.
 
 - ## [I use links and notes instead of tags : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1ue3fi1/i_use_links_and_notes_instead_of_tags/)
   - I don’t use tags at all in my Vault. Instead, I use links in place of tags

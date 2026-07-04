@@ -198,6 +198,15 @@ modified: 2022-08-18T16:57:46.405Z
     - Each Element is made up of Fields, which represent a data type – for example, text, rich text, or custom data types.
   - [How prosemirror-elements works](https://github.com/guardian/prosemirror-elements/blob/main/docs/how-it-works.md)
 
+- https://github.com/handlewithcarecollective/pitter-patter /MIT/202606/ts
+  - http://pitter-patter.dev/
+  - open source collaborative rich text editing toolkit, built with React and ProseMirror.
+  - There are other solutions, like Tiptap and Remirror, but we think that they’ve made some suboptimal choices that force product developers to make unnecessary compromises.
+    - Both attempt to use React portals and effect hooks to integrate with ProseMirror, which lead to irreconcilable state tearing, due to fundamental differences in how React and ProseMirror View handle view reconciliation.
+    - Both attempt to use Yjs via y-prosemirror for collaboration. We think that Yjs’s CRDT implementation is ill-suited for rich text editing.
+    - Both attempt to hide ProseMirror’s underlying APIs, under the guise of simplicity and abstraction. We think that ProseMirror, low-level though it is, is roughly the correct level of abstraction
+  - Don’t hide ProseMirror
+  - Collaboration should be simple to implement and simple to debug: Pitter Patter’s collaboration, presence, and version history libraries are based on prosemirror-collab-commit.
 - https://github.com/handlewithcarecollective/react-prosemirror /apache2/202501/ts
   - A fully featured library for safely integrating ProseMirror and React.
   - On Jan. 17, 2025, the maintainers of the @nytimes/react-prosemirror library decided fork the v2 release into its own project. It had been developed entirely by one developer, @smoores-dev, who had not worked for NYT in years

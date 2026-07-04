@@ -24,7 +24,10 @@ modified: 2021-05-06T09:39:53.522Z
 - cons
   - 实现逻辑(model/view)复杂度高、功能丰富
   - 数据结构层的设计不够通用, step/transform不是典型的ot operation
+    - wordgard已移除step的设计, 采用类似sharejs的delta结构
   - 数据层和示例没有优先使用json, 不如slate的数据层直观
+  - schema+content-expression 的限制过于严格，降低了编辑器操作的通用性
+    - wordgard已移除 content-expression
   - 不支持动态改变schema
   - 编辑器的多个插件存在依赖关系时如何处理
   - 与其他框架的集成不是很完美，ReactNodeView用不用portal的最佳实践不明确

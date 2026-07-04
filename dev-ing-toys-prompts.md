@@ -31,7 +31,7 @@ modified: 2026-04-11T01:31:17.720Z
   - 也可直接给明确的转译代码指令比模糊的rewrite更有效
 # prompts 🔠
 
-## begonia(superdoc/ailovedoc)
+## 📌 begonia(superdoc/ailovedoc)
 
 project `superdoc` at folder `../superdoc` implements renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed.
 - the final goal is to implement a framework-agnostic, modular, extensible, headless ai docx editing solution named `begonia` similar to `superdoc` in current folder to avoid the licensing issues.
@@ -91,6 +91,8 @@ you have worked on this problem several times but features are still lacking. Th
 - you may reference how superdoc implements/solves it, then do a similar or better implementation in begonia without licensing issue.
 
 - superdoc's overall architecture is good enough to follow. Mostly begonia should use similar architecture to superdoc.
+- you may analyze related architecture/code and borrow good deisgn from upstream superdoc(source code at folder `../superdoc`) and rewrite it in functional-programming style for redmansion to avoid licensing issues.
+- it is unnecessary to search the web for superdoc details, just analyze the source code at folder `../superdoc`.
 
 - please recheck migrated features and improve your implementation in begonia. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support..., compare the implementation logic/code of begonia with superdoc logic/code to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
 - core implementation for major features should be framework-agnostic without react, ui wrappers/bindings should be sub packages, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
@@ -125,7 +127,7 @@ you have worked on this problem several times but features are still lacking. Th
 project `superdoc` at folder `../superdoc` is also a paginated editor like `docx-editor` in current folder. analyze related code/docs/architecture/data-flow in superdoc, explain to me how does the core superdoc editor  implement the paginated editor layout engine architecture, whether superdoc editor supports multi-column layout, whether it supports virtualized rendering for huge document. 
 then compare the architecture/implementation of superdoc and docx-editor, explain the differences for core features like pagination, virtualized render, multi-column layout, track-change...
 
-## hardoc(onlyoffice-pdf)
+## 📌 hardoc(onlyoffice-pdf)
 
 onlyoffice-pdf-editor(code is at several git repos in current folder) implements renders, edits, annotates `.pdf` files in the browser, but it is AGPL licensed.
 - the final goal is to implement a new headless, extensible pdf editor named hardoc with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
@@ -243,7 +245,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
   - For hardoc, it seems the appropriate architecture might be a service-authoritative pdf runtime, rather than trying to force every parity-critical operation through pure TS logic. 
   - hardoc should be more of headless client-server architecture. native/source first, promote only for unsafe contents/objects.
 
-## grist-office
+## 📌 grist-office
 
 Project `grist` (in current folder) is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database. 
 - The final goal is to implement an alternative modular, extensible react frontend webapp in folder `./app/client-react` at the current git branch `feat/office-react`, with almost the same features as existing backbonejs frontend webapp at `app/client`, using modern tech stacks like npm, reactjs, typescript, tailwindcss, zustand, @tanstack/react-table, @tanstack/react-router without legacy backbonejs/knockoutjs. After you finished the react webapp,  `npm run start:app` should start the new react webapp, the legacy yarn toolchain/code should still be kept for backward compatibility, the legacy backonejs should still works, so you should implement the react webapp in a way to make it easy to merge code changes from `main` branch to `feat/office-react` branch in the future, so please reuse as many code from main branch as possible.
@@ -368,7 +370,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - research and make a full plan, then implement slaides to match major features of PPTist, or even better than PPTist, without licensing issues.
 
-## aichorage(janai/tranfromerlab-app)
+## 📌 aichorage(janai/tranfromerlab-app)
 
 - goals
   - 重后端、弱前端
@@ -386,7 +388,7 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 - most features/ux from jan should be migrated/reimplemented in aichorage. rag should be planned, but rag implementation may be delayed.
 - multi-user/team/workspace concepts in tranfromerlab-app should be implemented in aichorage, you may borrow the good design/architecture of transformerlab-app, but strictly following is unnecessary. all custom backend plugins may be installed in global scope, but each team can only use plugin enabled in their team. a default workspace and username/password should be created so that user can use it easily by just click login.
 - aichorage backend/runtime/web should be extensible, configurable, flexible. Apart from good defaults value, a `.env.example` should be provided in related sub packages if you want. you may borrow some good design/config from upstream jan/transformerlab-app/unsloth-studio.
-- all llm backend/runtime should be optional that supports to install/uninstall/enable/disable, so that the architecture is extensible and flexible. but llama.cpp amd mlx-vlm are installed by default to make it easy to use out of the box. you may design a standalone llm-runtime package to make the architecture modular, resuable, extensible.
+- all llm backend/runtime should be optional that supports to install/uninstall/enable/disable, so that the architecture is extensible and flexible. but llama.cpp should be installed by default to make it easy to use out of the box. you may design a standalone llm-runtime package to make the architecture modular, resuable, extensible.
 - tasks that may be planned but delayed(not in current goal): RAG, full parity of Jan-style UI/UX, complicated multi-user/team/workspace/RBAC, anthropic-compatible api, embedding models.
 
 - some local models if you need: ~/.lmstudio/models/unsloth/LFM2.5-1.2B-Thinking-GGUF/LFM2.5-1.2B-Thinking-UD-Q5_K_XL.gguf, ~/.lmstudio/models/unsloth/gemma-4-E4B-it-UD-MLX-4bit, ~/.lmstudio/models.
@@ -498,7 +500,7 @@ local model testing/running can be very slow.
   - cons: 内置runtime需要支持多种格式如 /v1/chat/completions, /v1/responses， 还要考虑本地ollama的版本、模型版本， 带来的问题比收益多
   - 参考很多主流开放性ai的产品如cursor/cherry-studio, 都支持用户配置api，所以通过平台/系统来管理本地的工具是非必要的
 
-## redmansion/dreamansions(vscode-obsidian/zotero)
+## 📌 dreamansions/redmansion(vscode-obsidian/zotero)
 
 - tips
   - 可用域名 dreamansions
@@ -574,7 +576,7 @@ project `directus` (at folder `../directus` ) is a source-available licensed, po
 - 
 - 
 
-### directus 🛢️
+### directus
 
 ### vscode-research
 

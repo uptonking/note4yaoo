@@ -95,6 +95,10 @@ modified: 2021-07-21T18:07:43.056Z
   - 支持TypeScript Twoslash
   - 相比于nextra: 支持 TypeScript Docs Generation, OpenAPI Integration
   - 相比于vike: 不支持vue/solid
+  - 支持多语言版本内容
+  - [部分支持obsidian](https://www.fumadocs.dev/docs/integrations/obsidian)
+    - https://github.com/fuma-nama/fumadocs/tree/dev/packages/obsidian
+    - 支持 Wikilinks, Embeds, Block ID
   - 支持ask ai
   - 搜索基于orama
   - Partial Versioning: Feedback When versioning only applies to part of your docs, You can separate them by folders.

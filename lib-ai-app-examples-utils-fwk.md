@@ -647,6 +647,10 @@ modified: 2025-02-21T18:20:42.624Z
     - Arch runs alongside app servers as a containerized process, and builds on top of `Envoy`'s proven HTTP management and scalability features to handle ingress and egress traffic related to prompts and LLMs.
     - Arch was built by the contributors of Envoy Proxy with the belief that: Prompts are nuanced and opaque user requests, which require the same capabilities as traditional HTTP requests including secure handling, intelligent routing, robust observability, and integration with backend (API) systems to improve speed and accuracy for common agentic scenarios – all outside core application logic.
 
+- https://github.com/lucafolino42-png/free-model-fusion /MIT/202606/ts
+  - [I built Free Model Fusion — a self-hosted AI router that turns free API keys into one smarter assistant. : r/SelfHostedAI _202606](https://www.reddit.com/r/SelfHostedAI/comments/1uihwno/i_built_free_model_fusion_a_selfhosted_ai_router/)
+  - combines multiple free/cheap AI APIs into one intelligent assistant with expert panels, judge/synthesis evaluation, session memory, web search, Telegram support, and speed-vs-quality routing.
+
 ## harness-router
 
 - https://github.com/farion1231/cc-switch /59kStar/MIT/202605/rust/ts
@@ -1088,6 +1092,8 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/diegosouzapw/OmniRoute /MIT/202606/ts
   - https://omniroute.online/
   - Connect any AI-powered IDE or CLI tool through OmniRoute — free API gateway for unlimited coding.
+  - https://x.com/geekbb/status/2073050127275561204
+    - 核心 4 层自动回退，订阅— API Key —便宜—免费，毫秒切换，外加 17 种路由策略，再用 RTK 加 Caveman 堆叠压缩省掉 15–95% 的 token。
 
 - https://github.com/zhalice2011/ProxyLLM /MIT/202601/ts
   - Electron 应用，用于捕获 LLM 网站的浏览器会话，并在本机暴露 OpenAI 兼容 API

@@ -23,8 +23,96 @@ modified: 2026-06-20T15:49:57.019Z
   - comments: 类似editor的行内评论足够了，类似github-issues/discussion的评论太重了，不是当前重点
 
 - features
-  - 
 
+## models-bases
+
+- model-wiki
+  - id
+  - name + totalB
+  - total parameters
+  - active parameters
+  - multimodal: image, audio, video
+  - reasoning: no, always, togglable
+  - Context length
+  - ~~tool-use~~ 
+  - MoE
+  - embedding
+  - branding
+  - release-collection
+  - Authors
+  - release-date
+  - license
+  - model-weight-repo
+  - content: description, usage, docs
+- model-media
+  - branding-logo
+  - creator-logo
+  - provider-logo
+
+- model-news
+  - news-date
+  - provider
+  - model
+  - pricing
+  - url
+  - content
+
+- model-bench-vendor
+  - bench-name
+  - bench-date
+  - model-name
+  - parameter1-2-3...
+
+- model-quants
+  - hosted-url: huggingface, modelscope
+  - quant-size
+
+- model-pricing
+  - date-pricing...
+  - type: offcial-release, latest, stable
+
+- model-tips
+  - unsloth-guide-docs
+  - links-submit
+
+## models-directory/catalog/registry
+
+- https://github.com/anomalyco/models.dev /MIT/202511/ts
+   - https://github.com/sst/models.dev
+  - https://models.dev/
+  - open-source database of AI model specifications, pricing, and capabilities
+  - We also use it internally in opencode.
+
+- https://github.com/janhq/model-catalog /202607/python
+  - A curated catalog of Large Language Models (LLMs) sourced from the Hugging Face Hub, specifically designed for integration with the Jan application's model hub. 
+
+- [LM Studio - Model Catalog](https://lmstudio.ai/models)
+  - https://github.com/lmstudio-ai/model-catalog /inactive
+- [Unsloth Model Catalog | Unsloth Documentation ](https://unsloth.ai/docs/get-started/unsloth-model-catalog)
+
+- [Catalog of Large Language Models ](https://systems-analysis.ru/eng/Large_language_models:_Catalog)
+
+- [AI Models Directory — Compare 280+ LLM Models | LLM Gateway ](https://llmgateway.io/models)
+  - https://github.com/theopenco/llmgateway /AGPL+EE/202607/ts
+  - https://github.com/theopenco/llmgateway/blob/main/apps/ui/src/app/models/page.tsx
+  - open-source API gateway for Large Language Models (LLMs)
+- [AI Model Directory — 300+ LLMs by price, region, ZDR | Opper AI ](https://opper.ai/models)
+- 🆚 [DeepSeek V4 Pro vs Kimi K2.7 Code - AI Model Comparison | OpenRouter ](https://openrouter.ai/compare/deepseek/deepseek-v4-pro/z-ai/glm-5.2)
+
+- [LLM Directory: All Local LLMs List ](https://apxml.com/models)
+- [LLM Large Language Model Directory - DocsBot ](https://docsbot.ai/models)
+- [LLM Model Card Directory ](https://www.prompthub.us/resources/llm-model-card-directory)
+
+- [有没有一个网站收集顶级科技公司的大模型名单 - LINUX DO _202606](https://linux.do/t/topic/2488815)
+  - [AI大模型列表 - 评测结果、参数与价格汇总 | DataLearnerAI ](https://www.datalearner.com/ai-models/pretrained-models)
+- [Models Table (10, 000+ LLM data points) – Dr Alan D. Thompson – LifeArchitect.ai ](https://lifearchitect.ai/models-table/)
+- [All Large Language Models Directory - All LLMs ](https://llmmodels.org/)
+- [Design Arena ](https://www.designarena.ai/)
+
+- [llm-stats AI Leaderboard 2026: Compare & Rank 300+ Top AI Models by Intelligence, Speed & Price ](https://llm-stats.com/)
+  - Your idle credits are losing value every day. Connect them to LLM Stats and earn 50% on every inference request we route through your keys.
+
+- [codingplans.cc — AI Coding Plans ](https://codingplans.cc/)
 # model-api-resources
 - [Model Pricing for Kilo Code – Compare LLM Model Pricing & Capabilities ](https://kilocodepricing.com/?freeOnly=1)
   - [I built a free Kilo AI model pricing browser - feedback welcome : r/kilocode _202606](https://www.reddit.com/r/kilocode/comments/1tvb84z/i_built_a_free_kilo_ai_model_pricing_browser/)
@@ -60,18 +148,7 @@ modified: 2026-06-20T15:49:57.019Z
 - https://github.com/vava-nessa/free-coding-models /202606/js
   - https://freecodingmodels.vercel.app/
   - Find, benchmark and install in CLI 170+ FREE coding LLM models across 15+ providers in real time
-
-- [有没有一个网站收集顶级科技公司的大模型名单 - LINUX DO _202606](https://linux.do/t/topic/2488815)
-  - [AI大模型列表 - 评测结果、参数与价格汇总 | DataLearnerAI ](https://www.datalearner.com/ai-models/pretrained-models)
-  - [Models Table (10, 000+ LLM data points) – Dr Alan D. Thompson – LifeArchitect.ai ](https://lifearchitect.ai/models-table/)
-  - [All Large Language Models Directory - All LLMs ](https://llmmodels.org/)
-  - https://llm-models.org
 # awesome/leaderboard/benchmark
-- [llm-stats AI Leaderboard 2026: Compare & Rank 300+ Top AI Models by Intelligence, Speed & Price ](https://llm-stats.com/)
-  - Your idle credits are losing value every day. Connect them to LLM Stats and earn 50% on every inference request we route through your keys.
-
-- [codingplans.cc — AI Coding Plans ](https://codingplans.cc/)
-
 - https://github.com/wenbochang888/github-trending-spider /20.8kStar/MIT/202606/ts
   - https://newsnow.busiyi.world/
   - 优雅地阅读实时热门新闻
@@ -1977,12 +2054,13 @@ modified: 2026-06-20T15:49:57.019Z
 - [莫比乌斯 2Chat /Sub2API](https://2chat.cc/keys)
   - 低倍率渠道， 夜晚可用性低
 
-- [Code-Plan  /NewAPI](https://code-plan.site/pricing)
+- [Code-Plan  /NewAPI](https://code-plan.site/pricing), 已充值
   - [GPT-源头供货-招代理的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/IY16OXB7)
   - AMD 顶级服务器 + 10Gbps 带宽
 
+- [DataCodex ](https://api.datacodex.net/keys), 已充值
+
 - [数智AI ](https://api.xpluse.plus/pricing)
-- [DataCodex ](https://api.datacodex.net/keys)
 - [AI来了 ](https://api.ailaile.site/)
   - [littleKK的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/BVGUTB12)
   - 注册需要花1元买邀请码
