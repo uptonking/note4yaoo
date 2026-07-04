@@ -48,6 +48,7 @@ modified: 2026-06-30T17:32:52.416Z
 
 - Templates is a core plugin that lets you insert pre-defined snippets of text into your active note.
   - You can add dynamic information to your templates, using template variables. 
+  - When you insert a template into the active note, all the properties from the template will be added to the note. Obsidian will also merge any properties that exist in your note with properties in the template.
 
 - A snippet, or CSS snippet, changes the appearance of Obsidian, just like a theme. 
   - Unlike themes, you can apply multiple snippets at the same time.
@@ -154,4 +155,54 @@ modified: 2026-06-30T17:32:52.416Z
 
 # docs
 
+- 
+- 
+- 
+- 
+
+# blogs
+
+## [How I use Obsidian — Steph Ango ](https://stephango.com/vault)
+
+- I use Obsidian to think, take notes, write essays, and publish this site. This is my bottom-up approach to note-taking and organizing things I am interested in. 
+- In Obsidian, a “vault” is simply a folder of files. This is important because it adheres to my file over app philosophy. If you want to create digital artifacts that last, they must be files you can control, in formats that are easy to retrieve and read.
+- Rules I follow in my personal vault for consistency:
+  - Avoid splitting content into multiple vaults.
+  - Avoid folders for organization.
+  - Avoid non-standard Markdown.
+  - Always pluralize categories and tags.
+  - Use internal links profusely.
+  - Use YYYY-MM-DD dates everywhere.
+  - Use the 7-point scale for ratings.
+  - Keep a single to-do list per week.
+
+- I use very few folders. I avoid folders because many of my entries belong to more than one area of thought. 
+- Most of my notes are in the root of the vault, not a folder. If a note is in the root, I know it’s something I wrote, or relates directly to me.
+- My notes are primarily organized using the categories property. Categories display an overview of related notes, using the bases feature in Obsidian. 
+
+- References where I write about things that exist outside my world. Books, movies, places, people, podcasts, etc. 
+- Clippings where I save things other people wrote, mostly essays and articles.
+- Attachments for images, audio, videos, PDFs, etc.
+- Daily for my daily notes, all named YYYY-MM-DD.md. I do not write anything in daily notes, they exist solely to be linked to from other entries.
+- Templates for templates.
+- Categories contains top-level overviews of notes per category (e.g. Books, Movies, Podcasts, etc).
+- Notes contains example notes.
+
+- I use internal links profusely throughout my notes.
+
+- Almost every note I create starts from a template
+- I have a template for every category with properties at the top, to capture data such as:
+  - Themes/topic — grouping by genre, type, topic 
+  - Dates — created, start, end, published
+  - People — author, director, artist, cast, host, guests
+  - Locations — neighborhood, city, coordinates
+  - Ratings — more on this below
+
+- A few rules I follow for properties:
+  - Property names and values should aim to be reusable across categories. 
+  - Templates should aim to be composable, e.g. Person and Author are two different templates that can be added to the same note.
+  - Short property names are faster to type, e.g. start instead of start‑date.
+  - Default to list type properties instead of text if there is any chance it might contain more than one link or value in the future.
+
+- This site is written, edited, and published directly from Obsidian. To do this, I break one of my rules listed above — I have a separate vault for my site. I use a static site generator called Jekyll to automatically compile my notes into a website and convert them from Markdown to HTML.
 # more

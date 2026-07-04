@@ -81,6 +81,8 @@ modified: 2026-04-07T00:47:33.626Z
   - 📡 Roadmap
     - Continued shim work to support more community plugins.
     - Multi-user support with OIDC for self-hosted shared deployments.
+  - [Just found Ignis: A lightweight web wrapper to self-host Obsidian (No VNC) : r/selfhosted _202606](https://www.reddit.com/r/selfhosted/comments/1u1gny0/just_found_ignis_a_lightweight_web_wrapper_to/)
+    - The only bad thing about Trilium is that it doesn't have a mobile app.
 
 - https://github.com/atomicstrata/llm-wiki-compiler /1.6kStar/MIT/202606/ts
   - https://llmwiki.atomicstrata.ai/
@@ -117,8 +119,9 @@ modified: 2026-04-07T00:47:33.626Z
   - https://github.com/callumalpass/mdbase-workouts
     - A workout tracking application that stores all data as markdown files with YAML frontmatter, managed by mdbase.
     - This project is an implementation of mdbase-spec.
+  - [A CLI tool for reading Bases files + mdbase-spec: a specification for treating a vault as a typed, queryable database : r/ObsidianMD _202601](https://www.reddit.com/r/ObsidianMD/comments/1qs1juw/a_cli_tool_for_reading_bases_files_mdbasespec_a/)
 
-- https://github.com/rafafields/Obsidian-Base-Hub
+- https://github.com/rafafields/Obsidian-Base-Hub /202601/inactive
   - A modular Obsidian vault leveraging native Bases to replicate Notion-like database functionality for personal project and task management.
   - 核心概念: Projects, Areas, People, Daily Notes
   - Obsidian Base Hub is a comprehensive vault template built on the KISS principle (Keep It Simple, Stupid) that transforms Obsidian into a powerful project management system. It provides interconnected databases similar to Notion, specifically designed for managing complex and dynamic work environments.
@@ -202,7 +205,7 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/ghyatt/bases-collapsing-group-table
   - add a Table that supports collapsable groups. Also: on demand, accordion, and collapse all.
 
-- https://github.com/grub-basket/CSV-to-Obsidian-Properties-for-Bases /202606/js
+- https://github.com/grub-basket/CSV-to-Obsidian-Properties-for-Bases /MIT/202606/js
   - csv2bases:  https://fork-archive-hub.github.io/CSV-to-Obsidian-Properties-for-Bases/
   - bases2csv:  https://bases-to-csv.netlify.app/
   - offline-capable browser tool that converts CSV or TSV spreadsheet data into Obsidian-ready .md files with YAML frontmatter — one file per row, downloaded as a ZIP.
@@ -248,8 +251,8 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/tu2-atmanand/Task-Board
   - An Obsidian plugin to view and manage your tasks from whole vault using much efficient boards using various methodologies.
-  - https://github.com/StepanKropachev/obsidian-pm
-    - Project management natively in your Obsidian vault. Table, Gantt, and Kanban views with subtasks, dependencies, time tracking, and custom…
+- https://github.com/StepanKropachev/obsidian-pm
+  - Project management natively in your Obsidian vault. Table, Gantt, and Kanban views with subtasks, dependencies, time tracking, and custom…
 
 - https://github.com/Trietment/obsidian-kanban /MIT/202606/js
   - A Kanban board for Obsidian that collects tasks from every note in your vault. Tasks are plain markdown checkboxes with optional metadata; the plugin shows them as draggable cards in columns. Works on desktop and mobile.
@@ -257,6 +260,10 @@ modified: 2026-04-07T00:47:33.626Z
   - Aren't we about to get a native implementation of kanban in Bases?
     - Isn’t that only relevant for linked notes? For some of us, we have a mix between plain text and linked notes within our kanban setup, so I’m unsure if bases will fill the niche I’m looking for (unless I’m mistaken)
   - the outlook sync is something i didn't know i needed until just now
+
+- https://github.com/taskgenius/taskgenius-plugin
+  - Comprehensive task management plugin for Obsidian
+  - 在开发独立的桌面版
 
 - https://github.com/ewerx/obsidian-bases-kanban
   - Kanban view for Obsidian Bases. Display notes as draggable cards organized in columns by any property.
@@ -274,6 +281,7 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/CodyBontecou/obsidian-bases-preview
   - Show inline note content previews inside Obsidian Bases table rows and quickly add new notes.
+  - MutationObserver watches the DOM for changes (Bases dynamically renders its table views).
 
 - https://github.com/Goldius23/obsidian-bases-extended-views
   - Plugin that adds a View option to Bases that displays the notes in a scrollable feed with a thumbnail image.
@@ -481,6 +489,7 @@ modified: 2026-04-07T00:47:33.626Z
   - Card-Based CMS View: Display your base entries as cards with thumbnails, snippets
   - Bulk Operations Toolbar: Select multiple items and perform batch operations including publish/draft status management, tag management, property setting/removal, and deletion.
   - Draft Status Management: Toggle publish/draft status for multiple files at once, with visual indicators on cards.
+  - [Bases CMS Plugin beta - bulk edit your notes like a content management system : r/ObsidianMD _202511](https://www.reddit.com/r/ObsidianMD/comments/1p8zk5q/bases_cms_plugin_beta_bulk_edit_your_notes_like_a/)
 
 - https://github.com/davidvkimball/vaultcms /MIT/202606/js
   - https://vaultcms.org/
@@ -498,9 +507,11 @@ modified: 2026-04-07T00:47:33.626Z
   - https://github.com/davidvkimball/obsidian-vault-cms
     - plugin for setup and configuration management of Vault CMS. Provides a setup wizard, automatic project detection, and plugin configuration management.
   - https://github.com/davidvkimball/vaultcms-presets
+  - https://github.com/davidvkimball/obsidian-home-base
 
 - https://github.com/Abdulkader-Safi/obsidian-crm-plugins /BSD/202606/ts/svelte
   - A lightweight CRM that lives inside Obsidian. 
+  - 强调 Clients, Deals, Projects
   - Track clients, deals, and projects, log every interaction, and keep your to-dos, without leaving your vault and without a cloud account.
   - [I built a CRM that lives entirely in your vault as plain markdown notes : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1ue6bfh/i_built_a_crm_that_lives_entirely_in_your_vault/)
 
@@ -513,6 +524,7 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/CLSherrod/crm-markdown /GPL/202606
   - https://christophersherrod.com/crm/
   - simple, local-first CRM in Markdown for tracking contacts, conversations, follow-ups, and relationships—without SaaS lock-in.
+  - 以Contact为核心, 强调 Communication/Reminder
   - The system is intentionally simple: one person = one contact note.
     - Each contact note includes the person’s profile, relationship type, relationship tier, follow-up rhythm, next contact date, and communication log.
   - One Markdown file per person
@@ -523,9 +535,15 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/wesswart77/obsidian-cadence /MIT/202606/js
   - A unified Obsidian plugin for CRM, PRM, project management, daily planning, and reminders — all on top of plain markdown. 
   - No server, no sync service, no lock-in. Your vault stays your vault.
+  - Markdown is the source of truth. Every contact, deal, project, activity is a .md file with frontmatter. Tasks, Dataview, Templater all keep working.
+  - 似乎未使用bases
   - Most "second brain" plugins do one thing well. Cadence is the opposite: a coherent workspace that brings together the surfaces a working person actually moves between every day — today's tasks, the week ahead, deals in flight, contacts, projects, recurring reminders — and presents them in a single tab with one familiar nav.
   - Module toggles. Turn off CRM, PRM or Planner if you only want some of it.
   - Cadence lets you define custom frontmatter properties for any of your core entities (Contact, Company, Project, Deal, Activity, Partner, etc.) to model your specific business workflows directly inside Obsidian.
+  - https://github.com/cbruyndoncx/obsidian-bob-workspace
+    - [Going all-in on Cadence Workspace UI and made a configurable fork 'BOB Workspace' _202605](https://github.com/wesswart77/obsidian-cadence/issues/5)
+    - I have taken Cadence and made all of the settings for navigation entities and listings configurable by re-using bases extensively combined with the metadata menu 
+    - Bases-backed views: Entity lists can be driven by Obsidian Bases (.base) files for richer filtering, sorting, and column control. 
 
 - https://github.com/anykeyguru/md-docs-cms-obsidian-plugin /MIT/202604/ts
   - Turn Obsidian into a real CMS for docs-as-code repositories: visual tree with both drafts and public side-by-side, drag-and-drop weight reordering, translation matrix, image picker, draft promotion with preflight, frontmatter form, broken-link health check, VS-Code-style commit / sync panel, schema-driven layout configurable per project, first-run setup wizard, structure-integrity checker with auto-fix, and a settings panel for engine config.
@@ -547,6 +565,9 @@ modified: 2026-04-07T00:47:33.626Z
   - SpecterSync Pro (spectersync.com) is the official commercial product with signed installers, license activation, automatic updates, managed connectors, hosted AI transformation workflows, and support.
   - The Mac shell and the daemon communicate only via `state.json`. One-shot CLI commands (pull, push, sync) spawn a fresh daemon process; the long-running watcher is a separate supervised process. 
   - Specter started as a local Obsidian plugin in May 2026 to scratch the "edit Ghost in Obsidian without going through their web editor" itch; it's grown into a CMS-agnostic sync tool because the workflow turned out to apply far beyond Ghost.
+
+- https://github.com/marcopeg/mondo /MIT/202511/ts/inactive
+  - a general purpose plugin that adds plentiful of utilities to a standard Obsidian vault
 # feat-ai
 - https://github.com/Nexus-JPF/note-companion /MIT/202604/ts
   - https://notecompanion.ai/
@@ -643,7 +664,7 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/mnaoumov/obsidian-backlink-cache
   - plugin that stores backlink cache to speed up app.metadataCache.getBacklinksForFile().
   - It's mostly useful for users with the large vaults. On smaller vaults the difference might be unnoticeable.
-# feat-publish
+# feat-publish 
 - tips
   - [Render your Obsidian vaults in Fumadocs](https://www.fumadocs.dev/docs/integrations/obsidian)
 
@@ -781,6 +802,12 @@ modified: 2026-04-07T00:47:33.626Z
   - S3-compatible storage: Load files from any S3-compatible bucket via URL fragment configuration
   - Authentication: Uses x-secret-key header for secure access to private buckets
   - File list: Browse all known files in the sidebar
+
+- https://github.com/Enveloppe/obsidian-enveloppe
+  - publish your notes on a GitHub repository from your Obsidian Vault, for free
+  - Converting [[wikilinks]] to markdown links
+  - All dataview queries are supported (including dataviewjs, inline DQL and inline dataviewJS.)
+  - Folder notes (renaming them to a specific name, like index.md)
 # feat-pdf
 - https://github.com/RyotaUshio/obsidian-pdf-plus /MIT/202508/ts/inactive
   - https://ryotaushio.github.io/obsidian-pdf-plus/
@@ -831,6 +858,7 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/ljcoder2015/obsidian-sheet-plus /apache2/202606/ts
   - https://docs.ljcoder.com/
   - A full-featured spreadsheet experience, built on `Univer`, directly inside your Obsidian vault.
+  - 似乎不支持bases
 
 - https://github.com/playermiller109/obsidian-sheets-basic /BSD/202606/js
   - Merge markdown table cells in Reading and Live Preview / Editing Mode. 在阅读和实时预览/编辑模式合并表格单元格
@@ -1003,6 +1031,12 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/anupchavan/obsidian-custom-views
   - Create custom HTML, CSS, and JavaScript views for Obsidian notes based on matching rules.
 
+- https://github.com/PandoraReads/apex-dashboard /MIT/202607/ts
+  - Stop switching between Obsidian notes. One page. Everything you need. Memo your thoughts, crush your todos, track your projects — and make it look incredible doing it. 
+  - Open the dashboard via the ribbon icon (home icon) or command palette: Apex Dashboard: Open dashboard
+  - A dashboard.md file is automatically created in your vault root
+  - Note: Deleting, renaming, or reordering sections must be done by editing the dashboard.md file directly. Any changes made to the note will take effect in the dashboard view immediately.
+
 - https://github.com/obsidianmd/obsidian-maps
   - Map layout for Obsidian Bases. Display your notes as an interactive map view.
   - https://github.com/ccmdi/obsidian-map-plus
@@ -1024,7 +1058,24 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/InlitX/Obsidian-Dashboard-Gallery
   - Beautiful, ready-to-use dashboard templates for Obsidian PKM
+
+- https://github.com/efemkay/obsidian-modular-css-layout /GPL/202409/css/inactive
+  - https://efemkay.github.io/obsidian-modular-css-layout/
+  - modular CSS layout hack for use with Obsidian.md
+
+- https://github.com/tnichols217/obsidian-columns /GPL/202412/ts/inactive
+  - The obsidian-columns callout syntax utilizes the Obsidian Callout spec, defined here, which in turn utilizes the markdown blockquote spec  
+  - The callout syntax uses no javascript at all, which makes it highly compatible with live preview without the use of codeblocks, this also means that the callout syntax cannot limit the height of the columns without significant performance trade-offs.
+- https://github.com/ckRobinson/multi-column-markdown /202405/ts/inactive
+  - A plugin for the Obsidian markdown note application, adding functionality to render markdown documents with multiple columns of text.
 # feat-template
+- https://github.com/mProjectsCode/obsidian-media-db-plugin /GPL/202607/ts
+  - A plugin that can query multiple APIs for movies, series, anime, manga, books, comics, games, music, and wiki articles, and import them into your vault.
+  - Once you have installed this plugin, you will find a database icon in the left ribbon. After clicking search, a new pop-up will open, prompting you to select from the search results.
+  - The plugin allows you to set a template note that gets added to the end of any note created by this plugin
+  - The plugin offers a setting to automatically download the poster images for a new media, ensuring offline access.
+  - Currently supported APIs: OMDb/TMDB, MusicBrainz, Wikipedia, Steam, Boardgame Geek, Open Library
+
 - https://github.com/SilentVoid13/Templater /5.1kStar/AGPL/202606/ts
   - https://silentvoid13.github.io/Templater
   - a template plugin for Obsidian.md. 
@@ -1044,15 +1095,12 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/Gchapolin/claude-brain /MIT/202605/python
   - Obsidian setup template for managing multi-project knowledge graphs with iCloud sync, quick capture, and auto-detection of new projects.
 
-- https://github.com/resMagi/obsidian-media-starter-vault
-  - Obsidian vault template for tracking films, series, books, games & more.
-
 - https://github.com/groepl/Obsidian-Templates
   - A repository containing templates and scripts for #Obsidian to support the #Zettelkasten method for note-taking.
   - Obsidian is a note-taking and knowledge management app from Shida Li and Erica Xu. It works on top of a local folder of plain text Markdown files and lets you turn a collection of plain text files into a rich network of linked thought.
   - Zettelkasten is a personal tool for thinking and writing created by Niklas Luhmann. It has hypertextual features to make a web of thought possible. The difference to other systems is that you create a web of thoughts instead of notes of arbitrary size and form, and emphasize connection, not a collection.
-  - https://github.com/groepl/Obsidian-Zettelkasten-Starter-Kit
-    - A Starter Kit for Obsidian with all essential elements to build up your own Zettelkasten system.
+- https://github.com/groepl/Obsidian-Zettelkasten-Starter-Kit
+  - A Starter Kit for Obsidian with all essential elements to build up your own Zettelkasten system.
 
 - https://github.com/PSPedro176/obsidian-customer-notes-template
   - lightweight Obsidian vault for tracking customer accounts, use cases, meetings and tasks — with daily notes linked to use cases, TaskNotes tasks, customer notes, use case notes, and embedded bases that tie them together. 
@@ -1070,6 +1118,14 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/ArtemXTech/claude-code-obsidian-starter
   - Free starter kit: Claude Code + Obsidian. 
   - Pre-configured vault with skills for projects, tasks, clients, and daily routines. Just open and go.
+
+- https://github.com/voothi/20250831153442-obsidian-templates /MIT/202606
+  - A ZID-based methodology for Obsidian. 
+  - It implements a ownership-partitioned "Flat Base" architecture that decouples the logical graph of knowledge (Nodes & Links) from the physical hierarchy of storage (Files & Directories), enabling many-to-many knowledge structures and seamless AI collaboration.
+  - This repository contains advanced Templater scripts and structural templates for Obsidian.md. Unlike filesystem-dependent approaches (like Dendron), it implements a "Flat Base" architecture where all notes reside at a single directory level, with logical graph maintained purely through frontmatter and backlinks.
+  - The Zettelkasten ID (ZID) is the heartbeat of this ecosystem. It is a strictly formatted 14-digit timestamp (YYYYMMDDHHMMSS) used as a permanent, immutable identifier for every atomic unit of knowledge.
+- https://github.com/zenobioscastillo1-source/obsidian-knowledge-system
+  - A Zettelkasten-inspired Obsidian vault template: six numbered folders, colour-coded graph view, and starter tags + templates. Even better automated with Claude Code.
 # feat-graph
 - https://github.com/zsviczian/excalibrain /MIT/202605/ts
   - A graph view to navigate your Obsidian vault
@@ -1197,33 +1253,30 @@ modified: 2026-04-07T00:47:33.626Z
   - Types as lenses, not schemas — Types in Tolaria are navigation aids, not enforcement mechanisms. There's no required fields, no validation, just helpful categories for finding notes.
   - [有人用过爆火的Tolaria笔记么? - LINUX DO _202605](https://linux.do/t/topic/2106096)
     - 感觉ui不是很好看，重复造轮子，大概率不如 obsidian
+
+- https://github.com/inkeep/open-knowledge /1.8kStar/GPL/202607/ts
+  - https://openknowledge.ai/
+  - beautiful markdown editor with integrations with Claude, Codex, and other harnesses. 
+  - Full true WYSIWYG so that editing markdown files feels like editing a Google Doc or Notion page.
+  - Collaborative AI-editing with Claude, Codex, and Cursor desktop apps. Can be used with any harness/agent via MCP/CLI, like OpenCode.
+  - [Show HN: OpenKnowledge – open source AI-first alternative to Obsidian/Notion | Hacker News _202606](https://news.ycombinator.com/item?id=48675435)
 # examples-vault
 - https://github.com/obsidian-pkm-vault/awesome-obsidian-vault /md
   - Awesome list of obsidian vaults
 
-- https://github.com/owlman/CS_StudyNotes /GPL/202606/js
-  - 这是一个面向 CS 学习者与工程实践者 的长期维护型计算机知识笔记库，整体风格倾向于 概念理解、知识结构与可复用判断。
-  - 所有笔记均使用 Markdown 编写，可直接在 GitHub 上按目录的自然分类进行阅读
-  - 若希望获得更好的体验（双链、反向链接、知识网络），推荐使用 Obsidian或在 VS Code 中配合 Foam 插件，可将项目根目录下的 Obsidian-README.md 当做入口文档进行阅读。
+- https://github.com/greyboy-59/Greys-Obsidian-Vault /202601/inactive
+  - [My gaming hub and hobby tracker are now fully migrated to Obsidian! : r/ObsidianMD _202601](https://www.reddit.com/r/ObsidianMD/comments/1q2fm62/my_gaming_hub_and_hobby_tracker_are_now_fully/)
 
-- https://github.com/BryanHogan/obsidian-vault-template /202603
-  - A clean, durable Obsidian Vault setup, focussing on simplicity, bottom-up approaches, using as little as possible plugins or similar adjustments. 
-  - It's what I use for daily for writing, research, projects and collections for books or games.
-  - Stable, future-proof: Sticks to plain Markdown and Obsidian core features.
-  - Lightweight: Minimal folder count, minimal plugins, zero CSS snippets.
-  - Bottom-up: Notes grow into Maps of Content (MOCs) organically.
-  - Multi-purpose: Works for writing, research, personal projects, and collections.
-  - Why one vault instead of many? Cross-linking is the superpower. Multiple vaults fragment knowledge and slow you down.
-  - [Obsidian vault setup tour _202509](https://bryanhogan.com/blog/obsidian-vault)
+- https://github.com/frogpal/PenguinVault /202601/inactive
+  - [My Comprehensive Obsidian Setup: Web Clipper, Bases & Formulas : r/ObsidianMD _202601](https://www.reddit.com/r/ObsidianMD/comments/1q2b6fp/my_comprehensive_obsidian_setup_web_clipper_bases/)
+    - After spending countless hours tinkering with bases and reading the documentation, I'm finally happy with my current setup, which I'd like to share in this post.
+    - Every captured web page using the web clipper templates goes into one of the following subfolders in the "Source Materials" folder
 
-- https://github.com/blueraina/group-vault /202606/ts
-  - https://group-vault.pages.dev/
-  - 群知识库是一个由群友共同维护的 Obsidian Markdown 笔记库。维护者主要在 Obsidian 中编辑，通过 Obsidian Git 插件同步到 GitHub；网站由 Quartz 构建并发布到 Cloudflare Pages。
-  - 不断更新的数学笔记
-  - 收录并整理 高等代数白皮书、复旦习题集、谢惠民数学分析 等内容。
-  - 支持 Obsidian 双链、局部图谱与全局图谱。
-  - 提供评论管理页，方便查看和处理近期评论
-  - AI 检索笔记功能：结合 AI查询改写+embedding 检索+BM25F 稀疏检索+PageRank 加权+RRF 融合排序+rerank 精排与对话模型生成报告，帮助你更精准地定位相关笔记和学习路径！
+- https://github.com/solorpgstudio/games-library /202509
+  - a small Obsidian Vault Template to store and visualize your game collection
+  - 有模版，无内容
+  - https://github.com/dclasair/ttrpg-campaign-vault
+    - An Obsidian vault to manage your TTRPG campaigns for DMs/GMs and Players.
 
 - https://github.com/CLSherrod/crm-markdown /GPL/202606
   - https://christophersherrod.com/crm/
@@ -1234,6 +1287,49 @@ modified: 2026-04-07T00:47:33.626Z
   - One communication log per person
   - Monthly, quarterly, yearly, and custom follow-up cadences
   - Obsidian Bases dashboards for reminders
+- https://github.com/DukeWood/obsidian-people-crm-boilerplate /202512/js/inactive
+  - vault for LinkedIn contact management, relationship tracking, and AI-powered enrichment.
+  - Visual Database Management - Base plugin dashboards for filtering, sorting, and managing contacts
+
+- https://github.com/BrineWR71/obsidian-project-vault-template /MIT/202606/python
+  - A structured Obsidian vault template designed for project-based work — software builds, businesses
+  - Optimized for AI-assisted workflows (Claude Code, GPT, Copilot) but works perfectly without them.
+  - Capture first, organize later — The Inbox exists so you never lose a thought while deciding where it goes
+  - MOCs over deep folders — Max 2 levels of nesting. Navigation happens through linked Maps of Content
+  - Status tags drive workflow — #status/active, #status/blocked, #status/done let you filter across the entire vault
+  - Zero required plugins — Works with core Obsidian. Community plugins enhance but aren't required
+  - https://github.com/AstroRoh2/obsidian-bases-demo
+    - Demo vault for connecting Claude Code to Obsidian Bases.
+
+- https://github.com/BryanHogan/obsidian-vault-template /202603
+  - [Obsidian vault setup tour _202509](https://bryanhogan.com/blog/obsidian-vault)
+  - A clean, durable Obsidian Vault setup, focussing on simplicity, bottom-up approaches, using as little as possible plugins or similar adjustments. 
+  - It's what I use for daily for writing, research, projects and collections for books or games.
+  - Stable, future-proof: Sticks to plain Markdown and Obsidian core features.
+  - Lightweight: Minimal folder count, minimal plugins, zero CSS snippets.
+  - Bottom-up: Notes grow into Maps of Content (MOCs) organically.
+  - Multi-purpose: Works for writing, research, personal projects, and collections.
+  - Why one vault instead of many? Cross-linking is the superpower. Multiple vaults fragment knowledge and slow you down.
+  - [Obsidian vault setup & template (simple, bottom-up) : r/ObsidianMD _202603](https://www.reddit.com/r/ObsidianMD/comments/1rscw0g/obsidian_vault_setup_template_simple_bottomup/)
+
+- https://github.com/Maws7140/Maws-vault-v1 /202604
+  - A comprehensive Obsidian vault template designed for me but can be optimized for your workflow too.
+  - It features a beautiful interface with custom themes, powerful organization systems, and productivity-enhancing plugins.
+  - [My Obsidian vault template: Maws Vault v1 : r/ObsidianMD _202512](https://www.reddit.com/r/ObsidianMD/comments/1pu71me/my_obsidian_vault_template_maws_vault_v1/)
+
+- https://github.com/owlman/CS_StudyNotes /GPL/202606/js
+  - 这是一个面向 CS 学习者与工程实践者 的长期维护型计算机知识笔记库，整体风格倾向于 概念理解、知识结构与可复用判断。
+  - 所有笔记均使用 Markdown 编写，可直接在 GitHub 上按目录的自然分类进行阅读
+  - 若希望获得更好的体验（双链、反向链接、知识网络），推荐使用 Obsidian或在 VS Code 中配合 Foam 插件，可将项目根目录下的 Obsidian-README.md 当做入口文档进行阅读。
+
+- https://github.com/blueraina/group-vault /202606/ts
+  - https://group-vault.pages.dev/
+  - 群知识库是一个由群友共同维护的 Obsidian Markdown 笔记库。维护者主要在 Obsidian 中编辑，通过 Obsidian Git 插件同步到 GitHub；网站由 Quartz 构建并发布到 Cloudflare Pages。
+  - 不断更新的数学笔记
+  - 收录并整理 高等代数白皮书、复旦习题集、谢惠民数学分析 等内容。
+  - 支持 Obsidian 双链、局部图谱与全局图谱。
+  - 提供评论管理页，方便查看和处理近期评论
+  - AI 检索笔记功能：结合 AI查询改写+embedding 检索+BM25F 稀疏检索+PageRank 加权+RRF 融合排序+rerank 精排与对话模型生成报告，帮助你更精准地定位相关笔记和学习路径！
 
 - https://github.com/CodyLiska/Obfluence-Suite /202510/md
   - Obfluence is a modular, opinionated Obsidian framework designed to bring the structure and scalability of Confluence to your personal knowledge base.
@@ -1256,6 +1352,15 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/kepano/kepano-obsidian /MIT
   - https://stephango.com/vault
   - My personal Obsidian vault template. A bottom-up approach to note-taking and organizing things I am interested in.
+  - Rules I follow in my personal vault for consistency:
+    - Avoid splitting content into multiple vaults.
+    - Avoid folders for organization.
+    - Avoid non-standard Markdown.
+    - Always pluralize categories and tags.
+    - Use internal links profusely.
+    - Use YYYY-MM-DD dates everywhere.
+    - Use the 7-point scale for ratings.
+    - Keep a single to-do list per week.
 
 - https://github.com/obsidian-community/obsidian-hub 
   - https://publish.obsidian.md/hub
@@ -1288,6 +1393,11 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/resMagi/obsidian-media-starter-vault
   - Obsidian vault template for tracking films, series, books, games & more.
+  - One-click media import via the Media DB plugin
+  - Watchlist & read list — watch, read and history lists displayed via Obsidian Bases
+  - dashboard — built with DataviewJS and CSS snippets
+  - https://github.com/resMagi/obsidian-media-vault
+    - My personal media vault — tracking films, series and books I've watched, am watching, or want to watch.
 
 - https://github.com/stormyark/Obsidian-Vault
   - https://md.stormyark.de/Obsidian-Vault/Obsidian-Vault
@@ -1296,6 +1406,16 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/shervinsahba/obsidian-icewind /202604
   - https://icewind.quest/
   - icewind.quest is a hosted Zettelkasten-style notebook. 
+
+- https://github.com/nthmagnitude/Obsidian-vault
+  - Habit tracker (With month overview)
+  - https://discord.com/channels/686053708261228577/1470037640739819582
+    - TaskNotes - For creating recurring tasks (this also creates the recurrence property)
+
+- https://github.com/dannysmith/tdn-obsidian-starter-vault /202601
+  - https://tdn.danny.is/
+  - A pre-configured Obsidian vault for managing tasks, projects, and areas using the Taskdn system. 
+  - Clone this repo to get started with file-based task management.
 # examples
 
 # utils-markdown/yaml
@@ -1449,6 +1569,12 @@ modified: 2026-04-07T00:47:33.626Z
   - clin is a FOSS, minimal(around 2-5~ megabytes of binary) and TUI alternative for the note management app Obsidian. It mainly provides the biggest features of Obsidian(markdown editing and rendering, .canvas files, graph view etc.) in a extremely compact package and really minimal resource usage, written in Rust at a TUI environment.
   - It's goal to provide you a feature-packed note management app right at your terminal while keeping the UI/UX easy and accessible. 
   - It's 90% compatible with Obsidian you can literally copy-paste your Obsidian vault to the clin vault and it just works without a problem, unsupported stuff are image rendering, databases, Obsidian plugins and some small features here and there.
+
+- https://github.com/creusvictor/daily-cli /MIT/202602/python/inactive
+  - Minimalist CLI for engineers to log daily work. Perfect for daily standups.
+  - [I built a minimalist CLI to feed my Obsidian vault with daily standup notes (No database, just pure Markdown) : r/ObsidianMD _202602](https://www.reddit.com/r/ObsidianMD/comments/1r9t878/i_built_a_minimalist_cli_to_feed_my_obsidian/)
+    - I built daily-cli, a tool that lets me log my work, plans, and blockers directly from the shell. The best part? It was designed with Obsidian in mind.
+    - Pure Markdown: Every entry is stored in ~/.daily/dailies/ (or your custom vault path) as a clean YYYY-MM-DD-daily.md file.
 # utils
 - https://github.com/Panda-995/obsidian-dashboard /MIT/202606/css
   - Zero-configuration dashboard for Obsidian that auto-scans your vault and displays comprehensive writing statistics & visualizations
@@ -1469,6 +1595,8 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/bkyle/obsidian-vault-statistics-plugin /202211/ts/inactive
   - Status bar item with vault statistics such as number of notes, files, attachments, and links.
+  - 🍴 forks
+  - https://github.com/jtprogru/obsidian-vault-full-statistics-plugin
 
 - https://github.com/tmcw/obsidian-freeform /MIT/202405/js
   - Obsidian freeform plugin. This lets you write arbitrary JavaScript, including importing ESM modules, injecting styles, and much more

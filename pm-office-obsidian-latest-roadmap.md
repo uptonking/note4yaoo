@@ -107,7 +107,14 @@ modified: 2026-06-30T22:55:02.169Z
 
 - ## 
 
-- ## 
+- ## [Global Plugins and Settings : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1suibk2/global_plugins_and_settings/)
+  - if you have multiple vaults, it is terrible to install/update plugins. I always open a vault just to see that this vault has not a plugin that I installed in another vault.
+- I have made a plugin for exactly this. Its on my Github and is called PluginHub: https://github.com/PixeroJan/obsidian-pluginhub
+  - With it you can install and update plugins directly from Github or Community plugins. It can install to all your vaults or just selected vaults and you can even save Sets of plugins for easy installation of multiple plugins on new vaults. It can even install on both Windows, Mac and IOS in one go.
+
+- I just copy my last used vault and prune out the stuff I don't need. I'm using Obsidian for RPG tracking, so it's mostly pretty similar stuff in all of them.
+
+- I use different plugins in each vault... I even exclude plugins from sync. Not sure what the problem is tbh, you can copy the plugin dir from one vault to another
 
 - ## [Is there a way to manually change note order? : r/ObsidianMD _202107](https://www.reddit.com/r/ObsidianMD/comments/onxu1j/is_there_a_way_to_manually_change_note_order/)
 - Some people create maps-of-content (MOC) which is just a note with links and context. Sort of a directory. I wonder if that might hit the part of your brain that wants the organized list?
@@ -175,7 +182,7 @@ modified: 2026-06-30T22:55:02.169Z
 
 - ## 
 
-- ## 
+- ## [Is it possible to create an Obsidian Base with an overview of PDF files and extra properties? : r/ObsidianMD _202509](https://www.reddit.com/r/ObsidianMD/comments/1niajm4/is_it_possible_to_create_an_obsidian_base_with_an/)
 
 - ## [Custom Views has literaly changed my Obsidian Vault : r/ObsidianMD _202606](https://www.reddit.com/r/ObsidianMD/comments/1u56bn3/custom_views_has_literaly_changed_my_obsidian/?sort=top)
   - Between Bases and this plugin I feel like I really can do anything I want 

@@ -79,9 +79,9 @@ modified: 2023-11-28T14:48:45.910Z
 - 
 
 - I joined Notion two years ago, so this era predates me, but I can shed a little bit of light:
-  1. The web UI used Polymer/Web Components. Simon (CTO/cofounder) described this as building on shifting sand as browsers and poly fills changed the standards and things never seemed to work well for long.
-  2. There was a lot of Redis with Lua action, using Redis instances as a distributed system for some purpose I don’t understand. This never worked well.
-  3. There was experimentation with graph database like Neo4J which turned out to be slow for the kinds of queries Notion needed to do. 
+  01. The web UI used Polymer/Web Components. Simon (CTO/cofounder) described this as building on shifting sand as browsers and poly fills changed the standards and things never seemed to work well for long.
+  02. There was a lot of Redis with Lua action, using Redis instances as a distributed system for some purpose I don’t understand. This never worked well.
+  03. There was experimentation with graph database like Neo4J which turned out to be slow for the kinds of queries Notion needed to do. 
   - Because of all that, they completely rebuilt the product using the most boring/normal technology possible. Today we run on Postgres/Memcached for data, a Redis for rate limit and queueing, and a Typescript/React front-end
 
 - 
@@ -213,6 +213,17 @@ modified: 2023-11-28T14:48:45.910Z
 
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 
 - ## [I Solved The Progress Bar issue! : r/Notion](https://www.reddit.com/r/Notion/comments/1pnu21w/i_solved_the_progress_bar_issue/)
   - it kept showing too long on windows. So, I found easy solution to it.
@@ -642,7 +653,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 最开始把服务端代码搬到 web worker 实现，client-server 一体放在 web 中，实现了离线可用。
   - 现在把 web worker 的代码复用，port 到边缘环境（Cloudflare worker/ Deno deploy ）公网可访问，实现发布服务，只需要少量的适配就行了。 设计模式真伟大
 
-# discuss-notion-cons
+# discuss-cons-notion
 - ## 
 
 - ## 
@@ -672,19 +683,13 @@ modified: 2023-11-28T14:48:45.910Z
 
 - Unfortunately I think this would be a huge amount of compute to do for their whole user base.
 
-- ## Notion 的数据库竟然不支持粘贴图片
-- https://x.com/oran_ge/status/1916027755122332065
-  - 另一个大规模不支持粘贴图片的产品是Mac的微信朋友圈
-
-- 可以拖
-- 不但不支持粘贴图片，当你发布了你的notion笔记之后，还不支持全文复制粘贴。浏览器一个劲在反复上下跳
-- 而且图片不支持剪切，服了
-
 - ## 再提供一个想法，赚钱了分我一成就行：将 Notion 当数据库提供类似 Vercel 自定义域名的能力，以及各种主题可以选择。
 - https://x.com/_Xheldon/status/1860691877357580581
   - 难点在于因为 Notion 任何集成并发限制是3次/秒，公共集成基本不可能，需要用户自己生成集成，这点跟小白目标群体有冲突，而且跟 Notion 已有的自定义域名能力是竞争关系
 
-# discuss-showcase
+# discuss-showcase 🌰
+- ## 
+
 - ## 
 
 - ## 

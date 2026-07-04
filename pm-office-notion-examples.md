@@ -13,6 +13,11 @@ modified: 2023-12-15T18:16:29.556Z
 
 # extensions
 
+# notion-sites
+- https://github.com/morethanmin/morethan-log /MIT/202602/ts
+  - https://morethan-log.vercel.app/
+  - Next.js static blog using Notion as a Content Management System (CMS). 
+  - Supports both Blog format Post as well as Page format for Resume. Deployed using Vercel.
 # integrations
 - https://github.com/infinitaslearning/notion-github-catalog /202312/js
   - https://infinitaslearning.notion.site/Notion-Github-Catalogue-ac2395eda37144e698e6b8faef1003c7

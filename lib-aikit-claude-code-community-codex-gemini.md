@@ -625,7 +625,11 @@ codex --yolo resume --last
 
 - ## 
 
-- ## 
+- ## [破甲项目升级了：Codex-X 可视化桌面版发布 - LINUX DO _202607](https://linux.do/t/topic/2523644)
+  - https://github.com/yynxxxxx/Codex-X
+  - Codex-X 是一个面向 Codex CLI / Codex 桌面端的跨平台可视化增强管理器。
+  - 内置了两套提示词模板：gpt5.5-unrestricted.md, gpt5.4-unrestricted.md
+  - 启用后可以用于更开放的安全研究、CTF、逆向分析、代码审计、漏洞测试、APK / EXE 分析等开发场景。
 
 - ## Codex is quietly killing your SSD.
 - https://x.com/hqmank/status/2069020259097735231

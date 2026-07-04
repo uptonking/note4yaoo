@@ -194,14 +194,15 @@ modified: 2024-01-23T02:52:23.932Z
 - it seems if you sandbox obsidian, the plugins don't work.
 
 - On macOS, the sandboxing can be configured in many details. So in theory, I could generate a configuration for Obsidian running specific plugins allowing just the access it needs.
-# discuss-showcase-ob
+# discuss-showcase/examples 🌰
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## [Thank you Obsidian community for having such vast resources ❤️ Vault Showcase + Yaps : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1sde5jm/thank_you_obsidian_community_for_having_such_vast/)
+  - 
 
 - ## [Combined all notes/writing apps I've ever used into a single vault : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1rdpwmw/combined_all_noteswriting_apps_ive_ever_used_into/)
   - graph关系图，样式友好
@@ -469,6 +470,23 @@ None.
   - One thing that worked really well for me was using Claude code and I spent about 2 weeks on a cloned vault and with Claude just simply rearchitecting for stronger discovery, better performance, tag management and cleaning up orphans.
 
 - I have close to 40, 000 notes in my vault. But it’s not bigger than your vault. All my notes are about something that does not reside in the vault. Using it without any issues on my mobile phone (iPhone), macOS, and Windows PC. I use Obsidian Sync.
+# discuss-ob-cli
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What’s the best use of the Obsidian CLI? : r/ObsidianMD _202602](https://www.reddit.com/r/ObsidianMD/comments/1racz6l/whats_the_best_use_of_the_obsidian_cli/)
+- It's agents and composibility. You can describe a highly constrained workflow and package it in a skill.
+
+But the best win is automation in building plugins. This was a big pain point because I had to go to settings manually to re-activate but now the coding agent gets a feedback loop.
+
+- I think it could be useful for creating small scripts that allow you to perform automations using notes as an input source or as a writing destination. Add tasks, for example.
+
+- Fetching Jira details from a ticket ID and generating a note based on a template on a default vault path.
 # discuss
 - ## 
 

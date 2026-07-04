@@ -207,6 +207,19 @@ modified: 2024-01-03T16:14:53.804Z
 - ## [Slow re-build time when changing JSX structure in React component _202401](https://github.com/web-infra-dev/rspack/issues/5315)
 - Should been fixed _202402
 
+# discuss-dev-server
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## webpack-dev-server, http-proxy-middleware and @rspack_dev are now using modernized unjs/httpxy
+- https://x.com/_pi0_/status/2072935705177711032
+- This fixes the previous lack of HTTP/2 proxy support in Rspack/Rsbuild
+
 # discuss-features
 - ## 
 

@@ -184,6 +184,16 @@ modified: 2026-06-24T16:51:57.846Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I genuinely don't understand... Deepseek V4 Flash is a 238B model, but is 5x cheaper to run than Qwen 3.6 35B A3B!!!! 5X
+- https://x.com/jpschroeder/status/2073412230918344835
+- The secret is KV cache compression. DeepSeek's MLA shrinks the KV footprint to a fraction of standard GQA, letting them pack massive concurrent batches. Also, they price their API basically at cost.
+
+- Raw parameter count is a distraction here. The real cost is how much useful throughput you can squeeze out per GPU once KV cache, memory traffic, batching, and routing overhead are included.
+
 - ## [Inference provider tiers by Cache-hit rates, using openrouter data : r/LLM _202605](https://www.reddit.com/r/LLM/comments/1tlppan/inference_provider_tiers_by_cachehit_rates_using/)
 - Interesting ! How did you compute it ?
 

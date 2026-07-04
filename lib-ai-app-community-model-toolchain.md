@@ -426,7 +426,7 @@ PP Speed: Q3 GGUF: 50 t/s
 - M3 Ultra, 512 GB RAM, 32/80-core variant.
   - I have a script processing files roughly 30-50k tokens in length, which I cache, and then ask subsequent questions of. I just fired it up on GLM4.5 4 bit MLX quant. For a 35000 token document, prompt processing took ~247 seconds. In subsequent turns of conversation generation speed was 10 tokens per second roughly speaking.
   - GLM4.5 Air, same document was ~104 seconds for prompt processing, and then generation is at 30 tokens per second or so.
-# discuss-feat-mtp
+# discuss-mtp
 - ## 
 
 - ## 
@@ -435,7 +435,23 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
-- ## 
+- ## [Is MTP is scam on Macs? : r/oMLX _202607](https://www.reddit.com/r/oMLX/comments/1umoigm/is_mtp_is_scam_on_macs/)
+  - M5 128 GB 40 GPU Cores
+  - For local Apple Silicon inference with Qwen oQ4 models, long contexts, and agentic workloads, MTP appears to be a net negative. Disable it unless your own benchmarks prove otherwise.
+
+- Same here, mtp does nothing
+- I conducted a bunch of tests with Qwen3.6-35B models on my Mbp M1Pro 32gb and concluded that MTP did nothing but use more memory so I could only gave 64k context instead of 128k
+
+- It is a commonly held fact that MTP offers at best no gain and often a net loss of speed. That's not to mention the extra memory it uses.
+  - On Apple Silicon, that is. And with MoE its gain is negligible
+
+- Has anyone here tried https://mtplx.com? Does that perform better than oMLX for MTP models?
+  - Yes it does. I’m currently working on single stream batching and achieving 250 tks on qwen 3.6 27b on m3u studio. Once I’ve refined it I’ll oos it.
+  - I’m working on batching a single stream. I’ve managed to get it to work but I’m just tweaking the logic before I send it live.
+- Can confirm. MTPLX is legit with MTP supported model. 2x gain for the same 27b model @q8 vs oMLX
+- I confirm fast bursts, on the models it gives >90t/s on M5 Max but in agentic development it lowered speed in time and crashed.
+
+- Its usually not beneficial on moe models so I recommend trying it out with a dense model like qwen3.6 27b
 
 - ## [MTP with Gemma-4-12b or Qwen3.5-9b : r/unsloth _202606](https://www.reddit.com/r/unsloth/comments/1u5n4dx/mtp_with_gemma412b_or_qwen359b/?sort=top)
   - I tested various of models including Gemma-4-12b or Qwen3.5-9b + MTP.

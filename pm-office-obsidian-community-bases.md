@@ -21,7 +21,7 @@ modified: 2026-06-30T23:04:11.000Z
 - ## 
 
 - ## 
-# discuss-showcase/examples
+# discuss-showcase/examples 🌰
 - ## 
 
 - ## 
@@ -58,6 +58,19 @@ modified: 2026-06-30T23:04:11.000Z
 
 - Does Dataview currently have an API ?
   - It appears to! Even an integration that renders dynamic Dataview queries would be neat, but probably ways to take advantage of connecting the two at the API layer
+# discuss-tips
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How to group bases by month _202601](https://forum.obsidian.md/t/how-to-group-bases-by-month/109597)
+- Make a Properties formula that’s [Created.year, Created.month]. Then group by that formula.
+
+- [Group by year in bases : r/ObsidianMD _202602](https://www.reddit.com/r/ObsidianMD/comments/1r355n3/group_by_year_in_bases/)
 # discuss
 - ## 
 

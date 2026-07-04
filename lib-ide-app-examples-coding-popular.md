@@ -974,6 +974,10 @@ modified: 2025-12-11T18:10:23.710Z
   - Self-maintaining, Obsidian-compatible knowledge base for pi. Follows Andrej Karpathy's LLM Wiki pattern.
   - Turn raw sources (URLs, PDFs, markdown, JSON, XML) into a durable, interlinked, LLM-maintained wiki that compounds over time.
   - Turn raw sources (URLs, PDFs, markdown, JSON, XML) into a durable, interlinked, LLM-maintained wiki that compounds over time.
+
+- https://github.com/rcarmo/piclaw /MIT/202607/ts
+  - https://rcarmo.github.io/projects/piclaw/
+  - PiClaw packages the Pi Coding Agent into a self-hosted workspace with a trilingual streaming web UI, persistent state, multi-provider LLM support, and a practical built-in toolset that includes many add-ons.
 # cli-aggregator/wrapper
 - https://github.com/jazzenchen/VibeAround /MIT/202606/rust/ts
   - https://vibearound.ai/

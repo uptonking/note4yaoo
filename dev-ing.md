@@ -338,13 +338,27 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0704
+
+- 🤔 running `git status` in this folder hangs, there seems to be some issue with this git repo.
+  - This repo is not generally broken. The specific problem is repo-local fsmonitor.
+  - The same command returns immediately with core.fsmonitor disabled
+  - the original problem comes back immediately with core.fsmonitor=true
+  - I also confirmed the daemon state is unhealthy: stop hung, start returned without leaving a running watcher, and a stale fsmonitor--daemon.ipc socket remained.
+
+```sh
+git config --local core.fsmonitor false
+```
+
+# dev-06
+
 ## 0628
 
 - [Session header can show "Agents.md: <none>" even though the workspace AGENTS.md is loaded later · Issue · openai/codex _202604](https://github.com/openai/codex/issues/17781)
   - session starts before AGENTS.md exists, AGENTS.md is created later
   - this persisted after later resuming/reopening the same session
 
-- 🤔 in a typical typescript monorepo project using npm workspaces , can different sub packages use typescript module declaration to declare the same module name? is there syntax error? is it valid? deep research related docs/discussions/issues, explain to me with code examples. for examples, `./packages` contains utils, `./apps/webapp` contain main web app using tanstack router module declaration for routes in main webapp, `./apps/admin` contain admin web app also using tanstack router module declaration for routes in admin webapp.
+- 🤔 in a typical typescript monorepo project using npm workspaces , can different sub packages use typescript module declaration to declare the same module name? is there syntax error? is it valid? deep research related docs/discussions/issues, explain to me with code examples. for examples,  `./packages` contains utils,  `./apps/webapp` contain main web app using tanstack router module declaration for routes in main webapp,  `./apps/admin` contain admin web app also using tanstack router module declaration for routes in admin webapp.
   - TypeScript module augmentation (declare module) is scoped to the compilation unit — meaning it only merges within the set of files that a single tsconfig.json compiles together. This comes directly from how TypeScript project references work.
   - TypeScript project references treat each project as its own isolated piece of code. 
   - Declaration merging works on a TS config level. So you could even have different typed router in the same application if you put multiple tsconfig.json files. 
@@ -372,7 +386,7 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - Outline Wiki (community scripts)
   - Outline stores content in PostgreSQL and does not have native file-based sync. 
   - However, the community has built solid tooling for pushing Markdown files to Outline's PostgreSQL-backed document store using the Admin API. 
-- Logseq as a cautionary study. The community is living through exactly the tradeoff you're facing. In the file version, the files are always canonical. In the DB version, while you will be able to export to markdown files, the database version is always canonical — in the MD version you can modify your graph by editing the MD files directly, but in the DB version you cannot do this. Logseq crossed this line because their file-based approach hit a hard performance ceiling at ~2,000 pages. 
+- Logseq as a cautionary study. The community is living through exactly the tradeoff you're facing. In the file version, the files are always canonical. In the DB version, while you will be able to export to markdown files, the database version is always canonical — in the MD version you can modify your graph by editing the MD files directly, but in the DB version you cannot do this. Logseq crossed this line because their file-based approach hit a hard performance ceiling at ~2, 000 pages. 
 
 - Obsidian DB Folder renders a Notion-style table view where each row is a Markdown file, and each column maps to a YAML frontmatter field. 
   - Edits made in the table UI are written back to the frontmatter of the corresponding file — fully bidirectional. Supports relations between databases, rollups, formulas, dropdowns, ratings, checkboxes, and nested subdirectory organization.
@@ -485,7 +499,7 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - i have bought a vps on https://dartnode.com/ and installed ubuntu 24.04 on it. the ip of vps is 166.88.1xx.xxx.
   - i have installed nginx on my ubuntu vps, and i can visit http://166.88.1xx.xxx:8080 and see the normal nginx info page.
   - i have a domain `playx.dpdns.org` on cloudflare.
-  - please explain to me step by step what should i do and configure to make visiting http://web1.playx.dpdns.org show the content of http://166.88.1xx.xxx:8080 . please make the configuration flexible so that i can make visiting http://web2.playx.dpdns.org to show content of http://OtherVpsIp:Port in the future.
+  - please explain to me step by step what should i do and configure to make visiting http://web1.playx.dpdns.org show the content of http://166.88.1xx.xxx:8080 . please make the configuration flexible so that i can make visiting http://web2.playx.dpdns.org to show content of http://OtherVpsIp: Port in the future.
 
 ## 0613
 
@@ -541,7 +555,7 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 
 - [Failed to install 27 Beta : r/MacOSBeta _202606](https://www.reddit.com/r/MacOSBeta/comments/1u1xrce/failed_to_install_27_beta/?sort=top)
 - Shut down your Mac completely.
-Press and hold the power button until you see “Loading startup options,” then let go.
+Press and hold the power button until you see “Loading startup options, ” then let go.
 Click Options, then Continue to get into Recovery Mode.
 In the menu bar, go to Utilities → Terminal.
 Type csrutil enable and hit Enter.
@@ -574,6 +588,7 @@ Rspack users get a full-stack choice: 100% TanStack Start, with router, SSR, RSC
 TanStack users can adopt the Rspack toolchain for stable bundled dev and first-class MF support
 
 ```
+
 - what does MF mean?
   - MF means Module Federation. In the Rspack/Rsbuild world, it refers to a way for multiple JavaScript apps to share code and load parts of each other at runtime, which is commonly used for micro-frontends. Rspack’s docs explicitly call out “first-class support for Module Federation.”
 
@@ -590,7 +605,6 @@ TanStack users can adopt the Rspack toolchain for stable bundled dev and first-c
   - -w (Web): This key is likely backed by a Web-to-API script. It takes your API requests and reverse-engineers them through the standard ChatGPT web browser interface.
   - -m (Mobile): This key is likely backed by a Mobile-to-API script. It routes your API requests by simulating the ChatGPT mobile app (iOS or Android).
   - The oai-w (Web) keys are often subject to strict browser-level bot protections (like Cloudflare Turnstile). If OpenAI updates their web security, web-based proxies often break temporarily. oai-m (Mobile) keys, on the other hand, use the mobile app's API endpoints. These are sometimes considered more stable by proxy providers because they use different authentication protocols (like Apple/Google app attestation) that have different anti-bot security.
-
 # dev-05
 
 ## 0530
@@ -613,7 +627,7 @@ TanStack users can adopt the Rspack toolchain for stable bundled dev and first-c
 
 - [更换渠道导致invalid_encrypted_content 的简单解决办法 - LINUX DO _202605](https://linux.do/t/topic/2188928)
   - 更换了上游渠道，会触发invalid_encrypted_content
-  - {"error":{"message":"The encrypted content QVhO...Rw== could not be verified. Reason: Encrypted content could not be decrypted or parsed.","type":"invalid_request_error","param":"","code":"invalid_encrypted_content"}}
+  - {"error":{"message":"The encrypted content QVhO... Rw== could not be verified. Reason: Encrypted content could not be decrypted or parsed.", "type":"invalid_request_error", "param":"", "code":"invalid_encrypted_content"}}
   - 这时候一般就是只能切换session，对于没有git记录的小项目连贯性不好，可以复制当前会话的session id在新开的session中发送，让它去找会话文件继续
 
 - [pro号池和team/plus/free号池体验还是不一样的 - LINUX DO _202604](https://linux.do/t/topic/2018101)
@@ -714,7 +728,7 @@ service_tier = "priority"
 
 ## 0518
 
-- [openrouter和kilo的deepseek v4 flash是出问题了?思考全是乱码内容然后中断 - LINUX DO _202605](https://linux.do/t/topic/2193158)
+- [openrouter和kilo的deepseek v4 flash是出问题了? 思考全是乱码内容然后中断 - LINUX DO _202605](https://linux.do/t/topic/2193158)
 
 ## 0516
 
@@ -731,7 +745,7 @@ service_tier = "priority"
 
 - Failed to load model: Subprocess error: Failed to import ML libraries: Unsloth: Please install unsloth_zoo via `pip install unsloth_zoo` then retry!
   - Failed to load model: Subprocess error: Failed to import ML libraries: Unsloth currently only works on NVIDIA, AMD and Intel GPUs.
-  - unsloth_zoo provides unsloth_zoo.mlx_loader.FastMLXModel (the Python wrapper), but the actual MLX framework (mlx and mlx-lm packages) are separate dependencies — they are not part of unsloth_zoo.
+  - unsloth_zoo provides unsloth_zoo.mlx_loader. FastMLXModel (the Python wrapper), but the actual MLX framework (mlx and mlx-lm packages) are separate dependencies — they are not part of unsloth_zoo.
   - mlx-vlm transitively pulls in mlx-lm, which transitively pulls in mlx. But if you only ran pip install unsloth_zoo, the mlx family packages were never installed.
   - Studio is correctly taking the MLX path, but when it tries to load the MLX backend it still needs unsloth_zoo.mlx_loader. Your manual local install skipped the unsloth-zoo git-main overlay that the repo’s supported local setup performs in install.sh:1795.
   - In your current .venv, the installed unsloth_zoo wheel has no mlx_loader.py or mlx_trainer.py, and its package init imports device_type first, which raises the misleading Unsloth currently only works on NVIDIA, AMD and Intel GPUs. on Apple Silicon. That is why every local model fails the same way.

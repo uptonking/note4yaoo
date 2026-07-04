@@ -82,6 +82,10 @@ modified: 2026-06-30T17:32:43.131Z
 
 - bases
   - export bundle: 将.base文件和相关文件一起导出
+
+- multi-column
+  - 社区有提供 css/js 插件方案
+  - 临时方案可考虑 card view
 # pm
 - 支持公开子目录作为site
 

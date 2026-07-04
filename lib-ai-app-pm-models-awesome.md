@@ -26,6 +26,9 @@ modified: 2026-06-20T15:49:57.019Z
 
 ## models-bases
 
+- tips
+  - 可参考crm的bases来实现本项目, people/project/deal ~ model/project/bench
+
 - model-wiki
   - id
   - name + totalB
@@ -42,6 +45,7 @@ modified: 2026-06-20T15:49:57.019Z
   - Authors
   - release-date
   - license
+  - is-open-model
   - model-weight-repo
   - content: description, usage, docs
 - model-media
