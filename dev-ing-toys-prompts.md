@@ -29,6 +29,10 @@ modified: 2026-04-11T01:31:17.720Z
 
 - code-port/translation
   - 也可直接给明确的转译代码指令比模糊的rewrite更有效
+
+## code-port/rewrite
+
+- 优先 client/server architecture with sdk, 这样frontend/cli 都可以通过sdk来实现，避免重复
 # prompts 🔠
 
 ## 📌 begonia(superdoc/ailovedoc)
@@ -90,7 +94,7 @@ you have worked on this problem several times but features are still lacking. Th
 - yes, continue to improve.
 - you may reference how superdoc implements/solves it, then do a similar or better implementation in begonia without licensing issue.
 
-- superdoc's overall architecture is good enough to follow. Mostly begonia should use similar architecture to superdoc.
+- superdoc's overall architecture is good enough to follow. Mostly begonia should use similar architecture like superdoc.
 - you may analyze related architecture/code and borrow good deisgn from upstream superdoc(source code at folder `../superdoc`) and rewrite it in functional-programming style for redmansion to avoid licensing issues.
 - it is unnecessary to search the web for superdoc details, just analyze the source code at folder `../superdoc`.
 
@@ -307,8 +311,6 @@ Project `grist` (in current folder) is a modern relational spreadsheet. It combi
 
 - the tests/scripts/commands you just run took huge memory and is very slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests. please recheck related implementation-logic/tests, improve it and make it correct and fast. 
 
-- the tests/scripts/commands for react webapp may take huge memory and be very slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests. please recheck core implementation-logic and tests, improve it and make it correct and fast.
-
 - recheck and improve it, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
 
 - every time you update some code, running tests is very slow, can you improve it?
@@ -516,9 +518,9 @@ local model testing/running can be very slow.
 project `directus` (at folder `../directus` ) is a source-available licensed, powerful, flexible, headless backend platform that helps users to build projects better/faster. It provides rest api, working with new or existing databases, content versioning, draft/publish content, support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions and marketplace, user account/auth, Policy-based Access Control, admin management studio webapp, horizontal scaling, workflow automations, SDK, AI Assistant.
 
 - The final goal for this project `redmansion` is to implement an directus-like backend platform with headless, extensible, flexible architecture in current folder with similar features like directus core features, but built using modern tech stacks like npm workspaces, expressjs, knex(for db crud), reactjs, @tanstack/react-router, @base-ui/react, typescript, tailwindcss, oxlint, oxfmt. you should implement the goal in a way to make it easy to migrate code changes/features from directus to redmansion in the future.
-- The core goal is to reimplment most of the existing directus features, like rest api, working with new or existing databases, content versioning, draft/publish content, i18n, data model relationships like one2many/many2one/many2many/many2any/translations/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, simple user account/auth, Policy-based Access Control, admin studio ui, horizontal scaling. since directus is source-available, you might refer to its architecture/data-flow/logic/code, but you should rewrite it in redmansion to avoid license issue. backend architecture of directus is really extensible, you should borrow the good design and data flow, admin frontend of directus should be rewritten in react, @tanstack/react-router, @base-ui/react. 
+- The core goal is to reimplment most of the existing directus features, like rest api, working with new or existing databases, content versioning, draft/publish content, i18n, data model relationships like one2many/many2one/many2many/many2any/translations/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, sdk, simple user account/auth, Policy-based Access Control, admin studio ui, horizontal scaling. since directus is source-available, you might refer to its architecture/data-flow/logic/code, but you should rewrite it in redmansion to avoid license issue. backend architecture of directus is really extensible, you should borrow the good design and data flow, admin frontend of directus should be rewritten in react, @tanstack/react-router, @base-ui/react. 
 
-- project directus-schema-sync(at folder `../directus-schema-sync`, apache 2 licensed) implements a way to sync Directus schema, configuration and selected data between environments. similar feature should be implemented as a sub package in redmansion. you may reuse the apache 2 code if you want.
+- project directus-schema-sync(at folder `../directus-schema-sync`, apache 2 licensed) implements a way to sync Directus schema, configuration and selected data between environments. similar feature should be implemented as a sub package in redmansion. you may reuse the apache code if you want.
 
 - features that may be planned but delayed(not in current goal): full parity of directus-style admin UI/UX, complicated multi-user/team/workspace/access-control, sso auth, workflow automations, extension marketplace, AI Assistant, MCP server for AI.
 - features that may be ignored in redmansion: GraphQL API.
@@ -547,14 +549,22 @@ project `directus` (at folder `../directus` ) is a source-available licensed, po
 - you may analyze related architecture/code and borrow good deisgn from upstream directus(source code at folder `../directus`) and rewrite it in functional-programming style for redmansion to avoid licensing issues.
 - it is unnecessary to search the web for directus details, just analyze the source code at folder `../directus`.
 
-- please recheck migrated features and improve your implementation in redmansion. Analyze core data flow and implementation logic details for every major feature like rest api, working with new or existing databases, content versioning, draft/publish content, i18n, data model relationships like one2many/many2one/many2many/many2any/translations/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, admin management studio webapp..., compare the implementation logic/code of redmansion with related logic/code of directus to recheck and enhance the correctness of architecture/data-flow and logic in redmansion, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in redmansion are correct, modular, extensible for long-term maintenance. 
+- please recheck migrated features and improve your implementation in redmansion. Analyze core data flow and implementation logic details for every major feature like rest api, working with new or existing databases, content versioning, draft/publish content, i18n/translation, data model relationships like one2many/many2one/many2many/many2any/translation/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, sdk, admin management studio webapp..., compare the implementation logic/code of redmansion with related logic/code of directus to recheck and enhance the correctness of architecture/data-flow and logic in redmansion, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in redmansion are correct, modular, extensible for long-term maintenance. 
 
-- prioritize and recheck/improve major features like rest api, working with new or existing databases, content versioning, draft/publish content, i18n/translation, data model relationships like one2many/many2one/many2many/many2any/translation/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions... in redmansion, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+- prioritize and recheck/improve major features like rest api, working with new or existing databases, content versioning, draft/publish content, i18n/translation, data model relationships like one2many/many2one/many2many/many2any/translation/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, sdk, admin management studio webapp... in redmansion, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+
 - if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
 - recheck and improve it, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
 
 - docs/tests/scripts might be outdated, recheck code and data flow to improve redmansion.
+
+------
+
+- the tests/scripts/commands you just run took huge memory and is very slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests. please recheck related implementation-logic/tests, improve it and make it correct and fast. 
+
+- try to improve/refactor the full tests to make it faster so that full tests running within 3 minutes.
+- improve the slow/complicated/heavy parts of tests, you may refactor/reorganize the tests to make it correct, fast, robust, maintainable in the long term.
 
 ### draft-vscode
 

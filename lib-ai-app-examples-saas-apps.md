@@ -174,6 +174,11 @@ modified: 2025-02-21T17:17:42.225Z
   - 画布工具现在支持局部编辑，功能参考ChatGPT官方的编辑功能，可选择画布对某个区域选择后编辑
   - [【开源无限画布】统一AI创作网关：集成图/文生图/视频的无限画布，兼容2api项目和OpenAI接口 - LINUX DO _202605](https://linux.do/t/topic/2249309)
     - render部署的会丢失数据，只简单演示用
+- https://github.com/csyqlz/vozeb
+  - [【开源推广】VOZEB：面向 AI 图片创作、用户管理、素材管理和无限画布工作流的开源工作台 - LINUX DO _202607](https://linux.do/t/topic/2528296)
+  - 基于 infinite-canvas 继续开发的二开版本，主要补了一些自部署、用户系统、管理员后台、提示词库、素材管理、生成日志和 Docker 部署相关的功能。
+  - 我做这个项目主要是身边同事以及朋友都能使用并且数据稳定并且把存储规则也改了一下，存储是最大的困难服务器多了小服务器卡死拉爆
+  - 图片/视频展示会按三层顺序兜底：浏览器本地缓存 → API 返回的远程地址 → 服务器副本。
 
 - https://github.com/fastaistack/OpenChat /MIT/202508/python/inactive
   - https://fastaistack.github.io/OpenChat/

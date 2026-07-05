@@ -111,11 +111,12 @@ I really like how this vscode extension does git support: marketplace.visualstud
 
 - ## 
 
-- ## 
+- ## [It is 2026 and we still have no Local History? : r/ZedEditor _202607](https://www.reddit.com/r/ZedEditor/comments/1unyfxq/it_is_2026_and_we_still_have_no_local_history/)
+- AFAIK they have their own plans with DeltaDB.
 
 - ## [run zed error on Ubuntu 24.04 : blade_graphics::hal::init Surface formats are incompatible _202405](https://github.com/zed-industries/zed/issues/11716)
 - Update: this error is on WayLand Mode, switch to X11 , zed works!
 - I can run zed in x11 mode in wayland using `WAYLAND_DISPLAY='' zed` ; 
-  - zed在ubuntu本地的安装地址在 `/home/yaoo/.local/zed.app/bin/zed`
+  - zed在ubuntu本地的安装地址在 `/home/yaoo/.local/zed.app/bin/zed` 
 
 - [[linux] Vulkan ERROR_INITIALIZATION_FAILED _202402](https://github.com/zed-industries/zed/issues/8168)

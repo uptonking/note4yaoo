@@ -83,6 +83,12 @@ modified: 2026-06-30T17:32:43.131Z
 - bases
   - export bundle: 将.base文件和相关文件一起导出
 
+- tasks
+  - TaskNote优点: inline-task-auto-detect, workflow
+  - use TaskNote/mdbase-spec as cms, not note
+  - TaskNote 容易split， 考虑提供快速merge
+  - 检查关系、验证
+
 - multi-column
   - 社区有提供 css/js 插件方案
   - 临时方案可考虑 card view

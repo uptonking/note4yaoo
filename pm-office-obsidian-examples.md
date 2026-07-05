@@ -124,12 +124,71 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/rafafields/Obsidian-Base-Hub /202601/inactive
   - A modular Obsidian vault leveraging native Bases to replicate Notion-like database functionality for personal project and task management.
   - 核心概念: Projects, Areas, People, Daily Notes
-  - Obsidian Base Hub is a comprehensive vault template built on the KISS principle (Keep It Simple, Stupid) that transforms Obsidian into a powerful project management system. It provides interconnected databases similar to Notion, specifically designed for managing complex and dynamic work environments.
+  - Obsidian Base Hub is a comprehensive vault template built on the KISS principle (Keep It Simple, Stupid) that transforms Obsidian into a powerful project management system. 
+  - It provides interconnected databases similar to Notion, specifically designed for managing complex and dynamic work environments.
   - Unlike team management tools, this system focuses on individual workflow optimization while maintaining flexibility for evolving project requirements.
   - [New open-source project: Obsidian Base Hub as simple Notion Alternative : r/ObsidianMD _202510](https://www.reddit.com/r/ObsidianMD/comments/1o40btl/new_opensource_project_obsidian_base_hub_as/)
     - A vault template that leverages Obsidian's new native Bases to create a complete project and knowledge management system.​​
     - Modular management of projects, areas, and tasks
     - Databases for people, meetings, daily notes, and tasks (grouped into projects or areas)​​
+
+- https://github.com/callumalpass/tasknotes /1.9kStar/MIT/202606/ts 
+  - https://tasknotes.dev/
+  - A task management plugin where each task is a separate Markdown note, and all views are powered by Obsidian Bases.
+  - Each task is a Markdown note with YAML frontmatter. Every view is a Bases query.
+  - TaskNotes registers as a Bases data source and provides custom view types: tasknotesTaskList, tasknotesKanban, tasknotesCalendar, and tasknotesMiniCalendar. 
+  - Calendar sync with Google and Microsoft (OAuth) or any ICS feed. 
+  - Calendar components by FullCalendar.io.
+  - 🛝
+    - 通过ui创建task， 然后通过bases/自定义view展示tasks/calendar, 展示的组建大部分使用bases， 少量使用自定义views
+    - 还提供了编辑器内 inline-task 自动转换为bases支持的task的逻辑
+  - 👷 作者开发了很多ob相关的玩具， 还在制定和推广 mdbase-spec
+  - 🐛 
+    - 对people/user的支持不清晰
+  - [[FR]: Auto-detection of inline sub-tasks _202510](https://github.com/callumalpass/tasknotes/issues/1007)
+    - TaskNote's most fundamental design is to leverage Notes as the most granular building block. It was designed for that purpose because other great plugins rely on Markdown checkboxes, but no mature plugin has leveraged Notes as tasks.
+    - This plugin is more sitable for those who do not always use checklists as tasks.
+    - One of main reasons for that fundamental architectural difference is the ability to have rich and flexible metadata, which cannot be natively and seamlessly supported by markdown checklists.
+  - [Sample/Example Vault with Projects? I can’t quite wrap my head around projects _202510](https://github.com/callumalpass/tasknotes/discussions/987)
+    - The name "project" can be misleading because it means different things for different approaches and contexts.
+    - In Task notes, it is just field that indicates a parents-children relationship. Knowing when there are parents-children relationship allows the plug-in to render items in a tree structure, nested indefinitely. That's it.
+    - TaskNotes doesn't make any assumptions.about what a "Project" means to the user. It's just a generic parent.
+    - Each TaskNote can have multiple parents and multiple children. That allows the plug-in to show hierarchical relation that users can interpret based on their own frameworks and workflows.
+    - You can use native obsidian tags in the "tags" property to determine the type or you could use a "type" property to store your predefined types.
+    - In my vault, the TaskNotes project field is mapped to the "in" property. 
+  - [The last context we need: people  _202507](https://github.com/callumalpass/tasknotes/discussions/143)
+    - I'm one of the plugin contributors and I've implemented custom properties a few months ago to address those use cases.
+    - Why were projects implemented separately with their own settings? it actually functions as a parent relationship. 
+  - [[Bug]: Can't Add Blocked/Blocking Tasks in ContextMenu or Task Modal _202605](https://github.com/callumalpass/tasknotes/issues/1589)
+    - blockedBy is the writable dependency field; blocking is derived from other tasks' blockedBy values, so it normally should not already exist in frontmatter before adding a relationship.
+  - https://github.com/callumalpass/tasknotes-workflows /MIT/202606/ts
+    - optional companion plugin for TaskNotes. It lets you automate TaskNotes workflows with editable Markdown files in your vault.
+    - raising priority as due dates approach
+    - copying parent task metadata into subtasks
+  - https://github.com/callumalpass/tasknotes-cli /202602/js
+  - https://github.com/vanillaflava/tasknotes-skill /MIT
+    - A single installable skill for task management: ask what's open, create a task from conversation, update or close it, check what's blocking you, track time, run a schema diagnostic. 
+    - Pairs with llm-wiki-claude-skills for an assisted knowledge + task workflow.
+
+- https://github.com/StepanKropachev/obsidian-pm /443Star/MIT/202607/ts
+  - https://stepankropachev.github.io/obsidian-pm-site/
+  - Table views, Gantt charts, Kanban boards, custom fields, time tracking, smart scheduling — all stored as plain Markdown with YAML frontmatter. 
+  - Project Manager plugin works alongside the `TaskNotes` plugin (4.10 or newer).
+  - Works offline — No cloud, no API calls, no accounts. Just Obsidian.
+  - Plain-text data — Projects and tasks live as .md files in your vault. Portable, searchable, version-controllable. No lock-in, ever.
+  - Real project management — Not just checkboxes. Dependencies, milestones, subtasks, time tracking, recurring tasks, smart scheduling, bulk actions.
+  - Customizable everything — Custom fields, statuses, priorities, saved views — adapt the tool to your workflow, not the other way around.
+  - [I built a native Project Manager for Obsidian: Gantt, Kanban, and Tables (Stored as plain Markdown/YAML) : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1sg3jcw/i_built_a_native_project_manager_for_obsidian/)
+  - why not base it on Tasknotes? It already has most features under the hood, just lacks some good views. In the end we have multiple similar but buggy and limited plugins.
+    - I actually wasn't aware of TaskNotes when I started building this. Looking at it now, the data model is very similar (file-per-task, YAML frontmatter, vault-native). So I get why it looks like duplication.
+    - Where they differ is mostly in views and workflow. Obsidian PM has a Gantt chart, subtask hierarchies (parent/child task trees), and a saved views system with composable filters. TaskNotes has calendar views, which I don't have yet. 
+    - 👀 TaskNotes also leans on Obsidian Bases for rendering, while PM has its own view layer.
+
+- https://github.com/obsidian-tasks-group/obsidian-tasks /3.8kStar/MIT/202607/ts/svelte
+  - https://publish.obsidian.md/tasks/
+  - Task management for the Obsidian knowledge base.
+  - Supports due dates, recurring tasks (repetition), done dates, sub-set of checklist items, and filtering.
+  - 似乎不支持bases
 
 - https://github.com/bgarciamoura/obsidian-notion-bases-plugin /GPL/202605/ts/inactive
   - Turn any folder in your vault into a powerful database — right inside Obsidian.
@@ -177,6 +236,11 @@ modified: 2026-04-07T00:47:33.626Z
     - this is NOT a separate database system. It's just a view on top of the native Bases engine, so all your filters, formulas, sorting and .base files work untouched. (Different approach from the "Notion Bases" plugin, which is its own database engine.)
     - Roadmap: column resizing, per-column Calculate footer, custom tag colors, a proper select-style pill editor.
     - makes huge bases laggy; also, it would have been great if the columns were resizable and their positions could be changed
+
+- https://github.com/obsidian-community/obsidian-kanban /4.4kStar/GPL/202603/ts
+  - Create markdown-backed Kanban boards in Obsidian.
+- https://github.com/xiwcx/obsidian-bases-kanban /MIT/202605/ts
+  - A kanban-style drag-and-drop custom view for Obsidian Bases that allows you to organize your notes into columns based on any property.
 
 - https://github.com/vitalybe/obsidian-advanced-list-bases-view /svelte
   - Adds a advanced list layout to Obsidian Bases so you can display notes as an interactive list view.
@@ -229,11 +293,6 @@ modified: 2026-04-07T00:47:33.626Z
   - Render bases formulas in your notes, define global formulas and functions, and more formula-related features.
   - You can render formulas in your notes in inline code or a codeblock. These formulas will automatically re-render when metadata changes.
 
-- https://github.com/obsidian-community/obsidian-kanban /4.4kStar/GPL/202603/ts
-  - Create markdown-backed Kanban boards in Obsidian.
-- https://github.com/xiwcx/obsidian-bases-kanban /MIT/202605/ts
-  - A kanban-style drag-and-drop custom view for Obsidian Bases that allows you to organize your notes into columns based on any property.
-
 - https://github.com/samaraliwarsi/obsidian-board /202604/css
   - Simple self contained obsidian markdown kanban board
   - https://github.com/Louai99k/obsidian-board
@@ -251,8 +310,6 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/tu2-atmanand/Task-Board
   - An Obsidian plugin to view and manage your tasks from whole vault using much efficient boards using various methodologies.
-- https://github.com/StepanKropachev/obsidian-pm
-  - Project management natively in your Obsidian vault. Table, Gantt, and Kanban views with subtasks, dependencies, time tracking, and custom…
 
 - https://github.com/Trietment/obsidian-kanban /MIT/202606/js
   - A Kanban board for Obsidian that collects tasks from every note in your vault. Tasks are plain markdown checkboxes with optional metadata; the plugin shows them as draggable cards in columns. Works on desktop and mobile.
@@ -271,9 +328,6 @@ modified: 2026-04-07T00:47:33.626Z
     - Kanban support for Obsidian bases
   - https://github.com/PythonJobOnline/obsidian-bases-kanban
     - kanban-style drag-and-drop custom view for Obsidian Bases 
-
-- https://github.com/obsidian-tasks-group/obsidian-tasks
-  - Task management for the Obsidian knowledge base.
 
 - https://github.com/ebullient/sandbox-customjs /MIT/202606/ts
   - CustomJS scripts for my Obsidian vaults
@@ -537,6 +591,7 @@ modified: 2026-04-07T00:47:33.626Z
   - No server, no sync service, no lock-in. Your vault stays your vault.
   - Markdown is the source of truth. Every contact, deal, project, activity is a .md file with frontmatter. Tasks, Dataview, Templater all keep working.
   - 似乎未使用bases
+  - crm的架构: Contacts / Companies / Activities 
   - Most "second brain" plugins do one thing well. Cadence is the opposite: a coherent workspace that brings together the surfaces a working person actually moves between every day — today's tasks, the week ahead, deals in flight, contacts, projects, recurring reminders — and presents them in a single tab with one familiar nav.
   - Module toggles. Turn off CRM, PRM or Planner if you only want some of it.
   - Cadence lets you define custom frontmatter properties for any of your core entities (Contact, Company, Project, Deal, Activity, Partner, etc.) to model your specific business workflows directly inside Obsidian.
@@ -597,6 +652,9 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/benoror/obsidianos_work
   - An Obsidian vault wired with AI agent skills — an Agentic Operating System for Thinkers.
+
+- https://github.com/rafafields/Obsidian-Soul /BSD/202607/ts
+  - A minimal AI agent plugin for Obsidian with transparent, vault-based long-term memory and customizable soul personalities.
 
 ## rag/memory
 
@@ -664,6 +722,12 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/mnaoumov/obsidian-backlink-cache
   - plugin that stores backlink cache to speed up app.metadataCache.getBacklinksForFile().
   - It's mostly useful for users with the large vaults. On smaller vaults the difference might be unnoticeable.
+
+- https://github.com/Jasper-1024/block-link-plus /GPL/202606/ts
+  - https://block-link-plus.jasper1024.com/
+  - plugin that extends block linking with multi-line support, timeline features, and inline editing. 
+  - Create precise references to any content span using the `^abc123-abc123` format.
+  - 增强 Obsidian 的块引用体验：一键复制块链接/嵌入/URI、创建多行范围块（^id-id，如 ^abc123-abc123）、在启用范围内使用 Outliner（类 Logseq）与 blp-view（Query/View），并支持嵌入块的内联编辑。
 # feat-publish 
 - tips
   - [Render your Obsidian vaults in Fumadocs](https://www.fumadocs.dev/docs/integrations/obsidian)
@@ -1576,9 +1640,19 @@ modified: 2026-04-07T00:47:33.626Z
     - I built daily-cli, a tool that lets me log my work, plans, and blockers directly from the shell. The best part? It was designed with Obsidian in mind.
     - Pure Markdown: Every entry is stored in ~/.daily/dailies/ (or your custom vault path) as a clean YYYY-MM-DD-daily.md file.
 # utils
+- https://github.com/pyrochlore/obsidian-tracker /1.9kStar/MIT/202603/ts
+  - plugin that helps you collect data from notes and represent it comprehensively.
+
 - https://github.com/Panda-995/obsidian-dashboard /MIT/202606/css
   - Zero-configuration dashboard for Obsidian that auto-scans your vault and displays comprehensive writing statistics & visualizations
   - 必须 Dataview
+
+- https://github.com/bkyle/obsidian-vault-statistics-plugin /202211/ts/inactive
+  - Status bar item with vault statistics such as number of notes, files, attachments, and links.
+  - 🍴 forks
+  - https://github.com/jtprogru/obsidian-vault-full-statistics-plugin
+- https://github.com/isaaclyman/novel-word-count-obsidian
+  - Obsidian plugin. Displays a word count or other statistic for each file, folder and vault in the File Explorer pane.
 
 - https://github.com/philoserf/obsidian-vault-changelog /MIT/202606/ts
   - https://philoserf.github.io/obsidian-vault-changelog/
@@ -1592,11 +1666,6 @@ modified: 2026-04-07T00:47:33.626Z
   - https://github.com/beaussan/update-time-on-edit-obsidian /MIT/202401/ts/inactive
 - https://github.com/SmetDenis/obsidian-frontmatter-date-manager /MIT/202606/ts
   - Automatically update created, updated, and viewed dates in YAML frontmatter when editing notes.
-
-- https://github.com/bkyle/obsidian-vault-statistics-plugin /202211/ts/inactive
-  - Status bar item with vault statistics such as number of notes, files, attachments, and links.
-  - 🍴 forks
-  - https://github.com/jtprogru/obsidian-vault-full-statistics-plugin
 
 - https://github.com/tmcw/obsidian-freeform /MIT/202405/js
   - Obsidian freeform plugin. This lets you write arbitrary JavaScript, including importing ESM modules, injecting styles, and much more
@@ -1630,9 +1699,6 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/ozntel/obsidian-link-converter /202402/ts/inactive
   - This plugin helps you to scan all your links in the vault and convert them to WikiLinks or Markdown format. The plugin also helps you to convert final path to relative, absolute or shortest possible. 
   - You can do link and path conversion at the same time or separately. 
-
-- https://github.com/isaaclyman/novel-word-count-obsidian
-  - Obsidian plugin. Displays a word count or other statistic for each file, folder and vault in the File Explorer pane.
 
 - https://github.com/Pr0dt0s/obsidian-html-server
   - Obsidian plugin to serve a vault as an html site.

@@ -107,6 +107,31 @@ modified: 2026-06-30T22:55:02.169Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [What regularly annoys you about Obsidian... : r/ObsidianMD _202607](https://www.reddit.com/r/ObsidianMD/comments/1unhgpe/what_regularly_annoys_you_about_obsidian/)
+- Bases wise, I mostly don't like that things can't show up multiple times in a base when it makes sense to (usually when you're grouping by lists, but sometimes also sorting by lists)
+
+- Bases refreshing every time I switch to it. I always lose my spot.
+  - Just add "#" followed by the name of the view you want to use as the default
+- It’s not the view, it’s the position in the view. Scroll down a few pages, click on an entry, then click back, and argh, have, to, scroll, down, again…
+
+- Lack of pagination and print capability.
+
+- The friction of dealing with embedded images (or "attachments" in general). You need to install and configure a bunch of plugins to have images treated like they're truly an embedded part of a page. So moving a page to another folder automatically moves the attachments with it, for example. And even then there are still issues.
+  - When deleting a page, want to automatically delete all embedded image files? You need to use a plugin, like Clear Unused Images, that will go through your vault and find orphaned images to delete, but it's still an extra step. And what if you have select orphaned images you want to keep?
+  - Want ti copy or move a page to another vault? You have to manually find and move all the image files.
+- No zoom for images
+
+- The mismatch between Live Preview and Reading view, especially when callouts are involved. Getting true WYSIWYG working is the one thing keeping my partner from even trying Obsidian.
+
+- Why cant we lock some notes for read only mode? I dont want to switch all app mode but specific notes until I choose otherwise.
+
+- 
+- 
+
 - ## [Global Plugins and Settings : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1suibk2/global_plugins_and_settings/)
   - if you have multiple vaults, it is terrible to install/update plugins. I always open a vault just to see that this vault has not a plugin that I installed in another vault.
 - I have made a plugin for exactly this. Its on my Github and is called PluginHub: https://github.com/PixeroJan/obsidian-pluginhub

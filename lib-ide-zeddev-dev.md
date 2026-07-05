@@ -13,6 +13,7 @@ modified: 2024-08-24T16:41:17.117Z
 
 - cons
   - vscode插件市场归微软所有而第三方不可用
+  - no local history
 
 - features
   - ?

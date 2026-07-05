@@ -27,7 +27,7 @@ modified: 2026-06-20T15:49:57.019Z
 ## models-bases
 
 - tips
-  - 可参考crm的bases来实现本项目, people/project/deal ~ model/project/bench
+  - 可参考crm的bases来实现本项目, people--project--meeting/deal ~ model--project--bench/news
 
 - model-wiki
   - id

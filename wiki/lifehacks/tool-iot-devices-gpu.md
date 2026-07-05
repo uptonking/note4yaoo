@@ -136,7 +136,22 @@ modified: 2026-01-15T15:33:18.008Z
 
 - ## 
 
-- ## 
+- ## [DGX Spark 是不是被人低估了？ - LINUX DO _202607](https://linux.do/t/topic/2525384)
+  - 最近在用我的4070tis 16g跑ideogram4（最新的开源图生图模型，conditional和unconditional模型nvfp4下5.5g），我怕爆显存于是就用nvfp4跑，发现速度奇慢。 我很不解，问了gpt才知道：40系（Ada Lovelace系）居然不支持nvfp4下的计算！所以nvfp4对40系显卡而言仅仅是节省了显存，实际计算是： 1）先反量化到bf16； 2）再分层计算。 所以速度很慢——很粗略地说等于花了“bf16的生图时间+反量化时间”。
+  - 作为对比，我改用FP8跑（conditional和unconditional模型，FP8下 9.3g），comfyui可以动态加载显存于是不会爆显存，果然4070tis 16g运行FP8的速度大于nvfp4的速度。
+  - 我又查了一下，40系果然是支持FP8精度计算的，但让我很震惊的是，FP8——这么一个ai生图领域的极其常见的量化格式——直到40系显卡才支持。甚至20和30系显卡都不支持（仅支持int4）
+  - 于是我又继续查了一下，发现mac无论是FP8/INT8/FP4/INT4，都不支持——mac甚至更惨，直到M5才在gpu里面加入“tensor core”（neural accelerator）。
+  - 怪不得我在M4 pro里面里面跑Q4量化的krea2.gguf（另一个最新的开源图生图模型），速度要30-60s/it，合着量化后对mac来说，也是先反量化到bf16再推理。
+  - 然后我又想到M4 max/M5 max/M3 ultra等这些大统一内存跑LLM时，很多所谓“Q4、Q8量化的LLM”，实际上也是因为无法进行低精度计算，导致“先反量化到bf16再推理”，吐字速度是多么地慢！白白浪费了硬件性能。
+  - DGX spark的优势来了！虽然一直被吐槽显存带宽低，但我才一直到DGX spark能够支持“nvfp4”和“fp8”等低精度计算是多么可贵，以及牢黄当时吹的“1T q4算力”其实真的很有应用场景。
+  - dgx spark最低支持nvfp4, 4070最低支持fp8，m3 ultra仅支持bf16。而模型在4bit→8bit→16bit下，大小（大概）依次翻倍。
+
+- Tensor Core 确实是 NV 芯片的最大优势，但 DGX 的败笔仍然在于它的内存带宽，所以玩 LLM 还是差点意思，不过生图主要就是compute bound所以好很多
+
+- m5 系列倒是可以对8bit加速了，不过现在mlx还没写完（4bit依然不支持）
+  - 而且老黄这个4bit比较画饼，几个月前打算简单测下结果没有找到框架完全支持的
+
+- 微调是compute bound
 
 - ## [Open-Source "GreenBoost" Driver Aims To Augment NVIDIA GPUs vRAM With System RAM & NVMe To Handle Larger LLMs : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1ru98fi/opensource_greenboost_driver_aims_to_augment/)
 - The concept of extending VRAM with system RAM isn't new - llama.cpp already does layer offloading to CPU and the performance cliff when you spill out of VRAM is brutal. 

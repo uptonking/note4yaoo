@@ -43,7 +43,7 @@ modified: 2026-06-30T23:04:11.000Z
 
 - ## 
 
-- ## 
+- ## [Bases: Renaming (or deleting) a property in properties view should update all affected bases - Feature requests - Obsidian Forum _202508](https://forum.obsidian.md/t/bases-renaming-or-deleting-a-property-in-properties-view-should-update-all-affected-bases/104914)
 
 - ## [Provide API access to the results of Bases view - Developers: Plugin & API - Obsidian Forum _202601](https://forum.obsidian.md/t/provide-api-access-to-the-results-of-bases-view/110660)
   - Bases is a fantastic first‑party way for users to define cohorts of notes. Allowing plugins to get a list of notes from a Base without the plugin being implemented as a Base view would significantly expand what plugins can do with Bases.
@@ -58,6 +58,30 @@ modified: 2026-06-30T23:04:11.000Z
 
 - Does Dataview currently have an API ?
   - It appears to! Even an integration that renders dynamic Dataview queries would be neat, but probably ways to take advantage of connecting the two at the API layer
+# discuss-properties/schema
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Some people here using "object types" for every notes to mimic AnyType structured data? : r/ObsidianMD _202510](https://www.reddit.com/r/ObsidianMD/comments/1oina9c/some_people_here_using_object_types_for_every/)
+  - I'm testing (for now successfully) organizing my Obsidian vault more like Anytype meaning, assigning an “object type” to every note.
+  - Each note has an Object property, and each Object a template (optional). For instance, I have currently Project, Project file, Server, Subscription, Task objects, Person object types. etc. when i add a new note, I select the right type and the right template.
+  - The big advantage of that is that anything in my vault is "Typed", it's a full and formal data-model that can evolve with time. I feel more confortable with that rather than just using tags, which often lead to a big mess.
+  - I noted also - and it was not planned - that my graph view looks a lot better because each note is linked to a object type which can be of a different color. Therefore, it makes a more logicial clustering without even using tags in the graph view.
+  - Final consideration: Obsidian is extremely powerful. AnyType is a good product because it helps to formalize everything, but I had absolutely no difficulty to reproduce this in Obsidian, very intuitively, and the new Bases feature is really wonderful. I even have a table with all my object types and their template(s).
+
+- Are you just assigning it as a property? Or are you using something like the fileclass/Metadata plugin or something else? The idea is appealing.
+
+- Yup, I do something similar. I use “Web Links” for bookmarks (terminology from Capacities), “People”, “Projects” and a few others; each are notes in a top level directory of the same name with a Base in the folder as well to list, sort, etc.
+  - I found Metadata Menu really helpful for this; I configured it to understand the structure of properties I want in each folder and use that to ensure a new file has the right properties. My use cases are pretty light at the moment so I haven’t built templates; I just make a new file on the right directory and use Metadata Menu to inject the desired properties.
+
+- I do exactly the same. And I also have a script that validates all objects conform to a given schema (like making sure person has a worksFor attribute and stuff like that.)
 # discuss-tips
 - ## 
 
@@ -71,6 +95,19 @@ modified: 2026-06-30T23:04:11.000Z
 - Make a Properties formula that’s [Created.year, Created.month]. Then group by that formula.
 
 - [Group by year in bases : r/ObsidianMD _202602](https://www.reddit.com/r/ObsidianMD/comments/1r355n3/group_by_year_in_bases/)
+# discuss-internals-bases
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Bases: data source from single CSV, JSON, special markdown file instead of note properties - Feature requests - Obsidian Forum _202508](https://forum.obsidian.md/t/bases-data-source-from-single-csv-json-special-markdown-file-instead-of-note-properties/103622)
+- This feature request is legitimate but the background is wrong. Obsidian does not read every file every time. There are multiple layers of caches (in memory and on disk). 
+  - I still think that if you have a very large database with complex queries you are better off using a different product.
+
 # discuss
 - ## 
 
