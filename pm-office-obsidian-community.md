@@ -496,7 +496,9 @@ But the best win is automation in building plugins. This was a big pain point be
 
 - ## 
 
-- ## 
+- ## [Properties panel name column is fixed width and truncates property name - Custom CSS & Theme Design - Obsidian Forum _202403](https://forum.obsidian.md/t/properties-panel-name-column-is-fixed-width-and-truncates-property-name/78130)
+- This is intentional. you can hover over the property name.
+- You can use a CSS snippet to adjust the width of the property name/key. e.g., for all devices
 
 - ## [How do you decide what's a tag and what's a property? : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1pp6x5d/how_do_you_decide_whats_a_tag_and_whats_a_property/)
 - I use properties more as a way of compartmentalizing specific aspects of notes and not cluttering my tags which would eventually have so many tags that it would become a mess. When I am done with it, I change the property to Archive.

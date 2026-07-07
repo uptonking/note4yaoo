@@ -1328,6 +1328,52 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/obsidian-pkm-vault/awesome-obsidian-vault /md
   - Awesome list of obsidian vaults
 
+- https://github.com/BryanHogan/obsidian-vault-template /202603
+  - [Obsidian vault setup tour _202509](https://bryanhogan.com/blog/obsidian-vault)
+  - A clean, durable Obsidian Vault setup, focussing on simplicity, bottom-up approaches, using as little as possible plugins or similar adjustments. 
+  - It's what I use for daily for writing, research, projects and collections for books or games.
+  - 结构清晰， 模版多
+  - Stable, future-proof: Sticks to plain Markdown and Obsidian core features.
+  - Lightweight: Minimal folder count, minimal plugins, zero CSS snippets.
+  - Bottom-up: Notes grow into Maps of Content (MOCs) organically.
+  - Multi-purpose: Works for writing, research, personal projects, and collections.
+  - Why one vault instead of many? Cross-linking is the superpower. Multiple vaults fragment knowledge and slow you down.
+  - [Obsidian vault setup & template (simple, bottom-up) : r/ObsidianMD _202603](https://www.reddit.com/r/ObsidianMD/comments/1rscw0g/obsidian_vault_setup_template_simple_bottomup/)
+
+- https://github.com/AstroRoh2/obsidian-bases-demo /202512/python
+  - Demo Obsidian vault for connecting Claude Code to Obsidian Bases.
+  - 结构清晰: people, task, meeting
+
+- https://github.com/CLSherrod/crm-markdown /GPL/202606
+  - https://christophersherrod.com/crm/
+  - simple, local-first CRM in Markdown for tracking contacts, conversations, follow-ups, and relationships—without SaaS lock-in.
+  - This repo includes .base files for: Contact lists, Relationship views, Follow-up reminders
+  - 核心只有contact一个数据模型， 专注于客户关系
+  - The system is intentionally simple: one person = one contact note.
+    - Each contact note includes the person’s profile, relationship type, relationship tier, follow-up rhythm, next contact date, and communication log.
+  - One Markdown file per person
+  - One communication log per person
+  - Monthly, quarterly, yearly, and custom follow-up cadences
+  - Obsidian Bases dashboards for reminders
+- https://github.com/DukeWood/obsidian-people-crm-boilerplate /202512/js/inactive
+  - vault for LinkedIn contact management, relationship tracking, and AI-powered enrichment.
+  - Visual Database Management - Base plugin dashboards for filtering, sorting, and managing contacts
+  - 里面的list-view的内容 显示 list-item 效果不错
+- https://github.com/czottmann/obsidian-people
+  - This vault is a super-reduced customer/contacts relationship management tool ("CRM") whose source of truth is Obsidian, and which offers an easy selective sync to Apple Contacts (on macOS) using macOS Shortcuts. 
+  - I've decided to employ to Dataview
+
+- https://github.com/BrineWR71/obsidian-project-vault-template /MIT/202606/python
+  - A structured Obsidian vault template designed for project-based work — software builds, businesses
+  - 未使用bases
+  - Optimized for AI-assisted workflows (Claude Code, GPT, Copilot) but works perfectly without them.
+  - Capture first, organize later — The Inbox exists so you never lose a thought while deciding where it goes
+  - MOCs over deep folders — Max 2 levels of nesting. Navigation happens through linked Maps of Content
+  - Status tags drive workflow — #status/active, #status/blocked, #status/done let you filter across the entire vault
+  - Zero required plugins — Works with core Obsidian. Community plugins enhance but aren't required
+  - https://github.com/AstroRoh2/obsidian-bases-demo
+    - Demo vault for connecting Claude Code to Obsidian Bases.
+
 - https://github.com/greyboy-59/Greys-Obsidian-Vault /202601/inactive
   - [My gaming hub and hobby tracker are now fully migrated to Obsidian! : r/ObsidianMD _202601](https://www.reddit.com/r/ObsidianMD/comments/1q2fm62/my_gaming_hub_and_hobby_tracker_are_now_fully/)
 
@@ -1341,40 +1387,6 @@ modified: 2026-04-07T00:47:33.626Z
   - 有模版，无内容
   - https://github.com/dclasair/ttrpg-campaign-vault
     - An Obsidian vault to manage your TTRPG campaigns for DMs/GMs and Players.
-
-- https://github.com/CLSherrod/crm-markdown /GPL/202606
-  - https://christophersherrod.com/crm/
-  - simple, local-first CRM in Markdown for tracking contacts, conversations, follow-ups, and relationships—without SaaS lock-in.
-  - The system is intentionally simple: one person = one contact note.
-    - Each contact note includes the person’s profile, relationship type, relationship tier, follow-up rhythm, next contact date, and communication log.
-  - One Markdown file per person
-  - One communication log per person
-  - Monthly, quarterly, yearly, and custom follow-up cadences
-  - Obsidian Bases dashboards for reminders
-- https://github.com/DukeWood/obsidian-people-crm-boilerplate /202512/js/inactive
-  - vault for LinkedIn contact management, relationship tracking, and AI-powered enrichment.
-  - Visual Database Management - Base plugin dashboards for filtering, sorting, and managing contacts
-
-- https://github.com/BrineWR71/obsidian-project-vault-template /MIT/202606/python
-  - A structured Obsidian vault template designed for project-based work — software builds, businesses
-  - Optimized for AI-assisted workflows (Claude Code, GPT, Copilot) but works perfectly without them.
-  - Capture first, organize later — The Inbox exists so you never lose a thought while deciding where it goes
-  - MOCs over deep folders — Max 2 levels of nesting. Navigation happens through linked Maps of Content
-  - Status tags drive workflow — #status/active, #status/blocked, #status/done let you filter across the entire vault
-  - Zero required plugins — Works with core Obsidian. Community plugins enhance but aren't required
-  - https://github.com/AstroRoh2/obsidian-bases-demo
-    - Demo vault for connecting Claude Code to Obsidian Bases.
-
-- https://github.com/BryanHogan/obsidian-vault-template /202603
-  - [Obsidian vault setup tour _202509](https://bryanhogan.com/blog/obsidian-vault)
-  - A clean, durable Obsidian Vault setup, focussing on simplicity, bottom-up approaches, using as little as possible plugins or similar adjustments. 
-  - It's what I use for daily for writing, research, projects and collections for books or games.
-  - Stable, future-proof: Sticks to plain Markdown and Obsidian core features.
-  - Lightweight: Minimal folder count, minimal plugins, zero CSS snippets.
-  - Bottom-up: Notes grow into Maps of Content (MOCs) organically.
-  - Multi-purpose: Works for writing, research, personal projects, and collections.
-  - Why one vault instead of many? Cross-linking is the superpower. Multiple vaults fragment knowledge and slow you down.
-  - [Obsidian vault setup & template (simple, bottom-up) : r/ObsidianMD _202603](https://www.reddit.com/r/ObsidianMD/comments/1rscw0g/obsidian_vault_setup_template_simple_bottomup/)
 
 - https://github.com/Maws7140/Maws-vault-v1 /202604
   - A comprehensive Obsidian vault template designed for me but can be optimized for your workflow too.
@@ -1407,6 +1419,7 @@ modified: 2026-04-07T00:47:33.626Z
   - clean Obsidian starter kit for building a practical second brain with MOCs, properties, templates, and review workflows.
   - Maps of Content (MOCs) as living indexes; 
   - Dataview/Bases-style queries for review; 
+  - 似乎未使用bases
   - an optional AI-friendly project memory layer for focused assistant handoffs.
   - https://github.com/Gleb-Vlasov/obsidian-vault
     - Obsidian vault template (EN + RU). Auto-MOC for new folders, Dataview-driven section maps, Templater-based frontmatter, color-coded graph

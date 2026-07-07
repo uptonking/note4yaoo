@@ -41,6 +41,9 @@ modified: 2023-02-08T10:46:26.912Z
 - 添加 .diff 到任何 PR URL 的末尾， 然后复制粘贴到你平时用的 LLM 中以进行快速的初审，只需要几秒钟，无须 Copilot Enterprise ，也不用什么浏览器插件或特殊工具。 也就是其实不用提交整个库，提交diff就可以了，省token。
   - https://github.com/uptonking/aionui-office/pull/1.diff
 
+- [Anonymous GitHub – Share the code, not the author ](https://anonymous.4open.science/)
+  - For double-blind peer review
+
 ## ranking/leaderboard
 
 - https://github.com/EvanLi/Github-Ranking /MIT/202503/python/样式简陋

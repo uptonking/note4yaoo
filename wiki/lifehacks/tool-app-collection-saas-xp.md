@@ -470,6 +470,12 @@ flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
   - https://github.com/MaddyUnderStars/Fosscord-BD /202209/ts/archived
     - BetterDiscord/Replugged plugin allowing connections to Fosscord instances
     - After Discord moved to swc, this plugin no longer works.
+# blogs
+- medium.com
+  - [RemovePaywall | Free online paywall remover ](https://www.removepaywall.com/)
+  - [Medium Unlocker - Break Free from Paywalls ](https://medium-unlocker.inulute.com/)
+  - https://freedium-mirror.cfd/url
+    - https://freedium-mirror.cfd/https://medium.com/@ConstructByDee/the-project-templates-i-use
 # 邮箱注册 📮
 - 不需要手机号的邮箱
   - mail.protonmail.com

@@ -471,16 +471,14 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - 
 - 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 
 - ## 🆚 [GGUF with MTP vs MLX without. Is mlx still the way to go for mac users? : r/LocalLLaMA _202605](https://www.reddit.com/r/LocalLLaMA/comments/1tgj2if/gguf_with_mtp_vs_mlx_without_is_mlx_still_the_way/)
+- I wonder if mlx is still the correct path in mac. Some reasons:
   - LM Studio has bad caching for mlx. And not MTP of course.
+  - omlx has very good cache + turboquant + dflash, but no MTP (yet, I see it will come soon since it is already in the dev branch).
+  - I have discovered two other engine wrappers that are interesting: rapid-mlx and mtplx, didn't try them yet. The second has MTP.
+  - I keep using mlx, cause it is more efficient on a mac. But now with MTP already in llama.cpp, I wonder if using metal llama + MTP the speeds would be better than mlx.
+  - And the most important part, the quant world has more options for the GGUFs.
 
 - From what I have seen MTP improves performance on dense. For MoE it reduces performance. Since macs are memory loaded with no sot strong compute, they mostly benefit from large MoE models with small active params count. Since MTP gains are not there yet, MLX is still way to go.
 

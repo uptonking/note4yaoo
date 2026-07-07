@@ -473,7 +473,11 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## [[开源推广] VisionMind - 一个基于CLIP自动给图片打标签的摄影管理平台, 支持Raw, 自然语言搜索 - LINUX DO _202607](https://linux.do/t/topic/2535248)
+  - 目前项目可以实现对文件夹的增量扫描, 基于Open-CLIP 分析图片并自动打上标签. 标签可以被Lightroom等adobe 软件识别. 同时基于FAISS搭建向量数据库, 支持自然语言搜索相关图片. 
+  - 当前版本还只支持自动打英文标签, 和英文的自然语言搜索. 后续将更新中文相关的方案.
+  - https://github.com/AtomChen0425/VisionMind
+  - Github 提供了可下载直接运行的 macOS 和 Windows的可执行文件.
 
 - ## [Most efficient way to classify rotated images before sending them to a VLM : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pku9qo/most_efficient_way_to_classify_rotated_images/)
   - I have seen paddleocr supports it natively. But I still need a generic option which can work with others

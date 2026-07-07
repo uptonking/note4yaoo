@@ -32,6 +32,62 @@ modified: 2025-09-16T19:59:57.856Z
 - awesome-models
   - [LLM Explorer: A Curated LLM List ](https://llm-explorer.com/)
 # model-bench
+- tips
+  - 注意发布的测评结果的脚注说明， 一般会补充具体的测试数据/条件/设备， 大模型的参数太多， 环境条件稍微不同都可能导致模型效果差异
+
+- model 测评类型
+  - Coding
+  - Reasoning
+  - Agentic
+
+- claude 测评要点
+  - SWE-Bench Pro
+  - Terminal-Bench 2.1
+  - FrontierCode(Diamond)
+  - Humanity's Last Exam
+  - OSWorld-Verified
+  - GDPval-AA
+  - GDP pdf
+  - Blueprint-Bench 2
+  - AutomationBench
+  - Legal Agent Benchmark
+  - BioMysteryBench
+  - ExploitBench(Cap%)
+  - HealthBench Professional
+  - optional
+    - finance Agent v2
+- GPT 测评要点
+  - Terminal-Bench 2.0
+  - Expert-SWE (Internal)
+  - GDPval (wins or ties)
+  - MMMU Pro (no tools)
+  - MMMU Pro (with tools)
+  - BrowseComp
+  - Toolathlon
+  - Tool Decathion
+  - MCP Atlas
+  - Tau2-bench Telecom
+  - CyberGym
+  - FinanceAgent v1.1
+  - OfficeQA Pro
+  - GPQA Diamond
+  - Humanity's Last Exam (no tools)
+  - Humanity's Last Exam (with tools)
+  - FrontierMath Tier 1–3
+  - FrontierMath Tier 4
+  - Graphwalks BFS 256k f1
+  - Graphwalks BFS 1mil f1
+  - Graphwalks parents 256k f1
+  - Graphwalks parents 1mil f1
+  - OpenAI MRCR v2 8-needle 512K-1M
+  - ARC-AGI-1 (Verified)
+  - ARC-AGI-2 (Verified)
+- GLM 测评要点
+  - NL2Repo
+  - DeepSWE
+  - ProgramBench
+  - 
+
 - [OpenCode Data ](https://opencode.ai/data)
   - See which models are winning real usage
 - [OpenRouter LLM Rankings](https://openrouter.ai/rankings)

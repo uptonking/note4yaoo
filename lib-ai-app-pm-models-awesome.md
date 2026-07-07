@@ -27,38 +27,72 @@ modified: 2026-06-20T15:49:57.019Z
 ## models-bases
 
 - tips
-  - 可参考crm的bases来实现本项目, people--project--meeting/deal ~ model--project--bench/news
+  - 可参考crm的bases来实现本项目, people--project--daily/meeting/deal ~ model--project--news/bench
+
+- bench
+  - 注意发布的测评结果的脚注说明， 一般会补充具体的测试数据/条件/设备， 大模型的参数太多， 环境条件稍微不同都可能导致模型效果差异
 
 - model-wiki
   - id
-  - name + totalB
-  - total parameters
-  - active parameters
-  - multimodal: image, audio, video
+  - model-name
+  - model-family
+  - total-parameters
+  - active-parameters
+  - arch-type: MoE, Dense
+  - input modalities: image, audio, video, pdf
+  - output modalities: image, audio, video
   - reasoning: no, always, togglable
-  - Context length
-  - ~~tool-use~~ 
-  - MoE
+  - capabilities: stream, reason, tool-use, structured-output, json-mode, web-search, batch
+  - features: ocr, coding, MTP, QAT, ssd-cache, DSpark, fully-open, 模型厂商发布的特性
+  - architecture
+  - Training precision
+  - Training budget
+  - context length
+  - output limit
   - embedding
-  - branding
-  - release-collection
+  - series
   - Authors
   - release-date
-  - license
-  - is-open-model
-  - model-weight-repo
+  - release-pricing
+  - latest-pricing
+  - license: proprietary, MIT
+  - license-url
+  - open-model
+  - model-weight-url
+  - github-url
+  - bench-general
+  - bench-coding
+  - status: stable, deprecated
+  - retirement-date
+  - alternative-model: 最新版或同类模型
   - content: description, usage, docs
+  - optional
+    - language-support
+    - 4bit-quant-size
+    - Knowledge Cut-off Date
+    - release-collection
+- model-provider
+  - name
+  - founded-at
+  - api-base-url
+  - models
+  - description
+  - models
+  - developer-docs
+  - api-format: openai-compatible, anthorpic-compatible
+  - optional
+    - provider-type: official, gateway
 - model-media
   - branding-logo
-  - creator-logo
+  - author-logo
   - provider-logo
 
 - model-news
-  - news-date
+  - model-name
   - provider
-  - model
-  - pricing
-  - url
+  - date-start
+  - sales-pricing: 0, 0.8
+  - news-url
   - content
 
 - model-bench-vendor
@@ -66,6 +100,19 @@ modified: 2026-06-20T15:49:57.019Z
   - bench-date
   - model-name
   - parameter1-2-3...
+- bench-Artificial-Analysis
+- bench-Design-Arena
+- AIME
+- Humanity's Last Exam (HLE) 
+- GPQA
+- Terminal-Bench 2.1
+- SWE-Bench Pro
+- SWE-bench Verified
+- DeepSWE
+- MCP Atlas
+
+- 
+- 
 
 - model-quants
   - hosted-url: huggingface, modelscope
@@ -86,6 +133,11 @@ modified: 2026-06-20T15:49:57.019Z
   - https://models.dev/
   - open-source database of AI model specifications, pricing, and capabilities
   - We also use it internally in opencode.
+
+- https://github.com/assistant-ui/modelpedia /MIT/202606/ts
+  - https://modelpedia.dev/
+  - Open catalog of AI models across providers
+  - Models, Providers, Compare, Analytics, API
 
 - https://github.com/janhq/model-catalog /202607/python
   - A curated catalog of Large Language Models (LLMs) sourced from the Hugging Face Hub, specifically designed for integration with the Jan application's model hub. 
@@ -110,11 +162,9 @@ modified: 2026-06-20T15:49:57.019Z
 - [有没有一个网站收集顶级科技公司的大模型名单 - LINUX DO _202606](https://linux.do/t/topic/2488815)
   - [AI大模型列表 - 评测结果、参数与价格汇总 | DataLearnerAI ](https://www.datalearner.com/ai-models/pretrained-models)
 - [Models Table (10, 000+ LLM data points) – Dr Alan D. Thompson – LifeArchitect.ai ](https://lifearchitect.ai/models-table/)
+  - 类似excel
 - [All Large Language Models Directory - All LLMs ](https://llmmodels.org/)
 - [Design Arena ](https://www.designarena.ai/)
-
-- [llm-stats AI Leaderboard 2026: Compare & Rank 300+ Top AI Models by Intelligence, Speed & Price ](https://llm-stats.com/)
-  - Your idle credits are losing value every day. Connect them to LLM Stats and earn 50% on every inference request we route through your keys.
 
 - [codingplans.cc — AI Coding Plans ](https://codingplans.cc/)
 # model-api-resources
@@ -153,6 +203,10 @@ modified: 2026-06-20T15:49:57.019Z
   - https://freecodingmodels.vercel.app/
   - Find, benchmark and install in CLI 170+ FREE coding LLM models across 15+ providers in real time
 # awesome/leaderboard/benchmark
+- [llm-stats AI Leaderboard 2026: Compare & Rank 300+ Top AI Models by Intelligence, Speed & Price ](https://llm-stats.com/)
+  - Your idle credits are losing value every day. Connect them to LLM Stats and earn 50% on every inference request we route through your keys.
+  - 专注于模型在各个bench中的排名
+
 - https://github.com/wenbochang888/github-trending-spider /20.8kStar/MIT/202606/ts
   - https://newsnow.busiyi.world/
   - 优雅地阅读实时热门新闻

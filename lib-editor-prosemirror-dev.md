@@ -84,6 +84,7 @@ modified: 2021-05-06T09:39:53.522Z
   - atlaskit-editor实现了layout多列插件和图片排版插件
 # draft
 - roadmap
+  - migrate core plugins of prosemirror to wordgard
   - fwk agnostic noseditor: prosekit + atlaskit <> tiptap
     - rewrite tiptap/blocknote/atlaskit extension in prosemirror
   - lasuite/colanode + diff-view

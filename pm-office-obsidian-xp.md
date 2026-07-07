@@ -81,7 +81,12 @@ modified: 2026-06-30T17:32:43.131Z
 - mermaid-chart + bases
 
 - bases
+  - migrate popular notion-database to ob-bases
   - export bundle: 将.base文件和相关文件一起导出
+  - 有时会显示过期数据
+
+- frontmatter
+  - 自动根据内容更新，是否有此需求 auto update from content
 
 - tasks
   - TaskNote优点: inline-task-auto-detect, workflow
