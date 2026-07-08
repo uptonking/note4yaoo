@@ -153,6 +153,25 @@ modified: 2026-06-30T17:32:52.416Z
 - 
 - 
 
+## formulas/functions
+
+- Functions are used in Bases to manipulate data from properties in filters and formulas. 
+- Bases functions follow JavaScript behavior. 
+- Formulas allow you to create calculated properties in Bases using data from other properties. 
+  - Calculate values, add prices, compute totals, or perform math operations.
+  - Manipulate text, combine strings, change case, or extract substrings.
+  - Work with dates, calculate time differences, format dates, or determine deadlines.
+  - Apply logic, use conditional statements to display different values.
+  - Process lists, filter, sort, map, or aggregate list data.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # docs
 
 - 

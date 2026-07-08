@@ -34,7 +34,7 @@ modified: 2021-01-01T20:11:00.889Z
   - geco: firefox, icecat
   - [Google and Mozilla are working on iOS browsers that aren't based on WebKit | Hacker News_202302](https://news.ycombinator.com/item?id=34690788)
 
-- **all Chrome variants except iOS now use Blink**
+- **all Chrome variants except iOS now use Blink** 
   - The restriction to use WebKit as the rendering engine for 3rd party Web browser apps exists solely on iOS.
 
 - https://github.com/midori-browser/core /LGPLv2/201910/vala/inactive
@@ -293,6 +293,14 @@ modified: 2021-01-01T20:11:00.889Z
 - https://github.com/Floorp-Projects/Floorp
   - https://floorp.app/
   - Firefox-based, flexible browser developed in Japan with a variety of features!
+  - A browser built for keeping the Open, Private and Sustainable Web alive. Based on Mozilla Firefox.
+
+- https://github.com/zen-browser/desktop /43.2kStar/MPL/202607/cpp/js
+  - https://zen-browser.app/
+  - a firefox-based browser with the aim of pushing your productivity to a new level!
+  - Zen is packed with features that help you stay productive and focused.
+  - Organize your tabs into Workspaces to keep your projects separate and organized, and switch between them with ease. 
+  - split view
 
 - https://github.com/dothq/browser-desktop
   - https://www.dothq.org/

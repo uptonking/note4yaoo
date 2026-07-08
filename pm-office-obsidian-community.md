@@ -487,6 +487,26 @@ But the best win is automation in building plugins. This was a big pain point be
 - I think it could be useful for creating small scripts that allow you to perform automations using notes as an input source or as a writing destination. Add tasks, for example.
 
 - Fetching Jira details from a ticket ID and generating a note based on a template on a default vault path.
+# discuss-blocks
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [So I just figured out how to effectively use Block IDs (^), but confused about how to retrieve them : r/ObsidianMD _202508](https://www.reddit.com/r/ObsidianMD/comments/1mjwa33/so_i_just_figured_out_how_to_effectively_use/)
+  - Unlike [[wikilinks]] and #tags, there seems to be no clear way to organise and view all the blocks you've marked with a ^ Block-ID, and I fear as my notes grow, I might start losing track of them.
+
+- Block identifiers aren't really built to be something global, their purpose is mainly to improve linking/embedding by allowing you to link to specific blocks. Functionally they are a subset of linking, and if you enter [[link-to-do#^, Obsidian tries to list the available block identifiers for that note. But block IDs don't really exist on the same level as links or tags.
+  - That being said, you can use search to search for specific block IDs, e.g. by typing "^the-block-id".
+
+- You can easily iterate through all files in the vault, read the metadataCache, find entries with blockid if present, and display them. A similar approach can be used to find all links to a specific block. For large vaults with many files, additional optimizations are needed
 # discuss
 - ## 
 

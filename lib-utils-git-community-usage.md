@@ -87,6 +87,21 @@ modified: 2024-05-27T09:12:06.925Z
   - You can set yourself up for repo-specific config to be loaded, but this is just a convention and requires you to change settings in your global git config. There is no way for a repo to define git hooks that are always and automatically installed when you clone. For good reason! Arbitrary code execution is scary! See npm post-install scripts for an example of how that has caused havoc.
 
 - That config lives under the “.git/config” file inside the repo. The .git folder is not versioned, so you still need some mechanism to ensure everyone has that config + the minimum git version that supports it, so… it seems easier to still use husky, doesn’t it? am I missing something?
+# disccuss-git-toolchain
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [【公益推广 OhMyGit】在线云端学习 git，简单模拟环境快速学习 git - LINUX DO _202607](https://linux.do/t/topic/2537705)
+  - 所有的操作都是模拟终端环境 模拟git 项目 完全本地 数据完全前端运行
+  - 赛季制度 分为 2 种模式 如果是点击就是图形 如果纯 cli 操作 那么就会获得额外的 CLI 标识
+
 # disccuss-usage-github
 - ## 
 

@@ -1060,6 +1060,10 @@ modified: 2025-02-21T17:17:42.225Z
   - 出来的视频不算专业剪辑师那种精细度，但对付日常需要的短视频、产品介绍、讲解类内容，一句话就能出片，确实比自己开软件剪快很多。
   - 这个项目是我自己写的，核心的Agent架构——包括整个的执行循环、9个工具怎么设计、多层记忆的思路——借鉴了 lsdefine 开源的 GenericAgent 项目（MIT协议），在这个基础上我加了流式的模型调用层、多模型网关、HyperFrames视频引擎、语音合成，还有现在这套Web界面。想看原始架构思路的可以去看看那个项目。
 
+- https://github.com/renmengwen/MuseDock /apache2/202607/js
+  - 个本地优先的 AI 短视频创作与编辑工作台：把选题输入、公开来源整理、联网研究、来源图片素材、脚本与分镜、TTS 配音、自动短音效、HTML 帧工程、布局质检和导出放在同一个 Web GUI 里。当前阶段成片统一基于 HyperFrames（HTML/CSS/GSAP 帧工程）生成——不是一次性黑盒 MP4，而是可检查、可重试、可二次编辑的 HTML 视频工程。
+  - [【开源推广】基于hyperFrames的一句话生成视频的webGUI(只需配置一个文本模型、视频可二次编辑、本地优先) - LINUX DO _202607](https://linux.do/t/topic/2540727)
+
 - https://github.com/kapishdima/remocn /MIT/202606/ts
   - https://remocn.dev/
   - Production-ready animations, transitions, backgrounds, and scenes for Remotion. 

@@ -43,6 +43,28 @@ modified: 2022-08-21T10:19:58.756Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I just shipped the experimental web worker row models plugin for TanStack Table V9
+- https://x.com/KevinVanCott/status/2074147476752286135
+  - After playing around with web worker patterns for the past 24 hours, I think they might be more of a party trick than a useful tool for 99% of use-cases in TanStack Table. You're probably better off doing expensive calculations on a server than in the client. The UI experience will be about the same minus network latency variations. Even just keeping everything synchronous on the main thread has much less complexity in your code still.
+  - But, since I was able to make this as a plugin without changing a single line of the main table-core code (thanks to the new feature/plugin architecture), I feel good about shipping this as an optional plugin for people to experiment with and iterate on.
+
+- yup, learned this the hard way too. way better to run duckdb desktop / server side and ship arrow buffers than mess with web workers and other browser limitations
+  - I initially tried canvas based tables, then TanStack for a bit but ended up writing my own Mobx backed renderer to squeeze out as much performance as possible (for huge remote multimodal data)
+  - Was hoping to drive it with duckdb-wasm but the threading and memory limits for wasm / web workers made it 10-20x slower than just packaging it as a desktop app.
+
+- in worker, wouldn't you need duplication of the data?
+  - Yes, that's the downside. Only somewhat useful for hundreds of thousands of rows
+- Did you try an approach as the React scheduler? (Slicing long tasks). I didn't talk about using React Scheduler. I talked about the idea. Run x commands, check how many ms pass if you continue executing or using any command to defer execution (setTimeout/raf/…)
+
+- Our tables are not that long yet but that can change soon. Please integrate well will TanstackDB
+
+- Suggestion: I actually just had to make a data grid on top of tanstack table which was performant well into the 100s of thousands of rows. Instead of a web worker, I’d recommend making all map/filter/reduce operations async and yielding the main thread every few thousands rows. I played around with using web workers , but found the change too invasive. You might make a different judgement call here, but I found I was fine if filtering took a second as long as the main thread never was noticeably blocked
+  - I agree that the web workers approach is actually way more niche and would probably be less optimal for most tables. Maybe 0.1% of tables actually need something like this and it would get misused. I'd be interested in collabing to find another approach. It could be as simple as alternative row models.
+
 - ## 🎯 [Migrating to TanStack Table v9 (React) _202606](https://tanstack.com/table/beta/docs/framework/react/guide/migrating)
 - Custom feature plugins with full type safety
   - Features are tree-shakeable

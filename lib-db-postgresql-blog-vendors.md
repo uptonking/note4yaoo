@@ -11,6 +11,22 @@ modified: 2023-10-26T18:14:17.038Z
 
 # blogs
 
+## [Scaling PostgreSQL to power 800 million ChatGPT users | OpenAI _202601](https://openai.com/index/scaling-postgresql/)
+
+- 
+- 
+- 
+- 
+
+- ### OpenAI handles 800 million users on ChatGPT with just one PostgreSQL primary and 50 read replicas
+- https://x.com/arpit_bhayani/status/2074509051686445362
+  - OpenAI published an engineering blog explaining how they scaled their Postgres setup to support a massive 800 million users using a single primary and 50 multi-region replicas.
+  - They dive into details around their scaling approach, the PgBouncer proxy, cache locking, and cascading read replicas. It is genuinely neat and impressive.
+  - [How OpenAI Handles 800 Million ChatGPT Users on a Single PostgreSQL Primary - YouTube _202601](https://www.youtube.com/watch?v=ubpUjovBMAM)
+
+- 
+- 
+
 ## ⚖️ [Why does Neon use Paxos instead of Raft, and what's the difference? - Neon _202208](https://neon.tech/blog/paxos)
 
 - TLDR: Neon separates storage and compute, substituting the PostgreSQL persistency layer with a custom-made distributed storage written in rust. 

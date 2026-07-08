@@ -21,6 +21,7 @@ modified: 2024-08-24T16:15:11.456Z
     - vscode对于本地c/s架构的参考价值高，web架构需要scale的价值不高
   - 💥 支持打开超大文件，而普通web-editor在编辑器卡死(如打开超大文件)时，容易造成整个页面不可用
     - 对各种语言/编码的text files支持广泛
+  - reproducible-workspace: 数据/文件 + 配置 (+ 插件), 可在其他设备直接复用， 这一点上vscode的实现值得参考, 支持多级配置
   - 实现了很多git操作的ui和展示的ui，可作为git客户端
   - diff的计算较准确，支持可视化move操作
   - 对LSP的支持较好，能找到很多第三方LSP Server

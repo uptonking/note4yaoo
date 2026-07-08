@@ -750,6 +750,16 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [GLM5.2 使用有感 - LINUX DO _202607](https://linux.do/t/topic/2541717)
+  - GLM 他只会迎合你回答 不会拒绝你, 我平时用5.5 和 opus比较多, 对于某个意见, 他真的会去反驳我, 并且和我列举一些说明
+- 有同感，glm5.2 感觉适合执行任务，但是执行任务他的思考链我感觉又太长了整体速度太慢
+
+- 是的, 如果某个任务能用一个对话就能解决的话, 我觉得还是挺好的, 这也是现在很多测评人用的, 基本上就是丢个任务再去看结果, 但在我们实际开发的过程中肯定是要和ai进行交互的, 哪个环节走偏了, 真就全偏了.
+
 - ## [买了一年的gemini pro，感觉好像没啥用啊 - LINUX DO _202606](https://linux.do/t/topic/2479695)
 - antigravity里用它写前端了，还有就是antigravitytools把大概600Wtoken的克劳德用了 
 

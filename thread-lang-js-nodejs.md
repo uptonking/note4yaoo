@@ -30,7 +30,7 @@ modified: 2023-11-10T07:10:19.089Z
   - `tsconfig` paths are more flexible for development, but they only work at compile time and need extra tooling to work at runtime.
   - that’s why I still use `tsconfig` in most of my projects.
 
-- What would happen if you changed "#​app/*" to "@/app/*"? 
+- What would happen if you changed "#​app/ *" to "@/app/* "? 
   - Node.js requires the alias to be prefixed with `#`. It’s honestly not that bad, you get used to it, and auto-import works too.
 
 - but Vite 8 may now read tsconfig.json to auto infer the aliases, so better keep them in tsconfig.json
@@ -48,6 +48,25 @@ modified: 2023-11-10T07:10:19.089Z
 - ## Node.js now has a built-in API for styling text (similar to `chalk` , `picocolors` , etc)
 - https://twitter.com/styfle/status/1765458512421814707
 - Maybe an API like this could become a standard
+
+# discuss-nodejs-v8
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Make your Node.js CLI start faster: Enable compile cache at startup. 
+- https://x.com/jiahan_c/status/2074069028520464497
+  - It uses on-disk V8 code cache for faster warm starts.
+  - Best for CLIs that load lots of code.
+  - The first run can be a bit slower because Node has to write the cache
 
 # discuss-js-runtime
 - ## 
@@ -230,7 +249,7 @@ script.runInContext(context);
   - What we do is flip a "shutting down" flag on SIGTERM and immediately start returning 503 from our health check endpoint. That gives the LB time to deregister the instance and stop sending new traffic. Then after a short delay (we use 5s) we call server.close() to drain the remaining in-flight requests. Without that gap you get a burst of 502s during deploys.
   - For your questions: yes, both SIGTERM and SIGINT. Docker sends SIGTERM, Ctrl+C sends SIGINT, and k8s also sends SIGTERM. PM2 uses SIGINT by default but can be configured. And server.close() does wait for existing connections to finish, but as someone else mentioned, keep-alive connections will hang indefinitely so you absolutely need that setTimeout force-kill.
 
-- **Signal Handling:**
+- **Signal Handling:** 
   - SIGTERM (Docker/Kubernetes default) - graceful shutdown
   - SIGINT (Ctrl+C locally) - same treatment
   - Don't handle uncaughtException/unhandledRejection for shutdown - log and exit immediately with code 1
@@ -305,7 +324,7 @@ script.runInContext(context);
   - For those of you looking to write cross-environment, isomorphic javascript that works in browsers and Node.js --- other than fetch and WHAT-WG streams
 - It would be neat if there were an official require(”vm”) factory to produce a browser-compatible context. Something along those lines might be a nice way to sandbox the sometimes incompatible underpinnings.
 - Important: WebSocket + SSE, IndexedDB, FormData, FileSystem, Text{Encoder/Decoder}Stream, Sanitizer
-  - Important-ish: WebRTC/Media*/Video*
+  - Important-ish: WebRTC/Media */Video* 
   - Fun, but not important: Bluetooth, USB, Audio
 
 - ## Today I learned that node's EventEmitter suffers from an issue called "producer interference".

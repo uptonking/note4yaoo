@@ -336,6 +336,16 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 前伯克利博士、现 xAI SGLang 负责人，用 23 分钟讲清楚他们如何在 10 万张 GPU 上部署 Grok
+- https://x.com/FinanceYF5/status/2074389038585503950
+  - 拆分 Prefill 和 Decode → 将 MoE 专家分片到不同 GPU → 按专家路由 Token → 让通信与计算重叠执行 → 以足以碾压 DeepSeek API 的价格对外提供服务。
+  - 第三方服务商也因此能把成本做到 DeepSeek 官方 API 的五分之一。 SGLang + Prefill-Decode 解耦 + 专家并行 + AMD MI300——这就是整套技术栈。
+- 很多人以为推理优化就是量化和蒸馏，其实真正省钱的是把不同阶段的算力特性分开调度。 Prefill 吃算力，Decode 吃带宽，混在一起就是浪费
+
 - ## Langchain DeepAgents 的 Harness Profile 功能不错，为不同的模型开启不同的提示词、工具，这样你选择不同的模型，就会自动应用不同的 Profile.
 - https://x.com/9hills/status/2064156876821192980
   - 比如对于gpt-5.5，将 edit_file 改成 apply_patch 工具，将execute 工具 改成 shell_command，从而和 codex 保持一致。

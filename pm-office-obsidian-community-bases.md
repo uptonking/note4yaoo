@@ -20,7 +20,10 @@ modified: 2026-06-30T23:04:11.000Z
 
 - ## 
 
-- ## 
+- ## [Is there really not any way to make bases query something smaller than a file? : r/ObsidianMD _202508](https://www.reddit.com/r/ObsidianMD/comments/1mxlibf/is_there_really_not_any_way_to_make_bases_query/)
+- Obsidian has always considered notes to be the smallest unit. You cannot assign tags to blocks, you cannot assign properties to blocks, you cannot meaningfully link from a block to a note (the backlink shows the note, not the block), and you can only link to a block as part of a note.
+
+- It’s simply not a block based editor - it’s file system based. That has always been the opinionated take. You can look into anytype if you want something like that, it’s much more rigid tho.
 # discuss-showcase/examples 🌰
 - ## 
 
@@ -29,6 +32,13 @@ modified: 2026-06-30T23:04:11.000Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [BASES - Relative Progress Bars | LeanProductivity _202601](https://blog.sascha-kasper.com/BASES---Relative-Progress-Bars)
+  - [BASES - Absolute Progress Bars | LeanProductivity _202601](https://blog.sascha-kasper.com/BASES---Absolute-Progress-Bars)
 
 - ## [A Bases Template for Project Tracking or Task Management - Share & showcase  _202508](https://forum.obsidian.md/t/a-bases-template-for-project-tracking-or-task-management/104249)
 
@@ -43,7 +53,12 @@ modified: 2026-06-30T23:04:11.000Z
 
 - ## 
 
+- ## [Bases: Open in Source Mode (Easy access to '.base' YAML file/view) - Feature requests - Obsidian Forum _202507](https://forum.obsidian.md/t/bases-open-in-source-mode-easy-access-to-base-yaml-file-view/103196/6)
+  - Provide an option to view the YAML (“source”) view of a .base file. There’s currently an option to show the file in explorer, and I use that to then open the file in VS Code, but I’d like to have a way to switch between YAML and GUI view similar to other Markdown files in Obsidian.
+  - workaround: right-clicking on the .base file, showing it in explorer, and opening it in a different editor.
+
 - ## [Bases: Renaming (or deleting) a property in properties view should update all affected bases - Feature requests - Obsidian Forum _202508](https://forum.obsidian.md/t/bases-renaming-or-deleting-a-property-in-properties-view-should-update-all-affected-bases/104914)
+  - 2种场景都很合理
 
 - ## [Provide API access to the results of Bases view - Developers: Plugin & API - Obsidian Forum _202601](https://forum.obsidian.md/t/provide-api-access-to-the-results-of-bases-view/110660)
   - Bases is a fantastic first‑party way for users to define cohorts of notes. Allowing plugins to get a list of notes from a Base without the plugin being implemented as a Base view would significantly expand what plugins can do with Bases.
@@ -91,6 +106,25 @@ modified: 2026-06-30T23:04:11.000Z
 
 - ## 
 
+- ## 
+
+- ## [Bases List View has Potential as Checklist : r/ObsidianMD _202511](https://www.reddit.com/r/ObsidianMD/comments/1oy8n71/bases_list_view_has_potential_as_checklist/)
+- Checklists are my last use case for Dataview, I'd like to get everything unified under Bases but I can't do checklists (to-do, shopping, etc)
+
+- I managed to find a workaround to add clickable checkmarks to the card views of the databases, using the QuickAdd plugin. I'm sure it can also work for the list view.
+
+- I use the Table view as a checklist. Not quite as clean as List view, but I use it for projects with multiple steps/statuses and it works great.
+
+- ## [Can a base have properties? : r/ObsidianMD _202508](https://www.reddit.com/r/ObsidianMD/comments/1mzae8p/can_a_base_have_properties/)
+  - is it possible to add properties to a .base file? I want to create a base of bases to organize my notes, but I want them to have covers for the card view, but that seems to be impossible.
+
+- Just embed the base file into the note. You can even have it pull a specific view every time as well.
+
+![[basefile.base #heading name]]
+
+- Is there a difference between just embedding a base file in a note with the double brackets, and using the code black with base (as you had said)? 
+  - Not much, except there will be no additional file, and link in your graph view, if the base is inside a code block. I myself have separate files I embed but if I ever had a need for, say a base of bases, I'd go down that road instead of having multiple duplicate markdown notes that only exist to embed a base.
+
 - ## [How to group bases by month _202601](https://forum.obsidian.md/t/how-to-group-bases-by-month/109597)
 - Make a Properties formula that’s [Created.year, Created.month]. Then group by that formula.
 
@@ -108,6 +142,33 @@ modified: 2026-06-30T23:04:11.000Z
 - This feature request is legitimate but the background is wrong. Obsidian does not read every file every time. There are multiple layers of caches (in memory and on disk). 
   - I still think that if you have a very large database with complex queries you are better off using a different product.
 
+# discuss-dataview/datacore
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Obsidian bases with inline fields? : r/ObsidianMD _202508](https://www.reddit.com/r/ObsidianMD/comments/1mwsbuk/obsidian_bases_with_inline_fields/)
+  - I'm guessing the new bases feature doesn't work with Dataview's inline fields?
+- You're correct. Inline fields is an unofficial feature from an unofficial (but hugely popular) plugin. You should be using only top-level YAML frontmatter properties if you want official support. There are community-made scripts out there to go through your notes and convert inline fields to properties. There's also tools out there to convert inline fields to properties as you type them.
+
+- The issue for me with switching to properties is that links aren't supported there. For example, I can have an inline field with text like "I met [[josh]]". If I move it to the properties, it doesn't consider the current note and "josh" to be linked. Unfortunately my solution was duplication. Since I want to preserve linking, I have a script that copies the value of the inline field to the property so that I could have both linking and using it in bases
+- I must be missing something because when I use the [[Link]] format in a property it does link them. I can see it in the local graph and the Rich Foot plugin.
+  - It only works if the field is just the link without any additional text. So [[josh]] would work, but not "I met with [[josh]]"
+- A workaround could be to use aliases if it's just a single link. [[josh|I met with josh]]
+- You can also use a list property with multiple linked entries
+
+- ## [Obsidian Bases by Block, Sentence, Checklists rather than full file : r/ObsidianMD _202603](https://www.reddit.com/r/ObsidianMD/comments/1s3rke0/obsidian_bases_by_block_sentence_checklists/)
+- Bases is limited to note-level data, so it won’t pick up individual blocks like that.
+  - For block-level queries (tasks, tagged lines, etc.) you’ll want Dataview or Datacore.
+  - Bases ≈ metadata, Dataview/Datacore ≈ actual content inside notes.
+
+- Datacore is a metadata index - it stores information about every page, section, block, list item, canvas file, and other file in your vault in an internal database which can be quickly searched for generating nice-looking views. You access this metadata using the query language, and then compile it into useful views using the embedded views.
 # discuss
 - ## 
 

@@ -9,6 +9,9 @@ modified: 2026-04-07T00:47:33.626Z
 
 # guide
 
+- fans-obsidian
+  - https://github.com/mnaoumov/obsidian-better-markdown-links
+
 - resources
   - [Latest Share & showcase topics - Obsidian Forum ](https://forum.obsidian.md/c/share-showcase/9)
   - [#bases-showcase | Discord](https://discord.com/channels/686053708261228577/1407099010787049482)
@@ -716,12 +719,23 @@ modified: 2026-04-07T00:47:33.626Z
   - Schema-guided knowledge graph generation — the extracted graph is always grounded in a formal RDFS/OWL schema
   - Bring your own ontology — supply a --base-schema TTL file to lock in classes and properties from an existing formal ontology; the LLM expands it with domain-specific concepts but cannot rename, remove, or contradict your authoritative vocabulary
 
-- https://github.com/kdnk/obsidian-automatic-linker
-  - Automatically convert plain text file references into Obsidian wiki links as you write. Keep your knowledge graph connected without manual linking.
-
-- https://github.com/mnaoumov/obsidian-backlink-cache
+- https://github.com/mnaoumov/obsidian-better-markdown-links /MIT/202607/ts
+  - a plugin for Obsidian that adds support for angle bracket links and manages relative links properly.
+  - Markdown links `[Title](path/to/note.md)` are better for compatibility purposes as `[[Wikilink]]` is not part of the Markdown spec.
+    - However, links with spaces `[Title](path%20with%20space/note%20with%20space.md)` are quite unreadable.
+    - The Markdown spec allows more readable links `[Title](<path with space/note with space.md>)`, which work fine in Obsidian, but Obsidian doesn't generate such angle bracket links.
+    - This plugin makes Obsidian generate angle bracket links.
+  - There is a problem in Obsidian where relative paths might be incorrectly resolved as absolute paths, causing the same link to behave differently in Obsidian and other Markdown editors.
+    - This plugin ensures that relative paths are prepended with ./, e.g., `[Title](./path/to/note.md)`, to overcome the above-mentioned problem.
+  - Link Conversion: convert all links in an individual note or the entire vault.
+- https://github.com/mnaoumov/obsidian-frontmatter-markdown-links
+  - a plugin for Obsidian that adds support for markdown links in frontmatter.
+- https://github.com/mnaoumov/obsidian-backlink-cache /MIT/202607/ts
   - plugin that stores backlink cache to speed up app.metadataCache.getBacklinksForFile().
   - It's mostly useful for users with the large vaults. On smaller vaults the difference might be unnoticeable.
+
+- https://github.com/kdnk/obsidian-automatic-linker
+  - Automatically convert plain text file references into Obsidian wiki links as you write. Keep your knowledge graph connected without manual linking.
 
 - https://github.com/Jasper-1024/block-link-plus /GPL/202606/ts
   - https://block-link-plus.jasper1024.com/
@@ -1026,6 +1040,8 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/mnaoumov/obsidian-codescript-toolkit /MIT/202606/ts
   - allows to do a lot of things with JavaScript/TypeScript scripts from inside the Obsidian itself.
   - formerly known as Fix Require Modules
+  - https://github.com/mnaoumov/obsidian-codescript-toolkit-demo-vault
+    - vault to demonstrate features of CodeScript Toolkit plugin.
 # feat-data
 - https://github.com/chrisgrieser/obsidian-quadro /MIT/202606/ts
   - Plugin for social-scientific Qualitative Data Analysis (QDA). 

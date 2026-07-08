@@ -13,6 +13,8 @@ modified: 2026-06-30T17:32:43.131Z
   - rich editor
   - backlinks: 双链基于[[]]语法, 同名文件的写法是相对路径
   - bases: 基于文件的多维表格
+    - bases 基于文件的设计 方便扩展每行的属性
+    - 支持直接编辑单元格
     - Convert CSV records to individual Markdown files and Bases.
     - 支持 导入/导出 csv/excel, 提供独立的webapp
   - publish
@@ -24,6 +26,9 @@ modified: 2026-06-30T17:32:43.131Z
 
 - cons
   - 不支持类似notion的 block-style dragging
+  - bases 基于文件的设计 难以获取页面内的内容
+    - 给block添加properties/元数据
+    - 页面内引用
   - bases
     - 不支持拖拽排序, 不能在指定位置插入行/列
     - 不支持拖拽导致不支持kanban
@@ -59,6 +64,9 @@ modified: 2026-06-30T17:32:43.131Z
 - 
 
 # draft
+- architecture
+  - reproducible-workspace: 数据/文件 + 配置 (+ 插件), 可在其他设备直接复用， 这一点上vscode的实现值得参考, 支持多级配置
+
 - .base 的自定义后缀不够方便, 不如用 .base.yml
 
 - bases auto converter: csv <> bases
@@ -80,14 +88,6 @@ modified: 2026-06-30T17:32:43.131Z
 
 - mermaid-chart + bases
 
-- bases
-  - migrate popular notion-database to ob-bases
-  - export bundle: 将.base文件和相关文件一起导出
-  - 有时会显示过期数据
-
-- frontmatter
-  - 自动根据内容更新，是否有此需求 auto update from content
-
 - tasks
   - TaskNote优点: inline-task-auto-detect, workflow
   - use TaskNote/mdbase-spec as cms, not note
@@ -97,6 +97,21 @@ modified: 2026-06-30T17:32:43.131Z
 - multi-column
   - 社区有提供 css/js 插件方案
   - 临时方案可考虑 card view
+
+## bases
+
+- later
+  - migrate popular notion-database to ob-bases
+  - export bundle: 将.base文件和相关文件一起导出
+  - 有时会显示过期数据
+
+- frontmatter
+  - 自动根据内容更新，是否有此需求 auto update from content
+
+- table-view
+
+- list-view
+  - 不支持显示 property name
 # pm
 - 支持公开子目录作为site
 
@@ -124,22 +139,33 @@ modified: 2026-06-30T17:32:43.131Z
 
 ## ob-bases
 
-- bases list view的使用场景: news-feed, 简单评论是否也可以采用list
+- bases-arch
+  - bases 基于文件的设计 方便扩展每行的属性
+  - 可考虑实现 基于block 来实现， 这样同一页面内的内容也可以实现动态引用/更新
 
+- inline-bases
+  - 实现思路类似在编辑内支持可执行的代码块
+
+- bases list view
+  - ✨ 需要支持分页
+  - 使用场景: news-feed, 简单评论是否也可以采用list实现
+  - 对于类似于 changelog 的场景， 支持查看列表，也支持查看指定日期
+
+- 
+- 
 - 
 - 
 - 
 
 - database的技术方案可参考agentfs+just-bash, 以数据库作为数据源，导出文件如markdown方便ai理解
 # dev-xp
+- 需要尽早决定 file/link path 的方案
+
 - ob公开的 api 包含很多 codmeirror 相关的类型定义
 
 - 偏ui的plugin，在headless的场景下可能读不到配置，需要在vault中存一份配置，然后server运行时支持相关逻辑
   - headless方案可参考vscode-server
 
-- ob-bases基于文件的设计，似乎很符合grist
-
-- 
 - 
 - 
 - 
@@ -148,6 +174,20 @@ modified: 2026-06-30T17:32:43.131Z
 - 
 
 - 对markdown文件的import需求很少，因为可以手动复制粘贴内容
+
+- keyboard-shortcuts
+  - use the keyboard shortcuts Ctrl/Cmd-Alt ←/→ to navigate back and forward.
+
+## bases-xp
+
+- 需要创建bases的note建议添加tags, 这样方便快速筛选
+
+- 
+- 
+- 
+- 
+
+- ob-bases基于文件的设计，似乎很符合grist
 # usage-workarounds
 - 文件及文件夹不支持自定义排序, 可用带wikilink的文档来指定顺序, 类似 toc目录
 # usage-tips

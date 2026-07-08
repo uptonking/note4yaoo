@@ -23,7 +23,32 @@ modified: 2026-06-30T22:55:02.169Z
 
 - resources
   - [Obsidian Roadmap  ](https://obsidian.md/roadmap/)
-  - [Obsidian Changelog ](https://obsidian.md/changelog/)
+# [changelog](https://obsidian.md/changelog/)
+- v1.13.0_20260528
+  - a revamped Settings panel that opens in a new window with built-in search and keyboard navigation. You can turn this off in Settings → Interface.
+
+- v1.12.7_20260323
+  - The Obsidian Installer is now bundled with a new binary file for using the CLI. 
+    - This new method replaces the old method of calling the Electron binary, resulting in significantly faster terminal interactions. 
+  - cli: Changed the CLI socket file to a hidden dotfile on macOS and Linux.
+
+- v1.12.0_20260210
+  - introduces the Obsidian CLI, a command line interface that lets you control Obsidian from your terminal for scripting, automation, and integration with external tools.
+
+- v1.11.0_20251210
+  - Markdown links are now supported in text and list properties. Internal links are automatically updated when the destination file is moved or renamed.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # discuss-news-obsdmd
 - ## 
 

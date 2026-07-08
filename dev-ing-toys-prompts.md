@@ -37,6 +37,12 @@ modified: 2026-04-11T01:31:17.720Z
 
 ## 📌 begonia(superdoc/ailovedoc)
 
+- goals
+  - pagination
+  - virtualized render
+  - track-change
+  - hybrid table and doc
+
 project `superdoc` at folder `../superdoc` implements renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed.
 - the final goal is to implement a framework-agnostic, modular, extensible, headless ai docx editing solution named `begonia` similar to `superdoc` in current folder to avoid the licensing issues.
 - begonia should be implemented in a modular and extensible architecture for core features, with functional programming style.
@@ -777,6 +783,7 @@ finally make sure all tests run and pass locally with npm. you can update/fix te
 
 - you have improved the codebase several times, but running the tests/parity/scripts took a lot of time for your every improvement.  please refactor and improve the tests/parity/scripts/devops/ci to make it faster and more maintainable.  you may combine/deduplicate/reduce/clean/redesign some tests/parity/scripts/devops/ci/outdated/legacy if you need. update the readme/docs after your cleanup.
 # rafactor
+- analyze the core data-flow/code-logic of major features, find possible bugs and memory leak, improve it for the long term maintenance.
 
 The goal is to refactor existing code and architecture to be more clear, extensible, functional-programming style, while improving logic correctness at the same time.
 One task is to remove `class extends` inheritance and js prototype. `class extends` inheritance and prototype MUST be avoided by refactoring and rewriting.
