@@ -208,6 +208,11 @@ modified: 2025-11-06T18:49:13.977Z
 - 
 
 # 🆚 ocr/vlm-parsing-benchmarking 
+- tips
+  - 主流LLM的榜单一般以 bench为行， 模型为列， 
+    - 而OCR榜单一般以模型为行，bench为列， 但ocr榜单的测试项没有主流LLM榜单规范， 很多榜单都是各测各的
+    - vision作为通用LLM的一种能力，采用主流LLM的行列设计更容易兼容和对比
+
 - leaderboard
   - [Open VLM Leaderboard - a Hugging Face Space by opencompass](https://huggingface.co/spaces/opencompass/open_vlm_leaderboard)
 
@@ -230,6 +235,9 @@ modified: 2025-11-06T18:49:13.977Z
 - [OCRBench v2 _202605](https://99franklin.github.io/ocrbench_v2/)
   - https://github.com/Yuliang-Liu/MultimodalOCR
   - Improved Benchmark for Evaluating Large Multimodal Models on Visual Text Localization and Reasoning.
+
+- [OCR-Reasoning Benchmark: Unveiling the True Capabilities of MLLMs in Complex Text-Rich Image Reasoning ](https://ocr-reasoning.github.io/)
+  - https://github.com/SCUT-DLVCLab/OCR-Reasoning 
 
 - [socOCRbench - Noah Dasanaike _202602](https://noahdasanaike.github.io/posts/sococrbench.html)
   - [socOCRbench: An OCR benchmark for social science documents : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r5wn6l/sococrbench_an_ocr_benchmark_for_social_science/)

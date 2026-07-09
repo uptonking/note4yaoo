@@ -659,6 +659,9 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/rafafields/Obsidian-Soul /BSD/202607/ts
   - A minimal AI agent plugin for Obsidian with transparent, vault-based long-term memory and customizable soul personalities.
 
+- https://github.com/agent-lore/lithos /MIT/202607/python
+  - Shared memory for AI agents. A local, privacy-first knowledge base that enables heterogeneous AI agents to share knowledge and coordinate work.
+
 ## rag/memory
 
 - https://github.com/oomkapwn/enquire-mcp /MIT/202606/ts
@@ -757,11 +760,19 @@ modified: 2026-04-07T00:47:33.626Z
   - a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites
   - Quartz is a set of tools that helps you publish your digital garden and notes as a website for free. 
   - Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
-  - [Backlinks ](https://quartz.jzhao.xyz/features/backlinks)
-    - Links in the backlink pane also feature rich popover previews
-  - [Bases Support ](https://quartz.jzhao.xyz/features/bases)
+  - 📈 [Bases Support ](https://quartz.jzhao.xyz/features/bases)
     - .base files as interactive database-like views. 
-  - 已合并 [perf: incremental rebuild (--fastRebuild v2 but default) _202503](https://github.com/jackyzha0/quartz/pull/1841)
+  - 🔗 [Backlinks ](https://quartz.jzhao.xyz/features/backlinks)
+    - Links in the backlink pane also feature rich popover previews
+  - Graph View: show both a local graph view and a global graph view
+  - Mermaid Diagrams: render Mermaid diagrams to match the site theme
+  - features: Breadcrumbs, Canvas
+  - Folder Listings: generate an index page for all the pages under a folder
+  - Private Pages: By default, Quartz uses the RemoveDrafts plugin which filters out any note that has `draft: true` in the frontmatter.
+  - [Obsidian Compatibility ](https://quartz.jzhao.xyz/features/obsidian-compatibility)
+    - Quartz was originally designed as a tool to publish Obsidian vaults as websites. the scope of Quartz has widened over time
+    - ObsidianFlavoredMarkdown plugin: support for features like wikilinks and Mermaid diagrams
+    - Obsidian core features are supported by Quartz directly, while Obsidian community plugin features are supported by corresponding Quartz community plugins. Not all Obsidian community plugins will have Quartz equivalents
   - [Web-editor for GitHub _202503](https://github.com/jackyzha0/quartz/issues/1864)
     - out of scope for Quartz, it is intended as a static site generator not the a CMS
   - dev-xp
@@ -874,6 +885,20 @@ modified: 2026-04-07T00:47:33.626Z
   - Self-hosted Knowledge-Context-Server for Markdown vaults. Browse, edit, and share your Obsidian-compatible notes from any browser.
   - No database — everything is filesystem-based, easy to backup and migrate
   - Multi-user — share vaults with others, with granular read/write permissions
+
+- https://github.com/jwintz/lithos /MIT/202603/ts/vue
+  - https://jwintz.github.io/lithos/
+  - Lithos extends Docus v5 to support Obsidian-specific features like wikilinks, callouts, and YAML frontmatter.
+  - First-class support for Wikilinks [[Page]], Embeds ![[Note]], and Callouts > [!note]
+  - Data Views - "Bases" for structured data (Tables, Cards, Lists) from frontmatter
+  - Graph View - Interactive force-directed graph (Global & Local)
+  - [Lithos, static site generator for Obsidian Vaults : r/ObsidianMD _202602](https://www.reddit.com/r/ObsidianMD/comments/1qv45bw/lithos_static_site_generator_for_obsidian_vaults/)
+
+- https://github.com/otaleghani/kiln /MIT/202605/go/js
+  - https://kiln.talesign.com/
+  - a static site generator designed specifically for Obsidian. It takes your Markdown vault—images, canvases, graphs, and math included—and "bakes" it into a highly optimized, interactive HTML website.
+  - [I made an SSG that renders canvas files, bases, callouts, and math exactly like Obsidian does : r/ObsidianMD _202603](https://www.reddit.com/r/ObsidianMD/comments/1rsjq1o/i_made_an_ssg_that_renders_canvas_files_bases/)
+    - bases support is still a work in progress — it works but there's room to improve it. 
 
 - https://github.com/DangerBlack/obsidian-web-viewer /202604/js/inactive
   - A static web page that allows you to view Obsidian-style markdown files from S3-compatible storage.

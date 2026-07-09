@@ -24,6 +24,10 @@ modified: 2022-12-16T01:51:52.564Z
 
 # draft
 
+# pm
+- card view 比 list view 展示更友好
+  - 支持显示 property name
+  - 加大card的宽度到一行仅展示一个card，此时就可以作为list来使用了
 # task
 - [TaskTXT](https://tasktxt.com/)
 # examples-list

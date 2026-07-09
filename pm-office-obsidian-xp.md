@@ -30,6 +30,7 @@ modified: 2026-06-30T17:32:43.131Z
     - 给block添加properties/元数据
     - 页面内引用
   - bases
+    - 文件架构限制，导致难以实现交换行列， 而benchmark场景有此需求
     - 不支持拖拽排序, 不能在指定位置插入行/列
     - 不支持拖拽导致不支持kanban
   - settings-sync 
@@ -98,6 +99,13 @@ modified: 2026-06-30T17:32:43.131Z
   - 社区有提供 css/js 插件方案
   - 临时方案可考虑 card view
 
+- properties
+  - hide empty properties
+  - number类型的属性值， 禁止滚动来出发加减
+
+- css-snippets
+  - 调整bases左对齐是全局调整, 修改样式粒度太广, 如何部分左对齐、部分居中
+
 ## bases
 
 - later
@@ -105,13 +113,38 @@ modified: 2026-06-30T17:32:43.131Z
   - export bundle: 将.base文件和相关文件一起导出
   - 有时会显示过期数据
 
+- group
+  - 另一种显示方式是组名不显示在分组上方，而是作为合并单元格显示在左边，这样内容区就显示为连续的表格了
+
 - frontmatter
   - 自动根据内容更新，是否有此需求 auto update from content
 
-- table-view
+- cells
+  - 单元格左中右对齐方式需要使用css, 这需要编辑器正确实现移动端的布局
 
-- list-view
+### inline-bases
+
+- later
+  - 打开编辑器有时显示code block而不是视图， 或者视图显示的慢
+    - read阅读模式此问题不严重，但仍然有明显的渲染闪烁(code快速变视图)
+
+### list-view
+
+- later
   - 不支持显示 property name
+  - 大量内容时，实现 懒加载 + 虚拟渲染
+
+### card-view
+
+- later
+  - 默认占满页面，ux不友好
+
+- card view 比 list view 展示更友好
+  - 支持显示 property name
+  - 加大card的宽度到一行仅展示一个card，此时就可以作为list来使用了
+
+### map-view
+
 # pm
 - 支持公开子目录作为site
 
@@ -158,8 +191,28 @@ modified: 2026-06-30T17:32:43.131Z
 - 
 
 - database的技术方案可参考agentfs+just-bash, 以数据库作为数据源，导出文件如markdown方便ai理解
+
+## publish-quartz
+
+- features
+  - bases formula计算的列能正常渲染
+
+- 对bases的支持度很低
+  - properties默认不渲染
+  - table/card/list 显示都是只读的，不能再次filter/sort
+  - inline bases交互差
+  - embed .base 文件有时未渲染， 因为相对路径解析失败了
+  - bases的空内容渲染为 - , 很多cell的内容丢失了
+
+- links
+  - 部分 wikilink 404， 因为相对路径解析失败了， 似乎只能解析同级文件夹下的
 # dev-xp
 - 需要尽早决定 file/link path 的方案
+
+- 加一个标签到 tags 方便用来快速生成bases
+
+- column
+  - 列名如何支持显示为link
 
 - ob公开的 api 包含很多 codmeirror 相关的类型定义
 

@@ -442,6 +442,9 @@ modified: 2026-04-07T12:53:38.419Z
   - Tesseract.js aims to bring the Tesseract OCR engine (a separate project) to the browser and Node.js, and works by wrapping a WebAssembly port of Tesseract.
   - Tesseract.js does not support PDF files and does not modify the Tesseract recognition model to improve accuracy.
   - Scribe.js is an alternative library created to accommodate common feature requests that are outside of the scope of this repo. 
+  - https://github.com/scribeocr/ocr-benchmark /202605/js
+    - This repo contains images and code for benchmarking OCR programs. This benchmark was created to evaluate Tesseract.js and Scribe.js, however it can be used with any OCR program that exports to a supported format (.hocr or Abbyy .xml).
+    - The goal is to include a handful of every document type (e.g. book, academic paper, magazine), document layout (e.g. single column, multi-column, table), and scanning condition (e.g. screenshot, high-resolution scan, low-resolution scan). 
 - https://github.com/scribeocr/scribe.js /234Star/AGPL/202512/js
   - a JavaScript library that performs OCR and extracts text from images and PDFs.
   - Scribe.js includes improvements to the Tesseract recognition model and supports extracting text from PDF documents

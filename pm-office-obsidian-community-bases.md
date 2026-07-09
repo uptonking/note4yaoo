@@ -42,6 +42,20 @@ modified: 2026-06-30T23:04:11.000Z
 
 - ## [A Bases Template for Project Tracking or Task Management - Share & showcase  _202508](https://forum.obsidian.md/t/a-bases-template-for-project-tracking-or-task-management/104249)
 
+# discuss-inline-bases
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Code block displaying incorrectly : r/ObsidianMD _202604](https://www.reddit.com/r/ObsidianMD/comments/1sakmrh/code_block_displaying_incorrectly/)
+  - Occasionally my custom widgets will not render immediately and will instead display as the code block. Usually this resolves pretty quickly.
+- Maybe view mode, live preview vs read
+  - the issue is I want to keep it in "edit" mode so that I can edit my notes but I want my code snippets to behave as intended.
+
 # discuss-issues
 - ## 
 
@@ -107,6 +121,12 @@ modified: 2026-06-30T23:04:11.000Z
 - ## 
 
 - ## 
+
+- ## [Bases: Hide Toolbar (after updating to Obsidian 1.10.3) - Custom CSS & Theme Design - Obsidian Forum _202511](https://forum.obsidian.md/t/bases-hide-toolbar-after-updating-to-obsidian-1-10-3/107901)
+  - a very useful CSS snippet that hides the Bases toolbar in Obsidian.
+- 通过自定义实现类似notion的 block-drag-handle 悬浮图标可作为一种替代方案
+
+- ## [Trying to left-align number properties in a Bases view : r/ObsidianMD _202509](https://www.reddit.com/r/ObsidianMD/comments/1nrc21a/trying_to_leftalign_number_properties_in_a_bases/)
 
 - ## [Bases List View has Potential as Checklist : r/ObsidianMD _202511](https://www.reddit.com/r/ObsidianMD/comments/1oy8n71/bases_list_view_has_potential_as_checklist/)
 - Checklists are my last use case for Dataview, I'd like to get everything unified under Bases but I can't do checklists (to-do, shopping, etc)

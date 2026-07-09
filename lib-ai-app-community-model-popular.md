@@ -34,6 +34,9 @@ modified: 2025-09-16T19:59:57.856Z
 # model-bench
 - tips
   - 注意发布的测评结果的脚注说明， 一般会补充具体的测试数据/条件/设备， 大模型的参数太多， 环境条件稍微不同都可能导致模型效果差异
+  - 主流LLM的榜单一般以 bench为行， 模型为列， 
+    - 而OCR榜单一般以模型为行，bench为列， 但ocr榜单的测试项没有主流LLM榜单规范， 很多榜单都是各测各的
+    - vision作为通用LLM的一种能力，采用主流LLM的行列设计更容易兼容和对比
 
 - model 测评类型
   - Coding
@@ -86,7 +89,13 @@ modified: 2025-09-16T19:59:57.856Z
   - NL2Repo
   - DeepSWE
   - ProgramBench
-  - 
+
+- https://github.com/VyetGokyra/awaresome_LLM_eval_benchmark
+  - 主流bench简介
+  - https://github.com/leobeeson/llm_benchmarks
+  - https://github.com/NaiveNeuron/awesome-multilingual-llm-benchmarks
+  - https://github.com/anadim/llm-benchmark-matrix
+  - https://github.com/terryyz/llm-benchmark
 
 - [OpenCode Data ](https://opencode.ai/data)
   - See which models are winning real usage

@@ -507,7 +507,41 @@ But the best win is automation in building plugins. This was a big pain point be
   - That being said, you can use search to search for specific block IDs, e.g. by typing "^the-block-id".
 
 - You can easily iterate through all files in the vault, read the metadataCache, find entries with blockid if present, and display them. A similar approach can be used to find all links to a specific block. For large vaults with many files, additional optimizations are needed
+# discuss-pattern-notes
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Is it better to use one vault or several? : r/ObsidianMD _202602](https://www.reddit.com/r/ObsidianMD/comments/1rg3i96/is_it_better_to_use_one_vault_or_several/)
+- I'm an advocate of using a single vault unless there's something that forces you to use multiple vaults (encryption, intellectual property issues, work and personal information -- here I suggest different devices that never share the information --, and so on).
+
+- It would spare you the trouble of having to switch from a vault to another or having multiple windows opened.
+  - I personnally have two vaults, one for everything and one for my blog (powered by markdown based static site generator) which has special technical needs.
+  - In any case, any choice you make is not for ever, you can join or split vaults as much as you like.
+- the multiple windows is part of why i like to have multiple myself actually! my vaults are for things i might start and stop working on throughout the day and i like to be able to pick up where i left off without needing to leave a bunch of extra tabs within a vault open.
+
+- Technically if you really wanted to, you could still link to notes in other vaults with the Obsidian URI
+
+- I did something similar. I have two vaults. One for work (I work in tech) and and on for personal. (also a test vault for testing out plugins etcs). My work vault and personal vault are structured almost exactly the same except my work vault has folder call "Admin" (with it's own attachments folder).
+
+- Personally, I find switching between different vaults more trouble than it's worth. I have 2 vaults currently and sometimes I mix up what's in which vault. I also use one vault infrequently, so there's time spent running plugin updates every time I open it. But I think it depends on your needs and workflow.
+
+- I prefer multiple vaults in order to have completely different setups for each + separation like this is how my brain works naturally (i.e. I would never want an all-in-one vault), but that’s just what makes sense to me. No one other than you can tell you what makes sense for you.
+
+- 
+- 
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

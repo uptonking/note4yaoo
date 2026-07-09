@@ -348,6 +348,28 @@ RAG 检索
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [一个不做中转就没必要了解的焚绝 - LINUX DO _202607](https://linux.do/t/topic/2548075)
+- 目前oai和a/对中转的ip都有进行检阅
+a/没办法只能上家宽
+oai目前是比较宽松的
+但是当量达到一定级别以后
+- 你的ip会被封禁，只要你这里的号池补号了，就会立马401被下线
+目前解决方案是，ovh等独服，都有提供ipv6
+只需要把号池出口的代理绑定到ipv6即可
+v6封不完
+
+- 直接按照v6前缀封那不就寄了吗？
+  - 目前来看，还没有这么做，主要是加代理以后，多了一层网络，延迟又更大了
+
+- 到多少量会被封禁啊 累计的还是短时间内并发？
+  - 我是差不多到30B左右，总的
+
+- ipv6虽然一个/48段很多IP, 你能想到, 对方也很清楚, 不封你ip, 直接封你的asn, 嘿嘿
+
 - ## [If you pay for OpenCode Go, 12 of 15 models break on follow-ups. Here's why superior LLMs were having errors. : r/opencodeCLI _202606](https://www.reddit.com/r/opencodeCLI/comments/1uco67e/if_you_pay_for_opencode_go_12_of_15_models_break/)
   - If you're on the OpenCode Go subscription and use anything besides Qwen, you've probably hit this: Turn 1: You ask something. It answers. Turn 2: You follow up. HTTP 400. "The reasoning_content in the thinking mode must be passed back to the API" The Go model list has 15 models. 12 of them - DeepSeek V4 Pro/Flash, Kimi K2.7/K2.6, GLM 5.2/5.1, MiMo V2.5/V2.5 Pro, MiniMax M3/M2.7/M2.5, all produce reasoning traces. Every one of them needs that field present on every assistant message in history. OpenCode strips it. Qwen 3.7 Max/Plus/Plus is the only one that doesn't hit this because it doesn't expose reasoning in the API at all.
   - So if you're paying for Go and using anything other than Qwen, multi-turn conversations are basically broken.
@@ -396,12 +418,12 @@ RAG 检索
 据笔者的使用体验来看，不会，但是会限速。如果您的CODEX被降智，那更多可能是普遍的bug问题而不是您的账户风险。就像Android端，桌面端，CODEX都是分开的风控体系，但也有一定的关联性。CODEX的限速表现在首字token和整体速度下降，但很难完全跟本地网络质量和服务器高载的影响因素脱离，本身这种情况也并不多见。
 
 - 逐点剖析————行为特征
-01.      单次复杂度过高：
+01.        单次复杂度过高：
 Pro Extend Thinking的复杂对话中，具体是5.4超过2小时，5.5超过1小时的高负载任务。其实具体分为两个部分：一个是思考时长[反映的是思考token耗费]，一个是输入输出内容。为什么5.5是1小时，5.4是2小时呢？其实business的限制可以放更长一些。因为Pro订阅的模型token速度更快，business速度要慢，以及5.5的算力平台较新，token速度脱离套餐本身就更快。
-01.      新注册账号：
+01.        新注册账号：
 新注册账号是典型的高风险场景。新注册帐号建议至少7天后再开付费套餐或您的背景特征较优秀，也是完全没问题，但对背景特征(如IP)的要求就较高。
 
-01.      支付方式与地区：
+01.        支付方式与地区：
 低价区也是风控的高峰，但这里，OPENAI对于支付地区的权重远比支付方式要高得多。Anthropic对于支付方式和支付地区抓的都严[如果想要听后续可以出Anthropic版本]。OPENAI对于低价区的风控水平明显高于其他地区，比如土区、菲区，误杀也会显著增加。
 
 - 逐点剖析————背景特征

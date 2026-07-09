@@ -32,6 +32,8 @@ modified: 2024-08-24T16:15:11.456Z
   - 有很多原理深度解析的技术博客
   - 🔄 sync settings/extensions/chats
   - multiple-windows/clients: 默认支持多开窗口
+  - local edit history: 本地编辑缓存对于跨日期的undo/redo很有用
+  - settings search: obsidian过了几年才实现这个功能
 
 - cons
   - insecure/non-sandboxed by design, 但微软设计就是如此，支持在本地或远程执行代码

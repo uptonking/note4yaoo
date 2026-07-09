@@ -20,6 +20,46 @@ modified: 2024-01-02T07:50:05.847Z
 
 ## v
 
+## [v12.0.0 _20260709](https://github.com/npm/cli/releases/tag/v12.0.0)
+
+- npm now supports node ^22.22.2 || ^24.15.0 || >=26.0.0
+
+- The default license for `npm init` has been changed from "ISC" to an empty string.
+
+- [Preparing for npm v12: install scripts and non-registry sources become opt-in  _202606](https://github.com/orgs/community/discussions/198547)
+  - Install scripts are off by default. preinstall, install, and postinstall from dependencies won't run unless explicitly allowed.
+  - allow-git and allow-remote now default to "none"; set them to "all" (or "root") to install git or user-supplied tarball-URL dependencies.
+  - --allow-file and --allow-directory exist too, but their defaults are not changing in v12.
+  - root `preinstall` now runs before dependencies are installed.
+- 💡 可临时使用旧版npm `npm i -g install npm@11.15.0`
+
+- unknown configs in .npmrc, unknown CLI flags, abbreviated flags, and single-hyphen multi-char shorthands now throw instead of warning.
+
+- npm view --json now always returns an array.
+- The npm pkg output is no longer forced to json. 
+- the --json output of npm pack and npm publish have changed. They are now always consistent, and in the same format.
+- npm shrinkwrap is removed, the shrinkwrap config alias is removed, and npm-shrinkwrap.json is no longer loaded or honored at the project root or from inside dependency tarballs. 
+  - Rename project-root npm-shrinkwrap.json to package-lock.json; 
+  - use `bundleDependencies` if you need to ship a locked dependency tree.
+- the star, stars and unstar commands have been removed
+
+- Preserve https protocol when working with git
+
+- 
+- 
+- 
+
+## [v11.0.0 _20241217](https://github.com/npm/cli/releases/tag/v11.0.0)
+
+- npm now supports node ^20.17.0 || >=22.9.0
+
+- When publishing a package with a pre-release version, you must explicitly specify a tag.
+- --ignore-scripts now applies to all lifecycle scripts, include prepare
+- The `npm hook` command has been removed
+
+- 
+- 
+
 ## [v10.0.0_v20230901](https://github.com/npm/cli/releases/tag/v10.0.0)
 
 - require nodejs v18.17.0 || v20.5.0
