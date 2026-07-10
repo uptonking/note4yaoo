@@ -18,7 +18,12 @@ modified: 2026-06-30T23:04:11.000Z
 
 - ## 
 
-- ## 
+- ## [A CLI tool for reading Bases files + mdbase-spec: a specification for treating a vault as a typed, queryable database : r/ObsidianMD _202601](https://www.reddit.com/r/ObsidianMD/comments/1qs1juw/a_cli_tool_for_reading_bases_files_mdbasespec_a/)
+  - I've been developing a specification, mdbase-spec, that defines how a folder of markdown files with YAML frontmatter can be treated as a typed, queryable data collection, and the CLI is a small implementation of it. 
+  - Obsidian's management of that collection of files is well executed. It is straightforward to create new files and add properties to those files through the frontmatter. Renaming a file will update references to that file in other files, which is one powerful feature that always makes me nervous to edit my markdown notes in other applications. The property system is well designed: all properties are user-defined, users specify the types of the properties, and that type is enforced (flexibly) across all notes, with values for a given property autosuggested based on existing values across the vault.
+  - This is what mdbase tries to address. The core idea is that types should be defined as files---specifically, markdown files in a _types/ folder, where the frontmatter declares the schema and the body can document the type in plain prose. 
+  - A template then becomes a consequence of a type definition rather than a substitute for one, and validation can happen at write time rather than only at creation time. And because type definitions are just files in the vault, they are versioned with everything else, human-readable, and editable in any text editor.
+  - The spec---mdbase-spec---defines how those type files, and the collection they describe, should be interpreted, so that different tools can treat them in the same way. It covers the things that tools like Obsidian currently handles in its own manner: how files are matched to types (explicitly by a type field, or automatically via path globs, field presence, or conditions on field values, and a single file can match multiple types); an expression language for filtering, sorting, and computed fields, with property access, string and list methods, date arithmetic, and the ability to traverse links (this is modelled on Obsidian's Bases syntax); how links are parsed and resolved across wikilinks, markdown links, and bare paths, and how references are updated when a file is renamed; and the semantics of create, read, update, delete, and rename operations, including how defaults are applied and when validation occurs. The expression syntax is designed for compatibility with the syntax that Obsidian Bases uses, which seemed like the reasonable choice given the audience that is most likely to care about this.
 
 - ## [Is there really not any way to make bases query something smaller than a file? : r/ObsidianMD _202508](https://www.reddit.com/r/ObsidianMD/comments/1mxlibf/is_there_really_not_any_way_to_make_bases_query/)
 - Obsidian has always considered notes to be the smallest unit. You cannot assign tags to blocks, you cannot assign properties to blocks, you cannot meaningfully link from a block to a note (the backlink shows the note, not the block), and you can only link to a block as part of a note.
@@ -87,6 +92,61 @@ modified: 2026-06-30T23:04:11.000Z
 
 - Does Dataview currently have an API ?
   - It appears to! Even an integration that renders dynamic Dataview queries would be neat, but probably ways to take advantage of connecting the two at the API layer
+# discuss-view-table
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-view-list
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-view-card
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Card view for Bases with no header - Feature archive - Obsidian Forum _202510](https://forum.obsidian.md/t/card-view-for-bases-with-no-header/106615)
+  - The card view is great, but I don’t want the header.
+- I use the following CSS snippet to do this per-page
+
+- ## [Improve compatibility of Bases Cards with CSS Snippets - Custom CSS & Theme Design - Obsidian Forum _202508](https://forum.obsidian.md/t/improve-compatibility-of-bases-cards-with-css-snippets/104590)
+  - Hide the property labels.
+  - Show longer text without the overflow being hidden.
+  - Current workaround: Properties can be moved around using `transform: translate()` or by overriding top, left etc. with !important. The variable --bases-cards-line-height is useful for offseting vertically.
+
+- CSS layouts like flex or grid won’t work—the elements don’t flow; they’re locked to specific coordinates. Card height is fixed, so even if you reposition elements or show longer text, you can get clipping or blank space. Property labels and values can be targeted via CSS, but some tricks are needed for dynamic styling based on values.
+
+- All that’s missing for this kind of elegant CSS styling is a way to manually specify the card height. 
+# discuss-view-map
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # discuss-properties/schema
 - ## 
 
@@ -111,6 +171,35 @@ modified: 2026-06-30T23:04:11.000Z
   - I found Metadata Menu really helpful for this; I configured it to understand the structure of properties I want in each folder and use that to ensure a new file has the right properties. My use cases are pretty light at the moment so I haven’t built templates; I just make a new file on the right directory and use Metadata Menu to inject the desired properties.
 
 - I do exactly the same. And I also have a script that validates all objects conform to a given schema (like making sure person has a worksFor attribute and stuff like that.)
+# discuss-image
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How can I display images in table view databases? : r/ObsidianMD _202605](https://www.reddit.com/r/ObsidianMD/comments/1tcidg3/how_can_i_display_images_in_table_view_databases/)
+- Use the `image` function
+  - Will you please consider making image() work with list properties, so multiple images can be displayed in a single cell?
+
+- I had to figure this out recently so here's a step by step for non-technical people (such as myself!):
+  - Your files must have the image as a frontmatter property. In this example I'll name that property "pic". When you assign an image to that property, make sure the image is somewhere in your vault and link to it. Example: "[[photo.jpg]]".
+  - In the Base, make a new formula using the Properties dropdown in the upper right corner. Give it a descriptive name such as cover_photo. Then paste in this formula: image(pic) - where "pic" is whatever name you gave to the image property. The word "image" refers to a function so it will always be the same.
+  - You should see a column named cover_photo populated with the images you linked to in each file's "pic" property. If you don't, check the image format. Not all formats work but at least JPG and PNG should be a safe bet iirc.
+
+- I've managed to add my already existing cover property using the formula, but it shows as a very small picture. How do i change that?
+  - The images scale to match the table’s row height, which you can adjust via Select view → Configure View → Row Height
+
+- In addition to everything said so far, I distinctly remember the property name first-image from a very useful formula someone once posted here:
+
+first_image: if(image, image, file.embeds.filter(value.containsAny("png", "jpg", "webp", "svg", "jpeg", "gif"))[0])
+
+This retrieves the first image embedded in your note if there isn't anything linked in the image property.
+
 # discuss-tips
 - ## 
 
@@ -120,7 +209,8 @@ modified: 2026-06-30T23:04:11.000Z
 
 - ## 
 
-- ## 
+- ## [Bases: Why can't you edit the file's name and properties inside the table without opening each file? : r/ObsidianMD _202509](https://www.reddit.com/r/ObsidianMD/comments/1navacf/bases_why_cant_you_edit_the_files_name_and/)
+- You can directly edit properties without opening the file. The file name is possible with right click on the title, rename.
 
 - ## [Bases: Hide Toolbar (after updating to Obsidian 1.10.3) - Custom CSS & Theme Design - Obsidian Forum _202511](https://forum.obsidian.md/t/bases-hide-toolbar-after-updating-to-obsidian-1-10-3/107901)
   - a very useful CSS snippet that hides the Bases toolbar in Obsidian.

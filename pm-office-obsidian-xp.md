@@ -33,6 +33,7 @@ modified: 2026-06-30T17:32:43.131Z
     - 文件架构限制，导致难以实现交换行列， 而benchmark场景有此需求
     - 不支持拖拽排序, 不能在指定位置插入行/列
     - 不支持拖拽导致不支持kanban
+  - css-snippets的样式设置是 per-page 的, 同一页面内的元素/bases难以实现不同样式
   - settings-sync 
   - 未提供统一的多语言切换方案
 
@@ -106,12 +107,19 @@ modified: 2026-06-30T17:32:43.131Z
 - css-snippets
   - 调整bases左对齐是全局调整, 修改样式粒度太广, 如何部分左对齐、部分居中
 
+## openbases spec
+
+- mdbase
+
 ## bases
+
+> a base file is a live query language for the stateful(persisted) markdown files.
 
 - later
   - migrate popular notion-database to ob-bases
-  - export bundle: 将.base文件和相关文件一起导出
   - 有时会显示过期数据
+- export bundle: 将.base文件和相关文件一起导出
+- export view result: 可参考dataview的serializer
 
 - group
   - 另一种显示方式是组名不显示在分组上方，而是作为合并单元格显示在左边，这样内容区就显示为连续的表格了
@@ -193,6 +201,16 @@ modified: 2026-06-30T17:32:43.131Z
 - database的技术方案可参考agentfs+just-bash, 以数据库作为数据源，导出文件如markdown方便ai理解
 
 ## publish-quartz
+
+- pros
+  - 支持 wikilinks/backlinks
+  - 支持 Bases
+  - 支持 graph view
+  - 支持 mermaid
+
+- cons
+  - 虽然自身ui支持i18n, 但似乎不支持多语言版本的文档
+  - 需要用户symlink/copy内容， 改变用户的习惯， 设计成用户无感更好
 
 - features
   - bases formula计算的列能正常渲染

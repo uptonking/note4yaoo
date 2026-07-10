@@ -9,7 +9,42 @@ modified: 2022-08-30T22:01:29.263Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-pagination
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [A new text editor with pagination - Show - discuss. ProseMirror _202409](https://discuss.prosemirror.net/t/a-new-text-editor-with-pagination/6667/6)
+  - https://www.badon.app/
+  - https://github.com/BadonWriter  /未开源_202607
+  - it comes with a completely new way of approaching the pagination problem, and thus it can even handle long documents (~300+ pages), with headers and footers.
+  - It’s not a 100% finished, The project will be open sourced in the short future.
+  - The pagination largely relies on CSS for the bulk of the layout work, so there’s no node splitting and barely any calculation related to height and width dimensions, which is why it’s quite performant. There are a few drawbacks though, as every element must adhere to specific constraints (I had to write a table plugin from scratch).
+
+- 
+- 
+
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

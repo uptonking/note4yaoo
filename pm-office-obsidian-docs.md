@@ -25,9 +25,17 @@ modified: 2026-06-30T17:32:52.416Z
   - Properties allow you to organize information about a note. 
   - Properties contain structured data such as text, links, dates, checkboxes, and numbers. 
   - Once you add a property, a row will appear at the top of the file with two inputs: the property name and the property value.
-  - property types: Text List Number Checkbox Date Date & time Tags
   - Once a property type is assigned to a property name, all properties with that name across your vault will use the same type.
-- Frontmatter is a way to define properties by adding YAML or JSON at the top of the note.  
+- property types: Text List Number Checkbox Date Date & time Tags
+- Obsidian comes with a set of default properties:
+  - tags, aliases, cssclasses
+- Frontmatter is a way to define properties by adding `YAML` or `JSON` at the top of the note.  
+  - While we recommend using YAML to define properties, you can also define properties using JSON
+  - Note that the JSON block will be read, interpreted, and saved as YAML.
+- A few features are not currently supported in Obsidian:
+  - Nested properties: To view nested properties, we recommend using the source mode.
+  - Bulk-editing properties: For in-depth bulk editing outside of Properties view, we recommend using bulk-editing tools like VSCode, scripts, and community plugins.
+  - Markdown in properties: This is an intentional limitation as properties are meant for small, atomic bits of information that are both human and machine readable.
 
 - An alias is a type of property that defines alternative names for a note.
 
@@ -45,6 +53,8 @@ modified: 2026-06-30T17:32:52.416Z
   - You can download an attachment directly to your vault, for example if you import from your browser, or from other apps that saves files directly to your file system.
 
 - A tag is a word that starts with a hash (#), for example #book. Tags are primarily used to find related notes.
+  - Tags can't contain blank spaces. 
+  - To separate two or more words, you can instead use the following formats: #camelCase #PascalCase #snake_case #kebab-case
 
 - Templates is a core plugin that lets you insert pre-defined snippets of text into your active note.
   - You can add dynamic information to your templates, using template variables. 

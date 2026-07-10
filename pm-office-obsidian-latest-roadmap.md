@@ -125,6 +125,33 @@ modified: 2026-06-30T22:55:02.169Z
   - 小脑筋又开始思考“笔记软件”，或者是“资料库”软件……
 
 - pptx和docx，本质上是一个压缩包，里面是xml和素材，obsidian换个角度就是一个超大的word文档
+# discuss-feature-requests
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Support for YAML dictionaries as nested properties - Help - Obsidian Forum _202603](https://forum.obsidian.md/t/support-for-yaml-dictionaries-as-nested-properties/112440)
+  - I have properties like sleep_wakeup_time, sleep_bedtime, sleep_score and sleep_duration. Adding more metadata leads to a long list that is cluttered and hard to navigate.
+  - Current workaround (optional): A possible workaround is to split related properties to different notes, e.g. to accompany a daily note with a daily sleep data note, or just a data note.
+
+- [Properties & Bases: Support multi-level YAML (Mapping of Mappings, nested attributes, nested properties) - Feature requests - Obsidian Forum _202307](https://forum.obsidian.md/t/properties-bases-support-multi-level-yaml-mapping-of-mappings-nested-attributes-nested-properties/63826)
+- This issue is too broad. Half the posts are about displaying and editing multi-level YAML, half the posts are about not overriding existing multi-level YAML. Several plugin ‘solutions’ only tackle the first half, while nothing seems to attempt to fix the second half.
+  - There are layers and layers of functionality built onto reparsing and editing the frontmatter. There’s no way to prevent frontmatter edits with “Source mode” properties, even when the operation being performed is as trivial as find-and-replace of a specific string, for some reason it pulls in the entire frontmatter.
+
+- 
+- 
+- 
+- 
+- 
+
 # discuss-pm-painpoints
 - ## 
 

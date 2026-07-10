@@ -338,6 +338,21 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0709
+
+- project `modelbase-power`(in current folder) aims to support to create/update Obsidian Flavored Markdown files in folder `../modelbase` by scripts in `./modelbase`. 
+- the current goal is to write configurable/extensible workflow scripts in typescript to automate this process: first read data from sources like `~/Documents/repos/ai-ml-llm/all-router-token/modelpedia/packages/data`, then parse the data, then write the transformed markdown to target folder like `../modelbase/providers/vendors`. For example, source data like `/Users/yaoo/Documents/repos/ai-ml-llm/all-router-token/modelpedia/packages/data/providers/deepseek/_provider.json` ended up to be create/update a file `/Users/yaoo/Documents/repos/yaoo/modelbase/providers/vendors/DeepSeek.md`. you might read and understands the example source/target data format first, then write ts scripts like ``./modelbase/model-providers-port.ts` to automate this process. the default automation should work only for `_providers.json` files that contains popular models like `Claude/OpenAI/Gemini/Mistral/DeepSeek/GLM/zai/moonshoot/minimax/qwen/kimi` , make these configs all configurable in `./.env` file with sensible defaults for use out of the box. fields from `_providers.json` files that can be ignored when porting : sdk, free_tier. merge values of discord_url/support_url to `Community URL` field. Try to perfer using YAML list for property values in Obsidian Flavored Markdown files. Field Names should try to use the names like in example file `/Users/yaoo/Documents/repos/yaoo/modelbase/providers/vendors/DeepSeek.md`, missing values just leave empty.
+- you should make the task running scripts extensible to make it easy to add more automation scripts later.
+
+- business code in current folder might be ignored, but you might reuse the dependencies and npm toolchain.
+
+- the target provider file name may just use the name field  in _provider.json. when i run the scripts multiple times, The script should only update the values from source data fields to target markdown yaml fields that value has changed. If the field values are unchanged, the update can be skipped.
+- you should parse source .json objects and targe .md yaml properties, only update the fields that value has changed when running the scripts multiple times. if value is not changed, skip the update.
+
+- i tried the automation scripts several times. some improvements need to implement. 
+  - for the fields/properties/values that exist both in source .json files and target  .md yaml, when you parse and compare what have changed, please relax the equals condition, ignore changes of properties order and values order. if i change the properties order or values order in targe .md files, as long as the value content is equal, the update should be skipped.  when values do change, only update the changed properties/values in place, do not do full overwrite. 
+  - for the properties that values is empty in source .json files but target .md files have values,  or the properties is non-existent in source .json files but target .md have new properties, running the port scripts should not remove the new values, update should be skipped.
+
 ## 0704
 
 - 🤔 running `git status` in this folder hangs, there seems to be some issue with this git repo.

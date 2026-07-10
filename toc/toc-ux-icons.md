@@ -434,6 +434,10 @@ modified: 2021-05-06T09:58:23.803Z
   - Next.js 16, shadcn/ui
   - https://x.com/preetsuthar17/status/2035251357855502604
     - Loftlyy is now open-source
+
+- https://github.com/lobehub/lobe-icons /2.2kStar/MIT/202607/ts
+  - https://icons.lobehub.com/
+  - Popular AI / LLM Model Brand SVG Logo and Icon Collection.
 # qrcode/barcode
 - https://github.com/productdevbook/etiket /MIT/202603/ts/NoDeps
   - Zero-dependency barcode & QR code SVG generator. 

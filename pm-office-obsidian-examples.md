@@ -102,16 +102,30 @@ modified: 2026-04-07T00:47:33.626Z
     - plugin that compiles notes into a structured Wiki using LLMs, inspired by Karpathy's LLM Knowledge Bases
 # feat-bases/kanban
 - https://github.com/callumalpass/mdbase-spec /81Star/MIT/202605/python/js
+  - https://mdbase.dev/spec.html
   - https://mdbase.dev/
   - A specification for treating a folder of markdown files with YAML frontmatter as a typed, queryable data collection.
   - If you use Obsidian (or a similar tool) and you've accumulated notes for meetings, contacts, projects, reading, journal entries, and so on, each with frontmatter fields, your vault is functioning as a database. The property system encourages this: you define fields, assign types, and the tool enforces them across files. But the tooling for managing that structure is limited. 
-  - There is no schema file that lives alongside your notes. 
-  - This means each tool that touches your vault---Obsidian itself, an editor, a templating plugin, an AI agent---has to independently work out what your types are, or you have to tell each one separately. 
+  - There is no schema file that lives alongside your notes. This means each tool that touches your vault---Obsidian itself, an editor, a templating plugin, an AI agent---has to independently work out what your types are, or you have to tell each one separately. 
   - 💡 mdbase-spec tries to address this. The core idea is that types are defined as files---markdown files in a _types/ folder, where the frontmatter declares the schema and the body can document the type in prose. 
     - A template becomes a consequence of a type definition rather than a substitute for one, and validation can happen at write time rather than only at creation time. 
+  - This specification was designed with Obsidian Bases compatibility as a goal. Many expression and query patterns are directly compatible. Extended Features: 
+    - Type definitions as markdown files (version-controlled schemas)
+    - Formal validation with error codes and levels
+    - CRUD operations specification
+    - Rename with reference updates
+    - Generated fields (ULID, UUID, timestamps)
+    - Filename patterns with slug generation
+    - Match rules for automatic type assignment
+    - Nested collection detection
   - The spec defines how those type files, and the collections they describe, should be interpreted, so that different tools can treat them consistently.
+    - It covers type definitions and inheritance, file-to-type matching (by explicit declaration, path globs, or field presence), an expression language for filtering and sorting (designed for compatibility with Obsidian Bases syntax), link parsing and resolution, and the semantics of create, read, update, delete, and rename operations.
   - A collection is a folder containing an mdbase.yaml config file, a _types/ folder with type definitions (themselves markdown files), and any number of markdown content files. 
   - Conformance levels: Implementations can claim partial conformance. Each level requires all previous levels.
+  - CLI tools for querying, validating, and manipulating markdown collections
+    - Editor plugins (for Obsidian, VS Code, etc.) that provide validation, autocomplete, and query interfaces. The expression syntax is designed for compatibility with Obsidian Bases.
+  - Hugo content mostly works directly. Define types that match your content structure.
+  - Notion databases export properties as frontmatter
   - https://discord.com/channels/1219902517304098836/1219902517304098841/1507266524291793019
     - Interesting YAML query language for markdown
     - Deriving directly from .base format might still be better for familiarity tho.
@@ -123,6 +137,10 @@ modified: 2026-04-07T00:47:33.626Z
     - A workout tracking application that stores all data as markdown files with YAML frontmatter, managed by mdbase.
     - This project is an implementation of mdbase-spec.
   - [A CLI tool for reading Bases files + mdbase-spec: a specification for treating a vault as a typed, queryable database : r/ObsidianMD _202601](https://www.reddit.com/r/ObsidianMD/comments/1qs1juw/a_cli_tool_for_reading_bases_files_mdbasespec_a/)
+  - [Why not use JSON Schema for frontmatter validation?  _202603](https://github.com/callumalpass/mdbase-spec/issues/14)
+    - Type matching is one place where this shows up quickly. A schema is not always chosen explicitly by the caller. A file can pick up a type from its path, from the presence of certain fields, or from a match condition. More than one type can apply at once, and explicit type keys change the flow again. JSON Schema can validate once you know which schema to apply, though the logic that decides which schema applies would still need to live somewhere else.
+    - The multi-type case seems important too. When two types describe the same field differently, mdbase defines what happens: some constraints tighten by intersection, some settings must agree exactly, and some combinations are errors. JSON Schema composition can express “must satisfy both,” though it does not really capture mdbase’s multi-type merge rules or conflict behavior.
+    - JSON Schema compatibility still seems worth pursuing, just not as the primary model. A more plausible direction might be derivation: tooling could generate a JSON Schema from the subset of an mdbase type that maps cleanly to JSON Schema, covering ordinary fields and constraints while leaving collection-specific behavior in mdbase itself. That would capture some ecosystem benefits without requiring the spec to use JSON Schema as the canonical source of truth.
 
 - https://github.com/rafafields/Obsidian-Base-Hub /202601/inactive
   - A modular Obsidian vault leveraging native Bases to replicate Notion-like database functionality for personal project and task management.
@@ -253,6 +271,11 @@ modified: 2026-04-07T00:47:33.626Z
   - https://github.com/Fertion/Bases_Link_Structure
     - plugin for managing link-based note hierarchies. Adds a Structure view for Bases that displays notes as a draggable tree, built on the up property.
 
+- https://github.com/sean2077/obsidian-bases-paginator /BSD/202603/ts
+  - adds a paginated table view with column filtering capabilities 
+- https://github.com/ghyatt/bases-collapsing-group-table
+  - add a Table that supports collapsable groups. Also: on demand, accordion, and collapse all.
+
 - https://github.com/j-palindrome/obsidian-time-ruler /MIT/202606/ts
   - Time Ruler combines the best parts of a nested tasklist and an event-based calendar view. Drag-and-drop tasks to time-block and reschedule, and view tasks on top of read-only online calendars. 
   - Integrates well with the Tasks, FullCalendar, Reminder, and Obsidian Day Planner plugins.
@@ -266,11 +289,6 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/tgrosinger/advanced-tables-obsidian
   - Improved table navigation, formatting, and manipulation in Obsidian.md
-
-- https://github.com/sean2077/obsidian-bases-paginator /BSD/202603/ts
-  - adds a paginated table view with column filtering capabilities 
-- https://github.com/ghyatt/bases-collapsing-group-table
-  - add a Table that supports collapsable groups. Also: on demand, accordion, and collapse all.
 
 - https://github.com/grub-basket/CSV-to-Obsidian-Properties-for-Bases /MIT/202606/js
   - csv2bases:  https://fork-archive-hub.github.io/CSV-to-Obsidian-Properties-for-Bases/
@@ -769,6 +787,10 @@ modified: 2026-04-07T00:47:33.626Z
   - features: Breadcrumbs, Canvas
   - Folder Listings: generate an index page for all the pages under a folder
   - Private Pages: By default, Quartz uses the RemoveDrafts plugin which filters out any note that has `draft: true` in the frontmatter.
+  - 🌹
+    - 通过自身插件来支持ob社区受欢迎的插件
+  - 🐛 
+    - 虽然自身ui支持i18n, 但似乎不支持多语言版本的文档
   - [Obsidian Compatibility ](https://quartz.jzhao.xyz/features/obsidian-compatibility)
     - Quartz was originally designed as a tool to publish Obsidian vaults as websites. the scope of Quartz has widened over time
     - ObsidianFlavoredMarkdown plugin: support for features like wikilinks and Mermaid diagrams
@@ -1072,6 +1094,15 @@ modified: 2026-04-07T00:47:33.626Z
   - Plugin for social-scientific Qualitative Data Analysis (QDA). 
   - An open alternative to MAXQDA and atlas.ti, using Markdown to store data and research codes.
 # feat-organzing
+- https://github.com/DuckTapeKiller/obsidian-bulk-tag-manager /MIT/202606/ts
+  - A comprehensive utility to standarize the entire front matter. Features a dashboard for bulk renaming, enforcing casing rules (lowercase/uppercase), swapping separators (snake/kebab), and generating master tag lists.
+  - This plugin incorporates and extends the context menu and tag page functionality originally created by pjeby in the Tag Wrangler plugin.
+  - This plugin contains a History system that allows you to undo any operation. However, if you are about to perform a destructive bulk process, it is recommended that you backup your vault before running bulk operations.
+  - https://github.com/OlegLustenko/obsidian-bulk-rename /MIT/202302/ts/inactive
+    - rename a bunch of files from the directory and all references also will be updated across the vault.
+- /https://github.com/pjeby/tag-wrangler /ISC/202505/js/inactive
+  - This plugin adds a context menu for tags in the Obsidian.md tags view
+
 - https://github.com/Agents365-ai/obsidian-ai-tagger-universe /MIT/202606/ts
   - plugin that leverages AI to automatically analyze note content and suggest relevant tags, supporting both local and cloud-based LLM services.
 
@@ -1544,8 +1575,10 @@ modified: 2026-04-07T00:47:33.626Z
   - It helps you build rich markdown-powered sites easily
   - Parses your markdown files to extract structured data (frontmatter, tags etc) and creates an index in a local `SQLite` database
   - Provides a lightweight javascript API for querying the database and importing files into your application
+  - ❓ 似乎不支持obsidian bases
 
 - https://github.com/intellectronica/mdbasequery /MIT/202602/ts
+  - CLI and library for querying Markdown-Frontmatter bases (Obsidian-compatible).
   - an Obsidian Bases-compatible query engine for Markdown vaults.
 
 - https://github.com/kiwifs/kiwifs /656Star/BSL/202606/go/ts
@@ -1646,6 +1679,10 @@ modified: 2026-04-07T00:47:33.626Z
   - The mirror of obsidian-export: where obsidian-export converts Obsidian notes to PDF/DOCX, obsidian-import converts external documents into Obsidian-ready markdown with YAML frontmatter.
   - https://github.com/neuralsignal/obsidian-export
     - Convert Obsidian-flavored Markdown to PDF and DOCX
+
+- https://github.com/brandonhorst/materialize-base /MIT/202510/ts/inactive
+  - CLI utility to materialize an Obsidian Base (read the query and output the results) as a Markdown table
+  - CLI Utility and Claude Skill for reading an Obsidian Base file, querying its Vault, and returning the the specified table formatted as Markdown.
 
 - https://github.com/ShrekBytes/advanced-pdf-export /GPL/202606/ts
   - Export Obsidian notes as pixel-perfect PDFs with six style presets, manual page breaks, full layout control, and a live preview — all from a full-screen modal panel.
@@ -1777,6 +1814,7 @@ modified: 2026-04-07T00:47:33.626Z
 - https://github.com/Ar9av/obsidian-wiki /2.4kStar/MIT/202606/python/js
   - Framework for AI agents to build and maintain a digital brain through Obsidian wiki using Karpathy's LLM Wiki pattern
   - The pattern comes from Andrej Karpathy's LLM Wiki gist: compile knowledge once into interconnected markdown files and keep them current, instead of asking an LLM the same questions over and over (or running RAG every time). Obsidian is how you see the brain. Your AI agent is how you grow it.
+  - /wiki-dashboard	Create dynamic Obsidian Bases dashboard views
 
 - https://github.com/green-dalii/obsidian-llm-wiki /MIT/202606/ts
   - Karpathy's LLM Wiki implementation - multi-page knowledge generation with entity/concept pages and conversational query.
