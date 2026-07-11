@@ -64,6 +64,28 @@ modified: 2026-04-20T00:36:02.064Z
 
 # more
 
+# superdoc-arch-v2
+
+- 🤔 superdoc editor is built with a extensible editing architecture that is modular, headless, and agent-friendly.
+  - there is a v1 editor at `packages/super-editor/src/editors/v1`. please analyze superdoc editor core architecture/data-flow/logic, then explain to me whether it is possible to implement a v2 editor using the Document API and without using prosemirror ? Is the Document API or  adapter API able to help to implement a v2 editor ?
+  - is there a editing Document API / adapter API in begonia like superdoc Document API / adapter API ?
+  - begonia should implement a modular/extensible/headless architecture just like superdoc, but in functional programming style. if begonia's architecture is extensible/flexible enough now, is it possible to refactor/improve the begonia architecture to implement a v2 functional edtior without prosemirror?
+
+- Superdoc can support a v2 editor without ProseMirror, but not by reusing the current v1 internals unchanged. Its DocumentApi is genuinely adapter-driven at the API boundary
+  - The encouraging part is that Superdoc’s headless toolbar/UI already depend on a narrow host contract plus doc access, and the UI controller also uses a structural editor-like contract
+  - But v1 itself is still ProseMirror-centric and its adapter assembly is tightly wired to that runtime 
+  - ProseMirror is still the actual v1 editor state, not just a thin compatibility backend. It maps XML to a ProseMirror schema.
+
+- Begonia is using ProseMirror even more centrally than just the browser editor layer. The headless mutable document port is typed as ProseMirrorNode. Engine normalization is PM-node based. The browser selection adapter is also PM-state driven.
+  - Begonia already has a strong Document API, but it does not yet have a full editing adapter API like the role Superdoc’s adapter bag plays. But editor-adapters is still mostly layout/ projection oriented, and the browser selection bridge is still explicitly ProseMirror-based.
+  - Begonia can be refactored into a modular, headless, functional v2 editor without ProseMirror, but only as a staged migration. 
+  - The biggest blocker is deeper than the browser layer: Begonia’s engine normalization, document service, and headless mutable document port still use ProseMirrorNode as the canonical document type.
+
+- 
+- 
+- 
+- 
+
 # 📌 docx-editor
 
 ## architecture

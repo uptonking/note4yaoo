@@ -2051,7 +2051,7 @@ modified: 2026-06-20T15:49:57.019Z
 - [鹰鹰发卡](https://fk.apiway.cc/)
   - 下单前请检测自己的号有没有试用资格，如果拿没有试用资格的普号导致无法升级
 
-## 中转站
+## 中转站/router
 
 - tips
   - 很多中转站带有峰值倍率和闲时倍率, 夜间多用闲时倍率, 白天可用半公益站
@@ -2111,14 +2111,18 @@ modified: 2026-06-20T15:49:57.019Z
   - 充值地址 https://nikoapi.xyz/shop
   - 加群可领取1刀体验
 
-- [莫比乌斯 2Chat /Sub2API](https://2chat.cc/keys)
-  - 低倍率渠道， 夜晚可用性低
+- [莫比乌斯 2Chat /Sub2API](https://2chat.cc/keys), 已充值
+  - 低倍率渠道
+
+- 咩咩的中转
+  - [ₒ⦁⩊⦁ₒ - 千寻寄售服务平台 ](https://www.qianxun1688.com/details/D5A18D58)
 
 - [Code-Plan  /NewAPI](https://code-plan.site/pricing), 已充值
   - [GPT-源头供货-招代理的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/IY16OXB7)
   - AMD 顶级服务器 + 10Gbps 带宽
 
 - [DataCodex ](https://api.datacodex.net/keys), 已充值
+  - 中等价格
 
 - [数智AI ](https://api.xpluse.plus/pricing)
 - [AI来了 ](https://api.ailaile.site/)

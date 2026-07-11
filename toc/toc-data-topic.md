@@ -118,6 +118,14 @@ modified: 2020-06-22T09:23:56.117Z
 # ebook
 - [资源资讯：全球免费开放的电子图书馆-清华大学公共管理学院](https://www.sppm.tsinghua.edu.cn/info/1072/1251.htm)
   - [公共版權電子圖書](https://web.lins.fju.edu.tw/mao/works/pdbooks.htm)
+# docx
+- [docx-corpus - The largest open DOCX dataset and document corpus](https://docxcorp.us/dataset)
+  - It contains 736, 000+ real .docx files collected from Common Crawl, validated, deduplicated, and labeled by document type and topic. It is the first large-scale research dataset for DOCX
+  - Each document has a content hash, file size, detected language, and a type and topic label from a fine-tuned XLM-RoBERTa text classifier. 
+  - The corpus spans 46+ languages and uses a 10-type, 9-topic taxonomy. Available as a HuggingFace dataset, a REST API at api.docxcorp.us, and downloadable manifest files. 
+  - https://huggingface.co/datasets/superdoc-dev/docx-corpus
+  - https://api.docxcorp.us/stats
+  - https://github.com/superdoc-dev/docx-corpus /MIT
 # geo
 - 现地名，古地名，如南京-建业(三国)
 - 地名，车牌号 的对应关系(如浙A)

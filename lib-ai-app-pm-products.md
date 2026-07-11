@@ -274,6 +274,9 @@ modified: 2025-03-22T16:10:24.856Z
 - 
 
 # draft
+- usecases(有特色不代表有需求)
+  - 使用频率: markdown > editor > ocr
+
 - toB-ai
   - 企业需要支持快速集成现有系统、权限、日志审计
 
@@ -490,7 +493,7 @@ modified: 2025-03-22T16:10:24.856Z
     - parallel tasks
   - gui
     - better revert/checkpoint
-# 💎 modelpedia - 模型参数对比, 历史评测结果, 能免费对比最新参数及上一个版本
+# 💎 modelbase - 模型参数对比, 历史评测结果, 能免费对比最新参数及上一个版本
 - free-model-today
   - 基于 github-action 自动更新各平台的免费模型
 
@@ -601,6 +604,10 @@ modified: 2025-03-22T16:10:24.856Z
 - pdf
   - gitbook-like viewer, mdBook, sharing without editing
   - LiteParse Grid Projection Algorithm
+
+- wikilinks扩展: pdf-bbox, 支持preview, 甚至可以显示为截图内容
+  - 引用pdf内容的场景都可以使用类似wikilinks的设计 + preview
+  - 还可以优化图片pdf的搜索体验
 
 - translation
   - 基于ai的翻译对比阅读， 支持部分翻译(四六级)

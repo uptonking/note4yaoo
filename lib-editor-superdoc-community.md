@@ -36,8 +36,12 @@ modified: 2026-04-20T00:35:49.933Z
 - ## 
 
 - ## [Chinese IME input intermittently fails _202603](https://github.com/superdoc-dev/superdoc/issues/2581)
-- We found the issue - the editor sometimes drops or reverts Chinese characters mid-input. The root cause is a limitation in the editing engine we use today, which we're replacing as part of a bigger upgrade already underway.
+- 👷 We found the issue - the editor sometimes drops or reverts Chinese characters mid-input. The root cause is a limitation in the editing engine we use today, which we're replacing as part of a bigger upgrade already underway.
   - This update is part of the top priority Core Editor v2 project at SuperDoc, which includes significant performance improvements on large documents and overall rendering improvements.
+- 👷 202607: Core Editor V2 is still actively in progress, and it includes the editing-engine changes needed to address this Chinese IME input issue. V2 also includes major improvements to document loading, rendering, selection, editing interactions, tracked changes, and overall performance, especially for larger and more complex DOCX files.
+
+- [Support CellSelection/TableSelection in editor.doc.selection.current() and context menu APIs  _202607](https://github.com/superdoc-dev/superdoc/issues/3806)
+  - We’re currently working on a V2 version of SuperDoc that does not use ProseMirror at all, and instead uses our Document API for this kind of interaction. 
 
 - ## [SuperDoc Product Roadmap  _202602](https://github.com/superdoc-dev/superdoc/issues/1982)
 - Expanded List Styles & Interactions 

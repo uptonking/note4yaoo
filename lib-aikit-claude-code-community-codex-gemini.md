@@ -625,6 +625,15 @@ codex --yolo resume --last
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [How do I use /plan and /goal together? : r/codex _202606](https://www.reddit.com/r/codex/comments/1u004l1/how_do_i_use_plan_and_goal_together/)
+- You can just ask it to set the goal in the plan. Then it really depends on the context, sometimes the goal is set before the plan is finished, or sometimes it sets the goal after you clicked implement plan.
+
+- Did you try /goal implement the plan
+
 - ## [破甲项目升级了：Codex-X 可视化桌面版发布 - LINUX DO _202607](https://linux.do/t/topic/2523644)
   - https://github.com/yynxxxxx/Codex-X
   - Codex-X 是一个面向 Codex CLI / Codex 桌面端的跨平台可视化增强管理器。

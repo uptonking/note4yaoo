@@ -20,6 +20,14 @@ modified: 2026-04-05T18:29:33.553Z
 
 - tips
   - ?
+
+- [docx-corpus - The largest open DOCX dataset and document corpus](https://docxcorp.us/dataset)
+  - It contains 736, 000+ real .docx files collected from Common Crawl, validated, deduplicated, and labeled by document type and topic. It is the first large-scale research dataset for DOCX
+  - Each document has a content hash, file size, detected language, and a type and topic label from a fine-tuned XLM-RoBERTa text classifier. 
+  - The corpus spans 46+ languages and uses a 10-type, 9-topic taxonomy. Available as a HuggingFace dataset, a REST API at api.docxcorp.us, and downloadable manifest files. 
+  - https://huggingface.co/datasets/superdoc-dev/docx-corpus
+  - https://api.docxcorp.us/stats
+  - https://github.com/superdoc-dev/docx-corpus /MIT
 # faq
 
 - 

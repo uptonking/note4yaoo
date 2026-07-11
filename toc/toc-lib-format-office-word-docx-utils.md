@@ -51,9 +51,11 @@ modified: 2023-01-09T11:03:32.533Z
   - Easily generate .docx files with JS/TS. 
   - Works for Node and on the Browser.
 
-- https://github.com/open-xml-templating/docxtemplater /MIT/js/excel收费
+- https://github.com/open-xml-templating/docxtemplater /3.6kStar/MIT/202606/js/excel收费
+  - https://www.docxtemplater.com/
   - a library to generate docx/pptx documents from a docx/pptx template.
   - Functionality can be added with the following paid modules
+  - Docxtemplater is my main job, and has been maintained for over 8 years. Expect to get great support if you buy any modules, and also good support on the open-source version.
 # examples
 
 # viewer

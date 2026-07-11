@@ -41,9 +41,10 @@ modified: 2026-04-11T01:31:17.720Z
   - pagination
   - virtualized render
   - track-change
+  - multi-column layout
   - hybrid table and doc
 
-project `superdoc` at folder `../superdoc` implements renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed.
+project `superdoc` (at folder `../superdoc` ) implements renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed.
 - the final goal is to implement a framework-agnostic, modular, extensible, headless ai docx editing solution named `begonia` similar to `superdoc` in current folder to avoid the licensing issues.
 - begonia should be implemented in a modular and extensible architecture for core features, with functional programming style.
 
@@ -101,13 +102,13 @@ you have worked on this problem several times but features are still lacking. Th
 - you may reference how superdoc implements/solves it, then do a similar or better implementation in begonia without licensing issue.
 
 - superdoc's overall architecture is good enough to follow. Mostly begonia should use similar architecture like superdoc.
-- you may analyze related architecture/code and borrow good deisgn from upstream superdoc(source code at folder `../superdoc`) and rewrite it in functional-programming style for redmansion to avoid licensing issues.
+- you may analyze related architecture/code and borrow good deisgn from upstream superdoc(source code at folder `../superdoc`) and rewrite it in functional-programming style for begonia to avoid licensing issues.
 - it is unnecessary to search the web for superdoc details, just analyze the source code at folder `../superdoc`.
 
-- please recheck migrated features and improve your implementation in begonia. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support..., compare the implementation logic/code of begonia with superdoc logic/code to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
+- please recheck migrated features and improve your implementation in begonia. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support, API, SDK, CLI..., compare the implementation logic/code of begonia with superdoc logic/code to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
 - core implementation for major features should be framework-agnostic without react, ui wrappers/bindings should be sub packages, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
 
-- prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support... in begonia, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+- prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support, API, SDK, CLI... in begonia, make related features/architecture correct, modular, extensible, robust for long-term maintenance.
 
 - if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
@@ -115,13 +116,20 @@ you have worked on this problem several times but features are still lacking. Th
 
 - please recheck migrated features and improve your implementation in begonia. Analyze core data flow and implementation logic details for every major feature , compare the implementation logic/code of begonia with superdoc logic/code to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. recheck and improve major features/architecture in begonia, make them correct and robust without guessing, the fewer bugs, the better.
 
-- prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, layout modes support vertical/horizontal/book like superdoc, multi-column layout supports unequal column widths like superdoc, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container like superdoc, zoom in/out, Canvas-based text measurement, performant line-breaking like superdoc, track-change/diff, overlap handling in track change like superdoc.
+- prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, layout modes support vertical/horizontal/book like superdoc, multi-column layout supports unequal column widths like superdoc, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container like superdoc, zoom in/out, Canvas-based text measurement, performant line-breaking like superdoc, track-change/diff, overlap handling in track change like superdoc, sdk.
 
 - prioritize and recheck/improve major features like document viewport/layout-engine(supports multi-column) like superdoc, toggling pagination, layout modes support vertical/horizontal/book like superdoc, multi-column layout supports unequal column widths like superdoc, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container like superdoc, zoom in/out, Canvas-based text measurement, performant line-breaking like superdoc. 
 - you may deep research, and reference the upstream superdoc code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues. 
 - core implementation in begonia for major features should be framework-agnostic without react, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
 
 ### draft-begonia
+
+- The current TASK is to refactor/improve the architecture of begonia to be more extensible/modular/headless like superdoc, so that it will be easy to implement a v2 editor without prosemirror in the future. 
+  - Superdoc’s headless toolbar/UI already depend on a narrow host contract plus doc access, and the UI controller also uses a structural editor-like contract. These features of superdoc should be a good reference for how to improve begonia.
+- a similar contract has been implemented in begonia, but not robust. 
+  - existing begonia v1 editor with prosemirror should become one backend implementation instead of the assumed core. core type definitions in begonia should be prosemirror agnostic, a contract api like superdoc should be implemented.
+  - related architecture/data-flow/logic should be migrated to use the new contract api, legacy architecture or code might be removed, related tests should be updated.
+- For current TASK, you should focus more on refactoring/improving the functional extensible architecture/data-flow for begonia. after you finish the goal, major features of begonia should still work, full tests should still pass.
 
 - 编辑器导出pdf: 内置FlowBlock的分页 如何实现 typst-pdf 的效果
 
@@ -557,7 +565,7 @@ project `directus` (at folder `../directus` ) is a source-available licensed, po
 
 - please recheck migrated features and improve your implementation in redmansion. Analyze core data flow and implementation logic details for every major feature like rest api, working with new or existing databases, content versioning, draft/publish content, i18n/translation, data model relationships like one2many/many2one/many2many/many2any/translation/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, sdk, admin management studio webapp..., compare the implementation logic/code of redmansion with related logic/code of directus to recheck and enhance the correctness of architecture/data-flow and logic in redmansion, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in redmansion are correct, modular, extensible for long-term maintenance. 
 
-- prioritize and recheck/improve major features like rest api, working with new or existing databases, content versioning, draft/publish content, i18n/translation, data model relationships like one2many/many2one/many2many/many2any/translation/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, sdk, admin management studio webapp... in redmansion, make related features/architecture correct, modular, extensible, robust for long-term maintenance
+- prioritize and recheck/improve major features like rest api, working with new or existing databases, content versioning, draft/publish content, i18n/translation, data model relationships like one2many/many2one/many2many/many2any/translation/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, sdk, admin management studio webapp... in redmansion, make related features/architecture correct, modular, extensible, robust for long-term maintenance.
 
 - if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
@@ -773,7 +781,10 @@ document what you have migrated from which commit id for future migration refere
 # tests
 - run the full tests and fix the bugs
 
-- improve the slowest part of tests first, you may refactor/reorganize the tests to make it correct, fast, robust, maintainable in the long term.
+- running full tests/scripts is a little slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests.
+
+- improve the slowest part of tests first, 
+review the whole tests architecture/logic, then improve it, you might refactor/reorganize the tests to make it correct, fast, robust, maintainable in the long term.
 
 - tests files in each package should existing as sibling folder of `src`. for example, all tests for `packages/core/src` should be put at ``packages/core/__tests__` , tests files like `parse.test.ts` should not be put inside `src` folder.
 

@@ -115,6 +115,13 @@ modified: 2026-06-30T17:32:43.131Z
 
 > a base file is a live query language for the stateful(persisted) markdown files.
 
+- 实现方式3种
+  - ❌ 在ssg阶段提前持久化base的结果，在前端仅展示数据
+  - server通过解析文件动态计算, 由server来计算， 甚至可支持修改数据/文件
+  - 🤔 将数据存入memorydb, 直接在浏览器计算， 不依赖server(所以不能修改数据)
+    - 此方案可结合多MPA多文件webapp拆分数据、懒加载来实现
+    - 甚至可引入高级数据操作方案， 如 apache-arrow/duckdb
+
 - later
   - migrate popular notion-database to ob-bases
   - 有时会显示过期数据
@@ -159,6 +166,10 @@ modified: 2026-06-30T17:32:43.131Z
 - 部分内容需要加密的场景，如何解决
   - 需要在cli侧解决
 
+- wikilinks扩展: pdf-bbox, 支持preview, 甚至可以显示为截图内容
+  - 引用pdf内容的场景都可以使用类似wikilinks的设计 + preview
+  - 还可以优化图片pdf的搜索体验
+
 - documentation-ideas
   - docusaurus
   - Starlight
@@ -199,9 +210,7 @@ modified: 2026-06-30T17:32:43.131Z
 - 
 
 - database的技术方案可参考agentfs+just-bash, 以数据库作为数据源，导出文件如markdown方便ai理解
-
-## publish-quartz
-
+# publish-quartz
 - pros
   - 支持 wikilinks/backlinks
   - 支持 Bases
@@ -221,6 +230,9 @@ modified: 2026-06-30T17:32:43.131Z
   - inline bases交互差
   - embed .base 文件有时未渲染， 因为相对路径解析失败了
   - bases的空内容渲染为 - , 很多cell的内容丢失了
+  - table的group ux很糟糕
+  - 会丢失sort排序， 但少数排序也可以正确展示
+  - image(property) 不能正确显示图片
 
 - links
   - 部分 wikilink 404， 因为相对路径解析失败了， 似乎只能解析同级文件夹下的

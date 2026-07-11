@@ -697,8 +697,14 @@ modified: 2022-08-18T16:57:46.405Z
   - Open-source WYSIWYG .docx editor library with canonical OOXML, tracked changes, and real-time collaboration.
   - core依赖prosemirror、xml-js、docxtemplater、jszip、pizzip
   - 依赖aisdk
+  - https://github.com/eigenpal/docx-template-skill
+    - Convert filled-out DOCX documents into reusable docxtemplater templates. 
+    - Uses docxtemplater syntax
   - 🍴 forks
   - https://github.com/reductoai/docx-editor
+  - https://github.com/DoctorSlimm/docx-js-editor /MIT/202602/ts/inactive
+    - https://docx-js-editor.vercel.app/
+    - Open-source WYSIWYG DOCX editor for React. Open, edit, and save .docx files entirely in the browser — no server required. 
 
 - https://github.com/samwillis/premirror /MIT/202603/ts
   - https://samwillis.uk/premirror/
