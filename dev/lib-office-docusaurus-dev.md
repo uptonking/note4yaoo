@@ -31,9 +31,11 @@ modified: 2020-12-19T08:52:02.671Z
   - all css selectors are using only semantic html tags with roles, no class names used
   - accessory sections have paddings with a fixed value of 1rem
 # docs
-
+- [Static site generation (SSG) | Docusaurus ](https://docusaurus.io/docs/advanced/ssg)
+  - Strictly speaking, Docusaurus is a static site generator, because there's no server-side runtime—we statically render to HTML files that are deployed on a CDN, instead of dynamically pre-rendering on each request. This differs from the working model of Next.js.
+  - Docusaurus is ultimately a single-page application, so static site generation is only an optimization 
+  - This is contrary to site generators like Jekyll and Docusaurus v1, where all files are statically transformed to markup, and interactiveness is added through external JavaScript linked with `<script>` tags. 
 # blog
-
 - ## [Docusaurus 2019 Recap_201912](https://v2.docusaurus.io/blog/2019/12/30/docusaurus-2019-recap/)
 - In 2018, we proposed to rebuild Docusaurus from the ground up.
   - a content-centric CSS framework from scratch, a plugins system, and moved from static HTML pages to be a single page-app with prerendered routes.
@@ -129,7 +131,61 @@ modified: 2020-12-19T08:52:02.671Z
 - Docusaurus is not a SaaS.
   - It's a free open-source tool that you can self-host easily everywhere as it builds a static website
 
+# discuss-roadmap
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Extend existing content plugins (CMS integration, middleware, doc gen...) _202102](https://github.com/facebook/docusaurus/issues/4138)
+  - I've also written a sample plugin, wordpress-to-docusaurus-plugin which uses GraphQL to pull Blog posts from Wordpress, which I then use to build Docusaurus posts with.
+  - All looks good but one problem remains. Plugins currently load in parallel, so new blog posts are not seen until I reload. I need my plugin's loadContent to run before the blog plugin runs, so it sees the new posts, I've created.
+
+- You probably mean using Docusaurus as the UI of a headless CMS. It's nice to see work being done integrating Docusaurus with WordPress or any other CMS, afaik it's not something many have done so far.
+  - I don't think it's a good idea to introduce this plugin ordering logic. We really want plugins to work in isolation and not interfere with each other. This ordering logic is also something that was often requested on Gatsby and they pushed hard against implementing it.
+  - My suggestion to this problem is that you should not actually write a new Docusaurus plugin for this, but instead enhance the existing blog plugin.
+  - If we created a blog plugin async beforeLoadContent() option, you would be able to write the MDX files here instead of trying to orchestrate a more complex workflow using multiple plugins. Do you think it would work for your usecase?
+- In case it's helpful to anyone, here's a runnable example of extending the blog plugin to expose extra global data
+
+- ## [Docusaurus V4 - Umbrella issue _202606](https://github.com/facebook/docusaurus/issues/11719)
+- Infima is not developed outside of Docusaurus. I'd like to re-integrate it into Docusaurus theme classic to reduce maintenance friction (added it to the list). That would actually help us port our theme to Tailwind.
+
+- Since planning for the Docusaurus v4 roadmap is underway, I wanted to suggest exploring support for the browser-native Speculation Rules API for page prefetching and client-side prerendering. Several other modern static site frameworks like astro have started adopting this mechanism. It provides a highly efficient, browser-optimized way to handle speculative loading while naturally respecting user preferences (like battery-saver or data-saver modes). This could be a great performance addition for the v4 release.
+  - docusaurus: we are an SPA framework and already implement prefetching using JavaScript with more granular control. Adding these wouldn't improve anything and would actually produce useless work for browsers.
+  - Using native speculation rules wouldn't be very helpful because: we already preload the link's target page javascript. we navigate using history.pushState() and render the next page client-side: we do not need to preload the target HTML page
+  - The only situation where this could make sense is if we support a mode to build Docusaurus as an MPA. But we don't support that mode yet. 
+
+- ## [Make site usable without any JavaScript _202007](https://github.com/facebook/docusaurus/issues/3030)
+  - avigation is not SPA/history push based, but is a regular html nav (like Docusaurus v1)
+
+# discuss-issues
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Relative markdown links between blog and docs does not work _202307](https://github.com/facebook/docusaurus/issues/9117)
+  - [WARNING] Blog markdown link couldn't be resolved: (../../docs/doc-page.md) in "/home/projects/github-dc5ygn/blog/blog-post.md
+  - On the other hand, using link without the .md ([link to doc](../../docs/doc-page)) extension works fine.
+- Yes, it does not work, because currently the relative link resolution is a plugin-specific feature and not a Docusaurus core feature.
+  - I'd like to support cross-plugin relative links but it would require the core engine to somehow maintain a "file path -> URL path" mapping, and we probably need additional plugin lifecycle hooks for that.
+
+- ## [Support Roam-like Linking for Docs Folder  _202206](https://github.com/facebook/docusaurus/issues/7618)
+  - Supporting Linkings with [[Title]].
+
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

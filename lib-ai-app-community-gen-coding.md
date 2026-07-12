@@ -1065,7 +1065,13 @@ It amazes me how people default to LLM calls when you can do it in a simple, fre
 
 - ## 
 
-- ## 
+- ## what are the best open source repos (in terms of quality) that have been written exclusively, or almost exclusively, by ai (bun excluded)
+- https://x.com/dillon_mulroy/status/2076022694269641113
+- opencode v2 branch is the most we've ever used ai
+
+- Hardwood (parquet), Ghostty, Fil-C, and Curl seem like prominent public examples of responsible AI development. Among those only Hardwood was started with AI though.
+
+- bun rust
 
 - ## [I'm done with using local LLMs for coding : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1sxqa2c/im_done_with_using_local_llms_for_coding/)
   - I used Qwen 27B and Gemma 4 31B, these are considered the best local models under the multi-hundred LLMs. I also tried multiple agentic apps. My verdict is that the loss of productivity is not worth it the advantages.

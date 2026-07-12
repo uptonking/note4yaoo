@@ -60,6 +60,8 @@ modified: 2024-02-16T14:55:58.271Z
   - instant REST+GraphQL API on top of any SQL database
   - Our no-code Vue.js app is intuitive for non-technical users
   - v12 has field-level locking and presence indicators, but not CRDT character-level editing.
+  - import JSON or CSV files into your collection as items.
+  - export items menu provides granular control over exactly which items and fields are exported: CSV, JSON, XML, or YAML
 
 - who is using #directus
   - ?

@@ -315,6 +315,13 @@ redis-cli shutdown
   - 首款微信 macOS 客户端撤回拦截与多开
   - 阻止消息撤回
   - 客户端多开
+
+- https://github.com/MR-TABATA/MrEditor /MIT/202607/swift
+  - https://mr-tabata.github.io/MrEditor/
+  - A Mac-native viewer — and editor — for 10 GB text files. 
+  - Opens an 86-million-line log in ~210 ms at a 44 MB footprint, and edits and saves it in place with atomic writes. 
+  - mmap + sparse line index + piece table. 
+  - It started life as a fast read-only viewer (full-file search, filtered view / live grep, tail -f). v0.4 makes the name literal: it edits and saves too.
 # arm-mac
 - https://github.com/scriptingosx/utiluti /apache2/202507/swift
   - macOS command line utility to work with default apps.

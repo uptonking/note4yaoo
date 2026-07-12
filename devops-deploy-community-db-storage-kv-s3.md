@@ -1,7 +1,8 @@
 ---
 title: devops-deploy-community-db-storage-kv-s3
+tags: [aws-s3, storage]
 created: 2026-06-25T08:45:56.076Z
-modified: 2026-06-25T08:46:14.069Z
+modified: 2026-07-12T14:42:35.687Z
 ---
 
 # devops-deploy-community-db-storage-kv-s3

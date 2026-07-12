@@ -253,7 +253,7 @@ use vanilla html/css/javascript to create a personal profile landing page: homep
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 
 - You are a professional python/typescript/nodejs fullstack developer.
-  - provide a comprehensive overview of this project. analyze the project architecture and primary user journey use cases. then find some important source code to explain the core architecture and data flow.
+  - please provide a comprehensive overview of this project. analyze the project architecture and major features, then analyze some important source code to explain the core architecture and data flow.
   - i want more details about rag ingest/chunking/embedding/persistence logic
   - how to refactor related source code to support more vector db including qdrant/chromadb/pgvector? show me some code and explain the architecture migration
 - analyze the project architecture and related code. explain the core architecture and data flow

@@ -16,6 +16,12 @@ modified: 2026-04-07T11:52:43.122Z
 - https://github.com/iflytek/iFly-Skills /apache2/202606/python
   - Official collection of iFLYTEK skills for speech, OCR, translation, proofreading, and multimodal AI capabilities.
 
+- https://github.com/hydropix/TranslateBooksWithLLMs /2.1kStar/AGPL/202606/python
+  - Translate full-length books and documents with Ollama, OpenAI (comptatible), Gemini, Mistral, Poe or OpenRouter. 
+  - Preserves formatting: EPUB formatting, styles, and structure remain intact. SRT timecodes stay perfectly synchronized. 
+  - No file size limits.
+  - Resumes where you left off: Pick up exactly where you left off. The checkpoint system saves progress automatically.
+
 - https://github.com/xunbu/docutranslate /747Star/MPLv2/202601/python
   - 文档（小说、论文、字幕）翻译工具（支持 pdf/word/excel/json/epub/srt...）
   - 基于大语言模型的轻量级本地文件翻译工具

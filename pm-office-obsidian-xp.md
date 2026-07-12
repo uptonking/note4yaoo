@@ -20,10 +20,10 @@ modified: 2026-06-30T17:32:43.131Z
   - graph-view
   - 🔌 plugins
   - publish
+  - sync
   - canvas
   - slides
   - templates
-  - sync
 
 - cons
   - 不支持类似notion的 block-style dragging
@@ -49,9 +49,10 @@ modified: 2026-06-30T17:32:43.131Z
   - sync
 # dreamansion
 - features
-  - ob editor
-  - pdf editing
+  - bases
+  - editing for markdown/pdf
   - pdf backlink/citation/preview
+  - file-editor: 不改变原文件的格式
 
 - goals
   - publish/site: github for obsidian bases
@@ -124,6 +125,12 @@ modified: 2026-06-30T17:32:43.131Z
 
 - css-snippets
   - 调整bases左对齐是全局调整, 修改样式粒度太广, 如何部分左对齐、部分居中
+    - 临时方案是 per-page
+
+## sync
+
+- markdown <-> db 的转换可参考 notty/joplin
+- markdown/yaml的解析可参考 quartz
 
 ## openbases spec
 
@@ -246,40 +253,14 @@ modified: 2026-06-30T17:32:43.131Z
 - 
 
 - database的技术方案可参考agentfs+just-bash, 以数据库作为数据源，导出文件如markdown方便ai理解
-# publish-quartz
-- pros
-  - 支持 wikilinks/backlinks
-  - 支持 Bases
-  - 支持 graph view
-  - 支持 mermaid
-
-- cons
-  - 偏重静态展示，bases动态操作数据的功能太弱
-  - 虽然自身ui支持i18n, 但似乎不支持多语言版本的文档
-  - 需要用户symlink/copy内容， 改变用户的习惯， 设计成用户无感更好
-
-- features
-  - bases formula计算的列能正常渲染
-
-- 对bases的支持度很低
-  - properties默认不渲染
-  - table/card/list 显示都是只读的，不能再次filter/sort
-  - inline bases交互差
-  - embed .base 文件有时未渲染， 因为相对路径解析失败了
-  - bases的空内容渲染为 - , 很多cell的内容丢失了
-  - table的group ux很糟糕
-  - 会丢失sort排序， 但少数排序也可以正确展示
-  - image(property) 不能正确显示图片
-
-- links
-  - 部分 wikilink 404， 因为相对路径解析失败了， 似乎只能解析同级文件夹下的
 # dev-xp
 - 需要尽早决定 file/link path 的方案
+  - 推荐使用 relative path， 方便将子目录作为vault打开或分享
 
 - 加一个标签到 tags 方便用来快速生成bases
 
 - column
-  - 列名如何支持显示为link
+  - 列名如何支持显示为link， 一般无此需求， 点击列表一般用来排序
 
 - ob公开的 api 包含很多 codmeirror 相关的类型定义
 

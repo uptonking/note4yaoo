@@ -106,7 +106,10 @@ modified: 2026-06-30T22:55:02.169Z
 
 - ## 
 
-- ## 
+- ## [Feature: Distribute Quartz as an NPM package (v5 idea) _202604](https://github.com/jackyzha0/quartz/issues/2357)
+  - I wanted to float an idea for v5: distributing Quartz as a standard NPM package rather than a Git template.
+  - Currently, cloning the repo means user content and config get mixed up with Quartz's internal source code, compiler configs, and dependency list. This makes updating via git pull upstream v4 prone to merge conflicts and clutters the workspace.
+  - If we look at other modern SSGs like VitePress or Hexo, the engine is just a standard dependency in package.json. The user's repo stays completely clean, implementation details are hidden in node_modules, and updates are as simple as npm update quartz.
 
 - ## [Obsidian WEB version : r/ObsidianMD _202509](https://www.reddit.com/r/ObsidianMD/comments/1n8qetr/obsidian_web_version/)
 - Logseq is local first and you can run it via the browser; it does it through a browser api that lets the website access your local files in a way as if it were a native app.

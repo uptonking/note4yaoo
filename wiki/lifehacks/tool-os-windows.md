@@ -43,8 +43,16 @@ modified: 2020-12-29T17:48:26.735Z
   - [Comparing WSL 2 and WSL 1](https://docs.microsoft.com/en-us/windows/wsl/compare-versions)
 # windows OS
 
-# ref
+# examples-win-os
 
+- https://github.com/itsfatduck/optimizerDuck /GPL/202607/csharp
+  - https://optimizerduck.vercel.app/
+  - open-source Windows optimization tool for performance, privacy, and simplicity.
+  - 35+ 项系统优化，覆盖性能、隐私、GPU、电源、系统服务和操作体验
+  - 200+ 个 Windows 服务可自由开关，并标注低、中、高风险等级
+  - 针对 AMD、NVIDIA、Intel 显卡提供专门优化
+  - 每次操作都会生成回滚文件，改错了还能恢复
+# ref
 - win 10 下载地址
   - https://www.microsoft.com/en-us/software-download/windows10ISO
   - https://www.microsoft.com/zh-cn/software-download/windows10

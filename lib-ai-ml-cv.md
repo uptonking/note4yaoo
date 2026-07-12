@@ -1,7 +1,8 @@
 ---
 title: lib-ai-ml-cv
+tags: [ai, cv, ml]
 created: 2026-02-19T14:38:16.543Z
-modified: 2026-02-19T14:38:28.823Z
+modified: 2026-07-12T14:43:00.030Z
 ---
 
 # lib-ai-ml-cv

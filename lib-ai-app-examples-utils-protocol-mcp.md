@@ -635,6 +635,8 @@ modified: 2026-01-19T05:01:00.055Z
   - Humanizer-zh: AI 写作去痕工具（中文版）
   - https://github.com/blader/humanizer
     - 原项目基于维基百科的 Signs of AI writing 指南
+- https://github.com/Raymondhou0917/speak-human-tw /MIT/202607
+  - 說人話.skill: 一個專門校對繁體中文的 skill：抓出 35+ 種 AI 中文寫作痕跡，順手把中國用語和半形標點改成台灣的寫法，改寫成讀起來像人寫的版本，還附一份交稿前能自己打分數的檢核表。
 
 - https://github.com/SmartisanNaive/AI-Cleaner /MIT/202605/python
   - 基于 NLP 的 AI 痕迹 Agent 系统

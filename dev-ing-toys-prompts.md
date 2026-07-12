@@ -29,6 +29,7 @@ modified: 2026-04-11T01:31:17.720Z
 
 - code-port/translation
   - 也可直接给明确的转译代码指令比模糊的rewrite更有效
+  - 比如直接按模块按文件逐个转译，准确度更高，但可要求风格转换
 
 ## code-port/rewrite
 
@@ -579,8 +580,9 @@ project `directus` (at folder `../directus` ) is a source-available licensed, po
 
 - the tests/scripts/commands you just run took huge memory and is very slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests. please recheck related implementation-logic/tests, improve it and make it correct and fast. 
 
-- try to improve/refactor the full tests to make it faster so that full tests running within 3 minutes.
-- improve the slow/complicated/heavy parts of tests, you may refactor/reorganize the tests to make it correct, fast, robust, maintainable in the long term.
+- try to improve/refactor the full tests to make it faster so that full tests running within 2 minutes.
+- improve the slow/complicated/heavy parts of tests, 
+you might refactor/reorganize the tests to make it correct, fast, robust, maintainable in the long term.
 
 ### draft-vscode
 
