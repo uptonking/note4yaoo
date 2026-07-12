@@ -524,6 +524,8 @@ local model testing/running can be very slow.
 - goals
   - ~~replace monaco with codemirror6~~ , 可替换的文本编辑器似乎价值不大
   - 📈 obsidian bases: with agentfs
+  - pdf editing
+  - pdf backlink/citation/preview
   - obsidian rich-editor and plugin: 内置了很多核心插件(实现方式不一定是插件，只提供了开关)如filetree/search/backlinks/bases, canvas, slides, graph-view
     - 如何兼容obsidian的plugin: 下载后 批量替换api? 自动转换?
     - 第三方插件: obsidian-homepage, obsidian-outliner, obsidian-iconize, obsidian-admonition

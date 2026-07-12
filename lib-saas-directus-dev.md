@@ -59,6 +59,7 @@ modified: 2024-02-16T14:55:58.271Z
   - 📝 block-editor使用editorjs, wysiwyg使用tinymce.v6
   - instant REST+GraphQL API on top of any SQL database
   - Our no-code Vue.js app is intuitive for non-technical users
+  - v12 has field-level locking and presence indicators, but not CRDT character-level editing.
 
 - who is using #directus
   - ?
@@ -82,7 +83,7 @@ pnpm --filter api dev
 pnpm --filter app dev
 ```
 
-- 在admin添加新的data-model时，数据库会创建对应的表，~~同时后端src/api下面会自动生成对应的schema/router/controller/service~~
+- 在admin添加新的data-model时，数据库会创建对应的表， ~~同时后端src/api下面会自动生成对应的schema/router/controller/service~~ 
 
 - 支持i18n, 提供了translations类型的字段，会自动建立关联表
   - 所有内容仍在db的同一张表中，lang/content表需要用户自己创建和配置，自动化程度不高

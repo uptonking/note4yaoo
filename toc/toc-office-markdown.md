@@ -222,8 +222,10 @@ modified: 2021-01-04T17:26:25.032Z
   - Editor — Built on Novel (TipTap/ProseMirror). Slash commands, bubble toolbar
   - Real-time sync — Every note is a Yjs CRDT document. Edits sync over WebSocket in real time between all your devices and collaborators
   - Offline-first — Notes persist to IndexedDB locally. 
-  - Desktop app — Native macOS app via Tauri. Local SQLite database, bidirectional markdown sync to ~/Documents/Notty/, and cloud sync when available. Works fully offline.
+  - Desktop app — Native macOS app via Tauri. Local SQLite database, bidirectional markdown sync to `~/Documents/Notty/`, and cloud sync when available. Works fully offline.
     - 手动 export + import
+    - Notes export as .md files with TipTap JSON-to-markdown conversion, and external markdown files can be imported back
+  - Cloud sync — When a cloud URL is configured, the desktop app merges local and cloud state bidirectionally (local-first, prefer newer timestamps)
   - Note locking — Lock sensitive notes behind passkey (WebAuthn) verification. Locked notes require biometric/PIN authentication to view or edit
 
 - https://github.com/auxclawdbot/taskflow /MIT/202603/js/inactive
@@ -269,6 +271,16 @@ modified: 2021-01-04T17:26:25.032Z
 - https://github.com/lukesrw/md-database /GPL/202109/ts/inactive
   - Middleware for producing SQL queries from Markdown
   - Currently only SQLite is fully supported, with support for MySQL being worked on.
+
+- https://github.com/edochi/mdvs /MIT/202607/rust
+  - https://edochi.github.io/mdvs/
+  - in-process validation & search engine for markdown documents — schema inference, frontmatter validation, and local semantic search.
+  - mdvs is useful when you have a markdown corpus with structured frontmatter. 
+  - Some common cases: Obsidian vaults, Docs-as-code repos (Hugo, MkDocs, Astro)
+  - Multi-format frontmatter. YAML (---), TOML (+++), or JSON ({...}), auto-detected per file. Mix freely within one vault.
+  - Hybrid search. Vector similarity + BM25 full-text + RRF fusion. 
+  - Runs entirely in-process. Local files, single binary. No API keys, no vector-DB cluster, no GPU.
+  - Incremental builds. Only changed files are re-embedded; the Lance write itself is also incremental (delete + append + optimize, not a full overwrite). If nothing changed, the model isn't loaded and the index isn't rewritten.
 # tools
 - monotome /151Star/AGPLv3/202208/js
   - https://github.com/cblgh/monotome

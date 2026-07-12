@@ -56,6 +56,14 @@ modified: 2023-01-09T11:03:32.533Z
   - a library to generate docx/pptx documents from a docx/pptx template.
   - Functionality can be added with the following paid modules
   - Docxtemplater is my main job, and has been maintained for over 8 years. Expect to get great support if you buy any modules, and also good support on the open-source version.
+
+- https://github.com/jandira-tech/neurotic_docx_bench /AGPL/202607/ts
+  - Six benchmarks to neurotically measure DOCX conversion and redlining against Microsoft Word
+  - How close can DOCX redline tools get to Microsoft Word?
+  - This benchmark takes real base → next document pairs, asks each tool to produce a tracked-change redline, renders the result to PDF, and scores every page pixel-wise against a committed Word oracle for that pair. 
+  - https://discord.com/channels/1299087524056010902/1299436491839246409/1525266654005690631
+    - it's pretty much an adaptation of the benchmark you(superdoc) developed but was limited to visual rendering only. 
+    - i expanded to the non-rendering parts of the engine (meaning, using superdoc as a redlining engine and not only a renderer) and expanded to test the rendering of these results as well
 # examples
 
 # viewer

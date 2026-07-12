@@ -447,6 +447,8 @@ modified: 2026-06-20T15:49:57.019Z
     - 不限量套餐: 限时、限并发
   - [123nhh API ](https://api.123nhh.com/profile), 只能签到得额度
     - [[nhh站]随时跑路和关闭注册 _202606](https://linux.do/t/topic/2468396)
+  - [KayanoLoveChenChen](https://chenchen.openachieve.asia)
+    - [晨晨公益站来了哩 Grok4.5 - LINUX DO _202607](https://linux.do/t/topic/2565874)
   - [Dk _202606](https://apideepseek.com/console/personal)
     - [DeepSeek公益站！支持缓存，完整原生支持 - LINUX DO _202606](https://linux.do/t/topic/2302675)
     - 10 LDC : 1 元用量 【DeepSeek 0.5倍率】（相当于 5 LDC = 1 元用量）
@@ -2114,7 +2116,7 @@ modified: 2026-06-20T15:49:57.019Z
 - [莫比乌斯 2Chat /Sub2API](https://2chat.cc/keys), 已充值
   - 低倍率渠道
 
-- 咩咩的中转
+- 咩咩的中转 [MAX API ](https://maxapi.hanyue.xyz/pricing), 未开放注册
   - [ₒ⦁⩊⦁ₒ - 千寻寄售服务平台 ](https://www.qianxun1688.com/details/D5A18D58)
 
 - [Code-Plan  /NewAPI](https://code-plan.site/pricing), 已充值

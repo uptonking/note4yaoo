@@ -458,6 +458,16 @@ codex --yolo resume --last
 
 - ## 
 
+- ## 
+
+- ## People of Pi: the next release will incorporate dynamic tool loading without cache wiping on supported models and providers. 
+- https://x.com/mitsuhiko/status/2075703856726499364
+  - We did some investigations and found a way to get somewhat consistent API behavior between OpenAI and Anthropic.
+  - The neat thing is that existing API behavior if used correctly, will just do the right thing when possible. If you turn cache miss warnings on, you can detect good and bad behavior. Adding tools works, removing will wipe caches.
+  - This is allowing you to write you own search tool that executes on the client. You can utilize the inputs in whatever form you like.
+- Can this happen also mid-session? Why does removal of tools brake cache? Any particular use cases in mind?
+  - Yes. This works mid session. As to why removing tools breaks the cache: just fundamental limitations. Use cases are primarily progressive disclosure of tools but it can also be handy for clear state transitions. Plan -> Implement etc.
+
 - ## 🆚 [Pi vs Opencode : r/PiCodingAgent _202606](https://www.reddit.com/r/PiCodingAgent/comments/1uf6uqb/pi_vs_opencode/)
   - I like Pi for its light weight and endless expandability options. I like Opencode for providing most of what I need out of the box, but not a big fan of huge system prompts.
 - You can dramatically reduce OpenCodes system prompts by just overwriting the default build and plan agents with your own agents

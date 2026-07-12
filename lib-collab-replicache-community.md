@@ -10,10 +10,25 @@ modified: 2024-01-07T05:09:14.413Z
 # guide
 
 - pros-zero
-  - ?
+  - Query-driven sync provides precise control over when data is synced
+  - Queries are always client-first
+  - Mutations are always client-first
+  - All queries are reactive.
+  - Server Authority: All reads and writes flow through your code on your server
 
 - cons-zero
   - 准备 disable offline writes, 因为应用场景复杂，可参考fluidFwk也采用了此方案
+  - ZQL: incremental execution of complex queries, a new streaming query engine we built specifically for Zero
+
+- tips
+  - zerosync不支持离线write， 不仅考虑了数据同步，还考虑了schema/relations的变化导致 旧逻辑无法处理新数据
+# docs
+- [Connection Status ](https://zero.rocicorp.dev/docs/connection#offline)
+  - ⚠️ Zero does not support offline writes. 
+  - When the client is in the disconnected, error, or needs-auth states, reads from synced data continue to work, but writes are rejected.
+  - Supporting offline writes in collaborative applications is inherently difficult, and no sync engine or CRDT algorithm can automatically solve it for you.
+  - The application's schema can change while offline, and the user's data may not be processable by the new schema.
+  - Just take your own schema and ask yourself what should really happen if one user takes their device offline for a week and makes arbitrarily complex changes while other users are working online.
 # discuss-stars
 - ## 
 
@@ -393,6 +408,17 @@ modified: 2024-01-07T05:09:14.413Z
 - We don't even re-sort client-side! A diff comes on the wire that says that an existing row updated its last-modified timestamp (and in this case its `open` status).
 # discuss-zerosync-offline
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Zero Bugs → Offline mode _202508](https://bugs.rocicorp.dev/p/zero/issue/4019)
+  - When entering offline mode, any queued mutations stay queued.
+
+- With custom mutations as commands (in terms of CQRS) and ES we implement server side conflict resolution anyway. UI depends on use case. “New Doc” is easy to catch and handle offline first while “Change Password” could be declined when offline. My vote for opt-in to enable offline mode globally, per model or even per mutation. Thoughts?
 
 - ## Zero isn't local-first. It's not offline-first either. It's a sync engine _202505
 - https://x.com/aboodman/status/1919899561549582525

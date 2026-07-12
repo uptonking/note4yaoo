@@ -303,7 +303,7 @@ modified: 2025-09-01T07:58:29.058Z
   - ... Often the root cause for these holes in the first place is because AI codebases have many shallow modules, narrow helpers/ wrappers that hide behavior and create unclear boundaries.  The models initial output then fails to cover all the seams the change covers.
 
 - sking Claude or Codex to do a “pre-mortem” gets a similar result to this for me. Finds all the edge cases, I do it on ever feature I build
-# discuss-coding-tools/tricks
+# discuss-coding-tips/tricks
 - ## 
 
 - ## 
@@ -311,6 +311,17 @@ modified: 2025-09-01T07:58:29.058Z
 - ## 
 
 - ## 
+
+- ## 开个thread，记录前端开的的，小妙招。
+- https://x.com/yan5xu/status/2074804888815686102
+1. 要会用CDP。让agent 可以通过CDP或者类似的封装，自己操作网页；
+2. 开发的时候，把UI操作封装成 windows.xx 函数，这样agent就可以直接通过 cdp eval 操作网站，而不用click/drop 找元素。debug，自测地时候会简单非常多。
+3. 要让agent 读网页实际截图，codex可以直接根据截图生成新的参考页面进行优化。如果用 claude code，可以使用gemini 3 flash preview 读图给出意见。
+4. 开一个单独的VI页面，放所有的组件和设计。结合3.截图可以很方便的让agent维持整个设计的一致性
+
+- 还有一个小技巧，如果你想查一个前端的动态的操作或者显示问题，除了录屏截图以外，一个更简单的方法就是把整个完整复现过程的 HAR log 下载下来，扔给 agent 去分析
+
+- log 能走node纯本地一个file, ai 自己分析然后debugger
 
 - ## i love how people are saying "if we write a sufficiently detailed specification, the agent can write all our code"
 - https://x.com/CWood_sdf/status/2052482202085048592
@@ -1012,7 +1023,7 @@ It amazes me how people default to LLM calls when you can do it in a simple, fre
   - I agree, the contributors are not maintainers mostly
 
 - i get it. the problem isnt ai its people submitting code they dont understand. open source worked when contributors actually learned the codebase. now its just paste the error into claude and submit whatever it spits out
-# discuss-ai-coding-lts
+# discuss-ai-coding-maintanence
 - ## 
 
 - ## 
@@ -1046,6 +1057,8 @@ It amazes me how people default to LLM calls when you can do it in a simple, fre
 
 - “Fallback” is also a great slop indicator
 # discuss
+- ## 
+
 - ## 
 
 - ## 

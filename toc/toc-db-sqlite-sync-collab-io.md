@@ -35,13 +35,19 @@ modified: 2022-11-04T14:21:31.365Z
   - https://github.com/superfly/litevfs
     - a Virtual Filesystem extension for SQLite that uses LiteFS Cloud as a backing store.
 
-- https://github.com/sqliteai/sqlite-sync /elastic/202606/c
+- https://github.com/sqliteai/sqlite-sync /elastic+Free4NC/202606/c
   - https://sqlite.ai/
-  - CRDT-based offline-first sync for SQLite. Syncs automatically with SQLite Cloud, PostgreSQL, and Supabase. No conflicts, no data loss, no backend to build. For offline-first apps and AI agents.
+  - CRDT-based offline-first sync for SQLite. 
+  - Syncs automatically with SQLite Cloud, PostgreSQL, and Supabase. 
+  - No conflicts, no data loss, no backend to build. For offline-first apps and AI agents.
+  - Block-Level LWW was specifically designed to keep markdown files in sync: multiple agents editing different sections of the same document preserve all changes after sync.
+    - Block-Level LWW splits text into lines and merges them independently, which was specifically designed to keep markdown files in sync
+  - https://github.com/sqliteai/sqlite-sync-dev
   - https://github.com/sqliteai/sqlite-memory /c
     - A SQLite extension that gives AI agents persistent, searchable memory, optimized for markdown content. 
     - Features hybrid semantic search (vector similarity + FTS5), markdown-aware chunking, and local embedding via llama.cpp.
     - Agent memory databases can be synchronized between agents using offline-first technology via sqlite-sync. Each agent works independently and syncs when connected, making it ideal for distributed AI systems
+    - sync uses content-hash change detection to skip unchanged files, atomically replace modified ones, and clean up deleted ones — transactional safety wraps each file's ingestion in a SAVEPOINT so a failed file never leaves partial rows.
 
 - https://github.com/aNinjaMonk/sync-server /201911/js
   - Syncing between local SQLite & remote PostgreSQL

@@ -222,7 +222,9 @@ Today, Turso is in beta with early customers working toward production deploymen
 
 - ## 
 
-- ## 
+- ## I've been working on merging @glcst experimental Postgres frontend into the Turso source tree.
+- https://x.com/penberg/status/2074871119279001724
+  - The architecture is surprisingly clean: Turso core becomes an LLVM-like library for both SQLite and Postgres. The core provides the primitives, while the SQL dialects and other database-specific things stay decoupled.
 
 - ## The turso sync works fully locally, without our cloud, btw. With Turso 0.5.0, if you download the CLI and do:
 - https://x.com/glcst/status/2029781200555102472

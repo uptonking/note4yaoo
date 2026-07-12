@@ -118,6 +118,22 @@ modified: 2026-07-05T14:58:20.129Z
 - ## 
 
 - ## 
+# discuss-files
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Cloudflare Drop | Hacker News _202607](https://news.ycombinator.com/item?id=48836233)
+- Does nobody read the fineprint(小号字体部分)? By submitting, posting, or publishing your content, suggestions, enhancement requests, recommendations, feedback, information, data, or comments (“Content”) to any Website or Online Service, you are granting Cloudflare a perpetual, irrevocable, worldwide, non-exclusive, royalty-free right and license (with the right to sublicense) to use, incorporate, exploit, display, perform, reproduce, distribute, and prepare derivative works of your Content.
+  - This is standard boilerplate for hosting companies so they don't run into issues putting your content on distributed CDNs, or if things are in their logs, etc.
+  - Vercel, Netlify, Fly.io all have the same "legal-ese".
+- Netlify made this 10 years ago... they even copied the name
+
+- I doubt this is a real safety issue. You can already sign up for a free cloudflare account and deploy it for free, on your own, on a free workers.dev domain. The friction removal here isn't going to meaningfully change the security / amount of malicious content.
 # discuss
 - ## 
 

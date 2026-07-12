@@ -11,23 +11,25 @@ modified: 2026-06-30T17:32:43.131Z
 # guide
 - pros
   - rich editor
-  - backlinks: 双链基于[[]]语法, 同名文件的写法是相对路径
-  - bases: 基于文件的多维表格
+  - 🔗 backlinks: 双链基于[[]]语法, 同名文件的写法是相对路径
+  - 📈 bases: 基于文件的多维表格
     - bases 基于文件的设计 方便扩展每行的属性
     - 支持直接编辑单元格
     - Convert CSV records to individual Markdown files and Bases.
     - 支持 导入/导出 csv/excel, 提供独立的webapp
+  - graph-view
+  - 🔌 plugins
   - publish
   - canvas
-  - graph-view
   - slides
   - templates
   - sync
 
 - cons
   - 不支持类似notion的 block-style dragging
+  - publish/webapp 视图层不开源
   - bases 基于文件的设计 难以获取页面内的内容
-    - 给block添加properties/元数据
+    - 给block添加properties/元数据, 变通方式是embed file
     - 页面内引用
   - bases
     - 文件架构限制，导致难以实现交换行列， 而benchmark场景有此需求
@@ -45,14 +47,20 @@ modified: 2026-06-30T17:32:43.131Z
   - command-palette
   - publish
   - sync
-# redmansion
+# dreamansion
+- features
+  - ob editor
+  - pdf editing
+  - pdf backlink/citation/preview
+
 - goals
   - publish/site: github for obsidian bases
   - editing: web, app, obfm editor
-  - api: md, bases
+  - api + cli + sdk: md, bases
   - compatible with obsidian: obfm, bases, plugins, config(attachment, .trash)
     - 兼容和扩展plugins在bases方面的能力
   - 不要过于依赖ob的runtime, 充分利用文件系统的优势
+  - 类似cloudflare-drop的快速分享
 
 - cms-platform
   - github for obsidian bases
@@ -60,6 +68,16 @@ modified: 2026-06-30T17:32:43.131Z
 - 
 - 
 - 
+- 
+
+- 
+- 
+- 
+- 
+
+- maybe
+  - 实现类似git commit history 的历史记录ux
+
 - 
 - 
 - 
@@ -116,11 +134,25 @@ modified: 2026-06-30T17:32:43.131Z
 > a base file is a live query language for the stateful(persisted) markdown files.
 
 - 实现方式3种
-  - ❌ 在ssg阶段提前持久化base的结果，在前端仅展示数据
-  - server通过解析文件动态计算, 由server来计算， 甚至可支持修改数据/文件
-  - 🤔 将数据存入memorydb, 直接在浏览器计算， 不依赖server(所以不能修改数据)
+  - ❌1 在ssg阶段提前持久化base的结果，在前端仅展示静态数据
+    - 维护成本低， 但体验差， 不支持修改, 
+    - 不支持大量数据, 对图片支持不好
+  - 📌2 server通过解析文件动态计算, 由server来计算， 甚至可支持修改数据/文件
+    - 完整的server能力，功能强， 但运营成本高，
+    - 支持大量数据，对本地图片支持友好
+    - 本地运行时需要设备提供计算能力， 计算大量数据的逻辑不适合放在本地，要考虑低性能移动端
+    - 方便基于本地server实现sync/edit
+    - free user 支持查看但不可编辑的成本不高， 这样避免方案3为了实现查看引入复杂的数据转换/缓存方案
+  - ❌ 3 将数据轻量获取到本地后，存入memorydb/jsondb, 直接在浏览器内存或indexdb计算， 不依赖server(所以 ~~不能~~ 难以修改数据)
+    - 🐛 实现复杂度太高, 但能支持动态filter， 低性能移动端的计算能力差
+    - 可在浏览器持久化变更数据，然后再手动/自动同步， 此方案可与方案2结合，支持切换数据源/server-url
     - 此方案可结合多MPA多文件webapp拆分数据、懒加载来实现
-    - 甚至可引入高级数据操作方案， 如 apache-arrow/duckdb
+    - 甚至可引入高级数据操作方案， 如 sqlite-wasm/apache-arrow/duckdb
+    - 🛢️ 类似jsonnl的db也方便使用cdn静态化低成本提供
+    - 支持大量数据需要优化很多细节
+    - 对图片的支持需要单独的方案， 只做缓存的场景可以直接用base64
+    - 但本方案适合低成本托管db
+    - 本地client的实现没必要搞这么复杂，因为本地client/server逻辑更简单清晰
 
 - later
   - migrate popular notion-database to ob-bases
@@ -161,7 +193,8 @@ modified: 2026-06-30T17:32:43.131Z
 ### map-view
 
 # pm
-- 支持公开子目录作为site
+- 🤔 产品形态是 markdown sdk？
+  - 付费点: bases reading, cloud rag for big pdf
 
 - 部分内容需要加密的场景，如何解决
   - 需要在cli侧解决
@@ -188,6 +221,9 @@ modified: 2026-06-30T17:32:43.131Z
   - 直接使用基于git的同步
 
 - multi-user/workspace的设计
+
+- 支持公开子目录作为site
+  - obsidian vault支持任意文件夹， 注意 此目标需要配置link使用 相对路径 来减少坏链
 
 ## ob-bases
 
@@ -218,6 +254,7 @@ modified: 2026-06-30T17:32:43.131Z
   - 支持 mermaid
 
 - cons
+  - 偏重静态展示，bases动态操作数据的功能太弱
   - 虽然自身ui支持i18n, 但似乎不支持多语言版本的文档
   - 需要用户symlink/copy内容， 改变用户的习惯， 设计成用户无感更好
 

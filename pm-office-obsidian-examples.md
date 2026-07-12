@@ -1077,6 +1077,18 @@ modified: 2026-04-07T00:47:33.626Z
   - Sync OpenCode AI conversation sessions to Obsidian as structured Markdown notes with Dataview dashboards, auto-tagging, and real-time sync
   - Dataview community plugin (for dashboard queries)
   - Local REST API community plugin (required)
+
+- https://github.com/jookos/obgo-sync /202605/go
+  - a headless Go CLI that syncs an Obsidian vault with a CouchDB instance using the Obsidian Livesync protocol. It is a lightweight alternative to the Node.js-based Obsidian Livesync plugin, designed for containerized or server-side setups where no GUI is available
+  - --watch / -w: eeps the process running after the initial sync. 
+    - Two concurrent goroutines maintain bidirectional sync: 
+    - A CouchDB watcher monitors the _changes feed and applies remote changes to disk.
+    - A filesystem watcher monitors OBGO_DATA and pushes local changes to CouchDB.
+
+- https://github.com/obst2580/memrosetta /MIT/202605/ts
+  - https://memrosetta.liliplanet.net/
+  - One memory shared across all your AI tools and machines.
+  - Local-first by default. Optional self-hosted sync for multiple devices. 
 # feat-code/scripts
 - https://github.com/Tzadikimctf/loom /202606/ts
   - Obsidian plugin for executing ordinary fenced Markdown code blocks.
@@ -1394,8 +1406,12 @@ modified: 2026-04-07T00:47:33.626Z
   - https://openknowledge.ai/
   - beautiful markdown editor with integrations with Claude, Codex, and other harnesses. 
   - Full true WYSIWYG so that editing markdown files feels like editing a Google Doc or Notion page.
+  - Built-in side-by-side editing with Claude, Codex, Cursor, Pi, and OpenCode.
   - Collaborative AI-editing with Claude, Codex, and Cursor desktop apps. Can be used with any harness/agent via MCP/CLI, like OpenCode.
   - [Show HN: OpenKnowledge – open source AI-first alternative to Obsidian/Notion | Hacker News _202606](https://news.ycombinator.com/item?id=48675435)
+  - https://x.com/nickgomez/status/2075258708175798357
+    - is this related to OKF as well?
+    - We have a starter pack for it! Think of us as a general markdown IDE for any markdown KB. OKF is more of a format for markdown KBs. We don’t restrict to only it, but give tools to help me conformant with it.
 # examples-vault
 - https://github.com/obsidian-pkm-vault/awesome-obsidian-vault /md
   - Awesome list of obsidian vaults
@@ -1672,6 +1688,16 @@ modified: 2026-04-07T00:47:33.626Z
   - SQLSeal allow you to query for files, tags and tasks in your vault using familar SQL syntax. 
   - It also enables you to preview any CSV file in your vault as a database. It brings fully featured database into your vault!
   - you can use it by creating sqlseal codeblocks in your notes. 
+
+- https://github.com/mbailey/sqldown /MIT/202511/python/inactive
+  - Bidirectional markdown-sqlite converter - query your docs with SQL, export results as markdown.
+  - Bidirectional markdown ↔ SQLite conversion - Load markdown files into SQLite, query with SQL, and export back to markdown.
+  - Dynamic schema generation from YAML frontmatter and markdown structure
+  - Import markdown collections into queryable SQLite databases
+  - Export database rows back to markdown files
+  - Watch mode for auto-refresh on file changes
+  - Gitignore-aware file filtering
+  - Smart change detection (skip unchanged files)
 # utils-import/export
 - https://github.com/neuralsignal/obsidian-import /MIT/202606/python
   - https://neuralsignal.github.io/obsidian-import/

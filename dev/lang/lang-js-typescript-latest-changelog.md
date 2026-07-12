@@ -57,6 +57,22 @@ File-Watching Now Uses File System Events
 
 ## v7
 
+### 🚀 [Announcing TypeScript 7.0 _202607](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/)
+
+- [TypeScript 7 is officially released _20260709](https://x.com/typescript/status/2074892178745327926)
+
+- v7 is a complete 10x faster version of the compiler & language server. It's a full port to parallelized native code.
+  - It runs faster, uses less memory, and is more stable than ever before.
+  - The new codebase has been battle-tested by many teams (and entire companies) using it in production for over a year now. In fact, in the editor TypeScript 7 is *more* stable than TypeScript 6, with fewer crashes and lower memory usage.
+  - TypeScript 7 has all the editor features you love, like auto-imports, find-all-references, expandable hovers, inlay hints, code lenses, linked editing, semantic highlighting, import sorting, and more. They're just a lot faster now.
+- TypeScript 7 also ships a new `--watch` mode based on a Go port of Parcel's watcher. This brings more efficient and reliable file watching to TypeScript users across platforms. If you tried earlier versions of TS7, you can expect way less CPU usage on idle with `--watch`.
+  - Under both `--watch` and in the editor, TypeScript 7 also now periodically releases unused type-checking state after enough idle time. For bigger projects, this should help reduce memory usage after peaking.
+Ç
+- 
+- 
+- 
+- 
+
 ### [A 10x Faster TypeScript _20250311](https://devblogs.microsoft.com/typescript/typescript-native-port/)
 
 - in many cases TypeScript has not been able to scale up to the very largest codebases. 
@@ -109,9 +125,9 @@ File-Watching Now Uses File System Events
 - Class Property Inference from Constructors
 - Short-Circuiting Assignment Operators for `&&=, ||=, ??=`
 - Customize the fragment factory through the new jsxFragmentFactory option
-- `/** @deprecated */` JSDoc comment
+- `/ ** @deprecated * /` JSDoc comment
   - deprecated values are typically displayed a strike-though style
-- **breaking-changes**
+- **breaking-changes** 
 - Operands for `delete` must be optional.
 
 ## [v3](https://devblogs.microsoft.com/typescript/announcing-typescript-3-0/)

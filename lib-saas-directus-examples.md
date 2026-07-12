@@ -69,6 +69,15 @@ modified: 2024-03-14T13:51:11.429Z
     - Dashboards
     - Files
 
+- https://github.com/directus/rstore /MIT/202607/ts/vue
+  - https://rstore.dev/
+  - The Reactive Data Store for Vue and Nuxt developers.
+  - rstore is a local-first data store for Vue and Nuxt applications.
+  - It gives you a normalized reactive cache, a structured query and mutation API, and plugin-based integration with your own data sources.
+  - Normalized reactive cache shared across your app
+  - Built for local-first, realtime, forms, and offline workflows
+  - [chore: remove yjs integration _20260623](https://github.com/directus/rstore/commit/6fa8546557a1b73af486c992c6974ef6f0d9e62b)
+
 - https://github.com/luochuanyuewu/nextus /MIT/202402/ts
   - https://nextus.vercel.app/
   - 多功能的现代化网站模板，基于Nextjs和Directus技术

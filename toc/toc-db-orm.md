@@ -100,6 +100,7 @@ modified: 2021-08-30T18:56:09.644Z
     - Prisma会根据数据库的Schema，生成js的客户端库。在里面定义了相应的数据接口，关联关系和函数等。通过这些，来完成对数据的操作
   - Prisma Migrate: Declarative data modeling & migration system
   - Prisma Studio: GUI to view and edit data in your database
+  - [Prisma ORM Architecture Shift: Why We Moved from Rust to TypeScript _202501](https://www.prisma.io/blog/from-rust-to-typescript-a-new-chapter-for-prisma-orm)
   - [为什么要用 Prisma？](https://zhuanlan.zhihu.com/p/142607078)
     - 自己手写SQL：控制力极强，生产力弱
       - 可以完全控制数据库操作，但是，生产力却不高，而且会遇到很多细碎的事情（如手动处理链接、操作模板）
@@ -232,7 +233,7 @@ modified: 2021-08-30T18:56:09.644Z
 - orbit /2.3kStar/MIT/202209/ts
   - https://github.com/orbitjs/orbit
   - Orbit is a composable data framework for managing the complex needs of today's web applications.
-  - Although Orbit is **primarily used as a flexible client-side ORM**, it can also be used server-side in Node.js.
+  - Although Orbit is **primarily used as a flexible client-side ORM** , it can also be used server-side in Node.js.
   - Interact with data from a variety of sources: a REST server, a WebSocket stream, an IndexedDB backup, an in-memory store, etc.
   - Work offline, work online, and seamlessly transition between both modes.
   - Support undo、redo
@@ -359,7 +360,7 @@ modified: 2021-08-30T18:56:09.644Z
   - A persistent, relational store inspired by Datomic and DataScript
   - Mentat is intended to be a flexible relational (not key-value, not document-oriented) store that makes it easy to describe, grow, and reuse your domain schema.
   - Just like DataScript, Mentat speaks Datalog for querying and takes additions and retractions as input to a transaction.
-  - Unlike DataScript, Mentat exposes free-text indexing, **thanks to SQLite**.
+  - Unlike DataScript, Mentat exposes free-text indexing, **thanks to SQLite** .
   - Mentat was designed for embedding, initially in an experimental Electron app 
   - Mentat uses partial indices, which are available in SQLite 3.8.0 and higher
   - 🍴 forks

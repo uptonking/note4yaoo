@@ -504,6 +504,23 @@ modified: 2023-01-20T21:59:47.792Z
     - Our drag and drop editor. You can use it for free at buidler.io/fiddle
     - Our APIs - aka the ability to add multiple users to an account
 
+- https://github.com/SveltyCMS/SveltyCMS /BSL>GPL/202607/ts/svelte
+  - https://sveltycms.com/
+  - a headless CMS. Built with modern and lightweight SvelteKit, This CMS is designed for speed, flexibility, and scalability. 
+  - This SveltyCMS headless CMS provides a powerful backend based on a modern SvelteKit 2 / Svelte 5 framework.
+  - designed to be database agnostic, we fully support MongoDB, PostgreSQL, SQLite, and MariaDB/MySQL (via Drizzle ORM).
+  - You can define Content Collections in two ways: in code or via the GUI-based collection builder. Full TypeScript support and a rich widget library make it straightforward to build custom data structures.
+  - All widget fields support localization, validation using Valibot, and access control.
+  - System localization uses Inlang Paraglide JS, a lightweight, type-safe i18n library.
+  - Backend data is available via REST API or GraphQL Yoga for fast, flexible frontends.
+  - Character-level CRDT co-editing via Yjs + Hocuspocus.
+  - as of June 2026, SveltyCMS is the only self-hosted CMS offering native, out-of-the-box CRDT collaboration. No lock-in, no plugins, no cost.
+  - 🆚 How Others Compare
+    - Strapi has no native real-time collaboration. Requires complex third-party plugins.
+    - Payload offers basic real-time via a community plugin — not core, not character-level.
+    - Directus v12 has field-level locking and presence indicators, but not CRDT character-level editing.
+    - Sanity has native CRDT — but is SaaS-only. No self-hosting, vendor lock-in, and cloud pricing.
+
 - https://github.com/apostrophecms/apostrophe /js
   - full-featured, open source CMS built with Node.js that seeks to empower organizations by combining in-context editing and headless architecture in a full-stack JS environment.
 

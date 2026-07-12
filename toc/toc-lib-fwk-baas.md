@@ -136,6 +136,15 @@ modified: 2021-05-25T09:40:55.797Z
     - Currently any additional data transformation is left to the developers to extend via event hooks or custom client side handling.
     - I've worked with CRDT in the past (yjs), but it may not be very useful in PocketBase considering that the application was designed to run on a single server and db writes are practically queued (you can have only one sqlite writer at a time)
 
+- https://github.com/tinbase/tinbase /MIT/202607/ts
+  - https://tinbase.dev/
+  - Supabase-compatible backend in a single binary — real Postgres with RLS, no Docker. Works with supabase-js unchanged.
+  - Local Supabase dev without Docker — one process, real Postgres, and it even runs in the browser. 
+  - It speaks the same wire protocols as hosted Supabase, so the official @supabase/supabase-js SDK works unchanged - REST, Auth, Storage, and Realtime.
+  - A pure-JS backend built on PGlite (Postgres compiled to WASM), with an embedded-native-Postgres and an ultralight pure-JS (@tinbase/pg-mem) engine too. One command, real Row Level Security, and 1:1 with Supabase's APIs and migration conventions.
+  - https://x.com/sanketsahu/status/2074864475438764498
+    - It's like PocketBase, but with Postgres instead of SQLite
+
 - https://github.com/easycrud/easycrud
   - https://easycrud.org/
   - This project is aimed at providing a series of handy packages for the development of a typical CRUD web application.
