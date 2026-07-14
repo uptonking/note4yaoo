@@ -63,6 +63,10 @@ modified: 2026-06-30T17:32:43.131Z
   - 不要过于依赖ob的runtime, 充分利用文件系统的优势
   - 类似cloudflare-drop的快速分享
 
+- non-goals
+  - mdx 一定不放在core实现， 可能会放在extension， 也可能不支持
+  - 不支持react组建作为内容，如 page.tsx
+
 - cms-platform
   - github for obsidian bases
 

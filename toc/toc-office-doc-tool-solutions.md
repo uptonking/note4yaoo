@@ -104,12 +104,22 @@ modified: 2021-07-21T18:07:43.056Z
   - Partial Versioning: Feedback When versioning only applies to part of your docs, You can separate them by folders.
     - 似乎是靠手动组织
     - Full Versioning: Feedback Sometimes you want to version the entire website, such as https://v14.fumadocs.dev
-  - Traditionally, static site generators are static. 
+  - 🏘️ Traditionally, static site generators are static. 
     - By default, Fumadocs use a server-first approach which always requires a running server to serve.
     - You can enable Next.js static export, it allows you to export the app as a static HTML site without a Node.js server.
   - The Fumadocs framework refers to a combination of UI + Core + Content Source, Fumadocs is more of a mental framework and each layer can be a library on its own.
     - Composable UI: we follow a much more flexible approach inspired by Shadcn UI — Fumadocs CLI, allowing you to "fork" a part of Fumadocs UI, and fully customize it.
   - Fumadocs is highly inspired by Nextra. For example, the Routing Conventions. That is why `meta.json` also exists in Fumadocs.
+  - [Content Source](https://www.fumadocs.dev/docs/integrations/content)
+    - very flexible. You can integrate with any content source, even without an official adapter
+    - You can see examples to use Fumadocs with a CMS, which allows a nice experience on publishing content, and real-time update without re-building the app.
+    - @fumadocs/local-md is a content source for local Markdown/MDX files, it is bundleless (works fully at runtime) by design.
+    - MDX Remote: compile MDX content to JSX nodes. Since it doesn't use a bundler, No imports and exports in MDX files
+    - Build Your Own: Loader API has a file-system-like interface for integrating different content sources.
+  - [Built-In Support for GitHub Content Loading  _202406](https://github.com/fuma-nama/fumadocs/issues/479)
+    - A helper function supplied by mdx-remote may be the most plausible solution, although it can require more manual configuration. It may permit more freedom than a whole new abstraction for content loading, but can also be limiting in its nature of simplicity.
+    - I'll keep my idea aforementioned: Store a single page-tree.json in the repo, and update it with a script every commit or deployment.
+    - You can always use local file content in dev mode, and it automatically use the remote files in production mode
   - [Performance | Fumadocs ](https://www.fumadocs.dev/docs/mdx/performance)
     - Although Fumadocs MDX can handle nearly 500+ files, it could be slow and inefficient. A huge amount of MDX files can cause extremely high memory usage during build and development mode.
     - This is because of: Feedback Bundlers do a lot of work under the hood to bundle MDX and JavaScript files and optimize performance. Feedback Bundlers are not supposed to compile hundreds of MDX files.
@@ -135,6 +145,17 @@ modified: 2021-07-21T18:07:43.056Z
     - All versions contain ssg and ssr support. The variants are just like templates. i18n version is fully ssr and all pages are static
     - [algolia search done _202502](https://github.com/nisabmohd/Aria-Docs/pull/32)
       - 最新代码已移除algolia
+
+- https://github.com/fuma-nama/fumadocs /2.3kStar/MIT/202607/ts
+  - https://rspress.rs/
+  - A fast Rsbuild-based static site generator.
+  - Fast Startup: Based on Rsbuild and MDX compiler
+  - MDX Support
+  - Built-in Full Text Search
+  - In production, it automatically builds into static HTML files, easily deployed anywhere
+  - plugin system: customize the build process and theme 
+  - [[Feature]: Backend support/docs example _202406](https://github.com/web-infra-dev/rspress/issues/1151)
+    - Rspress is not coupled with any backend solutions, so users can pick anything they want. Also Rspress does not support the "use server" flag.
 
 - NextBook /168Star/MIT/202206/js/inactive
   - https://github.com/amiroff/NextBook

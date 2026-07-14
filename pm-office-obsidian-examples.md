@@ -1309,6 +1309,11 @@ modified: 2026-04-07T00:47:33.626Z
   - Remark.js plugin for transforming Obsidian-flavored Markdown ASTs into a structured format, making callouts, highlights, and embeds
 - https://github.com/heavycircle/remark-obsidian /MIT/202507/js/inactive
   - A remark plugin to extend support to Obsidian-flavored Markdown.
+- https://github.com/johackim/remark-obsidian /GPL/202605/js
+  - Remark plugin to support Obsidian markdown syntax.
+  - [[Internal link]]
+  - ![[Embed note]]
+  - > [! CALLOUT]
 
 - https://github.com/kenforthewin/atomic-editor /MIT/202606/ts
   - https://kenforthewin.github.io/atomic-editor/
@@ -1511,6 +1516,7 @@ modified: 2026-04-07T00:47:33.626Z
   - an optional AI-friendly project memory layer for focused assistant handoffs.
   - https://github.com/Gleb-Vlasov/obsidian-vault
     - Obsidian vault template (EN + RU). Auto-MOC for new folders, Dataview-driven section maps, Templater-based frontmatter, color-coded graph
+    - 用了dataview
   - https://github.com/Gleb-Vlasov/obsidian-vault-skill
     - Claude Code skill that auto-builds a fully automated Obsidian vault: Dataview MOCs, Templater frontmatter, two-layer tags, graph-connecte…
 
@@ -1581,6 +1587,16 @@ modified: 2026-04-07T00:47:33.626Z
   - https://tdn.danny.is/
   - A pre-configured Obsidian vault for managing tasks, projects, and areas using the Taskdn system. 
   - Clone this repo to get started with file-based task management.
+
+- https://github.com/SoRobby/ObsidianStarterVault /202310/inactive
+  - An Obsidian starter vault for everyone, bridging the gap between ideas and actions
+
+- https://github.com/amatzk/obsidian-amatzk-template /MIT/2025
+  - A simple Obsidian vault template designed for focused note-taking.
+
+- vaults
+  - https://github.com/stormyark/Obsidian-Vault
+  - https://github.com/belen-albeza/obsidian-starter-vault
 # examples
 
 # utils-markdown/yaml

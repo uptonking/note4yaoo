@@ -94,7 +94,7 @@ find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
 # 格式化当前包，注意在子文件夹执行命令也会从package.json目录开始格式化整个包
 prettier --write ' **/* .{js,jsx,ts,tsx,json}' --ignore-unknown
 eslint --ext .js,.ts,.tsx --quiet --fix . 
-# npm i
+# 👀 npm i 有时很慢，原因可能是代理客户端的dns/缓存异常， 优先重启clash
   DEBUG=* npm i --no-audit --loglevel silly
 DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel=silly
 DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel=silly --registry=https://registry.npmmirror.com
@@ -338,6 +338,88 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0713
+
+- the goal for now is to rename this project from `redmansion` to `dreamansion`.
+  - packages names and import names should update, like from `@datalking/redmansion` to `@datalking/dreamansion`.
+  - for database table name or column name or other name in code, the abbreviation `RDMN` or `RDMN_ ` should be updated to `DRMN` or `DRMN_`.
+  - code/db/docs/tests should be updated accordingly.
+  - after you finish the rename work, major features should still work, all tests should still pass.
+
+- [@tanstack/react-start v1.134.7 causes import error with use-sync-external-store · Issue · TanStack/router _202603](https://github.com/TanStack/router/issues/5717)
+  - I got it working by adding the following to vite.config.ts
+   - [Some server-side modules incorrectly bundled into the client? · Issue · TanStack/router _202603](https://github.com/TanStack/router/issues/5738)
+
+```JS
+// 社区分享的2个配置都没用
+ optimizeDeps: {
+    include: ["@tanstack/react-form-start"],
+  },
+
+resolve: { alias: [ { find: "use-sync-external-store/shim/index.js", replacement: "react", } ], }
+
+// ai给的配置最有用
+  optimizeDeps: {
+    include: [
+      'use-sync-external-store/shim',
+      'use-sync-external-store/shim/with-selector',
+    ],
+  },
+```
+
+- [Dep Optimization Options | Vite ](https://vite.dev/config/dep-optimization-options)
+  - optimizeDeps.include: By default, linked packages not inside node_modules are not pre-bundled. Use this option to force a linked package to be pre-bundled.
+  - optimizeDeps.exclude: CommonJS dependencies should not be excluded from optimization. If an ESM dependency is excluded from optimization, but has a nested CommonJS dependency, the CommonJS dependency should be added to optimizeDeps.include. 
+
+- 🤔 What is the best practice to develop a documentation site that contains translations in different language, like English and Chinese, and a documentation site also contains versions like v1, v2, ... etc? My documentation source files are  markdown files. How should I organize the markdown files locally in languages and versions? What about the URL for different languages and versions? Is there any open source solutions or good practice in the documentation industry that have provided good conventions?
+  - The main design decision is whether versions or languages are the primary dimension.
+  - For most software documentation, the convention is: Version → Language → Page
+  - because every release has its own translated documentation, even if some translations are incomplete.
+- version-first 适合api文档
+  - examples: Docusaurus
+  - every release is self-contained
+  - translators only work inside one version
+  - older versions remain frozen, 减少修改面, Git history is cleaner
+- language-first 适合普通文档
+  - examples: VitePress
+  - Each language has its own complete tree, making it easy to hand off to separate translation teams.
+  - inconvenient when releasing new versions because updates span every language tree.
+  - Language First, Version Second: The language dictates the user's entire browsing context, so it usually comes first in the path. This is also preferred by search engines for SEO.
+- Suffix-Based(getting-started.en.md)
+  - examples: Nextra, MkDocs-static-i18n
+  - simpler for single-version docs but gets messy with versions. 
+- The industry standard is `/docs/{language}/{version}/{page-slug}`
+  - easy redirects
+- shared 平行目录时， 内容引用shared目录的路径是相同的
+  - Images
+  - snippets like code
+
+- Google and SEO best practices recommend using subdirectories (not subdomains) for language separation, with clear language codes like /en/, /zh/, /zh-cn/
+- Regardless of your URL structure, you must implement `hreflang` annotations to tell search engines about language and regional variants of your pages. This is a non-negotiable best practice for multilingual sites 
+
+- 
+- 
+- 
+- 
+
+- I have enough evidence to treat app-version-raw-collection.test.ts as a shared-process instability candidate: it failed once in the full-root parallel batch, then passed both standalone and when rerunning the entire shard. I’m isolating that file in the API runner so versioning coverage stays deterministic without changing runtime behavior.
+
+- [makefile - How does "make" app know default target to build if no target is specified? - Stack Overflow ](https://stackoverflow.com/questions/2057689/how-does-make-app-know-default-target-to-build-if-no-target-is-specified)
+- By default, it begins by processing the first target that does not begin with a . aka the default goal; to do that, it may have to process other targets - specifically, ones the first target depends on.
+  - Calling the first target `all` is just a convention.
+- [gnu make - Makefile: all vs default targets - Stack Overflow ](https://stackoverflow.com/questions/27242905/makefile-all-vs-default-targets)
+  - The default behavior of make is to run the first target in the Makefile if you don't specify a target as a command-line argument. 
+  - The default goal is the first rule in the makefile that does not start with '.' -- unless overridden by specifying the special variable . DEFAULT_GOAL. 
+  - The only difference, is that `all` is recommended in the GNU Make manual, to be the first (default) target, and `default` has no such special recommendation.
+
+```sh
+.DEFAULT_GOAL := mytarget
+
+# If you have an older version of make (<= 3.80)
+.PHONY: default
+default: mytarget ;
+```
+
 ## 0711
 
 - 🤔 cms is not required.  i want some open source examples that shows how to sync between db and files, so that when user edits a file, the db updates, when the db updates, the file also updates.  deep research related solutions/ideas, if you found any open source solutions or inspiration projects, provide overview/github-repo/website for each.
@@ -389,7 +471,7 @@ If you are building your own CMS or tool, you shouldn't rely on raw FUSE. The in
 
 - i tried the automation scripts several times. some improvements need to implement. 
   - for the fields/properties/values that exist both in source .json files and target  .md yaml, when you parse and compare what have changed, please relax the equals condition, ignore changes of properties order and values order. if i change the properties order or values order in targe .md files, as long as the value content is equal, the update should be skipped.  when values do change, only update the changed properties/values in place, do not do full overwrite. 
-  - for the properties that values is empty in source .json files but target .md files have values,  or the properties is non-existent in source .json files but target .md have new properties, running the port scripts should not remove the new values, update should be skipped.
+  - for the properties that values is empty in source .json files but target .md files have values, or the properties is non-existent in source .json files but target .md have new properties, running the port scripts should not remove the new values, update should be skipped.
 
 ## 0704
 

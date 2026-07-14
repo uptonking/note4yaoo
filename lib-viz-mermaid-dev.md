@@ -43,7 +43,7 @@ modified: 2025-11-19T17:50:09.072Z
 - bar-charts
   - 类似模型排行榜，但无坐标轴 https://x.com/Zai_org/status/2013261304060866758
 # dev-xp
-
+- 其实 Mermaid.js 的布局引擎就是 Graphviz.js
 # ai-mermaid
 - mermaid-ai-builder
   - [I Built an AI Mermaid Diagram Generator That Fixes Its Own Mistakes _202510](https://djajafer.medium.com/i-built-an-ai-mermaid-diagram-generator-that-fixes-its-own-mistakes-26552047c37a)

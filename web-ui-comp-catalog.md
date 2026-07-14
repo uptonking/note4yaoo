@@ -14,9 +14,7 @@ modified: 2023-10-26T14:56:56.839Z
   - button, card
   - checkbox, dropdown-list
   - accordion, modal/dialog
-
 # ux-experts-designers
-
 - Angel Uriostegui
   - https://github.com/anguriostegui
   - https://twitter.com/anguriostegui
@@ -286,6 +284,10 @@ modified: 2023-10-26T14:56:56.839Z
 - table-of-contents
   - 内容显示为可折叠的card，或者显示为浮动的modal()
 # ui-components-catalog
+- [NameThatUI — the visual dictionary of UI ](https://namethatui.com/)
+  - https://x.com/argofowl/status/2076284369883615555
+  - a dictionary for ui things you can see but can't name
+
 - 组件类别summary
   - 作为单独库实现的组件
     - list

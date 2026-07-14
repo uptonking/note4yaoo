@@ -75,6 +75,18 @@ modified: 2025-04-18T03:57:00.075Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I don't like the functional options pattern in Go, and I'm pretty disappointed that it ended up in the standard library with the new json/v2 package.
+- https://x.com/ohmypy/status/2076642867104080206
+  - An honest, plain Options struct is much better.
+
+- As long as fields of an option struct can be zero value they are not bad at all. The Rob Pike version of self referential functions where you return a closure to the previous state is really cool, though.
+
+- I think it is case by case basis. When you have options struct, and some fields have defaults if not applied, is zero value real zero or is it desired by user. If zero value is valid value, you end up using ptr which is in my opinion worse. Options are quite nice. You can add them nicely while keeping the ability to redesign internal fields how you see fit
+
 - ## [Indentation in Go: tabs or spaces? - Stack Overflow](https://stackoverflow.com/questions/19094704/indentation-in-go-tabs-or-spaces)
 - The official recommendation is formatting your code with `go fmt` ; 
   - or `gofmt -w .` 

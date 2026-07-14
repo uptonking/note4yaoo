@@ -26,13 +26,19 @@ modified: 2026-06-17T05:57:03.299Z
   - 1 concurrent build
   - 500 Builds per month, 16.7 builds/day
   - 100 custom domains
-  - Pages sites can contain up to 20, 000 files
+  - Pages sites can contain up to 20, 000 files on the Free plan. Paid plans (such as Pro, Business, and Enterprise plans) can have up to 100, 000 files per site.
   - maximum file size for a single Cloudflare Pages site asset is 25 MiB
   - A _redirects file can have a maximum of 2, 000 static redirects and 100 dynamic redirects
   - a soft limit of 100 projects within your account in order to prevent abuse
 
 - [Especially when Cloudflare Pages is free with unlimited bandwidth, if you don't ... | Hacker News _202511](https://news.ycombinator.com/item?id=45931329)
   - Cloudflare Pages is free with unlimited bandwidth, if you don't need any other backend. The only limit is 100 custom domains and 500 builds per month in their CI/CD, the latter of which you can bypass by just building everything in Github Actions and pushing it to Pages.
+
+- [It says I have limit of 100k requests a day _202303](https://community.cloudflare.com/t/it-says-i-have-limit-of-100k-requests-a-day/489253)
+  - You’re talking about the limit on Pages Functions and Workers requests, right? Note that on Pages this only applies to requests that actually invoke a Function; static files don’t count. (If you’re using a dynamic framework like Remix or something this could mean every request to your site, though.) 
+  - The plan to lift the limit is the paid Workers plan, which is $5 per month but is billed by usage after a certain point.
+  - $5包含 10M requests/month
+  - overage: Workers requests $0.30/million
 # github-pages
 - pros
   - free

@@ -429,6 +429,7 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/deanxv/done-hub /574Star/apache2/202601/go/js
   - https://github.com/MartialBE/one-hub/wiki/Deployment
     - make
+    - 升级repo时，需要先手动 `make clean` 删除 web/build 目录来触发前端重新构建
   - 基于one-hub二次开发而来的
   - 优先级大的优先调用，同优先级，基于权重轮询； 想要轮询的话还是同优先级设置权重
   - 目前与原版(最新镜像)的区别

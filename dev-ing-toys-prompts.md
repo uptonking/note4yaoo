@@ -61,7 +61,7 @@ project `superdoc` (at folder `../superdoc` ) implements renders, edits, and aut
 
 please refactor code structure in begonia project to use similar architecture and code structure as superdoc, to make it easy to migrate more features in the future.
 
-please recheck migrated features and improve your implementation in project begonia, make it runnable locally using npm without docker. Read core implementation logic details for major features, find possible bugs in code and fix them, make sure major features implementations are correct and extensible.
+please recheck migrated features and improve the implementation in project begonia, make it runnable locally using npm without docker. Read core implementation logic details for major features, find possible bugs in code and fix them, make sure major features implementations are correct and extensible.
 
 code at `./begonia` should use npm workspaces, typescript, prosemirror, yjs.
 
@@ -90,7 +90,7 @@ you have worked on this problem several times but features are still lacking. Th
 - you have worked on this several times but features are still lacking. They are the most important features at this moment. DO NOT stop untill you achieve full feature parity. 
 
 - you may deep research, and reference the upstream superdoc code(at folder `../superdoc`), you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
-- you may even do a big code refactor to match major features of superdoc in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor for begonia to match major features of superdoc in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design feature parity docs at `upstream/superdoc/reports`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream superdoc should be put in folder `upstream`. you may even design a script to automate it.
 - feature parity docs may be outdated, please read related code and recheck/update.
@@ -106,7 +106,7 @@ you have worked on this problem several times but features are still lacking. Th
 - you may analyze related architecture/code and borrow good deisgn from upstream superdoc(source code at folder `../superdoc`) and rewrite it in functional-programming style for begonia to avoid licensing issues.
 - it is unnecessary to search the web for superdoc details, just analyze the source code at folder `../superdoc`.
 
-- please recheck migrated features and improve your implementation in begonia. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support, API, SDK, CLI..., compare the implementation logic/code of begonia with superdoc logic/code to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
+- please recheck migrated features and improve the implementation in begonia. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support, API, SDK, CLI..., compare the implementation logic/code of begonia with logic/code of superdoc to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
 - core implementation for major features should be framework-agnostic without react, ui wrappers/bindings should be sub packages, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
 
 - prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support, API, SDK, CLI... in begonia, make related features/architecture correct, modular, extensible, robust for long-term maintenance.
@@ -115,11 +115,12 @@ you have worked on this problem several times but features are still lacking. Th
 
 - docs/tests/scripts might be outdated, recheck code and data flow to improve begonia.
 
-- please recheck migrated features and improve your implementation in begonia. Analyze core data flow and implementation logic details for every major feature , compare the implementation logic/code of begonia with superdoc logic/code to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. recheck and improve major features/architecture in begonia, make them correct and robust without guessing, the fewer bugs, the better.
+- please recheck migrated features and improve the implementation in begonia. Analyze core data flow and implementation logic details for every major feature , compare the implementation logic/code of begonia with logic/code of superdoc to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
+- recheck and improve major features/architecture in begonia, make them correct and robust without guessing, the fewer bugs, the better.
 
-- prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, layout modes support vertical/horizontal/book like superdoc, multi-column layout supports unequal column widths like superdoc, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container like superdoc, zoom in/out, Canvas-based text measurement, performant line-breaking like superdoc, track-change/diff, overlap handling in track change like superdoc, sdk.
+- prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, layout modes support vertical/horizontal/book like superdoc, multi-column layout supports unequal column widths like superdoc, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container like superdoc, zoom in/out, Canvas-based text measurement, performant line-breaking like superdoc, track-change/diff, overlap handling in track change like superdoc, comment, OOXML-support, API, SDK, CLI.
 
-- prioritize and recheck/improve major features like document viewport/layout-engine(supports multi-column) like superdoc, toggling pagination, layout modes support vertical/horizontal/book like superdoc, multi-column layout supports unequal column widths like superdoc, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container like superdoc, zoom in/out, Canvas-based text measurement, performant line-breaking like superdoc. 
+- prioritize and recheck/improve major features like document viewport/layout-engine(supports multi-column) like superdoc, toggling pagination, layout modes support vertical/horizontal/book like superdoc, multi-column layout supports unequal column widths like superdoc, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container like superdoc, zoom in/out, Canvas-based text measurement, performant line-breaking like superdoc, comment, OOXML-support, API, SDK, CLI. 
 - you may deep research, and reference the upstream superdoc code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues. 
 - core implementation in begonia for major features should be framework-agnostic without react, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
 
@@ -141,6 +142,13 @@ you have worked on this problem several times but features are still lacking. Th
 
 - import/export
 
+- the tests/scripts/commands you just run took huge memory and is very slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests. 
+- please recheck related implementation-logic/tests, improve it and make it correct and fast. 
+
+- try to improve/refactor the full tests to make it faster so that full tests running within 1.5 minutes.
+- improve the slow/complicated/heavy parts of tests, 
+you might refactor/reorganize the tests architecture/logic to make it correct, fast, robust, maintainable in the long term.
+
 ### docx-editor
 
 project `superdoc` at folder `../superdoc` is also a paginated editor like `docx-editor` in current folder. analyze related code/docs/architecture/data-flow in superdoc, explain to me how does the core superdoc editor  implement the paginated editor layout engine architecture, whether superdoc editor supports multi-column layout, whether it supports virtualized rendering for huge document. 
@@ -149,7 +157,7 @@ then compare the architecture/implementation of superdoc and docx-editor, explai
 ## 📌 hardoc(onlyoffice-pdf)
 
 onlyoffice-pdf-editor(code is at several git repos in current folder) implements renders, edits, annotates `.pdf` files in the browser, but it is AGPL licensed.
-- the final goal is to implement a new headless, extensible pdf editor named hardoc with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
+- the final goal is to implement a new headless, extensible pdf solution named hardoc with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
 - hardoc pdf editor should be more of a headless client-server architecture, so that a hardoc pdf web/cli/sdk can be built on the same architecture. the hard web pdf editor ui/ux might be similar to onlyoffice-pdf-editor.
 - hardoc should be implemented in a modular and extensible architecture for core pdf features like viewing and editing, with functional programming style.
 
@@ -196,7 +204,7 @@ project onlyoffice and project at `~/Documents/repos/office/all-pdf/open-pdf-stu
 - the final goal is to implement from scratch a extensible web pdf editor named hardoc with in-place text editing features similar to onlyoffice/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues. 
 
 - 🐛
-- forms, ocr, collaboration, ai-editing, complicated shapes, search should be planned but implementation may be delayed, so that architecture should support these features later.
+- forms, ocr, collaboration, ai-editing, complicated shapes should be planned but implementation may be delayed, so that architecture should support these features later.
 - please make a plan for the extensible text editing editor first, then implement it at folder `./hardoc`.
 
 - please refactor code structure in hardoc project to use similar architecture and code structure as onlyoffice without licensing issue, to make it easy to migrate more features in the long term. legacy code may be migrated or removed by rewriting.
@@ -229,7 +237,7 @@ please make a plan, then improve the core in-place text editing engine to make i
 - you have worked on this several times but still not solve it. 
 
 - you may reference the upstream onlyoffice-pdf-editor code(code is at several git repos in current folder), use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
-- you may even do a big code refactor to match major features of onlyoffice-pdf-editor in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor for hardoc to match major features of onlyoffice-pdf-editor in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design a feature parity doc at `upstream/parity/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream onlyoffice-pdf-editor should be put in folder `upstream`. you may even design a script to automate it.
 - research and make a plan, then implement hardoc to match major features of onlyoffice-pdf-editor, or even better than onlyoffice-pdf-editor, without licensing issues.
@@ -243,16 +251,16 @@ please make a plan, then improve the core in-place text editing engine to make i
 
 You should implement hardoc pdf editor in a similar architecture of onlyoffice pdf editor. If onlyoffice does not use the rust core architecure, you MUST NOT do it.
 
-DO NOT search the web for onlyoffice pdf api, you should find and read source code of onlyoffice pdf editor directly in current folder ~/Documents/repos/office/all-office/onlyoffice
+DO NOT search the web for onlyoffice pdf api, you should find and read source code of onlyoffice pdf editor directly in current folder.
 
 - hardoc should have full feature parity matching onlyoffice-pdf-editor for important/major features like document rendering/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, plugin architecture and manager, pdf search, pdf page-thumbnails, bookmarks.
 
-- please recheck migrated features and improve your implementation in hardoc. Analyze core data flow and implementation logic details for every major feature like document rendering/layout/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, ..., compare the implementation logic/code of hardoc with onlyoffice-pdf-editor logic/code to recheck and enhance the correctness of architecture and logic in hardoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in hardoc are correct, modular, extensible for long-term maintenance.
+- please recheck migrated features and improve the implementation in hardoc. Analyze core data flow and implementation logic details for every major feature like document rendering/layout/pagination/zoom, in-place text-editing engine, undo/redo for editing, pdf annotations/highlights, ..., compare the implementation logic/code of hardoc with logic/code of onlyoffice-pdf-editor to recheck and enhance the correctness of architecture and logic in hardoc, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in hardoc are correct, modular, extensible for long-term maintenance.
 
 - docs/tests/scripts might be outdated, recheck code and data flow to improve hardoc.
 
 - prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, selection range/offset/caret, undo/redo for editing, pdf annotations/highlights... in hardoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
-- prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, selection range/offset/caret, undo/redo for editing, pdf annotations/highlights, pdf search, pdf page thumbnails and navigation, bookmarks... in hardoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+- prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, selection range/offset/caret, undo/redo for editing, pdf annotations/highlights, pdf search, pdf page thumbnails and navigation, bookmarks... in hardoc, make related features/architecture correct, modular, extensible for long-term maintenance.
 
 - if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
@@ -311,7 +319,7 @@ Project `grist` (in current folder) is a modern relational spreadsheet. It combi
 
 -------
 
-- please recheck migrated features and improve your implementation in react webapp. Analyze core data flow and implementation logic details for every major feature like spreadsheet data-model and rich formatting, spreadsheet editing with undo/redo and history, custom-widget, formula, drag-and-drop-dashboard, incremental-imports..., compare the implementation of react webapp with backbonejs webapp to recheck and enhance the correctness of architecture and logic in react webapp, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in react webapp are correct, modular, extensible for long-term maintenance.
+- please recheck migrated features and improve the implementation in react webapp. Analyze core data flow and implementation logic details for every major feature like spreadsheet data-model and rich formatting, spreadsheet editing with undo/redo and history, custom-widget, formula, drag-and-drop-dashboard, incremental-imports..., compare the implementation of react webapp with backbonejs webapp to recheck and enhance the correctness of architecture and logic in react webapp, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in react webapp are correct, modular, extensible for long-term maintenance.
 
 - prioritize and recheck/improve major features like spreadsheet data-model and rich formatting, spreadsheet editing with undo/redo and history, custom-widget, formula, drag-and-drop-dashboard, incremental-imports... in react webapp, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 
@@ -398,14 +406,16 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 
 - The final goal for aichorage is to implement an jan-like webapp/electron-app/cli with headless, extensible, client-server architecture in current folder with the same features as existing jan webapp/tauri-app/cli, but built using modern tech stacks like python, uv, npm workspaces, reactjs, @tanstack/react-router, @base-ui/react, typescript, tailwindcss, oxlint, oxfmt. After you finished the work, so `npm run dev` should start the webapp. you should implement the goal in a way to make it easy to migrate code changes/features from jan to aichorage in the future.
 - The core goal is to support most of the existing jan features/ux, like Download and run LLMs, Connect to cloud llm api, install custom llm backend like custom llama.cpp, chat with local llm or cloud llm api. since jan is apache2 licensed, you can reuse/rewrite whatever code you need from jan repo. you may reuse jan web-app(at `../jan/web-app`) or just reuse/rewrite any code you want, but you should rewrite the jan rust backend with a good custom python implementation which you can borrow design and rewrite code from jan-rust-code/transformerlab-app/unsloth-studio to avoid license issue. you may implement the core llm download/run/chat/tool-call data flow first, then migrate more features later. 
-- you may reuse most webapp code from jan, you may also add new features and ux if you want. Since you can reuse many frontend code, the python backend should be the hard work. Strictly following jan-rust-backend architecture/logic/code is unnecessary. 
-  - transformerlab-app-electron repo gives a good reference for how to support to install multiple backend plugin like llama.cpp/mlx-vlm/ollama/mlx-audio from ui, you may reference useful architecture/features/code from it and migrate this custom llm backend feature to aichorage(llama.cpp/mlx-vlm first, ollama/mlx-audio may be delayed), you should ignore llm training/tuning code from it. tranfromerlab-app electron app also supports windows/linux/mac, you may reference the bundling logic if you need. 
-  - unsloth-studio webapp also supports windows/linux/mac, you may reference the bundling logic if you need. unsloth-studio supports auto detect local models from local huggingface-cache/ollama/lmstudio, it's a good feature, please migrate it to aichorage. unsloth-studio also supports llama-server/mlx-lm/mlx-vlm backend on windows/linux/mac, also a good reference. you should ignore llm training/tuning code from it. Unsloth studio can provide 2 llm apis that both support streaming, tool calling (OpenAI tools / Anthropic tools), and vision inputs: Anthropic-compatible api /v1/messages , OpenAI-compatible api /v1/chat/completions and /v1/responses. OpenAI-compatible api should be implemented in aichorage, anthropic api may be delayed. unsoloth-studio llm api has very very good fixes for tool-calls. It also support web search.
+- you may reuse most webapp code from jan, ux may differ. Since you can reuse many frontend code, the python backend should be the hard work. Strictly following jan-rust-backend architecture/logic/code is unnecessary. 
+  - transformerlab-app-electron repo gives a good reference for how to support to install multiple backend plugin like llama.cpp/mlx-vlm/mlx-audio from ui, you may reference useful architecture/features/code from it and migrate this custom llm backend feature to aichorage(llama.cpp first, others may be delayed), you should ignore llm training/tuning code from it. tranfromerlab-app electron app also supports windows/linux/mac, you may reference the bundling logic if you want. 
+  - unsloth-studio webapp also supports windows/linux/mac, you may reference the bundling logic if you want. unsloth-studio supports auto detect local models from local huggingface-cache/lmstudio, please migrate it to aichorage. unsloth-studio also supports llama-server/mlx-lm/mlx-vlm backend on windows/linux/mac, also a good reference. you should ignore llm training/tuning code from it. Unsloth studio can provide 2 llm apis that both support streaming, tool calling, and vision inputs: Anthropic-compatible api /v1/messages , OpenAI-compatible api /v1/chat/completions and /v1/responses. unsoloth-studio llm api has very very good fixes for tool-calls. It also support web search.
+  OpenAI-compatible api should be implemented in aichorage, anthropic api may be delayed. 
 
 - most features/ux from jan should be migrated/reimplemented in aichorage. rag should be planned, but rag implementation may be delayed.
 - multi-user/team/workspace concepts in tranfromerlab-app should be implemented in aichorage, you may borrow the good design/architecture of transformerlab-app, but strictly following is unnecessary. all custom backend plugins may be installed in global scope, but each team can only use plugin enabled in their team. a default workspace and username/password should be created so that user can use it easily by just click login.
 - aichorage backend/runtime/web should be extensible, configurable, flexible. Apart from good defaults value, a `.env.example` should be provided in related sub packages if you want. you may borrow some good design/config from upstream jan/transformerlab-app/unsloth-studio.
 - all llm backend/runtime should be optional that supports to install/uninstall/enable/disable, so that the architecture is extensible and flexible. but llama.cpp should be installed by default to make it easy to use out of the box. you may design a standalone llm-runtime package to make the architecture modular, resuable, extensible.
+
 - tasks that may be planned but delayed(not in current goal): RAG, full parity of Jan-style UI/UX, complicated multi-user/team/workspace/RBAC, anthropic-compatible api, embedding models.
 
 - some local models if you need: ~/.lmstudio/models/unsloth/LFM2.5-1.2B-Thinking-GGUF/LFM2.5-1.2B-Thinking-UD-Q5_K_XL.gguf, ~/.lmstudio/models/unsloth/gemma-4-E4B-it-UD-MLX-4bit, ~/.lmstudio/models.
@@ -419,7 +429,7 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 - you have migrated/reimplemented some features from upstream jan/transformerlab-app/unsloth-studio to aichorage.
 
 - you may deep research and reference the code of upstream projects(jan, unsloth-studio, transformerlab-app), you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
-- you may even do a big code refactor to match major feature of jan in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor for airchorage to match major feature of jan in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream jan/transformerlab-app/unsloth-studio should be put in folder `upstream`. you may even design a script to automate it.
 - research and make a good design, then implement aichorage to match major features of jan, or even better than jan, without licensing issues.
@@ -446,9 +456,9 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 
 - jan's overall architecture is good enough to follow. Mostly aichorage should use similar architecture to jan.
 
-- please recheck migrated features and improve your implementation in aichorage. Analyze core data flow and implementation logic details for every major feature like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible api, chat with local-model/cloud-llm-api-provider..., compare the implementation logic/code of aichorage with related jan/transformerlab-app/unsloth-studio logic/code to recheck and enhance the correctness of architecture and logic in aichorage, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in aichorage are correct, modular, extensible for long-term maintenance. 
+- please recheck migrated features and improve the implementation in aichorage. Analyze core data flow and implementation logic details for every major feature like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible api, chat with local-model/cloud-llm-api-provider..., compare the implementation logic/code of aichorage with related jan/transformerlab-app/unsloth-studio logic/code to recheck and enhance the correctness of architecture and logic in aichorage, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in aichorage are correct, modular, extensible for long-term maintenance. 
 
-- prioritize and recheck/improve major features like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible-api, chat with local-model/cloud-llm-api-provider... in aichorage, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+- prioritize and recheck/improve major features like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible-api, chat with local-model/cloud-llm-api-provider... in aichorage, make related features/architecture correct, modular, extensible for long-term maintenance. 
 - tasks that may be planned but delayed(not in current goal): RAG, full parity of Jan-style UI/UX, complicated multi-user/team/workspace/RBAC, anthropic-compatible api.
 - if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
@@ -469,15 +479,16 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 local model testing/running can be very slow.
 - please recheck implementation logic related to model/llm-runtime-backend downloading and related tests, improve it by making the downloaded models/binary/resources cached locally, so that later testing/running can reuse it directly if already existed. improve the cache logic, and update related data-flow/tests, make sure the implementation is correct, robust, extensible without unnecessary redownloading. 
 
-- try to improve/refactor the full tests to make it faster so that full tests running within 10 minutes.
-- improve the slow/complicated/heavy parts of tests, you may refactor/reorganize the tests to make it correct, fast, robust, maintainable in the long term.
+- try to improve/refactor the full tests to make it faster so that full tests running within 3 minutes.
+- improve the slow/complicated/heavy parts of tests, 
+you might refactor/reorganize the tests architecture/logic to make it correct, fast, robust, maintainable in the long term.
 
-- lm studio can load multiple models at the same time, and it also supports Parallel Requests, Multiple requests to the same model or different models can be processed simultaneously, this feature is powerful and increases productivity. core engine source code of lm studio is at folder `~/Documents/repos/ai-ml-llm/all-runtime-mlx/mlx-engine` and `~/Documents/repos/ai-ml-llm/all-runtime-mlx/lms` for your reference. you may analyze code in lm studio core engine, unsloth-studio and transformerlab-app , then you may get some ideas from their code and implement something like Parallel Requests in aichorage.
-- lm studio also supports to show model working log that can display the prompt processing or token generation progress(lm studio has this feature as developer logs). if there is something like this in the lmstudio code or unsloth-studio code or transformerlab-app code, you may get some ideas from their code and implement something like model logs in aichorage. it is better to design a option to configure the log level like off/debug/verbose/user/ai/..., you might design an extensible/robust architecture for the logging.
+- lm studio can load multiple models at the same time, and it also supports Parallel Requests, Multiple requests to the same model or different models can be processed simultaneously, this feature is powerful and increases productivity. core engine source code of lm studio is at folder `~/Documents/repos/ai-ml-llm/all-runtime-mlx/mlx-engine` and `~/Documents/repos/ai-ml-llm/all-runtime-mlx/lms` for your reference. you may analyze code in lm studio core engine, unsloth-studio and transformerlab-app , then you may get some ideas from their code and implement/improve something like Parallel Requests in aichorage.
+- lm studio also supports to show model working log that can display the prompt processing or token generation progress(lm studio has this feature in ui as developer logs). if there is something like this in the lmstudio code or unsloth-studio code or transformerlab-app code, you may get some ideas from their code and implement something like model logs in aichorage. it is better to design a option to configure the log level like off/debug/verbose/user/ai/..., you might design an extensible/robust architecture for the logging.
 - please continue to improve and enhance aichorage, and improve the features.
+- for every ai message in jan chat, ai model metadata like token generation speed, token count, and other metadata can be shown under the ai message, please refer to related code and migrate/improve this feature to aichorage.
 
 - in jan app, there is a download manager that supports to show download progress and provides downloading related features. please refer to the code of jan(at folder `../jan` ) and migrate this feature to aichorage. you might reuse ui of jan, but the downloading related backend like pause/resume/cancel/... should be rewritten in python, you might improve this feature in aichorage.
-- for every ai message in jan chat, ai model metadata like token generation speed and token count can be shown under the ai message, please refer to related code and migrate this feature to aichorage.
 
 - 
 - 
@@ -517,7 +528,7 @@ local model testing/running can be very slow.
   - cons: 内置runtime需要支持多种格式如 /v1/chat/completions, /v1/responses， 还要考虑本地ollama的版本、模型版本， 带来的问题比收益多
   - 参考很多主流开放性ai的产品如cursor/cherry-studio, 都支持用户配置api，所以通过平台/系统来管理本地的工具是非必要的
 
-## 📌 dreamansions/redmansion(vscode-obsidian/zotero)
+## 📌 dreamansion/redmansion(vscode-obsidian/zotero)
 
 - tips
   - 可用域名 dreamansions
@@ -534,55 +545,57 @@ local model testing/running can be very slow.
 
 project `directus` (at folder `../directus` ) is a source-available licensed, powerful, flexible, headless backend platform that helps users to build projects better/faster. It provides rest api, working with new or existing databases, content versioning, draft/publish content, support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions and marketplace, user account/auth, Policy-based Access Control, admin management studio webapp, horizontal scaling, workflow automations, SDK, AI Assistant.
 
-- The final goal for this project `redmansion` is to implement an directus-like backend platform with headless, extensible, flexible architecture in current folder with similar features like directus core features, but built using modern tech stacks like npm workspaces, expressjs, knex(for db crud), reactjs, @tanstack/react-router, @base-ui/react, typescript, tailwindcss, oxlint, oxfmt. you should implement the goal in a way to make it easy to migrate code changes/features from directus to redmansion in the future.
-- The core goal is to reimplment most of the existing directus features, like rest api, working with new or existing databases, content versioning, draft/publish content, i18n, data model relationships like one2many/many2one/many2many/many2any/translations/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, sdk, simple user account/auth, Policy-based Access Control, admin studio ui, horizontal scaling. since directus is source-available, you might refer to its architecture/data-flow/logic/code, but you should rewrite it in redmansion to avoid license issue. backend architecture of directus is really extensible, you should borrow the good design and data flow, admin frontend of directus should be rewritten in react, @tanstack/react-router, @base-ui/react. 
+- The final goal for this project `dreamansion` is to implement an directus-like backend platform with headless, extensible, flexible architecture in current folder with similar features like directus core features, but built using modern tech stacks like npm workspaces, expressjs, knex(for db crud), reactjs, @tanstack/react-router, @base-ui/react, typescript, tailwindcss, oxlint, oxfmt. you should implement the goal in a way to make it easy to migrate code changes/features from directus to dreamansion in the future.
+- The core goal is to reimplment most of the existing directus features, like rest api, working with new or existing databases, content versioning, draft/publish content, i18n, data model relationships like one2many/many2one/many2many/many2any/translations/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, sdk, simple user account/auth, Policy-based Access Control, admin studio ui, horizontal scaling. since directus is source-available, you might refer to its architecture/data-flow/logic/code, but you should rewrite it in dreamansion to avoid license issue. backend architecture of directus is really extensible, you may borrow the good design and data flow, admin frontend of directus should be rewritten in react, @tanstack/react-router, @base-ui/react. 
+- project directus-schema-sync(at folder `../directus-schema-sync`, apache 2 license) implements a way to sync Directus schema, configuration and selected data between environments. similar feature should be implemented as a sub package in dreamansion. you may reuse the apache code if you want.
 
-- project directus-schema-sync(at folder `../directus-schema-sync`, apache 2 licensed) implements a way to sync Directus schema, configuration and selected data between environments. similar feature should be implemented as a sub package in redmansion. you may reuse the apache code if you want.
+- features that may be planned but delayed(not in current goal): full parity of directus-style admin UI/UX, complicated multi-user/team/workspace/access-control, sso auth, workflow automations, extension marketplace, AI Assistant, MCP server, GraphQL API.
+- features that may be ignored in dreamansion: GraphQL API.
 
-- features that may be planned but delayed(not in current goal): full parity of directus-style admin UI/UX, complicated multi-user/team/workspace/access-control, sso auth, workflow automations, extension marketplace, AI Assistant, MCP server for AI.
-- features that may be ignored in redmansion: GraphQL API.
+- you have migrated/reimplemented some features from upstream directus to dreamansion.
 
-- you have migrated/reimplemented some features from upstream directus to redmansion.
-
-- you may deep research and refer to the architecture/data-flow/code of upstream directus, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional-programming style for redmansion without licensing issues.
-- you may even do a big code refactor for redmansion to match major feature of directus in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may deep research and refer to the architecture/data-flow/code of upstream directus, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional-programming style for dreamansion without licensing issues.
+- you may even do a big code refactor for dreamansion to match major feature of directus in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream directus should be put in folder `upstream`. you may even design a script to automate it.
 
 - these are the most important features now, the goal is to achieve major feature pairity or even better.
 - research and make a plan, then migrate and improve major feature pairity, without licensing issues
 
-- please deep research directus(at folder `../directus` ), then can you design a similar solution in redmansion to improve it? is directus's solution good enough? if yes, solve it in a similar way for redmansion.
+- please deep research directus(at folder `../directus` ), then can you design a similar solution in dreamansion to improve it? is directus's solution good enough? if yes, solve it in a similar way for dreamansion.
 
-- research and make a full plan, then implement redmansion to match major features of directus, or even better than directus, without licensing issues.
+- research and make a full plan, then implement dreamansion to match major features of directus, or even better than directus, without licensing issues.
 
-- research and make a good design, then implement redmansion to match major features of directus, or even better than directus, without licensing issues.
+- research and make a good design, then implement dreamansion to match major features of directus, or even better than directus, without licensing issues.
 
 ------
 
-- you may refer to how directus(source code at folder `../directus`) implements/solves it, then do a similar or better implementation in redmansion without licensing issue.
+- you may refer to how directus(source code at folder `../directus`) implements/solves it, then do a similar or better implementation in dreamansion without licensing issue.
 
-- directus's overall architecture is good enough to follow. Mostly redmansion should use similar architecture like directus.
-- you may analyze related architecture/code and borrow good deisgn from upstream directus(source code at folder `../directus`) and rewrite it in functional-programming style for redmansion to avoid licensing issues.
+- directus's overall architecture is good enough to follow. Mostly dreamansion should use similar architecture like directus.
+- you may analyze related architecture/code and borrow good deisgn from upstream directus(source code at folder `../directus`) and rewrite it in functional-programming style for dreamansion to avoid licensing issues.
 - it is unnecessary to search the web for directus details, just analyze the source code at folder `../directus`.
 
-- please recheck migrated features and improve your implementation in redmansion. Analyze core data flow and implementation logic details for every major feature like rest api, working with new or existing databases, content versioning, draft/publish content, i18n/translation, data model relationships like one2many/many2one/many2many/many2any/translation/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, sdk, admin management studio webapp..., compare the implementation logic/code of redmansion with related logic/code of directus to recheck and enhance the correctness of architecture/data-flow and logic in redmansion, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in redmansion are correct, modular, extensible for long-term maintenance. 
+- please recheck migrated features and improve the implementation in dreamansion. Analyze core data flow and implementation logic details for every major feature like rest api, working with new or existing databases, content versioning, draft/publish content, i18n/translation, data model relationships like one2many/many2one/many2many/many2any/translation/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, sdk, ..., compare the implementation logic/code of dreamansion with related logic/code of directus to recheck and enhance the correctness of architecture/data-flow and logic in dreamansion, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in dreamansion are correct, modular, extensible for long-term maintenance. 
 
-- prioritize and recheck/improve major features like rest api, working with new or existing databases, content versioning, draft/publish content, i18n/translation, data model relationships like one2many/many2one/many2many/many2any/translation/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, sdk, admin management studio webapp... in redmansion, make related features/architecture correct, modular, extensible, robust for long-term maintenance.
+- prioritize and recheck/improve major features like rest api, working with new or existing databases, content versioning, draft/publish content, i18n/translation, data model relationships like one2many/many2one/many2many/many2any/translation/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, sdk, ... in dreamansion, make related features/architecture correct, modular, extensible, robust for long-term maintenance.
+
+admin management studio webapp
 
 - if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
-- recheck and improve it, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
+- recheck and improve major features, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
 
-- docs/tests/scripts might be outdated, recheck code and data flow to improve redmansion.
+- docs/tests/scripts might be outdated, recheck code and data flow to improve dreamansion.
 
 ------
 
-- the tests/scripts/commands you just run took huge memory and is very slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests. please recheck related implementation-logic/tests, improve it and make it correct and fast. 
+- the tests/scripts/commands you just run took huge memory and is very slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests. 
+- please recheck related implementation-logic/tests, improve it and make it correct and fast. 
 
-- try to improve/refactor the full tests to make it faster so that full tests running within 2 minutes.
+- try to improve/refactor the full tests to make it faster so that full tests running within 2.0 minutes.
 - improve the slow/complicated/heavy parts of tests, 
-you might refactor/reorganize the tests to make it correct, fast, robust, maintainable in the long term.
+you might refactor/reorganize the tests architecture/logic to make it correct, fast, robust, maintainable in the long term.
 
 ### draft-vscode
 
@@ -591,8 +604,8 @@ you might refactor/reorganize the tests to make it correct, fast, robust, mainta
 - for the core editor, is it possible to use codemirror v6 to replace monaco editor by rewriting related logic with codemirror v6 state/view/plugin? 
 - https://code.visualstudio.com/api/extension-guides/custom-editors this doc shows vscode support custom editor, it seems a promising idea.
 
-- the final goal is to keep all exisitng vscode features working, just add a new `./scripts/redmansion.sh` like existing `./scripts/code.sh` to start the app with codemirror v6 editor.
-  - also add new `./scripts/redmansion-web.sh`
+- the final goal is to keep all exisitng vscode features working, just add a new `./scripts/dreamansion.sh` like existing `./scripts/code.sh` to start the app with codemirror v6 editor.
+  - also add new `./scripts/dreamansion-web.sh`
 - you should implement it in a way to make it easy to merge code changes from `main` branch to new `feat/codemirror` branch in the future, so please keep as many code from main branch unchanged as possible, most of codemirror related code/scripts should be designed as separate package or file without touching exising files.
 
 - analyze vscode source code and architecture/data-flow, deep-research the monaco-editor related features, then explain to me whether it is possible to replace/rewrite monaco editor with codemirror v6(replace the core editing feature first, other features can be planned but delayed.)
@@ -705,7 +718,7 @@ please analyze git commits and code if you need, then explain to me what major f
 
 - please refactor code structure in ilove-image project to use similar architecture and code structure as ilove-stirling-image without licensing issue, to make it easy to migrate more features in the future. 
 
-please recheck migrated features and improve your implementation in ilove-image, make it runnable locally with npm. make sure implementation is correct and extensible.
+please recheck migrated features and improve the implementation in ilove-image, make it runnable locally with npm. make sure implementation is correct and extensible.
 
 - research and make a full plan, then implement ilove-image to match major features of ilove-stirling-image, or even better than ilove-stirling-image, without licensing issues.
 
@@ -775,7 +788,7 @@ what should be done to macth the upstream? explain to me. if it it complicated, 
 # code-review 👀
 
 for project hardoc, 
-please recheck migrated features and improve your implementation, make it runnable locally using npm without docker. Analyze core data flow and implementation logic details for major features, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations are correct, modular, extensible for long-term maintenance.
+please recheck migrated features and improve the implementation, make it runnable locally using npm without docker. Analyze core data flow and implementation logic details for major features, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations are correct, modular, extensible for long-term maintenance.
 - docs/tests/scripts might be outdated, recheck code and data flow to improve begonia.
 
 please recheck migrated features and implementations for possible licensing issues. if the code is too similar to upstream, you can adjust the risking code to avoid licensing issues. if features are already migrated under different names, it is unnecessary to design it as a standalone/separate tool as the upstream did, this also helps to avoid licensing issues.

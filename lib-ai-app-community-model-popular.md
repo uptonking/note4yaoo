@@ -759,9 +759,14 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [Artificial Analysis says Sol and Luna dominate Terra on intelligence per dollar. Is GPT-5.6 Terra already obsolete, or is this benchmark missing something? : r/codex _202607](https://www.reddit.com/r/codex/comments/1uua1id/artificial_analysis_says_sol_and_luna_dominate/)
+- use Sol medium and high for the most part, Luna Max for some smaller things, and occasionally Sol xhigh for something hard/complex. No reason to touch Terra.
 
-- ## 
+- Luna xhigh(max) handles most of my current tasks very well
+
+- ## [GPT 5.6 不同模型和思考等级的消耗都咋样，有佬测过吗 - LINUX DO _202607](https://linux.do/t/topic/2571576)
+- 简单的luna xhigh, 复杂的sol high或xhigh
+- 用了5.6sole，高，感觉速度比5.5慢一点，
 
 - ## [GLM5.2 使用有感 - LINUX DO _202607](https://linux.do/t/topic/2541717)
   - GLM 他只会迎合你回答 不会拒绝你, 我平时用5.5 和 opus比较多, 对于某个意见, 他真的会去反驳我, 并且和我列举一些说明

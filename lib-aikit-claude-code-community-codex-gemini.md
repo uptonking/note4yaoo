@@ -637,7 +637,37 @@ codex --yolo resume --last
 
 - ## 
 
-- ## 
+- ## [Possible fixes for GPT 5.6 burning through your quota. : r/codex _202607](https://www.reddit.com/r/codex/comments/1uu7weh/possible_fixes_for_gpt_56_burning_through_your/)
+- 1. Lower the context window and compact earlier
+
+Add this to your Codex config.toml:
+
+model_context_window = 272000
+model_auto_compact_token_limit = 233000
+This prevents Codex from carrying an unnecessarily large active context for too long.
+
+2. Restrict unnecessary subagent usage
+
+Add this to your AGENTS.md:
+
+Use subagents only when they are likely to save tokens or improve the result.
+
+For simple tasks, use non-forked subagents with a lower reasoning level where appropriate.
+3. Enable the newer multi-agent configuration
+
+Add this to config.toml:
+
+[features.multi_agent_v2]
+hide_spawn_agent_metadata = false
+tool_namespace = "agents"
+4. Prevent subagents from inheriting the full conversation
+
+Add this to your AGENTS.md:
+
+When spawning subagents, use fork_turns="none" unless the parent conversation context is genuinely required.
+Forked subagents can inherit a large amount of existing context, increasing token usage before they even begin the assigned task.
+
+- If you don't want it in your AGENTS.md file there is a useful subagent hint text you can enable. Mine for example in the ~/.codex/config.toml
 
 - ## [How do I use /plan and /goal together? : r/codex _202606](https://www.reddit.com/r/codex/comments/1u004l1/how_do_i_use_plan_and_goal_together/)
 - You can just ask it to set the goal in the plan. Then it really depends on the context, sometimes the goal is set before the plan is finished, or sometimes it sets the goal after you clicked implement plan.

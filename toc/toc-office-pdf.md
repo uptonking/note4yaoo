@@ -299,7 +299,7 @@ modified: 2021-01-04T17:26:43.784Z
   - open-source PDF editor and annotator for Windows, macOS, Linux, and Android.
   - lightweight, native desktop application that provides professional-grade PDF annotation, markup, and editing tools without subscriptions, telemetry, or bloatware
   - Built with Tauri 2 and web technologies, it delivers a fast, modern experience with a Microsoft Office-style ribbon interface.
-  - 依赖tauri2、solidjs、pdfjs、pdf-lib
+  - 依赖tauri2、solidjs、pdfjs、pdf-lib、PDFium
   - Text Editing: Edit existing PDF text content inline
   - Page Management
   - Text markup: Highlight, underline, strikethrough
@@ -328,6 +328,7 @@ modified: 2021-01-04T17:26:43.784Z
     - The entire rendering and processing pipeline runs on the CPU via Canvas 2D with no GPU acceleration. 
     - All rendering is done via HTML5 Canvas 2D on the main thread. No OffscreenCanvas, ImageBitmap, or requestAnimationFrame batching is used anywhere. 
   - [perf: large PDF performance bottlenecks — rendering, loading & annotation pipeline  _202603](https://github.com/OpenAEC-Foundation/open-pdf-studio/issues/175)
+    - 202607: The four mentioned bottlenecks have largely been rendered obsolete by the performance work since v1.45 (progressive/tile render, multi-process PDFium worker pool, page bitmap cache, extract budget cap).
   - 🏘️ [arch: multi-engine rendering architecture for large PDF performance _202603](https://github.com/OpenAEC-Foundation/open-pdf-studio/issues/176)
     - The current architecture pushes everything through a single pipeline: one pdf.js render call → one canvas → annotations on top → done. All on the main thread. This fundamentally doesn't scale for large/complex PDFs.
     - Professional PDF viewers (PDFium, MuPDF, Adobe Acrobat) solve this with a multi-engine architecture. We should adopt a similar approach.

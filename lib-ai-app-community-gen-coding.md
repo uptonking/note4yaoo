@@ -312,6 +312,20 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## the problem with "spec driven development" is that most software can't be spec'd up front
+- https://x.com/stevekrouse/status/2076383688753832382
+  - software is a creative act, where you figure out what you're building as you build it
+
+- Specs are best written iteratively, one tiny little spec at a time. In the agile way.
+
+- That's what's cool and useful about @mattpocockuk wayfinder skill imo is it helps you grope into the fog progressively and firm things up rather than pretending you know everything up front
+
+- Agree to an extent. We tried to make the spec creation process collaborative and iterative with Speq. Usage hasn’t taken off, but I do think it’s useful in a team environment. https://getspeq.com
+
 - ## 开个thread，记录前端开的的，小妙招。
 - https://x.com/yan5xu/status/2074804888815686102
 1. 要会用CDP。让agent 可以通过CDP或者类似的封装，自己操作网页；

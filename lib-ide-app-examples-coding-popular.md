@@ -1303,7 +1303,7 @@ modified: 2025-12-11T18:10:23.710Z
     - Instead of open-ended "figure it out" prompting, provide step-by-step scaffolding
     - Use a frontier model (via OpenRouter or other provider) for planning and a local small model for execution
     - Task-Specific Micro-Agents
-    - [[Feature] Enable mode-specific model and provider configuration for optimized performance _202601](https://github.com/Nano-Collective/nanocoder/issues/277)
+    - 已支持 [[Feature] Enable mode-specific model and provider configuration for optimized performance _202601](https://github.com/Nano-Collective/nanocoder/issues/277)
       - Currently, Nanocoder uses a single provider and model configuration across all development modes (normal, auto-accept, plan). 
       - I propose implementing mode-specific model and provider configuration that allows users to define different AI models for different development modes
       - Planning Phase: Use powerful, sophisticated models
