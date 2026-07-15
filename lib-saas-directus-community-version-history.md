@@ -35,8 +35,8 @@ modified: 2024-03-29T14:00:38.977Z
 - ## ⏳ [Support activity/revisions/logs retention _202408 ](https://github.com/directus/directus/issues/23166)
   - We need to add a set of new environment variables to control the maximum retention of activity/revision/flow logs rows: ACTIVITY_RETENTION, REVISIONS_RETENTION, FLOWS_LOG_RETENTION
 
-- 
-- 
+- To make the `delete from directus_activity` fast you need an index on the directus_revisions.activity
+  - Yup! But that initial migration can take a while and even timeout for bigger existing projects. Strategy here is to first split it up into smaller chunks(eg comments #22295 / versions #22413 to a different table), then to add the necessary indexes (#23149) to activity/revisions and the other new tables, and then to enable the retention control for projects 
 
 - ## 🐛⚡️ [Performance issues with revisions and activity _202303](https://github.com/directus/directus/issues/17894)
 - There is a problem with the revisions and activity queries.

@@ -118,7 +118,7 @@ modified: 2020-12-17T09:11:52.546Z
 
 - You should use `getStaticProps` if:
   - The **data required to render the page is available at build time** ahead of a user’s request.
-  - The data can be publicly cached (**not user-specific**).
+  - The data can be publicly cached ( **not user-specific** ).
   - The data comes from a headless CMS.
   - The page must be pre-rendered (for SEO) and be very fast 
     - `getStaticProps` generates HTML and JSON files, both of which can be cached by a CDN for performance.
@@ -303,7 +303,7 @@ export async function getServerSideProps() {
 
 ## Fetching data on the client side
 
-- If your **page contains frequently updating data**, and you don’t need to pre-render the data, you can fetch the data on the client side.
+- If your **page contains frequently updating data** , and you don’t need to pre-render the data, you can fetch the data on the client side.
   - An example of this is user-specific data. 
 - Here’s how it works:
   - First, immediately show the page without data. 
@@ -328,6 +328,22 @@ function Profile() {
   return <div>hello {data.name}!</div>
 }
 ```
+
+# [Incremental Static Regeneration (ISR)](https://nextjs.org/docs/app/guides/incremental-static-regeneration)
+- Incremental Static Regeneration (ISR) enables you to: Update static content without rebuilding the entire site
+- Here's how this example works:
+
+During next build, all known blog posts are generated
+All requests made to these pages (e.g. /blog/1) are cached and instantaneous
+After 60 seconds has passed, the next request will still return the cached (now stale) page
+The cache is invalidated and a new version of the page begins generating in the background
+Once generated successfully, the next request will return the updated page and cache it for subsequent requests
+If /blog/26 is requested, and it exists, the page will be generated on-demand. This behavior can be changed by using a different dynamicParams value. However, if the post does not exist, then 404 is returned.
+
+- After an hour/TIME has passed, the next visitor will still receive the cached (stale) version of the page immediately for a fast response. Simultaneously, Next.js triggers regeneration of a fresh version in the background. Once the new version is successfully generated, it replaces the cached version, and subsequent visitors will receive the updated content.
+
+- 
+- 
 
 # Configuration
 - you can create a `next.config.js` in the root of your project directory

@@ -89,6 +89,32 @@ modified: 2023-12-15T17:05:49.576Z
 - It's a very interesting problem space. The http://editable.website approach is to do it all inline (it's basically building an app) but using a CMS comes in handy once I'd start replicating things like publishing workflows, permissions etc.
 # discuss-utils
 - [User CSV Import for a Collection](https://github.com/payloadcms/payload/discussions/1660)
+# discuss-feat-collab
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [feat: adds the ability to lock documents while they are being edited _202409](https://github.com/payloadcms/payload/pull/7970)
+  - Set to true by default - the lock is automatically triggered when a user begins editing a document within the Admin Panel and remains in place until the user exits the editing view or the lock expires due to inactivity.
+
+- ## [Build a way to "lock" a document while a user is editing  _202211](https://github.com/payloadcms/payload/discussions/1490)
+- There's a reason no other CMS implements this. The diffing algorithms used in the communication that syncs the multiple participants are incredibly complex and error prone.
+
+- I believe there are more ways how to handle sync of the changes. For example Quilljs Delta format handles this nicely as only partial changes at the cursor location are being sent back and forth, basically you can just make a ledger of changes since the last snapshot.
+I like your proposal as well though IMHO real time updates on the locked field without a need of hitting refresh btn would be better UX. So basically user focuses field -> locked for other users, then on blur the changes are pushed to other editors and the field is unlocked.
+Still I believe such changes should happen on the draft version not the published one until user press Publish btn.
+
+- Directus is working on such a feature using their new WebSocket API. Using WebSockets it should be easy to lock a certain document similar to the way WordPress does.
+
+- a database lock field would be the simplest way. WebSockets can be used with Express but are difficult to handle in cluster mode because the listeners run in a single process and IPC would be required for synchronization.
+
+- #7970 it seems this was added. However, depending on the number of editors, optimistic locking would probably make more sense as it reduces the load on the database. Pessimistic locks (as it was implemented) is usually always a hassle and hard to get right, and if you get it right you will produce DB deadlocks.
 # discuss-feat-version-history
 - ## 
 
@@ -126,9 +152,75 @@ modified: 2023-12-15T17:05:49.576Z
 
 - ## 
 
-- ## Just released: the ability to save filters and share them across your team. This was one of the most frequently requested features
+- ## Just released: the ability to save filters and share them across your team. This was one of the most frequently requested features _202503
 - https://x.com/jacobsfletch/status/1905279680585818609
 - Equals is chosen by default! One less click yay!
+
+- ## [Live Preview  _202307](https://github.com/payloadcms/payload/discussions/3061)
+  - We need to build a Live Preview feature into Payload so that editors can view updates on their front-end in real-time as they edit fields, without needing to save the document or navigate away from the admin dashboard. 
+  - 202411已实现
+- Is it correct to assume, that there is currently no way to enable live preview for data coming from custom endpoints? It seems like the feature is tightly coupled to the internal API, right?
+
+- [Why Live Preview is only on document save?  _202508](https://github.com/payloadcms/payload/discussions/13582)
+  - I had assumed that Live preview allows you to see the result before saving your changes and making them public. But from what I see (and from what happens when I had implemented the feature with @payloadcms/live-preview) you need to save (or autosave) for the iframe post message to be triggered.
+  - This defeats what I perceive to be the purpose of the feature. So I must be wrong. What I am missing?
+  - Maybe I need to setup versioning and autosaving drafts to get a realtime live preview which doesn't publish as you edit
+
+- You nailed it here! That's exactly how live preview is designed to work in Payload - using drafts with autosave. At least that's how I believe server-side live preview works, AFAIR client-side works differently and might not need drafts/autosave.
+
+- Yes client side live preview does not need saving of document. The setup is a bit different
+
+- The documentation is also quite misleading in the sense that it makes you think it's enough to go through the steps, and everything should work. But apparently you need to modify your queries to draft: true conditionally, otherwise either you won't see the live updates, or your draft changes will be made visible to the public.
+
+- [Live Preview Not Working Despite Changes Being Saved  _202501](https://github.com/payloadcms/payload/issues/10781)
+- For LivePreview to be "real-time", you really need to have versions and drafts enabled, with a sufficiently low interval for autosave
+
+- when using Client-side Live Preview, versions with drafts and autosave are not a requirement. The parent window will send the full data in real-time as changes are made to form state, regardless of save. In Server-side Live Preview, a save is required because your app will make a server round trip and query the data for itself.
+# discuss-roadmap
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How to add Payload CMS table to an existing database? : r/PayloadCMS _202410](https://www.reddit.com/r/PayloadCMS/comments/1csyp7h/how_to_add_payload_cms_table_to_an_existing/)
+- Payload now has a way to use an existing database that has other tables and columns that are not managed by the CMS. All you need to do is pass your existing drizzle schema which you can use drizzle's tool to introspect the db to get it. This is done with the `beforeSchemaInit` hook. That way Payload can be used with an existing DB, on the same schema and any migrations you make or connecting and making dev changes directly are going to ignore the existing structure.
+
+- ## [Feature Idea: Ability to Introspect Existing Postgres DB  _202401](https://github.com/payloadcms/payload/discussions/4919)
+  - With drizzle being supported it would be great if there was a tool that utilized the introspect command to generate a minimal payloadcms collection config based on an existing database.
+
+- By default, Payload automatically manages and updates its own schema—potentially dropping or renaming tables/columns that it doesn’t recognize.
+- However, you can preserve existing tables/data:
+1. Use dbName: In your Payload collections, set the dbName property to point to an existing table instead of creating a new one.
+2. Schema introspection & hooks: Run Drizzle’s introspection (drizzle-kit pull) to generate TypeScript definitions of your existing tables. Then, inject these into Payload’s schema via the beforeSchemaInit hook. This way, Payload “knows” about your existing tables and won’t drop them during schema migrations.
+# discuss-issues
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Data Loss Warning When Updating Field Type _202601](https://github.com/payloadcms/payload/discussions/15169)
+  - When I update the field type of an existing field (e.g., changing a text field to a rich text field), PayloadCMS always shows a warning that data will be deleted.
+
+- You need to treat it as a schema + data migration and copy the data into a new field, then swap.
+
+- ## 👀 [Renaming or removing a collection with relationship crashes in migration (Postgres)  _202507](https://github.com/payloadcms/payload/issues/13033)
+- 👷 202602: The behavior you’re seeing is expected. When you rename or remove a collection (or other schema elements) in Postgres, Payload relies on migrations to safely handle those changes. The automatic migration system can’t infer every intent (for example, renaming a collection involved in a relationship) so a crash can occur if a manual migration isn’t provided to handle the changes.
+  - The recommended approach here is to create a migration that accounts for renames or removals in your schema. That ensures existing data and relationships are preserved correctly.
+
+- [changing the name in the fields leads to a database breakdown  ](https://github.com/payloadcms/payload/issues/10853)
+- due to how PostgreSQL handles type changes and default constraints, it cannot automatically cast certain columns, which is why manual adjustments or two-step initialization (add field first, then defaultValue) are needed.
+  - While this isn’t considered a bug, it does highlight an area where Payload could improve the developer experience. Contributions in the form of safer migration patterns or documentation explaining these edge cases would be very welcome.
+
+- ## [Incorrent `preview` option in Global config Admin options  _202511](https://github.com/payloadcms/payload/issues/14550)
+  - global config Admin Options mentions preview as an available option. But preview is no longer in the Config type.
 
 # discuss
 - ## 

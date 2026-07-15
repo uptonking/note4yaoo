@@ -10,9 +10,11 @@ modified: 2026-04-11T01:31:17.720Z
 # guide
 
 # coding-harness-xp
+- ai长时间工作改代码/加测试后， build/testing/io 花费的时间可能过多， 要定期优化
+
 - 有些常用工具AI也记不住API, 比如pdfium, 可以将代码clone到本地让ai理解
 
-- task/goal的描述要用具体的features/bugs，否则ai也找不到重点甚至会偏离要点
+- task/goal的描述要用具体的features/bugs， 否则ai也找不到重点甚至偏移
   - ai工作时也可以直接发送instruction/goal来提醒
 
 - ai容易工作一小段时间就停止然后提示你next, 有时候感觉是无底洞
@@ -20,6 +22,7 @@ modified: 2026-04-11T01:31:17.720Z
 
 - ❓ 有些提示词不小心输入错误或复制粘贴错位会导致llm始终保持错误的指令/记忆
 
+- 
 - 
 - 
 - 
@@ -139,8 +142,6 @@ you have worked on this problem several times but features are still lacking. Th
 - please continue to improve and enhance begonia editor, and also improve the examples, you may add more modular examples to showcase the editing features.
 
 - there are many smoke tests, it seems messy. can you refactor/redesign the tests as common units that are eaiser to maintain? 
-
-- import/export
 
 - the tests/scripts/commands you just run took huge memory and is very slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests. 
 - please recheck related implementation-logic/tests, improve it and make it correct and fast. 
@@ -262,7 +263,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 - prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, selection range/offset/caret, undo/redo for editing, pdf annotations/highlights... in hardoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
 - prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, selection range/offset/caret, undo/redo for editing, pdf annotations/highlights, pdf search, pdf page thumbnails and navigation, bookmarks... in hardoc, make related features/architecture correct, modular, extensible for long-term maintenance.
 
-- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
+- if major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
 - core implementation for major features should be framework-agnostic without react, ui wrappers/bindings should be sub packages, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
 

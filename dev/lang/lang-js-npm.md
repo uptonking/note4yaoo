@@ -17,7 +17,14 @@ modified: 2024-01-02T07:49:41.237Z
   - npmjs.com支持按作者搜索，如`electron author:authorName`
 
 - proxy
+  - 可尝试手动设置代理 npm config set proxy http://127.0.0.1:7890
   - [常用网络问题库的url，部分地址失效待检查](https://github.com/cnpm/binary-mirror-config/blob/master/package.json)
+
+```sh
+npm config set proxy http://127.0.0.1:7890
+npm config set https-proxy http://127.0.0.1:7890
+```
+
 # not-yet
 - [[BUG] workspace scripts should be run in topological order by default · Issue · npm/cli](https://github.com/npm/cli/issues/4139)
   - A workaround here is to order your packages in the `workspaces` property of the top level `package.json` in the desired order of script execution.
@@ -33,7 +40,7 @@ modified: 2024-01-02T07:49:41.237Z
   - npm exec -w website -- docusaurus
 # faq
 - [[BUG] ^7.20.3 no longer resolves local package first on install (workspaces)](https://github.com/npm/cli/issues/3637)
-  - you can update your package.json files directly. The format is `"<package_name>": "*"` where the version number is `"*"`. If you do this, npm will recognize it as a local dependency
+  - you can update your package.json files directly. The format is `"<package_name>": " *"` where the version number is `"* "`. If you do this, npm will recognize it as a local dependency
 
 - [workspaces — require local package - Stack Overflow](https://stackoverflow.com/questions/68737632/node-workspaces-require-local-package)
 
@@ -50,7 +57,7 @@ modified: 2024-01-02T07:49:41.237Z
   - Dependency from another workspace package is referenced using `file:` prefix.
 
 - 如何执行某个workspace子包的package.json中预定义的命令
-  - (~~暂不支持~~)现已支持
+  - ( ~~暂不支持~~ )现已支持
   - [[BUG] npm 7 workspace package script execution](https://github.com/npm/cli/issues/1904)
     - 临时方案：npm run --prefix applications/app1 build
 

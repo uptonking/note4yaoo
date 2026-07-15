@@ -11,7 +11,7 @@ modified: 2024-03-02T13:33:54.693Z
 
 # roadmap
 
-# changelog
+# [changelog](https://directus.com/docs/releases/changelog)
 - resources
   - [Releases · directus/directus](https://github.com/directus/directus/releases)
   - [Breaking Changes | Directus Docs](https://docs.directus.io/releases/breaking-changes.html)
@@ -49,6 +49,10 @@ modified: 2024-03-02T13:33:54.693Z
 
 - 
 - 
+- v11.1.2_202411: For improvements to content versioning, internally, we stored every change to a content version separately in the `directus_revisions` collection, and then merged them together when promoting a version. 
+  - In this release, we’ve added a new `delta` field to the directus_versions collection that combines all revisions into a single field. 
+  - This means you can prune directus_revisions without compromising your content versions.
+- We've introduced a dedicated `directus_comments` collection, replacing the previous system that used `directus_activity` for comments. 
 
 - v11 contains a brand new permissions system that's based on policies. This is a big release, which changes the paradigm on how permissions are attached and executed. 
 

@@ -10,10 +10,11 @@ modified: 2024-02-16T14:55:58.271Z
 # guide
 - pros 支持扩展api和ui
   - ⌛️ 支持content versioning
-    - 数据修改更新的架构采用delta的设计
+    - 数据修改更新的架构采用 `delta` 的设计
     - 提供了用户所有的操作log, activity feed
   - 在admin添加新的data-model时，数据库会创建对应的表，但后端无需生成代码
     - strapi不支持在生产环境中添加model，需要restart
+    - ✨ 社区提供了rename/schema-change的方案
   - 🛢️ Works with new or existing SQL databases, no migration required
     - plug-and-play, so you're free to link or remove it anytime, with zero impact on your data
     - 支持postgis 🌍
@@ -30,12 +31,12 @@ modified: 2024-02-16T14:55:58.271Z
   - ⛓️ flows
     - 可灵活使用flow的trigger来实现op的暂停和继续
   - 🎛️ insights/dashboard
-  - 用户管理
-  - 通知系统
   - 〰️ 支持realtime data, 包括rest/graphql
     - sdk支持通过参数配置启用websocket
   - 支持i18n, 偏向于简单翻译，提供了translations类型的字段，会自动建立关联表
     - lang/content表需要用户自己创建和配置，自动化程度不高
+  - 用户管理
+  - 通知系统
 
 - cons 定位不明确 cms vs app
   - license: GPLv3 > BSL

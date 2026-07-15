@@ -348,6 +348,12 @@ modified: 2024-03-14T13:51:11.429Z
 
 ## utils
 
+- https://github.com/contensu/directus-extension-safe-rename /MIT/202603/ts
+  - A Directus extension that lets you safely rename collections and fields — updating all metadata, relations, permissions, presets, flows, and more in a single atomic transaction.
+  - Rename collections/fields
+  - Relation-aware — updates field references in related collections too (O2M, M2M, M2A)
+  - Atomic transactions — all changes happen in a single DB transaction, rolls back on failure
+
 - https://github.com/TheRocketLab/directus-import-images-and-data /MIT/202307/js
   - This repo bulk uploads images and data and associates them with a collection in Directus
   - You have formatted your JSON file to match the collection you are trying to import to in Directus
