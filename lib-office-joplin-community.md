@@ -36,7 +36,26 @@ modified: 2024-01-28T20:54:44.482Z
 - I wasn't aware that the HTML export encapsulated the images in the file. That would definitely be a more open format. I'll check it out.
 
 - Joplin plugins are also well suited for custom workflows such as this one since you could get the data out in exactly the way you want to, although that requires some development work.
+# discuss-collab
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Live, online editing mode _202208](https://discourse.joplinapp.org/t/live-online-editing-mode/26833)
+- [Week 10 update: Real Time Collaboration on a Note _202108](https://discourse.joplinapp.org/t/week-10-update-real-time-collaboration-on-a-note/19708)
+- https://github.com/joplin/plugin-collaboration /202108/ts/inactive
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

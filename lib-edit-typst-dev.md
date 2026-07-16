@@ -53,3 +53,5 @@ modified: 2025-12-25T19:53:44.941Z
   - Typst’s built-in linking mechanism natively supports cross-document links and resolves the correct relative paths for you. 
   - Documents and assets are normal elements, so you can use them with Typst’s usual scripting, styling, and introspection mechanisms.
   - Introspections always observe the full bundle rather than individual documents. For instance, querying for headings will give you all headings in all documents rather than the ones in the current document.
+
+- [Typst Studio Desktop: 90% Smaller, 100% Native, Same WASM Codebase, with Tauri _202510](https://autognosi.medium.com/typst-studio-desktop-90-smaller-100-native-same-wasm-codebase-with-tauri-8dc43cbb199b)

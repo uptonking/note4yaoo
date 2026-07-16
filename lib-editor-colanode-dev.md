@@ -20,6 +20,7 @@ modified: 2025-06-21T19:10:57.709Z
   - self-hostable 私有化部署方便
   - 👾 AI assistant built in
   - 支持计算存储空间
+  - 支持web, electron-app(轻量封装)
 
 - cons
   - version-history不支持

@@ -17,6 +17,7 @@ modified: 2023-12-15T17:04:17.775Z
   - 🛢️ 还支持使用已存在的db, 通过 beforeSchemaInit, 待验证
   - 添加表/数据模型无需重启服务
     - 内置数据库表名有统一前缀payload, 似乎有部分表名无前缀如imports/exports
+  - Relationship Field: hasOne, hasMany
   - ⏳ versions: If you enable versions but keep draft mode disabled, Payload will simply create a new version of a document each time you update a document.
     - 👀 数据模型不是delta
   - draft

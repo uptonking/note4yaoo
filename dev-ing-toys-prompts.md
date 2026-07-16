@@ -9,8 +9,12 @@ modified: 2026-04-11T01:31:17.720Z
 
 # guide
 
+# coding-xp
+- coding的时候容易困惑和迷茫，特别是在处理未知问题和疑难问题的时候， 此时不要凭空猜想，寻找现有项目或主流项目的相似点、参考点，然后改进、迁移
+  - 最好将灵感项目打开再浏览器或桌面，这样休息后可以进一步反思
 # coding-harness-xp
 - ai长时间工作改代码/加测试后， build/testing/io 花费的时间可能过多， 要定期优化
+  - 可以白天高峰期慢的时候优化testing, 晚上全速work
 
 - 有些常用工具AI也记不住API, 比如pdfium, 可以将代码clone到本地让ai理解
 
@@ -118,7 +122,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 - docs/tests/scripts might be outdated, recheck code and data flow to improve begonia.
 
-- please recheck migrated features and improve the implementation in begonia. Analyze core data flow and implementation logic details for every major feature , compare the implementation logic/code of begonia with logic/code of superdoc to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
+- please recheck migrated features and improve the implementation in begonia. Analyze core data flow and implementation logic details for every major feature like , compare the implementation logic/code of begonia with logic/code of superdoc to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
 - recheck and improve major features/architecture in begonia, make them correct and robust without guessing, the fewer bugs, the better.
 
 - prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, layout modes support vertical/horizontal/book like superdoc, multi-column layout supports unequal column widths like superdoc, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container like superdoc, zoom in/out, Canvas-based text measurement, performant line-breaking like superdoc, track-change/diff, overlap handling in track change like superdoc, comment, OOXML-support, API, SDK, CLI.
@@ -548,7 +552,8 @@ project `directus` (at folder `../directus` ) is a source-available licensed, po
 
 - The final goal for this project `dreamansion` is to implement an directus-like backend platform with headless, extensible, flexible architecture in current folder with similar features like directus core features, but built using modern tech stacks like npm workspaces, expressjs, knex(for db crud), reactjs, @tanstack/react-router, @base-ui/react, typescript, tailwindcss, oxlint, oxfmt. you should implement the goal in a way to make it easy to migrate code changes/features from directus to dreamansion in the future.
 - The core goal is to reimplment most of the existing directus features, like rest api, working with new or existing databases, content versioning, draft/publish content, i18n, data model relationships like one2many/many2one/many2many/many2any/translations/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, sdk, simple user account/auth, Policy-based Access Control, admin studio ui, horizontal scaling. since directus is source-available, you might refer to its architecture/data-flow/logic/code, but you should rewrite it in dreamansion to avoid license issue. backend architecture of directus is really extensible, you may borrow the good design and data flow, admin frontend of directus should be rewritten in react, @tanstack/react-router, @base-ui/react. 
-- project directus-schema-sync(at folder `../directus-schema-sync`, apache 2 license) implements a way to sync Directus schema, configuration and selected data between environments. similar feature should be implemented as a sub package in dreamansion. you may reuse the apache code if you want.
+- project directus-schema-sync(at folder `../directus-schema-sync`, apache 2 license) implements a solution to sync Directus schema, configuration and selected data between environments. similar feature should be implemented as a sub package in dreamansion. you may reuse the apache code if you want.
+- project directus-extension-safe-rename(at folder `../directus-extension-safe-rename`, MIT license) implements a solution to rename collections/fields — updating all metadata, relations, permissions, presets, flows, and more in a single atomic transaction. similar features should be implemented as a sub package in dreamansion. you may reuse the MIT code if you want. In admin studio, please design a rename menu or button for editing the collection/field/item names.   please design a extensible architecture so that your implementation should also work with existing related features like rest-api/relations/versioning/translation/... in dreamansion. make sure this feature work correctly, with extensible architecture. 
 
 - features that may be planned but delayed(not in current goal): full parity of directus-style admin UI/UX, complicated multi-user/team/workspace/access-control, sso auth, workflow automations, extension marketplace, AI Assistant, MCP server, GraphQL API.
 - features that may be ignored in dreamansion: GraphQL API.
@@ -577,13 +582,14 @@ project `directus` (at folder `../directus` ) is a source-available licensed, po
 - you may analyze related architecture/code and borrow good deisgn from upstream directus(source code at folder `../directus`) and rewrite it in functional-programming style for dreamansion to avoid licensing issues.
 - it is unnecessary to search the web for directus details, just analyze the source code at folder `../directus`.
 
-- please recheck migrated features and improve the implementation in dreamansion. Analyze core data flow and implementation logic details for every major feature like rest api, working with new or existing databases, content versioning, draft/publish content, i18n/translation, data model relationships like one2many/many2one/many2many/many2any/translation/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, sdk, ..., compare the implementation logic/code of dreamansion with related logic/code of directus to recheck and enhance the correctness of architecture/data-flow and logic in dreamansion, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in dreamansion are correct, modular, extensible for long-term maintenance. 
+- please recheck migrated features and improve the implementation in dreamansion. Analyze core data flow and implementation logic details for every major feature like rest api, working with new or existing databases, content versioning, draft/publish content, i18n/translation, data model relationships like one2many/many2one/many2many/many2any/translation/..., support to change data model without restarting server, schema-sync, schema-rename, optional Realtime Data, file management, modules/hooks, extensions, sdk, ..., compare the implementation logic/code of dreamansion with related logic/code of directus to recheck and enhance the correctness of architecture/data-flow and logic in dreamansion, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in dreamansion are correct, modular, extensible for long-term maintenance. 
 
-- prioritize and recheck/improve major features like rest api, working with new or existing databases, content versioning, draft/publish content, i18n/translation, data model relationships like one2many/many2one/many2many/many2any/translation/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, sdk, ... in dreamansion, make related features/architecture correct, modular, extensible, robust for long-term maintenance.
+- prioritize and recheck/improve major features like rest api, working with new or existing databases, content versioning, draft/publish content, i18n/translation, data model relationships like one2many/many2one/many2many/many2any/translation/..., support to change data model without restarting server, schema-sync, schema-rename, optional Realtime Data, file management, modules/hooks, extensions, sdk, ... in dreamansion, make related features/architecture correct, modular, extensible, robust for long-term maintenance.
 
 admin management studio webapp
+please refer to the upstream `../directus` , improve the admin management studio for major features like db model crud for collections/fields, data model relationships, draft/publish, Content Versioning, schema-rename, file management, extension management, Import/Export, user management, rest api...  Focus on the ui/ux of major features first, full parity of directus-studio-style UI/UX is not required. when you improve the admin studio, you should also make the dreamansion headless backend/server/api more correct/robust.
 
-- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
+- if major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
 - recheck and improve major features, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
 
@@ -594,11 +600,15 @@ admin management studio webapp
 - the tests/scripts/commands you just run took huge memory and is very slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests. 
 - please recheck related implementation-logic/tests, improve it and make it correct and fast. 
 
-- try to improve/refactor the full tests to make it faster so that full tests running within 2.0 minutes.
+- try to improve/refactor the full tests to make it faster so that full tests running within 2.5 minutes.
 - improve the slow/complicated/heavy parts of tests, 
 you might refactor/reorganize the tests architecture/logic to make it correct, fast, robust, maintainable in the long term.
 
-### draft-vscode
+### joplin
+
+### directus(client偏弱)
+
+### draft-vscode(server偏弱)
 
 - 对vscode-editor的修改是否会导致不兼容 coder-server
 
@@ -617,8 +627,6 @@ you might refactor/reorganize the tests architecture/logic to make it correct, f
 - 
 - 
 - 
-
-### directus
 
 ### vscode-research
 
@@ -799,10 +807,19 @@ document what you have migrated from which commit id for future migration refere
 # tests
 - run the full tests and fix the bugs
 
-- running full tests/scripts is a little slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests.
+- run the full tests to find possible problems, then improve the testing architecture/performance or other problems.
+
+- running full tests/scripts may take huge memory and is slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests. 
 
 - improve the slowest part of tests first, 
-review the whole tests architecture/logic, then improve it, you might refactor/reorganize the tests to make it correct, fast, robust, maintainable in the long term.
+review the whole tests architecture/logic, then improve it
+you might refactor/reorganize the tests architecture/logic to make it correct, fast, robust, maintainable in the long term.
+
+- the tests and related docs are a little messy, simplify it and remove duplicated/repeated/unnecessasy running of tests.
+
+- most sequential tests should be avoided , you might deisgn better tests if you want.
+
+- you should rerun the full tests again after you finish your fix, repeat until full tests pass.
 
 - tests files in each package should existing as sibling folder of `src`. for example, all tests for `packages/core/src` should be put at ``packages/core/__tests__` , tests files like `parse.test.ts` should not be put inside `src` folder.
 

@@ -338,6 +338,25 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0716
+
+- 🤔 I want to develop a saas solution with client/server architecture that provides webapp/electron-app/cli, and the electron-app should just be a thin wrapper of webapp. the electron-app/webapp/cli uses the same server backend/api. is there any popular open source solutions that use similar idea that building electron-app as lightweight webapp wrapper (cli is optional, not required)? deep research related solutions/ideas, if you found any open source solutions or inspiration projects, provide overview/github-repo/website for each.
+  - 🌰 
+  - Zulip, Element (Matrix), Mattermost, Rocket.Chat
+  - Trilium Notes, Standard Notes, SiYuan, AFFiNE
+  - comfyui
+- well-established patterns in open source
+  - (1) Electron ships as a pure client that points at a remote server, exactly like your browser tab does, 
+  - (2) Electron bundles both the frontend and a local copy of the backend server, so the desktop app can run fully offline and sync later.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 ## 0713
 
 - the goal for now is to rename this project from `redmansion` to `dreamansion`.

@@ -238,6 +238,9 @@ redis-cli shutdown
   - 基于 Electron + Vue 3 + TypeScript 构建的 macOS 桌面应用，旨在帮助开发者一键配置开发环境。
   - [macOS 开发环境一键安装工具，新电脑配环境再也不头疼 ](https://linux.do/t/topic/1407819)
 # mac-ai 👾
+- apple-foundation-model
+  - [Foundation Models from Python: the fm CLI _202606](https://blakecrosley.com/blog/foundation-models-python-fm-cli)
+
 - https://github.com/SkyBlue997/enableMacosAI /202606
   - 一个极简内核扩展(kext), 在 IORegistry 源头把设备区域码从 CH/A 改成 LL/A(美版), 让 MobileGestalt 对全系统每个进程都返回美版区域, 从而在国行机 (本机 Mac15, 9 / M3 Max / macOS 27 26A5353q)上启用完整的 Apple Intelligence—— 端侧 + Private Cloud Compute 云端全功能(写作工具含语气改写、图乐园、Genmoji、 Foundation Models、ChatGPT 扩展)。
 # mac-apps

@@ -2106,17 +2106,19 @@ modified: 2026-06-20T15:49:57.019Z
 - [Xybbz /Sub2API](https://sub2api.xybbz.xyz/dashboard)
   - plus--0.045, 算是低价，有点中等价格
 
-- [钧澈API /NewAPI ](https://vip.lcodex.cn/pricing), 已充值, 深夜低价
-  - plus--0.03
-  - team--0.01
+- [钧澈API /NewAPI ](https://vip.lcodex.cn/pricing), 已充值
   - plus/pro号池多, 0.04-0.07
+  - 可以隐藏了价格页面，不推荐
+  - [lcodex /sub2api](https://lcodex.cc/keys)
 
 - [NikoAPI /NewAPI](https://nikoapi.xyz/pricing), 已充值
   - 充值地址 https://nikoapi.xyz/shop
   - 加群可领取1刀体验
 
-- [莫比乌斯 2Chat /Sub2API](https://2chat.cc/keys), 已充值
+- [莫比乌斯 2Chat /Sub2API](https://2chat.cc/keys), 已充值, 可退款
   - 低倍率渠道
+  - [muskqq ](https://sub2api.muskqq.com/keys)
+    - 新站临时
 
 - 咩咩的中转 [MAX API ](https://maxapi.hanyue.xyz/pricing), 未开放注册
   - [ₒ⦁⩊⦁ₒ - 千寻寄售服务平台 ](https://www.qianxun1688.com/details/D5A18D58)
@@ -2127,9 +2129,29 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [liusq API ](https://api.liusq.icu/dashboard)
   - 有低倍率分组，但仅充值可用
+  - 不定期提供公益分组
+
+- [aimi-api /NewAPI](https://api.58aimi.cn/keys)
+  - [ai资源库的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/89LBYJ36)
+  - 提供月卡 90 > 每周100
+  - 偶尔能碰到无限额度的天卡, 并发5
 
 - [DataCodex ](https://api.datacodex.net/keys), 已充值
   - 中等价格
+
+- [suncode API ](https://ai.suncode.space/keys), 已充值
+  - [Sun-ai的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/SunAPi)
+  - 交流群 469032841
+  - 稳定性不高
+
+- [Kun-Api /sub2api](https://kunkun666.xyz/keys)
+  - 低价deepseek-flash
+
+- [iKun AI ](https://ikunai.xyz/keys)
+  - 主要卖成品号， 不定期开中转
+
+- [梦幻API /sub2api](https://api.mhapi.cn/keys) 
+  - [顶级 AI 铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/5O4RQJM1)
 
 - [数智AI ](https://api.xpluse.plus/pricing)
 - [AI来了 ](https://api.ailaile.site/)
@@ -2145,9 +2167,23 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [土豆 /Sub2API](https://zz.211b.site/keys)
   - 注意倍率变动
+  - gpt/kiro都有夜间福利
 
 - [YCY API /NewAPI](https://ycyapi.cn/pricing) , 长期运营, 较贵
   - [YCYAPI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ycyapi)
+
+- [柏API ](https://byeapi.top/keys)
+  - 每日签到奖励 0.05
+
+- [AI 万物 ](https://www.aiwanwu.cc/keys)
+  - 渠道杂乱，但有低价
+  - 群里人很少
+
+- [xixiapi /Sub2API](https://xixiapi.cc/keys)
+  - 渠道杂乱， 非常乱
+
+- [AI Maok ](https://ai.maok.shop/home)
+  - 会自动删号
 
 - 🗑️ [naonao - /Sub2API ](https://gpt.qinnaonao.com/dashboard), 已充值, 已跑路
   - codex分组--0.03
@@ -2156,14 +2192,6 @@ modified: 2026-06-20T15:49:57.019Z
 - [松松 AI ](https://ai.songsongcard.shop/keys), 已充值
   - [松松 AI ](https://songsongcard.shop/)
   - plus--0.02
-
-- [suncode API ](https://ai.suncode.space/keys), 已充值
-  - [Sun-ai的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/SunAPi)
-  - 交流群 469032841
-  - plus/pro
-
-- [梦幻API /sub2api](https://api.mhapi.cn/keys) 
-  - [顶级 AI 铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/5O4RQJM1)
 
 - 🗑️ [yypyyj- Sub2API ](https://sub2api.yypyyj.com/keys), 已充值, 高价, 缓存低
   - [max9527的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/2KFETVZG)

@@ -9,6 +9,10 @@ modified: 2024-01-31T19:13:11.286Z
 
 # guide
 
+- webapp由electron轻量封装的示例
+  - colanode, joplin, Postman-like/Hoppscotch
+  - 还提供cli的: joplin, SiYuan, Hoppscotch, Mattermost, Zulip, Bitwarden
+
 - loved-examples
   - https://github.com/warpdesign/react-explorer
   - https://github.com/koodo-reader/koodo-reader
@@ -250,9 +254,7 @@ modified: 2024-01-31T19:13:11.286Z
   - Independent front - end: Theoretically supports any front - end technology, such as Vue, React, HTML, etc.
   - https://github.com/wallace5303/ee-core /ISC/202502/js
     - Powerful electron third party module, offering 100+ API
-
-## client-server(webapp+desktop-app)
-
+# 🌰 pattern-client-server(webapp+desktop-app)
 - https://github.com/actualbudget/actual /24.2kStar/MIT/202601/ts/js
   - https://actualbudget.org/
   - A local-first personal finance app

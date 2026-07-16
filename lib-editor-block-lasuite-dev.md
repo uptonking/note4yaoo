@@ -24,6 +24,7 @@ modified: 2025-07-17T14:39:41.606Z
   - editor
   - collab
   - 文件不支持添加tag
+  - 不支持 desktop app, 未使用electron/tauri， 架构主要为client/server模式
   - ~~本地开发的环境配置过于复杂~~ 
 
 - features

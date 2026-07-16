@@ -50,7 +50,7 @@ modified: 2026-06-30T17:32:43.131Z
 # dreamansion
 - features
   - bases
-  - editing for markdown/pdf
+  - editing with pagination, unifying markdown/pdf xp
   - pdf backlink/citation/preview
   - file-editor: 不改变原文件的格式
 
@@ -62,15 +62,28 @@ modified: 2026-06-30T17:32:43.131Z
     - 兼容和扩展plugins在bases方面的能力
   - 不要过于依赖ob的runtime, 充分利用文件系统的优势
   - 类似cloudflare-drop的快速分享
+  - offline-capable: 仅本地能工作， 还支持开启云端同步
+  - 前端交互相关的功能都是不重要的，包括协作
 
 - non-goals
-  - mdx 一定不放在core实现， 可能会放在extension， 也可能不支持
-  - 不支持react组建作为内容，如 page.tsx
+  - 支持md但不支持mdx, mdx 一定不放在core实现， 可能会放在extension， 也可能不支持
+  - 非代码优先, 不支持react组建作为内容，如 page.tsx
+
+- features-nice
+  - bulk renaming
 
 - cms-platform
-  - github for obsidian bases
+  - github for obsidian bases, like gitea
 
-- 
+- 架构采用client/server模式， 方便实现saas, 
+  - desktop app 使用本地文件作为数据源 或 使用db作为数据源 都能实现需求， 但为了方便实现saas，放弃使用本地文件作为数据源的方案
+    - 🤔 采用db作为数据源时，要考虑如何支持使用本地db, 使用云端db，计算逻辑在本地，仅数据在云端？
+  - web必做，desktop必做，cli非必要， 如何复用架构或数据，降低复杂度
+- DRMN主要为本地设计, designed for markdown/bases files, 
+
+- cms-cli的参考
+  - nocobase
+
 - 
 - 
 - 

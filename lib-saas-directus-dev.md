@@ -15,6 +15,7 @@ modified: 2024-02-16T14:55:58.271Z
   - 在admin添加新的data-model时，数据库会创建对应的表，但后端无需生成代码
     - strapi不支持在生产环境中添加model，需要restart
     - ✨ 社区提供了rename/schema-change的方案
+  - Relationships: o2m, m2o, m2m, m2a
   - 🛢️ Works with new or existing SQL databases, no migration required
     - plug-and-play, so you're free to link or remove it anytime, with zero impact on your data
     - 支持postgis 🌍
@@ -24,6 +25,7 @@ modified: 2024-02-16T14:55:58.271Z
     - 支持custom field type(基于extension),需要写代码
   - 🪟 rich-views: table, kanban, calendar, card, map
     - 支持custom layouts
+  - Live Preview
   - 强大的权限系统，支持per-field
   - 🔌 Extensions and marketplace
     - marketplace支持自定义地址 MARKETPLACE_REGISTRY

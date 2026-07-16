@@ -78,6 +78,11 @@ modified: 2026-07-13T21:23:42.886Z
     - docsify init ./docs: 自动创建文件 index.html, README.md 
     - docsify serve docs: 启动一个本地服务器，可以方便地实时预览效果
 # pm-docs
+- 文件数据的标识
+  - db可用id，文件可用路径
+  - 若直接复制/移动文件夹，那用软件打开同一目录的效果如何变化
+    - 可参考简单文件操作的效果
+
 - 文档系统一般设置3级权限
   - admin/superuser/owner: 所有页面的crud， 管理人员
     - org: 所有页面的crud， 不管理人员

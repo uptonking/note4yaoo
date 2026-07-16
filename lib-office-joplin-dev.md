@@ -29,8 +29,83 @@ modified: 2024-01-28T20:52:21.981Z
   - File attachment support - images are displayed, other files are linked and can be opened in the relevant application.
   - Supports multiple languages.
 # usage
-
+- 社区提供了和obsidian类似的sync plugin, 支持同步到 Google Docs, supernote, ...
 # codebase
+- architecture
+  - ui <> (local-file <>) local-sqlite <> remote-server <> remote-db
+
+- Joplin uses a client-server sync architecture:
+  - self-hosted-server, joplin cloud, onedrive, WebDAV
+  - @joblin/lib (db, model, sync, encryption)
+  - electron-desktop, react-native-mobile, cli(nodejs)
+  - react-native-web
+  - The mobile app (@joplin/app-mobile) can run as a web app using react-native-web
+- The desktop app cannot run directly as a web app because:
+  - It uses Electron-specific APIs (ipcMain, ipcRenderer, BrowserWindow, native menus, etc.)
+  - It bundles Node.js modules that don't work in browsers
+  - Different UI component library, not react-native-web
+  - However, both share the same core library (@joplin/lib), so business logic, database, sync, and models are identical.
+
+- SQLite Database is the Source of Truth
+  - The SQLite database (joplin.sqlite or db-dev.sqlite) is the authoritative data store for all clients (Desktop, Mobile, CLI).
+- File API: Abstract interface (file-api.ts) with drivers for each sync target
+- Creates Real Files: Only during explicit export (File → Export or joplin export CLI)
+  - Exports EVERYTHING as .md files with resources folder
+  - CLI sync uses db, no files
+
+- @joplin/server is a standalone Koa-based Node.js server
+  - REST API for sync operations
+  - User management, authentication (including SAML)
+  - PostgreSQL or SQLite database
+  - Docker deployment support
+  - Admin UI (served via Mustache templates)
+  - Can be self-hosted or use Joplin Cloud 🤔
+- The server stores items in PostgreSQL (or SQLite for dev)
+  - if updated_time > sync_time
+- Conflict Resolution
+  - strategy: Remote Wins + Preserve Local as Conflict Note
+  - Remote content becomes the "current" note in DB (overwrites local changes in main note)
+  - Local changes are saved as a CONFLICT NOTE in "Conflicts" notebook 
+  - Metadata stored in conflict_note_states table
+  - User manually resolves via UI: Merges changes, Deletes conflict note when done
+
+- 🔄 Synchronizer.ts orchestrates bidirectional sync
+  - Clients configure sync target as "Joplin Server" with URL + credentials
+  - clients sync to various targets (Joplin Server, cloud services, filesystem)
+  - Delta-sync with multiple backend drivers via FileApi interface
+- How Local File Editing Syncs to DB (External Editor Feature)
+  - When you use an external editor (VS Code, Typora, etc.), Joplin uses ExternalEditWatcher.ts with chokidar file watcher
+- Joplin uses POLLING-based delta sync, NOT WebSocket/push
+- Doc Sharing exists but is sync-based 而不是协作
+  - ShareService.ts creates share records on server
+  - Recipients sync normally → receive shared notebook on next delta sync
+  - No real-time collaborative editing ( **no OT/CRDT, no live cursors** )
+- UI Editing → SQLite DB (Source of Truth)
+  - NO files are written to the filesystem when editing in the UI. The editor works entirely against the SQLite database.
+  - The editor component (packages/app-desktop/gui/NoteEditor*.tsx) calls dispatch({ type: 'NOTE_SAVE', note }) which triggers Note.save() → SQLite.
+- External Editor (VS Code, Obsidian) → SQLite DB
+  - When you use "Open in External Editor", Joplin temporarily exports the note to a file, watches it, and syncs back on change.
+  - writeNoteToFile_(note) → /tmp/edit-{noteId}.md 
+  - 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- The CLI (packages/app-cli/app/) is a full-featured client using the same @joplin/lib
+  - joplin cat
+  - joplin edit
+  - joplin import/export
+  - joplin sync
+  - The CLI is not a second-class citizen - it's a full peer to Desktop/Mobile using the exact same @joplin/lib core
+
+- 
+- 
+- 
+- 
 
 # not-yet
 

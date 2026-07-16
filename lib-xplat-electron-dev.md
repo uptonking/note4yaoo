@@ -26,7 +26,7 @@ modified: 2021-05-13T03:08:52.583Z
 
 - who is using #electron 🌰
   - popular: vscode/theia/opensumi, jupyter, postman-like(web+pc)
-  - known: obsidian, qq, slack, mattermost, zulip, figma-desktop
+  - known: obsidian, qq, slack, mattermost, zulip, Element, figma-desktop, github-desktop
   - db: mongodb-compass, dbgate, beekeeper, sqlectron
   - notes(web/pc): obsidian, joplin(AGPL), marktext(MIT), siyuan(AGPL), trilium(AGPL), notable(MIT), notesnook(GPL), Zettlr(GPL), yn(AGPL), tinywrite
   - open: drawio(apache2), tagspaces, medis
