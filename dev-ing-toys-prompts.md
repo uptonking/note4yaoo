@@ -264,8 +264,8 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - docs/tests/scripts might be outdated, recheck code and data flow to improve hardoc.
 
-- prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, selection range/offset/caret, undo/redo for editing, pdf annotations/highlights... in hardoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
-- prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, in-place text-editing engine, selection range/offset/caret, undo/redo for editing, pdf annotations/highlights, pdf search, pdf page thumbnails and navigation, bookmarks... in hardoc, make related features/architecture correct, modular, extensible for long-term maintenance.
+- prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, selection range/offset/caret, in-place text-editing engine， undo/redo for editing, pdf annotations/highlights... in hardoc, make related features/architecture correct and robust without guessing, the fewer bugs, the better.
+- prioritize and recheck/improve major features like document rendering/layout/pagination/zoom, selection range/offset/caret, in-place text-editing engine， undo/redo for editing, pdf annotations/highlights, pdf search, pdf page thumbnails and navigation, bookmarks... in hardoc, make related features/architecture correct, modular, extensible for long-term maintenance.
 
 - if major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
@@ -554,6 +554,7 @@ project `directus` (at folder `../directus` ) is a source-available licensed, po
 - The core goal is to reimplment most of the existing directus features, like rest api, working with new or existing databases, content versioning, draft/publish content, i18n, data model relationships like one2many/many2one/many2many/many2any/translations/..., support to change data model without restarting server, optional Realtime Data, file management, modules/hooks, extensions, sdk, simple user account/auth, Policy-based Access Control, admin studio ui, horizontal scaling. since directus is source-available, you might refer to its architecture/data-flow/logic/code, but you should rewrite it in dreamansion to avoid license issue. backend architecture of directus is really extensible, you may borrow the good design and data flow, admin frontend of directus should be rewritten in react, @tanstack/react-router, @base-ui/react. 
 - project directus-schema-sync(at folder `../directus-schema-sync`, apache 2 license) implements a solution to sync Directus schema, configuration and selected data between environments. similar feature should be implemented as a sub package in dreamansion. you may reuse the apache code if you want.
 - project directus-extension-safe-rename(at folder `../directus-extension-safe-rename`, MIT license) implements a solution to rename collections/fields — updating all metadata, relations, permissions, presets, flows, and more in a single atomic transaction. similar features should be implemented as a sub package in dreamansion. you may reuse the MIT code if you want. In admin studio, please design a rename menu or button for editing the collection/field/item names.   please design a extensible architecture so that your implementation should also work with existing related features like rest-api/relations/versioning/translation/... in dreamansion. make sure this feature work correctly, with extensible architecture. 
+- you have partly implemented the schema-sync/schema-rename feature, but not robust, please enhance it, make it correct, extensible, robust for the long term.
 
 - features that may be planned but delayed(not in current goal): full parity of directus-style admin UI/UX, complicated multi-user/team/workspace/access-control, sso auth, workflow automations, extension marketplace, AI Assistant, MCP server, GraphQL API.
 - features that may be ignored in dreamansion: GraphQL API.
@@ -603,8 +604,6 @@ please refer to the upstream `../directus` , improve the admin management studio
 - try to improve/refactor the full tests to make it faster so that full tests running within 2.5 minutes.
 - improve the slow/complicated/heavy parts of tests, 
 you might refactor/reorganize the tests architecture/logic to make it correct, fast, robust, maintainable in the long term.
-
-### joplin
 
 ### directus(client偏弱)
 

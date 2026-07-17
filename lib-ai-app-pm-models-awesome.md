@@ -1444,6 +1444,7 @@ modified: 2026-06-20T15:49:57.019Z
   - 中转商的价格每天都在变化, 套餐也在改变, 不要在一家花费过多
     - 很可能注册的第一天会显示低价，后面就恢复正常价格了，注意误导
     - 在5月13号，几乎所有成品号渠道都失效了，所有店铺(无论贵的还是便宜的)的源头渠道几乎相同，，，以后买便宜的就行了
+  - 渠道杂乱的中转站一般没有自己号源， 稳定性更低， 一般价格也不会低
   - 月初是openai集中清理风险型用户和欺诈性用户的敏感时间, 很多便宜的渠道会挂掉
     - 封号的时机注意周初和月末， 周初前几天可能会清理，月末很可能集中清理，最好在北美周二买号
   - 带at/rt的帐号价格不同，在不同的封控政策下，可使用时间差异很大，最好选择 RT(可长期) + 可刷新AT(手动刷新来解决401问题)
@@ -2131,10 +2132,15 @@ modified: 2026-06-20T15:49:57.019Z
   - 有低倍率分组，但仅充值可用
   - 不定期提供公益分组
 
-- [aimi-api /NewAPI](https://api.58aimi.cn/keys)
+- [aimi-api /NewAPI](https://api.58aimi.cn/keys), 已充值
   - [ai资源库的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/89LBYJ36)
   - 提供月卡 90 > 每周100
   - 偶尔能碰到无限额度的天卡, 并发5
+
+- [JinnyAPI ](https://jinnyapi.com/keys)
+  - 注意充值倍率是 1:10
+  - 大多是中等价格
+  - 低价grok
 
 - [DataCodex ](https://api.datacodex.net/keys), 已充值
   - 中等价格
@@ -2184,6 +2190,9 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [AI Maok ](https://ai.maok.shop/home)
   - 会自动删号
+
+- [Conpera ](https://code.conpera.ai/)
+  - 无法注册
 
 - 🗑️ [naonao - /Sub2API ](https://gpt.qinnaonao.com/dashboard), 已充值, 已跑路
   - codex分组--0.03

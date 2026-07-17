@@ -38,6 +38,7 @@ modified: 2022-11-29T20:41:25.566Z
 
 - realtime的方案参考
   - supabase realtime(Elixir): Broadcast, Presence, and Postgres Changes via WebSockets
+  - [[ documentation ] Comparision table · Issue · aspen-cloud/triplit _202406](https://github.com/aspen-cloud/triplit/issues/130)
 # 🆚️ [Best Realtime Sync Engine _202405](https://robotist.com/realtime-sync-engine)
 - We dive deep into every local-first sync engine so you don’t have to. 
   - This is our technical research of the best realtime sync services available.
@@ -333,6 +334,28 @@ modified: 2022-11-29T20:41:25.566Z
 - Is this using OPFS/workers etc legit doing this manually with Sqlocal package?
   - Yes, the web-adapter persists data to OPFS in a web worker. Also supports cross-tab syncing. Works fully offline.
   - Cloudflare Workers are already supported as a sync backend. Using Cloudflare Workers as a server-side client is planned as well
+# discuss-sync-examples
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [(Technical post) Our journey building an offline-first email client : r/SideProject _202501](https://www.reddit.com/r/SideProject/comments/1i13jqm/technical_post_our_journey_building_an/)
+  - When we set out to build Marco, we knew we were committing to two very difficult requirements: IMAP-based, not API-based; Cross-platform – web, Mac, Windows, Android, iOS
+  - There are many other options, including RxDB, MongoDB Atlas, Couchbase, and on and on. The three listed above are the options that we deeply investigated. We settled on WatermelonDB and built the initial alpha version of Marco on it. The backend implementation is rather simple: there is a “pull” endpoint to GET data, and a “push” endpoint to POST mutations.
+  - We got quite far along with the Marco alpha build, and then had a bit of a panic in November. Our confidence in our WatermelonDB-based offline-first approach was decreasing steadily. We began to seriously question if this technology could actually support a rock-solid, modern user experience.
+  - While Triplit and InstantDB can be described as “full stack databases”, Convex is instead an entire backend solution, including API endpoints, etc. For this reason we excluded Convex, as it seems like a huge leap and essentially 100% lock-in.
+  - Some time in early December, I came back across an option which I had glanced over before, but disregarded: Replicache.
+
+- ## [Testing Zero: Rocicorp's Ultra-Fast Sync Engine for the Web _202502](https://marmelab.com/blog/2025/02/28/zero-sync-engine.html)
+
 # discuss-sync-solutions
 - ## 
 
@@ -340,7 +363,11 @@ modified: 2022-11-29T20:41:25.566Z
 
 - ## 
 
-- ## 
+- ## [[ documentation ] Comparision table · Issue · aspen-cloud/triplit _202406](https://github.com/aspen-cloud/triplit/issues/130)
+- 比较了 PouchDB, RxDB, InstantDB, Jazz, Convex, Zero, Triplit, Evolu, Logux, ElectricSQL
+
+- 
+- 
 
 - ## [How CRDTs and sync engines keep realtime lists ordered with fractional indexing | Liveblocks blog _202604](https://liveblocks.io/blog/how-crdts-and-sync-engines-keep-realtime-lists-ordered-with-fractional-indexing)
 - 

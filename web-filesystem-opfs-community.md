@@ -9,7 +9,41 @@ modified: 2023-01-13T10:47:36.755Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-opfs-sqlite
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## wa-sqlite supports a new OPFSWriteAheadVFS virtual file system that unlocks much better performance by allowing multiple workers to read the database concurrently with a writer.  _202604
+- https://x.com/powersync_/status/2045261069808242765
+  - This means your UI no longer needs to lock up during heavy writes!
+  - Only works in Chromium right now.
+  - PowerSync users will benefit from this, and anyone using SQLite persistence in the browser can leverage this via wa-sqlite
+
+- [Write-ahead logging in a VFS _202604](https://github.com/rhashimoto/wa-sqlite/discussions/315)
+  - OPFSWriteAheadVFS is a new synchronous VFS that uses write-ahead logging to achieve significant performance and concurrency improvements. 
+  - It uses the proposed readwrite-unsafe mode that is currently implemented only on Chromium browsers.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

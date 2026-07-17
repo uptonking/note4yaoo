@@ -89,7 +89,7 @@ modified: 2023-12-15T17:05:49.576Z
 - It's a very interesting problem space. The http://editable.website approach is to do it all inline (it's basically building an app) but using a CMS comes in handy once I'd start replicating things like publishing workflows, permissions etc.
 # discuss-utils
 - [User CSV Import for a Collection](https://github.com/payloadcms/payload/discussions/1660)
-# discuss-feat-collab
+# discuss-feat-collab/sync
 - ## 
 
 - ## 
@@ -98,7 +98,20 @@ modified: 2023-12-15T17:05:49.576Z
 
 - ## 
 
-- ## 
+- ## [Local-First App with Zero sync or ElectricSQL & TanStackDB _202505](https://github.com/payloadcms/payload/discussions/12506)
+- I’d love for Payload to offer a solution to this problem—I imagine it as a plugin. The two most important questions to tackle first, IMO, are:
+  - Which local DB to use: indexeddb, sqlite or pglite. Also, how to reconcile if different DB adapters are used on the server (e.g., mongdb).
+  - How to define partial-replication rules. I picture the plugin having something like PowerSync’s sync rules.
+
+- ElectricSQL is ideal if you’re Postgres-only; Zero is the stronger long-term choice for Postgres + Mongo (and you don’t need TanStack DB on top).
+
+- Today, I spent the day playing with PayloadCMS + Zero Sync.
+  - Since both PayloadCMS and Zero are betting on the Drizzle, I didn't need much to make it work.
+  - PayloadCMS generates the Drizzle schema built-in. You can even customize the file output generateSchemaOutputFile.
+  - You can easily use drizzle-zero to generate the Zero Schema from the (Payload generated) Drizzle Schema.
+  - You just have to import the schema, add permissions, and the rest is history.
+  - https://github.com/carlosbensant/payload-sync
+    - Our mutation system combines the best of **TanStack Query**, **Convex**, and **Zero Sync** 
 
 - ## [feat: adds the ability to lock documents while they are being edited _202409](https://github.com/payloadcms/payload/pull/7970)
   - Set to true by default - the lock is automatically triggered when a user begins editing a document within the Admin Panel and remains in place until the user exits the editing view or the lock expires due to inactivity.

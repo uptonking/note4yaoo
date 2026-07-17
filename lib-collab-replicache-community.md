@@ -192,6 +192,15 @@ modified: 2024-01-07T05:09:14.413Z
 - https://x.com/aboodman/status/2036579771921080482
   - This does not mean that Zero is perfect or done. There is still so much to do. What it does mean is that we fully support Zero for appropriate workloads without caveat.
 
+- ## [Sync Engines Are the Future | Hacker News _202503](https://news.ycombinator.com/item?id=43397640)
+- Zero does not allow offline writes specifically because we want to educate people how to properly handle conflicts before we do. 
+
+- Without offline support AND you're doing real time updating of data, then conflict resolution is not a real world practical concern. 
+  - IF you had offline support, and for other sync engines that do: There is a real and meaningful difference between a backend dev and an end user of the application choosing what to do in case of a conflict. A backend dev cannot make a general case algorithm that knows that two end users want to keep or throw away in a conflict, because this is completely situational - users could be doing whatever. 
+- In my opinion the ideal offline-first write/write UI has never been built, but the team at Ink & Switch are closest: https://www.inkandswitch.com/patchwork/notebook
+  - I think the perfect UX in many cases is that syncs goes ahead and tries to land the offline writes, but the user has a history UI where they can see what happened. Like how many collaborative apps do today.
+  - But importantly in this UI the app would represent branches and merges. But unlike Git's fine grained branch/merge points, in this UI it would literally represent points where people went offline and made changes.
+
 - ## I can't wait to implement aggregates for Zero.
 - https://x.com/aboodman/status/1921648617330475070
   - For a database, a function like `count()` can be counter-intuitively expensive. Because you have to find all results in order to count them.
@@ -437,7 +446,26 @@ modified: 2024-01-07T05:09:14.413Z
   - If validating and rejecting mutations is allowed (even implicitly due to db constraints), then users' offline work can be lost, and this probability grows with amount of time user is offline (because db / server impl can change, data in system can change to become incompatible, etc).
 - It's for these reasons we don't recommend using Zero for offline writes.
 
+# discuss-examples 🌰
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Testing Zero: Rocicorp's Ultra-Fast Sync Engine for the Web _202502](https://marmelab.com/blog/2025/02/28/zero-sync-engine.html)
+
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

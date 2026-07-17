@@ -11,13 +11,17 @@ modified: 2024-01-28T20:52:21.981Z
 - pros
   - MIT > AGPLv3
   - 支持plugins，并提供了插件市场网站
-  - 客户端丰富，支持win/linux/mac/android/ios, 还提供Web Clipper
+  - 客户端丰富，支持win/linux/mac/android/ios/cli, 还提供Web Clipper
   - End To End Encryption (E2EE)
   - Note history (revisions)
   - Synchronisation with various services, including Nextcloud, Dropbox, WebDAV and OneDrive.
+  - export支持导出 md+图片
 
 - cons
   - 未实现web端
+  - 同步基于文件，难以实现多页面的联动更新
+  - client db全量存数据的架构在大量数据的场景对客户端设备要求高，scale不友好
+    - ? 大量数据时首次同步时间长
 
 - features
   - 支持本地文件管理?
@@ -51,7 +55,7 @@ modified: 2024-01-28T20:52:21.981Z
 - File API: Abstract interface (file-api.ts) with drivers for each sync target
 - Creates Real Files: Only during explicit export (File → Export or joplin export CLI)
   - Exports EVERYTHING as .md files with resources folder
-  - CLI sync uses db, no files
+  - CLI sync uses db, no files op
 
 - @joplin/server is a standalone Koa-based Node.js server
   - REST API for sync operations
@@ -74,7 +78,7 @@ modified: 2024-01-28T20:52:21.981Z
   - clients sync to various targets (Joplin Server, cloud services, filesystem)
   - Delta-sync with multiple backend drivers via FileApi interface
 - How Local File Editing Syncs to DB (External Editor Feature)
-  - When you use an external editor (VS Code, Typora, etc.), Joplin uses ExternalEditWatcher.ts with chokidar file watcher
+  - When you use an external editor (VS Code, Typora, etc.), Joplin uses ExternalEditWatcher.ts with `chokidar` file watcher
 - Joplin uses POLLING-based delta sync, NOT WebSocket/push
 - Doc Sharing exists but is sync-based 而不是协作
   - ShareService.ts creates share records on server
@@ -86,8 +90,7 @@ modified: 2024-01-28T20:52:21.981Z
 - External Editor (VS Code, Obsidian) → SQLite DB
   - When you use "Open in External Editor", Joplin temporarily exports the note to a file, watches it, and syncs back on change.
   - writeNoteToFile_(note) → /tmp/edit-{noteId}.md 
-  - 
-- 
+
 - 
 - 
 - 

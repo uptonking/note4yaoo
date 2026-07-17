@@ -23,11 +23,17 @@ modified: 2023-01-17T19:13:01.845Z
   - packages/zero-client: The main client library. It use replicache under the hood.
   - packages/zero-cache: The server side code.
   - packages/zql: The IVM (incremental view maintenance) engine as well as the query language/API.
-  - apps/zbugs: The bug tracker app.
   - packages/replicache: The replicache client library.
   - Reflect is no longer under development.
   - https://github.com/cbnsndwch/zero-sources
     - A collection of utilities and custom change sources for @rocicorp/zero
+  - apps/zbugs: The bug tracker app.
+    - drizzle-kit for for PostgreSQL schema management 
+    - server core似乎用drizzle不多， 仅几个文件
+  - https://github.com/rocicorp/drizzle-zero /apache2/202607/ts
+    - Generate Zero schemas from Drizzle ORM schemas
+  - [feat(zbugs): collaborative issue editing _202505](https://github.com/rocicorp/mono/pull/4402)
+    - pr已关闭， 作者放弃了offline的支持
 
 - https://github.com/powersync-ja/powersync-service /FSL-1.1-Apache-2.0(2y)/202406/ts
   - https://www.powersync.com/
@@ -334,6 +340,27 @@ modified: 2023-01-17T19:13:01.845Z
   - To establish a direct peer-to-peer connection with WebRTC, a signalling channel is needed to exchange peer information (SDP). 
     - Typically this involves running your own matchmaking server but Trystero abstracts this away for you and offers multiple "serverless" strategies for connecting peers (currently BitTorrent, Nostr, MQTT, Firebase, and IPFS).
     - Beyond peer discovery, your app's data never touches the strategy medium and is sent directly peer-to-peer and end-to-end encrypted between users.
+
+- https://github.com/JustVugg/loomabase /apache2/202606/rust/ts
+  - Offline-first synchronization engine for SQLite and PostgreSQL, built in Rust with column-level CRDTs, authoritative partial replicas, and secure multi- tenancy.
+  - open-source offline-first sync engine for applications that use SQLite on clients and PostgreSQL on the server.
+  - It resolves conflicts at column level with deterministic LWW CRDT registers and Lamport clocks, so unrelated offline edits do not overwrite each other.
+  - [I built an offline-first sync engine for SQLite ↔ PostgreSQL using column-level CRDTs : r/rust _202606](https://www.reddit.com/r/rust/comments/1u77bwc/i_built_an_offlinefirst_sync_engine_for_sqlite/)
+    - Loomabase could be a great fit for your use case. You have many independent SQLite instances (from different software/servers) that you want to sync into one central Postgres for analysis. That’s exactly the kind of multi-client → central DB pattern Loomabase is built for.
+    - implements its own lightweight column-level LWW CRDTs directly on top of SQLite/Postgres
+    - I wanted full control over: Row lifecycle as CRDT (create/delete/restore) , Partial replica scoping + evictions, Tight integration with relational schema + transactions
+  - how would you compare this with loro?
+    - Loro is excellent (especially for rich documents/JSON), but for this use case I preferred a more database-native, fine-grained approach.
+  - how would you compare this with electric?
+    - The biggest difference is that Loomabase uses column-level CRDTs: if two users edit different fields on the same row offline, both changes survive. ElectricSQL works at row/document level.
+  - Can it work with SQLite/SQLite too? 
+    - Not in this case because I use the very convenient part of Postgre and it was also created as support for SupaBase! I could work on it in the future! Why would you want sqlite to sqlite? Just to understand how to work with it in the future!
+
+- https://github.com/ctrotech-tutor/ctrodb /MIT/202607/ts
+  - https://ctrodb.vercel.app/
+  - zero-dependency, reactive, client-side database for the browser and Node.js. 
+  - MongoDB-like API, IndexedDB persistence, Signal-based reactivity.
+  - [Offline Sync in the Browser Without a Framework - DEV Community _202607](https://dev.to/ctrotech/offline-sync-in-the-browser-without-a-framework-pai)
 # sync-json
 - https://github.com/zettant/realtime-object-sync
   - server and client libraries for realtime JSON object synchronization.

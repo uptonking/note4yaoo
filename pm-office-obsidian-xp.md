@@ -52,7 +52,7 @@ modified: 2026-06-30T17:32:43.131Z
   - bases
   - editing with pagination, unifying markdown/pdf xp
   - pdf backlink/citation/preview
-  - file-editor: 不改变原文件的格式
+  - file-editor: 不改变原文件的格式, 可利用全局LRU缓存
 
 - goals
   - publish/site: github for obsidian bases
@@ -63,12 +63,34 @@ modified: 2026-06-30T17:32:43.131Z
   - 不要过于依赖ob的runtime, 充分利用文件系统的优势
   - 类似cloudflare-drop的快速分享
   - offline-capable: 仅本地能工作， 还支持开启云端同步
-  - 前端交互相关的功能都是不重要的，包括协作
 
 - non-goals
   - 支持md但不支持mdx, mdx 一定不放在core实现， 可能会放在extension， 也可能不支持
   - 非代码优先, 不支持react组建作为内容，如 page.tsx
+  - 前端交互相关的功能都是不重要的，包括协作
+  - 市面上可用的开源编辑器足够了，不要花过多时间做没人用的细节，集中精力做特色
+  - 优先web/desktop, cli不重要
 
+- DRMN主要为本地设计, designed for markdown/bases files
+  - 同步方案a: local-file <> local-db <> remote-db, 先操作本地db，再由db同步
+    - 优点是思路清晰， 统一的单向数据流
+    - 缺点是本地作为数据源，始终拥有全量数据， 可能速度慢且不scale
+    - 🤔 如果产品主要为本地设计，此方案可行性高
+  - 🐛 其他方案b: 在线时连接remote-server/db, 离线时才使用local-server/db，将remote作为数据源能简化同步, 
+    - 在线时本地db只做为cache/backup, ui操作全部基于db实现， 本地文件的外部操作由chokidar监控进程通知
+    - 架构较为复杂, ui操作需要更新remote-db+local-db+local-files, 本地外部操作需要更新remote-db+local-db
+    - 此方案在离线场景下edit，仍然需要实现方案a的 local-file <> local-db <> remote-db, 其中 local-db <> remote-db 的复杂度并没有降低
+  - 还可以将 desktop-app/webapp 分开实现
+    - 复杂度变高
+
+- infra-针对本产品的优先级
+  - ✨ offline editing
+  - ✨ partial sync
+  - collab with conflict resolution: 简单替代就是LLW, 提供ui让用户解决冲突或选版本
+  - realtime sync
+
+- features-maybe
+  - sync daemon
 - features-nice
   - bulk renaming
 
@@ -76,10 +98,10 @@ modified: 2026-06-30T17:32:43.131Z
   - github for obsidian bases, like gitea
 
 - 架构采用client/server模式， 方便实现saas, 
-  - desktop app 使用本地文件作为数据源 或 使用db作为数据源 都能实现需求， 但为了方便实现saas，放弃使用本地文件作为数据源的方案
-    - 🤔 采用db作为数据源时，要考虑如何支持使用本地db, 使用云端db，计算逻辑在本地，仅数据在云端？
   - web必做，desktop必做，cli非必要， 如何复用架构或数据，降低复杂度
-- DRMN主要为本地设计, designed for markdown/bases files, 
+  - desktop app 使用本地文件作为数据源 或 使用db作为数据源 都能实现需求， 但为了方便实现saas，放弃使用本地文件作为数据源的方案
+  - 🤔 采用db作为数据源时，要考虑如何支持使用本地db, 使用云端db，计算逻辑在本地，仅数据在云端？
+    - 梳理 本地文件 <> 本地db <> 云端db 的同步流程
 
 - cms-cli的参考
   - nocobase

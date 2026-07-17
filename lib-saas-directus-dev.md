@@ -19,6 +19,7 @@ modified: 2024-02-16T14:55:58.271Z
   - 🛢️ Works with new or existing SQL databases, no migration required
     - plug-and-play, so you're free to link or remove it anytime, with zero impact on your data
     - 支持postgis 🌍
+  - ✨ 提供了 rstore , 方便开发自定义ui, 还提供了 offline plugin
   - 内置数据库表名有统一前缀
   - 支持集群部署水平scaling
   - rich-fields: block-editor, WYSIWYG, markdown

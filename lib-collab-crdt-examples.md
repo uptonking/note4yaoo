@@ -10,7 +10,7 @@ modified: 2022-04-05T10:08:25.947Z
 # guide
 
 - requirements
-  - **extensible-data-structure**
+  - **extensible-data-structure** 
   - 离线合并
   - db-integration
   - undo/redo
@@ -56,7 +56,7 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/evoluhq/evolu
   - https://www.evolu.dev/
   - React Hooks library for local-first software with end-to-end encrypted backup and sync using SQLite and CRDT
-  - 依赖fp-ts、protobuf、kysely(sql-builder)、murmurhash、~~zod~~
+  - 依赖fp-ts、protobuf、kysely(sql-builder)、murmurhash、 ~~zod~~ 
   - 提供了dbworker.worker
   - [Release evolu@5.0.0](https://github.com/evoluhq/evolu/releases/tag/evolu%405.0.0)
     - For now, Evolu is using a synchronous version of SQLite. 
@@ -73,7 +73,7 @@ modified: 2022-04-05T10:08:25.947Z
   - Evolu CRDT has no support for transactions because CRDT transactions are still an unsolved issue. 
   - All table columns except for ID are nullable by default. It's not a bug; it's a feature. Local-first data are meant to last forever, but schemas evolve.
 
-- triplit /AGPLv3/202501/ts/crdt/llw/eav
+- triplit /3.1kStar/AGPLv3/202509/ts/crdt/llw/eav/inactive
   - https://github.com/aspen-cloud/triplit
   - https://triplit.dev/
   - [Triplit Roadmap](https://aspencloud.notion.site/7362bdf6512243fcbdfe03c9d56a5998?v=acd301c4bd3942b9b30a15f636cecd00)
@@ -84,17 +84,26 @@ modified: 2022-04-05T10:08:25.947Z
   - 🛢️ https://github.com/aspen-cloud/triplit/tree/main/packages/db
   - 依赖tuple-database、sorted-btree、zod、idb
   - the embedded database that powers Triplit, a complete solution to data persistence, state management, and realtime synchronization for web applications 
-  - Built-in storage providers for in-memory, IndexedDB, and Sqlite
+  - Pluggable storage providers like SQLite, IndexedDB, LevelDB, Memory, etc
+  - Real-time sync with incremental updates and conflict resolution at the property level
+  - Offline-mode with automatic reconnection and consistency guarantees
+  - Optimistic updates 
+  - Collaboration/Multiplayer powered by CRDTs
+  - Local caching powered by a full-fledged client-side database
+  - Durable server-side storage with an admin dashboard
   - Automatic indexing of object properties for fast querying
   - Combine multiple storage layers in the same DB with granular scoping on reads and writes
   - Transactions with rollback
+  - Relational querying for complex data models
   - Schema for validation, type hinting and enhanced CRDT-based storage.
-  - A schema can comprise multiple ‘collections’ (similar to a table in SQL). Using a schema with TriplitDB will enable type checking and the full the benefit of our CRDT-based data structures, like sets.
+    - A schema can comprise multiple ‘collections’ (similar to a table in SQL). Using a schema with TriplitDB will enable type checking and the full the benefit of our CRDT-based data structures, like sets.
   - By default your data will be stored ephemerally in memory and not persist through page refreshes
   - Under the hood, TriplitDB utilizes a timestamped Triple Store to support efficiently merging changes from multiple sources whether that’s multiple writers or multiple storage layers. 
-  - Each object that’s inserted is decomposed into a EAV triple of Entity (ID), Attribute (path in the object), and a Value. 
-  - Each triple is stored with a Lamport Timestamp and treated as a Last Writer Wins Register (LWW). 
-  - To support its tuple based storage system, TriplitDB uses Tuple Database as a generic querying interface and transaction manager.
+    - Each object that’s inserted is decomposed into a EAV triple of Entity (ID), Attribute (path in the object), and a Value. 
+    - Each triple is stored with a Lamport Timestamp and treated as a Last Writer Wins Register (LWW). 
+    - To support its tuple based storage system, TriplitDB uses Tuple Database as a generic querying interface and transaction manager.
+  - Authorization that's enforced on the server for both read and writes
+  - [Triplit joins Supabase _202510](https://supabase.com/blog/triplit-joins-supabase)
 
 - https://github.com/logux/core /202209/js/提供了ts声明
   - https://logux.io/
@@ -579,7 +588,7 @@ modified: 2022-04-05T10:08:25.947Z
   - List is based on the LSEQ and LOGOOT
   - [Support for recursive data types (e.g. JSON) ?](https://github.com/rust-crdt/rust-crdt/issues/51)
     - Yep, Map is indeed recursive, but it has the limitation that every value in the map is of the same type so it does not behave like a JSON CRDT where values may have different structures if that's what your goal is.
-    - you don't need an RGA for strings, just a LWW register. In the Riak DT map (and other proprietary JSON like CRDTs I have worked on). Strings have been LWW registers. **If you think of CRDTs as containers (Array, Map, Set) and values (Counter, Register) then you can make a JSON like thing with those alone (you don't even need the Set)**.
+    - you don't need an RGA for strings, just a LWW register. In the Riak DT map (and other proprietary JSON like CRDTs I have worked on). Strings have been LWW registers. **If you think of CRDTs as containers (Array, Map, Set) and values (Counter, Register) then you can make a JSON like thing with those alone (you don't even need the Set)** .
     - I still wonder how the ops should be structured though. I can't see a way to have document level CRDT ops that would not store some kind of a path to the target inner field. Since ops are serializable, that path must be serializable too. AFAIK, ditto did it using JSON pointers and I still see no better way to do that.
 - https://github.com/dougfort/crdt-genome /MIT/202112/rust/inactive
   - Experiments with Rust CRDTs using Tokio web application framework Axum.
@@ -945,7 +954,7 @@ modified: 2022-04-05T10:08:25.947Z
   - 依赖react、swarm.v0.3
   - 采用flux架构，暴露了state/action
   - It shuns(避免) use of the `contentEditable` attribute in favor of a custom editor surface and layout engine, exactly like the approach implemented by Google Docs.
-  - Ritzy is built with real-time collaborative editing support from the ground up, underlying mechanism for this is a **causal tree CRDT**.
+  - Ritzy is built with real-time collaborative editing support from the ground up, underlying mechanism for this is a **causal tree CRDT** .
   - Unlike Google Docs, Ritzy does not (currently) support complex page-based layout needed to build a word processor.
   - [Ritzy – A collaborative web-based rich text editor | Hacker News_201508](https://news.ycombinator.com/item?id=10104821)
   - [Ritzy Design](https://github.com/ritzyed/ritzy/blob/master/docs/DESIGN.adoc)
@@ -1158,7 +1167,7 @@ modified: 2022-04-05T10:08:25.947Z
   - This implementation uses a combination `{HybridLogicalTimestamp,PeerID}` as a means of conflict resolution, which on positive side is quite lightweight, but otherwise is pretty cumbersome: possible clock drifts on client devices; no ability to recognize concurrent updates ie. conflict resolution for things like update cell / delete column now depends on the clock timestamp
     - Easiest proposal is to switch to vector versions, with optional clock timestamps where useful, but they can be quite heavy (especially if used on per cell basis). 
     - Another proposal is to use partially-ordered log to detect concurrent conflicts (which would be also usefull ie. for undo/redo feature).
-  - Selections represents focused areas within a table/grid. In this PoC selections defined by user API using similar `{row:number,col:number}` pairs of opposite corners, however as row and column numbers can change under concurrent updates, **the internal representation of selection uses fractional keys (keys used internally by `LSeq` to establish order)**.
+  - Selections represents focused areas within a table/grid. In this PoC selections defined by user API using similar `{row:number,col:number}` pairs of opposite corners, however as row and column numbers can change under concurrent updates, **the internal representation of selection uses fractional keys (keys used internally by `LSeq` to establish order)** .
     - Quite often we need to react on changes happening within the boundaries of the selection.This requires efficient way to find selections that contain given cell or intersect with range of changed cells (ie. when we copy paste multiple rows/columns).
     - For small number of selection brute(纯体力的) force over all known selections wouldn't be an issue. 
     - For bigger number, we could modify indexing structures for 2-dimensional data such as R-Trees (used ie. to index geospatial data).
@@ -1323,7 +1332,7 @@ modified: 2022-04-05T10:08:25.947Z
     - One way of looking at Rhizome is "RDF without the RDF" bits
     - We use quads and SPOC for example — though we think about it more as EAVC instead of SPOC
     - We don't use any of the "Resource Description" parts of RDF, and are focused on things like incremental view maintenance for collaborative docs, row-level encryption, and , which the RDF community has historically not needed / explored. 
-    - Rhizome more focused on providing a database and CRDT primitives — despite the surface similarity of being a tuplestore, it's is **closer to something like Datomic or Automerge than RDF**.
+    - Rhizome more focused on providing a database and CRDT primitives — despite the surface similarity of being a tuplestore, it's is **closer to something like Datomic or Automerge than RDF** .
     - I see, incremental view maintenance is a powerful concept. Crucial to make CRDTs at Datalog-level efficient / practical.
 
 - https://github.com/iambriccardo/causal /rust/Operation-based

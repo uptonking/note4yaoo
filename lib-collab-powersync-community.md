@@ -126,7 +126,28 @@ modified: 2024-02-12T03:23:17.007Z
   - Our client SDK sequentially processes writes in the upload queue using an `uploadData()` function defined by the developer.
   - So, developers control how writes are applied to Postgres, typically via their backend API.
 
+# discuss-examples 🌰
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Offline-First Apps Made Simple: Supabase + PowerSync _202510](https://powersync.com/blog/offline-first-apps-made-simple-supabase-powersync)
+
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

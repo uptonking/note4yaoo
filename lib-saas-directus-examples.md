@@ -76,7 +76,11 @@ modified: 2024-03-14T13:51:11.429Z
   - It gives you a normalized reactive cache, a structured query and mutation API, and plugin-based integration with your own data sources.
   - Normalized reactive cache shared across your app
   - Built for local-first, realtime, forms, and offline workflows
+  - 使用 @directus/sdk 实现
+  - [Offline  ](https://rstore.dev/guide/data/offline.html)
   - [chore: remove yjs integration _20260623](https://github.com/directus/rstore/commit/6fa8546557a1b73af486c992c6974ef6f0d9e62b)
+  - [IndexedDB Plugin _202503](https://github.com/directus/rstore/issues/15)
+    - Have an indexed plugin to help build offline apps with less boilerplate
 
 - https://github.com/luochuanyuewu/nextus /MIT/202402/ts
   - https://nextus.vercel.app/
@@ -525,6 +529,10 @@ modified: 2024-03-14T13:51:11.429Z
 
 - https://github.com/Nana2929/discord-daily-task-bot /202401/python
   - Side project: discord bot for daily-task reminders
+
+- https://github.com/yohita/directus-electron-app /202307/inactive
+  - This repository provides a one-click installation of Directus, allowing you to try Directus and use it offline privately and securely without the need for any additional dependencies.
+  - Offline support: Access your Directus instance and manage your content even when you don't have an internet connection.
 # utils
 - https://github.com/utomic-media/directus-dev-utils /GPLv3/202401/ts
   - helpful utils when developing directus extensions.
