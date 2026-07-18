@@ -561,7 +561,19 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## Pi 刚发布了 computer-use v0.4.3，加了幽灵光标和并行子 agent。而 Claude 还没有自己的 computer use 故事。
+- https://x.com/yibie/status/2076866515073405214
+  - Codex 的 computer use 在 PC 上已经到了一个阈值。他最新的实验是让 GPT-5.6 Sol 在 Codex 里控制他的电脑，玩 Slay the Spire 2 的每日挑战——5 小时的自主游戏，做出复杂的游戏决策，赢了。
+  - Pi 的 computer use 更新到 v0.4.3（7 月 12 日）。三个变化：
+  - 幽灵光标——在屏幕上显示 CUA 正在操作的位置。之前 computer use 最大的痛点——"它是不动还是在想？"——被修好了。
+  - 并行子 agent——多个子 agent 可以在不同应用上安全地并行操作。
+  - 批量优化——延迟改善近 50%，Microsoft 应用支持更好。
+  - Pi 的定位是开源、可定制、带 harness 的 computer use——和 Codex 的端到端封闭体验形成对比。
+  - 截至 2026 年 7 月，Claude 还没有 native computer use。Claude Code 有终端——terminal computer use——但没有桌面级的、像 Codex 和 Pi 那样的"控制你的鼠标和键盘"。Anthropic 的 UI 故事仍然以聊天为界。
+
+- https://x.com/alading22/status/2076815570805149748
+  - i reverse engineered @OpenAI's Codex Computer Use and built pi-computer-use: a model agnostic computer use tool for my fellow pi enjoyers on MacOS.
+  - comes with ax-first navigation & a vision fallback for supported models! source code in comments; would love to get some feedback.
 
 - ## [OpenLobster – for those frustrated with OpenClaw's architecture : r/openclaw _202603](https://www.reddit.com/r/openclaw/comments/1rum56j/openlobster_for_those_frustrated_with_openclaws/)
 - What OpenClaw got right:

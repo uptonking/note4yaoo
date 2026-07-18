@@ -68,6 +68,25 @@ modified: 2026-04-06T22:42:11.263Z
     - Tauri for building Desktop- and Mobile apps 
     - Qwik web framework for building performant Web UIs
     - DaisyUI for faster, cleaner and simple tailwind CSS UI development
+
+- https://github.com/sybil-solutions/local-studio /1.5kStar/apache2/202607/ts
+  - https://localstudio.ai
+  - Control panel for VLLM, Sglang, llama.cpp, exllamav3
+  - a local-first workstation for running, managing, and using self-hosted LLM backends.
+  - controller/ — Bun/Hono backend. Owns model lifecycle (launch, evict, recipes, downloads, runtime process coordination), an OpenAI-compatible proxy (chat, models, tokenization, audio), system state (GPU metrics, logs, usage, settings, SSE), and controller integrations.
+  - frontend/ — Next.js 16 + React 19 UI and the macOS Electron desktop shell.
+    - The agent surface lives at /agent in the frontend. It uses `@earendil-works/pi-coding-agent` through the frontend runtime rather than shelling out to a separate agent process for normal turns. 
+    - Point the frontend at a remote controller with BACKEND_URL or NEXT_PUBLIC_API_URL
+  - vLLM/SGLang serving on Linux needs NVIDIA driver + CUDA; Apple Silicon uses the MLX backend.
+  - Runtime backends
+    - vllm — vLLM server recipes through configured/discovered/system/Docker/bundled targets.
+    - llamacpp — llama.cpp llama-server recipes for GGUF models.
+    - mlx — MLX mlx_lm.server recipes for Apple Silicon.
+  - https://x.com/0xSero/status/2077780960054009862
+    - it let u use whatever u setup via pi cli. the oauth is not in the ui tho maybe i'll port it tomorrow
+  - https://x.com/0xSero/status/2078121272618209699
+    - local.ai and https://localstudio.ai are only related in spirit
+    - 两个项目不是一个作者， 只是用了相似的local llm的设计
 # ollama/lmstudio-like
 - https://github.com/oobabooga/text-generation-webui /45.1kStar/AGPLv3/202509/python/js
   - https://oobabooga.gumroad.com/l/deep_reason

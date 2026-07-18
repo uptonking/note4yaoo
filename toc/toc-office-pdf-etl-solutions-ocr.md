@@ -707,6 +707,13 @@ modified: 2026-04-07T12:53:38.419Z
   - Uses the official PaddleOCR-VL async job API for structured Markdown/layout extraction.
   - Documents a hybrid OCRmyPDF + PaddleOCR overlay pattern for better Chinese phrase search.
 
+- https://github.com/arcships/light-ocr /apache2/202607/cpp/python
+  - Offline OCR for native and Node.js applications, powered by PP-OCRv6 Small.
+  - C++17 PP-OCRv6 small OCR core with an asynchronous Node-API adapter
+  - https://x.com/ashfold/status/2076937753993122239
+    - 开源了arcships/light-ocr ，一款为原生应用和 Node.js 应用准备的离线 OCR，可以做到每张图100ms以内。模型加包30MB左右。如果你正在构建desktop/native 客户端，这个你不能错过。
+    - 各种ocr module都没有做node module 的集成。所以基于ppocrv6，重新写了可以跑在任意平台上的onnx版本。
+
 ## utils
 
 - https://github.com/PaddlePaddle/PaddleOCR/tree/main/skills

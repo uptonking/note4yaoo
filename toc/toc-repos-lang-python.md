@@ -200,4 +200,11 @@ modified: 2025-02-26T15:04:15.883Z
     - Note: In the future this will no longer be the default server used by ActivityWatch, instead we will be using aw-server-rust.
   - https://github.com/ActivityWatch/aw-tauri /MPL
     - WIP ActivityWatch distribution using Tauri
+# pyodide
+
+## pyo-notebook
+
+- https://github.com/bouzidanas/pynote-notebook-editor /MIT/202607/jupyter/ts
+  - https://pynote-notebook-editor.vercel.app/
+  - A serverless, zero-setup Python notebook environment that runs entirely in your web browser
 # more

@@ -19,6 +19,8 @@ modified: 2026-06-18T14:27:48.210Z
 - ## 
 
 - ## 
+
+- ## 
 # discuss-linux-ai
 - ## 
 
@@ -126,3 +128,41 @@ modified: 2026-06-18T14:27:48.210Z
 - ## 
 
 - ## 
+
+- ## [Seriously, except package managers, what's the difference between distros? : r/linux _202607](https://www.reddit.com/r/linux/comments/1ux5vns/seriously_except_package_managers_whats_the/)
+- Stability. Some distros are more bleeding-edge while others stay with tried-and-true. And many in between. 
+
+Security. How quickly are security patches applied? How thoroughly are they vetted? How secure are the repositories?
+
+Support. The Arch wiki is known for excellent, detailed documentation. 
+
+Configurability. Gentoo and NixOS (and others I'm forgetting) allow the entire system to be rebuilt based on a configuration change. 
+
+FOSS philosophy. Are non-FOSS things like some video drivers available, and if so how well supported are they. 
+
+- Point (Fedora) vs Rolling release (Arch)
+
+Stable (Debian) vs Bleeding edge (Arch)
+
+Snap-infested (Ubuntu)
+
+Mutable (everything above) vs Immutable (Silverblue)
+
+A/B immutable (Vanilla)
+
+Declarative Config (Nix)
+
+Building everything from Source (Gentoo)
+
+QoL features (CachyOS, Bazzite)
+
+Alternative Init System (Void, Artix)
+
+Extremely Tiny (Alpine)
+
+Alternative userland (Chimera)
+
+- Opinionated for a specific purpose, Bazzit, Secureblue, OpenWRT or even Linux Larp, vs Allrounder like Fedora or Debian. 
+
+- A distribution is essentially just an opinionated collection of software. Debian stable and Arch may use most of the same tools, but someone who needs a stable system would never consider a rolling distro like Arch.
+- Distros are just collections of packages. Which packages you get and when is decided by the repo you download packages from. The Ubuntu repo has some packages released at some point, the Arch repo has some packages released at some point. The differences are the distro.

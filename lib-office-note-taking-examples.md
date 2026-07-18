@@ -318,6 +318,20 @@ modified: 2024-01-30T20:56:45.773Z
 
 - https://github.com/cybersemics/em /ts/yjs/web/ios/android
   - minimalistic note-taking app for personal sensemaking.
+
+- https://github.com/team-reflect/reflect-open /1.3kStar/MIT/202607/rust/ts
+  - Open-source Reflect rewrite: A local-first AI agent-friendly Markdown note-taking app
+  - Plain-file notes for Mac and iPhone: daily notes, wiki links, local search, and optional AI over your own Markdown.
+  - open-source note-taking app built around a folder of Markdown files. 
+  - 新建的note默认放在 root/notes 文件夹下, root/下的其他文件和文件夹都不可见
+  - https://x.com/reflectnotes/status/2077031149231092065  _202607
+    - Today we’re releasing Reflect Open, a complete rewrite of Reflect for the age of AI.
+    - The shape of Reflect is still there: daily notes, backlinks, tasks, search and chat with your notes.
+    - The important difference is underneath. Your data lives in ordinary files, the app works offline
+    - The rewrite came from a fairly uncomfortable conclusion: two of the original architectural decisions we were proudest of—our own encrypted sync and a custom note format—had become constraints.
+    - The rewrite came from a fairly uncomfortable conclusion: two of the original architectural decisions we were proudest of—our own encrypted sync and a custom note format—had become constraints.
+    - When Fable, a new coding model, came out, we put it to a fairly extreme test: Within two weeks, we had rebuilt the foundations and polished them into something we were comfortable releasing.
+    - If we didn’t build it, someone else would.
 # notes-webapp
 - https://github.com/encryptic-team/encryptic /MPLv2/202305/js/deprecated
   - An encryption-focused open source note taking application

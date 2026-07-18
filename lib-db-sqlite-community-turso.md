@@ -220,7 +220,21 @@ Today, Turso is in beta with early customers working toward production deploymen
 
 - ## 
 
-- ## 
+- ## 🐘 we are officially writing a new version of Postgres. In Rust - and creating the LLVM of databases in the process.  _202607
+- https://x.com/glcst/status/2077759127682486561
+  - In the span of a year, we have rewritten SQLite. Keeping the compatibility, increasing its feature set. MVCC, Types, (Live) Materialized Views, among other things. In the process of doing that, we have realized: At the end of the day, what makes SQLite special is that it compiles SQL to a database-specific bytecode. So why can't we compile *Postgres* to the same bytecode?
+  - Turns out we can. I ran an experiment called pgmicro as a way to prove this hypothesis, and it works very well. It is time to make this official, and put the weight of Turso behind it. We shall give the world a modern take on Postgres. Wire compatible, but built on a new architecture.
+  - We have already heard of others wanting to extend this. MySQL? Redis? the sky is the limit. What can we do if we do for databases what LLVM did for compilers? To prove how powerful the SQLite bytecode is, we are actually running DOOM compiled to the unmodified SQLite instruction set. And because Turso runs natively in the browser, you can play the game in your browser. With the database executing it.
+  - We are rewriting Postgres. And in the process, turning Turso into the LLVM of databases
+
+- So you'll have a collection of data structures that the IR gets to select from? In other words, what are the primitives below the IR?
+  - right now it is of course very sqlite centric because that is whales we branched from. Bur I want to add more specialized primitives
+
+- What's the advantage? Can you fix the Transaction ID Wraparound issue, maybe increase IDs to 128 bits. Can you add automatic incremental materialized view maintenance ? that  would be a compelling advantage.
+  - incremental  materialized views are already working
+- Not on on Postgres They are not incremental they require a full rewrite and are not automatic
+  - On Turso they are, that's what I meant.
+- The value of materialized views comes from MV rewrites during compilation/optimisation. When do you plan to support it?
 
 - ## I've been working on merging @glcst experimental Postgres frontend into the Turso source tree.
 - https://x.com/penberg/status/2074871119279001724

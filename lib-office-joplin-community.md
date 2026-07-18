@@ -25,6 +25,25 @@ modified: 2024-01-28T20:54:44.482Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [[Feature Request] Multiple synchronization targets  _201903](https://github.com/laurent22/joplin/issues/1293)
+  - like FolderSync
+
+- Very useful feature for use case « Work + Personal + Shared with significant other » !
+
+- Work vs Personal is probably the biggest use case, but there are more than those two for sure. I think the easiest way would be to connect Joplin to multiple Cloud locations for sync and then assign a notebook to a connected Cloud location. Due to the nature of networks and cloud storage syncing a notebook should be one to one, not one to multiple cloud targets. More flexibility could be offered if there were a Joplin server/node that handled the syncing tasks.
+
+- ## [[Feature Request] run multiple instances of Joplin _201806](https://github.com/laurent22/joplin/issues/591)
+  - Scope instance to the profile, so multiple apps could run, each with different profiles.
+  - Instead what we can do is provide a way to switch profiles from the app
+
+- so this issue was originally for multiple instances, but has it been closed under accomplishing support for multiple profiles instead? Is multiple instances still a potential future feature?
+
 - ## [Export to Textbundle - Features - Joplin Forum _202309](https://discourse.joplinapp.org/t/export-to-textbundle/32524)
   - I would like to renew the 2021 request (Support TextBundle files? 
 - Just look at TextBundles Apps-list:
@@ -45,7 +64,18 @@ modified: 2024-01-28T20:54:44.482Z
 
 - ## 
 
-- ## 
+- ## [All: Add sync pipeline changes to store conflict resolution base version _202605](https://github.com/laurent22/joplin/issues/15570)
+  - This is part of GSoC 2026 : Interactive Sync Conflict Resolution.
+  - The conflict resolution UI needs three versions of a note to show the user what each side changed - the local version, the remote version, and the base version. The base version is the common ancestor which is the state of the note the last time both devices agreed on it before either made offline edits. Without the base, only a two-way diff is possible which cannot distinguish between additions and deletions made by each side.
+  - Currently Joplin never records this base version anywhere. This issue adds the two minimal sync pipeline changes needed to start capturing it.
+  - After a note is successfully uploaded to the server with no conflict, write the note's current body and title to the new base_body and base_title columns in sync_items. 
+  - Link conflict note to its base : handleConflictAction.ts
+
+- [All: Add database schema for interactive sync conflict resolution  laurent22/joplin _202605](https://github.com/laurent22/joplin/issues/15549)
+- To perform a three-way diff, the UI needs a common ancestor the version of the note that both devices last agreed on before either made offline edits. This is stored on sync_items since it is tied to the sync state of the note rather than the note content itself:
+  - base_body : the note body at the time of the last clean upload
+  - base_title : the note title at the time of the last clean upload
+  - base_conflict_note_id : links this base snapshot to the specific conflict note it belongs to, so the UI can detect when the base has gone stale
 
 - ## [Live, online editing mode _202208](https://discourse.joplinapp.org/t/live-online-editing-mode/26833)
 - [Week 10 update: Real Time Collaboration on a Note _202108](https://discourse.joplinapp.org/t/week-10-update-real-time-collaboration-on-a-note/19708)

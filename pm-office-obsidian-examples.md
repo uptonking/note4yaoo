@@ -1907,6 +1907,13 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/kytmanov/synto
   - More than just Karpathy’s LLM Wiki, 100% local with Ollama. Drop Markdown notes → AI extracts concepts → your Obsidian wiki auto-links 
+
+- https://github.com/langchain-ai/openwiki /12.2kStar/MIT/202607/ts
+  - OpenWiki is a CLI that writes and maintains agent wikis for codebases or purpose memory. 
+  - It's built specifically for agents, can ingest local knowledge sources through built-in connectors or git repositories and synthesize them into a local wiki.
+  - OpenWiki emits Google Open Knowledge Format (OKF) v0.1 bundles in both code and personal modes.
+  - https://x.com/wey_gu/status/2077916113774772378
+    - OpenWiki is our open source CLI for generating and maintaining documentation for codebases. It creates a wiki for your repo, connects that wiki to your coding agent, and keeps the docs up to date as your code changes. 
 # more
 - https://github.com/TfTHacker/obsidian42-brat /MIT/202606/ts
   - BRAT - Beta Reviewers Auto-update Tester

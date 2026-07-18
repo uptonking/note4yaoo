@@ -861,6 +861,20 @@ modified: 2025-12-11T18:10:23.710Z
   - Automatically reduces token usage in OpenCode by removing obsolete content from conversation history.
   - Dynamic context pruning plugin for OpenCode - intelligently manages conversation context to optimize token usage
 
+## grok
+
+- https://github.com/xai-org/grok-build /16.8kStar/apache2/202607/rust
+  - https://x.ai/open-source
+  - Grok Build is SpaceXAI's terminal-based AI coding agent. 
+  - It runs as a full-screen TUI that understands your codebase, edits files, executes shell commands, searches the web, and manages long-running tasks — interactively, headlessly for scripting/CI, or embedded in editors via the Agent Client Protocol (ACP).
+  - https://x.com/SpaceXAI/status/2077494535387828644
+    - Open sourcing Grok Build allows anyone to support making a reliable and robust harness. 
+
+- https://github.com/krakenunbound/grok-desktop /MIT/202607/rust/ts/svelte
+  - Lightweight desktop GUI for the Grok Build CLI — Codex-inspired dark UI, project workspaces, explicit reasoning/access controls, rich file drop, system tray, chat history, and Grok CLI context visibility.
+  - Stack: Tauri 2 (Rust) + Svelte 5 (SvelteKit SPA)
+  - Platforms: Windows 10/11, Linux, and macOS
+
 ## pi
 
 - resources
@@ -1323,6 +1337,9 @@ modified: 2025-12-11T18:10:23.710Z
     - [feat: Implement graceful shutdown system ](https://github.com/Nano-Collective/nanocoder/issues/239)
       - ink's exit() doesn't terminate the process
     - [feat: implement parallel tool execution for better performance _202602](https://github.com/Nano-Collective/nanocoder/pull/352)
+  - [Releasing prompt-scrub v1.0! We've also built it into Nanocoder! : r/nanocoder _202607](https://www.reddit.com/r/nanocoder/comments/1uxdtdt/releasing_promptscrub_v10_weve_also_built_it_into/)
+    - prompt-scrub is a small Node.js utility that runs entirely on your machine. You give it a prompt, it detects identifying content (emails, phone numbers, postal addresses, paths, secrets, URLs, with name and code-tell as opt-ins), replaces each finding with a stable placeholder like Email_1 or Path_2, and gives you back the scrubbed text plus a session id. You send the scrubbed text to whichever LLM provider you already use. When the response comes back, you hand it to rehydrate() with the session id and the placeholders are swapped back to your real values.
+    - It is deterministic per session. 
 
 - https://github.com/SWE-agent/mini-swe-agent /5.3kStar/MIT/202606/python
   - https://mini-swe-agent.com/

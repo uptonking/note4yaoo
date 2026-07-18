@@ -26,6 +26,8 @@ modified: 2026-06-30T17:32:43.131Z
   - templates
 
 - cons
+  - 不支持打开单个外部markdown文件， 将外部md拖到ob时默认行为是复制，如果拖到bases默认会增加一行
+  - 不支持打开多个vault
   - 不支持类似notion的 block-style dragging
   - publish/webapp 视图层不开源
   - bases 基于文件的设计 难以获取页面内的内容
@@ -72,7 +74,8 @@ modified: 2026-06-30T17:32:43.131Z
   - 优先web/desktop, cli不重要
 
 - DRMN主要为本地设计, designed for markdown/bases files
-  - 同步方案a: local-file <> local-db <> remote-db, 先操作本地db，再由db同步
+  - 同步方案a: ~~local-file <> local-db <> remote-db~~ , 先操作本地db，再由db同步
+    - local-db-client <> remote-db-server, local-db-client <> local-files
     - 优点是思路清晰， 统一的单向数据流
     - 缺点是本地作为数据源，始终拥有全量数据， 可能速度慢且不scale
     - 🤔 如果产品主要为本地设计，此方案可行性高
@@ -82,11 +85,14 @@ modified: 2026-06-30T17:32:43.131Z
     - 此方案在离线场景下edit，仍然需要实现方案a的 local-file <> local-db <> remote-db, 其中 local-db <> remote-db 的复杂度并没有降低
   - 还可以将 desktop-app/webapp 分开实现
     - 复杂度变高
+  - 参考joplin: 支持配置 sync target 如filesystem/joplin-cloud/onedrive, 这样本地的db修改就可以自动同步到files/cloud
 
 - infra-针对本产品的优先级
   - ✨ offline editing
-  - ✨ partial sync
-  - collab with conflict resolution: 简单替代就是LLW, 提供ui让用户解决冲突或选版本
+  - partial sync: 采用snapshot方案的时候也可以通过delta结构来实现partial sync
+    - 甚至full sync的问题也不大， git 仓库就是这个设计
+    - text-sync first, 附件lazy, 很多项目都是类似设计
+  - collab with conflict resolution: 简单替代就是LLW, 或提供ui让用户解决冲突或选版本
   - realtime sync
 
 - features-maybe

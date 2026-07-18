@@ -108,6 +108,14 @@ modified: 2025-10-28T20:02:16.727Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Anaconda Acquires Kilo Code : r/kilocode _202607](https://www.reddit.com/r/kilocode/comments/1ux8565/anaconda_acquires_kilo_code/)
+  - [AI on Your Own Terms: Anaconda Acquires Kilo Code | Anaconda _202607](https://www.anaconda.com/blog/anaconda-acquires-kilo-code)
+- It's great news, Anaconda is partially open source, Kilo fits in nicely. Anaconda works on all types of machines, so does Kilo
+
 - ## [kilo code这么飞快的吗，同一个模型比roo code还快 ](https://linux.do/t/topic/1401468)
   - 我一开始觉得可能是模型原因，毕竟不是控制一个变量。kilo我用的是gemini-3-flash，而claude code则是AWS的claude。然而在我把模型都换成了glm-4.7之后发现kilo code的速度依旧很快。
   - 朋友之前一直用的roo code，听我这么一说不信，于是也换成了kilo code，结果也是快了不少。roocode还在想的时候kilo code就已经干完活了。

@@ -103,6 +103,10 @@ modified: 2021-05-06T09:58:23.803Z
   - https://lucide-animated.com/
   - collection of smooth animated icons
 
+- [Icon Animator ](https://www.iconanimator.app/)
+  - https://x.com/dotta/status/2077428830092833022
+  - This tool by the Paperclip team lets you animate any Lucide Icon in SVG
+
 - iconpark
   - https://github.com/bytedance/iconpark
   - https://iconpark.oceanengine.com/official

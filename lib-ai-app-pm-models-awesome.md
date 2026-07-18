@@ -314,6 +314,7 @@ modified: 2026-06-20T15:49:57.019Z
     - [LD士多 - LDC积分商城](https://ldst0re.qzz.io/)
 
 - token-news
+  - [GLM 5.2 FREE tier is live on TokenRouter, and running through July 25. ](https://www.tokenrouter.com/console/pricing?search=glm-5.2)
   - [商汤送免费的glm5.2了 - LINUX DO _202607](https://linux.do/t/topic/2504080)
   - [每月50刀免费额度 支持glm5.2 邮箱注册即可 - LINUX DO _202606](https://linux.do/t/topic/2489020)
 

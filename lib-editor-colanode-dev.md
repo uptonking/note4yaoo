@@ -15,17 +15,20 @@ modified: 2025-06-21T19:10:57.709Z
   - local-first: background syncing, web前端及后端server及minio全停止时web也可正常使用
     - 由于使用WebWorker，可在断网时使用
   - all-in-one: 📈 database + 💬 chat + 📝 doc + 📁 files
+  - 客户端支持 web/electron-app
   - blocky data model: flexible building blocks
   - subpage/sub-doc
   - self-hostable 私有化部署方便
   - 👾 AI assistant built in
   - 支持计算存储空间
   - 支持web, electron-app(轻量封装)
+  - 附件可配置下载策略, 默认懒加载
 
 - cons
-  - version-history不支持
-  - export 不支持
+  - version-history 不支持
+  - export to markdown/docx 不支持
   - comment 不支持
+  - server db 保存了changes, 也保存了最新内容， 但未提供内容相关api
   - ~~docs中的图片需要手动点击才会下载和显示~~ 
   - ~~docs不支持分享，每个doc没有单独的url~~ 
   - 多tab的设计，没有自动关闭tab很烦
@@ -60,6 +63,9 @@ modified: 2025-06-21T19:10:57.709Z
 # draft
 - roadmap
   - prosemirror-database-plugin
+
+- partial-sync
+  - 参考 per-root sync, 优先实现最近文件的partial-sync
 
 - ❓ huge content streaming
 

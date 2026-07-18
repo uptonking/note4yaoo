@@ -9,6 +9,12 @@ modified: 2026-06-17T05:51:04.215Z
 
 # guide
 
+# utils
+- https://github.com/foru17/neko-master /2.8kStar/MIT/202607/ts
+  - A modern and elegant dashboard for network traffic visualization and analysis.
+  - https://x.com/grgerwcwetwet/status/2077362897697849494
+    - 可以把家里网关的流量实时可视化，一眼看清网络到底发生了什么。
+    - 一般路由器的后台页面都可以监控看到
 # discuss-stars
 - ## 
 
@@ -1240,7 +1246,11 @@ ChatGPT 解锁
 
 - ## 
 
-- ## 
+- ## 一个游戏: 搭服务器扛流量，有点像塔防。你要摆 Firewall、CDN、数据库、缓存这些，把各种请求接到正确的地方。
+- https://x.com/7qD1aFUQaw41485/status/2078004343933190408
+  - 流量会越来越多，还会有 DDoS，接错了或者容量不够就会挂。声誉没了或者钱烧光了就结束。
+  - https://github.com/pshenok/server-survival
+  - https://pshenok.github.io/server-survival/
 
 - ## [记录第一次感受到了“树大招风”的含义 ](https://linux.do/t/topic/1180587)
   - 2025.11.12 我们刚刚上线我的 DMIT 机器 4 小时内给恶意刷流（1T 瞬间蒸发）
