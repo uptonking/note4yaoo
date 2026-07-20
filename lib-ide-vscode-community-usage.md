@@ -32,6 +32,25 @@ export VSCODE_GALLERY_CONTROL_URL=""
 - https://x.com/nullvoxpopuli/status/1955014292769542598
 - Default is indent based. But you can change in settings.
 
+# discuss-ai-vscode
+- ## 
+- ## 
+- ## 
+- ## 
+- ## [update frequency : r/vscode _202607](https://www.reddit.com/r/vscode/comments/1uzn6p0/update_frequency/)
+- Slopware as a service
+
+```JSON
+{
+  "chat.agent.enabled": false,
+  "chat.autopilot.enabled": false,
+  "chat.disableAIFeatures": true,
+  "git.addAICoAuthor": "off",
+  "telemetry.feedback.enabled": false,
+  "telemetry.telemetryLevel": "off"
+}
+```
+
 # discuss-search
 - ## 
 

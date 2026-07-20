@@ -314,7 +314,10 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## agents can control browsers but you can also ask it to record network requests into a HAR file
+- https://x.com/thdxr/status/2078727284865827140
+  - then it can derive a client for any website which is more efficient than browser controlling it every time
+- Yep codex did this automatically for me. It started by clicking through the website and investigating all internet request. After that, it only needed the website to grab the cookie, and rest is automated through undocumented APIs
 
 - ## the problem with "spec driven development" is that most software can't be spec'd up front
 - https://x.com/stevekrouse/status/2076383688753832382

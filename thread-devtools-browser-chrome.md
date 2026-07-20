@@ -189,7 +189,10 @@ modified: 2023-02-20T19:41:08.506Z
 
 - ## 
 
-- ## 
+- ## CloakBrowser，基于 Chromium 内核深度定制，主打纯开源和顶级防关联。 系统能为每个窗口生成完全隔离的设备指纹，连 Cloudflare 的人机校验都能轻松无感通过。
+- https://x.com/nini_incrypto_/status/2078801288054350233
+  - 更棒的是它全平台通用（Windows、Mac、Linux），原生兼容 Google Play 框架。 官方提供了一键迁移接口，现有的多账号环境一行代码就能直接无缝搬家，省掉了大把调试功夫。
+  - https://github.com/CloakHQ/CloakBrowser /MIT/202607/csharp/python
 
 - ## [吐槽roxybrowser - LINUX DO _202606](https://linux.do/t/topic/2286343)
   - 开机自动启动

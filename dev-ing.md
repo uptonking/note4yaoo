@@ -338,6 +338,11 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0719
+
+- LPT means Longest Processing Time first.
+  - It’s a scheduling heuristic: order jobs by estimated duration descending, then assign the next job to the least-loaded worker/bin. The idea is that long jobs start early so they don’t sit at the end and stretch the makespan.
+
 ## 0716
 
 - 🤔 I want to develop a saas solution with client/server architecture that provides webapp/electron-app/cli, and the electron-app should just be a thin wrapper of webapp. the electron-app/webapp/cli uses the same server backend/api. is there any popular open source solutions that use similar idea that building electron-app as lightweight webapp wrapper (cli is optional, not required)? deep research related solutions/ideas, if you found any open source solutions or inspiration projects, provide overview/github-repo/website for each.

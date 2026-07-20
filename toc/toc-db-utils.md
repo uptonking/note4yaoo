@@ -40,6 +40,10 @@ modified: 2022-11-06T11:21:27.612Z
 - https://github.com/fasiha/mudderjs /Unlicense(free)/202301/js/inactive
   - Lexicographically-subdivide the “space” between strings, by defining an alternate non-base-ten number system using a pre-defined dictionary of symbol↔︎number mappings. 
   - Handy for ordering NoSQL keys.
+
+- https://github.com/feigeCode/navop /apache2/202607/rust
+  - https://navop.dev/
+  - Navop combines Navigate and Operation—a unified workspace that helps developers navigate and operate databases, servers, terminals, and AI tools from one place.
 # rest
 - https://github.com/formio/resquel /202101/ts/inactive
   - Express.js middleware library that is able to convert SQL databases into a REST API.

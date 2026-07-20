@@ -448,6 +448,8 @@ modified: 2026-06-20T15:49:57.019Z
     - 不限量套餐: 限时、限并发
   - [123nhh API ](https://api.123nhh.com/profile), 只能签到得额度
     - [[nhh站]随时跑路和关闭注册 _202606](https://linux.do/t/topic/2468396)
+  - [GG_API _202607](https://api.imai.us.ci/keys)
+    - [【7.19-GG公益站】 新增订阅卡并调整额度 _202607](https://linux.do/t/topic/2613713)
   - [KayanoLoveChenChen](https://chenchen.openachieve.asia)
     - [晨晨公益站来了哩 Grok4.5 - LINUX DO _202607](https://linux.do/t/topic/2565874)
   - [Dk _202606](https://apideepseek.com/console/personal)
@@ -2137,11 +2139,12 @@ modified: 2026-06-20T15:49:57.019Z
   - [ai资源库的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/89LBYJ36)
   - 提供月卡 90 > 每周100
   - 偶尔能碰到无限额度的天卡, 并发5
+  - 夜间偶尔会有超低价分组
 
 - [JinnyAPI ](https://jinnyapi.com/keys)
   - 注意充值倍率是 1:10
   - 大多是中等价格
-  - 低价grok
+  - 低价grok/kiro
 
 - [DataCodex ](https://api.datacodex.net/keys), 已充值
   - 中等价格
@@ -2194,6 +2197,11 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [Conpera ](https://code.conpera.ai/)
   - 无法注册
+
+- [御海自用API ](https://www.zzczzc.top/keys)
+  - 中等价格
+- [DragonAPI ](https://newapi.dragon3api.com/keys)
+  - 中等价格
 
 - 🗑️ [naonao - /Sub2API ](https://gpt.qinnaonao.com/dashboard), 已充值, 已跑路
   - codex分组--0.03

@@ -875,6 +875,14 @@ modified: 2025-12-11T18:10:23.710Z
   - Stack: Tauri 2 (Rust) + Svelte 5 (SvelteKit SPA)
   - Platforms: Windows 10/11, Linux, and macOS
 
+- https://github.com/dandandujie/Grox /apache2/202607/rust
+  - 以 Grok Build 为核心打造的桌面端 Agent
+  - Grox 是以 xai-org/grok-build 为核心打造的桌面端 Agent。它通过 ACP（Agent Client Protocol）连接真实的 Grok Build 运行时，在 Tauri 桌面窗口中提供会话恢复、流式思考、工具调用、代码差异、权限审批、结构化问答和用量统计。
+  - 当前仓库同时保留上游 Grok Build Rust 工作区与 Grox 桌面应用；桌面端位于 apps/desktop
+  - 真实 ACP JSON-RPC 链路：原生进程托管、请求响应、通知流和异常退出处理
+  - 配置同步：账户模块内的 config.toml、system-prompt.md 与项目 AGENTS.md 支持双向编辑和外部变更热同步，不暴露原始环境变量编辑栏
+  - [[开源自荐]Grox——grok build桌面app - LINUX DO _202607](https://linux.do/t/topic/2613890)
+
 ## pi
 
 - resources

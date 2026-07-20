@@ -15,6 +15,34 @@ modified: 2026-02-20T17:36:40.796Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤔 [AI 时代的用户忠诚度大家怎么看？ - LINUX DO _202607](https://linux.do/t/topic/2612848)
+  - 我感觉AI用户几乎没有真正的忠诚度，模型足够强、价格足够低，迁移就会立刻发生。
+  - 哪怕你的上下文、记忆文档都有黏性
+  - 只要一方发生明显的能力跃迁，用户转向还是蛮快的。说白了国模有一个超过了 OA 的我直接暂时搁置一下GPT 
+  - 你不干有的是agent干
+
+- 消费者就是哪家好用用哪家，在什么行业都是这样，不止AI。
+- 干活最重要，哪家最适合干活就去哪家了
+- 不管黑猫白猫，捉住老鼠就是好猫
+
+- 所以Anthropic 、OpenAI都用力在建自己的agent的生态层
+  - 只要你数据接进原生平台是最方便的
+  - 那企业就会开始接入，因为企业不用那些佬们，要管理整间企的数据整合不容易
+  - 只要接入了，那就不可能调来调去
+  - 当agentic model曾遍进入人均Opus级的这个年代, 接下来就是抢谁主宰生态入口与平台霸权了
+
+- 有不同的观点，哈哈，目前ai的使用占比还是相对低，高度使用的都是b端客户 it 白领之类平均素质较高的人群，这类人群的信息渠道比较广，比较偏实用性，理性，追求质价比；但是如果真正铺开，放到国民级产品上，豆包、纳米ai其实也是有用户粘性的，在a/和OpenAI的方向上，OpenAI的群众路线其实也说明了这点，OpenAI的c端客户比较广泛；
+
+- 对于toC的用户来说，大模型只是工具，有啥忠诚可言？但toB的企业来说，更换模型的成本太高，除非token成本差距太大，否则不会轻易更换。
+
+- 忠诚是下级给上级的，现在是ai给你干活，你是老大，你是老板，你肯定是看谁干得好就用谁
+
+- 我觉得大模型公司真不是一门好做的生意，首先需要一直保持高成本的研发投入，一不小心就被超了。其次用户量越大成本越高，并不会因为用户多摊薄成本。还有就是用户毫无忠诚度，谁好用谁。再有就是好不好这件事也没那么明显，排行榜现在已经公认没啥用了。可能还得靠宣传和口碑，这玩意也很不可控。总之就是一个投入大，成本高，不赚钱，除了技术没别的护城河的生意。而当前阶段技术很难成为真正的护城河
+
 - ## 🤔 This is actually one of the main advantages startups have over frontier labs, as long as there's a healthy spectrum of open-weight to closed-weight models on the cost-performance curve.
 - https://x.com/jerryjliu0/status/2061933847630192899
   - Building a model harness is fundamentally a bit different than building the underlying model. The last year has shown that an increase in model capabilities has led to an increase in sophistication around agent harnesses as well (e.g. just look at Claude Code ultracode) 

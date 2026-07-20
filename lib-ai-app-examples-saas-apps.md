@@ -973,6 +973,13 @@ modified: 2025-02-21T17:17:42.225Z
   - Web: Next.js 16 + Supabase Auth/DB/Realtime. Channels, DMs, threads, tasks, agent management.
   - https://x.com/QingQ77/status/2052522615517204990
     - 频道里可以加 AI 队友。每个代理是本地跑的 Claude Code 进程，有独立工作目录和 MEMORY.md 来沉淀经验。
+
+## copyright
+
+- https://github.com/yuwen-cool/yuwen-publish-precheck /CC-BY-NC/202607/python
+  - 发布前审｜发抖音/小红书/视频号前先让 AI 审一遍：哪句踩线、依据哪条官方规则、给能直接用的改法。38 篇真实样本校准判定尺度，72 条官方原文引文可查证，你踩过的坑沉淀成本地规则库越用越准。不承诺过审，不教绕审。
+  - https://x.com/geekbb/status/2078727284861600034
+    - 发稿前用 AI 审一遍，告诉你能发不能发、哪句有问题、怎么改，依据的是平台官方规则。
 # devops
 - https://github.com/liangdabiao/GEO-Content-Optimizer-Skill /MIT/202605/python
   - GEO（Generative Engine Optimization）是面向 AI 搜索引擎的内容优化方法论。就像 SEO 优化 Google 排名，GEO 优化你的内容在 ChatGPT、Perplexity、Gemini、Google AI Overview 等 AI 引擎中的引用率。 本项目提供两个 Claude Code Skill，覆盖 GEO 全流程
@@ -1050,6 +1057,17 @@ modified: 2025-02-21T17:17:42.225Z
     - 支持20多套顶尖视频风格模板，分页编辑，mp4 导出，支持包括Claude Code、Codex、hermes、cursor等主流 Agent接入即用
     - html-video 项目基于 hyperframes 框架构建, 由 Open Design 团队原班人马打造
     - html-video 支持分页预览、分页编辑和帧文字编辑，修改视频更快更方便，不用每改一次就要导出一次看效果
+
+- https://github.com/xiejunjie524/handdraw-story-video /MIT/202607/python
+  - 把 7–9 幅手绘故事母图制作成 35–45 秒竖屏短视频：先从左到右显现黑白线稿，再沿相同方向逐步填入低饱和色彩。
+  - 项目包含故事配置校验、线稿提取、HyperFrames 页面生成，以及可安装的 Codex Skill。
+  - https://x.com/Kejijun6666/status/2078374170925392122
+    - 手绘故事技能已经开源了，纯codex手搓，非专业开发者
+    - 这条我更想看“30 分钟之后”的证据：同一套 Skill 换三种故事还能不能稳定复现，人物和镜头出错时怎么回滚。能跑出一个 demo 很爽，能批量重跑、定位失败，才真的有搞头
+      - 我这个是可以重复跑的啊，主要还是生图，现在我的GPT生图老报错，后台取不到图，不然会更快
+    - 只要是能改图的模型都可以，我现在用的GPT生图，Grok，以及别的等都可以的
+  - https://github.com/git-lt/hand-draw-video-skill
+    - 一个让 AI Agent（ZCode / Claude Code / Cursor 等）按可复用工作流，把一段中文故事做成「灰度扫入彩色」手绘风格竖版短视频（9:16）的 Skill。 完整覆盖：故事拆分 → 角色全家福参考图 → AI 生图（人物一致）→ Remotion 三层四遮罩动画 → 预览确认 → 渲染 MP4 → 抖音发布文案。
 
 - https://github.com/ciouskeila-hue/cybercode-cli /MIT/202607/python
   - [我写了个能自己生成视频的AI工具，一句话出片，还免费用GLM-5.2 - LINUX DO _202607](https://linux.do/t/topic/2509999)

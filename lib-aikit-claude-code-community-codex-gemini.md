@@ -612,6 +612,27 @@ codex --yolo resume --last
   - 这需要严格的上下文工程来控制，每完成一个任务更新文档
 
 - 得看啥任务，多agent到现在依然有上下文损失的风险，不如cx一口气做完
+# discuss-grok-build
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [xAI open-sourced Grok Build (1.3M lines of Rust). I read the source, here's what's worth stealing : r/HowToAIAgent _202607](https://www.reddit.com/r/HowToAIAgent/comments/1uxr891/xai_opensourced_grok_build_13m_lines_of_rust_i/)
+  - 1.3M lines of Rust across ~70 crates. 
+  - Context compaction is speculative : When usage crosses (threshold minus 10 points), a background task summarizes the first 95% of history into a cached note. When the hard limit actually hits, it only summarizes that note plus the 5% tail, so the user never blocks on a full-history summarization. And if even the summary request overflows, there's a fallback ladder which always reserves 32K tokens for the summary output.
+  - The token counter behind all of this is bytes ÷ 4 : One tiny crate: BYTES_PER_TOKEN = 4, images flat-rated at 765 tokens. Auto-compact gates, overflow preflight, the context display, everything runs on it. Frontier lab, dumbest possible heuristic, ships fine.
+  - Command approval is a kernel feature, not a regex : If the OS sandbox is active (Seatbelt on macOS, Landlock + bwrap on Linux), bash runs without prompting. The fallback classifier parses commands with tree-sitter and fails closed: anything with `$(...)` , `$VAR` or control flow gets blocked, and `rm` / `cp` / `mv` aren't even on the allowlist. Child processes get a seccomp-BPF filter blocking connect/bind/sendto. A per-command network kill-switch.
+  - Subagents are hard-capped at depth 1 : MAX_SUBAGENT_DEPTH = 1, right there in the source. No recursive agent trees and each subagent can get an isolated git worktree via copy-on-write cloning, and its "result" is literally just its last assistant message.
+  - Doom-loop detection only watches the thinking channel : Repetition in visible output "is the user's to judge" (actual code comment). Max 2 resamples per turn.
+  - My take: barely any of the interesting code here is AI. It's systems engineering. Speculate in the background, degrade conservatively, let the OS enforce safety. The model is maybe 5% of a production agent.
+
+- i didn’t cap depth. It caused me to have to write custom hooks that guarantee visibility and the possibility to interfere with those recursive agent trees. Works fine now though, nothing breaking anymore.
 # discuss-qwen-code
 - ## 
 

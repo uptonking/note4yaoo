@@ -118,7 +118,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 - prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support, API, SDK, CLI... in begonia, make related features/architecture correct, modular, extensible, robust for long-term maintenance.
 
-- if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
+- if major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
 - docs/tests/scripts might be outdated, recheck code and data flow to improve begonia.
 
@@ -811,7 +811,7 @@ document what you have migrated from which commit id for future migration refere
 # tests
 - run the full tests and fix the bugs
 
-- run the full tests to find possible problems, then improve the testing architecture/performance or other problems.
+- run the full tests again to find possible problems, then fix the problems or improve the testing architecture/performance.
 
 - running full tests/scripts may take huge memory and is slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests. 
 

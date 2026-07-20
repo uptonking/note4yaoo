@@ -34,6 +34,13 @@ modified: 2026-04-20T00:36:02.064Z
   - Incremental rendering via patchLayout() — only re-renders changed pages
   - Paint snapshot system for structured content observatio
 
+- 🏘️ .docx → super-converter (OOXML → hidden PM doc) → v1 layout-adapter (PM + styles → FlowBlock[]) → layout-engine (paginate) → ResolvedLayout -> DomPainter (paint DOM)
+  - Unpack .docx: DocxZipper.js, jszip, xml-js
+  - Parse / import OOXML: super-converter
+  - pm > FlowBlock[]: core/layout-adapter
+  - Style cascade: packages/layout-engine/ style-engine/
+  - measuring/dom: browser/canvas measurement
+
 - 
 - 
 - 
@@ -64,7 +71,211 @@ modified: 2026-04-20T00:36:02.064Z
 
 # more
 
-# superdoc-arch-v2
+# superdoc-v2 🎯
+
+- v1-pros
+  - track-change with prosemirror
+
+- v2-pros
+  - state athoritative
+  - Selection
+  - Rendering
+  - worker
+  - Lifecycle events
+  - Large documents
+
+- v2-cons
+  - Headless: Browser facade is not the headless product surface
+
+- ❓
+
+- draft
+  - superconverter for docx-engine
+
+- 
+- 
+- 
+- 
+
+- 🆚 this project `begonia` is heavily inspired by project `superdoc`(at folder `../superdoc`).  superdoc provides a powerful editing solution for documents like .docx. `../superdoc/packages/super-editor/src/editors/v1` is the source code for v1 editor. there is a v2 editor coming soon. some preparation work/code is already done. 
+  - superdoc v2 beta code has been released at `../superdoc-v2-beta`, just minified code, not source code, the core files are `../superdoc-v2-beta/dist/superdoc.es.js` and `../superdoc-v2-beta/docx-engine/dist/docx-engine.es.js`. please read related code and deep analyze the core architecture of v2 beta and v1, what are the differences between v1 and v2 editor. compare the major architectre/data-flow, editing-related features, agent features, ... Deep analyze the core architecture/features of v1 and v2 beta, explain to me the differences, whether it is easy to upgrade from v1 editor to v2 editor.
+  - finally write your findings/results to file v2-editor.md.
+- superdoc-v2 beta and @superdoc/docx-engine packages are internal packages at heavy testing stage in our company. I have updated @superdoc/docx-engine to MIT license. source code for both packages are deleted by mistake, so code is lost. 
+- The goal is to reimplement the source code of superdoc v2 using typescript at `./superdoc2` in current folder, you have implemented some parts of the goal, for example reimplement `../superdoc-v2-beta/docx-engine` at `./superdoc2/docx-engine/src`, and reimplement `../superdoc-v2-beta/` at `./superdoc2/superdoc/src`, all code related to superdoc v2 should be in folder `./superdoc2`. begonia is the experimental editor in our company, please reimplement superdoc v2 code so that we can have concrete implementation details of v2 editor to improve begonia editor in the future. you may reuse the exisiting v2 types definitions directly, deep analyze the minified esm js code, then try to reimplement the typescript code of `../superdoc-v2-beta`. 
+- you should reimplement superdoc v2 typescript code close to the released esm code for compatibility, so that it is easy to swap the package in the future. when you implement superdoc v2, begonia should not be used as a reference, just rewrite from scratch, the released minified v2 code like `../superdoc-v2-beta/dist/superdoc.es.js` and `../superdoc-v2-beta/docx-engine/dist/docx-engine.es.js` is really good for your reference. superdoc v1(at folder `../superdoc`) has a lot of common design with superdoc-v2-beta like FlowBlock/layout-engine/DomPainter/..., you may reuse or refer to the code if it helps. there is also some historical code from superdoc v1 that may be a good reference, you might reference the v1 code/commits if you want. some historical git commits from v1:
+  - `0f1806248` (2026-03-27): restructures SuperEditor under `editors/v1` to prepare for multiple editor versions.
+  - `16f70fb3e` (2026-05-18): adds editor-neutral layout identity and hit mapping.
+  - `7e11b28b7` (2026-06-16): public-minimal v2 port, explicitly marked as ported from private `superdoc/orbit`.
+  - `388224d45` (2026-06-17): adds the v2 package/runtime shell and v1 wiring; the commit metadata says most source paths were private and omitted.
+  - `46e30cc76` and `cd4cea9a0` (2026-06-18): historical v2 host/wiring fixes.
+  - `873dd2545` (2026-06-23): reverts the public v2 integration and removes the v2 runtime/integration files from the current line.
+
+- after you finish the superdoc v2 rewrite, you may add some examples at `./superdoc2/examples` to showcase the core features of superdoc v2 editor.
+
+- please recheck migrated superdoc-v2-beta features and improve the implementation at  `./superdoc2`. 
+- compare the implementation logic/code of `./superdoc2` with logic/code of `../superdoc-v2-beta` to recheck and enhance the correctness of architecture and logic in `./superdoc2`, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in `./superdoc2` are correct, modular, extensible for long-term maintenance. 
+
+- The declaration-to-source comparison is unusually strong: immediately before the public revert, historical source exists for 148 of 153 Document API declaration modules, 193 of 201 layout modules, and all 7 word-layout modules shipped in the beta. Those are the main direct-reuse candidates, but only the editor-neutral portions qualify; ProseMirror bridge files remain v1-specific even when their declarations were emitted into the beta package.
+
+- 📌 v1-editor: ProseMirror owns document state and editing; it is not the visual renderer
+  - V1 is built around ProseMirror. packages/super-editor/src/editors/v1/core/Editor.ts creates and manages the ProseMirror schema, EditorState, EditorView, transactions, commands, extensions, collaboration, comments, tracked changes, and the DOCX converter. The hidden ProseMirror document is the editor's mutable working state.
+  - In v1, a ProseMirror document and EditorState are the authoritative editing state. Commands, extensions, selection, history, collaboration, comments, and tracked changes all work with ProseMirror state or transactions. The paginated document is a projection of that state into neutral layout data.
+  - State is a ProseMirror document (often in a hidden host).
+  - Layout identity for clicks/selection still leans on PM positions (pmStart / pmEnd, data-pm-*)
+  - The only production projection into layout is the v1 layout-adapter.
+  - Layout-engine packages must not import that adapter; they only see FlowBlock[] and contracts.
+- The important detail is that ProseMirror owns state but does not necessarily own the visible document DOM. 
+  - In the paginated semantic-layout path, PresentationEditor wraps a hidden ProseMirror editor. DomPainter renders the visible pages, while the presentation layer bridges pointer input, selection, IME, navigation, secondary stories, and layout invalidation back to the hidden editor.
+- v1 also retains a conventional ProseMirrorRenderer path. This contributes to the size and complexity of Editor: it supports legacy/contenteditable and semantic/paginated rendering modes while preserving a single ProseMirror state model.
+- A v1 editor accepts a URL, path-like source, File, Blob, buffer, or blank document. It loads and unzips the package, initializes SuperConverter, parses OOXML into ProseMirror-compatible JSON, builds the schema and plugins, creates the state/view, and then configures document mode, comments, protection, and collaboration.
+- SuperConverter retains more than the visible text tree. It tracks converted XML, relationships, media, fonts, numbering, styles, comments, headers/footers, notes, and other package parts needed for round-trip export. Export serializes the current ProseMirror document while merging it with preserved and updated OOXML parts.
+- Most v1 editing coordinates are ProseMirror integer positions and selections. 
+  - Presentation mode has additional mapping layers between painted page geometry, layout fragments, story sessions, and ProseMirror positions. 
+  - Selection handles help preserve a range across some changes, but many integrations still depend on direct positions, EditorState.selection, or EditorView geometry methods.
+- v1 extensions are part of the editor implementation. This is powerful because extensions can participate at every layer. It also means they are coupled to the ProseMirror schema, transaction semantics, and often the current rendering mode.
+- Tracked changes are represented through ProseMirror marks/nodes plus transaction rewriting and an OOXML-aware review model. Comments and review decisions are integrated into editor plugins, package parts, selection logic, and the presentation layer.
+
+- 📌 SuperDoc v2 is a new editor architecture, not a compatible implementation of the v1 Editor API.
+
+- .docx bytes / collaborative source
+  -> v2 source provider and staged package opening
+  -> browser or collaboration worker session
+  -> engine-owned document surface and story/source coverage
+  -> Document API host + editing/review handles
+  -> receipt-producing transactions and capability updates
+  -> layout projection with first-window/progressive rendering
+  -> engine EditorComponent paints document pages
+  -> geometry publisher/review hydration expose shell-safe UI data
+  -> superdoc/ui and application code consume public facades
+- The rendering lifecycle includes first-window-painted, streaming, and render-complete. 
+  - The source lifecycle includes source-complete, source-failed, and source-cancelled.
+  - This indicates a staged large-document design: review or the first rendered window can become available before the entire source is fully hydrated. Public capabilities such as readSlices, wholeStoryKnown, searchSafe, mutationSafe, and layoutProjectionSafe prevent consumers from assuming full document readiness.
+
+- In v2, the browser shell talks to an engine-owned, usually worker-backed document surface.
+  - The supported boundaries are an async-capable Document API, coarse runtime commands, capability snapshots, opaque locations, structured mutation receipts, page metrics, and guarded extension APIs. 
+  - The shell is deliberately prevented from depending on an editor state, view, mutable DOM, or private position representation.
+
+- The shell registers mounted runtimes by opaque runtime ID and DOM root. The beta runtime kind is only v2
+- The shell/runtime command contract is intentionally coarse. 
+  - The adapter maps these onto engine host commands or Document API calls. 
+  - For example, shell paste maps to an engine plain-text paste operation, and shell structural split maps to the engine enter operation.
+- All mutations are awaited and return a named outcome
+
+- superdoc.activeEditor.doc is the browser-facing v2 Document API. 
+
+- The shell-level position token contains a runtime ID, token ID, revision, and an optional structured-clone-safe payload. Its payload is explicitly opaque. The shell must not inspect or manufacture it.
+
+- v2 explicitly ignores the v1 editorExtensions configuration. Its replacement is defineSuperDocExtension plus Config.extensions.
+
+- The v1 headless-toolbar* package subpaths are intentionally removed. v2 exposes createSuperDocUI({ superdoc }) through superdoc/ui, with an optional React binding.
+
+- v2 collaboration is single-document and engine-owned. Public configurations select supported provider families such as y-websocket, Hocuspocus, or Liveblocks. A document ID maps to one room/provider/root identity.
+  - Unlike v1, v2 does not accept an arbitrary external { ydoc, provider } pair as the live content driver. The bundle includes separate collaboration-worker and collaboration-upgrade artifacts
+
+- 
+- 
+- 
+- 
+- 
+
+- v2 owns its own projection adapter
+  - vs v1: PM → FlowBlock[] via super-editor’s layout-adapter
+  - layout-engine still only consumes FlowBlock[] and must not import either adapter
+  - So v1 and v2 are meant to share style-engine, layout-engine, DomPainter, and contracts — and swap how source state becomes FlowBlock[].
+  - Moving consumers to editor-agnostic Document API; PM commands/state deprecated
+- The v2 shell/runtime ports provide the clearest concrete preview of the intended integration model. In the historical 388224d45 implementation:
+  - The host owns lifecycle and document state. The runtime adapts host snapshots rather than exposing a ProseMirror session.
+  - Mutations use an asynchronous, capability-scoped dispatch contract with named outcomes such as committed, history commits/no-ops, receipt failures, and typed rejections.
+  - Selection endpoints are opaque position tokens containing a runtime id, token id, and revision. 
+  - The host selection shape is source-oriented (historical host code used values such as blockId, blockOffset, and story) rather than a public PM integer.
+  - Persistence is host-backed (save/DOCX export), and zoom/page metrics are host-backed snapshots.
+  - The v2 legacy projection intentionally exposes editorVersion: 2 with commands, state, and view set to null; v1-only shell APIs must be gated instead of reaching into those objects.
+  - Comments and tracked-change actions are routed through host review commands and capability checks. 
+- V2 is intended to decouple editor state and source identity from ProseMirror while reusing the layout-engine contracts and DOM painter.
+  - V2 is intended to communicate with the SuperDoc shell through a host/runtime boundary with opaque positions, capability checks, async mutations, lifecycle snapshots, and host-owned persistence/review state.
+  - The neutral layout identity/hit-testing work is designed to let v1 and v2 share rendering infrastructure without making PM positions the long-term layout contract.
+
+- Editor-neutral layout boundary (prep for v2)
+  - Neutral identity: LayoutSourceIdentity, data-layout-*, hitTestNeutral, etc.
+  - Layout/DOM can address fragments by story + blockRef + fragmentId (and optional source anchors), not only pmPosition.
+  - v1 compat layer (LayoutHitV1Compat) mapping neutral hits back to PM PositionHit. LayoutHitV1Compat is the explicit bridge between the neutral layout surface and PM-based v1 selection.
+  - v1 keeps using PM positions via a compat layer.
+  - v2 is expected to use the neutral surface end-to-end and drop the PM fallback.
+  - Comments explicitly say things like: retire legacyPm once the v2 provider no longer maps hits through PM positions.
+
+- Current editor-neutral groundwork includes:
+  - LayoutSourceIdentity with a versioned schema, story locator, opaque block reference, opaque fragment id, and optional source anchor (packages/layout-engine/contracts/src/layout-identity.ts).
+  - LayoutHit and range-mapping types that do not require pmStart/pmEnd; PM data is isolated under an optional legacyPm compatibility field (packages/layout-engine/layout-bridge/src/neutral-hit.ts).
+  - data-layout-* DOM datasets stamped alongside the legacy PM datasets by the painter.
+  - Editor-neutral OOXML normalization in packages/layout-engine/style-engine/src/normalize/, explicitly documented as consumable by a future v2 review/layout adapter without ProseMirror dependencies.
+  - Pure Word paragraph/list layout utilities in packages/word-layout/, including list-marker logic documented for both a v2 adapter and the v1 numbering plugin.
+
+- v2 review-layout-adapter
+  - That adapter should emit layout contracts from resolved OOXML without depending on ProseMirror or the v1 editor runtime.
+  - So one v2 flavor the code anticipates is a review/render-oriented path that projects toward layout from a non-PM source model.
+
+- Source identity is intentionally opaque
+  - LayoutBlockRef is a string today (v1’s blockId). Contracts say a future v2 source provider may use richer refs (e.g. part URI / XPath-style anchors) without reopening the layout boundary. 
+  - That points at a source model closer to document parts / OOXML identity, not PM node positions.
+
+- What is not clearly claimed for v2
+  - Whether v2 still uses ProseMirror for editing transactions
+  - Full feature parity plan vs v1 extensions
+
+- is worker required or optional?
+  - Worker is optional for small, local (non-collab) documents, but it is the default and is required in several important cases.
+- Architecture is dual-path: inline (main thread) or worker (background document worker).
+  - UI + paint on main thread; document kernel either inline or in a worker; Document API is the bridge and is async in the browser.
+- Data-flow for an edit (inline mode)
+User / agent
+  → host / doc facade
+  → same session + Document API on main thread
+  → receipt → paint
+- Data-flow for an edit (worker mode)
+User keystroke / toolbar / agent
+  → host command or editor.doc.*
+  → cloneable RPC to worker (worker.dispatch.execute)
+  → SDDocumentSession beginMutation / plan apply
+  → package/story rewrite + receipt
+  → result back to main thread
+  → host snapshot update + layout/paint
+
+- What stays on the main thread all the time
+  - Vue shell, toolbar, comments chrome 
+  - DomPainter / painted page DOM 
+  - Pointer/selection presentation, geometry publisher 
+  - Loading overlay, zoom, host lifecycle state machine  
+- Worker owns heavy document session work (parse, mutate, export, collab CRDT when enabled).
+
+- Size constants recovered from the code:
+  - 16 MB (0x10 * 0x400 * 0x400) — “huge” document flag (worker can keep source less fully materialized)
+  - 32 MB (0x20 * 0x400 * 0x400, also rFn / IOe) — hard max for inline; above this, worker is required
+- For normal apps, think: default = worker, with an internal/auto path that still ends as worker unless explicitly forced to inline (and allowed by size/collab gates).
+- Optional (allowed to run without worker)
+  • Local (non-collaborative) open
+  • Document under ~32 MB
+  • Worker not forced by collab
+  • Explicit/internal inline mode accepted
+- Required (must use worker, or open fails)
+  - Collaboration enabled 
+  - Large documents (≥ ~32 MB) 
+  - Environments that selected worker mode 
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - 🤔 superdoc editor is built with a extensible editing architecture that is modular, headless, and agent-friendly.
   - there is a v1 editor at `packages/super-editor/src/editors/v1`. please analyze superdoc editor core architecture/data-flow/logic, then explain to me whether it is possible to implement a v2 editor using the Document API and without using prosemirror ? Is the Document API or  adapter API able to help to implement a v2 editor ?
@@ -76,16 +287,10 @@ modified: 2026-04-20T00:36:02.064Z
   - But v1 itself is still ProseMirror-centric and its adapter assembly is tightly wired to that runtime 
   - ProseMirror is still the actual v1 editor state, not just a thin compatibility backend. It maps XML to a ProseMirror schema.
 
-- Begonia is using ProseMirror even more centrally than just the browser editor layer. The headless mutable document port is typed as ProseMirrorNode. Engine normalization is PM-node based. The browser selection adapter is also PM-state driven.
+- 🗑️ Begonia is using ProseMirror even more centrally than just the browser editor layer. The headless mutable document port is typed as ProseMirrorNode. Engine normalization is PM-node based. The browser selection adapter is also PM-state driven.
   - Begonia already has a strong Document API, but it does not yet have a full editing adapter API like the role Superdoc’s adapter bag plays. But editor-adapters is still mostly layout/ projection oriented, and the browser selection bridge is still explicitly ProseMirror-based.
   - Begonia can be refactored into a modular, headless, functional v2 editor without ProseMirror, but only as a staged migration. 
   - The biggest blocker is deeper than the browser layer: Begonia’s engine normalization, document service, and headless mutable document port still use ProseMirrorNode as the canonical document type.
-
-- 
-- 
-- 
-- 
-
 # 📌 docx-editor
 
 ## architecture
@@ -198,6 +403,7 @@ modified: 2026-04-20T00:36:02.064Z
   - PM schema is separate from the layout schema — the pm-adapter reads PM state and resolves styles at render time. 
     - style resolution is deferred to render time, not baked during import. The converter stores raw OOXML. This preserves document intent for round-trip fidelity.
   - PM doc is also hidden — PresentationEditor bridges PM events into layout/paint state
+  - PresentationEditor wraps a hidden ProseMirror editor.
 - SuperDoc's pm-adapter + deferred style resolution is architecturally superior for round-trip fidelity — baking styles during import loses document intent (e.g., a paragraph inheriting style from its parent vs. having inline formatting). 
   - docx-editor's approach is simpler but risks overwriting style references with resolved values. 
   - SuperDoc's document-api contract-first pattern for export operations is also more maintainable than docx-editor's direct fromProseDoc.

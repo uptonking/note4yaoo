@@ -618,9 +618,18 @@ claude的max我接触过的对外底价就是0.6:1，站里面富可敌国基本
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Grok Build 自定义API配置 - LINUX DO _202607](https://linux.do/t/topic/2612432)
+- [grok build搭配CPA配置自定义模型+配置思考程度教程 - LINUX DO _202607](https://linux.do/t/topic/2564131)
+
+- [grok配置grok build搭配CPA - LINUX DO _202607](https://linux.do/t/topic/2566278)
+
 - ## 💡 [AI 中转站大起底：什么是中转站，倍率是什么（科普贴） - LINUX DO _202607](https://linux.do/t/topic/2504277)
 - 便宜渠道的风险
-01. 缓存额外价格
+01.       缓存额外价格
 因为你可能现在发了一堆消息给 A 号，然后在下一次对话的时候是 B 号承接。
 
 如果 A 号被封了，就会导致缓存无法继续命中，实际成本提高。

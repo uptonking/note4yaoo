@@ -17,6 +17,7 @@ modified: 2024-01-28T20:52:21.981Z
   - 客户端丰富，支持win/linux/mac/android/ios/cli, 还提供Web Clipper, 但不支持web
   - End To End Encryption (E2EE)
   - 支持plugins，并提供了插件市场网站
+  - 内置OCR
   - export支持导出 md+图片
   - 附件可配置下载策略 always/manual/auto
   - server db 存放最新内容快照, 方便提供api

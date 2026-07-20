@@ -66,6 +66,13 @@ modified: 2026-06-30T17:32:43.131Z
   - 类似cloudflare-drop的快速分享
   - offline-capable: 仅本地能工作， 还支持开启云端同步
 
+- ✨ 内置RAG的优点
+  - 快速处理用户上传的pdf/docx
+  - web search的结果能快速处理
+- 内置coding的优点
+  - 方便操作用户本地环境的文件、软件
+  - 方便生成动态ui/操作界面
+
 - non-goals
   - 支持md但不支持mdx, mdx 一定不放在core实现， 可能会放在extension， 也可能不支持
   - 非代码优先, 不支持react组建作为内容，如 page.tsx
@@ -115,7 +122,6 @@ modified: 2026-06-30T17:32:43.131Z
 - 
 - 
 - 
-
 - 
 - 
 - 
@@ -298,6 +304,17 @@ modified: 2026-06-30T17:32:43.131Z
 - 
 
 - database的技术方案可参考agentfs+just-bash, 以数据库作为数据源，导出文件如markdown方便ai理解
+
+## maybe
+
+- 类似postman/scalar, 但基于md
+
+- 
+- 
+- 
+- 
+- 
+
 # dev-xp
 - 需要尽早决定 file/link path 的方案
   - 推荐使用 relative path， 方便将子目录作为vault打开或分享
