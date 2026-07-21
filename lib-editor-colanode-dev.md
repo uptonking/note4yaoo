@@ -11,10 +11,10 @@ modified: 2025-06-21T19:10:57.709Z
 
 - pros
   - license: apache2
+  - all-in-one: 📈 database + 💬 chat + 📝 doc + 📁 files
   - collab editing by yjs, undo/redo by yjs
   - local-first: background syncing, web前端及后端server及minio全停止时web也可正常使用
     - 由于使用WebWorker，可在断网时使用
-  - all-in-one: 📈 database + 💬 chat + 📝 doc + 📁 files
   - 客户端支持 web/electron-app
   - blocky data model: flexible building blocks
   - subpage/sub-doc
@@ -28,7 +28,9 @@ modified: 2025-06-21T19:10:57.709Z
   - version-history 不支持
   - export to markdown/docx 不支持
   - comment 不支持
-  - server db 保存了changes, 也保存了最新内容， 但未提供内容相关api
+  - 客户端计算也许过重， 复杂计算不适合放在客户端
+  - server db 保存了changes, 也保存了最新内容， 但未提供内容相关api, api不方便
+  - 不支持plugin
   - ~~docs中的图片需要手动点击才会下载和显示~~ 
   - ~~docs不支持分享，每个doc没有单独的url~~ 
   - 多tab的设计，没有自动关闭tab很烦
@@ -47,6 +49,7 @@ modified: 2025-06-21T19:10:57.709Z
   - collab
     - 文档分享未实现，协同编辑待开发
   - chat impl is too simple
+  - A server is required for account/auth/sync — either cloud or self-hosted. There is no fully standalone offline mode with no server at all (you still need a server to create an account / log in / create a workspace initially).
 
 - features
   - 文档名在编辑器内容外，方便重命名后自动更新相关位置

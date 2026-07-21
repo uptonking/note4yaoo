@@ -10,7 +10,7 @@ modified: 2026-04-20T00:35:08.788Z
 # guide
 
 - pros
-  - pagination for editor
+  - pagination for editor: 同时支持 分页 与 不分页
   - virtualized render
   - track-change / redline
   - multi-column layout: supports unequal column widths

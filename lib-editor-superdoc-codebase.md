@@ -74,18 +74,19 @@ modified: 2026-04-20T00:36:02.064Z
 # superdoc-v2 🎯
 
 - v1-pros
-  - track-change with prosemirror
+  - robust track-change with prosemirror
 
 - v2-pros
-  - state athoritative
-  - Selection
-  - Rendering
+  - state as SDDocument: stories, blocks
+  - Selection: blockId + offset
   - worker
-  - Lifecycle events
   - Large documents
+  - Rendering: lazy-virtualized-render
+  - Lifecycle events
 
 - v2-cons
   - Headless: Browser facade is not the headless product surface
+  - 在前端通过worker执行复杂计算也许是错误的架构
 
 - ❓
 
@@ -102,7 +103,7 @@ modified: 2026-04-20T00:36:02.064Z
   - finally write your findings/results to file v2-editor.md.
 - superdoc-v2 beta and @superdoc/docx-engine packages are internal packages at heavy testing stage in our company. I have updated @superdoc/docx-engine to MIT license. source code for both packages are deleted by mistake, so code is lost. 
 - The goal is to reimplement the source code of superdoc v2 using typescript at `./superdoc2` in current folder, you have implemented some parts of the goal, for example reimplement `../superdoc-v2-beta/docx-engine` at `./superdoc2/docx-engine/src`, and reimplement `../superdoc-v2-beta/` at `./superdoc2/superdoc/src`, all code related to superdoc v2 should be in folder `./superdoc2`. begonia is the experimental editor in our company, please reimplement superdoc v2 code so that we can have concrete implementation details of v2 editor to improve begonia editor in the future. you may reuse the exisiting v2 types definitions directly, deep analyze the minified esm js code, then try to reimplement the typescript code of `../superdoc-v2-beta`. 
-- you should reimplement superdoc v2 typescript code close to the released esm code for compatibility, so that it is easy to swap the package in the future. when you implement superdoc v2, begonia should not be used as a reference, just rewrite from scratch, the released minified v2 code like `../superdoc-v2-beta/dist/superdoc.es.js` and `../superdoc-v2-beta/docx-engine/dist/docx-engine.es.js` is really good for your reference. superdoc v1(at folder `../superdoc`) has a lot of common design with superdoc-v2-beta like FlowBlock/layout-engine/DomPainter/..., you may reuse or refer to the code if it helps. there is also some historical code from superdoc v1 that may be a good reference, you might reference the v1 code/commits if you want. some historical git commits from v1:
+- you should reimplement superdoc v2 typescript code close to the released esm code for compatibility, so that it is easy to swap the package in the future. when you implement superdoc v2, begonia should not be used as a reference, just rewrite from scratch, the released minified v2 code like `../superdoc-v2-beta/dist/superdoc.es.js` or `../superdoc-v2-beta/docx-engine/dist/docx-engine.es.js` or `../superdoc-v2-beta/docx-engine/dist/assets/` or `../superdoc-v2-beta/dist/chunks/` are really good reference. superdoc v1(at folder `../superdoc`) has a lot of common design with superdoc-v2-beta like FlowBlock/layout-engine/DomPainter/..., you may reuse or refer to the code if you want. there is also some historical code from superdoc v1 that may be a good reference, you might reference the v1 code/commits if you want. some historical git commits from v1:
   - `0f1806248` (2026-03-27): restructures SuperEditor under `editors/v1` to prepare for multiple editor versions.
   - `16f70fb3e` (2026-05-18): adds editor-neutral layout identity and hit mapping.
   - `7e11b28b7` (2026-06-16): public-minimal v2 port, explicitly marked as ported from private `superdoc/orbit`.
@@ -134,6 +135,9 @@ modified: 2026-04-20T00:36:02.064Z
   - Selection handles help preserve a range across some changes, but many integrations still depend on direct positions, EditorState.selection, or EditorView geometry methods.
 - v1 extensions are part of the editor implementation. This is powerful because extensions can participate at every layer. It also means they are coupled to the ProseMirror schema, transaction semantics, and often the current rendering mode.
 - Tracked changes are represented through ProseMirror marks/nodes plus transaction rewriting and an OOXML-aware review model. Comments and review decisions are integrated into editor plugins, package parts, selection logic, and the presentation layer.
+
+- v1 is a ProseMirror-centric DOCX editor: OOXML is converted into a PM document; editing is PM transactions + extensions; export converts back. A parallel PresentationEditor path already paints Word-like pages via the layout-engine while keeping PM as the source of truth (often hidden).
+- v2 is a package/story-centric DOCX engine: the live authority is an OPC ZIP package opened as an SDDocumentSession, organized into stories (body, header/footer, notes, textbox) with blockIds and package/story revisions. Mutations are planned and applied against package/story XML, return receipts, and are exposed through the Document API. Rendering uses DomPainter; editing can run inline or in a Web Worker. 
 
 - 📌 SuperDoc v2 is a new editor architecture, not a compatible implementation of the v1 Editor API.
 

@@ -15,14 +15,19 @@ modified: 2024-01-28T20:52:21.981Z
     - 还支持同步到本地文件夹
     - 由客户端polling拉取最新内容来实现同步
   - 客户端丰富，支持win/linux/mac/android/ios/cli, 还提供Web Clipper, 但不支持web
-  - End To End Encryption (E2EE)
-  - 支持plugins，并提供了插件市场网站
+    - 社区开发了webapp
+    - web clipper: Save web pages as notes
+  - 🔌 支持plugins，并提供了插件市场网站
+  - Multimedia notes: Images, videos, PDFs and audio files are supported
   - 内置OCR
+  - End To End Encryption (E2EE)
   - export支持导出 md+图片
   - 附件可配置下载策略 always/manual/auto
   - server db 存放最新内容快照, 方便提供api
+  - 客户端计算量不大
 
 - cons
+  - 官方未实现backlink, 社区plugin有实现
   - 未实现web端
   - ~~基于文件，难以实现多页面的联动更新~~ 
   - client db全量存数据的架构在大量数据的场景对客户端设备要求高，scale不友好
@@ -44,7 +49,7 @@ modified: 2024-01-28T20:52:21.981Z
 - 社区提供了和obsidian类似的sync plugin, 支持同步到 Google Docs, supernote, ...
 # codebase
 - architecture
-  - ui <> (local-file <>) local-sqlite <> remote-server <> remote-db
+  - ui <> (local-file <>) local-sqlite <> remote-server/remote-db
 
 - Joplin uses a client-server sync architecture:
   - self-hosted-server, joplin cloud, onedrive, WebDAV

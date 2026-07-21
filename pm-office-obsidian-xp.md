@@ -10,7 +10,8 @@ modified: 2026-06-30T17:32:43.131Z
 
 # guide
 - pros
-  - rich editor
+  - free to use but not open source
+  - local file based, friendly to human and ai
   - 🔗 backlinks: 双链基于[[]]语法, 同名文件的写法是相对路径
   - 📈 bases: 基于文件的多维表格
     - bases 基于文件的设计 方便扩展每行的属性
@@ -19,11 +20,13 @@ modified: 2026-06-30T17:32:43.131Z
     - 支持 导入/导出 csv/excel, 提供独立的webapp
   - graph-view
   - 🔌 plugins
+  - rich editor
   - publish
-  - sync
+  - sync: version-history, collab
   - canvas
   - slides
   - templates
+  - web clipper
 
 - cons
   - 不支持打开单个外部markdown文件， 将外部md拖到ob时默认行为是复制，如果拖到bases默认会增加一行
@@ -49,12 +52,14 @@ modified: 2026-06-30T17:32:43.131Z
   - command-palette
   - publish
   - sync
-# dreamansion
+# 🌸 dreamansion
 - features
-  - bases
+  - bases: formula, schema-change
   - editing with pagination, unifying markdown/pdf xp
   - pdf backlink/citation/preview
   - file-editor: 不改变原文件的格式, 可利用全局LRU缓存
+  - offline-editing
+  - sync
 
 - goals
   - publish/site: github for obsidian bases
@@ -68,7 +73,7 @@ modified: 2026-06-30T17:32:43.131Z
 
 - ✨ 内置RAG的优点
   - 快速处理用户上传的pdf/docx
-  - web search的结果能快速处理
+  - web search 的结果能快速处理
 - 内置coding的优点
   - 方便操作用户本地环境的文件、软件
   - 方便生成动态ui/操作界面
@@ -85,6 +90,7 @@ modified: 2026-06-30T17:32:43.131Z
     - local-db-client <> remote-db-server, local-db-client <> local-files
     - 优点是思路清晰， 统一的单向数据流
     - 缺点是本地作为数据源，始终拥有全量数据， 可能速度慢且不scale
+    - 降低sync复杂度的思路, 本地作为数据源, 自动执行到本地的新增, 到本地的删除需要确认并且默认进回收站
     - 🤔 如果产品主要为本地设计，此方案可行性高
   - 🐛 其他方案b: 在线时连接remote-server/db, 离线时才使用local-server/db，将remote作为数据源能简化同步, 
     - 在线时本地db只做为cache/backup, ui操作全部基于db实现， 本地文件的外部操作由chokidar监控进程通知
@@ -94,9 +100,10 @@ modified: 2026-06-30T17:32:43.131Z
     - 复杂度变高
   - 参考joplin: 支持配置 sync target 如filesystem/joplin-cloud/onedrive, 这样本地的db修改就可以自动同步到files/cloud
 
-- infra-针对本产品的优先级
+- infra-针对本产品的优先级(什么是必须做的, 似乎只有离线编辑)
   - ✨ offline editing
-  - partial sync: 采用snapshot方案的时候也可以通过delta结构来实现partial sync
+  - partial sync: 必需实现吗
+    - 采用snapshot方案的时候也可以通过delta结构+时间戳的方式来实现partial sync
     - 甚至full sync的问题也不大， git 仓库就是这个设计
     - text-sync first, 附件lazy, 很多项目都是类似设计
   - collab with conflict resolution: 简单替代就是LLW, 或提供ui让用户解决冲突或选版本
@@ -218,6 +225,10 @@ modified: 2026-06-30T17:32:43.131Z
 - export bundle: 将.base文件和相关文件一起导出
 - export view result: 可参考dataview的serializer
 
+- bases-arch
+  - bases 基于文件的设计 方便扩展每行的属性
+  - 可考虑实现 基于block 来实现， 这样同一页面内的内容也可以实现动态引用/更新
+
 - group
   - 另一种显示方式是组名不显示在分组上方，而是作为合并单元格显示在左边，这样内容区就显示为连续的表格了
 
@@ -252,7 +263,7 @@ modified: 2026-06-30T17:32:43.131Z
 
 # pm
 - 🤔 产品形态是 markdown sdk？
-  - 付费点: bases reading, cloud rag for big pdf
+  - 付费点: bases api, cloud rag for big pdf
 
 - 部分内容需要加密的场景，如何解决
   - 需要在cli侧解决
@@ -284,10 +295,6 @@ modified: 2026-06-30T17:32:43.131Z
   - obsidian vault支持任意文件夹， 注意 此目标需要配置link使用 相对路径 来减少坏链
 
 ## ob-bases
-
-- bases-arch
-  - bases 基于文件的设计 方便扩展每行的属性
-  - 可考虑实现 基于block 来实现， 这样同一页面内的内容也可以实现动态引用/更新
 
 - inline-bases
   - 实现思路类似在编辑内支持可执行的代码块
@@ -321,9 +328,6 @@ modified: 2026-06-30T17:32:43.131Z
 
 - 加一个标签到 tags 方便用来快速生成bases
 
-- column
-  - 列名如何支持显示为link， 一般无此需求， 点击列表一般用来排序
-
 - ob公开的 api 包含很多 codmeirror 相关的类型定义
 
 - 偏ui的plugin，在headless的场景下可能读不到配置，需要在vault中存一份配置，然后server运行时支持相关逻辑
@@ -344,6 +348,9 @@ modified: 2026-06-30T17:32:43.131Z
 ## bases-xp
 
 - 需要创建bases的note建议添加tags, 这样方便快速筛选
+
+- column
+  - 列名如何支持显示为link， 一般无此需求， 点击列名一般用来排序
 
 - 
 - 
