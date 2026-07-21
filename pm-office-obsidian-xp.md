@@ -53,6 +53,9 @@ modified: 2026-06-30T17:32:43.131Z
   - publish
   - sync
 # 🌸 dreamansion
+
+> local file based workspace, like notion but with files, bases, backlinks.
+
 - features
   - bases: formula, schema-change
   - editing with pagination, unifying markdown/pdf xp
@@ -60,6 +63,7 @@ modified: 2026-06-30T17:32:43.131Z
   - file-editor: 不改变原文件的格式, 可利用全局LRU缓存
   - offline-editing
   - sync
+  - collab with agent
 
 - goals
   - publish/site: github for obsidian bases

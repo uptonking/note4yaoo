@@ -535,7 +535,7 @@ you might refactor/reorganize the tests architecture/logic to make it correct, f
   - cons: 内置runtime需要支持多种格式如 /v1/chat/completions, /v1/responses， 还要考虑本地ollama的版本、模型版本， 带来的问题比收益多
   - 参考很多主流开放性ai的产品如cursor/cherry-studio, 都支持用户配置api，所以通过平台/系统来管理本地的工具是非必要的
 
-## 📌 dreamansion/redmansion(vscode-obsidian/zotero)
+## 📌 dreamansion(directus)
 
 - tips
   - 可用域名 dreamansions
@@ -692,8 +692,18 @@ project `vscode` in current folder is a popular, open-source, powerful coding id
 - Phase 2+: Monaco Contribution Features (Deferred)
   - Each Monaco contribution in src/vs/editor/contrib/ maps to a CodeMirror extension
 
-- 
-- 
+## 📌 redmansion(colanode/vscode-obsidian/zotero)
+
+- draft
+  - sqlite on server
+
+- This project colanode (also named redmansion) is a local-first Slack and Notion alternative that supports writing, databases, subpage and file management. web, desktop, react-native apps are available.
+- project joplin(at folder `../joplin`, AGPL license) is a offline-first note taking app that supports markdown, attachments, ocr, and e2ee. Windows, Linux, macOS, Android and iOS apps are available, NO web app.
+- The goal is to enhance colanode with features like joplin, making colanode more powerful and easier to use. You can refer to the architecture/data-flow/code/ideas of joplin, but copying AGPL code should be avoided, you might rewrite it in functional style for colanode.
+- The goal now is to enhance offline-first features for colanode desktop app like joplin desktop app: User should be able to open the desktop app and use it directly without configuring a server url, but for webapp, the existing workflow is ok, Joplin has very good support for offline usage like that. The first time to open the colanode desktop app, please also create a default user account, a default workspace , so that it is easy to use out of the box. If user want to sync to server, please allow user to configure sync target like in joplin in settings page. You might refer to the joplin syncing architecture for syncing targets like local-folder/local-server/cloud-server/onedrive, then design a robust/extensible syncing architecture for colanode. But unlike joplin, multiple sync targets should be supported in colanode desktop app, for example, docs in colanode can be synced to local folder and server at the same time. for example, when user edits a doc in colanode desktop app, the local folder sync target should be updated automatically(joplin supports this), when user edits the local file using external editor like vscode, changes should also be synced to colanode. multiple cloud servers as sync targets are not required now, it is too complicated, you should support to sync from desktop app to local folder and one cloud server at this moment.
+- This feature is very challenging, the current architecture in colanode might be refactored to make it easy to implement more features in the future.
+- analyze related architecture/data-flow/code in colanode and joplin, then implement a extensible offline and syncing feature for colanode.
+
 - 
 - 
 - 
@@ -811,7 +821,7 @@ document what you have migrated from which commit id for future migration refere
 # tests
 - run the full tests and fix the bugs
 
-- run the full tests again to find possible problems, then fix the problems or improve the testing architecture/performance.
+- run the full tests to find possible problems, then fix the problems or improve the testing architecture/performance.
 
 - running full tests/scripts may take huge memory and is slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests. 
 
