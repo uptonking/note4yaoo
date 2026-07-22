@@ -2198,6 +2198,10 @@ modified: 2026-06-20T15:49:57.019Z
 - [Conpera ](https://code.conpera.ai/)
   - 无法注册
 
+- [Duomi ](https://3aa.ai/keys)
+  - https://pay.ldxp.cn/shop/ECS3HUD5
+  - 50起充
+
 - [御海自用API ](https://www.zzczzc.top/keys)
   - 中等价格
 - [DragonAPI ](https://newapi.dragon3api.com/keys)

@@ -1120,6 +1120,12 @@ modified: 2026-04-07T00:47:33.626Z
 
 - https://github.com/jamiefdhurst/obsidian-inbox-organiser /MIT/202606/ts
   - Capture any new notes into an inbox and periodically prompt to organise these into other folders within the vault.
+
+- https://github.com/LostPaul/obsidian-folder-notes /AGPL/202606/ts
+  - https://lostpaul.github.io/obsidian-folder-notes/
+  - attach notes to folders so that you can click on the name of a folder to open the note like in the app Notion. 
+  - This plugin has some unique features that separate it from similar "Folder note" plugins like opening folder notes through the path, creating folder notes for every existing folder, templater/template support and more.
+  - Unlike other “folder note” plugins, Folder Notes offers several unique features, including support for custom file types, templating, and advanced folder handling options.
 # feat-reading/writing
 - https://github.com/chrisgrieser/obsidian-proofreader /30Star/MIT/202512/ts
   - AI-based proofreading and stylistic improvements for your writing. 

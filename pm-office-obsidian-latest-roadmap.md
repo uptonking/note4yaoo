@@ -255,12 +255,79 @@ modified: 2026-06-30T22:55:02.169Z
 
 - The better block-basis of Logseq/Roam (references, embeds, counters, etc) and the better UI/UX of interacting with blocks of Craft and Notion (selecting, moving, changing, different layout types, etc). Yes, I’ve used plugins that can somewhat enable these things, but they either lack all the niceties in the apps mentioned above, or sometimes they don’t work well (for some reason drag & drop doesn’t work for me most of the time).
   - Yes, some nice drag/drop action for blocks and bullets!! Hotkeys are nice but it doesn’t have that nice ux
+# discuss-pm-web
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Has anyone actually cracked a good way to access/edit Obsidian from the browser? : r/ObsidianMD _202607](https://www.reddit.com/r/ObsidianMD/comments/1v2lca8/has_anyone_actually_cracked_a_good_way_to/)
+
+# discuss-pm-files
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Links to files starting with dot break - Obsidian Forum _202209](https://forum.obsidian.md/t/links-to-files-starting-with-dot-break/43105)
+  - Apparently Obsidian doesn’t support dotfiles / dot files / hidden files / files starting with a period ..
+  - if I have an absolute link `[absolute link](.markdownlint.jsonc)` and click on it, it creates a file called `.markdownlint.jsonc.md` , which is still unreachable by Obsidian
+  - if I have a relative link `[relative link](./.markdownlint.jsonc)` and click on it, it says File names cannot end with a dot or a space.
+
+- My temporary workaround is to create a shell script that opens the default editor for .gitignore and link to that.
+
+- Yet another problem relates to Obsidian: you can’t link attached file an without extension. Still, developers, I can’t understand why this is impossible until now!
+
+- ## [Enable use/access to hidden files and folders starting with a dot /dotfiles/.dotfolders within Obsidian - Feature requests - Obsidian Forum _202111](https://forum.obsidian.md/t/enable-use-access-to-hidden-files-and-folders-starting-with-a-dot-dotfiles-dotfolders-within-obsidian/26908)
+  - Allow you to use hidden files as part of vault settings/configuration.
+  - A use case for the first point is to show/hide “meta” files e.g. `.templates` .
+  - A use case for the second point setting is settings attachments folder as `.attachments` . This in particular case would also be helpful for compatibility with azure wikis which uses `.attachments` and unfortunately can’t be changed.
+
+- “Azure DevOps” is a popular enterprise tool for creating wikis. It stores attachments in the directory called .attachments. Since Obsidian doesn’t see files from hidden directories, pictures from such wikis fail to load when opened in Obsidian.
+- Please enable .attachments usage for images link. Full support of Azure DevOps Wikis will be great.
+
+- .github/ is a common convention as a location for storage of assets.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # discuss-pm-ob
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Kind disappointed that Obsidian still does not allow a note title to contain ":", "?", quotes and some other special characters : r/ObsidianMD _202404](https://www.reddit.com/r/ObsidianMD/comments/1bzg5k7/kind_disappointed_that_obsidian_still_does_not/)
+- Its because most OSs dont support those symbols in file names. So youd need some layer on top which is annoying
+
+- Dropbox, Onedrive, Git sync, Google drive, and almost 95% other cloud providers don't support those special characters in the file name. So, if Obsidian allows it and then your files don't sync on any cloud. You'll blame Obsidian. So, Obsidian has rightfully not allowed those special characters. Otherwise we'll be doomed if you were allowed to use those characters.
+
+- you can already use those characters within aliases.
+
+- My titles are datetime of note creation. Headers are the real naming.
 
 - ## [Is it possible to create an Obsidian Base with an overview of PDF files and extra properties? : r/ObsidianMD _202509](https://www.reddit.com/r/ObsidianMD/comments/1niajm4/is_it_possible_to_create_an_obsidian_base_with_an/)
 

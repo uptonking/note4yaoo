@@ -694,18 +694,84 @@ project `vscode` in current folder is a popular, open-source, powerful coding id
 
 ## 📌 redmansion(colanode/vscode-obsidian/zotero)
 
+- goals
+  - text for workspace
+  - sqlite的概念和使用对user无感
+  - 简化了同步处理逻辑，先sync remote 到 local-db, 再让用户从local-db和file内容中选择
+
+- non-goals
+  - viewer for large binary files like docx/pdf, just ocred/converted text
+
 - draft
   - sqlite on server
+  - ocr
 
 - This project colanode (also named redmansion) is a local-first Slack and Notion alternative that supports writing, databases, subpage and file management. web, desktop, react-native apps are available.
 - project joplin(at folder `../joplin`, AGPL license) is a offline-first note taking app that supports markdown, attachments, ocr, and e2ee. Windows, Linux, macOS, Android and iOS apps are available, NO web app.
 - The goal is to enhance colanode with features like joplin, making colanode more powerful and easier to use. You can refer to the architecture/data-flow/code/ideas of joplin, but copying AGPL code should be avoided, you might rewrite it in functional style for colanode.
 - The goal now is to enhance offline-first features for colanode desktop app like joplin desktop app: User should be able to open the desktop app and use it directly without configuring a server url, but for webapp, the existing workflow is ok, Joplin has very good support for offline usage like that. The first time to open the colanode desktop app, please also create a default user account, a default workspace , so that it is easy to use out of the box. If user want to sync to server, please allow user to configure sync target like in joplin in settings page. You might refer to the joplin syncing architecture for syncing targets like local-folder/local-server/cloud-server/onedrive, then design a robust/extensible syncing architecture for colanode. But unlike joplin, multiple sync targets should be supported in colanode desktop app, for example, docs in colanode can be synced to local folder and server at the same time. for example, when user edits a doc in colanode desktop app, the local folder sync target should be updated automatically(joplin supports this), when user edits the local file using external editor like vscode, changes should also be synced to colanode. multiple cloud servers as sync targets are not required now, it is too complicated, you should support to sync from desktop app to local folder and one cloud server at this moment.
+- for syncing, rules in .gitginore file should be supported.
 - This feature is very challenging, the current architecture in colanode might be refactored to make it easy to implement more features in the future.
-- analyze related architecture/data-flow/code in colanode and joplin, then implement a extensible offline and syncing feature for colanode.
+- analyze related architecture/data-flow/code in colanode and joplin, then implement a extensible offline and syncing architecture for colanode.
 
 - 
 - 
+- 
+- 
+- 
+- 
+
+### draft-redmansion
+
+- roadmap
+  - image
+  - attachment
+
+- for a existing local folder that has synced to cloud server previously, how to open the local folder in colanode desktop app again and sync to the cloud server correctly.
+
+- some ideas for the colanode desktop app to enhance the offline and sync features(webapp workflow might stay unchanged or updated to be consistent to the desktop workflow): 
+  - when opening colanode desktop app for the first time, a default user and default workspace is created automatically, and a default folder is also auto created at path `~/Documents/colanodeYYYYMMdd`(use the latest date in code), user may add sync targets like cloud-server/local-server later, so a local sync folder is added automatically. Opening colanode desktop app later will auto open the last workspace.
+  - when colanode desktop app has a local folder as a sync target, it should auto export the colanode contents to local folder and markdown files that mirrors file tree structure in colanode and write richer metadata at `.colanode/manifest.json`, every note should be exported as a markdown file, for example, a note like work/meetings has subpages, then the note should be exported as a nested folder like work/meetings/ and the note itself should be exported as work/meetings/meetings.md (or work/meetings/meetings_readme.md or work/meetings/meetings_readme_.md to avoid conflict), notes without subpages should be exported as markdown file directly. you might store colanode id/hash/file-path relations or other metadata at `.colanode/manifest.json` if you want.
+  - when user uses colanode desktop app, local sqlite is source of truth, data exported to local folder automatically. when user uses external editor like vscode to edit the local folder, then user opens the same folder with the same .colanode/manifest.json or colanode local folder watcher detects the file changes, colanode desktop should parse all the local markdown files or changed file, then try to update the local sqlite. Before updating local sqlite, if a cloud server sync target is set, check the last sync time and changed files, if no conclict, merge cloud changes to local sqlite first, then update local sqlite with reparsed local markdown files, if conflicts exist, show a conflicts file list and ask the user to select cloud content or local file content to save. I think this workflow in my idea makes it easy to implement and works good enough for one-person workflow. 
+  - when user use colanode desktop app to open local folder, if the folder does not contain .colanode/manifest.json, a workspace with the same name of the folder is created automatically, local folder as a sync target is auto set, other sync targets like cloud/local-server may be added later. if the folder contains .colanode/manifest.json, just pull the latest content to local sqlite first, then try to update the local sqlite with reparsed content of local folder as the similar workflow previously mentioned. 
+  - when both app.sqlite and workspace.sqlite is missing, if using colannode to open a folder does not contain .colanode/manifest.json, auto create a new user, a workspace with the same name of the folder is created automatically, local folder as a sync target is auto set. if using colannode to open a folder contains .colanode/manifest.json, ask the user to login and sync or just use it locally.
+  - when app.sqlite exits and workspace.sqlite is missing, if using colannode to open a folder does not contain .colanode/manifest.json, use the user from app.sqlite, a workspace with the same name of the folder is created automatically, local folder as a sync target is auto set. if using colannode to open a folder contains .colanode/manifest.json, ask the user to sync or just use it locally.
+  - generally, local sqlite is the source of truth, before updating local sqlite with reparsing local files, sync the cloud first, then provide the user with conflicts list if any.
+
+- if my idea works well for one-person workflow, how does it work for a multi-user team? please make a extensible design for team collab but implementation may be delayed for team.
+  - does it work well for webapp?
+
+- The current server target creates a dedicated remote workspace behind the scenes and mirrors the local workspace into it; it does not let the user choose an existing remote workspace. That avoids accidental merges but is a product choice, not an architectural necessity.
+- Colanode restores its working SQLite/Yjs workspace from canonical data under .colanode. The visible Markdown files are editable projections; they are not the only recovery source.
+- Colanode performs a three-way reconciliation using the baseline saved at the last successful syn
+
+- in joplin app, when sync target is set to a local folder, image are not exported as .jpg/.png but random name like `.resource/11ebaf4a20084f99879f4af3b763d363`, which is inconvenient. in colanode, please just export the image in a readable format like `attachments
+
+- Cloud, SQLite, and folder are three current states. A baseline is a remembered common ancestor from an earlier successful sync.
+- State Model
+  - C: current cloud value
+  - L: current SQLite value
+  - F: current folder value
+  - Bc: last value confirmed equal between cloud and SQLite
+  - Bf: last value confirmed equal between folder and SQLite
+   - Two baselines are necessary because folder synchronization must continue while cloud is offline. In that case Bf advances while Bc does not.
+- When SQLite is gone, the manifest needs one additional value per item, cloudAckHash/
+  - cloudAckHash: the folder-compatible hash of the last state confirmed present in cloud.
+    - The canonical SQLite representation that the cloud target most recently confirmed it accepted or already contained
+  - baseHash: The last canonical representation known to be equal in SQLite and this folder target.
+- Recovery then works as follows:
+  01.               Keep the folder target disabled.
+  02.               Pull current cloud data into a new SQLite database, producing L = C.
+  03.               Use cloudAckHash as the recovery common ancestor R.
+  04.               Compare restored cloud/SQLite L and current folder F against R.
+  - This distinction matters when the folder was updated while cloud was offline. The folder manifest’s normal baseHash may be newer than cloud, so treating current cloud as the baseline could overwrite newer folder work.
+- so you wanna store a cloudAckHash at .colanode/manifest.json for each file/folder?
+  - Yes, but per exported Colanode item, not per physical directory.
+  - A page Markdown file, attachment, database JSON, or folder-node JSON gets an entry. 
+  - Ordinary filesystem directories such as pages/ do not.
+
+- contentHash is only the last normalized content shared by SQLite and the folder. It is not a cloud hash.
+
 - 
 - 
 - 

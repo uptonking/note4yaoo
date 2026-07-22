@@ -140,6 +140,7 @@ modified: 2026-06-30T17:32:43.131Z
 
 - maybe
   - 实现类似git commit history 的历史记录ux
+  - file-metadata as database
 
 - 
 - 

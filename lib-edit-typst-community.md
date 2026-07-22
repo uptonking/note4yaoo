@@ -142,7 +142,7 @@ modified: 2025-12-25T19:54:56.482Z
 
 - ## 
 
-- ## 
+- ## [Document Automation: Is Typst a Good Alternative to Carbone, Docxtemplater, etc.? : r/typst _202607](https://www.reddit.com/r/typst/comments/1v27i2q/document_automation_is_typst_a_good_alternative/)
 
 - ## [Typst has ruined me : r/typst](https://www.reddit.com/r/typst/comments/1r00v8d/typst_has_ruined_me/)
   - tl; dr: typst is so empowering and it started a domino effect where i now obsess over every typographical detail and even in my daily life i couldn't stop myself from thinking "heh i bet i could remake this form/signage/poster/presentation/document in typst and make it better"
