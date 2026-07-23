@@ -1984,6 +1984,9 @@ modified: 2026-06-20T15:49:57.019Z
   - 低价kiro
 - [KiroSwitch官方直营店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Z3VSKEGC)
   - pro
+- [kiro源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1XZXKYZB)
+  - 企业kiro 10000积分 power
+  - Kiro的apikey格式，无法在kiro软件使用, 推荐用 kiro.rs
 
 - [Gemini源头供货商的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/pixelshop)
   - gemini年卡--¥18

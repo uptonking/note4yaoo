@@ -39,7 +39,32 @@ modified: 2023-10-28T13:38:46.522Z
   - 说起css sprites，自从前端模块化后这个就没再见到用了。
 - 类似 tcp 多路复用
 
+# discuss-vendors-sqlite
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [D1 bill went from $0 to $1, 381 in 18 days. : r/CloudFlare _202607](https://www.reddit.com/r/CloudFlare/comments/1v3env9/d1_bill_went_from_0_to_1381_in_18_days/)
+  - We run our global routing registry on D1 
+  - We run sandboxes for agents and use D1 on every sandbox creation to decide which region the sandbox lands in.
+  - Around Jun 28, our bill started climbing from $8/day, then $60, then $190/day by Jul 13.
+  - There was no traffic spike, no errors, and latency was fine.
+  - The cause: one frequent query running every 5 mins had no composite index covering its WHERE clause, so SQLite was scanning the entire table, multiple times per run.
+  - Per million-row read pricing cooked us lmao.
+  - Fix: one `CREATE INDEX` . Bill back to effectively zero.
+
+- This is why I prefer to not use databases with row read billing. Worst case on a regular database your query performance starts degrading and you aren't billed an arm and a leg for badly optimized queries.
 # discuss-license-sqlite
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

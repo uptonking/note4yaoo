@@ -344,7 +344,16 @@ modified: 2023-01-02T10:30:19.459Z
 
 - ## 
 
-- ## 
+- ## [Why doesn't Electron have a symmetric IPC API? : r/electronjs _202607](https://www.reddit.com/r/electronjs/comments/1v44arp/why_doesnt_electron_have_a_symmetric_ipc_api/)
+  - ipcRenderer.invoke(...)
+  - ipcMain.handle(...)
+  - webContents.send(...)
+  - ipcRenderer.on(...)
+
+- That seems to be just a historic decision, there are no particular technical limitations, e. g. MoBrowser has it, so it can be done
+
+- The main thing that'll unstick this: preload isn't a middleman sitting between the two processes. It runs inside the renderer process — same process, just a separate JS context that's allowed to use Electron APIs. Nothing passes "through" it. So ipcRenderer.on really is the renderer listening, the same way ipcMain.on is main listening. It only feels hidden because it's in a file that doesn't look like "the renderer" to you.
+  - Also, renderer.send() already exists. It's webContents.send(). In the main process, webContents is the renderer.
 
 - ## [Add support for experimental-inspector-network-resource _202601](https://github.com/electron/electron/issues/49500)
   - in Node.js 22.19 they added --experimental-inspector-network-resource flag, which allows applications to manually add support for remote source map resolution

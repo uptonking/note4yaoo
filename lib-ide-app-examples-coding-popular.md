@@ -932,6 +932,15 @@ modified: 2025-12-11T18:10:23.710Z
     - a batteries-included distribution for Pi
     - It takes Pi's minimal core and turns it into an opinionated, complete, polished experience, adding a websearch tool to complement the four default built-in tools, plus several useful skills and tasteful extensions, split into purpose-driven packages
 
+- https://github.com/huggingface/tau /1.8kStar/MIT/202607/python
+  - http://twotimespi.dev/
+  - A Python port of Pi’s minimalist coding agent.
+  - Tau can read files, edit code, run commands, and keep a durable session history while streaming what it is doing.
+  - tau_coding  →  tau_agent  →  tau_ai
+    - tau_ai translates model providers into Tau's provider-neutral stream.
+    - tau_agent owns the portable brain: messages, tools, events, loop, harness, and session primitives.
+    - tau_coding wraps the brain as a real coding app: CLI, TUI, file/shell tools, provider config, project instructions, skills, and on-disk sessions.
+
 - https://github.com/itayinbarr/little-coder /1.5kStar/apache2/202606/ts
   - https://itayinbarr.github.io/little-coder/
   - A coding agent tuned for small local models, built on top of `pi`.
@@ -945,6 +954,13 @@ modified: 2025-12-11T18:10:23.710Z
   - ❓ 是否不支持extension
   - Kon takes significant inspiration from `pi` coding-agent, especially around philosophy and UI direction.
     - Kon also borrows ideas from Amp, Claude Code, and other terminal coding agents.
+
+- https://github.com/smallnest/pigo /MIT/202607/go
+  - https://colobu.com/pigo/
+  - 使用 Go 复刻的 pi AI Agent —— 一个面向命令行的编码智能体，同时支持无头（headless）脚本模式与交互式 REPL。
+  - pigo 可以读写文件、执行命令、检索代码、抓取网页，并借助大模型完成从"读懂需求"到"改好代码"的闭环。它兼容 OpenAI / Anthropic 等多种协议网关，支持会话续跑、项目信任、技能（Skills）、插件与包管理。
+  - https://x.com/smallnest/status/2080103406837129633
+    - 使用Go又重写pi agent, 以前重写是为了复制openclaw,这次纯粹是为了它的小巧灵。
 
 - https://github.com/justhil/pi-app /202606/ts
   - 面向个人开发者的 pi 桌面 GUI：在 Electron 里跑 pi SDK，复用 ~/.pi/agent 的认证、配置与会话 JSONL，用时间线、工具卡片、改动审查和扩展兼容层替代终端里那套 TUI 交互。

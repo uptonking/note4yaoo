@@ -45,7 +45,9 @@ modified: 2022-08-21T10:19:58.756Z
 
 - ## 
 
-- ## 
+- ## [Inside TanStack Table V9 Reactivity | TanStack Blog _202607](https://tanstack.com/blog/tanstack-table-v9-reactivity)
+- https://x.com/KevinVanCott/status/2079213754584015052
+  - building a headless, signal-first core while keeping framework integrations straightforward.
 
 - ## I just shipped the experimental web worker row models plugin for TanStack Table V9
 - https://x.com/KevinVanCott/status/2074147476752286135

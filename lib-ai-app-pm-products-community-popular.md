@@ -820,6 +820,82 @@ workbuddy，豆包，codex，claude
 
 - ## 
 
+- ## 
+
+- ## [Notebook LM is not enough. Here are the more tool I use around it : r/notebooklm _202607](https://www.reddit.com/r/notebooklm/comments/1v3hab4/notebook_lm_is_not_enough_here_are_the_more_tool/)
+- Perplexity - Research & finding sources
+Pros
+Great for discovering quality sources.
+
+Fast fact-checking and research.
+
+Cons
+Source quality still varies.
+
+Better for research than deep learning.
+
+- NotebookLM - Learning & understanding
+Pros
+Excellent for learning from your own documents.
+
+Great conversational experience.
+
+Cons
+Depends entirely on the sources you upload.
+
+Video overviews are better for summaries than deep visual explanations.
+
+- Distill book - Visual explanations
+Pros
+Good for visual explanations.
+
+Handles technical content well.
+
+Cons
+Takes longer than a quick summary.
+
+Better for deep dives than quick overviews.
+
+- Manus - Getting work done
+Pros
+Great for end-to-end task execution.
+
+Handles complex workflows well.
+
+Cons
+Can be slower for simple tasks.
+
+Needs clear instructions for best results.
+
+- Gamma - Presentations
+Pros
+
+Very fast presentation creation.
+
+Clean designs with minimal effort.
+
+Cons
+
+Limited design customization.
+
+Usually needs a quick content review. 
+
+- So my current AI stack looks like this:
+
+Perplexity → Finding and fact-checking sources.
+
+NotebookLM → Learning and chatting with documents.
+
+Distill book → Visual explanations for technical content.
+
+Manus → Autonomous task execution.
+
+Gamma → Creating presentations. what tool has quietly become part of your daily workflow that more people should know about?
+
+- NotebookLM is a RAG. It is not supposed to look outside the sources provided.
+
+- Jellypod for Ai audio and video overviews too
+
 - ## [Is RAG for PDFs really marketable : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1tjuupm/is_rag_for_pdfs_really_marketable/)
 - No, nobody's gonna pay for it, because there are better established players that have trust (like Obsidian and Google NotebookLM or even just ChatGPT/Gemini/Claude with PDF upload). It is very marketable if you build it and can integrate it into other apps or custom solutions for clients however. Like sales teams that can use RAG for their CRM that you integrate into. But that's a completely different market.
 

@@ -1090,6 +1090,13 @@ modified: 2025-02-21T17:17:42.225Z
   - https://x.com/kapish_dima/status/2062596204546953688
     - @shadcn registry with ready-to-use, free animations for your Remotion videos
 
+- https://github.com/gnipbao/story-to-handdrawn-video /MIT/202607/python/js
+  - 把中文故事文案或一组有序的手绘图片, 转换成 3:4 竖屏手绘日记漫画动画: 手写体字幕、从左到右的「文字 → 黑白画稿 → 彩色插画」揭示、可选的右下角卷页翻书转场、安全不裁剪的画面构图。基于 Remotion, 默认输出无配音、无音乐的 H.264 画面轨, 方便后期配音。
+  - https://x.com/GeekCatX/status/2079609613469798803
+    - 上周预告的“故事转手绘视频”Skill，今天正式开源了。
+    - 给它一段中文故事，它就能自动变成一支会从黑白慢慢长出颜色的手绘日记动画。
+    - 你可以直接输入中文故事文案，也可以上传一组按顺序排列的本地图片。
+
 - https://github.com/TriasJ/notebooklm-to-video /MIT/202605/python/ts
   - Claude Code skill: Convert NotebookLM slide decks into animated Remotion videos via MinerU OCR + HTML bbox editor + OpenCV inpainting
   - A Claude Code skill that converts NotebookLM slide decks into animated Remotion videos.

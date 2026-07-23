@@ -404,9 +404,8 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
-
-- ## 
+- ## [我打开应用就是白屏--mac · Issue · anomalyco/opencode _202602](https://github.com/anomalyco/opencode/issues/13044)
+- 实测，先卸载再安装就可以使用了, 用官方命令 `opencode uninstall` 
 
 - ## [What would be the best memory-bank in Opencode, coming from Roo Code with MemoryBank injected in the prompts. : r/opencodeCLI _202601](https://www.reddit.com/r/opencodeCLI/comments/1qe28fd/what_would_be_the_best_memorybank_in_opencode/)
 - Simple Memory Plugin from @knikolovx. It is a very simple plugin, but also very effective. And it was created with programming in mind. https://github.com/cnicolov/opencode-plugin-simple-memory

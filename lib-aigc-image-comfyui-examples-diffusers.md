@@ -376,6 +376,13 @@ modified: 2025-08-23T11:43:35.904Z
   - 画布工具现在支持局部编辑，功能参考ChatGPT官方的编辑功能，可选择画布对某个区域选择后编辑
   - [【开源无限画布】统一AI创作网关：集成图/文生图/视频的无限画布，兼容2api项目和OpenAI接口 - LINUX DO _202605](https://linux.do/t/topic/2249309)
     - render部署的会丢失数据，只简单演示用
+
+- https://github.com/BlackMixture/Mix-Studio /GPL/202607/js
+  - Mix Studio is a local web interface that builds and submits ComfyUI API graphs for image generation, regional prompting, image editing, video generation, motion transfer, and upscaling. 
+  - Its curated graph builders cover Krea 2, Flux 2 Klein, Qwen Image Edit, LTX 2.3, Wan 2.2, 10Eros, and SCAIL 2.
+  - Generations run through ComfyUI on the Windows desktop; use the same responsive workspace from your phone on the same Wi-Fi or through Tailscale. Zero app dependencies: one Node.js server, vanilla JS frontend, no build step.
+  - [Mix Studio - A Free Open Source AI Workspace for ComfyUI.   : r/StableDiffusion _202607](https://www.reddit.com/r/StableDiffusion/comments/1v3rjy1/mix_studio_a_free_open_source_ai_workspace_for/)
+    - Pinokio is great for downloading various AI tools, Mix Studio is more of a streamlined user interface for generative AI.
 # ai-image-generator
 - tips
   - midjourney alternative

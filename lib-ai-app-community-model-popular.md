@@ -757,7 +757,8 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [5.5 better than Terra? : r/OpenaiCodex _202607](https://www.reddit.com/r/OpenaiCodex/comments/1v0pp94/55_better_than_terra/)
+- GPT-5.6 Terra is designed for workloads that balance intelligence and cost. It roughly corresponds to the mini model tier used in earlier GPT-5 families.
 
 - ## [Artificial Analysis says Sol and Luna dominate Terra on intelligence per dollar. Is GPT-5.6 Terra already obsolete, or is this benchmark missing something? : r/codex _202607](https://www.reddit.com/r/codex/comments/1uua1id/artificial_analysis_says_sol_and_luna_dominate/)
 - use Sol medium and high for the most part, Luna Max for some smaller things, and occasionally Sol xhigh for something hard/complex. No reason to touch Terra.

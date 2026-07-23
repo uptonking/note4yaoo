@@ -77,7 +77,19 @@ modified: 2025-04-18T03:57:00.075Z
 
 - ## 
 
-- ## 
+- ## Go has 18 built-in functions (since Go 1.21; there were 15 before that).
+- https://x.com/ohmypy/status/2079542805060366467
+  - Personally, I use make, append and len/cap all the time. I never use complex/real/imag or print/println. Everything else falls in between.
+
+- its wild that go's built-ins print() and println() are not meant to be used to print and println
+
+- I used len, make and append all the time. Never used cap. Why would you need to use cap?
+  - maybe I don't. I paired len with cap out of habit of teaching them together.
+
+- often: make, new, append, delete, len, panic
+occasionally: cap, clear, close, copy, min, max
+never: complex, real, imag, recover, print, println
+- Note: I use `panic` only for impossible-by-contract errors that would indicate a developer bug, so the failure is loud, observable, and never leaked into caller-facing error handling.
 
 - ## I don't like the functional options pattern in Go, and I'm pretty disappointed that it ended up in the standard library with the new json/v2 package.
 - https://x.com/ohmypy/status/2076642867104080206

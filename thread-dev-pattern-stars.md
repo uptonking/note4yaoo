@@ -16,7 +16,12 @@ modified: 2023-11-29T15:23:06.805Z
 
 - ## 
 
-- ## 
+- ## 之前看的一篇文章 在 AI 时代真的不需要 SDK 了，我把几个 SMS 的服务从 SDK 直接改写成了基于 HTTP 请求的 thin wrapper。
+- https://x.com/CatChen/status/2079949032395596134
+- 问题是将来维护的成本全转移到你身上了，HTTP API 更新了你可能就要对应更新。更关键的是你不知道 API 什么时候会更新，你可能为此又要多部署一个监控 API 有没有发生重大变化的服务。
+  - 同意啊，本来可以外包给别人的时间和别人的token的事情，反而hand writtenSDK，没有必要。 在AI的时代，重复造轮子的事情依旧存在。
+
+- 生产用这种代码，后续对方的接口和协议变更，你没有及时跟进调整，怎么解？正常引入官方 sdk还可以快速升级一下 sdk（稳定性和维护性由厂商兜底）。这种让 AI 快速读源码然后提取精装版的行为不可控，sdk 有些极端场景会考虑和兜底，精简代码遇到直接扑街。
 
 - ## I wrote up a bit about the different types of cancellation/unregistration that exist, and why AbortSignal is a solid choice for DOM Observables in JavaScript.
 - https://twitter.com/BenLesh/status/1729970596715376698
@@ -38,14 +43,14 @@ modified: 2023-11-29T15:23:06.805Z
   - I really wish I had been better about apply CQRS in my code.
   - CQRS强调的是 command与query访问的数据模型不同，分别根据command与query需求的不同特性设计数据模型
 - one software architectural choice that has bitten me is the decision to return modified data in an API response payload. 
-- If I could go back and rebuild all mutation requests, I **would design them to return confirmation data only - no entity data**.
+- If I could go back and rebuild all mutation requests, I **would design them to return confirmation data only - no entity data** .
 - To understand what I mean, imagine that we have a web application that has a Contact entity. 
   - And, I have an API end-point that allows me to rename the Contact with a POST request
   - `POST /api/contact/4/rename?name=Hanna+Banana` .
   - Historically, in my web application, this POST request would execute the use-case - renaming the Contact - and would then return the Contact data with the new name field in tow(紧随着，陪伴着)
 - If I were to build this POST request today, however, I would code this to return a 204 No Content response. 
   - A 204 is a success code, confirming that the POST request was handled by the application; however, it wouldn't contain any other data.
-  - **If the client-side application needed the modified data**, it could either optimistically update its own view model locally as part of the request processing; or, it could make a subsequent request back to the server to get the modified data for its view.
+  - **If the client-side application needed the modified data** , it could either optimistically update its own view model locally as part of the request processing; or, it could make a subsequent request back to the server to get the modified data for its view.
 - In the case of a create request, such as to create a new Contact record within the application, I would return a 200 OK with a response payload; 
   - but, it would only contain the unique identifier of the newly-created Contact (assuming synchronous processing).
   - And, again, if the client-side application needed the fleshed-out data for the newly-created Contact record it could either optimistically update its own view-model locally; or, it could make a subsequent request - using the returned id value - to get the fleshed-out Contact record. 

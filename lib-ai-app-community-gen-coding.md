@@ -941,7 +941,7 @@ It amazes me how people default to LLM calls when you can do it in a simple, fre
 
 - ## 
 
-- ## 
+- ## [几句提示词拯救你的前端UI审美 - LINUX DO _202607](https://linux.do/t/topic/2642792)
 
 - ## 🆚 [【开源自荐】Vibebench - 一个AI外行消费者做的LLM前端横评展示项目（Claude/GPT/Gemini/GLM/Kimi/Qwen/Minimax/Mimo... SOTA模型大乱斗） - LINUX DO _202605](https://linux.do/t/topic/2268453)
   - 简单来说，就是让不同渠道的不同模型，做相同的赛题，然后展示出来

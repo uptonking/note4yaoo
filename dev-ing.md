@@ -340,6 +340,24 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0723
+
+- Optimize server adapter syncNodes() with cursor-based diff
+  - Problem: syncNodes() does a full table scan of both local and mirror SQLite databases on every pass. For a large workspace this is O(n_local + n_remote) row reads on every sync, including when nothing changed.
+  - Fix: Use the replication_changes journal (already populated by ReplicationService.recordWorkspaceEvent()) and the checkpoint's lastChangeSequence to identify which entities actually changed since the last successful pass
+  - This is a meaningful optimization for workspaces with thousands of nodes and frequent sync passes.
+
+- your optimization for server adapter with cursor-based attribute diff (performance at scale) has some issues
+  - Local SQLite changes are recorded in replication_changes.
+  - The server mirror intentionally does not record that journal.
+  - Therefore, a remote edit can arrive through the mirror WebSocket, trigger watch(), and still be skipped because its entity ID is absent from the local change set.
+- I just fixed it: Add one monotonic change sequence on the server, scoped to a workspace lineage.
+  - This changes the expensive operation from: "scan every node/document on every run" to "fetch changes since the last cursor load only affected entities"
+- There are two ways to enforce this:
+  - The feed includes the changed payload, allowing the adapter to apply it directly.
+  - Preferably, the mirror synchronizer records the server sequence when it applies each change. The adapter waits until the mirror’s applied sequence reaches the feed cursor, then reads the mirror as usual. 
+  - The second option preserves the existing mirror architecture and keeps SQLite as the adapter’s content source.
+
 ## 0721
 
 - ERR_UNSAFE_PORT
