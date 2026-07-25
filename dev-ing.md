@@ -293,6 +293,8 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 # cd ~/Documents/repos/ai-ml-llm/done-hub-local && dist/one-api --config config.yaml
 
 launchctl stop com.donehub && launchctl start com.donehub
+launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.donehub.plist
+
 launchctl stop com.cpap && launchctl start com.cpap
 
 # DATA_DIR=~/sub2api-local-data ./sub2api -setup
@@ -339,6 +341,19 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - ?
 - dev-log
   - ?
+
+## 0724
+
+- redmansion
+  - offline sync refactor
+  - fast open by mtime
+
+- defer vs delay
+  - Defer is deliberate and often formal
+    - Let's defer this decision until we have the budget numbers
+    - I deferred my enrollment for a year.
+  - Delay is more neutral and often implies something is taking longer than planned, sometimes due to outside factors rather than a deliberate choice.
+    - The flight was delayed by weather.
 
 ## 0723
 

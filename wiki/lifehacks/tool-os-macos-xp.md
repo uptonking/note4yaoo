@@ -790,7 +790,8 @@ CREATE DATABASE mydatabase;
 
 - ## 
 
-- ## 
+- ## [Anyone ever experience Bootstrap failed: 5: Input/output error when running sudo launchctl bootstrap system /System/Library/LaunchDaemons/com.apple.xsan.plist? : r/macsysadmin _202607](https://www.reddit.com/r/macsysadmin/comments/176jmx1/anyone_ever_experience_bootstrap_failed_5/)
+- "Bootstrap failed: 5: Input/output error"  Just means the process is already running.
 
 - ## 以前更换电脑，是吭哧吭哧用 dotfiles 管配置、写脚本，一点点把环境克隆出来。
 - https://x.com/Barret_China/status/2051841823908487242
