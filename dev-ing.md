@@ -373,6 +373,31 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - Preferably, the mirror synchronizer records the server sequence when it applies each change. The adapter waits until the mirror’s applied sequence reaches the feed cursor, then reads the mirror as usual. 
   - The second option preserves the existing mirror architecture and keeps SQLite as the adapter’s content source.
 
+- Cloud, SQLite, and folder are three current states. A baseline is a remembered common ancestor from an earlier successful sync.
+- State Model
+  - C: current cloud value
+  - L: current SQLite value
+  - F: current folder value
+  - Bc: last value confirmed equal between cloud and SQLite
+  - Bf: last value confirmed equal between folder and SQLite
+   - Two baselines are necessary because folder synchronization must continue while cloud is offline. In that case Bf advances while Bc does not.
+- When SQLite is gone, the manifest needs one additional value per item, cloudAckHash/
+  - cloudAckHash: the folder-compatible hash of the last state confirmed present in cloud.
+    - The canonical SQLite representation that the cloud target most recently confirmed it accepted or already contained
+  - baseHash: The last canonical representation known to be equal in SQLite and this folder target.
+- Recovery then works as follows:
+  01. Keep the folder target disabled.
+  02. Pull current cloud data into a new SQLite database, producing L = C.
+  03. Use cloudAckHash as the recovery common ancestor R.
+  04. Compare restored cloud/SQLite L and current folder F against R.
+  - This distinction matters when the folder was updated while cloud was offline. The folder manifest’s normal baseHash may be newer than cloud, so treating current cloud as the baseline could overwrite newer folder work.
+- so you wanna store a cloudAckHash at .colanode/manifest.json for each file/folder?
+  - Yes, but per exported Colanode item, not per physical directory.
+  - A page Markdown file, attachment, database JSON, or folder-node JSON gets an entry. 
+  - Ordinary filesystem directories such as pages/ do not.
+
+- contentHash is only the last normalized content shared by SQLite and the folder. It is not a cloud hash.
+
 ## 0721
 
 - ERR_UNSAFE_PORT
@@ -1200,19 +1225,19 @@ URL	: http://www.cip.cc/124.240.71.187
 
 For the parity refactor, which live edit authority should the plan assume for forms/annotations/reviews on recognized pages?
 
-1. Unify Page-Owned (Recommended)  Use one recognized-page scene/object authority for live editing, with forms/annotations/reviews projected to PDF/native structures only at import/save boundaries.
+01. Unify Page-Owned (Recommended)  Use one recognized-page scene/object authority for live editing, with forms/annotations/reviews projected to PDF/native structures only at import/save boundaries.
 
-2. Keep Sidecars                   Keep forms/annotations/reviews as separate live arrays beside the page scene, and only unify text/images/shapes under the page-owned runtime.
+02. Keep Sidecars                   Keep forms/annotations/reviews as separate live arrays beside the page scene, and only unify text/images/shapes under the page-owned runtime.
 
-3. Hybrid By Family                Unify annotations/reviews into the page scene now, but keep forms as a separate live model for longer.
+03. Hybrid By Family                Unify annotations/reviews into the page scene now, but keep forms as a separate live model for longer.
 
 ```
 
 - ONLYOFFICE is closer to Keep Sidecars, not Unify Page-Owned.
 - So the ONLYOFFICE-like choice for Hardoc is:
-  1. Keep recognized-page drawings/page objects as the authority for rich editable page content: text, images, shapes, groups, tables, charts.
-  2. Keep forms, annotations/redactions, and review threads as separate live families in the document model.
-  3. Unify them at the command/history/collaboration/selection layer, not by forcing them into one scene schema.
+  01. Keep recognized-page drawings/page objects as the authority for rich editable page content: text, images, shapes, groups, tables, charts.
+  02. Keep forms, annotations/redactions, and review threads as separate live families in the document model.
+  03. Unify them at the command/history/collaboration/selection layer, not by forcing them into one scene schema.
 
 ## 0414
 

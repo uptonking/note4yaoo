@@ -758,6 +758,7 @@ This project `colanode` (also named redmansion) is a local-first Slack and Notio
   - when app.sqlite exits but workspace.sqlite is missing: if using colannode to open a folder does not contain .colanode/manifest.json, use the user info from app.sqlite, a workspace with the same name of the folder is created automatically, local folder as a sync target is auto set. if using colannode to open a folder contains .colanode/manifest.json, use the user info from app.sqlite, ask the user to sync or just use it locally.
   - generally, local sqlite is the source of truth, before updating local sqlite with reparsing local files, sync the cloud data to local sqlite first, then provide the user with conflicts list if any conflict exists.
 - colanode is designed to be offline first, user mostly manage files at local folder or cloud/self-hosted server, local sqlite should be invisible to user: in most cases, before updating local sqlite, fetch cloud content first, then update local sqlite by cloud changes(always succeed), then try to update local sqlite by changes from local files(if conflicts exist, provide list).
+- downloading files/attachments/binary to local folder sync target should be lazy and follow the file structure in the workspace, for example, a `pets/cat.png` should be only exported to local folder sync target at `pets/cat.png` when it is clicked/opened, to simplify the implementation, generally the attachment/file download result should be success or failure, all or nothing, no crash intermediate state, interrupted downloads or incompleted downloads should be deleted. no global cache or private .staging design for this feature.
 
 - for offline use of desktop app, logout does not remove data, logout just show the onboarding page with user avatar that enable login again quickly, if user clicks the avatar to login again, most data/ui before logout just restores. when logout, most data stays unchanged, but cloud-server/local-folder syncing stops if exists; when login again, most data/ui before logout shows again, cloud-server/local-folder syncing auto starts.
 
@@ -768,36 +769,9 @@ This project `colanode` (also named redmansion) is a local-first Slack and Notio
 
 - The current server target creates a dedicated remote workspace behind the scenes and mirrors the local workspace into it; it does not let the user choose an existing remote workspace. That avoids accidental merges but is a product choice, not an architectural necessity.
 - Colanode restores its working SQLite/Yjs workspace from canonical data under .colanode. The visible Markdown files are editable projections; they are not the only recovery source.
-- Colanode performs a three-way reconciliation using the baseline saved at the last successful syn
 
-- in joplin app, when sync target is set to a local folder, image are not exported as .jpg/.png but random name like `.resource/11ebaf4a20084f99879f4af3b763d363`, which is inconvenient. in colanode, please just export the image in a readable format like `attachments
+- in joplin app, when sync target is set to a local folder, image are not exported as .jpg/.png but random name like `.resource/11ebaf4a20084f99879f4af3b763d363`, which is inconvenient. in colanode, please just export the image in a readable format like `attachments`
 
-- Cloud, SQLite, and folder are three current states. A baseline is a remembered common ancestor from an earlier successful sync.
-- State Model
-  - C: current cloud value
-  - L: current SQLite value
-  - F: current folder value
-  - Bc: last value confirmed equal between cloud and SQLite
-  - Bf: last value confirmed equal between folder and SQLite
-   - Two baselines are necessary because folder synchronization must continue while cloud is offline. In that case Bf advances while Bc does not.
-- When SQLite is gone, the manifest needs one additional value per item, cloudAckHash/
-  - cloudAckHash: the folder-compatible hash of the last state confirmed present in cloud.
-    - The canonical SQLite representation that the cloud target most recently confirmed it accepted or already contained
-  - baseHash: The last canonical representation known to be equal in SQLite and this folder target.
-- Recovery then works as follows:
-  01.                       Keep the folder target disabled.
-  02.                       Pull current cloud data into a new SQLite database, producing L = C.
-  03.                       Use cloudAckHash as the recovery common ancestor R.
-  04.                       Compare restored cloud/SQLite L and current folder F against R.
-  - This distinction matters when the folder was updated while cloud was offline. The folder manifest’s normal baseHash may be newer than cloud, so treating current cloud as the baseline could overwrite newer folder work.
-- so you wanna store a cloudAckHash at .colanode/manifest.json for each file/folder?
-  - Yes, but per exported Colanode item, not per physical directory.
-  - A page Markdown file, attachment, database JSON, or folder-node JSON gets an entry. 
-  - Ordinary filesystem directories such as pages/ do not.
-
-- contentHash is only the last normalized content shared by SQLite and the folder. It is not a cloud hash.
-
-- 
 - 
 - 
 - 

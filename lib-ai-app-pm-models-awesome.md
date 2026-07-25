@@ -2149,6 +2149,9 @@ modified: 2026-06-20T15:49:57.019Z
   - 大多是中等价格
   - 低价grok/kiro
 
+- [Conpera ](https://code.conpera.ai/), 已充值
+  - 仅支持google登录
+
 - [DataCodex ](https://api.datacodex.net/keys), 已充值
   - 中等价格
 
@@ -2197,9 +2200,6 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [AI Maok ](https://ai.maok.shop/home)
   - 会自动删号
-
-- [Conpera ](https://code.conpera.ai/)
-  - 无法注册
 
 - [Duomi ](https://3aa.ai/keys)
   - https://pay.ldxp.cn/shop/ECS3HUD5
