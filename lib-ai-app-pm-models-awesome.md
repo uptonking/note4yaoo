@@ -2160,6 +2160,11 @@ modified: 2026-06-20T15:49:57.019Z
   - 交流群 469032841
   - 稳定性不高
 
+- [xem API ](https://ai.xem8k5.top/pricing), 已充值
+  - plus--0.2
+  - claude--0.3
+  - 赞助和额度充值入口：https://afdian.com/a/cong0707
+
 - [Kun-Api /sub2api](https://kunkun666.xyz/keys)
   - 低价deepseek-flash
 
@@ -2260,11 +2265,6 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [Codex不限量 /sub2api](https://codex.0u0o.com/dashboard)
   - plus-0.06
-
-- [xem API ](https://ai.xem8k5.top/pricing)
-  - plus--0.2
-  - claude--0.3
-  - 赞助和额度充值入口：https://afdian.com/a/cong0707
 
 - [AI-Relay ](https://www.ai-relay.org/dashboard)
   - plus--0.1

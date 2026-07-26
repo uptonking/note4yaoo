@@ -63,7 +63,7 @@ modified: 2026-04-11T01:31:17.720Z
   - multi-column layout
   - hybrid table and doc
 
-project `superdoc` (at folder `../superdoc` ) implements renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed.
+project `superdoc` (at folder `../superdoc` ) implements renders, edits, and automates `.docx` files in the browser, headless on the server, and within AI agent workflows. but it is AGPL licensed. 
 - the final goal is to implement a framework-agnostic, modular, extensible, headless ai docx editing solution named `begonia` similar to `superdoc` in current folder to avoid the licensing issues.
 - begonia should be implemented in a modular and extensible architecture for core features, with functional programming style.
 
@@ -141,6 +141,8 @@ you have worked on this problem several times but features are still lacking. Th
 - prioritize and recheck/improve major features like document viewport/layout-engine(supports multi-column) like superdoc, toggling pagination, layout modes support vertical/horizontal/book like superdoc, multi-column layout supports unequal column widths like superdoc, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container like superdoc, zoom in/out, Canvas-based text measurement, performant line-breaking like superdoc, comment, OOXML-support, API, SDK, CLI, Agent. 
 - you may deep research, and reference the upstream superdoc code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues. 
 - core implementation in begonia for major features should be framework-agnostic without react, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
+
+- `./superdoc2` is a experimental toy that might be a reference for begonia in the future, just ignore all files at `./superdoc2` for now.
 
 ### draft-begonia
 
@@ -573,7 +575,6 @@ project `directus` (at folder `../directus` ) is a source-available licensed, po
 - project directus-rstore(at folder `../directus-rstore`, MIT license) implements a local-first data store for Vue and Nuxt applications. It makes it easy to build reactive Vue and Nuxt applications, and connect to your backend with hooks or plugins. A TASK is to build similar utils as sub packages in dreamansion to make it easy to build reactive applications for rstore, react and dreamansion. The core packages in directus-rstore like @rstore/core, @rstore/directus, @rstore/vite-directus ... are all framework agnostic. you might use similar architecture to build similar packages like @datalking/rstore-react, @datalking/rstore-dreamansion, @datalking/rstore-vite-dreamansion, playground-react-dreamansion .... you might reuse some code or just import the rstore related packages (from npm) for implementation in dreamansion since it is MIT license. you might use similar dependencies like the packages used in rstore and implement similar logic for dreamansion utils packages. @rstore/directus package is built with @directus/sdk, similarly, @datalking/rstore-dreamansion should be built with @datalking/dreamansion-sdk. for the example playground-react-dreamansion app, you might refer to the doc `../directus-rstore/docs/plugins/vite-directus.md`, then build similar app to showcase the integration of rstore, react and dreamansion, you might build examples to showcase how to use @datalking/rstore-vite-dreamansion to generate rstore collections and a dreamansion plugin in react app, how to use @datalking/rstore-react for a react app where you create the store yourself. for complicated state management in react examples, you might use zustand if necessary. you might add more examples to showcase the core features of rstore and dreamansion like Data Query/Mutation, Cache, Batching, reusable modules, Offline, Devtools.
 
 - features that may be planned but delayed(not in current goal): full parity of directus-style admin UI/UX, complicated multi-user/team/workspace/access-control, sso auth, workflow automations, extension marketplace, AI Assistant, MCP server, GraphQL API.
-- features that may be ignored in dreamansion: GraphQL API.
 
 - you have migrated/reimplemented some features from upstream directus to dreamansion.
 
@@ -758,7 +759,7 @@ This project `colanode` (also named redmansion) is a local-first Slack and Notio
   - when app.sqlite exits but workspace.sqlite is missing: if using colannode to open a folder does not contain .colanode/manifest.json, use the user info from app.sqlite, a workspace with the same name of the folder is created automatically, local folder as a sync target is auto set. if using colannode to open a folder contains .colanode/manifest.json, use the user info from app.sqlite, ask the user to sync or just use it locally.
   - generally, local sqlite is the source of truth, before updating local sqlite with reparsing local files, sync the cloud data to local sqlite first, then provide the user with conflicts list if any conflict exists.
 - colanode is designed to be offline first, user mostly manage files at local folder or cloud/self-hosted server, local sqlite should be invisible to user: in most cases, before updating local sqlite, fetch cloud content first, then update local sqlite by cloud changes(always succeed), then try to update local sqlite by changes from local files(if conflicts exist, provide list).
-- downloading files/attachments/binary to local folder sync target should be lazy and follow the file structure in the workspace, for example, a `pets/cat.png` should be only exported to local folder sync target at `pets/cat.png` when it is clicked/opened, to simplify the implementation, generally the attachment/file download result should be success or failure, all or nothing, no crash intermediate state, interrupted downloads or incompleted downloads should be deleted. no global cache or private .staging design for this feature.
+- downloading files/attachments/binary to local folder sync target should be lazy and follow the file structure in the workspace, for example, a `pets/cat.png` should be only exported to local folder sync target at `pets/cat.png` when it is clicked/opened, to simplify the implementation, generally the attachment/file download result should be success or failure, all or nothing, no crash intermediate state, interrupted downloads or incompleted downloads like *.part should be auto deleted. no global cache or private .staging design for this feature.
 
 - for offline use of desktop app, logout does not remove data, logout just show the onboarding page with user avatar that enable login again quickly, if user clicks the avatar to login again, most data/ui before logout just restores. when logout, most data stays unchanged, but cloud-server/local-folder syncing stops if exists; when login again, most data/ui before logout shows again, cloud-server/local-folder syncing auto starts.
 
@@ -772,7 +773,8 @@ This project `colanode` (also named redmansion) is a local-first Slack and Notio
 
 - in joplin app, when sync target is set to a local folder, image are not exported as .jpg/.png but random name like `.resource/11ebaf4a20084f99879f4af3b763d363`, which is inconvenient. in colanode, please just export the image in a readable format like `attachments`
 
-- 
+- Colanode desktop remains single-instance; simultaneously sharing one folder target between independent Colanode processes is outside this phase.
+
 - 
 - 
 - 
@@ -899,6 +901,8 @@ you might refactor/reorganize the tests architecture/logic to make it correct, f
 - most sequential tests should be avoided , you might deisgn better tests if you want.
 
 - you should rerun the full tests again after you finish your fix, repeat until full tests pass.
+
+- if my macos system is overloaded, you can run the tests at higher time budget. 
 
 - tests files in each package should existing as sibling folder of `src`. for example, all tests for `packages/core/src` should be put at ``packages/core/__tests__` , tests files like `parse.test.ts` should not be put inside `src` folder.
 
