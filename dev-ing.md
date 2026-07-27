@@ -342,6 +342,11 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0727
+
+- I'm spotting a concrete performance issue: the code hashes every file on every export pass, and then hashes the destination again during the copy operation. Since the file path and destination are the same after adoption, this means we're doing redundant hash computations that could be eliminated.
+  - The fix is straightforward — the manifest already tracks mtime, size, ctime, and attachmentVersion, and there's already a matchesFingerprint utility that does exactly this comparison. I can short-circuit the hash computation by checking the fingerprint against the previous item, reusing the cached hash when nothing has changed. This matters because sync passes fire every 60 seconds plus on every content event with a 500ms debounce, so typing in a document would re-hash all attachments in the workspace unnecessarily. I need to verify these performance issues empirically rather than just by code inspection. Let me trace through getLocalFile and adoptFilePath to confirm the path repointing actually happens, and I should also flag that O(n²) string comparison in the exporter at line 242 — for a 10k-page workspace that's 100 million comparisons.
+
 ## 0724
 
 - redmansion

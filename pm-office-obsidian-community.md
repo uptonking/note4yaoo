@@ -477,7 +477,9 @@ None.
 
 - ## 
 
-- ## 
+- ## [The Complete Guide to the Obsidian CLI - Everything You Can Do From the Terminal : r/ObsidianMD _202607](https://www.reddit.com/r/ObsidianMD/comments/1v61dyh/the_complete_guide_to_the_obsidian_cli_everything/)
+  - In this new article, I go deep on it: what the Obsidian CLI actually is (and why it’s NOT the old third-party obsidian-cli), how to enable it on macOS, Windows, and Linux, every command family, the interactive TUI, eval and the JavaScript API, and the different ways to reach your vault from the terminal.
+  - [The Complete Guide to the Obsidian CLI - Everything You Can Do From the Terminal _202607](https://www.dsebastien.net/the-complete-guide-to-the-obsidian-cli-everything-you-can-do-from-the-terminal/)
 
 - ## [What’s the best use of the Obsidian CLI? : r/ObsidianMD _202602](https://www.reddit.com/r/ObsidianMD/comments/1racz6l/whats_the_best_use_of_the_obsidian_cli/)
 - It's agents and composibility. You can describe a highly constrained workflow and package it in a skill.

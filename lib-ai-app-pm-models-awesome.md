@@ -1567,8 +1567,6 @@ modified: 2026-06-20T15:49:57.019Z
     - Cursor Auto｜超账单｜库存号
     - Cursor Pro Plan 20$官方套餐【已用完高级模型额度】
     - 可Auto、Composer模型｜可对接Api
-  - [奥仔小铺的小店 - 链动小铺  ](https://pay.ldxp.cn/shop/aozai)
-    - windsurf低价
 - [AI源头-oak的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/oak)
   - tg频道：https://t.me/dabaizu 
   - 接码多, paypal
@@ -1925,6 +1923,7 @@ modified: 2026-06-20T15:49:57.019Z
 - tips
   - ? 大厂的优惠活动更多, 优先cursor/kiro/antigravity
   - 二手号: 速刷号掉号快, 不会多人用, 质保掉号还是几天, 优先账密而不是token登录
+  - ide相比于cc/codex的自动化弱一点, 是否实现了/goal或/loop
 
 - cursor内置的都是非常高级的模型claude/haiku/gpt/gpt-mini/composer/gemini/grok/glm/kimi, 所以用auto模型完成普通开发也可考虑
   - 咸鱼上的cursor-pro废号可考虑，保证登录官网且是Pro号，可以自己修改账号密码，有效期15以上
@@ -1932,6 +1931,7 @@ modified: 2026-06-20T15:49:57.019Z
     - 👀 部分号来自速刷cursor pro, 刷完了再转卖
     - 速刷号速刷号！非月号非月号，在1天内使用完毕
     - 部分号是拼车收过来的号 不可能保证一定一个人用 部分账号两人共享使用。
+  - 有商家聚合了cursor账号， 然后按天/周/月卖cursor用量，额度由商家定义
   - 高级模型额度已用完，只剩Auto+Composer模型额度，大概在100刀额度。 
   - 可在账户余量界面看到剩余composer/auto的用量，来估算余量
   - ✨ 有商家甚至推出了自动换号的月卡， 价格合适也可考虑
@@ -1943,7 +1943,8 @@ modified: 2026-06-20T15:49:57.019Z
 
 ```
 你好, 我想买个划算的用完了高级模型的 cursor pro。
-1. 请问你这个是不是用漏洞的速刷号，据说速刷号掉号快, 发给我的是正常账密，还是token？
+1. 请问你这个是不是用漏洞的速刷号，据说速刷号掉号快, 发给我的是正常账密，还是token, 需要安装专门的插件吗？
+1. 请问你这个是不是用漏洞的速刷号，据说速刷号掉号快, 发给我的是正常账密，还是token, 需要安装专门的插件吗？
 2. 买好后是我一个人用吗，还是多人用, 我不想买共享的
 3. 下个月几号到期, auto模型用了多少了， 用的不多我能接受
 4. 我不会反代，就正常用auto模型， 如果掉号会质保换号对吗
@@ -1954,11 +1955,66 @@ modified: 2026-06-20T15:49:57.019Z
   - 所以 ¥25的supergrok 提供的composer模型 不如 ¥20的cursor pro提供的100刀auto池
   - supergrok不能包能用到一个月, 也不稳定
 
+- cursor-free
+  - 只能使用auto模型，约200W+ token（$2额度）。有限的Tab 补全。
+  - 所以100个free号大概能提供 2亿 token
+
 - [Cursor 专卖的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/cursor-pro)
   - cursor--¥80
     - 质保十五天！支付宝支付，正价充值
     - 邮箱----密码----Token
     - 当前商品是提前预制，非现场激活，有效时限 25 - 30 天左右
+- [微创科技的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/wckj)
+  - [向键雄 - 区块链全栈开发工程师 | Alvin Xiang ](https://www.alvinx.cn/home/about)
+  - cursor日卡-¥10, 不换号-插件计费, 目前只有一人用完，自述连用了18个小时
+  - cursor周卡-¥30
+  - cursor月卡-¥70, 不换号-插件计费-一天100-200额度
+- [CursorAoto月卡低至0.6元/天_闲鱼  ](https://www.goofish.com/item?spm=a21ybx.search.searchFeedList.6.464919d0EyJ0KW&id=1049251565744&categoryId=201449620)
+  - 30天-¥18.00， 24小时50个号，不会一小时内50个号一下放开
+- [Cursor Auto无限-30/d _闲鱼 ](https://www.goofish.com/item?spm=a21ybx.personal.feeds.2.4a996ac2Nu0xlf&id=1057431461577&categoryId=50023914)
+  - 30天-¥18.8， 每天限制30个号
+  - 1天-¥0.8
+- [Cursor 三十天无限续杯免费试用\_闲鱼 ](https://www.goofish.com/item?spm=a21ybx.search.searchFeedList.6.3a5c3c64bRMh8A&id=1053179367510&categoryId=201449620)
+  - 30天-¥26.60
+  - 支持无感换号，也支持自动无感换号
+  - 无限续杯：额度用完一键切换，无需繁琐操作，持续服务不间断
+  - 24小时（无限用）：2.6¥七天（无限用）：12.6¥十五天（无限用）：16.6¥三十天（无限用）：26.6¥
+  - [Cursor无限续杯月卡\_闲鱼 ](https://www.goofish.com/item?spm=a21ybx.search.searchFeedList.12.3a5c3c64bRMh8A&id=1048817506951&categoryId=201449620)
+- [cursor 无限续杯不限额度不限次数\_闲鱼 ](https://www.goofish.com/item?spm=a21ybx.search.searchFeedList.7.3a5c3c64bRMh8A&id=890720573627&categoryId=201449620)
+  - 30天-¥21.49
+- [CURSOR PRO续额—官方无限额\_闲鱼 ](https://www.goofish.com/item?spm=a21ybx.search.searchFeedList.10.3a5c3c64bRMh8A&id=1066953368656&categoryId=201453616)
+  - 无需换号，即可用无线额
+- [Cursor登录助手 ](https://www.xxdlzs.top/)
+  - [AI续杯工具官方授权店铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/xxdlzs)
+  - kiro, cursor
+  - 30天-¥36.8
+- [Cursor 无限续杯无感换号独享账号\_闲鱼 ](https://www.goofish.com/item?spm=a21ybx.search.searchFeedList.3.4761330awGJYXE&id=1070664432013&categoryId=201449620)
+  - 独享free：无共享、无限制
+
+- [cursorpro 会员独享\_闲鱼 ](https://www.goofish.com/item?spm=a21ybx.search.searchFeedList.2.4761330awGJYXE&id=1071187204306&categoryId=201449620)
+  - 全功能可用，智能补全+多模型切换
+- [Cursor不限量不限速无限爽玩-天卡 _闲鱼 ](https://www.goofish.com/item?spm=a21ybx.search.searchFeedList.4.3a5c3c64bRMh8A&id=1059427654555&categoryId=201449620)
+  - 天卡-¥15， 无限使用全高级模型
+  - 月卡-¥300， 可用时长：每天不限时，不限量
+  - 年卡-¥668， 可用时长：每天不限时，不限量
+- [cursor无限刷所有模型 _闲鱼 ](https://www.goofish.com/item?spm=a21ybx.search.searchFeedList.2.3a5c3c64bRMh8A&id=1068897365432&categoryId=201449620)
+  - 无限刷最高级 账单可查
+  - 付款成功立即发放登录口令，掉线可自行切换口令重连。
+  - 不是中转
+  - 套餐时长为在cursor原生窗口发提示词开始倒计时。中途下线、掉线、闲置不使用，时间持续消耗，不会暂停。
+  - 适合超级重度使用
+
+- [豪华专车 · 拼车候车厅 ](https://51aibtc.cn/cp)
+  - 3～5 人合租同一 Cursor Pro 号，错峰使用
+  - 多人合租同一 Cursor Pro 号，错峰使用，请勿多人同时上号，否则易「炸车」。
+  - 风险拼友自担：炸车、卡不上、号异常等一切风险由拼友自行承担，平台不担责、核销后不退款。
+  - 还提供了开车后发布token api获取收益的功能
+- [cursor续杯会员店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/WCT9GRNG)
+  - cursorpool插件 [cursor会员pro账号稳定代充AI无限续杯编程辅助工具不降智写代码_闲鱼 ](https://h5.m.goofish.com/item?id=1051212408984)
+  - [AgentAPI /NewAPI](https://agentapi.one/)
+  - 月卡-¥56, 3000额度≈240刀 , 不如官方
+- [Cursor Pro - 阿泽AI店铺 ](https://94fk.cn/)
+  - 按天购买, 似乎50起买
 - [黑客AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Loong)
   - [词元神 - 全球AI聚合平台 ](https://ciyuanshen.top/)
   - cursor--¥50
@@ -1972,6 +2028,10 @@ modified: 2026-06-20T15:49:57.019Z
     - 插件只支持win10以上电脑，支持mac,而且支持ssh
 - [Gemini Pixel 设备认证 ](https://autopixel.qzz.io/blackcat)
   - 品类多
+- [奥仔小铺的小店 - 链动小铺  ](https://pay.ldxp.cn/shop/aozai)
+  - Cursor Free Auto 白号
+- [阿C小店 - 在线购买 ](https://chan.vei1.com/)
+  - kiro, cursor
 
 - [AI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/XWTVY86A)
   - kiro
@@ -2048,6 +2108,9 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [Plati. Market : digital goods marketplace ](https://plati.market/)
   - 很多俄罗斯大佬卖ai
+
+- [ggsel – Digital goods marketplace  ](https://ggsel.net/)
+  - 品类似乎比plati更多
 
 - [KnauHip-Ai — 高级 AI 工具发卡站 ](https://www.payline.pics/)
   - 很多低价帐号如kiro/cursor都是10个起购
@@ -2164,6 +2227,9 @@ modified: 2026-06-20T15:49:57.019Z
   - plus--0.2
   - claude--0.3
   - 赞助和额度充值入口：https://afdian.com/a/cong0707
+
+- [zizhucan.xyz ](https://zizhucan.xyz/login)
+  - 低价但不是最低
 
 - [Kun-Api /sub2api](https://kunkun666.xyz/keys)
   - 低价deepseek-flash
