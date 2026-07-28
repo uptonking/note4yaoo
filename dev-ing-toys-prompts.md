@@ -142,8 +142,6 @@ you have worked on this problem several times but features are still lacking. Th
 - you may deep research, and reference the upstream superdoc code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues. 
 - core implementation in begonia for major features should be framework-agnostic without react, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
 
-- `./superdoc2` is a experimental toy that might be a reference for begonia in the future, just ignore all files at `./superdoc2` for now.
-
 ### draft-begonia
 
 - chart and complicated shapes/drawings may be delayed
@@ -168,6 +166,14 @@ you have worked on this problem several times but features are still lacking. Th
 - try to improve/refactor the full tests to make it faster so that full tests running within 1.5 minutes.
 - improve the slow/complicated/heavy parts of tests, 
 you might refactor/reorganize the tests architecture/logic to make it correct, fast, robust, maintainable in the long term.
+
+### superdoc v2
+
+- `./superdoc2` is a experimental toy that might be a reference for begonia in the future, just ignore all files at `./superdoc2` for now.
+
+- the latest minified code for superdoc v2 beta is superdoc@v2.3.0 and @superdoc/docx-engine@0.2.0 at `../ superdoc-v2-beta`, please analyze the minified code and related superdoc v1 code, then restore and improve superdoc v2 at `./superdoc2`.
+
+-  `../ superdoc-v2-beta`'s overall architecture is good enough to follow, just try to restore by the minified code.
 
 ### docx-editor
 
@@ -968,6 +974,7 @@ current code is under active development. please review and refactor code if you
 # play
 
 # llm-toolchain
+- DO NOT use parallel subagents, just explore code directly.
 
 ```prompt
 i start this llm api gateway by `dist/one-api --config config.yaml`. when i use codex-cli with it, codex always shows "exceeded retry limit, last status: 429 Too Many Requests". please analyze logs and related code , and explain to me which channels/providers is the cause of the rate limit ?

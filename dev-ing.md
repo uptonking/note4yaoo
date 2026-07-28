@@ -295,6 +295,8 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 launchctl stop com.donehub && launchctl start com.donehub
 launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.donehub.plist
 
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.newapi.plist
+
 launchctl stop com.cpap && launchctl start com.cpap
 
 # DATA_DIR=~/sub2api-local-data ./sub2api -setup
@@ -341,6 +343,22 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - ?
 - dev-log
   - ?
+
+## 0728
+
+- Your choices define a clean transition: new desktop cloud workspaces become user-selected local copies with explicit server/folder targets, while existing direct server workspaces stop syncing and remain readable until copied.
+- Existing direct server-backed desktop workspaces become read-only legacy snapshots. Users explicitly create target-based local copies from them; the snapshot remains untouched. SQLite remains authoritative, cloud reconciliation runs before folder reconciliation, and attachments remain lazy at natural workspace paths.
+
+- Atomic Folder Imports
+  - Split reconciliation into scan -> plan -> validate -> commit -> export.
+- Do not add .colanode/projection-commit.json or another durable export journal.
+
+- [GitHub+PicGo+JSDELIVER搭建自己的图床（亲测可用） - 知乎 _202402](https://zhuanlan.zhihu.com/p/681945624)
+  - 图片比较多或者准备多平台分发的时候，工作量成倍增加。提高效率的方式是插入在线图片。引用在线的图片，图片本身的插入相对于文件来说就是一串字符，多平台迁移的时候，直接粘贴过去就行了，无需考虑图片的路径问题。
+  - 几个问题：1. 上传到哪里？ 2. 如何上传？ 3. 如何生成链接？
+  - GitHub解决第一个问题
+  - PicGo解决后两个问题: 主要用于将本地图片上传至图床（图像托管服务），以获取可以在网页、博客等地方使用的图片链接。
+- [搭建 Github 免费图床 - 知乎 _202310](https://zhuanlan.zhihu.com/p/641821707)
 
 ## 0727
 

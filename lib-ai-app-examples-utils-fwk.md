@@ -377,7 +377,7 @@ modified: 2025-02-21T18:20:42.624Z
     - I'd want to 'set' the limit to be 92GB so I still have VRAM for the system, and for it to close down applications. I've been thinking how to make it more efficient.
       - This is where I'm looking for either V2 or V3 to go. Although my system is much lighter, that assigned to this with concurrency and VRAM monitoring insight.
 
-- https://github.com/Wei-Shaw/sub2api /1.7kStar/MIT/202602/go/ts/vue
+- https://github.com/Wei-Shaw/sub2api /1.7kStar/MIT>LGPL/202602/go/ts/vue
   - https://demo.sub2api.org/
   - Sub2API-CRS2 一站式开源中转服务，让 Claude、Openai 、Gemini、Antigravity订阅统一接入，支持拼车共享
   - 一个 AI API 网关平台，用于分发和管理 AI 产品订阅（如 Claude Code $200/月）的 API 配额。用户通过平台生成的 API Key 调用上游 AI 服务，平台负责鉴权、计费、负载均衡和请求转发。
@@ -387,6 +387,10 @@ modified: 2025-02-21T18:20:42.624Z
   - 并发控制 - 用户级和账号级并发限制
   - 后端	Go 1.25.7, Gin, Ent, PostgreSQL, Redis
   - 前端	Vue 3.4+, Vite 5+, TailwindCSS
+  - 🛝 
+    - cd frontend && npm run build
+    - go build -tags embed -ldflags="-X main.Version=${VERSION}" -o sub2api ./cmd/server
+  - [chore: change license from MIT to LGPL v3.0 _202604](https://github.com/Wei-Shaw/sub2api/commit/23def40bc5415c04ca3a05bb6d67a6ff1e4a3566)
 
 - https://github.com/0reki/cocodex /MIT/2020603/ts
   - https://cocodex.app/
@@ -418,6 +422,9 @@ modified: 2025-02-21T18:20:42.624Z
   - AI模型聚合管理中转分发系统，支持将多种大模型转为统一格式调用，支持OpenAI、Claude、Gemini等格式，可供个人或者企业内部管理与分发渠道使用
   - 新一代大模型网关与AI资产管理系统
   - 在One API的基础上进行二次开发
+  - 🛝
+    - cd web && npm run build
+    - go build -o new-api
   - [有没有什么能够聚合中转站api的项目呢？ - 开发调优 - LINUX DO](https://linux.do/t/topic/1172062)
   - https://github.com/Veloera/Veloera /GPL/202510/go/js
     - 优秀的 AI API 网关系统

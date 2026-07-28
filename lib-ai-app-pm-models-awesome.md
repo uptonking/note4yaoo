@@ -1924,6 +1924,7 @@ modified: 2026-06-20T15:49:57.019Z
   - ? 大厂的优惠活动更多, 优先cursor/kiro/antigravity
   - 二手号: 速刷号掉号快, 不会多人用, 质保掉号还是几天, 优先账密而不是token登录
   - ide相比于cc/codex的自动化弱一点, 是否实现了/goal或/loop
+  - 月末的优惠: kiro
 
 - cursor内置的都是非常高级的模型claude/haiku/gpt/gpt-mini/composer/gemini/grok/glm/kimi, 所以用auto模型完成普通开发也可考虑
   - 咸鱼上的cursor-pro废号可考虑，保证登录官网且是Pro号，可以自己修改账号密码，有效期15以上
@@ -1931,7 +1932,7 @@ modified: 2026-06-20T15:49:57.019Z
     - 👀 部分号来自速刷cursor pro, 刷完了再转卖
     - 速刷号速刷号！非月号非月号，在1天内使用完毕
     - 部分号是拼车收过来的号 不可能保证一定一个人用 部分账号两人共享使用。
-  - 有商家聚合了cursor账号， 然后按天/周/月卖cursor用量，额度由商家定义
+  - 有商家聚合了cursor free或pro账号， 然后按天/周/月卖cursor用量，额度由商家定义
   - 高级模型额度已用完，只剩Auto+Composer模型额度，大概在100刀额度。 
   - 可在账户余量界面看到剩余composer/auto的用量，来估算余量
   - ✨ 有商家甚至推出了自动换号的月卡， 价格合适也可考虑
@@ -1974,6 +1975,8 @@ modified: 2026-06-20T15:49:57.019Z
 - [Cursor Auto无限-30/d _闲鱼 ](https://www.goofish.com/item?spm=a21ybx.personal.feeds.2.4a996ac2Nu0xlf&id=1057431461577&categoryId=50023914)
   - 30天-¥18.8， 每天限制30个号
   - 1天-¥0.8
+- [Cursor无限续杯！账号自动登录！\_闲鱼 ](https://www.goofish.com/item?spm=a21ybx.search.searchFeedList.11.65cd1c31vjYkt7&id=1070494617734&categoryId=201449620)
+  - 30天-¥18.8， 每天限制40个号
 - [Cursor 三十天无限续杯免费试用\_闲鱼 ](https://www.goofish.com/item?spm=a21ybx.search.searchFeedList.6.3a5c3c64bRMh8A&id=1053179367510&categoryId=201449620)
   - 30天-¥26.60
   - 支持无感换号，也支持自动无感换号
@@ -1990,6 +1993,8 @@ modified: 2026-06-20T15:49:57.019Z
   - 30天-¥36.8
 - [Cursor 无限续杯无感换号独享账号\_闲鱼 ](https://www.goofish.com/item?spm=a21ybx.search.searchFeedList.3.4761330awGJYXE&id=1070664432013&categoryId=201449620)
   - 独享free：无共享、无限制
+- [Cursor Pro、额度包与 AI 编程账号商城 - 小文ai小铺 ](https://yidachuang.top/)
+  - 30天-¥15, 总额度 $100, 似乎只有50个号
 
 - [cursorpro 会员独享\_闲鱼 ](https://www.goofish.com/item?spm=a21ybx.search.searchFeedList.2.4761330awGJYXE&id=1071187204306&categoryId=201449620)
   - 全功能可用，智能补全+多模型切换
@@ -2160,6 +2165,17 @@ modified: 2026-06-20T15:49:57.019Z
   - kiro分组多，还有cc
   - plus--0.04
 
+- [kirotoken - Sub2API ](https://sub.kirotoken.cloud/keys)
+  - [疯狂蛋挞的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/9G8TUUQM)
+  - kiro-no-cache--0.01
+  - kiro-cache--0.02
+- [如梦AI _202607](https://api.rumeng-ai.com/keys)
+  - [如梦科技的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/rumeng)
+  - 0.03元/次，注册送1元
+  - 45一天不限量，但限制并发
+- [转转AI · New API · QuantumNous ](https://api.uu6.top/pricing)
+  - kiro 90缓 0.01元/次
+
 - [超超 mouubox  - /Sub2API ](https://sub2api.mouubox.com/dashboard) , 已充值, 副站
   - [/Sub2API ](https://api.mouubox.com/home), 主站
     - 一个主站一副站, 副站sub2api.mouubox.com,
@@ -2228,7 +2244,7 @@ modified: 2026-06-20T15:49:57.019Z
   - claude--0.3
   - 赞助和额度充值入口：https://afdian.com/a/cong0707
 
-- [zizhucan.xyz ](https://zizhucan.xyz/login)
+- [zizhucan.xyz ](https://zizhucan.xyz/login)， 有中奖余额
   - 低价但不是最低
 
 - [Kun-Api /sub2api](https://kunkun666.xyz/keys)
