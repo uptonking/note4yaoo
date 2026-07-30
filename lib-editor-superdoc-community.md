@@ -45,7 +45,9 @@ modified: 2026-04-20T00:35:49.933Z
 
 - ## 
 
-- ## 
+- ## 🐛 Is there a plan to open source the docx.tools ? I imagine that this could be very useful for and may increase confidence for end users in the redact tool for example since it would be easy to link to whichever LLM provider someone would want
+- https://discord.com/channels/1299087524056010902/1299436491839246409/1531984561117073478
+- we kept it private just because it is deployed/managed in our own infrastructure. but I believe there's a way to split the tools and open-source them specifically - after all they all use SuperDoc under the hood 
 
 - ## [Chinese IME input intermittently fails _202603](https://github.com/superdoc-dev/superdoc/issues/2581)
 - 👷 We found the issue - the editor sometimes drops or reverts Chinese characters mid-input. The root cause is a limitation in the editing engine we use today, which we're replacing as part of a bigger upgrade already underway.

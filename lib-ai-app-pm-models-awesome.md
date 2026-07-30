@@ -1927,12 +1927,19 @@ modified: 2026-06-20T15:49:57.019Z
   - 月末的优惠: kiro
 
 - cursor内置的都是非常高级的模型claude/haiku/gpt/gpt-mini/composer/gemini/grok/glm/kimi, 所以用auto模型完成普通开发也可考虑
+  - 在闲鱼搜cursor的转卖也许能碰上好东西
   - 咸鱼上的cursor-pro废号可考虑，保证登录官网且是Pro号，可以自己修改账号密码，有效期15以上
     - 优先考虑账密登录， 不考虑 发货格式：SessionToken/AccessToken 
     - 👀 部分号来自速刷cursor pro, 刷完了再转卖
     - 速刷号速刷号！非月号非月号，在1天内使用完毕
     - 部分号是拼车收过来的号 不可能保证一定一个人用 部分账号两人共享使用。
   - 有商家聚合了cursor free或pro账号， 然后按天/周/月卖cursor用量，额度由商家定义
+  - 插件 cursorpool 的计费方式， auto和高级模型共享额度， 官方提供大概 100 + 40 刀的额度， 商家的额度是自定义的
+    - [cursor激活插件 | 文档中心 ](https://docs.cloudpp.win/docs/cursor-extention)
+    - 100额度大约5刀， 官方100刀售价70RMB大约对应2000额度
+    - 注意高级模型倍率很高， 其它模型：0.75倍, gpt-5.5：5倍, Sonnet: 7.5倍, Opus: 15倍
+    - 👀 claude模型需要去【配置自定义API】页面勾选 **kiro** , 消耗很高建议额度小于400的不要开
+    - 激活器不绑定设备，但只能单设备使用，不支持多设备同时使用。
   - 高级模型额度已用完，只剩Auto+Composer模型额度，大概在100刀额度。 
   - 可在账户余量界面看到剩余composer/auto的用量，来估算余量
   - ✨ 有商家甚至推出了自动换号的月卡， 价格合适也可考虑
@@ -1944,7 +1951,6 @@ modified: 2026-06-20T15:49:57.019Z
 
 ```
 你好, 我想买个划算的用完了高级模型的 cursor pro。
-1. 请问你这个是不是用漏洞的速刷号，据说速刷号掉号快, 发给我的是正常账密，还是token, 需要安装专门的插件吗？
 1. 请问你这个是不是用漏洞的速刷号，据说速刷号掉号快, 发给我的是正常账密，还是token, 需要安装专门的插件吗？
 2. 买好后是我一个人用吗，还是多人用, 我不想买共享的
 3. 下个月几号到期, auto模型用了多少了， 用的不多我能接受
@@ -1960,6 +1966,9 @@ modified: 2026-06-20T15:49:57.019Z
   - 只能使用auto模型，约200W+ token（$2额度）。有限的Tab 补全。
   - 所以100个free号大概能提供 2亿 token
 
+- [AnyAPI 商城 ](https://ai.lottoz.vip/shop/AG394CE5)
+  - 周卡-¥58， 月卡-¥168
+  - 无限额度解锁高级模型
 - [Cursor 专卖的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/cursor-pro)
   - cursor--¥80
     - 质保十五天！支付宝支付，正价充值
@@ -2212,6 +2221,9 @@ modified: 2026-06-20T15:49:57.019Z
 - [Code-Plan  /NewAPI](https://code-plan.site/pricing), 已充值
   - [GPT-源头供货-招代理的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/IY16OXB7)
   - AMD 顶级服务器 + 10Gbps 带宽
+- [keria - Sub2API ](https://jjhd.cloud/keys)
+  - [icloud 邮箱 GPT PLUS直营店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/A87R3DZP)
+  - 主营卖号， 中转不稳定
 
 - [liusq API ](https://api.liusq.icu/dashboard)
   - 有低倍率分组，但仅充值可用
@@ -2244,7 +2256,10 @@ modified: 2026-06-20T15:49:57.019Z
   - claude--0.3
   - 赞助和额度充值入口：https://afdian.com/a/cong0707
 
-- [zizhucan.xyz ](https://zizhucan.xyz/login)， 有中奖余额
+- [板栗API ](https://banliapi.top/keys)
+  - 低价但不是最低
+
+- [zizhucan.xyz ](https://zizhucan.xyz/)， 有中奖余额
   - 低价但不是最低
 
 - [Kun-Api /sub2api](https://kunkun666.xyz/keys)
