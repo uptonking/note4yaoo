@@ -238,6 +238,13 @@ modified: 2026-01-15T15:33:18.008Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [AMD Lucebox Beats Nvidia DGX Spark by 3.63x on DeepSeek V4 Flash : r/StrixHalo _202607](https://www.reddit.com/r/StrixHalo/comments/1vb0gxe/amd_lucebox_beats_nvidia_dgx_spark_by_363x_on/)
+  - We worked really hard on this, and were able to have Lucebox (AMD Radeon AI PRO R9700 + Strix Halo) to beat one NVIDIA DGX Spark by 3.63x on DeepSeek V4 Flash Decode Speed.
+
 - ## 🆚 [RX 7900 XTX vs Radeon AI PRO R9700 — llama.cpp Vulkan vs ROCm (6 models, token-gen) : r/unsloth _202605](https://www.reddit.com/r/unsloth/comments/1thoonn/rx_7900_xtx_vs_radeon_ai_pro_r9700_llamacpp/)
   - Setup: llama.cpp llama-bench, -fa 1 -ngl 99 -ctk q8_0 -ctv q8_0 -p 512, 2048 -n 128, 256 -r
   - 7900 XTX beats the R9700 by +24–29% on token-gen across the whole slate — memory bandwidth (384-bit vs 256-bit).

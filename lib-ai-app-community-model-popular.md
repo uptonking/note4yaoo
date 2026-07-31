@@ -757,6 +757,35 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Sol vs Terra vs Luna: What Actually Worked for Me : r/codex _202607](https://www.reddit.com/r/codex/comments/1uz7pua/sol_vs_terra_vs_luna_what_actually_worked_for_me/)
+- I tested GPT-5.6 Sol, Terra, and Luna across real tasks in a large TypeScript monorepo with a frontend, backend, desktop and mobile apps, CI/CD, release tooling, and thousands of source files.
+
+What I use:
+
+Sol high: Best default for serious implementation. Strong at following changes across packages, writing tests, handling tooling, and catching platform-specific details.
+
+Sol xhigh: Use for architecture, security, migrations, CI/release workflows, and final reviews. Better judgment, but usually unnecessary for routine implementation.
+
+Sol medium: Good for small, clearly bounded fixes.
+
+Luna high: Surprisingly good for documentation, issue writing, repository navigation, and evidence gathering. It occasionally matched or beat Sol medium there. I would not use it for cross-platform or high-risk implementation because it missed operational details that Sol caught consistently.
+
+What I usually avoid:
+
+Terra: Mixed results. Terra xhigh did very well on one narrow UI task, but the advantage was small. On a more demanding high-risk task, Terra max failed to complete reliably. I now avoid Terra for critical or cross-cutting work.
+
+Max/ultra effort: Usually not worth it. High is my normal sweet spot, with xhigh reserved for decisions where mistakes are expensive.
+
+My biggest lesson: reasoning effort does not replace model capability. Luna xhigh does not automatically become Sol high ... also, a cheaper model can use more tokens or require more correction, so cheaper per token does not always mean cheaper per completed task.
+
+- Similar here. I don’t use terra at all. Mostly Sol high but a lot of Luna xhigh. Luna xhigh and max are slow compared to terra but more token efficient overall it seems.
+
+- Sol only, switch effort according to task complexity and scope, ignore Luna and Terra noise, simple
+
 - ## [5.5 better than Terra? : r/OpenaiCodex _202607](https://www.reddit.com/r/OpenaiCodex/comments/1v0pp94/55_better_than_terra/)
 - GPT-5.6 Terra is designed for workloads that balance intelligence and cost. It roughly corresponds to the mini model tier used in earlier GPT-5 families.
 

@@ -184,6 +184,12 @@ networksetup -getairportpower en0 | grep "On" && networksetup -setairportpower e
 
 - 自动换行(line wrapping): alt + z
 
+### macos-config
+
+- [Tip: Turn off “Shake mouse pointer to locate” to improve battery life [27 DB 4] : r/MacOSBeta _202607](https://www.reddit.com/r/MacOSBeta/comments/1vaw19m/tip_turn_off_shake_mouse_pointer_to_locate_to/)
+  - Go to System Settings → Accessibility → Display → Pointer.
+  - Turn off “Shake mouse pointer to locate.”
+
 ## devtools
 
 - terminal

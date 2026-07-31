@@ -1928,6 +1928,7 @@ modified: 2026-06-20T15:49:57.019Z
 
 - cursor内置的都是非常高级的模型claude/haiku/gpt/gpt-mini/composer/gemini/grok/glm/kimi, 所以用auto模型完成普通开发也可考虑
   - 在闲鱼搜cursor的转卖也许能碰上好东西
+  - pro的auto 和 无限free的auto 区别在于pro不需要经常换号， context更完整
   - 咸鱼上的cursor-pro废号可考虑，保证登录官网且是Pro号，可以自己修改账号密码，有效期15以上
     - 优先考虑账密登录， 不考虑 发货格式：SessionToken/AccessToken 
     - 👀 部分号来自速刷cursor pro, 刷完了再转卖
@@ -1966,9 +1967,23 @@ modified: 2026-06-20T15:49:57.019Z
   - 只能使用auto模型，约200W+ token（$2额度）。有限的Tab 补全。
   - 所以100个free号大概能提供 2亿 token
 
+- [AI助手 — 无限 auto 额度 · 一键登录 Cursor ](https://vaultbyte.top/)
+  - [AI助手使用教程T1 ](https://www.kdocs.cn/l/crNHsGjTirob)
+  - [cursor（常见问题处理方法）T1 ](https://www.kdocs.cn/l/ccqUKlbIdxLV)
+  - [AI助手的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/aizs)
+  - 月卡--¥26.8
+  - 无限 auto 额度 · 一键登录 Cursor，无需自行注册 Cursor 账号
+  - 系统冷却倒计时： 获取太多了，触发系统冷却机制，12点重置，等不到私聊我发激活码
+  - 当当前账号额度用尽时，手动前往 AI助手 的 Cursor 页面点击「获取账号并登录」。系统会自动完成重置机器标识、写入新凭证等整套逻辑，整个过程只需 5~10 秒。
+  - Windows 用户和 macOS Intel 芯片用户完美支持无感换号；macOS Apple Silicon（M1/M2/M3/M4等 ARM 架构）用户暂不兼容 无感换号
+  - 需要用auto，Cursor新版本只支持Composer 2.5fast!! 请使用Auto，3.6.21之前的版本
+  - 如果是com2.5模型就回退到auto模型这样额度消耗低很多。 Auto更耐用点Composer2.5fast消耗很快， 强烈建议多使用新建对话，这样消耗就少很多
+  - 如果用量很大而且又着急，可以继续拍一个新的卡密重新在软件助手上注册一个账号去激活这个新卡密，两个卡密搭配着用
 - [AnyAPI 商城 ](https://ai.lottoz.vip/shop/AG394CE5)
   - 周卡-¥58， 月卡-¥168
   - 无限额度解锁高级模型
+- [阿权小铺 - 源头好货 | Cursor Pro  ](http://39.97.231.221/)
+  - 各种cursor套餐
 - [Cursor 专卖的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/cursor-pro)
   - cursor--¥80
     - 质保十五天！支付宝支付，正价充值
@@ -1979,6 +1994,9 @@ modified: 2026-06-20T15:49:57.019Z
   - cursor日卡-¥10, 不换号-插件计费, 目前只有一人用完，自述连用了18个小时
   - cursor周卡-¥30
   - cursor月卡-¥70, 不换号-插件计费-一天100-200额度
+- [Lyla-精灵小店(gpt, kiro, 各大会员优惠充值)的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/lyla)
+  - Cursor月卡=【激活后30天内有效+75个账号（共计15000积分，每次换号消耗200积分）Auto模型+无感秒换号+两台设备+支持win、mac、linux系统】
+  - kiro-infinity插件
 - [CursorAoto月卡低至0.6元/天_闲鱼  ](https://www.goofish.com/item?spm=a21ybx.search.searchFeedList.6.464919d0EyJ0KW&id=1049251565744&categoryId=201449620)
   - 30天-¥18.00， 24小时50个号，不会一小时内50个号一下放开
 - [Cursor Auto无限-30/d _闲鱼 ](https://www.goofish.com/item?spm=a21ybx.personal.feeds.2.4a996ac2Nu0xlf&id=1057431461577&categoryId=50023914)
@@ -2579,6 +2597,9 @@ modified: 2026-06-20T15:49:57.019Z
   - pp-¥1.6
 
 ## email
+
+- outlook-tools
+  - [星辰邮箱大师 ](https://www.xckj.site/easy-mailbox/)
 
 - [T佬的gmail批发渠道 ](https://ai666.dnxb.cc/)
   - 全tg最便宜gmail邮箱批发

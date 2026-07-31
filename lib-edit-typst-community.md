@@ -123,6 +123,12 @@ modified: 2025-12-25T19:54:56.482Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Open sourced all 42 templates from my Typst resume builder : r/typst _202607](https://www.reddit.com/r/typst/comments/1v90o20/open_sourced_all_42_templates_from_my_typst/)
+
 - ## [Calepin: Computational notebooks in Typst : r/typst _202606](https://www.reddit.com/r/typst/comments/1txkdqu/calepin_computational_notebooks_in_typst/?sort=top)
   - https://github.com/vincentarelbundock/calepin /MIT/202606/rust
   - strongly inspired by Quarto, but is intended to be a Typst-first design.
