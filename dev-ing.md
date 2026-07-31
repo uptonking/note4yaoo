@@ -344,6 +344,24 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0731
+
+- pause/resume 可用于实现 draft/publish
+
+- colanode desktop app is offline-first, if a workspace has a cloud/self-hosted server as a sync target, user can pause/resume syncing manually. if user clicks the pause syncing button, user can still edits the content from desktop ui or external editor like vscode, then when user click the resume syncing button, changes should be handled correctly. the offline editing and syncing implementation has a lot in common with the use case of opening a local folder with valid manifest config. you might refactor/optimize/unify the architecture to share some common logic and make the data flow correct, extensible and consistent.
+- please analyze related offline editing and syncing data-flow/code, then make a plan to improve it. 
+- do you think it is a good idea to unify the data flow for these different use cases? does it make the logic clean? does it make it easy to maintain in the long term? if yes, refactor and improve it, if not, you might propose a better architecture or idea.
+
+- manual pause and sync should work for desktop app first, web/mobile is not required now. should pausing a cloud sync target stops all synchronizers, watchers ? when cloud sync target is paused, user can still edits the content from desktop ui or external editor like vscode, when user edits content from desktop ui, local files of sync target should update automatically, when a local file of sync target is edited by vscode, watcher should still update only changed files to local sqlite. please analyze related data flow, then improve the plan
+
+- unifying these workflows is the right direction, but only at the reconciliation-cycle level. Normal background sync, manual resume, opening a manifested folder, and recovery should share cloud- first ordering, serialization, cancellation, and conflict handling. Recovery must retain its separate identity validation, commit, and rollback state machine.
+  - The canonical flow becomes: cloud pull -> SQLite merge -> folder reconcile -> release outbound cloud work
+  - While cloud sync is paused, SQLite and folder reconciliation continue normally; cloud queues and checkpoints remain intact.
+
+- When a cloud target exists but cannot be fetched, what should happen to newly detected folder edits?
+  - Wait for cloud
+  - If the configured cloud target cannot be fetched, folder edits remain untouched and pending rather than being imported into SQLite.
+
 ## 0728
 
 - Your choices define a clean transition: new desktop cloud workspaces become user-selected local copies with explicit server/folder targets, while existing direct server workspaces stop syncing and remain readable until copied.

@@ -182,17 +182,19 @@ then compare the architecture/implementation of superdoc and docx-editor, explai
 
 ## 📌 hardoc(onlyoffice-pdf)
 
+onlyoffice(code is at several git repos in current folder) implements reads, edits, and file conversions for common office files like .docx/.xlsx/.pptx.
+
 onlyoffice-pdf-editor(code is at several git repos in current folder) implements renders, edits, annotates `.pdf` files in the browser, but it is AGPL licensed.
-- the final goal is to implement a new headless, extensible pdf solution named hardoc with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues.
+- the goal is to implement a new headless, extensible pdf solution named hardoc with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat at folder `./watoffice/hardoc` to avoid the licensing issues.
 - hardoc pdf editor should be more of a headless client-server architecture, so that a hardoc pdf web/cli/sdk can be built on the same architecture. the hard web pdf editor ui/ux might be similar to onlyoffice-pdf-editor.
 - hardoc should be implemented in a modular and extensible architecture for core pdf features like viewing and editing, with functional programming style.
 
 - goals for pdf editing:
-01. modular and extensible architecture for pdf viewing and editing: you may design sub packages like state/view/command/transform/... when you need. you may design a sdk if you want.
-02. in-place text editing feature like adobe acrobat; undo/redo
-03. pdf highlights, annotations with simple shapes
-04. pdf file open and save
-05. in-place text editing is the most important feature to implement now, the following features can be planned, but unnecessary to implement at this moment: forms, ocr, collaboration, ai-editing, complicated shapes, search. any feature you feel unimportant to in-place text editing can be delayed to implement,  but architecture should be extensible enough to support them later.
+01.  modular and extensible architecture for pdf viewing and editing: you may design sub packages like state/view/command/transform/... when you need. you may design a sdk if you want.
+02.  in-place text editing feature like adobe acrobat; undo/redo
+03.  pdf highlights, annotations with simple shapes
+04.  pdf file open and save
+05.  in-place text editing is the most important feature to implement now, the following features can be planned, but unnecessary to implement at this moment: forms, ocr, collaboration, ai-editing, complicated shapes, search. any feature you feel unimportant to in-place text editing can be delayed to implement,  but architecture should be extensible enough to support them later.
 
 - tech stack needs to use open source libs/fwk:
 you may reference architecture and implementation details of onlyoffice pdf editor. 
@@ -297,6 +299,35 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 - ONLYOFFICE’s solution is good enough at the architecture level, not at the implementation level. The strong pattern in the local source is: one document-owned runtime, promotion/recognition when native editing gets unsafe, and native engine primitives for operations like scanPage, RedactPage, merge/split, form extraction, and appearance generation. 
   - For hardoc, it seems the appropriate architecture might be a service-authoritative pdf runtime, rather than trying to force every parity-critical operation through pure TS logic. 
   - hardoc should be more of headless client-server architecture. native/source first, promote only for unsafe contents/objects.
+
+### draft-excel
+
+- onlyoffice(code is at several git repos in current folder) implements reads, edits, and file conversions for common office files like .docx/.xlsx/.pptx. 
+- hardoc at folder `./watoffice/hardoc` implements a pdf editor like onlyoffice-pdf-editor/adobe-acrobat. I also wants to implement a headless, extensible spreadsheet editor like onlyoffice-spreadsheet-editor/microsoft-office-excel at folder `./watoffice/watarble`. 
+  - onlyoffice spreadsheet related code exists in several repos/folders, please analyze the core architecture for spreadsheet and pdf. 
+- the goal is to implement a headless, extensible, framework-agnostic excel/spreadsheet editing solution named watarble at `./watoffice/watarble` to avoid the licensing issues. 
+  - watarble should be more of a headless client-server architecture, so that a watarble spreadsheet web/cli/sdk can be built on the same architecture. the watarble web spreadsheet editor ui/ux might be similar to onlyoffice-spreadsheet-editor.
+  - watarble should be implemented in a modular and extensible architecture with functional programming style.
+
+- you have migrated/reimplemented some features from onlyoffice-spreadsheet-editor to watarble.
+
+- you may reference the upstream onlyoffice-spreadsheet-editor code(code is at several git repos in current folder), use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
+- you may even do a big code refactor for watarble to match major features of onlyoffice-spreadsheet-editor in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+
+- you might refactor/reorganize the architecture/code of watoffice/hardoc/watarble to make major features/architecture correct, modular, extensible for long-term maintenance.
+
+- deep research and make a plan, then implement watarble to match major features of onlyoffice-spreadsheet-editor, or even better than onlyoffice-spreadsheet-editor, without licensing issues.
+
+- please analyze related architecture/code in onlyoffice, then explain to  me the core architecture for onlyoffice-spreadsheet-editor, then help me decide whether to build a standalone spreadsheet editor in a new folder or implement the spreadsheet editor inside `./hardoc` and share/reuse some code with hardoc.
+  - then help me decide whether to create two projects as hardoc and sheet-editor or should i implement sheet-editor inside hardoc to share/reuse some code. which architecture is better and easier to migrate features from onlyoffice to hardoc/sheet-editor in the future.
+
+- for excel formula feature, you might use npm package `@formulajs/formulajs`, the source code is at folder `./formulajs` for your reference.
+
+- 
+- 
+- 
+- 
+- 
 
 ## 📌 grist-office
 
@@ -749,6 +780,9 @@ This project `colanode` (also named redmansion) is a local-first Slack and Notio
 - draft
   - move tests inside src folder to sibling test folders of src like
   - login user can open cloud workspace
+  - rename the sync target of local folder
+  - improve sync cloud first then reconcile local files, what if local file needs dynamic computing
+  - improve web/mobile
 
 - roadmap
   - image
@@ -761,8 +795,8 @@ This project `colanode` (also named redmansion) is a local-first Slack and Notio
   - when colanode desktop app has a local folder as a sync target, it should auto export the colanode contents to local folder and markdown files that mirrors file tree structure in colanode and write metadata at `.colanode/manifest.json`, every note should be exported as a markdown file, for example, a note like `work/meetings` has subpages, then the note should be exported as a nested folder like `work/meetings/` and the note itself should be exported as `work/meetings/_index.md` (or work/meetings/meetings.md or work/meetings/meetings_readme.md or work/meetings/meetings_readme_.md to avoid name conflict), notes without subpages should be exported as markdown file directly. you might store colanode id/hash/file-path relations or other metadata at `.colanode/manifest.json` if you want.
   - when user uses colanode desktop app, local sqlite is source of truth, data exported to local folder automatically. when user uses external editor like vscode to edit the local folder, then user opens the same folder with the same .colanode/manifest.json or colanode local folder watcher detects the file changes, colanode desktop should parse all the local markdown files or changed file, then try to update the local sqlite. Before updating local sqlite, if a cloud server sync target is set, check the last sync status and changed files, if no conclict, merge cloud changes to local sqlite first, then update local sqlite with reparsed local markdown files, if conflicts exist, show a conflicts file list and ask the user to select cloud content or local file content to save. I think this workflow in my idea makes it easy to implement and works good enough for one-person workflow. 
   - when user use colanode desktop app to open local folder, if the folder does not contain .colanode/manifest.json, a workspace with the same name of the folder should be created automatically, the local folder should be set as sync target automatically, other sync targets like cloud/local-server may be added later. if the folder contains .colanode/manifest.json, just pull the latest cloud content to local sqlite first, then try to update the local sqlite with reparsed content of local folder as the similar workflow previously mentioned, the local folder should be set as sync target automatically. 
-  - when both app.sqlite and workspace.sqlite is missing: if using colannode to open a folder does not contain .colanode/manifest.json, auto create a new user and a workspace with the same name of the folder, the local folder should be set as sync target automatically. if using colannode to open a folder contains .colanode/manifest.json, ask the user to login and sync, or just use it locally.
-  - when app.sqlite exits but workspace.sqlite is missing: if using colannode to open a folder does not contain .colanode/manifest.json, use the user info from app.sqlite, a workspace with the same name of the folder is created automatically, the local folder should be set as sync target automatically. if using colannode to open a folder contains .colanode/manifest.json, use the user info from app.sqlite, ask the user to sync or just use it locally.
+  - when both app.sqlite and workspace.sqlite are missing: if using colannode to open a folder that does not contain .colanode/manifest.json, auto create a new user and a workspace with the same name of the folder, the local folder should be set as sync target automatically. if using colannode to open a folder that contains .colanode/manifest.json, ask the user to login and sync, or just use it locally with syncing to local folder enabled and syncing to server disabled .
+  - when app.sqlite exists but workspace.sqlite is missing: if using colannode to open a folder that does not contain .colanode/manifest.json, use the user info from app.sqlite, a workspace with the same name of the folder is created automatically, the local folder should be set as sync target automatically. if using colannode to open a folder that contains .colanode/manifest.json, use the user info from app.sqlite, ask the user to sync, or just use it locally.
   - generally, local sqlite is the source of truth, before updating local sqlite with reparsed local files, sync the cloud data to local sqlite first, then provide the user with conflicts list if any conflict exists.
 - colanode is designed to be offline first, user mostly manage files at local folder or cloud/self-hosted server, local sqlite should be invisible to user: in most cases, before updating local sqlite, fetch cloud content first, then update local sqlite by cloud changes(always succeed), then try to update local sqlite by changes from local files as mentioned above, if conflicts exist, provide the conflicts list.
 - downloading files/attachments/binary to local folder sync target should be lazy and follow the file structure in the workspace, for example, a `pets/cat.png` should be only exported to local folder sync target at `pets/cat.png` when it is clicked/opened, to simplify the implementation, generally the attachment/file download result should be success or failure, all or nothing, no crash/intermediate state, interrupted downloads or incompleted downloads like *.part should be auto deleted. no global cache or private .staging design for this feature.

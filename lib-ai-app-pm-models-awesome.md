@@ -1979,11 +1979,18 @@ modified: 2026-06-20T15:49:57.019Z
   - 需要用auto，Cursor新版本只支持Composer 2.5fast!! 请使用Auto，3.6.21之前的版本
   - 如果是com2.5模型就回退到auto模型这样额度消耗低很多。 Auto更耐用点Composer2.5fast消耗很快， 强烈建议多使用新建对话，这样消耗就少很多
   - 如果用量很大而且又着急，可以继续拍一个新的卡密重新在软件助手上注册一个账号去激活这个新卡密，两个卡密搭配着用
+
 - [AnyAPI 商城 ](https://ai.lottoz.vip/shop/AG394CE5)
   - 周卡-¥58， 月卡-¥168
   - 无限额度解锁高级模型
+
+- [Cursor Pro、额度包与 AI 编程账号商城 - 小文ai小铺 ](https://yidachuang.top/)
+  - [卡密与 Token 提取工具 - 小文ai小铺 ](https://yidachuang.top/extract)
+  - 各种灰色cursor账号
+  - 30天-¥15, 总额度 $100, 似乎只有50个号
 - [阿权小铺 - 源头好货 | Cursor Pro  ](http://39.97.231.221/)
   - 各种cursor套餐
+
 - [Cursor 专卖的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/cursor-pro)
   - cursor--¥80
     - 质保十五天！支付宝支付，正价充值
@@ -2020,8 +2027,6 @@ modified: 2026-06-20T15:49:57.019Z
   - 30天-¥36.8
 - [Cursor 无限续杯无感换号独享账号\_闲鱼 ](https://www.goofish.com/item?spm=a21ybx.search.searchFeedList.3.4761330awGJYXE&id=1070664432013&categoryId=201449620)
   - 独享free：无共享、无限制
-- [Cursor Pro、额度包与 AI 编程账号商城 - 小文ai小铺 ](https://yidachuang.top/)
-  - 30天-¥15, 总额度 $100, 似乎只有50个号
 
 - [cursorpro 会员独享\_闲鱼 ](https://www.goofish.com/item?spm=a21ybx.search.searchFeedList.2.4761330awGJYXE&id=1071187204306&categoryId=201449620)
   - 全功能可用，智能补全+多模型切换
@@ -2203,6 +2208,11 @@ modified: 2026-06-20T15:49:57.019Z
 - [转转AI · New API · QuantumNous ](https://api.uu6.top/pricing)
   - kiro 90缓 0.01元/次
 
+- [JinnyAPI ](https://jinnyapi.com/keys), 已充值
+  - 注意充值倍率是 1:10
+  - 大多是中等价格
+  - 低价grok/kiro
+
 - [超超 mouubox  - /Sub2API ](https://sub2api.mouubox.com/dashboard) , 已充值, 副站
   - [/Sub2API ](https://api.mouubox.com/home), 主站
     - 一个主站一副站, 副站sub2api.mouubox.com,
@@ -2215,6 +2225,13 @@ modified: 2026-06-20T15:49:57.019Z
 - [mdkj  - /Sub2API ](https://mdkj.lol/dashboard), 已充值, 廉价但很不稳定
   - plus--0.025
   - 注意倍率调整 
+
+- [聪明AI /sub2api](https://sub2.congmingai.com/keys)
+  - 充值改为u充值了，最低充值500r。小额充值点左边的小铺链接。
+  - 中等价格
+
+- [TK API](https://tkapi.fun/keys)
+  - 邀请返利充值后返利20%
 
 - [Xybbz /Sub2API](https://sub2api.xybbz.xyz/dashboard)
   - plus--0.045, 算是低价，有点中等价格
@@ -2252,11 +2269,6 @@ modified: 2026-06-20T15:49:57.019Z
   - 提供月卡 90 > 每周100
   - 偶尔能碰到无限额度的天卡, 并发5
   - 夜间偶尔会有超低价分组
-
-- [JinnyAPI ](https://jinnyapi.com/keys)
-  - 注意充值倍率是 1:10
-  - 大多是中等价格
-  - 低价grok/kiro
 
 - [Conpera ](https://code.conpera.ai/), 已充值
   - 仅支持google登录
