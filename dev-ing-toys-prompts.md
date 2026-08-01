@@ -15,6 +15,7 @@ modified: 2026-04-11T01:31:17.720Z
 
 - 有时agent会不停的改代码优化架构， api/format 就出现 v1/v2/v3 的混乱场景
   - 不要一直和agent聊架构， 直接和agent强调核心需求和核心流程， 优先主流程，细节不重要
+  - 可以反问AI，为什么要做大的架构变更，现有的架构有什么问题， 新的架构解决了什么问题
 
 - 
 - 
@@ -751,10 +752,6 @@ project `vscode` in current folder is a popular, open-source, powerful coding id
 - non-goals
   - viewer for large binary files like docx/pdf, just ocred/converted text
 
-- draft
-  - sqlite on server
-  - ocr
-
 This project `colanode` (also named redmansion) is a local-first Slack and Notion alternative that supports writing, databases, subpage and file management. web, desktop, react-native apps are available.
 - project joplin(at folder `../joplin`, AGPL license) is a offline-first note taking app that supports markdown, attachments, ocr, and powerful Synchronization. Windows, Linux, macOS, Android and iOS apps are available, NO web app.
 - The goal is to enhance colanode with offline and syncing related features like joplin, making colanode more powerful and easier to use. You can refer to the architecture/data-flow/code/ideas of joplin, but copying AGPL code should be avoided, you might rewrite it in functional style for colanode.
@@ -769,8 +766,12 @@ This project `colanode` (also named redmansion) is a local-first Slack and Notio
 - 
 - 
 
-- you have implemented part of the goals and features, please analyze related data-flow/code, improve the implementation for the offline and syncing related features, you might refactor/reorganize the architecture/logic to make it correct, fast, robust, maintainable in the long term.
-- review the implementation of the offline and syncing related features, then make a plan to continue to improve it
+- you have implemented part of the goals and features, please analyze related data-flow/code, improve the implementation for the offline and syncing related features, you might refactor/reorganize the architecture/logic to make it correct, robust, extensible, maintainable in the long term.
+- review the implementation of the offline and syncing related features, then make a plan to improve it
+
+- docs/tests/scripts might be outdated, recheck code and data flow to improve colanode.
+
+- please try to analyze and fully understand related data-flow/architecture/code before editing/updating code to make colanode correct, robust without hallucination. 
 
 - 
 - 
@@ -778,15 +779,16 @@ This project `colanode` (also named redmansion) is a local-first Slack and Notio
 ### draft-redmansion
 
 - draft
-  - move tests inside src folder to sibling test folders of src like
   - login user can open cloud workspace
-  - rename the sync target of local folder
-  - improve sync cloud first then reconcile local files, what if local file needs dynamic computing
   - improve web/mobile
+  - sync status/tips
+  - ~~improve sync cloud first then reconcile local files, what if local file needs dynamic computing~~ 
 
 - roadmap
   - image
   - attachment
+  - sqlite on server
+  - ocr
 
 - for a existing local folder that has synced to cloud server previously, how to open the local folder in colanode desktop app again and sync to the cloud server correctly.
 
@@ -800,6 +802,16 @@ This project `colanode` (also named redmansion) is a local-first Slack and Notio
   - generally, local sqlite is the source of truth, before updating local sqlite with reparsed local files, sync the cloud data to local sqlite first, then provide the user with conflicts list if any conflict exists.
 - colanode is designed to be offline first, user mostly manage files at local folder or cloud/self-hosted server, local sqlite should be invisible to user: in most cases, before updating local sqlite, fetch cloud content first, then update local sqlite by cloud changes(always succeed), then try to update local sqlite by changes from local files as mentioned above, if conflicts exist, provide the conflicts list.
 - downloading files/attachments/binary to local folder sync target should be lazy and follow the file structure in the workspace, for example, a `pets/cat.png` should be only exported to local folder sync target at `pets/cat.png` when it is clicked/opened, to simplify the implementation, generally the attachment/file download result should be success or failure, all or nothing, no crash/intermediate state, interrupted downloads or incompleted downloads like *.part should be auto deleted. no global cache or private .staging design for this feature.
+- colanode desktop app is offline-first, if a workspace has a cloud/self-hosted server as a sync target, user can pause/resume syncing manually. if user clicks the pause syncing button, user can still edits the content from desktop ui or external editor like vscode, then when user click the resume syncing button, changes should be handled correctly. the offline editing and syncing implementation has a lot in common with the use case of opening a local folder with valid manifest config. the architecture has been optimized to share some common logic and make the data flow correct, extensible and consistent. manual pause and sync should work for desktop app first, web/mobile is not required now. 
+
+- improve the offline and syncing related features for the use cases of renaming local folder sync target. 
+  - support to rename the sync target of local folder in desktop app ui only, web/mobile is not required. when use clicks the rename button and input new name, just rename the local folder to the new name, related config/logic/watcher should update automatically, and all desktop app features should work after renaming.
+  - when desktop app is open and the local folder is renamed(not from ui, but renamed from filesystem), local folder sync target should be disabled automatically, show a warning at user avatar or notification if you want, most desktop app features should still work with local sqlite. user can add a new local folder sync target later. 
+  - when desktop app is closed/not-open and the local folder is renamed, then user opens desktop app and tries to open/restore the last workspace, local folder sync target should be disabled automatically, show a warning at user avatar or notification if you want, most desktop app features should still work with local sqlite. user can add a new local folder sync target later.
+  - when both app.sqlite and workspace.sqlite exists, and user open a local folder contains valid manifest config, just pull the latest cloud content to local sqlite first, then try to update the local sqlite with reparsed content of local folder as the similar workflow previously mentioned, the local folder should be set as sync target automatically. 
+  - for the renaming in desktop app feature, add some reminder text or ux feedback for user, like renaming is a heavy and risky action, it may take some time, when renaming is in progress, show the in-progress status and guide user to wait some time, when renaming finishes, the in-progress status disappears.
+
+- please analyze offline and syncing related data-flow/code, then make a plan to improve it. 
 
 - for offline use of desktop app, logout does not remove data, logout just show the onboarding page with user avatar that enable login again quickly, if user clicks the avatar to login again, most data/ui before logout just restores. when logout, most data stays unchanged, but cloud-server/local-folder syncing stops if exists; when login again, most data/ui before logout shows again, cloud-server/local-folder syncing auto starts.
 
@@ -815,8 +827,18 @@ This project `colanode` (also named redmansion) is a local-first Slack and Notio
 
 - Colanode desktop remains single-instance; simultaneously sharing one folder target between independent Colanode processes is outside this phase.
 
+- when user delete .gitignore, related files that are ignored previuosly should be synced to local sqlite then to cloud server. when user add .gitignore, related files that are synced previuosly should be deleted from local sqlite and cloud server, but still exists in local folder. is this design good ?
+
 - 
 - 
+- 
+- 
+- 
+
+### draft-web
+
+- when you update/refactor/unify the db schema for desktop/web/mobile, you should update related data-flow as well, the latest desktop app is the latest data flow, you might update related web/mobile data flow, but it is unnecessary for web/mobile to follow desktop strictly.
+
 - 
 - 
 - 
@@ -951,8 +973,14 @@ when you improve the tests, you can also improve the source code logic by fixing
 finally make sure all tests run and pass locally with npm. you can update/fix tests file by file progressively. outdated or over-complicated or hard-to-maintain tests can be removed or rewritten. 
 
 - you have improved the codebase several times, but running the tests/parity/scripts took a lot of time for your every improvement.  please refactor and improve the tests/parity/scripts/devops/ci to make it faster and more maintainable.  you may combine/deduplicate/reduce/clean/redesign some tests/parity/scripts/devops/ci/outdated/legacy if you need. update the readme/docs after your cleanup.
+
+- tests is a little messy in this monorepo project. in all subpackages, move tests inside src folder to sibling test folders of src like apps/desktop/test, apps/server/test, packages/client/test, packages/durable-fs/test, packages/core/test
 # rafactor
+- why do you want to make a big change/refactor? is current architecture not correct or extensible? why is your proposal better?
+
 - analyze the core data-flow/code-logic of major features, find possible bugs and memory leak, improve it for the long term maintenance.
+
+- please try to analyze related data-flow/architecture/code before edit/update code to make colanode desktop correct, robust without hallucination. 
 
 The goal is to refactor existing code and architecture to be more clear, extensible, functional-programming style, while improving logic correctness at the same time.
 One task is to remove `class extends` inheritance and js prototype. `class extends` inheritance and prototype MUST be avoided by refactoring and rewriting.
@@ -1003,6 +1031,9 @@ current code is under active development. please review and refactor code if you
 - try to avoid circular dependencies
 
 - try to avoid hard-coded config/option
+
+- this is beta software, database migrations may be merged or squashed, no compatibility layer, just use the latest schema. 
+- legacy or unused code can be refactored and removed.
 # toys
 
 # play
@@ -1013,6 +1044,12 @@ current code is under active development. please review and refactor code if you
 ```prompt
 i start this llm api gateway by `dist/one-api --config config.yaml`. when i use codex-cli with it, codex always shows "exceeded retry limit, last status: 429 Too Many Requests". please analyze logs and related code , and explain to me which channels/providers is the cause of the rate limit ?
 ```
+
+## claude-code
+
+- no parallel subagents, just explore the code directly
+
+## codex
 
 # more
 

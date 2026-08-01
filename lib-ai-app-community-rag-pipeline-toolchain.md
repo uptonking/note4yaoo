@@ -116,7 +116,12 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
-- ## 
+- ## [How are people using Pi for web research outside of coding? : r/PiCodingAgent _202608](https://www.reddit.com/r/PiCodingAgent/comments/1vc2039/how_are_people_using_pi_for_web_research_outside/)
+- Now that GPT-Luna is so cheap, I just built a simple extension to expose a web-research tool that sends off a prompt to the codex cli with Luna on low reasoning, using the codex web search tool. 
+
+- I installed SearXNG on my computer, then installed searxng-suite, which seems to work for searches, though having it get to web pages after it finds them can be tricky.
+
+- gsearch skill, firecrawl api / mcp, grokbuild extension /last30days skill and agent-reach skill
 
 - ## [browser-search — three tools, zero cost, and your AI agent learns to search and browse the web : r/PiCodingAgent _202606](https://www.reddit.com/r/PiCodingAgent/comments/1ucm80t/browsersearch_three_tools_zero_cost_and_your_ai/)
   - SearXNG — metasearch engine that queries dozens of search engines at once

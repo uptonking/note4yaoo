@@ -1967,6 +1967,27 @@ modified: 2026-06-20T15:49:57.019Z
   - 只能使用auto模型，约200W+ token（$2额度）。有限的Tab 补全。
   - 所以100个free号大概能提供 2亿 token
 
+━━━ ✨ChatGPT 账号✨━━━
+👉 https://pay.ldxp.cn/shop/tuoling
+👉 https://pay.ldxp.cn/shop/7HVUEC3Y
+👉 https://pay.ldxp.cn/shop/IY16OXB7
+👉 https://pay.ldxp.cn/shop/cursor-pro
+*注：排名不分先后，理性消费。
+
+━━━ ✨CursorRro 账号✨━━━
+👉 https://wafase.com
+👉 https://yidachuang.top
+👉 https://94fk.cn
+👉 https://m.tb.cn/h.iJarRjRVL0paQcT
+*注：排名不分先后，理性消费。
+
+━━━ ✨礼品卡 · 点卡 · 卡台✨━━━
+👉 https://shop.pockyt.io
+👉 https://appstoreprice.org/zh
+👉 https://www.seagm.com/zh-cn
+👉 https://spacexcard.com/register?invite=2S5CVDH3
+*注：排名不分先后，理性消费。
+
 - [AI助手 — 无限 auto 额度 · 一键登录 Cursor ](https://vaultbyte.top/)
   - [AI助手使用教程T1 ](https://www.kdocs.cn/l/crNHsGjTirob)
   - [cursor（常见问题处理方法）T1 ](https://www.kdocs.cn/l/ccqUKlbIdxLV)
@@ -1984,7 +2005,7 @@ modified: 2026-06-20T15:49:57.019Z
   - 周卡-¥58， 月卡-¥168
   - 无限额度解锁高级模型
 
-- [Cursor Pro、额度包与 AI 编程账号商城 - 小文ai小铺 ](https://yidachuang.top/)
+- [小文ai小铺 - Cursor Pro、额度包与 AI 编程账号商城 ](https://yidachuang.top/)
   - [卡密与 Token 提取工具 - 小文ai小铺 ](https://yidachuang.top/extract)
   - 各种灰色cursor账号
   - 30天-¥15, 总额度 $100, 似乎只有50个号
@@ -2316,6 +2337,10 @@ modified: 2026-06-20T15:49:57.019Z
 - [土豆 /Sub2API](https://zz.211b.site/keys)
   - 注意倍率变动
   - gpt/kiro都有夜间福利
+
+- [52codeflow ](https://91kiro.com/)
+  - [52codeflow ](https://apiv3.52codeflow.top/)
+  - kiro--0.08
 
 - [YCY API /NewAPI](https://ycyapi.cn/pricing) , 长期运营, 较贵
   - [YCYAPI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ycyapi)
