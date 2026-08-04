@@ -1166,6 +1166,16 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/chaogei/Kiro-account-manager /AGPL/202605/ts
   - Quick account switching, auto token refresh, group/tag management, machine ID management and more
 
+- https://github.com/anyrobert/cursor-api-proxy /202607/ts
+  - OpenAI-compatible proxy for Cursor CLI. Expose Cursor models on localhost so any LLM client (OpenAI SDK, LiteLLM, LangChain, etc.) can call them as a standard chat API.
+  - This package works as one npm dependency: use it as an SDK in your app to call the proxy API, and/or run the CLI to start the proxy server. Core behavior is unchanged.
+  - 支持 /v1/responses, 	/v1/messages
+  - You can use multiple Cursor accounts to distribute load and avoid hitting usage limits. The proxy now includes a built-in account manager that makes this very easy.
+
+- https://github.com/standardagents/composer-api /MIT/202607/swift/ts
+  - Local OpenAI-compatible chat.completions and responses endpoints backed by Cursor models (Composer 2.5, Grok 4.5, and more).
+  - 不支持claude-code
+
 ## browser2api
 
 - https://github.com/xszwow/Chrome2api /MIT/202605/cpp

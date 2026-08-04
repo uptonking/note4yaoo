@@ -117,7 +117,7 @@ Bottom Line: Success isn’t just about good code. It’s about presentation, ac
   Zeno Rocha（Resend 创始人）
 
 - laravel 融资了 5700 万，也是从 Accel 拿的钱，创始人最喜欢的就是兰博基尼
-# discuss
+# discuss-db
 - ## 
 
 - ## 

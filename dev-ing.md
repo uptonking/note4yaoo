@@ -344,6 +344,52 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0803
+
+- the goal for now is to rename this project from `colanode` to `redmansion`.
+  - packages names and import names should update, like from `@colanode/server` to `@datalking/redmansion-server`, from `@colanode/client` to `@datalking/redmansion-client`.
+  - code/db/docs/tests should be updated accordingly.
+  - after you finish the rename work, major features should still work, all tests should still pass.
+
+- One product decision remains consequential: how to present simultaneous edits to workspace-level metadata (name/description/avatar), because the current code silently keeps the local value while node content has an explicit conflict path.
+  - Attention + local wins
+
+## 0802
+
+- Folder sync is a three-way merge, exactly like git. Three inputs per page:
+  - base — what both sides looked like at the last successful sync. This is .colanode/manifest.json, which stores a content hash per item.
+  - folder — the bytes on disk right now.
+  - sqlite — the app's current content.
+  - Each side is compared against base
+- choices
+  - **Journal** — append one line per item to `.colanode/export.journal` right after its bytes are durable; fold into `manifest.json` at the end and delete it. Next pass reads base as manifest + leftover journal. Baseline lives next to the bytes, so it survives a crash *and* an app reset. Cost: one small append+fsync per item, plus a file format to parse defensively.
+  - **Rewrite the manifest after every item** — simplest to reason about, no new file. But it rewrites the whole manifest N times per export; a 5,000-item workspace does 5,000 full rewrites. It's the journal's idea without the append-only optimization.
+  - **Persist to SQLite** — smallest diff. But it splits baseline across the folder and the private database, and `docs/desktop-offline-sync.md` promises a projection survives an app reset and can be reopened. After a reset the SQLite half is gone and the bug is back.
+
+- fs.appendFile works on a plain path string. Round 18 deliberately removed plain-path I/O from everything below a folder target: every operation goes through ScopedRootFilesystem, which holds an open handle on the root directory and resolves each component with openat/O_NOFOLLOW against that handle. The point isn't tidiness — it's a TOCTOU defence. With a path string, an attacker (or a sync client like Dropbox) can swap a parent directory for a symlink between the check and the write, and your append lands outside the folder. verifyIdentity() exists to confirm the root is still the same directory before a publish.
+
+- The journal isn't just "unbounded in size" — it's unconditional per-pass write amplification. recordExported runs for every entity on every export pass, and each call is a full atomic publish cycle: ensureDirectory + writeFileExclusive + flushFile (an fsync) + replaceFile. The page branch already skips its own byte-write when path and hash match the previous manifest (folder-exporter.ts:225-232), but the journal write immediately after has no such guard. So a completely unchanged 5,000-entity workspace does zero content writes and 5,000 fsync-and-rename cycles, on every 500ms debounce. The journal only exists to describe bytes that are newly durable but not yet in the manifest; an entity whose baseline is byte-identical to the previous manifest has nothing to record.
+  - That reframes the fix: gate recordExported on the baseline actually differing from previous.items[id]. That bounds the journal's size too — the unbounded growth in Next item 3 is a symptom of the same missing guard, so one change addresses both.
+
+- 
+- 
+
+- what's the git behavior and design for use cases (1) adding  a rule  to .gitignore then remove the rule, (2) removing  a rule  to .gitignore then adding the rule again. is file removed/added from local-folder or remote-origin? analyze the git design and explain to me
+  - .gitignore doesn't act on files the way rm or git rm does. It's a filter that git tooling consults, and it only has power over files that are not yet tracked. Once a file is in git's index (tracked), .gitignore has zero effect on it.
+  - The Golden Rule of .gitignore: .gitignore only applies to untracked files. If a file is already tracked by Git, adding a rule to .gitignore will have absolutely zero effect on that file.
+- .gitignore is read by git status, git add . / git add -A, and git clean to decide which untracked paths to hide/skip.
+  - It never touches the working directory on disk — it doesn't delete or create files.
+  - It never affects a file that's already tracked (already committed at least once), unless you explicitly untrack it with `git rm --cached`.
+  - Remote origin only ever changes when you commit + push. Editing .gitignore, or the file's ignored/visible status, does nothing to remote by itself.
+- So local-folder (disk) changes require rm/editing files directly. 
+  - Local-repo (tracked/untracked) changes require git add/git rm + commit. 
+  - Remote changes require push on top of that. 
+  - .gitignore only ever influences the middle layer, and only for untracked paths.
+
+- 
+- 
+- 
+
 ## 0801
 
 - A manifest with an unavailable cloud hint will use the selected detached local mode: create only a local workspace and folder target; retain the cloud hint in the manifest, not as an unusable SQLite target.

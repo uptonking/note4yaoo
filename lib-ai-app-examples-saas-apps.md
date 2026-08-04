@@ -550,6 +550,17 @@ modified: 2025-02-21T17:17:42.225Z
     - React Excel viewer component for previewing XLSX workbooks with sheet tabs, frozen panes, formulas, large-grid navigation, and cell selection
     - React DOCX editor component for editing Word documents with a Word-style toolbar, import and export, formatting controls, page thumbnails, links, images, tables, and tracked changes
 
+- https://github.com/genspark-ai/genoffice /apache2/202608/ts/rust/暂无web
+  - https://www.genspark.ai/genoffice
+  - AI-native office suite for macOS and Windows: word processor, spreadsheet, presentations, and PDF — five Electron apps sharing one engine layer, built around AI editing as a first-class workflow rather than a bolted-on chat box.
+  - .docx word processor. Byte-preserving round trip: only dirty paragraphs are regenerated (paragraph patch), everything else in the original file is kept byte-for-byte, so opening and saving never breaks layout in Word. 
+    - TipTap streaming editor (manual + AI editing, dirty tracking)
+  - .xlsx spreadsheet. UI built on the open-source Univer core (Apache-2.0) with a large layer of in-house extensions, xlsx import/export runs through an in-house Rust sidecar (calamine + IronCalc), charts are rendered in-house (Konva), plus pivot tables, slicers, conditional formatting, and formula tracing.
+  - In-house pptx parse/render/edit engine with masters, charts, cropping, ink, and text shaping (HarfBuzz metrics).
+  - PDF viewer/editor on pdf.js + pdf-lib: annotations, forms, outlines, stamps, signatures, page operations, print
+  - Every app embeds the same AI panel: block-granular AI editing with version snapshots and diffs in docs, a tool-calling agent over workbook/slide/PDF state in the others.
+  - The same philosophy holds in sheets and slides: the original file is the source of truth, edits are applied as narrow patches, and everything the editor didn't touch survives the round trip untouched.
+
 - https://github.com/FunYoung-code/web-to-doc /GPL/202606/js
   - An open-source browser extension that exports selected webpage content to Word documents.
   - [【开源推广】Web to Doc-网页导出助手：快速将网页导出为Word文档 - LINUX DO _202606](https://linux.do/t/topic/2446186)
@@ -676,6 +687,16 @@ modified: 2025-02-21T17:17:42.225Z
   - 思维导图	markmap-lib + markmap-view
   - 语音	edge-tts-universal（三级缓存）
   - [【开源自荐】拾语：外刊、外文原版书精读利器  - LINUX DO _202603](https://linux.do/t/topic/1786244)
+
+- https://github.com/nyblnet/bento /3.6kStar/MIT/202608/ts
+  - https://bento.page/
+  - Bento — the office suite that fits in a file
+  - This PowerPoint alternative is a single HTML file. A Bento deck carries its own viewer, presenter, and editor inside the document — open it in any browser, edit it, present it, send it. The person you send it to needs nothing: the file is the software.
+
+- https://github.com/cloudflare/nimbus /MIT/202607/ts/astro
+  - https://nimbus-docs.com
+  - Docs for humans and agents, built on Astro
+  - Nimbus scaffolds a complete Astro documentation site into your repo — layouts, components, styles, routes, content — as real files you edit from the first commit. The invisible plumbing ships as an npm package
 
 ### office-skills
 

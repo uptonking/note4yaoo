@@ -52,12 +52,16 @@ modified: 2026-06-30T17:32:43.131Z
   - command-palette
   - publish
   - sync
-# 🌸 dreamansion
+# 🌸 redmansion
 
 > local file based workspace, like notion but with files, bases, backlinks.
 
-- features
+- features: productivity > ux
+  - embedded-companion-files(ECF): 当使用ofm embed语法嵌入支持的源文件格式时, 会自动创建对应的ECF文件, 并支持切换显示源文件预览视图和方便编辑的ECF视图
+    - pdf/image/ocr>md(单向), csv>bases, xlsx>bases, docx>md, pptx>jsoncanvas
+    - ❓ 是不是可以embed sqlite
   - bases: formula, schema-change
+    - embed csv as bases
   - editing with pagination, unifying markdown/pdf xp
   - pdf backlink/citation/preview
   - file-editor: 不改变原文件的格式, 可利用全局LRU缓存
@@ -143,6 +147,63 @@ modified: 2026-06-30T17:32:43.131Z
   - file-metadata as database
   - text-first chat history
 
+- 
+- 
+- 
+- 
+
+## embeddable-companion-files(ECF)
+
+- 当使用ofm embed语法嵌入支持的源文件格式时, 会自动创建对应的ECF文件, 并支持切换显示源文件预览视图和方便编辑的ECF视图(类似embed bases), ~~甚至就是bases card view~~ 
+  - ECF文件的位置默认在源文件的相同目录, 默认名称为`源文件名[xxx]_ecf`, 为了资料整洁，也可统一放在指定目录, ~~同时也会放在全剧缓存~~ ， 目录内采用 assets/main/.backupN 的结构, 其中main内是主内容, .backupN会作为备份会自动删除
+  - 一个源文件可以生成多个ECF文件， 依次默认打开`源文件名_ecf` 或 `源文件名_ecf_` 或 最新日期的 `源文件名xxx_ecf`
+  - 也可以手动ECF文件， 效果就是类似普通markdown文件
+  - 不embed行不行? 
+    - 需要手动开启， 开启后打开源文件时会自动打开ECF
+    - 适合embed的是 csv/xlsx/docx/pdf 符合现有bases的心智模型和产品设计
+    - 嵌入ECF的父文件还适合记录更新的内容
+  - ❓ 是不是可以embed sqlite
+  - 首次打开包含嵌入ECF语法的文件时，会创建源文件和clone文件的内容关系, 最好建立更细粒度的元数据关系，如标题、双链, 具体关联信息可在属性面板查看/编辑
+
+- goals
+  - 同步更新文本: 修改ECF文件会自动更新源文件，修改源文件也会自动更新ECF文件
+  - ❓ 双向更新源文件和ECF的复杂度高, 源文件 > 目标文件的单向更新在产品逻辑上更简单、实现也更简单
+
+- non-goals
+  - 不会同步更新样式， 因为部分样式在转换时会丢失
+
+- ECF与bases的相同点
+  - 支持手动创建bases/EFC文件
+  - 都支持embed使用, 也支持单独打开
+  - bases/ECF文件的内容与一个或多个源文件关联
+  - 在界面上修改ECF视图内容时，也会修改源文件
+  - excel内容样式与markdown的转换存在损失, 都尝试同步尽可能多的文本内容
+
+- ECF与bases的不同点
+  - bases的视图内容完全由源文件计算得到因而总是同步变化， 而ECF的内容有自己的数据源所以存在数据不一致的问题
+  - ECF的内容会尝试与源文件建立块与块的对应关系
+
+- ECF文件和源文件的更新
+  - pdf/image/ocr>md, 单向编辑， 就像编辑普通markdown文件
+  - csv>bases, 双向
+  - xlsx>bases, 双向
+  - docx>md, 双向
+  - pptx>jsoncanvas/xml
+  - sqlite>sql, 双向
+  - sqlite只是作为一种参考实现，可以由它更新源文件和ecf
+
+- 🐛 问题
+  - xlsx 和 markdown 的转换也有损失, 如列宽
+  - docx 和 markdown 的转换有损失
+
+- 冲突处理(ECF由外部更新后)
+  - 源文件与ECF的文本内容通常是一致的， 不一致时需要用户处理，支持由用户选择 (docx/xlsx/pdf)生成新的ECF-md 或 ECF-md生成新的源文件(docx/xlsx), 生成新文件后旧的文件(夹)会自动被重命名
+  - 参考bases.yaml文件可能失效
+
+- 
+- 
+- 
+- 
 - 
 - 
 - 

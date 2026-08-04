@@ -1096,7 +1096,29 @@ RAG适合有明确知识库、答案可追溯的场景。如果你的需求是�
 
 - ## 
 
-- ## 
+- ## [Fast regex search: indexing text for agent tools · Cursor _202603](https://cursor.com/blog/fast-regex-search)
+- https://x.com/chenchengpro/status/2036362113543970818
+  - Cursor 最新的技术博客揭示了一个被忽视的瓶颈：不是模型不够聪明，而是 grep 不够快。
+  - 在大型 monorepo 里，ripgrep 单次搜索要 15 秒以上。而 AI Agent 不是人——它不会「扫一眼目录结构猜个大概」，它依赖精确搜索，一个任务反复搜几十上百次。Composer 2 每秒吐 500+ token，搜索跟不上，整个工作流就卡死了。
+- Cursor 的解法是给正则搜索建索引。这条路的技术演进非常精彩：
+
+第一步，经典方案：把代码拆成所有 3 字符重叠子串（trigram），建倒排索引。为什么是 3？因为 bigram 只有 ~64K 种组合，过滤效果太差；quadgram 有数十亿种，索引本身就爆了。Trigram 是工程上的甜点。搜索时把正则表达式分解成一组 trigram，先筛候选文件，再精确验证。
+
+第二步，GitHub Blackbird 的概率增强：每个 posting 多存 2 字节——一个 8-bit Bloom filter 记录后续字符，一个 8-bit 位置掩码记录 trigram 出现位置 mod 8。前者让 3-gram 达到准 4-gram 的精度，后者能验证相邻 trigram 在原文中是否真的紧挨着。两字节，误报率大幅下降。
+
+第三步，关键突破——稀疏 N-gram：不再固定切 trigram，而是根据字符对的权重动态提取可变长度的 n-gram。权重怎么定？用 TB 级开源代码语料统计频率，罕见组合权高，常见组合权低。这样索引自动聚焦在代码中最有辨识度的片段，跳过 int、the 这类噪音。查询时用覆盖算法只提取最少必要的 n-gram 集合，需要查的 posting list 数量比全量 trigram 少一个量级。
+
+架构上也值得说：完全本地化，两个文件搞定。Posting list 顺序写盘，查找表 mmap 映射做 O(log n) 二分查找。索引追踪 Git commit 状态，用户未提交的编辑作为 overlay 层叠加，增量同步而非全量重建。零网络延迟，零数据泄露风险，且永远和本地文件状态一致——这对 Agent 自读代码至关重要。
+
+一个更深的启发：AI Agent 时代的搜索不再是人的搜索。人搜一次看结果，Agent 搜一百次做决策。延迟的影响是复利式的——每次省 10 秒，一个任务就省出分钟级的差距。这就是为什么「给 grep 建索引」这件看起来不性感的事，才是真正的竞争壁垒。
+
+不是谁的模型更大，而是谁的工具链每个环节都快 10 倍
+
+- 第一步，embedding 已死，让agent自己grep才是正解
+第二步，grep太慢，用ngram
+第三步，ngram不够聪明，要不用embedding?
+
+- 大方向没毛病，所有系统发展都是先探索能力边界，再优化性能，如果站在传统软件工程角度看，目前所有工具都值得面向agent调用重新设计。但现在看模型能力还远未到瓶颈，也许上下文窗口的问题解决了，这种外挂检索的机制就鸡肋了？
 
 - ## [四个代码语义搜索工具的对比 - LINUX DO _202605](https://linux.do/t/topic/2254867)
   - https://github.com/colbymchenry/codegraph

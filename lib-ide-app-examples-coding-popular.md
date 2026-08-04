@@ -1026,6 +1026,10 @@ modified: 2025-12-11T18:10:23.710Z
   - https://daugasauron.github.io/piodide/
   - pi coding-agent terminal running entirely in the browser with Ghostty Web and Pyodide
   - A coding agent, Python runtime, shell, editor, and local LLM host that run in one browser tab.
+
+- https://github.com/hahhforest/pi-textbook /MIT/202607/ts
+  - https://build-your-own-pi-cn.enochzhang.chatgpt.site/
+  - 《动手学 Pi》：沿 15 个真实 checkpoint 从零构建 Pi-style Agent
 # cli-aggregator/wrapper
 - https://github.com/jazzenchen/VibeAround /MIT/202606/rust/ts
   - https://vibearound.ai/

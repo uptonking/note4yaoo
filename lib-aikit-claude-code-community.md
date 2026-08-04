@@ -9,6 +9,16 @@ modified: 2025-12-18T12:26:08.445Z
 
 # guide
 
+- pros-cc
+  - 功能丰富: plan, subagents, goal
+
+- cons-cc
+  - plan mode经常会编辑文件
+  - compact卡住
+  - anthropic官方的claude模型会隐藏思考内容， 缺乏互动和思考
+
+- tips-cc
+  - ?
 # pm-coding-cli
 - ide和cli主流的ux都与启动文件夹相关联，而chat并不会自带文件夹而是需要上传文件
   - 可将vscode的文件书隐藏，将chat移到左边来实现目前主流chat的产品ux，没必要单独开发electron app for chat.
@@ -177,6 +187,42 @@ They do this because thinking blocks aren't compatible across models, but the ke
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [[BUG] /compact 95% forever  _202605](https://github.com/anthropics/claude-code/issues/58996)
+- 实测 ~~安装使用旧版本的claude code就可以 /compact 成功了~~ 
+  - 似乎是中转站claude模型反代的问题， mouu会出现compact卡住的问题, uu6的也锁就很正常
+
+```sh
+
+# this sets and unsets auto compaction... hope that helps
+export CLAUDE_CODE_AUTO_COMPACT_WINDOW=250000 
+export CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=90
+```
+
+- [claude code里面的Compacting conversation一直卡在95%，该怎么解决这个问题 - LINUX DO _202608](https://linux.do/t/topic/2678085)
+  - 每次 claude code 到自动压缩的时候就会卡死
+- 这大概是因为 claude 的压缩也需要上下文，所以如果你用到自然满，可能就没有空间压缩了，这时候可以使用 /export 去导出对话，然后开新窗口让 claude 去读导出的对话文件
+
+- 可以试一下压缩时手动输入提示，实测可以压缩，而不输入就卡 95%
+
+- [Claude Code compaction fails with “Conversation too long” even when context is below 75% : r/ClaudeAI _202510](https://www.reddit.com/r/ClaudeAI/comments/1o0fljh/claude_code_compaction_fails_with_conversation/)
+  - /resume select same chat and then /compact
+
+- ## [Do you have memory on or off? : r/ClaudeCode _202608](https://www.reddit.com/r/ClaudeCode/comments/1vdgura/do_you_have_memory_on_or_off/)
+- I turned it off. Seeing less issues with hallucinations due to stale memories, especially if multi agents were working on things at the same time. Big improvement.
+
+- I disabled it a long time ago and never looked back. Having the memory as well as my system often disobeyed a Single Source of Truth (SSOT) model for me and made my life way simpler with it off.
+
+- Memory can definitely degrade performance if you let claude manage it by itself. But using memory files can also save a lot of tokens if you tailor them the right way
+
+- What are the things you would put in memory vs claude.md?
+
+- ## in claude code cli, shift+tab can switch modes, explain to me  auto mode vs accept edits vs plan mode
+- Manual mode (the default) — Claude only reads files without asking, but every edit and shell command needs your approval first. This is the safest option
+- Accept Edits mode (acceptEdits) — Claude can create and edit files in your working directory without prompting, and it also auto-approves common filesystem commands like mkdir, touch, rm, mv, and cp. Anything outside your working directory, or any other shell command, still prompts you.
+- Auto mode (auto) — this is a newer, more aggressive mode than accept-edits. Claude executes basically everything without routine permission prompts, but a separate classifier model reviews each action in the background and blocks anything that escalates beyond your request
 
 - ## 搞了半天才知道，CC 有这么一个模式：/model opusplan
 - https://x.com/JinsFavorites/status/2031634804844933485
@@ -384,7 +430,19 @@ export ANTHROPIC_SMALL_FAST_MODEL="claude-sonnet-4-5-20250929"
 
 - ## 
 
-- ## 
+- ## claude 为什么这么喜欢用 Python 去写文件和替换内容呢？
+- https://x.com/__oQuery/status/2081097128366235867
+- gpt 爱用 sed
+
+- 因为 Claude 的编辑工具是查找替换的形式，而且非常严格的要求必须先读 + 精确替换（且不能一次替换多个）, 然后 AI 就很容易觉得「这个工具不好用」，然后去用 Python，再后面发现前面已经用 Python 了就都照着用 Python 了 
+
+- Windows命令行不好用，有格式转义，有编码问题
+
+- 用内置工具会"Error writing file"
+
+- 因为调用工具是返回的 JSON 协议，里面有换行，引号等需要转义，各种转义之后就出现了 BUG，模型被迫尝试使用 shell 工具来帮助自己。
+
+- Python 集成在 Linux/mac 系统里，不用单独装。
 
 - ## 🆚 [Claude Code 和 Codex 的 Agent 设计有什么主要区别 - LINUX DO _202606](https://linux.do/t/topic/2463140)
 

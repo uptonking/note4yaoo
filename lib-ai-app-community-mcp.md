@@ -1234,7 +1234,17 @@ AI 可以直接操作后台 UI，把复杂流程自动化。
 
 - ## 
 
-- ## 
+- ## MCP 协议今天推出了第五个大版本（版本号 2026-07-28），核心变化：从有状态双向协议变成了无状态的请求/响应协议。
+- https://x.com/dotey/status/2082235315675144569
+  - 之前的 MCP 客户端连上来要先握手，服务端要给你一个会话 ID（session ID），后续每次请求都得带着这个 ID。这意味着你的请求被限制在了某一台服务器实例上，不方便做负载均衡。
+  - 现在每个请求都是独立的，自带协议版本和客户端信息，可以负载到任何一个实例上。也就是说 MCP 服务器终于可以像普通 HTTP 服务一样部署了，serverless、边缘计算、或者 CDN 后面放一排实例。
+  - 那如果业务确实需要跨请求的状态呢？协议的建议是：由工具自己生成一个句柄（handle），让模型在工具调用之间传递。状态放在业务层而不是协议层，模型能看到这个句柄，也能理解要怎么用它。
+
+- MCP 2026-07-28是发布以来最大的一次修订，亮点是能通过MCP Apps向客户端输出HTML富交互UI了
+
+- MCP 这次算是补上了最大短板。去掉 Session ID 之后终于能像标准 HTTP 服务一样做弹性扩容、负载均衡和 Serverless 部署，对云厂商和大规模生产环境都是利好。把状态从协议层下放到业务层也更符合现代架构设计，不过对于已经上线的 MCP Server 来说，迁移成本估计不会太低，接下来就看各家工具链和生态跟进速度了。
+
+- 业务需要跨请求状态时，让工具自己生成 handle 交给模型传递，这个思路挺聪明。
 
 - ## [Why MCP when we have REST APIs? : r/mcp _202605](https://www.reddit.com/r/mcp/comments/1t8sjho/why_mcp_when_we_have_rest_apis/)
 - LLMs are trained on tool calling, and MCP is the way that the industry has decided to expose MCP tooling. It’s a CLI with discoverability baked in. Therefore achieving the same result without MCP is an engineering effort of an uphill battle.

@@ -243,6 +243,10 @@ redis-cli shutdown
 - https://github.com/Gary-zy/dev-env-installer /202601/ts/vue
   - 基于 Electron + Vue 3 + TypeScript 构建的 macOS 桌面应用，旨在帮助开发者一键配置开发环境。
   - [macOS 开发环境一键安装工具，新电脑配环境再也不头疼 ](https://linux.do/t/topic/1407819)
+
+- https://github.com/jianyintang/find-disk-killer /MIT/202608/swift
+  - https://finddiskkiller.com/
+  - Native macOS disk activity monitor for app I/O, CPU, network, file access tracing, and SMART/NVMe drive health.
 # mac-ai 👾
 - apple-foundation-model
   - [Foundation Models from Python: the fm CLI _202606](https://blakecrosley.com/blog/foundation-models-python-fm-cli)

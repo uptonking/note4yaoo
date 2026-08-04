@@ -321,6 +321,14 @@ Today, Turso is in beta with early customers working toward production deploymen
 
 - ## 
 
+- ## 
+
+- ## Turso has partial sync support which avoids pulling the whole database: ”Turso has two modes of operation: you can submit queries to  their servers, which incurs a network hop for every query, or you can  run an embedded replica, which requires syncing the full database  locally before you can use it.”
+- https://x.com/penberg/status/2083278838868607152
+- Does Turso have a way of making writes-over-sync durable by waiting for the page to hit S3?
+  - You write locally, but when you push, it will always be durable on S3 when acknowledged.
+- Make sense, so you can effectively treat `await db.push()` as an fsync if your local disk is ephemeral
+
 - ## 👎🏻 现在并没有提供冲突解决的方案，有点半成品的感觉。而且turso 不支持 udf 和 load extension, 改了半天勉强能跑起来，有些失望。
 - https://x.com/mayneyao/status/1907287654368219589
 

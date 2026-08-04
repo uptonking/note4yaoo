@@ -569,6 +569,15 @@ modified: 2023-01-20T21:59:47.792Z
 
 - https://github.com/power-cms/power-cms /201903/ts/inactive
   - a Domain Driven, CQRS based CMS project in Microservices architecture, written for developers.
+# ai-cms/crm 👾
+- https://github.com/trycompai/crm /3kStar/MIT/202608/python/ts
+  - An open-source, agentic-first CRM.
+  - A durable research agent is the product. The database is just where it writes things down.
+  - apps/agent is its own deployment, built on `eve` — Vercel's filesystem-first framework for durable agents. 
+  - https://x.com/aigclink/status/2084098721227436303
+    - Comp AI 开源了一个 销售Agent：替代传统销售做客户research及客情的脏活累活，这个agent自己做客户排期、自己决定下一个查找哪个客户、自己花研究预算——它是一个持续性的销售research agent，关掉浏览器它继续跑，crm在这里只是个数据库功能。
+    - 作者把话说得很直白：多数 CRM 就是"数据库 + 一个表单"，所谓 AI CRM 只是在表单旁边挂了个聊天框。两者都把真正的活——查清什么是事实、然后写下来——留给了本该干别的事的人，这个项目解决的就是两者之外的事。
+    - NestJS 只负责报告"发生了什么"（收到一个邮件线程、建了一家公司、有个与会者不认识），写一行进队列；agent 租走这一行，再决定它意味着什么。 在 Nest 服务里直接调数据增强接口会被当成 bug——文档里记了促成这条规矩的事故：两份身份匹配逻辑各自漂移，最后其中一份匹配上了地球上所有雇主。
 # blogging
 - https://github.com/LetTTGACO/elog /MIT/202401/ts
   - https://elog.1874.cool/

@@ -680,6 +680,14 @@ modified: 2024-08-24T16:30:20.218Z
   - AI-powered code review CLI tool. It originated as Alibaba Group's internal official AI code review assistant 
   - https://x.com/Smartpigai/status/2066010490602459542
     - 它能读取 Git diff，结合上下文分析代码变更，生成带行级定位的结构化审查意见。
+
+- https://github.com/AmazingAng/old-coder /MIT/202608/python
+  - An old coder's strategy for the agent era: don't read the code — make it run the gauntlet. Evidence-first development skill for coding agents, inspired by Uncle Bob.
+  - https://x.com/geekbb/status/2084218468056887695
+    - 程序员老想自己把 agent 的代码看一遍才放心，这个 skill 把这份信任从"读代码"挪到"读测试报告"上，解决程序员不愿逐行读 agent 代码、又想对产出保有信任的问题
+    - 一个纯 markdown 的 skill，思路是把 agent 写的代码当作黑盒，逼它自己证明能跑。做法是让 agent 开工前先交测试计划、写完后交一份带数字的证据报告，看代码的人只审这两样。
+    - 工作流是从 Uncle Bob 那里借来的思路：代码必须闯过一整套测试关卡，测试没过就不算完成。
+    - 这其实是 TDD 思想在 Agent 时代的一次升级。 最大的问题从： “这个代码是谁写的？” 变成： “这个代码有没有经过足够强的验证？” 当代码生成成本接近 0，验证能力才会成为真正瓶颈。
 # code-security
 - https://github.com/lintsinghua/DeepAudit /5kStar/AGPL/202602/python/ts
   - DeepAudit：人人拥有的 AI 黑客战队，让漏洞挖掘触手可及。国内首个开源的代码漏洞挖掘多智能体系统。

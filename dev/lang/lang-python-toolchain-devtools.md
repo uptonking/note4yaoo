@@ -49,6 +49,22 @@ uv python install --default 3.13
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## At Astral, we created pre-built wheels for popular GPU-enabled packages (like FlashAttention and DeepSpeed) and distributed them on standards-complaint Python indexes.
+- https://x.com/charliermarsh/status/2082908642928402558
+  - Today we're open sourcing our build pipelines and making those wheels available to all.
+  - Instead of building FlashAttention or Transformer Engine from source, you can point to our GPU indexes
+  - The motivation here is that these wheels are both hard to build and hard to distribute. We've received so many issues over time that are downstream of these problems: trouble installing the right build, trouble building from source, trouble installing compatible versions.
+  - Unfortunately, these wheels fall into gaps in the Python standards: you can indicate that a wheel requires (e.g.) ARM vs. x86, but you can't indicate that it requires a specific CUDA version.
+  - PyTorch works around this by hosting wheels on a separate index per CUDA version, and tags the wheel using the local version identifier (+cu128 or similar).
+  - Other projects, though, either host wheels on GitHub Releases and download those at "build time", or don't publish wheels at all, leaving it to users to build from source.
+  - we're trying to fix this gap in the standards via [WheelNext ](https://wheelnext.dev/)
+
 - ## uv still has a bunch of issues.
 - https://x.com/HanchungLee/status/1900942356377202762
   - it’s not pip
@@ -71,7 +87,7 @@ uv python install --default 3.13
 export PATH=$(dirname $(realpath $(which python))):$PATH
 ```
 
-- ## what's uv's equivalent to `pip install diff_cover`
+- ## what's uv's equivalent to `pip install diff_cover` 
 
 - uv tool install diff-cover
   - This will fetch diff-cover, put its executable on your PATH, and isolate it from your project’s venv 

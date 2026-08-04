@@ -63,6 +63,22 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 软件领域还有一个轮回：
+- https://x.com/xicilion/status/2080908639540297914
+  所有的软件最后都需要配置；
+  所有的配置最后都需要配置文件；
+  所有的配置文件最后都会走向工作流；
+  所有的工作流最后都会走向可编程；
+  所有可编程的工作流最后都会图灵完备；
+  这个轮回出现过很多次，现在是另一次。
+- 这个规律很早就被发现了：(1)Postscript是个语言而不是格式，所以固化在打印机等机器ROM里的PS解释器不用修改，只要对文档进行PS编程就能实现未来所有文档的需求(2)i386启动时先进入实模式，再执行实模式的代码来配置保护模式的参数，最后再进入保护模式，这样也获得了无限的配置能力
+
+- 是的，配置文件都巨复杂，然后你就发现，他妈的，那已经不是人写的，而是机器生成，然后背后有一套别的什么东西在生成
+
 - ## 我就是在做业务页面开发的! 写表单写表格、调接口、改样式、修兼容!
 - https://x.com/hd_nvim/status/1950038562948182443
 
@@ -282,9 +298,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - 这里可能有个悖论, 自己造轮子 研发成本高, 不自己造轮子 显不出技术“高明”, 结果是 996 劣质轮子 遍地都是…
 
-01.                      大概率没有开源的好
-02.                      造轮子就要维护一个轮子迭代维保团队
-03.                      迭代维保团队和其他团队无限的撕逼
+01.                        大概率没有开源的好
+02.                        造轮子就要维护一个轮子迭代维保团队
+03.                        迭代维保团队和其他团队无限的撕逼
 
 - ## Five terms I avoid when naming things:
 - https://twitter.com/housecor/status/1742197661837476018
@@ -564,7 +580,7 @@ modified: 2021-01-21T17:52:13.333Z
 - ## For a new project, I’m experimenting with putting test code next to library modules: utl.test.ts
 - https://twitter.com/rauschma/status/1584271399606054913
   - Definitely a downside. During development, it mostly doesn’t matter. But it’s important when publishing packages. I’m leaning towards simply publishing the tests, too.
-  - `rm dist/**/*.test.js`
+  - `rm dist/ **/* .test.js` 
 
 - I found this pattern more useful and ergonomic than a test folder. I reserved a dedicated test folder for local integration ones that requires fixtures or more complex scenarios. For smaller projects don’t see bigger differences between each other benefits
 - This puts an emphasis on unit tests (because where do you put the integration tests that combine multiple modules?).
@@ -903,7 +919,7 @@ modified: 2021-01-21T17:52:13.333Z
   · Opinionated, strict, prop-driven
   · Can be simpler to learn
   · Use it when wanting to limit what users can do
-- **They're both good**!
+- **They're both good** !
 - I use both on a daily basis, I mean the second (UI preset) can be a shortcut for using the first (design system)
 
 - ## I ported Chrome DevTools' inspector to Node.js
@@ -1055,9 +1071,9 @@ modified: 2021-01-21T17:52:13.333Z
   - How to split arg/return value display from the written descriptions
 - We dynamically replace the generic type parameters in the docs for generic types with a concrete type where necessary. 
   - No `IEnumerable<T>` but `IEnumerable<INode>` .
-  - why not just name the generic parameter something readable (rather than abstract T)? that way you wouldn't have to replace anything - like probably you could just grab the name from `Node extends INode`
+  - why not just name the generic parameter something readable (rather than abstract T)? that way you wouldn't have to replace anything - like probably you could just grab the name from `Node extends INode` 
 
-- ## Unpopular opinion: you should write E2E/integration tests *first*, always. 
+- ## Unpopular opinion: you should write E2E/integration tests *first* , always. 
 - https://twitter.com/DavidKPiano/status/1180497113341468677
   - (This mainly applies to applications. For libraries used by developers, the unit tests *are* the E2E tests, a lot of the time.)
   - They should be directly related to business logic (user) requirements. 
@@ -1218,7 +1234,7 @@ modified: 2021-01-21T17:52:13.333Z
   - Expect to be given some silly use case, ie, "write a class that take two strings, and tracks which is longer"
   - Be comfortable talking through the requirements, asking questions, etc.
 - Expect to iterate on it, over and over, with requirements being added. Ie, "now optionally take an array of strings, and, if an array was passed, track the shortest string. If just two strings were passed, like before, then ..."
-- Most important tip I can give: **think out loud**. Always. Turn the voice in your head you normally think with, off, and think out loud.
+- Most important tip I can give: **think out loud** . Always. Turn the voice in your head you normally think with, off, and think out loud.
   - If you get stuck, talk it through, out loud. Explain why you're stuck. Ask questions. Your interviewer is there to help you. Seriously.
 - The worst thing you can do is stop coding, and freeze up, panicking in your mind. Talk it through.
 - Expect to be asked questions in your domain to test how deeply you know it. I was asked about everything from arrow functions, to Promises, to web sockets.
@@ -1466,7 +1482,7 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## If you don't know which code is calling your function, use console.trance()
 - https://twitter.com/sseraphini/status/1356654950198239233
-- I used `console.log(new Error)`
+- I used `console.log(new Error)` 
 
 - I usually also do “console.log = console.trace” to locate and remove some console.log
 
@@ -1503,7 +1519,7 @@ modified: 2021-01-21T17:52:13.333Z
   - Simple vs Configurable
   - Centralized vs Distributed
   - Convention vs Configuration
-  - **Avoid picking sides. Think tradeoffs.**
+  - **Avoid picking sides. Think tradeoffs.** 
 - I am not sure you want to trade off security for convenient
   - Perhaps, but companies do so everyday. 
   - Using other people’s software is convenient, but adds security risk by trusting other people’s code.

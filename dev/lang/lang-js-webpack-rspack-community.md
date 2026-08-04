@@ -197,6 +197,27 @@ modified: 2024-01-03T16:14:53.804Z
 - ## 
 
 - ## 
+# discuss-toolchain-alternatives
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 在无人在意的角落 antd 团队把 mako 直接秽土转生出来 utoopack；社区主要的rust bundler 如下
+- https://x.com/zouhangoo/status/2082040561201295675
+  - vite/rolldown 开源 infra 公约数，大部分 web 开源项目均基于 vite 构建
+  - rspack 字节开源领头羊/webpack 最忠实的继承人/benchmark 中的 蒙哥·卡恩
+  - turbopack  nextjs 的最强坐骑
+  - farm 跟不上了
+- 字节与 Rust bundler 不得不说的故事：
+  - Mako 主力 @stormslowly 目前在 Rspack 团队
+  - Utoopack 主力 @zoomdong2 来自 Rspack 团队
+  - Rolldown 的主力大部分来自 Rspack 团队
+  - Farm 作者也在字节
+
 # discuss-perf
 - ## 
 

@@ -81,6 +81,23 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 传统的 Agent 沙箱方案会给每个 Agent 一个完整的 Linux 环境，成本高，C端产品难规模化。
+- https://x.com/0xAA_Science/status/2082416079587180621
+  - 这篇文章探索了另一个极端，完全放弃 Linux 沙箱，成本降低几个数量级，操作更简单：
+  - 把 Agent 搬到自带 SQLite 的 Cloudflare Durable Object 
+  - 原先的文件系统落在 SQLite 和 R2 上
+  - 移除 bash，改为使用 CF 的 code mode + dynamic worker 执行 JS 代码
+  - 如果仍需要 Linux 系统，则按需调用 CF sandbox SDK 启动沙箱，运行后关闭。
+- 其实做的就是把agent放在更便宜的durable object中，比cf sandbox等linux vm服务要便宜得多。
+  - 市面上最便宜的agent sandbox，Daytuna 和 cf sandbox 大概 $0.1-0.2/h。而 cd durable object 不到 0.01/h
+
+- coding场景不行，需要build，另外这个方案没几家大厂采用的
+  - 很新的方案，对于成本敏感的c端用户有吸引力
+
 - ## [sandboxing pi : r/PiCodingAgent _202607](https://www.reddit.com/r/PiCodingAgent/comments/1uke0s1/sandboxing_pi/)
 - Really depends on what environment you’re in. Bubblewrap (Linux) Seatbelt (Mac, check agent-safehouse) are good isolation. You can always just run a VM, or even better use a remote environment. I have an LXC on Proxmox just for this.
 

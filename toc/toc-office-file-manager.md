@@ -52,6 +52,15 @@ modified: 2021-08-23T05:27:08.068Z
   - 依赖 react-virtualized, react-dnd, react-dnd-html5-backend
   - Drag-and-drop sortable component for nested data and hierarchies
 
+- https://github.com/hahahumble/storageui /apache2/202607/ts
+  - https://storageui.dev/
+  - Open-source file browser for S3, R2, and other storage backends. 
+  - Browse, preview, search, and manage files in a modern, self-hosted web interface.
+  - Search, filtering, sorting, and lazy folder loading
+  - PDF, DOCX, XLSX, image, text, and code previews
+  - Multiple storage connections with local persistence
+  - Per-bucket read-only mode for environment-configured connections
+
 - https://github.com/ln-dev7/square-ui/tree/master/templates-baseui/files /MIT/202601/ts/依赖少
   - https://square-ui-files.vercel.app/
   - Modern file manager with folders, storage overview, file grid/list view, and navigation.

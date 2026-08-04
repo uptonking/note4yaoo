@@ -39,6 +39,26 @@ modified: 2023-10-31T11:48:54.805Z
   - For now, the focus seems to be mainly dev use cases on Docker Desktop which ships bundled with the Secrets Engine and one provider (docker pass). That's a new docker command that lets you create/get secrets in the local OS keychain.
 
 - It's weird that it took so long for docker to build this natively. 1Password and other pw managers have also done a great job with implementing developer related features.
+# discuss-solutions-security
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 国内顶尖安全大厂长亭科技把他们家的商业级 Web 防火墙
+- https://x.com/CycleDecoded/status/2083899759295975530
+  - 开源自部署 WAF 防火墙系统 SafeLine（雷池），斩获了 2.2 万星。基于 GPL-3.0 协议开源，采用 Nginx 反向代理架构。不像传统防火墙死板地匹配规则，它直接上语义分析引擎，一条 Docker 命令就能给你的网站加个“防弹衣”。
+  - 人机挑战抗刷：内置验证码与动态加密，黑产脚本直接废掉
+  - 免费支持 10 站点：个人版零成本白嫖，小微项目管够
+  - https://github.com/chaitin/SafeLine /GPL/202607/go/cpp
+
+- 这并不是开源的   仓库里只是文档站
+- 一直有，这个是社区版，官网就有入口
 # discuss-security
 - ## 
 

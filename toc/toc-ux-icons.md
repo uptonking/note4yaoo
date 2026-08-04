@@ -107,6 +107,13 @@ modified: 2021-05-06T09:58:23.803Z
   - https://x.com/dotta/status/2077428830092833022
   - This tool by the Paperclip team lets you animate any Lucide Icon in SVG
 
+- https://github.com/guillermolg00/morphicons /MIT/202608/ts/NoDeps
+  - https://www.morphicons.com/
+  - Any icon morphs into any other — universal morphing for stroke-based icons with spring physics
+  - Universal morphing for stroke-based icons (Lucide, Tabler, Heroicons, Iconoir, or your own paths): any icon morphs into any other with spring physics. 
+  - Rotations are never declared by hand — they emerge from the math (2D Procrustes + polar interpolation). 
+  - Zero runtime dependencies.
+
 - iconpark
   - https://github.com/bytedance/iconpark
   - https://iconpark.oceanengine.com/official
@@ -450,6 +457,8 @@ modified: 2021-05-06T09:58:23.803Z
   - https://x.com/productdevbook/status/2036082175024496801
     - French word again. Ty for that. I love it
 # more
+- [Koboyo Icons — 71, 262 free hand-drawn SVG icons ](https://koboyo.com/icons)
+
 - https://github.com/fontello/fontello
   - This tool lets you combine icon webfonts
   - shrink glyph collections, minimizing font size

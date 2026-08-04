@@ -21,6 +21,17 @@ modified: 2023-03-09T13:47:07.317Z
   - [精读《WOPI协议》 - 掘金](https://juejin.cn/post/7105322391597187103)
     - WOPI是微软基于REST API的协议，定义了一组Http操作，使客户端能够访问和改变服务器存储的文件。
 # office-popular
+- https://github.com/genspark-ai/genoffice /apache2/202608/ts/rust/暂无web
+  - https://www.genspark.ai/genoffice
+  - AI-native office suite for macOS and Windows: word processor, spreadsheet, presentations, and PDF — five Electron apps sharing one engine layer, built around AI editing as a first-class workflow rather than a bolted-on chat box.
+  - .docx word processor. Byte-preserving round trip: only dirty paragraphs are regenerated (paragraph patch), everything else in the original file is kept byte-for-byte, so opening and saving never breaks layout in Word. 
+    - TipTap streaming editor (manual + AI editing, dirty tracking)
+  - .xlsx spreadsheet. UI built on the open-source Univer core (Apache-2.0) with a large layer of in-house extensions, xlsx import/export runs through an in-house Rust sidecar (calamine + IronCalc), charts are rendered in-house (Konva), plus pivot tables, slicers, conditional formatting, and formula tracing.
+  - In-house pptx parse/render/edit engine with masters, charts, cropping, ink, and text shaping (HarfBuzz metrics).
+  - PDF viewer/editor on pdf.js + pdf-lib: annotations, forms, outlines, stamps, signatures, page operations, print
+  - Every app embeds the same AI panel: block-granular AI editing with version snapshots and diffs in docs, a tool-calling agent over workbook/slide/PDF state in the others.
+  - The same philosophy holds in sheets and slides: the original file is the source of truth, edits are applied as narrow patches, and everything the editor didn't touch survives the round trip untouched.
+
 - https://github.com/dream-num/univer /11.9kStar/apache2/202512/ts
   - https://univer.ai/
   - An Isomorphic Full-Stack Framework for Creating and Editing Spreadsheets Across Web and Server.

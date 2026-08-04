@@ -26,9 +26,35 @@ modified: 2026-06-17T07:27:04.608Z
 
 - ## 
 
-- ## 
+- ## Tailscale 运行在 UDP（wireguard），现在国内运营商QoS越来越严重了。感觉我需要找另外一种远程组网方案了
+- https://x.com/riverleaf88/status/2084177126048322012
+- 我用的 WireGuard 同样的问题。但是又不想更换，一共有几十个客户端节点，全部更换太麻烦
 
-- ## 
+- 国内基本靠 derper 中转，是 tcp 的。
+
+- wireguard套上udp2raw/phantun/mimic，又不是不能用
+
+- 其实同城不跨运营商还行，基本没QoS~ 所以专门拉了电信百兆用来组网和玩游戏。
+  - 之前同城不跨运营商就行，现在我发现，也可能会QoS了
+
+- 在用ipv6+hysterica2+ddns-go这套方案，非常快，在外面看家里下载的影视随便拖拽。
+
+- 我试过，基本没办法，组网估计你只能考虑服务器中转。我感觉基本都限速到1MB/s以下了，大致就几百KB/s的样子
+
+- easytier 可以用 tcp 建立连接 也有其他协议 自己研究下, 我已经从 ts 转 et 了，不过 ts可以做备用，两套不冲突
+
+- 用openvpn 包一层tcp
+
+- 福建电信UDP限速5M
+
+- tailscale支持自建derp，走tcp通道稳
+
+- ## 通过 Cloudflare Registrar 注册后，必须使用 Cloudflare nameserver，不能切到其他 DNS 服务商。
+- https://x.com/itonlin111/status/2083570431211278467
+  - 好处是续费按注册局成本价、不加 markup，DNS、CDN、SSL 也能直接整合；代价是迁移自由度低一些。
+  - 这波更适合拿来做 demo、开源项目页或 AI 工具 landing page。真要做长期品牌站，先看第二年价格，再决定要不要冲。
+  - Cloudflare 官方 Registrar API 的示例价格里，标准 .dev 注册/续费约 10.11 美元，.app 约 11 美元。也就是说，1 美元更像首年获客价，不是长期成本；实际价格仍要以下单前的实时查询为准，Premium 域名可能更贵。
+
 # discuss-free/awesome
 - ## 
 

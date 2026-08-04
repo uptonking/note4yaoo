@@ -120,6 +120,17 @@ modified: 2025-09-21T18:39:13.776Z
 - [Typst Bundle export ](https://typst.app/docs/reference/bundle/)
   - Bundle output is useful for creating multi-page websites with HTML export, but it is not limited to HTML export. 
   - You can create bundles containing any combination of HTML pages, PDFs, PNGs, SVGs, and arbitrary assets.
+
+- https://github.com/panorama-lab/markdown
+  - https://panorama-lab.com/markdown
+  - Markdown for writing papers
+  - a lightweight dialect for writing academic papers and representing parsed PDF papers in Markdown.
+  - Standard Markdown for headings, paragraphs, lists, links, footnotes, and emphasis
+  - YAML front matter for titles, authors, abstracts, and keywords
+  - Figures and tables are imported with directive syntax instead of embedded directly in the Markdown
+  - Citations via :cite and a ::references block backed by BibTeX
+  - Cross-references via :ref to labeled sections, figures, and tables
+  - Markdown defines the content, while layout and styling stay separate. The current tooling can export APA-style PDFs, with support for additional styles planned.
 # table-md
 - 参考textbundle格式的csv来与表格交互
 

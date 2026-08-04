@@ -9,6 +9,8 @@ modified: 2026-04-11T01:31:17.720Z
 
 # guide
 
+- warning
+  - 少用subagents, 碰到网络问题或程序崩溃时， 恢复很难，并且中转站经常中断时会丢失subtask信息然后多次创建subagents执行重复的explore
 # coding-xp
 - coding的时候容易困惑和迷茫，特别是在处理未知问题和疑难问题的时候， 此时不要凭空猜想，寻找现有项目或主流项目的相似点、参考点，然后改进、迁移
   - 最好将灵感项目打开再浏览器或桌面，这样休息后可以进一步反思
@@ -752,13 +754,13 @@ project `vscode` in current folder is a popular, open-source, powerful coding id
 - non-goals
   - viewer for large binary files like docx/pdf, just ocred/converted text
 
-This project `colanode` (also named redmansion) is a local-first Slack and Notion alternative that supports writing, databases, subpage and file management. web, desktop, react-native apps are available.
+This project `redmansion` (also named colanode) is a local-first Slack and Notion alternative that supports writing, databases, subpage and file management. web, desktop, react-native apps are available.
 - project joplin(at folder `../joplin`, AGPL license) is a offline-first note taking app that supports markdown, attachments, ocr, and powerful Synchronization. Windows, Linux, macOS, Android and iOS apps are available, NO web app.
-- The goal is to enhance colanode with offline and syncing related features like joplin, making colanode more powerful and easier to use. You can refer to the architecture/data-flow/code/ideas of joplin, but copying AGPL code should be avoided, you might rewrite it in functional style for colanode.
-- The goal is to enhance offline-first features for colanode desktop app like joplin desktop app: User should be able to open the desktop app and use it directly without configuring a server url, Joplin has very good support for offline usage like that, but for webapp, the existing workflow is ok. The first time to open the colanode desktop app, please auto create a default user account and a default workspace, so that it is easy to use out of the box. If user want to sync to server, please allow user to configure sync target like in joplin in settings page. You might refer to the joplin syncing architecture for syncing targets like local-folder/local-server/cloud-server/onedrive, then design a robust/extensible syncing architecture for colanode. But unlike joplin, multiple sync targets should be supported in colanode desktop app, for example, docs in colanode can be synced to local folder and server at the same time. for example, if user edits a doc in colanode desktop app, the local folder of sync target should be updated automatically(joplin supports this), when user edits the file in local folder of sync target using external editor like vscode, changes should also be synced to colanode. multiple cloud servers as sync targets are not required now, it is too complicated, you should support to sync from desktop app to local folder and one cloud server at this moment.
+- The goal is to enhance redmansion with offline and syncing related features, making redmansion more powerful and easier to use. You can refer to the architecture/data-flow/code/ideas of joplin, but copying AGPL code should be avoided, you might rewrite it in functional style for redmansion.
+- The goal is to enhance offline-first features for redmansion desktop app: User should be able to open the desktop app and use it directly without configuring a server url, Joplin has very good support for offline usage like that, but for webapp, the existing workflow is ok. The first time to open the redmansion desktop app, please auto create a default user account and a default workspace, so that it is easy to use out of the box. If user want to sync to server, please allow user to configure sync target like in joplin in settings page. You might refer to the joplin syncing architecture for syncing targets like local-folder/local-server/cloud-server/onedrive, then design a robust/extensible syncing architecture for redmansion. But unlike joplin, multiple sync targets should be supported in redmansion desktop app, for example, docs in redmansion can be synced to local folder and server at the same time. for example, if user edits a doc in redmansion desktop app, the local folder of sync target should be updated automatically(joplin supports this), when user edits the file in local folder of sync target using external editor like vscode, changes should also be synced to redmansion. multiple cloud servers as sync targets are not required now, it is too complicated, you should support to sync from desktop app to local folder and one cloud server at this moment.
 - for syncing, rules in .gitginore file should be supported.
-- These features are very challenging, the current architecture in colanode might be refactored to make it easy to implement more features in the future.
-- analyze related architecture/data-flow/code in colanode and joplin, then implement a extensible offline and syncing architecture for colanode.
+- These features are very challenging, the current architecture in redmansion might be refactored to make it easy to implement more features in the future.
+- analyze related architecture/data-flow/code in redmansion and joplin, then implement a extensible offline and syncing architecture for redmansion.
 
 - 
 - 
@@ -766,12 +768,22 @@ This project `colanode` (also named redmansion) is a local-first Slack and Notio
 - 
 - 
 
-- you have implemented part of the goals and features, please analyze related data-flow/code, improve the implementation for the offline and syncing related features, you might refactor/reorganize the architecture/logic to make it correct, robust, extensible, maintainable in the long term.
+- you have implemented part of the goals and features, please analyze related data-flow/code, improve the implementation for the offline and syncing related features, you might refactor/reorganize the architecture/logic to make it correct, robust, extensible in the long term.
 - review the implementation of the offline and syncing related features, then make a plan to improve it
 
-- docs/tests/scripts might be outdated, recheck code and data flow to improve colanode.
+- docs/tests/scripts might be outdated, recheck code and data flow to improve redmansion.
 
-- please try to analyze and fully understand related data-flow/architecture/code before editing/updating code to make colanode correct, robust without hallucination. 
+- please try to analyze and fully understand related data-flow/architecture/code before editing/updating code to make redmansion correct, robust without hallucination. 
+
+- docs/tests/scripts might be outdated, please analyze and recheck related data-flow/code to improve redmansion for every feature above and major offline and syncing related features.  you might refactor/reorganize the architecture/logic if it helps to make it correct, robust, extensible in the long term.
+- analyze all the architecture/data-flow/code related to offline and syncing features, if there are obvious bugs, then make a comprehensive plan to fix all the bugs or improve the architecture if you want, you should only edit code after showing me the plan.
+
+- no parallel subagents, just explore the code directly
+
+- if major/important features already work without obvious bugs and have good architecture/data-flow, then please propose the top 2 features related to offline and syncing to improve later.
+
+- redmansion is still beta software, you might merge/squash the db schema migrations, only use the latest schema is ok, db related compatibility is not required for now. 
+- update you plan, make sure your plan is correct and robust.
 
 - 
 - 
@@ -782,6 +794,8 @@ This project `colanode` (also named redmansion) is a local-first Slack and Notio
   - login user can open cloud workspace
   - improve web/mobile
   - sync status/tips
+  - avoid sync loop
+  - file name starts with dot, like .gitignore
   - ~~improve sync cloud first then reconcile local files, what if local file needs dynamic computing~~ 
 
 - roadmap
@@ -790,22 +804,23 @@ This project `colanode` (also named redmansion) is a local-first Slack and Notio
   - sqlite on server
   - ocr
 
-- for a existing local folder that has synced to cloud server previously, how to open the local folder in colanode desktop app again and sync to the cloud server correctly.
+- for a existing local folder that has synced to cloud server previously, how to open the local folder in redmansion desktop app again and sync to the cloud server correctly.
 
-- some ideas for the colanode desktop app to enhance the offline and syncing related features(webapp workflow might stay unchanged or updated to be consistent with the desktop workflow): 
-  - when opening colanode desktop app for the first time, a default user and default workspace is created automatically, and a default folder is also auto created at path `~/Documents/colanodeYYYYMMdd`(use the latest date in code), so a local folder sync target is added automatically, user may add other sync targets like cloud-server/local-server later. Opening colanode desktop app later will auto open the last workspace.
-  - when colanode desktop app has a local folder as a sync target, it should auto export the colanode contents to local folder and markdown files that mirrors file tree structure in colanode and write metadata at `.colanode/manifest.json`, every note should be exported as a markdown file, for example, a note like `work/meetings` has subpages, then the note should be exported as a nested folder like `work/meetings/` and the note itself should be exported as `work/meetings/_index.md` (or work/meetings/meetings.md or work/meetings/meetings_readme.md or work/meetings/meetings_readme_.md to avoid name conflict), notes without subpages should be exported as markdown file directly. you might store colanode id/hash/file-path relations or other metadata at `.colanode/manifest.json` if you want.
-  - when user uses colanode desktop app, local sqlite is source of truth, data exported to local folder automatically. when user uses external editor like vscode to edit the local folder, then user opens the same folder with the same .colanode/manifest.json or colanode local folder watcher detects the file changes, colanode desktop should parse all the local markdown files or changed file, then try to update the local sqlite. Before updating local sqlite, if a cloud server sync target is set, check the last sync status and changed files, if no conclict, merge cloud changes to local sqlite first, then update local sqlite with reparsed local markdown files, if conflicts exist, show a conflicts file list and ask the user to select cloud content or local file content to save. I think this workflow in my idea makes it easy to implement and works good enough for one-person workflow. 
-  - when user use colanode desktop app to open local folder, if the folder does not contain .colanode/manifest.json, a workspace with the same name of the folder should be created automatically, the local folder should be set as sync target automatically, other sync targets like cloud/local-server may be added later. if the folder contains .colanode/manifest.json, just pull the latest cloud content to local sqlite first, then try to update the local sqlite with reparsed content of local folder as the similar workflow previously mentioned, the local folder should be set as sync target automatically. 
-  - when both app.sqlite and workspace.sqlite are missing: if using colannode to open a folder that does not contain .colanode/manifest.json, auto create a new user and a workspace with the same name of the folder, the local folder should be set as sync target automatically. if using colannode to open a folder that contains .colanode/manifest.json, ask the user to login and sync, or just use it locally with syncing to local folder enabled and syncing to server disabled .
-  - when app.sqlite exists but workspace.sqlite is missing: if using colannode to open a folder that does not contain .colanode/manifest.json, use the user info from app.sqlite, a workspace with the same name of the folder is created automatically, the local folder should be set as sync target automatically. if using colannode to open a folder that contains .colanode/manifest.json, use the user info from app.sqlite, ask the user to sync, or just use it locally.
+- some ideas for the redmansion desktop app to enhance the offline and syncing related features(webapp workflow might stay unchanged or updated to be consistent with the desktop workflow): 
+  - 1 workspace is designed to have only 1 local folder target, 1 cloud/self-hosted server.
+  - when opening redmansion desktop app for the first time, a default user and default workspace is created automatically, and a default folder is also auto created at path `~/Documents/redmansionYYYYMMdd`(use the latest date in code), so a local folder sync target is added automatically, user may add other sync targets like cloud-server/local-server later. Opening redmansion desktop app later will auto open the last workspace.
+  - when redmansion desktop app has a local folder as a sync target, it should auto export the redmansion contents to local folder and markdown files that mirrors file tree structure in redmansion and write metadata at `.redmansion/manifest.json`, every note should be exported as a markdown file, for example, a note like `work/meetings` has subpages, then the note should be exported as a nested folder like `work/meetings/` and the note itself should be exported as `work/meetings/_index.md` (or work/meetings/meetings.md or work/meetings/meetings_readme.md or work/meetings/meetings_readme_.md to avoid name conflict), notes without subpages should be exported as markdown file directly. you might store redmansion id/hash/file-path relations or other metadata at `.redmansion/manifest.json` if you want.
+  - when user uses redmansion desktop app, local sqlite is source of truth, data exported to local folder automatically. when user uses external editor like vscode to edit the local folder, then user opens the same folder with the same .redmansion/manifest.json or redmansion local folder watcher detects the file changes, redmansion desktop should parse all the local markdown files or changed file, then try to update the local sqlite. Before updating local sqlite, if a cloud server sync target is set, check the last sync status and changed files, if no conclict, merge cloud changes to local sqlite first, then update local sqlite with reparsed local markdown files, if conflicts exist, show a conflicts file list and ask the user to select cloud content or local file content to save. I think this workflow in my idea makes it easy to implement and works good enough for one-person workflow. 
+  - when user use redmansion desktop app to open local folder, if the folder does not contain .redmansion/manifest.json, a workspace with the same name of the folder should be created automatically, the local folder should be set as sync target automatically, other sync targets like cloud/local-server may be added later. if the folder contains .redmansion/manifest.json, just pull the latest cloud content to local sqlite first, then try to update the local sqlite with reparsed content of local folder as the similar workflow previously mentioned, the local folder should be set as sync target automatically. 
+  - when both app.sqlite and workspace.sqlite are missing: if using colannode to open a folder that does not contain .redmansion/manifest.json, auto create a new user and a workspace with the same name of the folder, the local folder should be set as sync target automatically. if using colannode to open a folder that contains .redmansion/manifest.json, ask the user to login and sync, or just use it locally with syncing to local folder enabled and syncing to server disabled .
+  - when app.sqlite exists but workspace.sqlite is missing: if using colannode to open a folder that does not contain .redmansion/manifest.json, use the user info from app.sqlite, a workspace with the same name of the folder is created automatically, the local folder should be set as sync target automatically. if using colannode to open a folder that contains .redmansion/manifest.json, use the user info from app.sqlite, ask the user to sync, or just use it locally.
   - generally, local sqlite is the source of truth, before updating local sqlite with reparsed local files, sync the cloud data to local sqlite first, then provide the user with conflicts list if any conflict exists.
-- colanode is designed to be offline first, user mostly manage files at local folder or cloud/self-hosted server, local sqlite should be invisible to user: in most cases, before updating local sqlite, fetch cloud content first, then update local sqlite by cloud changes(always succeed), then try to update local sqlite by changes from local files as mentioned above, if conflicts exist, provide the conflicts list.
+- redmansion is designed to be offline first, user mostly manage files at local folder or cloud/self-hosted server, local sqlite should be invisible to user: in most cases, before updating local sqlite, fetch cloud content first, then update local sqlite by cloud changes(always succeed), then try to update local sqlite by changes from local files as mentioned above, if conflicts exist, provide the conflicts list.
+- redmansion desktop app is offline-first, if a workspace has a cloud/self-hosted server as a sync target, user can pause/resume syncing manually. if user clicks the pause syncing button, user can still edits the content from desktop ui or external editor like vscode, then when user click the resume syncing button, changes should be handled correctly. the offline editing and syncing implementation has a lot in common with the use case of opening a local folder with valid manifest config. the architecture has been optimized to share some common logic and make the data flow correct, extensible and consistent. manual pause and sync should work for desktop app first, web/mobile is not required now. 
 - downloading files/attachments/binary to local folder sync target should be lazy and follow the file structure in the workspace, for example, a `pets/cat.png` should be only exported to local folder sync target at `pets/cat.png` when it is clicked/opened, to simplify the implementation, generally the attachment/file download result should be success or failure, all or nothing, no crash/intermediate state, interrupted downloads or incompleted downloads like *.part should be auto deleted. no global cache or private .staging design for this feature.
-- colanode desktop app is offline-first, if a workspace has a cloud/self-hosted server as a sync target, user can pause/resume syncing manually. if user clicks the pause syncing button, user can still edits the content from desktop ui or external editor like vscode, then when user click the resume syncing button, changes should be handled correctly. the offline editing and syncing implementation has a lot in common with the use case of opening a local folder with valid manifest config. the architecture has been optimized to share some common logic and make the data flow correct, extensible and consistent. manual pause and sync should work for desktop app first, web/mobile is not required now. 
 
 - improve the offline and syncing related features for the use cases of renaming local folder sync target. 
-  - support to rename the sync target of local folder in desktop app ui only, web/mobile is not required. when use clicks the rename button and input new name, just rename the local folder to the new name, related config/logic/watcher should update automatically, and all desktop app features should work after renaming.
+  - support to rename the sync target of local folder in desktop app ui only, web/mobile is not required. when user clicks the rename button and input new name, just rename the local folder to the new name, related config/logic/watcher should update automatically, and all desktop app features should work after renaming.
   - when desktop app is open and the local folder is renamed(not from ui, but renamed from filesystem), local folder sync target should be disabled automatically, show a warning at user avatar or notification if you want, most desktop app features should still work with local sqlite. user can add a new local folder sync target later. 
   - when desktop app is closed/not-open and the local folder is renamed, then user opens desktop app and tries to open/restore the last workspace, local folder sync target should be disabled automatically, show a warning at user avatar or notification if you want, most desktop app features should still work with local sqlite. user can add a new local folder sync target later.
   - when both app.sqlite and workspace.sqlite exists, and user open a local folder contains valid manifest config, just pull the latest cloud content to local sqlite first, then try to update the local sqlite with reparsed content of local folder as the similar workflow previously mentioned, the local folder should be set as sync target automatically. 
@@ -821,13 +836,15 @@ This project `colanode` (also named redmansion) is a local-first Slack and Notio
   - does it work well for webapp?
 
 - The current server target creates a dedicated remote workspace behind the scenes and mirrors the local workspace into it; it does not let the user choose an existing remote workspace. That avoids accidental merges but is a product choice, not an architectural necessity.
-- Colanode restores its working SQLite/Yjs workspace from canonical data under .colanode. The visible Markdown files are editable projections; they are not the only recovery source.
+- redmansion restores its working SQLite/Yjs workspace from canonical data under .redmansion. The visible Markdown files are editable projections; they are not the only recovery source.
 
-- in joplin app, when sync target is set to a local folder, image are not exported as .jpg/.png but random name like `.resource/11ebaf4a20084f99879f4af3b763d363`, which is inconvenient. in colanode, please just export the image in a readable format like `attachments`
+- in joplin app, when sync target is set to a local folder, image are not exported as .jpg/.png but random name like `.resource/11ebaf4a20084f99879f4af3b763d363`, which is inconvenient. in redmansion, please just export the image in a readable format like `attachments`
 
-- Colanode desktop remains single-instance; simultaneously sharing one folder target between independent Colanode processes is outside this phase.
+- redmansion desktop remains single-instance; simultaneously sharing one folder target between independent redmansion processes is outside this phase.
 
-- when user delete .gitignore, related files that are ignored previuosly should be synced to local sqlite then to cloud server. when user add .gitignore, related files that are synced previuosly should be deleted from local sqlite and cloud server, but still exists in local folder. is this design good ?
+- ✅ when user delete .gitignore, related files that are ignored previously should be synced to local sqlite then to cloud server. 
+  - ❌ when user add .gitignore, related files that are synced previously should be deleted from local sqlite and cloud server, but still exists in local folder. 
+  - is this design good ?
 
 - 
 - 
@@ -976,13 +993,15 @@ finally make sure all tests run and pass locally with npm. you can update/fix te
 
 - tests is a little messy in this monorepo project. in all subpackages, move tests inside src folder to sibling test folders of src like apps/desktop/test, apps/server/test, packages/client/test, packages/durable-fs/test, packages/core/test
 # rafactor
-- why do you want to make a big change/refactor? is current architecture not correct or extensible? why is your proposal better?
-
 - analyze the core data-flow/code-logic of major features, find possible bugs and memory leak, improve it for the long term maintenance.
 
-- please try to analyze related data-flow/architecture/code before edit/update code to make colanode desktop correct, robust without hallucination. 
+- please try to analyze and fully understand related data-flow/architecture/code before editing/updating code to make the data-flow/logic/code correct and robust without hallucination. 
 
-The goal is to refactor existing code and architecture to be more clear, extensible, functional-programming style, while improving logic correctness at the same time.
+- why do you want to make a big change/refactor? is current architecture not correct or extensible? why is your proposal better?
+
+- i think the design for journal related feature is heavy and bug-prone. please analyze related data-flow/code, make it correct and robust, no stale logs/items, make it correct, clean, consistent. you might do a big refactor or change to the existing journal design. 
+
+- The goal is to refactor existing code and architecture to be more clear, extensible, functional-programming style, while improving logic correctness at the same time.
 One task is to remove `class extends` inheritance and js prototype. `class extends` inheritance and prototype MUST be avoided by refactoring and rewriting.
 es6 class may be used very very sparingly. No confusing `this` , no prototype. 
 Prefer to avoid relying on dynamic binding, `.bind()` , `.call()` , `.apply()` , or method context unless truly necessary. 
@@ -1013,7 +1032,8 @@ Keep the existing code/architecture working. Do not rewrite the whole codebase a
 
 yes, continue to refactor and improve towards more functional-programming style
 
-for project begonia, please refactor code structure if you need, to make sure all source code and tests files should have less than **700** lines of code(other code-unrelated or unimportant files are not required). because if too many code exists in a single file, it will be hard to maintain. small files and modular architecture are always preferred.
+for project begonia, 
+please refactor code structure if you need, to make sure all source code and tests files should have less than **600** lines of code(other code-unrelated or unimportant files are not required). because if too many code exists in a single file, it will be hard to maintain. small files and modular architecture are always preferred. after your code refactor, all features should still work, all tests should still pass.
 
 please refactor code to migrate from pnpm to npm.
 please keep as many code as possible unchanged, so most bun scripts and code should be kept for backward compatibility, but bun wont be used any more. bun code should not be removed. you should create new script for nodejs or add new entrypoint for nodejs. now update your plan.
@@ -1034,6 +1054,12 @@ current code is under active development. please review and refactor code if you
 
 - this is beta software, database migrations may be merged or squashed, no compatibility layer, just use the latest schema. 
 - legacy or unused code can be refactored and removed.
+
+- the goal for now is to rename this project from `redmansion` to `redmansion`.
+  - packages names and import names should update, like from `@redmansion/server` to `@datalking/redmansion-server`, from `@redmansion/client` to `@datalking/redmansion-client`.
+  - for database table name or column name or other name in code, the abbreviation `RDMN` or `RDMN_ ` should be updated to `DRMN` or `DRMN_`.
+  - code/db/docs/tests should be updated accordingly.
+  - after you finish the rename work, major features should still work, all tests should still pass.
 # toys
 
 # play

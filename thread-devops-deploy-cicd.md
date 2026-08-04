@@ -163,6 +163,22 @@ jobs:
 - spaceship 四块几毛钱（不过是六个数字.xyz）
 
 - https://tld-list.com 这里可以对比价格
+# discuss-cicd-github
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Installing Playwright browsers can take minutes on GitHub Actions.
+- https://x.com/jiahan_c/status/2082299710577201216
+  - GitHub-hosted runners already include several browsers. If a compatible one meets your E2E needs, use it directly to skip the install and speed up CI.
+  - Keep in mind that runner-provided browsers may change independently of Playwright. This can introduce differences, but the CI time savings often make it worthwhile.
+
 # discuss-cicd-local
 - ## 
 

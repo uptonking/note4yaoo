@@ -879,6 +879,14 @@ modified: 2026-04-07T11:52:43.122Z
   - Open-Source, Efficient, and Robust Context Pruning for Retrieval-Augmented Generation
   - Lightweight Provence-style rerankers that keep the answers and drop the noise for retrieval-augmented generation.
 
+- https://github.com/AashishH15/Lexicon /MIT/202608/js
+  - https://lexicon-writer.pages.dev/
+  - free open source Grammarly alternative offline writing assistant assist with grammar, rewriting & tone entirely on your machine.
+  - https://x.com/geekbb/status/2081037759406301313
+    - 内置 Lexicon，基于 Tauri 构建的免费开源 Grammarly 平替。
+    - 离线 AI 写作助手，能下载本地 AI 模型（轻量版 0.8GB，标准版 1.4GB）来实现改写、精简、语气变换等操作，支持 9 种语气风格和整篇文章处理。
+    - 支持导入 .txt/.md/.html 文件，导出 HTML/纯文本/Markdown/PDF。
+
 - apps
   - [Refine - AI Powered Offline Grammar Checker for Mac | Privacy-First Grammarly Alternative](https://refine.sh/)
 # spellchecking

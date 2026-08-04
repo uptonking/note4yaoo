@@ -268,6 +268,15 @@ modified: 2024-03-31T17:45:16.789Z
   - SolidJS + Hope UI，已经停止维护
   - https://github.com/AlistGo/alist-web
 
+- https://github.com/hahahumble/storageui /apache2/202607/ts
+  - https://storageui.dev/
+  - Open-source file browser for S3, R2, and other storage backends. 
+  - Browse, preview, search, and manage files in a modern, self-hosted web interface.
+  - Search, filtering, sorting, and lazy folder loading
+  - PDF, DOCX, XLSX, image, text, and code previews
+  - Multiple storage connections with local persistence
+  - Per-bucket read-only mode for environment-configured connections
+
 - https://github.com/drivebase/drivebase /MIT/202510/ts/inactive
   - https://drivebase.github.io/
   - self-hosted cloud file manager designed to unify file storage across multiple cloud providers into one seamless interface.

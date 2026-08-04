@@ -104,6 +104,24 @@ modified: 2023-11-10T07:10:19.089Z
   - defacto standard at this point
 - their firecracker(爆竹，鞭炮; 杰出或激动人心、有吸引力的人或事物) vm is worth looking into if you want to get further back there in the backend and look at infra. i would imagine they are designing something purpose-built for it.
 - IMO WinterCG should eventually work on standardizing the subset of the Node API that runtimes can implement to get “enough” compatibility. Maybe not time yet though
+# discuss-nodejs-binary/sea
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Vercel 发布了一个 scriptc https://scriptc.dev 挺有意思。 能把普通的 ts 代码直接编译成小巧快速的原生可执行文件，编译出来的程序行为和在 Node 上运行几乎完全一致
+- https://x.com/vikingmute/status/2081638972724564013
+  - 启动极快 二进制体积很小 内存占用也很低。也支持交叉编译到 Linux 和 Windows，我觉得很适合做  CLI 工具 小脚本或者需要快速启动的场景。
+
+- 原理是啥 没有runtime是怎么跑ts的
+  - llvm+静态子集，可以理解为重做了一个rt
+- 绕过v8，c实现等价的runtime，按需加载编译runtime
 # discuss-nodejs-ts ⤴️
 - ## 
 

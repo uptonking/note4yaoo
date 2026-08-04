@@ -322,6 +322,13 @@ modified: 2020-10-05T06:22:02.107Z
   - https://brm.io/matter-js/
   - a 2D rigid body physics engine for the web
   - 一个高性能的 2D 物理 js 库
+# loading
+- https://github.com/turbostarter/loading-ui /MIT/202608/ts
+  - https://loading-ui.com/
+  - Spinners, loaders and loading animations for modern web apps
+  - simple api, fully customizable
+  - shadcn compatible
+  - https://x.com/bzagrodzki/status/2083957782416691275
 # text/font-transition
 - https://github.com/gunnargray-dev/unicode-animations /MIT/202602/ts
   - Unicode spinner animations as raw frame data — no dependencies, works everywhere.

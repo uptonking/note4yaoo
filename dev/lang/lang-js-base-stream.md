@@ -81,6 +81,14 @@ modified: 2023-04-11T13:29:56.273Z
 
 - https://x.com/joelhooks/status/1999886451270676956
   - I've been struggling with agent mail (as mcp versus cli) and want a more "native" approach so building out a typescript variant using pglite and the Durable Streams spec to facilitate agent coordination in swarm
+# discuss-usecase
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # discuss-protocol-stream
 - ## 
 
