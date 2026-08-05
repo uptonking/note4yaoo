@@ -2229,7 +2229,29 @@ https://makerich.club/ chong 这个渠道不是源头，也是流传最久的渠
 
 - ## 
 
-- ## 
+- ## [分享个白嫖opencode 模型的方法 - LINUX DO _202608](https://linux.do/t/topic/2704105)
+  - Base Url: https://opencode.ai/zen/v1
+  - 密钥填： public
+  - 限额根据 IP 计算，达到限额可以加个代理。
+- 添加 2 个请求头： 
+  - User-Agent : opencode/1.18.12 ai-sdk/provider-utils/4.0.23 runtime/bun/1.3.13
+  - x-opencode-client : cli
+
+- {“x-opencode-client”: “desktop”} 你那个太长了，用这些就行了，我都用几个月了
+
+- 带请求头，比 API 请求次数更高，基本不频繁使用，一天 24 小时可以无限使用，北京时间 6 点半到 8 点之前有 503 可能，其余时间都是这样的，最好本地弄个代理，它有 4 个 ID，这是 opencode 内置的请求头
+- 论坛搜 http 代理就有了，用 resin 聚合一下 (也是佬友写的)
+
+- 不用伪装也可以用的，opencode 都没加什么限制
+
+- 内置的只有 200K 上下文，做点小任务可以，让它抓包就可以，嫌麻烦就 resin 粘性代理
+
+- opencode 的是直连官方 api 的，但 free 锁 200k 上下文
+  - free 也是满血 1M 了。叫 AI 探测了一下
+
+- 实测 3000w 就会提示要果 20h 才能用
+
+- cline 改成这样 x-client-type : cline-cli
 
 - ## We just launched free Kimi K2.7 Code in our free coding agent: npm i -g freebuff
 - https://x.com/jahooma/status/2075775678633648503
@@ -2475,13 +2497,13 @@ Hugging Face 🇺🇸 Llama 3.3 70B, Qwen2.5 72B, Mistral 7B +many more. $0.10/m
 - 一个是卖钱的正式版，一个是对话用于训练的免费公测版。测试版不一定弱，但 Ta 是测试版。
 
 - ## 💡 [【长期更新-授人以鱼不如授人以渔】公益站渠道公示（人人都可搭公益？） _202601](https://linux.do/t/topic/1477161)
-  01.                                           q2api(claude)
-  02.                                           英伟达ai平台（大部分开源模型）
-  03.                                           hf抱脸（大部分开源模型）
-  04.                                           groq平台
-  05.                                           硅基流动平台
-  06.                                           富可敌国平台（duck已许可分发付费站anti, 正在申请分发max）
-  07.                                           杂七杂八的短效羊毛平台（国外）
+  01.                                                 q2api(claude)
+  02.                                                 英伟达ai平台（大部分开源模型）
+  03.                                                 hf抱脸（大部分开源模型）
+  04.                                                 groq平台
+  05.                                                 硅基流动平台
+  06.                                                 富可敌国平台（duck已许可分发付费站anti, 正在申请分发max）
+  07.                                                 杂七杂八的短效羊毛平台（国外）
 
 - [还有可以白嫖opus的平台嘛  ](https://linux.do/t/topic/1510785)
 

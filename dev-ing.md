@@ -344,6 +344,10 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0804
+
+- this git branch feat/offline-sync-targets supports to use the desktop app without server. the main git branch desktop app must use a server.  when the user starts the desktop for the first time, a local user and workspace is auto created, it is easy to use out of the box, the problem is there is no seed data or test document in the default workspace. Please analyze the onboarding workflow of the main branch, the webapp/desktop app both starts with good welcome doc. then please improve the desktop/web app in this branch, when user opens the default workspace for the first time,  there should exists similar welcome docs, but no welcome discussion and message for desktop/web by default, because chat is not the core feature for now .
+
 ## 0803
 
 - the goal for now is to rename this project from `colanode` to `redmansion`.
