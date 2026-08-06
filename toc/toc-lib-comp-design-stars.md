@@ -51,6 +51,7 @@ modified: 2021-01-12T18:48:52.713Z
     - https://shadcnstudio.com/templates/admin-dashboard/admincn-free
     - https://shadcnstudio.com/
     - open-source collection of copy-and-paste shadcn components, blocks, and templates - paired with a powerful theme generator to craft, customize, and ship faster.
+    - [Migrate from Radix UI to Base UI in 9 Easy Steps _202604](https://shadcnstudio.com/blog/migrate-from-radix-ui-to-base-ui/)
 
 - https://github.com/skeletonlabs/skeleton /风格glassmorphism
   - https://skeleton.dev/

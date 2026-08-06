@@ -344,6 +344,16 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0806
+
+- the original content in page11.md goes into page11/_index.md, when user clicks folder page11, children file list shows or  content in page11/_index.md shows. when user edits page11/_index.md using external editor like vscode, then if user clicks folder page11, children file list shows or updated content in page11/_index.md shows.
+- auto use Untitled or Untitle 2/3... for new file or folder name, but for Adding folder, the rename input should show to make it easy for user to change the Untitled name, and page focus should goes into the rename input, Untitle text should be auto selected to make it easy to change, just like the rename ux.
+
+- this project mostly uses radix ui, it is outdated and unmaintained, please migrate from radix ui to @base-ui/react, you might refer to the migration guide doc at `docs/ Migrating from Radix UI to Base UI Step-by-Step Guide.md`, or you might refer to other docs if you want. 
+  - @base-ui/react has already been installed with npm. 
+  - try to use as much as base-ui possible, shadcn might exists, but do not add new components from shadcn, try to use base-ui.
+  - please analyze existing ui/ux, then make a plan to migrate from radix ui to base ui.
+
 ## 0805
 
 - Opening a folder shows an upload-centric view. Create/upload uses file.create with parentId: folder.id. The folder body only lists files, not pages.

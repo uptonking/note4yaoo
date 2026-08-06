@@ -35,10 +35,14 @@ modified: 2023-08-31T04:01:14.658Z
   - https://justread.link/
   - A customizable read mode web extension
   - Premium features can be enabled by purchasing Just Read Premium.
+  - 浏览器url未变化
 
 - https://github.com/rNeomy/reader-view /544Star/MPL/202512/js/inactive
   - https://webextension.org/listing/chrome-reader-view.html
   - Reader View extension brings Mozilla's open-source Readability implantation(植入、移植) to Chromium. 
   - Using this extension you can strip clutters from webpages and read them on the "Reader View" mode. 
   - The extension allows you to toggle between normal view and reader view by pressing the page-action button.
+  - 浏览器url变化成了 chrome extension
+  - [Can you add export of markdown format files? _202212](https://github.com/rNeomy/reader-view/issues/154)
+    - Shift + Click the save button for MarkDown
 # more

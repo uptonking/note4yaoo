@@ -1775,6 +1775,10 @@ modified: 2025-08-23T11:43:35.904Z
   - A unified gallery view that allows you to easily preview, edit and manage both generated images as well as anything that's pending in the queue.
   - This project builds into a single HTML file. 
 
+- https://github.com/stimma-ai/stimma /AGPL/202608/python/ts/vue
+  - a desktop app for making images, videos, and designs with AI, and a durable home for the work you produce along the way. It pairs a local media library — semantic search, boards, full generation lineage, repeatable flows — with an agent that can drive every tool in the app
+  - [ComfyUI stopped feeling comfy, so I spent a year building an open-source app on top of it : r/comfyui _202608](https://www.reddit.com/r/comfyui/comments/1vh32n7/comfyui_stopped_feeling_comfy_so_i_spent_a_year/)
+
 - https://github.com/diStyApps/ComfyUI-disty-Flow /556Star/202501/python/js/inactive
   - a custom node designed to provide user-friendly interface for ComfyUI by acting as an alternative user interface for running workflows. It is not a replacement for workflow creation.
 

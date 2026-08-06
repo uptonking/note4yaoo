@@ -1232,7 +1232,14 @@ AI 可以直接操作后台 UI，把复杂流程自动化。
 
 - ## 
 
-- ## 
+- ## Introducing Agent Plugins, an open standard for extending agents.
+- https://x.com/vercel/status/2085398393179005223
+  - Supports Agent Skills and MCP, with more to come.
+  - Built in collaboration with: @awsdevelopers , @code , @cursor_ai , @github , and @openaidevs .
+- Do you plan to formalise "marketplace" spec as well?
+  - We'd love to but I believe it has no consensus right now. The thing to standardize would mostly be update semantics
+
+- A vendor coalition writing the spec is a partnership announcement, not an open standard. Real open standards need parties who'd push back on the outcome.
 
 - ## MCP 协议今天推出了第五个大版本（版本号 2026-07-28），核心变化：从有状态双向协议变成了无状态的请求/响应协议。
 - https://x.com/dotey/status/2082235315675144569

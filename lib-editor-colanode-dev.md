@@ -28,6 +28,7 @@ modified: 2025-06-21T19:10:57.709Z
 - cons
   - version-history 不支持
   - export to markdown/docx 不支持
+  - search 不支持? 
   - comment 不支持
   - 客户端计算也许过重， 复杂计算不适合放在客户端
   - server db 保存了changes, 也保存了最新内容， 但未提供内容相关api, api不方便
