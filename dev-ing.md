@@ -344,6 +344,24 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0805
+
+- Opening a folder shows an upload-centric view. Create/upload uses file.create with parentId: folder.id. The folder body only lists files, not pages.
+- make a plan to improve the page and folder experience.
+  - make a folder show files list by default. 
+  - add a context menu to folder, add a "Add Page" menu item to it. 
+  - analyze related code, then make a plan to improve the page and folder experience, you might refactor exisiting code to reuse/share some common logic.
+  - auto turns a subpage into a folder.
+
+- since redmansion is designed to be offline-first, is it a good idea to unify the architecture of folder and page with subpages?
+  - I think most existing ux can stay unchanged, but the internal data model/architecture might be unified like subpage to make it clean and easier to maintain in long term.
+  - in ui, a pages with subpage can be displayed as a folder automactically.
+  - how do you like my idea? do you have better idea or improvement suggestions?
+  - Analyze related code and the related features/influence, then explain to me.
+
+- if a page has subpage, the ui shows the page as a folder automatically to make the user feel consistent and familiar, but you might design a good internal data model.
+- the workspace concept is a local folder like obsidian vault. I think the spaces concept might be removed or hidden because user can organize the content by familiar folders.
+
 ## 0804
 
 - this git branch feat/offline-sync-targets supports to use the desktop app without server. the main git branch desktop app must use a server.  when the user starts the desktop for the first time, a local user and workspace is auto created, it is easy to use out of the box, the problem is there is no seed data or test document in the default workspace. Please analyze the onboarding workflow of the main branch, the webapp/desktop app both starts with good welcome doc. then please improve the desktop/web app in this branch, when user opens the default workspace for the first time,  there should exists similar welcome docs, but no welcome discussion and message for desktop/web by default, because chat is not the core feature for now .

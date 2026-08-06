@@ -782,9 +782,9 @@ This project `redmansion` (also named colanode) is a local-first Slack and Notio
 - please try to analyze and fully understand related data-flow/architecture/code before editing/updating code to make redmansion correct, robust without hallucination. 
 
 - docs/tests/scripts might be outdated, please analyze and recheck related data-flow/code to improve redmansion for every feature above and major offline and syncing related features.  you might refactor/reorganize the architecture/logic if it helps to make it correct, robust, extensible in the long term.
-- analyze all the architecture/data-flow/code related to offline and syncing features, if there are obvious bugs, then make a comprehensive plan to fix all the bugs or improve the architecture if you want
+- analyze all the architecture/data-flow/code related to offline and syncing features, if there are obvious bugs, then make a comprehensive plan to fix all the bugs or improve the architecture if you want.
 
-- no parallel subagents, just explore the code directly
+- no parallel subagents, just explore the code directly.
 
 - if major/important features already work without obvious bugs and have good architecture/data-flow, then please propose the top 2 features related to offline and syncing that is worth it to improve.
 
@@ -852,6 +852,8 @@ This project `redmansion` (also named colanode) is a local-first Slack and Notio
   - ❌ when user add .gitignore, related files that are synced previously should be deleted from local sqlite and cloud server, but still exists in local folder. 
   - is this design good ?
 
+- 
+- 
 - 
 - 
 - 

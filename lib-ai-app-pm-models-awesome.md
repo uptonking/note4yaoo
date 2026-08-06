@@ -2004,13 +2004,23 @@ modified: 2026-06-20T15:49:57.019Z
 - [AnyAPI 商城 ](https://ai.lottoz.vip/shop/AG394CE5)
   - 周卡-¥58， 月卡-¥168
   - 无限额度解锁高级模型
+  - 逆向分析后， api被转发到了中转站的gpt
 
 - [小文ai小铺 - Cursor Pro、额度包与 AI 编程账号商城 ](https://yidachuang.top/)
-  - [卡密与 Token 提取工具 - 小文ai小铺 ](https://yidachuang.top/extract)
+  - [卡密与 Token 提取工具  ](https://yidachuang.top/extract)
+  - [临期变红 ](https://yidachuang.top/expiring-red-bill)
+    - 先免费检测账号资格。仅临期（账期剩余 ≤ 2 天）的 Pro / Pro+ / Ultra 可下单， Pro--¥5, Pro+--¥30, ultra--¥60
   - 各种灰色cursor账号
-  - 30天-¥15, 总额度 $100, 似乎只有50个号
+  - 30天-¥15, 总额度 $100, 推算似乎不超过50个号
+  - 红账单最低45， 实付成品号100起偏贵
+  - 红账单auto最低5， 捡漏要等很久
+- [Wafase.com ](https://wafase.com/products/CursorProAuto)
+  - Pro auto: 质保5天--¥20, 质保10天--¥22, 质保15天--¥25
+  - qq群不定期福利: 15元质保5天
 - [阿权小铺 - 源头好货 | Cursor Pro  ](http://39.97.231.221/)
-  - 各种cursor套餐
+  - 独享官方正品 Pro auto: 质保3天--¥25, 质保20天--¥35
+- [Cursor Pro - 阿泽AI店铺 ](https://94fk.cn/)
+  - 按天购买, 似乎50起买
 
 - [Cursor 专卖的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/cursor-pro)
   - cursor--¥80
@@ -2071,8 +2081,6 @@ modified: 2026-06-20T15:49:57.019Z
   - cursorpool插件 [cursor会员pro账号稳定代充AI无限续杯编程辅助工具不降智写代码_闲鱼 ](https://h5.m.goofish.com/item?id=1051212408984)
   - [AgentAPI /NewAPI](https://agentapi.one/)
   - 月卡-¥56, 3000额度≈240刀 , 不如官方
-- [Cursor Pro - 阿泽AI店铺 ](https://94fk.cn/)
-  - 按天购买, 似乎50起买
 - [黑客AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Loong)
   - [词元神 - 全球AI聚合平台 ](https://ciyuanshen.top/)
   - cursor--¥50
@@ -2671,6 +2679,9 @@ modified: 2026-06-20T15:49:57.019Z
 - [静态IP的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/HLT0XHF9)
   - 共享ip 或 单人
 # vpn/networking
+- [helloProxy ](https://proxy.nihaox.cc.cd/user/dashboard)
+  - [【HelloProxy】Hello旗下全新公益机场 - LINUX DO _202608](https://linux.do/t/topic/2709964)
+
 - [风萧萧公益机场](https://chanel.weyolo.com)
   - [萧草 · 臻选](https://shop.sxxe.net/)
 

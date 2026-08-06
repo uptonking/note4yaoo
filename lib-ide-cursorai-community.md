@@ -37,6 +37,19 @@ modified: 2024-09-02T02:28:27.398Z
 - 更喜欢cursor聊天式帮忙生成代码。
 
 - 做工程不会拿着ai一路问到底的，cursor 就项目初开的时候用得多，路走顺了，就一个copilot帮补一下。
+# discuss-tools-cursor
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [I built a Cursor Extension to use multiple Cursor accounts (Work/Personal) on the same machine. No hacks, FOSS, 100% local. : r/cursor _202608](https://www.reddit.com/r/cursor/comments/1u6k1kk/i_built_a_cursor_extension_to_use_multiple_cursor/)
+  - https://github.com/domoarigatomrburato/userdata-switcher /MIT/202607/ts
+  - Use multiple Cursor AI subscriptions on the same machine, in parallel.
+
 # discuss-internals-cursorai
 - ## 
 
