@@ -59,8 +59,12 @@ modified: 2026-03-01T17:12:41.271Z
   - 零凭证网页后台入侵：针对使用 GPT-5.5 开发的一套 Web 应用，在完全没有任何账号信息的情况下，快速定位并利用关键漏洞，直接进入管理系统后台，验证了其安全性隐患。
   - 此外，还完成了大量其他复杂任务，包括但不限于：二进制协议逆向、混淆代码去混淆、加密通信流量分析、自动化漏洞挖掘等。
   - 其实还有关于游戏安全相关的  但是担心被人拿去做外挂 所以就在开源版本中删除了游戏安全相关的内容。
-  - https://github.com/zhaoxuya520/reverse-skill /MIT/202606/java/python
+- https://github.com/zhaoxuya520/reverse-skill /MIT/202606/java/python
+  - [REVERSE-SKILL · 破暗而行，逆水为舟 ](https://reverse.apivix.com/)
 - deepseek几乎是我用来做测试和网络安全等方面最常用的模型 因为他不仅仅聪明 而且不会拒绝我的命令
+
+- ## [很好用的逆向+渗透工作流 - LINUX DO _202605](https://linux.do/t/topic/2244272)
+  - https://github.com/zhaoxuya520/reverse-skill-private
 
 - ## [一个可能佬们已经知道并在用的AI逆向思路，主要是为了绕开大模型的道德抵制 - LINUX DO _202606](https://linux.do/t/topic/2356247)
   - 对于网页的话，可以把操作的所有网络请求导出为har包，然后扔给AI让他来处理
@@ -147,9 +151,9 @@ modified: 2026-03-01T17:12:41.271Z
 
 - ## 
 
-- ## [很好用的逆向+渗透工作流 - LINUX DO _202605](https://linux.do/t/topic/2244272)
-  - https://github.com/zhaoxuya520/reverse-skill-private
+- ## 
 
+- ## 
 # discuss-examples 🌰
 - ## 
 

@@ -344,11 +344,42 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0808
+
+- continue to improve the multi-users and syncing experience.
+- desktop-app/webapp both supports multi-users and multi-workspaces, clicking the bottom-left avatar icon can show user list, clicking the top-left workspace icon can show workspaces list for current user. clicking a user in user list should switch to the last opened local/remote workspace of the user. if user does not logout, the next time when you open the desktop-app/webapp, the last opened workspace and user will always be used. the same user can open workspaceA on desktop-app and open workspaceB on webapp at the same time.
+- for the webapp, it is always client/server architecture, changes/updates always syncs to server.
+- for the desktop app: The first time to open the redmansion desktop app, please auto create a default local user account and a default local workspace, a default welcome getting started page should open in editor to make it easy to get user onboard. for the desktop app without authenticated user, the default local user is used by default, newly created workspace also belongs to the local user. If user added a cloud/self-hosted server sync target, then the authenticated user of the server target will also be added as owner of current workspace, the authenticated user will display as current user in bottom-left user list, if authed user does not logout, all later edits/updates/actions will belongs to the authed user by default. for example, if the current selected user in bottom-left user list is the authed user, when clicking "create workspace" from the top-left workspace menu, the newly created workspace should belong to the authed user,  and a local folder sync target and cloud server sync target should be added by default. generally all actions belongs to the current user that is selected from the bottom-left user list. a workspace may belong to the default local user and a authed user at the same time, so switching the default local user and a authed user might not change workspace.
+  - if user clicks a cloud workspace in top-left workspaces list, the cloud workspace will be fetched to local and open, and a local folder sync target and cloud server sync target should be added by default. 
+
+- if there are authenticated users, clicking a user in user list should switch to the last opened local/remote workspace of the user, but the existing ui does not change, this is the problem. 
+  - for switching user, the last opened local/remote workspace of the user should show, the last opened page (or first page of the workspace) should show in editor by default.
+  - for switching workspace by clicking workspace name form the top-left menu list, the last opened page (or first page of the workspace) should show in editor by default.
+
+- 
+- 
+- 
+
+ ~~then the default local user will be hidden by default in bottom-left user list~~ 
+
+- 
+- 
+
+- when a user has login into a desktop-app, if user does not logout manually, opening desktop-app later will auto open the last used workspace. webapp should work like this too. the same user can open workspaceA on desktop-app and open workspaceB on webapp at the same time. please make syncing correct, robust.
+- when a user used desktop app first and add a cloud server, then user logins into the webapp, in webapp the last opened workspace of desktop should show in workspace menu items from top-left workspace icon. Similarly, when a user used webapp first, then user logins into the desktop app, in desktop app the last opened workspace of webapp should show in workspace menu items from top-left workspace icon.
+
+- [Chrome 119 Dev Tools: Application > Clear site Data leaves 2GB behind - Stack Overflow ](https://stackoverflow.com/questions/77312345/chrome-119-dev-tools-application-clear-site-data-leaves-2gb-behind)
+  - clear the OPFS for an app by pasting this into the console:
+```JS
+const opfsRoot = await navigator.storage.getDirectory();
+opfsRoot.remove()
+```
+
 ## 0807
 
 - PDF upload is supported.
   - PDF viewing inside the desktop app or web app is not currently supported.
-  - PDFs appear as ordinary file attachments. Opening one shows “No preview available for PDF Document,” plus metadata and a Save button.
+  - PDFs appear as ordinary file attachments. Opening one shows “No preview available for PDF Document, ” plus metadata and a Save button.
   - Remote attachment bytes are generally lazy-downloaded, but PDFs are not automatically downloaded when opened because the lazy-download trigger lives inside the preview component—and PDF is excluded from previews.
 - For server-backed workspaces using the private file cache, locally materialized attachments that have not been opened for seven days are evicted and can later be fetched again. Local-only workspaces are not evicted because there would be no recovery source. Folder-projected desktop workspaces also bypass this cache cleanup.
 - PDFs are handled as opaque, uploadable attachments; metadata is synchronized eagerly, bytes are designed to be lazy, but the current PDF UI only offers explicit download—not inline viewing or open-triggered materialization.
@@ -359,7 +390,7 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 
 - Analyze related code, then explain to me how can page/file/folder be deleted in file tree or in other ui? Is delete a hard remove or a soft remove as tombstone? Can deleted item be restored?
 
-- continue to improve the file tree experience: in file tree,add "Delete" menu item to actions-menu/context-menu of every row ui for page/file/folder/database/channel... 
+- continue to improve the file tree experience: in file tree, add "Delete" menu item to actions-menu/context-menu of every row ui for page/file/folder/database/channel... 
   - currently only page can be deleted from the settings icon at the top right of the editor , you might reuse the ux if you want. 
   - when page/file/folder/database/... is deleted from desktop-app/webapp ui, the deleted cannot be restored. if deleted from desktop-app, the file in local folder sync target should be removed to system trash bin by default, not hard remove from disk.
 
@@ -395,7 +426,7 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 
 ## 0804
 
-- this git branch feat/offline-sync-targets supports to use the desktop app without server. the main git branch desktop app must use a server.  when the user starts the desktop for the first time, a local user and workspace is auto created, it is easy to use out of the box, the problem is there is no seed data or test document in the default workspace. Please analyze the onboarding workflow of the main branch, the webapp/desktop app both starts with good welcome doc. then please improve the desktop/web app in this branch, when user opens the default workspace for the first time,  there should exists similar welcome docs, but no welcome discussion and message for desktop/web by default, because chat is not the core feature for now .
+- this git branch feat/offline-sync-targets supports to use the desktop app without server. the main git branch desktop app must use a server.  when the user starts the desktop for the first time, a local user and workspace is auto created, it is easy to use out of the box, the problem is there is no seed data or test document in the default workspace. Please analyze the onboarding workflow of the main branch, the webapp/desktop app both starts with good welcome doc. then please improve the desktop/web app in this branch, when user opens the default workspace for the first time, there should exists similar welcome docs, but no welcome discussion and message for desktop/web by default, because chat is not the core feature for now .
 
 ## 0803
 
@@ -416,12 +447,12 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - Each side is compared against base
 - choices
   - **Journal** — append one line per item to `.colanode/export.journal` right after its bytes are durable; fold into `manifest.json` at the end and delete it. Next pass reads base as manifest + leftover journal. Baseline lives next to the bytes, so it survives a crash *and* an app reset. Cost: one small append+fsync per item, plus a file format to parse defensively.
-  - **Rewrite the manifest after every item** — simplest to reason about, no new file. But it rewrites the whole manifest N times per export; a 5,000-item workspace does 5,000 full rewrites. It's the journal's idea without the append-only optimization.
+  - **Rewrite the manifest after every item** — simplest to reason about, no new file. But it rewrites the whole manifest N times per export; a 5, 000-item workspace does 5, 000 full rewrites. It's the journal's idea without the append-only optimization.
   - **Persist to SQLite** — smallest diff. But it splits baseline across the folder and the private database, and `docs/desktop-offline-sync.md` promises a projection survives an app reset and can be reopened. After a reset the SQLite half is gone and the bug is back.
 
 - fs.appendFile works on a plain path string. Round 18 deliberately removed plain-path I/O from everything below a folder target: every operation goes through ScopedRootFilesystem, which holds an open handle on the root directory and resolves each component with openat/O_NOFOLLOW against that handle. The point isn't tidiness — it's a TOCTOU defence. With a path string, an attacker (or a sync client like Dropbox) can swap a parent directory for a symlink between the check and the write, and your append lands outside the folder. verifyIdentity() exists to confirm the root is still the same directory before a publish.
 
-- The journal isn't just "unbounded in size" — it's unconditional per-pass write amplification. recordExported runs for every entity on every export pass, and each call is a full atomic publish cycle: ensureDirectory + writeFileExclusive + flushFile (an fsync) + replaceFile. The page branch already skips its own byte-write when path and hash match the previous manifest (folder-exporter.ts:225-232), but the journal write immediately after has no such guard. So a completely unchanged 5,000-entity workspace does zero content writes and 5,000 fsync-and-rename cycles, on every 500ms debounce. The journal only exists to describe bytes that are newly durable but not yet in the manifest; an entity whose baseline is byte-identical to the previous manifest has nothing to record.
+- The journal isn't just "unbounded in size" — it's unconditional per-pass write amplification. recordExported runs for every entity on every export pass, and each call is a full atomic publish cycle: ensureDirectory + writeFileExclusive + flushFile (an fsync) + replaceFile. The page branch already skips its own byte-write when path and hash match the previous manifest (folder-exporter.ts:225-232), but the journal write immediately after has no such guard. So a completely unchanged 5, 000-entity workspace does zero content writes and 5, 000 fsync-and-rename cycles, on every 500ms debounce. The journal only exists to describe bytes that are newly durable but not yet in the manifest; an entity whose baseline is byte-identical to the previous manifest has nothing to record.
   - That reframes the fix: gate recordExported on the baseline actually differing from previous.items[id]. That bounds the journal's size too — the unbounded growth in Next item 3 is a symptom of the same missing guard, so one change addresses both.
 
 - 
@@ -450,7 +481,6 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - Add a durable folder-target-rename workspace operation with reserved, filesystem-moved, and catalog-updated phases. Its payload records workspace user, target ID, canonical source/destination paths, and manifest projection identity.
   - Add an app-database migration that expands the workspace_operations kind constraint without losing existing operation records or indexes; bump and validate the operation payload schema version.
   - Start the rename journal before the adapter moves the directory. Mark filesystem-moved immediately after a successful filesystem rename; provider-lease commit marks catalog-updated and completes only after target configuration persistence succeeds.
-
 # dev-07
 
 ## 0731
@@ -584,7 +614,8 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 was compiled against a different Node.js version using
 NODE_MODULE_VERSION 137. This version of Node.js requires
 NODE_MODULE_VERSION 143. Please try re-compiling or re-installing
-the module (for instance, using `npm rebuild` or `npm install`).
+the module (for instance, using `npm rebuild` or `npm install` ).
+
     at process.func [as dlopen] (node:electron/js2c/node_init:2:2617)
     at Module._extensions..node (node:internal/modules/cjs/loader:1980:18)
     at Object.func [as .node] (node:electron/js2c/node_init:2:2617)
@@ -595,12 +626,16 @@ the module (for instance, using `npm rebuild` or `npm install`).
     at Module.require (node:internal/modules/cjs/loader:1563:12)
     at require (node:internal/modules/helpers:152:16)
     at bindings (/Users/yaoo/Documents/repos/ai-ml-llm/all-docai/redmansion/node_modules/bindings/bindings.js:112:48) {
+
   code: 'ERR_DLOPEN_FAILED'
 }
 Error: App is not initialized
+
     at ~/Documents/repos/ai-ml-llm/all-docai/redmansion/apps/desktop/.vite/build/main.js:59261:15
     at AsyncFunction.<anonymous> (node:electron/js2c/browser_init:2:59676)
+
 Error: App is not initialized
+
     at ~/Documents/repos/ai-ml-llm/all-docai/redmansion/apps/desktop/.vite/build/main.js:59261:15
     at AsyncFunction.<anonymous> (node:electron/js2c/browser_init:2:59676)
 
@@ -613,7 +648,7 @@ Error: App is not initialized
 
 ## 0720
 
-- 🤔 there are so many markdown parsers,  is there any open source solutions that implement streaming parsing for markdown so that it can support very large .md file?   supporting both full parsing and streaming parsing would be even better.   deep research related solutions/ideas, if you found any open source solutions or inspiration projects, provide overview/github-repo/website for each.
+- 🤔 there are so many markdown parsers, is there any open source solutions that implement streaming parsing for markdown so that it can support very large .md file?   supporting both full parsing and streaming parsing would be even better.   deep research related solutions/ideas, if you found any open source solutions or inspiration projects, provide overview/github-repo/website for each.
 - Markdown "streaming" actually covers two pretty different problems
   - Input-streaming — the file itself is too big to slurp into memory as one string, so the parser needs to consume it in chunks (or emit output without building a full tree).
   - Forward-only append streaming — this is the LLM-chat-UI problem: text arrives token by token and grows, syntax is often unterminated mid-stream, and you're re-rendering, not re-reading a file.
@@ -633,7 +668,7 @@ Error: App is not initialized
   - the C reference implementation of CommonMark.
   - it exposes both a one-shot cmark_parse_document() and a genuine streaming API
 - https://github.com/micromark/micromark /js/rust
-  - implemented as a state machine tokenizer that explicitly works on chunks.The parser takes chunks and turns them into events — the start or end of a token amongst other events It even ships a Node duplex stream.
+  - implemented as a state machine tokenizer that explicitly works on chunks. The parser takes chunks and turns them into events — the start or end of a token amongst other events It even ships a Node duplex stream.
   - two interfaces: buffering and streaming. The first takes all input at once whereas the last uses a Node.js stream to take input separately. 
 - https://github.com/pulldown-cmark/pulldown-cmark /rust
   - a pull parser for CommonMark
@@ -655,7 +690,7 @@ Error: App is not initialized
 
 - 🤔 I want to develop a saas solution with client/server architecture that provides webapp/electron-app/cli, and the electron-app should just be a thin wrapper of webapp. the electron-app/webapp/cli uses the same server backend/api. is there any popular open source solutions that use similar idea that building electron-app as lightweight webapp wrapper (cli is optional, not required)? deep research related solutions/ideas, if you found any open source solutions or inspiration projects, provide overview/github-repo/website for each.
   - 🌰 
-  - Zulip, Element (Matrix), Mattermost, Rocket.Chat
+  - Zulip, Element (Matrix), Mattermost, Rocket. Chat
   - Trilium Notes, Standard Notes, SiYuan, AFFiNE
   - comfyui
 - well-established patterns in open source
@@ -684,19 +719,19 @@ Error: App is not initialized
 
 ```JS
 // 社区分享的2个配置都没用
- optimizeDeps: {
+optimizeDeps: {
     include: ["@tanstack/react-form-start"],
   },
 
-resolve: { alias: [ { find: "use-sync-external-store/shim/index.js", replacement: "react", } ], }
+  resolve: { alias: [{ find: "use-sync-external-store/shim/index.js", replacement: "react", }], }
 
 // ai给的配置最有用
-  optimizeDeps: {
-    include: [
-      'use-sync-external-store/shim',
-      'use-sync-external-store/shim/with-selector',
-    ],
-  },
+optimizeDeps: {
+  include: [
+    'use-sync-external-store/shim',
+    'use-sync-external-store/shim/with-selector',
+  ],
+},
 ```
 
 - [Dep Optimization Options | Vite ](https://vite.dev/config/dep-optimization-options)

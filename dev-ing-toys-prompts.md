@@ -763,7 +763,7 @@ project `vscode` in current folder is a popular, open-source, powerful coding id
 This project `redmansion` (also named colanode) is a local-first Slack and Notion alternative that supports writing, pages/subpage, databases and file management. web, desktop, react-native apps are available.
 - project joplin(at folder `../joplin`, AGPL license) is a offline-first note taking app that supports markdown, attachments, ocr, and powerful Synchronization. Windows, Linux, macOS, Android and iOS apps are available, NO web app.
 - The goal is to enhance redmansion with offline and syncing related features, making redmansion more powerful and easier to use. You can refer to the architecture/data-flow/code/ideas of joplin, but copying AGPL code should be avoided, you might rewrite it in functional style for redmansion.
-- The goal is to enhance offline-first features for redmansion desktop app: User should be able to open the desktop app and use it directly without configuring a server url, Joplin has very good support for offline usage like that, but for webapp, the existing server-backed workflow is ok. The first time to open the redmansion desktop app, please auto create a default user account and a default workspace, a default welcome getting started page should open in editor to make it easy to get user onboard, so that it is easy to use out of the box. If user want to sync to server, configuring a cloud/self-hosted server sync target should be supported in settings page. 
+- The goal is to enhance offline-first features for redmansion desktop app: User should be able to open the desktop app and use it directly without configuring a server url, Joplin has very good support for offline usage like that, but for webapp, the existing server-backed workflow is ok. The first time to open the redmansion desktop app, please auto create a default local user account and a default local workspace, a default welcome getting started page should open in editor to make it easy to get user onboard, so that it is easy to use out of the box. If user want to sync to server, configuring a cloud/self-hosted server sync target should be supported in settings page. 
 - You might refer to the joplin syncing architecture for syncing targets like local-folder/local-server/cloud-server/onedrive, then design a robust/extensible syncing architecture for redmansion. But unlike joplin, 
 multiple sync targets should be supported in redmansion desktop app, for example, docs in redmansion can be synced to local folder and server at the same time. for example, if user edits a doc in redmansion desktop app, the local folder sync target should be updated automatically, when user edits the file in local folder of sync target using external editor like vscode, changes should also be synced to redmansion. multiple cloud servers as sync targets are not required now, you should support to sync from desktop app to 1 local folder and 1 cloud server at this moment.
 - for syncing, rules in .gitginore file should be supported.
@@ -794,9 +794,11 @@ multiple sync targets should be supported in redmansion desktop app, for example
 - redmansion is still beta software, you might merge/squash the db schema migrations, only use the latest schema is ok, db related compatibility is not required for now. 
 - update you plan, make sure your plan is correct and robust.
 
-- recheck the architecture/data-flow/code of features like page/folder creation/renaimg/updating , desktop-app/webapp should have similar consistent experience, and recheck offline and syncing related features, make it correct, robust in the long term. 
+- recheck the architecture/data-flow/code of features related to offline and syncing, desktop-app/webapp should have similar consistent experience, and recheck offline and syncing related features, make it correct, robust in the long term. 
 
 - you might refactor/reorganize the architecture/logic if it helps to make it correct, robust, extensible in the long term. only if there are obvious bugs or design defects, then you might propose big refactor or huge change. if there is only subtle bugs, just propose to improve the existing architecture.
+
+- How do you like my idea? if it is OK, make plan to improve it, and make it work well with the existing offline and syncing related features.
 
 - 
 - 

@@ -582,6 +582,12 @@ modified: 2026-04-07T12:53:38.419Z
   - Built in Rust, with Node.js and Python bindings.
   - It powers Firecrawl Parse, so if you'd rather not run it yourself, the hosted API gives you the same conversion plus our OCR models for the scanned pages anydoc can't read on its own.
   - the demo page runs the library as WebAssembly, so files are converted locally and never leave your machine.
+- https://github.com/firecrawl/pdf-inspector /13.4kStar/MIT/202608/rust
+  - https://firecrawl.github.io/pdf-inspector/
+  - Fast Rust library for PDF inspection, classification, and text extraction. 
+  - Intelligently detects scanned vs text-based PDFs to enable smart routing decisions.
+  - Built by Firecrawl to handle text-based PDFs locally in under 200ms, skipping expensive OCR services for the ~54% of PDFs that don't need them.
+
 - https://github.com/OpenAISpace/ai-trend-publish /MIT/202502/ts
   - 一个基于 AI 的趋势发现和内容发布系统，支持多源数据采集、智能总结和自动发布到微信公众号
   - 多源数据采集: Twitter/X, 网站内容抓取 (基于 FireCrawl)

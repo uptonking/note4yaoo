@@ -134,7 +134,9 @@ modified: 2026-01-15T15:33:18.008Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [2027 Memory Capacity Is Reportedly Sold Out : r/LocalLLaMA _202608](https://www.reddit.com/r/LocalLLaMA/comments/1viqtgm/2027_memory_capacity_is_reportedly_sold_out/)
+- architecturally the two main bottle necks in AI is still Capacity and Bus speed. Run a big model and off load experts to cpu? PCIE speed kneecaps you. shard model across GPUs? PCIE speeds. Nvidia solved this a bit with NvLink but still it’s not ideal.
+  - Capacity on the other hand is where it’s at. increase the amount of VRAM in a single card and things get interesting.
 
 - ## [DGX Spark 是不是被人低估了？ - LINUX DO _202607](https://linux.do/t/topic/2525384)
   - 最近在用我的4070tis 16g跑ideogram4（最新的开源图生图模型，conditional和unconditional模型nvfp4下5.5g），我怕爆显存于是就用nvfp4跑，发现速度奇慢。 我很不解，问了gpt才知道：40系（Ada Lovelace系）居然不支持nvfp4下的计算！所以nvfp4对40系显卡而言仅仅是节省了显存，实际计算是： 1）先反量化到bf16； 2）再分层计算。 所以速度很慢——很粗略地说等于花了“bf16的生图时间+反量化时间”。
