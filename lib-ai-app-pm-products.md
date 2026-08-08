@@ -605,6 +605,7 @@ modified: 2025-03-22T16:10:24.856Z
 - pdf
   - gitbook-like viewer, mdBook, sharing without editing
   - LiteParse Grid Projection Algorithm
+  - https://dashboard.extend.ai/demo 参考demo做本地化的版本
 
 - wikilinks扩展: pdf-bbox, 支持preview, 甚至可以显示为截图内容
   - 引用pdf内容的场景都可以使用类似wikilinks的设计 + preview

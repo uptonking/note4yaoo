@@ -605,6 +605,7 @@ modified: 2022-08-18T16:57:46.405Z
 # ai-editor 👾
 - https://github.com/extend-hq/ui /MIT/202606/ts
   - https://ui.extend.ai/
+  - https://dashboard.extend.ai/demo
   - Open source document components created by Extend. Extend UI gives product teams the building blocks for document processing interfaces: PDF viewers, file uploads, thumbnails, citations, OCR blocks, human review, document splitting, and e-signature flows.
   - DOCX Viewer/Editor 都支持分页、缩放, 基于DOM实现，感觉很卡
   - excel/csv viewer/editor基于glide-data-grid实现， 渲染为canvas

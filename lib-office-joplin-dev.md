@@ -19,7 +19,7 @@ modified: 2024-01-28T20:52:21.981Z
     - web clipper: Save web pages as notes
   - 🔌 支持plugins，并提供了插件市场网站
   - Multimedia notes: Images, videos, PDFs and audio files are supported
-  - 内置OCR
+  - 内置OCR: pdf通过toolbar上传后显示为普通link, 右键菜单点击 "View OCR Text" 可通过系统默认程序打开临时目录下的 .txt文件
   - End To End Encryption (E2EE)
   - export支持导出 md+图片
   - 附件可配置下载策略 always/manual/auto

@@ -37,7 +37,28 @@ modified: 2024-09-02T02:28:27.398Z
 - 更喜欢cursor聊天式帮忙生成代码。
 
 - 做工程不会拿着ai一路问到底的，cursor 就项目初开的时候用得多，路走顺了，就一个copilot帮补一下。
+# discuss-tips
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Do i still need rule files in additional agents.md file _202603](https://forum.cursor.com/t/do-i-still-need-rule-files-in-additional-agents-md-file/155815)
+- . `cursor/rules` provides static context that shapes every conversation, like an “always-on” system instructions.
+- AGENTS.md is for straightforward use cases, without metadata or complex configurations. It’s a plain markdown file without metadata or complex configurations, great for projects that need simple, readable instructions without the overhead of structured rules. 
+  - Cursor supports `AGENTS.md` in the project root and subdirectories. Because AGENTS.md targets multiple tools, you can’t use tool-specific features in it.
+- TL; DR: AGENTS.md is a simplified, tool-agnostic alternative to .cursor/rules (not a replacement). Keep your .cursor/rules for anything requiring conditional triggers, glob matching, or alwaysApply. Add AGENTS.md only if you need cross-tool portability.
+
 # discuss-tools-cursor
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

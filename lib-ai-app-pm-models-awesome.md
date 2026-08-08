@@ -1181,6 +1181,10 @@ modified: 2026-06-20T15:49:57.019Z
   - https://github.com/sherman-yang/nvidia-model-info /202604/js
     - Local dashboard for exploring the free models exposed through build.nvidia.com.
 
+- 📌 [AMD Radeon Cloud ](https://developer.amd.com.cn/radeon/tokenfactory)
+  - Daily budget: $1
+  - rpm: 30
+
 - [Groq Rate Limits - Docs](https://console.groq.com/docs/rate-limits)
   - tldr: tpd-100k~500k
   - MODEL ID	RPM	RPD	TPM	TPD
@@ -2260,7 +2264,7 @@ modified: 2026-06-20T15:49:57.019Z
   - 中等价格
 
 - [TK API](https://tkapi.fun/keys)
-  - 邀请返利充值后返利20%
+  - 邀请返利 ~~充值后返利20%~~ , 每个用户最高返2元
 
 - [Xybbz /Sub2API](https://sub2api.xybbz.xyz/dashboard)
   - plus--0.045, 算是低价，有点中等价格
@@ -2292,6 +2296,9 @@ modified: 2026-06-20T15:49:57.019Z
 - [liusq API ](https://api.liusq.icu/dashboard)
   - 有低倍率分组，但仅充值可用
   - 不定期提供公益分组
+
+- [yier-lukyface](https://api.lukyface.com/pricing)
+  - 顶级 OVH 服务器, 10G 独享大带宽, 稳抗上万 RPM
 
 - [aimi-api /NewAPI](https://api.58aimi.cn/keys), 已充值
   - [ai资源库的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/89LBYJ36)

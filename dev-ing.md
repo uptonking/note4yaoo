@@ -344,7 +344,28 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0807
+
+- PDF upload is supported.
+  - PDF viewing inside the desktop app or web app is not currently supported.
+  - PDFs appear as ordinary file attachments. Opening one shows “No preview available for PDF Document,” plus metadata and a Save button.
+  - Remote attachment bytes are generally lazy-downloaded, but PDFs are not automatically downloaded when opened because the lazy-download trigger lives inside the preview component—and PDF is excluded from previews.
+- For server-backed workspaces using the private file cache, locally materialized attachments that have not been opened for seven days are evicted and can later be fetched again. Local-only workspaces are not evicted because there would be no recovery source. Folder-projected desktop workspaces also bypass this cache cleanup.
+- PDFs are handled as opaque, uploadable attachments; metadata is synchronized eagerly, bytes are designed to be lazy, but the current PDF UI only offers explicit download—not inline viewing or open-triggered materialization.
+
+- if users has used the desktop app locally for a while, then user login and click the "Add server sync" in settings page, what is the data flow, analyze related code, then explain to me.
+
+- if users has used the desktop app locally for a while, then user click the "Add account" menu item from left bottom avatar icon, what is the data flow, analyze related code, then explain to me.
+
+- Analyze related code, then explain to me how can page/file/folder be deleted in file tree or in other ui? Is delete a hard remove or a soft remove as tombstone? Can deleted item be restored?
+
+- continue to improve the file tree experience: in file tree,add "Delete" menu item to actions-menu/context-menu of every row ui for page/file/folder/database/channel... 
+  - currently only page can be deleted from the settings icon at the top right of the editor , you might reuse the ux if you want. 
+  - when page/file/folder/database/... is deleted from desktop-app/webapp ui, the deleted cannot be restored. if deleted from desktop-app, the file in local folder sync target should be removed to system trash bin by default, not hard remove from disk.
+
 ## 0806
+
+- Directory mode does not automatically revert when the last child disappears.
 
 - the original content in page11.md goes into page11/_index.md, when user clicks folder page11, children file list shows or  content in page11/_index.md shows. when user edits page11/_index.md using external editor like vscode, then if user clicks folder page11, children file list shows or updated content in page11/_index.md shows.
 - auto use Untitled or Untitle 2/3... for new file or folder name, but for Adding folder, the rename input should show to make it easy for user to change the Untitled name, and page focus should goes into the rename input, Untitle text should be auto selected to make it easy to change, just like the rename ux.

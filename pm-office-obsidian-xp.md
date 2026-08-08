@@ -152,7 +152,11 @@ modified: 2026-06-30T17:32:43.131Z
 - 
 - 
 
-## embeddable-companion-files(ECF)
+## embeddable-companion-view(ECV)
+
+- 支持各种ocr模型的输出与pdf对比展示
+  - 手动创建ECV
+  - 代码自动创建ECV
 
 - 当使用ofm embed语法嵌入支持的源文件格式时, 会自动创建对应的ECF文件, 并支持切换显示源文件预览视图和方便编辑的ECF视图(类似embed bases), ~~甚至就是bases card view~~ 
   - ECF文件的位置默认在源文件的相同目录, 默认名称为`源文件名[xxx]_ecf`, 为了资料整洁，也可统一放在指定目录, ~~同时也会放在全剧缓存~~ ， 目录内采用 assets/main/.backupN 的结构, 其中main内是主内容, .backupN会作为备份会自动删除
