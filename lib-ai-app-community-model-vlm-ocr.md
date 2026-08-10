@@ -282,7 +282,20 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## [I compared MinerU, Granite-Docling, and PaddleOCR-VL on 12 PDF-parsing capabilities using 6 document types : r/LocalLLaMA _202608](https://www.reddit.com/r/LocalLLaMA/comments/1vecxhw/i_compared_mineru_granitedocling_and_paddleocrvl/)
+  - One thing the capability grades don't show: Granite-Docling is the only one that outputs markdown-native pipe tables and real heading levels (MinerU gives you HTML tables and promotes everything to #), so on clean digital documents its raw markdown is the nicest to actually read.
+  - MinerU quietly read a bar chart and returned the values as a table, and wrote its own description of an embedded image (tagged as generated).
+  - MinerU seemed to dropped the invoice's IBAN from the footer. But the model actually transcribes it yet the MinerU's markdown generator silently discards anything it classifies as page furniture (i.e things like footers, page numbers, fine print....), and there's no option or configuration to acutally change this behavior. So I rebuild the markdown from its block list instead, and re-ran that column, to give a fair comparison. If you are using stock MinerU's .md output, you're likely have footers missing.
+
+- For me, OCR has always been something to try out. One model is never noticeably better than any other. I've had certain success with MinerU. However, it has also let me down sometimes. Docling then again, is a bit too slow. I've settled on GLM's ocr which seems to be the best for my use cases. It's been a lot of trial and error.
+  - It's always a compromise. And considering Docling taking less than half as much as GPU memory as MinerU, I'd say it does a very good job.
+
+- The structural fidelity point is undersold. For RAG pipelines, proper pipe tables vs HTML tables and real heading levels vs flat # have outsized downstream impact. Chunking strategies that rely on heading structure or table boundaries break badly when parser output is inconsistent. Spending time on parser fidelity before chunking pays back more than tuning the retriever afterward. The clean digital vs scanned split basically maps to two entirely different pipeline paths. Fidelity assumptions that work for one silently break on the other, and mixed-document corpora expose that fast.
+
+- I think you didn't set the correct config with Docling, I've been getting 0.5s/page
+
+- Xberg backend can be configured. Xberg with a Qwen 3.6 27b or Gemma 4 31b VLM backend will likely outperform everything else but will be slow. Xberg no GPU is also unfair against the others which are essentially VLMs.
+  - Fair on both counts. But with regards to the VLM backend, XBerg's VLM integration is an OCR backend, and every failure in its row happened on PDFs where OCR never actually fires (except the scanned-invoice one). The text came straight from the text layer and the layout from XBerg's own pipeline.
 
 - ## There is no best VLM OCR model - rankings can flip completely by document type.
 - https://x.com/vanstriendaniel/status/2029555038322917718

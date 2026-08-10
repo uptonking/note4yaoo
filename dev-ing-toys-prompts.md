@@ -111,7 +111,8 @@ you have worked on this problem several times but features are still lacking. Th
 - you have worked on this several times but features are still lacking. They are the most important features at this moment. DO NOT stop untill you achieve full feature parity. 
 
 - you may deep research, and reference the upstream superdoc code(at folder `../superdoc`), you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
-- you may even do a big code refactor for begonia to match major features of superdoc in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor for begonia to match major features of superdoc in a similar architecture if it helps to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you might refactor/reorganize/improve the architecture/logic if it helps to make it correct, robust, extensible in the long term. only if there are obvious bugs or design defects, then you might propose big refactor or huge change. if there is only subtle bugs, just propose to improve the existing architecture.
 
 - you may design feature parity docs at `upstream/superdoc/reports`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream superdoc should be put in folder `upstream`. you may even design a script to automate it.
 - feature parity docs may be outdated, please read related code and recheck/update.
@@ -127,7 +128,8 @@ you have worked on this problem several times but features are still lacking. Th
 - you may analyze related architecture/code and borrow good deisgn from upstream superdoc(source code at folder `../superdoc`) and rewrite it in functional-programming style for begonia to avoid licensing issues.
 - it is unnecessary to search the web for superdoc details, just analyze the source code at folder `../superdoc`.
 
-- please recheck migrated features and improve the implementation in begonia. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support, API, SDK, CLI, Agent..., compare the implementation logic/code of begonia with logic/code of superdoc to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
+- please recheck migrated features and improve the implementation in begonia. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support, API, SDK, CLI, Agent..., 
+compare the implementation logic/code of begonia with logic/code of superdoc to recheck and enhance the correctness of architecture and logic of begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
 - core implementation for major features should be framework-agnostic without react, ui wrappers/bindings should be sub packages, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
 
 - prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support, API, SDK, CLI... in begonia, make related features/architecture correct, modular, extensible, robust for long-term maintenance.
@@ -147,7 +149,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 ### draft-begonia
 
-- chart and complicated shapes/drawings may be delayed
+- charts and complicated shapes/drawings may be delayed.
 
 - The current TASK is to refactor/improve the architecture of begonia to be more extensible/modular/headless like superdoc, so that it will be easy to implement a v2 editor without prosemirror in the future. 
   - Superdoc’s headless toolbar/UI already depend on a narrow host contract plus doc access, and the UI controller also uses a structural editor-like contract. These features of superdoc should be a good reference for how to improve begonia.
@@ -174,9 +176,15 @@ you might refactor/reorganize the tests architecture/logic to make it correct, f
 
 - `./superdoc2` is a experimental toy that might be a reference for begonia in the future, just ignore all files at `./superdoc2` for now.
 
-- the latest minified code for superdoc v2 beta is superdoc@v2.3.0 and @superdoc/docx-engine@0.2.0 at `../ superdoc-v2-beta`, please analyze the minified code and related superdoc v1 code, then restore and improve superdoc v2 at `./superdoc2`.
+- the latest minified code for superdoc v2 beta is at `../ superdoc-v2-beta`, please analyze the minified code and related superdoc v1 code if you want, then continue to restore and improve superdoc v2 at `./superdoc2`.
 
 -  `../ superdoc-v2-beta`'s overall architecture is good enough to follow, just try to restore by the minified code.
+
+- please recheck migrated features and improve the implementation at ./superdoc2. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, layout modes support vertical/..., multi-column layout supports unequal column widths, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container, lazy virtualized render, zoom in/out, Canvas-based text measurement, performant line-breaking, track-change/diff, overlap handling in track change, comment, OOXML-support, API, SDK, CLI, Agent, compare the implementation logic/code of `./superdoc2` with logic/code of `../ superdoc-v2-beta` to recheck and enhance the correctness of architecture and logic of `./superdoc2` , find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in ./superdoc2 are correct, modular, extensible for long-term maintenance. 
+
+---
+
+- core implementation for major features should be framework-agnostic without react, ui wrappers/bindings should be sub packages, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
 
 ### docx-editor
 
@@ -268,7 +276,7 @@ please make a plan, then improve the core in-place text editing engine to make i
 - you have worked on this several times but still not solve it. 
 
 - you may reference the upstream onlyoffice-pdf-editor code(code is at several git repos in current folder), use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
-- you may even do a big code refactor for hardoc to match major features of onlyoffice-pdf-editor in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor for hardoc to match major features of onlyoffice-pdf-editor in a similar architecture if it helps to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design a feature parity doc at `upstream/parity/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream onlyoffice-pdf-editor should be put in folder `upstream`. you may even design a script to automate it.
 - research and make a plan, then implement hardoc to match major features of onlyoffice-pdf-editor, or even better than onlyoffice-pdf-editor, without licensing issues.
@@ -315,7 +323,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 - you have migrated/reimplemented some features from onlyoffice-spreadsheet-editor to watarble.
 
 - you may reference the upstream onlyoffice-spreadsheet-editor code(code is at several git repos in current folder), use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
-- you may even do a big code refactor for watarble to match major features of onlyoffice-spreadsheet-editor in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor for watarble to match major features of onlyoffice-spreadsheet-editor in a similar architecture if it helps to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you might refactor/reorganize the architecture/code of watoffice/hardoc/watarble to make major features/architecture correct, modular, extensible for long-term maintenance.
 
@@ -370,7 +378,7 @@ Project `grist` (in current folder) is a modern relational spreadsheet. It combi
 - please deep research the existing backbonejs webapp, then can you design a similar solution in react webapp to achieve full feature parity?
 
 - you may deep research and reference the existing backbonejs webapp code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style with modern tech stacks like typescript-utils/react. 
-- you may even do a big code refactor in react webapp to match major features of backbonejs webapp in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor in react webapp to match major features of backbonejs webapp in a similar architecture if it helps to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design feature parity docs at `upstream/feature-parity.md`, when you migrate/implment features from backbonejs webapp to react webapp, you can recheck and update it. all checking/docs/scripts related to upstream backbonejs webapp should be put in folder `upstream`. you may even design a script to automate it.
 - research and make a plan, then implement the react webapp to match major features of existing backbonejs webapp, or even better than backbonejs webapp.
@@ -451,7 +459,7 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - you may reference the upstream code, use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 
-- you may even do a big code refactor to match major feature of PPTist in a similar architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor to match major feature of PPTist in a similar architecture if it helps to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - research and make a full plan, then implement slaides to match major features of PPTist, or even better than PPTist, without licensing issues.
 
@@ -489,7 +497,7 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 - you have migrated/reimplemented some features from upstream jan/transformerlab-app/unsloth-studio to aichorage.
 
 - you may deep research and reference the code of upstream projects(jan, unsloth-studio, transformerlab-app), you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
-- you may even do a big code refactor for airchorage to match major feature of jan in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor for airchorage to match major feature of jan in a extensible architecture if it helps to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream jan/transformerlab-app/unsloth-studio should be put in folder `upstream`. you may even design a script to automate it.
 - research and make a good design, then implement aichorage to match major features of jan, or even better than jan, without licensing issues.
@@ -619,7 +627,7 @@ project `directus` (at folder `../directus` ) is a source-available licensed, po
 - you have migrated/reimplemented some features from upstream directus to dreamansion.
 
 - you may deep research and refer to the architecture/data-flow/code of upstream directus, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional-programming style for dreamansion without licensing issues.
-- you may even do a big code refactor for dreamansion to match major feature of directus in a extensible architecture, to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor for dreamansion to match major feature of directus in a extensible architecture if it helps to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream directus should be put in folder `upstream`. you may even design a script to automate it.
 
@@ -796,9 +804,9 @@ multiple sync targets should be supported in redmansion desktop app, for example
 
 - recheck the architecture/data-flow/code of features related to offline and syncing, desktop-app/webapp should have similar consistent experience, and recheck offline and syncing related features, make it correct, robust in the long term. 
 
-- you might refactor/reorganize the architecture/logic if it helps to make it correct, robust, extensible in the long term. only if there are obvious bugs or design defects, then you might propose big refactor or huge change. if there is only subtle bugs, just propose to improve the existing architecture.
+- you might refactor/reorganize/improve the architecture/logic if it helps to make it correct, robust, extensible in the long term. only if there are obvious bugs or design defects, then you might propose big refactor or huge change. if there is only subtle bugs, just propose to improve the existing architecture.
 
-- How do you like my idea? if it is OK, make plan to improve it, and make it work well with the existing offline and syncing related features.
+- How do you like my idea? if it is OK, make plan to improve it, desktop-app/webapp should have similar consistent experience, and make it work well with the existing offline and syncing related features.
 
 - 
 - 
@@ -881,6 +889,16 @@ multiple sync targets should be supported in redmansion desktop app, for example
 
 - 
 - 
+- 
+- 
+
+### draft-editor
+
+- 编辑器中的 subpage 无法删除
+
+- please analyze code related to the existing rich text editor, then design a extensible architecture to make it easy to implement a new editor called VibeEditor that just shows the plain text, both the existing editor and the new VibeEditor should be usable and switchable from the a new icon next to the top-right settings icon of editor. 
+  - both editors should work well on desktop-app and webapp.
+
 - 
 - 
 - 
@@ -1047,7 +1065,7 @@ finally make sure all tests run and pass locally with npm. you can update/fix te
 
 - tests is a little messy in this monorepo project. in all subpackages, move tests inside src folder to sibling test folders of src like apps/desktop/test, apps/server/test, packages/client/test, packages/durable-fs/test, packages/core/test
 # rafactor
-- legacy/unused code might be refactored and removed.
+- legacy/unused code might be refactored and removed. compatibility layer is not required.
 
 - analyze related code, then make a plan to improve it, you might refactor exisiting code to reuse/share some common logic.
 
@@ -1059,7 +1077,7 @@ finally make sure all tests run and pass locally with npm. you can update/fix te
 
 - i think the design for journal related feature is heavy and bug-prone. please analyze related data-flow/code, make it correct and robust, no stale logs/items, make it correct, clean, consistent. you might do a big refactor or change to the existing journal design. 
 
-- you might refactor/reorganize the architecture/logic if it helps to make it correct, robust, extensible in the long term. only if there are obvious bugs or design defects, then you might propose big refactor or huge change. if there is only subtle bugs, just propose to improve the existing architecture.
+- you might refactor/reorganize/improve the architecture/logic if it helps to make it correct, robust, extensible in the long term. only if there are obvious bugs or design defects, then you might propose big refactor or huge change. if there is only subtle bugs, just propose to improve the existing architecture.
 
 - The goal is to refactor existing code and architecture to be more clear, extensible, functional-programming style, while improving logic correctness at the same time.
 One task is to remove `class extends` inheritance and js prototype. `class extends` inheritance and prototype MUST be avoided by refactoring and rewriting.
@@ -1084,7 +1102,7 @@ Prefer to extract all side effects (logging, API calls, DOM updates) to the func
 
 Identify shared mutable state across modules (globals, singletons, module-level variables), and improve the architecture to make it resuable and clear.
 
-you may do some big code refactor to improve the architecture and data flow logic, to make it easier to maintain in the long term.
+you may do some big code refactor to improve the architecture and data flow logic if it helps to make it easier to maintain in the long term.
 
 make a plan, refactor and improve the codebase progressively.
 
@@ -1120,10 +1138,14 @@ current code is under active development. please review and refactor code if you
   - for database table name or column name or other name in code, the abbreviation `RDMN` or `RDMN_ ` should be updated to `DRMN` or `DRMN_`.
   - code/db/docs/tests should be updated accordingly.
   - after you finish the rename work, major features should still work, all tests should still pass.
+# toolchain
+- make a plan to improve the toolchain architecture/performance.
+  - update typescript to latest v7 and update related toolchain/scripts.
 # toys
 
-# play
+# libs
 
+- you should use npm package @embedpdf/viewer-react@3.0.0-next.1 to implement the pdf viewer, source code is at git repo `../embed-pdf-viewer` , you might refer to the api/docs/examples at the git repo.
 # llm-toolchain
 - DO NOT use parallel subagents, just explore code directly.
 

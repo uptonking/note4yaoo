@@ -152,40 +152,65 @@ modified: 2026-06-30T17:32:43.131Z
 - 
 - 
 
-## embeddable-companion-view(ECV)
+## draft-rdmn
+
+- dev-to
+  - 基础层工作db-schema: replace-editor + pdf-ECF 
+  - 2way sync for bases
+  - backlink
+
+- 
+- 
+- 
+- 
+- 
+- 
+
+## embeddable-companion-files(ECF)
+
+- features
+  - portable files
+  - easy to read for human/agent
+  - ECF is easy to edit as markdown files(before chatting with agent)
+  - rich metadata for doc/image/chart
+  - fast model switching: 同时支持本地model和api
 
 - 支持各种ocr模型的输出与pdf对比展示
-  - 手动创建ECV
-  - 代码自动创建ECV
+  - 手动创建ECF
+  - 代码自动创建ECF
+  - 支持自定义ocr的模版如table/chart/image
+  - 典型场景: pdf->md, docx->md, xlsx->md, image->md
 
-- 当使用ofm embed语法嵌入支持的源文件格式时, 会自动创建对应的ECF文件, 并支持切换显示源文件预览视图和方便编辑的ECF视图(类似embed bases), ~~甚至就是bases card view~~ 
-  - ECF文件的位置默认在源文件的相同目录, 默认名称为`源文件名[xxx]_ecf`, 为了资料整洁，也可统一放在指定目录, ~~同时也会放在全剧缓存~~ ， 目录内采用 assets/main/.backupN 的结构, 其中main内是主内容, .backupN会作为备份会自动删除
-  - 一个源文件可以生成多个ECF文件， 依次默认打开`源文件名_ecf` 或 `源文件名_ecf_` 或 最新日期的 `源文件名xxx_ecf`
-  - 也可以手动ECF文件， 效果就是类似普通markdown文件
-  - 不embed行不行? 
-    - 需要手动开启， 开启后打开源文件时会自动打开ECF
-    - 适合embed的是 csv/xlsx/docx/pdf 符合现有bases的心智模型和产品设计
-    - 嵌入ECF的父文件还适合记录更新的内容
-  - ❓ 是不是可以embed sqlite
-  - 首次打开包含嵌入ECF语法的文件时，会创建源文件和clone文件的内容关系, 最好建立更细粒度的元数据关系，如标题、双链, 具体关联信息可在属性面板查看/编辑
+- 当使用ofm embed语法嵌入支持的源文件格式时, 会自动创建/更新对应的ECF文件, 并支持切换显示源文件预览视图和方便编辑的ECF视图(类似embed bases), ~~甚至bases card view~~ 
+  - ECF文件默认保存为文件夹, 默认放在源文件的相同目录, 默认名称为`源文件名[xxx]_ecf`, 为了资料整洁，也可统一放在指定目录, ~~同时也会放在全剧缓存~~ ， 目录内采用 assets/main/.backupYYYYMMddHHmmss 的结构, 其中main内是主内容, .backupN采用assets/main的结构且作为备份会自动删除, 可使用.backupN 的内容替换顶层主文件
+  - 一个源文件可以生成多个版本的ECF文件， 依次默认打开`源文件名_ecf`下的顶层main 或 最新日期的 `.backupN/main`
+  - 也可以手动创建ECF文件， 就是普通markdown文件
+  - 首次打开嵌入了ECF的父文件时，会尝试创建源文件和ECF文件的内容关系, 最好能建立更细粒度的元数据关系，如标题、双链, 具体关联信息可在属性面板查看/编辑
+  - 自动更新文本: 修改源文件也会自动更新ECF文件, ~~修改ECF文件会自动更新源文件~~ 
+    - 格式转换会丢失少数内容
+    - ❓ 双向更新源文件和ECF的复杂度高, 源文件 > 目标文件的单向更新在产品逻辑上更简单、实现也更简单
 
 - goals
-  - 同步更新文本: 修改ECF文件会自动更新源文件，修改源文件也会自动更新ECF文件
-  - ❓ 双向更新源文件和ECF的复杂度高, 源文件 > 目标文件的单向更新在产品逻辑上更简单、实现也更简单
+  - 兼容性: bases, ofm-embed
+  - 同步更新文本
+  - 🤔 是不是可以embed sqlite
 
 - non-goals
   - 不会同步更新样式， 因为部分样式在转换时会丢失
 
+- tips
+  - 适合embed的是 pdf/docx/xlsx/csv 符合现有bases的心智模型和产品设计
+  - 嵌入ECF的父文件还适合记录更新的内容, 但更多的是提供给用户熟悉的pdf视图
+
 - ECF与bases的相同点
-  - 支持手动创建bases/EFC文件
+  - 支持手动创建bases/ECF文件、通过代码创建
   - 都支持embed使用, 也支持单独打开
-  - bases/ECF文件的内容与一个或多个源文件关联
-  - 在界面上修改ECF视图内容时，也会修改源文件
+  - bases/ECF文件的内容与 一个或多个源文件 关联, ECF的内容会尝试与源文件建立块与块的对应关系
   - excel内容样式与markdown的转换存在损失, 都尝试同步尽可能多的文本内容
+  - 在界面上修改ECF视图内容时，也会修改源文件
 
 - ECF与bases的不同点
-  - bases的视图内容完全由源文件计算得到因而总是同步变化， 而ECF的内容有自己的数据源所以存在数据不一致的问题
-  - ECF的内容会尝试与源文件建立块与块的对应关系
+  - bases的视图内容完全由源文件计算得到因而总是同步变化， 而ECF的内容有自己的数据源所以允许存在数据不一致的问题
 
 - ECF文件和源文件的更新
   - pdf/image/ocr>md, 单向编辑， 就像编辑普通markdown文件
@@ -196,16 +221,32 @@ modified: 2026-06-30T17:32:43.131Z
   - sqlite>sql, 双向
   - sqlite只是作为一种参考实现，可以由它更新源文件和ecf
 
-- 🐛 问题
-  - xlsx 和 markdown 的转换也有损失, 如列宽
-  - docx 和 markdown 的转换有损失
-
 - 冲突处理(ECF由外部更新后)
   - 源文件与ECF的文本内容通常是一致的， 不一致时需要用户处理，支持由用户选择 (docx/xlsx/pdf)生成新的ECF-md 或 ECF-md生成新的源文件(docx/xlsx), 生成新文件后旧的文件(夹)会自动被重命名
   - 参考bases.yaml文件可能失效
 
 - 
 - 
+- 
+- 
+- 
+
+### faq-ECF
+
+- 数据丢失问题
+  - xlsx 和 markdown 的转换也有损失, 如列宽
+  - docx 和 markdown 的转换有损失
+
+- 必需要手动创建ECF文件吗
+  - 不是必需, embeddable, embed is not required
+  - 产品设计上, 打开pdf/docx/xlsx/image时, 可以手动打开ECF视图模式, 程序会自动在全局临时缓存目录, 但此时的ECF文件编辑时会提示保存到源文件目录否则编辑会丢失, 源文件更新时ECF会自动更新， 缓存的内容始终是最新版不含旧版本
+  - 需要手动开启视图， 开启后打开源文件时会自动打开ECF
+
+- 何时使用全局临时缓存，何时使用本地ECF文件
+  - 非embed的场景会使用全局临时缓存
+  - embed+auto会使用全局临时缓存
+  - 明确的embed会使用指定的本地
+
 - 
 - 
 - 

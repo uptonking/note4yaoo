@@ -135,7 +135,19 @@ modified: 2025-09-16T19:59:57.856Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [No wonder Qwen and Gemma are so different : r/LocalLLaMA _202608](https://www.reddit.com/r/LocalLLaMA/comments/1vjb15v/no_wonder_qwen_and_gemma_are_so_different/)
+  - Pasted the same HTML/JS code (330 lines) into Qwen 35B A3B and Gemma 26B A4B.
+  - Qwen: tokenized the input to 1609 tokens
+  - Gemma: tokenized the input to 4258 tokens.
+  - Qwen can literally see the code as some specific form of input/output, while Gemma is breaking it down into pieces of words like regular language. Qwen also gets a totally different reasoning personality when given coding tasks.
+  - Btw with the instruction document (55 lines), the tokenization breakdown is almost the same: 1025 vs. 1039 tokens.
+
+- Turns out Qwen tokenizes multiple spaces (like 2, 4, or 8) as a single token. Also,  `</div>` is a single token in Qwen, while it's 4 in Gemma.
+- Qwen3.5/3.6 35B A3B and Gemma 4 26B A4B have similar vocabulary sizes: 248k and 256k tokens respectively.
+  - The fact that the Gemma 4 model encodes 330 lines of HTML/JS into 4258 tokens instead of 1609 with Qwen3.6 is due to different tokenizer algorithms and trainings.
+  - Gemma 4 uses SentencePiece-based tokenizer whereas Qwen3.6 uses a more standard BPE tokenizer.
+
+- so does gemma man, blocks of multiple spaces and newlines are some of the very first tokens in the tokenizer.
 
 - ## 🧩 [[Discussion] What exactly are World Models in AI? What problems do they solve, and where are they going? : r/MachineLearning _202505](https://www.reddit.com/r/MachineLearning/comments/1kf3pes/discussion_what_exactly_are_world_models_in_ai/)
 - A " world model " is really just some set of assumptions The model makes about the world reflected in how it makes decisions.

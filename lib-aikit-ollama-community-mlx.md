@@ -332,6 +332,7 @@ modified: 2026-01-14T18:59:01.949Z
 - ## Would it help your workflow if oMLX supported MarkItDown natively?
 - https://x.com/jundotkim/status/2062838413590675511
   - At least for me, I think it'll be a huge help going forward. (It's built right into oMLX, and works both as a Markdown Converter you can call through the OpenAI API endpoint as a single model, and as an automatic document converter when you attach documents to an LLM request.)
+- Awesome for attachments
 
 - ## For oMLX there's some overhead from boundary caching and the sampler, so it being slightly slower than native mlx-vlm is expected 
 - https://x.com/jundotkim/status/2063344398038077548

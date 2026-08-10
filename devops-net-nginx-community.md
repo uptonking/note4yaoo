@@ -146,7 +146,58 @@ Their main job is sending client requests to several servers. The goal is to spr
 - 
 - 
 
+# discuss-taliscale
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Any downsides to taliscale? Seems like an incredible amount of value for free : r/selfhosted _202608](https://www.reddit.com/r/selfhosted/comments/1vjqxo3/any_downsides_to_taliscale_seems_like_an/)
+- It's pretty good and they can provide so much for free because they do everything they can to not deal with your traffic directly, and only route it as a last resort. Your devices ideally only use the control plane as a broker and initiate a direct connection. That makes their service pretty cheap to run and maintain.
+  - But you do effectively outsource a big chunk of your network, and moving away once you have everything managed through Tailscale can be a pain. They're still a rather young company, and could reduce their free tier at any moment (although they've just raised the limits substantially, so Idk).
+
+- Headscale and Netbird are two direct replacements.
+
+Wire guard itself isn't sufficient to replace Tailscale, it does so much more than that:
+
+Client to Client VPN
+
+Site2Site (subnet routers)
+
+Reverse Proxy and Ingress (Funnel)
+
+Certificate provisioning (Services)
+
+Access control through extensive policies
+
+DNS (MagicDNS)
+
+Mesh networking
+
+STUN hole punching / DERP relays
+
+- Yes it's a third party service for convinence, that's the downside.
+
+If you want to skip the middleman use wireguard.
+
+Honestly though you are better off just using it and knowing that wireguard is your backup. I have friends that use it and I'm not going to talk them out of it - I pointed them there in the first place and covers thier needs fine.
+
+- Tailscale is useful when you don't have a static IP address because it maintains peer discovery. Wireguard requires you to have a persistent IP. For concerns about privacy, a self hosted headscale can serve the same purpose. Both tailscale and headscale use wireguard.
+
+- People skipping the middleman and just using wireguard have no idea what Tailscale actually does
+- Tailscale (can) do so much more than plain Wireguard, for most deployments Wireguard isn't a 1:1 replacement.
+
+- All good solutions are free at first. Just wait until you have to pay to let your friends access your services.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

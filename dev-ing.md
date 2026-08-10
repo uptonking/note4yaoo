@@ -344,6 +344,77 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0809
+
+- 🤔 there are so many markdown flavors/formats, is there any open source formats/proposals that can represent paginated document in markdown?   supporting pagination/page-header/page-footer would be even better.   deep research related solutions/ideas, if you found any open source formats/proposals or inspiration projects, provide overview/url/website for each.
+  - Typst is heavily inspired by Markdown and was built from the ground up to be a modern replacement for LaTeX. Because its primary output is paginated documents (PDF), the concept of a "page" is a native, first-class citizen. 
+
+- prior art
+  - Typst
+  - AsciiDoc + Asciidoctor PDF
+  - Djot: John MacFarlane's (creator of Pandoc/CommonMark) lighter, more consistently-parseable successor to CommonMark, with generic attributes and containers for extensibility. No pagination built in, but its generic-div/attribute system would make adding a clean pagebreak or page-header extension straightforward
+- The pattern that keeps recurring — and is probably your best starting point — is: keep pagination metadata as HTML comments (invisible, backward-compatible) for header/footer/page-number/page-break, and let an actual CSS-Paged-Media engine (Paged.js, Vivliostyle, WeasyPrint) or Typst do the real layout math.
+  - Azure's PageHeader/PageFooter/PageBreak comment convention and Quarto's pagebreak shortcode are the two most pragmatic, widely-copied answers rather than a single unifying spec.
+
+- https://github.com/markuadoc/markua-spec
+  - https://markua.com/
+  - Created by the Leanpub team, Markua is a Markdown flavor explicitly designed for writing long-form books and courses. It deliberately removes inline HTML (which standard Markdown allows) but introduces book-specific pagination concepts.
+  - Markua inherently understands document structure (Frontmatter, Mainmatter, Backmatter), which dictates how page numbers are generated (e.g., roman numerals for the preface). It supports a `{pagebreak}` directive directly in the Markdown syntax.
+
+- https://github.com/vivliostyle/vfm /ts
+  - https://docs.vivliostyle.org/vfm/vfm/
+  - Vivliostyle Flavored Markdown (VFM), a Markdown syntax optimized for book authoring. 
+  - It is standardized and published for Vivliostyle and its sibling projects.
+  - VFM is implemented top on CommonMark and GitHub Flavored Markdown (GFM).
+  - compiles to HTML which Vivliostyle then paginates using CSS Paged Media (running headers, footnotes, page counters, named pages are handled at that layer).
+
+- MyST (Markedly Structured Text)
+  - Page breaks: +++ { "page-break": true }
+
+- Marp / Marpit extends standard Markdown for creating slides.
+  - It uses `---` as a native page break delimiter. More importantly, it natively supports YAML frontmatter and inline directives to handle headers and footers.
+
+- Microsoft Azure Document Intelligence (Layout API) recently proposed an extended Markdown output format to solve the problem of lost page boundaries.
+  - the resulting Markdown uses tags like `<!-- PageHeader="This is a page header" -->, <!-- PageFooter="..." -->, <!-- PageNumber="1" -->, and <!-- PageBreak -->` inline with the standard Markdown content. 
+
+- Docling (IBM Research / LF AI & Data) and similar open-source PDF→Markdown tools (Marker, MinerU)
+  - The community convention that's grown up around these tools is the same idea in miniature: page markers are inserted as HTML comments like `<!-- Page N -->` throughout the Markdown output
+
+- Quarto is the modern, open-source successor to R Markdown, heavily reliant on Pandoc. It is designed to take a single Markdown document and publish it to HTML, PDF, Word, or ePub.
+  - Quarto introduces the `{{< pagebreak >}}` shortcode to abstract page breaks across different output formats
+  - Quarto (successor to R Markdown/bookdown) — a `{{< pagebreak >}}` shortcode inserts a native pagebreak — `\newpage` in LaTeX, a Word-native break in docx, `page-break-after: always` in HTML
+
+- pandoc-ext/pagebreak — a filter that converts a paragraph containing only a LaTeX `\newpage` or `\pagebreak` command into the appropriate page-break markup
+
+- R Markdown + pagedown / bookdown — R's ecosystem for turning (R-flavored) Markdown into paginated HTML or PDF, using CSS paged media
+- Bookdown, Built on R Markdown
+  - extends Markdown by allowing syntax like (PART), (APPENDIX), and explicit page break syntax. It heavily customizes LaTeX templates for PDF and Paged.js for HTML to ensure chapters always start on a new page, with running headers and footers.
+
+- CSS Paged Media
+  - Paged.js
+  - Vivliostyle
+  - WeasyPrint
+
+- Paged.js is an open-source JavaScript polyfill that chunks continuous HTML (rendered from Markdown) into distinct pages in the browser. 
+  - the R Markdown community created Pagedown a tool that takes your Markdown, converts it to HTML, and uses Paged.js to create a beautifully paginated document.
+
+- Typora
+  - `<div style="page-break-after: always;"></div>`
+- Obsidian
+  - page break plugin
+
+- Markdown AST + Document IR approach (future direction)
+  - WordprocessingML
+  - Typst AST
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 ## 0808
 
 - continue to improve the multi-users and syncing experience.

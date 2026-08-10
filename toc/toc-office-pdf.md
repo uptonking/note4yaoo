@@ -59,6 +59,30 @@ modified: 2021-01-04T17:26:43.784Z
   - unpdf ships with a serverless build/redistribution of Mozilla's PDF.js for serverless environments. 
   - This library is also intended as a modern alternative to the unmaintained but still popular `pdf-parse`.
 
+- https://github.com/LibPDF-js/core /1.7kStar/MIT/202603/ts
+  - https://libpdf.dev/
+  - modern PDF library for TypeScript. Parse, modify, and generate PDFs with a clean, intuitive API.
+  - LibPDF was born from frustration at `Documenso`.
+    - PDF.js is excellent for rendering and even has annotation editing — but it requires a browser
+    - pdf-lib has a great API, but chokes on slightly malformed documents
+    - pdfkit only generates, no parsing at all
+    - We kept adding workarounds. Eventually, we decided to build what we actually needed
+  - [Introducing LibPDF: The PDF Library TypeScript Deserves - Documenso _202601](https://documenso.com/blog/introducing-libpdf-the-pdf-library-typescript-deserves)
+  - https://x.com/lxunos/status/2014805777551392968  _202601
+    - Introducing LibPDF the library that we’ve always wanted for PDF parsing, manipulation and signing (MIT)
+    - It does text/line/word extraction but won't do OCR, so if you're dealing with a scanned document you would need other tooling.
+      - For a multi column layout I'm not sure, we parse all the text operators we can find and do glyph mapping.
+      - Then using the font metrics we get everything onto a baseline and aggregate that into lines/words.
+    - @documenso has embeddable signing, works with any framework, is customizable, and open source.
+    - LibPDF handles the low-level PDF work. Documenso handles the signing UX. Use both.
+    - how would you compare this to reducto
+      - I'd say they're more focused on document extraction, for a rasterised document they'd be way better if that's your sole focus.
+    - just wrap pdfium.. wont beat its performance
+    - Pdf nightmares
+      - layering citation bounding boxes
+      - free text search
+      - resizing
+
 - https://github.com/diegomura/react-pdf /16.2kStar/MIT/202509/ts
   - https://react-pdf.org/repl /示例渲染的页面内容为dom元素
     - 示例效果是左边是react jsx代码， 右边是pdf预览， 感觉不如markdown/typst的预览
@@ -82,7 +106,6 @@ modified: 2021-01-04T17:26:43.784Z
   - [Highlighting by rectangle bounds and not text _202204](https://github.com/wojtekmaj/react-pdf/discussions/980)
     - I've tried the recipe for highlighting text here. It works fairly well, but it does not work with multiple lines. Lets say I know the bounds of a rectangle on a specified page (or I know multiple bounds), Is there a way to highlight by these bounds instead of matching text?
     - You can use `canvasRef` prop to draw whatever you want on a given canvas. Here's an example with watermark added dynamically
-  - https://x.com/xiaohanyu1988/status/1905077853785567258 🆚️
   - https://github.com/allenai/pdf-component-library /apache2/202310/ts
     - https://www.semanticscholar.org/reader/13497bd108d4412d02050e646235f456568cf822
     - built on top of the React-PDF library, with some added components to help with creating an interactive reading experience. 
@@ -90,19 +113,71 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/allenai/scholar-reader-pdfjs /202009/js/inactive
     - Fork of pdf.js for the Scholar Reader
 
-- https://github.com/Alpovka/EasyPDF-React /24Star/MIT/202501/ts/inactive
-  - https://easypdf.vercel.app/
-  - open source React library for generating beautiful PDFs from React components
-  - [I built an open-source package 6 months ago to easily turn React components into PDFs _202510](https://www.reddit.com/r/reactjs/comments/1nun17d/i_built_an_opensource_package_6_months_ago_to/)
-
-- https://github.com/pdfslick/pdfslick /771Star/MIT/202511/ts
+- https://github.com/pdfslick/pdfslick /1.1kStar/MIT/202608/ts
   - https://pdfslick.dev/
+  - https://pdfslick.dev/examples  /示例丰富
+  - https://pdfslick.dev/examples/pdf-viewer-app
+    - 经典文档, 可用任意文本、画笔注释
+  - https://pdfslick.dev/examples/multiple-documents
+    - 经典多文件预览视图, 无法打开文档就可以通过缩略图上的左右箭头换页
   - PDFSlick is a library that enables viewing of and interaction with PDF documents in React, SolidJS, Svelte and JavaScript apps. 
   - It's build on top of Mozilla's `PDF.js`, and utilises `Zustand` to provide a reactive store for the loaded documents.
   - @pdfslick/core package wraps PDF.js's functionality and links it to the store.
     - you can learn more about using PDFSlick's @pdfslick/core package with Vanilla JS apps and with libraries other than React and SolidJS
+  - https://x.com/xiaohanyu1988/status/1905077853785567258 🆚️
+    - react-pdf.org: mostly as a PDF build tool which allows you to create a PDF with react DSL
+    - http://react-pdf-viewer.dev, the most powerful and flexible solution, paid, not maintained
+    - lector, native next.js support, provide headless UI support, young project
+    - pdfslick.dev, multi libs support, react, solid.js and svelte, impressive examples: https://pdfslick.dev/examples, no native next.js support, with my test, HMR not fully working with pdfslick
+    - react-pdf.dev, newly released react PDF viewer, paid
 
-- https://github.com/jkgenser/react-pdf-headless /50Star/MIT/202509/ts
+- https://github.com/anaralabs/lector /355Star/MIT/202608/ts/功能简单
+  - https://lector-weld.vercel.app/
+  - A composable, headless PDF viewer toolkit for React applications, powered by `PDF.js`.
+  - Page thumbnails and outline navigation
+  - Text selection and search functionality
+  - Responsive and mobile-friendly
+  - Fully customizable UI components
+  - Form filling support
+  - Internal and external link handling
+
+- https://github.com/embedpdf/embed-pdf-viewer /4.4kStar//apache2+FairCode/202508/ts
+  - https://www.embedpdf.com/
+  - https://app.embedpdf.com/
+  - EmbedPDF is a framework‑agnostic, MIT‑licensed PDF viewer that drops into any JavaScript project.
+  - ✨ 主功能: annotate, shapes, form, redact, insert-image/stamp
+  - Annotations (highlight, sticky notes, free text, ink) + comment
+  - True redaction (content is actually removed)
+  - Pluggable architecture & tree-shakable plugins
+  - Smooth, virtualized scrolling
+  - Headless, Fully customizable UI components: Build your own custom viewer UI from scratch
+  - EmbedPDF has two entries for the same viewer UI:
+    - @embedpdf/viewer-react: Built-in PDFium WASM (default)
+    - @cloudpdf/viewer-react: Rendering happens on @cloudpdf/server / SaaS; the browser only does HTTPS. every call goes over HTTP. 
+    - cloudpdf有点: 禁止外传文件, no wasm overhead, large pdf rendering
+  - [PDF viewer using PDFium + WebAssembly — would love your input : r/opensource _202505](https://www.reddit.com/r/opensource/comments/1kydm90/pdf_viewer_using_pdfium_webassembly_would_love/)
+    - open source PDF viewer called EmbedPDF, based on PDFium (the same rendering engine used in Chrome) compiled to WebAssembly.
+    - It’s meant to be an alternative to PDF.js, with a focus on rendering accuracy and customizability. You can use it with a full UI out of the box, or headless for full control.
+    - It’s MIT-licensed and framework-agnostic.
+  - [Show HN: I built a free alternative to Adobe Acrobat PDF viewer | Hacker News _202508](https://news.ycombinator.com/item?id=44901683)
+    - The main goal was to make a PDF viewer that is easy for developers to integrate into their websites with minimal setup, while PDF.js can be harder to customize and extend for certain use cases
+    - Note that actual hard work here seems is done by PDFium, which is what Google bought from Foxit and then relicenced (and keep developing themselves), and which is now in Chrome.
+    - Does it support editing the embedded outline (annotations)? Probably the number one missing feature of PDF editors/viewers.
+      - It doesn’t support editing outlines yet, but it’s definitely possible and something I plan to look into. 
+      - The only free PDF editor that works on linux to support that currently is PDF4QT.
+  - [v3.0.0-next.0 _202608](https://github.com/embedpdf/embed-pdf-viewer/releases/tag/v3.0.0-next.0)
+    - Introduces the self-hostable CloudPDF document server. 
+    - Introduces the CloudPDF implementation of the Engine v3 interface. It gives browser applications the same document API as the local engine while executing PDF operations remotely through CloudPDF over HTTPS.
+    - Introduces the rebuilt Node.js administration SDK for CloudPDF. It lets trusted backends upload and manage documents
+    - Introduces the QuickJS-backed sandbox for PDF JavaScript. 
+    - Introduces the pure Acrobat JavaScript compatibility core. It defines deterministic document-script contracts, security policy, and the VM prelude used to execute supported PDF form scripts consistently.
+    - Introduces the rebuilt framework-independent EmbedPDF kernel. It owns serializable state, typed plugin capabilities, effects, scopes, and plugin lifecycle without depending on the DOM or a rendering engine.
+    - ntroduces the transport-independent Engine v3 contract. It includes engine and document interfaces, DTOs, wire schemas
+  - [v2.0.0-next.0 _202512](https://github.com/embedpdf/embed-pdf-viewer/releases/tag/v2.0.0-next.0)
+    - a major refactoring to support multiple documents in a single viewer instance. The core architecture has been significantly enhanced to manage per-document state and lifecycle.
+    - Core state now uses documents: `Record<string, DocumentState>` instead of a single `document` property. Each document has its own state including pages, scale, rotation, and other document-specific properties.
+
+- https://github.com/jkgenser/react-pdf-headless /50Star/MIT/202509/ts/inactive
   - a React component for efficiently rendering and navigating PDF documents.
   - It leverages virtualization to handle large documents smoothly and provides APIs for client-side interactions such as jumping to specific pages or highlighted areas.
   - [Don't use this package, and a good mostly FREE alternative · Issue · react-pdf-viewer/react-pdf-viewer](https://github.com/react-pdf-viewer/react-pdf-viewer/issues/1858)
@@ -126,39 +201,6 @@ modified: 2021-01-04T17:26:43.784Z
     - Tiny box-layout DSL over pdf-lib.
     - Flexbox-lite for server-side PDF generation in Node, Cloudflare Workers, Deno, and browsers.
 
-- https://github.com/LibPDF-js/core /1.7kStar/MIT/202603/ts
-  - https://libpdf.dev/
-  - modern PDF library for TypeScript. Parse, modify, and generate PDFs with a clean, intuitive API
-  - LibPDF was born from frustration at `Documenso`.
-    - PDF.js is excellent for rendering and even has annotation editing — but it requires a browser
-    - pdf-lib has a great API, but chokes on slightly malformed documents
-    - pdfkit only generates, no parsing at all
-    - We kept adding workarounds. Eventually, we decided to build what we actually needed
-  - [Introducing LibPDF: The PDF Library TypeScript Deserves - Documenso _202601](https://documenso.com/blog/introducing-libpdf-the-pdf-library-typescript-deserves)
-  - https://x.com/lxunos/status/2014805777551392968  _202601
-    - Introducing LibPDF the library that we’ve always wanted for PDF parsing, manipulation and signing (MIT)
-    - It does text/line/word extraction but won't do OCR, so if you're dealing with a scanned document you would need other tooling.
-      - For a multi column layout I'm not sure, we parse all the text operators we can find and do glyph mapping.
-      - Then using the font metrics we get everything onto a baseline and aggregate that into lines/words.
-    - @documenso has embeddable signing, works with any framework, is customizable, and open source.
-    - LibPDF handles the low-level PDF work. Documenso handles the signing UX. Use both.
-    - how would you compare this to reducto
-      - I'd say they're more focused on document extraction, for a rasterised document they'd be way better if that's your sole focus.
-    - just wrap pdfium.. wont beat its performance
-    - Pdf nightmares
-      - layering citation bounding boxes
-      - free text search
-      - resizing
-
-- https://github.com/anaralabs/lector /355Star/MIT/202510/ts
-  - https://lector-weld.vercel.app/
-  - A composable, headless PDF viewer toolkit for React applications, powered by PDF.js
-  - Page thumbnails and outline navigation
-  - Text selection and search functionality
-  - Responsive and mobile-friendly
-  - Form filling support
-  - Internal and external link handling
-
 - https://github.com/OnedocLabs/pdfreader /MIT/202411/ts
   - https://pdfreader.fileforge.com/
   - Easy Radix-Style PDF Viewer for React.
@@ -172,6 +214,11 @@ modified: 2021-01-04T17:26:43.784Z
   - Easy PDF Template Design: easily create templates using the designer.
   - Templates are JSON data that is easy to understand
   - pdfme will always remain open source. The cloud service is an optional offering for those who prefer a managed solution.
+
+- https://github.com/Alpovka/EasyPDF-React /24Star/MIT/202501/ts/inactive
+  - https://easypdf.vercel.app/
+  - open source React library for generating beautiful PDFs from React components
+  - [I built an open-source package 6 months ago to easily turn React components into PDFs _202510](https://www.reddit.com/r/reactjs/comments/1nun17d/i_built_an_opensource_package_6_months_ago_to/)
 
 - https://github.com/agentcooper/react-pdf-highlighter /1.4kStar/MIT/202409/ts/inactive
   - https://agentcooper.github.io/react-pdf-highlighter
@@ -249,7 +296,8 @@ modified: 2021-01-04T17:26:43.784Z
   - [网页工具：长图转多页 PDF 文件工具，方便 AI 分析  ](https://linux.do/t/topic/1360957)
 
 - https://github.com/DDULDDUCK/every-pdf /1kStar/MIT/202601/python
-  - all-in-one desktop PDF toolkit to edit, convert, merge, and secure your documents. Built with Electron, Next.js, and Python.
+  - all-in-one desktop PDF toolkit to edit, convert, merge, and secure your documents. 
+  - Built with Electron, Next.js, and Python.
   - PDF Editor (New!): Add text, signatures, images, and checkboxes to complete your documents.
   - Converting PDFs to different formats and converting different formats to PDFs 
   - split, merge, Watermark
@@ -565,19 +613,6 @@ modified: 2021-01-04T17:26:43.784Z
   - Internally server starts a headless browser and opens http://localhost:3000 application and creates the pdf (i.e print layout).
   - Note: Server-side pdf generator code is hardcoded so you will get same pdf every time.
 # viewer/reader
-- https://github.com/embedpdf/embed-pdf-viewer /1.8kStar/MIT/202508/ts
-  - https://www.embedpdf.com/
-  - https://app.embedpdf.com/
-  - EmbedPDF is a framework‑agnostic, MIT‑licensed PDF viewer that drops into any JavaScript project.
-  - Annotations (highlight, sticky notes, free text, ink) + comment
-  - True redaction (content is actually removed)
-  - Pluggable architecture & tree-shakable plugins
-  - Smooth, virtualized scrolling
-  - [PDF viewer using PDFium + WebAssembly — would love your input : r/opensource](https://www.reddit.com/r/opensource/comments/1kydm90/pdf_viewer_using_pdfium_webassembly_would_love/)
-  - open source PDF viewer called EmbedPDF, based on PDFium (the same rendering engine used in Chrome) compiled to WebAssembly.
-  - It’s meant to be an alternative to PDF.js, with a focus on rendering accuracy and customizability. You can use it with a full UI out of the box, or headless for full control.
-  - It’s MIT-licensed and framework-agnostic.
-
 - https://github.com/docMentis/docmentis-udoc-viewer /MIT-partOpen/202604/ts
   - https://www.docmentis.com/
   - https://www.docmentis.com/viewer/demo
@@ -920,7 +955,7 @@ modified: 2021-01-04T17:26:43.784Z
   - changelog
     - 2.0.16 - 201906
 
-## pdf viewer
+## pdf-native-viewer
 
 - JPedal PDF library /11Star/LGPL/202009
   - https://github.com/Lonzak/JPedal

@@ -479,6 +479,13 @@ modified: 2026-04-07T12:53:38.419Z
   - OCR Engines Currently supports EasyOCR (JaidedAI), Tesseract (Google), and Pororo (KakaoBrain).
   - [Show HN: BetterOCR combines and corrects multiple OCR engines with an LLM | Hacker News _202310](https://news.ycombinator.com/item?id=38048228)
 
+- https://github.com/xberg-io/xberg /8.9kStar/MIT/202608/rust
+  - https://docs.xberg.io/
+  - A polyglot document intelligence framework with a Rust core. 
+  - Extract text, metadata, images, and structured data from 101 formats
+  - [Xberg v1: a local, CPU-only document extraction engine for feeding an Ollama RAG (101 formats, OCR) : r/ollama _202608](https://www.reddit.com/r/ollama/comments/1vejt3j/xberg_v1_a_local_cpuonly_document_extraction/)
+    - fully local and CPU-only (no GPU).
+
 - https://github.com/wolfmanstout/screen-ocr /apache2/202510/python
   - screen-ocr package makes it easy to perform OCR on portions of the screen
   - WinRT is a Windows-only backend that is very fast and reasonably accurate.

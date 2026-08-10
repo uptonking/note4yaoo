@@ -899,6 +899,12 @@ modified: 2025-12-25T19:55:10.911Z
     - 网页版不分页，但使用浏览器的打印预览时显示分页，每章的分页都正确
   - The power of CSS typesetting, right at your fingertips
   - offers HTML+CSS typesetting and rich paged viewing with EPUB/Web publications support
+- https://github.com/vivliostyle/vfm /ts
+  - https://docs.vivliostyle.org/vfm/vfm/
+  - Vivliostyle Flavored Markdown (VFM), a Markdown syntax optimized for book authoring. 
+  - It is standardized and published for Vivliostyle and its sibling projects.
+  - VFM is implemented top on CommonMark and GitHub Flavored Markdown (GFM).
+  - compiles to HTML which Vivliostyle then paginates using CSS Paged Media (running headers, footnotes, page counters, named pages are handled at that layer).
 
 - https://github.com/mkpoli/hundouk /MIT/202512/typst
   - hundouk (訓讀) is a Typst package for rendering Kanbun Kundoku (漢文訓読) texts, by which Classical Chinese texts are rendered with annotations to be translated mechanically into Classical Japanese, which is still used in modern Japanese education.

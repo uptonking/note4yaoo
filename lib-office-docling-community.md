@@ -218,6 +218,39 @@ modified: 2025-09-21T13:57:50.332Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🤔 [Is there any way to get page number on converted markdown file? · Issue · datalab-to/marker _202502](https://github.com/datalab-to/marker/issues/539)
+
+```python
+converter = PdfConverter( artifact_dict=create_model_dict(), config = {"paginate_output":True} )
+```
+
+- [[FEAT] Use page labels or allow offset for page numbers _202603](https://github.com/datalab-to/marker/issues/1002)
+  - When using paginate_output the page markers in the markdown reflect the PDF’s physical page index, not the logical/printed page numbers in the document, and not the page labels embedded in the pdf. This is a problem for workflows like RAG or citation tooling where users expect “page 1” in the markdown to match “page 1” printed in the PDF.
+
+- ## [mineru-api 是否支持 return markdown 时返回 pdf 的页码 · opendatalab/MinerU _202411](https://github.com/opendatalab/MinerU/discussions/3798)
+- mineru-api 的 /file_parse 接口（2.5.4）在 return_content_list 输出中会包含每段内容的 page_idx（页码），但 return_md 并不原生支持在每页内容前自动加页码标记。当前没有参数或选项可以直接实现这一功能，markdown 输出是连续文本，没有自动插入页码标记的逻辑。
+  - 如果需要在 markdown 中标记页码，可以用 content_list.json 的 page_idx 信息做后处理，比如用 HTML 注释或标签插入页码分隔。
+
+- [Support for PDF page number mapping in converted Markdown files · Issue · opendatalab/MinerU _202411](https://github.com/opendatalab/MinerU/issues/1190)
+  - Since standard Markdown is written continuously and does not have the concept of page numbers, we use a content_list.json file to store additional information in a rich text format.
+
+- ## [Detecting page breaks in markdown output - docling _202410](https://github.com/docling-project/docling/discussions/142)
+  - Is there any way to detect page breaks in markdown output of a PDF?
+- (In PyMuPDF4LLM, the page break looks like this: "n\n-----\n" (2 empty lines, then 5 hyphens, then 1 empty line).
+
+- We are already using comments `<!-- -->` for tagging images. I think we could easily do the same to signal page breaks. And potentially, having the user specifying the preferred placeholder for it.
+
+- Just a more adding to this feature request , just like doctags if its possible to identify code tags, table and images captions in markdown also bcz currently they are part of normal markdown text flow.
+  - I manually did this by looking at the page elements count and exporting to markdown from the beginning to end of each page element. you could probably implement this more elegantly on the backend 
+
+- 202503: Well to add page breaks in the markdown you can achieve it simply adding a argument of `page_break_placeholder` while exporting to markdown.
+
 - ## 🚀 [IBM just released Granite Docling : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1njet2z/ibm_just_released_granite_docling/)
 - What is the difference with Docling library ? Is it that it’s not using EasyOCR but homemade OCR ?
   - 👷 I’m one of the authors of Granite Docling and Docling.

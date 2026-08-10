@@ -12,6 +12,7 @@ modified: 2026-01-14T19:05:15.969Z
 - pros
   - 支持多种格式的模型: gguf, mlx
   - llama.cpp后端支持自定义从本地文件安装最新llama.cpp版本
+  - 同时支持本地model和api
 
 - cons
   - mlx后端不支持自定义安装最新mlx-lm/mlx-vlm版本

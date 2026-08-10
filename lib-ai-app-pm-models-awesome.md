@@ -314,6 +314,14 @@ modified: 2026-06-20T15:49:57.019Z
     - [LD士多 - LDC积分商城](https://ldst0re.qzz.io/)
 
 - token-news
+  - [Mirasim — One Agent IDE ](https://mirasim.ai/)
+    - 前1000名注册可获得89刀/月的套餐，送1年！每月CC MAX 5x + Codex 5x的额度。
+    - 必须是mac啊
+    - MIRA-37ZP-8X1E-KAWX
+    - 這玩意只是個中轉站，然後用網站+客戶端編造一個很正式的感覺。通過 mac用戶篩選一些高質量人群，然後盜用他們的i/o。新型的騙局而已。
+    - 这玩意会读取你的claude和codex的auth密钥, 保不准会不会上传
+    - 你自己看看 这个pro完全就是假的 压根就没有什么所谓的付款通道
+    - 数据安全这东西，只要agent，都会获取你
   - [GLM 5.2 FREE tier is live on TokenRouter, and running through July 25. ](https://www.tokenrouter.com/console/pricing?search=glm-5.2)
   - [商汤送免费的glm5.2了 - LINUX DO _202607](https://linux.do/t/topic/2504080)
   - [每月50刀免费额度 支持glm5.2 邮箱注册即可 - LINUX DO _202606](https://linux.do/t/topic/2489020)

@@ -58,6 +58,7 @@ modified: 2025-09-21T18:39:13.776Z
   - > [!note]	Callouts
 
 - [R Markdown](https://rmarkdown.rstudio.com/)
+
 - [MyST(Markedly Structured Text)](https://github.com/executablebooks/markdown-it-myst)
   - [MyST Overview](https://myst-parser.readthedocs.io/en/latest/index.html)
   - who is using #MyST
@@ -65,6 +66,12 @@ modified: 2025-09-21T18:39:13.776Z
   - MyST is a rich and extensible flavor of Markdown.
   - MyST is inspired by Sphinx, and comes with its own Sphinx parser.
   - MyST markdown provides a markdown equivalent of the reStructuredText syntax
+
+- https://github.com/markuadoc/markua-spec
+  - https://markua.com/
+  - Created by the Leanpub team, Markua is a Markdown flavor explicitly designed for writing long-form books and courses. It deliberately removes inline HTML (which standard Markdown allows) but introduces book-specific pagination concepts.
+  - Markua inherently understands document structure (Frontmatter, Mainmatter, Backmatter), which dictates how page numbers are generated (e.g., roman numerals for the preface). It supports a {pagebreak} directive directly in the Markdown syntax.
+
 - [kramdown](https://github.com/gettalong/kramdown)
   - kramdown is a fast, pure Ruby Markdown superset converter
   - input formats: kramdown (a Markdown superset), Markdown, GFM, HTML
@@ -73,9 +80,18 @@ modified: 2025-09-21T18:39:13.776Z
     - a kramdown extension for converting Markdown documents to AsciiDoc. 
 - [readmeio-markdown](https://github.com/readmeio/markdown)
 - [jsxtreme-markdown](https://github.com/mapbox/jsxtreme-markdown)
-- [vfm(Vivliostyle Flavored Markdown (VFM))](https://github.com/vivliostyle/vfm)
-  - a Markdown syntax optimized for book authoring. 
+
+- https://github.com/markuadoc/markua-spec
+  - https://markua.com/
+  - Created by the Leanpub team, Markua is a Markdown flavor explicitly designed for writing long-form books and courses. It deliberately removes inline HTML (which standard Markdown allows) but introduces book-specific pagination concepts.
+  - Markua inherently understands document structure (Frontmatter, Mainmatter, Backmatter), which dictates how page numbers are generated (e.g., roman numerals for the preface). It supports a `{pagebreak}` directive directly in the Markdown syntax.
+- https://github.com/vivliostyle/vfm /ts
+  - https://docs.vivliostyle.org/vfm/vfm/
+  - Vivliostyle Flavored Markdown (VFM), a Markdown syntax optimized for book authoring. 
   - It is standardized and published for Vivliostyle and its sibling projects.
+  - VFM is implemented top on CommonMark and GitHub Flavored Markdown (GFM).
+  - compiles to HTML which Vivliostyle then paginates using CSS Paged Media (running headers, footnotes, page counters, named pages are handled at that layer).
+
 - [Idyll markup](https://idyll-lang.org/docs/syntax)
   - The main extensions are reactive variables, and components. 
   - Together these two elements can be used to create dynamic, interactive articles.
