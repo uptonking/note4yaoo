@@ -344,6 +344,28 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0810
+
+- ✨ please design a new "Open File" menu item at top-left workspace menu list. 
+  - in webapp, opening a file will always upload the file to workspace root folder and show the file at new editor tab or folder children view. 
+  - in desktop app, opening a single file should be supported. this feature is designed to make it easy to view/edit a single markdown file, .pdf should also be supported to view(edit not required). 
+  - opening a file that is in local folder sync target of current workspace should be similar to click the file in file tree, but the file content opens in a new editor tab, syncing works if the cloud server exists. 
+  - opening a external file that is not in workspace should behave like a temporary file, just show the file in rich text editor, user can edit the file in editor but changes will be lost if the user does not download the content manually. everything related to the external file works in desktop app locally, without syncing to cloud server.
+
+- desktop app can be used without server if the current user from bottom-left user avatar menu list is the default local user. only when the current user is the authenticated user, then pdf will be uploaded to the server.
+- in desktop app, when user uploads a pdf, it will show in the local folder of sync target, then you view the pdf file in desktop app pdf viewer, How do you like my idea?
+
+- i am developing a big typescript monorepo project with npm workspaces, not yarn/pnpm workspaces.  if i want to add a sub packageA in monorepo to another packageB as dependency in monorepo, how should i write in package.json of packageB? does `"packageA":"workspace"` or `"packageA":"*"` work? what is the best practice?
+  - `npm install package-a --workspace=package-b`
+  - "workspace: *" does not work in npm workspaces, and "* " does work, but isn't automatically "best practice" — it depends on whether packageA is ever published on its own.
+  - The workspace: protocol is a pnpm/Yarn Berry feature. npm has never implemented it — as of npm 11.6.4, running an install that produces a "workspace:*" entry throws EUNSUPPORTEDPROTOCOL
+- Best practice really depends on one thing: do you ever publish packageA standalone?
+  - Never published (internal-only, tightly coupled packages) → "*" or even "file:../package-a" is fine and low-maintenance. f you used file:../package-a, that literal relative path can leak into the published package.json, which is broken for anyone installing from the registry.
+  - Published independently to npm (others depend on it outside the monorepo) → use a real semver range like "^1.0.0" that matches packageA's actual version
+- "*" satisfies any version, so npm will always resolve it to the local symlinked package regardless of what version packageA is at. It's a common pattern for internal-only monorepo packages.
+  - However, using * is dangerous because it is an unbounded range. If you ever publish packageB to the public npm registry, npm will try to install any version of packageA from the public registry, which could pull in malicious or completely different code.
+  - If you publish packageB with "packageA": " *", it will literally publish with "* " as the dependency requirement. Anyone downloading packageB from the registry will fetch the absolute highest version of packageA available, ignoring major breaking changes, which will inevitably break their application.
+
 ## 0809
 
 - 🤔 there are so many markdown flavors/formats, is there any open source formats/proposals that can represent paginated document in markdown?   supporting pagination/page-header/page-footer would be even better.   deep research related solutions/ideas, if you found any open source formats/proposals or inspiration projects, provide overview/url/website for each.

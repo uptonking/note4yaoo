@@ -451,6 +451,15 @@ codex --yolo resume --last
 - 写代码这件事情上，还是有IDE窗口更加直观。习惯了cursor，cli不如cursor。
   - 另外近期在研究调用AI生成一些报告，这一块调用claude -p挺好用，这一点也算是cli工具的优势了吧。
   - 为什么采用这种方式，因为工作环境会有很多代码、数据，需要AI进行分析，OpenApi的方式不够友好了
+# discuss-pi-ui
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Mature/better alternatives to pi-web? : r/PiCodingAgent _202608](https://www.reddit.com/r/PiCodingAgent/comments/1vkgwhy/maturebetter_alternatives_to_piweb/)
+
 # discuss-pi
 - ## 
 

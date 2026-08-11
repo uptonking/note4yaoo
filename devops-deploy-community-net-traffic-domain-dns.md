@@ -19,6 +19,11 @@ modified: 2026-06-17T07:27:04.608Z
   - [tld-list ](https://tld-list.com/)
   - [TLD List - 域名比价 ](https://tld-list.com/zh-hans)
   - 可按续费价格排序
+
+## mydns
+
+- [DNSHE ](https://my.dnshe.com)
+  - datalking.de5.net
 # discuss-stars
 - ## 
 
