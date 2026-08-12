@@ -355,6 +355,10 @@ modified: 2025-03-22T16:10:24.856Z
 
 - cleaner
   - 清理codex-cli/cc的对话历史，展示date/size/suggestion-to-clean
+
+- harness
+  - harness工具越来越多, 每个都有自己的配置、特性, 统一管理的难度大、更新维护的复杂度高
+  - 🤔 可考虑不做agent的管理, 只做 context 的共享、产物的共享、skills的共享
 # 💎🚀 aichorage - local llm with joy, 提供模型API、rag可靠性、pdf文本操作
 
 > hybrid local/cloud ai assistant/harness designed to work with documents and mitigate your token anxiety.

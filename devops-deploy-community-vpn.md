@@ -75,6 +75,60 @@ modified: 2026-06-17T05:51:04.215Z
 - 建议小号，真封了很麻烦。优选也是。
 
 - VPS，IP 不乱跳才是最重要的啊！有一些网站服务检测到 IP 变化，就得重新登录。 而且 VPS 自己搭建的也安全啊！
+# discuss-tailscale
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [tailscale经过clash分流直连，成功打洞，但不够优雅 - LINUX DO _202605](https://linux.do/t/topic/2177060)
+  - 旁路由安装了 openclash，启用的是 fake-ip 混合模式 使用 tailscale 会打洞失败
+  - 具体表现为使用 tailscale netcheck 得到的 ipv4 地址为代理 ip 地址，不是国内运营商的
+  - 主要原因还是分流的问题，tailscale 的 derp 服务器的 ip 还是走代理了
+  - 不管是 openclash、还是本机 clash 开启 tun 模式，只要分流的规则没写好，应该都会有这样的问题
+  - Tailscale 在这里发布了他们的 https://login.tailscale.com/derpmap/default DERP 服务器的所有域名和 IP 地址, 那么我们只需将这些域名和 ip 都加入 clash 的分流规则即可，让其直连。
+  - tailscale 的 DERP 服务器的 ip 跟域名会变化，比如新增服务器啥的，这样就得持续更新 clash 的规则表，不知道有没有更优雅的解决方式。
+  - 实测，即使使用上面的解决方案，由于旁路由多加了层 nat 的原因，也会打动失败。
+  - 我已经舍弃旁路由，改为主路由，成功打洞。
+
+- 可以考虑在路由器用 tailscale 然后开子网路由
+  - 但是这样好像又会有 tailscale 跟 openclash 冲突的问题，比如 dns 接管啥的
+
+- mihomo 支持 tailscale 了，我前几天刚刚试过，还行，alpha 版本
+
+- Android 可以共存吗？手机上使用 tailscale 不是会创建一个 vpn 吗，和代理软件没冲突吗？我用的 ios + 机场私有客户端，如果要开 tailscale 的话，就必须关了机场私有客户端，Android 也是同样的道理吧
+  - 用 clash 的话可以把 tailscale 变成一个代理节点走分流规则，就把 tailscale 当作一个正常的节点来用，不过机场私有客户端应该不行，另外这样就不是点对点了需要有一台机器专门跑这个服务当中转
+  - 用这个方案就是不直接用 tailscale 进行连接，相当于你通过 vpn 连接到一台运行了 tailsclae 的服务器把这个服务器当跳板连接 tailscale 网络
+
+- ubuntu 实测，fakeip filter 需要加上 tailscale 相关域名，否则重启后 tailscale 无法登录，原因是 tailscale 数据包连接时候底层打上了 fwmark，绕开了 tun，但是 ip 却是 fakeip，导致无法连接。
+
+- 一直用 openwrt 软路由做主路由，小米路由器做 AP，稳定使用很多年了，不知道为什么很多人做旁路由
+
+- ## [小火箭Shadowrocket与tailscale相关问题 - LINUX DO _202607](https://linux.do/t/topic/2561133)
+  - 最近看到小火箭 Shadowrocket 新增了 tailscale，于是想通过 tailscale 连接部署好的 code-server 进行远程开发。我使用域名 code.example.com 解析了 code-server 所在的虚拟内网服务器 ip（100.64.0.1:38080），并使用 nginx 进行了反向代理实现 443 端口访问。
+  - 通过 100.64.0.1：38080，我成功访问到了 code-server。 但是当我通过 code.example.com 访问 code-server 时，却无论如何也访问不了，通过 Shadowrocket 的日志，我发现他将 code.example.com 转发到了代理，并没有走直连通过 tailscale 访问。 于是我在 clash 的订阅文件里面增加了 rule: DOMAIN-SUFFIX, example.com, DIRECT
+  - 目前的解决方案是在 Shadowrocket 的 default.conf 增加 DOMAIN-SUFFIX, example.com，此时 code.example.com 成功走了直连。
+
+- 直接在本机写 hosts 表指定 ip 和域名呢？ 我记得本地 hosts 表的解析优先级是最高的
+  - 我希望是维护一个文件，然后多端实现同步，如果更改本机 host 的话达不到所有设备同步的方案。
+
+- 虽然严格来说我没有搞懂你困扰在哪里。但是又一个办法肯定可以解决你的问题：小火箭支持 “模块”，而模块是可以从 url 导入的。所以你可以考虑多维护一个 “模块” 文件，挂在你的任意服务器上，然后让小火箭订阅这个模块就完事了。并不需要去改 default.conf。
+
+- 版本 2.2.91 (3388)
+
+测试内容：
+
+· feat(tailscale): route subnet destinations through packet tunnel
+
+我加了官方 tg 群，看了一下测试版的最近几次更新日志，这一版应该就是解决这个问题的，等正式版发布吧（目前 App Store 最新版本是 3378）
+
 # discuss-tunnel/forwarding
 - ## 
 

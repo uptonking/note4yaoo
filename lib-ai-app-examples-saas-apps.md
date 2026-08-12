@@ -573,7 +573,7 @@ modified: 2025-02-21T17:17:42.225Z
   - https://officecli.ai/
   - the first and best Office suite purpose-built for AI agents to read, edit, and automate Word, Excel, and PowerPoint files. 
   - Free, open-source, single binary, no Office installation required.
-- https://github.com/xintaofei/codeg /apache2/202606/rust/ts
+- https://github.com/xintaofei/codeg /2.7kStar/apache2/202608/ts/rust/tauri
   - [[开源] Codeg V0.18.0：日常办公模式来了（幻灯片、表格和文档都支持）｜多智能体协作工作台 - LINUX DO _202606](https://linux.do/t/topic/2480502)
     - 最近迭代有点快了，特性一个接着一个来，先是多智能体协作、自动化，现在日常办公模式它来了，目前支持9个Agent生成创作幻灯片、表格和文档，支持边编辑边预览，实时查看Agent编辑的最新效果
     - OfficeCLI，办公文件的生成和预览都是使用此cli

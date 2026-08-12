@@ -71,17 +71,26 @@ modified: 2026-04-06T22:42:11.263Z
 
 - https://github.com/sybil-solutions/local-studio /1.5kStar/apache2/202607/ts
   - https://localstudio.ai
-  - Control panel for VLLM, Sglang, llama.cpp, exllamav3
   - a local-first workstation for running, managing, and using self-hosted LLM backends.
-  - controller/ — Bun/Hono backend. Owns model lifecycle (launch, evict, recipes, downloads, runtime process coordination), an OpenAI-compatible proxy (chat, models, tokenization, audio), system state (GPU metrics, logs, usage, settings, SSE), and controller integrations.
-  - frontend/ — Next.js 16 + React 19 UI and the macOS Electron desktop shell.
-    - The agent surface lives at /agent in the frontend. It uses `@earendil-works/pi-coding-agent` through the frontend runtime rather than shelling out to a separate agent process for normal turns. 
-    - Point the frontend at a remote controller with BACKEND_URL or NEXT_PUBLIC_API_URL
+  - setup: choosing a models directory, installing an engine, downloading a model, launching it, and benchmarking
+  - `controller/` — Bun/Hono backend. Owns model lifecycle (launch, evict, recipes, downloads, runtime process coordination), an OpenAI-compatible proxy (chat, models, tokenization, audio), system state (GPU metrics, logs, usage, settings, SSE), and controller integrations.
+  - `frontend/` — Next.js 16 + React 19 UI and the macOS Electron desktop shell. Hosts the Workbench (/agent), consolidated Configure surface, settings, usage, logs.
+    - 依赖effect、hono、xterm、next、zustand
+    - Electron → embedded Next.js server (same routes) + agent-runtime sidecar
+  - The agent surface lives at /agent in the frontend. It uses `@earendil-works/pi-coding-agent` through the frontend runtime rather than shelling out to a separate agent process for normal turns. 
+    - Agent skills and extensions are loaded by the frontend runtime and surfaced in the session UI.
+    - Pi remains the source of truth for authentication, settings, resources, tools, and native JSONL sessions. 
+    - New Workbench chats start with Pi's read, grep, find, and ls tools. 
   - vLLM/SGLang serving on Linux needs NVIDIA driver + CUDA; Apple Silicon uses the MLX backend.
   - Runtime backends
     - vllm — vLLM server recipes through configured/discovered/system/Docker/bundled targets.
     - llamacpp — llama.cpp llama-server recipes for GGUF models.
     - mlx — MLX mlx_lm.server recipes for Apple Silicon.
+  - 🛝
+    - The downloaded Mac app is the UI shell. Inference and model management live in a separate controller process. Then open ui and Add a controller
+    - electron-app and webapp share the core features, Both talk to the same controller API and the same Workbench / Configure / Settings surfaces. 
+    - desktop prefers a native Electron PTY; web uses the same UI over /api/agent/terminal/pty/* SSE
+    - desktop-only: Deploy controller over SSH, open in Finder, launchd
   - https://x.com/0xSero/status/2077780960054009862
     - it let u use whatever u setup via pi cli. the oauth is not in the ui tho maybe i'll port it tomorrow
   - https://x.com/0xSero/status/2078121272618209699

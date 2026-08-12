@@ -2000,6 +2000,12 @@ modified: 2026-06-20T15:49:57.019Z
 👉 https://spacexcard.com/register?invite=2S5CVDH3
 *注：排名不分先后，理性消费。
 
+- [AIFF · AI IDE 智能分发平台 ](https://aiff.chat/)
+  - [Aiff agent · 新手指南 ](https://portal.aiff.chat/guide)
+  - win, mac
+  - 余额即积分，1 元 = 1 积分
+  - 若你本地 Cursor 账号是 Free 版，连接号池后通常可解锁 Pro 模型选择。部分 AUTO 福利号池可能仅开放 Auto 和 Composer，属号池策略限制，非客户端故障。
+
 - [AI助手 — 无限 auto 额度 · 一键登录 Cursor ](https://vaultbyte.top/)
   - [AI助手使用教程T1 ](https://www.kdocs.cn/l/crNHsGjTirob)
   - [cursor（常见问题处理方法）T1 ](https://www.kdocs.cn/l/ccqUKlbIdxLV)
@@ -2110,6 +2116,8 @@ modified: 2026-06-20T15:49:57.019Z
   - Cursor Free Auto 白号
 - [阿C小店 - 在线购买 ](https://chan.vei1.com/)
   - kiro, cursor
+- [ai gaga的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/EEY89GS3)
+  - 品类多
 
 - [AI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/XWTVY86A)
   - kiro

@@ -78,6 +78,48 @@ modified: 2026-04-06T17:38:13.599Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Meet Unsloth Desktop - the first desktop app to run and train models : r/unsloth _202608](https://www.reddit.com/r/unsloth/comments/1vli9xs/meet_unsloth_desktop_the_first_desktop_app_to_run/)
+  - Supports MLX, diffusion image/video models, audio models, and GGUF
+  - Connect Claude Code and Codex to local LLMs
+  - Includes private web search, deep research, RAG, MCP, and exports (NVFP4, GGUF)
+  - Tauri
+
+- Looks like a great AIO solution to replace LM Studio!
+
+- how is it different from unsloth studio?
+  - It's a desktop app which is very different and it has a million new features! Especially introduction of diffusion inference + training support, better audio support and more.
+- Not having to run a server in a command line and a browser tab is always good IMO.
+- unsloth studio was never a desktop app :) this one is
+
+- Does it finally support GRPO/PPO?
+  - Oop not at the moment but we'll work on it
+
+- Training on Apple Silicon is not available yet (coming soon forever) 
+
+- Supports MTP?
+  - Yes
+
+- Wish I had more manual loading controls similar to KoboldCPP. So far I can’t get Unsloth to inference as fast as KoboldCPP.
+
+- you need to fix dual GPU setups, i do have 5060Ti on Tunderbolt 4 and Strix halo gpu. And it detects nvidia gpu but, not the AMD one. I have even disabled 5060Ti and unpluged it, but once installed on detected nvidia GPU it will stay there.
+
+- I was messing with the API in it a bit and it’s nice to have that level of visibility into the llama.cpp server under the hood. I was curious if you plan to support being able to run multiple servers or loaded models at once? I’ve been running my own two llama.cpp servers so I can have a 27B and A3B running in parallel. I’d like to run everything through the unsloth app so I can use the nice interface you all have created!
+
+- I’m hoping it can connect to a local llama.cpp running on a remote machine on the same network.
+  - Should be able to, i have it working for a local llama server, though it doesnt let you use web search or code features in its chat window for some reason.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 - ## [Roadmap for Unsloth Studio? : r/unsloth _202606](https://www.reddit.com/r/unsloth/comments/1ubjayu/roadmap_for_unsloth_studio/)
 - Firstly we need to announce support for lots of archs like AMD, Windows, Apple etc. they're all technically in studio but haven't been announced yet and are in beta mode. And obvious multigpu training support - multigpu inference should already work.
   - Next up we have our desktop app which we're working on! And ofc something else we're working on the side.

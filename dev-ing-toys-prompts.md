@@ -196,10 +196,10 @@ then compare the architecture/implementation of superdoc and docx-editor, explai
 
 ## 📌 hardoc(onlyoffice-pdf)
 
-onlyoffice(code is at several git repos in current folder) implements reads, edits, and file conversions for common office files like .docx/.xlsx/.pptx.
+onlyoffice(code is at several git repos in current folder) implements reads, edits, and file conversions for common office files like .docx/.xlsx/.pptx/.pdf.
 
 onlyoffice-pdf-editor(code is at several git repos in current folder) implements renders, edits, annotates `.pdf` files in the browser, but it is AGPL licensed.
-- the goal is to implement a new headless, extensible pdf solution named hardoc with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat at folder `./watoffice/hardoc` to avoid the licensing issues.
+- the goal is to implement a new headless, extensible, framework-agnostic pdf view/editing solution named hardoc at folder `./watoffice/hardoc` with in-place text editing features similar to onlyoffice-pdf-editor/adobe-acrobat to avoid the licensing issues.
 - hardoc pdf editor should be more of a headless client-server architecture, so that a hardoc pdf web/cli/sdk can be built on the same architecture. the hard web pdf editor ui/ux might be similar to onlyoffice-pdf-editor.
 - hardoc should be implemented in a modular and extensible architecture for core pdf features like viewing and editing, with functional programming style.
 
@@ -246,7 +246,7 @@ project onlyoffice and project at `~/Documents/repos/office/all-pdf/open-pdf-stu
 - the final goal is to implement from scratch a extensible web pdf editor named hardoc with in-place text editing features similar to onlyoffice/adobe-acrobat at folder `./hardoc`  to avoid the licensing issues. 
 
 - 🐛
-- forms, ocr, collaboration, ai-editing, complicated shapes should be planned but implementation may be delayed, so that architecture should support these features later.
+- forms, complicated shapes should be planned but implementation may be delayed, so that architecture should support these features later.
 - please make a plan for the extensible text editing editor first, then implement it at folder `./hardoc`.
 
 - please refactor code structure in hardoc project to use similar architecture and code structure as onlyoffice without licensing issue, to make it easy to migrate more features in the long term. legacy code may be migrated or removed by rewriting.
@@ -279,7 +279,7 @@ please make a plan, then improve the core in-place text editing engine to make i
 - you have worked on this several times but still not solve it. 
 
 - you may reference the upstream onlyoffice-pdf-editor code(code is at several git repos in current folder), use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
-- you may even do a big code refactor for hardoc to match major features of onlyoffice-pdf-editor in a similar architecture if it helps to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may even do a big code refactor for hardoc to match major features of onlyoffice-pdf-editor if it helps to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design a feature parity doc at `upstream/parity/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream onlyoffice-pdf-editor should be put in folder `upstream`. you may even design a script to automate it.
 - research and make a plan, then implement hardoc to match major features of onlyoffice-pdf-editor, or even better than onlyoffice-pdf-editor, without licensing issues.
@@ -314,13 +314,14 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
   - For hardoc, it seems the appropriate architecture might be a service-authoritative pdf runtime, rather than trying to force every parity-critical operation through pure TS logic. 
   - hardoc should be more of headless client-server architecture. native/source first, promote only for unsafe contents/objects.
 
-### draft-excel/watarble
+### draft-excel/watarble 📈
 
 - onlyoffice(code is at several git repos in current folder) implements reads, edits, and file conversions for common office files like .docx/.xlsx/.pptx/.pdf. 
 - project hardoc(at folder `./watoffice/hardoc`) implements a pdf editor like onlyoffice-pdf-editor/adobe-acrobat. I also wants to implement a headless, extensible spreadsheet editor like onlyoffice-spreadsheet-editor/microsoft-office-excel at folder `./watoffice/watarble`. 
   - onlyoffice spreadsheet related code exists in several repos/folders, please analyze the core architecture for spreadsheet and pdf. 
 - the goal is to implement a headless, extensible, framework-agnostic excel/spreadsheet editing solution named watarble at `./watoffice/watarble` to avoid the licensing issues. 
   - watarble should be more of a headless client-server architecture, so that a watarble spreadsheet web/cli/sdk can be built on the same architecture. the watarble web spreadsheet editor ui/ux might be similar to onlyoffice-spreadsheet-editor.
+  - onlyoffice spreadsheet has a solid data model for a spreadsheet engine, watarble should implement a similar data model and spreadsheet engine.
   - watarble should be implemented in a modular and extensible architecture with functional programming style.
 
 - you have migrated/reimplemented some features from onlyoffice-spreadsheet-editor to watarble.
@@ -330,7 +331,7 @@ DO NOT search the web for onlyoffice pdf api, you should find and read source co
 
 - you might refactor/reorganize the architecture/code of watoffice/hardoc/watarble to make major features/architecture correct, modular, extensible for long-term maintenance.
 
-- prioritize and recheck/improve major features like spreadsheet data-model and rich formatting, spreadsheet editing with undo/redo and history, selection range/offset/caret, formula, spreadsheet rendering/zoom, search, pivot table, collaborative-editing... in watarble, make related features/architecture correct, modular, extensible for long-term maintenance.
+- prioritize and recheck/improve major features like spreadsheet data-model and rich formatting, spreadsheet editing with undo/redo and history, selection range/offset/caret, formula, spreadsheet rendering/zoom, search, pivot table, collaborative-editing... in watarble, make related features/architecture correct, modular, extensible for long-term maintenance. 
 - features might be planned but delayed: VBA, shapes, drawings, smartart, image, chart, sparkline, comment, encryption/signature, translation, AI.
 
 - deep research and make a plan, then implement watarble to match major features of onlyoffice-spreadsheet-editor, or even better than onlyoffice-spreadsheet-editor, without licensing issues.
@@ -812,7 +813,8 @@ multiple sync targets should be supported in redmansion desktop app, for example
 
 - you might refactor/reorganize/improve the architecture/logic if it helps to make it correct, robust, extensible in the long term. only if there are obvious bugs or design defects, then you might propose big refactor or huge change. if there is only subtle bugs, just propose to improve the existing architecture.
 
-- How do you like my idea? if it is OK, make plan to improve it, desktop-app/webapp should have similar consistent experience, and make it work well with the existing offline and syncing related features.
+- How do you like my idea? if it is ok, make a plan to improve it, desktop-app/webapp should have similar consistent experience, and make it work well with the existing offline and syncing related features.
+- How do you like my idea? if it is ok, make a plan to improve it, and make it work well with the existing offline and syncing related features.
 
 - 
 - 
@@ -1047,14 +1049,14 @@ document what you have migrated from which commit id for future migration refere
 
 - run the full tests to find possible problems, then fix the problems or improve the testing architecture/performance.
 
-- the tests/scripts/commands you just run took up all my cpu up to 97% and make the work stopped unexpectedly. Analyze related tests/scripts/commands, refactor/improve it to take up less os cpu/memory, a balance of speed and parallelism would be even better.
+- the tests/scripts/commands you just run took up all my cpu up to 97% and make other tasks stopped unexpectedly. Analyze related tests/scripts/commands, refactor/improve it to take up less os cpu/memory, a balance of speed and parallelism would be even better.
 
 - the tests/scripts/commands you just run took huge memory and is very slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests. 
 - please recheck related implementation-logic/tests, improve it and make it correct and fast. 
 
 - try to improve/refactor the full tests to make it faster so that full tests running within 2.5 minutes.
 - improve the slow/complicated/heavy parts of tests, 
-you might refactor/reorganize the tests architecture/logic to make it correct, fast, robust, maintainable in the long term.
+you might refactor/reorganize the tests architecture/logic to if it helps to make it correct, fast, robust, maintainable in the long term.
 
 - the tests and related docs are a little messy, simplify it and remove duplicated/repeated/unnecessasy tests/logic.
 

@@ -928,9 +928,22 @@ modified: 2025-12-11T18:10:23.710Z
   - 40+ providers · 32 built-in tools · 14 lsp ops · 28 dap ops · ~55k lines of Rust core.
   - https://x.com/geekbb/status/2065979536471417341
     - 从 Tau 分出来的一个分支，专门给 Pi 编码代理做了个 Codex 风格的客户端。把 Pi 运行时直接打包进应用里，装完就能用，不用额外装命令行工具。
-  - https://github.com/goncalossilva/tau /MIT/202606/ts
-    - a batteries-included distribution for Pi
-    - It takes Pi's minimal core and turns it into an opinionated, complete, polished experience, adding a websearch tool to complement the four default built-in tools, plus several useful skills and tasteful extensions, split into purpose-driven packages
+
+- https://github.com/omaclaren/pi-studio /202608/ts
+  - Extension for pi that opens a local two-pane browser workspace for working with prompts, responses, live working details, Markdown and LaTeX documents, interactive HTML previews, code files
+- https://github.com/shixin-guo/picot /MIT/202608/ts
+  - A local desktop GUI for the Pi coding agent. No cloud, no account — runs entirely on your machine.
+  - [Pi Studio — a local desktop UI for Pi coding agent : r/PiCodingAgent _202606](https://www.reddit.com/r/PiCodingAgent/comments/1tti7d8/pi_studio_a_local_desktop_ui_for_pi_coding_agent/)
+    - interaction with Pi agent like Codex desktop app, but free, open and extendable 
+
+- https://github.com/deflating/tau  /202606/ts
+  - A web UI that mirrors your Pi terminal session in the browser. 
+  - No separate server — it runs as a Pi extension inside your existing process.
+  - Tau connects to your running Pi TUI and gives you a second view in the browser. Same session, same messages, same tools — just a different screen. 
+  - Type in the terminal or the browser, both stay in sync.
+- https://github.com/goncalossilva/tau /MIT/202608/ts
+  - a batteries-included distribution for Pi
+  - It takes Pi's minimal core and turns it into an opinionated, complete, polished experience, adding a websearch tool to complement the four default built-in tools, plus several useful skills and tasteful extensions, split into purpose-driven packages
 
 - https://github.com/huggingface/tau /1.8kStar/MIT/202607/python
   - http://twotimespi.dev/
@@ -987,9 +1000,6 @@ modified: 2025-12-11T18:10:23.710Z
   - https://pi-web.dev/
   - Web UI for Pi Coding Agent that keeps sessions alive in real workspaces.
 
-- https://github.com/shixin-guo/pi-studio /MIT/202606/ts
-  - Local Codex-style desktop GUI for the Pi coding agent
-
 - https://github.com/pithings/pi-vscode /MIT/202604/ts
   - 🍴 forks
   - [在VSCode中深度集成Pi Agent经验分享 - LINUX DO _202606](https://linux.do/t/topic/2432358/7)
@@ -1045,6 +1055,7 @@ modified: 2025-12-11T18:10:23.710Z
   - A Terminal Built for Coding Agents
   - Run 10+ CLI coding agents like Claude Code, Codex, etc. in parallel on your machine. Spin up new coding tasks while waiting for your current agent to finish. Quickly switch between tasks as they need your attention.
   - For each parallel tasks, Superset uses git worktrees to clone a new branch on your machine.
+  - 主推tui，而不是webui
   - https://x.com/FlyaKiet/status/2020993991605735571
     - Chat GUI is in early preview - It's Claude Code SDK  under the hood with extra integrations into Superset for the ultimate chat experience. Compatible with existing Claude Code sessions. Slash commands and @ mention supported. Codex will soon follow.
   - https://x.com/vikingmute/status/2029906627458125926
@@ -1143,6 +1154,16 @@ modified: 2025-12-11T18:10:23.710Z
   - Run Claude Code, OpenCode, and Codex sessions in parallel. One window. Isolated branches. Zero tab chaos.
   - [Built a fully open source desktop app wrapping OpenCode sdk aimed at maximum productivity : r/opencodeCLI _202603](https://www.reddit.com/r/opencodeCLI/comments/1runznq/built_a_fully_open_source_desktop_app_wrapping/)
 # ui-aggregator/manager
+- https://github.com/xintaofei/codeg /2.7kStar/apache2/202608/ts/rust/tauri
+  - https://docs.codeg.app/
+  - Codeg (Code Generation) is a multi-agent coding workspace: run every AI coding agent in one place — and let them work together.
+  - It aggregates your sessions from every supported agent CLI into one searchable workspace, lets a main agent delegate to sub-agents of other types within a single task, and runs as a desktop app, a standalone server, or a Docker container — with native iOS and Android clients 
+  - since 0.22 you can register any other ACP-compatible agent yourself.
+  - Supported: Claude Code · Codex · Gemini · OpenClaw · OpenCode · Cline · Hermes · CodeBuddy · Kimi Code · Pi · Grok · Cursor
+  - [[开源] Codeg V0.18.0：日常办公模式来了（幻灯片、表格和文档都支持）｜多智能体协作工作台 - LINUX DO _202606](https://linux.do/t/topic/2480502)
+    - 最近迭代有点快了，特性一个接着一个来，先是多智能体协作、自动化，现在日常办公模式它来了，目前支持9个Agent生成创作幻灯片、表格和文档，支持边编辑边预览，实时查看Agent编辑的最新效果
+    - OfficeCLI，办公文件的生成和预览都是使用此cli
+
 - https://github.com/iOfficeAI/AionUi /18.4kStar/apache2/202603/ts
   - https://www.aionui.com/
   - https://github.com/iOfficeAI/AionUi/wiki
@@ -1150,6 +1171,11 @@ modified: 2025-12-11T18:10:23.710Z
   - While the official Gemini CLI is powerful, its command-line interface has limitations for daily use. 
   - 🐛 
     - 不支持rag
+  - https://github.com/iOfficeAI/AionUi/releases/tag/v2.1.47-final
+    - This is the final AionUi build distributed through GitHub Releases
+    - AionUi and its commercial counterpart share a package name but use different signatures
+    - The new version requires sign-in (Google today, more methods on the way). multiple accounts, data sync, and safer mobile collaboration, all need a proper service layer underneath.
+    - What's next, still open source: team board (a global view of multi-agent collaboration), conversation archive, data sync across devices, and broader organizational collaboration.
   - Seamlessly integrate multiple terminal AI agents - Gemini CLI, Claude Code, Qwen Code, Codex and more
     - [ACP Setup · iOfficeAI/AionUi Wiki](https://github.com/iOfficeAI/AionUi/wiki/ACP-Setup)
     - Gemini CLI Mode: Built into AionUi, users get it by default
@@ -1160,14 +1186,63 @@ modified: 2025-12-11T18:10:23.710Z
   - image generation, editing, and recognition powered by Gemini 2.5 Flash Image Preview
   - AI helps you create, organize, analyze, and beautify Excel files
   - MCP Tool Management
+  - https://github.com/iOfficeAI/AionCore /apache2/rust
+  - https://github.com/iOfficeAI/aionrs
+    - Rust-based LLM tool-use agent for the command line. It connects to LLM APIs, autonomously invokes local tools (file I/O, shell, search, etc.), and completes tasks end-to-end.
   - [feat: Implement ACP integration with improved Gemini authentication _20250903](https://github.com/iOfficeAI/AionUi/commit/23b3c4fae1af1c763f7ca41957ec141df47ad3a2)
     - Add comprehensive ACP (Agent Client Protocol) support for Claude and Gemini backends
+  - [AionUi V2.1.0大重构：前后端分离、改Rust - LINUX DO _202605](https://linux.do/t/topic/2236003)
+    - 让 AionUi 帮我写了页 PPT 来介绍下新方案
   - 📡 roadmap
     - 可结合下面async-code和其他ui的优点, 优化 background-agents 后台任务/并发任务
-  - [AionUi V1.7.4 更新：兼容了Newapi（Cowork开源版可以用公益站/中转站了 _202601](https://linux.do/t/topic/1508016)
-    - 测了一下部分中转站已经通了，基于newapi的公益站也通了。配置在“自定义模型平台”上即可。
-    - 之前aionui直接配置中转站时会被中转站拦截请求。需要带上user-agent才能通信。他们要在标准的OpanAI协议基础上带上defaultHeader才可以识别请求，之前AionUi没做这个。
-    - 支持多key轮询, 同一个url下的多key轮询
+  - [feat(agents): add Pi coding agent as builtin ACP agent _202607](https://github.com/iOfficeAI/AionCore/pull/618)
+  - [AionUi 为什么要搞成不登录不能用呢？  LINUX DO _202608](https://linux.do/t/topic/2719463)
+    - aionui 所有的源代码包括前后端以及 agent 都是开源的，连 user 表的设计也是开源的，所以可以试试如果不需要账号功能话，就直接在仓库里 build 一份（开源中的功能范围甚至大于安装包里的功能）
+  - [[Question]: AionUi未来都强制必须登录才能使用吗？  _202608](https://github.com/iOfficeAI/AionUi/issues/3901)
+    - 为了提供基于账号的基础服务，我们必须保证账号登录后使用 aionui。但是源码都是开源的，您可以让 agent 直接拉源码来打包，这可以跳过登录环节
+    - 在安排了（接入 google 只是为了方便，但是邮箱登录一定会有的）
+  - [[Question]: @office-ai/aioncli-core跟@office-ai/platform开源 _202607](https://github.com/iOfficeAI/AionUi/issues/3575)
+    - @office-ai/platform：npm 包标注为 MIT，发布内容包含编译后的 JS、类型声明和 source map，但项目实际只使用了其中很薄的 bridge、storage、theme 常量和 logger 封装
+    - 我们已在 #3595 中把仍需要的 bridge/storage 以源码形式内置到 AionUi，主题值改用项目自己的语义 token，并删除未使用的 logger 逻辑和 @office-ai/platform 依赖。该 PR 合并后，AionUi 将不再直接依赖这两个 @office-ai/* 包。
+  - [写在 AionUi 30K stars 之际：以产品视角的复盘和思考 - LINUX DO _202607](https://linux.do/t/topic/2595788/2)
+    - 自动识别大家本机装的Agent cli，一键拉起到界面中
+    - 基于 CLI 衍生助手，并设置你的使用习惯。
+    - 基于助手，我们提供 Agent 之上的 harness 环境。这一步是打破了Agent会话之间的隔离，让你的不同Agent会话之间能交流、协作。 (类似于选了一组skills)
+    - 观点】为什么大厂都从云端下凡，卷的桌面端 Agent？
+      - C端AI应用的的对决，基本上都在抢用户的数据和业务沉淀。 所以最初，大家都做云端业务。因为天然带账号，用户数据绑定账号不容易带走。但是26年以来，几乎所有的大厂都下场做桌面端 Agent应用了。明明在云端呆的好好的，为啥集体“下凡”了？ 
+      - 如上述数据看来，大部分用户还不能理解 Agent 的魅力。大家都知道，Agent 要真正的干活，得摸得到你的资料 —— 你的文件、你的项目、你装的工具。在云上，这些都得你亲自搬上去，还没开始干活，一大半人已经在上传资料那一步流失了。而在本地，Agent 打开就能看到你桌面、资料、文件夹。
+    - 【观点】桌面端AI 应用的下一步是什么？
+      - 桌面端 Agent 教育好用户后，下一步一定会又回到云端，因为应用的本质还是“抢用户数据并让用户有离开成本”。
+      - 所以，几乎所有的产品的下一步，都会引导你把这些习惯和数据搬到它的云端。
+    - 【观点】多个 Agent 并存是未来的常态吗？
+      - 每一家模型厂商，为了让自家的模型被用户使用，都必须给自己配备一个亲儿子 Agent。
+      - 抢数据入口：大家都知道，现在用户使用模型，通常是通过 Agent 来调用的，因此 agent 成为了模型使用的入口，那抢入口就等于给自家 LLM 抢数据。
+      - 更适配模型特点：为了更好的放大自家模型的特点，有一个自家的 Agent 配套调教，这样模型的调用效果不会被掌握在别的 Agent手上。
+    - 【观点】正在打造自己的产品的佬友们，不要放弃对GUI界面的追求
+
+- https://github.com/getpaseo/paseo /13.4kStar/MIT > AGPL/202608/ts
+  - https://paseo.sh/
+  - Manage coding agents from your phone and desktop.
+  - a self-hosted daemon for Claude Code, Codex, and OpenCode.
+  - Agents run on your machine with your full dev environment. 
+  - Connect from phone, desktop, or web.
+  - [I built a fully self-hosted and open-source Claude Code UI for desktop and mobile : r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1r8rqnv/i_built_a_fully_selfhosted_and_opensource_claude/)
+    - Git worktree management for running agents in parallel, Git operations so you don't have to leave the app, integrated terminal, it also comes with fully local voice mode and dictation
+  - [I built an open source mobile and desktop app for OpenCode : r/opencodeCLI _202604](https://www.reddit.com/r/opencodeCLI/comments/1s9d7u6/i_built_an_open_source_mobile_and_desktop_app_for/)
+
+- https://github.com/stablyai/orca /42.9kStar/MIT/202608/ts
+  - https://onorca.dev/
+  - Orca is the next-gen IDE for building with coding agents
+  - Available for macOS, Windows, and Linux, ios, android
+  - Run Codex, ClaudeCode, OpenCode or Pi side-by-side — each in its own worktree, tracked in one place.
+  - 主推的是 tui, 而不是webui
+  - Worktree Management: Spin up, manage, and switch between multiple Git worktrees instantly. 
+  - Agent-Ready Terminals: Robust support for multiple terminals, tabs, and panes. Run Claude Code, Codex, OpenCode, or your own agents side-by-side.
+  - Smart Notifications & Status Tracking: See exactly which worktrees have active agents. 
+  - Design Mode: Click any UI element in a real Chromium window to send its HTML, CSS, and a cropped screenshot straight into your agent's prompt
+  - Deep GitHub Integration
+  - https://x.com/orca_build/status/2040147412002697617
+    - Orca now has Notion-style markdown editing.
 
 - https://github.com/multica-ai/multica /apache2/202602/ts/inactive
   - A native desktop client that brings coding agent capabilities to everyone through a visual interface.
@@ -1179,18 +1254,6 @@ modified: 2025-12-11T18:10:23.710Z
   - https://x.com/jiayuan_jy/status/2012040329407713404
     - 分享我们最近实现的一个开源版本 Claude Cowork
     - 目标是成为 coding agent 和终端用户的中间层，有点类似 Obsidian 的模式，每个人都可以根据自己的工作流使用插件的方式来定制化。
-
-- https://github.com/stablyai/orca /MIT/202604/ts
-  - https://onorca.dev/
-  - Orca is the next-gen IDE for building with coding agents
-  - Available for macOS, Windows, and Linux.
-  - Whether it's Claude Code, Codex, or OpenCode, Orca makes coordinating multiple features across multiple repos effortless.
-  - Worktree Management: Spin up, manage, and switch between multiple Git worktrees instantly. 
-  - Agent-Ready Terminals: Robust support for multiple terminals, tabs, and panes. Run Claude Code, Codex, OpenCode, or your own agents side-by-side.
-  - Smart Notifications & Status Tracking: See exactly which worktrees have active agents. 
-  - Deep GitHub Integration
-  - https://x.com/orca_build/status/2040147412002697617
-    - Orca now has Notion-style markdown editing.
 
 - https://github.com/siteboon/claudecodeui /8.2kStar/GPL/202603/ts
   - https://cloudcli.ai/
@@ -1250,16 +1313,6 @@ modified: 2025-12-11T18:10:23.710Z
   - [[Question] Does this usage violate Anthropic’s ToS? _202601](https://github.com/21st-dev/1code/issues/8)
     - 1Code uses the official Claude Code SDK which wraps the Claude Code binary. This is the official way to build on top of Claude Code.
     - Some other tools (like OpenCode) made direct API calls while impersonating Claude Code - that approach got banned. We're not doing that.
-
-- https://github.com/getpaseo/paseo /MIT/202602/ts
-  - https://paseo.sh/
-  - Manage coding agents from your phone and desktop.
-  - a self-hosted daemon for Claude Code, Codex, and OpenCode.
-  - Agents run on your machine with your full dev environment. 
-  - Connect from phone, desktop, or web.
-  - [I built a fully self-hosted and open-source Claude Code UI for desktop and mobile : r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1r8rqnv/i_built_a_fully_selfhosted_and_opensource_claude/)
-    - Git worktree management for running agents in parallel, Git operations so you don't have to leave the app, integrated terminal, it also comes with fully local voice mode and dictation
-  - [I built an open source mobile and desktop app for OpenCode : r/opencodeCLI _202604](https://www.reddit.com/r/opencodeCLI/comments/1s9d7u6/i_built_an_open_source_mobile_and_desktop_app_for/)
 
 - https://github.com/SakuraByteCore/codexmate /apache2/202603/js
   - https://sakurabytecore.github.io/codexmate/

@@ -152,12 +152,32 @@ modified: 2026-06-30T17:32:43.131Z
 - 
 - 
 
+## draft-ai
+
+- harness
+  - harness工具越来越多, 每个都有自己的配置、特性, 统一管理的难度大、更新维护的复杂度高
+  - 🤔 可考虑不做agent的管理, 只做 context 的共享、产物的共享、skills的共享
+
 ## draft-rdmn
 
 - dev-to
   - 基础层工作db-schema: replace-editor + pdf-ECF 
   - 2way sync for bases
   - backlink
+
+- chat-as-files
+  - every chat is a folder, every message is a file
+    - workbuddy采用了此设计, 方便放产物、版本、多AI协作， 以日期为文件夹名
+  - 聊天会保存为本地文件, 用bases视图来保存元数据和信息
+
+- 
+- 
+- 
+- 
+- 
+
+- later
+  - mobile doc agent
 
 - 
 - 
@@ -246,6 +266,15 @@ modified: 2026-06-30T17:32:43.131Z
   - 非embed的场景会使用全局临时缓存
   - embed+auto会使用全局临时缓存
   - 明确的embed会使用指定的本地
+
+- 
+- 
+- 
+
+### later-ECF
+
+- new-split-view
+  - markdown and webpage
 
 - 
 - 
