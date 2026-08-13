@@ -347,7 +347,7 @@ modified: 2026-04-07T12:53:38.419Z
   - https://huggingface.co/opendatalab/MinerU-HTML  /0.8B/v1.1-0.5B
     - https://huggingface.co/opendatalab/MinerU-HTML-v1.1-hunyuan0.5B-compact
 
-- https://github.com/opendatalab/MinerU-Document-Explorer /MIT/202604/python/ts
+- https://github.com/opendatalab/MinerU-Document-Explorer /MIT/202604/python/ts/inactive
   - Agent-native knowledge engine with MCP tools for document indexing, wiki organization, fast retrieval and deep reading across PDF/DOCX/PPTX/Markdown
   - equips your agent with three tool suites — Retrieve, Deep Read, and Ingest — closing the full knowledge loop
   - Retrieve — Cross-collection search: BM25, vector, and hybrid with LLM reranking and query expansion
@@ -682,6 +682,11 @@ modified: 2026-04-07T12:53:38.419Z
   - Generate PDF documents from hOCR documents
   - 支持win/linux, 不支持mac
 
+- https://github.com/0xovo/LiteDoc /AGPL/202608/python/js
+  - A 100% Local, Browser-Based PDF to Markdown Converter.
+  - Tesseract.js - WebAssembly-based OCR for scanned document fallback.
+  - LiteDoc's parser is driven by a set of layout, table, and OCR heuristics (column proximity, alignment tolerances, math detection margins, and more). Those parameters are no longer hand-tuned — this repository ships the complete, open-source Synthetic Dataset Training Pipeline that tunes them automatically.
+
 ## utils
 
 - skills
@@ -717,6 +722,20 @@ modified: 2026-04-07T12:53:38.419Z
     - HTML tags and image placeholders are stripped from the output
     - Results are stored in SQLite and available per-page as they complete
     - Jobs interrupted by a restart are automatically re-queued
+
+- https://github.com/CHEN010325/paddleocr-local /202608/python/js
+  - 一个可本地部署的多模型文档解析 WebUI，支持上传图片、PDF、PPT、Word，查看解析结果并导出 Markdown。
+  - 支持四个独立模型： PaddleOCR-VL, 1.6 PP-OCRv6, Unlimited-OCR, OvisOCR2
+  - 安装脚本会让你选择首次部署的模型，并且只下载和启动所选模型。其他模型不会下载权重，也不会占用内存或显存。
+  - Windows + NVIDIA 需要提前安装 NVIDIA 驱动和支持 GPU 的 Docker Desktop。
+  - 支持 Apple M1、M2、M3、M4，OvisOCR2 默认使用 MLX。
+
+- https://github.com/ConcatenateLine/paddle-vlm-editor /202607/python/js
+  - PaddleVLM Editor is a local, Docker-based application that extracts structured content from PDFs and images using PaddleOCR-VL's Vision-Language Model, then lets you review and edit the results in a rich-text block editor — all without sending data to any cloud service.
+  - 5 processing pipelines in a single UI: Document Parser, OCR, Table Recognition, Formula Recognition, and Chart Parsing
+  - Editor.js block editor for reviewing and editing extracted content 
+  - PDF image extraction via PyMuPDF (embedded images matched by IoU, fallback to page rendering)
+  - Subprocess isolation for PaddleOCR-VL to recover from known PaddlePaddle static-graph crashes
 
 - https://github.com/egore4606/paddle-ocr-ui /202602/python/js
   - Local web UI for PaddleOCR‑VL via Docker (PDF/Image OCR, preview, logs, downloads)

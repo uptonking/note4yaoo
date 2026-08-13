@@ -344,6 +344,27 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0812
+
+- [CBOR Encoding: Efficiency in Data Storage and Transmission | Medium _202502](https://medium.com/@contactomyna/cbor-encoding-efficiency-in-data-storage-and-transmission-16e05bfd5241)
+  - CBOR(Concise Binary Object Representation) is a binary data serialization format designed to be concise and efficient. It is particularly effective for encoding complex and structured data, such as JSON-like objects, arrays, and more.
+
+- 🤔 there are so many ocr app or webapp , is there any open source apps/webapps that act as gui for mineru/paddleocr/marker/docling/... deep research related solutions/ideas, if you found any open source apps or inspiration projects, provide overview/github-url/website for each.
+- MinerU already ships a Gradio WebUI built into the package itself (mineru-gradio command), but there are also independent community wrappers
+- PaddleOCR provides no ui.
+- Marker ships its own optional Streamlit demo app
+- docling-serve – FastAPI service with a built-in /ui playground
+  - docling-serve run --enable-ui
+- Open WebUI has natively integrated Docling, Marker, PaddleOCR-VL, and MinerU into its RAG pipeline
+
+- Multi-engine aggregator apps (pick your backend from one UI)
+  - Kotaemon – full RAG chat UI (Gradio-based)
+  - RAGFlow – ships its own parser, "DeepDoc" (PaddleOCR-based layout/OCR/table models), behind a very polished self-hosted web app with visual chunk verification
+  - Chunkr: OSS version uses community models; their higher-accuracy models are cloud-only
+  - OmniParse – Gradio UI over a Surya-OCR + Florence-2 pipeline that ingests docs, images, audio/video, and web pages into unified Markdown.
+  - docext (Nanonets) – Gradio web interface for OCR-free, VLM-based document→Markdown and field extraction
+  - OCRRouter – not a GUI itself, but worth knowing as a backend: a Python library that abstracts MinerU, PaddleOCR, DeepSeek-OCR, DotsOCR, and Hunyuan-OCR behind one interface, including composite pipelines (layout from one engine, OCR from another).
+
 ## 0811
 
 - make a plan to rename and simplify `redmansion` related package names from `redmansion` to `rdmn`, like renaming from `@datalking/redmansion-ui` to `@datalking/rdmn-ui`, from `@datalking/redmansion-desktop` to `@datalking/rdmn-desktop`...
@@ -900,7 +921,7 @@ optimizeDeps: {
 - Suffix-Based(getting-started.en.md)
   - examples: Nextra, MkDocs-static-i18n
   - simpler for single-version docs but gets messy with versions. 
-- The industry standard is `/docs/{language}/{version}/{page-slug}`
+- The industry standard is `/docs/{language}/{version}/{page-slug}` 
   - easy redirects
 - shared 平行目录时， 内容引用shared目录的路径是相同的
   - Images
@@ -1887,7 +1908,7 @@ Error: Command '['/Users/yaoo/.unsloth/studio/.venv/bin/python3', '-m', 'ensurep
 ## 0301
 
 - 🤔 latest chromium/chrome has experimental features like ai/split-view, how can i enable these features automatically on my custom electron app? explain to me and give me some docs and urls for references
-  - enable the Chromium flags you need at app startup (via `app.commandLine.appendSwitch`) and/or turn on Renderer-level runtime flags via BrowserWindow's `webPreferences` (experimentalFeatures / enableBlinkFeatures).
+  - enable the Chromium flags you need at app startup (via `app.commandLine.appendSwitch` ) and/or turn on Renderer-level runtime flags via BrowserWindow's `webPreferences` (experimentalFeatures / enableBlinkFeatures).
 - Electron is built on Chromium's web rendering engine, not the Chrome browser UI. Because "Split Tabs" is strictly a Chrome Browser UI feature, appending the split-view flag in Electron will do absolutely nothing.
   - To implement a split-view in Electron, you don't use flags; you build it natively using Electron's `WebContentsView` API (the modern replacement for BrowserView). This allows you to embed multiple independent web views side-by-side in a single window.
 - Google Chrome recently introduced a built-in AI API (window.ai.languageModel) powered by a local Gemini Nano model.
@@ -1976,7 +1997,7 @@ uv tool list
 
 ## 0216
 
-- 🤔 when i add a mcp to claude code like `claude mcp add n8n-mcp`, how does agent know when to use the mcp tools and what mcp tools are available? is it required to add  explicit mcp instructions to CLAUDE.md ?  there are many open source mcp on github, after adding some by commands like `claude mcp add n8n-mcp`, i am curious the internals about the mcp integration. does opencode-cli work the similar way?
+- 🤔 when i add a mcp to claude code like `claude mcp add n8n-mcp` , how does agent know when to use the mcp tools and what mcp tools are available? is it required to add  explicit mcp instructions to CLAUDE.md ?  there are many open source mcp on github, after adding some by commands like `claude mcp add n8n-mcp` , i am curious the internals about the mcp integration. does opencode-cli work the similar way?
 - How the Agent Discovers Available MCP Tools
   - When you run claude mcp add n8n-mcp, here's what happens under the hood:
   - Registration Phase: This stores the MCP server configuration in Claude Code's settings 
@@ -2582,7 +2603,7 @@ Loaded cached credentials. jinyaoo86@gmail.com
 }
 ```
 
-- 🤔 when i do some edits and run `git push`, i hope tags and commits are both pushed and the built win/macos/linux artifacts can be seen on github release page https://github.com/examples-hub/electron-tanstack-shadcn/releases. tell me how to do it manually with shell commands step by step
+- 🤔 when i do some edits and run `git push` , i hope tags and commits are both pushed and the built win/macos/linux artifacts can be seen on github release page https://github.com/examples-hub/electron-tanstack-shadcn/releases. tell me how to do it manually with shell commands step by step
 
 ```sh
 # After making edits and committing:

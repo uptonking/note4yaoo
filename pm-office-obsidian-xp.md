@@ -154,9 +154,17 @@ modified: 2026-06-30T17:32:43.131Z
 
 ## draft-ai
 
+- extends familiar agent xp
+  - select files
+  - select ocr-model(mineru/paddleocr-vl/DeepSeek-OCR) or harness(mineru/paddleocr/marker) or translation-model
+  - prompt + go
+
+- web
+  - highlight ai response markdown and the corresponding webpage citation
+
 - harness
   - harness工具越来越多, 每个都有自己的配置、特性, 统一管理的难度大、更新维护的复杂度高
-  - 🤔 可考虑不做agent的管理, 只做 context 的共享、产物的共享、skills的共享
+  - 🤔 可考虑不做agent的管理, 只做 context的共享、产物的共享、skills的共享
 
 ## draft-rdmn
 
@@ -169,6 +177,8 @@ modified: 2026-06-30T17:32:43.131Z
   - every chat is a folder, every message is a file
     - workbuddy采用了此设计, 方便放产物、版本、多AI协作， 以日期为文件夹名
   - 聊天会保存为本地文件, 用bases视图来保存元数据和信息
+
+- page-preview, pdf-preview, file-preview
 
 - 
 - 
@@ -274,7 +284,7 @@ modified: 2026-06-30T17:32:43.131Z
 ### later-ECF
 
 - new-split-view
-  - markdown and webpage
+  - highlight ai response markdown and the corresponding webpage location
 
 - 
 - 

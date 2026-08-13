@@ -595,7 +595,7 @@ modified: 2024-08-24T16:30:20.218Z
     - The commercial parts, like the UI dashboard or premium integrations, are totally optional and don’t block anyone from running Kodus locally with the core AI working. The goal is to make it easy for any team to use Kody in an open, customizable, and self hosted way if they want.
     - About the .ee. files: yeah, there are still some references to them in the main repo, and we get how that can be confusing. The core engine already works without those parts, but the current setup doesn’t make that obvious. That’s exactly why we’re working on a separate repo with a fully open source version, to make it clearer and easier to use without any closed components.
 
-- https://github.com/mattzcarey/shippie /MIT/202510/ts/inactive
+- https://github.com/mattzcarey/shippie /2.5kStar/MIT/202608/ts/inactive
   - https://shippie.dev/
   - extendable code review and QA agent
   - Shippie uses Large Language Models to review code in your CI/CD pipeline. 

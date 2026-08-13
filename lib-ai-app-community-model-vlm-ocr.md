@@ -265,6 +265,10 @@ modified: 2025-11-06T18:49:13.977Z
     - Main takeaway: for standard OCR, smaller and older models match premium accuracy at a fraction of the cost.
   - there is a difference between OCR models and Vision models. I found that few models worked for OCR purposes as well the legacy Tesseract in my cases (no articles about that one.) In short, if you want to read the neon sign on a photo, you want a vision model, and if you give it a page, even with fairly specialized prompting, it has a tendency to describe the page rather than OCR it.
 
+- https://github.com/shijincai/fast360 /202508/NonOpen/inactive
+  - https://fast360.xyz/
+  - The industry's first "Open Source OCR Arena, " a free, no-login utility for one-click benchmarking of 7 top-tier models (Marker, MinerU, MonkeyOCR, Docling, Dolphin, OCRFlux, PP-StructureV3) on your PDF/image files, specializing in PDF-to-Markdown conversion.
+
 - [Extend-AI/RealDoc-Bench · Datasets at Hugging Face _202605](https://huggingface.co/datasets/Extend-AI/RealDoc-Bench)
   - [RealDoc-Bench: PDF parsing evals for agents : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1to8d4v/realdocbench_pdf_parsing_evals_for_agents/)
   - A lot of parser evals focus on academic texts or simple PDFs which don’t reflect the docs agents struggle with in the real world. So this benchmark includes 1500 pages across logistics, healthcare, financial services, and real estate, including bills of lading, EOBs, mortgage 1003s, paystubs, and property disclosures.

@@ -45,6 +45,17 @@ modified: 2025-09-21T13:58:46.548Z
   - [Is anyone still running pure vector RAG in production in 2026, and is it actually holding up? : r/Rag _202605](https://www.reddit.com/r/Rag/comments/1t9v93f/is_anyone_still_running_pure_vector_rag_in/)
   - We built oss tool to make visual debugging of our chunk an re-injection
 
+- https://github.com/duckling-ui/duckling /MIT/202608/python/ts
+  - browser-based graphical interface for Docling 
+  - URL-Based Conversion: Convert documents directly from URLs with automatic image extraction for HTML pages
+  - Multi-Format Support: Convert PDFs, Word docs, PowerPoints, Excel files, HTML, Markdown, images, and more
+  - Multiple Export Formats: Export to Markdown, HTML, JSON, DocTags, DocLang, Document Tokens, RAG Chunks, or plain text
+  - Image & Table Extraction: Extract embedded images and tables with CSV export
+  - RAG-Ready Chunking: Generate document chunks optimized for RAG applications
+  - Advanced OCR: Multiple OCR backends with GPU acceleration support
+    - OCR engine (easyocr/default, tesseract, ocrmac, rapidocr)
+  - [A Fresh UI for docling _202602](https://davidgs.com/posts/category/open-source/a-fresh-ui-for-docling/)
+
 - https://huggingface.co/spaces/ibm-granite/granite-docling-258M-WebGPU/tree/main /apache2/202510/html/vanillajs
   - a demo which showcases the model running entirely in your browser with WebGPU acceleration
   - ✨ 此类demo可考虑实现类似图片对比的新旧对比滑块
@@ -131,6 +142,9 @@ modified: 2025-09-21T13:58:46.548Z
   - Convert unstructured documents to markdown using the Docling.
   - This blueprint guides you to convert various unstructured documents (PDFs, DOCX, HTML, etc.) to markdown, or other, formats using the Docling CLI or a locally-hosted demo UI
   - We have built a simple Graphical Interface demo of Docling to showcase some basic functionality 
+
+- https://github.com/ismail-seleit/docling-ui /202506/ts/inactive
+  - desktop application for converting your documents to Markdown. It's built with React and Electron, and it's designed to be simple, powerful, and completely private.
 
 - https://huggingface.co/spaces/AmineAce/pdf-tables-rag-demo/tree/main /202512/python/单文件
   - https://amineace-pdf-tables-rag-demo.hf.space/

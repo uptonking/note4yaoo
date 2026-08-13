@@ -205,7 +205,18 @@ codex --yolo resume --last
 
 - ## 
 
-- ## 
+- ## [我最喜欢使用的离线环境下harness分享 - LINUX DO _202608](https://linux.do/t/topic/2746324)
+  - 因为公司是内网开发环境，我主要是qt c++相关，老板自己部署了kimi3 glm5.2 ds4.2这些顶尖的开源模型让我们开发用，然后自己使用过codex cc grok oc kimi-code zcode这些harness软件。
+  - codex是我发现接入第三方效果最差的模型，cli和桌面端都用过，但是真的一言难尽，当然我这是离线自部署模型情况下的使用体验，可能在线并且使用官方api下效果会更好。
+  - grok开源的时候用过几次，但是我发现它每次都给我磁盘拉满，用的时候电脑都开始卡卡的, 后面就没用了。
+  - cc应该是使用最久的，我是搭配ccs一起用的，但是前段时间开始用着感觉慢而且效果变差，有可能是我skill和plugin装多了原因并且ccs本身有一些代理的bug不修复，比如cc会出现映射失败的现象，有人提了pr但是也不合。
+  - oc用的少了，一开始搭配omo使用的，但是后面体验一般就不用了。
+  - 然后就是从glm5.2发布后，开始用zcode，zcode没cli，桌面版一个问题就是太占内存了，但是搭配5.2一起用效果还可以；
+  - k3发布后开始用kimi-code，这个也是我现在主要使用的cli，k3+kimi-code有一个问题，不知道是不是离线部署的原因，就是plan模式下一直在反复思考，明明思考内容都输出“已获取所需信息，xxx, 接下来开始写plan文件”，但是它一直在重复。然后切换glm和deepseek模型，体验非常好，不存在k3这种情况；
+  - 接下来肯定最期待的还是deepseek的harness，出了的话肯定是替换kimi-code了。
+  - PS：装过很多各种各样的插件skill，但是只有codegraph是我换一个harness就一定会装的。
+
+- codex我觉得它有点想做成专用OpenClaw那个味道，但是又不能太开放不然没有收益了。所以它的plugin体系、上下文压缩，都非常依赖它的云端环境，也就说不让你完全脱离OpenAI的生态。
 
 - ## [I want OpenCode, but with Pi's stripped down system prompts. : r/LocalLLM _202606](https://www.reddit.com/r/LocalLLM/comments/1u3mfy4/i_want_opencode_but_with_pis_stripped_down_system/?sort=top)
 - Look at little-coder and oh-my-pi. Both use pi under the hood, but are a little closer to OpenCode

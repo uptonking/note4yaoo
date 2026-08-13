@@ -718,13 +718,12 @@ modified: 2025-12-11T18:10:23.710Z
     - A containerized development environment running OpenCode WebUI with comprehensive tooling support. 
   - https://github.com/awesome-opencode/awesome-opencode
 
-- https://github.com/NeuralNomadsAI/CodeNomad /203Star/NALic/202512/ts
+- https://github.com/NeuralNomadsAI/CodeNomad /2.5kStar/MIT/202608/ts
   - built for people who live inside OpenCode
   - Multi-Instance: Juggle several OpenCode sessions side-by-side with tabs.
   - Monitor background tasks and child sessions without losing flow
-  - A native application (Electron-based) with global shortcuts, deeper system integration, and a dedicated window.
+  - Available as both Electron and Tauri builds — choose based on your preference.
   - The SolidJS-based frontend
-  - We are also working on a lightweight, high-performance version built with Tauri. 
   - [CodeNomad - multi-instance opencode desktop client : r/opencodeCLI _202511](https://www.reddit.com/r/opencodeCLI/comments/1ox9a4u/codenomad_multiinstance_opencode_desktop_client/)
     - The TUI wasn't cutting it for my workflow and other UIs are either slow or have a different perspective.
     - Primary feature - Fast long session handling. Quick scrolling the session.,
@@ -903,7 +902,6 @@ modified: 2025-12-11T18:10:23.710Z
   - [Add a Python SDK for `pi-agent-core` and `pi-ai` _202605](https://github.com/earendil-works/pi/issues/4174)
     - sorry, this is entirely out of scope for pi itself. but nothing stops you from building this as your own project.
   - [大模型应用开发：学习和整理Pi的LLM模块设计 - LINUX DO _202606](https://linux.do/t/topic/2293027)
-  - https://github.com/ayuayue/pi-desktop
   - https://github.com/earendil-works/pi-chat
     - A pi extension that bridges Discord and Telegram channels to a sandboxed pi session. Each connected channel gets its own Gondolin micro-VM with persistent workspace, shared storage, memory, and skills.
     - Requirements
@@ -928,6 +926,13 @@ modified: 2025-12-11T18:10:23.710Z
   - 40+ providers · 32 built-in tools · 14 lsp ops · 28 dap ops · ~55k lines of Rust core.
   - https://x.com/geekbb/status/2065979536471417341
     - 从 Tau 分出来的一个分支，专门给 Pi 编码代理做了个 Codex 风格的客户端。把 Pi 运行时直接打包进应用里，装完就能用，不用额外装命令行工具。
+
+- https://github.com/ayuayue/PiDeck /571Star/MIT/202608/ts
+  - https://github.com/ayuayue/pi-desktop /renamed
+  - https://ayuayue.github.io/PiDeck/
+  - 在本地项目目录中统一管理 pi Agent 会话，并支持导入 Codex、Claude 本地会话以便统一浏览和恢复。
+  - 支持多项目工作区、会话历史、Git 集成、内置终端、模型配置和插件管理，基于 Electron 构建。
+  - PiDeck 不是 pi 的分支。它是一个轻量 Electron 外壳，通过启动多个 pi --mode rpc 进程，将项目管理、会话管理、对话界面、配置管理和工具编排整合到一个原生桌面应用中——所有 Agent 能力由 pi 原生提供。
 
 - https://github.com/omaclaren/pi-studio /202608/ts
   - Extension for pi that opens a local two-pane browser workspace for working with prompts, responses, live working details, Markdown and LaTeX documents, interactive HTML previews, code files
@@ -1154,6 +1159,16 @@ modified: 2025-12-11T18:10:23.710Z
   - Run Claude Code, OpenCode, and Codex sessions in parallel. One window. Isolated branches. Zero tab chaos.
   - [Built a fully open source desktop app wrapping OpenCode sdk aimed at maximum productivity : r/opencodeCLI _202603](https://www.reddit.com/r/opencodeCLI/comments/1runznq/built_a_fully_open_source_desktop_app_wrapping/)
 # ui-aggregator/manager
+- https://github.com/getpaseo/paseo /13.4kStar/MIT > AGPL/202608/ts
+  - https://paseo.sh/
+  - Manage coding agents from your phone and desktop.
+  - a self-hosted daemon for Claude Code, Codex, and OpenCode.
+  - Agents run on your machine with your full dev environment. 
+  - Connect from phone, desktop, or web.
+  - [I built a fully self-hosted and open-source Claude Code UI for desktop and mobile : r/ClaudeCode _202602](https://www.reddit.com/r/ClaudeCode/comments/1r8rqnv/i_built_a_fully_selfhosted_and_opensource_claude/)
+    - Git worktree management for running agents in parallel, Git operations so you don't have to leave the app, integrated terminal, it also comes with fully local voice mode and dictation
+  - [I built an open source mobile and desktop app for OpenCode : r/opencodeCLI _202604](https://www.reddit.com/r/opencodeCLI/comments/1s9d7u6/i_built_an_open_source_mobile_and_desktop_app_for/)
+
 - https://github.com/xintaofei/codeg /2.7kStar/apache2/202608/ts/rust/tauri
   - https://docs.codeg.app/
   - Codeg (Code Generation) is a multi-agent coding workspace: run every AI coding agent in one place — and let them work together.
@@ -1220,16 +1235,6 @@ modified: 2025-12-11T18:10:23.710Z
       - 更适配模型特点：为了更好的放大自家模型的特点，有一个自家的 Agent 配套调教，这样模型的调用效果不会被掌握在别的 Agent手上。
     - 【观点】正在打造自己的产品的佬友们，不要放弃对GUI界面的追求
 
-- https://github.com/getpaseo/paseo /13.4kStar/MIT > AGPL/202608/ts
-  - https://paseo.sh/
-  - Manage coding agents from your phone and desktop.
-  - a self-hosted daemon for Claude Code, Codex, and OpenCode.
-  - Agents run on your machine with your full dev environment. 
-  - Connect from phone, desktop, or web.
-  - [I built a fully self-hosted and open-source Claude Code UI for desktop and mobile : r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1r8rqnv/i_built_a_fully_selfhosted_and_opensource_claude/)
-    - Git worktree management for running agents in parallel, Git operations so you don't have to leave the app, integrated terminal, it also comes with fully local voice mode and dictation
-  - [I built an open source mobile and desktop app for OpenCode : r/opencodeCLI _202604](https://www.reddit.com/r/opencodeCLI/comments/1s9d7u6/i_built_an_open_source_mobile_and_desktop_app_for/)
-
 - https://github.com/stablyai/orca /42.9kStar/MIT/202608/ts
   - https://onorca.dev/
   - Orca is the next-gen IDE for building with coding agents
@@ -1243,6 +1248,16 @@ modified: 2025-12-11T18:10:23.710Z
   - Deep GitHub Integration
   - https://x.com/orca_build/status/2040147412002697617
     - Orca now has Notion-style markdown editing.
+
+- https://github.com/dark-hxx/CLI-Manager /651Star/AGPL/202608/ts/rust
+  - https://cli-manager.github.io/
+  - 为 Claude Code 与 Codex CLI 深度优化的跨平台工作台。
+  - 从任务开始到会话复盘，把原本散落在多个窗口、配置与日志里的信息，收进一个安静而强大的工作空间。
+  - 多项目、多终端，一处清晰掌控: 每个 AI CLI 会话都有自己的空间、状态和上下文。
+  - Multi-source history parsing (Claude Code, Codex CLI, Gemini CLI, GitHub Copilot CLI, Antigravity, Grok Build, Pi, OpenCode, Kiro, Cursor, and Cline)
+  - Cross-platform desktop app (Windows / macOS / Linux, based on Tauri 2)
+  - Multi-shell support (Windows: PowerShell / CMD / Pwsh / WSL / Git Bash; macOS / Linux: Bash / Zsh, etc.)
+  - Claude Code / Codex Hook Bridge (127.0.0.1 loopback + bearer token validation)
 
 - https://github.com/multica-ai/multica /apache2/202602/ts/inactive
   - A native desktop client that brings coding agent capabilities to everyone through a visual interface.

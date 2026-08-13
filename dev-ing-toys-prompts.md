@@ -591,7 +591,7 @@ you might refactor/reorganize the tests architecture/logic to make it correct, f
 
 - 对并行执行的支持度如何? 同时运行多个backend/runtime? 同一个runtime运行多个模型? 多个请求的queue?
 
-- 是否是都采用binary的方案? 同时运行多个backend/runtime时，是否存在端口冲突?
+- runtime是否是都采用binary的方案? 同时运行多个版本的backend/runtime时，是否存在端口冲突?
 
 - tasks that are out of scope for near-term parity and may be delayed:
   - team/workspace/rbac: basic owner/member safeguards are sufficient for now; broader workspace ACL parity may be delayed.
@@ -602,6 +602,63 @@ you might refactor/reorganize the tests architecture/logic to make it correct, f
   - pros: 对使用本地已有工具的场景更友好
   - cons: 内置runtime需要支持多种格式如 /v1/chat/completions, /v1/responses， 还要考虑本地ollama的版本、模型版本， 带来的问题比收益多
   - 参考很多主流开放性ai的产品如cursor/cherry-studio, 都支持用户配置api，所以通过平台/系统来管理本地的工具是非必要的
+
+### aichorite
+
+### aichor-harness
+
+> aichor is a self-hostable agent with extensible ui built with pi, it also makes it easy to manage existing agent harness like claude code, codex...
+
+project paseo(at folder `../all-agi-harness/paseo` , AGPL License) provides a interface to orchestrate multiple coding agents. It runs a local server called the daemon that manages your coding agents. Clients like the desktop app, mobile app, webapp, and CLI connect to it. 
+- project pi(at folder `../all-agi-harness/pi`, MIT License ) is a minimal agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI.
+
+- The final goal for this project `aichor` is to implement a paseo-like agent framework/sdk/cli/server/webapp/electron-app with headless, extensible, flexible architecture in current folder with similar features like paseo's core features, but built using client/server architecture, modern tech stacks like npm workspaces, reactjs, @tanstack/react-router, @base-ui/react, zustand, typescript v7, tailwindcss, oxlint, oxfmt. you should implement the goal in a way to make it easy to migrate code changes/features from paseo to aichor in the future.
+- you might refer to the architecture  and ui/ux of paseo, but you should rewrite it with headless client/server architecture with functional-programming style to avoid licensing issues. It would be even better if aichor cli/web-app/electron-app can be built on the same architecture. A big architecture change for aichor is that, aichor should support external cli agents claude-code/codex/pi like paseo, but it also ships a built-in agents named `pichor` that is built with `../all-agi-harness/pi/packages/coding-agent`, so that user can use aichor app with pichor even if user does not have any existing cli agent on his machine. It would be even better if built-in pichor and external cli agents use the same architecture. you might refer to related code if you want, then design a correct and extensible architecture for aichor.
+- The core goal is to reimplment most of the existing paseo features, self-hosted daemon, server/desktop/web/CLI/sdk, CLI that is able to script agent work and drive remote daemons, remote control over a direct connection or a custom relay, supporting multi-providers like Claude-Code/Codex/OpenCode/Pi through the same interface, optional worktrees/branches for diff/review/preview, integrations like Paseo Hub for github, use a api/protocol/contract that is compatible with paseo to make it easy for user to switch, Schedules for task with cadence, Diagnostics with connection/daemon/provider/log, agent config with tools/browser-tool/system-prompt .
+- features that may be planed but delayed: ios/android, paseo-vscode, voice control, integrations like copilot/slack/discord, token usage statistics, full parity of paseo-style UI/UX.
+
+- you have migrated/reimplemented some features from upstream paseo to aichor.
+
+- you may deep research and refer to the architecture/data-flow/code of upstream paseo and pi, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional-programming style for aichor without licensing issues.
+- you may even do a big code refactor for aichor to match major feature of paseo in a extensible architecture if it helps to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+
+- please deep research paseo(at folder `../paseo` ), then can you design a similar solution in aichor to improve it? is paseo's solution good enough? if yes, solve it in a similar way for aichor.
+
+- research and make a good design for architecture/data-flow, then implement aichor to match major features of paseo, or even better than paseo, without licensing issues.
+
+- 
+- 
+- 
+- 
+- 
+
+#### draft-aichor
+
+for SQLite db operation, you should use npm package `kysely` with better-sqlite3 , the source-code/api/docs is at `../../libfwk/endback/kysely` for your reference. 
+- opencode v2 provides a good db design for agent harness, you might refer to it at `../all-agi-harness/opencode`. but you might not refer to the effect.ts related implementation, use functional typescript for implementation in aichor.
+
+- you might refer to how paseo(source code at folder `../all-agi-harness/paseo`) implements/solves it, then do a similar or better implementation in aichor without licensing issue.
+
+- paseo's overall architecture is good enough to follow. Mostly aichor should use similar architecture like paseo.
+- you may analyze related architecture/code and borrow good deisgn from upstream paseo(source code at folder `../all-agi-harness/paseo`) and rewrite it in functional-programming style for aichor to avoid licensing issues.
+- it is unnecessary to search the web for paseo details, just analyze the source code at folder `../all-agi-harness/paseo`.
+
+- please recheck migrated features and improve the implementation in aichor. Analyze core data flow and implementation logic details for every major feature like   ..., compare the implementation logic/code of aichor with related logic/code of paseo to recheck and enhance the correctness of architecture/data-flow and logic in dreamansion, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in aichor are correct, modular, extensible for long-term maintenance. 
+
+- prioritize and recheck/improve major features like    ... in aichor, make related features/architecture correct, modular, extensible, robust for long-term maintenance.
+
+- if major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
+
+- recheck and improve major features, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
+
+- docs/tests/scripts might be outdated, recheck code and data flow to improve aichor.
+
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## 📌 dreamansion(directus)
 
@@ -642,8 +699,6 @@ project `directus` (at folder `../directus` ) is a source-available licensed, po
 - research and make a plan, then migrate and improve major feature pairity, without licensing issues
 
 - please deep research directus(at folder `../directus` ), then can you design a similar solution in dreamansion to improve it? is directus's solution good enough? if yes, solve it in a similar way for dreamansion.
-
-- research and make a full plan, then implement dreamansion to match major features of directus, or even better than directus, without licensing issues.
 
 - research and make a good design, then implement dreamansion to match major features of directus, or even better than directus, without licensing issues.
 
@@ -916,6 +971,8 @@ multiple sync targets should be supported in redmansion desktop app, for example
 
 ### improvements
 
+- page-preview, pdf-preview, file-preview
+
 - subpage在editor中无法通过 DEL键 删除
 
 - 外部修改导致的格式丢失问题，如何处理
@@ -939,6 +996,8 @@ multiple sync targets should be supported in redmansion desktop app, for example
 ### draft-later
 
 - default local username: local@redmansion.invalid
+
+## later
 
 ## ilove-image(stirling-image)
 
