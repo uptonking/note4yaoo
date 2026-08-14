@@ -117,6 +117,16 @@ modified: 2026-06-24T16:51:57.846Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [CachyLLama’s: llama.cpp fork with persistent KV cache that makes long local-agent sessions much less painful : r/LocalLLaMA _202607](https://www.reddit.com/r/LocalLLaMA/comments/1v5k08a/cachyllamas_llamacpp_fork_with_persistent_kv/)
+- CachyLLama adds persistent SSD-backed KV checkpoints and a system-prompt cache. When the beginning of a request matches previously processed context, it can restore that state and evaluate only the changed tail rather than starting over. The checkpoints can also survive a server restart.
+  - llama-server is fine until you accidentally close the server or it crashes and you were working with 100k context. This need to be part of the mainline code.
+
 - ## Offloading KV cache to NVMe SSDs wastes 70% of GPU cycles on stalls. 
 - https://x.com/sakurayukiai/status/2069179520519717347
   - The bottleneck isn't SSD bandwidth, but the CPU choking on thousands of tiny I/Os for vLLM's fragmented pages. Tutti running io_uring directly on the GPU proves CPU-centric storage is the real bottleneck??

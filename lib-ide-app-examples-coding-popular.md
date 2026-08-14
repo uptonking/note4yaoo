@@ -1045,6 +1045,18 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/hahhforest/pi-textbook /MIT/202607/ts
   - https://build-your-own-pi-cn.enochzhang.chatgpt.site/
   - 《动手学 Pi》：沿 15 个真实 checkpoint 从零构建 Pi-style Agent
+
+### pi-utils
+
+- https://github.com/demigodmode/pi-web-agent /AGPL/202608/ts
+  - Reliable web tools for Pi: search for sources, fetch over HTTP, and use headless browsing only when explicitly requested.
+  - [pi-web-agent is essentially feature-complete now, Tavily and Exa are the last backends that were added : r/PiCodingAgent _202608](https://www.reddit.com/r/PiCodingAgent/comments/1vmkzzp/piwebagent_is_essentially_featurecomplete_now/)
+    - What's the marginal improvement for adding more API keys or you only get to pick one to search in at a time?
+    - multi-provider search isn't a bad idea at all. I could see value in optionally fanning a query out to 2-3 providers, deduping the results, then reranking them before the research loop continues. main downside would be extra latency/API usage, so I'd probably make it opt-in rather than the default. 
+  - how does it compare to pi-web-access? https://pi.dev/packages/pi-web-access
+    - the reason I ended up building this was that "pi-web-access" felt a bit too interactive for how I wanted web research to work. the curator/review flow can open a browser/window and ask you to approve results, which is useful if you want that level of control but I found it disruptive for normal agent use. you can disable that now (right?) but that workflow was a big part of what pushed me toward building something more hands-off.
+    - "pi-web-agent" is intentionally more hands-off. the model gets one research tool, "web_explore", and search/fetch/headless/ranking/evidence checks all happen behind that boundary without popping you out of the session.
+    - "pi-web-access" has a bigger feature surface. mine is more opinionated around keeping research bounded, quiet, and agent-native.
 # cli-aggregator/wrapper
 - https://github.com/jazzenchen/VibeAround /MIT/202606/rust/ts
   - https://vibearound.ai/

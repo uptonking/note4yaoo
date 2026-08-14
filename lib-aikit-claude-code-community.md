@@ -188,7 +188,13 @@ They do this because thinking blocks aren't compatible across models, but the ke
 
 - ## 
 
-- ## 
+- ## [How are you managing multiple accounts on Claude? : r/ClaudeAI _202603](https://www.reddit.com/r/ClaudeAI/comments/1rkdigx/how_are_you_managing_multiple_accounts_on_claude/)
+  - I have both a personal Claude account and one provided by work.
+  - From what I can tell, account switching is not a thing in any of the Claude apps. You have to log out and in again.
+
+- I created a simple bash script for mac to do this with help of claude itself for anyone that like one liner use https://github.com/noobogami/claude-code-app-multiplier
+
+- [Account Switcher for Claude Code : r/ClaudeAI _202507](https://www.reddit.com/r/ClaudeAI/comments/1lp6ldn/account_switcher_for_claude_code/)
 
 - ## [[BUG] /compact 95% forever  _202605](https://github.com/anthropics/claude-code/issues/58996)
 - 实测 ~~安装使用旧版本的claude code就可以 /compact 成功了~~ 

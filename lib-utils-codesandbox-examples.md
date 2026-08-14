@@ -652,6 +652,16 @@ modified: 2023-09-02T09:17:22.992Z
     - agentOS uses WASM with a fraction of the RAM
     - Most importantly, agentOS supports Sandbox Mounting in order to use a VM in use cases where it makes sense, such as: Heavy-weight workloads, Computer/Browser Use
 
+- https://github.com/elie222/rakazo /apache2/202608/ts
+  - https://rakazo.com/
+  - Open-source Grok Bot alternative, built with Cursor and Grok 4.6.
+  - https://x.com/elie2222/status/2087898602890744089
+    - Use any LLM (pi harness)
+    - Use any sandbox provider. Or Docker
+    - Web, desktop (Electron), and mobile (React Native)
+  - struggling to understand how grok bot is different from openclaw and hermes
+    - Simpler ux. Hosted. Sandboxed computer use built in and teaching ai what to do. I’m sure you can make open claw and Hermes do that too but different experience.
+
 - https://github.com/rivet-dev/sandbox-agent /536Star/apache2/202602/rust/ts
   - https://sandboxagent.dev/
   - Introducing Sandbox Agent SDK: A universal API for automatic coding agents in sandboxes

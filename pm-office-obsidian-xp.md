@@ -35,7 +35,7 @@ modified: 2026-06-30T17:32:43.131Z
   - publish/webapp 视图层不开源
   - bases 基于文件的设计 难以获取页面内的内容
     - 给block添加properties/元数据, 变通方式是embed file
-    - 页面内引用
+    - 页面内引用, 变通方式是embed file
   - bases
     - 文件架构限制，导致难以实现交换行列， 而benchmark场景有此需求
     - 不支持拖拽排序, 不能在指定位置插入行/列
@@ -54,7 +54,7 @@ modified: 2026-06-30T17:32:43.131Z
   - sync
 # 🌸 redmansion
 
-> local file based workspace, like notion but with files, bases, backlinks.
+> local agent workspace for your files, like notion but with files, also supports bases, backlinks.
 
 - features: productivity > ux
   - embedded-companion-files(ECF): 当使用ofm embed语法嵌入支持的源文件格式时, 会自动创建对应的ECF文件, 并支持切换显示源文件预览视图和方便编辑的ECF视图
@@ -75,9 +75,11 @@ modified: 2026-06-30T17:32:43.131Z
   - api + cli + sdk: md, bases
   - compatible with obsidian: obfm, bases, plugins, config(attachment, .trash)
     - 兼容和扩展plugins在bases方面的能力
+    - 方便用户迁移
   - 不要过于依赖ob的runtime, 充分利用文件系统的优势
   - 类似cloudflare-drop的快速分享
-  - offline-capable: 仅本地能工作， 还支持开启云端同步
+  - offline-capable: 本地时能工作， 还支持云端同步
+  - make it productive, profitable, resellable
 
 - ✨ 内置RAG的优点
   - 快速处理用户上传的pdf/docx
@@ -122,6 +124,10 @@ modified: 2026-06-30T17:32:43.131Z
 - features-nice
   - bulk renaming
 
+- input
+- output
+- automation
+
 - cms-platform
   - github for obsidian bases, like gitea
 
@@ -156,8 +162,31 @@ modified: 2026-06-30T17:32:43.131Z
 
 - extends familiar agent xp
   - select files
-  - select ocr-model(mineru/paddleocr-vl/DeepSeek-OCR) or harness(mineru/paddleocr/marker) or translation-model
+  - select models: thining-effort, ocr-model(mineru/paddleocr-vl/DeepSeek-OCR) or harness(mineru/paddleocr/marker) or translation-model
+  - select tools: file/image/pdf, web-search, deep-research, ocr-pipeline, vision-tool-for-text-model, skills, connectors, plugins
   - prompt + go
+- ocr模版的需求有必要吗
+  - local ocr model/harness 或 cloud api 模型推理参数配置, 针对不同模型的提示词不同
+  - 文档参数设置: 布局、大小、类型、chunking
+  - feature设置: image, table, chart, formula
+  - 导出设置: 类型md/html, 分页
+  - Requires setup/engineering effort vs plug-and-play SaaS
+  - Learning Curve: Requires understanding of LLM concepts and agentic workflows.
+  - From parsing to reasoning
+
+- OCRRouter
+  - openrouter for documents
+
+- ocr/vlm-use-cases
+  - ocr
+  - translation
+  - vlm: vision + understanding
+  - ~~文档转换类~~ : markitdown, marker
+  - computer-use, browser-use, phone-use
+  - video understanding
+  - Spatial Understanding
+  - 2D/3D Grounding
+  - Complex Document Understanding & General Parsing: forms, tables, chart, formulas
 
 - web
   - highlight ai response markdown and the corresponding webpage citation
@@ -188,6 +217,7 @@ modified: 2026-06-30T17:32:43.131Z
 
 - later
   - mobile doc agent
+  - 竖向古典文档
 
 - 
 - 

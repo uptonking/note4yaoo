@@ -45,6 +45,21 @@ modified: 2020-12-08T13:27:56.600Z
 - https://twitter.com/RyanCarniato/status/1628123589898813442
   - Signals, Fine-grained rendering, Nested Routing, Compiled RPCs, Serializing Promises/Errors across the network, etc.. these are all obvious things in hindsight. And we would have arrived at them when focusing on the problem space long enough. Technology is inevitable
 
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Solid 2.0 has reached Release Candidate _20260814
+- https://x.com/solid_js/status/2087958309160780182
+  - Async is first-class — computations return promises, the graph suspends and resumes itself. 
+  - Plus optimistic mutations and a reactive core rebuilt from scratch.
+  - [Solid 2.0 RC: The Big <Reveal> | SolidJS _202608](https://www.solidjs.com/blog/solid-2-0-rc-the-big-reveal)
+
 # discuss-roadmap
 - ## 
 

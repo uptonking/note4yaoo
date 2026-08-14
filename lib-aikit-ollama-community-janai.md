@@ -74,6 +74,13 @@ modified: 2026-01-14T19:05:15.969Z
 - 
 - 
 
+# xp-unsloth
+- pros
+  - desktop/web/cli
+
+- cons
+  - skills支持不好
+  - desktop不支持plugins
 # xp-aichorage
 
 - 

@@ -344,6 +344,16 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0813
+
+- how about keep the existing mlx runtime without batching and ssd-caching, and implement a new omlx runtime that built as adapter to omlx release? the existing mlx runtime is the suggested default runtime for mlx models, users might install omlx runtime manually.
+
+- if user downloaded a mlx model, but mlx/mlx-vlm runtime is not installed, when user select the mlx model and send prompt to chat, the suggested latest mlx runtime should be lazy downloaded automatically.
+
+- aichor
+  - Idle runtime residency follows Paseo’s explicit-close model, with no automatic timeout.
+  - Forking is normalized-context based for every provider; native provider forks may be added later as transparent optimizations.
+
 ## 0812
 
 - [CBOR Encoding: Efficiency in Data Storage and Transmission | Medium _202502](https://medium.com/@contactomyna/cbor-encoding-efficiency-in-data-storage-and-transmission-16e05bfd5241)

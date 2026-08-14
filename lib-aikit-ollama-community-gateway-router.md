@@ -35,6 +35,8 @@ modified: 2026-01-21T04:22:29.956Z
     - 👀 仅deepseek-v3.2存在此问题, glm-4.7正常
 # ai-providers-devops
 - 当2api失效时，先不要怀疑是软件没更新或平台故障了， 先去主流论坛/交流群看看是否有同样问题，可能就是风控严格了
+# new-api
+- 容易自动退出登录，然后点击再次登录会提示 Request failed with status code 429
 # donehub/one-api
 - anthropic-api
   - 有的中转站的claude反代出的api配置参数有差异， 不能走donehub的再次转发，如uu6， 但大多数中转站反代出的没问题

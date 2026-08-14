@@ -18,6 +18,170 @@ modified: 2025-11-06T18:49:13.977Z
 
 - https://github.com/bytefer/macos-vision-ocr /MIT/202502/swift
   - A powerful command-line OCR tool built with Apple's Vision framework, supporting single image and batch processing with detailed positional information output.
+
+- A common thread across nearly every 2025–26 entrant: OCR and layout detection are converging into a single VLM call instead of a multi-stage pipeline (dots.ocr, PaddleOCR-VL, Surya 2, Granite-Docling all do this), and everyone benchmarks against the same two suites — `OmniDocBench` and `olmOCR-bench` 
+# pm-ocr/vlm
+- ocr模版的需求有必要吗
+  - local ocr model/harness 或 cloud api 模型推理参数配置, 针对不同模型的提示词不同
+  - 文档参数设置: 布局、大小、类型、chunking
+  - feature设置: image, table, chart, formula
+  - 导出设置: 类型md/html, 分页
+  - Learning Curve: Requires understanding of LLM concepts and agentic workflows.
+  - From parsing to reasoning
+
+- ocr/vlm-use-cases
+  - ocr
+  - translation
+  - vlm: vision + understanding
+  - ~~文档转换类~~ : markitdown, marker
+  - computer-use, browser-use, phone-use
+  - video understanding
+  - Spatial Understanding
+  - 2D/3D Grounding
+  - Complex Document Understanding & General Parsing: forms, tables, chart, formulas
+
+- [LlamaIndex | AI Agents for Document OCR + Workflows ](https://www.llamaindex.ai/)
+  - LlamaParse: parse, extract, index, split, classify
+  - LiteParse: local processing, Bounding box output, various formats
+  - workflow
+  - doc features: Handwritten Text, Tables, Charts
+
+- [Datalab | High-Precision Document Intelligence ](https://www.datalab.to/)
+  - convert/parse, extract, segment/split, eval, custom processor
+  - Open Source: Marker, Surya, and Chandra
+
+- [Extend: Document Processing Infrastructure for AI Agents ](https://www.extend.ai/)
+  - parse, extract, split, classify, edit
+  - Confidence scoring: Enable a multi-pass review agent that checks every output to flag potential errors
+  - Composer Agent: let Composer identify issues, automatically refine your schemas
+  - workflows: multi-step workflows that parse, split, extract, validate, and route with versioning and durability out of the box.
+  - evals: Iterate on schemas, run evals, catch regressions, and ship with confidence
+  - Self-hosted deployment
+  - Fast mode: Low latency for real-time use cases, cost optimized for bulk jobs, or maximum accuracy when precision matters.
+
+- [PaddleOCR - 文档解析与智能文字识别 | 支持API调用与MCP服务 - 飞桨星河社区 ](https://aistudio.baidu.com/paddleocr)
+  - 智能文字识别，轻松提取图片文字
+  - 智能文档解析: 精准解析表格、图片、公式等内容，完整还原文档层级与排版结构
+  - 支持MCP
+  - [PaddleOCR 文档 ](https://www.paddleocr.ai/latest/)
+    - PaddleOCR-VL - 通过 0.9B 超紧凑视觉语言模型增强多语种文档解析
+    - PP-OCRv6 — 全场景多语言文字识别 单模型支持 50 种语言
+    - PP-StructureV3 — 复杂文档解析
+    - PP-ChatOCRv4 — 智能信息抽取
+
+- [MinerU | 面向 Agent 和 RAG 的智能文档解析平台 ](https://mineru.net/)
+  - 多模态与全格式兼容: PDF、Word、PPT、Excel、图片、网页 URL 一键解析
+  - 高度结构化与机器可读输出: 输出高保真 Markdown / JSON / LaTeX, 完美保留排版层级
+  - 高并发与 Agent 自动化处理: 免登录适合轻量级使用
+  - 原生接入主流 Agent 工作流: notion, dify, openclaw
+  - 复杂元素: Table, formula, 化学分子式
+
+- 🤔 there are so many document ocr related products/apps, like mineru/paddleocr/llamaindex/datalab/... deep research related solutions/ideas/inspirational-projects, analyze their features/strengths/weakness, provide overview/url/website for each.
+- MinerU (by OpenDataLab / Shanghai AI Lab)
+  - Excellent CJK language support
+  - Extracts text, images, and tables while preserving reading order (even in multi-column layouts). 
+  - It recently introduced MinerU-Diffusion, a framework that decodes OCR as an inverse rendering problem rather than token-by-token text generation.
+  - Parallel processing capabilities reduce latency and semantic hallucinations
+  - Weaknesses: 
+    - Heavy to run locally; requires significant GPU compute for its full VLM capabilities.
+    - Primarily PDF-focused (limited multi-format support)
+    - No OCR for Images Within PDFs: Does not perform OCR on text embedded in images within PDFs
+    - High-accuracy mode (VLM backend) requires significant VRAM (8GB+)
+- PaddleOCR
+  - PP-OCRv5/PP-StructureV3 reached OmniDocBench edit distances matching Gemini-2.5-Pro's billion-scale VLM accuracy at under 100M parameters
+  - best accuracy-per-parameter in the category, strong table/formula/chart support.
+  - Weakness: 
+    - built on the PaddlePaddle framework rather than PyTorch
+    - English trailing EasyOCR/specialists; large full model (~1GB+)
+    - Primarily focused on OCR; document-level semantic reconstruction requires additional pipeline work
+    - While strong in OCR, it lacks deep semantic understanding of document content compared to LLM-based solutions.
+    - RapidOCR: Inference only — no training, no layout/table analysis
+- Docling
+  - uses computer-vision layout models to sidestep OCR where possible
+  - Weakness: 
+    - pure layout-model approach can lag VLM-based tools on extremely messy/degraded scans.
+    - Requires setup/engineering effort vs plug-and-play SaaS
+- Marker + Surya (Datalab)
+  - Marker reads the PDF text layer directly and only calls a VLM where it's actually needed — garbled/scanned pages, equations, low-confidence tables — rather than OCR'ing every page
+  - Incredibly fast and accurate. Marker's "hybrid mode" allows you to pipe the output through an LLM (like Gemini or Claude) to perfectly clean up tables and extract forms
+  - Surya, its companion OCR/layout model, has evolved into a single VLM handling layout analysis, OCR, and table recognition in one pass
+    - commercial unfriendly
+    - No searchable PDF output
+  - Managed "Chandra" platform is the higher-accuracy commercial sibling
+  - excellent speed/accuracy tradeoff, simple CLI, hosted API via datalab.to
+  - Weakness: 
+    - dual-licensed (GPL free tier / paid commercial license above a revenue threshold), 
+    - best quality mode wants a GPU.
+    - Resource-intensive: ~5GB VRAM per worker at peak 
+    - Known limitations on nested tables and forms without LLM assistance 
+- Unstructured
+  - Positions itself as document ETL rather than pure OCR: 60+ file types into structured data ready for vector databases and downstream applications
+  - the commercial Platform adds three deployment modes (Python library, no-code UI, enterprise API) and claims roughly 50x faster transformation speeds than the OSS library.
+  - Weakness: 
+    - High-accuracy hi-res mode pulls Detectron2/YOLOX — heavy deps
+    - Best features (VLM, scale, monitoring) are paid Platform tier
+    - the meaningful gap between free OSS and paid Platform performance can be confusing for newcomers
+    - Accuracy on complex layouts (tables, charts) lags behind VLM-native tools
+- olmOCR (Allen Institute for AI / AI2)
+  - A specialized "linearizer" — not a layout parser. Designed to turn PDF pages into clean, linearized Markdown for LLM training data and text-only consumption.
+  - Returns clean markdown with YAML frontmatter (page metadata)
+  - Weaknesses
+    - No bounding boxes, no layout classes — pure text linearization
+    - No geometry/layout information — cannot cite back to page regions 
+    - Requires separate layout detector if structure matters
+    - PDF/image input only — no DOCX/native format parsing
+    - Text-only output (no searchable PDF / MRC compression)
+- Tesseract
+  - CPU-only, deterministic, runs anywhere
+  - 100+ language data files; 
+  - hOCR/TSV/ALTO/PDF output
+  - Weaknesses
+    - ~8% char error on long text; weak on handwriting/curved/complex layout
+    - No layout/table understanding; dated vs VLM approaches
+
+- LlamaParse
+  - tightest integration with the LlamaIndex RAG/agent ecosystem
+  - Weakness: 
+    - not open-source, credit-based pricing takes effort to predict, 
+    - and its earlier "Structured Output" schema-extraction feature is now deprecated.
+    - Learning Curve: Requires understanding of LLM concepts and agentic workflows.
+    - ParseBench is self-published; independent verification recommended 
+- Reducto
+  - five APIs — Parse, Extract, Classify, Split, Edit
+  - "Agentic OCR" mode that reviews and self-corrects its own output in real time on edge cases.
+  - Weakness: 
+    - it converts PDFs to images before parsing rather than reading the text layer, 
+    - and pricing is sales-led rather than self-serve. 
+    - No reasoning/cross-document analysis (parsing-only) 
+- Chunkr (Lumina AI)
+  - the open-source release uses community/open-source models, while the paid Cloud API runs proprietary in-house models for higher accuracy and speed.
+  - self-hostable core, built by a team that first needed this at scale (~600M pages of scientific literature for their search engine Lumina).
+  - Weakness: no native Excel support in the open-source tier, smaller ecosystem than LlamaIndex or Reducto.
+
+- Azure AI Document Intelligence
+  - Rebranded from Form Recognizer in 2023
+  - needs as few as 5 sample documents to train a custom extraction model, and offers container deployment for on-prem/edge use plus commitment-tier discounts
+  - Weakness: features stack — a scanned invoice needing prebuilt + layout + high-res add-on can hit $26/1, 000 pages before any of your own engineering. 
+- AWS Textract
+  - tightest native fit if you're already on AWS (S3, Lambda, Step Functions, Bedrock), strong volume discounts. 
+  - Weakness: easy to overpay by picking the wrong endpoint.
+- Google Document AI
+  - broadest library of niche prebuilt parsers, strong Gemini-backed accuracy. 
+  - Weakness: Form Parser/custom extraction pricing sits above AWS/Azure's basic-OCR tiers, and it assumes you're comfortable in GCP.
+- Mistral OCR (Document AI) 
+  - Mistral explicitly scopes it out for medical diagnosis, legal judgment, and high-stakes financial decisions, and it lacks the deep library of prebuilt invoice/tax-form parsers Azure and Google offer.
+- Mathpix
+  - The industry standard for STEM OCR — math, chemistry diagrams, handwriting, tables, full PDF conversion.
+  - The STEM specialist: deep math, chemistry, and handwriting OCR outputting LaTeX, MathML, AsciiMath, and SMILES
+  - Weakness: 
+    - narrow focus — not the right tool for general business documents without heavy math/science content.
+    - Cloud-first (on-prem only at enterprise tier)
+
+- 
+- 
+- 
+- 
+
 # free-ocr-api
 - [MinerU api](https://mineru.net/apiManage/limit)
   - 单个用户一天最多允许上传1万个文件，其中html文件最多100个
@@ -546,7 +710,30 @@ modified: 2025-11-06T18:49:13.977Z
 - https://x.com/vista8/status/1862696894172209476
 - Vision 建议换成用 Llama 3.2 Vision 11b，比llava要好很多，且支持多语言（包括中文）的文字识别
 
+# discuss-ocr-examples 🌰
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🌰 [Local VLMs (Qwen 3 VL) for document OCR with bounding box detection for PII detection/redaction workflows (blog post and open source app) : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r8smbk/local_vlms_qwen_3_vl_for_document_ocr_with/)
+  - I have now implemented OCR with bounding box detection into the Document redaction app 
+- [Redaction with local VLM and LLMs – Document Redaction App _202602](https://seanpedrick-case.github.io/doc_redaction/src/redaction_with_vlm_and_llms.html)
+- [OCR and redaction with Qwen 3.5 – Document Redaction App _202603](https://seanpedrick-case.github.io/doc_redaction/src/ocr_and_redaction_with_qwen35.html)
+
+    - In February 2026, I wrote an article looking into the use of VLMs for OCR and redaction tasks in documents. The original article, using Qwen 3 VL 8B Instruct
+    - My conclusion from the previous article was that PaddleOCR for initial OCR, paired with Qwen 3 VL 8B Instruct for low confidence phrases was the best solution for OCR of ‘difficult’ pages in documents (e.g. with difficult handwriting).
+    - Here I will test Qwen 3.5 for OCR/redaction on three ‘difficult’ tasks with an updated version of the app
+    - Overall, the Qwen 3.5 27B model is the overall winner across all three tasks. It can read difficult handwritten text, it can identify photos of faces on a page and locate them with some accuracy, and it can follow relatively complex custom instructions to identify custom entities in open text. 
+    - Surprisingly, the Qwen 3 VL 8B Instruct model performed surprisingly well compared to Qwen 3.5 9B across all three tasks.
 # discuss-ocr
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

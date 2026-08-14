@@ -470,44 +470,51 @@ you may use similar file/folder names instead of the same file/folder names as t
 
 - research and make a full plan, then implement slaides to match major features of PPTist, or even better than PPTist, without licensing issues.
 
-## 📌 aichorage(janai/tranfromerlab-app)
+## 📌 aichorage(unsloth/janai/tranfromerlab-app)
+
+> Local models with joy: download, discover, import, run, and chat with local llms, or connect to cloud llm providers.
 
 - goals
   - 重后端、弱前端
 
-project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-like tauri app that supports to download and run LLMs, Connect to cloud llm api, install custom llm backend like custom llama.cpp.
-- project transformerlab-app(at folder `../all-runtime-llamacpp/transformerlab-app-electron`) is a AGPL-licensed electron app that supports to train, fine-tune, chat with your own model locally. it can be used to train/tune local model, but it also supports to import local models, install custom llm backend plugin, run and chat with local model.
-- project unsloth-studio(at folder `../unsloth`) is a AGPL-licensed webapp that supports to run and train text, audio, embedding, vision models on Windows, Linux and macOS. It supports to run local gguf/mlx models, but it cannot install custom llm backend. It also supports auto detect locally downloaded models in local huggingface-cache/ollama/lmstudio.
+project unsloth-studio/desktop(at folder `../unsloth` , Apache2 or AGPL license) provides cli/webapp/tauri-app that support to run and train text, audio, embedding, vision, image/video models on Windows, Linux and macOS. It supports to run local gguf/mlx models, but it cannot install custom llm backend. It also supports auto detect locally downloaded models from local huggingface-cache/ollama/lm studio.
+- project transformerlab-app(at folder `../all-runtime-llamacpp/transformerlab-app-electron`, AGPL license) provides cli/webapp/electron-app that supports to train, fine-tune, chat with your own model locally. it can be used to train/tune local model, but it also supports to import local models, install custom llm backend plugin, run and chat with local models with selected runtime.
 
-- The final goal for aichorage is to implement an jan-like webapp/electron-app/cli with headless, extensible, client-server architecture in current folder with the same features as existing jan webapp/tauri-app/cli, but built using modern tech stacks like python, uv, npm workspaces, reactjs, @tanstack/react-router, @base-ui/react, typescript, tailwindcss, oxlint, oxfmt. After you finished the work, so `npm run dev` should start the webapp. you should implement the goal in a way to make it easy to migrate code changes/features from jan to aichorage in the future.
-- The core goal is to support most of the existing jan features/ux, like Download and run LLMs, Connect to cloud llm api, install custom llm backend like custom llama.cpp, chat with local llm or cloud llm api. since jan is apache2 licensed, you can reuse/rewrite whatever code you need from jan repo. you may reuse jan web-app(at `../jan/web-app`) or just reuse/rewrite any code you want, but you should rewrite the jan rust backend with a good custom python implementation which you can borrow design and rewrite code from jan-rust-code/transformerlab-app/unsloth-studio to avoid license issue. you may implement the core llm download/run/chat/tool-call data flow first, then migrate more features later. 
-- you may reuse most webapp code from jan, ux may differ. Since you can reuse many frontend code, the python backend should be the hard work. Strictly following jan-rust-backend architecture/logic/code is unnecessary. 
-  - transformerlab-app-electron repo gives a good reference for how to support to install multiple backend plugin like llama.cpp/mlx-vlm/mlx-audio from ui, you may reference useful architecture/features/code from it and migrate this custom llm backend feature to aichorage(llama.cpp first, others may be delayed), you should ignore llm training/tuning code from it. tranfromerlab-app electron app also supports windows/linux/mac, you may reference the bundling logic if you want. 
-  - unsloth-studio webapp also supports windows/linux/mac, you may reference the bundling logic if you want. unsloth-studio supports auto detect local models from local huggingface-cache/lmstudio, please migrate it to aichorage. unsloth-studio also supports llama-server/mlx-lm/mlx-vlm backend on windows/linux/mac, also a good reference. you should ignore llm training/tuning code from it. Unsloth studio can provide 2 llm apis that both support streaming, tool calling, and vision inputs: Anthropic-compatible api /v1/messages , OpenAI-compatible api /v1/chat/completions and /v1/responses. unsoloth-studio llm api has very very good fixes for tool-calls. It also support web search.
-  OpenAI-compatible api should be implemented in aichorage, anthropic api may be delayed. 
+- The final goal for project `aichorage` in current folder is to implement a cli/webapp/electron-app with headless, extensible, client/server architecture with the similar features like unsloth-studio/desktop cli/webapp/tauri-app, also like lm studio. It should be built using modern tech stacks like python, uv, electron, npm workspaces, reactjs, @tanstack/react-router, @base-ui/react, zustand, typescript v7, tailwindcss, oxlint, oxfmt. you might resue the Apache2 unsloth utils/packages, but you should reimplement the AGPL unsloth-studio/desktop to avoid licensing issues. you should implement the goal in a way to make it easy to migrate code changes/features from unsloth-studio/desktop to aichorage in the future.
+- The core goal is to support most of the existing unsloth-studio/desktop features/ux, like support for various llm runtimes/backends, model hub to browse/search and download models with download manager , run models to expose OpenAI-compatible API, Connect to cloud llm api, chat with local models or cloud llm api. 
 
-- most features/ux from jan should be migrated/reimplemented in aichorage. rag should be planned, but rag implementation may be delayed.
-- multi-user/team/workspace concepts in tranfromerlab-app should be implemented in aichorage, you may borrow the good design/architecture of transformerlab-app, but strictly following is unnecessary. all custom backend plugins may be installed in global scope, but each team can only use plugin enabled in their team. a default workspace and username/password should be created so that user can use it easily by just click login.
-- aichorage backend/runtime/web should be extensible, configurable, flexible. Apart from good defaults value, a `.env.example` should be provided in related sub packages if you want. you may borrow some good design/config from upstream jan/transformerlab-app/unsloth-studio.
-- all llm backend/runtime should be optional that supports to install/uninstall/enable/disable, so that the architecture is extensible and flexible. but llama.cpp should be installed by default to make it easy to use out of the box. you may design a standalone llm-runtime package to make the architecture modular, resuable, extensible.
+- features that may be planned but delayed(not in current goal): full parity of unsloth-style UI/UX, recipe templates, voice models and related features, image/video models, model training/tuning related features, model export.
 
-- tasks that may be planned but delayed(not in current goal): RAG, full parity of Jan-style UI/UX, complicated multi-user/team/workspace/RBAC, anthropic-compatible api, embedding models.
+- you might refer to the architecture and ui/ux of unsloth-studio/desktop, but you should rewrite it with headless client/server architecture to avoid licensing issues. It would be even better if aichorage cli/webapp/electron-app can be built on the same architecture. Some big architecture changes for aichorage are using electron instead of tauri, aichorage should support to install custom llm backend like different versions of llama.cpp/mlx, pluggable llm runtime/backend should be extensible/flexible, every local model can use a default backend like llama.cpp/mlx, but user can configure a custom backend in local model config if he wants, so that if user does not configure the backend explicitly, user can use the downloaded default backend or lazy download the suggested backend to run model. 
+- The llm runtime/backend is the most important foundation. llm backend/runtime should be pluggable, extensible, configurable. all llm backend/runtime should be optional and supports to install/uninstall/enable/disable, so that the architecture is extensible and flexible, and user can even just use the airchorage ui with cloud llm api, so local model is not required. but llama.cpp should be installed by default to make it easy to use out of the box. you may design a standalone llm-runtime package to make the architecture modular, resuable, extensible.
+- aichorage cli/backend/web should be extensible, configurable, flexible. Apart from good defaults value, a `.env.example` should be provided in related sub packages if you want. you may borrow some good design/config from upstream transformerlab-app/unsloth.
 
-- some local models if you need: ~/.lmstudio/models/unsloth/LFM2.5-1.2B-Thinking-GGUF/LFM2.5-1.2B-Thinking-UD-Q5_K_XL.gguf, ~/.lmstudio/models/unsloth/gemma-4-E4B-it-UD-MLX-4bit, ~/.lmstudio/models.
+- transformerlab-app-electron provides a good reference for how to support to install multiple backend/runtime plugin like llama.cpp/mlx-vlm/mlx-audio from ui, you may reference useful architecture/features/code from it and migrate this custom llm backend plugin feature to aichorage(llama.cpp installed by default, other backends may be installed by user later), you should ignore llm training/tuning code from it. tranfromerlab-app electron app also supports windows/linux/mac, you may reference the related logic if you want. 
+- unsloth-studio/desktop also supports windows/linux/mac, you may reference the related logic if you want. unsloth supports auto detect existing local models from local huggingface-cache/lmstudio, please migrate it to aichorage. unsloth also supports llama-server/mlx-lm/mlx-vlm backend on windows/linux/mac, also a good reference. you should ignore llm training/tuning code from it. Unsloth can provide 2 llm apis that both support streaming, tool calling, and vision inputs: Anthropic-compatible api /v1/messages , OpenAI-compatible api /v1/chat/completions and /v1/responses. unsloth llm api has very very good fixes for tool-calls. It also support web search. 
+  - unsloth has very good support for openai-compatible api and anthropic-compatible api and gguf/mlx/vlm, text, vision, TTS audio, embedding models, you may refer to it if you want. it also support auto inference settings, chat templates editing, self-healing tool-calling, advanced web search, code execution, you may refer to the architecture/code and rewrite/improve it for aichorage.
+
+- project omlx(at folder `../all-runtime-mlx/omlx`, Apache2 license) provides mlx inference server with continuous batching & SSD caching for running mlx model on mac. it does not support gguf models or llama.cpp. it supports text LLMs, vision-language models (VLM), OCR models, embeddings, and rerankers on Apple Silicon. These popular features should also be supported in aichorage, but should be adapted and implemented with aichorage's pluggable-llm-runtime. Multi-Mac Inference from omlx can be ignored. you may analyze code in omlx, then you may get some ideas from their code or reuse their utils/packages/code, then implement/improve omlx runtime with continuous batching and tiered KV caching for aichorage(gguf models not required, the existing mlx runtime should work as default runtime for mlx models, user can download and install omlx later ). 
+- lm studio can load multiple models at the same time, and it also supports Parallel Requests, Multiple requests to the same model or different models can be processed simultaneously, this feature is powerful and increases productivity. core engine source code of lm studio is at folder `../all-runtime-mlx/mlx-engine` and `../all-runtime-mlx/lms` for your reference. you may analyze code in lm studio core engine, unsloth-studio and transformerlab-app , then you may get some ideas from their code and implement/improve something like Parallel Requests in aichorage.
+- analyze related code/architecture if you want, then make a correct/robust/extensible design for mlx concurrency/batching/ssd-caching, it should work well with the pluggable-mlx-runtime architecture. 
+
+- lm studio also supports to show model working log that can display the prompt processing or token generation progress(lm studio has this feature in ui as developer logs). if there is something like this in the lmstudio code or unsloth code or transformerlab-app code, you may get some ideas from their code and implement something like model logs in aichorage. it is better to design a option to configure the log level like off/debug/verbose/user/ai/..., you might design an extensible/robust architecture for the logging.
+- for every ai message in chat ui, model metadata like token-generation-speed/token-count/other-metadata might be shown at the bottom of the ai message if related metadata can be got or calculated, please implement/improve this feature to aichorage, you might add a toggle in settings.
+
+- some local models for testing if you need: ~/.lmstudio/models/unsloth/LFM2.5-1.2B-Thinking-GGUF/LFM2.5-1.2B-Thinking-UD-Q5_K_XL.gguf, ~/.lmstudio/models/unsloth/gemma-4-E4B-it-UD-MLX-4bit, ~/.lmstudio/models.
 
 - tech stack for project aichorage needs to use open source libs/fwk:
-  - you can use similar dependencies from jan/transoformerlab-app/unsloth-studio for easier feature migration. AGPL deps should be avoided.
-  - you may use `zustand` for state management, the source code is at folder `~/gh-mirror/pmndrs/zustand` for your reference.
+  - you can use similar dependencies from transoformerlab-app/unsloth-studio for easier feature migration. AGPL deps should be avoided.
   - Apart from reusing existing jan ui/ux, you may use `@base-ui/react` for new ui/ux, the source code is at folder `~/gh-mirror/mui/base-ui` for your reference.
   - for python backend/cli, unsloth-studio/transformerlab-app has good codebase and architecture, you may reference them.
 
-- you have migrated/reimplemented some features from upstream jan/transformerlab-app/unsloth-studio to aichorage.
+- you have migrated/reimplemented some features from upstream transformerlab-app/unsloth-studio/desktop to aichorage.
 
-- you may deep research and reference the code of upstream projects(jan, unsloth-studio, transformerlab-app), you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
-- you may even do a big code refactor for airchorage to match major feature of jan in a extensible architecture if it helps to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+- you may deep research and reference the code of upstream projects(unsloth-studio/desktop, transformerlab-app), you may use similar dependencies, and implement similar logic, but you should rewrite it without licensing issues.
+- you may even do a big code refactor for airchorage to match major feature of unsloth in a extensible architecture if it helps to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
 - you may design a feature parity doc at `upstream/feature-parity.md`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream jan/transformerlab-app/unsloth-studio should be put in folder `upstream`. you may even design a script to automate it.
-- research and make a good design, then implement aichorage to match major features of jan, or even better than jan, without licensing issues.
+
+- deep research and make a good design, then implement/improve aichorage to match major features of unsloth, or even better than unsloth, without licensing issues.
 
 - please recheck logic parity detail by detail for every major feature, the goal is to achieve major feature parity(ux can differ) like jan for major features.
 
@@ -518,23 +525,26 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 - these are the most important features now, the goal is to achieve major feature pairity or even better.
 - make a plan, then migrate and improve major feature pairity, without licensing issues
 
-- please deep research jan(at folder `../jan` ), then can you design a similar solution in aichorage to improve it? is jan's solution good enough? if yes, solve it in a similar way for aichorage.
+- please deep research unsloth(at folder `../unsloth` ), then can you design a similar solution in aichorage to improve it? is unsloth's solution good enough? if yes, solve it in a similar way for aichorage.
 
-- research and make a full plan, then implement aichorage to match major features of jan, or even better than jan, without licensing issues.
+- research and make a full plan, then implement aichorage to match major features of unsloth, or even better than unsloth, without licensing issues.
 
-------
+- aichorage is still beta software, you might merge/squash the db schema migrations, only use the latest schema is ok, db related compatibility is not required for now. 
+- legacy/unused code might be refactored or removed. compatibility layer is not required.
+
+### draft-aichorage
 
 - yes, continue to improve.
-- you may reference how jan implements/solves it, then do a similar or better implementation in aichorage without licensing issue.
+- you may refer to how unsloth implements/solves it, then do a similar or better implementation in aichorage without licensing issue.
 
-- you may borrow good deisgn from to upstream jan/transformerlab-app/unsloth-studio and rewrite it to avoid licensing issues.
+- you may borrow good deisgn from to upstream transformerlab-app/unsloth-studio/desktop and rewrite it to avoid licensing issues.
 
-- jan's overall architecture is good enough to follow. Mostly aichorage should use similar architecture to jan.
+- unsloth's overall architecture is good enough to follow. Mostly aichorage should use similar architecture to unsloth.
 
-- please recheck migrated features and improve the implementation in aichorage. Analyze core data flow and implementation logic details for every major feature like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible api, chat with local-model/cloud-llm-api-provider..., compare the implementation logic/code of aichorage with related jan/transformerlab-app/unsloth-studio logic/code to recheck and enhance the correctness of architecture and logic in aichorage, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in aichorage are correct, modular, extensible for long-term maintenance. 
+- please recheck migrated features and improve the implementation in aichorage. Analyze core data flow and implementation logic details for every major feature like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible api, chat with local-model/cloud-llm-api-provider..., compare the implementation logic/code of aichorage with related transformerlab-app/unsloth-studio/desktop logic/code to recheck and enhance the correctness of architecture and logic in aichorage, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in aichorage are correct, modular, extensible for long-term maintenance. 
 
 - prioritize and recheck/improve major features like pluggable-llm-runtime(llama.cpp, mlx-lm, mlx-vlm), model-search/download/auto-discovery/caching, openai-compatible-api, chat with local-model/cloud-llm-api-provider... in aichorage, make related features/architecture correct, modular, extensible for long-term maintenance. 
-- tasks that may be planned but delayed(not in current goal): RAG, full parity of Jan-style UI/UX, complicated multi-user/team/workspace/RBAC, anthropic-compatible api.
+
 - if these major/important features already work without obvious bugs and have good architecture/data-flow, then you may mark current goal as achieved so that further improvements will be designed as separate goal/task.
 
 - recheck and improve it, make related features/data-flow/architecture correct and robust without guessing, the fewer bugs, the better.
@@ -548,8 +558,6 @@ project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-
 
 -------
 
-- unsloth-studio has very good support for openai-compatible api and anthropic-compatible api and gguf/mlx/vlm, text, vision, TTS audio, embedding models, you may reference it if you need. it also support auto inference settings, chat templates editing, self-healing tool-calling, advanced web search, code execution, you may reference the architecture/code and rewrite/improve it for aichorage.
-
 - local model testing/running can be very slow and take huge disk space.
 local model testing/running can be very slow.
 - please recheck implementation logic related to model/llm-runtime-backend downloading and related tests, improve it by making the downloaded models/binary/resources cached locally, so that later testing/running can reuse it directly if already existed. improve the cache logic, and update related data-flow/tests, make sure the implementation is correct, robust, extensible without unnecessary redownloading. 
@@ -557,11 +565,6 @@ local model testing/running can be very slow.
 - try to improve/refactor the full tests to make it faster so that full tests running within 3 minutes.
 - improve the slow/complicated/heavy parts of tests, 
 you might refactor/reorganize the tests architecture/logic to make it correct, fast, robust, maintainable in the long term.
-
-- lm studio can load multiple models at the same time, and it also supports Parallel Requests, Multiple requests to the same model or different models can be processed simultaneously, this feature is powerful and increases productivity. core engine source code of lm studio is at folder `~/Documents/repos/ai-ml-llm/all-runtime-mlx/mlx-engine` and `~/Documents/repos/ai-ml-llm/all-runtime-mlx/lms` for your reference. you may analyze code in lm studio core engine, unsloth-studio and transformerlab-app , then you may get some ideas from their code and implement/improve something like Parallel Requests in aichorage.
-- lm studio also supports to show model working log that can display the prompt processing or token generation progress(lm studio has this feature in ui as developer logs). if there is something like this in the lmstudio code or unsloth-studio code or transformerlab-app code, you may get some ideas from their code and implement something like model logs in aichorage. it is better to design a option to configure the log level like off/debug/verbose/user/ai/..., you might design an extensible/robust architecture for the logging.
-- please continue to improve and enhance aichorage, and improve the features.
-- for every ai message in jan chat, ai model metadata like token generation speed, token count, and other metadata can be shown under the ai message, please refer to related code and migrate/improve this feature to aichorage.
 
 - in jan app, there is a download manager that supports to show download progress and provides downloading related features. please refer to the code of jan(at folder `../jan` ) and migrate this feature to aichorage. you might reuse ui of jan, but the downloading related backend like pause/resume/cancel/... should be rewritten in python, you might improve this feature in aichorage.
 
@@ -576,7 +579,7 @@ you might refactor/reorganize the tests architecture/logic to make it correct, f
 - 
 - 
 
-### draft-aichorage
+### later-aichorage
 
 - cloud-only version: mineru-api, openai-like api
 
@@ -603,7 +606,15 @@ you might refactor/reorganize the tests architecture/logic to make it correct, f
   - cons: 内置runtime需要支持多种格式如 /v1/chat/completions, /v1/responses， 还要考虑本地ollama的版本、模型版本， 带来的问题比收益多
   - 参考很多主流开放性ai的产品如cursor/cherry-studio, 都支持用户配置api，所以通过平台/系统来管理本地的工具是非必要的
 
-### aichorite
+### aichorite-legacy-jan
+
+project jan(at folder `../jan` ) is a apache2-licensed, local, powerful chatgpt-like tauri app that supports to download and run LLMs, Connect to cloud llm api, install custom llm backend like custom llama.cpp.
+
+- you may reuse most webapp code from jan, ux may differ. Since you can reuse many frontend code, the python backend should be the hard work. Strictly following jan-rust-backend architecture/logic/code is unnecessary. 
+
+- most features/ux from jan should be migrated/reimplemented in aichorage. rag should be planned, but rag implementation may be delayed.
+
+- multi-user/team/workspace concepts in tranfromerlab-app should be implemented in aichorage, you may borrow the good design/architecture of transformerlab-app, but strictly following is unnecessary. all custom backend plugins may be installed in global scope, but each team can only use plugin enabled in their team. a default workspace and username/password should be created so that user can use it easily by just click login.
 
 ### aichor-harness
 
@@ -613,20 +624,26 @@ project paseo(at folder `../all-agi-harness/paseo` , AGPL License) provides a in
 - project pi(at folder `../all-agi-harness/pi`, MIT License ) is a minimal agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI.
 
 - The final goal for this project `aichor` is to implement a paseo-like agent framework/sdk/cli/server/webapp/electron-app with headless, extensible, flexible architecture in current folder with similar features like paseo's core features, but built using client/server architecture, modern tech stacks like npm workspaces, reactjs, @tanstack/react-router, @base-ui/react, zustand, typescript v7, tailwindcss, oxlint, oxfmt. you should implement the goal in a way to make it easy to migrate code changes/features from paseo to aichor in the future.
-- you might refer to the architecture  and ui/ux of paseo, but you should rewrite it with headless client/server architecture with functional-programming style to avoid licensing issues. It would be even better if aichor cli/web-app/electron-app can be built on the same architecture. A big architecture change for aichor is that, aichor should support external cli agents claude-code/codex/pi like paseo, but it also ships a built-in agents named `pichor` that is built with `../all-agi-harness/pi/packages/coding-agent`, so that user can use aichor app with pichor even if user does not have any existing cli agent on his machine. It would be even better if built-in pichor and external cli agents use the same architecture. you might refer to related code if you want, then design a correct and extensible architecture for aichor.
-- The core goal is to reimplment most of the existing paseo features, self-hosted daemon, server/desktop/web/CLI/sdk, CLI that is able to script agent work and drive remote daemons, remote control over a direct connection or a custom relay, supporting multi-providers like Claude-Code/Codex/OpenCode/Pi through the same interface, optional worktrees/branches for diff/review/preview, integrations like Paseo Hub for github, use a api/protocol/contract that is compatible with paseo to make it easy for user to switch, Schedules for task with cadence, Diagnostics with connection/daemon/provider/log, agent config with tools/browser-tool/system-prompt .
-- features that may be planed but delayed: ios/android, paseo-vscode, voice control, integrations like copilot/slack/discord, token usage statistics, full parity of paseo-style UI/UX.
+- you might refer to the architecture and ui/ux of paseo, but you should rewrite it with headless client/server architecture with functional-programming style to avoid licensing issues. It would be even better if aichor cli/web-app/electron-app can be built on the same architecture. A big architecture change for aichor is that, aichor should support external cli agents claude-code/codex/pi like paseo, but it also ships a built-in agents named `pichor` that is built with `../all-agi-harness/pi/packages/coding-agent`, so that user can use aichor app with pichor even if user does not have any existing cli agent on his machine. It would be even better if built-in pichor and external cli agents use the same architecture. you might refer to related code if you want, then design a correct and extensible architecture for aichor.
+- The core goal for aichor is to reimplment most of the existing paseo features, self-hosted daemon, server/desktop/web/CLI/sdk, CLI that is able to script agent work and drive remote daemons, remote control over a direct connection or a custom relay, supporting multi-providers like Claude-Code/Codex/OpenCode/Pi through the same interface, optional worktrees/branches for diff/review/preview, integrations like Paseo Hub for github, use a api/protocol/contract that is mostly compatible with paseo to make it easy for user to switch, Schedules for task with cadence, Diagnostics with connection/daemon/provider/log, agent config with tools/browser-tool/system-prompt, in-app browser and tools .
+- features that may be planed but delayed: terminal ui(aichor focuses on ui, not terminal), paseo-vscode, voice control, integrations like copilot/slack/discord, token usage statistics, full parity of paseo-style UI/UX. fully compatible with paseo api is not required, supporting most common use cases is enough.
+- for SQLite db operation, you should use npm package `kysely` with better-sqlite3 , the source-code/api/docs is at `../../libfwk/endback/kysely` for your reference. 
+- opencode v2 provides a good db design for agent harness, you might refer to it at `../all-agi-harness/opencode` . but you might not refer to the effect.ts related implementation, use functional typescript for implementation in aichor.
+- for every ai message in chat ui, model metadata like token-generation-speed/token-count/other-metadata might be shown at the bottom of the ai message if related metadata can be got or calculated, please implement/improve this feature to aichor, you might add a toggle in settings.
 
 - you have migrated/reimplemented some features from upstream paseo to aichor.
 
+- paseo's overall architecture is good enough to follow.
 - you may deep research and refer to the architecture/data-flow/code of upstream paseo and pi, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional-programming style for aichor without licensing issues.
 - you may even do a big code refactor for aichor to match major feature of paseo in a extensible architecture if it helps to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
 
+- research and make a good design, then implement/improve aichor to match major features of paseo, or even better than paseo, without licensing issues.
+
 - please deep research paseo(at folder `../paseo` ), then can you design a similar solution in aichor to improve it? is paseo's solution good enough? if yes, solve it in a similar way for aichor.
 
-- research and make a good design for architecture/data-flow, then implement aichor to match major features of paseo, or even better than paseo, without licensing issues.
+- aichor is still beta software, you might merge/squash the db schema migrations, only use the latest schema is ok, db related compatibility is not required for now. 
+- legacy/unused code might be refactored or removed. compatibility layer is not required.
 
-- 
 - 
 - 
 - 
@@ -634,16 +651,13 @@ project paseo(at folder `../all-agi-harness/paseo` , AGPL License) provides a in
 
 #### draft-aichor
 
-for SQLite db operation, you should use npm package `kysely` with better-sqlite3 , the source-code/api/docs is at `../../libfwk/endback/kysely` for your reference. 
-- opencode v2 provides a good db design for agent harness, you might refer to it at `../all-agi-harness/opencode`. but you might not refer to the effect.ts related implementation, use functional typescript for implementation in aichor.
-
 - you might refer to how paseo(source code at folder `../all-agi-harness/paseo`) implements/solves it, then do a similar or better implementation in aichor without licensing issue.
 
 - paseo's overall architecture is good enough to follow. Mostly aichor should use similar architecture like paseo.
 - you may analyze related architecture/code and borrow good deisgn from upstream paseo(source code at folder `../all-agi-harness/paseo`) and rewrite it in functional-programming style for aichor to avoid licensing issues.
 - it is unnecessary to search the web for paseo details, just analyze the source code at folder `../all-agi-harness/paseo`.
 
-- please recheck migrated features and improve the implementation in aichor. Analyze core data flow and implementation logic details for every major feature like   ..., compare the implementation logic/code of aichor with related logic/code of paseo to recheck and enhance the correctness of architecture/data-flow and logic in dreamansion, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in aichor are correct, modular, extensible for long-term maintenance. 
+- please recheck migrated features and improve the implementation in aichor. Analyze core data flow and implementation logic details for every major feature like self-hosted daemon, server/desktop/web/CLI/sdk, CLI that is able to script agent work and drive remote daemons, remote control over a direct connection or a custom relay, supporting multi-providers like Claude-Code/Codex/OpenCode/Pi through the same interface, optional worktrees/branches for diff/review/preview, integrations like Paseo Hub for github, use a api/protocol/contract that is mostly compatible with paseo to make it easy for user to switch, Schedules for task with cadence, Diagnostics with connection/daemon/provider/log, agent config with tools/browser-tool/system-prompt, in-app browser and tools..., compare the implementation logic/code of aichor with related logic/code of paseo to recheck and enhance the correctness of architecture/data-flow and logic in aichor, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in aichor are correct, modular, extensible for long-term maintenance. 
 
 - prioritize and recheck/improve major features like    ... in aichor, make related features/architecture correct, modular, extensible, robust for long-term maintenance.
 
@@ -1216,7 +1230,9 @@ current code is under active development. please review and refactor code if you
 # libs
 
 - you should use npm package @embedpdf/viewer-react@3.0.0-next.1 to implement the pdf viewer, source code is at git repo `../embed-pdf-viewer` , you might refer to the api/docs/examples at the git repo.
-# llm-toolchain
+# harness
+- DO NOT use codex browser-use or computer-use skills, just focus on tests.
+
 - DO NOT use parallel subagents, just explore code directly.
 
 ```prompt

@@ -900,6 +900,13 @@ modified: 2021-01-04T17:26:43.784Z
   - 依赖gradio、pdfminer.six、pymupdf、pikepdf、pdf2image、opencv、presidio-image-redactor
   - [Local VLMs (Qwen 3 VL) for document OCR with bounding box detection for PII detection/redaction workflows (blog post and open source app) : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r8smbk/local_vlms_qwen_3_vl_for_document_ocr_with/)
     - I have now implemented OCR with bounding box detection into the Document redaction app 
+  - [Redaction with local VLM and LLMs – Document Redaction App _202602](https://seanpedrick-case.github.io/doc_redaction/src/redaction_with_vlm_and_llms.html)
+  - [OCR and redaction with Qwen 3.5 – Document Redaction App _202603](https://seanpedrick-case.github.io/doc_redaction/src/ocr_and_redaction_with_qwen35.html)
+    - In February 2026, I wrote an article looking into the use of VLMs for OCR and redaction tasks in documents. The original article, using Qwen 3 VL 8B Instruct
+    - My conclusion from the previous article was that PaddleOCR for initial OCR, paired with Qwen 3 VL 8B Instruct for low confidence phrases was the best solution for OCR of ‘difficult’ pages in documents (e.g. with difficult handwriting).
+    - Here I will test Qwen 3.5 for OCR/redaction on three ‘difficult’ tasks with an updated version of the app
+    - Overall, the Qwen 3.5 27B model is the overall winner across all three tasks. It can read difficult handwritten text, it can identify photos of faces on a page and locate them with some accuracy, and it can follow relatively complex custom instructions to identify custom entities in open text. 
+    - Surprisingly, the Qwen 3 VL 8B Instruct model performed surprisingly well compared to Qwen 3.5 9B across all three tasks.
 
 - https://github.com/leedrake5/unredact /GPL/202512/python
   - This repository contains a Python utility for extracting selectable (but visually redacted) text from PDF files and presenting it in a clear, human-readable format while preserving pagination and layout as closely as possible.

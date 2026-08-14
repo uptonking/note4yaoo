@@ -61,7 +61,7 @@ modified: 2025-11-01T10:54:26.044Z
 - https://github.com/jundot/omlx /12.7kStar/apache2/202605/python
   - https://omlx.ai/
   - https://omlx.ai/benchmarks
-  - LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar
+  - ✨ LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar
   - Continuous batching and tiered KV caching, managed directly from your menu bar.
   - The server discovers LLMs, VLMs, embedding models, and rerankers from subdirectories automatically.
     - Point `--model-dir` at a directory containing MLX-format model subdirectories.

@@ -369,10 +369,11 @@ modified: 2025-03-22T16:10:24.856Z
     - llm ux: natural language as interface
     - 对同一场景, 如翻译/ocr, 针对不同模型内置合理的参数且支持配置
     - pdf: ocr(提取table/chart), editing(proof/布局), rag(citation)
-    - pm: llamaparse-extract( **mineru/paddleocr**/mistral/本地/远程), cowork(docx-xml/databases/**ilovepdf** ), notebooklm
-    - later: GPU硬件+model量化(ai难取代), Image, TableAI, Audio, 翻译, 多维表格, ai-design/lovable, pretext-edit
+    - pm: llamaparse-extract( **mineru/paddleocr**/mistral/本地/远程), cowork(docx-xml/databases/**ilovepdf** ), notebooklm(citation)
+    - later: GPU硬件+model量化(ai难取代), Image, TableAI, Audio, 翻译, 多维表格, ai-design/lovable, 
       - hybrid-ai-with-ssd-caching, eidting-with-brower-use, sandbox-with-just-bash, db-derived-files-sync-dbfs+backlinks
       - doc-ask, doc-mgmt like paperless-ngx
+      - pretext-edit
     - roadmap: 
       - agentic场景优化: ocr-vlm/pipeline, translation
       - citation, backlinks: 提升rag的准确度, 优化搜索结果中的code/text/image
@@ -791,6 +792,17 @@ modified: 2025-03-22T16:10:24.856Z
   - 🔡 尝试用code generation的思路来实现ai ppt
   - 🎞️ 基于演讲视频生成视频中的ppt, 还原ppt内容
 
+- workbuddy-xp
+  - 长文档或报告直接输出html, 可在app内打开，也可在浏览器打开, ux体验丰富
+    - 静态html文件, 不方便修改
+    - 打开的路径是 file://, 而不是http://
+  - 用量明细记录中可以看到用户输入的完整内容，但看不到ai回复的内容
+
+- 
+- 
+- workbuddy-cons
+- 
+- 
 - 
 - 
 - 

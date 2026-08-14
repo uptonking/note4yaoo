@@ -161,6 +161,11 @@ modified: 2026-05-28T17:50:54.646Z
   - A larger, code-focused model (e.g. Qwen 2.5 Coder 14B) generates the code
 # pm
 
+## agent-ui/client
+
+- workbuddy
+  - 长文档或报告直接输出html, 可在app内打开，也可在浏览器打开
+
 ## pm-issues
 
 - chat-projects 和 task-folder/workspace 如何区分
