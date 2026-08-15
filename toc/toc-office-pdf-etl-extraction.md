@@ -101,6 +101,9 @@ modified: 2026-04-07T12:53:02.538Z
   - 使用 pdfplumber 进行精确文本定位, 表格提取
   - 基于 PyMuPDF 的 redaction/编辑能力
 # extraction-vlm
+- tips
+  - docling-serve 支持pipeline, 也支持vlm
+
 - https://github.com/ahnafnafee/local-llm-pdf-ocr /MIT/202604/python
   - [Building a Local LLM-Powered Hybrid OCR Engine _202604](https://www.ahnafnafee.dev/blog/local-llm-pdf-ocr)
   - Convert scanned PDFs into searchable text locally using Vision LLMs (olmOCR). 
@@ -241,6 +244,13 @@ modified: 2026-04-07T12:53:02.538Z
   - PDF-to-image conversion using `PyMuPDF` (fitz)
   - VisionCapture: Used for extracting specific fields from documents (e.g., forms, technical diagrams)
     - 似乎只提取字段, 不提取插图
+
+- https://github.com/stanford-oval/Churro /apache2/202604/python/inactive
+  - https://stanford-oval.github.io/Churro/
+  - CHURRO is an OCR toolkit for historical document transcription, built to make handwritten and printed sources readable at high accuracy and lower cost.
+  - a unified OCR toolkit with profiles/templates and post-processing
+  - It works with all major OCR proividers and vision-language models, and provides first-party support for the CHURRO 3B model and CHURRO-DS dataset.
+  - CHURRO 3B exceeds the accuracy of Gemini 2.5 Pro at 15.5x lower cost.
 
 - https://github.com/daviden1013/vlm4ocr /MIT/202604/python/js
   - Python package and Web App for OCR with vision language models

@@ -81,9 +81,13 @@ modified: 2026-01-14T19:05:15.969Z
 - cons
   - skills支持不好
   - desktop不支持plugins
-# xp-aichorage
+# xp-aichor
+- subagent的使用场景(无需父进程context, 多步骤)
+  - 搜索关键词并处理内容
+  - 查找一组文件
+  - 通知
+  - effects
 
-- 
 - 
 - 
 - 

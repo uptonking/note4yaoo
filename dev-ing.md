@@ -344,6 +344,10 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0814
+
+- 🤔 there are so many llm api/token related gateway/router, like openrouter/vercel-ai-gateway... is there any open source gateway/router that focuses on ocr/vlm/documents... deep research related solutions/projects/ideas, if you found any open source products or inspiration projects, provide overview/github-url/website for each.
+
 ## 0813
 
 - how about keep the existing mlx runtime without batching and ssd-caching, and implement a new omlx runtime that built as adapter to omlx release? the existing mlx runtime is the suggested default runtime for mlx models, users might install omlx runtime manually.

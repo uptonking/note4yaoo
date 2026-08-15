@@ -303,6 +303,19 @@ modified: 2025-09-01T07:58:29.058Z
   - ... Often the root cause for these holes in the first place is because AI codebases have many shallow modules, narrow helpers/ wrappers that hide behavior and create unclear boundaries.  The models initial output then fails to cover all the seams the change covers.
 
 - sking Claude or Codex to do a “pre-mortem” gets a similar result to this for me. Finds all the edge cases, I do it on ever feature I build
+# discuss-coding-examples 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Woc被glm5.3做的前端吓哭了就是有点神区二象性不知为何 - LINUX DO _202608](https://linux.do/t/topic/2754340)
+  - 红黑米黄主题，样式友好
+  - https://zcode-showcase.pages.dev/zcode-constructivist
+
 # discuss-coding-tips/tricks
 - ## 
 

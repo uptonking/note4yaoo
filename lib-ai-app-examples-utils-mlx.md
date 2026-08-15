@@ -413,6 +413,12 @@ modified: 2025-11-01T10:54:26.044Z
     - MLX Studio is the app — the chat UI, agentic tools, model browser, and settings interface you interact with. 
     - vMLX Engine is the inference backend that powers it — the caching, batching, model loading, and API layer. Think of it like LM Studio and llama.cpp.
     - Any Mac with Apple Silicon (M1 or later) running macOS 26 (Tahoe). 8 GB RAM minimum, 16 GB+ recommended. Remote endpoints work on macOS 14+.
+
+- https://github.com/henrybravo/mlx-router /MIT/202604/python
+  - An OpenAI-compatible inference server optimized for Apple Silicon. 
+  - Hot-swap between MLX models, stream responses in real-time, process images and PDFs, and integrate with any OpenAI client.
+  - FastAPI-powered - Modern async API 
+  - Vision Model Support - Process images and PDFs with multimodal models (mlx-vlm)
 # mlx/llama.cpp-server/wrapper
 - https://github.com/HazyResearch/minions /1.2kStar/MIT/202601/python
   - Big & Small LLMs working together

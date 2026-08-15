@@ -22,6 +22,23 @@ modified: 2024-02-12T03:22:23.769Z
 - ## 
 
 - ## 
+# discuss-news 🆕
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Electric (co behind PGlite and Postgres realtime sync engine) is joining Neon at Databricks : r/PostgreSQL _202608](https://www.reddit.com/r/PostgreSQL/comments/1vlmlcz/electric_co_behind_pglite_and_postgres_realtime/)
+- Databricks fucked up pg_mooncake and didn't do as promised: allow the team to finish a stable release and hand over to the community. Complete abandonment without even a license lightening so that community efforts could practically carry it forward. I will forever hate the company for this.
+  - The licence is MIT, what am I missing?
+- The critical component is not: https://github.com/Mooncake-Labs/moonlink
+- Thankfully snowflake opened up pg_lake but being told that things were weeks away from a proper stable release I went ahead and built a proof of concept based on mooncake (absolutely amazing tech when it works as intended) so my hatred for databricks burns eternal.
+
 # discuss-vendor-convex
 - ## 
 

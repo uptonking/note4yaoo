@@ -160,6 +160,9 @@ modified: 2026-06-30T17:32:43.131Z
 
 ## draft-ai
 
+- ai-doc
+  - 多次生成
+
 - extends familiar agent xp
   - select files
   - select models: thining-effort, ocr-model(mineru/paddleocr-vl/DeepSeek-OCR) or harness(mineru/paddleocr/marker) or translation-model
@@ -176,6 +179,7 @@ modified: 2026-06-30T17:32:43.131Z
 
 - OCRRouter
   - openrouter for documents
+  - 此类产品通常不对外暴露, 通常自动选择工具处理文档/图片, 可以作为llm的 tool
 
 - ocr/vlm-use-cases
   - ocr

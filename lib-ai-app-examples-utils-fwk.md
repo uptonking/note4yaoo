@@ -615,6 +615,20 @@ modified: 2025-02-21T18:20:42.624Z
 
 ## model-router
 
+- https://github.com/NVIDIA-NeMo/Switchyard /1.5kStar/apache2/202608/rust
+  - Switchyard lets LLM applications route traffic across models and providers while preserving native OpenAI and Anthropic API compatibility - enabling flexible model selection, benchmarking, and cost/performance optimization.
+  - Given a multimodal request, it can analyze the prompt, including images, and select the most appropriate model.
+  - https://github.com/NVIDIA-AI-Blueprints/llm-router /339Star/apache2/202607/python/deprecated
+    - https://build.nvidia.com/nvidia/llm-router
+    - Route LLM requests to the best model for the task at hand.
+
+- https://github.com/K1nght/VL-RouterBench /MIT/202605/python
+  - [CVPR 2026 Highlight] VL-RouterBench: A Benchmark for Vision–Language Model Routing
+  - VL-RouterBench as the first unified benchmark tailored to multimodal VLM routing.
+  - Two Router architecture paradigms:
+    - Feature-level routers: frozen text+image encoders + lightweight classifier/fusion.
+    - End-to-end routers: fine-tune multimodal backbones to directly predict the routed model.
+
 - https://github.com/ulab-uiuc/LLMRouter /400Star/MIT/202512/python
   - https://ulab-uiuc.github.io/LLMRouter/
   - Open-Source Library for LLM Routing

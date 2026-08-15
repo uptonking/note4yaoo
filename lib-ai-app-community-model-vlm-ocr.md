@@ -40,6 +40,24 @@ modified: 2025-11-06T18:49:13.977Z
   - 2D/3D Grounding
   - Complex Document Understanding & General Parsing: forms, tables, chart, formulas
 
+- Nobody has really built the "OpenRouter for OCR/VLM" yet as a standalone product. What exists instead are two patterns: 
+  - (1) Document-native gateways/routers: full document-intelligence platforms (DocRouter, Unstract, Chunkr) that bundle routing logic internally but aren't primarily positioned as routers, 
+    - routing layers over vision models: Zerox, Docling, Chunkr
+  - (2) small complexity-based dispatchers (BukeLy/rag-api, deepseek-ocr.rs) that pick a parser per-document but aren't productized gateways.
+
+- [DocsRouter - Document extraction through one API ](https://docsrouter.com/)
+  - [Show HN: DocsRouter – The OpenRouter for OCR and Vision Models | Hacker News ](https://news.ycombinator.com/item?id=46310013)
+
+- [DocRouter. AI — AI Data Layer for Operational Documents  ](https://docrouter.ai/)
+  - https://github.com/analytiq-hub/doc-router /apache2/202607/python/ts
+  - open source document processing data layer.
+  - Extract, validate, and route structured data
+  - It ingests unstructured docs through REST APIs and integrations from faxes, emails, and ERPs.
+  - And it chunks, embeds, and organizes documents into queriable knowledge bases
+  - The Document Router is designed to work standalone or with a human-in-the-loop, and can process medical, insurance, financial, supply chain, and legal documents.
+  - NextJS, NextAuth, MaterialUI, TailwindCSS
+  - FastAPI, Pydantic, MongoDB
+
 - [LlamaIndex | AI Agents for Document OCR + Workflows ](https://www.llamaindex.ai/)
   - LlamaParse: parse, extract, index, split, classify
   - LiteParse: local processing, Bounding box output, various formats
@@ -75,6 +93,13 @@ modified: 2025-11-06T18:49:13.977Z
   - 高并发与 Agent 自动化处理: 免登录适合轻量级使用
   - 原生接入主流 Agent 工作流: notion, dify, openclaw
   - 复杂元素: Table, formula, 化学分子式
+
+- [Unstract - Agentic AI Document Processing & Extraction  ](https://unstract.com/)
+  - Turn Unstructured Documents into Structured Data. Instantly.
+  - a wide variety of document formats
+  - LLMChallenge uses two LLMs to arrive at a consensus before an extracted field value is returned, hallucinations are caught and discarded early in the process.
+  - SinglePass Extraction: Read all your field extraction prompts to construct a large, single prompt.
+  - Summarized Extraction: Automatically constructs an extremely compact version of the input document.
 
 - 🤔 there are so many document ocr related products/apps, like mineru/paddleocr/llamaindex/datalab/... deep research related solutions/ideas/inspirational-projects, analyze their features/strengths/weakness, provide overview/url/website for each.
 - MinerU (by OpenDataLab / Shanghai AI Lab)
@@ -361,7 +386,8 @@ modified: 2025-11-06T18:49:13.977Z
     - The model integrates the CogViT visual encoder pre-trained on large-scale image–text data, a lightweight cross-modal connector with efficient token downsampling, and a GLM-0.5B language decoder
     - Combined with a two-stage pipeline of layout analysis and parallel recognition based on PP-DocLayout-V3, GLM-OCR delivers robust and high-quality OCR performance across diverse document layouts.
 
-- https://github.com/stanford-oval/Churro
+- https://github.com/stanford-oval/Churro /apache2/202604/python/inactive
+  - https://stanford-oval.github.io/Churro/
   - CHURRO is an OCR toolkit for historical document transcription, built to make handwritten and printed sources readable at high accuracy and lower cost.
   - It works with all major OCR proividers and vision-language models, and provides first-party support for the CHURRO 3B model and CHURRO-DS dataset.
   - CHURRO 3B exceeds the accuracy of Gemini 2.5 Pro at 15.5x lower cost.

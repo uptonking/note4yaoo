@@ -58,7 +58,15 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## OpenCode is the first time i could justify event sourcing in a real system
+- https://x.com/thdxr/status/2088326451103699363
+  - everything that happens is an event which gets projected into the sqlite db
+  - this means you can consume the event stream and replicate it durably into another db
+- out of curiosity, did you ever consider running the agents outside the sandboxes and writing all session logs directly to a centralized database, instead of starting each session inside a sandbox, logging to a local SQLite database first, and then replicating those logs to the centralized database?
+  - this is how our new slackbot works
+- That sounds expensive lol. Imagine running 20 opus 5 sessions...
+
+- same here. it always felt like overengineering but it's the best architecture to empower the agents.
 
 - ## in OpenCode v2 all instances of the tui and desktop and web share the same backend
 - https://x.com/thdxr/status/2071007637487894883

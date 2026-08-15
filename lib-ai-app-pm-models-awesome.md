@@ -314,14 +314,10 @@ modified: 2026-06-20T15:49:57.019Z
     - [LD士多 - LDC积分商城](https://ldst0re.qzz.io/)
 
 - token-news
+  - https://chatapi.weixin.qq.com/
+    - 微信开发大赛, 免费使用Deepseek和GLM
+    - 白嫖微信的v4flash 1Btoken 约合35块钱
   - [Mirasim — One Agent IDE ](https://mirasim.ai/)
-    - 前1000名注册可获得89刀/月的套餐，送1年！每月CC MAX 5x + Codex 5x的额度。
-    - 必须是mac啊
-    - MIRA-37ZP-8X1E-KAWX
-    - 這玩意只是個中轉站，然後用網站+客戶端編造一個很正式的感覺。通過 mac用戶篩選一些高質量人群，然後盜用他們的i/o。新型的騙局而已。
-    - 这玩意会读取你的claude和codex的auth密钥, 保不准会不会上传
-    - 你自己看看 这个pro完全就是假的 压根就没有什么所谓的付款通道
-    - 数据安全这东西，只要agent，都会获取你
   - [GLM 5.2 FREE tier is live on TokenRouter, and running through July 25. ](https://www.tokenrouter.com/console/pricing?search=glm-5.2)
   - [商汤送免费的glm5.2了 - LINUX DO _202607](https://linux.do/t/topic/2504080)
   - [每月50刀免费额度 支持glm5.2 邮箱注册即可 - LINUX DO _202606](https://linux.do/t/topic/2489020)
@@ -1319,6 +1315,11 @@ modified: 2026-06-20T15:49:57.019Z
   - 经常拒绝用户的直接请求，而回答其他内容
   - [腾讯混元大模型 混元 OpenAI 兼容接口相关调用示例](https://cloud.tencent.com/document/product/1729/111007)
   - [腾讯混元大模型全面降价！混元-lite 即日起免费 _202405](https://cloud.tencent.com/developer/article/2419914)
+
+- [小红书 接口文档 · Dots API 开放平台 ](https://dots.ai/platform/docs)
+  - Dots API 开放平台提供与 OpenAI Chat Completions 格式兼容的模型调用接口
+  - rpm: 20
+  - tpm: 500k
 
 - [百度千帆 - 百度智能云控制台](https://console.bce.baidu.com/qianfan/modelcenter/model/buildIn/list)
   - ERNIE-Lite 免费使用， 非开源， 上下文长度: 6K tokens + 2K tokens

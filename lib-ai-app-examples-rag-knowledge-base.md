@@ -1028,7 +1028,7 @@ modified: 2025-11-30T17:27:16.720Z
   - https://github.com/HKUDS/LightRAG /20.1kStar/MIT/202508/python
     - Simple and Fast Retrieval-Augmented Generation
     - [2025.06.16]🎯 Our team has released RAG-Anything an All-in-One Multimodal RAG System for seamless text, image, table, and equation processing.
-  - https://github.com/BukeLy/rag-api
+  - https://github.com/BukeLy/rag-api /202512/python/inactive
     - Multi-tenant RAG API powered by LightRAG/RAG-Anything. Auto-selects best parser (DeepSeek-OCR/MinerU/Docling) via complexity scoring
 - https://github.com/xerrors/Yuxi-Know /2.6kStar/MIT/202512/python/vue
   - https://xerrors.github.io/Yuxi-Know/

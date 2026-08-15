@@ -132,6 +132,44 @@ modified: 2026-04-07T12:53:38.419Z
   - Extensible Architecture: Pluggable, content-aware processors (e.g., table and image extraction) with support for multiple OCR backends—LLM-assisted OCR on the roadmap.
   - An optional flag generates a detailed performance log to help you tune parameters and identify bottlenecks.
 
+- https://github.com/OCRBridge/ocr-service /MIT/202602/python/inactive
+  - A high-performance RESTful API service for document OCR processing with modular engine architecture using datenzar OCR Bridge packages.
+  - This service uses a modular plugin architecture powered by the datenzar OCR Bridge packages:
+    - Core Framework: FastAPI with async/await
+    - Engine Packages (optional, installed separately):
+      - ocrbridge-tesseract - Tesseract OCR (100+ languages)
+      - ocrbridge-easyocr - EasyOCR deep learning (80+ languages, GPU support)
+      - ocrbridge-ocrmac - Apple Vision framework (macOS only)
+    - Engine Discovery: Python entry points for automatic detection
+    - Metrics: Prometheus client
+  - OCR engine packages register themselves via Python entry points (ocrbridge.engines)
+    - On startup, the service discovers all installed engines dynamically
+    - API endpoints work with any engine - no code changes needed
+  - https://github.com/OCRBridge/ocrbridge-core
+  - https://github.com/OCRBridge/ocrbridge-tesseract
+
+- https://github.com/AnotherJ1/Common-OCR /202602/ts/inactive
+  - 面向个人/内网使用的 OCR 聚合服务，将百度、腾讯、阿里云、华为云、京东云、Azure、AWS Textract、OCR.space 等主流 OCR 平台统一到一个 API 接口中。
+  - 支持自动调度、优先级降级、配额管理和用量统计。
+  - 智能降级：按优先级自动切换，单平台故障不影响服务
+  - 配额管理：按日/月/总量跟踪用量，超限自动跳过
+  - 异步任务：PDF 等大文件通过任务队列异步处理
+  - Web 管理界面：可视化配置平台凭证、查看用量统计
+  - Prometheus + Grafana：内置监控指标和仪表盘
+  - 零鉴权设计：内网环境无需 API Key 即可调用
+- https://cnb.cool/g-finallyweb/FunOCR /MIT/202601/python/inactive
+  - 开箱即用的本地私有化部署OCR服务，快速搭建传统OCR/LLM OCR后端
+  - 开箱即用的本地私有化 OCR API 服务，基于微服务架构，支持多种 OCR 引擎灵活组合部署。
+  - 微服务架构，每个 OCR 引擎独立运行，灵活组合部署
+  - 统一 /v1/ocr API 接口，适配所有模型
+  - 支持 RapidOCR、DeepSeek-OCR、PaddleOCR-VL、PP-StructureV3
+  - 支持 vLLM / Transformers / PaddlePaddle 多种推理后端
+  - 通过 docker-compose 按需组合服务，支持多 GPU 分配
+  - 完整数据返回：文本 + Markdown + 坐标 + 置信度 + 元素类型
+  - https://github.com/polokang/ocr /202501/python/inactive
+    - 基于 FastAPI 的 OCR 服务，集成了多个 OCR 引擎，包括 EasyOCR、Tesseract 和 Azure Computer Vision。
+    - MongoDB 数据存储
+
 - https://github.com/sandraschi/ocr-mcp /MIT/202603/python/ts
   - FastMCP server providing advanced OCR capabilities with current state-of-the-art models (DeepSeek-OCR, Florence-2, DOTS. OCR, PP-OCRv5, Qwen-Image-Layered decomposition), WIA scanner control, and multi-format document processing for PDFs, CBZ comics, and images.
   - A web app for people (drag‑and‑drop OCR, scanner, batch) and a FastMCP 3.1 MCP server for agentic IDEs—Claude, Cursor, Windsurf—so agents can run OCR
@@ -332,6 +370,10 @@ modified: 2026-04-07T12:53:38.419Z
   - https://huggingface.co/spaces/opendatalab/MinerU
   - [Connect to the local LLM接入本地大语言模型 _202503](https://github.com/opendatalab/MinerU/issues/1976)
     - 教程没写就只是预留字段而已，有想做成llm方向的想法
+  - [3.0版本的mineru-router咋用呢 _202603](https://github.com/opendatalab/MinerU/discussions/4683)
+    - mineru-router 是 MinerU 3.0（2026-03-28 发布）新增的一个独立 HTTP 服务，用于在多个 mineru-api 工作进程之间做负载均衡和编排，实现一键多 GPU 部署
+    - 它不是单独的 pip 包，而是 pip install mineru 后自动注册的 CLI 命令，入口在 mineru/cli/router.py
+    - 启动后，它暴露的 API 接口和 mineru-api 完全一致（/tasks、/file_parse、/health 等），可以直接作为 mineru-api 的替代使用
   - [升级2.5后 在解析3000页的pdf时候 mineru-api服务内存剧增 _202509](https://github.com/opendatalab/MinerU/issues/3648)
     - 在2.2.2版本没有遇到这种问题, 单文件3000页, 采用的mineru-vllm-server vlm-http-client 模式, 开始的时候内存缓慢增长，后面剧增 然后占用内存达到148g, 巅峰到了 170g
     - 2.2处理单文件3000页也需要128g内存以上的，2.5应该差不多情况

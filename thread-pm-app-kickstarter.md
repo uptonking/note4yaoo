@@ -154,7 +154,7 @@ modified: 2021-10-29T15:02:28.882Z
 - ## 创新的本质是组合，想清楚这一点，是我2023年最大的收获之一
 - https://twitter.com/uptonking2/status/1742059175574983114
   - 往大里一点说，人类文明发展本质上取决于复杂组合能力：通过归纳组合不停的拓展知识边界
-  - 前一阵openAI宫斗剧才爆出来的Q*算法，本质上是强化学习里Q learning和A star算法，和LLM组合起来。而A* 算法又相当于是把搜索和目标函数组合起来
+  - 前一阵openAI宫斗剧才爆出来的Q *算法，本质上是强化学习里Q learning和A star算法，和LLM组合起来。而A* 算法又相当于是把搜索和目标函数组合起来
   - 最近的LLM发展，其实很多效果不错的方法，都是AI/ML领域里的老方法新用在了LLM上，比如Tree o Thought，LLM blender这类ensemble method都是ML里古老的思想了
   - 麦克斯韦方程（描述电磁场以及如何随时间变化/相互作用），精妙之处在于把几种数学现象和几种电磁现象组合起来，把这种微妙的看似不同现象的弱联系组合起来，就是最伟大的天才，让人的感官有无比愉悦的感受：原来电磁的关系是如此的简洁优雅
   - 乔布斯著名的“connecting the dots”，本质上也就是在自己的人生经历dots里寻找更合理和更有价值的组合，动画/图形学+人机交互+电脑组合起来，成就了一个新王国
@@ -848,7 +848,7 @@ modified: 2021-10-29T15:02:28.882Z
   - Myself, @sdothaney , and the team have joined to continue working on UI projects and OSS. 
   - It's been an incredible ride, here's a quick recap 👇
 - It's been over 4 years since myself and @sdothaney founded Modulz. 
-  - Ultimately, **we didn't manage to find PMF for Modulz, but we've accomplished a lot that I'm proud of**.
+  - Ultimately, **we didn't manage to find PMF for Modulz, but we've accomplished a lot that I'm proud of** .
   - We built a super strong team who shipped some mind-blowing tech, and maintained a high bar for design quality.
   - Radix is one of the highest-quality UI component libs available. With 4M+ npm installs/month, it's being used in production by hundreds of awesome teams including Vercel, Supabase, CodeSandbox, Linear, and of course, WorkOS.
   - We also managed to make Stitches the fastest runtime CSS-in-JS lib available, with easy-to-use APIs offering a great DX.
@@ -1154,6 +1154,47 @@ your suggestion here
 - What's the difference between this and GumHub by @m1guelpf ?
   - Sell access to your GitHub repos with Gumroad
 
+# discuss-toB
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [AI时代的SaaS——Software在贬值，Service在升值 - 知乎 _202603](https://zhuanlan.zhihu.com/p/2010751170252149291)
+  - 昨天和朋友聊天，吐槽大家用AI Coding做SaaS，只做了Software，没有做Service，我深以为然，故有感而发，写下此文。
+  - 我个人看法是：To C领域AI Coding确实大有可为，To C 市场确实具有更大的灵活性，用户对错误的容忍度较高，追求的是新鲜感和单点效率，不少独立开发者通过这种「小而美」的工具赚到了第一桶金。
+  - 但在To B领域，AI不会是决定性因素。我2018年之前都是做To C的游戏和应用，从2018年开始做To B的AI应用，刚开始是给银行做AI风控系统（相关经验见：AI风控系列文章目录），现在是做企业AI应用。这些年做To B产品的这些年，最常听到的一个词，叫SLA。
+- SLA 全程是Service Level Agreement（服务等级协议)，是服务提供商（如 SaaS 公司）与客户之间的一份具有法律效力的正式合同条款。它定义了服务的标准、可靠性和可用性。它通常包含三个递进的概念：
+  - SLI (Indicator - 指标)： 你衡量什么的指标？（例如：系统运行时间、响应速度、错误率）。
+  - SLO (Objective - 目标)： 你的指标要达到多少？（例如：可用率必须达到 $99.9%）。
+  - SLA (Agreement - 协议)： 如果没达到 SLO，你会怎么办？（例如：返还 20% 的月费）。
+- 简单来说，在 To B 的世界里，客户买的不是「代码」，而是「承诺」。SLA 就是把这种口头承诺转化为可量化、可审计、可赔付的硬性指标。 SLA 常见的指标包括（但不限于）以下这些：
+  - 可用性 (Uptime)：例如指标要求月度服务可用率通常不低于 99.9%。
+  - 响应速度 (Latency)：指标要求客户请求到收到结果的时间必须在毫秒或秒级。
+  - 错误率 (Error Rate)：指标要求在海量操作中，允许失败的比例极低（如小于 0.01%）。
+  - 平均修复时间 (MTTR)：指标要求故障发生后，必须在规定时间内（如 15 分钟或 4 小时）修复。
+- 所以，这也是为啥你点进去一些SaaS服务里看它各种plan的价格时，会发现很多enterprise plan价格都没写在上面。因为它们和每个公司达成的SLA都不一样。如果你看到某个服务提供商有个固定的enterprise plan的价格，那么有一种可能性，就是这个服务提供商的能力，能够给到不同的客户同样的SLA。
+- 理解了SLA，你就大概能了解，为啥在To B领域，即使人人都能做Software，但不是人人都能做Service。
+- Software是下限， 在 AI 时代，功能实现不再难事。如果一个功能可以被 AI 快速复制，那么它就不再具备溢价能力。然而，即使如此，很多SaaS公司依然并没有因此倒闭，因为它们能够提供上限更高的Service。毕竟，SaaS 的本质不是租用软件，而是租用一种持续的业务结果。
+- 顺便一说，其实原本标题我拟的是Service仍「保值」，但考虑到AI时代，软件门槛太低，反而抬高了服务（信任与落地）的稀缺性，所以最后决定标题改成「升值」。
+
+- Agent是否能做Service
+  - 我给出的答案是：不能。
+  - 首先，很多场景下的Service，其实是非标环境的治理。现实中的企业数据是脏的，系统是老的。AI Agent 在实验室里很聪明，但在客户杂乱的 ERP 接口面前，需要的是经验丰富的实施团队来做「脏活累活」的交付。
+  - 当然，你说AI Agent能不能帮助服务团队提升服务效率？那肯定是可以的，团队的经验可以写成文档，建立知识库，通过RAG系统，能让团队高效共享知识和经验。但Agent能不能代替服务团队？不行。Service的背后是承诺，而确定性，而Agent越强大，确定性反而更低。最近OpenClaw确实成为了很多人的超级助理，但大家用起来也知道，OpenClaw也很危险，很多不确定性，甚至Meta的安全总监也被OpenClaw删邮件。
+- 其实你去研究大模型和公司和云厂商的SLA，就会发现，其实云厂商给的SLA更具确定性，有更清晰的赔付条款；而模型厂商则更模糊，更少赔付。即使是同样是提供模型推理服务，云厂商提供的服务会更清晰：例如AWS Bedrock承诺99.9%的月度可用性，若可用性在95% - 99.9%之间赔付 10% 积分；低于95%赔付25%；低于 90% 赔付 100%
+
+- AI Agent 的普及确实让软件的生产力迎来了爆发，但在 To B 的战场上，技术从来不是唯一的子弹。客户支付的订阅费，一半是给代码的，另一半是给那些「在系统出问题时能立刻接起电话并解决问题」的人。
+
+- 在 To B 领域，单纯的Software只是一个半成品，只有加上了有SLA 和人工服务的纠偏的Service，它才能被称作真正的 SaaS。这也是AI无法完全取代人类的原因之一。当然，AI会推进SaaS公司变革，会对SaaS公司的业务造成一定影响，甚至会让一部分SaaS公司倒闭，但本质原因，是这些公司只有Software能力，而Service不足，我认为，AI依然无法颠覆那些Service做得好的公司。
+
+- 👥
+
+- 我觉得本质是，ai无法承担真实的责任。要么责任转嫁给提供ai产品服务的人，要么由消费者自行负担。
+  - 确实如此，AI公司提供的是AI能力，不可能对AI做的事情负责，就像当今的智能驾驶。
 # discuss-part-time-job
 - ## 
 
