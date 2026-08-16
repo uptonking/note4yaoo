@@ -75,6 +75,13 @@ modified: 2020-10-22T10:22:33.292Z
   - https://www.rgraph.net/
   - started in 2008 and was initially canvas only.
   - Now it has support for over 60 responsive chart types across SVG and canvas
+
+- https://github.com/Subhan-code/Amicro--Micro-transitions- /MIT/202608/ts
+  - https://amicro.vercel.app/
+  - A curated collection of premium React micro-interactions, transition components, and card layouts powered by Motion.
+  - You can add Amicro motion primitives, custom hooks, and spring presets directly to your project using the shadcn CLI!
+  - https://x.com/SubhanHQ/status/2088599468698751328
+    - A collection of minimal, animated chart components for React.
 # gis-charts
 - bertin /222Star/MIT/202212/js/d3js
   - https://github.com/neocarto/bertin

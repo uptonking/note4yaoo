@@ -968,6 +968,30 @@ Gamma → Creating presentations. what tool has quietly become part of your dail
 - 现在好多短剧的B Roll都用不少SD生成素材了，A Roll暂时还是容易穿帮
 
 - 不要被偏见影响了判断。现在的ai短剧，有一批高质量的，比真人拍的好看多了。
+# discuss-harness-gui
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [没有linux, 甚至禁用WSL，国内各家哪家好？ - LINUX DO _202608](https://linux.do/t/topic/2760028/3)
+- 我们这些都调研过，禁用 wsl 说明还可以用 win，我们选的 zcode
+Zcode：搭配 glm/kimi 都很好用，统计清晰，界面流畅，我们的首选。
+DSH：刚出来，感觉像 pi，各种东西都要自己配置，太复杂了，不适合生产环境
+Trae：现在也在用，不过主要用来看代码，也不错，如果要和编辑器结合的话这个不错
+kimi code：用 kimi 家模型的话还可以，用其他家的没必要用
+Qoder：不好用，积分巨贵，自定义渠道处处受限
+workbuddy&codebuddy：没用过
+mimo code：美化 + 汉化 opencode，但 Windows 下我感觉很卡，而且退出以后终端会无法使用，感觉兼容性有问题
+
+- 感觉 zcode 相当不错，启动速度和性能比 Codex 好（吐槽一波 Codex 做的好烂），手机远程控制也还不错，接的第三方 5.2 模型缓存命中率也在 90 以上
+
+- dsh 合适吗，今天刷到视频说官方不推荐 powershell 来着
 # discuss-ai-pm-cowork/office
 - ## 
 

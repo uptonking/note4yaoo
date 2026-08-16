@@ -344,6 +344,32 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0815
+
+- 🤔 i am developing a typescript monorepo project, should tests for every sub package should be put in a folder `__tests__`  that is a sibling folder of `src`? is `__tests__` a good name, should i use `tests`/`test`. What are the best practice for typescript tests in the industry?  please deep research popular solutions/projects/ideas, provide overview/github-url/website for each.
+- colocated
+  - VS Code's own (huge) codebase does a nested version of this — unit tests sit alongside source files, e.g. src/vs/editor/common/model.ts pairs with src/vs/editor/common/test/model.test.ts
+  - date-fns does this at the function level — every function lives in its own folder with an index.ts for the implementation and a test.ts for its unit tests.
+  - Angular (and the official Angular style guide) mandates it: unit test files end in .spec.ts and live next to the file they test
+  - Nx generates this by default: nx g lib mylib creates libs/mylib/src/lib/mylib.ts and mylib.spec.ts side by side
+- __tests__ nested inside src (one level in, not a sibling)
+  - Jest
+  - Prisma
+- __tests__/test as a true sibling of src
+  - This was also the classic pre-Jest convention: traditional single-package projects put all tests in a directory called test, while TypeScript monorepos often combine that with src/tests conventions
+  - NestJS's own internal framework packages follow this too — packages/common/test/ mirrors packages/common/src/ folder-for-folder
+  - Zowe CLI
+
+- `test/`: TypeScript’s handbook, Node.js, Angular, and many older JavaScript repositories.
+- `tests/`: Playwright, typescript-eslint, Turborepo examples, and many modern monorepos.
+- `__tests__/`: Jest-derived ecosystems such as React and Vue.
+
+- `__tests__` (double underscore) is the Jest/React-ecosystem convention — Create React App, Jest itself, Prisma, and Zowe CLI all use it.
+  - Jest special-cases the name: its default testMatch explicitly matches anything inside a folder literally named __tests__, anywhere in the tree, in addition to *.test.*/*.spec.* files.
+- Vitest doesn't care about folder names at all — its default include is [' **/* .{test,spec}.?(c|m)[jt]s?(x)'], purely filename-based, so tests/, __tests__/, or fully colocated all work identically out of the box. 
+- Node.js test runner
+  - Default discovery recognizes test/, test- *, *_test, *-test, and *.test.* .
+
 ## 0814
 
 - 🤔 there are so many llm api/token related gateway/router, like openrouter/vercel-ai-gateway... is there any open source gateway/router that focuses on ocr/vlm/documents... deep research related solutions/projects/ideas, if you found any open source products or inspiration projects, provide overview/github-url/website for each.

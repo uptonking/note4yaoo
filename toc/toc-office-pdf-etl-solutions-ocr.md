@@ -332,6 +332,20 @@ modified: 2026-04-07T12:53:38.419Z
     - `LibreOffice` is optional and only used for a small subset of legacy/edge formats. For common formats like PDF, DOCX, HTML, email, etc., Kreuzberg uses native Rust parsers and doesn’t require LibreOffice. 
     - Any Docling integration?
       - Not directly- they overlap some but are separate projects. Kreuzberg is x50 times faster than docling on a CPU (not suprising, since docling is GPU orientated). Docling is better in terms of complex layout extraction. 
+
+- https://github.com/shunyagatha/Vecline /MIT/202608/ts
+  - https://shunyagatha.github.io/Vecline/
+  - https://vecline.xyz/
+  - Measurable raster ⇄ SVG conversion — and a broad image + document toolkit. 
+  - On flat artwork — logos, icons, UI, screenshots, pixel art — the output is bit-exact: SSIM 1.0000, PSNR ∞, zero differing pixels, in a smaller and faster file than potrace, imagetracerjs or vtracer. 
+  -  The native dependencies (`sharp/resvg`) ship prebuilt binaries for Linux, macOS and Windows.
+  - Eleven raster formats, every one convertible to every other, with the accuracy of every conversion actually measured rather than asserted; 
+  - plus PDF & Office (docx/xlsx/pptx) rendering and conversion, images → PDF, DXF at a real physical cut size alongside EPS and G-code for makers, centerline tracing and content-aware crop 
+  - most of it in a zero-dependency core that is CI-proven to bundle for a browser.
+  - Mode: lossless, pixel, trace, embed
+  - [Vecline: a free, MIT image-to-SVG toolkit that measures its own accuracy (SSIM/PSNR/CIEDE2000) instead of asserting it : r/svg _202608](https://www.reddit.com/r/svg/comments/1vp0mi6/vecline_a_free_mit_imagetosvg_toolkit_that/)
+    - Every image-to-SVG converter advertises "100% accuracy," and none of them define it. I built one that actually measures it.
+    - Vecline renders its own SVG output back to pixels with the same renderer a browser uses, and scores it against the source with SSIM, PSNR and CIEDE2000. The number you see is measured from the real output, not estimated from the settings.
 # ocr-solutions/vendors
 - https://github.com/PaddlePaddle/PaddleOCR /66.5kStar/apache2/202512/python/cpp
   - https://www.paddleocr.ai/

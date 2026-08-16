@@ -160,6 +160,9 @@ modified: 2026-06-30T17:32:43.131Z
 
 ## draft-ai
 
+- features
+  - bases-kanban for ai
+
 - ai-doc
   - 多次生成
 

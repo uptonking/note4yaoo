@@ -114,6 +114,7 @@ you have worked on this problem several times but features are still lacking. Th
 
 - you may deep research, and reference the upstream superdoc code(at folder `../superdoc`), you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues.
 - you may even do a big code refactor for begonia to match major features of superdoc in a similar architecture if it helps to make it easier to maintain and migrate more features in the long term. legacy code may be migrated or removed by rewriting.
+
 - you might refactor/reorganize/improve the architecture/logic if it helps to make it correct, robust, extensible in the long term. only if there are obvious bugs or design defects, then you might propose big refactor or huge change. if there is only subtle bugs, just propose to improve the existing architecture.
 
 - you may design feature parity docs at `upstream/superdoc/reports`, when you migrate/implment features, you can recheck and update it. all checking/docs/scripts related to upstream superdoc should be put in folder `upstream`. you may even design a script to automate it.
@@ -1157,7 +1158,9 @@ you might refactor/reorganize the tests architecture/logic to if it helps to mak
 
 - if my macos system is overloaded, you can run the tests at higher time budget. 
 
-- tests files in each package should existing as sibling folder of `src`. for example, all tests for `packages/core/src` should be put at ``packages/core/__tests__` , tests files like `parse.test.ts` should not be put inside `src` folder.
+- please refactor/improve the testing architecture.
+- testing files in each package should exist in a sibling folder of `src`. for example, all tests for `packages/core/src` should be put at `packages/core/test`, testing files like `*.test.ts` should not be put inside `src` folder in any package. And the file/folder structure in `packages/engine/test` should mirror `packages/engine/src` .
+- after you finish the refactor, all features should still work, all tests should still pass.
 
 - you have migrated/implemented major features in project react web, but when you migrated/implemented features, tests are not taken good care of. please fix and update existing tests. 
 when you improve the tests, you can also improve the source code logic by fixing or refactoring code. DO NOT get locked to the risk code that has weak or wrong logic, you should fix them.

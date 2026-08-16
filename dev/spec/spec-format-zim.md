@@ -125,6 +125,10 @@ modified: 2023-07-05T10:22:57.942Z
   - [Zimi – ZIM file access for AI agents and humans (UI, API, more...) : r/Kiwix _202602](https://www.reddit.com/r/Kiwix/comments/1r4f6vv/zimi_zim_file_access_for_ai_agents_and_humans_ui/)
     - I tried to use Claude Code to access my ZIM files and realized there's no great way to do that, so I built one.
     - It runs locally or in Docker and can be used via API, CLI, MCP, or a web UI in the browser.
+
+- https://github.com/akshitkamboz13/search.si4k /202608/ts
+  - Unified, high-performance offline-first knowledge search engine for Kiwix and local ZIM collections including Wikipedia, wikiHow, iFixit, Stack Overflow, and other datasets. Optimized for modest home servers and offline knowledge infrastructure.
+  - [I built an offline-first search engine for Kiwix/ZIM collections : r/Kiwix _202608](https://www.reddit.com/r/Kiwix/comments/1vp4pps/i_built_an_offlinefirst_search_engine_for/)
 # resources
 - [StreetZim — Offline Maps for Kiwix ](https://streetzim.web.app/)
   - [Streetzim - offline map ZIMs : r/Kiwix _202604](https://www.reddit.com/r/Kiwix/comments/1sfdzf7/streetzim_offline_map_zims/)

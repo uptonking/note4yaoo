@@ -1471,7 +1471,31 @@ Coding LLMs is a solved problem and everyone will end up having the same solutio
 
 - ## 
 
-- ## 
+- ## 作为 infra dev 咱也觉得 multi 不了一点，subagent 已经是极限了，agent 互相讨论很容易跑飞
+- https://x.com/fuyufjh/status/2088509006197510395
+- 同感。实测下来 agent 之间自由讨论基本必跑飞：互相附和、话题漂移、token 烧得飞快。能用的形态还是 orchestrator 派活给边界清晰的 subagent，结果写成结构化文件再汇总，全程不让它们互相聊天
+
+- agent 互相讨论还是太烧钱了 
+
+- 最终还是 context management ，单个 agent 很多时候 context 不太灵活
+
+- 多agent的本質是context management跟parallelization for speed up
+任何以"多agent討論可以提升整體agent system performance"的論點都是有問題的
+
+實際上大多數時候多agent會導致整體表現下降，但是在super long horizon跟速度表現上有優勢罷了。
+
+(以上為本人個人感受)
+
+- 分布式系统的信任问题
+
+- https://x.com/edward40e/status/2088517776315212236
+  - 我深度用了一段时间 agent team 也感觉并不刚需，单一强大的 monolithic agent 在眼下是更优的选择。
+  - 深度思考得到的初步结论是，现在 agent team 里 agent 个数是个位十位没形成规模效应。 但未来上云之后就不一定了，分布式有共识的 agent 或许能节省很多资源开销，并在数据层上互相提升。
+- multi-agent 最大的开销不是算力是上下文同步：每个 agent 一份世界观，靠消息传递对齐，token 翻倍，个位数 agent 摊不平这笔协调税。眼下把 sub-agent 当工具按需调用、主 agent 常驻上下文更划算，等真需要跨进程共识再拆不迟。
+
+- https://x.com/jakevin7/status/2088528506476953967
+  - 集群/org 组织永远都是需要治理和设计的，放在 agent 集群上也不例外。
+- multi agent比较早弄的像opencode的omo，其实效果很差，因为分工的能力不足，现在像herdr，orca，用原生cli去干活，让harness进行通信，再加一个主模型，比之前感受要好很多了，所以在codex里面用的时候，我会禁止gpt开子agent
 
 - ## [佬们觉得多Agent协作有意义吗 - LINUX DO _202606](https://linux.do/t/topic/2419981)
 
@@ -1609,6 +1633,21 @@ e) 最终评论者(Final Critic)
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 突然想到今天是真的没人在意 temperature 了。 而三年前，这个还是从业面试一定会问到的东西。 _202608
+- https://x.com/wwwgoubuli/status/2088130170003784019
+- 好像 agent 的 workload 下面把 temperature 给都 hard code 了
+
+- 因為RL會直接對整個logits分佈做學習 (像是GRPO裡面的kl div一類的), 用temperature調整分佈會偏離原本的訓練目標, 但是預訓練直接對target token學習，練出來的softmax結果不一定直接代表實際需要的分佈
+
+- 被 effort 取代了
+- 预言思考强度设置也会逐渐消失，因为强模型会处理好这一切，且 Token 成本也不再是问题。
 
 - ## [Anyone else spending more time tweaking than actually using their model? : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1r6e4h4/anyone_else_spending_more_time_tweaking_than/)
 - I swear I’ve spent 10x more time:
