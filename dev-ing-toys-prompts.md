@@ -195,7 +195,12 @@ you might refactor/reorganize the tests architecture/logic to make it correct, f
 
 - make `./superdoc2/docx-engine` works well with other packages at `./superdoc2`, api/code/tests at `./ superdoc2/docx-engine` might be refactored/updated to match other superdoc2 packages, legacy/unused code at `./superdoc2/docx-engine` might be refactored or removed.
 
----
+#### draft-v2
+
+- I have updated some superdoc v2 code at `./superdoc2/shared` and `./superdoc2/packages`, the toolchain/build/tests scripts might be broken now. please analyze all the package.json and scripts, then fix the package versions in npm workspaces.
+  - generally source code inside src folder for `./superdoc2/shared` and `./superdoc2/packages` should not be changed, but you might change the source code at `./superdoc2/docx-engine`. Mostly you should fix the package config and scripts. 
+  - package `./superdoc2/docx-engine` is a typescript reimplementation of folder `../superdoc-v2-beta/docx-engine`, you might refer to the minified code at `../superdoc-v2-beta/docx-engine` if you want to change `../superdoc-v2-beta/docx-engine`.
+  - after your fix/improvement, then run the full tests, fix/improve the toolchain/build/tests in ./superdoc2. 
 
 - core implementation for major features should be framework-agnostic without react, ui wrappers/bindings should be sub packages, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
 
@@ -1136,7 +1141,7 @@ please recheck migrated features and implementations for possible licensing issu
 
 document what you have migrated from which commit id for future migration reference at file `doc/devlog-migrations.md` . you can also add some concise(less than 120 lines) migration guide/steps/tips in it to make it easy to do migrations later.
 
-# tests
+# tests 🧪
 - run the full tests and fix the bugs
 
 - run the full tests to find possible problems, then fix the problems or improve the testing architecture/performance.

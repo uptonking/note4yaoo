@@ -326,6 +326,15 @@ modified: 2026-06-30T17:32:43.131Z
 - 
 - 
 - 
+
+## draft-server-rdmn
+
+- service比client能提供更多盈利的机会
+  - storage
+  - rag shared
+
+- 
+- 
 - 
 - 
 - 

@@ -177,6 +177,11 @@ modified: 2021-07-21T18:07:43.056Z
   - Raneto is a "flat file" CMS, meaning no database problems, no MySQL queries, nothing.
   - Full-text search powered by Lunr
 
+- https://github.com/haydenbleasel/blume /1.2kStar/MIT/202608/ts/astro
+  - https://useblume.dev/
+  - Drop Markdown or MDX into a folder, run blume dev, and get a production-grade docs site — navigation, search, theming, Open Graph images, and a rich component library — with no app boilerplate to write or maintain. 
+  - Blume generates and drives a hidden Astro project for you
+
 - https://github.com/Gram-ax/gramax /217Star/GPL/202506/ts/rust
   - Embrace a docs-as-code approach to build, version, and publish Git-driven documentation sites using Markdown and a visual editor
   - It stores all data locally in Markdown format, offering flexibility and offline access, and seamlessly integrates with Git for version control and collaboration
