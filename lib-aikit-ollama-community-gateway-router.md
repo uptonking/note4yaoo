@@ -1080,7 +1080,32 @@ plus 给的 codox 额度每个月可以有 5 亿 token 左右（不考虑低价�
 
 - ## 
 
-- ## 
+- ## 💰 [用了一个月中转发现他们的BUG渠道也没有官方20x便宜啊 - LINUX DO _202608](https://linux.do/t/topic/2771925)
+  - 已知一个月 30 天，一周 7 天，pro20x 一个月一千块，由此可得 官方 = ¥1000 ≈ 13B
+  - 搜集了站内佬们 pro20x sol 的 7d 数据，基本都在 $2k-$2.5k 额度，蹬满 3B 左右
+  - 而从我用的 6 家中转取平均价 ¥100 ≈ 0.86B，换算后为 中转 = ¥1000 ≈ 8.6B, ¥1000 ≈ 8.6B
+  - 而且我这 6 家中转全部下架了 luna，我就算想测算综合 (sol 调度 luna) 消耗都没法搞
+  - 为什么突然发这个呢，因为中转今天一天都不稳定，一个任务时不时重试，闲的思考人生了 
+  - 自己没卡能开是最烦的，几个平台都没下卡
+- 对于用量大的，官方周限能跑完的，那肯定是官方划算。
+- 中转站只是随充随用, 不用盯着额度重置的周期
+
+- 主要是中转看上去比官方便宜，如果全部用 sol 并且不炸缓存 (上游号死了连带会话重试几次缓存率莫名其妙就跳水) 的话差不太多
+  - 我寻思我好像没有必要全用 sol，可以让 luna 做 subagent 来压低开销的，中转压根不给用，这一下就拉开差距了
+
+- 佬可以找代充 然后走菲区很便宜 980 代充收点钱 1200 左右 20x 一个月很舒服的
+
+- 本来就是如此，尤其是有重置的情况下，不过现在基本是表演式重置，有能安装 chatgpt 的 iPhone 或者 iPod 可以试试充值点卡开。
+
+- 办张 visa 卡也不难啊，我以为很难，结果上次玻区出来后，我自己上招行 app 在线申请办了一张秒通过，第二天快递就给我寄到了，然后成功开了玻区的 20x 
+
+- 为什么你可以，我招行全币种白金也是 visa 啊, 我直接被拒绝支付
+  - 套一层 google pay 或 apple pay 就行，GPT 是没有抽成苹果 / 安卓税的
+- 他那是套一层，直接就是不行的。apple 的话还需要用礼品卡
+- applepay 不行的，直接透卡号，礼品卡倒是可以
+- 网页端，即使用 google/apple pay, 还是会把卡头传递给 chatgpt, 然后就拒付了，我是在 google play 里订阅的，缺点就是要多付钱.
+
+- 之前玻区的 bug，800 上车 20x，按照一星期 2500 刀，倍率也才 0.08，老划算了 
 
 - ## [算了一笔账， AI 中转站有那么赚钱吗？ - V2EX _202608](https://www.v2ex.com/t/1233419#reply9)
   - 好奇进去看了下几个站，充值 ¥1 = $1 ，最离谱的分组倍率还能做到 0.1x
@@ -1161,14 +1186,14 @@ Codex这类长会话场景，缓存通常会占输入的大头，正常使用一
 0.35+	若能跑完 1-2 周即盈利，重置则更优。
 
 - 二、成本与风险细节
-01.       K12 与爆炸车
+01.               K12 与爆炸车
 K12 仍活跃，但号价从 0.1 涨至 3.5 元 / 个，且不保质量。
 此类号仅适合中转，自用极易亏损，中转也大概率砸手里。
-01.       Plus 号（0.06–0.08）
+01.               Plus 号（0.06–0.08）
 当前拿货 6–8 元，1000 个号中约 80–120 个会被封禁，其余正常用完，额度约 80–120 刀 / 号。
 以 6 元 / 号计算，基础倍率 0.06；定价 0.08 需覆盖封号、服务器等成本，利润微薄。
 部分掺爆炸车的渠道可做到 0.06，但我暂无此渠道。
-01.       Pro 号（0.17–0.35+）
+01.               Pro 号（0.17–0.35+）
 0.17 档多为黑冲或亏本 Pro，当前 Plus 稀缺下 Pro 成为主要选择。
 0.25 档回本周期长，盈利有限。
 0.35 + 档若跑完周限即盈利，重置更佳。
@@ -1280,6 +1305,134 @@ Pro 储备不足 → 用户并发 429
 - 之前有想过搞中转，后来发现其实没想象的好赚，太卷了，主要最烦的还是没有稳定的货源渠道，得每天去烦怎么搞新的低价渠道，封号得一直补号，感觉累死了。
 
 - 一直想用，就是发票门槛高了点，怕用不到1k没法开票得自费了。申请降低一些，有手续费也行呀
+# discuss-llm-api-auto-register
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [本地跑通gpt注册机、爽用gpt-5.6-luna-跑通流程分享 - LINUX DO _202608](https://linux.do/t/topic/2743741)
+  - [[开源推广] 取之于佬，用之于佬，魔改之前一个佬的GPT协议注册机增强现已适配3个指纹浏览器、7个邮箱服务商、自动Codex授权上传CPA/Sub2Api、对接UPI/PIX提链服、Codex Agent Token（跳过接码）、查活 - LINUX DO _202607](https://linux.do/t/topic/2560041)
+  - 本帖核心是跑通注册机接码流程，不在于接码是不是最低的价格，成本是否高很多，因为有更便宜的渠道，大家可以自行尝试
+  - 无需家宽 ip，我这里用的美国的节点
+  - 这里我用的 RoxyBrower，这个需要到他们官网去下载客户端安装到本地（自行搜索，这里不发，发了可能被有些人认为我在引流）。免费版 4 个窗口，够用了。
+
+- 
+
+- ## [【开源】fuckoai：Linux 服务器版本的接码codex free注册机；走号商的路，让号商无路可走！ - LINUX DO _202606](https://linux.do/t/topic/2326247)
+  - 都要接码， herosms 0.05 刀一次
+
+- free 号 codex 登录要二验。free 的路是走不通了
+- free 好搞，二次接码难如登天啊。。长效接码贵的一批，成本疯涨
+
+- 佬，想问下这个临时邮箱接口地址是怎么填，我现在用你的项目可以注册账号了，但是不能绑定邮箱，如果说用到 sub2api 的话需要去网上找个临时邮箱的网站接码? 用的什么域名邮箱呢?
+  - 我自用是.vip 的域名，稳着用了三个月了
+- cfworker 的自建 tempmail
+
+- 每月刷新，我自己的号基本都能活下来，自己的号用的放心
+# discuss-llm-api-sim
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [你们gpt账号 怎么手搓的 还是用注册机 有教程吗 可以有偿 - LINUX DO _202607](https://linux.do/t/topic/2659198)
+- 如果是一个号成本假设是 4 毛的话。额度 4 刀，那岂不是跟 0.1x 的中转站差不多了？
+  - 现在平均只有 1.15 刀，完全搞不了了
+
+- 第一，官网注册登录
+
+第二，登录 codex，接码手机号
+
+有没有注册机不太清楚，成本太高了，一个 free 号也就一两刀额度，接码可能回出现二次接码，临时接码只能应对一次
+
+- 我是用的这位佬的接码注册机，上周末一口气搞了一百五十多个 codex 账号，一个号接码成本在 0.6r 左右
+https://linux.do/t/topic/2326247
+要准备一个 cf 上的域名邮箱 (我用的 vip 结尾的), 然后还要一台 ip 稍微干净点的小鸡，接码用的 herosms
+
+但是前天下午那波官方炸了两次，导致我的号很多都要二次验证，在这之前我用的都很稳，而且这个帖子的原贴主注册的账号，特别稳，一直到现在都没掉，快两个月了
+
+👀 我是用的 herosms, 最近几天接的一般是哥伦比亚，巴西，智利，墨西哥之类的，但是还是会被二验，之前一口气注册的 150 个，过了大概一周，全死 TvT, 现在我只敢一天注册一两个了
+
+- icloud 邮箱 + 短信验证码 + 美国 vps , 走浏览器自动注册。
+
+- 问题是难道不会被封吗？我之前 5 月底那一批 free 号被杀的干干净净，用一个死一个，可能是我域名邮箱已经被盯上了
+  - 跟服务器有关吧，icloud 邮箱注册的，我最近比较稳，对账号不过度使用。
+
+- 最近死的比较少，我里面有 300 个账号活了 2 个月。一个成本 2 毛 - 4 毛。
+
+- 我之前是在 heroSMS 上借码，但不清楚现在还可不可以
+  - 是的，就这个。我主要在这个平台接码。
+
+- hero 上面没那个忠诚计划的话，码都挺贵的
+- 忠诚计划。一周冲 10 刀以上，运气好可以做到每个号 0.02 刀左右。
+
+- 你别说好像还真的降了对 free 的风控，我刚刚试了一下之前有幸存活的号，现在测试连接都还是通的，之前那段风控的事情，发一个 hi，下一秒再发就寄了
+
+- 要站内找找之前浏览器自动注册的，我改成自己纯服务器用的，本地目前用不了。
+
+- ## [giffgaff 难民看过来，ctexcel 出了1英镑领卡活动 - LINUX DO _202608](https://linux.do/t/topic/2683435)
+- 低成本保号还是乌龟卡（esim.gg）更好，这个貌似该规则了 7 天就得充值余额一次
+
+- ## [关于gpt接码 - LINUX DO _202608](https://linux.do/t/topic/2756181)
+- 除非你是用完就抛啊 不要接码 自己的号不要接码 后面出二验 号彻底废了
+
+- 绕不了，如果是自己的账号最好买个国外的卡，接码也会有二验的，如果是 free 号池就随便了
+
+- 接码可以看一下 HeroSMS 这个 app，但是现在好像 codex 有风控，不同账号额度不同，很多缩水特别严重，不知道 free 账号有没有这个问题
+- 就是用的herosms，然后我发现只用个手机号，不用验证码，就相当于不扣钱。不过如果你取消了订阅，再用原来的信息来订阅的话要二次接码，我换了个号就没问题了
+
+- 如果你有苹果设备，可以考虑一下 talkatone，类似 Google voice 但是可以接码
+  - textnow、textfree 也不错，安卓设备也能用，还有免费号码可以试用，但对网络环境要求比较高，要购买的话成本也偏高，长期自用的号可以试试
+
+- 自己的号用的 CTEXECL UK，月抛与日抛用的接码。
+
+- 直接买 rt 日抛号吧，不然还要花钱接码，到时候号也是一样会死。
+
+- ## [gpt接码平台求助 - LINUX DO _202608](https://linux.do/t/topic/2698934)
+- 日抛就 hero-sms 或 5sim，长期就买 esim
+
+- 巴西和哥伦比亚，但是基本上成功率都不是很高
+
+- 我最后闲鱼买了一个，不到 2 块。二验先不管了
+
+- ## [[更新codex接码情况]9 国手机号收码保号实测：8 大平台验证码、KYC、保号成本全对比 _202608](https://linux.do/t/topic/2736395)
+  - 真正长期持有一个号码，还需要看实名门槛以及保号成本。
+  - 这里的 KYC 指： 购买或激活手机号时，是否需要你提供你的护照、身份证件、自拍、人脸验证等个人身份资料。
+- 爱沙尼亚 eSIM. GG：目前最亮眼但不同号码质量不一
+  - 注意：该运营商的不同号段可能会遇到不同的封控，我的测试结果仅代表我的号段，无法保证其他的号码
+  - 目前 eSIM. GG 的购买和使用流程，无需任何实名，创建账号同意协议后即可使用。 所以它为：:green_circle: 无需 KYC
+  - eSIM. GG 这张卡非常适合长期持有的一个原因是： 余额本身不会轻易因为套餐到期而消失，号码只需要至少每年保持一次有效使用。
+  - 实际使用中，例如你在 8 月 1 日购买，在 8 月 10 日漫游使用记录，则下一个保号期间为明年 8 月 10 日。不知道这个是不是 bug，整体保号成本很低，约 1 欧元一年。
+
+- 美国 Saily 这个 kyc 用中国身份证或护照可以吗
+  - 可以， 身份证也可以
+# discuss-llm-api-payment
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [国外怎么付费 - LINUX DO _202608](https://linux.do/t/topic/2768479)
+  - command code 和 ollama pro 都不支持支付宝
+
+- ollama 用 visa 就可以支付
+
+- 工行可以开星座 visa 卡，招行可以开万事达卡。
+  - command code 实测可以用星座卡付款，ollama pro 还没有试过，不过除了御三家，一般都不会拒付大陆的卡吧
+
+- 学生直接开星座卡学生版吧，APP 申请一下，一两天就审核通过了，一般不会拒绝，接着就是去线下网点激活就 OK 了
+
+- 我之前开了个招商银行的那个万事达借记卡，发现 command code 也能支付，ollama 没试过。这个卡学生也能办
 # discuss-llm-api-paid
 - accounts
   - 带at/rt的帐号价格不同，在不同的封控政策下，可使用时间差异很大，最好选择 RT(可长期) + 可刷新AT(手动刷新来解决401问题)
@@ -1291,9 +1444,69 @@ Pro 储备不足 → 用户并发 429
 
 - ## 
 
-- ## 
+- ## [Ollama Pro ($20) vs OpenCode Go ($10): Does Ollama really provide 2x or more usage? : r/ollama _202608](https://www.reddit.com/r/ollama/comments/1vqr0ve/ollama_pro_20_vs_opencode_go_10_does_ollama/)
+- I've tried and currently have active subscriptions to both.
 
-- ## 
+I've requested more transparent usage information from Ollama (see my post history) so that an apples-to-apples comparison is easier but in my personal, anecdotal testing on GLM 5.2:
+
+OpenCode Go $10 plan gives you roughly 2/3 usage of the $20 Ollama plan if you assume 0 prompt caching on both platforms (unrealistic IMO).
+
+If your requests frequently have large context and/or you make continuous requests within the TTL limit the OpenCode Go $10 plan will give you more usage the Ollama plan because, in my testing, Ollama doesn't seem to actually discount cached prompts and since they (very unconventionally) hide cache-hit information, there is no way to actually verify misses/hits.
+
+OpenCode also gives you access to frontier models that, at the time of writing this, Ollama has either paywalled or has not made available yet, e.g. Kimi K3 and GLM-5.3. The only legitimate downside to OpenCode Go is there is one plan tier - they really need a 5x and/or 10x plan for $50/$100 - although many people just purchase additional subscriptions and configure a proxy to easily get around this.
+
+TL; DR No doubt in my opinion that currently OpenCode Go has better usage limits (per $), actually uses prompt caching, better model access and pricing that actually allows users to make an informed choice about model selection. My Ollama subscription is still active pending changes to model availability and pricing info but if nothing changes by my next billing cycle I would rather just buy another 2 OpenCode Go subscriptions.
+
+- It is pretty difficult to compare and the situation may be dynamic but earlier $20 Ollama plan could give you around 2000 GLM-5.2 requests per week (according to reports which I saw). If we compare by request Ollama would be a winner but requests are not reliable metric. Also the risky part is how they'll treat GLM-5.3 when weights are opened (maybe the same way as kimi-k3...).
+
+- you sub free for small usage, then 20 usd pro and bigger plans are not available right now, they charge per gpu usage which could mean a ton of tokens in low gpu heavy models but the issue that it is only 1 concurrent pass at a time so multiuser is terrible for such sub or multi agent
+
+- ## 📌 [[排行榜][08.17 更新]各家plan每1亿token消耗RMB - LINUX DO _202608](https://linux.do/t/topic/2756196)
+  - Coding Agent 模型性价比排行榜
+  - 统一计算规则 99% 的输入，1% 的输出， 95% 的输入缓存命中率
+
+- 这个规则只适用于 长对话，高缓存，如果缓存率低的应用场景，输出再多一些，价格高的离谱。 我用 v4flash 80 万 1.2 元，一个亿要 150 元
+
+- 👀 下面的claude额度是在双倍优惠期间
+- 我是在这上面用 Claude Code+glm 5.2 的。Pro 订阅大致测了一下周限额大概在 2-2.4 亿 token，取中间值 2.2 亿，按 20 美元约 135 人民币，一个月 4.5 周计算就是 135 ÷(4.5 ×2.2) ≈13.64 元 / 亿 Token
+- 佬你的表上面没有 claude，根据我上周期的实际使用记录（Claude Max 5x, 一个星期）： 折合一个月下来，纯用 opus5 是 7.09 元 / 亿左右。当然缓存率不一样，没法直接对比
+- 跟订阅套餐比没啥意义吧 claude 订阅缓存命中是 free
+
+- 考虑到 GPT 的 plan 是有重置的，如果账号不被降额，GPT 的性价比甚至可以到第一名。
+
+- 三个菲区 20x，按五次周限算，大概是 37500 刀
+
+100 刀大概能用 1.1 到 1.3 亿
+
+加上大量重置
+
+最后用了 500 亿，成本 3000 块
+
+其实大部分重置额度都没用完又重置了
+
+完全蹬完估计能有一千多亿
+
+- 榜单只按不重置的情况计算了。 但是过去一个月，tibo 简直是神，重置按钮按爆了。我的 plus 都蹬了 20 亿 sol
+
+- 给了我启发，可以做一个计算器，用户自己按需填入输入占比、缓存率
+预置各个模型的参数，也可以手动调整（比如 gpt 的周额度、买入价格等）
+
+- 现在只有价格，如果有性能排行，或者均衡排行的话 更好哦
+
+- 还可以加入 cursor pro 套餐，把 grok 每亿成本也算上去。
+- cursor pro 的 grok4.5 可以使用不到 7 亿，这样算下来一亿 19.1，如果有半价就是 9.5 一亿。这样看 cursor pro 挺不错，没有 5 小时和周限制，缺点可能就是 256k 上下文了，不过还可以额外使用其他的第三方模型
+
+- 拿了融资，就要做利润给投资人看了，普惠路线和赚取超额利润本身就是冲突的
+
+- glm 还可以再低。 最近 zcode1.5 倍用量，而且社区反馈缓存命中率可达到 98%。 另外季付 8 折 全都算上:plus:max 套餐 能平峰 10 块 高峰 20 块。
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## [claude pro 和gpt plus 额度对比 - LINUX DO _202607](https://linux.do/t/topic/2670814)
   - claude pro 和 gpt plus 现在来看额度对比怎么杨 之前使用 claude pro opus 额度也还可以 但是没用过 plus 想问问佬这两个目前额度哪个高
@@ -1989,13 +2202,13 @@ Cloudflare → 安全性 → WAF → 自定义规则 → 创建规则。
   - 国内直连、高稳定、多模型 AI API 中转，支持 GPT-4o/Claude Opus 满血，企业级技术支持。
 - 另外确定目标用户：
 
-01.                                                                                                                                                                                     个人开发者：
+01.                                                                                                                                                                                             个人开发者：
 特别厉害的个人开发者其实自己也可以解决我刚刚写的那些东西，所以我就不跟这些人卷了，我去闲鱼上找了很多代写项目，毕业设计，软件开发的开发者，这部分人一般懒得折腾，不懂如何配置号池。
 
-01.                                                                                                                                                                                     ai套壳创业者：
+01.                                                                                                                                                                                             ai套壳创业者：
 他们需要稳定的api，高并发，子账号，针对这部分用户定制了一些企业级的面板和技术支持，然后去三四线城市的boss直聘/转转找各种ai创作视频，装修，ai做本地服务的小团队小企业，跟他们聊合作。
 
-01.                                                                                                                                                                                      中小企业/传统行业/实验室
+01.                                                                                                                                                                                              中小企业/传统行业/实验室
 他们需要合规，开发票，私有路由，所以我在国内开了个公司，给他们走合规公司签单。
 
 其次就是做seo，小红书，抖音，比如我这篇文章就是一篇seo，seo的核心就是why what how 通过教别人如何搞中转站，如何使用claude code获取流量，当然你也可以发布在知乎掘金csdn个人博客V2EX、NodeSeek、SegmentFault、Linuxo
@@ -2241,7 +2454,51 @@ https://makerich.club/ chong 这个渠道不是源头，也是流传最久的渠
 
 - ## 
 
-- ## 
+- ## [TrueSOTA 中转站答佬友问｜$20 能用多久，Luna、生图和 Claude 预告 - LINUX DO _202608](https://linux.do/t/topic/2745388)
+  - Luna：输入 $0.07，输出 $0.42，缓存 $0.007
+  - Luna 我们还在正常供给，而且是真便宜。新用户送的 $20，如果简单粗暴地全按 Luna 输入算，大约是 2.86 亿 Token；全按输出算，也有 4762 万 Token。
+
+- 
+- 
+- 
+
+- ## [自己注册gpt free用luna疑问 - LINUX DO _202608](https://linux.do/t/topic/2735981)
+- 这肯定要根据你的需求了，free 号月限用一个少一个。
+自用 free 号池使用 luna 虽说够用，前期可能成本确实比较低，但是，长久以来感觉还是不划算，还要面临滥用封号的风险，再者，要不就找那些能用 luna 的中转站都比自建 free 号池稳定划算
+
+- 不好用，我也是今天刚折腾。free 号一个号现在就只能用 1$ 差不多 20M 的样子，而且我不知道是不是我工具的问题还是 luna 模型的问题。一旦上下文较长了，模型就罢工返回处理部了了。 而且自己注册号都得接码，所以很不划算
+
+- 我是觉得 luna xhigh 都都比 dsf 好用多了，除了速度慢
+
+- 不赚钱，还把中转站负载弄得很高。我试过，一个免费账号好像能问 300 多次 luna max.
+
+- 楼主你组 free 号池了吗？我用注册机 指纹浏览器 + 家宽 + 人工模拟注册的 free 账号一个多小时就 g 了你是怎么整的？
+
+- 域名邮箱 + gmail+hotmail 组号池，有便宜几分钱接码。
+
+- [GPT luna降价后，组free号池的性价比是不是高了很多？  - LINUX DO _202608](https://linux.do/t/topic/2683988)
+- 其实是可以批量注册 + 批量接码，成本可以做到趋于 0，但现在的问题是 free 经常掉号，二次认证，已经不想折腾了。
+- 有注册机，但是注册出来的账号都需要接码，成本太高了。
+
+- ## [测了一下 gpt-free 账号的 luna和terra 额度 - LINUX DO _202608](https://linux.do/t/topic/2739318)
+  - 测试条件：固定提示词、reasoning.effort=max、串行请求、30 天额度窗口。
+  - Luna 和 Terra 使用同一个 Codex Free 30天额度池
+  - Terra 的额度消耗权重明显高于 Luna，不能简单按请求次数或裸 Token 数量互换计算
+  - Luna Max:  150w ~ 160w Token
+  - Terra Max: 16w ~ 17w Token
+
+- bug 账号可以做到 Luna max 周限 100M 额度，现在应该是优先级不高 总是 502
+
+- 但是目前注册的 free 号要接码才能用在 codex 中，大佬有什么方法可以绕过接码么？谢谢
+
+- 我还发现一个问题，刚注册的 free 不能拿来用，要养一段时间才行，我刚注册的 free 用了几下都寄了，但是之前 5 月底大封杀留下来的那一批还能狠狠用（而且额度比昨天刚注册的还多）
+
+- ## [GPT Free 号为啥有的是周限额有的是月限额 - LINUX DO _202608](https://linux.do/t/topic/2771719/5)
+- 十分之一的概率有这种 7 日周限号，但是下一轮额度就变回月限，额度没有特别之处，
+  - 现在 5.5 额度 200k，luna4M（今天数据
+
+- free 账号目前绝大部分都是月限额，周限额的号出现的概率非常的低但是有，具体原理不清楚
+- 我有 10 来个，后面刷了几次又变成月额度了
 
 - ## [分享个白嫖opencode 模型的方法 - LINUX DO _202608](https://linux.do/t/topic/2704105)
   - Base Url: https://opencode.ai/zen/v1
@@ -2511,13 +2768,13 @@ Hugging Face 🇺🇸 Llama 3.3 70B, Qwen2.5 72B, Mistral 7B +many more. $0.10/m
 - 一个是卖钱的正式版，一个是对话用于训练的免费公测版。测试版不一定弱，但 Ta 是测试版。
 
 - ## 💡 [【长期更新-授人以鱼不如授人以渔】公益站渠道公示（人人都可搭公益？） _202601](https://linux.do/t/topic/1477161)
-  01.                                                 q2api(claude)
-  02.                                                 英伟达ai平台（大部分开源模型）
-  03.                                                 hf抱脸（大部分开源模型）
-  04.                                                 groq平台
-  05.                                                 硅基流动平台
-  06.                                                 富可敌国平台（duck已许可分发付费站anti, 正在申请分发max）
-  07.                                                 杂七杂八的短效羊毛平台（国外）
+  01.                                                           q2api(claude)
+  02.                                                           英伟达ai平台（大部分开源模型）
+  03.                                                           hf抱脸（大部分开源模型）
+  04.                                                           groq平台
+  05.                                                           硅基流动平台
+  06.                                                           富可敌国平台（duck已许可分发付费站anti, 正在申请分发max）
+  07.                                                           杂七杂八的短效羊毛平台（国外）
 
 - [还有可以白嫖opus的平台嘛  ](https://linux.do/t/topic/1510785)
 

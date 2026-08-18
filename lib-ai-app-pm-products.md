@@ -276,7 +276,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 # draft
 - usecases(有特色不代表有需求)
-  - 使用频率: markdown > editor > ocr
+  - 使用频率: markdown > editor > ocr, pdf-editing > bases > ocr
 
 - toB-ai
   - 企业需要支持快速集成现有系统、权限、日志审计
@@ -285,6 +285,7 @@ modified: 2025-03-22T16:10:24.856Z
   - pdf-vector bundle 格式, 
     - 优点: 可以隐藏原文但支持搜索
     - 缺点: 体积大，vector/dimension缺乏标准
+- spinedigest: 一次处理完，所有中间结果（Chunk、图谱、Snake、总结）全部打包进一个 .sdpub 文件。以后想重新导出成 Markdown、EPUB、纯文本……完全不需要再跑 LLM，秒级完成。
 
 - pdf
   - gitbook-like viewer, mdBook, sharing without editing
@@ -297,8 +298,6 @@ modified: 2025-03-22T16:10:24.856Z
   - pretext
   - ooxml editing
   - agentfs
-
-- spinedigest: 一次处理完，所有中间结果（Chunk、图谱、Snake、总结）全部打包进一个 .sdpub 文件。以后想重新导出成 Markdown、EPUB、纯文本……完全不需要再跑 LLM，秒级完成。
 
 - translation
   - 基于ai的翻译对比阅读
@@ -349,6 +348,9 @@ modified: 2025-03-22T16:10:24.856Z
     - versions/comparison
     - citation or not
 
+- unify doc-editing with browser-use
+  - 参考类似claude-design/browser-use的ux, 优化 ai editing 的能力和ux
+
 - omni
   - audio
   - video
@@ -365,12 +367,12 @@ modified: 2025-03-22T16:10:24.856Z
 
 - selling-points
   - non-goals: local image gen
-  - 易用性: 模型推荐 + 场景优化的提示词 + 多模型/多版本对比
+  - 易用性: 模型推荐 + 场景优化的提示词 + 多模型/多版本对比, 使用频率高
     - llm ux: natural language as interface
     - 对同一场景, 如翻译/ocr, 针对不同模型内置合理的参数且支持配置
     - pdf: ocr(提取table/chart), editing(proof/布局), rag(citation)
     - pm: llamaparse-extract( **mineru/paddleocr**/mistral/本地/远程), cowork(docx-xml/databases/**ilovepdf** ), notebooklm(citation)
-    - later: GPU硬件+model量化(ai难取代), Image, TableAI, Audio, 翻译, 多维表格, ai-design/lovable, 
+    - later: GPU硬件+model量化(ai难取代), TableAI, Image, Audio, 翻译, 多维表格, ai-design/lovable, 
       - hybrid-ai-with-ssd-caching, eidting-with-brower-use, sandbox-with-just-bash, db-derived-files-sync-dbfs+backlinks
       - doc-ask, doc-mgmt like paperless-ngx
       - pretext-edit
@@ -606,6 +608,13 @@ modified: 2025-03-22T16:10:24.856Z
 
 - news-feed/crawler
   - reddit/hacker-news上的热门讨论
+
+## draft-modelbase
+
+- model-pricing for coding plans
+  - pricing/1M
+  - 订阅价格和token需要换算
+  - [[排行榜][08.17 更新]各家plan每1亿token消耗RMB - LINUX DO _202608](https://linux.do/t/topic/2756196)
 # 💎 ai-pdf/docs
 - pdf
   - gitbook-like viewer, mdBook, sharing without editing
@@ -786,7 +795,7 @@ modified: 2025-03-22T16:10:24.856Z
     - glm-4.7在处理monorepo的import路径、vite方面明显不如claude-opus
 # ai-office
 - 产品方向: ask、生成、集成
-  - core-features: improve, shorter, longer, fix/checker, translate
+  - core-features: improve, shorter, longer, fix/checker, translate, tone/humanize/short/formal/playful
 
 - ai-ppt 🌗
   - 🔡 尝试用code generation的思路来实现ai ppt

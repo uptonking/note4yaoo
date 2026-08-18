@@ -184,6 +184,19 @@ you might refactor/reorganize the tests architecture/logic to make it correct, f
 
 ### superdoc v2
 
+project `begonia` (in current folder) is inspired by project `superdoc` v1(at folder `../superdoc` ). superdoc provides a powerful editing solution for documents like .docx. `../superdoc/packages/super-editor/src/editors/v1` is the source code for v1 editor. 
+- there is a superdoc v2 editor coming soon. some work/code is already done at `./superdoc2.` 
+- superdoc v2 docx-engine beta code for `@superdoc/docx-engine` package has been released at `../superdoc-v2-beta/docx-engine`, just minified code, not source code, the core file is `../superdoc-v2-beta/docx-engine/dist/docx-engine.es.js`. 
+- `@superdoc/docx-engine` package is internal package at heavy testing stage, but source code is deleted by mistake, so code is lost. 
+
+- The goal is to reimplement the source code of npm package `@superdoc/docx-engine` using typescript at `./superdoc2/docx-engine`, you have implemented some parts of the goal, for example reimplement `../superdoc-v2-beta/docx-engine` at `./superdoc2/docx-engine/src`, all code/scripts/docs related to superdoc v2 should be put in folder `./superdoc2`. begonia is a experimental editor, please reimplement superdoc v2 code so that we have a concrete implementation details of v2 editor to improve begonia editor in the future. you may reuse the exisiting @superdoc/docx-engine code/types-definitions directly, deep analyze the minified esm js code, then try to reimplement the typescript code of `../superdoc-v2-beta/docx-engine` at `./superdoc2/docx-engine`. mostly you only work at `./superdoc2/docx-engine`, other folders/files should be changed as less as possible, after you finish the work, all tests under `./superdoc2` should pass.
+- you should reimplement `@superdoc/docx-engine` typescript code close to the released esm code for compatibility, so that it is easy to swap the package in the future. when you implement `@superdoc/docx-engine`, begonia should not be used as a reference, the released minified v2 beta code like   `../superdoc-v2-beta/docx-engine/dist/docx-engine.es.js` or `../superdoc-v2-beta/docx-engine/dist/assets/` are really good references. 
+
+- you have already reimplemented part of `@superdoc/docx-engine`, but not robust. 
+- please recheck migrated `@superdoc/docx-engine` features and improve the implementation at  `./superdoc2/docx-engine`. 
+- you might update/improve the testing/scripts/toolchain under `./superdoc2`, but mostly you only work at `../superdoc2/docx-engine`, for other sub packages, most source code should not be changed. source code in other sub packages is already good, you might improve/refactor `./superdoc2/docx-engine` to match the other packages' data-structure/state/types/tests. code at `./superdoc2/docx-engine` should work well with the rest of superdoc v2 code at ``./superdoc2`.
+- please compare the implementation logic/code of `./superdoc2/docx-engine` with logic/code of `../superdoc-v2-beta/docx-engine` to recheck and enhance the correctness of architecture and logic in `./superdoc2/docx-engine`, find possible bugs in code and fix them, refactor code if you need, make major features implementations in `./superdoc2/docx-engine` correct, modular, extensible for long-term maintenance. 
+
 - `./superdoc2` is a experimental toy that might be a reference for begonia in the future, just ignore all files at `./superdoc2` for now.
 
 - the latest minified code for `@superdoc/docx-engine` npm package is at `../superdoc-v2-beta/docx-engine`, please analyze the minified code and related superdoc v2 code if you want, then continue to restore and improve superdoc v2 at `./superdoc2/docx-engine`.
@@ -197,12 +210,26 @@ you might refactor/reorganize the tests architecture/logic to make it correct, f
 
 #### draft-v2
 
-- I have updated some superdoc v2 code at `./superdoc2/shared` and `./superdoc2/packages`, the toolchain/build/tests scripts might be broken now. please analyze all the package.json and scripts, then fix the package versions in npm workspaces.
+- I have updated some superdoc v2 code at `./superdoc2/shared` and `./superdoc2/packages`, the toolchain/build/tests scripts might be broken now. please analyze all the package.json and scripts, then fix the package versions/tsconfig/toolchain in npm workspaces.
   - generally source code inside src folder for `./superdoc2/shared` and `./superdoc2/packages` should not be changed, but you might change the source code at `./superdoc2/docx-engine`. Mostly you should fix the package config and scripts. 
-  - package `./superdoc2/docx-engine` is a typescript reimplementation of folder `../superdoc-v2-beta/docx-engine`, you might refer to the minified code at `../superdoc-v2-beta/docx-engine` if you want to change `../superdoc-v2-beta/docx-engine`.
+- package `./superdoc2/docx-engine` is a typescript reimplementation of folder `../superdoc-v2-beta/docx-engine`, you might refer to the minified code at `../superdoc-v2-beta/docx-engine` if you want to change `../superdoc-v2-beta/docx-engine`.
   - after your fix/improvement, then run the full tests, fix/improve the toolchain/build/tests in ./superdoc2. 
 
 - core implementation for major features should be framework-agnostic without react, ui wrappers/bindings should be sub packages, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
+
+- superdoc v1(at folder `../superdoc`) has a lot of common design with superdoc-v2-beta like FlowBlock/layout-engine/DomPainter/..., you may reuse or refer to the code if you want. there is also some historical code from superdoc v1 that may be a good reference, you might reference the v1 code/commits if you want. 
+  - some historical git commits from v1:
+  - `0f1806248` (2026-03-27): restructures SuperEditor under `editors/v1` to prepare for multiple editor versions.
+  - `16f70fb3e` (2026-05-18): adds editor-neutral layout identity and hit mapping.
+  - `7e11b28b7` (2026-06-16): public-minimal v2 port, explicitly marked as ported from private `superdoc/orbit`.
+  - `388224d45` (2026-06-17): adds the v2 package/runtime shell and v1 wiring; the commit metadata says most source paths were private and omitted.
+  - `46e30cc76` and `cd4cea9a0` (2026-06-18): historical v2 host/wiring fixes.
+  - `873dd2545` (2026-06-23): reverts the public v2 integration and removes the v2 runtime/integration files from the current line.
+
+- after you finish the superdoc v2 reimplementation, you may add some examples at `./superdoc2/examples` to showcase the core features of superdoc v2 editor.
+
+- please read related code and deep analyze the core architecture of v2 beta and v1, what are the differences between v1 and v2 editor. compare the major architectre/data-flow, editing-related features, agent features, ... Deep analyze the core architecture/features of v1 and v2 beta, explain to me the differences, whether it is easy to upgrade from v1 editor to v2 editor.
+  - finally write your findings/results to file v2-editor.md.
 
 ### docx-editor
 
@@ -1151,7 +1178,7 @@ document what you have migrated from which commit id for future migration refere
 - the tests/scripts/commands you just run took huge memory and is very slow. maybe there is some memory leak or lack of logic to stop running some commands/scripts/tests. 
 - please recheck related implementation-logic/tests, improve it and make it correct and fast. 
 
-- try to improve/refactor the full tests to make it faster so that full tests running within 2.5 minutes.
+- try to improve/refactor the full tests to make it faster so that full tests running within 150s.
 - improve the slow/complicated/heavy parts of tests, 
 you might refactor/reorganize the tests architecture/logic to if it helps to make it correct, fast, robust, maintainable in the long term.
 

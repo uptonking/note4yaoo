@@ -113,7 +113,60 @@ modified: 2026-05-28T20:48:22.013Z
   - It's not cheaper than API calls (OpenRouter is free for Gemma)
 - We're keeping it anyway. I think it's the future. Other browsers will add their own AI models. We'll get consistent cross-platform APIs. I also like the privacy aspects of local inference. The more we use it, the more we'll see optimizations from OS, browser, and hardware vendors.
 
+# discuss-model-config
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Weirdly, no one talks about Temperature setting for the Qwen3.8 27b : r/LocalLLaMA _202608](https://www.reddit.com/r/LocalLLaMA/comments/1vr3cma/weirdly_no_one_talks_about_temperature_setting/)
+  - it is 1.0 by default, yet everyone is focused on how much the new model thinks, restricting the reasoning budget and/or dropping the reasoning level.
+  - Set the temperature to 0.7 and the model will no longer write a whole book of thoughts before trying to make a small edit in the file.
+  - The question is - how much does this affect the model's capabilities? What is the sweet spot for the temp parameter for various tasks?
+
+- The temperature determines how it selects tokens - the higher the temperature, the more random the next token can be. So for writing you might want a high temperature to get variety in your text, but for coding a lower one.
+  - High for making plans, lower for delivering them.
+
+- Unsloth's recommended parameters for Qwen 3.8 (https://unsloth.ai/docs/models/qwen3.8#qwen3.8-27b-settings) suggests setting temperature = 1.0 for thinking, so I think lots of people have just stuck with the recommended parameters.
+
+- SillyTavern sub and server talk more about settings. Good place to find experiences. 
+
+People complain their LLM sound too robotic but they don't even use xtc and dry, run really really rigid top k samples then wonder why their model behaves uptight.
+
+Edit: not recommending xtc sampler for code. I actually haven't tried it but don't hold high hopes. Anyone experiments I'd love to hear though. I can't run coding sized models locally so I can't experiment.
+- top p and top k are the "default"
+
+min p is better but might slip into repetition
+
+DRY is the one you should embrace 100%
+
+dynatemp and mirostat are niche
+
+rep pen, presence pen, some other pen - obsolete
+
+XTC is a crazy gimmick
+
+typical p is my favorite for creative writing but a lot of people find it unreliable
+
+- I'm no coder but I'm absolutely in love with typical_p, which people love to dunk on. In my experience, some relatively sane 0.92-0.94 values can be used as a mono-sampler instead of top_p, which is rigid as a stack of bricks.
+
+Yeah occasionally a weird thing slip in but that's why we have swipes.
+
+and I used to swipe rigid braindead top p answers a lot more. typical is a lot more fun in my experience
+
+- I’d expect XTC to produce dumpster code. Honestly I’m experimenting with a llama.cpp patch that turns temperature to 0.1 for primary generation, 0.0 during tool call fences and otherwise 1.0 during reasoning. You want code to be as Top-Choice as possible in almost all cases. 
+
+- don't use it for code. It will break your syntax/formatting. It picks a less likely token, remember.
+
+- People typically test new models using recommended parameters and provide feedback based on their specific use cases. I don't think there's anything wrong with this. The primary goal is task completion rather than parameter experimentation, as not everyone has the time to fine-tune settings.
 # discuss-models/small
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

@@ -146,6 +146,9 @@ modified: 2026-05-28T17:50:54.646Z
 
 ## local-models
 
+- 本地模型和厂商模型api的区别
+  - 本地模型想要速度更快体验更好需要设置较低的temperature， 而这会影响输出质量
+
 - port model-specific skills to aichorage
 
 - [skills for Deploy MiniCPM5-1B with LM Studio](https://github.com/OpenBMB/MiniCPM/blob/main/skills/minicpm5-deploy-lmstudio/SKILL.md)

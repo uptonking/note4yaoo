@@ -433,6 +433,13 @@ modified: 2023-04-04T03:59:40.928Z
   - 不过 OR 的数据也挺有意思，年化营收 $1.4 亿，毛利约 $1亿，毛利率 70%。
   - 啥概念呢？NVIDIA毛利率也就约 75%，而 OpenAI/Anthropic 只有 40% 左右，可以说这是个一本万利的生意了
 
+- https://x.com/maxleiter/status/2089152931228741632
+- companies that sell tokens get a very high revenue multiple now. it just makes sense for Stripe to acquire a company with an high tokens revenue just before IPO. just like SpaceX did with Cursor
+- Overthrowing OpenRouter in 2026 is borderline impossible, need:
+  - Enterprise-level relationships with 75+ inference providers
+  - Industry-leading team and model-routing understanding
+  - 10M+ users, all with applications built around OpenRouter
+
 - ## AI API中转这门生意，本质是做AI模型的中间商：上游对接OpenAI、Claude等海外大模型，下游把接口打包卖给个人或小团队，中间做精准计费和分发，赚的是Token差价。
 - https://x.com/yrftxzjl/status/2065039586280214609
 - 但真正赚钱的人玩的是组合拳，常见的四种正规盈利模式如下：
@@ -503,13 +510,13 @@ modified: 2023-04-04T03:59:40.928Z
 - ## 为什么有中转站这种业务存在
 - https://x.com/Jason_Young1231/status/2062124505057960270
 - 中转站有以下优点：
-  01.         一次付费支持多家模型
-  02.         不需要走代理
-  03.         能开发票走公司报销
+  01.            一次付费支持多家模型
+  02.            不需要走代理
+  03.            能开发票走公司报销
 2和3是刚需
 - 缺点也很明显：
-  01.         无法保证你在用的模型是啥，掺假是公认事实，良心商家无法保证
-  02.         诚信的商家成本降不下来，用户也认不出来模型差异，劣币驱逐良币，或者商家抱紧企业用户大腿。
+  01.            无法保证你在用的模型是啥，掺假是公认事实，良心商家无法保证
+  02.            诚信的商家成本降不下来，用户也认不出来模型差异，劣币驱逐良币，或者商家抱紧企业用户大腿。
 
 - 最重要的：不封号
 

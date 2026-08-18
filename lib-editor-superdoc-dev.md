@@ -84,6 +84,9 @@ modified: 2026-04-20T00:35:08.788Z
 - editing
   - 兼容分页和不分页2种模式
 
+- unify doc-editing with browser-use
+  - 参考类似claude-design/browser-use的ux, 优化 ai editing 的能力和ux
+
 - spec/format
   - bridge typst to superdoc
 

@@ -37,6 +37,25 @@ modified: 2024-09-02T02:28:27.398Z
 - 更喜欢cursor聊天式帮忙生成代码。
 
 - 做工程不会拿着ai一路问到底的，cursor 就项目初开的时候用得多，路走顺了，就一个copilot帮补一下。
+# discuss-pricing
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Cursor Auto Mode in 2026-Aug - Community Forum _202608](https://forum.cursor.com/t/cursor-auto-mode-in-2026-aug/167118)
+- On Pro Individual, Auto is currently the classic Auto, which in the new terms is called Auto Cost. The key point is pricing is a flat per token rate, no matter which model the router picks in the background. If Auto ends up using a frontier model under the hood, like Grok 4.5, you still get charged the fixed Auto rate, not that model’s rate. That leads to two things: 1 Auto is often cheaper for many tasks than manually picking the same model, and 2 Auto Cost gives you a predictable spend cap because the rate is fixed.
+  - Auto Cost is a fixed rate regardless of which model the router uses under the hood, and its cache read rate is about half of Grok 4.5 ($0.25/1M vs $0.50/1M). So even with similar output pricing, the real total session cost on Auto Cost often ends up cheaper than manually selecting Grok, especially in long chats with lots of context.
+  - Auto often routes to Grok 4.5 under the hood anyway, but you’re charged the flat Auto Cost rate, not the model’s own rate.
+  - Flat rate means predictability. The per token price doesn’t change depending on which model the router picked.
+  - So picking Grok manually makes sense when you specifically need that model’s behavior or you want full determinism in model choice. If you don’t need that, Auto Cost is usually cheaper in practice.
+- The new Auto rework with three modes Cost, Balance, Intelligence is Cursor Router, and according to the team it’s currently only available on Teams and Enterprise. It’s not on individual plans yet. 
+  - When Router comes to individual plans, it’s worth double checking billing: Cost should keep the current flat rate logic bundled Auto pricing, while Balance and Intelligence will be charged at the rate of the model that actually gets picked. Let me know if anything’s still unclear.
+- About the pool: Auto, Grok 4.5, and Composer 2.5 all draw from the same first party Cursor Models pool. That’s by design, not a change specific to Auto.
+
 # discuss-tips
 - ## 
 

@@ -308,6 +308,20 @@ modified: 2026-06-20T15:49:57.019Z
   - 公益站多帐号的兑换码一般未与用户绑定，可以兑换到其他用户，甚至延迟兑换，这样可以将兑换码的额度接力使用而不触发限流
   - 在ldstore卖兑换码的公益站就是活着的，按销量排序就能去试用了
 
+- free-tokens
+  - opencode 多用几个账号
+  - gpt free
+  - cursor free
+  - grok free
+  - openrouter/free
+  - nvidia
+  - amd-radeon-tokenfactory
+- 自己动手维护free账号的工作
+  - 注册邮箱
+  - 网络
+  - 手机号验证、 二次验证、多次验证
+  - 支付方式
+
 - [最新跳蚤市场话题 - LINUX DO ](https://linux.do/c/trade/10)
   - [最新积分乐园话题 - LINUX DO ](https://linux.do/c/credit/106)
   - [LD士多 - LinuxDo站点积分兑换中心](https://ldcstore.com/)
@@ -2232,6 +2246,20 @@ modified: 2026-06-20T15:49:57.019Z
   - [AI中转站推荐 | Claude/Gemini/Codex中转站评测对比](https://www.helpaio.com/transit)
     - 评分结果与L站评分基本一致
     - 提供了很多折扣码
+
+- gpt-5.6-luna
+  - https://dddai.dev/pricing  /0.2x--0.04--0.004/作者加入L站时间短
+    - [【富可敌国】Claude Fable 5 / Gemini 3.7 / Grok 4.6 都能用，gpt-5.6-luna 不限制 _202608](https://linux.do/t/topic/2737252)
+    - 闲时倍率为 0.2x0.98, 还有日卡/月卡
+  - https://www.jiji.cc/keys  /0.2x--0.04/Luna单独分组/作者加入L站时间长
+    - [【富可敌国】几块钱能蹬一天的luna大家都停了，我们继续 _202608](https://linux.do/t/topic/2758706)
+    - [【富可敌国】想钱想疯了，佬们一起来做个中转站 - LINUX DO _202607](https://linux.do/t/topic/2587271)
+  - https://kuaipao.pro/pricing  /0.5x
+  - https://www.rightapi.ai/models  /0.4x--0.08--0.008/10rpm
+  - https://codexapis.com/pricing   /0.085--0.0085
+  - https://tkapi.cc.cd/keys   /0.1x/似乎不能用
+    - [【快跑AI】长期GPT-5.6 特价分组 0.08倍率 180+稳定渠道 已同步Luna/terra 支持企业对公开清单 LINUX DO _202608](https://linux.do/t/topic/2679908)
+    - gpt-5.6-luna 因蒸馏问题已全部下架
 
 - [zzshu /NewAPI ](https://zzshu.cc/pricing)  , 长期运营
   - [吱吱鼠AI的小店 - 云猫寄售 ](https://catfk.com/shop/SXS913NA)

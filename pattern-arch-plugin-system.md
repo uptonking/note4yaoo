@@ -182,7 +182,7 @@ class Plugins {
 
 ## 🔌🆚️ [figma: How to build a plugin system on the web and also sleep well at night _201908](https://www.figma.com/blog/how-we-built-the-figma-plugin-system/)
 
-> Since we published this blog post, we decided to **change our sandbox implementation to an alternative approach**: compiling a JavaScript VM written in C to WebAssembly. As you'll see in the blog post below, it was one of several ideas we originally weighed.
+> Since we published this blog post, we decided to **change our sandbox implementation to an alternative approach** : compiling a JavaScript VM written in C to WebAssembly. As you'll see in the blog post below, it was one of several ideas we originally weighed.
 > We decided to implement this alternative after a security vulnerability in the Realms shim (which our original approach uses) was privately disclosed to us.
 
 - [An update on plugin security _201910](https://www.figma.com/blog/an-update-on-plugin-security/)
@@ -420,7 +420,7 @@ class Plugins {
   - how extension points work. It's pretty simple with two parts:
     - Define/use extension point in an extensible module/component.
     - Define plugin object structure following the extension point.
-  - **Every plugin is just a JavaScript object**, normally every path to leaf property means it contribute some extension point.
+  - **Every plugin is just a JavaScript object** , normally every path to leaf property means it contribute some extension point.
 
 - https://github.com/e0ipso/plugnplay /202110/js/inactive
   - Plugin system for reusable code in node.js
@@ -545,6 +545,15 @@ class Plugins {
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Software engineering is very cyclical. RCP, OSGi, obsessive pursuit of plugins has led to nightmares in the past. 
+- https://x.com/tantaman/status/2089333688953692341
+  - We seem to see “new thing” which is actually “old thing” and try to use it everywhere then violently react to “opposite thing.”
+  - once people go far enough down the plugin path they’ll be shouting nothing should be a plugin.
 
 - ## Since you can access webpack by runtime injection, should webpack still be listed as peerDependency of webpack-xxx-plugin ?
 - https://twitter.com/hardfist_1/status/1754740402580820368

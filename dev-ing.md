@@ -296,6 +296,7 @@ launchctl stop com.donehub && launchctl start com.donehub
 launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.donehub.plist
 
 launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.newapi.plist
+launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.newapi.plist
 
 launchctl stop com.cpap && launchctl start com.cpap
 
@@ -343,6 +344,12 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - ?
 - dev-log
   - ?
+
+## 0817
+
+- 
+- 
+- 
 
 ## 0816
 
