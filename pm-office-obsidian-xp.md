@@ -68,6 +68,7 @@ modified: 2026-06-30T17:32:43.131Z
   - offline-editing
   - sync
   - collab with agent
+  - 支持只作为ui使用， 支持自定义server
 
 - goals
   - publish/site: github for obsidian bases

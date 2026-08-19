@@ -691,6 +691,18 @@ modified: 2025-02-21T18:20:42.624Z
   - The `activate` command allows you to set up environment variables globally in your shell, enabling you to use the claude command directly or integrate Claude Code Router with applications built using the Agent SDK.
     - `eval "$(ccr activate)"`
 
+- https://github.com/lbjlaq/Antigravity-Manager /30.5kStar/CC-NC/202608/rust/ts
+  - https://lbjlaq.github.io/Antigravity-Manager/
+  - 专业级 AI 账号管理与协议代理系统 (v4.5.6)
+  - 专为开发者和 AI 爱好者设计的全功能桌面应用。它将多账号管理、协议转换和智能请求调度完美结合，为您提供一个稳定、极速且成本低廉的 本地 AI 中转站。
+  - 将常见的 Web 端 Session (Google/Anthropic) 转化为标准化的 API 接口，消除不同厂商间的协议鸿沟。
+  - 全局实时监控: 一眼洞察所有账号的健康状况，包括 Gemini Pro、Gemini Flash、Claude 以及 Gemini 绘图的 平均剩余配额。
+  - 最佳账号推荐 (Smart Recommendation): 系统会根据当前所有账号的配额冗余度，实时算法筛选并推荐“最佳账号”，支持 一键切换。
+  - 多维度导入: 支持单条 Token 录入、JSON 批量导入（如来自其他工具的备份），以及从 V1 旧版本数据库自动热迁移。
+  - 全协议适配 (Multi-Sink): openai, anthropic, gemini
+  - 多模态与 Imagen 3 支持: 超强 Body 支持, 后端支持高达 100MB (可配置) 的 Payload，处理 4K 高清图识别绰绰有余。
+  - 
+
 ## router-cn
 
 - https://github.com/CrisXie4/ModelBridge /apache2/202606/python
@@ -1031,6 +1043,9 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/maowuzz/chatgpt-session-forge /202605/js
   - 一个本地运行的 ChatGPT 会话管理工具，用于导入 Outlook 账号、自动获取 OpenAI 邮箱验证码、批量完成 ChatGPT 登录，并导出 CPA / sub2api / Cockpit 可用的凭证 JSON。
 # model-2api
+- tips
+  - 不要在小众反代上花费过多时间, 市场上低价容易购买的grok号都是cpa/sub2api, 而不是omniroute
+
 - https://github.com/star5o/reverse-check /MIT/202504/js/vue
   - https://reverse-check.no-reverse-api.com/
   - LLM API 逆向检测工具
@@ -1042,6 +1057,8 @@ modified: 2025-02-21T18:20:42.624Z
   - Wrap Gemini CLI, Antigravity, ChatGPT Codex, Claude Code, Qwen Code, iFlow as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini 2.5 Pro, GPT 5, Claude, Qwen model through API
   - A proxy server that provides OpenAI/Gemini/Claude/Codex compatible API interfaces for CLI.
   - It now also supports OpenAI Codex (GPT models) and Claude Code via OAuth.
+  - https://github.com/router-for-me/EasyCLIProxyAPI
+    - graphical desktop management tool built on CLIProxyAPI
   - [API Key issue _202510](https://github.com/router-for-me/CLIProxyAPI/issues/181)
     - 🍎 mac上通过homebrew安装后配置文件在 `/opt/homebrew/etc/cliproxyapi.conf`.
   - [fix: Implement fallback log directory for file logging on read-only system _202512](https://github.com/router-for-me/CLIProxyAPI/pull/772)
@@ -1064,6 +1081,8 @@ modified: 2025-02-21T18:20:42.624Z
   - https://github.com/router-for-me/Cli-Proxy-API-Management-Center /MIT/202601/ts
     - a WebUI interface based on CLI-Proxy-API, designed to simplify configuration modifications and runtime status monitoring.
     - Since version 6.0.19, the WebUI ships with the main program; access it via `/management.html` on the API url
+  - https://github.com/seakee/CPA-Manager-Plus /MIT
+    - self-hosted CPA / CLIProxyAPI management panel and AI gateway observability dashboard for requests, usage, cost, quota, failures, and account health.
   - https://github.com/seakee/CPA-Manager /MIT
     - [解决 CPA 移除使用统计方法：CPA-Manager - LINUX DO _202605](https://linux.do/t/topic/2103420)
   - https://github.com/router-for-me/CLIProxyAPIPlus /MIT/202512/go
@@ -1078,6 +1097,10 @@ modified: 2025-02-21T18:20:42.624Z
     - [现在不支持 plus 了么... 仓库都删了  _202604](https://github.com/router-for-me/CLIProxyAPI/issues/2951)
       - CPA不会接入没有自主模型的二道贩子
   - https://github.com/kaitranntt/CLIProxyAPIPlus /MIT
+    - https://github.com/kaitranntt/Cli-Proxy-API-Management-Center
+    - 📌 CCS-maintained fork of CLIProxyAPIPlus (MIT snapshot, Apr 2026) with daily auto-sync from router-for-me/CLIProxyAPI. See plans for context.
+    - 支持: Grok, Qoder, Amp
+    - Since v6.10.0, upstream CLIProxyAPI and CPAMC no longer ship built-in usage statistics. CLIProxyAPIPlus preserves this workflow with its usage logger and the maintained CPAMC dashboard fork
   - https://github.com/jc01rho/CLIProxyAPIPlus /MIT
     - openai-compatibility providers (DeepSeek-like, Mistral, Xiaomi)
   - https://github.com/HsnSaboor/CLIProxyAPIPlus
@@ -1098,24 +1121,33 @@ modified: 2025-02-21T18:20:42.624Z
   - 通用 AI IDE 账号管理工具：多账号切换、配额监控、自动唤醒与多开实例管理
   - 十二平台支持：同时展示 Antigravity IDE、Codex、GitHub Copilot、Windsurf、Kiro、Cursor、Gemini Cli、CodeBuddy、CodeBuddy CN、Qoder、Trae 与 Zed 的账号状态
   - 本地 Codex API 服务由内置 `CLIProxyAPI` sidecar 驱动，Cockpit Tools 负责账号同步、配置投影、状态与用量统计；Base URL、API Key 与用户操作方式保持不变。
+  - 🛝
+    - 偏向于账号管理， 而不是反代
 
-- https://github.com/decolua/9router /MIT/202606/js
+- https://github.com/diegosouzapw/OmniRoute /50.6kStar/MIT/202608/ts
+  - https://omniroute.online/
+  - Connect any AI-powered IDE or CLI tool through OmniRoute — free API gateway for unlimited coding.
+  - It started as a fork of `9router` and a TypeScript port of the Go project CLIProxyAPI 
+  - 🐛
+    - 对多账号的支持较差
+    - 仅支持单个cursor ide账号, 实现逻辑有缺陷, 导入时会读数据库  ~/.config/Cursor/User/globalStorage/state.vscdb, 还会定期读数据库来renew
+  - 🛝
+    - dotenvx run -- node scripts/dev/run-next.mjs start
+  - https://x.com/geekbb/status/2073050127275561204
+    - 核心 4 层自动回退，订阅— API Key —便宜—免费，毫秒切换，外加 17 种路由策略，再用 RTK 加 Caveman 堆叠压缩省掉 15–95% 的 token。
+
+- https://github.com/decolua/9router /25.8kStar/MIT/202608/js
   - https://9router.com/#providers
   - Unlimited FREE AI coding. Connect Claude Code, Codex, Cursor, Cline, Copilot, Antigravity to FREE Claude/GPT/Gemini via 40+ providers. 
   - 🐛 不支持 trae, codebuddy, zed
   - free-providers: kiro, opencode, vertex
   - CLIProxyAPI — original Go implementation that inspired this JavaScript port.
 
-- https://github.com/justlovemaki/AIClient2API /GPL/202606/js
+- https://github.com/justlovemaki/AIClient2API /8.7kStar/GPL/202608/js
+  - https://aiproxy.justlikemaki.vip/
   - 模拟AI客户端请求并提供统一API服务
   - [提供商池配置 ](https://aiproxy.justlikemaki.vip/zh/docs/advanced-config/provider-pools.html)
     - 支持的provider不多
-
-- https://github.com/diegosouzapw/OmniRoute /MIT/202606/ts
-  - https://omniroute.online/
-  - Connect any AI-powered IDE or CLI tool through OmniRoute — free API gateway for unlimited coding.
-  - https://x.com/geekbb/status/2073050127275561204
-    - 核心 4 层自动回退，订阅— API Key —便宜—免费，毫秒切换，外加 17 种路由策略，再用 RTK 加 Caveman 堆叠压缩省掉 15–95% 的 token。
 
 - https://github.com/zhalice2011/ProxyLLM /MIT/202601/ts
   - Electron 应用，用于捕获 LLM 网站的浏览器会话，并在本机暴露 OpenAI 兼容 API
@@ -1180,15 +1212,32 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/chaogei/Kiro-account-manager /AGPL/202605/ts
   - Quick account switching, auto token refresh, group/tag management, machine ID management and more
 
-- https://github.com/anyrobert/cursor-api-proxy /202607/ts
+- https://github.com/anyrobert/cursor-api-proxy /MIT/202608/ts
   - OpenAI-compatible proxy for Cursor CLI. Expose Cursor models on localhost so any LLM client (OpenAI SDK, LiteLLM, LangChain, etc.) can call them as a standard chat API.
-  - This package works as one npm dependency: use it as an SDK in your app to call the proxy API, and/or run the CLI to start the proxy server. Core behavior is unchanged.
+  - One npm package, two uses: import it as an SDK, or run the CLI to start the server. Same behavior either way.
   - 支持 /v1/responses, 	/v1/messages
-  - You can use multiple Cursor accounts to distribute load and avoid hitting usage limits. The proxy now includes a built-in account manager that makes this very easy.
+  - This package does not install or bundle the CLI. Install and set it up separately. The proxy prefers cursor-agent on PATH, then falls back to agent. 
+  - 👥 You can use multiple Cursor accounts to distribute load and avoid hitting usage limits. The proxy now includes a built-in account manager that makes this very easy.
+    - `npx cursor-api-proxy login account1`: Opens an isolated browser login. Session saves under ~/.cursor-api-proxy/accounts/ on macOS/Linux
+    - When you start the proxy (npx cursor-api-proxy), it finds all accounts under that directory and adds them to the rotation pool.
+    - Single port, round-robin rotation (default)
+    - Multi-port (one server per account): For explicit client-to-account mapping, use multi-port mode
 
-- https://github.com/standardagents/composer-api /MIT/202607/swift/ts
+- https://github.com/standardagents/composer-api /MIT/202608/swift/ts
+  - https://api-for-cursor.standardagents.ai/
   - Local OpenAI-compatible chat.completions and responses endpoints backed by Cursor models (Composer 2.5, Grok 4.5, and more).
+  - ships as a local macOS app that starts a localhost /v1 server, stores the Cursor API key locally, and configures local agent tools.
+  - This project supports text and image input, non-streaming and streaming output, JSON-output prompt constraints, and the common SDK response shapes.
   - 不支持claude-code
+
+- https://github.com/1parado/grok-build-switch /MIT/202608/go/js
+  - https://1parado.github.io/grok-build-switch/
+  - 本地托盘工具：用供应商（Profile）管理 Grok CLI 的 ~/.grok/config.toml。
+  - 一键切换上游 base_url、默认模型、联网搜索模型、subagents 与各 [model.*] 定义。
+  - 首次运行可从当前 config.toml 导入 Default 供应商
+  - 导入 CPA xai-*.json 或 Grok CLI auth.json，由内嵌代理提供稳定的本地 URL/key 并自动刷新 token
+  - Grok 多账号池：批量导入、定时自动巡检、健康分类、坏号自动隔离、健康号轮换与单账号回退
+  - 内置 Grok Build AI 对话工作台：流式回复、工具权限、历史会话续接与工作目录选择
 
 ## browser2api
 

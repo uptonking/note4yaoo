@@ -309,18 +309,19 @@ modified: 2026-06-20T15:49:57.019Z
   - 在ldstore卖兑换码的公益站就是活着的，按销量排序就能去试用了
 
 - free-tokens
-  - opencode 多用几个账号
-  - gpt free
-  - cursor free
+  - gpt free: 自己维护free太折腾、没收益
   - grok free
-  - openrouter/free
+  - cursor free
+  - opencode 多用几个账号/ip
   - nvidia
   - amd-radeon-tokenfactory
-- 自己动手维护free账号的工作
+  - openrouter/free
+- 自己手动维护free账号的工作
   - 注册邮箱
   - 网络
   - 手机号验证、 二次验证、多次验证
   - 支付方式
+  - 对多账号的支持需要手动copy账号token、指纹浏览器...
 
 - [最新跳蚤市场话题 - LINUX DO ](https://linux.do/c/trade/10)
   - [最新积分乐园话题 - LINUX DO ](https://linux.do/c/credit/106)
@@ -1952,6 +1953,9 @@ modified: 2026-06-20T15:49:57.019Z
   - 二手号: 速刷号掉号快, 不会多人用, 质保掉号还是几天, 优先账密而不是token登录
   - ide相比于cc/codex的自动化弱一点, 是否实现了/goal或/loop
   - 月末的优惠: kiro
+  - 不要在小众反代上花费过多时间, 市场上低价容易购买的grok号都是cpa/sub2api, 而不是omniroute
+  - 大多数ide都对多账号登录/试用进行了风控， 对于账号绑定ide/数据库的场景很难突破， 但对于浏览器登录的场景， 可尝试用指纹浏览器， 这样每次从ide/terminal打开登录时都能打开新浏览器页面
+    - 更简单的方式是, 不要点击ui上的退出登录， 直接手动清除浏览器storage, 但还是需要考虑登录后harness客户端将用户token保存在了文件/db的哪里，是否覆盖了
 
 - cursor内置的都是非常高级的模型claude/haiku/gpt/gpt-mini/composer/gemini/grok/glm/kimi, 所以用auto模型完成普通开发也可考虑
   - 在闲鱼搜cursor的转卖也许能碰上好东西
@@ -2054,6 +2058,10 @@ modified: 2026-06-20T15:49:57.019Z
   - 独享官方正品 Pro auto: 质保3天--¥25, 质保20天--¥35
 - [Cursor Pro - 阿泽AI店铺 ](https://94fk.cn/)
   - 按天购买, 似乎50起买
+
+- [linux.do成员每日免费领取 Cursor Auto 账号 ](https://claim.cusors.cloud/)
+  - [手搓cursor free账号给大家玩耍一下 - LINUX DO _202608](https://linux.do/t/topic/2701785)
+  - linux.do 账号每天可以领取 2 个，领取的格式就是：cursor 账号和 cursor 邮箱接码地址
 
 - [Cursor 专卖的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/cursor-pro)
   - cursor--¥80
@@ -2202,6 +2210,14 @@ modified: 2026-06-20T15:49:57.019Z
 - [聊聊AI ](https://talkai.cyou/)
   - gork
 
+- [自行车 Ai 店铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/zxc)
+  - 普号 Grok AI 长效 微软邮箱 账密 SSO 支持 web/build/con ole, ￥0.52
+- [柠檬酱小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/lemon123)
+  - 【Grok 普号】可反代使用grok4.6--
+  - 微软邮箱注册
+  - 高质量住宅 IP 环境
+  - 发货格式 账号----密码----SSO和Sub2API和CPA格式
+  - 全部是正常账号 没有出现bfs风控，遇到降智换IP
 - [GGgrok ](https://ggrokheavy.xyz/pricing)
   - 旧版 [New API ](https://newapi.neokoaigc.com/pricing)
 
@@ -2248,16 +2264,18 @@ modified: 2026-06-20T15:49:57.019Z
     - 提供了很多折扣码
 
 - gpt-5.6-luna
+  - https://www.jiji.cc/model-list  /0.2x--0.04/Luna单独分组/作者加入L站时间长/QQ群活跃
+    - 由于luna这两天不是很稳，我们调整出来单独的分组，以免和pro组冲突影响，用luna的佬们要麻烦在后台的分组切换一下到codex luna分组。旧的分组将会跳转到GPT-5.6-terra。
+    - 为啥大部分中转站把 luna 停掉了？ 不但是亏本，还影响主号。基本是得不偿失
+    - [【富可敌国】几块钱能蹬一天的luna大家都停了，我们继续 _202608](https://linux.do/t/topic/2758706)
+    - [【富可敌国】想钱想疯了，佬们一起来做个中转站 - LINUX DO _202607](https://linux.do/t/topic/2587271)
   - https://dddai.dev/pricing  /0.2x--0.04--0.004/作者加入L站时间短
     - [【富可敌国】Claude Fable 5 / Gemini 3.7 / Grok 4.6 都能用，gpt-5.6-luna 不限制 _202608](https://linux.do/t/topic/2737252)
     - 闲时倍率为 0.2x0.98, 还有日卡/月卡
-  - https://www.jiji.cc/keys  /0.2x--0.04/Luna单独分组/作者加入L站时间长
-    - [【富可敌国】几块钱能蹬一天的luna大家都停了，我们继续 _202608](https://linux.do/t/topic/2758706)
-    - [【富可敌国】想钱想疯了，佬们一起来做个中转站 - LINUX DO _202607](https://linux.do/t/topic/2587271)
-  - https://kuaipao.pro/pricing  /0.5x
   - https://www.rightapi.ai/models  /0.4x--0.08--0.008/10rpm
   - https://codexapis.com/pricing   /0.085--0.0085
   - https://tkapi.cc.cd/keys   /0.1x/似乎不能用
+  - https://kuaipao.pro/pricing  /0.5x
     - [【快跑AI】长期GPT-5.6 特价分组 0.08倍率 180+稳定渠道 已同步Luna/terra 支持企业对公开清单 LINUX DO _202608](https://linux.do/t/topic/2679908)
     - gpt-5.6-luna 因蒸馏问题已全部下架
 
@@ -2716,6 +2734,51 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [极速的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/jishu)
   - Gmail母号 邮箱，正规账号，单账号独立注册。 可用opus4.6  4.7
+
+### outlook-manager
+
+- tips
+  - [使用邮箱管理工具踩过的坑 - LINUX DO _202608](https://linux.do/t/topic/2728175)
+
+- https://github.com/assast/outlookEmail /1.5kStar/MIT/202608/python/ts
+  - https://aso.de5.net/
+  - 面向多邮箱账号场景的邮件管理工具，支持通过 Outlook/Hotmail OAuth、Microsoft Graph API 和标准 IMAP 统一读取、管理和转发邮件，并提供 Web 界面、Chrome/Edge 浏览器扩展，用于分组管理、账号管理、邮件查看和对外 API 调用。
+  - 当前支持 Outlook/Hotmail、Gmail、QQ、163、126、Yahoo、阿里邮箱以及自定义 IMAP 邮箱，同时集成 GPTMail、DuckMail、Cloudflare Temp Email 多提供商临时邮箱能力。
+  - 注意：改密码会导致auth失效，需要重新授权
+  - 普通邮箱本地保留开关 normal_mail_local_retention_enabled 默认关闭。用户需要在系统设置中明确开启后，普通 Outlook/Hotmail 与标准 IMAP 邮箱才会把列表元数据和已查看、补齐过的部分正文保存到本机 SQLite。
+  - Flask 3.0, SQLite, requests, IMAP4_SSL, Microsoft Graph API
+  - 原生 JavaScript - 无框架依赖
+  - [【开源】outlookEmail做了个比较大的更新，完美支持hotmail及其别名邮箱，接入了gmail等主流其他邮箱，支持TG SMTP转发，支持各类邮箱别名 - LINUX DO _202604](https://linux.do/t/topic/1929862)
+
+- https://github.com/daimon3332/OutlookManage /NALic/202608/python/js
+  - Outlook / Hotmail 本地账号管理 WebUI，支持账号批量导入、状态检测（存活/封禁）、令牌刷新与同步。
+  - 以 SQLite 为唯一权威数据源
+  - [【开源】OutlookManage：Outlook/Hotmail 本地管理台（协议测试 + Token 刷新 + 远程池同步 + 滥用封禁） - LINUX DO _202607](https://linux.do/t/topic/2655051)
+    - Outlook/Hotmail 注册机把注册了几千上万隔账号，人工管理非常麻烦。github 有个很好的 Outlook 管理开源项目是：outlookEmail。但是这个项目不方便在本地管理，而且缺少一定的测试功能。
+    - 批量协议测试： 测试邮箱是否被封禁？如果邮箱存活，可以测出来邮箱开通了哪几个协议（Graph / IMAP / POP / SMTP ）？
+    - Token 刷新 + 远程同步：本地刷新成功，同步到远程的 outlookEmail
+    - 邮箱导出：可选导出指定邮箱后缀、存活天数的邮箱，导出前会进行测试。
+
+- https://github.com/ZeroPointSix/outlookEmailPlus /1.9kStar/apache2/202608/python/ts
+  - 面向个人与团队的注册邮箱管理器。
+  - 更聚焦在注册与验证场景，并围绕注册流程做了深度优化。
+  - 专为注册而生：尽量减少注册流程中不必要的操作。你可以一键复制邮箱地址；在注册页发送验证邮件后，回到管理器点击“验证码”，即可自动拉取最新验证邮件，并用正则快速提取验证码或验证链接，尽量减少等待。
+  - 多邮箱账号管理 支持 Outlook OAuth、普通 IMAP 邮箱和 CF Worker 临时邮箱（多域配置，Admin Key 加密存储）
+  - 邮件读取与提取 支持验证码、链接、原文内容读取
+  - 批量导入与分组整理 支持批量导入、标签、搜索、分组、导出
+  - 导入兼容更广：支持主流邮箱导入（Gmail、QQ、163 等），也支持自定义 IMAP 服务器。即使是自建邮箱也能使用；内置 CF Worker 临时邮箱，支持多域配置与 Admin Key 加密，大幅降低注册场景的隐私泄露风险。
+  - 通知能力 支持业务邮件通知、Telegram 推送和测试发送
+
+- https://github.com/gblaowang-i/MailAggregator_Pro /MIT/202603/python/ts/inactive
+  - 基于IMAP协议的多品牌邮箱聚合管理平台
+  - 多邮箱 IMAP 聚合 + 规则打标签 + Telegram 推送
+  - 后端：FastAPI、SQLAlchemy（异步）、SQLite
+  - 前端：React、TypeScript、Vite
+  - 部署：Docker + docker-compose（一容器同时跑前后端）
+
+- https://github.com/ChouHX/MailManager /202607/rust/ts
+  - 独立的 Tauri 2 + React 桌面取件工具，只在本机保存手动导入的 Outlook OAuth 账号。
+  - TXT 文件与文本框手动导入账号
 
 ## accounts
 

@@ -22,6 +22,8 @@ https://us05web.zoom.us/j/7754416829?pwd=TUlMR3dMWEpaajdVR1VNdDR5N29NZz09
 
 ---
 
+sk-947b2d2479365cdc-98ac8a-ce631d70
+
 ```JS
 async function mockCmdkChat() {
   await new Promise((_) => setTimeout(_, 3000));

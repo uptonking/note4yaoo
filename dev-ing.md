@@ -115,7 +115,7 @@ HOST=0.0.0.0 PORT=8080 react-scripts start
 next dev -H 0.0.0.0 -p 3000
 
 npm i -g npm yarn pnpm corepack serve @dotenvx/dotenvx opencode-ai @openai/codex @kilocode/cli @kimuson/claude-code-viewer 
-npm up -g  @openai/codex opencode-ai @kilocode/cli 
+npm up -g  @openai/codex @earendil-works/pi-coding-agent 
 ```
 
 - dev-goals 不能在产品中检验的技术不玩，注意产品化
@@ -298,6 +298,9 @@ launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.donehub.plist
 launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.newapi.plist
 launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.newapi.plist
 
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.omniroute.plist
+launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.omniroute.plist
+
 launchctl stop com.cpap && launchctl start com.cpap
 
 # DATA_DIR=~/sub2api-local-data ./sub2api -setup
@@ -345,9 +348,12 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
-## 0817
+## 0819
 
-- 
+- when I click a link from vscode or terminal, how to make the link open in incognito mode of chrome?  My idea is to open a chrome incognito window, then close all other chrome windows/tabs, then i click the link, will it work?
+  - No
+  - When you click a link in VS Code (or run something like xdg-open/open in a terminal), the OS hands the URL to Chrome as a fresh "open this URL" request — the same as if another app on your system just launched `chrome <url>`. Chrome deliberately does not route that into an already-open Incognito window, even if Incognito is the only window you have open. Instead it spins up a new normal (default-profile) window.
+  - This is intentional: Chrome doesn't let external apps silently drop URLs into a private session, and it doesn't treat "last window was incognito" as a signal to keep opening incognito ones.
 - 
 - 
 

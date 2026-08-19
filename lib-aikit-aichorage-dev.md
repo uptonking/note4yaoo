@@ -67,6 +67,9 @@ modified: 2026-05-28T17:50:54.646Z
 
 ## free-model-today
 
+- pain-points
+  - new-api的各种渠道参数配置比较繁琐， 需要可复现的配置分享
+
 - features
   - latest free models
   - model-wiki: 最重要的部分是双链
