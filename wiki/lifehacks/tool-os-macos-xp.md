@@ -401,7 +401,14 @@ redis-cli shutdown
 
 - ## 
 
-- ## 
+- ## [docker 部署mac 用起来感觉还不错 - LINUX DO _202608](https://linux.do/t/topic/2770234)
+  - apple pay买了土区GPT之后 都是一个月一冲 每次还需要找老婆手机兑换礼品卡 就想着搞个mac虚拟机，找了教程部署发现有问题，问ai找到了docker项目部署了一下 可以正常登录 apple store 和安装代理软件 还挺好用 
+  - https://github.com/dockur/macos
+- 这个不是巨卡无比吗
+
+不过确实也能用
+
+- 首次购买需要手机 我是后面续费 兑换礼品卡用的
 
 - ## [What are some not well known, but powerful apps that you haven’t found anything like? : r/macapps _202606](https://www.reddit.com/r/macapps/comments/1u7ulwk/what_are_some_not_well_known_but_powerful_apps/)
 

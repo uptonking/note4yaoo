@@ -1222,6 +1222,9 @@ modified: 2025-02-21T18:20:42.624Z
     - When you start the proxy (npx cursor-api-proxy), it finds all accounts under that directory and adds them to the rotation pool.
     - Single port, round-robin rotation (default)
     - Multi-port (one server per account): For explicit client-to-account mapping, use multi-port mode
+  - `npx cursor-api-proxy login account1` = `NO_OPEN_BROWSER=1 agent login` + isolated named account dir + proxy pool integration.
+    - For multi-account: run login once per account over SSH, verify with cursor-api-proxy accounts, start the proxy without a global CURSOR_API_KEY.
+    - At proxy startup, the repo auto-discovers authenticated accounts, Each API request gets the next account via round-robin, and spawns agent with that account’s CURSOR_CONFIG_DIR
 
 - https://github.com/standardagents/composer-api /MIT/202608/swift/ts
   - https://api-for-cursor.standardagents.ai/

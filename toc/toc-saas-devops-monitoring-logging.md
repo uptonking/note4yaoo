@@ -274,7 +274,6 @@ modified: 2024-02-11T15:11:31.598Z
   - https://x.com/QingQ77/status/2033932369967910975
     - kula — Linux 服务器监控做成“单二进制 + WebUI + TUI”，零依赖开箱即用。
     - 这个项目有点反现代，不堆  Prometheus/Grafana/一堆 agent，而是直接给你一颗 Linux 监控单二进制。kula 读 /proc 和 /sys，每秒采一次指标，落到内置的 分层 ring-buffer 存储，然后同时提供 Web UI 实时看板 + 终端 TUI，后端还能用WebSocket 做实时推流。
-
 # more
 - https://github.com/anthonygauthier/jmeter-es-backendlistener-dashboard /201810/js
   - Dashboard to visualize JMeter results generated via the ElasticSearch Backend Listener. 

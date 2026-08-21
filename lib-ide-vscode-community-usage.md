@@ -112,6 +112,13 @@ export VSCODE_GALLERY_CONTROL_URL=""
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [VS Code opens localhost links in embedded browser after latest update : r/vscode _202608](https://www.reddit.com/r/vscode/comments/1tmy1v4/vs_code_opens_localhost_links_in_embedded_browser/)
+  - Search for "Open Localhost Links"
+
 - ## you can select bracket and string content with a simple double-click
 - https://x.com/code/status/2046331469396693073
 

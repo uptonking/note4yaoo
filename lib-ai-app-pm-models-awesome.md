@@ -1400,11 +1400,19 @@ modified: 2026-06-20T15:49:57.019Z
   - all endpoints are limited to 1000 calls per month with a trial key
   - 仅支持自研模型 Command A, Command R
 
+- [TokenRouter ](https://www.tokenrouter.com/console/pricing)
+  - 不定期
+
 - [AIHubMix - Models](https://aihubmix.com/models)
   - 免费模型不多，大多coding相关
   - free-per-model: 5rpm, 500rpd, 1Mtpd
   - mimo-v2-flash-free
   - coding-glm-4.7-free, coding-glm-4.6-free, coding-minimax-m2-free, kimi-for-coding-free
+
+- [NaraRouter ](https://router.bynara.id/models)
+  - tpd: 7M
+  - rpm: 10
+  - 需要绑定并加入telegram
 
 - [现在做大模型，还有靠谱且免费的 api 接口吗？ - 知乎](https://www.zhihu.com/question/662092970)
   - 纯粹免费的API也是有的，但是多限于轻量级的大模型，比如智谱AI的flash模型，Google的 Gemini 1.5 Flash。

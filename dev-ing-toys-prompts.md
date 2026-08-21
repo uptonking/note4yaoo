@@ -1301,6 +1301,10 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 
 ## codex
 
+# vps
+- you can login and control the vps by running `ssh root@166.88.`.
+
+- you should only use ssh for the first deploy, later devops should not use ssh, daily devops should work with github push > woodpecker update
 # more
 
 ```prompt
