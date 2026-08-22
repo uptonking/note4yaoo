@@ -1450,7 +1450,7 @@ https://linux.do/t/topic/2326247
 
 - ## 
 
-- ## 
+- ## [采访佬友 Coding Plan 分布情况调研分析投票 - LINUX DO _202608](https://linux.do/t/topic/2782138/4)
 
 - ## [Ollama Pro ($20) vs OpenCode Go ($10): Does Ollama really provide 2x or more usage? : r/ollama _202608](https://www.reddit.com/r/ollama/comments/1vqr0ve/ollama_pro_20_vs_opencode_go_10_does_ollama/)
 - I've tried and currently have active subscriptions to both.
@@ -2210,13 +2210,13 @@ Cloudflare → 安全性 → WAF → 自定义规则 → 创建规则。
   - 国内直连、高稳定、多模型 AI API 中转，支持 GPT-4o/Claude Opus 满血，企业级技术支持。
 - 另外确定目标用户：
 
-01.                                                                                                                                                                                             个人开发者：
+01.                                                                                                                                                                                              个人开发者：
 特别厉害的个人开发者其实自己也可以解决我刚刚写的那些东西，所以我就不跟这些人卷了，我去闲鱼上找了很多代写项目，毕业设计，软件开发的开发者，这部分人一般懒得折腾，不懂如何配置号池。
 
-01.                                                                                                                                                                                             ai套壳创业者：
+01.                                                                                                                                                                                              ai套壳创业者：
 他们需要稳定的api，高并发，子账号，针对这部分用户定制了一些企业级的面板和技术支持，然后去三四线城市的boss直聘/转转找各种ai创作视频，装修，ai做本地服务的小团队小企业，跟他们聊合作。
 
-01.                                                                                                                                                                                              中小企业/传统行业/实验室
+01.                                                                                                                                                                                               中小企业/传统行业/实验室
 他们需要合规，开发票，私有路由，所以我在国内开了个公司，给他们走合规公司签单。
 
 其次就是做seo，小红书，抖音，比如我这篇文章就是一篇seo，seo的核心就是why what how 通过教别人如何搞中转站，如何使用claude code获取流量，当然你也可以发布在知乎掘金csdn个人博客V2EX、NodeSeek、SegmentFault、Linuxo

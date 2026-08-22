@@ -71,6 +71,9 @@ modified: 2020-12-12T19:01:56.749Z
     - Agent: Runs on each system you want to monitor and communicates system metrics to the hub.
   - Does it support adding custom metrics? E.g. getting the result of some external shell script or app and taking values from its output as plaintext/regex/JSON for graphs and alerts?
     - AFAICT, it does not.
+  - [[Bug]: Systemd + AppArmor  _202511](https://github.com/henrygd/beszel/issues/1408)
+    - AppArmor (Application Armor) is a Linux security module that protects an operating system and its applications from security threats.
+    - The `apparmor:unconfined` actually solved my problem and the systemd information is being fetched and transmitted to the hub.
 
 - https://github.com/nicolargo/glances /32.3kStar/LGPL/202608/python/vue
   - open-source system cross-platform monitoring tool. 

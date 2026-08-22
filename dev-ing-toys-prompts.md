@@ -125,8 +125,6 @@ you have worked on this problem several times but features are still lacking. Th
 - begonia is still beta software, you might merge/squash the db schema migrations, only use the latest schema is ok, db related compatibility is not required for now. 
 - legacy/unused code might be refactored or removed. compatibility layer is not required.
 
-- you might refactor/reorganize/improve the architecture/logic if it helps to make it correct, robust, extensible in the long term. only if there are obvious bugs or design defects, then you might propose big refactor or huge change. if there is only subtle bugs, just propose to improve the existing architecture.
-
 - `./superdoc2` is a experimental toy that might be a reference for begonia in the future, just ignore all files at `./superdoc2` for now.
 
 ### draft-begonia
@@ -1302,9 +1300,39 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 ## codex
 
 # vps
-- you can login and control the vps by running `ssh root@166.88.`.
+- analyze the core architecture/docs/scripts/code, then explain to me step by step how to deploy this repo from scratch to my vps 
 
-- you should only use ssh for the first deploy, later devops should not use ssh, daily devops should work with github push > woodpecker update
+- you can login and control the vps by running `ssh root@166.88.` as root user if you want.
+
+- ssh should only be used for the first deploy, later devops should not use ssh, daily devops should work with workflow like `github push > woodpecker update` .
+
+- please review existing apps/services architecture/implementation, analyze all the services/docs/code if you want, then make a comprehensive plan to improve the docker architecture/servces in a single vps, making all the services correct, robust, extensible in the long term. 
+
+- caddy/beszel/woodpecker are the foundation of the whole docker stack, they should be correct and robust for bootstrapping and restarting. other apps/services should be extensible to add/disable/enable, for example, new-api and cliproxyapi should be enabled by default, but they should support to be disabled by environment variables like `APP_NEWAPI_DISABLE=true` or `APP_CLIPROXYAPI_DISABLE=true`. 
+- please design a extensible architecture to support to add/disable/enable new apps/services in the future. docker/config for foundational caddy/beszel/woodpecker should not be coupled to other apps/services.
+
+- this repo should be a reproducible apps/services stack using docker. 
+
+- please improve the bootstrap/restart related scripts for the use case of restarting vps so that when vps is restarted, all the services including baszel can restore correctly and quickly, without data loss. 
+
+- 👀
+- please delete all the repo/config/data/backup about this repo on vps root@166.88.
+- I will deploy this repo to a new vps from scractch. 
+
+- you might refactor/reorganize/improve the architecture/logic if it helps to make it correct, robust, extensible in the long term.
+
+- this repo is still beta software/stack, you might merge/squash the db schema migrations, only use the latest schema is ok, db related compatibility is not required for now. 
+- legacy/unused code might be refactored or removed. compatibility layer is not required.
+
+## bootstrap
+
+## updates/maintenance
+
+- ❓
+- when only updating app service, how to make foundational caddy/beszel stable without restarting/offline?
+  - Normal app pushes validate foundation files but do not pull/ recreate Woodpecker or Beszel; a manual/approved foundation workflow upgrades them safely.
+
+- Image upgrades are explicit operations; ordinary pushes do not silently change production images.
 # more
 
 ```prompt

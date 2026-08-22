@@ -1463,6 +1463,8 @@ modified: 2026-06-20T15:49:57.019Z
   - 优先高级模型， 价格贵一点， 但减少返工， 一般新模型速度会快点因为厂商会给更多硬件资源
     - 应该早点用最新模型，实际使用体验是新模型的high比旧模型的xhigh更强，并且更省token
   - 直接在电报搜索倍率如 0.08 , 能快速找到候选商家, 优先选提供交流群和通知频道的, 在频道可以查看历史倍率是否正常
+  - 稳定的高缓存 比 经常断的低倍率 更低价, 特别在高倍率如 0.1x 以上时缓存省钱特别明显
+    - 0.15x的gpt-5.6-sol 大概 ¥1 ~ 6M token, 100M token ~ ¥15
   - 站内直接充值时三思， 冲进去可能就跑路了退不了， 平台有保障
   - 当购买一个商品有很多渠道时，优先选择可靠的平台，售后/质保/退款更方便
     - 提供多天 model health status 的平台更可靠
@@ -2280,6 +2282,8 @@ modified: 2026-06-20T15:49:57.019Z
   - https://dddai.dev/pricing  /0.2x--0.04--0.004/作者加入L站时间短
     - [【富可敌国】Claude Fable 5 / Gemini 3.7 / Grok 4.6 都能用，gpt-5.6-luna 不限制 _202608](https://linux.do/t/topic/2737252)
     - 闲时倍率为 0.2x0.98, 还有日卡/月卡
+  - [FastAI 模型 ](https://www.fastaitoken.com/keys)
+    - 仅0.3x的pro分组支持luna
   - https://www.rightapi.ai/models  /0.4x--0.08--0.008/10rpm
   - https://codexapis.com/pricing   /0.085--0.0085
   - https://tkapi.cc.cd/keys   /0.1x/似乎不能用
@@ -2382,6 +2386,9 @@ modified: 2026-06-20T15:49:57.019Z
   - 提供月卡 90 > 每周100
   - 偶尔能碰到无限额度的天卡, 并发5
   - 夜间偶尔会有超低价分组
+
+- [星宇Token Hub ](https://vip.xyapi.club/monitor)
+  - 多级渠道
 
 - [Conpera ](https://code.conpera.ai/), 已充值
   - 仅支持google登录
@@ -2678,6 +2685,11 @@ modified: 2026-06-20T15:49:57.019Z
 - [Duo API - /newapi](https://api.duou.ai/)
 
 - [subgo /sub2api](https://code.subgo.qzz.io/)
+
+## 代充
+
+- [[富可敌国]【daNew ai】daNew ai GPT代充服务正式上线了! - LINUX DO _202608](https://linux.do/t/topic/2764583)
+  - [Recharge Portal ](https://cdk.danew.cc/)
 
 ## sms/code
 
