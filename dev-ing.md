@@ -348,6 +348,81 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0822
+
+- caddy can be used for load balancing like nginx
+
+- on this mac, i cannot use ssh to login to my vps by `ssh root@2`
+
+
+- 🤔 When using nginx to reverse proxy and Load Balancing multiple servers, if one server is down, can the service still work? What will happen to the broken server?
+  - By default, the free, open-source version of Nginx uses passive health checks. This means Nginx doesn't actively ping the servers in the background. Instead, it monitors the real requests being sent by users.
+  - If Nginx tries to send a user's request to a backend server and the connection is refused, times out, or returns a specific error (like a 502 Bad Gateway), Nginx immediately forwards that user's request to the next available server. The user will likely not notice anything, though the request might take slightly longer.
+  - Once the broken server reaches the max_fails limit, Nginx marks it as temporarily down. For the duration of the fail_timeout (e.g., 10 seconds), Nginx will not send any traffic to this server.
+  - The failed server is marked as "unavailable" for the duration of the fail_timeout (e.g., 30 seconds). After that time, Nginx will allow a limited number of requests to try it again. If it fails again, the fail_timeout period restarts. This cycle continues until the server recovers and starts responding successfully.
+  - If you are using Nginx Plus (the paid commercial version) or an open-source Nginx build with specific third-party modules (like nginx_upstream_check_module), you can enable active health checks.
+- 🤔 can i use caddy to reverse proxy and Load Balancing multiple servers?  if one server is down, can the service still work? What will happen to the broken server?
+  - yes. Caddy handles server failures exceptionally well, and unlike the free, open-source version of Nginx (which requires a paid upgrade for active health checks), Caddy includes all load balancing and advanced health-checking features natively and for free
+  - Caddy supports passive health checks (circuit breaking). This relies on observing actual user traffic.
+  - Caddy also fully supports active health checks. This means Caddy acts as a background monitor.
+- will nginx/caddy become a single point of failure in the architecture? What is the best practice in the industry?
+  - Yes, Nginx and Caddy can become single points of failure (SPOF) if deployed as single instances. However, the industry has well-established best practices to eliminate this risk by adding redundancy and automatic failover mechanisms. Let me break this down for you.
+- The best practice is to deploy multiple Nginx/Caddy instances and ensure traffic is distributed or fails over between them. 
+- Keepalived + Virtual IP (VIP/VRRP) - The Most Common Solution
+  - If you own your own servers or rent dedicated servers, the standard practice is to use two Nginx/Caddy servers and a "Floating IP" (also known as a Virtual IP or VIP) managed by a tool like Keepalived.
+  - You set up two load balancers: LB-1 (Primary) and LB-2 (Backup).
+  - Keepalived runs on both Nginx servers and uses the VRRP (Virtual Router Redundancy Protocol) to manage a shared virtual IP address (VIP) 
+  - One server is designated as MASTER (active), the other as BACKUP (passive) 
+  - The MASTER server owns the VIP and handles all traffic. The BACKUP server monitors the MASTER's health via heartbeat advertisements.
+  - If the MASTER fails, the BACKUP automatically takes over the VIP within seconds (typically 1-3 seconds), ensuring service continuity 
+Advantages:
+
+✅ Automatic failover within seconds
+✅ Simple to implement and understand
+✅ Transparent to clients (they always access the same VIP)
+✅ Works on-premises and in the cloud (with proper IP configuration)
+Disadvantages:
+
+❌ One node is idle (standby) during normal operation
+❌ Requires additional software (Keepalived)
+❌ Split-brain risk if not properly configured (both nodes think they're MASTER)
+
+- Cloud Load Balancer (Managed Service)
+  - The cloud provider's managed load balancer (e.g., AWS Application Load Balancer, Google Cloud Load Balancer) sits in front of your Nginx/Caddy instances.
+  - The cloud LB handles health checks, traffic distribution, and automatic failover if an Nginx instance becomes unhealthy.
+Advantages:
+
+✅ Fully managed - no need to configure or maintain keepalived
+✅ Built-in health checks and automatic failover
+✅ Scalability - can easily add/remove Nginx instances
+✅ Additional features like SSL termination, WAF, global acceleration
+✅ No split-brain concerns
+Disadvantages:
+
+❌ Additional cost (cloud LB services are paid)
+❌ Vendor lock-in to specific cloud provider
+❌ Less control over low-level networking
+
+- DNS Round-Robin / Weighted DNS
+  - This is a simpler but less reliable method that distributes traffic at the DNS level 
+  - DNS servers respond with these IPs in a rotating order (round-robin) or based on weights.
+  - If you want to protect against a whole data center going down, you handle the SPOF at the DNS or Global CDN level using services like Cloudflare or AWS Route 53.
+
+- 🤔 please explain to me what is the best practice to bootstrap the github repo with docker on 2 vps separately, then how to configure to make my website newapi.aichorage.de  always online without single point of failure.
+  - 不要过度考虑, 经典的方案就是 nginx/caddy 反代到不同的server, 但仍没有解决部分server故障的问题
+  - Plain DNS with two A records isn't enough — Cloudflare will happily keep sending some visitors to a dead IP, because vanilla DNS has no concept of "this origin stopped responding." 
+  - What you actually want is Cloudflare Load Balancing, which adds active health checks on top of DNS
+  - Add your app's /health endpoint if it doesn't already have one — the same one your docker-compose healthcheck uses.
+  - In the Cloudflare dashboard → Load Balancing, enable the add-on and create: A Monitor, A Load Balancer
+
+- Why Primary IP and "Test IP" don't match — this part is normal, not a bug
+  - The "Test IP" shown next to the location name isn't your VPS's IP at all — it's a fixed, generic reference IP RackNerd publishes per datacenter for prospective/existing customers to test latency before/after ordering, paired with a Looking Glass tool (e.g., lg-lax02.racknerd.com for DC02, lg-lax03.racknerd.com for DC03). RackNerd publishes one test IP per location for people to ping and validate latency assumptions, and this is explained on RackNerd's own blog about their Looking Glass tooling, which lists a separate test IP/LG server for each of their independent Los Angeles facilities. Every customer whose service is labeled "Los Angeles DC02" sees that exact same 204.13.154.3 test IP — it has nothing to do with your own assigned address. So it being different from your Primary IP is expected, not an inconsistency. 
+- 23.254.1**
+  - Belongs to AS36352 (HostPapa / ColoCrossing). This is the network used at DC-03. Geolocation confirms Los Angeles.
+- 204.13.154.3
+  - Official Looking-Glass / test IP that used to belong to the old DC-02 (Multacom). It is still listed next to the outdated “DC02” label.
+  - (DC-03’s public test IP is normally 107.174.51.158 / lg-lax03.racknerd.com.)
+
 ## 0820
 
 - 🤔 i have a github repo that only contains docker.compose.yaml, no source code.  I want to design a GitHub action or workflow automation solution that every time I use git push to github, the latest github repo should be deployed on my own vps. 

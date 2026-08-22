@@ -74,6 +74,8 @@ modified: 2020-12-12T19:01:56.749Z
   - [[Bug]: Systemd + AppArmor  _202511](https://github.com/henrygd/beszel/issues/1408)
     - AppArmor (Application Armor) is a Linux security module that protects an operating system and its applications from security threats.
     - The `apparmor:unconfined` actually solved my problem and the systemd information is being fetched and transmitted to the hub.
+  - [I just released Beszel, a server monitoring hub with historical data, docker stats, and alerts. It's a lighter and simpler alternative to Grafana + Prometheus or Checkmk _202407](https://www.reddit.com/r/selfhosted/comments/1eb4bi5/i_just_released_beszel_a_server_monitoring_hub/)
+    - I would like to see a tiny bit of uptime kuma incorporated just to check if a service responds on a port, http curl responds with 200, etc.
 
 - https://github.com/nicolargo/glances /32.3kStar/LGPL/202608/python/vue
   - open-source system cross-platform monitoring tool. 
@@ -96,6 +98,13 @@ modified: 2020-12-12T19:01:56.749Z
   - Multi-Host Docker Support: Connect to local Unix sockets, remote SSH, or TCP endpoints
   - React + Vite + Capacitor mobile client under mobile/
 
+## vps-init
+
+- https://github.com/buildplan/du_setup /767Star/MIT/202608/sh
+  - https://buildplan.org/du_setup/getting-started
+  - A Bash script to automate the initial configuration and security hardening of Debian and Ubuntu servers.
+  - It is idempotent, safe, and suitable for production environments, providing a secure baseline for further customization. The script runs interactively, guiding users through critical choices while automating essential security and setup tasks.
+
 ## vps-deploy
 
 - https://github.com/ovexro/dockpanel /AGPL/202608/rust/ts
@@ -105,6 +114,15 @@ modified: 2020-12-12T19:01:56.749Z
   - No other free panel gives you Git push-to-deploy with blue-green zero-downtime updates, 148 one-click Docker app templates, per-image CVE scanning with deploy gating, a WAF, passkey login, GPU passthrough, multi-server management, reseller accounts, a developer CLI, and Infrastructure as Code 
 
 ## vps-more
+
+- https://github.com/inpanel/inpanel /BSD/202607/python/js
+  - http://inpanel.cn/
+  - InPanel 是一款轻量级、非入侵式的 Linux 系统级运维管理面板，致力于通过 Web 界面实现高效、安全的服务器运维管理。
+  - 后端采用 Python 语言编写，基于 Tornado 异步框架，采用 BSD 3-Clause 开源许可证。项目于 2017 年 1 月 11 日启动，持续维护至今。
+  - 系统级运维：直接操作系统原生配置文件（/etc/passwd、Nginx vhost、防火墙规则等），不依赖中间层
+  - 极低入侵度：纯 UI 层面管理，不修改系统核心架构，卸载后系统无残留、无依赖
+  - 轻量高效：内存占用仅 30-40MB，资源消耗极低，适合 VPS/轻量服务器环境
+  - 兼容性: CentOS/RHEL 7+、Debian 10+、Ubuntu 18.04+, Python 3.6+（兼容至 Python 3.14）
 
 - https://github.com/LloydAsp/NodeQuality /2.1kStar/AGPL/202603/sh
   - 在沙箱环境中运行vps测试脚本，并排版测试结果
@@ -138,6 +156,20 @@ modified: 2020-12-12T19:01:56.749Z
   - It has a goal of deployment simplicity and minimal dependencies, to reduce friction of systematic troubleshooting. 
   - No need to install kernel modules or heavy monitoring frameworks.
   - 0x.tools allow you to measure individual thread level activity, like executed code, sleep states, system calls and wait locations - by tracking (not tracing) and then sampling the right events at the right time.
+
+## ssh
+
+- https://github.com/Termix-SSH/Termix /14.9kStar/apache2/202608/ts
+  - https://termix.site/
+  - Self-hosted server management, from SSH and remote desktop to automations
+  - It puts SSH terminals, remote desktops (RDP, VNC, Telnet), file transfers, tunnels, Docker, metrics, and automations in one place, on web, desktop, and mobile. It is a self-hosted alternative to Termius that stays free forever.
+# docker
+- https://github.com/Finsys/dockhand /5.7kStar/BSL/202608/ts/svelte
+  - https://dockhand.pro/
+  - efficient Docker management application providing real-time container management, Compose stack orchestration, and multi-environment support. All in a lightweight, secure and privacy-focused package.
+  - Compose Stacks: Visual editor for Docker Compose deployments
+  - File Browser: Browse, upload, and download files from containers
+  - Base: own OS layer built from scratch using `Wolfi` packages via apko. Every package is explicitly declared in the Dockerfile.
 # ci/cd
 - https://github.com/woodpecker-ci/woodpecker /7.7kStar/apache2/202608/go
   - https://woodpecker-ci.org/

@@ -16,6 +16,10 @@ modified: 2025-09-23T09:28:08.532Z
   - open-source Identity Provider (IdP) for modern SSO. 
   - It supports SAML, OAuth2/OIDC, LDAP, RADIUS, and more, designed for self-hosting from small labs to large production clusters.
   - 管理ui方便易用
+  - [High Availability  _202203](https://github.com/goauthentik/authentik/issues/2460)
+    - authentik by itself is stateless and you can run as many instances of the server and worker container as you need for your load.
+    - Because authentik's origin as a web-primary application, it uses PostgreSQL and Redis, and those can also be ran in HA, but this is outside the scope of authentik. 
+    - Both the default setups with docker-compose and Kubernetes are simply basic deployments aimed at most smaller scale deployments.
 
 - https://github.com/keycloak/keycloak /29.7kStar/apache2/202509/java
   - https://www.keycloak.org/

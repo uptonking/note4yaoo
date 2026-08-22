@@ -14,7 +14,7 @@ modified: 2020-12-28T12:24:09.275Z
   - toggle views: designer view, code view
   - 是否基于iframe
 
-- workflow/automation/pipeline/**rpa**
+- workflow/automation/pipeline/ **rpa** 
   - workflow/flowchart progress animation
   - ⚖️ workflow specification: bpmn, MCP, JSON Canvas
     - n8n/activepieces/trigger 对bpmn的讨论度都不高
@@ -118,6 +118,9 @@ modified: 2020-12-28T12:24:09.275Z
   - ⚖️ [n8n is not open source and your project is gaslighting its users _201910](https://github.com/n8n-io/n8n/issues/40)
   - https://github.com/drudge/n8n-nodes-puppeteer
     - n8n node for requesting webpages using Puppeteer, a Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol.
+  - [Scaling | Deploy | n8n Docs ](https://docs.n8n.io/deploy/host-n8n/configure-n8n/scaling)
+    - n8n can run in different modes depending on your needs. The queue mode provides the best scalability. 
+    - When running in queue mode, you have multiple n8n instances set up, with one main instance receiving workflow information (such as triggers) and the worker instances performing the executions.
   - [N8n.io – Workflow automation alternative to Zapier | Hacker News _201910](https://news.ycombinator.com/item?id=21191676)
   - https://github.com/Zie619/n8n-workflows /202508/python/js
     - collection of 2,053 n8n workflows with a lightning-fast documentation system

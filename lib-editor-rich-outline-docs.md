@@ -37,3 +37,14 @@ modified: 2021-09-09T18:30:24.610Z
   - As documents are edited, Outline will automatically keep a record of revision history. 
   - At most, a version is recorded for every 5 minutes of editing.
   - Note that restoring a version will create another version and not rollback history to this point in time. In this way it is a non-destructive action.
+# docs
+
+## scaling
+
+- [Horizontal scaling - Outline ](https://docs.getoutline.com/s/hosting/doc/horizontal-scaling-hkfU5Stao7)
+  - Outline’s api, worker, and web processes are able to automatically scale horizontally – you can deploy as many instances as needed to handle traffic. 
+  - collaboration however, is different due to it’s stateful nature…
+  - If you would like to run Outline’s collaboration server in a horizontally distributed manner either for redundancy or large installation sizes an additional environment variable must be set: REDIS_COLLABORATION_URL – This should be the fully qualified url of a Redis server that will be used to syncronize edit transactions between processes.
+  - [Improved horizontal scaling of collaborative servers  _202204](https://github.com/outline/outline/issues/3425)
+    - I spent a lot of time working on the scaling extension for Hocuspocus, it is time to implement it in the backend.
+# more

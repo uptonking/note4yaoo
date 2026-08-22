@@ -884,6 +884,8 @@ modified: 2022-06-03T21:34:54.893Z
       - I am personally not a fan of Paperless’s tag-based approach. I have a folder-based approach that has worked well for me for years. I would love it if paperless (or an alternative) would simply interact with an existing folder structure, rather than consuming everything.
     - pr已合并 [Feature: Nested Tags _202509](https://github.com/paperless-ngx/paperless-ngx/pull/10833)
       - uses django-treenode's TreeNodeModel for tags to give them parent/child relationships and applies to documents such that adding a child always adds its parents and removing a parent removes all children. Similarly, if a tag gets assigned a new parent, that parent is added to existing docs.
+  - [Horizontal scaling? _202405](https://github.com/paperless-ngx/paperless-ngx/discussions/6630)
+    - In the current state Paperless is not really designed to run distributed on multiple nodes. Sure you can scale out gotenberg and apache tika, but these are optional additional services. The main paperless currently runs as kind of a monolith. API, GUI and OCR all in one. If you truly want to scale out these have to be split. Despite that Paperless heavily relies on local storage.
 - https://github.com/clusterzx/paperless-ai /4.6kStar/MIT/202511/python/js
   - https://clusterzx.github.io/paperless-ai/
   - an AI-powered extension for Paperless-ngx that brings automatic document classification, smart tagging, and semantic search using OpenAI-compatible APIs and Ollama.

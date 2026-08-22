@@ -191,6 +191,8 @@ modified: 2024-03-31T17:45:16.789Z
     - We are working on adding s3 compatibility, on this branch. Right now, it is on a early stage but functional, we have tried so far with Minio and Backblaze B2 and all basic funcionality is there
   - 📡 roadmap
     - electron-app
+  - 🐛
+    - 似乎不支持 horizontal scaling
   - https://github.com/Softwaredam/filebrowser-chart
     - For anyone interested in a chart to deploy it on Kubernetes
   - [High memory usage _202506](https://github.com/gtsteffaniak/filebrowser/issues/747)

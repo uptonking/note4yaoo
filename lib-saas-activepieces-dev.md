@@ -19,6 +19,7 @@ modified: 2025-03-31T17:38:17.881Z
   - Secure by Design: Self-hosted and network-gapped for maximum security and control over your data.
   - ecosystem: supports integrations with Google Sheets, OpenAI, Discord, RSS, and over 200 other services
     - integrations are versioned and published directly to npmjs.com
+  - [Autoscaling](https://www.activepieces.com/docs/install/architecture/autoscaling)
 
 - cons
   - paid: permissions, Audit logs, Collaborate using Git, Customize branding
@@ -64,3 +65,7 @@ modified: 2025-03-31T17:38:17.881Z
   - [feat: make mcp stateless](https://github.com/activepieces/activepieces/pull/7261)
   - It does no longer require the load balancer to be sticky
 # more
+- [Autoscaling](https://www.activepieces.com/docs/install/architecture/autoscaling)
+  - Everything is queue-backed: webhooks and recurring jobs land on Redis, and workers poll them off it. A spike does not drop work.  It queues and drains as slots free. For exactly what survives a crash, what runs at-least-once, and where each promise stops
+  - To scale Activepieces, add replicas of the workers, the app, or the Postgres database. A small Redis instance is enough.
+  - Workers are the unit you scale — one worker runs one flow at a time 

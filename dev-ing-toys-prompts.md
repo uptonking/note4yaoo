@@ -1333,6 +1333,10 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
   - Normal app pushes validate foundation files but do not pull/ recreate Woodpecker or Beszel; a manual/approved foundation workflow upgrades them safely.
 
 - Image upgrades are explicit operations; ordinary pushes do not silently change production images.
+
+## multi-nodes
+
+- make docker services like beszel/woodpecker work in a multi-node architecture like leader/follower.
 # more
 
 ```prompt

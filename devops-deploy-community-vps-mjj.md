@@ -10,7 +10,7 @@ modified: 2026-06-19T06:15:35.007Z
 # guide
 
 - tips
-  - 分析需求: 想要更强的CPU、更大的RAM、更多的流量、CN线路优化、升降配置
+  - 分析需求: 想要更强的CPU、更大的RAM、更多的流量、CN线路优化、可升降配置
   - 公开与分享的需求不强时，没必要上顶级vps
   - 可以先月付便宜的vps，等到活动或论坛有人抛售时再获取长期vps
   - dedirock性价比高，但口碑不好
@@ -295,6 +295,69 @@ evoxt my 半价翻倍和炒鸡多流量款
 - HK 地区的低价非常难做，性价比高必定挨打，必定被薅，最后清退，HK 低价鸡大致结局如此，claw 已经清退，Y 系挨打最后限速。作为整个亚太的核心中转地区，性价比高的小鸡基本是存量，没有什么增量了，所以大量的 MJJ 在从直连转向专线 (IEPL/IPLC/IXP)，专线又有点通报严重，直连目前基本上也只剩下正价了，所以 HK 推荐是专线为主，直连为辅。对于预算不高不想折腾的佬来说，美西才是归宿。
 
 - 亚太最昂贵的区域，JP 地区的最佳建议就是：能玩专线别玩直连。基本上所有线路晚高峰都是爆炸的，太拥挤了。如果还是选择直连，很难推荐出一款完美的产品，只能说性价比不错，各有千秋。
+
+- ## 🔒 ¡[After spinning up way too many VPS servers, this is the checklist I now run every single time : r/selfhosted _202603](https://www.reddit.com/r/selfhosted/comments/1rob0cj/after_spinning_up_way_too_many_vps_servers_this/)
+- After setting up dozens of servers over the years (for projects, game servers, infrastructure, etc.) I realized many beginners skip some really basic things in the first minutes.
+- First thing I always do: Update the system.
+  - apt update && apt upgrade -y
+- Then I go through the basics:
+• disable root login
+• disable password authentication
+• create a normal user with sudo
+• enable a firewall (usually ufw)
+• install fail2ban
+• enable automatic security updates
+• set up basic logging
+One thing that surprised me when I first started running public servers:
+
+SSH brute-force attempts often start within minutes of a fresh server going online.
+
+Sometimes literally 2-3 minutes after deployment.
+
+Since then I always assume a server is being scanned immediately after it gets an IP.
+
+- I left things like ipset/conntrack out mostly because I wanted to keep the checklist beginner friendly. For the first hour on a fresh VPS I usually focus on SSH hardening + basic firewall. But once a server runs something public facing for longer, ipset / rate limiting definitely become useful additions.
+
+- Why not create an ansible playbook that does this for you programmatically so you don't have to "check" each item off a list. You run once (or 100 times) and you always get the same results.
+- Or Terraform script so that one can run it and have fresh VPS to standard set
+  - Terraform will only provision the VM. Ideally, you'd be doing that and then a cloud-init config to make most of those changes, but an ansible playbook would be a drop in replacement for typing those commands manually.
+
+- True. If you're provisioning servers regularly, Ansible or cloud-init is definitely the cleaner approach.
+  - The checklist is more how I mentally structure the first steps on a fresh machine as a beginner guide for people doing that not such often. Once the setup becomes repeatable or you need to do it regulary it makes sense to turn it into automation.
+
+- Cloud-init script? Should be supported on most mainstream VPS providers. Hetzner, Linone, Digital Ocean.
+  - Yes, it is supported by Hetzner. Together with Terraform and a Terraform Cloud-init template passed to a Hetzner server resource, it is pretty straightforward to create a flexible server boilerplate. 
+  - Cloud-Init is just a pain to debug. As Hetzner saves the Cloud-Init config as metadata, secrets need to be provisioned separately via, Terraform provisioners (or Ansible), but this is still very manageable.
+
+- This looks like a promising cloud-init script: https://gist.github.com/NatElkins/20880368b797470f3bc6926e3563cb26
+
+- This looks like an interesting bash script to check out: https://github.com/buildplan/du_setup
+
+- If you aren't using an incommon SSH port + fail2ban + ufw on all your servers, you are playing with fire. This is the bare minimum you can do on any server.
+
+- I’m very new to all this but is fail2ban and turning off password sshing mostly redundant? I do both but was curious how fail2ban works with key based sshing
+  - Yeah, that’s basically it. Disabling password SSH removes the main attack surface, and fail2ban just adds another layer by blocking IPs that behave suspiciously. Even if they can't log in, it still helps reduce noise and scanning attempts. So it's less about redundancy and more about defense in depth.
+- Fail2ban monitors login attempts, no matter what method, and blocks IPs if some threshold is passed. It would also protect against someone trying to brute force an SSH key (which is practically impossible but just making a point. Defense in depth is a good strategy. 
+
+- Monitoring is really important too. Something like Beszel can be really useful. I've tossed around the idea of centralized logging but without an idea of a service to go through the logs, haven't bothered yet. 
+
+- I do the same, but I also change the SSH port, set the timezone, and install some essentials like Docker, etc. Automate with Ansible.
+
+- ## 🔒 [拿到新的小鸡（VPS）后，你应该先做什么？（入门安全篇） - LINUX DO _202507](https://linux.do/t/topic/817769)
+  - 在你开始部署网站、搭建应用之前，务必先花上15-30分钟，完成一些至关重要的基础设置。这不仅能保护你的服务器免受最常见的网络攻击，还能为你未来的管理工作提供便利。
+  - 首先，我们以root用户身份登录到服务器。root是Linux系统中的超级管理员，拥有最高权限。
+  - 连接过程中，系统可能会询问你是否信任该主机的指纹，输入yes并回车。接着，输入你的初始密码。成功登录后，你将看到服务器的命令行欢迎信息。
+  - 登录后的首要任务是更新系统。 这可以确保所有已安装的软件包都打上了最新的安全补丁。
+  - 创建新用户并授予管理员权限。一直使用root用户操作服务器是一个非常危险的习惯。任何误操作都可能对系统造成毁灭性打击。创建一个新的日常使用账户，并赋予它sudo权限（即在需要时临时获取管理员权限）。
+  - 加固SSH服务，提升安全性。SSH是我们远程管理服务器的唯一入口，保护好它至关重要。
+  - 禁用root用户远程登录。
+  - (强烈推荐) 更改默认SSH端口: SSH默认使用22端口，这使得它成为自动化扫描和攻击的首要目标。
+  - 配置基础防火墙。 防火墙是服务器的第一道防线。UFW (Uncomplicated Firewall) 是一个非常易于使用的防火墙管理工具，使用系统底层的iptables进行设置。
+  - 安装Fail2ban防御工具，Fail2ban，顾名思义是防止后台暴力扫描的软件，通过分析系统日志中的异常行为（如多次登录失败），自动封禁可疑 IP 地址，有效抵御暴力破解攻击。
+  - 将系统时间设置为北京时间，推荐使用 timedatectl 命令。
+- 新手小白建议使用 Ubuntu 系统，默认配置比较完全，软件包更新也还算及时，只要你的 VPS 配置不至于比 1C1G（1 个虚拟核心，1GB 内存）还低，如果再低就换 Debian 吧，如果 Debian 还卡那就得用 Alpine 了，不过这个大多数人不太用得来，它太精简了
+
+- fail2ban 不太推荐用默认的 ufw 来屏蔽恶意扫描，IP 太多了影响 ufw 自己，推荐用 iptables+ipset 的方式（nftables 我就不清楚了，不会用）
 # discuss-vps-usecase 🌰
 - ## 
 
@@ -316,22 +379,6 @@ evoxt my 半价翻倍和炒鸡多流量款
 - 我部署了一个可以查询任意 Chrome extension 信息的接口，传入插件 Id 就可以直接查询
 
 - openlist、hermes，好像没了
-
-- ## 🔒 [拿到新的小鸡（VPS）后，你应该先做什么？（入门安全篇） - LINUX DO _202507](https://linux.do/t/topic/817769)
-  - 在你开始部署网站、搭建应用之前，务必先花上15-30分钟，完成一些至关重要的基础设置。这不仅能保护你的服务器免受最常见的网络攻击，还能为你未来的管理工作提供便利。
-  - 首先，我们以root用户身份登录到服务器。root是Linux系统中的超级管理员，拥有最高权限。
-  - 连接过程中，系统可能会询问你是否信任该主机的指纹，输入yes并回车。接着，输入你的初始密码。成功登录后，你将看到服务器的命令行欢迎信息。
-  - 登录后的首要任务是更新系统。 这可以确保所有已安装的软件包都打上了最新的安全补丁。
-  - 创建新用户并授予管理员权限。一直使用root用户操作服务器是一个非常危险的习惯。任何误操作都可能对系统造成毁灭性打击。创建一个新的日常使用账户，并赋予它sudo权限（即在需要时临时获取管理员权限）。
-  - 加固SSH服务，提升安全性。SSH是我们远程管理服务器的唯一入口，保护好它至关重要。
-  - 禁用root用户远程登录。
-  - (强烈推荐) 更改默认SSH端口: SSH默认使用22端口，这使得它成为自动化扫描和攻击的首要目标。
-  - 配置基础防火墙。 防火墙是服务器的第一道防线。UFW (Uncomplicated Firewall) 是一个非常易于使用的防火墙管理工具，使用系统底层的iptables进行设置。
-  - 安装Fail2ban防御工具，Fail2ban，顾名思义是防止后台暴力扫描的软件，通过分析系统日志中的异常行为（如多次登录失败），自动封禁可疑 IP 地址，有效抵御暴力破解攻击。
-  - 将系统时间设置为北京时间，推荐使用 timedatectl 命令。
-- 新手小白建议使用 Ubuntu 系统，默认配置比较完全，软件包更新也还算及时，只要你的 VPS 配置不至于比 1C1G（1 个虚拟核心，1GB 内存）还低，如果再低就换 Debian 吧，如果 Debian 还卡那就得用 Alpine 了，不过这个大多数人不太用得来，它太精简了
-
-- fail2ban 不太推荐用默认的 ufw 来屏蔽恶意扫描，IP 太多了影响 ufw 自己，推荐用 iptables+ipset 的方式（nftables 我就不清楚了，不会用）
 # discuss-vps-cicd 👾
 - ## 
 
@@ -476,7 +523,7 @@ Edit: dokploy is good afaik.
 - aws里面有一款2核2g的免费套餐，可以用一年
 
 - 免费套餐：阿里云提供了“飞天加速计划”，针对学生和开发者提供免费的云服务资源，包括ECS云服务器、对象存储OSS等。这些资源通常有一定的使用期限和资源限制。
-# discuss-paid-ww
+# discuss-paid-vps
 - ## 
 
 - ## 
@@ -490,55 +537,6 @@ Edit: dokploy is good afaik.
 
 - 如果你要稳定性、又要性价比，因为 KYC 莫名其妙被封号的，排除 Hetzner （ KYC 严格、涨价、贵）、OVH （ KYC 严格，不欢迎中国人、涨价、贵）。
   - 可以看看 Netcup
-
-- ## [dartnode过排队思路 _202606](https://www.nodeseek.com/post-781010-1)
-  - 判断了这个参数是claim就弹出抢购页面，但是我没有claim_url怎么办？
-  - 灵机一动，去排队另外两台月付几十刀的，人很少，一下就拍到了，抓到返回参数把商品id换成173
-  - 实际抢购地址：https://dartnode.com/wh-session/173/claim
-
-- 这是后端鉴权吧，哪有把逻辑放前端的, 肯定过不了
-
-- ## [Dartnode 13.99 休士頓 _202606](https://www.nodeseek.com/post-781019-1)
-一、 核心短板：CPU 性能较弱
-配置：Intel Xeon Gold 6148 (2.40GHz)，分配了 2 核 2 线程。
-
-表现：Geekbench 5 的单核得分 612，多核得分 1021。这个分数在目前的服务器市场中属于偏低水平。
-
-影响：不适合用来跑重度计算、大型游戏服务端、复杂的实时视频转码，或者高并发的大型动态网站。如果负载过高，这颗 CPU 会成为明显的系统瓶颈。
-
-二、 绝对亮点：极其优异的硬盘 I/O
-配置：100GB 容量，测试显示大概率为 NVMe 固态硬盘。
-
-表现：顺序读取（SEQ1M）高达 ~2585 MB/s，顺序写入高达 ~2900 MB/s。更关键的 4K 随机读写（RND4K）也有 50+ MB/s 和 13k+ 的 IOPS。
-
-影响：这是这台机器最拉分的地方（击败了大部分同类检测库里的硬盘）。这意味着极快的系统启动速度、极其丝滑的系统重装与恢复过程，以及非常优秀的数据库（如 MySQL/PostgreSQL）读写响应。它在处理海量小文件时会非常从容。
-
-三、 中规中矩：内存与网络设施
-内存：总容量约 4GB（实际可用 3.8GB）。对于运行 Debian 12 来说非常充裕。配合 100GB 的硬盘，用来跑 Docker 容器、搭建几个中小型网站环境、或者作为测试节点是完全绰绰有余的。
-
-底层架构：KVM 虚拟化，并且支持 VT-x 和 AES-NI 指令集。这意味着如果你需要在里面跑一些需要加密解密的代理服务，或者进行轻量级的嵌套虚拟化测试，底层是完全支持的。
-
-- ## [求推荐服务器，大带宽无限流量每月 200-300 美元左右，最高可到 3K/月以内 - IDC Flare _202606](https://idcflare.com/t/topic/98226)
-- RN这两款带宽最大1Gbps，流量不够直接+70刀/月买100T流量，或者可以+199刀/月升级为无限流量。缺点是带宽无法升级，优点是流量可以加，CPU也不错，同时工单很快。
-  - HostDzire优点是带宽大，缺点是无法加流量，也没有无限制流量选项，CPU也略差
-
-- ## [DartNode这个7刀年付貌似也没啥性价比啊 _202606](https://www.nodeseek.com/post-782223-1)
-- 一般，除了无限流量，我为什么不选dedirock呢? 还是1h2g 30G的硬盘，虽然流量只有4T，但是正常建站玩机也足够了吧
-- 如果是洛杉矶放货的话肯定很快就被抢光。
-
-- 不如dedirock, 人dedirock工单回的也快，服务态度没的说
-  - dartnode买了一天都没部署好，工单隔了老久回了一下，但也就是回了一下，啥问题没解决
-
-- [DartNode的美南7刀鸡没人买吗？ _202606](https://www.nodeseek.com/post-782192-1)
-- 买了美中了，可惜没抢到美西
-- 库存多，放了115台，另外很多人都在等美西放货。
-
-- ## [Let's discuss their service attitude. dartnode.com — LowEndTalk _202408](https://lowendtalk.com/discussion/196839/lets-discuss-their-service-attitude-dartnode-com)
-  - dartnode.com They offered a very tempting price, and I don’t doubt the quality of their servers.
-  - But as for their service quality, have any of you experienced something similar to what I have?
-  - When you submit a support ticket, they hardly ever respond. They’re extremely lazy.
-
-- I can't reach them from anywhere right now. If any of you know them, please help me find them. My server has been unreachable for several days, and there is very important data on it. This damn server is disrupting my work. I’ll say it again, I don’t want to damage their reputation, but if they see my post, please contact me as soon as possible.
 
 - ## [做中转站推荐用哪个机？目前知晓以下4个鸡 - LINUX DO _202605](https://linux.do/t/topic/2238660)
 - 看你用户数量，一般推荐HostDZire，但是有缺点，就是三年付绑定太长了，而且由于是分销商，所以无法更换ip，如果ip出问题了很难换，不过性能肯定是最强的，
@@ -560,20 +558,6 @@ Edit: dokploy is good afaik.
 
 - netcup应该算很稳的建站了，然后就是一些大厂，腾讯云、阿里云、甲骨文、aws、azure、digitalocean，最近看到的DigitalFyre也不错，性价比也极高也很稳定。
 
-- ## [DartNode, 这是在干嘛？我都排到51，结果给我重新顺延到127位，不抢了 _202606](https://www.nodeseek.com/post-780901-1)
-- 我13.9的，跑到了第7，然后没了哈哈哈，7刀的跑到了第4没了
-- 不要刷新，不要点其他的抢购，否则排名会重置。PS: 可以同时开不同的浏览器抢不同的产品，可以抢到后下单时再登录。
-
-- [dartnode 核心发现：你排到了也没用！ _202606](https://www.nodeseek.com/post-780849-1)
-- 排到是有用的，我是排到的。看样子是等前一个退单了才排到的，到了第一名还排队了1个多小时。。
-- 界面显示还有五六台美西时，我就排到1了，等了十几分钟，然后还是没有
-- 我排到了，然后告诉我没货蚌埠住了
-- 每次排到#50就自动重排恢复#160了，非常逆天的商家
-
-- 隔壁LET也有人说了，有个哥们排到第7名，然后莫名其妙掉到57名，还有一个人排了两个小时，纹丝不动，只能说难以绷住
-
-- 我刚才点进去试了一下其实是 left 0 但是还让你排队
-
 - ## [最近一直在看vps相关的，一些小心得体会 - LINUX DO _202606](https://linux.do/t/topic/2313988)
   - 看站里的测评啊，还有猫猫整理的资料什么的，发现这种像走流量的机子，除去涨价RN（已经变成了20刀了），大多都是10-15刀之间，甚至有的还会8刀（按年算）。这种都是1c1g。（我看的都是便宜的，不看超级优化线路的，那种略过 ）
   - 然后一些可能配置稍微好点的，低价的，大多都是美东，像CCS 这些。20-25刀应该就能拿下至少2c2g的，稍微贵点的像rn（总觉得涨的有点离谱）36刀也能拿下同配置。
@@ -593,30 +577,6 @@ Edit: dokploy is good afaik.
 
 - 最后买了Interserver的2.4刀月付试试咸淡，是钻石盘，Fio只有我绿云2T的十分之一，不过这个价格确实也没办法，我绿云2T年付要80刀。。。
 
-- ## [佬们，有没有便宜的服务器链式代理webshare家宽 - LINUX DO _202606](https://linux.do/t/topic/2406011)
-- 我现在用的dedirock，感觉现在便宜机器基本要被dedirock dedione两个替代了，我就是用的dedirock链式的webshare
-- DediOne是不是最便宜12.99刀一年？dedirock好像我看着一年$9
-  - 差不多，dedirock我黑五买的$7, 现在应该也是差不多$10，一个月还是断过两次，一个小时都能恢复，不过考虑这个价格也就还好
-
-- ## [dedirock 是灵车吗 - IDC Flare _202511](https://idcflare.com/t/topic/37735)
-- 他们家客服做的很好，去这个贴子下留言还能流量翻倍+IPv6
-- IP烂完了，但是好在速度可以，7刀只希望能用的久点跑得晚点 
-
-- 这家去年就在了，至少开了一年了吧，应该不是灵车……（就7-8刀要什么自行车……
-
-- 老板在LET上高频互动, 工单回复也比较及时. 但是他的这个后台不显示IPv6, VNC无法连接, 工单一顿回最后也没解决, 无所谓了, 小玩具.
-
-- 用一年不亏，两年血赚，三年他还不跑的话可以考虑传家了
-
-- 问一下这种机器一般用来做什么？
-  - 探针
-
-- 他家的 IP 质量很一般， IP 风险完全看运气开出来的。
-
-- 
-- 
-- 
-
 - ## [🍀平替Racknerd美西！【5月10日售罄】CCS洛杉矶补货了，可能是目前美西最便宜的机器了，CCS低价机，不是优化线路，备用机优选美西 - 测评 - IDC Flare _202604](https://idcflare.com/t/topic/77833)
 - 中国大陆到美国的优化线路或者无优化线路，几乎都是走洛杉矶，物理延迟低，买其他地方的也要经过洛杉矶，例如去美东的纽约，水牛城，美中的亚特兰大，芝加哥，都要经过洛杉矶。 目前确实是最便宜的，量也是最大，服务也稳定。其他品牌的不清楚，但ccs是十几年的牌子，跑路概率不大。
 
@@ -628,7 +588,7 @@ Edit: dokploy is good afaik.
   - 他们老外下班了就不上班的，一般下午或者晚上买开机会快一点
 - 我半夜买的买完就开机了，纽约的2+2。虽然说听松弛，但是我之前中午找他们换IP啥的回复也挺快的
 
-- ## [RN闪购建站鸡平替 2C4G100G 仅需13.99/y - IDC Flare _202606](https://idcflare.com/t/topic/99797)
+- ## dartnode [RN闪购建站鸡平替 2C4G100G 仅需13.99/y - IDC Flare _202606](https://idcflare.com/t/topic/99797)
   - 两家最大区别
   - RN 服务售后好
   - DN IP原生 解锁好，售后服务响应慢 支持PP支付
@@ -739,6 +699,293 @@ Edit: dokploy is good afaik.
   - Vultr / Digital Ocean 等这种算是云厂商里比较出名的，就是比较贵，对我来说使用没有感觉有什么优势，可能对非技术人员来说操作简单一些。
 
 - nube.sh/invite/897602750V27SC 我最近用这家还可以，1cpu 2gRAM 3usd左右，关键是AMD 服务器zen3 CPU，现在VPS市场5usd以下套餐基本都是用10年前的inter服务器 CPU
+# discuss-vps-vpn
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [【自建线路】cloudflare自选优选ip，sing-box搭建快速低延迟的vpn教程 - LINUX DO _202607](https://linux.do/t/topic/2639989)
+
+# discuss-vendors
+- resources
+
+- cons
+  - 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [DartNode, 这是在干嘛？我都排到51，结果给我重新顺延到127位，不抢了 _202606](https://www.nodeseek.com/post-780901-1)
+- 我13.9的，跑到了第7，然后没了哈哈哈，7刀的跑到了第4没了
+- 不要刷新，不要点其他的抢购，否则排名会重置。PS: 可以同时开不同的浏览器抢不同的产品，可以抢到后下单时再登录。
+
+- [dartnode 核心发现：你排到了也没用！ _202606](https://www.nodeseek.com/post-780849-1)
+- 排到是有用的，我是排到的。看样子是等前一个退单了才排到的，到了第一名还排队了1个多小时。。
+- 界面显示还有五六台美西时，我就排到1了，等了十几分钟，然后还是没有
+- 我排到了，然后告诉我没货蚌埠住了
+- 每次排到#50就自动重排恢复#160了，非常逆天的商家
+
+- 隔壁LET也有人说了，有个哥们排到第7名，然后莫名其妙掉到57名，还有一个人排了两个小时，纹丝不动，只能说难以绷住
+
+- 我刚才点进去试了一下其实是 left 0 但是还让你排队
+
+- ### [dartnode过排队思路 _202606](https://www.nodeseek.com/post-781010-1)
+  - 判断了这个参数是claim就弹出抢购页面，但是我没有claim_url怎么办？
+  - 灵机一动，去排队另外两台月付几十刀的，人很少，一下就拍到了，抓到返回参数把商品id换成173
+  - 实际抢购地址：https://dartnode.com/wh-session/173/claim
+
+- 这是后端鉴权吧，哪有把逻辑放前端的, 肯定过不了
+
+- ## [Dartnode 13.99 休士頓 _202606](https://www.nodeseek.com/post-781019-1)
+一、 核心短板：CPU 性能较弱
+配置：Intel Xeon Gold 6148 (2.40GHz)，分配了 2 核 2 线程。
+
+表现：Geekbench 5 的单核得分 612，多核得分 1021。这个分数在目前的服务器市场中属于偏低水平。
+
+影响：不适合用来跑重度计算、大型游戏服务端、复杂的实时视频转码，或者高并发的大型动态网站。如果负载过高，这颗 CPU 会成为明显的系统瓶颈。
+
+二、 绝对亮点：极其优异的硬盘 I/O
+配置：100GB 容量，测试显示大概率为 NVMe 固态硬盘。
+
+表现：顺序读取（SEQ1M）高达 ~2585 MB/s，顺序写入高达 ~2900 MB/s。更关键的 4K 随机读写（RND4K）也有 50+ MB/s 和 13k+ 的 IOPS。
+
+影响：这是这台机器最拉分的地方（击败了大部分同类检测库里的硬盘）。这意味着极快的系统启动速度、极其丝滑的系统重装与恢复过程，以及非常优秀的数据库（如 MySQL/PostgreSQL）读写响应。它在处理海量小文件时会非常从容。
+
+三、 中规中矩：内存与网络设施
+内存：总容量约 4GB（实际可用 3.8GB）。对于运行 Debian 12 来说非常充裕。配合 100GB 的硬盘，用来跑 Docker 容器、搭建几个中小型网站环境、或者作为测试节点是完全绰绰有余的。
+
+底层架构：KVM 虚拟化，并且支持 VT-x 和 AES-NI 指令集。这意味着如果你需要在里面跑一些需要加密解密的代理服务，或者进行轻量级的嵌套虚拟化测试，底层是完全支持的。
+
+- ## [求推荐服务器，大带宽无限流量每月 200-300 美元左右，最高可到 3K/月以内 - IDC Flare _202606](https://idcflare.com/t/topic/98226)
+- RN这两款带宽最大1Gbps，流量不够直接+70刀/月买100T流量，或者可以+199刀/月升级为无限流量。缺点是带宽无法升级，优点是流量可以加，CPU也不错，同时工单很快。
+  - HostDzire优点是带宽大，缺点是无法加流量，也没有无限制流量选项，CPU也略差
+
+- ## [DartNode这个7刀年付貌似也没啥性价比啊 _202606](https://www.nodeseek.com/post-782223-1)
+- 一般，除了无限流量，我为什么不选dedirock呢? 还是1h2g 30G的硬盘，虽然流量只有4T，但是正常建站玩机也足够了吧
+- 如果是洛杉矶放货的话肯定很快就被抢光。
+
+- 不如dedirock, 人dedirock工单回的也快，服务态度没的说
+  - dartnode买了一天都没部署好，工单隔了老久回了一下，但也就是回了一下，啥问题没解决
+
+- [DartNode的美南7刀鸡没人买吗？ _202606](https://www.nodeseek.com/post-782192-1)
+- 买了美中了，可惜没抢到美西
+- 库存多，放了115台，另外很多人都在等美西放货。
+
+- ## [Let's discuss their service attitude. dartnode.com — LowEndTalk _202408](https://lowendtalk.com/discussion/196839/lets-discuss-their-service-attitude-dartnode-com)
+  - dartnode.com They offered a very tempting price, and I don’t doubt the quality of their servers.
+  - But as for their service quality, have any of you experienced something similar to what I have?
+  - When you submit a support ticket, they hardly ever respond. They’re extremely lazy.
+
+- I can't reach them from anywhere right now. If any of you know them, please help me find them. My server has been unreachable for several days, and there is very important data on it. This damn server is disrupting my work. I’ll say it again, I don’t want to damage their reputation, but if they see my post, please contact me as soon as possible.
+
+- ## [佬们，有没有便宜的服务器链式代理webshare家宽 - LINUX DO _202606](https://linux.do/t/topic/2406011)
+- 我现在用的dedirock，感觉现在便宜机器基本要被dedirock dedione两个替代了，我就是用的dedirock链式的webshare
+- DediOne是不是最便宜12.99刀一年？dedirock好像我看着一年$9
+  - 差不多，dedirock我黑五买的$7, 现在应该也是差不多$10，一个月还是断过两次，一个小时都能恢复，不过考虑这个价格也就还好
+
+- ## [dedirock 是灵车吗 - IDC Flare _202511](https://idcflare.com/t/topic/37735)
+- 他们家客服做的很好，去这个贴子下留言还能流量翻倍+IPv6
+- IP烂完了，但是好在速度可以，7刀只希望能用的久点跑得晚点 
+
+- 这家去年就在了，至少开了一年了吧，应该不是灵车……（就7-8刀要什么自行车……
+
+- 老板在LET上高频互动, 工单回复也比较及时. 但是他的这个后台不显示IPv6, VNC无法连接, 工单一顿回最后也没解决, 无所谓了, 小玩具.
+
+- 用一年不亏，两年血赚，三年他还不跑的话可以考虑传家了
+
+- 问一下这种机器一般用来做什么？
+  - 探针
+
+- 他家的 IP 质量很一般， IP 风险完全看运气开出来的。
+
+- ## [DediRock的稳定性怎么样？ _202601](https://www.nodeseek.com/post-599346-1)
+- 灵车要啥稳定性， 一个月大半夜重启两次，每次半小时
+
+- 非常差，我大盘都停了3次了 都是数据清零
+
+- 我是美东水牛城的机房，感觉还可以啊。缺点是延迟高，客服一般吧。优点是稳定而且几乎0丢包。晚高峰体验比rn dc2好。
+
+- ## [问一下ccs dedirock cloudnium _202608](https://www.nodeseek.com/post-885585-1)
+- 机房一样线路一样 机器配置定价不同
+
+- ## [盘一下cloudnium，mjj参考一下 _202607](https://www.nodeseek.com/post-804064-1)
+  - cloudnium曾经是nextarray合伙人，nextarray有达拉斯自有机房，但是老板生了个病死掉了，合伙人接收就叫cloudnium了。早期nextarray机器迁移到了breezehost（就是杜甫盲盒那一家）
+  - cloudnium开始就是做杜甫和托管生意的，从San Angelo的frontier机房起家，后来逐步拓展业务的
+  - 后来frontier机房不作为，杜甫全迁移到了达拉斯，我就溢价把传家宝卖了。
+  - 他家效率非常低，机器是不知道从哪儿淘来的硬件，迁移杜甫换了两台都没法装系统，都是硬件有毛病
+  - 今天的活动款其实把老用户背刺得连裤衩子都不剩了，之前一直有1刀的配置，现在0.54刀
+  - 目前cloudnium 达拉斯在tier.net机房，和曾经的nextarray没有关联，应该不属于左手倒右手
+
+- 刚刚好这个价格就差不多是IP成本
+
+- [cloudnium咋样？ _202312](https://www.nodeseek.com/post-50924-1)
+- 成立時間太短，不建議放重要的數據。
+
+- 无限流量真的挺好的 
+
+- 偶尔给你失联两三天，目前是吃灰
+- 平均每月断网一天。
+# discuss-vendor-racknerd
+- resources
+  - [RackNerd | VPS Specials](https://www.racknerd.com/specials/)
+
+- cons
+  - 似乎不支持 backup: [How to Backup Your VPS: A Simple Guide to Getting Started — RackNerd _202409](https://blog.racknerd.com/how-to-backup-your-vps-a-simple-guide-to-getting-started/)
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [RN 圣何塞和洛杉矶DC03哪个更好 _202510](https://www.nodeseek.com/post-488380-1)
+- 自己拿测试ip去ping一下啊，不同地方，不同运营商的结果都是不一样的，要选适合自己的，而不是人家说什么就是什么
+
+- 圣何塞电信用着很舒服 直接hy2速度也挺快 联通直接ping不通 移动没测过
+
+- 对线路来说稳定性无非就是延迟，抖动，或者你问的就是机器，会不会宕机失联
+
+- ## [对比测一下 RackNerd DC02 / DC03 / SJC - LINUX DO _202511](https://linux.do/t/topic/1150760)
+  - 单纯作上网用途，其实没有必要盲目跟风购买，因为这三台机器都没有优化，晚高峰的表现可能令人失望。三网中联通直连效果最好，属于是矮子里拔高个儿。DC02 综合下来是三者中直连效果最好的。
+
+- 如果买 DC02，可以选 cloudcone，同机房，而且活动款叠加储值优惠更加划算
+
+- ## [在RackNerd买的小鸡，上传速度只有这么点？ - LINUX DO _202512](https://linux.do/t/topic/1275819)
+  - 之前在 RackNerd 买了只小鸡，用起来感觉速度非常慢，浏览网页都很吃力，刚才测速发现它的上传速度只有 4Mbps？一定是哪里出了问题。
+  - 位置在纽约
+
+- 那这速度非常正常了，隔着一个太平洋 + 整个美国。美国鸡的话建议买洛杉矶的，对中国友好一点。
+
+- 廉价鸡是这样的，质量纯是抽奖
+
+- RN 虽然便宜，但是晚高峰卡
+- RN 的机子除了价格，其他的优势一点都没啊，晚上高峰 ssh 连半天，连上一会儿也掉了
+
+- 不差钱就 搬瓦工 CN2GIA 免费有谷歌云 甲骨文
+
+- ## [racknerd买的服务器很卡 - LINUX DO _202608](https://linux.do/t/topic/2705444)
+- rn 线路很差，我测下来我的延迟还行，丢包很多，一般都是套个 cf 建站用
+  - 需要用跳板机，最好是线路优化的机器，连梯子代理也行
+
+- 需要套 cf 的代理，然后走优化域名，且是联通宽带, 为了这个折腾很久，还换了联通号卡 情况好的时候能稳定 200ms 延迟 + 20MB/s ， 不套这些真的完全没法用 上个 google 都难丢包严重
+
+- ssh，finalshell 加代理或者隧道就能解决，至于建站对外访问，或者搭建节点
+建站直接套 cf
+节点直接用 hy2 也能跑到 7 万（油管）
+只能说没明确需求和不会玩而已
+
+- RACKNERD 的主机 ssh 不会太好的，直连多少有延迟，RACKNERD 一般都是搞自建线路的，胜在便宜，在套上 cf 的优选 ip，不会输机场的，自用基本上都满足，可以看看 RACKNERD 配置 cf 自选优选 ip 搭建线路
+
+- ## [RACKNERD 现在一般都溢价多少？ _202608](https://www.nodeseek.com/post-885356-1)
+- 个别黑五活动款会有些溢价，比如去年黑五第三波的性能款，其他普通款基本没有甚至折价
+
+- rn 的机子很脏，ip 被滥用的
+
+- ## [【RackNerd】RN 2026年黑五历史所有特价机整理（常规套餐+性能建站AMD系列）【均可代申请流量翻倍】 _202604](https://www.nodeseek.com/post-673445-1)
+2025年RN全部黑五套餐
+1 GB 内存
+1 CPU 核心
+25 GB SSD 存储
+2000 GB 月流量
+$10.60 /年 (续费同价)
+可选机房: 多机房
+购买链接: https://my.racknerd.com/aff.php?aff=12854&pid=923&language=chinese
+
+2.5 GB 内存 (热门款)
+2 CPU 核心
+45 GB SSD 存储
+3000 GB 月流量
+$18.66 /年 (续费同价)
+可选机房: 多机房
+购买链接: https://my.racknerd.com/aff.php?aff=12854&pid=924&language=chinese
+
+4 GB 内存
+3 CPU 核心
+65 GB SSD 存储
+6500 GB 月流量
+$29.98 /年 (续费同价)
+可选机房: 多机房
+购买链接: https://my.racknerd.com/aff.php?aff=12854&pid=925&language=chinese
+
+6 GB 内存
+5 CPU 核心
+100 GB SSD 存储
+10, 000 GB 月流量
+$44.98 /年 (续费同价)
+可选机房: 多机房
+购买链接: https://my.racknerd.com/aff.php?aff=12854&pid=926&language=chinese
+
+8 GB 内存
+6 CPU 核心
+150 GB SSD 存储
+20, 000 GB 月流量
+$62.49 /年 (续费同价)
+可选机房: 多机房
+购买链接: https://my.racknerd.com/aff.php?aff=12854&pid=927&language=chinese
+
+需要申请流量翻倍的，回复订单号/PM我订单号都可以(代申请)，一般1-2天即可完成翻倍。
+
+- ## [从 RackNerd 换到搬瓦工再换回来 _202604](https://www.nodeseek.com/post-685159-1)
+  - 两年前第一次买 VPS，在 nodeseek 看了一圈，入手了 RackNerd 洛杉矶的年付机器，$11.29，想着便宜先试试。后来又换过搬瓦工 CN2 GIA，最终又回到 RackNerd。过程踩了不少坑，记录一下。
+- 第一阶段：RackNerd 年付 $11
+  - 实际体验：白天 SSH 连上去操作完全没问题，延迟大概 180ms 左右，勉强能接受。博客访问也还行。 
+  - 问题出在晚高峰，丢包率会明显上升，偶尔 SSH 卡几秒，网页加载变慢。普通 BGP 线路，高峰期就是这样，没什么好抱怨的，毕竟一年才 $11。
+  - 稳定性倒是出乎意料得好，挂了快一年没遇到无故宕机，有一次机房维护提前发了邮件告知。
+- 第二阶段：换搬瓦工 CN2 GIA，为了速度
+  - 后来项目需要访问国内的一些 API，晚高峰的丢包让我受不了，咬牙换了搬瓦工 DC6 CN2 GIA-E，季付约 $50。
+  - 效果是真的好。延迟稳定在 140ms 左右，晚高峰丢包几乎没有，下载速度能跑满本地带宽。DC6 机房对电信、联通、移动现在分别走 CN2 GIA、CUP、CMIN2，三网都有优化。
+  - 但用了半年，我意识到自己的实际场景根本用不着这个线路质量——项目访问量很低，偶尔慢一下没什么影响，每季度 $50 花得不值。
+- 第三阶段：现在的方案，两台机器分工
+  - RackNerd 年付 $11：跑不重要的服务，脚本、博客、测试环境，挂着就行
+  - 搬瓦工只在需要时用：需要稳定访问国内资源时再开
+  - 说直白点：RackNerd 的线路够不够用，取决于你的实际用途。跑脚本、个人博客、境外业务，完全够；如果是面向国内用户的服务，或者对延迟敏感，搬瓦工 CN2 GIA 才值得价差。
+
+- 落地鸡 + 线路鸡 + 活动鸡 等于性能线路性价比🐔
+
+- ## [Racknerd洛杉矶dc-02的VPS要换机房了 - LINUX DO _202605](https://linux.do/t/topic/2202607)
+- 曾经优质的 74 段 IP 以后再也没有了
+  - cloudcone 还是 74 段的，不清楚会不会也这样搞
+- 不要啊。我的 74 网段，直连没了。dc02 直连可以 150ms, 不知道 dc03 可以不。。。
+
+- DC03 线路比 DC02 的延迟高多了，晚高峰速度也拉胯得多 
+
+- 有人发了工单问了，不能退款，但是可以发工单选其他机房，比如圣何塞什么的
+
+- DC02 完全可以直连，DC03 似乎一部分 IP 都被 google 打到香港去了，之前买了个 DC03，连不上 gemini，直接废弃了
+
+- 经过对比测试，发现：
+
+CPU 从 E5-2690 变成了 2697，但是单核 / 多核性能略有下降，没了嵌套虚拟化；
+内存读写性能下降；
+磁盘 4K 读写略有提升，顺序读写性能下降；
+NAT 从 Full Cone 改成了 Port Restricted；
+Gemini、Reddit 被拉黑；
+电信延迟加重・・・
+
+- ## [RackNerd 的 DC03 和 DC02 机房，到底有啥区别？老用户帮你扒明白 _202605](https://www.nodeseek.com/post-737628-1)
+  - 这俩压根不是一家公司的机房。
+  - DC03 的真身：ColoCrossing（CCS）
+  - RackNerd 的 DC03，底层是 ColoCrossing（业内简称 CCS）洛杉矶机房。CCS 是北美知名的 IDC 批发商，旗下有大量"下游品牌"在卖它的资源，RackNerd 就是其中之一。所以你买的 DC03 机器，网络、硬件、上游线路全都来自 CCS，RackNerd 更像是一个"贴牌零售商"。
+  - RackNerd 的 DC02，底层则是 Multacom 洛杉矶机房，和 DC03 完全是两套独立的网络与基础设施。同样用 Multacom 这个机房的，还有大家熟悉的 CloudCone。
+  - DC03（CCS）的网络架构偏向北美本地与欧美互联，到国内的整体延迟普遍高于 DC02（Multacom）。
+  - DC03（CCS） 与中国移动的互联较弱，移动用户经常出现绕路、丢包、晚高峰拥堵等问题。
+  - DC02（Multacom） 对比DC03移动线路方向的对接相对友好，稳定性更好。
+
+- 网络感觉差不多，但是DC02的IP确实干净一些。
+
+- 建站套CF的话影响不大 科学用可以考虑不续了 DC02在白天 电信和联通和移动起码还是能用的
+
+- [racknerd快讯，dc02 所有机器将物理迁移到 dc03 _202605](https://www.nodeseek.com/post-736588-1)
+- dc2机房是属于mc的，mc被ec收购了，ec也收购了cc，现在cc和dc2都是一家，rn估计没续约找借口
 # discuss-vendor-dartnode
 - cons
   - backup restore 慢到不能忍

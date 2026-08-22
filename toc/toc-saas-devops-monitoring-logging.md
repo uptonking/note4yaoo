@@ -21,9 +21,23 @@ modified: 2024-02-11T15:11:31.598Z
   - qryn polyglot user interface to explore logs, metrics and traces 
   - Grafana Explore alternative compatible with Loki, Prometheus and Tempo
 # monitoring/observability
-- https://github.com/hyperdxio/hyperdx /MIT/202506/ts
+- https://github.com/openobserve/openobserve /21.4kStar/AGPLv3/202608/rust/ts/vue
+  - https://openobserve.ai/
+  - a cloud-native observability platform built specifically for logs, metrics, traces, analytics, RUM (Real User Monitoring - Performance, Errors, Session Replay) designed to work at petabyte scale
+  - Elasticsearch/Splunk/Datadog alternative for (logs, metrics, traces, RUM, Error tracking, Session replay)
+  - High Availability mode scales to petabytes for the most demanding workloads
+  - Stateless architecture — rapid scaling and low RPO/RTO for disaster recovery
+  - Parquet columnar storage — efficient compression and fast analytical queries
+  - S3-native design — inexpensive object storage with intelligent caching
+  - Native multi-tenancy — organizations and streams as first-class concepts with complete data isolation
+  - [OpenObserve Architecture ](https://openobserve.ai/docs/architecture/)
+    - OpenObserve is an observability platform with a distributed architecture composed of five node types — Router, Ingester, Compactor, Querier, and Scheduler — that runs in either single-node mode (SQLite with local disk or object storage) or high-availability mode (NATS, PostgreSQL, and object storage).
+    - Single-node mode with SQLite and local disk is the default way to run OpenObserve. Use it for light usage and testing or if you don't require HA. You can still ingest and search over 2 TB on a single machine per day.
+    - HA mode does not support local disk storage. Running OpenObserve in HA mode requires: Kubernetes (with Helm) to orchestrate the nodes.
+
+- https://github.com/hyperdxio/hyperdx /9.9kStar/MIT/202608/ts
   - https://hyperdx.io/
-  - open source observability platform unifying session replays, logs, metrics, traces and errors powered by Clickhouse and OpenTelemetry.
+  - open source observability platform unifying session replays, logs, metrics, traces and errors powered by `Clickhouse` and OpenTelemetry.
   - open source and developer-friendly alternative to Datadog and New Relic.
   - 依赖rrweb、@clickhouse/client、@hyperdx/lucene、express-session、mongoose、passport、zod、nextjs、mantine6、jotai、swr、tanstack-table
   - We provide a set of SDKs and integration options to make it easier to get started with HyperDX, such as Browser, Node.js, and Python
@@ -36,6 +50,9 @@ modified: 2024-02-11T15:11:31.598Z
   - 未使用rrweb
   - SQL: Query your data using standard SQL
   - Pydantic Integration: Understand the data flowing through your Pydantic models and get built-in analytics on validations.
+  - [Self-Hosted Logfire Overview ](https://pydantic.dev/docs/logfire/deploy/self-hosted-deployment/overview/)
+    - Self-hosted Logfire runs the same product as the public Logfire deployment in your own Kubernetes environment. It is delivered through the official Logfire Helm chart.
+    - Self-hosted Logfire is included in the Enterprise plan. Contact sales@pydantic.dev for access to the private container images and commercial terms.
 
 - https://github.com/Openpanel-dev/openpanel /AGPLv3/202403/ts
   - https://openpanel.dev/
@@ -45,7 +62,7 @@ modified: 2024-02-11T15:11:31.598Z
   - Cloud or Self-Hosting
   - Nextjs - the dashboard
   - Postgres - storing basic information
-  - Clickhouse - storing events
+  - `Clickhouse` - storing events
   - Fastify - event api
   - Redis - cache layer, pub/sub and queue
 
@@ -56,7 +73,7 @@ modified: 2024-02-11T15:11:31.598Z
   - Built on top of OpenTelemetry, the open-source standard which frees you from any type of vendor lock-in
   - 依赖httpsnoop、go-sqlbuilder
   - Use SigNoz APM to monitor your applications and services. It comes with out-of-box charts for key application metrics like p99 latency, error rate, Apdex and operations per second. You can also monitor the database and external calls made from your application
-  - SigNoz can be used as a centralized log management solution. We use ClickHouse as a datastore
+  - SigNoz can be used as a centralized log management solution. We use `ClickHouse` as a datastore
   - Monitor exceptions automatically in Python, Java, Ruby, and Javascript. For other languages, just drop in a few lines of code and start monitoring exceptions.
   - [Is Signoz really open-source or not? _202312](https://github.com/SigNoz/signoz/discussions/4231)
     - SigNoz is fully open-source. However, ee folder is under SigNoz Enterprise license, while the rest of the code is under MIT Expat license.
@@ -96,6 +113,9 @@ modified: 2024-02-11T15:11:31.598Z
 - https://github.com/openreplay/openreplay /8.2kStar/AGPL/202412/ts/go/python
   - https://openreplay.com/
   - a session replay suite you can host yourself, that lets you see what users do on your web app, helping you troubleshoot issues faster.
+  - [OpenReplay Administration ](https://docs.openreplay.com/en/deployment/openreplay-admin/)
+    - sink	Reads data from the streaming pipeline (Redis or Kafka for enterprise edition) and inserts into a temp storage (NFS)
+    - 
 
 - https://github.com/ccfos/nightingale /12.5kStar/apache2/202510/go
   - 夜莺 Nightingale 是中国计算机学会接受捐赠并托管的第一个开源项目，是一个 All-in-One 的云原生监控工具，
@@ -127,11 +147,6 @@ modified: 2024-02-11T15:11:31.598Z
   - It can use either a local mount point or object storage (S3/compatible stores) for data storage.
   - For comparison, Parseable consumes up to ~80% lower memory and ~50% lower CPU than `Elastic` for similar ingestion throughput. 
 
-- https://github.com/openobserve/openobserve /AGPLv3/202402/rust/ts/vue
-  - https://openobserve.ai/
-  - a cloud-native observability platform built specifically for logs, metrics, traces, analytics, RUM (Real User Monitoring - Performance, Errors, Session Replay) designed to work at petabyte scale
-  - Elasticsearch/Splunk/Datadog alternative for (logs, metrics, traces, RUM, Error tracking, Session replay)
-
 - https://github.com/spiritLHLS/ecs /shell
   - VPS融合怪服务器测评脚本(VPS Fusion Monster Server Test Script)(尽量做最全能测试服务器的脚本)
 
@@ -157,11 +172,15 @@ modified: 2024-02-11T15:11:31.598Z
   - 依赖express、mongoose
   - [Download & Install Countly](https://github.com/osoner/countly-documentation/blob/master/installation/countly-server-installation.md)
 # feature-flag
-- https://github.com/Unleash/unleash /10.1kStar/apache2/202403/ts
+- https://github.com/Unleash/unleash /13.7kStar/apache2 > AGPL/202608/ts
   - https://getunleash.io/
   - https://demo.unleash-hosted.com/
   - Unleash is the open source feature toggle service.
   - Unleash increases efficiency and gives teams full control of how and when they enable new functionality for end users.
+  - [Scaling Unleash for enterprise workloads | Unleash Documentation ](https://docs.getunleash.io/guides/scaling-unleash)
+    - Unleash API server: a Node.js-based, stateless API. It can be scaled horizontally by running multiple instances behind a load balancer, ideally across different Availability Zones (Multi-AZ).
+    - Use managed database services (such as AWS RDS for PostgreSQL) configured for high availability and backups.
+    - You are responsible for architecting for high availability (for example, Multi-AZ API deployment, database clusters), scaling compute resources and database capacity planning, backups, disaster recovery strategies, monitoring
 
 - https://github.com/PostHog/posthog /29.7kStar/MIT+EE/202510/python/ts
   - https://posthog.com/

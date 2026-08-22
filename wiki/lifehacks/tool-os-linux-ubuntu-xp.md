@@ -39,7 +39,70 @@ modified: 2021-01-01T22:26:57.773Z
   - bring back Tray Icons to top panel, with additional features.
   - only works with Xorg and XWayland.
   - If you are on Wayland and app won't run through XWayland you can force it via command: `GDK_BACKEND=x11 app_name`
-# ubuntu-starter
+# ubuntu-starter 🚀
+- [拿到新的小鸡（VPS）后，你应该先做什么？（入门安全篇） _202507](https://linux.do/t/topic/817769)
+
+```sh
+ssh root@ip
+uname -a 
+
+sudo apt update -y && sudo apt upgrade -y
+sudo apt install -y vim ufw fail2ban git
+
+# 创建新用户并授予管理员权限
+adduser your_username
+usermod -aG sudo your_username
+# logout
+ssh your_username@ip
+
+# 禁用 root 用户远程登录
+sudo nano /etc/ssh/sshd_config
+# PermitRootLogin no
+
+# UFW (Uncomplicated Firewall) 
+# 设置默认规则: 先禁止所有传入连接，允许所有传出连接。这是一个安全的基准。
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+sudo ufw allow http  # 80端口
+sudo ufw allow https # 443端口
+
+sudo ufw allow ssh
+# 如果你改了 SSH 端口 (例如 2233)
+# sudo ufw allow 2233/tcp
+
+sudo ufw enable
+sudo ufw status verbose
+
+# 安装 Fail2ban 防御工具
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+sudo systemctl restart fail2ban
+sudo systemctl enable fail2ban 
+
+sudo fail2ban-client status
+sudo fail2ban-client status sshd
+
+# 设置系统时间
+sudo timedatectl set-timezone Asia/Shanghai
+timedatectl
+
+# ssh client
+# 用邮箱来标识这个密钥是谁的、用在哪台电脑上，方便管理
+ssh-keygen -t ed25519 -C "your_email@example.com"
+ssh-copy-id your_username@server_ip
+
+# docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker $USER
+
+```
+
+- https://github.com/buildplan/du_setup /767Star/MIT/202608/sh
+  - https://buildplan.org/du_setup/getting-started
+  - A Bash script to automate the initial configuration and security hardening of Debian and Ubuntu servers.
+  - It is idempotent, safe, and suitable for production environments, providing a secure baseline for further customization. The script runs interactively, guiding users through critical choices while automating essential security and setup tasks.
+
 - https://github.com/ohmybash/oh-my-bash
   - https://ohmybash.github.io/
   - A delightful community-driven framework for managing your bash configuration

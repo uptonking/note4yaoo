@@ -11,6 +11,54 @@ modified: 2023-01-12T10:24:24.591Z
 
 - ref
   - [most popular backend frameworks 时间变化条形图 基于d3实现](https://statisticsanddata.org/data/most-popular-backend-frameworks-2012-2021/)
+# horizontal-scaling/HA/stateless
+- scaling-examples
+  - authentik
+  - 观测类: openobserve, PostHog
+  - 工作流计算类: n8n, activepieces
+  - Unleash
+  - outline, colanode
+  - Appwrite
+
+## scaling-xp
+
+- 🤔 I want to build a saas web app that is always online without single point of failure.  so the core backend architecture should be stateless, and supports horizontal scaling and high availability.  some example solutions can be references: https://github.com/goauthentik/authentik  , https://github.com/openobserve/openobserve .
+  - I want more architecture inspirations for horizontal scaling apps, not for db or framework.
+  - deep research related solutions/ideas, if you found any open source solutions or inspiration projects, provide overview/github-repo/website for each.
+- Disaggregating compute from storage (OpenObserve's approach, generalized)
+  - OpenObserve's own docs describe five node types — router, ingester, compactor, querier, and a scheduler/alertmanager — coordinating over NATS with Postgres for metadata and S3-compatible storage for the actual dataOpenObserve uses Ingester nodes to receive ingest requests, to convert data into Parquet format and to store it in object storage, and the router, ingester, compactor, and alertmanager components are stateless and horizontally scalable. 
+- Several other projects independently converged on the same idea
+  - Grafana Loki: microservices-based architecture designed to run as a horizontally scalable, distributed system, with multiple components that can run separately and in parallel.
+  - Grafana Mimir: Long-term Prometheus metrics storage. No single points of failure — all components can be replicated
+  - Quickwit: Search/log engine written in Rust. Fully decoupled compute and storage with stateless indexers and searchers that execute complex search
+- Zitadel: every change is captured as an immutable event, and separate read models are built from that event log.
+- Kratos/Ory Hydra: Zero In-Memory State: Kratos does not use sticky sessions or in-memory caching. Every request contains all the context needed to verify it via a stateless JWT or by checking a highly available data store
+
+- PostHog: When an event hits PostHog, a stateless web node validates the payload and immediately writes it to Apache Kafka, returning a HTTP 200 OK to the client.
+- Sentry: Sentry uses Python (Django) for its stateless web nodes, but delegates almost all business logic to asynchronous Celery workers backed by Redis and Kafka
+- Mattermost: use a Redis cluster (or a gossip protocol) as a high-speed pub/sub backplane. Node 1 publishes the event to Redis; Node 2 is subscribed to it, sees the message, and forwards it to User B.
+
+- Unleash [Scaling Unleash for enterprise workloads  ](https://docs.getunleash.io/guides/scaling-unleash)
+  - Unleash API server: a Node.js-based, stateless API. It can be scaled horizontally by running multiple instances behind a load balancer, ideally across different Availability Zones (Multi-AZ).
+  - Self-hosting Unleash: Designing for high availability
+    - We recommend running the Unleash API nodes in at least two different Availability Zones within a single region. 
+    - For enterprise-scale deployments, a robust, managed service (such as AWS RDS for PostgreSQL) is recommended.
+
+- n8n [Scaling | Deploy  ](https://docs.n8n.io/deploy/host-n8n/configure-n8n/scaling)
+  - n8n can run in different modes depending on your needs. The queue mode provides the best scalability. 
+  - When running in queue mode, you have multiple n8n instances set up, with one main instance receiving workflow information (such as triggers) and the worker instances performing the executions.
+- activepieces [Autoscaling](https://www.activepieces.com/docs/install/architecture/autoscaling)
+  - Everything is queue-backed: webhooks and recurring jobs land on Redis, and workers poll them off it. A spike does not drop work.  It queues and drains as slots free. For exactly what survives a crash, what runs at-least-once, and where each promise stops
+  - To scale Activepieces, add replicas of the workers, the app, or the Postgres database. A small Redis instance is enough.
+  - Workers are the unit you scale — one worker runs one flow at a time 
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 # node as backend
 - ## [Node.js做Web后端优势为什么这么大？](https://www.zhihu.com/question/357717742/answers/updated)
 - 从没见过哪个后端开发语言的标准库比js还小的，连leftpad这种常用的功能还有一个npm库，难以想象
