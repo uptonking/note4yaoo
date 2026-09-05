@@ -651,9 +651,15 @@ you might refactor/reorganize the tests architecture/logic to make it correct, f
   - cons: 内置runtime需要支持多种格式如 /v1/chat/completions, /v1/responses， 还要考虑本地ollama的版本、模型版本， 带来的问题比收益多
   - 参考很多主流开放性ai的产品如cursor/cherry-studio, 都支持用户配置api，所以通过平台/系统来管理本地的工具是非必要的
 
-### aichor-harness 💎
+### aichor(paseo) harness
 
-> aichor is a self-hostable agent with extensible ui built with pi, it also makes it easy to manage existing agent harness like claude code, codex...
+- features
+  - remote-control
+  - existing coding agents
+  - automation: cli, mcp, worktree
+  - plugins
+
+> aichor is a self-hostable agent built with pi and extensible architecture, also supports to manage existing agent harness like claude code, codex...
 
 project paseo(at folder `../all-agi-harness/paseo` , AGPL License) provides a interface to orchestrate multiple coding agents. It runs a local server called the daemon that manages your coding agents. Clients like the desktop app, mobile app, webapp, and CLI connect to it. 
 - project pi(at folder `../all-agi-harness/pi`, MIT License ) is a minimal agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI.
@@ -706,7 +712,13 @@ project paseo(at folder `../all-agi-harness/paseo` , AGPL License) provides a in
 
 - docs/tests/scripts might be outdated, recheck code and data flow to improve aichor.
 
-- 
+- please continue to improve aichor with a comprehensive settings page like paeso.
+  - the bottom-left menu item of sidebar should be settings, the current "Connections" should be a menu item in settings page. 
+  - reimplement the "Appearance" settings features of paseo in aichor, settings of theme/details-level/fonts should also be supported in aichore, just like paseo. (code highlight setting might be ignored.)
+  - In aichor Appearance settings, use System theme by default, allow to switching light/dark/system theme, other themes are not required.
+  - implement "Shortcuts" settings like paseo for supported features only.
+  - Rename "Host" settings to "Devices" in aichor. it is unnecessary to migrate all settings, just migrate common settings, currently it should show Overview/Providers/Metadata/Connections/Pair Devices/Projects/Workspaces. other settings might be supported if you want.
+
 - 
 - 
 - 

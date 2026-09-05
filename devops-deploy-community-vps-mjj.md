@@ -16,6 +16,7 @@ modified: 2026-06-19T06:15:35.007Z
   - dedirock性价比高，但口碑不好
   - 是否能多次免费更换ip
   - 支持7天无理由退款的很方便
+  - 一号一鸡容易转手
 
 - comparison
   - [VPS值得买！ 产品库存状态 ](https://stock.vpszdm.com/)

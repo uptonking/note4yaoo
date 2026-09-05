@@ -881,7 +881,6 @@ modified: 2025-12-11T18:10:23.710Z
   - 真实 ACP JSON-RPC 链路：原生进程托管、请求响应、通知流和异常退出处理
   - 配置同步：账户模块内的 config.toml、system-prompt.md 与项目 AGENTS.md 支持双向编辑和外部变更热同步，不暴露原始环境变量编辑栏
   - [[开源自荐]Grox——grok build桌面app - LINUX DO _202607](https://linux.do/t/topic/2613890)
-
 # cli-aggregator/wrapper
 - https://github.com/jazzenchen/VibeAround /MIT/202606/rust/ts
   - https://vibearound.ai/
@@ -996,7 +995,7 @@ modified: 2025-12-11T18:10:23.710Z
   - Run Claude Code, OpenCode, and Codex sessions in parallel. One window. Isolated branches. Zero tab chaos.
   - [Built a fully open source desktop app wrapping OpenCode sdk aimed at maximum productivity : r/opencodeCLI _202603](https://www.reddit.com/r/opencodeCLI/comments/1runznq/built_a_fully_open_source_desktop_app_wrapping/)
 # ui-aggregator/manager
-- https://github.com/getpaseo/paseo /13.4kStar/MIT > AGPL/202608/ts
+- https://github.com/getpaseo/paseo /13.4kStar/MIT > AGPL > apache2/202608/ts
   - https://paseo.sh/
   - Manage coding agents from your phone and desktop.
   - a self-hosted daemon for Claude Code, Codex, and OpenCode.
@@ -1005,6 +1004,10 @@ modified: 2025-12-11T18:10:23.710Z
   - [I built a fully self-hosted and open-source Claude Code UI for desktop and mobile : r/ClaudeCode _202602](https://www.reddit.com/r/ClaudeCode/comments/1r8rqnv/i_built_a_fully_selfhosted_and_opensource_claude/)
     - Git worktree management for running agents in parallel, Git operations so you don't have to leave the app, integrated terminal, it also comes with fully local voice mode and dictation
   - [I built an open source mobile and desktop app for OpenCode : r/opencodeCLI _202604](https://www.reddit.com/r/opencodeCLI/comments/1s9d7u6/i_built_an_open_source_mobile_and_desktop_app_for/)
+  - [Relicensing Paseo from AGPL-3.0-or-later to Apache-2.0  _202608](https://github.com/getpaseo/paseo/issues/2982)
+    - The goal is to make Paseo easier for individuals and organizations to adopt, integrate, redistribute, and build upon. 
+  - [v0.7.0  _20260901](https://github.com/getpaseo/paseo/releases/tag/v0.7.0)
+    - Changed the project license to Apache-2.0
 
 - https://github.com/xintaofei/codeg /2.7kStar/apache2/202608/ts/rust/tauri
   - https://docs.codeg.app/

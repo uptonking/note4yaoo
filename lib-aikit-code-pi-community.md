@@ -117,3 +117,34 @@ format-on-save - Automatically runs linters and prettier formatting hooks immedi
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## People of Pi: the next release will incorporate dynamic tool loading without cache wiping on supported models and providers. 
+- https://x.com/mitsuhiko/status/2075703856726499364
+  - We did some investigations and found a way to get somewhat consistent API behavior between OpenAI and Anthropic.
+  - The neat thing is that existing API behavior if used correctly, will just do the right thing when possible. If you turn cache miss warnings on, you can detect good and bad behavior. Adding tools works, removing will wipe caches.
+  - This is allowing you to write you own search tool that executes on the client. You can utilize the inputs in whatever form you like.
+- Can this happen also mid-session? Why does removal of tools brake cache? Any particular use cases in mind?
+  - Yes. This works mid session. As to why removing tools breaks the cache: just fundamental limitations. Use cases are primarily progressive disclosure of tools but it can also be handy for clear state transitions. Plan -> Implement etc.
+
+- ## 🆚 [Pi vs Opencode : r/PiCodingAgent _202606](https://www.reddit.com/r/PiCodingAgent/comments/1uf6uqb/pi_vs_opencode/)
+  - I like Pi for its light weight and endless expandability options. I like Opencode for providing most of what I need out of the box, but not a big fan of huge system prompts.
+- You can dramatically reduce OpenCodes system prompts by just overwriting the default build and plan agents with your own agents
+
+- try oh my pi. it has more features than opencode and its super customizable and still more efficient when you set it up right.
+
+- i used OC for a while until i finally installed pi. have not gone back to OC since. pair pi + zed acp and i miss nothing about OC.
+
+- ## [Pi coding agent is amazing (or how I learned to stop worrying and leave OpenCode) : r/LocalLLM _202605](https://www.reddit.com/r/LocalLLM/comments/1ta2tzz/pi_coding_agent_is_amazing_or_how_i_learned_to/)
+  - following Pi’s philosophy of “if you need extra features, ask Pi to build them”
+- It is really hard to understand. Can someone explain why? As far as I understand, tools like OpenCode, Pi, or even Claude are just wrappers. The actual reasoning capability comes from the LLM. I know each tool uses different system prompts, but can that really create such a huge difference that one tool succeeds while another completely fails at the same task? It feels similar to humans. The brain is the most important part. Whether the arms or legs are slightly stronger or weaker should only affect working speed a little, not completely ruin the result.
+  - The harness can make a big difference. It's doing more than just a system prompt, there's memory management, there's broader context management, there's how tools, mcps, skills, etc are exposed to the agent, session management, and more. Check out terminal-bench, they have benchmark scores by harness+LLM which sort of highlights the difference a harness can make.
+- Think of a harness like managers, LLMs as your development team members.
+  - harnesses. Think of it like managing a team of house movers. If you just let them go, they'll grab what they see and throw it in the truck. If you put them in harnesses with moving straps, they'll go move the big furniture in first, because that's what those harnesses are for.
+- models are trained to use certain tools, so which tools are exposed through harness, matters.
+
+- SLMs and smaller LLMs are not as incapable as we think, they just can't handle heavyweight harnesses.
+  - Harnesses with huge system prompts and lots of skills/mcp tools loaded will need more capable models to run it.

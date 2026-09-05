@@ -25,18 +25,18 @@ python2 -m SimpleHTTPServer 8000
 - prettier
 
 ```shell
-npx prettier --write '**/*.{js,jsx,ts,tsx,json}'
+npx prettier --write ' **/* .{js,jsx,ts,tsx,json}'
 
-prettier --config ./.prettierrc.js --write '**/*.{js,jsx,ts,tsx,json}' --ignore-unknown
+prettier --config ./.prettierrc.js --write ' **/* .{js,jsx,ts,tsx,json}' --ignore-unknown
 
-prettier --loglevel debug --config ./.prettierrc.js --write '**/*.*' --ignore-path=./.prettierignore --ignore-unknown
+prettier --loglevel debug --config ./.prettierrc.js --write ' **/*.* ' --ignore-path=./.prettierignore --ignore-unknown
 ```
 
 - file
 
 ```shell
 # remove files
-rimraf --glob ./**/*.tsbuildinfo
+rimraf --glob ./ **/* .tsbuildinfo
 ```
 
 - changelog
@@ -110,11 +110,16 @@ git commit --amend -m 'new msg'
 # https://stackoverflow.com/questions/1884474
 git rebase -i HEAD~n    倒数条第N条，N>=1
 
-# trigger CI
+# dry-run does not trigger hooks
+git commit --dry-run
+
+# trigger CI, Use --allow-empty (If you have no files staged)
 git commit --allow-empty -m 'chore: empty commit'
+git commit --allow-empty -m "test hooks"
+# Run git commit without the -m flag will run hooks, If the hook passes, a editor will open to write commit message
 
 # 撤销上次commit的记录，不回滚修改
-# **只撤销本次提交记录，实际修改后的文件仍然存在本地**
+# **只撤销本次提交记录，实际修改后的文件仍然存在本地** 
 git reset HEAD~
 git reset commit_id
 

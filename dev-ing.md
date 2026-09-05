@@ -345,6 +345,25 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0904
+
+- 🤔 [Feature request: show client IP in request records · Issue · router-for-me/CLIProxyAPI _202608](https://github.com/router-for-me/CLIProxyAPI/issues/5029)
+  - In CLIProxyAPI, structured request/usage records emitted to the usage queue (and retrieved via the management API endpoint /management/usage or the Redis queue protocol stream) already contain the following metadata fields:
+  - client_ip: The direct peer IP address.
+  - x_forwarded_for: The forwarded IP chain from X-Forwarded-For header values.
+  - user_agent: The client user agent.
+  - Since CLIProxyAPI already provides these structured fields in the usage records, surfacing them in the CPA Manager Plus dashboard UI is a feature request for the CPA Manager Plus repository/panel rather than a backend change in CLIProxyAPI.
+
+- These are private (internal) IP address ranges defined by RFC 1918. They're reserved for use inside local networks and aren't routable on the public internet — routers simply drop packets addressed to them if they leak out.
+  - 10.0.0.0/8	~16.7 million	Large enterprise networks, cloud VPCs (AWS, GCP, Azure)
+  - 172.16.0.0/12	~1 million	Medium networks; also common in Docker default bridge networks
+  - 192.168.0.0/16	65,536	Home routers, small office networks
+  - 172. *.*.* is not entirely private. Only 172.16.0.0 through 172.31.255.255 (the second octet between 16–31) is reserved. 172.32.0.0 and above, or 172.15.0.0 and below, are public address space.
+  - 192.168. *.* is fully private — the whole /16 block, so any address from 192.168.0.0 to 192.168.255.255 is internal. Most home routers default to 192.168.0.x or 192.168.1.x.
+  - 10. *.*.* is fully private and the largest block, so it's the usual choice when you need to number a big network (thousands of devices, multiple subnets).
+  - 127.0.0.0/8 — loopback addresses (127.0.0.1 = "localhost," your own machine).
+  - 169.254.0.0/16 — link-local addresses, auto-assigned when a device can't reach a DHCP server.
+
 ## 0901
 
 - beszel: worker-4’s fingerprint is identical to worker-3’s, so Beszel treats the new agent as the existing worker-3 system and never creates a worker-4 record. This comes from cloned VPS machine identity data; I’m assigning worker-4 a unique persisted fingerprint and restarting only its Beszel agent.

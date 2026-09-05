@@ -22,6 +22,15 @@ modified: 2025-01-01T16:03:02.565Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Crab builds on Hugging Face’s open-source Xet libraries to bring chunk-level deduplication to Git, with large files stored in your own S3, GCS or Azure bucket.
+- https://x.com/haipingfu/status/2095682433924595878
+  - Unfortunately technology alone isn’t worth billions. Ecosystems are. Hugging Face has built one of the strongest ecosystems in AI and it’s already worth more than GitHub ($7.5 billion) was when Microsoft acquired it.
+- Content-defined chunking is the part that pays off daily: change a byte in a 2 GB checkpoint and only the touched chunks upload.
+
 - ## 🚀 Today I’m open-sourcing Crab: serverless Git for large files at any scale, released under Apache 2.0.
 - https://x.com/haipingfu/status/2094863027682386215
   - Git remains one of the best interfaces for collaborative work: add, commit, branch, merge, push, clone. The problem isn’t the workflow—it’s the weight behind it.

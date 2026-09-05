@@ -16,7 +16,7 @@ modified: 2026-05-28T19:25:14.480Z
   - The sdk_version: 4.36.1 tag tells the engine exactly which version of Gradio to inject into that environment
 - Common system packages used in machine learning and computer vision are pre-installed, including ffmpeg (for video/audio processing), cmake, and libsm6 (often required by OpenCV).
 - Historically, Hugging Face provided built-in Streamlit support exactly the same way it did for Gradio
-  - However, according to the latest Hugging Face documentation updates: The option to use streamlit as a default built-in SDK is currently marked as deprecated
+  - However, according to the latest Hugging Face documentation updates: The option to use `streamlit` as a default built-in SDK is currently marked as deprecated
   - While older spaces using sdk: streamlit might still run, Hugging Face now officially advises that if you want to deploy a Streamlit Space, you should select the Docker SDK (sdk: docker) and choose their provided Streamlit template
 # discuss-stars
 - ## 

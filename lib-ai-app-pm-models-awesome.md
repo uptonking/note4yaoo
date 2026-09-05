@@ -2137,8 +2137,6 @@ modified: 2026-06-20T15:49:57.019Z
     - Cursor月卡=【激活后30天内有效+75个账号（共计15000积分，每次换号消耗200积分）Auto模型+无感秒换号+两台设备+支持win、mac、linux系统】
   - kiro 天卡/周卡/月卡 - 6/19/50
     - 插件只支持win10以上电脑，支持mac,而且支持ssh
-- [Gemini Pixel 设备认证 ](https://autopixel.qzz.io/blackcat)
-  - 品类多
 - [阿C小店 - 在线购买 ](https://chan.vei1.com/)
   - kiro, cursor
 - [奥仔小铺的小店 - 链动小铺  ](https://pay.ldxp.cn/shop/aozai)
@@ -2164,14 +2162,27 @@ modified: 2026-06-20T15:49:57.019Z
   - 企业kiro 10000积分 power
   - Kiro的apikey格式，无法在kiro软件使用, 推荐用 kiro.rs
 
+- [Gemini Pixel 设备认证 ](https://autopixel.qzz.io/blackcat)
+  - 品类多
+- [大象AI的小店 - 云猫寄售 ](https://catfk.com/shop/I2QSJARP)
+  - Gemini Pro 18个月兑换--自助提货
+  - 该优惠活动是印度JIO与谷歌的联合套餐，会有一定概率会掉介意勿拍
+  - 提货后先收到兑换链接，链接是有时效性的一次性链接！提货后无质保
+  - 提货地址： https://gemini.models.run/ 
+- [黑鹅的闲置的小店 - 云猫寄售 ](https://catfk.com/shop/ithte)
+  - google one gemini pro
 - [Gemini源头供货商的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/pixelshop)
   - gemini年卡--¥18
 - [gemini专家的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/gemini123)
   - 反重力--¥18
+- [Gemini pro 18个月激活卡密，JIO渠道，只包激活无售后 - LD士多 ](https://ldcstore.com/product/12047)
+  - JIO渠道链接提取自助卡密，卡密使用后，登录账号打开链接激活
+  - 自查账号地区，地区没问题，支付和地址不是国内，年龄成年，就可以
+  - [Ai小铺的小店 - 链动小铺 ](https://wzyp.cn/shop/WPXSCE1B/)
+- [以太 AI服务订阅充值 ](https://google7676.top/)
+  - gemini pro, 价格较贵
 - [AKMOZ-魔卡AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/AKMOZ)
   - gemini年卡--¥65
-- [Gemini丨Telegram的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Pro)
-  - gemini产品多
 - [Antipro（请看店铺公告）的小店 - 云猫寄售 ](https://catfk.com/shop/Antipro)
   - Gemini PRO一年会员成品 （随机地区，不包gcp）, ¥13
     - 仅质保首登，2fa验证码可以去  https://2fa.fun/ 获取验证码
@@ -2181,6 +2192,8 @@ modified: 2026-06-20T15:49:57.019Z
 - [奥特曼丨ChatGPT的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/atmgpt)
   - 品类多
   - 反重力--¥46
+- [Gemini丨Telegram的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Pro)
+  - gemini产品多
 
 - [Windsurf专卖4988的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/3FR7Y3PY)
   - 谷歌母号, 不质保，只保拍下立马登录满配额。有效期10天左右。
@@ -2228,6 +2241,15 @@ modified: 2026-06-20T15:49:57.019Z
   - 旧版 [New API ](https://newapi.neokoaigc.com/pricing)
 
 ## 发卡网
+
+- [AI号探 - ChatGPT/Claude/Gemini/Grok等AI账号的发卡平台比价探针 ](https://www.aihaotan.com/)
+
+- [阿华的AI比价聚合站 ](https://ahua-ai-price-aggregator.onrender.com/)
+- [AI 商品库存聚合搜索工具 ](https://goods.moo.kim/)
+  - [售票处的小店 - 链动小铺](https://pay.ldxp.cn/shop/T6UJ4L1M)
+- [AI 比价雷达 _202606](https://priceai.cc/)
+  - https://github.com/physics-dimension/PriceAI
+  - [【开源推广】PriceAI：我vibe了一个ai订阅卡网渠道聚合比价平台，拒绝中间商赚差价 - LINUX DO _202606](https://linux.do/t/topic/2294440)
 
 - [学生教育优惠项目导航 ](https://nav.edumails.cn/)
   - [EDU教育网邮箱注册申请-EDU教育网邮箱官方资讯平台 ](https://www.edumails.cn/)
@@ -2757,7 +2779,12 @@ modified: 2026-06-20T15:49:57.019Z
   - gmail-5/6: 美区, 混合地区
 
 - [AI账号乐园的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/SB9T68JP)
+  - https://wzyp.cn/shop/SB9T68JP
   - gmail-3.5/5: 美区, 随机
+
+- [陆柒科技的小店 - 链动小铺 ](https://wzyp.cn/shop/M18V0XVF)
+  - 邮箱丰富
+  - [自行车 Ai 店铺的小店 - 链动小铺 ](https://wzyp.cn/shop/zxc)
 
 - [极速的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/jishu)
   - Gmail母号 邮箱，正规账号，单账号独立注册。 可用opus4.6  4.7
@@ -2835,6 +2862,7 @@ modified: 2026-06-20T15:49:57.019Z
 # vpn/networking
 - [helloProxy ](https://proxy.nihaox.cc.cd/user/dashboard)
   - [【HelloProxy】Hello旗下全新公益机场 - LINUX DO _202608](https://linux.do/t/topic/2709964)
+  - [【HelloProxyPrologue】比肩付费的公益机场 - LINUX DO _202609](https://linux.do/t/topic/2856499)
 
 - [风萧萧公益机场](https://chanel.weyolo.com)
   - [萧草 · 臻选](https://shop.sxxe.net/)
