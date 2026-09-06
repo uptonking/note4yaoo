@@ -2029,6 +2029,7 @@ modified: 2026-06-20T15:49:57.019Z
 - antigravity
   - antigravity需要google账号支持gcp: 美区邮箱 + gcp/agy + 12个月套餐, 手机接码风险高
   - 过度折腾不如直接买 gemini token
+  - https://gemini.google.com/gems/create?hl=en-US&pli=1
   - [Catiecli - gcli2api](https://catiecli.sukaka.top/dashboard)
     - GCLI/ build/ 反重力/ gemini api云反代
     - 上传一个pro凭证（学生pro或者企业pro） → 获得 **500 额度** （可以吃kimi-k3 glm5.3）
@@ -2188,12 +2189,17 @@ modified: 2026-06-20T15:49:57.019Z
   - gemini年卡--¥18
 - [gemini专家的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/gemini123)
   - 反重力--¥18
+- [以太 AI服务订阅充值 ](https://google7676.top/)
+  - gemini pro, 反重力贵一点
 - [Gemini pro 18个月激活卡密，JIO渠道，只包激活无售后 - LD士多 ](https://ldcstore.com/product/12047)
   - JIO渠道链接提取自助卡密，卡密使用后，登录账号打开链接激活
   - 自查账号地区，地区没问题，支付和地址不是国内，年龄成年，就可以
   - [Ai小铺的小店 - 链动小铺 ](https://wzyp.cn/shop/WPXSCE1B/)
-- [以太 AI服务订阅充值 ](https://google7676.top/)
-  - gemini pro, 价格较贵
+- [Ai2You智友社，让更多的人用上更好的AI的小店 - 链动小铺 ](https://wzyp.cn/shop/282D9KDL)
+  - 购买账号后，先上反重力，反重力测试正常后，再去修改2FA验证、更换辅助邮箱 和 剔除设备（请保留您自己的设备），此外为防止风控，请您不要再进行其他任何的修改，请7日后再修改账户密码
+  - 如果登陆跳手机绑定，请绑定您自己的国内号码即可
+  - 请用第三方反重力软件cockpit-tools跳转官方反重力软件antigravity（支持批量，记得切换账号）
+  - 反重力使用方法：先同时安装好cockpit-tools跟antigravity，然后先打开 cockpit-tools，打开软件后选择 添加账号，在Refresh Token输入您收到卡密的refresh_token即可，选择启动账号自动打开antigravity，在打开的浏览器完成登陆授权即可。
 - [AKMOZ-魔卡AI的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/AKMOZ)
   - gemini年卡--¥65
 - [Antipro（请看店铺公告）的小店 - 云猫寄售 ](https://catfk.com/shop/Antipro)
@@ -2275,6 +2281,9 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [KnauHip-Ai — 高级 AI 工具发卡站 ](https://www.payline.pics/)
   - 很多低价帐号如kiro/cursor都是10个起购
+
+- [zhanghao66 - 全网最低批发ai账号店铺 ](https://www.zhanghao66.com/)
+  - 各种gmail/gemini/google接码
 
 - [聊聊AI ](https://talkai.cyou/)
   - gork
@@ -2796,9 +2805,28 @@ modified: 2026-06-20T15:49:57.019Z
 - [T佬的gmail批发渠道 ](https://ai666.dnxb.cc/)
   - 全tg最便宜gmail邮箱批发
   - Gemini专区：美区/随机2022--2024谷歌邮箱/指定地区gmail邮箱
+  - 登录后不要马上修改密码，会风控出手机验证，但是登录后请一定修改2Fa，（不改2fa不售后）辅助邮箱 
+  - 如果出现无法验证本人， 这个就是ip问题，换下ip，找优质ip登录更换
+  - 首次登录不要着急踢设备，因为异地首登有保护，过两周养好账号权重再挂常用设备后在踢设备，改密码 修改2fa和辅助邮箱后，账户绝对安全。 
+  - 修改2fa可以用 https://2fa.show/ 网站修改，也可以下载Authenticator（身份验证器）进行修改。 后续依次修改 密码 踢设备
+
+- [gmailgood ](https://gmailgood.com/)
+  - 全新gmail || 注册时间：2005-2015年 || 所属地区：随机 2FA
+  - 全新google cloud Platform || 手工注册 || 300$额度 预付费50$ （48小时包首登）
 
 - [91的小店 ](https://gmail91.shop/)
   - gmail-5/6: 美区, 混合地区
+
+- [海外邮箱大全 - Gmail/Yahoo/Outlook邮箱账号与API自动发货 ](https://qan8.com/)
+  - 个人谷歌邮箱
+  - 企业谷歌邮箱
+  - 各国邮箱综合版
+
+- [zhanghao66 - 全网最低批发ai账号店铺 ](https://www.zhanghao66.com/)
+  - 各种gmail/gemini/google接码
+
+- [以太 AI服务订阅充值 ](https://google7676.top/)
+  - gemini pro, 价格较贵
 
 - [AI账号乐园的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/SB9T68JP)
   - https://wzyp.cn/shop/SB9T68JP

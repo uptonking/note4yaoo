@@ -1294,10 +1294,9 @@ current code is under active development. please review and refactor code if you
 # toolchain
 - make a plan to improve the toolchain architecture/performance.
   - update typescript to latest v7 and update related toolchain/scripts.
-# toys
-
+# workflow
+- at the end of the plan, you should push to github, then inspect ci status by woodpecker-cli, fix issue if it exists.
 # libs
-
 - you should use npm package @embedpdf/viewer-react@3.0.0-next.1 to implement the pdf viewer, source code is at git repo `../embed-pdf-viewer` , you might refer to the api/docs/examples at the git repo.
 # harness
 - DO NOT use codex browser-use or computer-use skills, just focus on tests.
@@ -1423,6 +1422,11 @@ in a multi-nodes high-availability architecture
 
 - please design a solution to deploy a paseo service called `aichor` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/wapdf. in cloudflare, i have configured aichor.aichorage.de to leader ip and worker2-aichor-origin.aichorage.de to worker-2 ip .
   - source code for aichor(paseo) has been cloned at folder `~/Documents/repos/ai-ml-llm/all-agi-harness/paseo` for reference if you want.
+- please improve aichor by creating a child docker image that contains the latest @openai/codex, @anthropic-ai/claude-code, opencode-ai, @earendil-works/pi-coding-agent by default, so that user can use the remote agent out of the box. this doc `~/Documents/repos/ai-ml-llm/all-agi-harness/paseo/public-docs/docker.md` is a good reference.
+  - i have a idea, like the existing cursorapi, you might put the image at `images/aichor/Dockerfile`, and implement a `ops/publish-aichor-image.sh`, so user can update and publish paseo image manually by the script, then the auto deployment is handled by woodpecker ci.
+  - you might refactor/improve the workflow of aichor and cursorapi to reuse common logic and make it consistent.
+  - aichor should also work well for unexpected vps restart, the data/config should work, previous conversation list and content should show as normal.
+    - `claude -c` or `claude --resume` or `codex resume` or `pi -c` or `pi -r` can show the previous conversation content or list.
 
 - please design a solution to deploy a bentopdf service called `wapdf` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/cpapi. i have configured wapdf.aichorage.de to leader ip and worker2-wapdf-origin.aichorage.de to worker-2 ip .
   - source code for wapdf(bentopdf) has been cloned at folder `~/Documents/repos/office/ilove-bentopdf` for reference if you want.

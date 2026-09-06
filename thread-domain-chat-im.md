@@ -480,7 +480,53 @@ ldc 升值有利于广大持有 ldc 的佬友，为什么要强行引入干预�
 
 - ## 
 
-- ## [反重力教程登陆教程 此教程只针对个人使用定制 _202608](https://flowus.cn/share/edefab75-e89b-4c48-85df-343715d71664)
+- ## 
+
+- ## 
+
+- ## [公司有一批非常重要的Gmail帐号，如何低成本养号呢 _202503](https://www.nodeseek.com/post-294121-1)
+- 因某个业务只能使用Gmail所以没办法更换域名邮箱
+目前方案是指纹浏览器+独立IP，但是每个月IP成本太高了，又经常使用这批帐号进行授权登录
+还经常蹦出来二次手机号验证，目前也没找到好办法
+有没有什么办法能低成本的养住这Gmail，尽量少挂掉
+
+评论里几乎没有一个说到点上，大多都是3，5个帐号的，50个以下帐号的不要回复了，当然不用考虑养号的问题
+
+我们的场景是给学员注册某个平台，但是我们要有邮箱帐号管理权限，平均一个学员5个帐号，对于不严格的平台，我们直接用outlook或者Getmx域名邮箱了，但是有些平台比较严格只能Gmail，连outlook都不可以
+
+只用来收验证码，不发件，但是偶尔可能要操作授权，所以目前转发也无法满足我们的需求
+偶尔需要授权登录
+
+成本主要是IP，目前一个固定IP一个月也最少10块钱, 还不是家庭的
+
+『gmail又不管你一个ip登录几个号』这个是不正确的
+养的是Gmail，业务有独立的方案，业务会依赖Gmail收验证码
+『建议多花钱，都管学生了，又不是没钱』我问得是如何能省钱，不谈成本得到利润都是耍流氓
+
+- 指纹浏览器+假家宽都嫌贵，那说明还没有那么重要。。随便弄弄吧
+
+- 既然 非常重要, 就没必要 低成本 吧
+  - 每个号一台pixel3、4、5，三百块一台，绝对安全
+- 买谷歌pixel 手机。正常可以一机搞十来个号
+
+- 我一个chrome浏览器就登了5个账号，啥事没有啊，要哪个账号点哪个
+- 我gmail的app登着十多个账号呢，用了快十年了还没碰到被封。
+- 这个不用养吧？我10几个号，都是直接在同一个浏览器里一键切换
+
+- IP可以买CC或者RN之类的年付十刀左右，自己搭建用机场统一管理，然后试试多少号一个IP能稳定一些，这样就只有指纹浏览器的成本了。
+
+- 养的应该是业务不是gmail吧，gmail又不管你一个ip登录几个号，所以楼主需要的是指纹浏览器开N个实例+N个住宅IP，其中N>=你的业务账号数量。
+
+成本就是指纹数量和ip数量，这些量大的还得能自动托管指纹和ip对应关系，防止串号或串指纹，指纹浏览器一般都支持这些功能的。你就是整个学校一万学生它也能管下来。
+
+自己实现也行，开N个浏览器沙盒，配置N組Agent和硬件指纹，会把你累坏的。就这些。要么花钱省事儿，要么省钱花功夫。建议多花钱，都管学生了，又不是没钱
+
+- 有款软件叫AYCD可以帮你养号, 也会帮你模拟一些操作. 如果你aws有高cpu的话, 这款软件也能一键帮你生成代理
+  - [Automation Done Right | AYCD ](https://aycd.io/)
+
+- 一台香港4H4G的优化线路30多块一个月，带宽不需要多高，然后使用docker部署jlesage/firefox浏览器，既简单又方便，然后通过vnc连接浏览器可视化使用，一台机挂5个账号，这样算下来，50个账号300多块，500个账号3000多块，需要接码就打开对应机器的vnc连接查看网页就行了，关闭vnc的话浏览器也会一直后台运行，相当于你的账号一直是登录状态，网页也一直是打开状态，然后可以搞个小本本记录下来哪个IP地址登录了哪5个账号
+
+- ## 💡 [反重力教程登陆教程 此教程只针对个人使用定制 _202608](https://flowus.cn/share/edefab75-e89b-4c48-85df-343715d71664)
   - 关于不能跳转和反重力没资格的问题的问题 用tools管理工具登陆
 - 谷歌号停用被封申诉模板: 
   - 要围绕自己用，不得不用网络代理，账号里面有重要数据 展开
@@ -491,6 +537,12 @@ ldc 升值有利于广大持有 ldc 的佬友，为什么要强行引入干预�
   4. 凸显出账号的重要性，例如要与国外的朋友联系、账号内有很重要的东西、公司重要账号等**）
 - 申诉后一般 24–48 小时会有回复
   - 如果没回，可以隔几天再发一次，内容主旨不变，换一种英文说法即可
+
+- [Gemini 成品号使用教程 - Feishu Docs ](https://my.feishu.cn/wiki/N43PwSarpi5XGGkhwe0cmOOanve)
+- 登录上去正常使用，养了6-10天之后，可以逐步修改账户信息（建议不要一次完成，分几次）：
+  - 添加辅助手机号、邮箱号
+  - 添加两步验证
+  - 修改密码
 
 - ## [反重力需要扫描验证怎么解决 - LINUX DO _202609](https://linux.do/t/topic/2855971)
 - 找个装谷歌框架的安卓手机，有 play，登录一个老账号，然后用相机直接扫就行
@@ -513,6 +565,8 @@ ldc 升值有利于广大持有 ldc 的佬友，为什么要强行引入干预�
   - 然后故事就来了，因为是一个注册了半年的 google 账号，通过链接开通了之后。登录 antigravity, 提示 verify . 点击之后需要手机扫码发送短信，而且没有其他的验证方式.
   - 核心问题，google 账号可以 oauth 跳转到 antigravity, 但是显示 verify 点击会显示 需要扫码发短信
   - 通过 https://console.cloud.google.com/ 开启 console 的时候的 verify 他是在 web 端进行验证的，会给出第二个选项，就是通过手机号码接收验证码。而不是必须要手机扫码二维码。这时候就通过一个手机号码接收验证码就行了
+- [【安卓 反重力登录验证码问题】+【Google AI Plus+400G存储免费白嫖12个月】+【Antigravity 反代api】 - LINUX DO _202608](https://linux.do/t/topic/2746638)
+  - 激活终端：在控制台页面右上角的顶部导航栏，找到并点击 “激活 Cloud Shell” 图标（图标形状类似 >_）
 
 - 方法可行，+86 的也可以验证成功
 
@@ -622,7 +676,26 @@ Play 商店地区	• 决定商店应用及定价 • 家庭组判定依据	• 
 
 - ## 
 
-- ## 
+- ## 💡 [How to ACTUALLY mark all of your emails as read in your inbox (2025) : r/GMail _202507](https://www.reddit.com/r/GMail/comments/1m78zti/how_to_actually_mark_all_of_your_emails_as_read/)
+- I went down this rabbit hole and could not for the life of me figure out how to mark all my emails as read. I'm sure you guys have followed the most commons steps:
+
+1. Go to your google inbox
+
+2. is:unread in the search bar to populate all of the unread emails
+
+3. hit the check mark in the top left above the first email and a message "select all conversations that match this etc" will pop up
+
+BUT wait - it doesn't pop up, no matter how long you wait.
+
+4. This is the secret, key step. In the top right of your inbox, you will see your email sorted by "Most Relevant". You can only mark all of your emails as unread if the emails are sorted by "Most Recent".
+
+Once you make this switch and follow the above steps, it WILL work. 
+
+- This method works in the iOS app:
+
+To mark all emails as read in the Gmail app, open your inbox, tap and hold the first unread email to select it, then tap the "Select all" checkbox that appears at the top to select visible messages, and finally tap the open envelope icon (Mark as Read) at the top right. For a very large number of emails, you might need to scroll and tap "Select all" multiple times, or use the desktop version for easier bulk actions, as the mobile app handles them in batches.
+
+- iOS only allows me to select 30 emails when I have several thousand
 
 - ## [求gmail邮箱账户的购买渠道 - LINUX DO _202609](https://linux.do/t/topic/2857425)
   - 最近公司想买一批 gpt 账号，找好了代充但是要我们自备邮箱，听说 gmail 耐用一些，想问问佬友们哪里可以买得到靠谱的 gmail 邮箱账户？自己创还要养有点麻烦，暂时不考虑

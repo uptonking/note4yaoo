@@ -1008,6 +1008,20 @@ modified: 2025-12-11T18:10:23.710Z
     - The goal is to make Paseo easier for individuals and organizations to adopt, integrate, redistribute, and build upon. 
   - [v0.7.0  _20260901](https://github.com/getpaseo/paseo/releases/tag/v0.7.0)
     - Changed the project license to Apache-2.0
+  - https://github.com/blockfeed/paseo-selfhosted
+    - A Docker build that runs the Paseo web UI and connects it to a self-hosted local daemon — no relay, no cloud, no app install required.
+    - This is an unofficial showcase. It patches two files in the Paseo source at Docker build time and adds an nginx WebSocket proxy that makes the browser→daemon connection work. 
+    - The Paseo web app is built as a static SPA (Expo web export). In its normal release form it only supports connecting to the official Paseo relay or a local desktop daemon via a Unix socket — it has no path for connecting a browser to a self-hosted TCP daemon. This repo makes it work with two changes
+    - This repository contains only build tooling and documentation. The Paseo source code is fetched from getpaseo/paseo at build time 
+
+- https://github.com/cleiter/desvio /apache2/202608/sh
+  - Keep a personal build of someone else's project.
+  - You have branches that upstream has not merged — open pull requests, changes that were rejected, things only you want. desvio merges them onto a fresh upstream in a worktree of your own checkout, resolves the conflicts, and runs your gate. What comes out is a build you can install and use every day, rebuilt in a minute when upstream moves.
+  - 🍴 使用了paseo
+  - 感觉很复杂， 学习成本太高， 慎用
+  - Every run does the same thing: fetch upstream, recreate the integration branch from the base commit, merge each manifest branch in order, install, build, verify, and print what you got.
+  - Why merge, not cherry-pick: A merge resolves once against a whole topic. Cherry-pick replays a branch commit by commit, so a branch that builds on itself conflicts with itself 
+  - The first time a conflict appears, something has to resolve it. After that, git's `rerere` replays the same resolution on every rebuild, and most rebuilds spend no thought at all.
 
 - https://github.com/xintaofei/codeg /2.7kStar/apache2/202608/ts/rust/tauri
   - https://docs.codeg.app/
