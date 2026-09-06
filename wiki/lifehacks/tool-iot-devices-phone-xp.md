@@ -29,6 +29,15 @@ modified: 2024-09-25T15:20:00.070Z
 - 防摔
   - Motorola Force
   - 三星 active系列
+
+## agm
+
+- [AGM X6 EU ](https://eu.agmmobile.com/products/agm-x6-phantom/)
+
+- [Software Download – AGM手机商城 ](https://shop.agmdevice.com/pages/software-download/)
+
+- [刷机教程-AGM手机官网 ](https://www.agmdevice.com/Home/brush/index.html)
+  - AGM X3 / AGM X3 Turbo 快速刷机国际版/国内版ROM教程
 # cpu
 - [高通处理器规格表](https://www.mydrivers.com/zhuanti/tianti/01/index_gaotong.html)
 # discuss-stars

@@ -788,6 +788,10 @@ openclaw/herness
 - 会有跑路风险吗
   - 我用了两年，就是售后慢，其他与这个价格匹配，跑路应该不至于，let上他们认过
 
+- ## [HostDzire他没有push通道吗 _202609](https://www.nodeseek.com/post-913404-1)
+- 不能push
+- 还不能修改邮箱
+
 - ## [日经贴, 小白求推荐个建站小鸡 - IDC Flare _202603](https://idcflare.com/t/topic/72945)
 - hostdare 和 hostdzire 不是一家，后者是 leaseweb 的十多年的分销商，而 leaseweb 是始建于 1999 年的老牌厂商
 

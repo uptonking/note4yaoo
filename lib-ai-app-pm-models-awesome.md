@@ -24,6 +24,16 @@ modified: 2026-06-20T15:49:57.019Z
 
 - features
 
+- 用多个手机号来注册多账号来使用token的思路不太可行
+  - 🤔 充钱可以避免下面各种方式的折腾， 过度折腾不如直接买 token
+  - 同一手机号最多绑定4个google账号
+    - google验证支持国内手机号, 但codex/claude这些不支持国内手机号
+  - esim随时会被风控, 如esim.gg在25年被google禁止验证码
+  - 厂商的不确定性太大， google不停加强风控, 就算能用网页版pro, 也行还是用不了反重力
+  - 很多厂商明确不支持虚拟卡/esim， 如OpenAI 的条款里面是不支持的
+  - 厂商如opencode会根据ip来限制请求, 此时多个账号没用
+  - 很多国产模型登录账号后甚至需要实名才能用
+
 ## models-bases
 
 - tips
@@ -2017,6 +2027,8 @@ modified: 2026-06-20T15:49:57.019Z
   - 所以100个free号大概能提供 2亿 token
 
 - antigravity
+  - antigravity需要google账号支持gcp: 美区邮箱 + gcp/agy + 12个月套餐, 手机接码风险高
+  - 过度折腾不如直接买 gemini token
   - [Catiecli - gcli2api](https://catiecli.sukaka.top/dashboard)
     - GCLI/ build/ 反重力/ gemini api云反代
     - 上传一个pro凭证（学生pro或者企业pro） → 获得 **500 额度** （可以吃kimi-k3 glm5.3）
@@ -2172,6 +2184,7 @@ modified: 2026-06-20T15:49:57.019Z
 - [黑鹅的闲置的小店 - 云猫寄售 ](https://catfk.com/shop/ithte)
   - google one gemini pro
 - [Gemini源头供货商的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/pixelshop)
+  - https://wzyp.cn/shop/gemini123
   - gemini年卡--¥18
 - [gemini专家的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/gemini123)
   - 反重力--¥18
@@ -2243,13 +2256,13 @@ modified: 2026-06-20T15:49:57.019Z
 ## 发卡网
 
 - [AI号探 - ChatGPT/Claude/Gemini/Grok等AI账号的发卡平台比价探针 ](https://www.aihaotan.com/)
+- [AI 比价雷达 _202606](https://priceai.cc/)
+  - https://github.com/physics-dimension/PriceAI
+  - [【开源推广】PriceAI：我vibe了一个ai订阅卡网渠道聚合比价平台，拒绝中间商赚差价 - LINUX DO _202606](https://linux.do/t/topic/2294440)
 
 - [阿华的AI比价聚合站 ](https://ahua-ai-price-aggregator.onrender.com/)
 - [AI 商品库存聚合搜索工具 ](https://goods.moo.kim/)
   - [售票处的小店 - 链动小铺](https://pay.ldxp.cn/shop/T6UJ4L1M)
-- [AI 比价雷达 _202606](https://priceai.cc/)
-  - https://github.com/physics-dimension/PriceAI
-  - [【开源推广】PriceAI：我vibe了一个ai订阅卡网渠道聚合比价平台，拒绝中间商赚差价 - LINUX DO _202606](https://linux.do/t/topic/2294440)
 
 - [学生教育优惠项目导航 ](https://nav.edumails.cn/)
   - [EDU教育网邮箱注册申请-EDU教育网邮箱官方资讯平台 ](https://www.edumails.cn/)
@@ -2719,10 +2732,13 @@ modified: 2026-06-20T15:49:57.019Z
 - [[富可敌国]【daNew ai】daNew ai GPT代充服务正式上线了! - LINUX DO _202608](https://linux.do/t/topic/2764583)
   - [Recharge Portal ](https://cdk.danew.cc/)
 
-## sms/code
+## sms/code/接码
 
 - [superman的小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/superman)
   - codex接码 一个号码可以接三次，小概率号码无效，不一定能接到，无质保，如果连续三个有问题，找我退款问题账号
+
+- [幻境MirageAI的小店 - 链动小铺 ](https://wzyp.cn/shop/mirage)
+  - 不保证都能接上码懂的在拍，接不上需要隔一段时间再接，可以换个IP亦或开无痕再试（大部分不用，就是ip问题）
 
 - [La shop的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/aisell)
   - 加拿大接码
@@ -2765,7 +2781,13 @@ modified: 2026-06-20T15:49:57.019Z
 - [Smz - 数字商品自动发卡平台 ](https://shop.smz6.com/)
   - pp-¥1.6
 
-## email
+## email 📧
+
+- gmail-tools
+  - antigravity需要google账号支持gcp: 美区邮箱 + gcp/agy + 12个月套餐
+  - [谷歌账号检查器 Gmailcheck ](https://gmailcheck.com/)
+  - 尽量不要买随机地区的账号, 通常是印度/孟加拉, 默认打不开gemini
+  - 部分gmail账号默认打不开 gemini.google.com, 变通方式是打开 https://gemini.google.com/gems/create?hl=en-US&pli=1 , 在这个页面可以chat
 
 - outlook-tools
   - [星辰邮箱大师 ](https://www.xckj.site/easy-mailbox/)
@@ -2785,6 +2807,15 @@ modified: 2026-06-20T15:49:57.019Z
 - [陆柒科技的小店 - 链动小铺 ](https://wzyp.cn/shop/M18V0XVF)
   - 邮箱丰富
   - [自行车 Ai 店铺的小店 - 链动小铺 ](https://wzyp.cn/shop/zxc)
+
+- [CodeFree铺子的小店 - 链动小铺 ](https://wzyp.cn/shop/N0IK02WR)
+  - 帐号格式（就是卡密格式）: 账号|密码|辅助邮箱|2fa密钥|时间|地区
+  - Gmail邮箱质保首登无售后均已验活, 随机地区大多是印度, 👀 默认登录不了gemini, 但能登录aistudio
+  - 拿到货立即检查状态，售出后一天内保首登，其余一概不管。之后不退不换，批量可谈
+  - 检查无误后，改2FA，检查转发，7-14天后改密码。不要上号就改密码，可以改2fa
+
+- [牛店的小店 - 链动小铺 ](https://wzyp.cn/shop/7KJU4N9A)
+  - 品类丰富
 
 - [极速的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/jishu)
   - Gmail母号 邮箱，正规账号，单账号独立注册。 可用opus4.6  4.7

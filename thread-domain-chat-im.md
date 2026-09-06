@@ -480,6 +480,112 @@ ldc 升值有利于广大持有 ldc 的佬友，为什么要强行引入干预�
 
 - ## 
 
+- ## [反重力教程登陆教程 此教程只针对个人使用定制 _202608](https://flowus.cn/share/edefab75-e89b-4c48-85df-343715d71664)
+  - 关于不能跳转和反重力没资格的问题的问题 用tools管理工具登陆
+- 谷歌号停用被封申诉模板: 
+  - 要围绕自己用，不得不用网络代理，账号里面有重要数据 展开
+- 申诉原因
+  1. 中国人或者美国人居住在中国**
+  2. 特殊原因必须要网络代理才能使用到谷歌服务**
+  3. 自己只有这一个号**
+  4. 凸显出账号的重要性，例如要与国外的朋友联系、账号内有很重要的东西、公司重要账号等**）
+- 申诉后一般 24–48 小时会有回复
+  - 如果没回，可以隔几天再发一次，内容主旨不变，换一种英文说法即可
+
+- ## [反重力需要扫描验证怎么解决 - LINUX DO _202609](https://linux.do/t/topic/2855971)
+- 找个装谷歌框架的安卓手机，有 play，登录一个老账号，然后用相机直接扫就行
+
+- YouTube 扫个码就过了，我有两个号也报二验，扫完就 OK 了
+
+- 直接扫就行啊，扫完跳转谷歌系任意一个登录过的 app 确认一下就行了
+
+- ## [antigravity的账号验证要怎么过啊，要我扫码发短信 - LINUX DO _202605](https://linux.do/t/topic/2215836)
+- 我也是好多个号卡在这扫码了，自己设备已经扫的超限了，最后花钱解决的，几分钟就搞定，要不是还想用 gemini 模型，真想扔了它
+
+- 最简单直接的办法就是闲鱼找人代扫，20 以内一般
+
+- 我遇到过同样的问题，让发送短信，结果短信根本无法送达，后来用谷歌 app 还是谷歌浏览器扫码，会跳出来打开方式，打开方式有【google play、以及其他几个软件】，选择 google play 打开就好了（谷歌这神人交互真是绝了）
+
+- 我前几天也遇到了这个问题，刚充套餐的时候风控了，用 + 86 和租的 + 1 号发都没反应，搞了两天都没搞好。期间我是直接用的 agy cli，这个虽然会显示检测失败但是依然能直接用套餐里的模型。结果有一天发现 cli 没有显示检测失败，然后再登 antigravity 就发现已经不用验证了。
+
+- ## [近期反重力antigravity无法登录等问题可能的解决方案 - LINUX DO _202608](https://linux.do/t/topic/2804240)
+  - 闲鱼入手 jio 渠道的邀请的 pro, 说是 18 个月，但是这玩意不要抱有任何希望，几块钱能用一天都是赚. 
+  - 然后故事就来了，因为是一个注册了半年的 google 账号，通过链接开通了之后。登录 antigravity, 提示 verify . 点击之后需要手机扫码发送短信，而且没有其他的验证方式.
+  - 核心问题，google 账号可以 oauth 跳转到 antigravity, 但是显示 verify 点击会显示 需要扫码发短信
+  - 通过 https://console.cloud.google.com/ 开启 console 的时候的 verify 他是在 web 端进行验证的，会给出第二个选项，就是通过手机号码接收验证码。而不是必须要手机扫码二维码。这时候就通过一个手机号码接收验证码就行了
+
+- 方法可行，+86 的也可以验证成功
+
+- ## [antigravity反重力过二次验证 _202609](https://www.nodeseek.com/post-911507-1)
+  - 对于新账号和刚订阅Pro的用户来说 登录antigravity可能会触发风控 导致无法反代到Codex里 
+  - 用新的谷歌账号登录一下以下网址 https://shell.cloud.google.com
+  - 会弹出 扫码界面 然后用常用手机扫码即可（不需要登录新谷歌账户）
+- 原理：Antigravity 登录用的是它自己的 OAuth 客户端，风控更容易升到 设备二维码验证。
+  - Cloud Console / Cloud Shell 是 Google 自己的网页产品，挑战经常还是老一套：密码 + 手机短信/提示。
+  - 两条路的风控档位不一样
+  - 亲测有效
+
+- ## [Google One AI Gemini Pro $99 家庭5人拼车 _202601](https://www.nodeseek.com/post-566540-1)
+  - 在 Google One AI 高级版（家庭方案）中，虽然空间（如 2TB 存储空间）是共享的，但 AI 功能的使用权是按人头独立计算的。
+  - 独立计算： 您的家庭成员（最多 5 人）中，凡是年满 18 岁且符合条件的成员，每个人都拥有自己独立的 Gemini Pro 使用权限。
+  - 不共用额度： 假设您今天用完了 3 个视频生成的额度，这并不会消耗您家人的额度。他们依然可以生成自己那部分的视频。
+  - 隐私保护： 您的生成历史、提示词（Prompt）以及积分消耗情况，其他家庭成员是看不见的。
+
+- ## [【网页版操作】解决谷歌家庭组地区不同 - LINUX DO _202602](https://linux.do/t/topic/1611408)
+  - 支付方式改成美国了，为什么 play 里面显示法国呢
+
+- 有个【+ 添加支付方式】选项，试试这里添加个 fake CC，billing address 改 US
+
+我之前的小号没有添加支付方式。
+
+- 加了，之前有个法国的支付方式，我删除了，然后加个一个假的就过了
+
+- [Google One家庭组地区不匹配解决方案（Gemini pro优惠共享） - LINUX DO _202511](https://linux.do/t/topic/1206323/2)
+- 其实，关闭付款资料，用美国 IP 就 OK 了
+
+- 大部分只需要发起邀请时的 ip 一致就可以啦
+
+- ## [Google 家庭组切换后 12 个月内可以自己再创建吗 - V2EX _202604](https://fast.v2ex.com/t/1203654)
+  - 我之前作为家庭成员加入了别人的谷歌家庭组，上的 YouTube 会员车，结果车主跑路了。 谷歌官方说的是 12 个月内只能切换一次家庭组，现在还没到 12 个月，我想自己开车创建家庭组再去邀请别人，这种操作会受 12 个月的限制吗？
+- 自问自答：试过了，不行，更换和创建统一受 12 个月的限制。
+
+- 我亲身试过，之前上别人车，翻了下车上车又翻，车主说还有办法拉我，我怕有问题，就自己开了个车，正常拉人用到现在
+  - 为啥谷歌提示我 12 个月内只能变更一次，服了
+
+- 找客服说你的室友搬家了之类的, 第一次非常容易过
+
+- ## [无法加入 Google One 家庭组？全因这 3 个“地区”搞乌龙！ _202602](https://www.nodeseek.com/post-606792-1)
+  - 核心问题：订阅或加入 Google One 家庭群组时，提示「地区不匹配，无法加入家庭组」。
+  - 根本原因：Google 账号体系里有 3 个不同的地区概念。家庭组匹配的是「Play 商店地区」，而不是你当前的「IP 地区」。
+
+地区类型	👀 在哪里查看	💡 定义是什么
+Google Play 商店地区	play.google.com右下角	付款资料中的地址 (家庭组看这个)
+当前 IP 地区	policies.google.com/terms	你现在用的代理节点
+账号注册地区	Google 账号设置	注册时的 IP
+
+- 地区类型	定义与作用	关键限制与特点	特别备注
+Play 商店地区	• 决定商店应用及定价 • 家庭组判定依据	• 需绑定该区本地支付方式 • 限制严，每年仅可改一次	⚠️ 家庭组匹配这个 (成员地区必须与家长一致)
+当前 IP 地区	• 访问网络时的物理/VPN位置 • 实时变动	• 直接影响搜索结果 • 决定区域限制内容 (如流媒体)	-
+账号注册地区	• 创建账号时选择的地区 • 属于账号的基础属性	• 通常不可随意更改 • 影响部分基础服务
+
+- 操作名称	操作位置	作用	解决地区问题用哪个？
+移除付款方式(Remove payment method)	Google Pay > Payment methods	仅仅删除了卡号，地区锁定依然存在。	❌ 不行
+关闭付款资料(Close payments profile)	Settings 页面最底部	彻底重置账号的支付属性和地区绑定。	✅ 必须用这个
+
+- 要确认账号真实的 Play 商店地区，以 Google Pay 的 Payments profile → Country/Region 为准。
+
+- [google 账号是美国 但是无法加入美国组的解决方案 - V2EX _202601](https://v2ex.com/t/1184393)
+  - 账号已经申请改资料变成了美国 但是还是没法加入美国群组
+  - 右下角能看到支付国家 就是因为这个地址和上方账号地址不一致导致无法加入
+  - 设置->支付资料->设置->滑倒最下面 关闭资料即可
+  - 支付资料银行卡卡什么都可以随便填 但是国家一定选美国 点击确定保存资料 是不是成功无所谓 这时候再去看支付国家就会变了
+
+- 不用改区，
+1 、挂美国的梯子，开启 tun ，然后 https://play.google.com/store/games 查看确认是否是美国
+2 、关闭支付资料
+我地区是 香港的，一直没改成功，手动填写申诉理由，不给审核。
+在咸鱼上买的服务，满足这两个也加入 家庭组了。
+
 - ## ["Can't join family group It looks like you're not in the same country as the person who invited you" - Google Drive Community _202508](https://support.google.com/drive/thread/369037540/can-t-join-family-group-it-looks-like-you-re-not-in-the-same-country-as-the-person-who-invited-you?hl=en)
 - To ensure a 'Payments profile' is the same 'COUNTRY/REGION' as the family manager who invited you:
   - https://policies.google.com/country-association-form
@@ -514,6 +620,43 @@ ldc 升值有利于广大持有 ldc 的佬友，为什么要强行引入干预�
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [求gmail邮箱账户的购买渠道 - LINUX DO _202609](https://linux.do/t/topic/2857425)
+  - 最近公司想买一批 gpt 账号，找好了代充但是要我们自备邮箱，听说 gmail 耐用一些，想问问佬友们哪里可以买得到靠谱的 gmail 邮箱账户？自己创还要养有点麻烦，暂时不考虑
+- 代充是怎么个代法？
+  - 给session
+
+- 不要买新号 现在老号很多存量的 直接买老号 我说的就是老号的价格 10 块到 20 块左右
+
+老号它的风控没那么严 不用验证手机号了
+
+- 可以开通 google workspace，一个账号可以生成 30 个邮箱地址。收费版比较稳定。
+
+- mail.com 只有注册比较吃 ip（更建议直接买邮箱然后换密码） 其他的风控什么的都还好 并且 mail.com 自动化更容易
+  - proton 的话也挺稳的 但是 proton 接码自动化没做好的话容易导致邮箱被封 邮箱风控相对高一点
+  - 我目前卖的成品号量大的也都是走 mail.com 的
+
+- 买的 gmail, 买后不要立刻修改密码 只修改 2fa, 并绑定手机和辅助邮箱，过一周后修改密码 基本不会出现 2 验，或者也有些邮箱申请的时候就没绑定手机，二验也只是输入辅助邮箱名称 不影响 我年前买的 当时 2-8 块左右 有学生认证的贵一些 现在倒无所谓了 我看还有 10 块一下的 不过我没买过 不知道质量怎么样
+
+- 之前也买过 10 来个，都正常，然后突然有一天开始陆陆续续挂了 4 个，其中三个在同一天挂，IP 与其他存活至今的完全一致，有关指纹也正常，全都是曾经有过异地设备并已经剔除和挂失的即有关绑定全部换新并且还闲得没事去油管搜索播放过 
+
+- ## [gmail邮箱购买经验求指导建议 _202607](https://www.nodeseek.com/post-808947-1)
+  - 昨天买了一个 Gmail 邮箱，然后上去一顿操作，然后被封了。上去我就改了密码，然后修改了辅助邮箱，添加了 RFA 验证。这一顿操作猛如虎，然后直接挂了。
+
+- 新号改了环境上去不要改敏感信息 一周后再改
+
+- 重要警告（必读）
+禁止立刻修改密码！ 登录后请勿立即更改密码，否则极易触发风控导致封号。因登录后立刻改密导致的封号，不提供任何售后！
+
+请勿频繁切换登录！ 不要频繁登入登出，建议在固定设备上保持登录。
+
+养号期（7-30天）： 建议始终使用固定且纯净的IP（推荐美国IP）登录使用，稳定使用 7-30 天后再进行修改密码、绑定手机等敏感操作。
+
+- 购买后先不要着急改这些信息，先去设备里面看，如果设备里面显示有三星手机登录的痕迹，很遗憾，百分之99这个号是号商使用模拟器接码注册的，哪怕你绑定自己的手机，后续风控了也要求验证原始手机，号直接废了，需要等几个月有概率让你重新绑定手机。
+
 - ## Proton ["Account is no longer available due to inactivity" : r/ProtonMail _202411](https://www.reddit.com/r/ProtonMail/comments/1gl35ek/account_is_no_longer_available_due_to_inactivity/)
 
 - [Inactive accounts | Proton  ](https://proton.me/support/inactive-accounts)
@@ -532,8 +675,9 @@ ldc 升值有利于广大持有 ldc 的佬友，为什么要强行引入干预�
 
 - ## [How many gmails can be opened under one number? - Google Account Community _202502](https://support.google.com/accounts/thread/324205080/how-many-gmails-can-be-opened-under-one-number?hl=en)
 - You can create up to four Gmail accounts using the same phone number for verification. Opening a second Gmail account for work purposes is both possible and safe. Having multiple Gmail accounts is common and can help separate personal and professional communications.
+  - While Google allows you to create as many Gmail accounts as you want, the limit of four accounts per phone number is a security measure to prevent spam and abuse. If you need more than four accounts, you'll need to use a different phone number for verification. Using multiple Gmail accounts is safe as long as you follow good security practices like using strong, unique passwords for each account. Having a separate work account can actually improve your overall email security and organization.
 
-- ## [How many Google email accounts can I have? : r/GMail _202601](https://www.reddit.com/r/GMail/comments/1qc58lb/how_many_google_email_accounts_can_i_have/)
+- ## 💡 [How many Google email accounts can I have? : r/GMail _202601](https://www.reddit.com/r/GMail/comments/1qc58lb/how_many_google_email_accounts_can_i_have/)
 - You can use multiple addresses with a single account using plus addresses. If you have joesmith@gmail.com, you can give addresses to multiple sites as joesmith+site1@gmail.com, joesmith+site2@gmail.com, etc.
   - The last time I checked, Google didn't have any hard limit on the number of accounts you have, but it does seem to have a hard limit of how many accounts you can set up with a given phone number. That limit is 4.
 - There is no limit off Google accounts but if you use it for free storage then Google can disabled your account but if you do not use to store photos on the account there can not be anything wrong. i have 13 Google accounts and have on 2 accounts Google One paid. but beware doent use your free account for "Free" storage because Google then will disabled your.

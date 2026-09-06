@@ -19,6 +19,10 @@ modified: 2023-02-08T10:24:11.422Z
 - tips
   - 👾 可让ai实现一些扩展
 
+- github 
+  - github user join date
+    - org creation date
+
 - zhihu
   - 去掉通知私信红点
   - 去掉html标题中的 (2条新消息 )

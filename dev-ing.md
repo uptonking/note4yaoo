@@ -345,6 +345,25 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0905
+
+- ./index.html contains scripts to query github user creation date.
+  - ./user-gists-nav.js contains scripts to add a button below user info when visiting user profile like https://github.com/khaliladev. this script can be published to greasyfork.org.
+- the goal to design a script at ./github-user-profile.js to show user creation date below user info like user-gists-nav.js when visiting user profile like https://github.com/khaliladev. this script will be published to greasyfork.org manually later.
+  - show creation date in ISO datetime format, time can be ignored. when clicking creation date text, open https://api.github.com/users/username in a new tab by default. if github api rate limit is reached, show a reminder.
+  - please make this feature robust by adding a "Auth" button below the creation date text, when clicking the button, show a text input to allow user to add/update github personal access token to mitigate improve github api rate limit.
+
+- the failure is specifically the immediate public HTTPS smoke for aichor.aichorage.de. The endpoint returns a TLS internal error because the newly-added Caddy site has no usable certificate yet, then the rollback removes the route.
+  - you have come cross this issue multiple times, you might refer to how wapdf/aichrouter are solving this, they are also single-consumer service and they work well.
+  - you might do multi-stage implementation to deploy aichor if it helps,
+  - you might run `ssh root@166.88.xxx.xxx` as worker_2 node and do whatever you want.
+- Live inspection identified the root cause: worker-2’s firewall intentionally blocks public ACME validation, so new follower-origin certificates can never be issued. 
+  - Wapdf/Aichorouter work only because their origin certificates predate that firewall. 
+  - I’m making Aichor’s follower hop use Caddy’s local internal CA and explicitly pinning the Leader→worker transport to that private hop (with verification disabled only inside the firewall boundary), so deployment no longer depends on external ACME for this origin.
+
+- when i install a apk on my android 13 phone , it show error:  app not installed(-112) why does it happen? how to fix it?
+  - Error **-112** corresponds to `INSTALL_FAILED_DUPLICATE_PERMISSION` — Android is refusing to install the package because it's trying to define a custom permission that's already defined by another app currently on your phone.
+
 ## 0904
 
 - 🤔 [Feature request: show client IP in request records · Issue · router-for-me/CLIProxyAPI _202608](https://github.com/router-for-me/CLIProxyAPI/issues/5029)

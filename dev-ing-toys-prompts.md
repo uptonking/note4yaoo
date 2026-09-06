@@ -1321,7 +1321,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cursorapi, worker_2 node deploys librechat/wapdf, worker_3 deploys flowy, worker_4 deploys wabase/verge.
   - all services are running well on my 5 vps.
   - the current architecture of Foundation apps/services and Consumer apps/services is good.
-  - All requests should go to leader node first, then proxying to follower/worker nodes.
+  - Most requests should go to leader node first, then proxying to follower/worker nodes.
 
 - analyze related architecture/scripts/code, then 
 
@@ -1358,6 +1358,8 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 
 - you might refactor/reorganize/improve the architecture/logic if it helps to make it correct, robust, extensible in the long term. only if there are obvious bugs or design defects, then you might propose big refactor or huge change. if there is only subtle bugs, just propose to improve the existing architecture.
 
+- you might do multi-stage implementation to deploy aichor if it helps, 
+- you might run `ssh root@166.88.160.139` as worker_2 node and do whatever you want.
 - you might run `ssh root@107.175.66.2` as worker_1 node and do whatever you want.
 
 - after you finish the fixes and improvements, please push to github to auto trigger the woodpecker ci. 
@@ -1419,6 +1421,9 @@ in a multi-nodes high-availability architecture
 - a solution has been implemented to support to deploy a new docker service to any follower node by new environment variables or new interactive shell scripts, so that requests still go to leader node then proxied to follower node. for services that high-availability is not required, these services can be deployed to a single server.
 - continue to improve the architecture that supports to deploy a new docker service to any follower node, using aichorouter/cpapi as example, making the architecture correct, robust, extensible.
 
+- please design a solution to deploy a paseo service called `aichor` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/wapdf. in cloudflare, i have configured aichor.aichorage.de to leader ip and worker2-aichor-origin.aichorage.de to worker-2 ip .
+  - source code for aichor(paseo) has been cloned at folder `~/Documents/repos/ai-ml-llm/all-agi-harness/paseo` for reference if you want.
+
 - please design a solution to deploy a bentopdf service called `wapdf` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/cpapi. i have configured wapdf.aichorage.de to leader ip and worker2-wapdf-origin.aichorage.de to worker-2 ip .
   - source code for wapdf(bentopdf) has been cloned at folder `~/Documents/repos/office/ilove-bentopdf` for reference if you want.
 
@@ -1439,11 +1444,11 @@ in a multi-nodes high-availability architecture
   - please design a solution to deploy a openobserve service called `observer` to any follower node user specified.  also deploy it to worker_1 node, just like aichorouter/cpapi. `observer.aichorage.de` has been configured at cloudflare.
   - source code for openobserve has been cloned at folder `../all-logging/openobserve` for reference if you want.  you might use the provided docker config or custom docker config.
 
-- optimize wapdf for single-node, minimal cpu/ram resources. 
+- optimize aichor for single-node, minimal cpu/ram resources. 
   - the max cpu should be 0.9, the max ram should be 1.5gb.
   - if required, cloudflare r2 might be used.
 
-- review exising code/implementation, make both single-node consumer app and multi-nodes consumer apps work correctly, make a comprehensive plan to implement/improve wapdf.
+- review exising code/implementation, make both single-node consumer app and multi-nodes consumer apps work correctly, make a comprehensive plan to implement/improve aichor.
 
 - you might refactor/reorganize/improve the architecture/logic if it helps to make it correct, robust, extensible in the long term. only if there are obvious bugs or design defects, then you might propose big refactor or huge change. if there is only subtle bugs, just propose to improve the existing architecture.
 

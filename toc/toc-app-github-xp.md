@@ -243,6 +243,16 @@ language:JavaScript  language:TypeScript
     - https://techgaun.github.io/active-forks/index.html
   - https://github.com/useful-forks/useful-forks.github.io
     - https://useful-forks.github.io/
+# user-info
+- user-join-date
+  - https://api.github.com/users/uptonking
+    - 官方api有ip限制
+  - https://xyl1null.github.io/GittyAge/
+    - 注意有ip限制, 貌似就是使用的官方api
+  - https://tools.simonwillison.net/github-account?username=uptonking
+    - GitHub API rate limit reached
+  - [Profile Does Not Display Account Creation Date (“Joined”) _202512](https://github.com/orgs/community/discussions/181218)
+    - The account creation (“Joined”) date exists but is not being rendered on the public profile, which can happen for newly created or migrated accounts. This is not user-configurable. 
 # github-actions
 - [Automated Data Scraping with Github Actions](https://www.swyx.io/github-scraping/)
   - https://github.com/sw-yx/gh-action-data-scraping
