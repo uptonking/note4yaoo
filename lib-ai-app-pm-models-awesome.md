@@ -2828,6 +2828,16 @@ modified: 2026-06-20T15:49:57.019Z
 - [以太 AI服务订阅充值 ](https://google7676.top/)
   - gemini pro, 价格较贵
 
+- [CodeFree铺子的小店 - 链动小铺 ](https://wzyp.cn/shop/N0IK02WR)
+  - 帐号格式（就是卡密格式）: 账号|密码|辅助邮箱|2fa密钥|时间|地区
+  - Gmail邮箱质保首登无售后均已验活, 随机地区大多是印度, 👀 默认登录不了gemini, 但能登录aistudio
+  - 拿到货立即检查状态，售出后一天内保首登，其余一概不管。之后不退不换，批量可谈
+  - 检查无误后，改2FA，检查转发，7-14天后改密码。不要上号就改密码，可以改2fa
+
+- [AI CDKs的小店 - 链动小铺 ](https://wzyp.cn/shop/ID2BFCF5)
+  - 邮箱特别多
+  - 随机 2-4年邮箱 包gcp: 不要买多了, 全被风控了
+
 - [AI账号乐园的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/SB9T68JP)
   - https://wzyp.cn/shop/SB9T68JP
   - gmail-3.5/5: 美区, 随机
@@ -2836,11 +2846,11 @@ modified: 2026-06-20T15:49:57.019Z
   - 邮箱丰富
   - [自行车 Ai 店铺的小店 - 链动小铺 ](https://wzyp.cn/shop/zxc)
 
-- [CodeFree铺子的小店 - 链动小铺 ](https://wzyp.cn/shop/N0IK02WR)
-  - 帐号格式（就是卡密格式）: 账号|密码|辅助邮箱|2fa密钥|时间|地区
-  - Gmail邮箱质保首登无售后均已验活, 随机地区大多是印度, 👀 默认登录不了gemini, 但能登录aistudio
-  - 拿到货立即检查状态，售出后一天内保首登，其余一概不管。之后不退不换，批量可谈
-  - 检查无误后，改2FA，检查转发，7-14天后改密码。不要上号就改密码，可以改2fa
+- [Gmail谷歌邮箱批发, 购买邮箱, 微软邮箱批发, 外贸营销网 ](https://yxpifa.com/)
+  - gmail贵
+
+- [mall1024 ](https://mall1024.net/)
+  - [Google Gmail邮箱售卖1.5、2、2.5起、outlook 0.7元，质保7天首登 _202510](https://www.nodeseek.com/post-391814-9)
 
 - [牛店的小店 - 链动小铺 ](https://wzyp.cn/shop/7KJU4N9A)
   - 品类丰富

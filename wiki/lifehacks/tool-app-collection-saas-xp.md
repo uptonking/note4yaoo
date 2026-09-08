@@ -260,6 +260,7 @@ mineru paddleocr site:github.com -inurl:"github.com/opendatalab/" -inurl:"github
 
 - 养号日常
   - gmail, gemini, youtube
+  - google验证码支持国内手机号, 支持副卡的手机号很适合(但支持副卡的主卡套餐一般较贵)
   - https://gemini.google.com/gems/create?hl=en-US&pli=1
 
 - cloud

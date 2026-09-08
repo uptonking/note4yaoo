@@ -12,10 +12,14 @@ modified: 2026-09-05T00:27:42.212Z
   - license: apache2
   - remote control: local server, remote server
   - existing coding agents, use it  on your own device
-  - Providers: Bring your own
+  - providers: Bring your own
   - plugins: add server-side functionality, modify the client with custom components
   - parallel work with optional git worktree: Per-worktree services. Each worktree gets allocated ports for dev servers and databases, 
   - automation: cli, mcp
+  - browser tools
+  - hub integrations: github, slack, discord
+    - 类似openclaw, 但能让agent操作云端资源
+    - 采用类似github workflow .yaml的设计，对普通用户不友好, 但对agent友好
   - Can I get banned for using Paseo? Paseo is designed to use each provider's officially supported integration and does not attempt to bypass its terms of service
 
 - cons
@@ -24,12 +28,15 @@ modified: 2026-09-05T00:27:42.212Z
 - [features](https://paseo.sh/docs/why)
   - clients: The native mobile app has full feature parity with desktop.
   - integrations: GitHub, Slack, Discord
-  - Voice runs locally on your device by default.
+  - Voice runs locally on your device by default
   - You can use the hosted relay (end-to-end encrypted, Paseo can't read your traffic), set up your own tunnel (Tailscale, Cloudflare Tunnel, etc.), or expose the daemon port directly. 
 
 - tips
   - ?
 # draft
+- agent-base
+  - built-in agent
+
 - cowork/workbuddy-like
   - implement integrations for google-docs/msoffice like github/gitea
 
@@ -72,6 +79,59 @@ modified: 2026-09-05T00:27:42.212Z
 - The CLI is designed to be used by agents themselves. You can instruct an agent to spawn sub-agents for parallel work
 
 - You'll also want the GitHub CLI (gh) installed and authenticated, Paseo uses it for PR-aware worktrees and a few orchestration features.
+
+- A project can be a git repository, a GitHub project, or any directory on a machine running the Paseo daemon.
+  - Inside each project are workspaces. 
+- Paseo is organized around workspaces, not chats.
+  - A workspace is the place where a task happens. It has a working directory and can contain multiple sessions running at the same time. In the app, each session opens as a tab.
+  - Each workspace is a separate place to work. You can keep one for your main checkout, create another for a feature, or open a GitHub PR as another workspace.
+
+- Agents run inside a workspace as sessions. A workspace can have one agent session, several agent sessions, terminals, browsers, and diffs open at the same time.
+
+- The workspace is the product concept; a git worktree is one way to isolate its files. More than one workspace can refer to the same managed worktree, and Paseo removes that worktree after its last workspace is archived.
+
+- Every workspace in Paseo is backed by a working directory. When that directory is a git worktree, you get a separate branch and isolated environment for each task.
+- When a workspace is backed by a git worktree, Paseo creates a separate directory on a separate branch so parallel agents never step on each other.
+
+- A provider is the contract between Paseo and one external agent CLI: how to launch it, how to stream its output, how to send input back, what modes it supports. The actual binary lives on your machine and runs as a normal subprocess.
+
+- Paseo ships a bundled adapter for the major agents (Claude Code, Codex, OpenCode, pi). Auto-discovered when the underlying CLI is installed, with mode metadata and voice support where applicable.
+- any agent speaking the Agent Client Protocol is supported through a generic adapter. Paseo ships a curated catalog of one-click installs 
+
+- A schedule starts a new agent for you on a cron cadence: at this time, run this prompt, in this repo, with these agent settings.
+  - Schedules create a new agent each run. You can inspect, pause, resume, run once, update, or delete them.
+  - Heartbeats target one existing agent. They are intentionally lightweight: create or delete them over MCP; from the CLI you can also update only their cron period. A heartbeat sends a recurring prompt back into one existing agent so it can reassess and continue the same conversation.
+
+- The most important difference from native subagents is that Paseo subagents can cross provider boundaries.
+  - Native subagents belong to one provider. Claude Code launches Claude Code subagents; Codex launches Codex subagents. 
+  - Paseo subagents are full agents managed by the Paseo daemon. The orchestrator can choose any configured provider and model, keep the worker in the current workspace, or place it in another workspace created for the task. Use them when you want one model to plan, another to implement, and another to review.
+
+- Agents in Paseo can drive real browser tabs — the same tabs you see in the Paseo desktop app. 
+  - An agent can open your dev server, read the page, click through a flow, fill a form, and take a screenshot, all without leaving your machine.
+  - The tools are part of the Paseo MCP toolset, so Enable Paseo tools on the same page must also be on for agents to receive them. 
+  - Browser tools let agents access and control Paseo browser tabs, including logged-in browser state. Only enable this for agents you trust.
+- Browser tabs are hosted by the Paseo desktop app. The daemon itself doesn't run a browser — it routes tool calls to a connected desktop app, and returns an error when none is connected. The wire contract is host-neutral, so other hosts can carry the same tools later.
+- How an agent sees a page
+  - The primary tool is `browser_snapshot`, which returns the page as an accessibility tree — headings, text, form state, and hierarchy — instead of raw HTML
+  - For anything the tree can't capture, agents fall back to `browser_screenshot`, and browser_logs exposes console messages and network timing.
+  - agent ──MCP──▶ daemon (broker) ──▶ browser host (desktop app) ──▶ webview
+
+- A daemon runs agents on one machine, for you. Paseo Hub is the layer above your daemons. 
+  - Your daemons keep running agents where they always did. Hub decides when to ask them to.
+- A daemon is one of your machines running the Paseo daemon. Enroll it once with your Hub organization, then any project can reference it.
+- For agents it dispatched, Hub owns creation, reconnect recovery, output observation, and completion. Agents you start yourself are untouched.
+- A workflow file contains one trigger and the ordered steps it starts. Files are discovered from .paseo/workflows/*.yml.
+- A trigger says which provider event can start a workflow. The Hub workflows page covers the steps, inputs, routing, prompts, and deadlines that run after a match.
+- Every event Hub accepts is recorded, whether or not it ran anything. That record is how you debug a trigger.
+
+- Hosted Hub uses the same projects, workflows, daemons, and activity model.
+
+- Do I need Hub to use Paseo?
+  - No. Paseo runs agents on your machines without it. 
+  - Hub adds what a single daemon cannot do on its own: starting agents from external activity, versioned configuration, a shared record of what ran, and team access.
+
+- 
+- 
 
 - Connectivity
   - SSH: SSH transport connects to an existing daemon through your local OpenSSH client.

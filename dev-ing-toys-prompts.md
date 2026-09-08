@@ -1294,7 +1294,7 @@ current code is under active development. please review and refactor code if you
 # toolchain
 - make a plan to improve the toolchain architecture/performance.
   - update typescript to latest v7 and update related toolchain/scripts.
-# workflow
+# devops-workflow
 - at the end of the plan, you should push to github, then inspect ci status by woodpecker-cli, fix issue if it exists.
 # libs
 - you should use npm package @embedpdf/viewer-react@3.0.0-next.1 to implement the pdf viewer, source code is at git repo `../embed-pdf-viewer` , you might refer to the api/docs/examples at the git repo.
@@ -1317,7 +1317,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 ## codex
 
 # llm-hub-lite/vps
-- i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cursorapi, worker_2 node deploys librechat/wapdf, worker_3 deploys flowy, worker_4 deploys wabase/verge.
+- i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cursorapi, worker_2 node deploys librechat/wapdf/aichor, worker_3 deploys flowy, worker_4 deploys wabase/verge.
   - all services are running well on my 5 vps.
   - the current architecture of Foundation apps/services and Consumer apps/services is good.
   - Most requests should go to leader node first, then proxying to follower/worker nodes.
@@ -1357,9 +1357,10 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 
 - you might refactor/reorganize/improve the architecture/logic if it helps to make it correct, robust, extensible in the long term. only if there are obvious bugs or design defects, then you might propose big refactor or huge change. if there is only subtle bugs, just propose to improve the existing architecture.
 
-- you might do multi-stage implementation to deploy aichor if it helps, 
-- you might run `ssh root@166.88.160.139` as worker_2 node and do whatever you want.
+- you might do multi-stage implementation to deploy the code if it helps, 
 - you might run `ssh root@107.175.66.2` as worker_1 node and do whatever you want.
+- you might run `ssh root@166.88.160.139` as worker_2 node and do whatever you want.
+- you might run `ssh root@23.254.182.254` as leader node and do whatever you want.
 
 - after you finish the fixes and improvements, please push to github to auto trigger the woodpecker ci. 
   - after the success of re-deployment, you might do some tests to recheck 
@@ -1372,6 +1373,16 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - the existing deployment might be cleaned and redeployed if latest architecture is not compatible, data loss is allowed. 
 
 ## updates/maintenance
+
+- please update aichorouter and cpapi to the latest docker image that is offcially published, you might do some database migration if necessary. 
+  - after your update, you should push to github, then inspect ci status by woodpecker-cli, fix issue if it exists.
+  - when you finish the update, all services should still running well, and features in aichorouter and cpapi should still work well without data/config loss.
+
+- 
+- 
+- 
+- 
+- 
 
 - ❓
 - when only updating app service, how to make foundational caddy/beszel stable without restarting/offline?

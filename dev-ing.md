@@ -345,6 +345,15 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0907
+
+- [newapi如何为OpenCode Go正确设置x-opencode-session 请求头 - LINUX DO _202609](https://linux.do/t/topic/2866462)
+  - 询问客服。现在要求宽松，这两个请求头只执行非空校验（就是只要有这个请求头就行）但未来会严格要求格式
+- 全都固定成同一个其实不太好，因为这样不同会话会用同一个 ID，一旦多会话并行工作，上游看来就是，你交替请求着完全不一样的任务，看起来像是多人共用
+
+- [Can’t find Google Chrome or Microsoft Edge in Mac App Store? : r/MacOS _202607](https://www.reddit.com/r/MacOS/comments/1v4c5kd/cant_find_google_chrome_or_microsoft_edge_in_mac/)
+  - Chrome and Edge was never on the Mac App Store. Ever. Why? They have to go through App Store approval to update and submit their app which takes time, and only allow code approved by App Store guidelines.
+
 ## 0905
 
 - ./index.html contains scripts to query github user creation date.

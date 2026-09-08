@@ -480,9 +480,28 @@ ldc 升值有利于广大持有 ldc 的佬友，为什么要强行引入干预�
 
 - ## 
 
-- ## 
+- ## [gemini和Antigravity有什么区别 - LINUX DO _202609](https://linux.do/t/topic/2870744)
+- Antigravity 是开发工具，有 agent、cli、ide
+Gemini 是 AI 模型
+理论上买的就是 Google One Pro 会员，但是你要反代当心谷歌封号
 
-- ## 
+- 应该买带 antigravity 权限的 pro 订阅账号，如果给自己的号开 pro 会员，先检查一下自己的账号的归属地区，是不是谷歌提供服务的地区（最好是美国）。如果不是，就先把号养好后，再开会员（一般 aws 节点就行了），否则你开了 pro 订阅，账号也不会有 antigravity 权限的。
+谷歌杀 cpa 反代根据自己模型能力和算力来的，之前 2.5pro 3.0pro 时期，你反代露头就秒，现在路边一条水平，只反代 gemini 系列模型被杀的几率不大。但反代 antigravity 里的 opus4.6 你被杀号风险还是很大。
+反正你这操作我建议买个号或者新建养个号，别用自己主号去开福利 pro 订阅了
+
+- 不买包 antigravity 权限的 google 账号，那可能你就用不了 antigravity
+只能在网页端 app 端用 gemini
+号商都是挑出去然后涨价卖
+
+- ## [google账号被封后，申请解封了，需要原手机号验证 - LINUX DO _202508](https://linux.do/t/topic/836576)
+- 意思就是等着，多试几次之后就不用原手机号了
+
+- 等半个月，期间不要登录这个号
+
+- [google账号风控，要求用之前接过码的手机接码验证，没有这个手机号怎么办 - LINUX DO _202607](https://linux.do/t/topic/2644627/4)
+- 先放着不管，一个月后再尝试登录，或许就能换手机号接码
+
+- 等半个月就好了 半个月里不要尝试登录（这点很重要！） 之后再去登录就可以使用任意号码接码（这是第一次验证） 但是接码后可能会提示账号被停用，需要申诉 申诉通过后，需要再次接码（这是第二次验证） 第二次验证强制要求第一次验证时的手机号 所以，在第一次验证时，要用能重复接码的手机号
 
 - ## [公司有一批非常重要的Gmail帐号，如何低成本养号呢 _202503](https://www.nodeseek.com/post-294121-1)
 - 因某个业务只能使用Gmail所以没办法更换域名邮箱
@@ -674,7 +693,16 @@ Play 商店地区	• 决定商店应用及定价 • 家庭组判定依据	• 
 
 - ## 
 
-- ## 
+- ## [我的Google邮箱有点多，辅助邮箱填相同有影响吗 _202501](https://www.nodeseek.com/post-246558-1)
+  - Google邮箱添加辅助邮箱，能不能都填一个，或者两三个邮箱填相同的，有没有影响啊？
+
+- 我五六十个gmail 大部分填一样的 没啥大问题 不过最好还是做下区别
+
+- 我outlook也害怕填相同的出问题，所以都填了不同的，不过可能只是自我安慰，毕竟经常用同一个IP和浏览器登录，就看微软啥时候心情不好开杀了
+
+- 几十个邮箱 辅助邮箱都填的qq邮箱 最近QQ邮箱老给我弹xxx谷歌邮箱两年没登录让我登录 我现在用的也不是之前的设备和IP了 搞得之前的一堆账号也很难登上去
+
+- Outlook 可以添加邮箱别名。我是一个 GMail 对应一个别名。除非两家的数据串到一起，否则应该很难查出来吧。
 
 - ## 💡 [How to ACTUALLY mark all of your emails as read in your inbox (2025) : r/GMail _202507](https://www.reddit.com/r/GMail/comments/1m78zti/how_to_actually_mark_all_of_your_emails_as_read/)
 - I went down this rabbit hole and could not for the life of me figure out how to mark all my emails as read. I'm sure you guys have followed the most commons steps:
@@ -745,6 +773,8 @@ To mark all emails as read in the Gmail app, open your inbox, tap and hold the f
 
 - [Maximum Number of Accounts : r/google _202502](https://www.reddit.com/r/google/comments/1izo9mi/maximum_number_of_accounts/)
   - Is there any way to add more than 10 accounts to a single Google profile? I work for an agency and have 15 clients but can only have 10 accounts on my profile at a time.
+- Setup profiles in your browser for each client to help prevent data leakage.
+  - I have a dozen or so Google accounts, so far, each with their own Chrome browser profile. I also have each one remember the tabs I had open on them, and set to send my main email notifications if the account is at risk of deletion due to inactivity. Also have 2FA on each.
 
 - ## [How many gmails can be opened under one number? - Google Account Community _202502](https://support.google.com/accounts/thread/324205080/how-many-gmails-can-be-opened-under-one-number?hl=en)
 - You can create up to four Gmail accounts using the same phone number for verification. Opening a second Gmail account for work purposes is both possible and safe. Having multiple Gmail accounts is common and can help separate personal and professional communications.
