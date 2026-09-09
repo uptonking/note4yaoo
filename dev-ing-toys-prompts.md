@@ -1317,10 +1317,10 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 ## codex
 
 # llm-hub-lite/vps
-- i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cursorapi, worker_2 node deploys librechat/wapdf/aichor, worker_3 deploys flowy, worker_4 deploys wabase/verge.
+- i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cursorapi, worker_2 node deploys librechat/wapdf/aichor, worker_3 deploys flowy/aichor3, worker_4 deploys wabase/verge.
   - all services are running well on my 5 vps.
-  - the current architecture of Foundation apps/services and Consumer apps/services is good.
   - Most requests should go to leader node first, then proxying to follower/worker nodes.
+  - the current architecture of Foundation apps/services and Consumer apps/services is good.
 
 - analyze related architecture/scripts/code, then 
 
@@ -1335,7 +1335,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - code/docs for beszel has been cloned at `../all-vps-monitor` for reference if you want.
 - code/docs for woodpecker has been cloned at `../all-cicd/woodpecker` for reference if you want.
 - code/docs for aichorouter(new-api) has been cloned at `~/Documents/repos/ai-ml-llm/all-router-token/new-api` for reference if you want.
-- code/docs for cpapi(CLIProxyAPI) has been cloned at `~/Documents/repos/ai-ml-llm/all-router-token/CLIProxyAPI` for reference if you want.
+- code/docs for cpapi(CLIProxyAPI) has been cloned at `~/Documents/repos/ai-ml-llm/all-router-token/CLIProxyAPI` and `~/Documents/repos/ai-ml-llm/all-router-token/Cli-Proxy-API-Management-Center` for reference if you want.
 - code/docs for observer(openobserve) has been cloned at `../all-logging/openobserve` for reference if you want.
 - code/docs for librechat has been cloned at `~/Documents/repos/ai-ml-llm/LibreChat` for reference if you want.
 
@@ -1357,12 +1357,16 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 
 - you might refactor/reorganize/improve the architecture/logic if it helps to make it correct, robust, extensible in the long term. only if there are obvious bugs or design defects, then you might propose big refactor or huge change. if there is only subtle bugs, just propose to improve the existing architecture.
 
+- analyze related code/config, find the reason, then fix the issue, 
+
 - you might do multi-stage implementation to deploy the code if it helps, 
+- you might run `ssh root@23.254.182.254` as leader node and do whatever you want.
 - you might run `ssh root@107.175.66.2` as worker_1 node and do whatever you want.
 - you might run `ssh root@166.88.160.139` as worker_2 node and do whatever you want.
-- you might run `ssh root@23.254.182.254` as leader node and do whatever you want.
+- you might run `ssh root@192.3.91.103` as worker_3 node and do whatever you want.
 
-- after you finish the fixes and improvements, please push to github to auto trigger the woodpecker ci. 
+- at the end of the plan, 
+- after you finish the fixes and improvements, please push to github to auto trigger the woodpecker ci, then inspect ci status by woodpecker-cli, fix issue if it exists.
   - after the success of re-deployment, you might do some tests to recheck 
   - you might run `ssh root@107.175.66.2` as worker_1 node(or `ssh root@ip` for other vps node) and do whatever you want. 
 
@@ -1431,8 +1435,10 @@ in a multi-nodes high-availability architecture
 - a solution has been implemented to support to deploy a new docker service to any follower node by new environment variables or new interactive shell scripts, so that requests still go to leader node then proxied to follower node. for services that high-availability is not required, these services can be deployed to a single server.
 - continue to improve the architecture that supports to deploy a new docker service to any follower node, using aichorouter/cpapi as example, making the architecture correct, robust, extensible.
 
-- please design a solution to deploy a paseo service called `aichor` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/wapdf. in cloudflare, i have configured aichor.aichorage.de to leader ip and worker2-aichor-origin.aichorage.de to worker-2 ip .
+- please design a solution to deploy a paseo service called `aichor3` to any follower node user specified. deploy it to worker_3 node by default, just like aichorouter/aichor. in cloudflare, i have configured aichor3.aichorage.de to leader ip and worker3-aichor3-origin.aichorage.de to worker_3 ip .
   - source code for aichor(paseo) has been cloned at folder `~/Documents/repos/ai-ml-llm/all-agi-harness/paseo` for reference if you want.
+  - source code for pi agent has been cloned at folder `~/Documents/repos/ai-ml-llm/all-agi-harness/pi` for reference if you want.
+  - aichor3 should be similar to aichor, but as a separate service unrelated to aichor. aichor3 can reuse the aichor config and docker image that contains @openai/codex, @anthropic-ai/claude-code, opencode-ai, @earendil-works/pi-coding-agent by default. aichor3 is not designed to achieve high-availability with aichor. In the future, i plan to add aichor3 as a new host in https://aichor.aichorage.de, so that user use the existing aichor host by default, they can also use the aichor3 host. Please design a extensible architecture to make it easy to add more paseo daemon host later.
 - please improve aichor by creating a child docker image that contains the latest @openai/codex, @anthropic-ai/claude-code, opencode-ai, @earendil-works/pi-coding-agent by default, so that user can use the remote agent out of the box. this doc `~/Documents/repos/ai-ml-llm/all-agi-harness/paseo/public-docs/docker.md` is a good reference.
   - i have a idea, like the existing cursorapi, you might put the image at `images/aichor/Dockerfile`, and implement a `ops/publish-aichor-image.sh`, so user can update and publish paseo image manually by the script, then the auto deployment is handled by woodpecker ci.
   - you might refactor/improve the workflow of aichor and cursorapi to reuse common logic and make it consistent.
@@ -1459,8 +1465,8 @@ in a multi-nodes high-availability architecture
   - please design a solution to deploy a openobserve service called `observer` to any follower node user specified.  also deploy it to worker_1 node, just like aichorouter/cpapi. `observer.aichorage.de` has been configured at cloudflare.
   - source code for openobserve has been cloned at folder `../all-logging/openobserve` for reference if you want.  you might use the provided docker config or custom docker config.
 
-- optimize aichor for single-node, minimal cpu/ram resources. 
-  - the max cpu should be 0.9, the max ram should be 1.5gb.
+- optimize aichor3 for single-node, minimal cpu/ram resources. 
+  - the max cpu should be 0.8, the max ram should be 0.9gb.
   - if required, cloudflare r2 might be used.
 
 - review exising code/implementation, make both single-node consumer app and multi-nodes consumer apps work correctly, make a comprehensive plan to implement/improve aichor.

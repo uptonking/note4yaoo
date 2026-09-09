@@ -345,6 +345,20 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0908
+
+- [cpa反代gemini报错 - LINUX DO _202609](https://linux.do/t/topic/2836154)
+  - 400: {“code”:400,“message”:“Request contains an invalid argument.”,“status”:“INVALID_ARGUMENT”}, 之前一直都没有问题，今天调用时 gemini 会报如上错误，有佬知道是为什么么
+  - 还是授权文件 project_id 参数的问题，删除凭证，重新授权一直获取到一个不存在的 project_id，已经从 google cloud 里手动修改一个存在的 project id 解决了
+  - 谷歌账号登录 https://console.cloud.google.com, 里面有相应的项目，找到一个复制 project id， 到 CPA 文件目录 app auth 下对应的凭证 json 的 project_id 字段上
+
+- [cpa反代antigravity，通过newapi接入到codex后报错 - LINUX DO _202609](https://linux.do/t/topic/2860986)
+  - 我也发现是 newapi 的问题，cpa 收到的全是没带 high 的，坑啊
+  - NewAPI 官方源码确实会把 gemini-3.7-flash-high 解析成： 模型：gemini-3.7-flash 推理强度：high
+  - 解法有兩種，我一開始在 CPA 設模型映射別名不帶 high 就行了（但也搞了好久還重新部署 CPA 和換 Antigravity-Manager)。後來才看到別的佬友有正確解法，在 newapi 的全局模型設置白名單
+
+- gemini-3.6-flash-high 试试！这个不容易封号
+
 ## 0907
 
 - [newapi如何为OpenCode Go正确设置x-opencode-session 请求头 - LINUX DO _202609](https://linux.do/t/topic/2866462)

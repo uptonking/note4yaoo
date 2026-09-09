@@ -66,6 +66,8 @@ cp -r source_folder /path/to/destination_folder/
 
 ```
 
+
+
 ```shell
 # 在linux docker 的terminal输入 mount 命令，可以看到容器的挂载点及地址，对调试读写很有用
 mount
@@ -94,12 +96,18 @@ mount
 ### 普通压缩解压缩
 
 ```shell
+zip -r activepieces.zip activepieces/
+unzip ./activepieces.zip -d activepieces/
+
+# -f flag specifies the output archive filename and expects that filename immediately after it. 
 tar -cvf /tmp/etc.tar  /etc # <==仅打包，不压缩！
 tar -czvf /tmp/etc.tar.gz  /etc # <==打包后以gzip压缩,tgz
 tar -cjvf /tmp/etc.tar.bz2  /etc # <==打包后以bzip2压缩
 
 tar -xzvf /tmp/etc.tar.gz  /my # 解压到文件夹
 ```
+
+
 
 ```
 

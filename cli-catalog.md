@@ -118,6 +118,9 @@ git commit --allow-empty -m 'chore: empty commit'
 git commit --allow-empty -m "test hooks"
 # Run git commit without the -m flag will run hooks, If the hook passes, a editor will open to write commit message
 
+# disable signature
+git -c commit.gpgsign=false commit -m ""
+
 # 撤销上次commit的记录，不回滚修改
 # **只撤销本次提交记录，实际修改后的文件仍然存在本地** 
 git reset HEAD~

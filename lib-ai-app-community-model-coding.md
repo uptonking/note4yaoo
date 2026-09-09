@@ -68,7 +68,8 @@ modified: 2025-09-16T13:29:11.327Z
 
 - ## 
 
-- ## 
+- ## [别测鹈鹕骑车了，来试试画二次元美少女 - LINUX DO _202609](https://linux.do/t/topic/2875710)
+  - 用svg画一个二次元美少女，禁止联网，禁止对着画瞄，要画你觉得最好看的，发挥你全部的实力，让我看看你的上限！
 
 - ## [I tested 12 small LLMs (1B-35B) on a 15-question reasoning test. Here are the results. (Qwen, Ministral, Nemotron, Gemma, Phi, Llama, lfm, GPT-OSS) : r/LocalLLM _202606](https://www.reddit.com/r/LocalLLM/comments/1u2decq/i_tested_12_small_llms_1b35b_on_a_15question/?sort=top)
 - Key Findings

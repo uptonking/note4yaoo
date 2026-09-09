@@ -11,6 +11,7 @@ modified: 2026-09-05T00:27:42.212Z
 - pros
   - license: apache2
   - remote control: local server, remote server
+    - 移动端登录时会自动同步workspace/session
   - existing coding agents, use it  on your own device
   - providers: Bring your own
   - plugins: add server-side functionality, modify the client with custom components
@@ -45,11 +46,16 @@ modified: 2026-09-05T00:27:42.212Z
 - paseo-relay server
   - ts, go
 
+- cloud的易用性改进
+  - chat history
+
 - 
 - 
 - 
 - 
-- 
+
+- sync
+  - ?
 
 - integrations
   - qq
@@ -61,6 +67,37 @@ modified: 2026-09-05T00:27:42.212Z
 - 
 
 # dev-xp
+- https://github.com/myysophia/paseo-best-practices
+  - Linux 服务器部署：ARCHITECTURE → USAGE → OPS → ADR
+  - macOS 桌面 App：MACOS_DESKTOP → USAGE → ARCHITECTURE
+  - 把历史 Codex / Claude 会话迁到 Paseo：SESSION_MIGRATION → USAGE
+
+- Project: The top-level logical repository or root codebase.
+  - Does not execute code directly.
+  - It is simply the parent anchor that groups checkouts and workspaces together.
+- Workspace: A concrete working directory (`cwd`) + Git branch/worktree + terminals + dev servers. A concrete filesystem directory (`cwd`) on a specific machine, with its own Git state and dev environment.
+  - `local_checkout`: The main repository directory on disk.
+  - `worktree`: A dedicated, isolated Git worktree automatically created by Paseo (under `~/.paseo/worktrees/<name>`) on an isolated branch.
+  - `directory`: A plain directory (for non-Git codebases).
+  - **Workspace scripts / background services** (e.g., dev servers defined in `paseo.json`).
+  - **File explorer & changes tree** .
+  - Tabs: Contains one or more agent sessions, terminal tabs, diff viewers, and browsers.
+- Session / Agent Session: One active AI agent conversation (Claude, Codex, Pi) running in that directory.
+  - equivalent of the "chat/conversation" in Claude Code or Codex.
+  - In Paseo's code, "Session" also sometimes refers to the low-level WebSocket connection in `session.ts`, which is why the UI and docs standardize on **Agent Session** or **Agent** for the user-facing chat.
+
+- why workspace
+  - 🌹 By introducing Workspaces (especially Git worktrees): Paseo lets you spin up a new workspace in one click. Agent 1 works in Worktree A, Agent 2 works in Worktree B. Both belong to the same **Project** , but their files and Git branches are isolated.
+  - Multi-Agent Collaboration in the Same Workspace: Tab 1 Claude Code , Tab 2 codex. Because **Workspace** is the environment container, you can switch providers or have multiple agents and terminals cooperate on the same working tree.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 # more
 
