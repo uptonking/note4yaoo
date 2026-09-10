@@ -1253,6 +1253,8 @@ modified: 2026-06-20T15:49:57.019Z
   - 在上述调用次数限制的基础上，不同模型允许的调用并发，会根据平台的压力进行动态的速率限制调整，原则上以保障开发者单并发正常使用为目标。
   - 实际单模型可用次数以及允许的并发，以平台实时调整为准。
   - 🖼️ 当前API-Inference为魔搭平台上的部分开源大语言模型（LLM），多模态模型（MLLM），以及AIGC专区文生图模型等，提供了可直接使用的API。
+  - [ModelScope.ai](https://www.modelscope.ai/models)
+  - [阿里系AI网站汇总 - LINUX DO _202603](https://linux.do/t/topic/1706052)
 
 - [硅基流动 SiliconFlow - 大模型 API 价格方案](https://www.siliconflow.cn/pricing)
   - tldr: tpm-50k
@@ -2742,6 +2744,24 @@ modified: 2026-06-20T15:49:57.019Z
   - [Recharge Portal ](https://cdk.danew.cc/)
 
 ## sms/code/接码
+
+- [无风的小店|全球旅游卡代购 ](https://wufeng.de/)
+  - [新西兰skinny/onenz拼车帖，已明盘 _202608](https://www.nodeseek.com/post-889419-1)
+  - skinny
+  - one nz
+  - giffgaff
+
+- [Kaka Shop - 新西兰手机卡与充值 ](https://kaka-shops.com/)
+
+- [0esim - Qingqiu ](https://www.0es.im/)
+  - [voxi成品号 ](https://www.nodeseek.com/post-882923-1)
+  - 发货格式：邮箱----密码----客户端ID----刷新令牌----生日DDMMYYYY----voxi密码----生日----PIN----密保问题----密保答案----LPA
+
+- [Overseas SIM Cards | UK, US & Japan Mobile Numbers | SIM Panda ](https://simpanda.cc/)
+  - [爱屋及乌的用户空间 ](https://www.nodeseek.com/space/1872#/discussions)
+
+- [V2EX › lyzh130 ](https://v2ex.com/member/lyzh130)
+  - 长期卖 one nz, skinny
 
 - [superman的小店的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/superman)
   - codex接码 一个号码可以接三次，小概率号码无效，不一定能接到，无质保，如果连续三个有问题，找我退款问题账号

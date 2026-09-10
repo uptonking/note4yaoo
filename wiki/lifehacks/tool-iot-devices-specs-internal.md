@@ -47,6 +47,7 @@ modified: 2024-09-25T15:17:42.743Z
 - 省电模式下，蜂窝网络会自动从 5G 切换到 4G，导致自身网络慢和hotspot热点网络慢
 
 - [AGM X6 – AGM手机官方商城](https://shop.agmdevice.com/products/agm-x6-zh/)
+  - [AGM X6参数 规格 性能 功能 - IT之家产品百科 ](https://ku.ithome.com/item/39893/canshu.html)
   - 5G智能三防手机 黑色
   - 出厂系统内核: Android 13 XOS系统
   - 防水等级: IP68/IP69K

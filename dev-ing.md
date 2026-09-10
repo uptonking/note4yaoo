@@ -345,6 +345,12 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0910
+
+- paseo-plugins
+
+- paseo-github
+
 ## 0908
 
 - [cpa反代gemini报错 - LINUX DO _202609](https://linux.do/t/topic/2836154)

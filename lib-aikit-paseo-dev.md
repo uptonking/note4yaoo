@@ -25,6 +25,7 @@ modified: 2026-09-05T00:27:42.212Z
 
 - cons
   - Paseo manages other agents, it doesn't ship one.
+  - 不方便使用多账号, 这是设计目标的取舍
 
 - [features](https://paseo.sh/docs/why)
   - clients: The native mobile app has full feature parity with desktop.
@@ -33,7 +34,7 @@ modified: 2026-09-05T00:27:42.212Z
   - You can use the hosted relay (end-to-end encrypted, Paseo can't read your traffic), set up your own tunnel (Tailscale, Cloudflare Tunnel, etc.), or expose the daemon port directly. 
 
 - tips
-  - ?
+  - paseo放在docker容器运行时注意设置最大cpu/ram, 会影响多agent和subagent并发运行, 有些agent可能占用较多ram如claude-code
 # draft
 - agent-base
   - built-in agent
@@ -49,7 +50,9 @@ modified: 2026-09-05T00:27:42.212Z
 - cloud的易用性改进
   - chat history
 
-- 
+- transparency
+  - show thinking/tools
+
 - 
 - 
 - 
@@ -67,6 +70,12 @@ modified: 2026-09-05T00:27:42.212Z
 - 
 
 # dev-xp
+- Daemon Spawns the Pi Subprocess
+  - pi --mode rpc --model gemini-3.8-flash --thinking high --extension /tmp/paseo-ext-...
+  - It spawns the `pi` binary as a child process with its working directory set to your workspace
+  - Communication is handled through `JsonlRpcProcess` using newline-delimited JSON over `stdin` and `stdout`.
+  - Coding agents like Pi execute tools locally in their working directory. As Gemini instructs Pi to perform actions, Pi outputs JSON-RPC events on `stdout`
+
 - https://github.com/myysophia/paseo-best-practices
   - Linux 服务器部署：ARCHITECTURE → USAGE → OPS → ADR
   - macOS 桌面 App：MACOS_DESKTOP → USAGE → ARCHITECTURE
