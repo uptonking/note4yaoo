@@ -1,3 +1,9 @@
+---
+title: SKILL
+created: 2026-09-08T04:45:25.984Z
+modified: 2026-09-08T04:45:25.985Z
+---
+
 <!-- ---
 title: SKILL
 created: 2026-02-27T14:23:32.902Z
@@ -15,3 +21,4 @@ Use this skill when the user needs to work with PDF files...
 1. Use pdfplumber for text extraction...
 
 ## more -->
+

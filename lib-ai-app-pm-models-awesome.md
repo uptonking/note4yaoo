@@ -1504,6 +1504,9 @@ modified: 2026-06-20T15:49:57.019Z
     - 廉价的AT号几乎都不提供刷新，在每天掉号的状况下经常用不完周限，很浪费
     - 如果有rt和邮箱取码，可以手动接码来刷新AT，也是一种折中的方案(介于2个AT号 和 一个接码成品号)
 
+- free账号
+  - 可买些老号接码/支付
+
 - sources
   - [货源广场 - 链动小铺](https://pay.ldxp.cn/merchant/my_parent/source_square)
   - [阿华的AI比价聚合站 ](https://ahua-ai-price-aggregator.onrender.com/)

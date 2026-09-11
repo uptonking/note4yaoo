@@ -8,7 +8,8 @@ modified: 2026-02-06T15:48:09.172Z
 
 # common-rules
 
-- When a task requires deleting, moving, or renaming more than one file, stop and present a clear list of affected files. Do not execute the command until the user provides approval or confirmation. 
+- when deleting files/folders, always perfer to move them to the system trash bin if possible instead of deleting them permanently immediately.
+
 - System Configuration Changes Require Approval: When a task requires adding, updating, or deleting operating system configurations or system files, you must stop and present a clear list of all affected configurations/files before execution. Wait for explicit user approval before proceeding with any commands.
 # markdown
 - always prefer github-flavored markdown syntax.

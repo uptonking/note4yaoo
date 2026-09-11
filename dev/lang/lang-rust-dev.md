@@ -14,13 +14,13 @@ modified: 2022-11-11T06:57:09.670Z
   - infra: turso, typst
   - editor: kilo-editor, treesitter, ripgrep, xi-editor/lapce/zed, 
   - docs: micromark(remark), mdx, mdBook(MPL)/rustdoc, typst, 
-  - db: 🌹 turso, rust-kv, terminusdb-store, xet(hf storage)
+  - db: 🌹 turso, rust-kv, terminusdb-store, xet/crab(hf storage)
   - crdt: automerge
-  - git-like: codex-cli/server
-  - utils:  arrow
+  - git-like: lore, crab
+  - utils: arrow
   - toolchain: rspack+unplugin, openobserve
   - ui: gpui(by zed), tauri/pake
-  - ai: janai
+  - ai:  codex-cli/server, janai
   - more: wasm, json-parser, tree, kanban, 
 
 - tutorials 🧑‍🏫

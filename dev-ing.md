@@ -345,11 +345,54 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
-## 0910
+## 0911
 
 - paseo-plugins
 
 - paseo-github
+
+## 0910
+
+- [关于ChatGPT被封号申诉失败后多次申诉终于解封这种事 - LINUX DO _202608](https://linux.do/t/topic/2771464/5)
+  - 年初手动注册，邮箱为 outlook 邮箱，注册时使用某万人骑机场
+  - 免费账号、只在手机 app 上使用、绑定 mfa、有头像
+  - 低强度使用，截至被封总共对话不超过 30 个，且对话长度较短，未出现滥用情况，未收到过警告，一直使用同一个节点，可以使用 chatgpt
+  - 5 月 27 日早上 10 点 29 分，突然收到 openai 发来的邮件，告知账号已经被封禁，未给出任何明确理由，仅提示是违反用户协议，收到邮件后尝试登录，确定已经 deactivated，之前并未给出任何警告信息。
+  - 收到邮件后立即去官网进行申诉，申诉理由找的小作文，并且强调为自己使用，并保证会合法使用，下午 4 点 49 分收到回执。
+  - 下午 5 点 36 分，收到邮件，提示申诉不通过，并且不再接受新的申诉（大概率 ai 审的），当时已经认为该账号已死，遂注册新账号。
+  - 8 月 16 日，突然想到这件事，越想越气，并且邮箱是自己主邮箱，被封了感觉很不爽，遂在 L 站上翻经验帖，注意到 6 月 4 日误封申诉失败仍然解封的，当时以为自己也是这种情况，尝试登录账号后，失败。但抱着死马当活马医的态度，点进官网（而非用邮件里的申诉链接），找到申诉页面，填上自己邮箱，理由直接放空（其实是手快了直接点到提交了……），没有受到回执，8 月 17 日，收到邮件，直接解封。
+  - outlook 真可能是高风控邮箱，无故封号概率较大，同时间段注册的 qq 邮箱之类的都没事。
+  - 可以进行多次申诉，并不是收到了不通过就一定判死刑，如果你确定你是合法注册 + 合法使用（当然不讨论用梯子的情况），你是可以多次进行申诉并有可能解封的。
+  - https://openai.com/form/appeal/
+
+- 🤔 there are so many web search related solutions for agent, like exa/searxng/tavily... is there any popular open source web search solutions... please deep research related solutions/projects/ideas, if you found any open source products or inspiration projects, provide overview/github-url/website for each.
+  - i am looking for a good self-hosted web search solution for cli coding agent like claude-code/codex/pi, what is the best practice in the industry, propose a good solution for this use case.
+- Web search for agents is not a single tool—it is a two-step pipeline:
+  - Discovery (Search): Finding the most relevant URLs, page titles, and short snippets based on a query
+  - Fetch & Extract: Pulling a specific webpage and converting its bloated HTML/DOM (often full of ads, scripts, navbars, and SVGs) into clean, token-efficient Markdown 
+
+- the commercial side you already named (Exa, Tavily, Brave Search API, Perplexity Sonar) — none are open source/self-hostable, but they're frequently wired in as a fallback provider alongside SearXNG
+
+- https://github.com/searxng/searxng
+  - metasearch engine forked from Searx that aggregates results from over 70 different search engines, self-hosted via Docker, no API key needed.
+- https://github.com/yacy/yacy_search_server
+  - decentralized peer-to-peer search engine that operates without centralized servers, letting you build local or global indexes and query distributed peers.
+  - Interesting architecture, but results quality lags and it's overkill for a coding agent.
+- https://github.com/firecrawl/firecrawl
+  - search, scrape, parse, crawl, map, and interact in one API
+- https://github.com/unclecode/crawl4ai
+  - headless-browser crawler purpose-built for LLM pipelines — turns any page into clean markdown
+- https://github.com/jina-ai/reader
+  - Prefix any URL with r.jina.ai/ for clean markdown. Its search endpoint
+  - uses the `Brave` Search API under the hood, so it's not fully self-hosted for the search half.
+
+- https://github.com/ItzCrazyKns/Vane
+  - Open-source Perplexity clone that uses SearxNG
+- 
+- 
+- 
+- 
+- 
 
 ## 0908
 

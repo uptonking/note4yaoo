@@ -1296,6 +1296,9 @@ current code is under active development. please review and refactor code if you
   - update typescript to latest v7 and update related toolchain/scripts.
 # devops-workflow
 - at the end of the plan, you should push to github, then inspect ci status by woodpecker-cli, fix issue if it exists.
+# backups
+- services-to-backup
+  - newapi
 # libs
 - you should use npm package @embedpdf/viewer-react@3.0.0-next.1 to implement the pdf viewer, source code is at git repo `../embed-pdf-viewer` , you might refer to the api/docs/examples at the git repo.
 # harness
@@ -1317,7 +1320,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 ## codex
 
 # llm-hub-lite/vps
-- i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cursorapi, worker_2 node deploys librechat/wapdf/aichor, worker_3 deploys flowy/aichor3, worker_4 deploys wabase/verge.
+- i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cursorapi, worker_2 node deploys librechat/wapdf/aichor/searx, worker_3 deploys flowy/aichor3, worker_4 deploys wabase/verge.
   - all services are running well on my 5 vps.
   - Most requests should go to leader node first, then proxying to follower/worker nodes.
   - the current architecture of Foundation apps/services and Consumer apps/services is good.
@@ -1366,7 +1369,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - you might run `ssh root@192.3.91.103` as worker_3 node and do whatever you want.
 
 - at the end of the plan, 
-- after you finish the fixes and improvements, please push to github to auto trigger the woodpecker ci, then inspect ci status by woodpecker-cli, fix issue if it exists.
+- after you finish the improvements/fixes, please push to github to auto trigger the woodpecker ci, then inspect ci status by woodpecker-cli, fix issue if it exists.
   - after the success of re-deployment, you might do some tests to recheck 
   - you might run `ssh root@107.175.66.2` as worker_1 node(or `ssh root@ip` for other vps node) and do whatever you want. 
 
@@ -1435,6 +1438,9 @@ in a multi-nodes high-availability architecture
 - a solution has been implemented to support to deploy a new docker service to any follower node by new environment variables or new interactive shell scripts, so that requests still go to leader node then proxied to follower node. for services that high-availability is not required, these services can be deployed to a single server.
 - continue to improve the architecture that supports to deploy a new docker service to any follower node, using aichorouter/cpapi as example, making the architecture correct, robust, extensible.
 
+- please design a solution to deploy a searxng service called `searx` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/aichor. in cloudflare, i have configured searx.aichorage.de to leader ip and worker2-searx-origin.aichorage.de to worker_2 ip .
+  - source code for searx(searxng) has been cloned at folder `~/Documents/repos/ai-ml-llm/all-search-etl/searxng` for reference if you want.
+
 - please design a solution to deploy a paseo service called `aichor3` to any follower node user specified. deploy it to worker_3 node by default, just like aichorouter/aichor. in cloudflare, i have configured aichor3.aichorage.de to leader ip and worker3-aichor3-origin.aichorage.de to worker_3 ip .
   - source code for aichor(paseo) has been cloned at folder `~/Documents/repos/ai-ml-llm/all-agi-harness/paseo` for reference if you want.
   - source code for pi agent has been cloned at folder `~/Documents/repos/ai-ml-llm/all-agi-harness/pi` for reference if you want.
@@ -1465,11 +1471,11 @@ in a multi-nodes high-availability architecture
   - please design a solution to deploy a openobserve service called `observer` to any follower node user specified.  also deploy it to worker_1 node, just like aichorouter/cpapi. `observer.aichorage.de` has been configured at cloudflare.
   - source code for openobserve has been cloned at folder `../all-logging/openobserve` for reference if you want.  you might use the provided docker config or custom docker config.
 
-- optimize aichor3 for single-node, minimal cpu/ram resources. 
-  - the max cpu should be 0.8, the max ram should be 0.9gb.
+- optimize searx for single-node, minimal cpu/ram resources. 
+  - by default, the max cpu should be 0.8, the max ram should be 0.9gb.
   - if required, cloudflare r2 might be used.
 
-- review exising code/implementation, make both single-node consumer app and multi-nodes consumer apps work correctly, make a comprehensive plan to implement/improve aichor.
+- review exising code/implementation, make both single-node consumer app and multi-nodes consumer apps work correctly, make a comprehensive plan to implement/improve searx.
 
 - you might refactor/reorganize/improve the architecture/logic if it helps to make it correct, robust, extensible in the long term. only if there are obvious bugs or design defects, then you might propose big refactor or huge change. if there is only subtle bugs, just propose to improve the existing architecture.
 
@@ -1559,6 +1565,7 @@ in a multi-nodes high-availability architecture
 
 - review exising code/implementation, then continue to improve the cicd architecture/experience.
 # more
+- When a task requires deleting, moving, or renaming more than one file, stop and present a clear list of affected files. Do not execute the command until the user provides approval or confirmation. 
 
 ```prompt
 

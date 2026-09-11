@@ -38,6 +38,7 @@ modified: 2026-09-05T00:27:42.212Z
 # draft
 - agent-base
   - built-in agent
+  - external: deepseek-harness, cursor-cli
 
 - cowork/workbuddy-like
   - implement integrations for google-docs/msoffice like github/gitea
@@ -53,6 +54,10 @@ modified: 2026-09-05T00:27:42.212Z
 - transparency
   - show thinking/tools
 
+- github-integrations
+  - 支持现有github cli的设计， 同时支持github oauth直接登录来选择repo
+
+- 
 - 
 - 
 - 

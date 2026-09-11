@@ -476,10 +476,21 @@ ldc 升值有利于广大持有 ldc 的佬友，为什么要强行引入干预�
 # discuss-sms/sim 📱
 - tips
   - 部分实体卡/esim需要每年在当地一段时间，否则取消, 如giffgaff的封号
+  - giffgaff封号后很多用户转向同在英国的voxi, 可能会增加后者的风控
   - 拿到号码别急着买套餐, 先测主流平台如google/telegram/paypal/whatsapp
   - 就算接码了， 也可能封号， 比如google会封禁反代的
 
-- ## 
+- sim
+  - 激活限制
+  - 保号条件
+  - esim的条件: skinny优先封号esim, 实体卡封号较少
+
+- wifi-calling
+  - Wi-Fi calling requires both the phone AND your carrier to support it — and specifically, the carrier must support it for your exact device model. 
+  - Wi-Fi Calling works in Airplane Mode, as long as you manually turn Wi-Fi back on after enabling Airplane Mode.
+
+- skinny
+  - 刚拿到了 skinny 的卡，在注册 wa 的时候能输手机号，但收不到短信验证码，来电也没有，试了几次就给我弹窗限制了，难受  
 
 - ## 
 
@@ -489,7 +500,33 @@ ldc 升值有利于广大持有 ldc 的佬友，为什么要强行引入干预�
 
 - ## 
 
-- ## 
+- ## [记录一下从新西兰🇳🇿带回来的SIM卡 _202604](https://www.nodeseek.com/post-679834-1)
+- 后一共带回来13张，覆盖新西兰四家运营商：
+One NZ：4张实体SIM + 1张eSIM
+Skinny：4张实体SIM（走Spark网络）
+Spark：2张实体SIM + 1张eSIM
+2degrees：1张实体SIM
+这里要特别说一下Spark的坑。Skinny、One NZ、2degrees的卡带回国后都能正常注册网络、接收短信，唯独Spark的卡回国后直接显示"仅限紧急呼叫"，手动选网也注册不上。 最后通过WhatsApp联系Spark客服，客服在后台做了一次network refresh（网络刷新），然后才恢复正常。两张Spark卡都是同样的问题，都需要客服手动刷新才行。
+SIM卡需要在新西兰境内首次激活（插卡拨打运营商客服号），没法回国再激活，所以人在新西兰的时候记得把要用的卡都激活了。
+新西兰SIM卡实名要求很宽松，买的时候不需要护照，激活也很方便。
+如果有去新西兰的计划，路过超市顺手买几张就行，成本极低。
+
+- 激活都需要实名吗？
+  - 不用，转esim需要
+
+- 这四家好像只有skinny不支持Apple esim转移
+
+- ONE NZ的二维码还支持复扫好像
+  - 是的
+
+- ## [想用whatsapp接码codex，能否用+86注册whatsapp - LINUX DO _202606](https://linux.do/t/topic/2386780/3)
+- +86 手机号可以注册 whatsapp，但是 OAI 不会给你的 + 86 发验证码
+
+- +86 的号码 openai 不认，接码是先判断电话号码，再判断要不要发到 whatsapp 的，注册了 whatsapp 也没用
+
+- 可以先去买个虚拟号再注册 whatsapp，也能长期使用的，不过要是账号丢了手机重置了之类的就不行了
+
+- 我目前没有遇到 whatsapp 需要二次验证的问题，最稳妥的还是自己有一张外卡。
 
 - ## [Helium Mobile 免费 Zero Plan 灵车全部坠机 - 运营商 奶昔论坛 _202605](https://forum.naixi.net/thread-12090-1-1.html)
   - 刚收到官方的“死亡通知书”，Helium Mobile 那个 $0/月的 Zero Plan 免费白嫖灵车，终于宣布翻车了！
@@ -1182,6 +1219,13 @@ Google Voice
 - 按照官方要求必须护照和签证
 - 首先你转esim需要护照，这一步就给你卡死了
 
+- ## [skinny现在有什么渠道 _202606](https://www.nodeseek.com/post-784697-1)
+- 实体卡现在只能在新西兰激活
+eSIM有一段时间是可以在内地下单激活。但是eSIM是永远无法转移的，除非你在新西兰或者有新西兰的护照。有人拿新西兰签证也被拒了，必须到新西兰去才能转移。现在最新情况不清楚了。
+
+- 要我说esim不如实体卡，安装了就转移不了，实体卡好歹能拔下来换手机。
+  - 优点就是可以通过增加余额保号，两张卡相互转一次，增加一年有效期，理论上永久免费保号。
+
 - ## [关于skinny _202608](https://www.nodeseek.com/post-882998-1)
   - 买了一张26年6月10日在新西兰激活的skinny实体卡，听说有一个规则是三个月不连新西兰本土基站就封禁，确有此事吗 
 - 没有的事，放心用（目前是）
@@ -1392,6 +1436,13 @@ Lebara 保号周期90天，最低充值5英镑，发送短信 0.49 英镑。
 - 有没有套餐无所谓，你再充值5磅就可以正常发短信了，套餐漫游不行的，你得有额外的余额。
 
 - 我装三星外板手机Wi-Ficall随便拉，不要英国IP都行，到了外板iPhone怎么都拉不起来Wi-Ficall
+
+- ## [VOXI怎么申请实体卡？ - 运营商 奶昔论坛 _202603](https://forum.naixi.net/thread-10329-1-1.html)
+- voxi实体sim卡只能邮寄英国境内，不发往海外地区，想要卡只能找代收或者找人买
+
+- 找 在英留/在英国的盆友/转运（UK Post Box）发回来
+
+- 没啥意义啊 现在一张esim白卡才十几块钱 转运费都不止
 
 - ## ⚠️ [voxi使用条款 _202607](https://www.nodeseek.com/post-847319-1)
   - 让GPT查了一下，也有说长期漫游注销啊。
