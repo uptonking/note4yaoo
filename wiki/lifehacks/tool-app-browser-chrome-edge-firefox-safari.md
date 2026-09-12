@@ -31,6 +31,9 @@ modified: 2021-08-19T13:02:28.478Z
     - 网速不稳定
     - ios商店无法下载proxy
 # edge-linux体验
+- resources
+  - [Edge Insider channels](https://explore.microsoft.com/en-us/edge/download/insider)
+
 - 优点
   - 同步无需vpn
 

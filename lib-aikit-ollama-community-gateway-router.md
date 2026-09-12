@@ -33,6 +33,9 @@ modified: 2026-01-21T04:22:29.956Z
   - 字节火山: [Transformer maxtoken field ineffective for Volcengine API with DeepSeek-v3 model ](https://github.com/musistudio/claude-code-router/issues/213)
     - The maxtoken transformer field in the configuration does not work properly when using the Volcengine API with the DeepSeek-v3 model, resulting in API call failures. However, the same configuration works correctly with the DeepSeek-R1 model.
     - 👀 仅deepseek-v3.2存在此问题, glm-4.7正常
+
+- payment
+  - 支付系统接入ldc
 # ai-providers-devops
 - 当2api失效时，先不要怀疑是软件没更新或平台故障了， 先去主流论坛/交流群看看是否有同样问题，可能就是风控严格了
 # new-api
@@ -2564,12 +2567,83 @@ https://makerich.club/ chong 这个渠道不是源头，也是流传最久的渠
 
 - ## 
 
+- ## 
+
+- ## [FREE存号越封越少，新注册号又秒封 - LINUX DO _202608](https://linux.do/t/topic/2830633)
+- 我看卖 free 号的写的家宽注册 估计和 ip 有关系吧 这两天我买的号都挺稳的
+
+- gpt 免费号现在只有 luna，luna 又便宜的要死，
+基本都是开 plus，都不研究免费号注册了，省心
+
+- 别用 outlook 邮箱了，换其他权重高点的，我 800 个 free 号全放在一个 vps 上，用的同一个机房 ip，目前还没出现大批量封禁的情况
+
+- 我的还可以，每台服务器 100 个凭证，5 台服务器上的都活得好好的。前几天迁移了一台服务器，设备指纹和 ip 全变了，我以为必死，结果依然一个没死。
+
+- 我 80 + 个账号好几个月了，0 封，都是域名邮箱 + 同一个 ip
+
+- 我封的很少，基本一周死一个。还有几百个。反正也就用用 luna 和 5.5 基本都溢出非常多。
+新注册我倒是没试过，过两天试试。
+
+- 貌似最近新注册的 free 很容易封号，老号没怎么封，一个 free 额度我这边大概 2 刀出头
+
+- 3 月份古法注册的 free，有 70 多个放在生图用的 cpa，每次 chatgpt2api 调用 web 渠道生图，至今都活着。另外一个号池用 5.6luna，直接干出 70 多个 401
+- 协议注册的容易封。古法注册稳得很。已经积攒了几百个了
+
+- 我用的家宽注册，也是秒封。很早之前注册的 free 有些还活着，不过陆陆续续也在被封
+
+- webshare 伪家宽，但感觉与 IP 关系不大，注册一定不要太频繁。
+  - 就是使用 webshare，一天一个 IP，一天注册 2 个号都不行，要么全封，要么只封一个
+- webshare 真不便宜，3.5 刀一 GB。出口 IP 也是用的 webshare 吗
+
+- 我之前六月份协议注册的 300 多个最近几天封了要一半了，难过 
+
+- 也是域名邮箱，.de 的。控制注册频率，一个域名一天内不要注册太多。
+
+- ## [最近刷到不少free号使用5.6luna的帖子，说一下我的个人经验 - LINUX DO _202609](https://linux.do/t/topic/2880659)
+- 我从半年前的协议注册机时代就开始维护 free 号池了，自认为有经验，这是当时发的手搓教程还挺火热（已失效）
+- 以下是我在普通机房 ip 的 vps 上，自用情况下总结的结论。
+
+反代项目选择：
+推荐使用 codex2api 或 cpa，我用的是 codex2api，很舒服，主要是账号导入兼容性比较好。
+
+账号获取：
+完全没必要自行注册，推荐在谷歌、bing 搜索关键词卡网、比价网
+free 号价格一般在：
+outlook、hotmail：六七毛以内，超过这个的不要买
+iCloud、gamil：一块五以内，同样超过的不要买
+商家自己的域名邮箱：不推荐，没好货，普遍额度极低封号极快。
+因为成本都在邮箱上
+同时注意商家备注，需要买已接码的！！！
+购买后一般会发货 rt 或 sub2api 格式。
+账号额度：
+据我观察，额度只与邮箱域名有关，与 ip、使用方式基本无关。
+outlook、hotmail：低等账号，运气好的能用三四刀，运气不好的一刀都不够
+比如这个 hotmail 账号
+iCloud、gamil：icloud 滥用有点厉害，比 gamil 的少。基本都在三刀以上，有的天选账号能用十刀往上，比沟槽的 plus 还多。
+
+封禁情况与维护
+free 号疑似有连坐机制，建议控制 free 号池单 ip 账号数量，这个数量我也不确定，稳妥推荐 50 以内吧。额度用光再补号。封号频率极低，基本月限额重置时会封禁两三个那样。
+我个人号池长期维护在 20 个以上，50 个以内，主要使用场景是日常聊天，部分重复苦力活，还部署了一个站内佬做的那个 deeix 给我的家人使用顶尖模型。
+
+总之，free 号薅 luna 还是很带劲的，也比较省心省力，如果有轻、中度 luna 需求的话，很推荐自己维护一个 free 号池
+
+- 买来的 30 个已经接码的 free 号，接入 CPA 里面用了一个星期不到，全部要求重新登录
+  - 买带邮箱凭据的
+
+- 其他地方不知道，反正 free 号池反代出来的额 luna max 的速度慢到离谱
+
+- terra 不错啊，现在我日常都是用的 terra，比 luna 好多了
+
+- 4 月手动做了 170 个号，死了 10 个号，都是域名邮箱和 2925，刚开始 terra max 蹬了一会一个号平均 4 刀，越到后面一个号额度越少，只剩 2 刀了
+
+- 发现我之前要二验的 free 号，现在也不用了，可以直接登录
+
+- 火山 coding plan 只用 deepseek 就行了，或者 comm 的 1 美元也凑合用
+
 - ## [TrueSOTA 中转站答佬友问｜$20 能用多久，Luna、生图和 Claude 预告 - LINUX DO _202608](https://linux.do/t/topic/2745388)
   - Luna：输入 $0.07，输出 $0.42，缓存 $0.007
   - Luna 我们还在正常供给，而且是真便宜。新用户送的 $20，如果简单粗暴地全按 Luna 输入算，大约是 2.86 亿 Token；全按输出算，也有 4762 万 Token。
 
-- 
-- 
 - 
 
 - ## [自己注册gpt free用luna疑问 - LINUX DO _202608](https://linux.do/t/topic/2735981)
@@ -2878,13 +2952,13 @@ Hugging Face 🇺🇸 Llama 3.3 70B, Qwen2.5 72B, Mistral 7B +many more. $0.10/m
 - 一个是卖钱的正式版，一个是对话用于训练的免费公测版。测试版不一定弱，但 Ta 是测试版。
 
 - ## 💡 [【长期更新-授人以鱼不如授人以渔】公益站渠道公示（人人都可搭公益？） _202601](https://linux.do/t/topic/1477161)
-  01.                                                           q2api(claude)
-  02.                                                           英伟达ai平台（大部分开源模型）
-  03.                                                           hf抱脸（大部分开源模型）
-  04.                                                           groq平台
-  05.                                                           硅基流动平台
-  06.                                                           富可敌国平台（duck已许可分发付费站anti, 正在申请分发max）
-  07.                                                           杂七杂八的短效羊毛平台（国外）
+  01.                                                                 q2api(claude)
+  02.                                                                 英伟达ai平台（大部分开源模型）
+  03.                                                                 hf抱脸（大部分开源模型）
+  04.                                                                 groq平台
+  05.                                                                 硅基流动平台
+  06.                                                                 富可敌国平台（duck已许可分发付费站anti, 正在申请分发max）
+  07.                                                                 杂七杂八的短效羊毛平台（国外）
 
 - [还有可以白嫖opus的平台嘛  ](https://linux.do/t/topic/1510785)
 

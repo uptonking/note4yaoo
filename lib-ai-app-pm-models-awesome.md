@@ -1467,6 +1467,9 @@ modified: 2026-06-20T15:49:57.019Z
   - claude - opencode + antigravity  -- ¥40
   - cursor - composer/auto  -- ¥30
   - kiro - claude  -- ¥50
+  - 厂商类: gpt, claude, gemini, grok, glm
+  - ide类: cursor, devin/windsurf, kiro, antigravity
+  - coding/插件类: opencode, cline, kilo
 
 - tips
   - 有时api请求慢, 可能不是卖家/服务器的问题, 换个ip看看
@@ -2018,6 +2021,7 @@ modified: 2026-06-20T15:49:57.019Z
 
 - cursor-tools
   - cursor的风控限制了机器码, 不需要买过多账号
+  - https://cursor.com/dashboard/api
 
 - grok-tools
   - [Grok 账号管理系统 ](https://grok-distribute.131518.xyz/)
@@ -2283,6 +2287,9 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [ggsel – Digital goods marketplace  ](https://ggsel.net/)
   - 品类似乎比plati更多
+
+- [TG账号购买平台|电报账号批发|telegram账号购买 ](https://didipifa.net/)
+  - tg, apple
 
 - [KnauHip-Ai — 高级 AI 工具发卡站 ](https://www.payline.pics/)
   - 很多低价帐号如kiro/cursor都是10个起购
@@ -2826,6 +2833,7 @@ modified: 2026-06-20T15:49:57.019Z
   - [Outlook 快速取件 ](https://mail.leadbee.cn/)
 
 - [T佬的gmail批发渠道 ](https://ai666.dnxb.cc/)
+  - [T佬的gmail批发渠道 ](https://tmail.dnxb.cc/)
   - 全tg最便宜gmail邮箱批发
   - Gemini专区：美区/随机2022--2024谷歌邮箱/指定地区gmail邮箱
   - 登录后不要马上修改密码，会风控出手机验证，但是登录后请一定修改2Fa，（不改2fa不售后）辅助邮箱 
@@ -2884,8 +2892,14 @@ modified: 2026-06-20T15:49:57.019Z
 ### outlook-manager
 
 - tips
+  - 买的outlook需要每3个月刷新一次token
+  - 实测安卓outlook app在使用手机流量且关闭VPN的条件下注册成功率会高很多
   - [使用邮箱管理工具踩过的坑 - LINUX DO _202608](https://linux.do/t/topic/2728175)
     - 最后，我下载了 Outlook 安卓应用，添加微软邮箱，OK；添加谷歌邮箱，OK；QQ 邮箱，LinuxDo 邮箱，都能成功通过，界面看起来也比较清爽。（我尝试的多个平台中，唯一无法添加的只有沃邮箱，应该是不支持 imap 协议）
+
+- [Outlook 邮箱服务 ](https://outlook.nestlone.com/?section=overview)
+  - [3LDC一个outlook邮箱 - LINUX DO _202609](https://linux.do/t/topic/2864861)
+  - 都是长效邮箱感觉 3ldc 价格还可以吧，带自动测活和 api 的
 
 - https://github.com/assast/outlookEmail /1.5kStar/MIT/202608/python/ts
   - https://aso.de5.net/
@@ -2920,6 +2934,16 @@ modified: 2026-06-20T15:49:57.019Z
   - 导入兼容更广：支持主流邮箱导入（Gmail、QQ、163 等），也支持自定义 IMAP 服务器。即使是自建邮箱也能使用；内置 CF Worker 临时邮箱，支持多域配置与 Admin Key 加密，大幅降低注册场景的隐私泄露风险。
   - 通知能力 支持业务邮件通知、Telegram 推送和测试发送
   - 参考了以下项目的思路：assast/outlookEmail, gblaowang-i/MailAggregator_Pro
+
+- https://github.com/mibgb65-cloud/OmniMail /MIT/202609/ts/kotlin
+  - https://omnimail.aicnos.com/
+  - [[开源] OmniMail 1.0.0 正式发布：你的多邮箱工作台 - 开发调优 - LINUX DO _202609](https://linux.do/t/topic/2856438)
+  - 基于 Cloudflare 构建的轻量、自托管、多域名 Webmail。
+  - 前端使用 React + TypeScript + Vite。它主要运行在 Cloudflare 的各种服务之上，免费白嫖。
+  - 从最开始我只是想弄一个方便自己收域名邮件的小工具，到后面慢慢加入多用户、多域名、发信、第三方邮箱聚合、浏览器扩展、API、备份等等，现在项目终于从 0.x 进入了 1.0。
+  - 简单来说，如果你手里有一些托管在 Cloudflare 的域名，可以部署一套自己的 Webmail，然后集中管理这些域名下面的邮箱，不再需要自己维护传统邮件服务器。
+  - 多域名统一管理: 一个实例可以同时添加多个域名，然后分别创建邮箱。
+  - 多厂商邮箱: OmniMail, Gmail, Outlook, iCloud, QQ
 
 - https://github.com/gblaowang-i/MailAggregator_Pro /MIT/202603/python/ts/inactive
   - 基于IMAP协议的多品牌邮箱聚合管理平台

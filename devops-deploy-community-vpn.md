@@ -9,6 +9,8 @@ modified: 2026-06-17T05:51:04.215Z
 
 # guide
 
+- tips
+  - 临时的需求可以用LDC在 ldstore 买一些proxy/vps
 # DNS
 - [网易DNS检测工具 ](https://nstool.netease.com/)
 - [阿里昆仑用户诊断工具 ](https://cdn.dns-detect.alicdn.com/)

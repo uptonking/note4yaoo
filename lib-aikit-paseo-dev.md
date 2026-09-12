@@ -55,7 +55,7 @@ modified: 2026-09-05T00:27:42.212Z
   - show thinking/tools
 
 - github-integrations
-  - 支持现有github cli的设计， 同时支持github oauth直接登录来选择repo
+  - 支持现有github cli的设计， 同时支持github oauth登录来选择repo
 
 - 
 - 
@@ -68,6 +68,7 @@ modified: 2026-09-05T00:27:42.212Z
 - integrations
   - qq
   - telegram
+  - 支付系统接入ldc
 
 - 
 - 

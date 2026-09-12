@@ -11,6 +11,7 @@ modified: 2026-06-19T06:15:35.007Z
 
 - tips
   - 分析需求: 想要更强的CPU、更大的RAM、更多的流量、CN线路优化、可升降配置
+    - 临时的需求可以用LDC在 ldstore 买一些proxy/vps
   - 公开与分享的需求不强时，没必要上顶级vps
   - 可以先月付便宜的vps，等到活动或论坛有人抛售时再获取长期vps
   - dedirock性价比高，但口碑不好
@@ -903,7 +904,12 @@ openclaw/herness
 
 - ## 
 
-- ## 
+- ## [国外vps被封？使用Cloudflare + Nginx + V2Ray，代理服务搭建 - 教程 - IDC Flare _202609](https://idcflare.com/t/topic/127101)
+  - 本文记录一套使用 Cloudflare 橙云代理、Nginx 和 V2Ray 的部署方法：客户端通过域名访问 Cloudflare，由 Cloudflare 通过 HTTPS 回源到 VPS，再由 Nginx 将 WebSocket 请求转交给本机 V2Ray。
+  - 除了安装配置，文章也整理了本次实际遇到的两个问题：TUN 模式下的 DNS 解析异常，以及客户端误用 TCP、未开启 TLS 导致连接失败。
+
+- 
+- 
 
 - ## [【自建线路】cloudflare自选优选ip，sing-box搭建快速低延迟的vpn教程 - LINUX DO _202607](https://linux.do/t/topic/2639989)
 
