@@ -14,6 +14,15 @@ modified: 2026-09-05T00:40:32.289Z
 - 
 - 
 - 
+- 
+- 
+- 
+
+- v0.8.0 - 2026-09-10
+  - 0.8 adds plugin header buttons, custom providers, and richer chat components, alongside fixes for desktop updates and mobile keyboards.
+  - Added answer forms for Codex questions asked while the agent continues working
+  - Added per-provider controls for disabling all or selected Paseo tools
+  - Added custom providers with their own icons, settings, permissions, and timeline rendering (
 
 - v0.7.0 - 2026-08-31
   - Changed the project license to Apache-2.0

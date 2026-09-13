@@ -40,11 +40,11 @@ modified: 2026-09-05T00:28:18.805Z
 - Claude: ClaudeAgentSDK, claude CLI
   - in-process `query()`, not a spawned CLI
   - Managed via the SDK's `query()` factory (`query.ts`). Paseo spawns the `claude` subprocess through the SDK wrapper.
-  - **Native Features** : Directly controls Claude's native `allowedTools`,                        `disallowedTools`, extended thinking tokens, UltraCode mode, and token compaction.
+  - **Native Features** : Directly controls Claude's native `allowedTools`, disallowedTools, extended thinking tokens, UltraCode mode, and token compaction.
 - Codex: stdio JSON-RPC, codex app-server 
   - proprietary __app-server JSON-RPC over stdio__, via a custom transport
   - Spawns `codex app-server` as a long-running subprocess.
-  - Directly bridges Codex's OS sandbox modes (`sandbox_workspace_write`, writable roots, network proxy settings) and approval policies (`auto-review`,                      `full`).
+  - Directly bridges Codex's OS sandbox modes (`sandbox_workspace_write`, writable roots, network proxy settings) and approval policies (`auto-review`, full).
   - **Native Features** : Supports conversation branch rollbacks, thread forks, and Codex Goals.
 - OpenCode: HTTP/SSE Client, opencode server
   - HTTP __server API__ + a Paseo-authored __bridge plugin__ injected into OpenCode 
@@ -55,7 +55,7 @@ modified: 2026-09-05T00:28:18.805Z
   - PI: Custom __JSONL-RPC over stdio__
   - OMP: Its own __RPC / RPC-UI protocol__ , omp --mode rpc-ui
   - Spawns `pi --mode rpc` or `omp --mode rpc-ui` using `JsonlRpcProcess`.
-  - Intercepts Pi RPC interactive extension dialogs (`select`,            `input`,            `editor`,            `confirm`) and translates them into Paseo question permission cards, sending the answer back via `extension_ui_response`.
+  - Intercepts Pi RPC interactive extension dialogs (`select input editor confirm`) and translates them into Paseo question permission cards, sending the answer back via `extension_ui_response`.
 - This is why native providers get deep features ACP can't express: subagent sidechain tracking and workflow output folding (Claude), file+conversation rewind via provider-native persistence (Claude/Codex/OpenCode), provider-native `providerOptions` schemas (only claude/codex/opencode have a `ProviderContract` with a real options schema in `provider-registry.ts:158-162`), and exact MCP preapproval for Hub unattended runs.
 
 - External providers communicate over the Agent Client Protocol (ACP), an open standard (similar to Language Server Protocol, but for AI coding agents) using JSON-RPC 2.0 over stdio.
@@ -77,6 +77,32 @@ modified: 2026-09-05T00:28:18.805Z
   - `WorkspaceGitService` runs an incremental `git status` and `git diff`.
   - The daemon emits a workspace checkout update.
   - In your workspace UI: The **Changes** tab / Git panel automatically highlights under Modified files.
+# plugins
+- Paseo recently introduced a comprehensive **full-stack plugin system** (in v0.8).
+- Unlike simple UI plugins or basic terminal hooks, Paseo plugins are **dual-runtime extensions**: they can execute code in a **Node.js daemon child process** on your development machine, while simultaneously delivering **rich React Native UI** to every connected mobile, desktop, or web client.
+
+- In `plugin-examples/`, Paseo maintains canonical examples demonstrating key plugin patterns:
+  - Example 1: External Context Integration (`plugin-examples/linear`), Allows developers to search Linear issues directly from Paseo's message composer and attach them as rich context cards to any agent prompt.
+  - Example 2: Lifecycle Actions & Policy Governance (`plugin-examples/lifecycle-actions`), Demonstrates how plugins can enforce security policies, automate git workflows, and handle agent errors.
+  - Example 3: Adding Custom Coding Agents (`plugin-examples/provider-direct` & `provider-acp-transformer`)
+  - Example 4: Transcript Customization (`plugin-examples/timeline-items` & `inline-thinking`), Transforms raw agent tool invocations into beautiful native UI components.
+  - Example 5: Themes (`plugin-examples/catppuccin`), Adds custom visual themes across the entire Paseo app.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # client-web/electron
 
 ## mac

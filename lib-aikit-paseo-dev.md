@@ -25,6 +25,11 @@ modified: 2026-09-05T00:27:42.212Z
 
 - cons
   - Paseo manages other agents, it doesn't ship one.
+  - 依赖用户本地的环境， 如果用paseo之前的agent没配置好， 那也需要先配好再用paseo
+  - 适合个人用户私有化部署, 但不适合作为saas对外提供， 因为自定义host需要支持存储/计算/git操作/开发环境...
+    - 一个host似乎只能一个用户使用， scale成本太高
+    - By delegating to `gh` and `git`, Paseo automatically inherits your existing developer setup
+    - 🤔 可尝试将用户本地的secrets复制到云端， 这种方案好吗
   - 不方便使用多账号, 这是设计目标的取舍
 
 - [features](https://paseo.sh/docs/why)
@@ -50,6 +55,8 @@ modified: 2026-09-05T00:27:42.212Z
 
 - cloud的易用性改进
   - chat history
+  - project快速跳转到github repo, workspace快速跳转到branch
+  - chat-turn-mark + content-toc
 
 - transparency
   - show thinking/tools
@@ -70,6 +77,18 @@ modified: 2026-09-05T00:27:42.212Z
   - telegram
   - 支付系统接入ldc
 
+- 
+- 
+- 
+- 
+- 
+
+## terminal-hiding
+
+- git operations
+  - commit/push/pull
+
+- 
 - 
 - 
 - 
@@ -105,6 +124,21 @@ modified: 2026-09-05T00:27:42.212Z
   - 🌹 By introducing Workspaces (especially Git worktrees): Paseo lets you spin up a new workspace in one click. Agent 1 works in Worktree A, Agent 2 works in Worktree B. Both belong to the same **Project** , but their files and Git branches are isolated.
   - Multi-Agent Collaboration in the Same Workspace: Tab 1 Claude Code , Tab 2 codex. Because **Workspace** is the environment container, you can switch providers or have multiple agents and terminals cooperate on the same working tree.
 
+- paseo relies on the host system's **GitHub CLI (`gh`)** and local **Git configuration** (SSH keys, Git credential helper, or PAT).
+  - Local-First & Zero Credential Relaying: Paseo never stores, relays, or refreshes GitHub OAuth tokens or client secrets on its servers or across remote devices.
+  - Environment Inheritance: By delegating to `gh` and `git`, Paseo automatically inherits your existing developer setup: 适合个人用户，不适合服务端
+  - No Centralized Cloud Proxy: your machine communicates directly with GitHub.
+- Paseo abstracts Git hosting platforms under a **Git Forge** layer (which supports GitHub, GitLab, Gitea, Forgejo, and Codeberg). GitHub is implemented as an adapter in this forge registry.
+- clone from github
+  - gh auth status
+  - **Repository search:** Runs `gh repo list --json ...` for user repos or `gh search repos <query>` for public repos.
+  - daemon executes `git clone <url> .paseo-clone-<temp>`
+  - gh pr view <number> --json ...
+
+- There is one place where a **GitHub App is used**: **Paseo Hub** 
+  - Hub uses environment variables to receive GitHub webhooks and mint scoped installation access tokens.
+
+- 
 - 
 - 
 - 
