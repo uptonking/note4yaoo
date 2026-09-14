@@ -37,7 +37,16 @@ modified: 2026-09-08T04:45:17.635Z
 
 - ## 
 
-- ## 
+- ## when i open https://app.paseo.sh in chrome or microsoft edge browser, the localhost:6767 is auto detected and added as host. but when i open it in safari browser, why is localhost:6767  not auto detected and added as host?
+- This happens because of a major architectural difference between browser engines: **Chromium (Chrome & Edge) vs. WebKit (Safari)** regarding **Mixed Content Security Policies** .
+  - https://app.paseo.sh  is served over HTTPS. When a web page loaded over HTTPS tries to open an unencrypted WebSocket (ws:// instead of wss://), browsers have to decide whether to permit it under their Mixed Content rules.
+  - Chromium implements the W3C _Secure Contexts_ specification, which explicitly designates `127.0.0.1` and `localhost` as **"potentially trustworthy origins"** (loopback exception).
+  - Apple's WebKit takes a strict security stance and **does not grant a mixed-content exemption to `localhost` ** . An HTTPS origin is **strictly forbidden** from loading any unencrypted subresources ( `http://` or `ws://` ).
+
+- 
+- 
+- 
+- 
 
 - ## where is location for "Search for directory" ?
 - /workspace is the intended persistent project area. It survives Aichor/container/VPS restarts and is separate from Paseo’s internal state.

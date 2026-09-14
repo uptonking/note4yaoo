@@ -116,4 +116,51 @@ modified: 2026-09-05T00:28:18.805Z
 - 
 - 
 
+# isolation/worktree
+- for Non-Git Folder, worktree is not supported.
+
+- local: Your actual filesystem folder (e.g. `/Users/you/project`).
+  - No file isolation. Edits happen immediately in your working folder and editor. 
+  - If two agent sessions run concurrently in the same directory and edit the same file, **they will overwrite each other's edits** . Paseo does not lock filesystem files.
+    - **Provider-level protection:** Most agent providers (Claude Code, Pi, Codex) perform check-before-write in their `edit` tool. If Agent 1 edits lines in `index.ts` while Agent 2 is also modifying it, Agent 2’s tool invocation fails with an `oldText did not match` error.
+  - Shares the main repository's `.git/index` and checked-out branch.
+  - for **Workspace Archive / Deletion** , Only archives workspace metadata/chat history. **Files are never touched or deleted.** 
+    - For `local_checkout` and non-git `directory` workspaces, archiving removes the workspace record from Paseo's UI and daemon registry, but **never deletes the directory on your disk** .
+  - Dev server port collisions must be handled manually.
+- worktree: A dedicated directory under `~/.paseo/worktrees/{slug}`.
+  - **Full physical isolation.** Changes are completely secluded in the worktree folder. each worktree has its own physical copy of files on disk.
+  - Completely isolated `.git/worktrees/{name}/index` and dedicated branch.
+  - Each worktree maintains its own independent index file under `.git/worktrees/<name>/index`, so worktree Git mutations do not lock the main repo.
+  - If Paseo owns the worktree, archiving the workspace deletes the worktree folder via `git worktree remove`.
+  - Runs setup scripts defined in `paseo.json` (e.g. `npm ci`, build steps).
+  - Injected with `PASEO_WORKTREE_PORT` and ephemeral port allocation.
+
+- for Simple Non-Git Folder (`kind: "directory"`), The daemon creates a workspace record with `isGit: false` `currentBranch: null`, and `cwd: /path/to/folder`.
+  - When you run an agent session (Claude, Codex, Pi, etc.) or open a terminal, the daemon spawns the process with `process.cwd` set to that directory.
+  - Git-specific panels (Git diff, branch switcher, forge PR/MR integration) are automatically disabled. 
+  - The file explorer, composer, agent transcripts, and terminals operate directly on the folder.
+
+- for Local Git Repo with `local` Isolation (`kind: "local_checkout"`), The daemon inspects your repo via `workspaceGitService.getCheckout()`, detecting your Git root and current branch.
+  - Agents run directly in your main repo. Any file edited by Claude, Codex, or Pi is instantly visible in your IDE (VS Code, Cursor, etc.) and in `git status`.
+  - Paseo allows you to open multiple workspaces pointing to the exact same local folder.
+  - Directory-backed state (Shared across same-directory workspaces): Includes Git status, Git diff, forge PR/MR status, and file contents. Both workspaces see the identical on-disk reality.
+  - Workspace-owned state (Strictly isolated per workspace): Includes agent sessions, chat transcripts, terminals, draft messages, review draft comments, and file explorer expanded trees. 
+  - Agent running status (`running` vs `idle`) is isolated to the owning workspace
+
+- for Local Git Repo with `worktree` Isolation (`kind: "worktree"`), Executes `git worktree add <worktreePath> -b <newBranch> <baseRef>`.
+  - Writes `.paseo/worktree.json` with metadata (`baseRef`  `changeRequestLookupTarget`), and seeds `paseo.json` from the source repository.
+  - Writes `.paseo/worktree.json` with metadata (`baseRef`  `changeRequestLookupTarget`), and seeds `paseo.json` from the source repository.
+  - If the worktree directory is accidentally deleted,  `workspace-recovery-service.ts` can reconstruct the worktree from `mainRepoRoot` + `baseBranch`.
+
+- When multiple agents or background polling tasks run `git status` or `git diff` simultaneously, standard Git repos can crash due to index locking.
+  - All read-only Git operations (polling, diffing, status checks, rev-parse) inject `GIT_OPTIONAL_LOCKS: "0"`, This tells Git not to acquire index locks during read operations.
+  - A centralized concurrency scheduler git-process-scheduler.ts limits concurrent Git processes and prioritizes user operations over background polling.
+  - 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # more

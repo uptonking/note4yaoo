@@ -345,11 +345,37 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
-## 0911
+## 0914
 
 - paseo-plugins
 
 - paseo-github
+
+- 🤔 i want to integrate github into my own project . what are the differences between GitHub Apps and OAuth apps?  analyze related docs or use cases, then explain to me. you might reference docs like https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps
+  - GitHub explicitly recommends GitHub Apps for almost all modern integrations
+  - In general, GitHub Apps are preferred to OAuth apps because they use fine-grained permissions, give more control over which repositories the app can access, and use short-lived tokens.
+  - Similar to OAuth apps, GitHub Apps can still use OAuth 2.0 and generate a type of OAuth token (called a user access token) and take actions on behalf of a user.
+  - However, GitHub Apps can also act independently of a user. The app will continue to work even if the person who installed the app on an organization leaves the organization.
+  - GitHub Apps have built-in, centralized webhooks. GitHub Apps can receive webhook events for all repositories and organizations the app can access. Conversely, OAuth apps must configure webhooks individually for each repository and organization.
+  - for github apps, Bot accounts do not consume a paid GitHub seat.
+  - There is one case where an OAuth app is preferred over a GitHub App. If your app needs to access enterprise-level resources such as the enterprise object itself, you should use an OAuth app because a GitHub App cannot yet be given permissions against an enterprise. GitHub Apps can still access enterprise-owned organization and repository resources.
+
+- GitHub Apps also use OAuth 2.0 under the hood. The difference is identity and permission model.
+  - OAuth App — acts as the user. Whatever the authorizing user can see, the app can see. There's no independent identity separate from that user.
+    - even when a GitHub App acts "on behalf of a user" (the classic OAuth-style login flow), the resulting action shows as performed by the app on behalf of the user, whereas an OAuth app's actions don't carry that distinction — which is nice for auditability.
+  - GitHub App — has its own identity (a bot account like @yourapp[bot]) and can act independently of any user, or on behalf of one when needed. This matters for automations that don't require user input, and the app keeps working even if the person who installed it leaves the organization.
+
+- Pick a GitHub App over GitHub Actions if: your tool needs to react to events from outside GitHub too, run persistently on your own infrastructure, or needs more execution time/permissions than an Actions workflow gets. 
+- Pick a GitHub App over a personal access token if: you want the integration to survive a team member leaving, or you're building something for others to install rather than a one-off script for yourself.
+
+- [Google Ai Studio 和 Gmini 两者有什么区别呢？ - V2EX _202509](https://www.v2ex.com/t/1158022)
+- gemini 多了 canvas 、deep research 功能，但话偏少。
+  - aistudio 可以调 temperature ，挺有用的，也很好用。喜欢里面的 branch from here 功能，可以很方便地分支。而且也支持历史记录的 delete 。
+- Gemini 面向普通用户，AI Studio 面向开发者，Vertex AI 面向公司
+aistudio 是面向开发者的调试平台
+vertexAI 是 2B 的商业平台
+gemini 是给普通人用的终端
+分发渠道不同
 
 ## 0910
 

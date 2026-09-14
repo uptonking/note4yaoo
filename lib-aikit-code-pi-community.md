@@ -33,14 +33,19 @@ modified: 2026-08-14T21:43:42.546Z
 - Use embeddings does make a difference at scale, if your are working on enterprise architecture comprising hundreds of repos then I found it did make a difference across my own personal evals.
 
 - 不赞同 “代码即真相，代码不需要记忆系统，不需要 RAG，模型很擅长理解代码结构”。 模型很擅长理解代码，不代表能找到对应的代码。古法写过代码的人都知道，难的不是写代码，是找到写代码的地方
-# discuss-news
+# discuss-news/author
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## Pi's New Approval System _202606
+- https://x.com/mitsuhiko/article/2064060467975520341
+  - Pi does not have a command approval feature, so what it runs, it runs. We still think that approvals that come up all the time are not a great idea, because you get fatigue. 
+  - When a coding agent loads AGENTS.md, it injects that into the system prompt. SOTA models follow the system prompt very well. That means if you have "run ./script.sh before every command" in an AGENTS.md file, then Pi will run this even if you ask it for the current time. That is quite different from having that instruction in README.md, where the agent will usually not follow it.
+  - this is generally also an issue with other coding agents. If you launch Claude or Codex in another repo it will also put AGENTS.md into the system prompt. It's slightly less of an issue there because by default they will ask for approval on all commands which might catch out novice users. 
+
 # discuss-roadmap
 - ## 
 

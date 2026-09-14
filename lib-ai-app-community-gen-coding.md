@@ -316,9 +316,21 @@ modified: 2025-09-01T07:58:29.058Z
   - 红黑米黄主题，样式友好
   - https://zcode-showcase.pages.dev/zcode-constructivist
 
-# discuss-coding-tips/tricks
+# discuss-testing
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## e2e 不要用 agent 做啊，用 nodejs+playwright 做，测试稳定，速度快，还不花 token。
+- https://x.com/xicilion/status/2099097011270402507
+  - UI 视觉回归不多，人工瞅一眼其实更容易发现，复杂 ue 交互细节，人操作的感觉其实是不如 js 检测出来的精确数值的。
+- 我在 docu.md 里也是这样做的，你可以去看一下代码，或者直接把测试目录丢给 agent 让它照着做就行了。
+
+# discuss-coding-tips/tricks
 - ## 
 
 - ## 

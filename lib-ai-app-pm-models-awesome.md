@@ -319,9 +319,12 @@ modified: 2026-06-20T15:49:57.019Z
   - 在ldstore卖兑换码的公益站就是活着的，按销量排序就能去试用了
 
 - free-tokens
-  - gpt free: 自己维护free太折腾、没收益
-  - grok free
-  - cursor free
+  - gpt-free: 自己维护free太折腾、没收益
+    - 每天把数据卖给 OpenAI 有最多 10M 的免费额度
+    - [Sharing feedback, evaluation and fine-tuning data, and API inputs and outputs with OpenAI ](https://help.openai.com/en/articles/10306912-sharing-feedback-evaluation-and-fine-tuning-data-and-api-inputs-and-outputs-with-openai)
+    - https://platform.openai.com/settings/organization/data-controls/sharing
+  - grok-free
+  - cursor-free
   - opencode 多用几个账号/ip
   - nvidia
   - amd-radeon-tokenfactory
@@ -1462,6 +1465,12 @@ modified: 2026-06-20T15:49:57.019Z
   - 刚刚发现暂时只可用oai协议
   - 可用模型：minimax-2.5（其他模型陆续上线）
 # paid-api 💰
+- models
+  - best-pricing
+    - 2609: luna, mimo, deepseek-v4.1-flash, gemini-3.8-flash, grok-4.6, composer-2.5, devin-swe2
+  - intelligence
+    - 2609: gpt-5.6-sol, claude-opus-5, glm-5.3, kimi-k3
+
 - ai-coding-plan2606
   - codex - gateway -- ¥50
   - claude - opencode + antigravity  -- ¥40
@@ -1470,6 +1479,12 @@ modified: 2026-06-20T15:49:57.019Z
   - 厂商类: gpt, claude, gemini, grok, glm
   - ide类: cursor, devin/windsurf, kiro, antigravity
   - coding/插件类: opencode, cline, kilo
+  - opencode go: 性价比降低
+  - commandcode go: 价格战阶段性价比高
+    - 1刀的go没有api, 10 刀可以用 api，我挂 cpa 上没问题
+    - github 有现成的项目可以反代出来用，如果用 dsh 更简单，有现成的 oauth 插件
+    - deepseek有峰谷的，他家有 token 计算器，佬友可以根据用量自己算一下，5 小时额度是 14 刀
+  - charm-hyper-crush
 
 - tips
   - 有时api请求慢, 可能不是卖家/服务器的问题, 换个ip看看
@@ -2339,6 +2354,9 @@ modified: 2026-06-20T15:49:57.019Z
     - Api可以不用开梯子
   - https://jinnyapi.com/keys  /0.2x
     - 刚刚上了个Cursor逆向的chatgpt分组。里面只有gpt-5.6-luna
+  - https://www.acsgw.top/app/usage /0.35x
+    - [ACS Gateway 主打长期稳定可靠 gpt-5.6-luna模型依旧开放   _202608](https://linux.do/t/topic/2806212)
+    - pro 号池 倍率 0.35 codex plus 倍率 0.15 Claude 倍率 1.25
   - https://dddai.dev/pricing  /1.3x/作者加入L站时间短
     - [【富可敌国】Claude Fable 5 / Gemini 3.7 / Grok 4.6 都能用，gpt-5.6-luna 不限制 _202608](https://linux.do/t/topic/2737252)
     - 闲时倍率为 0.2x0.98(=0.196×), 还有日卡/月卡, 注意月卡混合号池的倍率是 1x
@@ -2348,12 +2366,9 @@ modified: 2026-06-20T15:49:57.019Z
   - [FastAI 模型 ](https://www.fastaitoken.com/keys) /x
     - 仅0.3x的pro分组支持luna
     - luna按tera计费， terra是luna的10x
-  - https://tkapi.cc.cd/keys   /0.1x/似乎不能用
   - https://kuaipao.pro/pricing  /1.5x/签到0.005
     - [【快跑AI】长期GPT-5.6 特价分组 0.08倍率 180+稳定渠道 已同步Luna/terra 支持企业对公开清单 LINUX DO _202608](https://linux.do/t/topic/2679908)
-  - https://www.acsgw.top/app/usage /0.35x
-    - [ACS Gateway 主打长期稳定可靠 gpt-5.6-luna模型依旧开放   _202608](https://linux.do/t/topic/2806212)
-    - pro 号池 倍率 0.35 codex plus 倍率 0.15 Claude 倍率 1.25
+  - https://tkapi.cc.cd/keys   /0.1x/似乎不能用
   - https://aixoras.com/pricing /0.35x
     - 分组 GPT 优质
     - 实际倍率让人困惑 0.35/0.035/2.1
@@ -2831,6 +2846,9 @@ modified: 2026-06-20T15:49:57.019Z
   - pp-¥1.6
 
 ## email 📧
+
+- email-providers
+  - seek.li: 方便转移邮箱，为mjj设计
 
 - gmail-tools
   - antigravity需要google账号支持gcp: 美区邮箱 + gcp/agy + 12个月套餐

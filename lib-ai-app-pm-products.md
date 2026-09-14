@@ -367,6 +367,10 @@ modified: 2025-03-22T16:10:24.856Z
   - coding工具
   - 指纹浏览器: 免费产品都不好用, 付费的都不便宜
     - 还能深入浏览器内核
+
+## pricing
+
+- gpt plus的定价很巧妙, 用sol不够, 用luna太多
 # 💎🚀 aichorage - local llm with joy, 提供模型API、rag可靠性、pdf文本操作
 
 > hybrid local/cloud ai assistant/harness designed to work with documents and mitigate your token anxiety.

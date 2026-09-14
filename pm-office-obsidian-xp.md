@@ -209,6 +209,13 @@ modified: 2026-06-30T17:32:43.131Z
   - harness工具越来越多, 每个都有自己的配置、特性, 统一管理的难度大、更新维护的复杂度高
   - 🤔 可考虑不做agent的管理, 只做 context的共享、产物的共享、skills的共享
 
+- 通过github app支持github， 因为agent擅长操作
+
+- 
+- 
+- 
+- 
+
 ## draft-rdmn
 
 - dev-to

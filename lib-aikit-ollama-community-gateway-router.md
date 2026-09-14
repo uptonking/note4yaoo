@@ -1436,6 +1436,32 @@ https://linux.do/t/topic/2326247
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [gpt充值方法整理搬运 也请大佬继续添砖加瓦 - LINUX DO _202609](https://linux.do/t/topic/2879942)
+  - 目前 gpt 订阅分为个人和 business，个人订阅可以通过网页、apple、google 内购获得，business 只能通过网页。apple 订阅充值必须先 plus 再 pro，中间随时可以直接改订阅，会根据使用时间差额退款。可能会有购买未完成，提交审核点继续提交审核等待 72 小时即可。如果是错误 支付未完成，没有继续的选项，那大概率是梯子网络不太好…
+  - 国内用户订阅分为以下几种：代充、招行 visa 套 Google 内购、apple 礼品卡以及支付宝礼品卡、国外银行卡 / 信用卡 / U 卡直付。
+  - 其中代充风险最大，普遍代充使用低价区，本身账号权重低、风控严格，极易封号 / 模型降智。
+  - 其次为 U 卡直付。【U 卡是指加密货币（类似于比特币）交易所推出的虚拟信用卡，其风险在于国内合规风险 / 中国境内禁止使用加密货币】，个人偷偷使用问题不大，但是公司行为可能造成风险。
+  - 总体风险：代充＞U 卡直付＞支付宝礼品卡＞apple 礼品卡＞招行 visa 套 Google 内购＞国外银行卡 / 信用卡
+  - 此外，有少量招行 visa 直接网页充值案例，但 gpt 官方文档仍明确表示不支持，存在实际成功案例，但不属于官方保证支持的支付组合。
+
+- 还要考虑手机号验证问题，综合下来我觉得信用卡最好.
+
+- 是不是可以列一下哪些 u 卡能付成功，目前我知道的：
+bybit
+fiat24
+starryblu
+
+- 基本上靠谱就是 apple store 了，起码还能退款，图一个安稳
+
+- 主要是要能开发票，报销用。官网自己充都开不了发票，只能代充
+- 国外只有收据的，想开发票只有找代充中转站了
+
+- 亲测农行visa信用卡套 google play 也能充值成功
+
 - ## [国外怎么付费 - LINUX DO _202608](https://linux.do/t/topic/2768479)
   - command code 和 ollama pro 都不支持支付宝
 
@@ -1459,6 +1485,53 @@ https://linux.do/t/topic/2326247
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [已测几家 deepseek4.1flash 的 ttl - LINUX DO _202609](https://linux.do/t/topic/2890952)
+  - 4.1flash 的缓存读是输入的 1/50，ttl 过期的代价就是全量输入，单次 40 倍以上的消耗，如果你的日常里，会经常用 4.1 当做主控模型（纯 subagent 场景 ttl 基本可以无视），那么这个代价其实是相当大的。
+deepseek 官方：几个小时 - 一天
+opencode go：几个小时
+commandcode go/goat：几个小时
+workbuddy：几个小时
+ollama pro：15-20 分钟
+hyper.charm：10-15 分钟
+Cline pass：5 分钟 - 一天（有多个上游，可钉死 deepseek 官方）钉死方法搜 cline-pass-switcher
+Devin pro：5 分钟
+
+- hyper.charm 的 v4.1flash 是满血的吗？
+  - 它的上游是 fireworks
+
+- ## [commandcode 昨天下午的计费果然有问题 - LINUX DO _202609](https://linux.do/t/topic/2887600)
+- 有峰谷的，他家有 token 计算器，佬友可以根据用量自己算一下，5 小时额度是 14 刀
+- 这个峰谷扣费和梁文峰谷时间一致
+
+- 正常 ds V4F 我算的 Peak 2.5B Off-Peak 5B，昨天 V4.1F 怎么算 Peak 都只有 1B 多些 低的夸张。
+
+- ## [昨天到现在蹬的command code的goal套餐，给大家做个用量参考 - LINUX DO _202609](https://linux.do/t/topic/2888073)
+- 月是 10 亿，7 天是 6 亿左右，5 小时是 3 到 4 亿左右吧
+
+- 1 刀这么耐用吗，卧槽，那我感觉订阅个 1 刀就可以了。。。luna 实在是太慢了
+
+- github 有现成的项目可以反代出来用，如果用 dsh 更简单
+  - 名称是 Command Code Provider ，通过 oauth 登录后可以反代 1 刀的 go
+
+- 我也 1 刀，用 pi 安装了个 command code 的插件直接就用了 command code 的 key，有现成的 oauth 插件, 应该是那个插件做了反代吧，原理没太去了解
+
+- 1刀的go没有api, 10 刀可以用 api，我挂 cpa 上没问题
+- deepseek有峰谷的，他家有 token 计算器，佬友可以根据用量自己算一下，5 小时额度是 14 刀
+
+- [感觉Command Code Go的DeepSeek V4.1 Flash还挺不错的 - LINUX DO _202609](https://linux.do/t/topic/2890891)
+  - 感觉 Command Code GO 套餐的额度挺充足的啊，1 刀差不多 12 亿
+- go 能蹬多少 token，官方的似乎 1 亿 token5 块差不多
+
+- 我听说 command 这家明确说过多开还是反代就会封号，我刚用这家，佬友遇到过封号吗？一个号能反复开 go 套餐吗？
+  - 我用半个多月了，一个号额度都要用完了也没封
+  - 我大概是 6 亿的额度，全白天使用
+
+- 10 号降价前，V4 推算大概 1.5-2B
+10 号降价后，V4.1 推算大概能有 3-4B
+高峰期使用
 
 - ## [谷歌很良心，免费的gemini的额度和反重力额度分开计算的 - LINUX DO _202609](https://linux.do/t/topic/2895763)
   - 而且都是量大管饱，还免费
@@ -1582,6 +1655,16 @@ TL; DR No doubt in my opinion that currently OpenCode Go has better usage limits
 - It is pretty difficult to compare and the situation may be dynamic but earlier $20 Ollama plan could give you around 2000 GLM-5.2 requests per week (according to reports which I saw). If we compare by request Ollama would be a winner but requests are not reliable metric. Also the risky part is how they'll treat GLM-5.3 when weights are opened (maybe the same way as kimi-k3...).
 
 - you sub free for small usage, then 20 usd pro and bigger plans are not available right now, they charge per gpu usage which could mean a ton of tokens in low gpu heavy models but the issue that it is only 1 concurrent pass at a time so multiuser is terrible for such sub or multi agent
+
+- ## 📌 [【持续更新】国内外AI订阅性价比 - LINUX DO _202609](https://linux.do/t/topic/2831355)
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## 📌 [[排行榜][08.17 更新]各家plan每1亿token消耗RMB - LINUX DO _202608](https://linux.do/t/topic/2756196)
   - Coding Agent 模型性价比排行榜
@@ -2324,13 +2407,13 @@ Cloudflare → 安全性 → WAF → 自定义规则 → 创建规则。
   - 国内直连、高稳定、多模型 AI API 中转，支持 GPT-4o/Claude Opus 满血，企业级技术支持。
 - 另外确定目标用户：
 
-01.                                                                                                                                                                                                                       个人开发者：
+01.                                                                                                                                                                                                                                     个人开发者：
 特别厉害的个人开发者其实自己也可以解决我刚刚写的那些东西，所以我就不跟这些人卷了，我去闲鱼上找了很多代写项目，毕业设计，软件开发的开发者，这部分人一般懒得折腾，不懂如何配置号池。
 
-01.                                                                                                                                                                                                                       ai套壳创业者：
+01.                                                                                                                                                                                                                                     ai套壳创业者：
 他们需要稳定的api，高并发，子账号，针对这部分用户定制了一些企业级的面板和技术支持，然后去三四线城市的boss直聘/转转找各种ai创作视频，装修，ai做本地服务的小团队小企业，跟他们聊合作。
 
-01.                                                                                                                                                                                                                        中小企业/传统行业/实验室
+01.                                                                                                                                                                                                                                      中小企业/传统行业/实验室
 他们需要合规，开发票，私有路由，所以我在国内开了个公司，给他们走合规公司签单。
 
 其次就是做seo，小红书，抖音，比如我这篇文章就是一篇seo，seo的核心就是why what how 通过教别人如何搞中转站，如何使用claude code获取流量，当然你也可以发布在知乎掘金csdn个人博客V2EX、NodeSeek、SegmentFault、Linuxo
@@ -2575,6 +2658,22 @@ https://makerich.club/ chong 这个渠道不是源头，也是流传最久的渠
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [CPA 反代gemini 到那个harness最有好啊 - LINUX DO _202609](https://linux.do/t/topic/2897453)
+- 我用在 claude code 里面的，还行吧，试过接到 DSH 里面，也还行
+- 我是啥也没管，直接 CPA 反代出来后在 CC 里面用，目前感觉一切正常。
+
+- claude，hermes 上都用过，claude 似乎确实搜索会返回空，工具调用有问题
+
+- 我放 codex 里面感觉还可以
+
+- 接到 pi agent 里面，各渠道都能用，暂时没有报错
+
+- 实测 pi 和 zcode 都不错，3.8f 还挺好使的
 
 - ## [gpt-5.6-luna现状 - LINUX DO _202609](https://linux.do/t/topic/2895875)
 我经常一个文档上百万字丢给 luna，luna 大概半小时可以很漂亮的把我的活儿干完。
@@ -3001,13 +3100,13 @@ Hugging Face 🇺🇸 Llama 3.3 70B, Qwen2.5 72B, Mistral 7B +many more. $0.10/m
 - 一个是卖钱的正式版，一个是对话用于训练的免费公测版。测试版不一定弱，但 Ta 是测试版。
 
 - ## 💡 [【长期更新-授人以鱼不如授人以渔】公益站渠道公示（人人都可搭公益？） _202601](https://linux.do/t/topic/1477161)
-  01.                                                                    q2api(claude)
-  02.                                                                    英伟达ai平台（大部分开源模型）
-  03.                                                                    hf抱脸（大部分开源模型）
-  04.                                                                    groq平台
-  05.                                                                    硅基流动平台
-  06.                                                                    富可敌国平台（duck已许可分发付费站anti, 正在申请分发max）
-  07.                                                                    杂七杂八的短效羊毛平台（国外）
+  01.                                                                     q2api(claude)
+  02.                                                                     英伟达ai平台（大部分开源模型）
+  03.                                                                     hf抱脸（大部分开源模型）
+  04.                                                                     groq平台
+  05.                                                                     硅基流动平台
+  06.                                                                     富可敌国平台（duck已许可分发付费站anti, 正在申请分发max）
+  07.                                                                     杂七杂八的短效羊毛平台（国外）
 
 - [还有可以白嫖opus的平台嘛  ](https://linux.do/t/topic/1510785)
 

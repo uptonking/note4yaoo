@@ -49,6 +49,23 @@ modified: 2026-01-12T10:04:03.442Z
   - The real lesson: Start with a test dataset, not eval infrastructure.
 
     - Capture edge cases as you build. Test iteratively in your normal workflow. Graduate to formal evals when you actually have 100+ test cases and need automation.
+# discuss-eval-solutions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [ModelTrace ](https://xqy2006.github.io/ModelTrace/)
+  - [隔壁站看到的一个可以测试 gpt是否降智路由到别的模型的办法 - LINUX DO _202609](https://linux.do/t/topic/2899199)
+  - 三次挑战
+
 # discuss-promptfoo-issues
 - ## 
 
