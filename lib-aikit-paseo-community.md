@@ -28,7 +28,25 @@ modified: 2026-09-05T00:28:04.965Z
 
 - ## 
 
-- ## 
+- ## [Paseo Changed Everything About My Multi-Account Codex Setup | Edi Hasaj _202608](https://edihasaj.com/posts/paseo-changed-my-multi-account-codex-setup)
+- I use two Codex accounts, one for work and one for personal projects. On macOS, running both official desktop profiles at the same time requires two isolated state directories, two Electron data directories, and a small controller to keep the Dock sane.
+- Paseo supports custom provider profiles. A profile can extend the built-in Codex adapter and add environment variables. I point each profile at a different CODEX_HOME
+  - Paseo now shows both accounts as first-class choices. Selecting one launches the same native Codex binary with the corresponding home directory. No logout, no token copying, no wrapper flag, and no second Electron process.
+
+- Paseo does not merge accounts, chats, billing, or usage limits. It gives each profile a clean launch path.
+
+- I started with a UI problem: how do I keep two Codex accounts open on one Mac?
+
+The better question was: who should own the lifecycle of my agents?
+
+Once the answer became “a daemon on the machine doing the work, ” the rest simplified. Multiple accounts became provider profiles. The Studio became an execution host. The MacBook and phone became clients. Persistence stopped depending on a window staying open. Orchestration became possible without replacing the tools I already use.
+
+- Why use a Mac Studio daemon instead of SSH alone?
+SSH gives me a shell. Paseo adds durable agent lifecycle, reconnectable timelines, named providers, mobile and desktop clients, orchestration, workspaces, schedules, and supervised services
+
+- Is the Paseo relay required?
+No. Paseo supports direct connections. I use a Tailscale-only address and disable the relay. The official relay is an alternative for simpler remote access and provides end-to-end encryption.
+
 # discuss-internals
 - ## 
 

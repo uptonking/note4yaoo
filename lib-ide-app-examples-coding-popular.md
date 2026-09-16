@@ -1014,6 +1014,13 @@ modified: 2025-12-11T18:10:23.710Z
     - The Paseo web app is built as a static SPA (Expo web export). In its normal release form it only supports connecting to the official Paseo relay or a local desktop daemon via a Unix socket — it has no path for connecting a browser to a self-hosted TCP daemon. This repo makes it work with two changes
     - This repository contains only build tooling and documentation. The Paseo source code is fetched from getpaseo/paseo at build time 
 
+- https://github.com/mcowger/amble /202609/ts
+  - modern, high-performance web workbench for the Paseo autonomous coding agent daemon. 
+  - Amble features Summary Mode—a dual-card visualization that aggregates tool executions into clear tallies on the left while streaming a formatted Markdown Thought Log on the right.
+  - [Amble is an alternative client for the Paseo daemon : r/PaseoAI _202609](https://www.reddit.com/r/PaseoAI/comments/1w71k4j/amble_is_an_alternative_client_for_the_paseo/)
+    - built using the Paseo SDK
+    - alternative client with a more opinionated UI in certain aspects like how it shows the tool calls and context usage, just another flavor to chose from if that's your thing
+
 - https://github.com/cleiter/desvio /apache2/202608/sh
   - Keep a personal build of someone else's project.
   - You have branches that upstream has not merged — open pull requests, changes that were rejected, things only you want. desvio merges them onto a fresh upstream in a worktree of your own checkout, resolves the conflicts, and runs your gate. What comes out is a build you can install and use every day, rebuilt in a minute when upstream moves.

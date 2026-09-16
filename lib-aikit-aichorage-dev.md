@@ -147,6 +147,10 @@ modified: 2026-05-28T17:50:54.646Z
 
 - KV Cache on disk added to LM Studio
 
+- token
+  - 推广本地token: 类似cursor, 用本地或自部署token时免费加返还积分
+  - 推广云端token: 用云端token时倍率更低加返还积分
+
 ## local-models
 
 - 本地模型和厂商模型api的区别

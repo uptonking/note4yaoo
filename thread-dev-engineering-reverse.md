@@ -144,6 +144,18 @@ modified: 2026-03-01T17:12:41.271Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 来自美国国家安全局（NSA） 的官方逆向工具——Ghidra。
+- https://x.com/0xCheshire/status/2099743923405226051
+  - 支持几乎所有你知道的操作系统（Windows、Mac、Linux），甚至能分析路由器和物联网里的芯片 。
+  - 早在 2017 年维基解密曝光的 Vault 7 文档里，CIA 就提到过 NSA 一直在偷偷用 Ghidra 。
+  - https://github.com/nationalsecurityagency/ghidra /apahce2/202609/java
+- 之前拆路由器固件就是靠它
+
 # discuss-tips
 - ## 
 

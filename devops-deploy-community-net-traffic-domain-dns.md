@@ -31,6 +31,27 @@ modified: 2026-06-17T07:27:04.608Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 💡 一个链接就能把网站子域名全查出来？不用装工具、不用写脚本，直接打开：
+- https://x.com/hank_aibtc/status/2099697906311983162
+  - [Subdomain Enumeration via Certificate Transparency · crt.name ](https://crt.name/)
+  - https://crt.name/v1/search?apex=clacky.ai
+  - 把后面换成 谷歌、淘宝 随便试，证书里出现过的子域名基本都能列出来。
+  - 原理就是公开的证书透明度日志，谁都能查，特别适合快速摸底一个站有哪些隐藏入口。
+
+```sh
+# 信息更详细
+curl -s "https://crt.sh/?q=%.example.com&output=json" | jq .
+```
+
+- 试了几个不全，可能我试的都是用通配符证书的那种？
+- They are historical certificates that existed at some point. Not necessarily current. But this is interesting.
+
+- 如果用通配符证书的话就查不出来了
+
 - ## Tailscale 运行在 UDP（wireguard），现在国内运营商QoS越来越严重了。感觉我需要找另外一种远程组网方案了
 - https://x.com/riverleaf88/status/2084177126048322012
 - 我用的 WireGuard 同样的问题。但是又不想更换，一共有几十个客户端节点，全部更换太麻烦

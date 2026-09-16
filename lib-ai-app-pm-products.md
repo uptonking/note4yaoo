@@ -275,7 +275,7 @@ modified: 2025-03-22T16:10:24.856Z
 - 
 
 # draft
-- usecases(有特色不代表有需求)
+- usecases(有特色不代表有需求): work/doc, code, design
   - 使用频率: markdown > editor > ocr, pdf-editing > bases > ocr
 
 - toB-ai
@@ -650,6 +650,12 @@ modified: 2025-03-22T16:10:24.856Z
   - 处理跨页的table
 
 - 
+- 
+- 
+
+# ai-ui
+- terminal中的table内容很难复制
+
 - 
 - 
 - 

@@ -342,13 +342,13 @@ modified: 2026-06-20T15:49:57.019Z
     - [LD士多 - LDC积分商城](https://ldst0re.qzz.io/)
 
 - token-news
+  - [Atria Dawn Preview — Model API _202609](https://api.atria-asi.ai/console)
   - https://chatapi.weixin.qq.com/
     - 微信开发大赛, 免费使用Deepseek和GLM
     - 白嫖微信的v4flash 1Btoken 约合35块钱
+  - [Atria Dawn Preview — Model API _202609](https://api.atria-asi.ai/)
   - [Mirasim — One Agent IDE ](https://mirasim.ai/)
-  - [GLM 5.2 FREE tier is live on TokenRouter, and running through July 25. ](https://www.tokenrouter.com/console/pricing?search=glm-5.2)
   - [商汤送免费的glm5.2了 - LINUX DO _202607](https://linux.do/t/topic/2504080)
-  - [每月50刀免费额度 支持glm5.2 邮箱注册即可 - LINUX DO _202606](https://linux.do/t/topic/2489020)
 
 - claude-news
   - [Ollama v0.14.0 and later are now compatible with the Anthropic Messages API _202601](https://ollama.com/blog/claude)
@@ -1471,11 +1471,12 @@ modified: 2026-06-20T15:49:57.019Z
   - intelligence
     - 2609: gpt-5.6-sol, claude-opus-5, glm-5.3, kimi-k3
 
-- ai-coding-plan2606
+- ai-coding-plan
   - codex - gateway -- ¥50
   - claude - opencode + antigravity  -- ¥40
   - cursor - composer/auto  -- ¥30
   - kiro - claude  -- ¥50
+  - token choices: gpt, kiro-claude, gemini, grok, composer, deepseek
   - 厂商类: gpt, claude, gemini, grok, glm
   - ide类: cursor, devin/windsurf, kiro, antigravity
   - coding/插件类: opencode, cline, kilo
@@ -1485,6 +1486,7 @@ modified: 2026-06-20T15:49:57.019Z
     - github 有现成的项目可以反代出来用，如果用 dsh 更简单，有现成的 oauth 插件
     - deepseek有峰谷的，他家有 token 计算器，佬友可以根据用量自己算一下，5 小时额度是 14 刀
   - charm-hyper-crush
+  - evot
 
 - tips
   - 有时api请求慢, 可能不是卖家/服务器的问题, 换个ip看看
@@ -2294,6 +2296,8 @@ modified: 2026-06-20T15:49:57.019Z
 - [AI 商品库存聚合搜索工具 ](https://goods.moo.kim/)
   - [售票处的小店 - 链动小铺](https://pay.ldxp.cn/shop/T6UJ4L1M)
 
+- [16688 - 专业数字卡密自动交易平台 ](https://www.16688.com.cn/)
+
 - [学生教育优惠项目导航 ](https://nav.edumails.cn/)
   - [EDU教育网邮箱注册申请-EDU教育网邮箱官方资讯平台 ](https://www.edumails.cn/)
 
@@ -2375,6 +2379,34 @@ modified: 2026-06-20T15:49:57.019Z
   - removed
     - https://www.rightapi.ai/models  /0.4x--0.08--0.008/10rpm
     - https://codexapis.com/pricing   /0.085--0.0085
+
+- deepseek-注意缓存价格
+  - https://openrouter.ai/deepseek/deepseek-v4.1-flash
+  - https://subrouter.ai/models?page=1&vendor=deepseek
+    - 中转的中转
+  - [PackyAPI ](https://www.packyapi.com/pricing)
+    - 0.5x, 0.8x
+  - [快跑API ](https://kuaipao.pro/pricing)
+    - 0.45x
+  - [HOHAI ](https://api.hohai.eu.org/pricing)
+    - 0.2x, 0.2-0.8-0.004
+  - [Pricing _202609](https://teamorouter.com/#pricing)
+    - [【富可敌国】 TeamoRouter：DeepSeek V4正式版全系0.01折薅。限时大放漏 - LINUX DO _202608](https://linux.do/t/topic/2771088/1)
+    - 0.1x, free分组
+    - 1x, 1-4-0.02
+  - [AI 网关控制台 - AkileCloud ](https://akile.ai/console/ai-api)
+    - 0.52x, 0.52-2.1-0.0105
+    - 高峰价 01:00–04:00, 06:00–10:00（UTC；北京时间周六、周日除外）
+  - [雨落千息 开放平台 ](https://api.rainflowtb.com/models)
+    - 2x, 2-8-0.04
+    - 35每月-200积分, 接近一折
+  - [TokenRa ](https://tokenra.io/pricing)
+    - 0.09-0.36-0.0018
+    - 5折
+  - [J8API ](https://j8api.com/models)
+    - 美元计费
+  - [NexoToken｜AI API 与 Agent 工具平台 ](https://www.nexotoken.net/?view=models)
+    - 0.45-1.8-0.045
 
 - [zzshu /NewAPI ](https://zzshu.cc/pricing)  , 长期运营
   - [吱吱鼠AI的小店 - 云猫寄售 ](https://catfk.com/shop/SXS913NA)

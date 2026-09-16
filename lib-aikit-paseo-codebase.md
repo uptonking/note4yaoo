@@ -98,6 +98,37 @@ modified: 2026-09-05T00:28:18.805Z
 - 
 - 
 - 
+
+## https://github.com/itsjustanks/paseo-plugin-daemon
+
+- paseo-plugin-daemon provides three distinct forwarding modes
+
+- Mode 1: "Browser Link" (One-Click Temporary Public HTTPS URL)
+  - This is the primary flow when you click "Open" or "Browser Link" next to a server card. 
+  - The plugin spawns an in-memory Node.js HTTP/WebSocket reverse proxy on an ephemeral loopback port.
+  - The plugin spawns a background cloudflared process: 
+  - `cloudflared tunnel --no-autoupdate --protocol http2 --url http://127.0.0.1:<gatePort> ` 
+  - Every 2 seconds, the Gate probes the local dev server. If the dev server stops, the tunnel immediately shuts down.
+
+- Mode 2: "Private Localhost" (Zero-Knowledge E2EE Relay Forwarding) 
+  - Used when you pair two Paseo hosts (e.g., your laptop and your desktop/VPS) via Connect → Private localhost.
+  - Host B pairs with Host A.  
+  - Host B starts a local TCP server on an arbitrary port (e.g. 127.0.0.1:45678). 
+  - When your local browser connects to http://localhost:45678, Host B opens an end-to-end encrypted WebSocket channel to Host A through the Paseo Relay (@getpaseo/relay/e2ee).
+
+- Mode 3: "SSH Forward" (server/ssh.ts) 
+  - If you already have SSH access, the plugin can manage persistent `ssh -L 127.0.0.1:<localPort>:127.0.0.1:<remotePort>` connections, monitoring their health and auto-restarting them if dropped.
+  - Low-latency private tunnel if you have SSH keys configured
+
+- On Linux, the plugin doesn't use macOS lsof or ps. Instead, it reads the Linux /proc virtual filesystem directly: Ports: It parses /proc/net/tcp and /proc/net/tcp6 to find all listening sockets.
+  - When you click "Set up browser links" on your VPS, you do not need to install cloudflared manually via apt or yum
+  - It downloads the official pinned binary (cloudflared-linux-amd64 / arm64) from GitHub directly to ~/.paseo/daemon-link/bin/cloudflared.
+
+- With Browser Link (Cloudflare Quick Tunnel): cloudflared makes an outbound connection to Cloudflare Edge servers (outbound HTTPS/port 7844). You do not need to open any inbound ports on your VPS firewall. You can access the dev server on your phone through the trycloudflare.com URL immediately.
+
+- With Private Localhost (Paseo Relay): Both the VPS and your client connect outbound to your relay server (relay.yourdomain.com:443). No inbound VPS ports are required.
+
+- 
 - 
 - 
 - 

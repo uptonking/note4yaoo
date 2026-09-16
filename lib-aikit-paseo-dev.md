@@ -24,6 +24,8 @@ modified: 2026-09-05T00:27:42.212Z
     - 类似openclaw, 但能让agent操作云端资源
     - 采用类似github workflow .yaml的设计，对普通用户不友好, 但对agent友好
   - Can I get banned for using Paseo? Paseo is designed to use each provider's officially supported integration and does not attempt to bypass its terms of service
+  - connection
+    - Connect to remote daemons over SSH 
 
 - cons
   - Paseo manages other agents, it doesn't ship one.
@@ -43,9 +45,24 @@ modified: 2026-09-05T00:27:42.212Z
 
 - tips
   - paseo放在docker容器运行时注意设置最大cpu/ram, 会影响多agent和subagent并发运行, 有些agent可能占用较多ram如claude-code
+# issues
+- 不同vps上的同一git仓库，似乎会覆盖/合并为一个， 不能同时使用
+
+- 
+- 
+- 
+- 
+- 
+
+- 是否支持daemon主机上的port forwarding, 比如运行webapp然后直接暴露
+  - https://github.com/itsjustanks/paseo-plugin-daemon  /cf-tunnel/relay/ssh-forward
+  - Open a remote project's dev server from Paseo in one press.
 # draft
+- usecases
+  - work/doc, code, design
+
 - agent-base
-  - built-in agent
+  - built-in agent: 这样移动端可以直接执行agent，而不依赖桌面端或外部agent
   - external: deepseek-harness, cursor-cli, commandcode
 
 - cowork/workbuddy-like
@@ -88,6 +105,23 @@ modified: 2026-09-05T00:27:42.212Z
 - voice
   - toggle speech models
 
+- 
+- 
+- 
+
+## mobile-agent
+
+- mobile agent xp
+  - 桌面版的agent过于复杂
+
+## relay
+
+- desktop app 不支持添加多个relay
+  - ~/.paseo/config.json 的 `relay` 属性值不是array
+  - 当前的实现, 修改relay server url后, 因为server id不变, 旧的relay配置直接被新的relay配置覆盖了
+
+- 
+- 
 - 
 - 
 - 
@@ -181,6 +215,26 @@ modified: 2026-09-05T00:27:42.212Z
 - 
 - 
 
+# paseo-alternatives
+- https://github.com/vastsa/pi-desktop /4kStar/LGPL/202609/ts/rust
+  - https://pi-docs.aiuo.net/
+  - Local-first AI coding agent desktop: Electron + Rust host core + pi Agent Harness + user-installable plugins
+  - [【PI-Desktop】两个月，300 亿 Token，终于把自己想要的 Agent 桌面端搓出来了 - LINUX DO _202609](https://linux.do/t/topic/2869113)
+  - 插件系统
+  - 模型配置
+  - 会话导入
+  - 内置 Agent / Plan / Goal 三种工作方式
+  - Subagent 真正可见，而且可以用不同模型
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # more
 
 # docs
@@ -227,13 +281,14 @@ modified: 2026-09-05T00:27:42.212Z
 
 - Agents in Paseo can drive real browser tabs — the same tabs you see in the Paseo desktop app. 
   - An agent can open your dev server, read the page, click through a flow, fill a form, and take a screenshot, all without leaving your machine.
-  - The tools are part of the Paseo MCP toolset, so Enable Paseo tools on the same page must also be on for agents to receive them. 
   - Browser tools let agents access and control Paseo browser tabs, including logged-in browser state. Only enable this for agents you trust.
-- Browser tabs are hosted by the Paseo desktop app. The daemon itself doesn't run a browser — it routes tool calls to a connected desktop app, and returns an error when none is connected. The wire contract is host-neutral, so other hosts can carry the same tools later.
+- Desktop only, for now: Browser tabs are hosted by the Paseo desktop app. The daemon itself doesn't run a browser — it routes tool calls to a connected desktop app, and returns an error when none is connected. The wire contract is host-neutral, so other hosts can carry the same tools later.
+  - Reach for Playwright or agent-browser when the browser work stands on its own — headless CI runs, an existing test suite, or automation that isn't tied to an agent session in Paseo.
 - How an agent sees a page
   - The primary tool is `browser_snapshot`, which returns the page as an accessibility tree — headings, text, form state, and hierarchy — instead of raw HTML
   - For anything the tree can't capture, agents fall back to `browser_screenshot`, and browser_logs exposes console messages and network timing.
   - agent ──MCP──▶ daemon (broker) ──▶ browser host (desktop app) ──▶ webview
+  - Navigation is restricted to http(s) URLs.
 
 - A daemon runs agents on one machine, for you. Paseo Hub is the layer above your daemons. 
   - Your daemons keep running agents where they always did. Hub decides when to ask them to.

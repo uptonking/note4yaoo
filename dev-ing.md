@@ -358,15 +358,33 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - Zero-knowledge byte forwarding: Both act as blind pipes. 
   - Both accept dedicated daemon data sockets for each connectionId
 - paseo-relay (Elixir): Built for production fleet hosting. It uses Erlang's distributed process registry (:syn) and supports multi-node clustering with HTTP replay headers (x-reroute- target, fly-replay) to route connections across different server nodes.
-  - paseo-relay-go (Go): Pure single-node architecture. All sessions and connection routing live in local Go memory (map[string]*session guarded by mutexes). This is ideal for a single VPS or homelab, but it cannot run as a multi-node cluster behind a round-robin load balancer without sticky routing.
+  - distributed implementation, offering features like multi-node clustering and dynamic rerouting. It also includes robust memory and backpressure control mechanisms
+- paseo-relay-go (Go): Pure single-node architecture. All sessions and connection routing live in local Go memory (map[string]*session guarded by mutexes). This is ideal for a single VPS or homelab, but it cannot run as a multi-node cluster behind a round-robin load balancer without sticky routing.
 - paseo-relay (Elixir): Uses Cowboy's {active, false} socket suspension, an ingress token ledger, per-process heap limit fuses, and memory watermark shedding to survive sustained high-concurrency fleet loads (tens of thousands of concurrent connections).
-  - paseo-relay-go (Go): Uses standard Go goroutines and mutex-protected socket writes with a bounded FIFO frame buffer (up to 200 frames / 32 MB). For personal or small-team use, this is more than sufficient.
-- 
-- 
-- 
-- 
-- 
-- 
+- paseo-relay-go (Go): Uses standard Go goroutines and mutex-protected socket writes with a bounded FIFO frame buffer (up to 200 frames / 32 MB). For personal or small-team use, this is more than sufficient.
+
+- frp is a network-layer tunneling solution, contrasting with Paseo Relay's application-level rendezvous service.
+  - Compared to a general-purpose reverse proxy, the custom application-layer protocol of Paseo Relay offers specialized features such as session topology awareness and seamless integration with the pairing workflow.
+- paseo-relay is an Application-Layer Rendezvous Broker:  
+  - Paseo Relay's architecture prioritizes end-to-end encryption, ensuring the relay server's compromise doesn't expose sensitive data, with trust rooted in the daemon's public key. 
+  - This approach is also firewall-friendly, as it relies on outbound connections from both ends. The alternative solution poses a security risk and is not compatible with the mobile app's workflow.
+  - It does not open arbitrary TCP listening ports on your VPS. Instead, both your Mac daemon and Android phone connect outward via WebSockets. The relay simply pairs the two WebSockets together by serverId and connectionId. It forwards ciphertext frames blindly.
+  - Daemon connects outbound. No public listening socket points to the daemon.
+- frp is a Transport/Network-Layer Reverse Proxy:
+  - frp presents a security risk if the Paseo daemon's port is exposed without authentication, potentially leading to unauthorized access. 
+  - frp's secure tunneling modes are incompatible with the Paseo mobile app.
+  - frp demands a more complex configuration involving direct TCP connections, domain setup, and manual password management. 
+  - The primary advantage of frp lies in its ability to forward arbitrary protocols beyond the Paseo WebSocket, including P2P connections and advanced traffic management features.
+  - You can expose SSH (22), PostgreSQL (5432), or remote desktop to your VPS. paseo-relay only speaks Paseo's specific WebSocket protocol. Access other Mac services (SSH, web dev server, VNC) 
+  - Supports UDP (gaming/DNS), raw TCP, KCP (UDP-based high-latency optimization), and QUIC transport multiplexing.
+  - Advanced Traffic Controls: Bandwidth rate limiting, connection pooling, load balancing among multiple local machines, HTTP header rewriting (X-Forwarded-For), and basic auth injection.
+  - frp runs frps on the VPS and frpc on your Mac. It forwards incoming TCP/UDP connections from a public port on the VPS (or an HTTP subdomain) through a multiplexed tunnel directly to a local port (e.g., 127.0.0.1:6767) on your Mac.
+  - Traffic is decrypted at the VPS (or forwarded as raw TCP). The VPS host can inspect or tamper with traffic unless client-to-server TLS is used.
+  - Daemon exposed to public internet. VPS opens a public port mapping to your local daemon port. 
+  - Requires running frpc as a background service on your Mac in addition to the Paseo daemon, maintaining separate config files.
+  - Mobile app cannot run frpc (e.g. STCP/XTCP private modes are impossible without a rooted phone or VPN).
+
+- Considering that paseo-relay provides end-to-end encryption and a streamlined pairing process via outbound connections, it's the clear choice for Paseo mobile-to-desktop control.
 
 - [09-15 Codex 调用 Gemini 报 429 (Resource has been exhausted) 问题(newapi、dsh调用均正常) - LINUX DO _202609](https://linux.do/t/topic/2903531)
   - 通过 Codex -> ccswitch -> NewAPI -> CLIProxyAPI (CPA) -> Google Antigravity (Gemini) 链路调用模型时，Codex 持续报错

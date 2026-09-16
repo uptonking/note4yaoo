@@ -77,6 +77,22 @@ modified: 2026-06-17T05:51:04.215Z
 - 建议小号，真封了很麻烦。优选也是。
 
 - VPS，IP 不乱跳才是最重要的啊！有一些网站服务检测到 IP 变化，就得重新登录。 而且 VPS 自己搭建的也安全啊！
+# discuss-frp/ngrok
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [fatedier/frp: A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet. : r/commandline _202302](https://www.reddit.com/r/commandline/comments/1115j7y/fatedierfrp_a_fast_reverse_proxy_to_help_you/)
+- The classic in this space is ngrok. Works great for temporary exposing a local machine to the internet, has a free tier.
+- I think cloudflare also have a product that does this - cloudflare tunnels - that is more suited to permanent links.
+
+- I used to use this to route nvidia gamestream to a vps so I could use moonlight from where ever. dont really recommend it for that but its pretty good for less realtime applications like webservers or backends
 # discuss-tailscale
 - ## 
 
@@ -88,7 +104,27 @@ modified: 2026-06-17T05:51:04.215Z
 
 - ## 
 
-- ## 
+- ## [A word of caution about Tailscale : r/selfhosted _202312](https://www.reddit.com/r/selfhosted/comments/18evofr/a_word_of_caution_about_tailscale/)
+- Headscale looks nice. Another option that I don't see mentioned much is Slack's Nebula (https://github.com/slackhq/nebula).
+- The plus on using tailscale is that you don't need a public address. With headscale, you still need a public address like wireguard, openVPN, and others...
+
+- Nebula doesn't use WireGuard
+  - While true, both Nebula & Wireguard are based on the Noise Protocol Framework, so their roots are similar
+
+- What is the difference between something like this and FRP?
+  - These are all VPN solutions, they wouldn't supplant the need for load balancing and presentation via reverse proxy - I would think you always need that for sanity's sake.
+
+- Hopefully those who use it already know this. It's not that different from using cloudflare tunnel in terms of entrusting your key to a third party provider. People still do it because they deem the risk acceptable.
+  - Cloudflare decrypts your traffic on the edge, Tailscale doesn't hold the keys needed to decrypt anything, the communication can be purely peer-to-peer and if it's not, it's still being forwarded in an encrypted state. Headscale also exists, which lets you use 100% self-hosted Tailscale infrastructure.
+- Tailscale controls the identity and permissioning of your nodes. Among other things, they can (theoretically) MiTM your traffic by inserting a new identity and route through DERP or an exit node that they control. Yes, Tailscale supports and prefers direct P2P but it's not "purely" P2P, and it wouldn't be immediately obvious when it switched from P2P to DERP / exit node + a fake node identity. I'm not saying Tailscale would do this; merely that from a risk perspective there is significant amount of third-party trust that is NOT mitigated because Tailscale is P2P.
+  - That’s why tailscale lock exists. Should you enable it, a new node cannot be trusted on the tailnet without first being manually signed by another ‘trusted’ and designated signing node on the tailnet. This means that a new node cannot be introduced into the network by tailscale themselves or even if someone gains access to an admin account.
+
+- You always have to trust someone. It’s either your privacy respecting ISP, your definitely not shady VPS provider, a VC backed network controller. Even if you are running your own network, someone can always fuck you up.
+
+- From what I know, Tailscale tunnels are P2P and encrypted. Network communications are "direct" and don't go through Tailscal, except at the beginning of the process to know the routes. Am I right? 
+  - Tailscale has a good blog post explaining the differences between their additions and base wireguard. There are scenarios where tailscale will act as a relay of encrypted messages, but private keys are only client side (the client is open source) so tailscale is unable to decrypt the messages. I'm guessing if you didn't need this feature you could disable it and tailscale will only resort to relaying if other more direct routes are unavailable.
+
+- 
 
 - ## [tailscale经过clash分流直连，成功打洞，但不够优雅 - LINUX DO _202605](https://linux.do/t/topic/2177060)
   - 旁路由安装了 openclash，启用的是 fake-ip 混合模式 使用 tailscale 会打洞失败
