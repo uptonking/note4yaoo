@@ -94,6 +94,8 @@ modified: 2026-09-05T00:27:42.212Z
 
 ## ux
 
+- paseo daemon pair 让移动端扫码的ui
+
 - thinking content height
   - thinking内容的markdown未渲染为富文本元素
 

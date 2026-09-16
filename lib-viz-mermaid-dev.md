@@ -50,4 +50,9 @@ modified: 2025-11-19T17:50:09.072Z
     - 源码直接在文章末尾，而不在github
   - [Fun project of the week, Mermaid flowcharts generator _202507](https://alain-airom.medium.com/fun-project-of-the-week-mermaid-flowcharts-generator-0bc74404e9e6)
     - 源码直接在文章末尾，而不在github
+# chart-text-sollutions
+- [Charts built for Chat · dbt Charts _202609](https://dbtcharts.com/blog/charts-built-for-chat/)
+  - https://x.com/getdbt/status/2099698283631313013
+  - We’re open sourcing dbt Charts.
+  - Build interactive dashboards in YAML, keep them alongside your dbt models in Git, and give humans + agents the same development workflow.
 # more

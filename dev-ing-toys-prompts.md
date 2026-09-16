@@ -1320,7 +1320,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 ## codex
 
 # llm-hub-lite/vps
-- i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cursorapi, worker_2 node deploys librechat/wapdf/aichor/searx, worker_3 deploys flowy/aichor3, worker_4 deploys wabase/verge.
+- i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cursorapi, worker_2 node deploys librechat/wapdf/aichor/relaichor/searx, worker_3 deploys flowy/aichor3, worker_4 deploys wabase/verge.
   - all services are running well on my 5 vps.
   - Most requests should go to leader node first, then proxying to follower/worker nodes.
   - the current architecture of Foundation apps/services and Consumer apps/services is good.
@@ -1369,7 +1369,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - you might run `ssh root@192.3.91.103` as worker_3 node and do whatever you want.
 
 - at the end of the plan, 
-- after you finish the improvements/fixes, please push to github to trigger auto deployment with woodpecker ci, then inspect ci status by woodpecker-cli, fix issue if it exists.
+- after you finish the improvements/fixes, please push to github to trigger auto deployment with woodpecker ci, then inspect ci status by `woodpecker-cli`, fix issue if it exists.
   - after the success of re-deployment, you might do some tests to recheck 
   - you might run `ssh root@107.175.66.2` as worker_1 node(or `ssh root@ip` for other vps node) and do whatever you want. 
 
@@ -1381,6 +1381,8 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 
 ## updates/maintenance
 
+- ### aichor/paseo
+
 - please update aichor/aichor3 by upgrading paseo to the latest docker image that is offcially published, you might do some database migration if necessary. then you should publish the aichor image (at file `images/aichor/Dockerfile`) first, because deployment will use it.
   - keep the currently pinned Codex/ Claude/OpenCode/Pi versions and update only paseo.
   - i want to play with the latest plugin feature in paseo.
@@ -1388,13 +1390,9 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - after your update, you should push to github to trigger auto deployment with woodpecker, then inspect ci status by `woodpecker-cli`, fix issue if it exists.
   - when you finish the update, all services should still running well, and features in aichor and aichor3 should still work well without data/config loss. aichor and aichor3 are 2 separate services(not high availability).
 
-- all services from this repo are running well on my 5 vps. but disk usage in worker_3 node takes up to 91%.
-  - please ssh into worker_3 node(ubuntu os) , analyze disk usage, then make a comprehensive plan to clean up unused/legacy files or docker related files to make worker_3 node healthy.
-  - legacy or old or unused files might be removed from worker_3 node.
-  - after your cleanup/improvements, all services on worker_3 node should still work well.
-  - you might run `ssh root@192.3.91.103` as worker_3 node and do whatever you want.
+- ### aichorouter/new-api/cpa
 
-- please update aichorouter and cpapi to the latest docker image that is offcially published, you might do some database migration if necessary. 
+- please update aichorouter and cpapi by upgrading new-api and cli-proxy-api to the latest docker image that is offcially published, you might do some database migration if necessary. legacy `./apps/newapi` service should stay unchanged because it's unrelated to this upgradation.
 - after your update, you should push to github to trigger auto deployment with woodpecker, then inspect ci status by `woodpecker-cli`, fix issue if it exists.
   - when you finish the update, all services should still running well, and features in aichorouter and cpapi should still work well without data/config loss.
 
@@ -1403,6 +1401,16 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - 
 - 
 - 
+- 
+- 
+
+### devops
+
+- all services from this repo are running well on my 5 vps. but disk usage in worker_3 node takes up to 91%.
+  - please ssh into worker_3 node(ubuntu os) , analyze disk usage, then make a comprehensive plan to clean up unused/legacy files or docker related files to make worker_3 node healthy.
+  - legacy or old or unused files might be removed from worker_3 node.
+  - after your cleanup/improvements, all services on worker_3 node should still work well.
+  - you might run `ssh root@192.3.91.103` as worker_3 node and do whatever you want.
 
 - ❓
 - when only updating app service, how to make foundational caddy/beszel stable without restarting/offline?
@@ -1454,6 +1462,10 @@ in a multi-nodes high-availability architecture
 - please design a solution to deploy a searxng service called `searx` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/aichor. in cloudflare, i have configured searx.aichorage.de to leader ip and worker2-searx-origin.aichorage.de to worker_2 ip .
   - source code for searx(searxng) has been cloned at folder `~/Documents/repos/ai-ml-llm/all-search-etl/searxng` for reference if you want.
 
+- please design a solution to deploy a paseo-relay-go service called `relaichor1` to any follower node user specified. deploy it to worker_1 node by default, just like aichorouter/aichor/relaichor. in cloudflare, i have configured relaichor1.aichorage.de to leader ip and worker1-relaichor1-origin.aichorage.de to worker_1 ip .
+  - source code for relaichor1(paseo-relay-go) has been cloned at folder `~/Documents/repos/ai-ml-llm/all-agi-harness/paseo-relay-go` for reference if you want.
+  - relaichor1 should be a standalone consumer service just like relaichor. https://aichor.aichorage.de and https://aichor3.aichorage.de should support to use it in the future.
+  - please make it easy to switch between relaichor and relaichor1 service for user, so that user might use either relaichor or relaichor1 if they want.
 - please design a solution to deploy a paseo-relay service called `relaichor` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/aichor. in cloudflare, i have configured relaichor.aichorage.de to leader ip and worker2-relaichor-origin.aichorage.de to worker_2 ip .
   - source code for relaichor(paseo-relay) has been cloned at folder `~/Documents/repos/ai-ml-llm/all-agi-harness/paseo-relay` for reference if you want.
   - relaichor should be a standalone consumer service. https://aichor.aichorage.de and https://aichor3.aichorage.de should support to use it in the future.
@@ -1564,6 +1576,11 @@ in a multi-nodes high-availability architecture
 ## security
 
 - review the config on all vps, make the architecture more secure, robust in the long term.
+
+## aichor/paseo
+
+- https://aichor.aichorage.de and https://relaichor.aichorage.de are running well.
+- i have downloaded paseo mac app and android app, how can i use android app to control mac daemon or aichor daemon with relaichor .
 
 ## woodpacker
 

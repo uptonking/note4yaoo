@@ -345,6 +345,60 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0915
+
+- 🤔 i have deployed this repo paseo and ../paseo-relay elixir on my vps, they works well, i can use paseo android app and relay to control my mac app.
+  - for  ../paseo-relay, it can make my local paseo  mac app public to the internet, so android app can talk to it by the relay server.
+  - for ../paseo-relay-go , it is a golang implementation of ../paseo-relay.
+  - for ../frp, it helps to expose a local server behind a NAT or firewall to the internet.
+  - Analyze related code, Then explain to me the differences/relationship of frp and paseo-relay, what frp can do but paseo-relay cannot, which solution is better for the use case of control desktop app with mobile app.
+- you can use paseo-relay-go to replace paseo-relay on your VPS.
+  - paseo-relay-go was created specifically as a lightweight, single-binary replacement for self-hosters who do not want the heavyweight Erlang/BEAM runtime required by paseo-relay.
+  - Both relays implement the exact same Paseo v2 WebSocket relay protocol
+  - Zero-knowledge byte forwarding: Both act as blind pipes. 
+  - Both accept dedicated daemon data sockets for each connectionId
+- paseo-relay (Elixir): Built for production fleet hosting. It uses Erlang's distributed process registry (:syn) and supports multi-node clustering with HTTP replay headers (x-reroute- target, fly-replay) to route connections across different server nodes.
+  - paseo-relay-go (Go): Pure single-node architecture. All sessions and connection routing live in local Go memory (map[string]*session guarded by mutexes). This is ideal for a single VPS or homelab, but it cannot run as a multi-node cluster behind a round-robin load balancer without sticky routing.
+- paseo-relay (Elixir): Uses Cowboy's {active, false} socket suspension, an ingress token ledger, per-process heap limit fuses, and memory watermark shedding to survive sustained high-concurrency fleet loads (tens of thousands of concurrent connections).
+  - paseo-relay-go (Go): Uses standard Go goroutines and mutex-protected socket writes with a bounded FIFO frame buffer (up to 200 frames / 32 MB). For personal or small-team use, this is more than sufficient.
+- 
+- 
+- 
+- 
+- 
+- 
+
+- [09-15 Codex 调用 Gemini 报 429 (Resource has been exhausted) 问题(newapi、dsh调用均正常) - LINUX DO _202609](https://linux.do/t/topic/2903531)
+  - 通过 Codex -> ccswitch -> NewAPI -> CLIProxyAPI (CPA) -> Google Antigravity (Gemini) 链路调用模型时，Codex 持续报错
+  - 根因：Google Antigravity 上游拦截了 Codex 的系统提示词（System Instruction）。
+  - Codex 会在每个请求的 instructions 中固定注入开头："You are Codex, a coding agent based on GPT-5..."。
+  - Google 上游风控网关对 systemInstruction 进行了特征匹配，一旦检测到该组合词，就会伪装返回 429 RESOURCE_EXHAUSTED 假限流。
+  - 如果在网页端作为普通用户消息（role: user）发送相同的句子，则不会触发拦截（返回 200 OK）。
+  - 解决方案：利用 CLIProxyAPI (CPA) 原生支持的零宽字符隐式混淆功能，绕过上游对 System Prompt 的静态特征检测。
+- 反重力的 gemini 也会检测 claude 之类的关键词，都一样的
+
+- [cpa antigravity 429原因和解决办法 - LINUX DO _202609](https://linux.do/t/topic/2897260)
+  - 账号有额度，VPS 通过 antigravity cli 可以调用模型（Gemini 3.8 flash，Claude opus 4.6），但是通过 CPA 无法调用，提示 429
+  - 调用的模型使用的工具是 Claude code，系统提示词包含 “You are a Claude agent, built on Anthropic’s Claude Agent SDK.”，触发了 Google 的拦截
+  - 修改 CPA，打个补丁，对 antigravity 的流量进行预清洗，去掉这句提示词，经过测试，风控仅针对这句话，去掉后可以正常使用
+  - 使用其他的 coding agent，如 codex,pi 等
+- omp 的关键词也被识别了
+
+看样子是针对其他 harness 的
+
+cpa 设置里面可以添加零宽字符解决这种检测，只能说目前检测的还只是最简单的文本，怕以后加码
+
+- cpa 里有个 antigravity-coding-filter 插件，就是用来干这事的
+  - antigravity 里遥测非常多，要杀很容易
+
+- [🚨 [Critical] Codex → Antigravity: Responses `instructions` triggers false 429 · Issue · router-for-me/CLIProxyAPI _202609](https://github.com/router-for-me/CLIProxyAPI/issues/5848)
+  - Google's Antigravity path applies an upstream content filter to system-instruction text. Certain words or phrases in the Codex system prompt can be rejected as a masked 429 RESOURCE_EXHAUSTED. 
+  - CLIProxyAPI already has the intended workaround: obfuscate the trigger words before they are forwarded to Antigravity.
+
+- [gemini 降速了 · Issue · router-for-me/CLIProxyAPI _202609](https://github.com/router-for-me/CLIProxyAPI/issues/5377)
+  - 该问题通常是由于上游 Antigravity / Gemini 服务对 System Prompt（系统提示词）中的特定 Harness / Client 关键词（例如 Claude Code、Codex、Hermes 等）进行了检测与限制，从而触发了上游的 503 MODEL_CAPACITY_EXHAUSTED 拦截
+  - 请排查客户端发送的系统提示词（System Instruction / System Prompt）中是否包含上述主流 Harness 工具或相关敏感词。如果包含，可以在 CPA 的 config.yaml 中配置 antigravity.sensitive-words，CPA 会自动在请求的 System Instruction 中对这些关键词插入零宽字符（Zero-Width Characters）进行混淆屏蔽，避免触发上游风控。
+
 ## 0914
 
 - paseo-plugins

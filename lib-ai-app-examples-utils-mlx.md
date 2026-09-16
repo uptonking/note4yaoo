@@ -852,7 +852,7 @@ modified: 2025-11-01T10:54:26.044Z
     - MTP support out of the box is the detail that makes this worth installing immediately
   - https://github.com/google-deepmind/science-skills
     - A collection of agent skills for scientific research tasks, spanning genomics, structural biology, cheminformatics, literature search, and more.
-# apple-afm
+# apple-afm/coreai
 - https://github.com/sambitcreate/Swift-Foundation-Models-Skills /MIT/202603/js
   - Agent Skills for building iOS/macOS applications with Apple's Foundation Models framework 
   - https://github.com/alessiorubicini/Apple-Foundation-Models-Agent-Skill
@@ -878,6 +878,11 @@ modified: 2025-11-01T10:54:26.044Z
   - Apple's model doesn't have native tool-calling, so FoundationCode uses guided generation (fm respond --schema) to force the model to emit a single, schema-valid JSON action every turn. 
 - https://github.com/schnaitter/pifm
   - pi-coding-agent provider extension for Apple Foundation Models via fm CLI
+
+- https://github.com/john-rocky/coreai-kit /BSD/202609/swift
+  - https://john-rocky.github.io/coreai-kit/
+  - Swift SDK for running chat, vision and speech models on iPhone and Mac with Apple's Core AI. 
+  - Model download and caching, FoundationModels integration, and runnable examples with documented OS, SDK and model requirements.
 
 - https://github.com/entro314-labs/tauri-apple-intelligence /MIT/202606/swift/rust
   - Native Tauri commands for Apple Intelligence (Foundation Models) with streaming + tool calling support.
