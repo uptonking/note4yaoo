@@ -65,6 +65,10 @@ modified: 2026-09-05T00:27:42.212Z
   - built-in agent: 这样移动端可以直接执行agent，而不依赖桌面端或外部agent
   - external: deepseek-harness, cursor-cli, commandcode
 
+- 与im平台的集成，类似openclaw
+  - telegram
+  - qq
+
 - cowork/workbuddy-like
   - implement integrations for google-docs/msoffice/lark like github/gitea
 
@@ -206,9 +210,14 @@ modified: 2026-09-05T00:27:42.212Z
 - you can add your local Mac as a host to the web app running at `https://aichor.aichorage.de`, but it requires using Paseo's **Encrypted Relay** (or an HTTPS tunnel) rather than a direct `localhost` connection, due to web browser security policies.
   - because you already installed the Paseo Mac App, you can also do the reverse (and often much better) setup: add your VPS to your Mac App.
 
-- 
-- 
-- 
+- Paseo is designed to run concurrent workspaces and worktrees in parallel without port conflicts.
+  - Dynamic Port Allocation: When "port" is omitted from paseo.json, Paseo allocates an available ephemeral TCP port per workspace.
+  - Environment Variable Injection: Paseo injects PASEO_PORT (and HOST=127.0.0.1) into the script's environment.
+  - Unique Proxy URLs: Each workspace (on separate branches) gets a unique hostname (e.g. http://dev--feature-a--react-starter-rspack.localhost:6767), proxying requests to that workspace's assigned PASEO_PORT.
+- Paseo gives each service an isolated proxy hostname based on its branch name
+
+- Git itself enforces a fundamental safety rule: a local branch can only be checked out in one working tree at a time.
+
 - 
 - 
 - 

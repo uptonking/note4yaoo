@@ -132,6 +132,178 @@ modified: 2024-09-25T15:20:00.070Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Google 的 Pixel 手机有什么特别的好处？ - V2EX _202401](https://www.v2ex.com/t/1011622)
+- 原生 Android 的体验吧。
+光知道 Google Photos ，Pixel 第一代 Google Photos 备份照片可以原始画质无限容量，后面代的都是压缩画质
+
+- 买软件送手机差不多，最安卓的体验，但是硬件尤其是 soc 不如国内用高通最新这些厂商，还是海外市场不够卷
+
+- 个人感觉这个是 Pixel 一大长处，只要你手持稳定给点耐心多试几次，Pixel 的成像效果会非常好（不如 iPhone 稳定，但上限高）。而且，Pixel 相册的物品擦除功能是离线运行的，不知道这个算不算好处。
+  - 准确的说，橡皮擦功能有离线版，也有魔术修图的线上模式，更强大。不过离线版临时用用已经足够好了就是。
+
+- 先说优点：
+
+首先来说各种体验融合的很好，举几个我常用的例子：
+1. 在国外邮箱用的多，比如一些会议邀请，航班或者比赛日程，google 会自加入 calendar ，快到时间了会给你提醒
+2. 打电话，有 ai 接电话功能，告别各种诈骗或者广告推销电话
+3. 拍照，算法拍照里面做的最傻瓜化易用的，效果真实，没有很夸张的滤镜风格
+4. google 助手很多时候还是挺方便的：
+比如听到一首不认识歌，让 Google 搜索识别，不用特地打开某个软件来识别
+或者你正在开车，到饭点了你想买点东西吃，可以让他搜索你导航路线附近的餐馆，他会给你几个选择然后重新规划导航，全程不需要点击，只需要对话即可
+
+然后系统是更新得最快的，每年加入 google beta 计划每年你可以提早几个月体验下个大版本
+没有第三方预装 app
+整体来说挺流畅
+
+然后说一些缺点：
+1 ，哪怕在国外能用 google ，待机掉电依然有点快
+2 ，微信视频通话耗电很快发热严重，且视屏质量不清晰（从 pixel3 一直到 pixel7 一直没有改观，估计也不会修了），后来换的 S23 就好很多
+
+1. Pixel 支持 Esim 。
+2. 没有那么多系统级别的监控。
+3. 系统动画配色流畅优雅，审美在线。
+4. 正常版本也容易 root 。
+
+- 在 2024 年依然是对刷机最友好的品牌。谷歌直接开放系统镜像下载给你，无论是稳定版还是当前的 beta ，bootloader 解锁也不需要任何傻逼答题），熟悉 adb 的话不到十分钟就可以完成解锁修补镜像刷面具的工作。
+
+- 8Pro 的 Soc 性能，能让你体验到 3 年前的机器性能
+
+- 作为备用机用过 Nexus 5 、Nexus 5x 、Pixel 5 ；作为主力机用过 Pixel XL ；现在备用机 Pixel 6a ；其他安卓主力用过几个月的一加 6
+
+优点：原生系统、Google 全家桶，可以放心把通讯录、相册、通话记录、短信交给他，用其他安卓，比如一加就没有这种能放心把相册上传上去的体验。esim 、可以随时伪装成「香港人」「美国人」「新西兰人」并且养号的成本很低，不需要插拔电话卡这种繁琐的操作。拍照对我来说比 iPhone 用着舒服，iPhone Pro 系列的拍照实在是不想吐槽了，尤其是不同镜头之间的自动切换，难受的很，还有自动拉高锐度等等的槽点，相比较下 Pixel 的表现就很好。
+
+缺点：不支持 NFC 交通卡、不支持微信/支付宝指纹、人脸识别付款，续航比较拉垮 (这个可以 root 后使用 xposed 模块实现)
+
+性能的话，不是游戏玩家，即使是现在用 Pixel 6a 也没有不够用的感觉
+
+- 
+主力 Pixel6 年，root 用户，Lsp 地震后就能发现如果没有这些开源作者的贡献，这台手机在中国基本等于不能用的状态
+
+已经转投 iPhone 了
+
+而且 Pixel 自家构建的生态真的能说是一塌糊涂，我买过 ChromeBook ，买过 PixelBuds ，各种兼容还有质量问题，生态一塌糊涂。Pixelwatch 逆天定价+逆天送一年会员，Pixeltablet 我线下体验了后觉得还不如买个华为 mate 。
+
+唯一唯一的好处，可能就是这台手机太安全了，如果被上门，这个手机和你存给 google 的数据没人能得到（是的，没有一个人能得到）
+
+- galaxy nexus 一直用到 pixel6 pro 的老玩家了，去年换的三星 s23u
+这么多年国内用下来，主要感受是：
+1. 原生系统是真好看，不管是流畅度还是小细节都由于后头换的三星
+2. 系统每年一更，满足玩机人对新系统的要求
+3. 谷歌全家桶 照片联系人同步 pc 跟手机 chrome 网页推送啥的都方便
+4. google 自带的相机、歌曲识别等还是蛮好用的
+5. 性能是真不行，玩手游的话快速发烫降频
+6. 因为系统更新快，国内银行 app 基本处于能用/不能用叠加态，系统一更新就用不了
+7. NFC 门卡、交通卡不是很方便
+8. 国内用保修就别指望了，我就是 pixel6 pro 不小心碎屏不好处理，才下定决心换的
+
+- ## 📌 [Pixel手机使用不负责推荐 - LINUX DO _202606](https://linux.do/t/topic/2474381)
+整个 Pixel 手机可以简单分为：
+高通时代：2016-2020 年，Pixel 1—5
+自研时代：2021-2025 年，Pixel 6—10
+高通时代的 Pixel 手机外形不太有辨识度，但有两个比较优秀的功能：
+Pixel 1 的 Google 相册可以无限容量，
+Pixel 2 的单摄是当年最强的手机相机（国内已经普遍双摄甚至三摄）没有之一。
+Pixel 3 刘海屏太丑了，不想赘述。这一代开始内置 Titan M 安全芯片，号称是苹果级的安全系数。
+Pixel 4 首创安卓机内置雷达（Soli Radar），可以用于人脸识别，手势感应切歌、静音，不过因为耗电和监管原因一代而亡。
+然后来到自研时代，从 Pixel 6 开始，谷歌全面使用自研 Tensor CPU+NPU 打造 Pixel 手机，也慢慢将镭射激光眼的背部设计定型下来，成为自家独特的硬件设计语言。6 代作为初代自研机，属于全方位的拉，电池不行，信号不行，工艺差（顶部边框全塑料），唯一的亮点是还算不错的 120Hz 屏幕。
+7 代，小修小补。
+8 代，逐渐可用。8 代开始谷歌承诺给用户 7 年软件更新。（OV 你学学！）
+9 代，朝完全体进一步进化。
+10 代，终于抛弃三星自己都不用的猎户座，投入台积电 3nm 工艺；但也因为芯片设计原因，加上继续采用三星 5400 基带，及奇葩的 PowerVR GPU，导致只有约 10% 的性能提升。跑分更是被同时代的小米玄戒按在地板上摩擦，被网友调侃反向制裁。
+目前国内二手交易比较多的是 8 代、9 代和 10 代，也是比较成熟的三代产品。
+
+信号篇
+
+是的，你没看错，拿到 Pixel 第一时间是开 VoLTE，不然你电话都打不了。我自己从 Pixel 6 开始就不刷机了，因为神器 shizuku 诞生了。root 已经没有必要，而且还会失去系统自动更新及大堆银行 app 报错。
+可以在 Carrier IMS 里打开 VoLTE，5G，甚至可以修复 TikTok 大陆不能观看的问题。
+
+Pixel 手机从 7 代开始内置的免费 Google VPN，速度不快油管可开 2K，需要用自己的梯子前置一下（让它连上外网），后面就可以设置始终开启，关机重启也不掉。再也不用担心梯子挂掉或者失联。
+
+暂时想到这些，据说今年的 Pixel 11 会用上台积电 2nm，其他小修小改；Pixel 的强处从来不是硬件性能，且看今年秋季 11 代会在 AI 上面给大家带来什么惊喜吧。
+
+谷歌有时候会有迷之更新，比如 3、4、5 月更新后疯狂掉电。6 月份修复了
+只要不打大游戏，一般使用和国产机无异
+对了，10 代之前充电极慢
+
+- 现在备胎机用来 esim 的话推荐哪个型号的机器？不用魔法用 ai 太爽了
+  - Pixel8 吧，或者 9a, 8 之前还是比较多问题，9a 和 8 都是 Tensor 3 芯片
+
+- ## 📌 from google pixel 4 or later, which pixel phones support multiple sim cards?
+- All Google Pixel phones from the Pixel 4 onward support multiple SIM cards (using Dual SIM Dual Standby, or DSDS).
+  - However, no Pixel phone has two physical SIM card slots. Dual SIM support on Pixel phones is achieved through a combination of physical nano-SIM and eSIM (embedded SIM).
+
+- Pixel 4 through Pixel 6 Series (1 Physical SIM + 1 eSIM)
+
+- Pixel 7 Series and Later (Dual eSIM Support)
+  - 1 physical nano-SIM + 1 eSIM, OR 2 active eSIMs simultaneously (Dual eSIM). 
+
+- Carrier locks: If you buy a Pixel phone through a carrier (or under a carrier financing plan), the second SIM slot/eSIM may be locked until the device is fully paid off and network-unlocked.
+
+- ## [What is the best Pixel midrange phone in your opinion? : r/pixel\_phones _202512](https://www.reddit.com/r/pixel_phones/comments/1ppq8yh/what_is_the_best_pixel_midrange_phone_in_your/)
+- I miss my 4a - perfect size, perfect fingerprint reader. Battery life suited my needs. Very reliable. Got it during the shutdown, as a much needed replacement to a dying blue OG Pixel. Going from the 4a to the 7a was a bit of a rough transition. I recently purchased the 9a. I haven’t done the transfer yet. Hoping for good things.
+
+- The best A-series phones are the 3a, 4a (not 4a 5G), 6a (in Chalk color), and 9a (because of its enormous battery). I've got the 7a, and it would be on this list if it just had better battery life.
+Edit: 7a also has some of the best wide lens shots of any pixel, it takes the boosted colors/contrast from older Pixel sensors, and combines it with some features from Tensor-era Pixels.
+
+- 7a is the best of the best in their mid-level line Great cameras - Great size in hand - Great performance for its price - Great screen
+
+- Moving from a Pixel 3, the 6a amazed me. Most of all, the camera was just superb.
+
+Then I moved to a used family 7a, very meh (same as 6a but heavier, for some reason screen looked a bit worse, cameras felt worse as well).
+
+Now, 9a. Definitely felt like a jump from the 7a, but not wow overall. The biggest (and best) difference it totally the battery life.
+
+But yeah - 6a was the best mid ranger for me so far.
+
+- 9a and it's not even close, after that I'd say 4a 5g
+
+- 9a is an incredible value especially if you can get it during one of these sales events. I saw an effective price of around $315 (after Amazon's 10% cashback on their credit cards) which is just unbeatable for a phone of this value. People wouldn't even be able to tell it apart from a Pixel 10 without looking at the back of the phone.
+
+- ## [What is the best Google Pixel of all time for you, and why? : r/pixel_phones _202608](https://www.reddit.com/r/pixel_phones/comments/1vpe2cg/what_is_the_best_google_pixel_of_all_time_for_you/)
+- Best pixel was the 2XL Panda
+  - Yes, stereo front facing speakers.
+- Yet it sounded worse than botton firing speakers
+
+- Pixel 5. Perfect size, lightweight, durable, uniform bezels, rear FP sensor, good cameras with no bump, good battery life even on 5G. No Pixel before or since checks all those boxes.
+- The first 5.. Just because free google photos.
+- Pixel 5. Perfect form factor, great camera, good battery. Didn't have the notch.
+- Pixel 5 was my favorite. I like larger phones which is why my P9PXL is my current Favorite. I was coming from the P3xl when I bought the P5. It was just the perfect fit in my hand!
+- Pixel 5. Good size and the fngerprint reader on the back where it's supposed to be.
+- I second this! The 5! Good size, metal back with wireless charging. No need for covering it, perfect grip. Perfect phone.
+
+- My favorite was the 4a thus far. Simple phone, clean software, good update policy, good price.
+
+- Probably the 8 Pro (mine in the photo).
+
+New camera sensor compared to previous generations, they still use the same main and zoom lens even today, and the ultra wide angle sensor is actually bigger than the newer ones!
+
+The Tensor G3 was the first Google processor to get at least 1 million points on AnTuTu benchmarks (that I consider the minimum results for a phone to be usable in daily usage). The newer G4 and G5 are not even more efficient or more powerful, the numbers are similar from benchmarks overall.
+
+The only negative parts for me are the slow charging at 30W and the optic fingerprint sensor instead of ultrasonic, but apart from that you get almost the same experience of a Pixel 9/10 Pro XL for less than half the price.
+
+- Pixel 8 Pro. It is very balanced in every aspect and it came with less issues that its previous and future iterations
+
+- my pixel 7 was the best phone I ever had
+kind of feels like pixel peaked their and really hasn't changed significantly since then, I have the 10 pro rn and really feels like the same phone despite maybe a couple very small changes
+- Pixel 7 used an inefficient chip and modem. Far from the best phones at the time in terms of battery life and performance. They have improved quite a bit on efficiency since then.
+- I just changed from my 7 pro to a 10 pro and it's disappointing haha. I didn't realize the 7 pro was the size of a 10 pro XL.
+- I had the 7 Pro as well, and loved it. The display on the 7 Pro was better than what I have with the 10 Pro XL. Its camera was also very very good.
+
+- Pixel 7 Series.. I have the Pixel 7a and it's performing quite well..
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 - ## Is there a way to prevent android apps from disabling screenshots? 
 - https://twitter.com/NicoloRibaudo/status/1781262203728925129
   - It's my phone, those pixels are being rendered on my display, I want to screenshot them.

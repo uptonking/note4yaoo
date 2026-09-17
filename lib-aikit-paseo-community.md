@@ -120,6 +120,15 @@ No. Paseo supports direct connections. I use a Tailscale-only address and disabl
 
 - 内网穿透自己架啊，用 easytier。
 
+- ## [Show HN: Paseo – Beautiful open-source coding agent interface | Hacker News _202606](https://news.ycombinator.com/item?id=48377250)
+- I want to keep the core open and local-first, the business, when it comes, will be around the convenience/team/enterprise layer.
+
+- I love how mobile app works on my 13 years old Nexus 7 (2GB RAM). It was the sole reason I choose it, actually - other PWAs are too much for the little guy.
+
+- this is what finally unlocked multi-agent workflow for me. Each session comes with a script that runs a local server in a different port
+
+- the web app is a static Expo export, so the simplest self-host path is to build packages/app and serve the generated dist/ with any static HTTP server. The daemon itself is published to npm as `@getpaseo/cli`.
+
 - ## [I built a fully self-hosted and open-source Claude Code UI for desktop and mobile : r/ClaudeCode _202602](https://www.reddit.com/r/ClaudeCode/comments/1r8rqnv/i_built_a_fully_selfhosted_and_opensource_claude/)
 - Really cool project. The relay for remote connectivity is probably the trickiest part of something like this -- how does it handle reconnections if the WebSocket drops mid-session? Like if you are on your phone and switch between wifi and cellular.
   - Mosh + tmux running on a sleepless server is the only way I've found to solve websocket drops.  

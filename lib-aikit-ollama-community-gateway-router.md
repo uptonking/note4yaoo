@@ -2666,9 +2666,36 @@ https://makerich.club/ chong 这个渠道不是源头，也是流传最久的渠
 
 - ## 
 
-- ## 
+- ## [grok free帐号额度问题 - LINUX DO _202608](https://linux.do/t/topic/2711842)
+- 一个 free 号 build 有 50w token，看你日常消耗了，但是有点降智
 
-- ## 
+- grok free 有 1 刀的额度，对应的 grok4.5 是 2 刀 / M，有 0.25 倍率的缓存，实际用起来差不多 1-2M 吧
+
+- [Grok free的额度已降到500K - LINUX DO _202607](https://linux.do/t/topic/2663738/6)
+  - 之前 2M / 每天 → 1M → 0.5M。 不过重置时间还是 24 小时
+- 和 openai 一样，缓存是全局的，切号能续上
+
+- [【grok free】你们要的单个free账号的额度上限跟刷新周期 - LINUX DO _202607](https://linux.do/t/topic/2562837)
+  - 这是实测账号出现的数据包稳。总结：2M 上限 24 小时刷新。
+
+- [Grok 4.5 官网说有免费使用额度，有佬测出来是多少吗？ - LINUX DO _202607](https://linux.do/t/topic/2550761/2)
+- 官网 free 账号的额度好像是 2m
+
+一天一刷新
+
+- ## [codex和网页端的额度是分开的？ - LINUX DO _202609](https://linux.do/t/topic/2853444/5)
+- cowork 是和 codex 算一个额度。chat 是无限额度的 免费用户是 luna 订阅用户是 sol
+
+- 网页里也分普通对话和 work，普通对话是不占用额度的，work 就是对应的 codex，不是分开的
+
+- 是的 因为额度分开，chat 基本无限，所以 plus 就有常用的操作就是拿 chat 来规划方案，codex 实际来执行，这样比较省 token。当然现在 tibo 重置频繁，luna 无限也不是特别有必要了。
+
+- [佬们，GPT网页版和CODEX的6是分开计算额度的吗 - LINUX DO _202609](https://linux.do/t/topic/2868515)
+- 网页版和 codex 两个是独立的额度，5x 每周好像是 50，20x 是 200 次 (for gpt-6)
+
+- 独立的，而且还有插件，将网页额度接入到 codex 里，相当于可以用两套额度了
+  - 可以在 github 上搜 WebCodex，最高 star 的就是了
+  - https://github.com/yyjeqhc/webcodex
 
 - ## [哈哈道爷我成啦，ChatGPT 可以当作无限 Codex 来用（并非 2api） - LINUX DO _202609](https://linux.do/t/topic/2904360)
 - 最大的问题就是太降智，网页端降智太狠
@@ -3115,13 +3142,13 @@ Hugging Face 🇺🇸 Llama 3.3 70B, Qwen2.5 72B, Mistral 7B +many more. $0.10/m
 - 一个是卖钱的正式版，一个是对话用于训练的免费公测版。测试版不一定弱，但 Ta 是测试版。
 
 - ## 💡 [【长期更新-授人以鱼不如授人以渔】公益站渠道公示（人人都可搭公益？） _202601](https://linux.do/t/topic/1477161)
-  01.                                                                       q2api(claude)
-  02.                                                                       英伟达ai平台（大部分开源模型）
-  03.                                                                       hf抱脸（大部分开源模型）
-  04.                                                                       groq平台
-  05.                                                                       硅基流动平台
-  06.                                                                       富可敌国平台（duck已许可分发付费站anti, 正在申请分发max）
-  07.                                                                       杂七杂八的短效羊毛平台（国外）
+  01.                                                                                 q2api(claude)
+  02.                                                                                 英伟达ai平台（大部分开源模型）
+  03.                                                                                 hf抱脸（大部分开源模型）
+  04.                                                                                 groq平台
+  05.                                                                                 硅基流动平台
+  06.                                                                                 富可敌国平台（duck已许可分发付费站anti, 正在申请分发max）
+  07.                                                                                 杂七杂八的短效羊毛平台（国外）
 
 - [还有可以白嫖opus的平台嘛  ](https://linux.do/t/topic/1510785)
 

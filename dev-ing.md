@@ -345,6 +345,18 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0917
+
+- The GPG timeout occurred during the git commit operation, after the metadata generation successfully completed in under five seconds.
+  - 已在当前项目本地仓库执行 git config commit.gpgsign false
+  - 该配置会直接同步影响该项目下的所有 Worktree
+  - 如果你希望所有 GUI 应用（包括 Paseo、VSCode、GitKraken 等）都能顺利签名，需要配置 macOS 系 统的图形密码框 pinentry-mac 并由 macOS 钥匙串保存密码
+  - 这样后台触发 GPG 签名时会自动调用 macOS 钥匙串解锁，不再挂起无响应。
+
+- I have downloaded paseo mac app and added /Users/yaoo/Documents/repos/tests/react-starter-rspack-landing as a project.
+  - i want to run dev server in the project and use paseo browser tools to inspect the landing page.
+  - Analyze related code/config, then explain to me step-by-step how to do it
+
 ## 0915
 
 - 🤔 i have deployed this repo paseo and ../paseo-relay elixir on my vps, they works well, i can use paseo android app and relay to control my mac app.

@@ -247,6 +247,12 @@ redis-cli shutdown
 - https://github.com/jianyintang/find-disk-killer /MIT/202608/swift
   - https://finddiskkiller.com/
   - Native macOS disk activity monitor for app I/O, CPU, network, file access tracing, and SMART/NVMe drive health.
+
+## image
+
+- i am using macos. i have copied a image to clipboard, where can i paste it to view the image.
+  - Open Preview: Press Command (⌘) + N (or go to the top menu: File > New from Clipboard). The image will instantly open in a window.
+  - Apple Notes: Click to start a new note and press Command (⌘) + V. The image will paste directly onto the page.
 # mac-ai 👾
 - apple-foundation-model
   - [Foundation Models from Python: the fm CLI _202606](https://blakecrosley.com/blog/foundation-models-python-fm-cli)
