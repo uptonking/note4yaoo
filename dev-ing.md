@@ -115,7 +115,7 @@ HOST=0.0.0.0 PORT=8080 react-scripts start
 next dev -H 0.0.0.0 -p 3000
 
 npm i -g npm yarn pnpm corepack serve @dotenvx/dotenvx opencode-ai @openai/codex @kilocode/cli @kimuson/claude-code-viewer 
-npm up -g  @openai/codex @earendil-works/pi-coding-agent 
+npm up -g  @openai/codex @earendil-works/pi-coding-agent @deepseek-ai/dsh
 ```
 
 - dev-goals 不能在产品中检验的技术不玩，注意产品化

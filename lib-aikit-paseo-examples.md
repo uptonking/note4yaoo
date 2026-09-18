@@ -127,6 +127,11 @@ modified: 2026-09-17T14:19:32.208Z
   - Plugin client bundles may only import react, react-native, @tanstack/react-query, zod and @getpaseo/plugin. No pdf.js, no canvas, no gesture library. So the daemon does the work and the client renders the result.
   - PDFs and images are rasterised. pdftoppm renders one page at a time at a requested DPI
   - Word documents and spreadsheets are parsed, not rasterised. This is the design decision the plugin turns on
+  - 在主编辑区上方的标签栏右侧，点击 + 号按钮，找到并点击 Viewer
+  - 🐛 issues
+    - 文本类pdf中的文字无法选中， 渲染效果是图片， 很模糊
+    - docx不显示 分页、多栏布局 
+    - 扁平化显示所有文件， 不显示文件夹结构
 
 - https://github.com/ABorakati/beautiful-chat /MIT/202609/ts
   - plugin that redraws the Oh My Pi (OMP) chat stream: tool calls, reasoning, prompts, approvals, and checklists. It replaces the host rendering of OMP timeline items with typed, syntax-aware cards that follow the active Paseo theme.

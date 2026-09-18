@@ -1320,7 +1320,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 ## codex
 
 # llm-hub-lite/vps
-- i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cursorapi, worker_2 node deploys librechat/wapdf/aichor/relaichor/searx, worker_3 deploys flowy/aichor3, worker_4 deploys wabase/verge.
+- i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cursorapi/relaichor1, worker_2 node deploys librechat/wapdf/aichor/relaichor/searx, worker_3 deploys flowy/aichor3, worker_4 deploys wabase/verge.
   - all services are running well on my 5 vps.
   - Most requests should go to leader node first, then proxying to follower/worker nodes.
   - the current architecture of Foundation apps/services and Consumer apps/services is good.
@@ -1404,7 +1404,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - 
 - 
 
-### devops
+## devops/fixes
 
 - all services from this repo are running well on my 5 vps. but disk usage in worker_3 node takes up to 91%.
   - please ssh into worker_3 node(ubuntu os) , analyze disk usage, then make a comprehensive plan to clean up unused/legacy files or docker related files to make worker_3 node healthy.
@@ -1417,6 +1417,9 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
   - Normal app pushes validate foundation files but do not pull/recreate Woodpecker or Beszel; a manual/approved foundation workflow upgrades them safely.
 
 - Image upgrades are explicit operations; ordinary pushes do not silently change production images.
+
+- 在upstash的redis达到每月限额后, 相关服务节点会不停重试, 导致cpu占用高
+  - Upstash Redis free tier reached its quota (ERR max requests limit exceeded. Limit: 500000, Usage: 500000), trapping librechat-api in an infinite rapid reconnection retry loop.
 
 ## multi-nodes
 
@@ -1572,6 +1575,16 @@ in a multi-nodes high-availability architecture
 - some problem is that current `worker_2` node(192.3.xxx.xxx) has logical id `worker_3`.
 
 - you might run `ssh root@ip` and do whatever you want.
+
+## monitor/observability
+
+- cpu usage in worker_1 node always takes up to 27%-50% even when idle, while all other 4 vps takes only 4%-10% cpu most of the time.
+- please ssh into worker_1 node , analyze cpu usage, then make a comprehensive plan to improve cpu usage for core services on this vps node to make worker_1 node healthy.
+- you might also pay attention to the backup/recovery/restic related daemon/services, it might cause high cpu usage.
+
+- analyze related code/config to recheck if restic is the cuase, then fix it and improve it.  
+
+- after your cleanup/improvements, all services on worker_1 node should still work well.
 
 ## security
 

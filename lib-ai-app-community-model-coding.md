@@ -1053,6 +1053,23 @@ def slugify(text):
 
 - ## 
 
+- ## [有佬在用ds 4.1f写代码吗？ - LINUX DO _202609](https://linux.do/t/topic/2916200)
+- 模型能力够用，执行力很强，可以看截图，简单来说 指引清晰的话可以写代码 但不建议全由 4.1f 规划和执行
+
+- 和 gemini3.8 感觉差不多，优点就是快，可以做一些 demo 技术验证
+
+- 从 dsv4f 正式版就开始用了，
+完全满足生产力甜点线，
+我都当主力用。
+dsv4fv 还更好。
+但是 dsv4.1f 思考过度。
+我就是普通项目写代码和逆向，好用，爱用
+
+- 可以，能力上我认为不比 5.6t 弱。再执行力方面吊打 5.6t，是真的听话。不会想 5.6t 对长任务存在遗留实现点。
+
+- 4.1f 很考验提示词功底，提示词不能有模棱两可的含义，要不然在这种情况，它就会往你不想要的方向雷霆大思考
+- 在写，但是指令要明确，模棱两可的话会飞掉。
+
 - ## Introducing Cohere's first open-source coding model: North Mini Code
 - https://x.com/Prince_Canuma/status/2064437722689962242
   - a 30B param MoE model with 3B active. It runs at ~66 tok/s in BF16, truly impressive speeds before any compression.

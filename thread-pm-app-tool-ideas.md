@@ -243,6 +243,9 @@ modified: 2022-11-07T10:58:24.512Z
 - 带有空格的空行格式化时会单独占一行，浪费空间
 - 格式化多个连续的转义字符时，斜杠会混乱
 - 会自动在点号后，大写英文字母前加空格，这会破坏代码中的调用，如React. Component
+# personal
+- google export data analysis
+- twitter/x export data analysis
 # docs
 - [资源高级搜索-人邮教育社区](https://www.ryjiaoyu.com/search/resource)
   - 可搜索随书的docx/xlsx/ppt/pdf

@@ -871,6 +871,10 @@ My biggest lesson: reasoning effort does not replace model capability. Luna xhig
 
 - ## 
 
+- ## 
+
+- ## 
+
 - ## [技术上讲，llama 4到底失败在哪里？ - 知乎 _202507](https://www.zhihu.com/question/1923759516484367396)
 - Scout和behemoth的架构可能有问题。至少和Deepseek，Qwen3和gpt-oss这种稀疏化专家的方向不一致。这方面的insight甚至不如AI2的olmoe，就和Llama3.2对比Molmo一样。Maverick我觉得潜力还是有的，做到比Gemini2.5-Flash略好的水平应该没问题。
   - 后训练相比Llama3时期没有明显提升，更是没有追上r1带领的reasoning模型的潮流。

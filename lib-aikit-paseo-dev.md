@@ -76,6 +76,12 @@ modified: 2026-09-05T00:27:42.212Z
 
 - sandbox
 
+- browser-use
+  - 参考开源的zcode
+
+- computer-use
+  - 参考开源的zcode
+
 - paseo-relay server
   - ts, go
 

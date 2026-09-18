@@ -123,9 +123,40 @@ format-on-save - Automatically runs linters and prettier formatting hooks immedi
 
 - ## 
 
-- ## 
+- ## [眩晕瘫坐就像原子弹爆炸！全新重写的 pi 3.14 将于下周五推出 - LINUX DO _202609](https://linux.do/t/topic/2911636)
+  - pi 会引入全新的插件系统 chord 取代扩展系统，简单理解的话用途上类似于 dsh 的 cordis
+  - 旧的框架会暂存一段时间，待新的框架稳定后移除
 
-- ## 
+- 新版的会话似乎可以用 SQLite 存储，相比 JSONL 性能应该会有所提升
+
+- OMP 和 Pi 完全不一样，它是基于很早的 Pi 重开的
+
+当时的 Pi 甚至没有扩展系统，OMP 早已经错过了很多大型更改
+
+- ## [pi 我建议最好别碰 不然用一会儿可能就会觉得用其他的 agent cli 不干净了 - LINUX DO _202609](https://linux.do/t/topic/2920056)
+  - pi 干干净净 就那么几个 tool 再装个 pi-permission-system（甚至也不用装 自己写个 plugin 返回需要审核也行）和 pi-web-access 发现完全满足需求了（是的。。我 subagent 也没用） 也不用担心组合问题
+
+- pi 没有原生 subagent 太伤了，没有统一接口，插件之间互相支持不好。
+  - 新的 Chord 系统超强的，丝毫不输 Cordis
+
+- 虽然 zcode 今天爆雷了，但是我觉得还挺好用的，能自定义多个源头的模型，harness 做的也不错
+
+- 我喜欢大又全的，oh-my-pi 就挺好用
+
+- pi 的自动压缩机制很奇怪，不是每轮工具调用发现上下文不足就压缩，不知道现在主干是什么实现。我自己维护了一个
+  - 许多人反馈的自动压缩问题已被修复进 main 分支， 现在压缩检查会发生在工具调用后模型请求前的间隙， 修复预计随下个版本 v0.84.4 发布
+
+- 超级长程任务下有个界面很救命
+
+- 觉得不顺手的地方可以自写插件解决
+上游插件不满意也可以自己动手改
+
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## People of Pi: the next release will incorporate dynamic tool loading without cache wiping on supported models and providers. 
 - https://x.com/mitsuhiko/status/2075703856726499364

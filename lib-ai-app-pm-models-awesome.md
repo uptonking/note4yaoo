@@ -2329,12 +2329,18 @@ modified: 2026-06-20T15:49:57.019Z
 - [鹰鹰发卡](https://fk.apiway.cc/)
   - 下单前请检测自己的号有没有试用资格，如果拿没有试用资格的普号导致无法升级
 
+- [TG批发网 | TG账号购买平台|电报账号批发|telegram账号购买 ](https://tg.x6m6x.com/)
+  - 双向撸毛号仅 ¥1.2
+  - ❓ 买了几个tg号都被双向限制了
+
 ## 中转站/router
 
 - tips
+  - 主要因素: 缓存 > 倍率
   - 很多中转站带有峰值倍率和闲时倍率, 夜间多用闲时倍率, 白天可用半公益站
   - hub.linux.do深夜福利的cc倍率也能达到0.02, 而付费的cc普遍在0.3, 所以可以适当留好余额在hub用cc
   - 少数中转站会用非常短暂的低倍率吸引充值, 充完后取消低倍率只剩高倍率, 所以不要充多了
+  - 厂商风控加强后, gpt/grok都降智了， 候选模型可用 kiro/composer/gemini/deepseek/glm
 
 - resources
   - [LinuxDo商家评价平台](https://rate.linux.do/)
@@ -2351,6 +2357,8 @@ modified: 2026-06-20T15:49:57.019Z
     - 为啥大部分中转站把 luna 停掉了？ 不但是亏本，还影响主号。基本是得不偿失
     - [【富可敌国】几块钱能蹬一天的luna大家都停了，我们继续 _202608](https://linux.do/t/topic/2758706)
     - [【富可敌国】想钱想疯了，佬们一起来做个中转站 - LINUX DO _202607](https://linux.do/t/topic/2587271)
+  - [熊出没API /sub2api](https://us.xcmapi.com/model-plaza)
+    - 0.13x-pro分组
   - https://api.liusq.icu /0.1x
     - team  现在就这个分组了
     - free分组只能跑luna和5.5
@@ -2380,21 +2388,27 @@ modified: 2026-06-20T15:49:57.019Z
     - https://www.rightapi.ai/models  /0.4x--0.08--0.008/10rpm
     - https://codexapis.com/pricing   /0.085--0.0085
 
-- deepseek-注意缓存价格
-  - https://openrouter.ai/deepseek/deepseek-v4.1-flash
-  - https://subrouter.ai/models?page=1&vendor=deepseek
-    - 中转的中转
+- deepseek/国模-注意缓存价格
+  - https://www.jiji.cc/model-list  /0.2x/注意缓存
+  - https://us.xcmapi.com/model-plaza  /0.08x
+  - https://ai.xem8k5.top/pricing  /0.25x
+  - https://ai.max66.xyz/keys, 只做自部署的deepseek  /0.125x
+  - https://fuck-everyone.bbroot.com/model-plaza  /0.18x
+  - [IKunCode ](https://api.ikuncode.cc/pricing)
+    - 0.35x
+  - [帅API ](https://api.shuaiapi.com/pricing)
+    - 0.3x
+  - [HOHAI ](https://api.hohai.eu.org/pricing)
+    - 0.2x, 0.2-0.8-0.004
   - [PackyAPI ](https://www.packyapi.com/pricing)
     - 0.5x, 0.8x
   - [快跑API ](https://kuaipao.pro/pricing)
     - 0.45x
-  - [HOHAI ](https://api.hohai.eu.org/pricing)
-    - 0.2x, 0.2-0.8-0.004
-  - [Pricing _202609](https://teamorouter.com/#pricing)
-    - [【富可敌国】 TeamoRouter：DeepSeek V4正式版全系0.01折薅。限时大放漏 - LINUX DO _202608](https://linux.do/t/topic/2771088/1)
+  - [TeamoRouter](https://teamorouter.com/#pricing)
+    - [【富可敌国】 TeamoRouter ：DeepSeek V4正式版全系0.01折薅。限时大放漏 - LINUX DO _202608](https://linux.do/t/topic/2771088/1)
     - 0.1x, free分组
     - 1x, 1-4-0.02
-  - [AI 网关控制台 - AkileCloud ](https://akile.ai/console/ai-api)
+  - [AkileCloud ](https://akile.ai/console/ai-api)
     - 0.52x, 0.52-2.1-0.0105
     - 高峰价 01:00–04:00, 06:00–10:00（UTC；北京时间周六、周日除外）
   - [雨落千息 开放平台 ](https://api.rainflowtb.com/models)
@@ -2453,6 +2467,10 @@ modified: 2026-06-20T15:49:57.019Z
   - 新发卡网 [WogHub ](https://fk.woghub.com/)
   - plus--0.02
 
+- [NikoAPI /NewAPI](https://nikoapi.xyz/pricing), 已充值
+  - 充值地址 https://nikoapi.xyz/shop
+  - 加群可领取1刀体验
+
 - [mdkj  - /Sub2API ](https://mdkj.lol/dashboard), 已充值, 廉价但很不稳定
   - plus--0.025
   - 注意倍率调整 
@@ -2461,8 +2479,68 @@ modified: 2026-06-20T15:49:57.019Z
   - 充值改为u充值了，最低充值500r。小额充值点左边的小铺链接。
   - 中等价格
 
+- [熊出没API /sub2api](https://us.xcmapi.com/model-plaza)， 每日抽奖签到
+  - [分组监控页&AI降智监控中心 ](https://www.xcmapi.com/jk/)
+  - [API 在线检测 ](https://us.xcmapi.com/jc/)
+  - 0.13x的pro分组有luna
+  - 0.08x-推荐国模-deepseek/glm
+
+- [SwiftAPI/极速ai ](https://api.x5m5x.com/), 注意缓存率不高, 长期运营
+  - https://api.x5m5x.com/monitor
+  - 国模源头全系0.03倍率起
+  - ds-4.1, 0.15x, 仅90%的缓存，不如其他中转站
+  - glm-5.3, 0.03x
+  - 缓存超80%的: glm-5.3, kimi-k2.6, MiniMax-M3, hy4-preview
+  - 本平台主要做国内模型哈 国外模型是附带的 另外gpt全网都不稳定 因为官方打压中转
+  - 国模除了qwen都是自营
+  - 注意可用性普遍不高
+  - [HeroHao ](https://sub2.herohao.top/home), 渠道似乎与上面的极速ai相同
+    - [国模人民币定价 ](https://sub2.herohao.top/pricing)
+
+- [MaxAPI ](https://ai.max66.xyz/keys), 只做deepseek
+  - 0.1x, 0.125x
+  - 按量走新平台 ai.max66.xyz
+  - 按天走老平台 max66.xyz
+  - 目前自部署ds v4.1flash 0.1x尝鲜中，需要可小额充值体验
+  - 客户两块多蹬了1亿token
+  - 已上架天卡15.88不限量蹬一天
+
+- [ITKK ](https://itkk.lol/pricing)
+  - China-Ai-福利 分组， 全系 0.1 倍率打破底价
+  - 似乎没有ds4.1
+  - 提供次卡: claude, gemini
+
+- [FoxRouter ](https://foxrouter.org/pricing)
+  - 分组实际倍率与文字不同
+  - 全局0.06倍率
+
+- [Sub2AI ](https://www.sub2ai.vip/pricing)
+  - 分组实际倍率与文字不同
+  - 国模满血源头
+  - 新用户自动加入svip分组, svip分组全局0.08x倍率
+
+- [AI算力中心 ](https://aiapi.c0c.cc/custom/4fddf83543f2fd4d)
+  - QQ群号 1012226122, 重要通知，分组倍率变化都在群里机器人通知
+  - C02-ds/glm-flash高缓，已上线，0.16标准官方计费
+    - deepseek输入1输出4缓存0.02，每日峰谷价，峰2倍，，与官方不同的是非工作日也峰谷，官方非工作日谷价
+    - glm5.3flash输入0.8输出2.8缓存0.23，无峰谷每日价都是一样
+  - 可用性很低
+  - 商家感觉没有自营号池，渠道分组混乱
+
+- [HOHAI ](https://api.hohai.eu.org/pricing)
+  - 有公益， 有付费
+  - 仅一个分组
+
+- [Fuck-API ](https://fuck-everyone.bbroot.com/model-plaza)
+  - deepseek 0.18x
+  - qq群人少不活跃
+
+- [羊村 API  ](https://site.whyapi.top/pricing)
+  - 分组太多了
+
 - [TK API](https://tkapi.fun/keys)
   - 邀请返利 ~~充值后返利20%~~ , 每个用户最高返2元
+  - 缓存特别低，导致费用很高
 
 - [Xybbz /Sub2API](https://sub2api.xybbz.xyz/dashboard)
   - plus--0.045, 算是低价，有点中等价格
@@ -2471,10 +2549,6 @@ modified: 2026-06-20T15:49:57.019Z
   - plus/pro号池多, 0.04-0.07
   - 可以隐藏了价格页面，不推荐
   - [lcodex /sub2api](https://lcodex.cc/keys)
-
-- [NikoAPI /NewAPI](https://nikoapi.xyz/pricing), 已充值
-  - 充值地址 https://nikoapi.xyz/shop
-  - 加群可领取1刀体验
 
 - [莫比乌斯 2Chat /Sub2API](https://2chat.cc/keys), 已充值, 可退款
   - 低倍率渠道
@@ -2537,7 +2611,8 @@ modified: 2026-06-20T15:49:57.019Z
 - [iKun AI ](https://ikunai.xyz/keys)
   - 主要卖成品号， 不定期开中转
 
-- [梦幻API /sub2api](https://api.mhapi.cn/keys) 
+- [梦幻API ](https://mhapi.net/monitor)
+  - [梦幻API /sub2api](https://api.mhapi.cn/keys), /legacy
   - [顶级 AI 铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/5O4RQJM1)
 
 - [数智AI ](https://api.xpluse.plus/pricing)
@@ -2804,6 +2879,14 @@ modified: 2026-06-20T15:49:57.019Z
 - [Duo API - /newapi](https://api.duou.ai/)
 
 - [subgo /sub2api](https://code.subgo.qzz.io/)
+
+### 中转的中转
+
+- https://openrouter.ai/deepseek/deepseek-v4.1-flash
+
+- https://subrouter.ai/models?page=1&vendor=deepseek
+
+- [BeeAPI. AI — The AI API Marketplace · 多模型聚合的 AI API 集市 ](https://beeapi.dev/marketplace)
 
 ## 代充
 
