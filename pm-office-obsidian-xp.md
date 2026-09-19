@@ -161,6 +161,9 @@ modified: 2026-06-30T17:32:43.131Z
 
 ## draft-ocr
 
+- alternatives
+  - retain-pdf
+
 - cpu 比 大模型便宜得多, 允许用户手动指定大模型处理
   - remote 和 local 结合
   - gpu 和 cpu 结合
@@ -169,6 +172,8 @@ modified: 2026-06-30T17:32:43.131Z
 
 - features
   - bases-kanban for ai
+  - apple foundation model
+  - cpu friendly
 
 - ai-doc
   - 多次生成
@@ -337,6 +342,21 @@ modified: 2026-06-30T17:32:43.131Z
 - new-split-view
   - highlight ai response markdown and the corresponding webpage location
 
+- 
+- 
+- 
+- 
+
+## citation
+
+- unify citations for documents
+  - docx
+  - xlsx
+  - html
+  - image
+
+- 
+- 
 - 
 - 
 - 

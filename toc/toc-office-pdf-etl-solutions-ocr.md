@@ -476,6 +476,8 @@ modified: 2026-04-07T12:53:38.419Z
     - This is plugin to run OCRmyPDF with the EasyOCR engine instead of Tesseract OCR, the default OCR engine for OCRmyPDF. 
   - [OCRmyPDF: Add an OCR text layer to scanned PDF file | Hacker News _202207](https://news.ycombinator.com/item?id=32028752)
     - LibreOffice has a cool option where you can generate the PDF with the editable text format embedded. You get a clean PDF that is also fully editable. Easy tech, but also useful.
+  - https://github.com/meyayl/ocrmypdf-batch
+    - OCRmyPDF Docker image with batch processing based on iNotify
 
 - https://github.com/FanQinFred/OCRmyPDF-Desktop /apache2/202312/js/vue/inactive
   - 在OCRmyPDF的基础上，集成了所需环境，并使用Electron开发了桌面端
@@ -678,7 +680,7 @@ modified: 2026-04-07T12:53:38.419Z
   - Open-source no-code web data extraction platform. 
   - Maxun lets you create custom robots which emulate user actions and extract data. A robot can perform any of the actions: Capture List, Capture Text or Capture Screenshot. Once a robot is created, it will keep extracting data for you without manual intervention
   - BYOP (Bring Your Own Proxy) lets you connect external proxies to bypass anti-bot protection. Currently, the proxies are per user. Soon you'll be able to configure proxy per robot.
-# tesseract
+# 📌 tesseract
 - https://github.com/atorhub/anj-dual-ocr-parser /202512/js
   - https://atorhub.github.io/anj-dual-ocr-parser/
   - Advanced client-side invoice OCR, parsing, export, and history system — powered entirely by browser technologies, no backend required.
@@ -750,7 +752,7 @@ modified: 2026-04-07T12:53:38.419Z
 
 - https://github.com/asottile/tessdata /MIT/202604/python
   - pip installable versions of tesseract-ocr data
-# paddleocr
+# 📌 paddleocr
 - https://github.com/majcheradam/ocrbase /MIT/202601/ts
   - Turn PDFs into structured data at scale. 
   - Real-time WebSocket updates.
@@ -893,7 +895,7 @@ modified: 2026-04-07T12:53:38.419Z
   - Image Processing: OpenCV, NumPy, pdf2image(Poppler)
   - Streamlit
   - Parsing: Regular Expressions (RE)
-# mineru
+# 📌 mineru
 - https://github.com/liuhuapiaoyuan/MinerU-webui /202412/python/inactive
   - 本项目为其提供一个简化版本的WebUI，方便用户上传PDF文件，并实时展示提取结果。
   - MinerU-PDFScanner, 可以将本程序作为后端调用，支持多任务并行处理，支持历史数据查看，支持导出包
@@ -1126,6 +1128,18 @@ modified: 2026-04-07T12:53:38.419Z
   - Post-process a MinerU extraction directory into a retrieval-ready knowledge base dataset for RAG pipelines.
   - [开源：MinerU → RAG 数据集转换工具 - LINUX DO _202604](https://linux.do/t/topic/1940345)
     - MinerU 自身的输出格式很标准，但有一些标记和符号对于 RAG 模型来说反而是噪声。
+# ocr-cpu
+- https://github.com/moravianlibrary/TuzkaOCR /apache2/202609/python
+  - https://moravianlibrary.github.io/TuzkaOCR/
+  - Lightweight CPU-first OCR for scanned page and document images
+  - The system detects page layout and text lines, runs line-level OCR, maps recognized words back to source-image coordinates, and returns either ALTO XML with word bounding boxes or plain text.
+  - Lightweight: ~12 MB of model artifacts, no GPU required, runs anywhere ONNX Runtime runs.
+  - Page OCR for scanned documents, archival material, and newspapers.
+  - ALTO XML output with page, block, line, and word coordinates.
+  - FastAPI service with asynchronous job processing.
+  - CLI for single-image and batch processing.
+  - Load the input image with `OpenCV`.
+  - Detect regions, baselines, and line heights using the layout model.
 # ocr-examples
 - https://github.com/AKSarav/pdfstract /108Star/apache2/202601/python/js
   - The Extraction and Chunking Layer in Your RAG Pipeline - Available as CLI - WEBUI - API
@@ -1153,7 +1167,7 @@ modified: 2026-04-07T12:53:38.419Z
   - Document tagging and categorization
   - OIDC Setup - Single Sign-On integration
 
-- https://github.com/fabriziosalmi/pdf-ocr /MIT/202602/python/inactive
+- https://github.com/fabriziosalmi/pdf-ocr /MIT/202609/python
   - web-based application built with Flask to convert PDF documents into editable formats (DOCX, TXT, Markdown, HTML) using Optical Character Recognition (OCR).
   - 支持image preprocessing
   - ocr支持tesseract/EasyOCR/pyocr
@@ -1325,6 +1339,21 @@ modified: 2026-04-07T12:53:38.419Z
   - IndexedDB 持久化 — OCR 结果通过 Dexie.js 存入浏览器数据库
   - 客户端图片压缩 — Web Worker + OffscreenCanvas 后台压缩，不阻塞主线程；不支持时自动回退
   - [[开源] 做了一个用LLM来OCR的工具，欢迎各位佬友使用！ - LINUX DO _202604](https://linux.do/t/topic/1888946)
+
+- https://github.com/zzhjim02/CathayOCR /202609/python/cpp
+  - 面向人文社科研究的 OCR 利器：多引擎驱动，高精度识别，任意设备可跑，开箱即用，繁体竖排支持，输出双层 PDF / 带页码 TXT
+  - 选 PP-OCRv6 / PP-OCRv5 / 经典版 / ncnn CPU / EasyOCR 处理
+  - 一条龙完成古籍数字化： CathayOCR 扫描 PDF → CathayRestore 修正文字层 → CathaySimplify / CathayShelf 繁简统一与批量著录 → CathayReader 双栏校勘
+  - Cathay 人文研究工具链
+    - CathayRepair →	 抢救损伤 PDF：逐页复制、跳过坏页
+    - CathayRestore →	 TXT 文本层写回 PDF（竖排/透明/可搜索）
+    - CathayShelf →	批量著录建夹 · 后缀替换 · 繁简转换+编码规范化
+    - CathayExtract →	已有双层 PDF → 提取文字层成 TXT
+    - CathayReader →	PDF/TXT 双栏同步古籍校勘阅读器
+
+- https://github.com/ruhaansahi/ocr-id-reader /202609/python
+  - A general-purpose OCR pipeline that extracts text from any image. 
+  - Built with OpenCV for preprocessing (deskewing, denoising), pytesseract/Tesseract for text recognition, Pillow for synthetic test data generation, and NumPy for array handling
 # ocr-vlm
 - https://github.com/yejinlei/pdf-ocr-skill /MIT/202604/python
   - 一个支持多种OCR引擎的PDF文字提取技能，可以从影印版PDF文件和图片文件中提取文字内容。
@@ -1341,6 +1370,10 @@ modified: 2026-04-07T12:53:38.419Z
   - 支持多种图片格式：JPG、PNG、GIF、BMP、WebP
   - 支持批量识别多张图片
 # utils-ocr
+- https://github.com/r-uben/socr /MIT/202609/python
+  - Multi-engine document OCR with cascading fallback and quality audit.
+  - socr orchestrates multiple OCR engines — calling each as a CLI subprocess, auditing output quality, and falling back to a different engine when results are poor. Each engine is a standalone CLI tool (gemini-ocr, deepseek-ocr, marker-ocr, etc.) that can also be used independently.
+
 - https://github.com/yigitkonur/llm-based-ocr /AGPL/202511/python
   - PDF-to-Markdown OCR API using LLMs with vision capabilities. 
   - The LLM-powered OCR engine that turns any PDF into beautifully formatted Markdown. 
@@ -1495,6 +1528,12 @@ modified: 2026-04-07T12:53:38.419Z
     - So I built a C++/CUDA inference server around Paddle's PP-OCRv5 models with FP16 inference. It takes images and PDFs via HTTP/gRPC and returns bounding boxes and text.
     - Results: 100+ img/s on text-heavy pages, 1,000+ on sparse ones.
   - Trade-offs: this sacrifices layout fidelity for speed. If you need perfect layout detection, multi-column reading order, or complex table extraction, you're better off with VLM-based OCR like GLM-OCR or PaddleOCR-VL.
+
+- https://github.com/juanso123/local-llm-pdf-ocr /MIT/202609/python
+  - https://juanso123.github.io/
+  - This application helps you convert scanned PDFs into searchable text using Vision LLMs. It runs fully offline
+  - Modern Web UI: User-friendly interface to make your experience smooth.
+  - Command Line Interface: For advanced users who prefer command-line tools.
 # ocr-skills
 - skills
   - [Extract text from PDFs/scans (pymupdf, marker-pdf).](https://github.com/NousResearch/hermes-agent/blob/main/skills/productivity/ocr-and-documents/SKILL.md)
@@ -1736,13 +1775,40 @@ modified: 2026-04-07T12:53:38.419Z
   - Annotate entities directly onto a PDF with automatic OCR for scanned PDFs
   - OCR on scanned PDFs
   - 需要指定entity后，才会高亮出ocr后符合entity语义的文本
-# exampels
+# apps/platform-ocr
 - https://github.com/SmileSnail5470/PowerTools /GPL/202604/python/PySide6
   - 一站式多媒体处理工具箱。支持图片与视频的可见/盲水印植入与移除，内置高精度 OCR 文字提取与全功能图像编辑器。为版权保护与内容创作而生。
   - 支持 Windows、macOS
   - 水印添加: 可见 + 盲水印，图片/视频，批量
   - 水印移除
   - 文字提取(OCR): 图片文字提取与识别，单文件与批量
+
+- https://github.com/scholarlybat/Offline-Scanned-Document-Translator /MIT/202609/python/go/rust
+  - https://trainedhierar.github.io/
+  - Offline PDF OCR Translator for Windows — extract text from scanned PDFs and images, translate locally, preserve document layout, export translated PDF/DOCX/TXT, process folders in batch, and use custom terminology glossaries.
+
+- https://github.com/kingrocfella/image-text-react /202609/ts
+  - A React Native app built with Expo that allows users to extract text from images, PDFs, and audio using AI-powered OCR 
+  - The app features a queue-based job processing system with automatic polling, markdown rendering for rich text display, user authentication, camera functionality, PDF document Q&A with multiple AI models (OpenAI, Ollama, DeepSeek, Gemini), audio recording/upload, and seamless text extraction with copy-to-clipboard features.
+
+- https://github.com/timor-m/fnos-app-health-records /MIT/202609/ts/vue
+  - 健康档案是一款面向家庭用户的健康报告归档应用，支持在 fnOS 或 Docker 中部署。
+  - 项目计划支持随手拍照或上传医院 PDF，通过本地 OCR 与可选 AI 生成结构化记录，保留原件证据，并按医院报告生成日期形成家庭成员健康时间轴。
+
+- https://github.com/Alvandcode/ocr-stt-tool /202609/python
+  - Cross-platform OCR, PDF text extractor and speech-to-text tool in Python
+
+- https://github.com/evb0110/evb-viewer /MIT/202609/ts/rust
+  - https://evb-viewer.com/
+  - https://web.evb-viewer.com/
+  - Scanned-document workbench that AI agents can operate: clean, OCR, annotate PDF and DjVu, with a local MCP server. macOS, Windows, Linux, Web.
+  - EVB Viewer turns raw scans and DjVu files into clean, searchable, annotatable PDFs: native scan cleanup, Tesseract OCR in 30 languages, annotation, and export. 
+  - It runs offline on macOS, Windows, and Linux, and the same workspace runs in a browser tab with nothing to install. 
+  - Open PDF, DjVu, and image batches. Combine loose page images into one PDF.
+  - Clean scanned pages: deskew, despeckle, binarize, crop, and split two-page spreads. This runs in a native Rust engine, not a filter chain.
+  - OCR the pages with Tesseract and tessdata-best models. English and Russian are bundled for offline use; 28 more languages download on demand, including Ancient Greek, Hebrew, Arabic, and Syriac.
+  - Export a searchable PDF, or DOCX, PNG, JPG, and multi-page TIFF.
+  - Annotate with free text, ink, highlight, shapes, arrows, notes, and placed images. Edit bookmarks, page labels, and page order from the sidebar.
 # utils
 
 # more

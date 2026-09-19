@@ -170,7 +170,12 @@ modified: 2026-04-07T11:52:43.122Z
   - Parse regular PDFs into TeX projects with DOC2X
     - Segment translatable prose while preserving fragile LaTeX blocks
 
-- https://github.com/wxyhgk/retain-pdf /MIT/202604/python/rust/js
+- https://github.com/wxyhgk/retain-pdf /2.3kStar/MIT/202609/python/rust/ts
+  - 面向图片型 / 扫描版 PDF、支持保留排版翻译的开源项目，翻译与排版效果对标甚至超过同类商业产品。
+  - 🌹 优势: 扫描型pdf, 布局, 表格, 公式, 代码, 翻译策略, PDF压缩优化, api自动化
+  - 自研字体排版算法，支持复杂公式与多栏论文的版式还原。扫描 PDF 翻译、PDF 结构优化、代码保护、自定义翻译策略和开放 API，一并支持。
+  - 翻译系统同样自研，针对跨栏、跨页、断句和段落续接等 PDF 常见难题做了专门处理：先恢复完整语义单元，再进行翻译，避免逐框翻译造成的上下文割裂。
+  - 在行内公式部分 RetainPDF 的断层领先：翻译后仍能稳定保留公式本体、前后文关系与行内排版，这是其他开源 PDF 翻译项目目前做不到的。
   - [RetainPDF：PDF 保留排版翻译工具 - LINUX DO _202604](https://linux.do/t/topic/1891990)
   - RetainPDF 做的事: 上传 PDF，一键拿到保留原始排版的中文译文。
   - 首次运行需要填写两个 API Key：MinerU（用于 PDF 解析，每天 2000 页免费）和 DeepSeek（用于翻译，需要自己充值 API ）。
@@ -520,6 +525,9 @@ modified: 2026-04-07T11:52:43.122Z
 - https://github.com/MashiroSaber03/Saber-Translator /GPL/202512/python/js
   - AI 漫画/图像翻译与编辑神器，支持多种模型、手动标注、精细编辑、会话管理和插件扩展
   - 移植自 manga-image-translator 项目 只保留模型推理核心逻辑
+
+- https://github.com/ucx0204/CarrotMangaTranslator /GPL/202609/python/ts
+  - Open-source desktop OCR, AI translation, editing and inpainting tool for user-provided manga and comic images.
 
 - https://github.com/yunshaochu/mangatype-live /202601/ts
   - 一款提供了AI自动嵌字功能的漫画编辑器

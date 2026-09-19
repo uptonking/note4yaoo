@@ -81,6 +81,7 @@ modified: 2026-09-05T00:27:42.212Z
 
 - computer-use
   - 参考开源的zcode
+  - 参考 pi computer use
 
 - paseo-relay server
   - ts, go

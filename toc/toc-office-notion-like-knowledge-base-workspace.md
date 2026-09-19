@@ -893,6 +893,11 @@ modified: 2022-06-03T21:34:54.893Z
   - https://github.com/admonstrator/paperless-ai-next /MIT
     - fork of Paperless-AI for Paperless-ngx, improving AI/OCR reliability with an OCR rescue queue (Mistral), a permanent-failure queue, and ignore filters.
     - Adds history + one-click rescan, MFA, better setup, restore-original-metadata, and Date/Boolean custom fields support
+  - https://github.com/admonstrator/zettelrobbe /MIT
+    - https://zettelrob.be/
+    - Next-generation fork of Paperless-AI for Paperless-ngx: reliable AI tagging plus an OCR rescue queue (Mistral or local vision models, multi-page PDFs), failed/ignored document queues, one-click rescan history, MFA, guided setup, and richer custom fields.
+- https://github.com/lucaperl/paperless-local-ai
+  - Local OCR, metadata automation and RAG document chat for Paperless-ngx using PaddleOCR and Ollama, designed for CPU-only self-hosted servers
 
 - https://github.com/papra-hq/papra /2.4kStar/AGPL/202509/ts
   - https://demo.papra.app/
@@ -933,6 +938,10 @@ modified: 2022-06-03T21:34:54.893Z
     - 在线文档编辑已经实现
     - 文档版本回退已经实现
     - 有flutter开发的android客户端，同理应该可以开发电脑端的
+# mobile
+- https://github.com/egdels/makeacopy /202609/java
+  - open-source offline document scanner with OCR for Android, designed for privacy-friendly and self-hosted document workflows.
+  - It allows you to digitize paper documents into searchable PDFs while keeping the entire processing pipeline on your device. The app works completely offline and avoids any cloud services, telemetry, or tracking.
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3

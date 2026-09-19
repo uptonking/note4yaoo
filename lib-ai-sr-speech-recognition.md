@@ -12,6 +12,12 @@ modified: 2023-02-07T09:22:03.120Z
 - [人工智能的方向——NLP CV SR(语音识别) KG(知识图谱)](https://blog.csdn.net/qq_43165081/article/details/113790560)
 # sr-products
 
+## popular
+
+- https://github.com/pudaa/MemoryServerTTS /202609/python
+  - 基于 Qwen3-TTS、Faster-Whisper 与 PaddleOCR 的 AI 语音与视觉服务平台，为英语学习 APP 提供4大核心能力: TTS 文本转语音（含 WebSocket 流式合成）、ASR 语音识别、音素级发音评价（G2P + MFCC/DTW）与 图片/文档 OCR 四大能力。
+  - 基于 FastAPI 构建，统一 RESTful + WebSocket API，内置管理后台与 Gradio 调试界面，支持 ModelScope 模型下载与多档配置，最低 6GB 显存即可运行。
+
 ## free-tts
 
 - resources

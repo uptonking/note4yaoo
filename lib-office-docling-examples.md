@@ -29,6 +29,8 @@ modified: 2025-09-21T13:58:46.548Z
   - Works on macOS, Linux and Windows environments. Both x86_64 and arm64 architectures.
   - https://huggingface.co/ibm-granite/granite-docling-258M /apache2
     - a multimodal Image-Text-to-Text model engineered for efficient document conversion
+  - https://github.com/hwdsl2/docker-docling
+    - Part of the Self-Hosted AI Stack — deploy a complete self-hosted AI stack with a single command.
 
 - https://github.com/docling-project/docling-agent /MIT/202604/python
   - Docling-agent simplifies agentic operation on documents, such as writing, editing, summarizing, etc.

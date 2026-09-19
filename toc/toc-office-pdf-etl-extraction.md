@@ -431,8 +431,6 @@ modified: 2026-04-07T12:53:02.538Z
   - Parse PDFs, Docx, PPTx in a format that is ideal for LLMs
   - Files: ✅ PDF ✅ Powerpoint ✅ Word
   - Content: ✅ Tables ✅ TOC ✅ Headers ✅ Footers ✅ Images
-# feat-elements
-
 # feat-layout
 - https://github.com/RapidAI/RapidLayoutRecover /apache2/202409/python
   - 针对文档类图像，整合版面分析、文字识别、表格识别和公式识别结果，还原版面布局信息。

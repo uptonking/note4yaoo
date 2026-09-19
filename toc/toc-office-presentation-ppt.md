@@ -901,6 +901,11 @@ modified: 2021-04-30T20:14:17.669Z
   - [【开源Skill】高质量的可编辑的AIPPT生成方式 - LINUX DO _202607](https://linux.do/t/topic/2512642)
   - 基于NyxTide大佬的ppt-image-first 的二次扩展
   - ppt-image-first 已经很优秀了，基于编辑图片的方式生成最终图片形式的ppt视觉质量因为背靠AI所以一流 但是存在一个问题，如果后期需要对上面的文案进行编辑就很不方便了，于是我在此基础上将ppt-image-first 的最终稿件当做效果图，从而生成风格尽可能高度还原或者贴近（看模型能力）的背景，然后再让模型通过计算将文案填充至合适的位置进行渲染。
+
+- https://github.com/DSY-Xueai/image2editable /MIT/202609/python
+  - A skill tool for Codex and Claude Code that converts images, PDFs, and image-based PPTX files into editable PowerPoint presentations.
+  - 图片、PDF、图片版 PPTX → 可编辑 PPTX
+  - 多页 PDF、复杂页面和高分辨率图片耗时较长。 每页都会经过 OCR、视觉拆分、重建与质量检查，单个组件修复周期最多接收 5 批修复计划，还需要等待 Agent 完成视觉判断。
 # ai-canvas
 - https://github.com/open-webui/open-webui /104kStar/BSD+LOGO/python/ts/svelte
   - https://openwebui.com/

@@ -2330,6 +2330,7 @@ modified: 2026-06-20T15:49:57.019Z
   - 下单前请检测自己的号有没有试用资格，如果拿没有试用资格的普号导致无法升级
 
 - [TG批发网 | TG账号购买平台|电报账号批发|telegram账号购买 ](https://tg.x6m6x.com/)
+  - 也卖gmail
   - 双向撸毛号仅 ¥1.2
   - ❓ 买了几个tg号都被双向限制了
 
@@ -2389,11 +2390,14 @@ modified: 2026-06-20T15:49:57.019Z
     - https://codexapis.com/pricing   /0.085--0.0085
 
 - deepseek/国模-注意缓存价格
-  - https://www.jiji.cc/model-list  /0.2x/注意缓存
   - https://us.xcmapi.com/model-plaza  /0.08x
-  - https://ai.xem8k5.top/pricing  /0.25x
+  - https://api.x5m5x.com/monitor  /0.15x
   - https://ai.max66.xyz/keys, 只做自部署的deepseek  /0.125x
   - https://fuck-everyone.bbroot.com/model-plaza  /0.18x
+  - https://www.jiji.cc/model-list  /0.2x/注意缓存
+    - 国模组的差一些 deepseek组的就是好很多，至于满血，基本来说都是满血，但是我看了好像除了官方的，其它的包括国内阿里火山那些都有点拉胯，佬自己测一下，站内的要质量好些的就选  deepseek 0.7那个, 便宜的国模的就是 0.19
+  - https://zzshu.cc/pricing /0.2x
+  - https://ai.xem8k5.top/pricing  /0.25x
   - [IKunCode ](https://api.ikuncode.cc/pricing)
     - 0.35x
   - [帅API ](https://api.shuaiapi.com/pricing)
@@ -2484,6 +2488,9 @@ modified: 2026-06-20T15:49:57.019Z
   - [API 在线检测 ](https://us.xcmapi.com/jc/)
   - 0.13x的pro分组有luna
   - 0.08x-推荐国模-deepseek/glm
+  - 0.03x-国模福利版, 可用性低
+  - 还提供了免费分组，可用性低
+  - 感觉群里用gpt的更多，用国模的不多
 
 - [SwiftAPI/极速ai ](https://api.x5m5x.com/), 注意缓存率不高, 长期运营
   - https://api.x5m5x.com/monitor
@@ -2505,16 +2512,16 @@ modified: 2026-06-20T15:49:57.019Z
   - 客户两块多蹬了1亿token
   - 已上架天卡15.88不限量蹬一天
 
-- [ITKK ](https://itkk.lol/pricing)
+- [FoxRouter ](https://foxrouter.org/pricing)， 低价
+  - 分组实际倍率与文字不同
+  - 全局0.06倍率
+
+- [ITKK ](https://itkk.lol/pricing), 缓存价格较高
   - China-Ai-福利 分组， 全系 0.1 倍率打破底价
   - 似乎没有ds4.1
   - 提供次卡: claude, gemini
 
-- [FoxRouter ](https://foxrouter.org/pricing)
-  - 分组实际倍率与文字不同
-  - 全局0.06倍率
-
-- [Sub2AI ](https://www.sub2ai.vip/pricing)
+- [Sub2AI ](https://www.sub2ai.vip/pricing)， 很多按次模型
   - 分组实际倍率与文字不同
   - 国模满血源头
   - 新用户自动加入svip分组, svip分组全局0.08x倍率
@@ -2534,9 +2541,6 @@ modified: 2026-06-20T15:49:57.019Z
 - [Fuck-API ](https://fuck-everyone.bbroot.com/model-plaza)
   - deepseek 0.18x
   - qq群人少不活跃
-
-- [羊村 API  ](https://site.whyapi.top/pricing)
-  - 分组太多了
 
 - [TK API](https://tkapi.fun/keys)
   - 邀请返利 ~~充值后返利20%~~ , 每个用户最高返2元
@@ -2660,9 +2664,12 @@ modified: 2026-06-20T15:49:57.019Z
 - [DragonAPI ](https://newapi.dragon3api.com/keys)
   - 中等价格
 
-- 🗑️ [naonao - /Sub2API ](https://gpt.qinnaonao.com/dashboard), 已充值, 已跑路
+- [naonao - /Sub2API ](https://gpt.qinnaonao.com/dashboard), 已充值, 已跑路, 又开了新站
   - codex分组--0.03
   - 不可用
+
+- 🗑️ [羊村 API  ](https://site.whyapi.top/pricing), 无社区群组， 已被举报诈骗
+  - 分组太多了
 
 - [松松 AI ](https://ai.songsongcard.shop/keys), 已充值
   - [松松 AI ](https://songsongcard.shop/)

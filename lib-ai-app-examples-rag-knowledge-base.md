@@ -848,6 +848,9 @@ modified: 2025-11-30T17:27:16.720Z
   - Multi-user Auth: JWT-based with role-based access control
   - Multiple Formats: PDF, DOCX, TXT, MD, PPTX, XLSX, and more
   - [RAG-Enterprise: One-command local RAG setup (Docker + Ollama + Qdrant) with zero-downtime backups via rclone – for privacy-focused enterprise docs : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rhvpuj/ragenterprise_onecommand_local_rag_setup_docker/)
+
+- https://github.com/arsalanafzal010/SmartRAG /MIT/202609/python
+  - Enable smart conversations with documents, images, and audio files
 # rag-fwk
 - https://github.com/NanoNets/nanoindex /apache2/202604/python
   - https://nanonets.com/research/nanonets-ocr-3

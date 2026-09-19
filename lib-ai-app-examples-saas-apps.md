@@ -995,12 +995,27 @@ modified: 2025-02-21T17:17:42.225Z
   - https://x.com/QingQ77/status/2052522615517204990
     - 频道里可以加 AI 队友。每个代理是本地跑的 Claude Code 进程，有独立工作目录和 MEMORY.md 来沉淀经验。
 
+## legal/law
+
+- https://github.com/Macrify-LLC/raiopdf /GPL/202609/rust/ts
+  - RaioPDF — a free, fully-local desktop PDF suite for law firms. OCR, page organization, redaction, Bates numbering, and one-click e-filing prep. Your files never leave your computer.
+
+- https://github.com/alperu/soundsuite /202609/ts
+  - Local-first AI document intelligence for legal case management. 
+  - 14 MCP tools, semantic search, OCR, and a draft editor — all running on your machine.
+
 ## copyright
 
 - https://github.com/yuwen-cool/yuwen-publish-precheck /CC-BY-NC/202607/python
   - 发布前审｜发抖音/小红书/视频号前先让 AI 审一遍：哪句踩线、依据哪条官方规则、给能直接用的改法。38 篇真实样本校准判定尺度，72 条官方原文引文可查证，你踩过的坑沉淀成本地规则库越用越准。不承诺过审，不教绕审。
   - https://x.com/geekbb/status/2078727284861600034
     - 发稿前用 AI 审一遍，告诉你能发不能发、哪句有问题、怎么改，依据的是平台官方规则。
+
+## health
+
+- https://github.com/thetahealth/mirobody /apache2/202609/python
+  - https://mirobody.ai/
+  - The AI-native health data engine — collect, translate, and reason with AI Agents over labs results, wearables & genomics.
 # devops
 - https://github.com/liangdabiao/GEO-Content-Optimizer-Skill /MIT/202605/python
   - GEO（Generative Engine Optimization）是面向 AI 搜索引擎的内容优化方法论。就像 SEO 优化 Google 排名，GEO 优化你的内容在 ChatGPT、Perplexity、Gemini、Google AI Overview 等 AI 引擎中的引用率。 本项目提供两个 Claude Code Skill，覆盖 GEO 全流程

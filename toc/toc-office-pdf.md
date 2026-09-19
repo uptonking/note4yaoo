@@ -424,6 +424,10 @@ modified: 2021-01-04T17:26:43.784Z
   - browser based PDF viewing on multiple devices. Remembers current position - continue where you stopped reading
   - Edit PDFs by adding comments, highlighting and drawings
   - SSO support via OIDC
+
+- https://github.com/Sanjays2402/slab /GPL/202609/rust/svelte
+  - Slab — local-first PDF workstation. 30+ ops (merge, OCR, redact, sign, bates, flatten, diff, sanitize) + native Tauri desktop app for macOS/Windows/Linux. 
+  - Runs on-device AI. Zero cloud, zero telemetry. [Private — commercial product in development]
 # pdf-editor
 - https://github.com/R0mb0/PDF_web_editor /MIT/202604/js
   - https://r0mb0.github.io/PDF_web_editor/

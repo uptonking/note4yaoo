@@ -44,6 +44,11 @@ modified: 2025-12-26T08:56:31.035Z
   - Collection of handy online tools for developers, with great UX.
   - 非常典型的list-article导航结构
 
+- https://github.com/snapotter-hq/SnapOtter /2.7kStar/AGPL/202609/ts/python
+  - https://snapotter.com/
+  - Open-source, self-hosted file-processing tool. 
+  - Convert, compress, OCR, transcribe & run local AI across image, video, audio, PDF & documents, via UI, REST API & pipelines. Your files never leave your network.
+
 - https://github.com/ccascio/ConvertPrivately /MIT/202605/ts
   - https://convertprivately.com/
   - a privacy-first web app with 160+ converters that run entirely in your browser. 

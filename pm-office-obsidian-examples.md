@@ -100,6 +100,11 @@ modified: 2026-04-07T00:47:33.626Z
   - llmwiki view opens a read-only browser UI with search, page metadata, graph exploration, source-freshness badges, and citation chips.
   - https://github.com/colin4k/obsidian-wiki-compiler
     - plugin that compiles notes into a structured Wiki using LLMs, inspired by Karpathy's LLM Knowledge Bases
+
+- https://github.com/ventouxlabs/carnet /AGPL/202609/ts
+  - Mobile-first knowledge capture for Obsidian. 
+  - write Markdown straight into your vault — synced peer-to-peer with `Syncthing`. 
+  - Expo / React Native app with a Tauri desktop companion, in a TypeScript monorepo.
 # feat-bases/kanban
 - https://github.com/callumalpass/mdbase-spec /81Star/MIT/202605/python/js
   - https://mdbase.dev/spec.html

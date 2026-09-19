@@ -426,6 +426,15 @@ modified: 2025-11-01T10:54:26.044Z
   - We support three servers for running local models: lemonade, ollama, and tokasaurus. You need to install at least one of these.
     - You should use ollama if you do not have access to NVIDIA/AMD GPUs
 
+- https://github.com/nextime/coderai /GPL/202609/python
+  - https://aisbf.cloud/coderai/
+  - Local and cloud GPU interference model orchestrator exposing OpenAI-compatible API from different engines
+  - A multimodal and multi-backend local model orchestrator with an OpenAI-compatible API server to run models on local GPUs, supporting multiple GPU backends: NVIDIA (CUDA), AMD (Vulkan), and Intel (Vulkan). Configuration-driven architecture with per-model settings and full multi-modal support.
+  - Text, images, video, speech, embeddings, OCR and LoRA training behind one API — served by whichever runtime each model actually needs, from PyTorch to native C MoE engines 
+  - one front routes every request to the right runtime, card, machine or cloud — engines per GPU here, other coderai installs as cluster nodes, pools of hosts and remotes, RunPod pods
+  - one model over several machines' cards — a GGUF over llama.cpp RPC, an HF model over vLLM on Ray or SGLang multi-node, a video pipeline's text encoder / experts / VAE on different nodes
+  - On-Demand Loading: Models load automatically when requested, unload when idle
+
 - https://github.com/lordmathis/llamactl /69Star/MIT/202601/go/ts
   - http://llamactl.org/
   - Unified management and routing for llama.cpp, MLX and vLLM models with web dashboard.

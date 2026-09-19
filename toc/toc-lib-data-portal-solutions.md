@@ -73,6 +73,20 @@ modified: 2021-01-01T16:02:50.598Z
   - https://github.com/datopian/playbook
   - https://github.com/keitaroinc/ckanext-visualize
 
+- https://github.com/inveniosoftware/invenio-app-rdm /MIT/202609/python/js
+  - https://inveniordm.docs.cern.ch/
+  - Turn-key research data management platform.
+  - https://github.com/inveniosoftware/invenio /MIT
+    - https://invenio.readthedocs.io/
+    - The main development effort is currently on the InvenioRDM project and there will be no new releases of Invenio framework. However, each Invenio module is actively maintained as part of InvenioRDM.
+  - https://github.com/zenodo/zenodo-rdm /GPL
+    - https://zenodo.org/
+    - powered by InvenioRDM
+    - Safe — Your research is stored safely for the future in CERN’s Data Centre for as long as CERN exists
+    - Citeable — Every upload is assigned a Digital Object Identifier (DOI), to make them citable and trackable
+    - Versioning — Easily update your dataset with our versioning feature
+    - GitHub integration — Easily preserve your GitHub repository in Zenodo
+
 - https://github.com/awslabs/open-data-registry /apache2/python
   - https://registry.opendata.aws/
   - A repository of publicly available datasets that are available for access from AWS resources

@@ -120,6 +120,10 @@ modified: 2026-04-06T22:42:11.263Z
   - Fast model downloads
   - There is also a simple API that you can use to ask the model questions.
 
+- https://github.com/kunpengtalk/OmniStudio /MIT/202609/ts
+  - https://omnilabs.vibeadmin.cn/#/omnistudio
+  - OmniStudio 是一个本地大模型一体化桌面工作台，集模型市集下载、llama.cpp/vLLM/SGLang 三引擎推理管理，以及对话、语音合成、ASR语音识别、图片生成、视频生成、OCR 等多种大模型应用于一体，全程本地优先。
+
 - https://github.com/EmreMutlu99/Ollama-Agent-Kit /202510/ts
   - https://emc-ltd.co/software-consultancy/
   - open-source Node.js toolkit for building memory-enabled AI agents powered by Ollama. 

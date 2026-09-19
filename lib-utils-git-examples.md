@@ -233,6 +233,20 @@ modified: 2023-08-29T10:12:22.345Z
   - [Darcs is a free and open source, cross-platform version control system, like git/svn](https://darcs.net/)
   - the primary datastructure in Darcs is indeed a list of patches, and the main operation is rearrangement.
   - [darcs: a distributed, interactive, smart revision control system](https://hackage.haskell.org/package/darcs)
+
+- https://github.com/inveniosoftware/invenio-app-rdm /MIT/202609/python/js
+  - https://inveniordm.docs.cern.ch/
+  - Turn-key research data management platform.
+  - https://github.com/inveniosoftware/invenio /MIT
+    - https://invenio.readthedocs.io/
+    - The main development effort is currently on the InvenioRDM project and there will be no new releases of Invenio framework. However, each Invenio module is actively maintained as part of InvenioRDM.
+  - https://github.com/zenodo/zenodo-rdm /GPL
+    - https://zenodo.org/
+    - powered by InvenioRDM
+    - Safe — Your research is stored safely for the future in CERN’s Data Centre for as long as CERN exists
+    - Citeable — Every upload is assigned a Digital Object Identifier (DOI), to make them citable and trackable
+    - Versioning — Easily update your dataset with our versioning feature
+    - GitHub integration — Easily preserve your GitHub repository in Zenodo
 # git-ui
 - https://github.com/corylus-git/corylus /ts/electron
   - https://corylus.dev/
