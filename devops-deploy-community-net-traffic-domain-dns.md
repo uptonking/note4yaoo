@@ -491,7 +491,42 @@ curl -s "https://crt.sh/?q=%.example.com&output=json" | jq .
 
 - ## 
 
-- ## 
+- ## [【干货】分享 6 个稳定免费二级域名平台（支持托管 Cloudflare / 避坑指南 _202608](https://www.nodeseek.com/post-852512-1)
+1. 📱 Stackryze 免费域名（可续期 / 支持托管 Cloudflare）
+特点：提供多种免费域名后缀（默认 .in 后缀无门槛直接申请；为 GitHub 项目点 Star 可解锁另外 3 款后缀）。
+配额与续期：支持 1 年一续期（可长期免费续用）。
+Cloudflare：支持（可完美托管至 Cloudflare）。
+🔗 官网直达：https://domain.stackryze.com
+2. 🇫🇷 Katabump（法国非营利项目）
+特点：来自法国的非营利域名项目，稳定且永久免费。
+配额：单账号可注册 2 个 免费二级域名。
+Cloudflare：支持（完美接入 NS 托管）。
+🔗 注册直达：https://rl.katabump.fr/cf4e0e
+3. ⚡ DNSHE 免费域名
+特点：申请流程自动化程度高，配置省心省力，极为适合新手。
+配额：单账号可注册 10 个 免费二级域名。
+Cloudflare：支持（提供一键接入 CF 体验）。
+🔑 邀请码：EPKD5G4S3RMR
+🔗 注册直达：https://my.dnshe.com/go.php?code=C7xEB2MaHy
+4. 🛡️ DigitalPlat Domains
+特点：级别高，属于 Cloudflare 官方认证合作伙伴，防滥用机制机制完备（生态非常健康）。
+配额：单账号可注册 2 个 免费二级域名。
+Cloudflare：支持（完美兼容）。
+🔗 注册直达：https://dash.domain.digitalplat.org/signup?ref=dzLQQTW9an
+5. 🌏 Zone.id 高质量二级域名
+特点：域名质量高，允许被 Google 等搜索引擎正常收录索引。
+配额：单账号额度较高（最高可达 10 个，以控制台显示为准）。
+Cloudflare：支持（支持自定义修改 NS 服务器托管）。
+⚠️ 规则提示：平台禁做代理/节点服务，建议仅用于网页建站或自建服务。
+🔗 官网入口：https://zone.id/
+6. 🌐 ClouDNS
+特点：老牌 DNS 服务商，提供包含 .com 后缀在内的免费二级域名方案。
+配额：单账号可注册 1个 免费二级域名。
+Cloudflare：不支持（只能直接使用其自带的 DNS 控制台，但免费配额够用）。
+🔗 官网入口：https://www.cloudns.net
+
+- 能称得上稳定的只有 .eu.org
+目前三级的地区性 .eu.org 还在缓慢接受申请
 
 - ## Cloudflare的域名注册业务可以说是走自己的路让别人无路可走。我现在是能转尽转。别人根本没法竞争。
 - https://x.com/PenngXiao/status/1982716318836220250

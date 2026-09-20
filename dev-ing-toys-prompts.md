@@ -1319,7 +1319,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 
 ## codex
 
-# llm-hub-lite/vps
+# llm-hub-lite/vps 🚧
 - i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cursorapi/relaichor1, worker_2 node deploys librechat/wapdf/aichor/relaichor/searx, worker_3 deploys flowy/aichor3, worker_4 deploys wabase/verge.
   - all services are running well on my 5 vps.
   - Most requests should go to leader node first, then proxying to follower/worker nodes.
@@ -1611,6 +1611,10 @@ in a multi-nodes high-availability architecture
 - review exising code/implementation, then make a comprehensive plan to refactor/improve the cicd architecture/experience.
 
 - review exising code/implementation, then continue to improve the cicd architecture/experience.
+
+## 🐛 issues
+
+- 配置其他域名如 https://datalking.dpdns.org 重定向到 https://wabase.aichorage.de 时，提示 SSL handshake failed
 # more
 - When a task requires deleting, moving, or renaming more than one file, stop and present a clear list of affected files. Do not execute the command until the user provides approval or confirmation. 
 

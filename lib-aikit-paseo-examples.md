@@ -78,6 +78,12 @@ modified: 2026-09-17T14:19:32.208Z
   - AI 协作（Director） 由你选择设计、执行和审核 AI，完成设计、实现、审核与验收协作。
   - 工作区文件传输面板：浏览目录树，上传下载当前 daemon 主机上的文件。
 
+- https://github.com/geoqiao/paseo-stuff /202609/ts
+  - Independent community plugins for Paseo: readable activity, DeepSeek Harness, math and pets
+
+- https://github.com/koinzhang/paseo-plugins /202609/ts
+  - activity	Local usage analytics and workspace agent ops (Explorer fleet list, live attention, terminals)
+
 - https://github.com/sleeyax/paseo-plugins /apache2/202609/ts
   - Discord Rich Presence: Show your current Paseo activity on Discord.
   - Claude TTY: Offer the Claude TTY ACP adapter as a Paseo provider, and manage it on the daemon host.
@@ -106,6 +112,10 @@ modified: 2026-09-17T14:19:32.208Z
 
 - https://github.com/ZackYJz/paseo-workspace-agent-count /202609/ts
   - 插件：随时看到每个 workspace 下有几个会话 —— Agent 总览页（只读）+ 可选标题前缀 (3) 原标题
+
+- https://github.com/supermomonga/paseo-plugin-canvas /202609/ts
+  - Open a workspace, then choose Open Canvas from the Command Center
+  - Keep plans, notes, and review discussions in one place. Ask an agent to write a document, edit it yourself, and send comments back for another pass. Other agents in the same workspace can read and update the same canvas, even in separate sessions.
 
 ## git
 
@@ -145,6 +155,13 @@ modified: 2026-09-17T14:19:32.208Z
 - https://github.com/dutchakdev/paseo-plugin-mermaid /MIT/202609/ts
   - Render Mermaid diagrams inside the Paseo chat timeline
 
+- https://github.com/tonyredondo/paseo-inline-review /202609/ts
+  - plugin for commenting on agent responses inline and sending the comments back as a review.
+  - Replaces each assistant response in the timeline with a paragraph view: tap a paragraph to attach a comment anchored below it. 
+  - Adds a "Review (n)" composer pill for every agent that opens the plugin panel.
+  - Comments persist in the daemon store and carry a status: pending comments are included in the next "Send to agent"; sent comments stay visible as muted conversation context (and can be re-opened).
+  - The agent panel offers: Send to agent:
+
 - https://github.com/infectiousstupidity/paseo-reasoning-display /202609/ts
   - plugin that replaces built-in reasoning rows with expandable Markdown cards and lets you control how reasoning blocks open by default.
 
@@ -176,6 +193,10 @@ modified: 2026-09-17T14:19:32.208Z
 
 - https://github.com/Laokashouji/paseo-feishu-ui /MIT/202609/ts
   - Feishu-inspired light and dark themes for Paseo, with a desktop workspace layout, continuous assistant bubbles, compact tool cards, and first-line thinking previews.
+
+- https://github.com/feixqemn/paseo-smooth-ui /202609/ts
+  - A focused Paseo UI fork: inline reasoning, compact tool activity, Markdown messages and configurable file opening
+  - It keeps the official Paseo 0.8.0 foundation and focuses on small, direct UI changes: predictable file opening, a compact reasoning and tool timeline, and Markdown that reads like Markdown.
 # examples
 
 # utils

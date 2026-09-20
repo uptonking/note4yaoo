@@ -946,6 +946,11 @@ modified: 2026-04-07T12:53:38.419Z
     - 基于MinerU强大的解析能力，将文字、图片、表格按照位置进行解析重组，字体大小根据Area-based放缩，让Antigravity改了几稿，做了一个简单的GUI页面
     - 加了一个去右下角水印的选项
 
+- https://github.com/wzdavid/ThinkParse /MIT/202609/python
+  - Enterprise-grade document parsing service with asynchronous queue processing based on MinerU, Celery and Docker.
+  - open-source document parsing service powered by MinerU, FastAPI, Celery, and Redis.
+  - Built for reliable PDF, image, and Office document processing—from one machine to distributed GPU workers.
+
 - https://github.com/lpdswing/mineru-web /AGPL/202601/python/ts/vue
   - 提供文档解析、信息提取和智能分析功能。
   - 采用前后端分离架构，结合容器化技术，为用户提供高效、可靠的文档处理解决方案。
@@ -1354,6 +1359,28 @@ modified: 2026-04-07T12:53:38.419Z
 - https://github.com/ruhaansahi/ocr-id-reader /202609/python
   - A general-purpose OCR pipeline that extracts text from any image. 
   - Built with OpenCV for preprocessing (deskewing, denoising), pytesseract/Tesseract for text recognition, Pillow for synthetic test data generation, and NumPy for array handling
+
+- https://github.com/1131351687/pdf2tex-web /202609/python
+  - PDF -> Markdown/LaTeX/PDF 本地 Web 应用：MinerU OCR + OpenAI 兼容 LLM 校对与编译修复
+# ocr-multi
+- https://github.com/zj-unicom-ai/wanwu-file-parser /MIT/202609/python
+  - 一个纯 CPU 的文档解析分发服务，与ocr模型解耦，可以分离部署。基于 FastAPI 构建
+  - 纯 CPU 分发服务（:8083）与 GPU/NPU OCR 模型服务解耦。CPU 服务从不导入 paddleocr/paddlepaddle —— 所有 OCR 都通过 HTTP 调用远端的 PaddleOCR-VL 流水线或 MinerU API 完成。
+  - Excel（.xlsx/.xls）文本 + 图片分离处理
+
+- https://github.com/Alpha-Park/genpark-multimodal-vision-table-structural-extractor-skill /202609/python/似乎未开源
+  - https://genpark.ai/mcp
+  - Multimodal OCR table grid & merged-cell reconstruction into Markdown (MinerU / Marker)
+  - zero-dependency Python skill engineered for autonomous AI workflows, multi-agent orchestration 
+  - GenPark AI Agent Skills are engineered with zero external dependencies using pure Python standard library code.
+
+- https://github.com/sdsdsssssdsd/PDF2MD /apache2/202609/python
+  - Academic PDF to Markdown (Docling/MinerU) with conservative RepairPipeline — Alpha
+  - Windows desktop app that turns academic PDFs and screenshots into Markdown you can actually edit in Typora or VS Code.
+  - pdf: Docling / MinerU + local formula recovery
+  - Install engines yourself: docling, optional mineru, CUDA torch that matches the driver
+  - 日常识图: DeepSeek Vision API (one shot)
+  - 网页高保真: DeepSeek website via Playwright
 # ocr-vlm
 - https://github.com/yejinlei/pdf-ocr-skill /MIT/202604/python
   - 一个支持多种OCR引擎的PDF文字提取技能，可以从影印版PDF文件和图片文件中提取文字内容。

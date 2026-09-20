@@ -88,6 +88,11 @@ modified: 2025-03-31T17:39:01.892Z
   - https://x.com/activepieces/status/1906280824682459578
   - single select fields
   - rename field. These updates are live 
+
+- ## 📈 [Activepieces Tables  _20250313](https://community.activepieces.com/t/activepieces-tables/9128)
+  - Many of your automations revolve around data, we know this because Google Sheets is the TOP used piece 
+  - We decided to own the full automation experience and offer Tables as part of your favorite automation software, Activepieces – all in ONE place
+
 # discuss-roadmap
 - ## 
 
@@ -97,7 +102,38 @@ modified: 2025-03-31T17:39:01.892Z
 
 - ## 
 
-- ## [Parallel execution · Issue · activepieces/activepieces _202305](https://github.com/activepieces/activepieces/issues/1204)
+- ## 
+
+- ## [Severe Performance Issue: Flow Editor Takes 60+ Seconds to Load When Flow Contains 100+ Steps  _202602](https://github.com/activepieces/activepieces/issues/11256)
+  - When opening flows that contain more than 100 steps in Activepieces (self-hosted), the Flow Editor loading time significantly degrades and can exceed 60 seconds. This heavily impacts developer productivity, especially in large-scale automation and orchestration use cases.
+
+- This also occurs when working with base64 or binary (and testing steps) the whole editor lags and most times it crashes the entire server.
+
+- 
+- 
+
+- ## [How can I sort rows in Google Sheet (or the native table)?  _202510](https://community.activepieces.com/t/how-can-i-sort-rows-in-google-sheet-or-the-native-table/10920)
+  - I have a Google Sheet with rows (number, blog topic and URL). Each URL links to one of my blog’s posts.
+  - I want the flow to sort one line each day and publish a post in Linkedin and Facebook. I use Gemini to “sort the line” but I can’t find a way to sort the line inside the sheet and return only the URL of that post.
+
+- Sorting and Selecting a Row per Day
+Activepieces and Google Sheets don’t natively support in-place sorting of rows as part of the trigger/action.
+Workaround: Use Activepieces “Find Row, ” “Get Row by Index, ” or fetch all rows and sort/filter in a code step, then pick the row for today.
+If you want to always take the next row (e.g., for “one per day”), use a separate “Processed” column or remove already posted rows, so the next day, the correct row is at the top.
+
+Returning Only the URL
+After fetching the row you want, you can extract the URL column value in a later step, and pass only that field to Gemini (or any AI step).
+
+Typical flow:
+Get/fetch the Google Sheet rows.
+Sort or filter in a code step (if needed).
+Extract just the URL.
+
+- ## [Sort tables by column  _202603](https://github.com/activepieces/activepieces/issues/11715)
+  - We have a lot of tables for entities i.e flows, connections, pieces ...etc, we need to add a way for users to sort by column name, i.e Name, Updated...etc.
+-  I would love to work on this issue! Based on the discussion in #11196, I understand the goal is to implement dynamic sorting via the pagination API (adding orderBy and order parameters) rather than changing the default sort. Could you assign this to me?
+
+- ## [Parallel execution _202305](https://github.com/activepieces/activepieces/issues/1204)
   - There are some use cases where having a parallel branch could be more comfortable. An example is when you have to send multiple notifications using different pieces, you don't care about fails nor of their sequence execution.
   - The same could be achieved in other ways, such as sending multiple requests on other flows, but this would be uncomfortable.
 
@@ -118,6 +154,38 @@ modified: 2025-03-31T17:39:01.892Z
   - 3 - General-purpose Scrapers with AI parsing: If a pre-built scraper is not available, use a general scraper
   - 4 - Custom development with open-source libraries
 
+# discuss-tips
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What is happening with delay piece?   _202504](https://community.activepieces.com/t/what-is-happening-with-delay-piece/9346)
+- For some reason, the testing environment has issues with the delay step, but the live environment is working correctly. I have the same issue when testing. I have found that though the delay doesn’t work in testing, it does work when it goes live.
+
+- ## [How to add a delay to a flow  _202407](https://community.activepieces.com/t/how-to-add-a-delay-to-a-flow/5346)
+- maybe use Loop to check and email one record at a time, and add a Delay step inside the loop?
+
+- ## [Get the contents from a URL - Which settings should I use?  _202309](https://community.activepieces.com/t/get-the-contents-from-a-url-which-settings-should-i-use/180)
+  - I was just made aware of the “Send HTTP request” piece, and it can read a URL and get the content using the GET function. 
+  - But I struggle. It gets all the content in the , but I only want the content without the CSS, javascript, head etc.
+  - How can I tell this piece to clean up the content so I only have the text content?
+
+- You can parae the content with a Code step
+
+- You have 2 options here; both involve utilising the `codepiece`!
+  - Install some npm package, such as `cheerio`. npm install cheerio. Then, you can utilise it to extract a specific section from the page data gathered in the GET request.
+  - or if you prefer plain JavaScript, then you MIGHT be able to use the `DOMParser` API to extract the content 
+
+- [How to extract a part of the content of a Web page _202312](https://community.activepieces.com/t/how-to-extract-a-part-of-the-content-of-a-web-page/1525)
+  - I am able to get the full text of the body with “Send HTTP reqest”, but I want to extract only the elements in which the div is main.
 # discuss
 - ## 
 

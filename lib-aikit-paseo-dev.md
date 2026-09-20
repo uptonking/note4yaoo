@@ -36,6 +36,9 @@ modified: 2026-09-05T00:27:42.212Z
     - 🤔 可尝试将用户本地的secrets复制到云端， 这种方案好吗
   - 不方便使用多账号, 这是设计目标的取舍
   - local隔离模式下, 不支持历史记录
+  - 在paseo的web-terminal(xtermjs)中执行 `git pull` 会出现异常，但ssh到vps的repo目录执行pull可以成功
+  - ux
+    - webapp不支持很多桌面端的快捷键
 
 - [features](https://paseo.sh/docs/why)
   - clients: The native mobile app has full feature parity with desktop.
@@ -48,7 +51,8 @@ modified: 2026-09-05T00:27:42.212Z
 # issues
 - 不同vps上的同一git仓库，似乎会覆盖/合并为一个， 不能同时使用
 
-- 
+- 在paseo的web-terminal(xtermjs)中执行 `git pull` 会出现异常，但ssh到vps的repo目录执行pull可以成功
+
 - 
 - 
 - 
@@ -60,6 +64,8 @@ modified: 2026-09-05T00:27:42.212Z
 # draft
 - usecases
   - work/doc, code, design
+  - mobile远程控制pc
+  - 远程控制时使用pc上的computer-use
 
 - agent-base
   - built-in agent: 这样移动端可以直接执行agent，而不依赖桌面端或外部agent
@@ -71,6 +77,9 @@ modified: 2026-09-05T00:27:42.212Z
 
 - cowork/workbuddy-like
   - implement integrations for google-docs/msoffice/lark like github/gitea
+
+- rag
+  - qmd
 
 - local folder as project/workspace
 
@@ -97,6 +106,10 @@ modified: 2026-09-05T00:27:42.212Z
 - github-integrations
   - 支持现有github cli的设计， 同时支持github oauth登录来选择repo
 
+- version-history for non-git folder
+  - like git panel
+
+- 
 - 
 - 
 - 

@@ -125,6 +125,23 @@ modified: 2020-12-12T19:01:56.749Z
   - Self-hosted. Docker-native. Written in Rust. Panel services run on ~49MB of RAM. 823 HTTP routes. 148 app templates. 2585 regression assertions. ~46MB binaries. Zero subscriptions.
   - No other free panel gives you Git push-to-deploy with blue-green zero-downtime updates, 148 one-click Docker app templates, per-image CVE scanning with deploy gating, a WAF, passkey login, GPU passthrough, multi-server management, reseller accounts, a developer CLI, and Infrastructure as Code 
 
+## vps-monitor/uptime
+
+- serverless 无服务器的方案(依赖外部/免费计算资源, 实际延迟不可控)
+  - upptime
+
+- https://github.com/upptime/upptime /17.2kStar/MIT/202609/markdown
+  - https://upptime.js.org/
+  - open-source uptime monitor and status page, powered entirely by GitHub Actions, Issues, and Pages
+
+- https://github.com/louislam/uptime-kuma /91.6kStar/MIT/202609/js/vue
+  - https://uptime.kuma.pet/
+  - https://demo.kuma.pet/start-demo
+    - a temporary live demo, all data will be deleted after 10 minutes.
+  - easy-to-use self-hosted monitoring tool.
+  - Monitoring uptime for HTTP(s) / TCP / HTTP(s) Keyword / HTTP(s) Json Query / Websocket / Ping / DNS Record / Push / Steam Game Server / Docker Containers
+  - Notifications via Telegram, Discord, Gotify, Slack, Pushover, Email (SMTP), and 90+ notification services, click here for the full list
+
 ## vps-more
 
 - https://github.com/inpanel/inpanel /BSD/202607/python/js

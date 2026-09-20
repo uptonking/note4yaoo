@@ -54,6 +54,33 @@ target/debug/limbo database.db
 
 ```
 
+# turso-pg
+- Turso has begun rolling out experimental support for the PostgreSQL wire protocol and SQL dialect
+
+- 
+- 
+- 
+- 
+- 
+- 
+
+# turso-cloud
+- turso://testdb11-uptonking.aws-us-west-2.turso.io 
+  - The `turso://` prefix does not use the standard PostgreSQL or MySQL wire protocols over TCP.
+  - It's a SQLite-compatible database built on libSQL
+  - Standard clients won't work. psql, mysql, pg, mysql2 and similar can't connect.
+  - Instead, it uses the libSQL wire protocol (specifically a protocol called Hrana). It communicates over secure WebSockets or HTTP/HTTPS
+  - Clients connect over Hrana, libSQL's own protocol, which runs over HTTP or WebSocket. The WebSocket variant needs only one roundtrip before queries can be sent, and one connection can carry multiple concurrent SQL streams.
+  - You can actually replace turso:// with https:// in that exact URL and query your database directly using a standard REST HTTP POST request without any special database driver
+- Traditional DB protocols (like Postgres/MySQL) require heavy, persistent TCP connections. In modern serverless environments (like AWS Lambda, Cloudflare Workers, or Vercel), opening hundreds of TCP connections per second will exhaust database connection pools and cause crashes.
+  - By using WebSockets and HTTP, Turso allows you to query your database seamlessly from edge functions without worrying about connection pooling
+
+- 
+- 
+- 
+- 
+- 
+
 # discuss-stars
 - ## 
 

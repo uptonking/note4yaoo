@@ -260,7 +260,7 @@ modified: 2025-11-30T17:27:16.720Z
     - 这样设计的目的是为了防止模型输出一些危险的，无法预测的内容
     - 可以修改summary prompt, 把 NO_MATCH 的话术从 Prompt中去掉，改成你想要的
   - [[Question]: 为什么pdf用minerU的parser后，还单独用了paddle ocr处理图片？ _202512](https://github.com/Tencent/WeKnora/issues/461)
-    - 目前 minuerU 的 PDF 解析功能暂未集成 OCR 能力，若你对此功能感兴趣，欢迎提交 PR 贡献代码。
+    - 202609: MinerU 的 PDF 解析目前没有集成 OCR 能力，所以图片仍然单独走 PaddleOCR 这条路径。
 
 - https://github.com/UnicomAI/wanwu /2.7kStar/apache2/202511/go/🆚
   - 元景万悟智能体平台是一款面向企业级场景的一站式、商用license友好的智能体开发平台
@@ -586,6 +586,9 @@ modified: 2025-11-30T17:27:16.720Z
     - All processing runs locally via Docker and Ollama.
   - Extracts text from PDFs, images (OCR), and plain text
   - Gallery view for browsing and analyzing images with vision models
+
+- https://github.com/iDiagoValeta/localOllamaRAG /202609/python
+  - Local multimodal RAG for PDFs: MinerU, Jina CLIP, FAISS, BM25, BGE reranking and Ollama. Runs on your hardware via web and desktop
 
 - https://github.com/MLNativeAI/paperjet /AGPL/202512/ts
   - https://getpaperjet.com/

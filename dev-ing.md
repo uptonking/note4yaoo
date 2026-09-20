@@ -345,6 +345,42 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0920
+
+- is there any way to create  Cron Expression to express every 10s, 60s, 90s?
+- Every 10 Seconds (10s)
+  - Standard cron cannot do this directly. The standard workaround is running a shell script every minute that executes a task in a loop with sleep 10.
+  - Every 10 Seconds (10s): */10 * * * * * 
+- Every 60 Seconds (60s)
+  - * * * * * 
+  - 0 * * * * * 
+- Every 90 Seconds (90s)
+  - No single cron expression can do this.
+  - Option A: Use Two Cron Jobs (Extended 6-field)
+  - Option B: Use an Interval / Rate Scheduler (Recommended)
+
+- 
+- 
+- 
+- 
+- 
+- 
+
+- i have deployed activepieces on my own vps at https://flowy.aichorage.de. it is working well. it is deployed with name `flowy`, the deploy config is at folder ~/Documents/repos/devops/llm-hub-lite.
+  - i want to add an automation workflow at https://flowy.aichorage.de/projects/AMlNGwrgqgJuT8zKYu8PF/flows/ynyslT5utgtK2ixGJGWRu . it fetches xml content from https://rss.nodeseek.com at step 2 (Send HTTP request), then at step 3 code step, i want to parse and extract the news/posts from output of step 2. then i want to store the data.
+  - Annalyze related code/config, then explain to me step by step how to do it on ui.
+
+## 0919
+
+- `git status` fatal: unable to create threaded lstat: Resource temporarily unavailable
+  - This error happens because Git, by default, tries to spawn multiple threads to run file checks (lstat) in parallel across your repository to speed up git status.
+  - When Git calls pthread_create(), the Linux kernel rejects it with EAGAIN (Resource temporarily unavailable). 
+  - On Linux, this almost always means your user has hit their process/thread limit (nproc) or the VPS is out of available memory. That usually means a thread/process limit or low memory, which is common on small VPSes and on OpenVZ/LXC/Docker containers.
+  - `git config --global core.preloadIndex false`
+- `git pull origin main` error: cannot fork() for index-pack: Resource temporarily unavailable
+  - When you run git pull, Git needs to spawn (fork) helper processes like index-pack to decompress the 700+ incoming objects, but Linux is outright refusing to create any new process.
+  - 在paseo的web-terminal(xtermjs)中执行 `git pull` 会出现异常，但ssh到vps的repo目录执行pull可以成功
+
 ## 0917
 
 - The GPG timeout occurred during the git commit operation, after the metadata generation successfully completed in under five seconds.
@@ -353,7 +389,7 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - 如果你希望所有 GUI 应用（包括 Paseo、VSCode、GitKraken 等）都能顺利签名，需要配置 macOS 系 统的图形密码框 pinentry-mac 并由 macOS 钥匙串保存密码
   - 这样后台触发 GPG 签名时会自动调用 macOS 钥匙串解锁，不再挂起无响应。
 
-- I have downloaded paseo mac app and added /Users/yaoo/Documents/repos/tests/react-starter-rspack-landing as a project.
+- I have downloaded paseo mac app and added ~/Documents/repos/tests/react-starter-rspack-landing as a project.
   - i want to run dev server in the project and use paseo browser tools to inspect the landing page.
   - Analyze related code/config, then explain to me step-by-step how to do it
 

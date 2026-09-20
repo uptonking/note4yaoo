@@ -8,7 +8,11 @@ modified: 2025-05-11T08:44:21.140Z
 # thread-domain-blogs-newsletter-feed
 
 # guide
+- serverless 无服务器的方案(依赖外部/免费计算资源, 实际延迟不可控)
+  - upptime
 
+- ux for news-feed
+  - 可参考大模型的交互， 支持选择多种模型api/数据源
 # resources
 - news-sources
   - v2ex直接提供api, 但返回的是 Unicode escape sequences. It ensures that the data transfers safely across the internet without text-encoding glitches. 
@@ -28,6 +32,9 @@ modified: 2025-05-11T08:44:21.140Z
   - API Direct uses a pay-per-request pricing model. There are no monthly fees, subscriptions, or minimum commitments.
   - Every account gets free requests per endpoint per month — 50 for most endpoints, 20 for Places Search, Place Reviews, and Place Photos. No credit card required. Free requests reset on the 1st of each month.
   - 50 free requests per endpoint each month 
+
+- [AI Web Crawler API for Agents and RAG | Spider ](https://spider.cloud/)
+  - [Nodeseek Scraper - Extract nodeseek.com Data | Spider ](https://spider.cloud/scrapers/nodeseek-com-scraper/)
 # discuss-stars
 - ## 
 

@@ -1011,6 +1011,16 @@ modified: 2025-02-21T17:17:42.225Z
   - https://x.com/geekbb/status/2078727284861600034
     - 发稿前用 AI 审一遍，告诉你能发不能发、哪句有问题、怎么改，依据的是平台官方规则。
 
+## doc-usecases
+
+- https://github.com/zeronezer/bidcraft /202609/python
+  - 标书匠 BidCraft · 对话式标书编制系统：AI 智能编制技术标，支持招标文件解析、标段选择、标书编写、知识库提炼与学习对话式改稿。
+  - LLM-Wiki 路线，基于LangGraph实现。
+
+- https://github.com/ningkaikok/dotty-tutor /apache2/202609/python/ts
+  - 面向中文教材与个人错题复习的 AI 学习平台。
+  - Dotty Tutor 在内容生产工作台中将 PDF 或扫描教材转换为带来源、公式、题图和审校记录的结构化题目； 学生学习空间只负责互动练习、错题陪练、掌握验证和复习，不向学生暴露 OCR、模型或上传配置。
+
 ## health
 
 - https://github.com/thetahealth/mirobody /apache2/202609/python
