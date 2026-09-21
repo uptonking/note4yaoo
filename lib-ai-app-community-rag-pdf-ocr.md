@@ -120,6 +120,32 @@ modified: 2026-01-25T17:23:01.510Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [My only real use case for a local AI use is document management, how much VRAM do I realistically need for a good experience? : r/LocalLLaMA _202609](https://www.reddit.com/r/LocalLLaMA/comments/1w8ga5y/my_only_real_use_case_for_a_local_ai_use_is/)
+  - I just want to use paperless-ai and be able to ask questions relative to it. Bonus points if I could use it with home assistant but that's not the focus.
+
+- You don't need a lot to set up a paperless stack honestly you can run paperless ngx with no gpu most document processing is in the cpu with python. Specialized cases you can use GLM-OCR it takes up about 1.5gb of VRAM. If you want something more like notebooklm there's anythingllm and open notebook you can run them with Gemma 4b or even qwen3.6 35B. 
+  - One caveat to the GLM-OCR argument, is that poorly formatted-for-digital documents like reference books with columns and graphs that divide the page inconsistently, is that it will make it into text, that is quite incoherent and out of order. Being able to give these to a reasonably capable AI that doesn't read it per page but cuts it up by paragraphs and images, is better able to properly ingest a corpus in a way that will be useful to you later. It's the main time when the "read by vision" approach may actually be better.
+
+- I use paperless-ngx and paperless-gpt for a full document + LLM workflow and im really happy with it.
+  - Paperless' built in OCR (tesseract) is garbage, so I let paperless-gpt replace the initial OCR using Nanonets-OCR2-3B. It then uses Gemma-E4B for document parsing and tagging and I've not had any issues so far with it misunderstanding, tags have been brilliant.
+  - Paperless-ngx 3.1.2 is then set up to use EmbeddingGemma for embedding/indexing and Gemma-E4B for it's built in document chatting/searching and it's nailed every question I've thrown at it.
+  - For GPU I use a 9060XT 16gb, and with nanonets, Gemma E4B and embeddinggemma all loaded in at once I get about 13.5gb VRAM usage. But not all models need to be loaded at once if you're using something like llama-swap to unload/load models gracefully as needed. I just have those 3 in a group in llama-swap so they can all exist at once for convenience.
+
+- By document management do you mean a RAG based AI that can answer questions based on a corpus of documents? AI is the least of your problems with that setup. Getting it good and accurate is an effort in ETL, data engineering and evaluation.
+
+- I have most of my home automation, WhatsApp bots, work assistants (real time RAG lookup during work calls) and more running on a single 12GB 3060 using a Qwen 14B model.
+- You don't feel like it stutters compared to a frontier model or more VRAM?
+  - It's adequate. Faster and larger would always be welcome, but for the majority of tasks this is sufficient. My only real-time use is live transcript generation, question detection and RAG responses - but even that returns results in ~20 seconds. For home automation and other tools, speed is not so important. It's useless for opencode or Hermes though.
+
+- You'd never know until you try. You need VRAM for loading the LLM model and context window (think it as the memory for LLM model to load documents and think). 
+  - 1. Knowledge base: you'd need to convert these documents into llm knowledge base so less VRAM is wasted and your AI will be better at or you need less smart AI for document search. 
+  - 2. Search/ask questions: the more straightforward/instructional your questions are, the less smartness you need from AI because it does not need to "think". 
+  - 3. Document size: LLMs themselves becomes gradually more stupid as the context window extends
+
 - ## [What OCR Actually Is (and Why It’s More Useful Than Most People Think) : u/docpose-cloud-team _202604](https://www.reddit.com/user/docpose-cloud-team/comments/1rpcmlk/what_ocr_actually_is_and_why_its_more_useful_than/)
   - OCR converts text inside images or scanned documents into real, editable text.
   - So instead of looking at a scanned PDF or a screenshot as just a picture, OCR can detect the characters and turn them into text you can: edit, search, copy, analyze, export to other formats

@@ -46,6 +46,26 @@ modified: 2026-09-17T14:19:32.208Z
   - Frogg Development Environment: Tauri desktop client for remote AI coding agents (fork of Paseo)
   - Every client, one state. Desktop (Windows, macOS, Linux), web, Android and CLI see the same projects, timelines and permission requests, live.
   - Isolated workspaces. Git worktrees per task, with setup scripts and per-worktree services from frogg.json.
+# paseo-alternatives
+- https://github.com/vastsa/pi-desktop /4kStar/LGPL/202609/ts/rust
+  - https://pi-docs.aiuo.net/
+  - Local-first AI coding agent desktop: Electron + Rust host core + pi Agent Harness + user-installable plugins
+  - [【PI-Desktop】两个月，300 亿 Token，终于把自己想要的 Agent 桌面端搓出来了 - LINUX DO _202609](https://linux.do/t/topic/2869113)
+  - 插件系统
+  - 模型配置
+  - 会话导入
+  - 内置 Agent / Plan / Goal 三种工作方式
+  - Subagent 真正可见，而且可以用不同模型
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # agent-provider
 - https://github.com/Pheobe-Southwood/dsh-acp-paseo /MIT/202608/ts
   - 把 DeepSeek Harness（dsh）编码代理通过 ACP（Agent Client Protocol）接入 Paseo。

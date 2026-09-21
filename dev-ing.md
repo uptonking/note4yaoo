@@ -345,6 +345,36 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0921
+
+- browser-use: paseo vs zcode
+  - paseo support only desktop
+
+- 🤔 browser use in zcode is very powerful. ZCode can run completely headless in the background on remote Linux servers, Docker containers, or terminal sessions via zcode --browser-use=headless.  for the headless browser-use, what are the typical use cases? i plan to deploy zcode cli to my vps, provides some ideas for me to play with it. 
+  - Unlike traditional scrapers (like simple curl or cheerio scripts), an LLM-driven browser agent can handle client-side JavaScript (SPAs), adapt to changing DOM structures, bypass subtle UI changes, solve multi-step navigation flows, and extract structured insights from unstructured pages.
+- Site audits. Link checking, SEO checks, and accessibility or meta-tag review of your own sites, with a report as output.
+- Deep Health Checks & Synthetic User Monitoring (E2E Testing)
+  - Standard uptime monitors (like UptimeRobot) only check if an endpoint returns HTTP 200 OK. They cannot tell you if your login form broke, if a checkout modal failed to render, or if a critical third-party script threw a fatal JavaScript error.
+- Dynamic Competitor & Market Intelligence Watcher
+  - Have the LLM diff the changes and highlight new feature releases or pricing tier shifts.
+  - Monitor complex booking platforms, hardware drops, apartment rental portals, or flight aggregators that heavily rely on client-side JS rendering and search form submissions.
+- Autonomous Invoice & Financial Document Harvester
+  - find files then download it
+- Automated Lead Research & Data Enrichment
+  - Feed ZCode a list of company domains or GitHub profiles. For each entry, ZCode visits the domain, locates the "About Us" or "Team" page, searches for contact details, checks their public tech stack or open job postings, and outputs a clean, structured JSON/CSV file.
+
+- 
+- 
+- 
+- 
+
+- Headless Chromium instances can consume around 300MB–800MB of RAM per active session. A VPS with at least 2 GB of RAM and 1–2 vCPUs (or a swap file configured) will ensure smooth operation without out-of-memory (OOM) crashes.
+
+- Granite Docling 258M vs SmolDocling 256M, which one should i use for pdf ocr
+  - Granite Docling 258M is the direct, production-ready successor to SmolDocling 256M. The Docling team and IBM officially recommend Granite Docling over SmolDocling for document OCR and conversion
+  - SmolDocling: SigLIP + SmolLM-2
+  - Granite Docling: SigLIP2 + Granite 3
+
 ## 0920
 
 - is there any way to create  Cron Expression to express every 10s, 60s, 90s?
@@ -358,13 +388,6 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - No single cron expression can do this.
   - Option A: Use Two Cron Jobs (Extended 6-field)
   - Option B: Use an Interval / Rate Scheduler (Recommended)
-
-- 
-- 
-- 
-- 
-- 
-- 
 
 - i have deployed activepieces on my own vps at https://flowy.aichorage.de. it is working well. it is deployed with name `flowy`, the deploy config is at folder ~/Documents/repos/devops/llm-hub-lite.
   - i want to add an automation workflow at https://flowy.aichorage.de/projects/AMlNGwrgqgJuT8zKYu8PF/flows/ynyslT5utgtK2ixGJGWRu . it fetches xml content from https://rss.nodeseek.com at step 2 (Send HTTP request), then at step 3 code step, i want to parse and extract the news/posts from output of step 2. then i want to store the data.

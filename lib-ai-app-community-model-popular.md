@@ -873,7 +873,14 @@ My biggest lesson: reasoning effort does not replace model capability. Luna xhig
 
 - ## 
 
-- ## 
+- ## [How accurate do you think this is? Qwen3.5 9B vs GPT-4o : r/LocalLLaMA _202608](https://www.reddit.com/r/LocalLLaMA/comments/1vqneac/how_accurate_do_you_think_this_is_qwen35_9b_vs/)
+  - Do you think today’s GPU-poor systems running Qwen 3.5 9B can outperform the ones we had with ChatGPT-4o?
+
+- 4o was not trained with agentic use in mind, i.e it is hard to force a structured output require by automatic test harness.
+
+- simple answer: 9b model is better in coding and agentic stuff while gpt-4o have more world knowledge. Because gpt-4o was not trained as a agentic coding model + its not a reasoning model also
+
+- actually qwen 3.5 9b is much better even in sillytavern than old gpt4o for role playing
 
 - ## [技术上讲，llama 4到底失败在哪里？ - 知乎 _202507](https://www.zhihu.com/question/1923759516484367396)
 - Scout和behemoth的架构可能有问题。至少和Deepseek，Qwen3和gpt-oss这种稀疏化专家的方向不一致。这方面的insight甚至不如AI2的olmoe，就和Llama3.2对比Molmo一样。Maverick我觉得潜力还是有的，做到比Gemini2.5-Flash略好的水平应该没问题。

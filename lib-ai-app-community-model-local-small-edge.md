@@ -171,7 +171,23 @@ and I used to swipe rigid braindead top p answers a lot more. typical is a lot m
 
 - ## 
 
-- ## 
+- ## [What’s your favorite underrated local model? : r/LocalLLaMA _202607](https://www.reddit.com/r/LocalLLaMA/comments/1v0eszf/whats_your_favorite_underrated_local_model/)
+- cogito-v1-preview-qwen-32B
+
+It is the only model that can summarise text **in the same voice** 
+As the original model.
+
+I use it for summarising long meetings, where I dont want 'third person' rubbish such as "The speaker discussed some vague topic", I want it to use the original text from the transcript as if the speaker said it in their own words.
+
+I've tried many many models to find one that this works on.
+
+Qwen3.6 cant do this and NO GLM-5.2 cant either and neither can Gemma-4
+
+- I use ornith too and it's like 30% faster than qwen3.6 35b , I don't understand how but it's cool haha
+
+- Granite 4.1 3B. I'm using it for home assistant conversations and it works wonders. Doesn't miss a tool call and manages web searches as well. And it's so small I can run it on an old 1050 TI 4GB
+
+- Hy-MT2 1.8B: Accurate enough (at least for Dutch) offline on-device translation for laptops without strong GPUs is really neat! A bit picky in it's system prompt though.
 
 - ## [Released Soren-1-Small (Qwen3.5-2B) — 1M Context, SFT+DPO, Reasoning & Coding Focused : r/unsloth _202605](https://www.reddit.com/r/unsloth/comments/1tqv1vx/released_soren1small_qwen352b_1m_context_sftdpo/?sort=top)
   - It's based on Qwen3.5-2B and was trained through a multi-stage SFT + DPO pipeline focused on reasoning, coding, instruction following, and reducing hallucinations while keeping the model practical to run locally.

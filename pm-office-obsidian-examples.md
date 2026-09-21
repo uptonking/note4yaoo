@@ -1428,6 +1428,12 @@ modified: 2026-04-07T00:47:33.626Z
   - https://x.com/nickgomez/status/2075258708175798357
     - is this related to OKF as well?
     - We have a starter pack for it! Think of us as a general markdown IDE for any markdown KB. OKF is more of a format for markdown KBs. We don’t restrict to only it, but give tools to help me conformant with it.
+
+- https://github.com/schmayterling/hibi /AGPL/202609/ts
+  - https://hibi.garden/
+  - a desktop editor for local notes and documents. write in Markdown, edit the source, or keep both views side by side 
+  - [i built an open source obsidian replacement : r/Markdown _202609](https://www.reddit.com/r/Markdown/comments/1wlyva3/i_built_an_open_source_obsidian_replacement/)
+    - in addition to markdown, hibi can also edit: latex, r doc, typst and more
 # examples-vault
 - https://github.com/obsidian-pkm-vault/awesome-obsidian-vault /md
   - Awesome list of obsidian vaults

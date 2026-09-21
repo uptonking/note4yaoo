@@ -29,7 +29,6 @@ modified: 2026-06-30T17:32:43.131Z
   - web clipper
 
 - cons
-  - 不支持打开单个外部markdown文件， 将外部md拖到ob时默认行为是复制，如果拖到bases默认会增加一行
   - 不支持打开多个vault
   - 不支持类似notion的 block-style dragging
   - publish/webapp 视图层不开源
@@ -43,6 +42,8 @@ modified: 2026-06-30T17:32:43.131Z
   - css-snippets的样式设置是 per-page 的, 同一页面内的元素/bases难以实现不同样式
   - settings-sync 
   - 未提供统一的多语言切换方案
+  - ~~不支持打开单个外部markdown文件， 将外部md拖到ob时默认行为是复制~~ (2608已实现)
+    - 如果拖到bases默认会增加一行
 
 - features(来自ob app里面的 core/community plugins)
   - filetree, file-properties, search, file-recovery, note-merge/split, quick switcher, workspaces-layout
@@ -55,6 +56,9 @@ modified: 2026-06-30T17:32:43.131Z
 # 🌸 redmansion
 
 > local agent workspace for your files, like notion but with files, also supports bases, backlinks.
+
+- usecases(有特色不代表有需求): work/doc, code, design
+  - 使用频率: markdown > editor ~ ocr, citation > pdf-editing > bases > ocr
 
 - features: productivity > ux
   - embedded-companion-files(ECF): 当使用ofm embed语法嵌入支持的源文件格式时, 会自动创建对应的ECF文件, 并支持切换显示源文件预览视图和方便编辑的ECF视图
@@ -69,6 +73,7 @@ modified: 2026-06-30T17:32:43.131Z
   - sync
   - collab with agent
   - 支持只作为ui使用， 支持自定义server
+  - file-in, text-out
 
 - goals
   - publish/site: github for obsidian bases
@@ -160,6 +165,9 @@ modified: 2026-06-30T17:32:43.131Z
 - 
 
 ## draft-ocr
+
+- image
+  - paste image as image file or inside doc
 
 - alternatives
   - retain-pdf

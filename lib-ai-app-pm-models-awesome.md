@@ -179,6 +179,8 @@ modified: 2026-06-20T15:49:57.019Z
 - [Design Arena ](https://www.designarena.ai/)
 
 - [codingplans.cc — AI Coding Plans ](https://codingplans.cc/)
+
+- [OpenModelMap - 开源 AI 世界的导航地图 | The Navigation Map for Open AI ](https://openmodelmap.com/)
 # model-api-resources
 - [Model Pricing for Kilo Code – Compare LLM Model Pricing & Capabilities ](https://kilocodepricing.com/?freeOnly=1)
   - [I built a free Kilo AI model pricing browser - feedback welcome : r/kilocode _202606](https://www.reddit.com/r/kilocode/comments/1tvb84z/i_built_a_free_kilo_ai_model_pricing_browser/)

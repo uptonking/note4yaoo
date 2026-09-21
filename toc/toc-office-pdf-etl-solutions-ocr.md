@@ -896,6 +896,10 @@ modified: 2026-04-07T12:53:38.419Z
   - Streamlit
   - Parsing: Regular Expressions (RE)
 # 📌 mineru
+- https://github.com/sergeyshmakov/mineru-runpod /MIT/202609/python
+  - Serverless MinerU document parser on RunPod. MinerU 3.4.x runtime with the MinerU2.5-Pro-2605-1.2B VLM. 
+  - Scales to zero; best-case warm parses measured about $0.0003 per page on a 24 GB serverless RTX 4090.
+
 - https://github.com/liuhuapiaoyuan/MinerU-webui /202412/python/inactive
   - 本项目为其提供一个简化版本的WebUI，方便用户上传PDF文件，并实时展示提取结果。
   - MinerU-PDFScanner, 可以将本程序作为后端调用，支持多任务并行处理，支持历史数据查看，支持导出包
@@ -981,6 +985,9 @@ modified: 2026-04-07T12:53:38.419Z
 
 - [MinerU 开发者生态 | Agent Skills · MCP Server · CLI/SDK · RAG 框架集成 ](https://mineru.net/ecosystem)
   - https://github.com/opendatalab/MinerU-Ecosystem/blob/main/skills/SKILL.md
+
+- https://github.com/opendatalab/mineru-vl-utils /202609/python
+  - A Python package for interacting with the MinerU Vision-Language Model.
 
 - https://github.com/LeoLin990405/mineru-skill /MIT/202603
   - https://github.com/LeoLin990405/mineru-skill/blob/main/SKILL.md
@@ -1381,6 +1388,16 @@ modified: 2026-04-07T12:53:38.419Z
   - Install engines yourself: docling, optional mineru, CUDA torch that matches the driver
   - 日常识图: DeepSeek Vision API (one shot)
   - 网页高保真: DeepSeek website via Playwright
+
+- https://github.com/roamer-remote/FileX /202608/python/ts
+  - https://roamer-remote.github.io/FileX/
+  - https://ding.yyyou.top/
+  - AI 智能体资料库：个人 / 集团知识空间、RAG 检索、正文提取与向量索引、Wiki 互联、钉技能集成。
+  - 正文提取	Office / PDF / 图片等多格式 → 结构化笔记（legacy / Docling / MinerU / Insavlo 等路由）
+  - 向量索引	RabbitMQ 异步流水线；Ollama bge-m3 嵌入；pgvector HNSW + FTS hybrid
+  - RAG 检索	hybrid RRF、TEI rerank、查询缓存、蒙特卡洛采样、文件名/ID 检索
+  - Google OKF bundle 导入/导出/校验（064）
+  - 架构原则：FileX 后端提供确定性检索 API，不在 FastAPI 内嵌 Chat LLM 或 Agent 编排框架；ReAct / LangGraph 运行在钉 Agent 宿主侧。
 # ocr-vlm
 - https://github.com/yejinlei/pdf-ocr-skill /MIT/202604/python
   - 一个支持多种OCR引擎的PDF文字提取技能，可以从影印版PDF文件和图片文件中提取文字内容。

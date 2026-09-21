@@ -1475,7 +1475,7 @@ modified: 2025-11-30T17:27:16.720Z
     - 聊天式 AI 更擅长当场回答问题，Notemd 更擅长把结果沉淀进知识库。
   - [【开源推广】不是让 AI 替你读论文，而是把论文一点点织进知识库：作为一名在读物理博士，我现在怎么用 Obsidian + Notemd 做论文深读与长期积累 - LINUX DO _202606](https://linux.do/t/topic/2379015)
 
-- https://github.com/WangQrkkk/PaperQuay 
+- https://github.com/WangQrkkk/PaperQuay /APGL/202609/ts
   - [PaperQuay：一种新的文献阅读范式：瞬时跳转翻译、Agent管理文献、高亮批注导出、极低内存占用、兼容Zotero - LINUX DO _202604](https://linux.do/t/topic/2079732)
   - 它应用了一种新的翻译范式，对于每段原文提前翻译好（这个过程可以软件自动去做，或者挂机的时候去做），这样点击我要读的内容时，软件可以瞬间转到其翻译。而且借助Mineru可以很好地提取表格信息等等，方便和大模型交互。
   - 它的即时翻译功能，只要提前解析好，可以实现瞬间跳转翻译。(同时具备主流的划词翻译功能)

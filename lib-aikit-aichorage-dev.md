@@ -59,11 +59,15 @@ modified: 2026-05-28T17:50:54.646Z
   - ocr for arbitrary image
   - good llm xp on cpu, but optimized for gpu
     - cpu works for ocr/translation
+    - cpu is cheap
   - computer-use
   - cloud rag
   - multiple-server/remotes
   - web-search
   - reranking models
+
+- cpu-runtime
+  - koboldcpp
 
 ## free-model-today
 

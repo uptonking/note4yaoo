@@ -112,6 +112,15 @@ modified: 2023-07-05T10:22:57.942Z
 - 
 
 # examples
+- https://github.com/HilbertraumAI/HilbertRaum /GPL/202609/ts
+  - https://hilbertraum.ai/
+  - a private AI workspace that runs locally on your computer and can operate entirely offline. 
+  - Local models. A llama.cpp runtime with GGUF models 
+  - The workspace is encrypted and portable. The app, models, and data can all live on a hard drive or USB drive, allowing you to move the entire setup between machines.
+  - designed to run on a wide range of hardware, from CPU-only systems to single-GPU and unified-memory machines.
+  - an offline Wikipedia (optional). Register ZIM archives 
+  - [We added ZIM support to our open-source offline AI app using Kiwix : r/Kiwix _202609](https://www.reddit.com/r/Kiwix/comments/1wjy0rc/we_added_zim_support_to_our_opensource_offline_ai/)
+# utils
 - https://github.com/openzim/libzim /cpp
   - Reference implementation of the ZIM specification
 

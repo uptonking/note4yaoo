@@ -14,6 +14,7 @@ modified: 2026-09-05T00:27:42.212Z
     - webapp添加本地paseo app作为host后，可以直接从web控制本地电脑
     - 移动端登录时会自动同步workspace/session
     - 👀 如果要通过webapp控制本地的paseo app, 需要手动修改配置 daemon.cors.allowedOrigins
+    - zcode的webapp不支持添加 remote connection
   - existing coding agents, use it  on your own device
   - providers: Bring your own
   - plugins: add server-side functionality, modify the client with custom components
@@ -24,6 +25,9 @@ modified: 2026-09-05T00:27:42.212Z
     - 类似openclaw, 但能让agent操作云端资源
     - 采用类似github workflow .yaml的设计，对普通用户不友好, 但对agent友好
   - Can I get banned for using Paseo? Paseo is designed to use each provider's officially supported integration and does not attempt to bypass its terms of service
+  - 支持使用其他agentt的功能: 
+    - 其他agent的skills
+    - codex的computer-use
   - connection
     - Connect to remote daemons over SSH 
 
@@ -61,6 +65,12 @@ modified: 2026-09-05T00:27:42.212Z
 - 是否支持daemon主机上的port forwarding, 比如运行webapp然后直接暴露
   - https://github.com/itsjustanks/paseo-plugin-daemon  /cf-tunnel/relay/ssh-forward
   - Open a remote project's dev server from Paseo in one press.
+# aichor
+- aichor as paseo bundle
+  - paseo + custom-agent + ocr-skills + ui
+
+- non-goals
+  - less multiple-agent collab
 # draft
 - usecases
   - work/doc, code, design
@@ -70,6 +80,9 @@ modified: 2026-09-05T00:27:42.212Z
 - agent-base
   - built-in agent: 这样移动端可以直接执行agent，而不依赖桌面端或外部agent
   - external: deepseek-harness, cursor-cli, commandcode
+
+- architecture
+  - 能否通过 skills + ui plugins 的方式提升复用性
 
 - 与im平台的集成，类似openclaw
   - telegram
@@ -133,10 +146,118 @@ modified: 2026-09-05T00:27:42.212Z
 - 
 - 
 
+## remote-control
+
+- 远程控制的交互不够自然
+  - 可参考 zcode, uu远程
+
 ## mobile-agent
 
 - mobile agent xp
   - 桌面版的agent过于复杂
+
+## browser-use
+
+- headless browser-use
+  - 可以在不打开文件的情况下编辑修改(vibe coding就是这样不看代码)
+
+- Paseo has NO headless CLI browser
+- Paseo uses Electron WebContents directly (via Electron's built-in `contents.debugger` CDP and native input events). It does NOT use Playwright in its runtime.
+  - directly employing CDP and native input events within its desktop application
+  - Native Input Simulation: mouse moves, clicks, and drags are sent via CDP, while keyboard inputs use Electron's contents.sendInputEvent
+- Turn-by-turn LLM Loop
+  - Every navigation, snapshot, click, and wait requires an individual LLM inference round-trip.
+  - The agent only has discrete MCP tools (browser_snapshot, browser_click, browser_scroll).
+  - This consumes massive token budgets, incurs huge latency (several minutes), and increases the chance of the LLM losing context
+- Ephemeral element refs (@e1, @e2) from the latest snapshot; mutates goes stale on DOM change.
+
+- Paseo's interaction model operates through granular tools and a turn-by-turn LLM loop, each step demanding LLM inference. 
+  - Conversely, ZCode employs a single code execution engine, allowing LLMs to script browser interactions programmatically. This highlights ZCode's potential for more efficient and complex web scraping tasks due to its programmatic flexibility.
+  - ZCode's single-turn script execution capability provides a key advantage for complex browser interactions, encompassing loops and error handling in a single operation. 
+  - Paseo's reliance on turn-by-turn LLM inference for each tool interaction results in increased overhead.
+
+- Paseo's desktop-dependent architecture and use of a tethered host limits its environment compatibility, unlike ZCode's dual-mode headless operation. This difference fundamentally impacts deployment options.
+
+- Paseo's `browser_snapshot` is engineered for UI accessibility testing. It transforms the page into an ARIA tree. Unlabelled `<div>` tags, custom table layouts, metadata, JSON-LD, and CSS attributes are intentionally flattened or dropped to keep tokens low for human UI interactions (buttons, textboxes).
+  - ZCode's Playwright integration allows full query selector power
+
+- While ZCode and Paseo both automate an Electron browser using WebContents and the Chrome DevTools Protocol (CDP), their implementations are completely separate codebases
+- Both teams had the exact same technical constraint: Electron cannot natively use Playwright out-of-the-box without launching an external Chromium browser or exposing unsafe remote debugging ports
+  - To solve this, both projects used Electron's built-in contents.debugger (CDP 1.3) and borrowed ideas from Microsoft's Playwright (Apache-2.0) to make WebContents automation robust and stable.
+- PASEO DESKTOP 
+  - Agent calls MCP: browser_snapshot ──▶ returns ARIA accessibility tree with @ref
+  - Agent calls MCP: browser_click("@e3")
+  - Handcrafted ARIA script injected into page (adapted from Playwright concepts).
+  - Dispatches mouse click via CDP `Input.dispatchMouseEvent`.
+  - Paseo wrote a ~300-line custom script adapted from Playwright's ARIA tree concept
+  - The agent never writes CSS or XPath selectors. The agent must pass @e3 to browser_click. If the DOM mutates between turns, the ref invalidates
+  - Text is entered either via CDP Input.insertText or Electron's native sendInputEvent
+- ZCODE DESKTOP 
+  - Agent writes JS: await tab.playwright.locator("button.save").click()
+  - Dynamically extracts real Playwright's compiled `injectedScriptSource.js`.
+  - Creates CDP isolated world (`zcode-playwright-locator`).
+  - Evaluates full CSS / XPath / Role selectors using Playwright's strict mode engine.
+  - Dispatches input via CDP or Virtual Clipboard (for fast text paste). 
+  - Direct bytecode/source extraction from playwright-core
+  - ZCode locates `injectedScriptSource.js` on disk, parses the string literal using Node vm.runInNewContext, caches it, and injects it directly into Electron
+  - Uses Playwright's real internal selector parser
+  - Elements are resolved dynamically at runtime with Playwright's strict mode
+  - In addition to standard typing, ZCode implements a Virtual Clipboard
+  - LRU Tab Eviction & Residency: Automatically parks background tabs to conserve memory when too many tabs are open
+  - Built-in Video Recording: Directly records tab interactions into .webm video streams
+
+- 
+- 
+- 
+- 
+- 
+
+### [zcode browser-use](https://zcode.z.ai/cn/docs/browser-use)
+
+- 浏览器面板 仅桌面端可用。
+- Agent 默认只操作自己打开的标签。你手动打开的那些它不会动，要接管其中某一个，需要先显式认领。
+  - 在后台运行的会话不会抢占你正在看的界面——只有当前这个工作区在前台时，它的浏览器操作才会显示出来。
+- 另外，Agent 操作网页和它改文件、执行命令一样受 执行模式 约束。涉及会真正提交数据的页面时，用「变更前确认」会更稳妥。
+  - 暂时不能上传文件。 需要选择本地文件的表单环节它做不了，这一步得你自己来。
+
+- ZCode can run completely headless in the background on remote Linux servers, Docker containers, or terminal sessions via `zcode --browser-use=headless`.
+  - ZCode utilizes Electron WebContents for its desktop app and Playwright with CDP for its CLI
+  - Built-in standalone headless CDP runner for CLI, servers, and CI
+  - Full DOM & Playwright Locators: css selectors, XPath, aria
+  - controls Electron WebContents / WebContentsView instances embedded directly in the desktop workspace UI.
+  - cli launched via `--browser-use=headless`. It spawns a headless Chromium process driven by playwright-core using direct Chrome DevTools Protocol (CDP) sessions
+  - Agent Entry Point: The agent does not get separate single-step MCP tools for clicking or navigating; instead, it uses the @zcode/node-repl-host (js tool) to run JavaScript scripts that call await agent.browsers.get("iab") or await agent.browsers.get("cdp"), giving the agent a comprehensive Playwright-style API facade.
+- relations/differences of desktop/cli
+  - follow a "Shared Contract & Client Facade, Divergent Execution Backends" architecture
+  - control-browser/SKILL.md is shared across both environments
+  - Commands sent from the agent are serialized into the exact same JSON format: BrowserCommand
+- CLI Backend (cdp): Native Playwright 
+  - The CLI uses real playwright-core. it launches a headless Chromium instance. 
+  - When the agent calls tab.playwright.locator("button").click(), CLI simply forwards the call directly to Playwright's native methods
+- Desktop Backend (iab): Emulated Playwright on Electron
+  - Electron WebContents cannot be directly wrapped by Playwright without opening external debugging ports and spawning remote sessions.
+  - ZCode reverse-engineered and re-implemented Playwright's core selector and snapshot logic inside Electron
+  - Desktop creates an isolated JavaScript world via CDP, injects Playwright's script into it, and compiles selectors
+  - It then simulates clicks and keypresses using Electron's native input pipeline
+- Duplicated Code & Logic  
+  - DOM Snapshotting (snapshot.ts vs browserCommandScripts.ts) 
+  - Element Inspection (elementInfo)
+  - Visual Highlighting Overlays (elementScreenshot) 
+
+- 
+- 
+- 
+- 
+
+## computer-use
+
+- 暂无内置实现， 可用外部agent提供的 computer use
+
+- 
+- 
+- 
+- 
+- 
 
 ## relay
 
@@ -175,7 +296,7 @@ modified: 2026-09-05T00:27:42.212Z
 - 
 
 # dev-xp
-- webapp to local
+- use webapp to control native app
   - 如果要通过webapp控制本地的paseo app, 需要手动修改配置 daemon.cors.allowedOrigins
   - ws://localhost:6767/ws means the browser is talking to the daemon on your Mac directly.  JavaScript running in Chrome opened a WebSocket directly to the Paseo daemon listening on your Mac.
   - Chromium implements the W3C _Secure Contexts_ specification, which explicitly designates `127.0.0.1` and `localhost` as **"potentially trustworthy origins"** (loopback exception).
@@ -239,22 +360,6 @@ modified: 2026-09-05T00:27:42.212Z
 - Git itself enforces a fundamental safety rule: a local branch can only be checked out in one working tree at a time.
 
 - 
-- 
-- 
-- 
-- 
-
-# paseo-alternatives
-- https://github.com/vastsa/pi-desktop /4kStar/LGPL/202609/ts/rust
-  - https://pi-docs.aiuo.net/
-  - Local-first AI coding agent desktop: Electron + Rust host core + pi Agent Harness + user-installable plugins
-  - [【PI-Desktop】两个月，300 亿 Token，终于把自己想要的 Agent 桌面端搓出来了 - LINUX DO _202609](https://linux.do/t/topic/2869113)
-  - 插件系统
-  - 模型配置
-  - 会话导入
-  - 内置 Agent / Plan / Goal 三种工作方式
-  - Subagent 真正可见，而且可以用不同模型
-
 - 
 - 
 - 

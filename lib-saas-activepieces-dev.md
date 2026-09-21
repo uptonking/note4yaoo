@@ -43,6 +43,7 @@ modified: 2025-03-31T17:38:17.881Z
     - open: Flow History, Custom Pieces
   - 💫 node节点的执行进度无法实时显示，动画体验不如triggerdotdev
     - 动画进度比较成熟的是comfyui，但体验待改进
+  - 提供了类似dify/coze的工作流，但ai相关的feature不突出，整体功能太传统
 
 - Technical limits 🛑
   - ⚠️ Execution Time: Each flow has a maximum execution time of 600 seconds (10 minutes). Flows exceeding this limit will be marked as a timeout.

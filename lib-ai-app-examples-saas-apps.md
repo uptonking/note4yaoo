@@ -1016,6 +1016,9 @@ modified: 2025-02-21T17:17:42.225Z
 - https://github.com/zeronezer/bidcraft /202609/python
   - 标书匠 BidCraft · 对话式标书编制系统：AI 智能编制技术标，支持招标文件解析、标段选择、标书编写、知识库提炼与学习对话式改稿。
   - LLM-Wiki 路线，基于LangGraph实现。
+- https://github.com/guangshu100/BidMaster-Pro /202609/python
+  - 全流程 智能招投标 Agent：标书生成 · 招投标解读 · 标书检查 · 标书文档ai排版 · 商机发现 一键完成。 21 项合规检查 · 多模型切换 · RAG 知识库 · OCR 抽取。 
+  - 从招标公告到可交付 docx 文档，全流程 AI 自动化。
 
 - https://github.com/ningkaikok/dotty-tutor /apache2/202609/python/ts
   - 面向中文教材与个人错题复习的 AI 学习平台。

@@ -165,6 +165,55 @@ modified: 2025-12-11T18:10:23.710Z
   - https://covibes.ai/
   - Your autonomous engineering team in a CLI. Point Zeroshot at an issue, walk away, and return to production-grade code. Supports Claude Code, OpenAI Codex, OpenCode, and Gemini CLI.
 # terminal-ai
+- https://github.com/zai-org/ZCode /4.3kStar/apache2/202609/ts
+  - https://zcode.z.ai/
+  - ZCode 是 AI 编程工作台，提供桌面应用、浏览器界面和终端 Agent。
+  - 本仓库包含客户端、后端服务、共享 UI，以及 Agent CLI 与运行时源码。
+  - Desktop	Electron 桌面应用
+  - Web / ZCode 命令行版	终端与浏览器工作台；将 TUI、Web、后端和 Agent 组装为独立运行包
+  - Agent CLI	在终端中使用 zcode，也为 Desktop 和 Web 提供 Agent 运行时
+  - 远程功能（SSH/WSL）: 连接远程项目时资源选择「本地下载后上传」。
+  - ZCode implements its own proprietary-origin clean architecture (Hexagonal / Ports & Adapters) inside apps/zcode-cli
+    - 未使用pi, built within its own monorepo and uses the Vercel AI SDK for model streaming and tool invocation
+  - pre-built binary distributions of search tools (ripgrep, bfs, ugrep)
+  - The desktop packaging scripts, designed to compile runtime code into V8 bytecode (.jsc)
+  - [远程开发 | ZCode Docs ](https://zcode.z.ai/cn/docs/remote-development)
+    - 远程开发用于把工作区放到远程主机、WSL 发行版或本机容器里运行。连接成功后，文件读取、终端命令、Git 操作和 ZCode Agent 都会在目标环境内执行；桌面端仍负责账号、模型配置、任务入口和界面交互。
+    - 当前不支持连接原生 Windows 远程主机。如果你要用的是 Windows 本机上的 Linux 环境，请选择 WSL。
+  - [Remote Control | ZCode Docs ](https://zcode.z.ai/cn/docs/remote-control)
+    - Remote Control 用来把当前 ZCode 桌面窗口临时开放给手机访问。扫码之后，你可以在手机上查看和切换这个窗口里已经打开的工作区、任务和会话，继续给 Agent 发指令。
+    - 手机端是一层控制界面：它不同步代码，也不新建运行环境。 在上面发出的每一条指令，都由桌面端那个工作区原本连着的机器去执行。
+    - 连接成功后，手机端接入的是整个桌面窗口，而不只是扫码时停留的那个工作区。
+    - 同一时间只支持一个手机页面连接。如果已经在别的页面打开过，需要先关掉旧页面。
+    - 手机能打开桌面端没开过的项目吗？ 不能
+  - Bot Channel 用来把外部聊天工具接入 ZCode。
+  - over 140 skills across 27 plugins are open source
+    - obsidian, 
+    - GitHub CLI, Tencent CloudBase, 
+    - video-agent-kit(FFmpeg / Whisper)
+  - @zcode/web is not an officially promoted consumer product
+    - Conversation Sharing Landing Pages: page rendered in the browser is @zcode/web running in read-only/preview mode.
+    - Internal / Headless Web Fallback: The web frontend explicitly disables remote workspace creation and embedded browsers.
+    - webapp can be used just like the desktop app on my mac without remote connection(ssh/wsl/docker), in-app-browser, open-in-external-editor. 
+    - Because the web app runs in a browser sandbox, several OS-level features are disabled or adapted.
+    - webapp supports Server-managed configuration only
+    - strictly Desktop-only: Connecting from your local machine to another remote server via SSH / WSL / Docker. The Desktop app contains the SSH2 client, SFTP asset deployment pipeline, and PTY multiplexing required to reach into a remote machine and deploy the ZCode agent daemon.
+  - 🧭 Browser Use is fully implemented and included in the source code
+    - Desktop In-App Browser: Full Electron `WebContents` automation
+    - Headless CDP Browser for CLI: Uses `playwright-core` to launch and automate local Chromium instances via Chrome DevTools Protocol
+    - Ships built-in skills (control-browser, web-gui-tester)
+  - @zcode/web works in tandem with @zcode/server and @zcode/server-cli.
+    - Both the desktop app (packages/desktop) and the web app (packages/web) import and render the same top-level `<Root />` component from @zcode/ui.
+    - Instead of Electron IPC, @zcode/web connects over a WebSocket protocol to @zcode/server (running on Hono + @zcode/rpc), which executes the actual agent workflows, files, git commands, and terminals on the host.
+    - Full Self-Hosted Web Workspace (Remote Dev / Web IDE): run the server on your VPS and access the full ZCode interface from any browser 
+    - Because the web app runs in a standard browser sandbox, certain native desktop features are gracefully disabled or adapted
+    - in-app browser is disabled in webapp
+    - node-pty inside Electron vs Remote PTY multiplexed over WebSocket
+  - 闭源插件: tianyancha, finance-search, Wind Stock, Hithink Flush (iFinD) Stock
+  - 🐛
+    - "Computer Use" is intentionally disabled. The stubbed-out `zcode-cua` package strongly suggests Computer Use functionality is not present
+    - Hard coupling to Zhipu / Z.ai proprietary cloud services: Anthropic-compatible API calls to official endpoints. Platform-bound features: User authentication, quota checks, subscription management, cloud sharing, off-peak task ticket scheduling, error feedback reporting, and auto-update feeds depend directly on Zhipu's closed cloud backends.
+
 - https://github.com/omnigent-ai/omnigent /1.6kStar/apache2/202606/python
   - https://omnigent.ai/
   - A meta-harness for all your AI agents. Omnigent provides a common layer over Claude Code, Codex, Pi, and the agents you write yourself: swap or combine harnesses without rewriting, keep them in check with policies and sandboxing, and collaborate in real time on the same live session, from any device.

@@ -404,13 +404,15 @@ modified: 2025-11-06T18:49:13.977Z
     - vision作为通用LLM的一种能力，采用主流LLM的行列设计更容易兼容和对比
 
 - leaderboard
+  - [OCR — papers and benchmarks | Papers with Code ](https://paperswithcode.co/tasks/ocr)
+    - [Find the best open-source OCR models in one place at Papers with Code [P] : r/MachineLearning _202606](https://www.reddit.com/r/MachineLearning/comments/1ueiam6/find_the_best_opensource_ocr_models_in_one_place/)
   - [Open VLM Leaderboard - a Hugging Face Space by opencompass](https://huggingface.co/spaces/opencompass/open_vlm_leaderboard)
 
-- [ParseBench — Document Parsing Benchmark for AI Agents](https://www.parsebench.ai/)
+- [ParseBench — Document Parsing Benchmark for AI Agents (from llamaindex)](https://www.parsebench.ai/)
   - https://github.com/run-llama/ParseBench /apache2/202606/python
   - a benchmark for evaluating how well document parsing tools convert PDFs into structured output that AI agents can reliably act on.
 
-- [OpenDataLab OmniDocBench](https://opendatalab.com/omnidocbench)
+- [OmniDocBench (from OpenDataLab/mineru)](https://opendatalab.com/omnidocbench)
   - https://github.com/opendatalab/OmniDocBench /1.3kStar/apache2/202512/python/mineru
   - https://opendatalab.com/omnidocbench
   - A Comprehensive Benchmark for Document Parsing and Evaluation
@@ -419,12 +421,12 @@ modified: 2025-11-06T18:49:13.977Z
   - https://x.com/NielsRogge/status/2024518878655578509
   - We converted OlmOCR-Bench by @allen_ai to an official benchmark on the hub.
 
-- [OCR Arena](https://www.ocrarena.ai/battle)
-  - [I made a free playground for comparing 10+ OCR models side-by-side _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p35f2c/i_made_a_free_playground_for_comparing_10_ocr/)
-
 - [OCRBench v2 _202605](https://99franklin.github.io/ocrbench_v2/)
   - https://github.com/Yuliang-Liu/MultimodalOCR
   - Improved Benchmark for Evaluating Large Multimodal Models on Visual Text Localization and Reasoning.
+
+- [OCR Arena](https://www.ocrarena.ai/battle)
+  - [I made a free playground for comparing 10+ OCR models side-by-side _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p35f2c/i_made_a_free_playground_for_comparing_10_ocr/)
 
 - [OCR-Reasoning Benchmark: Unveiling the True Capabilities of MLLMs in Complex Text-Rich Image Reasoning ](https://ocr-reasoning.github.io/)
   - https://github.com/SCUT-DLVCLab/OCR-Reasoning 
@@ -480,6 +482,8 @@ modified: 2025-11-06T18:49:13.977Z
   - One thing the capability grades don't show: Granite-Docling is the only one that outputs markdown-native pipe tables and real heading levels (MinerU gives you HTML tables and promotes everything to #), so on clean digital documents its raw markdown is the nicest to actually read.
   - MinerU quietly read a bar chart and returned the values as a table, and wrote its own description of an embedded image (tagged as generated).
   - MinerU seemed to dropped the invoice's IBAN from the footer. But the model actually transcribes it yet the MinerU's markdown generator silently discards anything it classifies as page furniture (i.e things like footers, page numbers, fine print....), and there's no option or configuration to acutally change this behavior. So I rebuild the markdown from its block list instead, and re-ran that column, to give a fair comparison. If you are using stock MinerU's .md output, you're likely have footers missing.
+  - [I compared even more parsers on 14 PDF-parsing capabilities using different types : r/LocalLLaMA _202608](https://www.reddit.com/r/LocalLLaMA/comments/1vh7bxu/i_compared_even_more_parsers_on_14_pdfparsing/?sort=top)
+  - https://github.com/alaamroue/pdf-parser-bench
 
 - For me, OCR has always been something to try out. One model is never noticeably better than any other. I've had certain success with MinerU. However, it has also let me down sometimes. Docling then again, is a bit too slow. I've settled on GLM's ocr which seems to be the best for my use cases. It's been a lot of trial and error.
   - It's always a compromise. And considering Docling taking less than half as much as GPU memory as MinerU, I'd say it does a very good job.
@@ -789,7 +793,30 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## 💡 [Local LLM's to do OCR : r/LocalLLM _202606](https://www.reddit.com/r/LocalLLM/comments/1u5oacy/local_llms_to_do_ocr/)
+- Teseract is the OCR ai that is most popular. Some people try to combine it with other llms, but its really the gold standard.
+  - I do a lot of OCR with Stirling PDF which uses teseract behind the scenes and has a nice api. Haven't run into any issues with it. Not sure an LLM adds any value on top of it.
+  - I've done a few million pages with it and haven't really encountered those issues with any scale. And OCR isn't HTR so handwriting is a whole different ball of wax.
+
+- I'm doing it. It takes a bit of work, along with trial and error with the model settings, the formatting you want, the resolution, chunking (breaking the problem into smaller pieces) and post processing. I've had good results with Ministral 3 3B and with Gemma 4 E2B and E4B. Those are the smaller models I use. I have a process where now I can transcribe several hundred page PDF's with both text and graphics.
+  - I convert pdf to images first. The PDF is really just a container at that point.
+  - I don't blindly image every page. I check whether the page already has a real text layer. Those pages I just pull the text straight out, no model involved. Only the pages that are actually images get converted and sent to the vision model. On a mixed several-hundred-page doc that split alone saves me a huge amount of work and cuts the hallucination surface way down, since you're only trusting the model on the pages that genuinely need it.
+  - I also scan the page for both a text layer and image/graphic content. If it has mixed content I pull the embedded text straight out as the source of truth, then run the vision model only on the figures and merge the two.
+  - For the pages I do convert: render around 150 DPI, then downscale so the longest side is ~1024px and save as JPEG. 1024 is the sweet spot where you keep OCR accuracy but keep the request small and fast. Each page goes in as its own image request.
+  - On llama.cpp: the vision capability is a separate projector file (the "mmproj") you load alongside the base model.
+  - the details of the scan resolution, chunking, context window size, and model settings are important. Lately I've been doing OCR on some very old NASA PDF's with no embedded text. I'm getting about 2 seconds per page on a system with an RTX 5070 TI graphics card and the Gemma 4 E4B model.
+
+- I think you might get better results and performance just using a dedicated OCR model, and then using a LLM on the output to leverage the strengths of each system. I recently tried paddle paddle (open source, fully local) and got fantastic results on a mishmash of scanned documents. I then fed that into a Gemma 4 to produce the final output. There are a bunch of good local OCR solutions that run on CPU, as far as I’m aware there’s no advantage using your LLM for this task
+
+- Docling with the glm-ocr extension and llama.cpp as a back end. Works quite well. I'd say over 95% accurate so far. 
+
+- For non fiction and fiction books with italic i use in local : lightonocr 2.1-q8. Use only ryzen cpu/gpu with lmstudio server api and is best together chandra for my use. But chandra is slow.
+
+- I've used qwen3:4b-instruct in PhotoPrism to label and caption my photos, including documents. For me it was good enough, though sometimes had spelling problems with non-English texts. It takes about 1 second to process a photo if you have a nvidia GPU.
+
+When you do text only, you may want to try a different model, that writes structured output, like html. OCR on a form with a complicated table is not that straightforward.
+
+- I am having great success with Nemotron-3-Nano-Omni-30b-A3B-Reasoning-NVFP4 (choose your quant based on hardware of course).
 
 - ## We’re open-sourcing Unlimited OCR — built to read long documents in one pass. _202606
 - https://x.com/Baidu_Inc/status/2069358973753729165

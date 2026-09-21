@@ -452,6 +452,16 @@ modified: 2026-04-07T11:52:43.122Z
   - Smart Allocation: Up to 16 pages/slides concurrently, 64 workers per page
   - Supports multiple file formats including PDF, Word, PowerPoint, Excel, and more.
 
+- https://github.com/WangQrkkk/PaperQuay /APGL/202609/ts
+  - [PaperQuay：一种新的文献阅读范式：瞬时跳转翻译、Agent管理文献、高亮批注导出、极低内存占用、兼容Zotero - LINUX DO _202604](https://linux.do/t/topic/2079732)
+  - 它应用了一种新的翻译范式，对于每段原文提前翻译好（这个过程可以软件自动去做，或者挂机的时候去做），这样点击我要读的内容时，软件可以瞬间转到其翻译。而且借助Mineru可以很好地提取表格信息等等，方便和大模型交互。
+  - 它的即时翻译功能，只要提前解析好，可以实现瞬间跳转翻译。(同时具备主流的划词翻译功能)
+  - 批注管理跳转：可选择直接将划词内容加入笔记，方便修改。同时支持点击批注直接跳转对应文章区域。
+  - 通过agent方便分析、管理大量论文，包括但不限于命名、总结、分类（可以直接与软件交互）。
+  - 兼容Zotero：如果之前的大量文献都在Zotero进行管理的，可以在设置界面自动读取并导入，分类格式与zotero完全相同。
+  - 未完待续：后续计划加入rag能力，方便自建知识库问答，同时支持一键生成综述(word、latex)等总结性文章。
+  - 支持windows、linux、mac系统
+
 - https://github.com/aikilan/Babel-Markdown /MIT/202511/ts
   - provides real-time translation previews for VS Code, synchronizing the original Markdown and AI-translated content in a single view to help you efficiently proofread multilingual documents.
   - Progressive translation preview: streams segments as they finish translating.

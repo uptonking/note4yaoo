@@ -275,8 +275,26 @@ modified: 2025-03-22T16:10:24.856Z
 - 
 
 # draft
+
+## pm-usecase/roadmap
+
 - usecases(有特色不代表有需求): work/doc, code, design
-  - 使用频率: markdown > editor > ocr, pdf-editing > bases > ocr
+  - 使用频率: markdown > editor > ocr, citation > pdf-editing > bases > ocr
+- 能帮用户盈利的工具更值得做(最好是需求大到付费都难有好的体验)
+  - ai, doc
+  - coding工具
+  - 指纹浏览器: 免费产品都不好用, 付费的都不便宜
+    - 还能深入浏览器内核
+
+- cheap features
+  - cpu: ocr
+
+- roadmap
+  - doc harness
+  - ocr harness
+  - batch ocr + progress + pause/resume
+
+## ideas/features
 
 - toB-ai
   - 企业需要支持快速集成现有系统、权限、日志审计
@@ -361,12 +379,6 @@ modified: 2025-03-22T16:10:24.856Z
 - harness
   - harness工具越来越多, 每个都有自己的配置、特性, 统一管理的难度大、更新维护的复杂度高
   - 🤔 可考虑不做agent的管理, 只做 context的共享、产物的共享、skills的共享
-
-- 能帮用户盈利的工具更值得做(最好是需求大到付费都难有好的体验)
-  - ai
-  - coding工具
-  - 指纹浏览器: 免费产品都不好用, 付费的都不便宜
-    - 还能深入浏览器内核
 
 ## pricing
 

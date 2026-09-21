@@ -448,6 +448,63 @@ modified: 2026-01-14T18:59:01.949Z
 - The smaller models are tuned versions of Gemma4, the final big model running on Nvidia hardware is Gemini. All obviously heavily modified though. It was in once of their announcements, it was straight from them. Model a & b are local, model c is Apple hardware servers, model d is Nvidia hardware in Google’s datacenters.
 
 - The fact that they were able to get AFM 3 Core Advanced with 20-billion parameters working on-device is pretty cool, but yet it doesn't enable any groundbreaking features. Most of the cool stuff is done via Private Cloud Compute or the AFM 3 Core model.
+# discuss-mlx-runtime/alternatives
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [[Splash Engine] Qwen3.8-27B in native 8-bit at 37–55 tok/s on Apple Silicon: Extending Splash to Q8, 256k context scaling, and the "Reasoning Cliff" : r/LocalLLaMA _202609](https://www.reddit.com/r/LocalLLaMA/comments/1wmbbf9/splash_engine_qwen3827b_in_native_8bit_at_3755/)
+  - Spent weekend benchmarking the Splash engine (by Incoai) and extending its architecture to native 8-bit on Apple Silicon (M5 Pro, 64 GB unified memory).
+  - Splash is a compiled C++ and Metal speculative decoding engine designed specifically for Apple Silicon. Upstream Splash pioneered a blisteringly fast speculative decoding pipeline for 4-bit models (~60 tok/s). However, aggressive 4-bit quantization hits a nasty "reasoning cliff" on competition-grade math and multi-step derivations.
+  - We wanted to bring Splash's speed to true uncompressed 8-bit weights without losing its speculative decoding advantages. By extending Splash's architecture to support native 8-bit tiled Metal kernels (schema 5, MDFL0008), we were able to sustain 37–55 tok/s with zero quantization degradation.
+  - Full credit to the Incoai team for creating Splash (https://github.com/incoai/splash). Their C++ Metal speculative decoding architecture is what makes these speeds possible on Apple Silicon in the first place—this fork simply extends their work to support native 8-bit weights and custom Q8 tiled kernels. Also huge credit to the Qwen team for base weights and MTP architecture, and Youssofal for MTPLX reference benchmarks.
+
+- Uncompressed 8-bit being faster than compressed because the drafts land cleaner is the kind of result that makes you rethink every quantization benchmark.
+
+- ## Splash Engine [Qwen3.8-27B at 144 tok/s on an M5 Max MacBook Pro : r/LocalLLaMA _202609](https://www.reddit.com/r/LocalLLaMA/comments/1wk9hze/qwen3827b_at_144_toks_on_an_m5_max_macbook_pro/)
+  - it’s a flat 4 bit model, and the KV cache is quantised to INT8
+- 4bit for all weights is going to be pretty bad quality, especially if you want to use it for coding. Why not modern dynamic weights?
+  - Because then they wouldn't get 144tk/sec on a M5 Max Macbook Pro.
+
+- Because mac hardware only support int4 and int8 hardware acceleration
+  - That's not correct. Apple Silicon does fp16, bf16, i16, f32, i32 amongst others. All good MLX and GGUF quants are dynamic / mixed weights. https://github.com/philipturner/metal-benchmarks
+
+- Is there a reason it would not work on M2 Max?
+  - Kernels written in Metal 4. Could try relaxing the graphics card family req but would be legacy software fill in for the hardware.
+
+- tried this and holy shit it flies (base M5 Pro 48gb)
+decode speed:
+getting between 50-60 tk/s on 27B at reasonable context (32k±) for code
+and 3.6 35A3B goes at 170-180 tk/s when generating code, otherwise <100 tk/s
+
+- I have a working model and code that you can find here: https://github.com/npanj/splash-plus
+
+- ## [Splash: A Local Engine Built Around the Model — Inco AI _202609](https://inco.ai/blog/splash/)
+  - Most inference engines are built to run any model for maximum flexibility. 
+  - Our approach turns this assumption upside down: the engine is built around the model for maximum efficiency. Its kernels, draft model, and memory plan are specialized for the model it serves. 
+  - Today we bring the same technology to Apple silicon with Splash, our open-source inference engine for the Mac.
+  - It delivers 2× the decode speed of the next-fastest engine we measured on Qwen3.8-27B and stays ahead at every context length we tested, to 32K tokens. 
+  - Splash needs an M3 or newer Mac on macOS 26.4 or later with at least 36 GB of unified memory, and Homebrew. 
+  - During the initial download, the engine is automatically tuned to your system configuration. 
+  - The server can be queried via OpenAI Chat Completions, Responses, and Anthropic Messages, with streaming, tool calls, JSON Schema output, and image input.
+  - LM Studio integrates Splash as a first-class inference engine
+  - Splash supports a small set of models, two today, and is specialized for each of them. The runtime, scheduler, cache, and API are shared. Everything else is purpose-built for each model for peak efficiency
+  - By design, there is no generic multi-model runtime, no fallback path, and nothing to tune manually. 
+  - Splash batches requests as they arrive and balances prefill against decode, so new requests start quickly and running ones keep streaming. 
+  - Speculative decoding is the decode path in Splash, not an option. Every supported model ships with its own DFlash 2 draft, trained for it. 
+- oMLX is the closest comparison: a general-purpose server with batching and cache reuse across many models.
+
+- Splash rethinks local model inference from the ground up by building the engine around the model. Compared to a general-purpose engine on the same Mac, Splash provides superior performance across decode, prefill, cache reuse, and higher levels of subagent concurrency. These gains come from automatic kernel generation, specialized draft models, and a hardware-aware memory plan.
+
+- Splash is out today, open source under Apache-2.0 at github.com/incoai/splash, with two supported models and more on the way. 
 # discuss
 - ## 
 
