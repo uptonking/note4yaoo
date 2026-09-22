@@ -114,8 +114,8 @@ serve -p 9000 --cors
 HOST=0.0.0.0 PORT=8080 react-scripts start
 next dev -H 0.0.0.0 -p 3000
 
-npm i -g npm yarn pnpm corepack serve @dotenvx/dotenvx opencode-ai @openai/codex @kilocode/cli @kimuson/claude-code-viewer 
-npm up -g  @openai/codex @earendil-works/pi-coding-agent @deepseek-ai/dsh
+npm i -g npm yarn pnpm corepack serve @dotenvx/dotenvx opencode-ai @openai/codex @kimuson/claude-code-viewer   @deepseek-ai/dsh 
+npm up -g  @getpaseo/cli @earendil-works/pi-coding-agent @openai/codex
 ```
 
 - dev-goals 不能在产品中检验的技术不玩，注意产品化
@@ -344,6 +344,20 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - ?
 - dev-log
   - ?
+
+## 0922
+
+- 🤔 browser use feature is very powerful. for example, ZCode agent can run completely headless in the background on remote Linux servers, Docker containers, or terminal sessions via zcode --browser-use=headless.  for the headless browser-use feature, what are the typical use cases? i plan to deploy zcode agent to my vps or implement a similar headless browser use feature in my own app. please deep research related solutions/projects/ideas, if you found any open source products or inspiration projects, provide overview/github-url/website for each.
+core use-case list whether it's ZCode, browser-use, or something you build yourself:
+Web scraping / data extraction from JS-heavy sites that plain HTTP requests can't render (prices, listings, structured data for RAG/LLM pipelines)
+QA and regression testing — click through a flow after a deploy, screenshot diffs, verify forms don't break, run as a CI step
+RPA / form automation — signups, data entry, filing repetitive web forms, account provisioning
+Monitoring — uptime checks, visual regression, price/inventory tracking, "did this page change" alerts
+Research agents — open a page, read it, follow links, summarize (the "agentic browsing" pattern behind most AI research tools)
+Lead gen / competitive intelligence — pull structured info from directories, competitor sites, job boards
+Report generation — render a page to PDF/screenshot for compliance or archiving
+Cross-viewport/responsive testing — resize and check mobile layouts programmatically
+Synthetic benchmarking — generating trajectories/training data for other agents (this is literally what WebVoyager-style benchmarks use headless agents for)
 
 ## 0921
 

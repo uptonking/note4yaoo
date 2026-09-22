@@ -482,6 +482,9 @@ modified: 2026-06-20T15:49:57.019Z
     - 不限量套餐: 限时、限并发
   - [123nhh API ](https://api.123nhh.com/profile), 只能签到得额度
     - [[nhh站]随时跑路和关闭注册 _202606](https://linux.do/t/topic/2468396)
+  - [X-API _202609](https://x-api.cfd/console/models)， 随时关站跑路
+    - [【X-API】Grok Free 透明共享号池普惠公益站(2) - LINUX DO _202609](https://linux.do/t/topic/2937858)
+    - 原则：普惠；反独占滥用；不设充值、套餐、邀请返利、TL 特权档
   - [GG_API _202607](https://api.imai.us.ci/keys)
     - [【7.19-GG公益站】 新增订阅卡并调整额度 _202607](https://linux.do/t/topic/2613713)
   - [KayanoLoveChenChen](https://chenchen.openachieve.asia)
@@ -1477,7 +1480,8 @@ modified: 2026-06-20T15:49:57.019Z
   - codex - gateway -- ¥50
   - claude - opencode + antigravity  -- ¥40
   - cursor - composer/auto  -- ¥30
-  - kiro - claude  -- ¥50
+  - kiro - claude  -- ¥50: 会降智, 低缓存
+    - kiro 的 claude 是没思考的模型, 能思考其实是 kiro 的 agent 能力
   - token choices: gpt, kiro-claude, gemini, grok, composer, deepseek
   - 厂商类: gpt, claude, gemini, grok, glm
   - ide类: cursor, devin/windsurf, kiro, antigravity
@@ -2354,14 +2358,12 @@ modified: 2026-06-20T15:49:57.019Z
     - 提供了很多折扣码
 
 - gpt-5.6-luna
-  - https://www.jiji.cc/model-list  /0.2x--0.04/Luna单独分组/作者加入L站时间长/QQ群活跃
+  - https://www.jiji.cc/model-list  /0.2x/Luna单独分组/作者加入L站时间长/QQ群活跃
     - 由于luna这两天不是很稳，我们调整出来单独的分组，以免和pro组冲突影响，用luna的佬们要麻烦在后台的分组切换一下到codex luna分组。旧的分组将会跳转到GPT-5.6-terra。
     - pro 的luna已经跳到terra 用luna要用codex luna 分组
     - 为啥大部分中转站把 luna 停掉了？ 不但是亏本，还影响主号。基本是得不偿失
     - [【富可敌国】几块钱能蹬一天的luna大家都停了，我们继续 _202608](https://linux.do/t/topic/2758706)
     - [【富可敌国】想钱想疯了，佬们一起来做个中转站 - LINUX DO _202607](https://linux.do/t/topic/2587271)
-  - [熊出没API /sub2api](https://us.xcmapi.com/model-plaza)
-    - 0.13x-pro分组
   - https://api.liusq.icu /0.1x
     - team  现在就这个分组了
     - free分组只能跑luna和5.5
@@ -2390,6 +2392,9 @@ modified: 2026-06-20T15:49:57.019Z
   - removed
     - https://www.rightapi.ai/models  /0.4x--0.08--0.008/10rpm
     - https://codexapis.com/pricing   /0.085--0.0085
+    - [熊出没API /sub2api](https://us.xcmapi.com/model-plaza)
+      - 0.13x-pro分组
+      - 用不了luna
 
 - deepseek/国模-注意缓存价格
   - https://us.xcmapi.com/model-plaza  /0.08x
@@ -2485,8 +2490,9 @@ modified: 2026-06-20T15:49:57.019Z
   - 充值改为u充值了，最低充值500r。小额充值点左边的小铺链接。
   - 中等价格
 
-- [熊出没API /sub2api](https://us.xcmapi.com/model-plaza)， 每日抽奖签到
+- [熊出没API /sub2api](https://us.xcmapi.com/model-plaza), 已充值
   - [分组监控页&AI降智监控中心 ](https://www.xcmapi.com/jk/)
+  - https://www.xcmapi.net/welfare-lottery , 每日抽奖签到, 需vpn魔法
   - [API 在线检测 ](https://us.xcmapi.com/jc/)
   - 0.13x的pro分组有luna
   - 0.08x-推荐国模-deepseek/glm
@@ -2497,7 +2503,7 @@ modified: 2026-06-20T15:49:57.019Z
 - [SwiftAPI/极速ai ](https://api.x5m5x.com/), 注意缓存率不高, 长期运营
   - https://api.x5m5x.com/monitor
   - 国模源头全系0.03倍率起
-  - ds-4.1, 0.15x, 仅90%的缓存，不如其他中转站
+  - ds-4.1, 0.15x, 仅90%的缓存，不如其他中转站, 缓存倍率0.2, 其他in/out倍率0.13
   - glm-5.3, 0.03x
   - 缓存超80%的: glm-5.3, kimi-k2.6, MiniMax-M3, hy4-preview
   - 本平台主要做国内模型哈 国外模型是附带的 另外gpt全网都不稳定 因为官方打压中转
@@ -2506,7 +2512,7 @@ modified: 2026-06-20T15:49:57.019Z
   - [HeroHao ](https://sub2.herohao.top/home), 渠道似乎与上面的极速ai相同
     - [国模人民币定价 ](https://sub2.herohao.top/pricing)
 
-- [MaxAPI ](https://ai.max66.xyz/keys), 只做deepseek
+- [MaxAPI 只做 deepseek ](https://ai.max66.xyz/keys), 已充值
   - 0.1x, 0.125x
   - 按量走新平台 ai.max66.xyz
   - 按天走老平台 max66.xyz

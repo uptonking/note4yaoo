@@ -15,8 +15,11 @@ modified: 2026-09-05T00:40:32.289Z
 - 
 - 
 - 
-- 
-- 
+
+- v0.9.0 - 2026-09-22
+  - Added plugin installation from npm, including scoped packages, versions
+  - Added Jump to file to mobile Changes, opening the changed-files tree in a sheet
+  - Added host discovery through useHosts() and host-targeted SDK clients
 
 - v0.8.0 - 2026-09-10
   - 0.8 adds plugin header buttons, custom providers, and richer chat components, alongside fixes for desktop updates and mobile keyboards.

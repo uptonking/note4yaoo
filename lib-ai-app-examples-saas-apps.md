@@ -12,6 +12,9 @@ modified: 2025-02-21T17:17:42.225Z
 - tips
   - bpmn + ai
 # popular
+- https://github.com/anthropics/claude-quickstarts /MIT/202609/python/ts
+  - A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API
+
 - https://github.com/OpenHealthForAll/open-health /AGPL/202502/ts
   - https://www.open-health.me/
   - AI Health Assistant | Powered by Your Data
@@ -1094,6 +1097,18 @@ modified: 2025-02-21T17:17:42.225Z
     - 盈利方式是使用买断制，但是后续使用ai功能仍然需要继续消耗积分和充值。买断的只是app的功能。
     - 然后在开源上，开源版本会比正式版本落后几个版本，但是框架完整，可以正常给技术人员进行交流学习。
 # video/mtv
+- https://github.com/hypit-ai/hypit /apache2+logo+NC/202609/ts
+  - https://hypit.ai/
+  - [【开源自荐】2个月见了几十个通过短视频做事儿的老板，发现他们的需求都一样，所以我开源了这个复刻爆款视频的工具 - LINUX DO _202609](https://linux.do/t/topic/2906539)
+  - 给你的 Agent 一条参考视频，告诉它你想怎么改，Agent 就能把视频复刻成一套可以修改、反复运行的 workflow，还能批量生成不同版本
+  - 如果要复刻一个不错的视频广告，得先拆脚本、生成素材、配音、剪辑，再补字幕和特效，一套做下来小半天过去了
+  - Hypit 的价值就是：把这些环节组织成了一套给 Agent 使用的视频语言和制作 “系统”，你可以直接在 Claude Code 或者 Codex 里面直接输入： /hypit 复刻这个视频：/path/to/video.mp4，把主持人换成动画人物，语言换成西班牙语，保留其他视频结构
+  - Agent 就会开始分析参考视频，把画面、台词、字幕、B-roll（补充画面）和特效组织进 workflow，再生成、编排和渲染成片，几乎可以做到完美复刻
+  - Hypit 不是模型，也不是一个 GPT 套壳的 Agent，而是一门【语言】, 我给它起名叫 Semantic Video Markup Language（.svml）
+  - 2 个月的时间，我自己一个人跑了北京、义乌、长沙、广州、佛山、东莞、惠州、湛江，陆陆续续见了五六十个老板，99% 的人，面对 prompt 输入框，完全无从下手
+  - 既然不知道如何构建 Prompt，那么复刻已经拿到流量的爆款视频就成了入门最快的方式，而复刻的工作流，完全可以做成产品，这就是我做 Hypit 的原因。
+  - 🤔 这种产品思路可以用在所有没灵感、想用模版的场景
+
 - https://github.com/heygen-com/hyperframes /15.7kStar/apache2/202605/ts
   - Write HTML. Render video. Built for agents.
   - open-source video rendering framework that lets you create, preview, and render HTML-based video compositions — with first-class support for AI agents.

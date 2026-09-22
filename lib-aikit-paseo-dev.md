@@ -69,6 +69,10 @@ modified: 2026-09-05T00:27:42.212Z
 - aichor as paseo bundle
   - paseo + custom-agent + ocr-skills + ui
 
+- architecture
+  - 能否通过 skills + ui plugins 的方式提升复用性
+  - 也可考虑使用paseo sdk开发自定义前端， 类似amble
+
 - non-goals
   - less multiple-agent collab
 # draft
@@ -80,9 +84,6 @@ modified: 2026-09-05T00:27:42.212Z
 - agent-base
   - built-in agent: 这样移动端可以直接执行agent，而不依赖桌面端或外部agent
   - external: deepseek-harness, cursor-cli, commandcode
-
-- architecture
-  - 能否通过 skills + ui plugins 的方式提升复用性
 
 - 与im平台的集成，类似openclaw
   - telegram
@@ -160,6 +161,16 @@ modified: 2026-09-05T00:27:42.212Z
 
 - headless browser-use
   - 可以在不打开文件的情况下编辑修改(vibe coding就是这样不看代码)
+
+- 🤔 editor + browser-use, 大部分数据都在editor的数据结构中， 是否有必要实现browser-use
+  - 缺乏统一标准的ui, 如office/wps的排版不同, 此场景也可用computer-use来解决
+  - 缺乏统一标准的ux, 难量化的场景， 比如统一调整元素样式、主题
+  - adhoc类型的场景如 表格数据计算、公式计算 
+  - 多个tab时，能获取用户当前的位置
+  - 也许不需要browser-use
+    - 能让用户选择元素
+    - highlight/cite web page content
+    - link preview, 类似wikipedia的预览链接内容
 
 - Paseo has NO headless CLI browser
 - Paseo uses Electron WebContents directly (via Electron's built-in `contents.debugger` CDP and native input events). It does NOT use Playwright in its runtime.
@@ -244,7 +255,18 @@ modified: 2026-09-05T00:27:42.212Z
   - Element Inspection (elementInfo)
   - Visual Highlighting Overlays (elementScreenshot) 
 
-- 
+- "Browser Automation / Use" (浏览器自动化) Works in BOTH Desktop and CLI: 
+  - The actual automation engine—navigating pages, clicking, typing, taking DOM snapshots, and running Playwright scripts—is fully implemented in the CLI as a headless CDP runtime
+  - ZCode even bundles the runtime assets for playwright-core and the browser-use plugin so that the single-executable binary (npm run sea) can extract and run headless Chromium on Linux servers
+  - In the CLI, browser automation is disabled by default. Chromium is heavy (~300MB RAM, CPU overhead). headless browser requires external OS binaries (chromium-browser or google-chrome) and Linux system libraries (libnss3, libgbm1, etc.) that are rarely present on a bare Linux server.
+  - ZCode is commercially marketed by Zhipu as a Desktop AI IDE, less cli features
+
+- ZCode's CLI adapter checks for an installed Chromium binary at /usr/bin/chromium or chrome
+  - It boots a headless Chromium instance via playwright-core. 
+  - The AI agent executes JavaScript in node_repl calling agent.browsers.get("cdp").
+  - The agent writes and runs real Playwright scripts in memory to navigate, scroll, click, evaluate DOM, and save extracted JSON/CSV directly to your VPS disk.
+- Run in tmux: Always launch inside tmux new -s zcode so long scraping tasks keep running after you disconnect your SSH session.
+
 - 
 - 
 - 
@@ -287,10 +309,18 @@ modified: 2026-09-05T00:27:42.212Z
 ## terminal-hiding
 
 - git operations
-  - commit/push/pull
+  - commit/push/pull 性能很差, 有时必须ssh到vps执行命令才成功
 
 - 
 - 
+- 
+- 
+- 
+
+## windows
+
+- powershell
+
 - 
 - 
 - 
