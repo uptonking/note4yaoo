@@ -216,7 +216,7 @@ modified: 2026-06-20T15:49:57.019Z
 - https://github.com/vava-nessa/free-coding-models /202606/js
   - https://freecodingmodels.vercel.app/
   - Find, benchmark and install in CLI 170+ FREE coding LLM models across 15+ providers in real time
-# awesome/leaderboard/benchmark
+# leaderboard/benchmark 🆚
 - [llm-stats AI Leaderboard 2026: Compare & Rank 300+ Top AI Models by Intelligence, Speed & Price ](https://llm-stats.com/)
   - Your idle credits are losing value every day. Connect them to LLM Stats and earn 50% on every inference request we route through your keys.
   - 专注于模型在各个bench中的排名
@@ -232,19 +232,19 @@ modified: 2026-06-20T15:49:57.019Z
     - 多语言支持（英语、中文，更多语言即将推出）
     - 个性化选项（基于分类的新闻、保存的偏好设置）
     - 扩展 数据源 以涵盖多种语言的全球新闻
-
-- https://github.com/wenbochang888/github-trending-spider /MIT/202606/python/vue
-  - https://www.gdufe888.top/ai/
-  - 每日AI前沿信息。开源趋势、社区热议、AI 动态
-  -  每日自动爬取 GitHub Trending、Hacker News、TLDR AI、OpenAI、Anthropic、InfoQ AI Development 等信息源，通过 GitHub Models API (GPT-4o) 生成中文摘要，提供 FastAPI 只读接口和 Vue 前端资讯流页面。
-  -  历史归档 最近 7 天，不包含今天。选择日期后读取当天历史资讯。
-  -  [【开源自荐】AI信息，自动爬取 GitHub Trending、Hacker News、OpenAI、Anthropic、InfoQ AI 等AI信息 - LINUX DO _202606](https://linux.do/t/topic/2300464)
+  - https://github.com/wenbochang888/github-trending-spider /MIT/202606/python/vue
+    - https://www.gdufe888.top/ai/
+    - 每日AI前沿信息。开源趋势、社区热议、AI 动态
+    -  每日自动爬取 GitHub Trending、Hacker News、TLDR AI、OpenAI、Anthropic、InfoQ AI Development 等信息源，通过 GitHub Models API (GPT-4o) 生成中文摘要，提供 FastAPI 只读接口和 Vue 前端资讯流页面。
+    -  历史归档 最近 7 天，不包含今天。选择日期后读取当天历史资讯。
+    -  [【开源自荐】AI信息，自动爬取 GitHub Trending、Hacker News、OpenAI、Anthropic、InfoQ AI 等AI信息 - LINUX DO _202606](https://linux.do/t/topic/2300464)
 
 - https://github.com/SWE-bench/SWE-bench /MIT/202603/python
   - https://www.swebench.com/
   - SWE-bench: Can Language Models Resolve Real-world Github Issues?
 
 - https://github.com/sierra-research/tau2-bench /MIT/202606/python
+  - https://sierra-research.github.io/hyper-tau-bench/
   - https://taubench.com/#leaderboard?benchmark=text
   - A Benchmark for Tool-Agent-User Interaction in Real-World Domains
   - https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard
@@ -273,6 +273,13 @@ modified: 2026-06-20T15:49:57.019Z
 - https://github.com/jeinlee1991/chinese-llm-benchmark /NonOpen
   - https://nonelinear.com/
   - 非线智能 NoneLinear - ReLE评测：中文AI大模型能力评测（持续更新）
+
+- https://github.com/llm2014/llm_benchmark /202609/每月底做一次成绩归档
+  - https://llm2014.github.io/llm_benchmark/
+  - 本评测是个人性质，使用滚动更新的私有题库进行长期跟踪评测。
+  - 本评测侧重模型对逻辑，数学，编程，人类直觉等问题的测试。不够权威，不够全面。仅从一个侧面观察各个大模型的长期进化趋势。
+  - 本评测的题库规模不大，长期维持在28题/270个用例以内，不使用任何互联网公开题目。题目每月会有滚动更新。题目不公开，意图是分享一种评测思路，以及个人见解。每个人应该根据自己所需，对大模型进行考察。不可盲信任何评测。
+  - 因为题目会每月增减，每个模型的成绩在每个月榜单中会有正负3分左右的变化，属于正常现象。大致排序保持稳定。
 
 - https://github.com/alvinreal/awesome-opensource-ai /CC0/202606/python/简单列表
   - https://awesomeosai.com/
@@ -2362,8 +2369,15 @@ modified: 2026-06-20T15:49:57.019Z
     - 由于luna这两天不是很稳，我们调整出来单独的分组，以免和pro组冲突影响，用luna的佬们要麻烦在后台的分组切换一下到codex luna分组。旧的分组将会跳转到GPT-5.6-terra。
     - pro 的luna已经跳到terra 用luna要用codex luna 分组
     - 为啥大部分中转站把 luna 停掉了？ 不但是亏本，还影响主号。基本是得不偿失
+    - luna的话1块钱=1个亿, 现在5毛一个亿
     - [【富可敌国】几块钱能蹬一天的luna大家都停了，我们继续 _202608](https://linux.do/t/topic/2758706)
     - [【富可敌国】想钱想疯了，佬们一起来做个中转站 - LINUX DO _202607](https://linux.do/t/topic/2587271)
+  - https://beiluoxi.top/keys  /0.15x
+    - 换了两台物理机 随便上量 随便蹬 luna
+    - 企业补号了 然后后台有很多人说要luna6 所以开了
+    - luna有蒸馏组和非蒸馏组随便打随便上量
+  - https://tntapi.com/keys, /0.1x
+    - Luna我都开了，一天几块钱
   - https://api.liusq.icu /0.1x
     - team  现在就这个分组了
     - free分组只能跑luna和5.5
@@ -2383,12 +2397,15 @@ modified: 2026-06-20T15:49:57.019Z
   - [FastAI 模型 ](https://www.fastaitoken.com/keys) /x
     - 仅0.3x的pro分组支持luna
     - luna按tera计费， terra是luna的10x
-  - https://kuaipao.pro/pricing  /1.5x/签到0.005
-    - [【快跑AI】长期GPT-5.6 特价分组 0.08倍率 180+稳定渠道 已同步Luna/terra 支持企业对公开清单 LINUX DO _202608](https://linux.do/t/topic/2679908)
+  - https://kuaipao.pro/pricing  /0.2x/不定期下架上架luna
+    - 快跑平台 充值是 0.4 充值 1 美金
+    - 计算方式 0.4 元 * 平台倍率 * 模型官网价格 = rmb / 百万 token
   - https://tkapi.cc.cd/keys   /0.1x/似乎不能用
   - https://aixoras.com/pricing /0.35x
     - 分组 GPT 优质
     - 实际倍率让人困惑 0.35/0.035/2.1
+  - https://1yuanapi.com/pricing /0.3x
+    - 运营活动花哨复杂
   - removed
     - https://www.rightapi.ai/models  /0.4x--0.08--0.008/10rpm
     - https://codexapis.com/pricing   /0.085--0.0085
@@ -2401,6 +2418,7 @@ modified: 2026-06-20T15:49:57.019Z
   - https://api.x5m5x.com/monitor  /0.15x
   - https://ai.max66.xyz/keys, 只做自部署的deepseek  /0.125x
   - https://fuck-everyone.bbroot.com/model-plaza  /0.18x
+  - https://tntapi.com/keys  /0.1x
   - https://www.jiji.cc/model-list  /0.2x/注意缓存
     - 国模组的差一些 deepseek组的就是好很多，至于满血，基本来说都是满血，但是我看了好像除了官方的，其它的包括国内阿里火山那些都有点拉胯，佬自己测一下，站内的要质量好些的就选  deepseek 0.7那个, 便宜的国模的就是 0.19
   - https://zzshu.cc/pricing /0.2x
@@ -2409,9 +2427,7 @@ modified: 2026-06-20T15:49:57.019Z
     - 0.35x
   - [帅API ](https://api.shuaiapi.com/pricing)
     - 0.3x
-  - [HOHAI ](https://api.hohai.eu.org/pricing)
-    - 0.2x, 0.2-0.8-0.004
-  - [PackyAPI ](https://www.packyapi.com/pricing)
+  - https://www.packyapi.com/pricing,  /0.5x 
     - 0.5x, 0.8x
   - [快跑API ](https://kuaipao.pro/pricing)
     - 0.45x
@@ -2432,6 +2448,8 @@ modified: 2026-06-20T15:49:57.019Z
     - 美元计费
   - [NexoToken｜AI API 与 Agent 工具平台 ](https://www.nexotoken.net/?view=models)
     - 0.45-1.8-0.045
+  - [HOHAI ](https://api.hohai.eu.org/pricing), 会自动删除账号
+    - 0.2x, 0.2-0.8-0.004
 
 - [zzshu /NewAPI ](https://zzshu.cc/pricing)  , 长期运营
   - [吱吱鼠AI的小店 - 云猫寄售 ](https://catfk.com/shop/SXS913NA)
@@ -2519,6 +2537,14 @@ modified: 2026-06-20T15:49:57.019Z
   - 目前自部署ds v4.1flash 0.1x尝鲜中，需要可小额充值体验
   - 客户两块多蹬了1亿token
   - 已上架天卡15.88不限量蹬一天
+
+- [TNTAPI ](https://tntapi.com/keys), 
+  - 国模-0.1x
+  - 支持luna
+
+- [北洛AI ](https://beiluoxi.top/keys), 用户少
+  - 换了两台物理机 随便上量 随便蹬 luna
+  - 国模-0.039x, 包括 deepseek
 
 - [FoxRouter ](https://foxrouter.org/pricing)， 低价
   - 分组实际倍率与文字不同
@@ -2901,7 +2927,13 @@ modified: 2026-06-20T15:49:57.019Z
 
 - https://subrouter.ai/models?page=1&vendor=deepseek
 
+- [AI中转导航 ](https://ai2api.vip/)
+
 - [BeeAPI. AI — The AI API Marketplace · 多模型聚合的 AI API 集市 ](https://beeapi.dev/marketplace)
+
+## payment-card
+
+- [美卡论坛 ](https://www.uscardforum.com/top)
 
 ## 代充
 

@@ -280,6 +280,8 @@ redis-cli shutdown
   - https://github.com/alienator88/Pearcleaner /NonCommercial/202601/swift
     - free, source-available and fair-code licensed Mac app cleaner inspired by Freemacsoft's AppCleaner 
     - For now, I just legitimately don't have any spare time to work on my open-source apps.
+  - https://github.com/jasonwong1991/WonderBox /MIT/202609/swift
+    - [【开源推广】你的Mac空间不知道用到哪了？内存突然不足？来看看这个实用工具吧～ - 资源荟萃 - LINUX DO _202609](https://linux.do/t/topic/2941177)
 
 - git
   - [UGit - 让每个人都可以轻松使用Git](https://ugit.qq.com/zh/) 从这个带/zh的url进去才能下载

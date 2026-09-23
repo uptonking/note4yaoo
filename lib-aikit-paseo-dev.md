@@ -32,6 +32,7 @@ modified: 2026-09-05T00:27:42.212Z
     - Connect to remote daemons over SSH 
 
 - cons
+  - sync的功能不够强: 如何让云端设备与本地设备同步
   - Paseo manages other agents, it doesn't ship one.
   - 依赖用户本地的环境， 如果用paseo之前的agent没配置好， 那也需要先配好再用paseo
   - 适合个人用户私有化部署, 但不适合作为saas对外提供， 因为自定义host需要支持存储/计算/git操作/开发环境...

@@ -345,6 +345,19 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 0923
+
+- [Codex 开启 APIKey 的模型发现功能 - LINUX DO _202609](https://linux.do/t/topic/2940739)
+
+```toml
+[model_providers.custom]
+base_url = "http://127.0.0.1:3001/v1"
+model_catalog_url = "http://127.0.0.1:3001/v1/models"
+
+[features]
+api_key_model_discovery = true
+```
+
 ## 0922
 
 - 🤔 browser use feature is very powerful. for example, ZCode agent can run completely headless in the background on remote Linux servers, Docker containers, or terminal sessions via zcode --browser-use=headless.  for the headless browser-use feature, what are the typical use cases? i plan to deploy zcode agent to my vps or implement a similar headless browser use feature in my own app. please deep research related solutions/projects/ideas, if you found any open source products or inspiration projects, provide overview/github-url/website for each.
@@ -484,7 +497,7 @@ Synthetic benchmarking — generating trajectories/training data for other agent
   - 账号有额度，VPS 通过 antigravity cli 可以调用模型（Gemini 3.8 flash，Claude opus 4.6），但是通过 CPA 无法调用，提示 429
   - 调用的模型使用的工具是 Claude code，系统提示词包含 “You are a Claude agent, built on Anthropic’s Claude Agent SDK.”，触发了 Google 的拦截
   - 修改 CPA，打个补丁，对 antigravity 的流量进行预清洗，去掉这句提示词，经过测试，风控仅针对这句话，去掉后可以正常使用
-  - 使用其他的 coding agent，如 codex,pi 等
+  - 使用其他的 coding agent，如 codex, pi 等
 - omp 的关键词也被识别了
 
 看样子是针对其他 harness 的
@@ -580,7 +593,7 @@ gemini 是给普通人用的终端
 ## 0908
 
 - [cpa反代gemini报错 - LINUX DO _202609](https://linux.do/t/topic/2836154)
-  - 400: {“code”:400,“message”:“Request contains an invalid argument.”,“status”:“INVALID_ARGUMENT”}, 之前一直都没有问题，今天调用时 gemini 会报如上错误，有佬知道是为什么么
+  - 400: {“code”:400, “message”:“Request contains an invalid argument.”, “status”:“INVALID_ARGUMENT”}, 之前一直都没有问题，今天调用时 gemini 会报如上错误，有佬知道是为什么么
   - 还是授权文件 project_id 参数的问题，删除凭证，重新授权一直获取到一个不存在的 project_id，已经从 google cloud 里手动修改一个存在的 project id 解决了
   - 谷歌账号登录 https://console.cloud.google.com, 里面有相应的项目，找到一个复制 project id， 到 CPA 文件目录 app auth 下对应的凭证 json 的 project_id 字段上
 
@@ -610,7 +623,7 @@ gemini 是给普通人用的终端
 
 - the failure is specifically the immediate public HTTPS smoke for aichor.aichorage.de. The endpoint returns a TLS internal error because the newly-added Caddy site has no usable certificate yet, then the rollback removes the route.
   - you have come cross this issue multiple times, you might refer to how wapdf/aichrouter are solving this, they are also single-consumer service and they work well.
-  - you might do multi-stage implementation to deploy aichor if it helps,
+  - you might do multi-stage implementation to deploy aichor if it helps, 
   - you might run `ssh root@166.88.xxx.xxx` as worker_2 node and do whatever you want.
 - Live inspection identified the root cause: worker-2’s firewall intentionally blocks public ACME validation, so new follower-origin certificates can never be issued. 
   - Wapdf/Aichorouter work only because their origin certificates predate that firewall. 
@@ -631,11 +644,11 @@ gemini 是给普通人用的终端
 - These are private (internal) IP address ranges defined by RFC 1918. They're reserved for use inside local networks and aren't routable on the public internet — routers simply drop packets addressed to them if they leak out.
   - 10.0.0.0/8	~16.7 million	Large enterprise networks, cloud VPCs (AWS, GCP, Azure)
   - 172.16.0.0/12	~1 million	Medium networks; also common in Docker default bridge networks
-  - 192.168.0.0/16	65,536	Home routers, small office networks
+  - 192.168.0.0/16	65, 536	Home routers, small office networks
   - 172. *.*.* is not entirely private. Only 172.16.0.0 through 172.31.255.255 (the second octet between 16–31) is reserved. 172.32.0.0 and above, or 172.15.0.0 and below, are public address space.
   - 192.168. *.* is fully private — the whole /16 block, so any address from 192.168.0.0 to 192.168.255.255 is internal. Most home routers default to 192.168.0.x or 192.168.1.x.
   - 10. *.*.* is fully private and the largest block, so it's the usual choice when you need to number a big network (thousands of devices, multiple subnets).
-  - 127.0.0.0/8 — loopback addresses (127.0.0.1 = "localhost," your own machine).
+  - 127.0.0.0/8 — loopback addresses (127.0.0.1 = "localhost, " your own machine).
   - 169.254.0.0/16 — link-local addresses, auto-assigned when a device can't reach a DHCP server.
 
 ## 0901
@@ -669,7 +682,6 @@ gemini 是给普通人用的终端
   - Vmess stands for “VMessage” and is based on the Transport Layer Security (TLS) protocol, which provides a secure and encrypted communication channel between the client and server.
 
 - Trojan is another open-source network proxy that is designed to provide similar functions as V2Ray, but with a different approach to obfuscation. Trojan disguises network traffic as HTTPS traffic, making it difficult for firewalls to detect and block it.
-
 # dev-08
 
 ## 0831
@@ -690,14 +702,14 @@ vps A - 2c4g unlimited bandwidth
 vps B - 2c4g 10TB bandwidth
 vps C - 1c2g 4TB bandwidth
 vps D - 2c2g 3TB bandwidth
-i want to deploy a suite of services to 4 vps,  with a leader node with mostly caddy reverse proxy and no business services, and 3 nodes with heavy business services that might consume high ram.
+i want to deploy a suite of services to 4 vps, with a leader node with mostly caddy reverse proxy and no business services, and 3 nodes with heavy business services that might consume high ram.
 i want to choose a vps for my leader node, which vps might be better, can you design a high-availability architecture for me?
 since the leader node is always the entry of all requests then proxied to other nodes, will it consume very high network bandwidth? if i configure proxy for leader node in cloudflare, can it lower the network usage, especially ddos?
 
 - Leader → VPS A. Since every request and every response byte for all three backend services transits the leader, bandwidth is the binding constraint for that role, not CPU or RAM. Caddy itself is light (a few hundred MB RAM, modest CPU except under heavy TLS handshake load), so 2c4g is comfortably enough compute.
   - it sees the sum of everything going to B, C, and D combined, since 100% of requests pass through it.
 - With a single leader, that node is a single point of failure
-  - Standby leader + Cloudflare Load Balancer. Run a second Caddy instance on VPS B as a warm standby. Cloudflare's load balancer does DNS-based routing with active health checks against your origins so traffic is only sent to servers that respond to health probes,
+  - Standby leader + Cloudflare Load Balancer. Run a second Caddy instance on VPS B as a warm standby. Cloudflare's load balancer does DNS-based routing with active health checks against your origins so traffic is only sent to servers that respond to health probes, 
   - Cloudflare Tunnel from both A and B, no public IP exposed on either — Cloudflare routes to whichever tunnel is healthy. More setup work, but also removes the origin-IP-exposure question entirely.
 - Does Cloudflare in front lower bandwidth?
   - Caching — anything cacheable (static assets, cacheable API responses if you configure it) gets served straight from Cloudflare's edge and never touches your leader at all.
@@ -710,8 +722,8 @@ since the leader node is always the entry of all requests then proxied to other 
 ## 0830
 
 - 🤔 i  have a  vps with 1 core cpu and 2gb ram, i have installed https://beszel.dev/ monitoring service on the ubuntu 24.04 os.
-  - i can see the cpu takes up 62.1%, ram takes up 43.1%,  disk takes 62.3%,  but the system load number is `1.29 1.57 1.39` .  for a vps with only 1 cpu, oftentime i see the system load is red warning. 
-  - if all cpu/ram is normal,  why would this happen? what can i do to lower the system load to make it healthy? or is it doesnot matter at all?
+  - i can see the cpu takes up 62.1%, ram takes up 43.1%, disk takes 62.3%, but the system load number is `1.29 1.57 1.39` .  for a vps with only 1 cpu, oftentime i see the system load is red warning. 
+  - if all cpu/ram is normal, why would this happen? what can i do to lower the system load to make it healthy? or is it doesnot matter at all?
 - load average and CPU% measure two different things.
 - Beszel's CPU% is roughly "how much of the CPU's actual compute cycles were used" — a snapshot of the processor doing work.
 - Linux's load average is the average number of processes that were either running on the CPU or waiting in queue — and critically, that queue includes processes stuck in uninterruptible sleep (state D), which is almost always a process waiting on disk or network I/O, not CPU.
@@ -805,7 +817,7 @@ All three high and similar: sustained, chronic load problem
   - It turns on four safety settings that make a script __fail fast and fail loudly__ instead of continuing in a broken state
   - abort on any error, including inside pipelines and functions; refuse to use undefined variables.
 
-- 🤔 when devops shell scripts become too long, what is the best practice to deal with it in the industry?  deep research related solutions/ideas,  provide overview/url for each.
+- 🤔 when devops shell scripts become too long, what is the best practice to deal with it in the industry?  deep research related solutions/ideas, provide overview/url for each.
   - Break the monolith into functions with local variables, split reusable logic into sourced library files (lib/*.sh), and give each piece a single responsibility with one small orchestrator script that calls the rest.
 - Turn it into a proper CLI instead of a script: tools like Bashly generate the argument parsing, help text, and subcommand routing from a YAML spec, so you only write the logic for each command.
 - Migrate to High-Level Languages (Python, Go, or Google zx)
@@ -832,7 +844,7 @@ All three high and similar: sustained, chronic load problem
   - What happens if someone pings your domain: They will see your exact VPS IP address.
   - Benefits: It allows all types of traffic to pass through. You would use this for subdomains that handle non-web traffic. For example, if you have ssh.yourdomain.com or mail.yourdomain.com, you must set them to "DNS Only" so those specific services can connect directly to your server.
 
-- If you initially set your domain to "DNS Only" (even for just a few minutes while setting it up) and then switched it to "Proxied," your VPS IP might still be logged in historical public DNS databases (like SecurityTrails or Shodan). Therefore, if someone really wants to find your VPS IP, they might look at your domain's history.
+- If you initially set your domain to "DNS Only" (even for just a few minutes while setting it up) and then switched it to "Proxied, " your VPS IP might still be logged in historical public DNS databases (like SecurityTrails or Shodan). Therefore, if someone really wants to find your VPS IP, they might look at your domain's history.
 
 - If you do want the IP genuinely hidden and only reachable through Cloudflare, it's worth also configuring your VPS firewall to only accept web traffic from Cloudflare's published IP ranges — otherwise someone who does find the real IP can bypass Cloudflare entirely and hit your server directly.
 
@@ -840,7 +852,7 @@ All three high and similar: sustained, chronic load problem
 - Aiven for Valkey (Most Generous Raw Capacity)
   - 1 Dedicated Virtual Machine, 1 CPU, 1 GB RAM (with Redis maxmemory capped at 50%, giving you 500 MB of usable cache)
 - Upstash (Most Generous & Practical for Serverless SaaS)
-  - 256 MB data size limit and 500,000 commands per month
+  - 256 MB data size limit and 500, 000 commands per month
 - Redis Cloud by Redis Inc. (Official but Constrained)
   - 30 MB + 5 GB/month bandwidth + 100 ops/sec
   - 30 MB memory limit, max 30 concurrent connections, and capped at 100 operations per second
@@ -983,7 +995,7 @@ analyze related solutions or similar ideas, then explain to me what are the best
   - since Discourse, Gitea, MinIO, n8n, and Beszel will all be containers, Caddy should live on the same shared Docker network and reverse-proxy them by container name — not by `localhost:PORT` for a dozen different ports.
   - proxying by container name on a shared network is simpler and less error-prone than tracking which host port each app bound to and keeping a firewall rule set in sync with it.
 - Caddy via apt + apps in Docker on localhost ports
-  - Caddy is the host-level edge; each app container publishes to 127.0.0.1:PORT only.
+  - Caddy is the host-level edge; each app container publishes to 127.0.0.1: PORT only.
 - Caddy in Docker + everything in Docker
   - Right choice when: you want the entire server state in one compose repo, you rebuild the VPS often, or you run multiple VPSes with the same stack.
   - Requires: a dedicated Docker network (e.g. proxy) shared by Caddy and every app, upstreams like reverse_proxy n8n:5678, persistent volumes for /data and /config.
@@ -1052,7 +1064,7 @@ analyze related solutions or similar ideas, then explain to me what are the best
 
 - `__tests__` (double underscore) is the Jest/React-ecosystem convention — Create React App, Jest itself, Prisma, and Zowe CLI all use it.
   - Jest special-cases the name: its default testMatch explicitly matches anything inside a folder literally named __tests__, anywhere in the tree, in addition to *.test.*/*.spec.* files.
-- Vitest doesn't care about folder names at all — its default include is [' **/* .{test,spec}.?(c|m)[jt]s?(x)'], purely filename-based, so tests/, __tests__/, or fully colocated all work identically out of the box. 
+- Vitest doesn't care about folder names at all — its default include is [' **/* .{test, spec}.?(c|m)[jt]s?(x)'], purely filename-based, so tests/, __tests__/, or fully colocated all work identically out of the box. 
 - Node.js test runner
   - Default discovery recognizes test/, test- *, *_test, *-test, and *.test.* .
 
@@ -1102,7 +1114,7 @@ analyze related solutions or similar ideas, then explain to me what are the best
 
 - when opening a pdf file, the top-right view icon supports to switch between "PDF Viewer" and "PDF Text View". 
   - when clicking "PDF Viewer", the existing pdf viewer works well.
-  - when clicking "PDF Text View", please show a static pdf ui component like OcrBlocksBlock in project `../extend-ui`. in source code of `../extend-ui` webapp, `apps/v4/app/(view)/view/blocks/[block]/page.tsx` shows a full page pdf document with text panel to the right, which is a good ux for redmansion "PDF Text View", just migrate this static example ui to redmansion, no real pdf data for now. 
+  - when clicking "PDF Text View", please show a static pdf ui component like OcrBlocksBlock in project `../extend-ui`. in source code of `../extend-ui` webapp,  `apps/v4/app/(view)/view/blocks/[block]/page.tsx` shows a full page pdf document with text panel to the right, which is a good ux for redmansion "PDF Text View", just migrate this static example ui to redmansion, no real pdf data for now. 
 - analyze related code in current project and `../extend-ui`, then design an extensible solution to switch between "PDF Viewer" and "PDF Text View". 
 
 - you have implemented part of this "PDF Text View" feature.
@@ -1110,6 +1122,7 @@ analyze related solutions or similar ideas, then explain to me what are the best
 - when the pdf is opened by "Open File" from top-left workspace icon menu, External temporary PDF file should also support to switch between "PDF Viewer" and "PDF Text View". design a extensible architecture for the external pdf view/caching.
 
 - which one would be better for showing the static pdf text view:
+
 ```tsx
 
 export function StaticPdfTextView() {

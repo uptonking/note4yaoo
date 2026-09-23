@@ -279,6 +279,19 @@ mineru paddleocr site:github.com -inurl:"github.com/opendatalab/" -inurl:"github
 
 - Ensure the 'COUNTRY/REGION' shown in the 'Payments profile' matches those of the family manager (parent account).
   - https://payments.google.com/settings
+
+- [GBox - GMS GBox ](https://gboxlab.com/)
+  - GBox means Google Box that helps users use Google apps Built-in GMS
+  - 虚拟机的方案
+
+- [YouTube ReVanced - Download YouTube ReVanced APK - vanced.to ](https://vanced.to/)
+  - https://vanced.to/apps
+  - vanced.to is a community-driven website created by ReVanced enthusiasts to distribute clean APKs and is not official. 
+  - The simplest way is to download Community ReVanced Manager and use it to install, manage, and update other ReVanced applications with user-friendly features designed for non-technical users.
+  - ReVanced Extended, created by inotia00, improves on the original YouTube ReVanced with more features and a friendlier UI.
+
+- [Morphe App for YouTube and Reddit ](https://morphe.software/)
+  - Morphe is an open-source Android app created by former ReVanced developers who left due to internal conflicts. Like ReVanced, it patches the official YouTube app to remove ads, enable background playback, and unlock Premium features — but with more transparent governance and welcoming contribution policies.
 # twitter/x
 - search
   - [How to use advanced search – find posts, hashtags, and more](https://help.x.com/en/using-x/x-advanced-search)
