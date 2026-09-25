@@ -2252,6 +2252,13 @@ modified: 2026-06-20T15:49:57.019Z
   - 反重力--¥46
 - [Gemini丨Telegram的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/Pro)
   - gemini产品多
+- [AI 拆解局 ](https://chai.aihao666.com/shop)
+  - 无需注册登录, 直接下单
+  - [Antigravity 扫码验证过不去？两种方法手把手教你通过-AI 拆解局 ](https://chai.aihao666.com/archives/antigravity-qr-verification)
+  - [反重力弹出扫码验证怎么办？手把手教你通过验证 - AI小波知识库 ](https://blog.aixiaobo.cn/posts/antigravity-qr-code-verification-guide/)
+    - 手机已登录谷歌账号：不一定要用你反重力的那个号，登录你自己的老号也是可以的。 手机上随便登一个谷歌账号就能完成验证，不一定要和反重力用的是同一个号。
+    - 方法一：用手机原相机扫码, 小米、OPPO、一加这类品牌的，可以直接用原相机里面的「扫一扫」
+    - 方法二：用 Google 应用扫码, 如果你的手机找不到相机自带的扫一扫，可以用 Google 官方应用来扫码。
 
 - [Windsurf专卖4988的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/3FR7Y3PY)
   - 谷歌母号, 不质保，只保拍下立马登录满配额。有效期10天左右。
@@ -2508,7 +2515,7 @@ modified: 2026-06-20T15:49:57.019Z
   - 充值改为u充值了，最低充值500r。小额充值点左边的小铺链接。
   - 中等价格
 
-- [熊出没API /sub2api](https://us.xcmapi.com/model-plaza), 已充值
+- [熊出没API /sub2api](https://us.xcmapi.com/model-plaza), 已充值, 群聊活跃
   - [分组监控页&AI降智监控中心 ](https://www.xcmapi.com/jk/)
   - https://www.xcmapi.net/welfare-lottery , 每日抽奖签到, 需vpn魔法
   - [API 在线检测 ](https://us.xcmapi.com/jc/)
@@ -2538,7 +2545,7 @@ modified: 2026-06-20T15:49:57.019Z
   - 客户两块多蹬了1亿token
   - 已上架天卡15.88不限量蹬一天
 
-- [TNTAPI ](https://tntapi.com/keys), 
+- [TNTAPI ](https://tntapi.com/keys), 用户多
   - 国模-0.1x
   - 支持luna
 

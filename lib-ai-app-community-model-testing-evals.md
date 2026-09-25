@@ -60,7 +60,9 @@ modified: 2026-01-12T10:04:03.442Z
 
 - ## 
 
-- ## 
+- ## [满血AI ](https://manxue.ai/)
+  - 糖果测试
+  - 鹈鹕骑行
 
 - ## [ModelTrace ](https://xqy2006.github.io/ModelTrace/)
   - [隔壁站看到的一个可以测试 gpt是否降智路由到别的模型的办法 - LINUX DO _202609](https://linux.do/t/topic/2899199)

@@ -280,6 +280,9 @@ mineru paddleocr site:github.com -inurl:"github.com/opendatalab/" -inurl:"github
 - Ensure the 'COUNTRY/REGION' shown in the 'Payments profile' matches those of the family manager (parent account).
   - https://payments.google.com/settings
 
+- age
+  - https://myaccount.google.com/age-verification?utm_source=p0
+
 - [GBox - GMS GBox ](https://gboxlab.com/)
   - GBox means Google Box that helps users use Google apps Built-in GMS
   - 虚拟机的方案
@@ -651,6 +654,8 @@ sudo systemctl start minidlna
   - 原链接：https://huggingface.co/数据集名称
   - 镜像链接：https://hf-mirror.com/数据集名称
   - 还可以在 https://modelscope.cn/models 下载模型和数据集
+
+- [Pirate Face - Turn AI into torrents that live forever ](https://pirateface.co/)
 # gfw-proxy
 - [镜像站点收集](https://xiaodu114.github.io/p/fav/imageSite/index.html)
   - 谷歌镜像、YouTube镜像、GitHub镜像

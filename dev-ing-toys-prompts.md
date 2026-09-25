@@ -1392,7 +1392,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 
 - ### aichorouter/new-api/cpa
 
-- please update aichorouter and cpapi by upgrading new-api and cli-proxy-api to the latest docker image that is offcially published, you might do some database migration if necessary. legacy `./apps/newapi` service should stay unchanged because it's unrelated to this upgradation.
+- please update aichorouter and cpapi by upgrading new-api and cli-proxy-api to the latest docker image that is offcially published, you might do some database migration if necessary. legacy `./apps/newapi` service should stay unchanged because it's unrelated to this upgrade.
 - after your update, you should push to github to trigger auto deployment with woodpecker, then inspect ci status by `woodpecker-cli`, fix issue if it exists.
   - when you finish the update, all services should still running well, and features in aichorouter and cpapi should still work well without data/config loss.
 

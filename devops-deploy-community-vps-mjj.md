@@ -1291,6 +1291,47 @@ Gemini、Reddit 被拉黑；
   - The restoration process was painfully slow, and ultimately unsuccessful.
   - The fact that multiple backups failed to restore properly raises serious questions about their backup system's reliability. What good are backups if they don't work when you need them?
 
+# discuss-vendor-dmit
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [请教 LAX. AS3. T1. WEE 和一些中转线路的知识 _202609](https://www.nodeseek.com/post-947315-1)
+今天看到大妈放货的消息，想到一些问题，总结起来请教
+
+1. LAX. AS3. PRO. TINY 直连优秀大家抢的这款居多
+2. LAX. AS3. T1. WEE 这款也包含日本、新加坡两款因为直连差，所以更推荐用来落地、外贸、一些其他业务。
+
+我的问题：
+1. 那为什么要过「DMIT LAX. T1」，直接 「LAX. AS3. PRO. TINY 」连住宅IP不也是美国本土互联么？
+2. 1的问题无论是否是必要的之后，那这里「LAX.AS3.PRO.TINY 」的部分是否可以用EVOXT的马来的VPS去替换（因为至少电信也是CTG GIA），或许比不了 LAX.AS3.PRO.TINY延迟低绕了弯路 ，但至少是可用的？
+3. 衍生2的问题，要拉家宽至少中转是要对应自己的宽带网络有（CN2 GIA / 9929 / CMIN2 ）的，或者换个说法就是直连稳定无丢包？
+4. 有条件 中转尽量家宽和中转同一个地区/国家？没条件的话要怎么判断是否拉得起来或者是适合的、稳定的、性价比高的？（因为我刷到说台北HiNet家宽对电信很难拉，本身台湾也没有直连好的VPS）
+
+- 多了一层吧，T1是给你在海外用的，在国内用Pro接家宽就好
+
+- 没必要中间加一个 T1。 T1 的用法应该是有沪日的朋友买来走日美 GSL，再去走家宽，而不是用美西优化。
+
+- ## [DMIT VPS 求推荐 - LINUX DO _202609](https://linux.do/t/topic/2947399)
+- 要么买 EB 要么买 Pro，T1 是不带任何优化的
+
+- t1 无优化，线路就是普通线路，结合广播老巴西 ip 尚未完全拉到美国，没有购买价值
+- 刚买完一个 t1 一个 pro 正在跑测试，t1 确实拉不要考虑了，pro 比我手里的 BWHdc9 结果稍微差一丢丢
+
+- 传家宝都是活动年付机，等黑五圣诞看会不会放，正价机里电信买 pro，联通移动买 eb，t1 没有线路优化别图便宜买
+
+- ## [请教dmit注册需要填真实的国内手机号吗 _202606](https://www.nodeseek.com/post-790132-1)
+  - 以及地址填国内还是海外。dmit审核手机号和地址吗？
+- 不需要，地址别填太假就行
+
 # discuss-deprecated/shutdown
 - ## 
 

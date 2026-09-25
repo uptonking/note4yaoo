@@ -13,6 +13,10 @@ modified: 2026-09-19T14:34:58.669Z
 
 # table
 
+- https://github.com/kujiangmudao/tablepack /MIT/202609/python
+  - One command turns PDF tables into review-ready Excel packages. Powered by MinerU
+  - Table-crop screenshots saved next to every package — QC without extra tooling
+  - Empty / broken tables → written into notes, never invented data
 # image
 
 # formula

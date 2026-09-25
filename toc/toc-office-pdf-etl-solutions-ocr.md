@@ -981,6 +981,13 @@ modified: 2026-04-07T12:53:38.419Z
   - https://github.com/neka-nat/mineru-api /AGPL/202512/python
     - API server for MinerU.
 
+- https://github.com/aronnaxlin/minerupress /apache2/202605/python
+  - 把 MinerU 解析结果整理成可以发布的 MkDocs Material 图书站点。
+  - MineruPress 适合处理扫描教材、课程讲义、内部手册和长 PDF 知识库迁移：输入 MinerU 生成的 content_list.json 与图片，输出按章节拆分的 Markdown、图片资源和可直接部署的静态站点。
+
+- https://github.com/Sevthered/pdf2wiki /AGPL/202609/python
+  - Convert technical books (native-text PDFs) into clean, chapter-split, LLM-ready Markdown — dual-pass MinerU pipeline with fidelity-preserving post-processing.
+
 ## utils
 
 - [MinerU 开发者生态 | Agent Skills · MCP Server · CLI/SDK · RAG 框架集成 ](https://mineru.net/ecosystem)
@@ -1015,6 +1022,11 @@ modified: 2026-04-07T12:53:38.419Z
   - https://github.com/linger-alpha/trans2md
     - 自动把产物落在“源文件同目录”，并且 Markdown 文件名与源文件一致（仅后缀变为 .md）
     - 有图片引用：创建 `<stem>_trans2md/`，输出 `<stem>_trans2md/<stem>.md + <stem>_trans2md/images/`（md + images/ 可直接渲染）
+
+- https://github.com/kujiangmudao/tablepack /MIT/202609/python
+  - One command turns PDF tables into review-ready Excel packages. Powered by MinerU
+  - Table-crop screenshots saved next to every package — QC without extra tooling
+  - Empty / broken tables → written into notes, never invented data
 
 - https://github.com/Nebutra/MinerU-Skill /MIT/202602/python
   - https://smithery.ai/skills/nebutra/mineru-skill
@@ -1140,6 +1152,9 @@ modified: 2026-04-07T12:53:38.419Z
   - Post-process a MinerU extraction directory into a retrieval-ready knowledge base dataset for RAG pipelines.
   - [开源：MinerU → RAG 数据集转换工具 - LINUX DO _202604](https://linux.do/t/topic/1940345)
     - MinerU 自身的输出格式很标准，但有一些标记和符号对于 RAG 模型来说反而是噪声。
+
+- https://github.com/johnking0099/mineru-llama-cpp /202609/python/cpp
+  - In-process llama.cpp VLM inference engine for MinerU, exposing a single Engine class with synchronous and asynchronous generate/stream methods. Wraps a pinned build of llama.cpp (no HTTP layer, no subprocess) via pybind11.
 # ocr-cpu
 - https://github.com/moravianlibrary/TuzkaOCR /apache2/202609/python
   - https://moravianlibrary.github.io/TuzkaOCR/
