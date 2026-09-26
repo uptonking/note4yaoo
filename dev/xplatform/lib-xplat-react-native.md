@@ -56,6 +56,29 @@ modified: 2021-05-13T03:12:23.257Z
     - 扶不起的QT
   - 各自写一遍其实也没想象的工作量大
     - 如果有图表的话，工作量就大了
+# expo
+- Expo is a framework/toolchain built on top of React Native — every Expo app is a React Native app underneath. 
+  - React Native — the core: write UI in JS/TypeScript + React, it compiles to real native iOS/Android views.
+  - Expo — adds a CLI, a large library of pre-built native modules (camera, notifications, secure storage, etc.), file-based navigation via expo-router, OTA updates, and cloud build/submit services (EAS) on top of React Native.
+
+- The New Architecture (JSI, Fabric, TurboModules) eplaced the old JS bridge entirely. It's the default in React Native 0.76+ and Expo SDK 52+, and by React Native 0.82 (October 2025)
+
+- The old fear that Expo locks you out of native code is largely outdated: with prebuild/config plugins and dev clients, you can drop into native iOS/Android code whenever you need it without leaving the Expo toolchain.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # NativeScript
 - ## 
 

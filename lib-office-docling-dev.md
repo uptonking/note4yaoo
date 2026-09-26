@@ -10,7 +10,8 @@ modified: 2025-09-21T13:58:08.942Z
 # guide
 
 - pros
-  - 提供了2种转换方式和架构: ocr+parse, vlm
+  - license: MIT
+  - 提供了2种转换方式和架构: ocr+parse, vlm-pipeline(llama-server/ollama)
 
 - cons
   - text styles((bold, underline, etc)) are not supported in the `DoclingDocument` format
@@ -31,6 +32,9 @@ modified: 2025-09-21T13:58:08.942Z
 
 - vlm
   - 如何流式输出
+
+- roadmap
+  - ppt
 # dev-xp
 - 使用lmstudio的granite-docling-mlx时，lmstudio的server日志不断出现重复文字，最终返回的文本不完整
 

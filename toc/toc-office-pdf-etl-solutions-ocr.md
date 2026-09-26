@@ -12,11 +12,14 @@ modified: 2026-04-07T12:53:38.419Z
   - popular-on-github: tesseract/OCRmyPDF(71k), PaddleOCR(67k), MinerU(51k), DeepSeek-OCR(21k)
   - 图片的使用场景比文档更高, ocr/translation的方案要考虑图片场景
   - 传统的ocr方案还没有结合llm来优化效果，而是应用层的数据处理管线开始用llm来提高质量和准确度
-  - 🐛 ? 含图片内容的ocr结果是 markdown + base64图片
+  - 含图片内容的ocr结果是 ~~markdown + base64图片~~ 
+    - mineru的输出是文件 
   - ⏳ 文本/富文本/原文的版本管理如何设计
   - 批量执行ocr的架构可参考papermerge/paperless
   - ocr API的用法还可以参考 基于llm的文本提取, 基于openai api来提取文本/ocr
+    - vlm 通常只是 ocr pipeline 中的一个步骤
   - ~~vlm流式输出的方案配合编辑器流式构建内容的ux体验会很好~~ , 前端交互重要性不高
+  - 当前大多ocr技术框架/产品只做tob， 没有toc方面的feature
 
 - 支持多种ocr方案的实现
   - ragflow: docling, mineru, paddleocr
@@ -28,7 +31,7 @@ modified: 2026-04-07T12:53:38.419Z
   - 编辑的一种思路: 图片 > html > svg, 其中图片转html的思路可参考 design to code
     - 此时编辑ppt的需求可转换为编辑html代码, 此方案也可用于 design2code/pdf2text
     - 基于代码的方案交互性强
-  - 编辑的一种思路: 生成图片后，(用inpaint)remove所有文字，然后再把文本渲染到bbox
+  - 编辑的一种思路: 图片，(用inpaint)remove所有文字，然后再把文本渲染到bbox
     - 基于图片的方案方便缩放
     - 根据现有slides生成(inpaint)去文本的底图, 再将ocr的文本叠加上去
   - 编辑的一种思路: 直接生成svg，然后右键转换为形状
@@ -40,6 +43,7 @@ modified: 2026-04-07T12:53:38.419Z
 
 - 💡 pdf的文本化
   - 将minerU/paddleocr识别的html结果转换为 prosemirror editor: html通过markdown转换而来， 布局已丢失
+    - mineru的markdown包含分页信息
   - 输出不一定是markdown, 各厂商都有自己的偏向, qwenvl-html, Nanonets-markdown, docling-doctags
   - 可以不做完全体ocr，而优化重点数据的ocr，如 pdf-table > excel
   - vlm也可以提取bounding-box + 手动分割图片为主来提取表格、图表、图片
@@ -101,7 +105,8 @@ modified: 2026-04-07T12:53:38.419Z
   - [Update license from Apache 2.0 to AGPL-3.0 _20240914](https://github.com/opendatalab/PDF-Extract-Kit/commit/1471e22384d4b02e1357926e4908296ed31dac51)
     - Since this project uses YOLO code and PyMuPDF for file processing, these components require compliance with the AGPL-3.0 license
 
-- https://github.com/magicyuan876/mineru-tianshu /apache2/202601/python/ts/vue
+- https://github.com/magicyuan876/mineru-tianshu /821Star/apache2/202609/python/ts/vue
+  - https://mineru-tianshu.vercel.app/
   - 天枢 - 企业级 AI 数据预处理平台，将非结构化数据转换为 AI 可用的结构化格式
   - 支持文档、图片、音频等多模态数据处理 | GPU 加速 | MCP 协议
   - 后端：FastAPI、LitServe、MinerU、PaddleOCR、SenseVoice、SQLite、Loguru
@@ -114,14 +119,16 @@ modified: 2026-04-07T12:53:38.419Z
   - 视频: MP4、AVI、MKV → 语音转写 + 关键帧 OCR🧪（FFmpeg + SenseVoice）
   - 音频: MP3、WAV、M4A → 文字转写 + 说话人识别（SenseVoice 多语言）
   - 大文件并行处理: PDF 自动拆分功能：超过阈值（默认 500 页）的 PDF 自动拆分为多个子任务并行处理
-    - 并发安全: 原子操作防止任务重复，支持多 Worker 并发
-    - Worker 主动拉取: 0.5秒响应，无需调度器触发
+  - 并发安全: 原子操作防止任务重复，支持多 Worker 并发
+  - Worker 主动拉取: 0.5秒响应，无需调度器触发
   - RustFS 对象存储：所有解析结果的图片自动上传到对象存储, S3 兼容 API，基于 minio-py 实现
   - GPU 负载均衡: LitServe 自动调度，避免显存冲突，多 GPU 隔离
   - 企业特性: GPU 负载均衡、任务队列、JWT 认证、MCP 协议、现代化 Web 界面
   - Tianshu 支持完全离线部署，提供两种部署模式：
     - 方式 1：Linux 服务器（有 GPU 则加速，无 GPU 自动降级 CPU）
     - 方式 2：CPU 专用版（Mac/无 GPU 环境）
+  - 📡
+    - integrations: feishu, google-docs
 - https://github.com/phuocnguyen90/paraOCR /MIT/202509/python/inactive
   - a Python library for high-throughput OCR on large collections of files—PDFs, PNGs, JPEGs—at the speed your hardware allows. 
   - Built around `EasyOCR`, it adds production-grade features such as true batch processing, a parallel CPU/GPU architecture, and detailed logging.
@@ -266,7 +273,7 @@ modified: 2026-04-07T12:53:38.419Z
     - References and links
     - Better equation conversion (soon including inline)
 
-- https://github.com/NanoNets/docstrange /460Star/MIT/202508/python
+- https://github.com/NanoNets/docstrange /460Star/MIT/202508/python/inactive
   - https://docstrange.nanonets.com/
   - Extract and convert data from any document, images, pdfs, word doc, ppt or URL into multiple formats (Markdown, JSON, CSV, HTML) with intelligent content extraction and advanced OCR.
   - Cloud Processing (Default): Instant free conversion with cloud API 
@@ -1385,6 +1392,9 @@ modified: 2026-04-07T12:53:38.419Z
 - https://github.com/1131351687/pdf2tex-web /202609/python
   - PDF -> Markdown/LaTeX/PDF 本地 Web 应用：MinerU OCR + OpenAI 兼容 LLM 校对与编译修复
 # ocr-multi
+- tips
+  - 基于openai-compatible api来切换多个后端是易用性更高的方案
+
 - https://github.com/zj-unicom-ai/wanwu-file-parser /MIT/202609/python
   - 一个纯 CPU 的文档解析分发服务，与ocr模型解耦，可以分离部署。基于 FastAPI 构建
   - 纯 CPU 分发服务（:8083）与 GPU/NPU OCR 模型服务解耦。CPU 服务从不导入 paddleocr/paddlepaddle —— 所有 OCR 都通过 HTTP 调用远端的 PaddleOCR-VL 流水线或 MinerU API 完成。

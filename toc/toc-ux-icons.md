@@ -439,6 +439,10 @@ modified: 2021-05-06T09:58:23.803Z
     - Light mode, dark mode, and wordmark variants built in for every brand
     - Works in React, Next.js, Astro, or download raw SVGs for Figma
 
+- https://github.com/glincker/thesvg /2.7kStar/MIT/202609/ts
+  - https://thesvg.org/
+  - 7, 400+ brand SVG icons for developers. Tree-shakeable, typed, open source
+
 - https://github.com/preetsuthar17/loftlyy /MIT/202603/ts
   - https://loftlyy.com/
   - A brand identity reference site — discover and explore brand colors, typography, logos, and design systems. Like Mobbin, but for branding.

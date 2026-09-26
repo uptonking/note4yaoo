@@ -386,6 +386,18 @@ modified: 2025-03-22T16:10:24.856Z
 ## pricing
 
 - gpt plus的定价很巧妙, 用sol不够, 用luna太多
+
+- cursor采用 优惠池 + 三方池
+
+- 用本地token可以送token api
+
+- 买token可以送云盘空间
+
+- 
+- 
+- 
+- 
+
 # 💎🚀 aichorage - local llm with joy, 提供模型API、rag可靠性、pdf文本操作
 
 > hybrid local/cloud ai assistant/harness designed to work with documents and mitigate your token anxiety.
@@ -820,6 +832,9 @@ modified: 2025-03-22T16:10:24.856Z
 - lib-port
   - pdf: PyMuPDF(AGPL), python-docx(AGPL)
   - image: poppler
+
+- [Dosu - Knowledge Infrastructure for Agents and Humans ](https://dosu.dev/)
+  - agent主动读取仓库相关代码，然后在issue中回复用户
 
 ## ai-coding-xp
 

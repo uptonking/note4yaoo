@@ -459,7 +459,15 @@ modified: 2026-01-14T18:59:01.949Z
 
 - ## 
 
-- ## 
+- ## Meet Husky: a Model-Specific Inference (MSI) engine up to 4.5× faster than Apple's MLX 
+- https://x.com/0xSigil/status/2102165862065328538
+  - Underdog's Pareto frontier model, now runs up to 730 tokens/sec on a MacBook  
+  - To beat Apple's MLX we wrote model-shaped Metal Megakernels.  
+  - MLX is general, so each layer is a chain of small GPU calls with the CPU in between. Husky knows Woof's shapes ahead of time, so each matrix gets one kernel: norm, 4-bit unpack and multiply in one pass.  
+  - The GPU never waits.
+  - Husky runs on your Mac and iPhone, even without wifi.
+
+- 
 
 - ## [[Splash Engine] Qwen3.8-27B in native 8-bit at 37–55 tok/s on Apple Silicon: Extending Splash to Q8, 256k context scaling, and the "Reasoning Cliff" : r/LocalLLaMA _202609](https://www.reddit.com/r/LocalLLaMA/comments/1wmbbf9/splash_engine_qwen3827b_in_native_8bit_at_3755/)
   - Spent weekend benchmarking the Splash engine (by Incoai) and extending its architecture to native 8-bit on Apple Silicon (M5 Pro, 64 GB unified memory).

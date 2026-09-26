@@ -9,11 +9,9 @@ modified: 2026-09-17T14:19:32.208Z
 
 # guide
 
+- fans-paseo
+  - https://github.com/q5m-ai/beautiful-pi
 # popular
-- https://github.com/paseo-cafe/paseo-cafe /apache2/202609/ts
-  - https://paseo.cafe/
-  - community driven directory of paseo.sh plugins
-
 - https://github.com/getpaseo/paseo /13.4kStar/MIT > AGPL > apache2/202608/ts
   - https://paseo.sh/
   - Manage coding agents from your phone and desktop.
@@ -46,6 +44,12 @@ modified: 2026-09-17T14:19:32.208Z
   - Frogg Development Environment: Tauri desktop client for remote AI coding agents (fork of Paseo)
   - Every client, one state. Desktop (Windows, macOS, Linux), web, Android and CLI see the same projects, timelines and permission requests, live.
   - Isolated workspaces. Git worktrees per task, with setup scripts and per-worktree services from frogg.json.
+  - Frogg is an independently maintained fork of Paseo v0.7.2
+
+- https://github.com/feixqemn/paseo-smooth-ui /202609/ts
+  - A focused Paseo UI fork: inline reasoning, compact tool activity, Markdown messages and configurable file opening
+  - It keeps the official Paseo 0.8.0 foundation and focuses on small, direct UI changes: predictable file opening, a compact reasoning and tool timeline, and Markdown that reads like Markdown.
+  - This independent fork changes the UI and desktop file opener; it does not change Pi or daemon message delivery.
 # paseo-alternatives
 - https://github.com/vastsa/pi-desktop /4kStar/LGPL/202609/ts/rust
   - https://pi-docs.aiuo.net/
@@ -58,23 +62,17 @@ modified: 2026-09-17T14:19:32.208Z
   - Subagent 真正可见，而且可以用不同模型
 
 - 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 
-# agent-provider
-- https://github.com/Pheobe-Southwood/dsh-acp-paseo /MIT/202608/ts
-  - 把 DeepSeek Harness（dsh）编码代理通过 ACP（Agent Client Protocol）接入 Paseo。
-  - 用户把 dsh 添加为 Paseo provider 后，模型目录、凭据、模式、思考强度与斜杠命令全部从 dsh 侧自动发现，Paseo 端零配置。
 # plugins
+- https://github.com/paseo-cafe/paseo-cafe /apache2/202609/ts
+  - https://paseo.cafe/
+  - community driven directory of paseo.sh plugins
+
 - https://github.com/omercnet/paseo-plugins /MIT/202609/ts
   - agent-monitor
   - agent-crew
   - paseo-omp
+  - pr-radar
   - paseo-shared-browser: plugin that runs one real Chromium browser per workspace on the daemon host and shares that exact live session with every connected Paseo client. Version 1.0 replaces the previous browser runtime in place with a plugin-owned, pinned `agent-browser` runtime; 
 
 - https://github.com/mcowger/paseo-plugins /MIT/202609/ts
@@ -93,10 +91,6 @@ modified: 2026-09-17T14:19:32.208Z
   - github-board	A sidebar board of open issues, draft PRs, open PRs, and discussions
   - launchd-jobs	Schedules shell commands through launchd on the daemon's Mac 
   - herald	A sidebar panel of every agent waiting on you 
-
-- https://github.com/lalaze/paseo-plugins /202609/ts
-  - AI 协作（Director） 由你选择设计、执行和审核 AI，完成设计、实现、审核与验收协作。
-  - 工作区文件传输面板：浏览目录树，上传下载当前 daemon 主机上的文件。
 
 - https://github.com/koinzhang/paseo-plugins /202609/ts
   - activity	Local usage analytics and workspace agent ops (Explorer fleet list, live attention, terminals)
@@ -137,10 +131,6 @@ modified: 2026-09-17T14:19:32.208Z
   - Open a workspace, then choose Open Canvas from the Command Center
   - Keep plans, notes, and review discussions in one place. Ask an agent to write a document, edit it yourself, and send comments back for another pass. Other agents in the same workspace can read and update the same canvas, even in separate sessions.
 
-- https://github.com/lalaze/paseo-plugins /202609/ts
-  - Selection Translate: Select text in a user message or AI reply and translate it in place. On iOS/Android a native "Translate" pill next to the composer translates a draft for sending or copying, or translates the latest AI reply
-  - Pi Qwen thinking levels
-
 - https://github.com/theTd/paseo-translate /202609/ts
   - Converse in your language while the agent works in another. Prompts are translated into the agent language before they reach the inner agent; replies stream back in the agent's own words and are translated in the app after each stream completes.
 
@@ -163,6 +153,12 @@ modified: 2026-09-17T14:19:32.208Z
 
 - https://github.com/mentalfl0w/review-deck /202609/ts
   - Human-in-the-loop code review workspace for Paseo with inline file comments, project-level AI processing, and safe Git diff review.
+  - 效果类似github的 pr文件浏览界面
+  - Review Deck turns a Git changeset into a navigable review workspace: browse files and hunks, leave comments right next to the exact diff, collect them in a project queue, and let one Agent process all of them at once.
+  - File-first review UI	Navigate changed files and hunks with the exact diff shown next to the change details
+  - Inline comments	Write a file-level main comment beside the change details and save it
+  - AI processing	Select the Agent of the current workspace and process all saved comments for the project in one batch
+  - default diff layout (Auto / Unified / Split)
 
 - https://github.com/ImAnOwl/Paseo-Worktree-Status /MIT/202609/ts
   - Shows in a Paseo Worktee the current GIT status of the branch and worktree
@@ -184,6 +180,11 @@ modified: 2026-09-17T14:19:32.208Z
 
 ## ui-plugin
 
+- https://github.com/lalaze/paseo-plugins /202609/ts
+  - Selection Translate: Select text in a user message or AI reply and translate it in place. On iOS/Android a native "Translate" pill next to the composer translates a draft for sending or copying, or translates the latest AI reply
+  - Pi Qwen thinking levels
+  - 工作区文件传输面板：浏览目录树，上传下载当前 daemon 主机上的文件。
+
 - https://github.com/dbhq-uk/paseo-file-viewer /MIT/202609/ts
   - Read PDFs, images, Word documents and spreadsheets inside Paseo
   - Needs poppler-utils, imagemagick and librsvg2-bin on the daemon machine
@@ -196,11 +197,14 @@ modified: 2026-09-17T14:19:32.208Z
     - docx不显示 分页、多栏布局 
     - 扁平化显示所有文件， 不显示文件夹结构
 
-- https://github.com/ABorakati/beautiful-chat /MIT/202609/ts
-  - plugin that redraws the Oh My Pi (OMP) chat stream: tool calls, reasoning, prompts, approvals, and checklists. It replaces the host rendering of OMP timeline items with typed, syntax-aware cards that follow the active Paseo theme.
-
 - https://github.com/q5m-ai/beautiful-pi /202609/ts
   - A compact, polished timeline renderer for Pi agents in Paseo.
+  - collapsed one-line shell command previews with wrapped commands and output when expanded
+  - matching collapsed cards for every tool call, including read, write, edit, search, fetch, sub-agent, and custom skill tools
+  - collapsed-by-default reasoning and shell sections with tap-to-expand history
+
+- https://github.com/ABorakati/beautiful-chat /MIT/202609/ts
+  - plugin that redraws the Oh My Pi (OMP) chat stream: tool calls, reasoning, prompts, approvals, and checklists. It replaces the host rendering of OMP timeline items with typed, syntax-aware cards that follow the active Paseo theme.
 
 - https://github.com/AStox/paseo-chat-links /202609/ts
   - Paseo plugin that shows Linear tickets and GitHub PRs mentioned in a chat
@@ -250,10 +254,6 @@ modified: 2026-09-17T14:19:32.208Z
 - https://github.com/Laokashouji/paseo-feishu-ui /MIT/202609/ts
   - Feishu-inspired light and dark themes for Paseo, with a desktop workspace layout, continuous assistant bubbles, compact tool cards, and first-line thinking previews.
 
-- https://github.com/feixqemn/paseo-smooth-ui /202609/ts
-  - A focused Paseo UI fork: inline reasoning, compact tool activity, Markdown messages and configurable file opening
-  - It keeps the official Paseo 0.8.0 foundation and focuses on small, direct UI changes: predictable file opening, a compact reasoning and tool timeline, and Markdown that reads like Markdown.
-
 - https://github.com/thisjrodriguez/paseo-plugin-clusters /202609/ts
   - plugin that groups your projects into clusters and puts them as circles above the workspace list, Discord-style.
   - Circles in the sidebar. A row above "New workspace". 
@@ -292,6 +292,10 @@ modified: 2026-09-17T14:19:32.208Z
 
 - https://github.com/xuruiye/paseo-cliproxyapi-providers /202609/ts
   - a Paseo direct Provider Plugin. It discovers Claude-compatible models from CLIProxyAPI and launches the local Claude Code CLI with the selected cloaked model ID.
+
+- https://github.com/Pheobe-Southwood/dsh-acp-paseo /MIT/202608/ts
+  - 把 DeepSeek Harness（dsh）编码代理通过 ACP（Agent Client Protocol）接入 Paseo。
+  - 用户把 dsh 添加为 Paseo provider 后，模型目录、凭据、模式、思考强度与斜杠命令全部从 dsh 侧自动发现，Paseo 端零配置。
 
 - https://github.com/RUIIIOVO/paseo-usage-sidebar /202609/ts
   - provider plan usage as a sidebar surface, read from Paseo's own usage data

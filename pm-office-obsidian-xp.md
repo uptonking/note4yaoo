@@ -204,8 +204,10 @@ modified: 2026-06-30T17:32:43.131Z
   - openrouter for documents
   - 此类产品通常不对外暴露, 通常自动选择工具处理文档/图片, 可以作为llm的 tool
 
+- 类似cline/kilo/zcode/cursor支持设置场景优先的模型
+
 - ocr/vlm-use-cases
-  - ocr
+  - ocr-only
   - translation
   - vlm: vision + understanding
   - ~~文档转换类~~ : markitdown, marker
@@ -228,6 +230,16 @@ modified: 2026-06-30T17:32:43.131Z
 - 
 - 
 - 
+
+## draft-pdf
+
+- auto-toc
+
+## draft-office/documents
+
+- text-first office
+  - no manual git xp, with git-like features
+  - git blame toggle: 行级别的blame, 自动按文件多次commit来添加文件级更准确的message
 
 ## draft-rdmn
 

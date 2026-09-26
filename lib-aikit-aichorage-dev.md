@@ -68,6 +68,7 @@ modified: 2026-05-28T17:50:54.646Z
 
 - cpu-runtime
   - koboldcpp
+  - coreml/coreai, no mlx
 
 ## free-model-today
 

@@ -18,7 +18,9 @@ modified: 2023-11-10T07:10:19.089Z
 
 - ## 
 
-- ## 
+- ## Node.js has FFI support now, which makes it possible to implement native integrations without all the build problems that comes with native addons.
+- https://x.com/sindresorhus/status/2103833001859899888
+  - For example, https://github.com/sindresorhus/finder-alias
 
 - ## ⚖️ Use the standard Node.js "imports" field instead of TypeScript `paths` aliases:
 - https://x.com/diegohaz/status/1996628354179698873

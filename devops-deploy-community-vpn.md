@@ -102,7 +102,14 @@ modified: 2026-06-17T05:51:04.215Z
 
 - ## 
 
-- ## 
+- ## Mac上的Tailscale有3个版本。
+- https://x.com/corndogjpn2/status/2103408248355434760
+  - AppStore版，废物；
+  - 官网下载的PKG版，不能SSH，能传文件；
+  - Homebrew版，能注册成系统服务，能开放Tailscale SSH。
+  - 今天搞了半天，就是因为对方想要开TS的SSH，但对方用的是官网下载的版本。
+
+- 还有 sing-box 版
 
 - ## [A word of caution about Tailscale : r/selfhosted _202312](https://www.reddit.com/r/selfhosted/comments/18evofr/a_word_of_caution_about_tailscale/)
 - Headscale looks nice. Another option that I don't see mentioned much is Slack's Nebula (https://github.com/slackhq/nebula).
@@ -548,6 +555,39 @@ https://dlercloud.com/user/shop
   - 青云梯：96/年，60G/月
   - 肥猫云：72/年，60G/月
   - HK-BEUP:69/年（兑换码优惠），100G/月
+# discuss-家宽
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [常见各种家宽ipVPS的推荐和碎碎念 - LINUX DO _202504](https://linux.do/t/topic/585764)
+US
+VICRS
+目前我认为最好买到的真家宽，确实真家宽，即使他的 ping0 属性和 ipdata 不够完美 (看起来是 ipdata 和 ping0 自己的问题)，但使用下来体验确实最佳，没收到这个 ip 降智的问题，而且如果整段 ip 送中了还会更换 ip，唯一美中不足的就是 50M 的小口子让人难以下手，其他属性几乎趋近完美，没有什么问题。如果佬友们只想用它看 ai，会是非常好的选择！
+
+qq.pw
+新兴夏威夷 oneman 商家，有独一无二的夏威夷家宽 ip，机器性能强劲，ip 质量好，相同价格下口子是 VIRCS 的 8 倍，更有超量停机不限速策略，相当不错。美中不足的是位于夏威夷导致延时会比美西高 60ms，但总体而言物有所值，有需要的可以购买。
+
+sixtynet
+一代神机重生归来，ip 质量相当不错，稳定性有待观察，具体可以看测评帖子。
+
+webshare/ip2world 等系列
+这类就是专门贩卖住宅代理的，交付形式往往是 socks/http 协议，这类的特点就是 ip 家宽属性很好，但是真万人骑，绝对伪家宽，很多时候不如机房 ip，当然价格非常美丽 (1 刀 / 月)，有需求的小伙伴可以考虑使用。
+
+- ### [【转帖】常见各种家宽（住宅宽）提供商的推荐和吐槽 _202504](https://www.nodeseek.com/post-321780-1)
+- 补一条sixtynet这家拿来加速游戏哪怕用沪日专线拉也是半小时一掉线，不晓得是国际优化问题还是本身机子的问题
+
+- 做tk 心思都在生意上，月 200 他们可能也不觉得贵
+
+- 做TK其实只要是干净一些就可以，不需要什么家宽（没有这个属性），原生IP，甚至广播都可以。
+这个我实测是对的 直播不知道 养号是对的
+我都用几块钱的ip 做了 三十个左右 美区万粉了
+
+- 美区感觉都好贵。。。请问有没有几十块以内能用的？干净原生就好，不用家宽
 # discuss-vpn-server
 - ## 
 

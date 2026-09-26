@@ -816,6 +816,31 @@ window.document.getElementById("baidu-container").onload = function() {
 - git repo should be colocated on the host, so sandbox with up to date git repo is possible in 0.01 nano secounds (in our case 400ms).
 
 - can't you mount that repo from disk?
+# discuss-sandbox-js
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-sandbox-python
+- ## 
+
+- ## 
+
+- ## 
+
+- ## We've just released Monty v1 - a Python sandbox that starts in 1 millisecond, not 1.5 seconds. _202609
+- https://x.com/samuelcolvin/status/2103469459981619243
+  - I just ran 10k sandboxed scripts in 674ms, something that would take a cloud sandbox > 3 hours.
+  - This removes the biggest drawback of letting agents write code. The future is fast.
+  - Even better, it's open source, you can install it from PyPI, npm or Crates now.
+
+- You missed the comparison with Wasmer the SDK
+
+- does the 1ms hold once you import numpy/pandas? import time is what eats the win when i sandbox llm-gen code, not the interpreter boot
+  - Once we implement numpy, I guess it will add <50us to start time. We won't implement pandas in Monty, but you can register an external function the sandbox call can run, which can use pandas, and it will have zero impact on startup time.
 # discuss
 - ## 
 

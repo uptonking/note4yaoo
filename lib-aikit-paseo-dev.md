@@ -25,15 +25,17 @@ modified: 2026-09-05T00:27:42.212Z
     - 类似openclaw, 但能让agent操作云端资源
     - 采用类似github workflow .yaml的设计，对普通用户不友好, 但对agent友好
   - Can I get banned for using Paseo? Paseo is designed to use each provider's officially supported integration and does not attempt to bypass its terms of service
-  - 支持使用其他agentt的功能: 
+  - 支持使用其他agent的功能: 
     - 其他agent的skills
     - codex的computer-use
   - connection
     - Connect to remote daemons over SSH 
 
 - cons
-  - sync的功能不够强: 如何让云端设备与本地设备同步
-  - Paseo manages other agents, it doesn't ship one.
+  - 🐛 Paseo manages other agents, it doesn't ship one. 
+  - 移动端不能单独chat, 只能连接daemon后chat
+    - mobile platforms cannot run Node.js subprocesses.
+  - sync功能不够强: 如何让云端设备与本地设备同步配置/数据
   - 依赖用户本地的环境， 如果用paseo之前的agent没配置好， 那也需要先配好再用paseo
   - 适合个人用户私有化部署, 但不适合作为saas对外提供， 因为自定义host需要支持存储/计算/git操作/开发环境...
     - 一个host似乎只能一个用户使用， scale成本太高
@@ -153,6 +155,13 @@ modified: 2026-09-05T00:27:42.212Z
 - 
 - 
 
+## plugin
+
+- tips/xp
+  - github上的plugin安装后能立即生效
+
+- plugin-list 界面不支持对单个plugin进行设置
+
 ## remote-control
 
 - 远程控制的交互不够自然
@@ -160,13 +169,39 @@ modified: 2026-09-05T00:27:42.212Z
 
 ## mobile-agent
 
+- features-mobile
+  - built-in agent without external coding agent
+  - pdf
+  - docx
+  - sharing
+
 - mobile agent xp
   - 桌面版的agent过于复杂
 
 - code
   - mobile端如何执行代码
 
+- The mobile app does not support chatting directly with custom LLM APIs, nor does it have a plain chatbot mode without coding agents.
+- The mobile app cannot be used without a running Paseo daemon/server; it is strictly designed as a thin client.
+- mobile platforms cannot run Node.js subprocesses.
+
+- The mobile app contains no server engine, no Git engine, no terminal PTYs, and no agent execution runners.
+
+- All directory listings, files, Git diffs, terminal outputs, and timeline streams are served remotely by the daemon via WebSocket messages
+- The mobile app's local storage (AsyncStorage and SQLite) is used solely as a replica cache and for UI preferences.
+
 - 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+## documents/pdf/docx
+
 - 
 - 
 - 

@@ -382,6 +382,8 @@ modified: 2026-06-20T15:49:57.019Z
   - https://new.sharedchat.cc
     - [codex公益站已开 继续每人免费100刀   _202605](https://linux.do/t/topic/2260900)
     - 关t子或者用非us节点访问，ccswtich的不要获取模型，手填模型可以直接用
+- [Claude ](https://claude-gate.123nhh.ai/new)
+  - [【公益推广】Claude 公益镜像站 - LINUX DO _202609](https://linux.do/t/topic/2954843)
 
 - 中转站
   - 不需要用自己的gpt/claude账号

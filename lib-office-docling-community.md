@@ -9,9 +9,6 @@ modified: 2025-09-21T13:57:50.332Z
 
 # guide
 
-# draft
-- roadmap
-  - ppt
 # discuss-stars
 - ## 
 
@@ -483,7 +480,8 @@ converter = PdfConverter( artifact_dict=create_model_dict(), config = {"paginate
 
 - ## 
 
-- ## 
+- ## [Would it be possible to configure docling to work with llama.cpp (openai compatible)? _202511](https://github.com/docling-project/docling/discussions/2679)
+- Working with the llama-server app of llamacpp should work out-of-the-box. In general, we are already running examples using Ollama and LM Studio which leverage the llamacpp backend internally.
 
 - ## [Love-hate relationship with Docling, or am I missing something? : r/Rag](https://www.reddit.com/r/Rag/comments/1r3kk3b/lovehate_relationship_with_docling_or_am_i/)
   - I can use texts to get any text block from the pdf.
