@@ -114,7 +114,7 @@ serve -p 9000 --cors
 HOST=0.0.0.0 PORT=8080 react-scripts start
 next dev -H 0.0.0.0 -p 3000
 
-npm i -g npm yarn pnpm corepack serve @dotenvx/dotenvx opencode-ai @openai/codex @kimuson/claude-code-viewer   @deepseek-ai/dsh 
+npm i -g npm yarn pnpm corepack serve @dotenvx/dotenvx opencode-ai @openai/codex @kimuson/claude-code-viewer   @deepseek-ai/dsh @github/copilot
 npm up -g  @getpaseo/cli @earendil-works/pi-coding-agent @openai/codex
 ```
 
@@ -344,6 +344,182 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - ?
 - dev-log
   - ?
+
+## 0925-🧊
+
+- 🧊📌 there are so many sandboxing related solutions for agent, like https://github.com/anthropic-experimental/sandbox-runtime, https://github.com/openai/codex/tree/main/codex-rs/windows-sandbox-rs, https://github.com/alibaba/OpenSandbox, https://github.com/TencentCloud/CubeSandbox, https://github.com/earendil-works/gondolin ... 
+  - i want to build a agentic desktop-first app named `aichorbox` with a popular cli-agents + electron-app/webapp + sandbox, using a client/server architecture. aichorbox should be powerful with the features from cli-agents like claude-code/codex/pi/..., it should also be easy to use with electron-app/webapp, webapp is useful when it is deployed on server. sandboxing is the most important feature for aichorbox, it provides the safety when running on local windows/linux/mac, it should not use docker related solution for sandboxing because it brings heavy dependencies. for sandboxing on server, linux support is enough, but for sandboxing on desktop app, windows/linux/mac should all be supported well.
+  - is there any popular open source sandboxing related solutions that supports all of windows/linux/mac .  please deep research related solutions/projects/ideas, if you found any open source products or inspiration projects, provide overview/github-url/website for each.
+  - what is the best practice in the industry, propose a good solution for my use case.
+- https://github.com/anthropic-experimental/sandbox-runtime
+  - macOS: sandbox-exec + dynamically generated Seatbelt profiles; violation detection via the system sandbox log store
+  - Linux: bubblewrap (namespaces + bind mounts) + seccomp BPF blocking AF_UNIX socket creation, network namespace removed entirely
+  - Windows: dedicated srt-sandbox local user account + per-session ACLs + Windows Filtering Platform (WFP) egress fence keyed on the account SID
+    - a bundled `srt-win.exe` runs the process under a dedicated local srt-sandbox account, with a Windows Filtering Platform egress fence keyed on that SID and NTFS ACLs for filesystem rules (one-time elevated install).
+    - weakenings: domain fronting, docker.sock, Apple Events
+  - no container/VM anywhere
+  - backing Claude Code's sandboxed bash tool
+  - Written in TypeScript (with a Python port srt-py)
+  - Dual isolation model: network is default-deny with an allowedDomains allowlist enforced by host-side HTTP/SOCKS5 proxies; filesystem writes are allow-only, reads are deny-then-allow; supports violation monitoring attributed per command
+  - Anthropic's srt is the closest thing to exactly what you're describing: it's explicitly designed to sandbox "arbitrary processes, agents and MCP servers" without spinning up a container, enforces the same policy shape (filesystem allow/deny + network allow-list via a local proxy) on all three OSes, and ships as an installable library with a documented API
+  - On Windows it takes a distinct approach from Codex — rather than a restricted token in the same user context, it runs the child under a separate, dedicated OS-level user account (srt-sandbox) with a machine-wide WFP egress fence keyed to that account's SID, which structurally closes an entire class of surrogate-spawn escapes (Task Scheduler, BITS, out-of-process COM). 🐛 known gaps (no CRL/OCSP fencing, per-user tool installs like nvm-managed Node aren't reachable by the sandbox account)
+  - For network isolation, it spins up a local loopback HTTP CONNECT / SOCKS proxy that intercepts network requests against domain allowlists
+
+- https://github.com/openai/codex/tree/main/codex-rs/windows-sandbox-rs
+  - macOS: Seatbelt (sandbox-exec) via .sbpl policy files, Seatbelt profiles per sandbox mode; process hardening: ptrace(PT_DENY_ATTACH), strip DYLD_*, core dumps off
+  - Linux: Bubblewrap (bwrap) + Seccomp BPF, in-process seccomp network filter, Landlock now the legacy fallback
+  - Windows: restricted tokens / AppContainer + firewall rules (windows-sandbox-rs crate)
+    - Restricted token derived from an AppContainer profile + capability SIDs + Job Objects; 
+    - provisions two local accounts (CodexSandboxOffline / CodexSandboxOnline); 
+    - ACL preflight scan of world-writable dirs
+    - rejected Windows Sandbox and AppContainer as ill-fitting dev workflows, then shipped "unelevated" mode (a synthetic sandbox-write SID + write-restricted token + ACLs + private desktop) and "elevated" mode 
+  - not packaged as a standalone reusable library — it's baked into codex-rs
+  - Codex's sandbox is arguably more battle-tested per-OS (Landlock is a purpose-built Linux LSM for exactly this, lower overhead than bubblewrap's namespace machinery) but it isn't published as an SDK you can npm install
+  - windows-sandbox-rs: Uses CreateRestrictedToken (strips admin privileges), dedicated Capability SIDs, Job Objects (to guarantee sub-process termination), dynamic NTFS DACLs/ACEs for workspace path boundaries, and COM-based Windows Firewall / WFP rules for network isolation
+
+- https://github.com/earendil-works/gondolin 
+  - Linux and macOS only, no Windows yet
+  - Local micro-VM (QEMU, or experimental krun) with a JS-programmable network/filesystem policy layer
+  - Boots an Alpine Linux microVM in under 1 second using QEMU (or experimental libkrun)
+  - The innovation is its TypeScript control plane: the virtual filesystem and network stack are implemented directly in TypeScript on the host. This allows JS hooks to inspect, rewrite, or block requests, and substitute placeholder tokens with real secrets on the fly.
+  - JS-programmable HTTP egress hooks with secret placeholdering (guest sees a fake token; the host injects the real credential only for allowlisted destinations), snapshots/resume, DNS modes.
+  - programmable VFS providers (in-memory, remote-proxy); qcow2 snapshots; SSH ingress/egress with host-key verification. Ships a Pi extension that runs the pi coding agent inside a microVM with your project mounted at /workspace
+
+- https://github.com/microsoft/mxc /MIT/202609/rust
+  - the engine behind GitHub Copilot CLI's local sandboxing
+  - MXC is a sandboxed code execution system for running untrusted code (model output, plugins, tools) on Windows, Linux, and macOS.
+  - One versioned JSON policy schema (filesystem / network / UI policy) + one TypeScript SDK (@microsoft/mxc-sdk), mapped onto native backends: ProcessContainer (AppContainer-based, Win 11 24H2+) on Windows, Bubblewrap on Linux, Seatbelt on macOS; optional heavier backends (Windows Sandbox, LXC, microVM, Hyperlight)
+  - It provides multiple containment backends — from OS-native process sandboxes to full VMs — behind a unified JSON configuration schema and TypeScript SDK.
+  - Multiple Containment Backends: ProcessContainer, Windows Sandbox, LXC, Bubblewrap, Seatbelt (macOS), MicroVM (NanVix), Hyperlight, IsolationSession, and WSLC
+  - State-aware lifecycle (provision → start → exec → stop → deprovision) — useful for long-running agent sessions
+  - Big caveat: official README says "no MXC profiles should be treated as security boundaries currently"; deny-paths not yet on Windows; network proxying is cooperative on Linux/macOS
+
+- https://github.com/superradcompany/microsandbox
+  - local-first microVM runtime written in Rust designed explicitly for AI agents, plugins, and scrapers
+  - Uses libkrun and native hypervisors (Virtualization.framework on macOS, KVM on Linux, Windows Hypervisor Platform WHP in preview)
+  - provides direct SDKs for Rust, Node/TS, and Python
+  - every sandbox gets its own kernel behind a hardware boundary, with Docker-like OCI workflows
+
+- Gemini CLI sandboxing
+  - docker/podman/sandbox-exec/runsc/lxc backends; 
+  - Windows native sandbox via icacls low-integrity labels (persist after session — a weakness)
+
+- https://github.com/shleder/vetto /apache2/202609/rust
+  - macOS: Seatbelt (with published caveats about Apple deprecating SBPL)
+  - Linux: Landlock + namespaces (its strongest platform)
+  - Windows: Job Objects + Less-Privileged AppContainer, plus an opt-in full Windows Sandbox VM backend
+  - VM backend is opt-in/optional
+  - it publishes a per-OS tier matrix and fails closed (exit code 103) rather than silently degrading
+  - Windows lacks unprivileged mount namespaces and a Landlock equivalent, and it recommends WSL2 for anyone who needs a hard guarantee on Windows.
+  - https://github.com/Erio-Harrison/nanosandbox /MIT/202609/rust
+    - lightweight, embeddable sandbox for running untrusted code. 
+    - Works on Linux, macOS, and Windows.
+    - uses OS-native isolation primitives directly—no VMs, no containers, no network calls.
+    - Linux	namespaces + cgroups v2 + seccomp
+    - macOS	sandbox-exec (Seatbelt/SBPL)
+    - Windows	Job Objects + Restricted Tokens
+  - https://github.com/can1357/isobox /MIT/202606/go
+    - Run a command in a sandbox with the same flags on every OS — one capability model compiled to Seatbelt (macOS), gVisor (Linux), and AppContainer (Windows).
+  - https://github.com/A3S-Lab/Sandbox /MIT/202609/rust
+    - Rust-native, fail-closed command boundary for A3S Bash and other A3S products.
+    - There is no Node.js runtime, npm package, or SRT process in the execution path. 
+    - The library is deliberately independent of A3S Code so it can be embedded by a CLI, an agent, or a future SDK.
+
+- https://github.com/nolabs-ai/nono /apache2/202609/rust
+  - Built by Luke Hinds (creator of Sigstore at Red Hat), designed to prevent AI agents from stealing SSH keys, accessing cloud credentials, or running destructive commands
+  - macOS: Seatbelt
+  - Linux: Landlock
+  - Windows is currently supported via WSL2 (native Windows under development)
+  - implements a deny-by-default capability system, a local credential broker (injects dummy tokens into the agent environment and replaces them with real secrets at the network perimeter), and cryptographic agent commit signing
+  - permission levels (ReadOnly, WorkspaceWrite, NetworkFull, AskBeforeElevate) for security capability
+
+- OpenSandbox (Alibaba), CubeSandbox (Tencent), and I'd add NVIDIA OpenShell — These three are all fundamentally server/fleet-oriented sandbox platforms
+
+- https://github.com/alibaba/OpenSandbox
+  - unified SDK/protocol with Docker and Kubernetes runtimes; 
+  - a "local lightweight sandbox for AI tools running directly on PCs" is listed only as a roadmap item, not shipped.
+
+- https://github.com/TencentCloud/CubeSandbox
+  - Firecracker/Cloud-Hypervisor microVMs on KVM — sub-60ms boot, E2B-API-compatible, genuinely excellent for high-density server-side sandboxing
+  - it's Linux/KVM-only by construction (it needs a hardware hypervisor and specific host kernel/filesystem setup, e.g. XFS reflink) — there's no macOS or Windows path.
+
+- https://github.com/NVIDIA/OpenShell
+  - policy-governed sandboxes over Docker/Podman/microVM; 
+  - Windows support is "WSL 2 (experimental)," not native.
+
+- OS-level primitives (no container, no VM)
+- macOS Seatbelt / sandbox-exec
+  - Apple's TrustedBSD-based MAC framework. 
+  - Codex CLI
+  - Anthropic's srt.
+  - Gemini CLI 
+- Windows AppContainer / Restricted Tokens 
+  - Codex CLI's Windows backend.
+- Linux Landlock
+  - Unprivileged filesystem/network LSM; 
+  - default backend for Codex CLI on Linux.
+  - Landlock Island — Landlock-powered CLI sandbox.
+- bubblewrap — Unprivileged namespace sandbox
+  - backs Flatpak and Anthropic's srt on Linux.
+- Linux namespaces + cgroups — Building blocks for almost every Linux sandbox.
+- Linux seccomp-bpf — Syscall filtering
+  - layered into most other Linux sandboxes.
+- Minijail — Google/ChromeOS launcher built on namespaces + seccomp.
+- nsjail — Google's namespace+seccomp jail; used by Windmill for Python/Go.
+
+- Docker Sandboxes / sbx 
+  - Docker's purpose-built microVM-backed sandbox CLI for Claude Code, Codex, Gemini, Kiro.
+
+- Firecracker 
+  - AWS's KVM VMM; 
+  - foundation of Lambda, Fargate, Fly.io, Vercel Sandbox, E2B, Sprites.
+- Cloud Hypervisor — Intel-led Rust VMM, alternative to Firecracker (used by Kata).
+- libkrun — Embeddable KVM library; powers microsandbox and Podman's VM mode.
+- Kata Containers — OCI-compatible runtime that puts each container in its own microVM.
+
+- Landlock itself has grown up — kernel docs show TCP rules since ABI 4, UDP since ABI 10, abstract-UNIX-socket/signal scopes since ABI 6 — but it's filesystem+network only (no process/signal UI isolation), and kernel-dependent. 
+- Node's permission model (stable since Node 23.5) is not a hard boundary — multiple bypass CVEs (e.g. CVE-2025-55131) — so don't rely on it. 
+- sandbox-exec on macOS is still "deprecated but functional" in 2026: the fragile part is only the CLI frontend; the underlying Seatbelt kernel MAC framework is what Chrome itself uses, so removal risk is low but plan a fallback.
+
+- The industry answer is a sandbox facade with per-OS backends: one unified policy (read paths / write paths / network domains / approval rules) implemented with a different primitive on each OS. 
+  - That's exactly what Anthropic's sandbox-runtime, OpenAI Codex, and Claude Code's built-in sandboxing all do.
+
+- Industry best practice
+- Dual isolation is non-negotiable. Anthropic states this explicitly: Claude Code's new sandboxing features, a bash tool and Claude Code on the web, reduce permission prompts and increase user safety by enabling two boundaries: filesystem and network isolation.
+- Default-deny, allow-list up. Every serious implementation (srt, Codex, Vetto) denies network entirely and denies writes entirely by default, requiring explicit grants — never the reverse.
+- Egress goes through a host-side proxy enforcing domain allowlists — and this is also where you inject secrets (credential never enters the sandbox env; proxy attaches it only to approved hosts). This is the srt, gondolin, and CubeSandbox model alike.
+- Mediate the network through a local proxy that injects credentials, never through raw env vars the sandboxed process can read.
+- Decouple your UI from the specific CLI agent via a thin protocol, rather than screen-scraping each agent's own CLI output. The Agent Client Protocol (ACP), created by Zed, is exactly this
+- Broker pattern for anything outside the sandbox: the sandboxed process asks a broker (running unsandboxed) to perform the op after an approval prompt — Codex's /sandbox-add-read-dir, Claude Code's dangerouslyDisableSandbox retry flow, Gondolin's secret placeholdering are all this pattern.
+
+- Threat-model honestly: process-level sandboxing is a strong guardrail but not a VM-grade boundary. If you need hardware isolation (server, multi-tenant), that's what microVMs (CubeSandbox/Firecracker) are for — NIST SP 800-190 explicitly notes containers don't offer a VM-grade security boundary
+- Portable declarative policy, compiled per-OS. One JSON policy (allowRead/denyRead/allowWrite/allowedDomains globs) → Seatbelt profile / bubblewrap mounts / AppContainer+WFP rules. This is srt's core design and the right abstraction for aichorbox.
+
+- Sandbox only the execution step. The agent loop (conversation state, API calls, tool orchestration) runs unsandboxed outside; each shell/command invocation gets wrapped. This keeps latency near zero and matches how Claude Code and Codex work
+
+- The 4 Pillars of Native Agent Sandboxing
+  - Filesystem Boundary	Allow read-only access to system binaries and libraries (/usr, C:\Windows)[13]. Allow read/write access only to the user’s designated workspace directory and /tmp[13]. Crucial rule: Explicitly revoke write access to .git/ and the app config directory (.aichorbox/) to prevent repo destruction or config tampering
+  - Network Filtering	Do not allow raw TCP/UDP outbound sockets from the sandboxed process[46]. Enforce local loopback proxy routing (HTTP_PROXY/ALL_PROXY) via loopback firewalls or seccomp[1][46]. Domain allowlists block data exfiltration.
+  - Process & Lifetime Limits	Wrap child processes in Job Objects (Windows) or cgroups / PR_SET_PDEATHSIG (Linux). If an agent spawns daemon forks, killing the agent turn kills all rogue background processes immediately.
+  - Secret Brokering	Never expose real API keys or tokens in the process environment. Pass dummy placeholders (e.g., GITHUB_TOKEN=placeholder_xxx)[30]. The host-side proxy replaces the placeholder with the real secret only when requests hit verified endpoints
+
+- On the server: warm pools, snapshots, E2B-compatible API. Cold start is the latency killer (agent-sandbox warm pools <1s; Cube 60ms create / sub-100ms resume; OpenSandbox ~80ms FastSandbox admission). Snapshot/restore gives agents long-term memory across sessions. Targeting the E2B API surface keeps you portable across Cube/OpenSandbox/E2B.
+
+- [Implementing a secure sandbox for local agents · Cursor _202602](https://cursor.com/blog/agent-sandboxing)
+  - Use OS-native primitives per platform — never Docker on desktop. 
+  - Cursor's engineering blog documents evaluating App Sandbox / containers / VMs / Seatbelt and concluding Seatbelt was the only viable macOS path (VMs = unacceptable startup latency; containers = Linux-only; App Sandbox = would require signing every binary the agent generates). 
+  - The de-facto trio is: Seatbelt (macOS) /  bubblewrap+seccomp or Landlock (Linux) / A ppContainer + restricted tokens + WFP (Windows).
+
+- 
+- 
+- 
+
+- ["code": 400 "User location is not supported for the API use" - Google Antigravity _202605](https://discuss.ai.google.dev/t/code-400-user-location-is-not-supported-for-the-api-use/141606)
+- I did it! Struggled for 2 weeks! Found the solution!
+  - Fixing Error 400 (User location is not supported) in Antigravity 1.23.2 (WSL)
+  - if you’ve turned on your VPN and the 400 error still persists, the problem lies in a traffic leak.
+  - In the 1.23.2 update, requests to the AI models started routing directly. If you are working on Windows via the Windows Subsystem for Linux (WSL), a conflict arises: WSL ignores Windows system proxies by default. As a result, your browser connects through the US, but the hidden agent inside WSL sends traffic directly through your local ISP. The security system detects your real IP and drops the connection.
+  - The Solution: Strict Tunneling (using Happ, v2rayN, NekoBox as examples)
 
 ## 0923
 

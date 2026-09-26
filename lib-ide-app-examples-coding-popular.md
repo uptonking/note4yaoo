@@ -247,6 +247,8 @@ modified: 2025-12-11T18:10:23.710Z
   - https://gitlawb.com/node/repos/z6MkqDnb/openclaude
     - https://x.com/gitlawb/status/2039063488468000835
     - We forked the leaked Claude Code source and made it work with ANY LLM: GPT, DeepSeek, Gemini, Llama, MiniMax. Open source.
+  - https://github.com/freecodexyz/free-code
+    - The free build of Claude Code. All telemetry removed, security-prompt guardrails stripped, all experimental features enabled.
 
 - https://github.com/Windy3f3f3f3f/claude-code-from-scratch /ebook
   - https://windy3f3f3f3f.github.io/claude-code-from-scratch

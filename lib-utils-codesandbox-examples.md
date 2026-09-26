@@ -364,7 +364,8 @@ modified: 2023-09-02T09:17:22.992Z
   - Uses Ubuntu, but designed to work with any operating system
   - [How I taught an AI to use a computer _202501](https://blog.jamesmurdza.com/how-i-taught-an-ai-to-use-a-computer)
 
-- https://github.com/microsandbox/microsandbox /3.5kStar/apache2/202507/rust
+- https://github.com/superradcompany/microsandbox /3.5kStar/apache2/202507/rust
+  - https://github.com/microsandbox/microsandbox /renamed
   - https://docs.microsandbox.dev/
   - Self-Hosted Plaform for Secure Execution of Untrusted User/AI Code
   - Strong Isolation - Hardware-level VM isolation with microVMs
@@ -587,6 +588,9 @@ modified: 2023-09-02T09:17:22.992Z
   - DevTools-pro 是基于chrome-devtools-frontend进行开发的，通过自建 WebSocket 通道实现 Frontend 和 Backend 的通信。
   - 可扩展，支持自定义插件
 # ai-sandbox 👾
+- tips
+  - [List of coding agent sandboxes 2026-05 ](https://gist.github.com/wincent/2752d8d97727577050c043e4ff9e386e)
+
 - https://github.com/anthropic-experimental/sandbox-runtime /1.6kStar/apache2/202511/ts
   - A lightweight sandboxing tool for enforcing filesystem and network restrictions on arbitrary processes at the OS level, without requiring a container.
   - `srt` uses native OS sandboxing primitives (`sandbox-exec` on macOS,  `bubblewrap` on Linux) and proxy-based network filtering. 
@@ -603,6 +607,28 @@ modified: 2023-09-02T09:17:22.992Z
   - https://x.com/zhangjintao9020/status/2029357059913798119
     - 我大致看了下，感觉这个沙箱主要是创建了一个在登陆界面隐藏的使用随机密码的用户，然后获取该用户令牌后进行 XP 时期提供的创建受限令牌操作，Job Objects 限制基本没做啥……就个人感觉隔离程度有但还没有令人放心到放手一搏的地步（强度比 Chromium 沙盒和 Sandboxie 低很多）
     - 我很多年前倒是在 NSudo 研究过通过创建受限令牌降权到 UAC 提升之前的方式，关于我的研究最终发现还是获取 Linked Token 最好，倒是 Codex 那个沙盒的受限令牌创建 LUA 实现我之前在 NSudo 实现过类似的（只是创建受限令牌的时候我没有引入 DISABLE_MAX_PRIVILEGE 和 WRITE_RESTRICTED）
+
+- https://github.com/microsoft/mxc /MIT/202609/rust
+  - MXC is a sandboxed code execution system for running untrusted code (model output, plugins, tools) on Windows, Linux, and macOS.
+  - It provides multiple containment backends — from OS-native process sandboxes to full VMs — behind a unified JSON configuration schema and TypeScript SDK.
+  - Multiple Containment Backends: ProcessContainer, Windows Sandbox, LXC, Bubblewrap, Seatbelt (macOS), MicroVM (NanVix), Hyperlight, IsolationSession, and WSLC
+  - Policy-driven Sandboxing: Filesystem, Network, UI
+  - State-aware Lifecycle: Multi-step sandbox lifecycle (provision → start → exec → stop → deprovision) for session sandboxes
+  - https://github.com/microsoft/nvx /MIT/202609/python
+    - ultra-light micro-VM sandbox for running untrusted workloads with hardware-enforced isolation. 
+    - It is built on top of OpenVMM and runs Linux as a guest.
+    - NVX was jointly developed by the MSR Systems Research Group and Azure Research - Systems, building on research results from the Nanvix system.
+    - 似乎不支持mac
+  - https://github.com/microsoft/litebox /MIT/202609/rust
+    - a sandboxing library OS that drastically cuts down the interface to the host, thereby reducing attack surface. It focuses on easy interop of various "North" shims and "South" platforms. LiteBox is designed for usage in both kernel and non-kernel scenarios.
+
+- https://github.com/nolabs-ai/nono /apache2/202609/rust
+  - Built by Luke Hinds (creator of Sigstore at Red Hat), designed to prevent AI agents from stealing SSH keys, accessing cloud credentials, or running destructive commands
+  - macOS: Seatbelt
+  - Linux: Landlock
+  - Windows is currently supported via WSL2 (native Windows under development)
+  - implements a deny-by-default capability system, a local credential broker (injects dummy tokens into the agent environment and replaces them with real secrets at the network perimeter), and cryptographic agent commit signing
+  - permission levels (ReadOnly, WorkspaceWrite, NetworkFull, AskBeforeElevate) for security capability
 
 - https://github.com/rivet-dev/agent-os /1.4kStar/apache2/202604/ts/rust
   - https://www.rivet.dev/agent-os
@@ -754,6 +780,14 @@ modified: 2023-09-02T09:17:22.992Z
   - Local Linux micro-VMs with programmable network and filesystem control.
   - Gondolin runs that code inside a fast local Linux micro-VM (QEMU by default, with an optional experimental krun backend) while keeping network and filesystem access under host-side policy control. That policy layer can be customized via JavaScript.
   - Linux and macOS are supported. ARM64 is the most tested runtime path today. Linux x86_64 make krun-runner is covered by CI smoke builds.
+  - [Add Windows host support _202602](https://github.com/earendil-works/gondolin/issues/21)
+
+- https://github.com/nolabs-ai/nono /apache2/202609/rust
+  - Built by Luke Hinds (creator of Sigstore at Red Hat), designed to prevent AI agents from stealing SSH keys, accessing cloud credentials, or running destructive commands
+  - macOS: Seatbelt
+  - Linux: Landlock
+  - Windows is currently supported via WSL2 (native Windows under development)
+  - implements a deny-by-default capability system, a local credential broker (injects dummy tokens into the agent environment and replaces them with real secrets at the network perimeter), and cryptographic agent commit signing
 
 - https://github.com/boxlite-ai/boxlite /apache2/202601/rust
   - https://boxlite-ai.github.io/website/
@@ -779,6 +813,9 @@ modified: 2023-09-02T09:17:22.992Z
 
 - https://github.com/boxlite-labs/boxlite-mcp /apache2/202512/python
   - embeddable sandbox with hardware-level isolation and no daemon. The SQLite of sandbox, coming soon as open source
+
+- https://github.com/shleder/vetto /apache2/202609/rust
+  - Daemon-less OS security boundary & sandbox for AI coding agents (Codex, Claude Code, Cursor, Aider)
 
 - https://github.com/Coooolfan/onlyboxes /AGPL/202603/go
   - a self-hosted code execution sandbox platform for individuals and small teams.

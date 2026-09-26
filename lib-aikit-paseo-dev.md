@@ -51,6 +51,10 @@ modified: 2026-09-05T00:27:42.212Z
   - Voice runs locally on your device by default
   - You can use the hosted relay (end-to-end encrypted, Paseo can't read your traffic), set up your own tunnel (Tailscale, Cloudflare Tunnel, etc.), or expose the daemon port directly. 
 
+- agent-solutions
+  - harness: pi, dsh, codex, zcode, claude-code, vscode-copilot
+  - sandbox: anthropic-cc-srt, codex-windows-sandbox-rs, ms-copilot-mxc
+
 - tips
   - paseo放在docker容器运行时注意设置最大cpu/ram, 会影响多agent和subagent并发运行, 有些agent可能占用较多ram如claude-code
 # issues
@@ -99,6 +103,7 @@ modified: 2026-09-05T00:27:42.212Z
 - local folder as project/workspace
 
 - sandbox
+  - 移动端的sandbox如何处理
 
 - browser-use
   - 参考开源的zcode
@@ -157,6 +162,18 @@ modified: 2026-09-05T00:27:42.212Z
 
 - mobile agent xp
   - 桌面版的agent过于复杂
+
+- code
+  - mobile端如何执行代码
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## browser-use
 
@@ -282,6 +299,32 @@ modified: 2026-09-05T00:27:42.212Z
 - 
 - 
 
+## sandboxing 🧊
+
+- tips
+  - 参考方案: anthropic-cc-srt, codex-windows-sandbox-rs, ms-copilot-mxc
+  - desktop-sandbox: anthropic-cc-srt, codex-rs
+  - server-sandbox: pi-gondolin
+
+- 移动端的sandbox如何处理
+
+- 
+- 
+- 
+- 
+- 
+- 
+
+## windows
+
+- powershell
+
+- 
+- 
+- 
+- 
+- 
+
 ## relay
 
 - desktop app 不支持添加多个relay
@@ -307,21 +350,13 @@ modified: 2026-09-05T00:27:42.212Z
 - 
 - 
 
-## terminal-hiding
+## terminal-xp
 
 - git operations
   - commit/push/pull 性能很差, 有时必须ssh到vps执行命令才成功
 
 - 
 - 
-- 
-- 
-- 
-
-## windows
-
-- powershell
-
 - 
 - 
 - 

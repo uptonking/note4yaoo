@@ -98,11 +98,11 @@ modified: 2026-09-17T14:19:32.208Z
   - AI 协作（Director） 由你选择设计、执行和审核 AI，完成设计、实现、审核与验收协作。
   - 工作区文件传输面板：浏览目录树，上传下载当前 daemon 主机上的文件。
 
-- https://github.com/geoqiao/paseo-stuff /202609/ts
-  - Independent community plugins for Paseo: readable activity, DeepSeek Harness, math and pets
-
 - https://github.com/koinzhang/paseo-plugins /202609/ts
   - activity	Local usage analytics and workspace agent ops (Explorer fleet list, live attention, terminals)
+
+- https://github.com/geoqiao/paseo-stuff /202609/ts
+  - Independent community plugins for Paseo: readable activity, DeepSeek Harness, math and pets
 
 - https://github.com/sleeyax/paseo-plugins /apache2/202609/ts
   - Discord Rich Presence: Show your current Paseo activity on Discord.
@@ -137,6 +137,21 @@ modified: 2026-09-17T14:19:32.208Z
   - Open a workspace, then choose Open Canvas from the Command Center
   - Keep plans, notes, and review discussions in one place. Ask an agent to write a document, edit it yourself, and send comments back for another pass. Other agents in the same workspace can read and update the same canvas, even in separate sessions.
 
+- https://github.com/lalaze/paseo-plugins /202609/ts
+  - Selection Translate: Select text in a user message or AI reply and translate it in place. On iOS/Android a native "Translate" pill next to the composer translates a draft for sending or copying, or translates the latest AI reply
+  - Pi Qwen thinking levels
+
+- https://github.com/theTd/paseo-translate /202609/ts
+  - Converse in your language while the agent works in another. Prompts are translated into the agent language before they reach the inner agent; replies stream back in the agent's own words and are translated in the app after each stream completes.
+
+- https://github.com/Julesseg/paseo-deck /MIT/202609/ts
+  - A multi-session terminal client for managing Paseo agents and workspaces
+  - keyboard-first terminal client for managing several Paseo sessions at once. 
+  - It presents projects, workspaces, and sessions as a navigable tree beside the active session's live timeline, with prompt composition, permissions, session creation, and lifecycle controls in one terminal screen.
+
+- https://github.com/ZackYJz/paseo-workspace-cleaner /202609/ts
+  - 硬删除 Agent、归档并清理 Workspace、统一停机删除已归档 Workspace 及其 Pi session（优先进废纸篓、引用感知）
+
 ## git
 
 - https://github.com/ZFhuang/paseo-git-tree /MIT/202609/ts
@@ -148,6 +163,24 @@ modified: 2026-09-17T14:19:32.208Z
 
 - https://github.com/mentalfl0w/review-deck /202609/ts
   - Human-in-the-loop code review workspace for Paseo with inline file comments, project-level AI processing, and safe Git diff review.
+
+- https://github.com/ImAnOwl/Paseo-Worktree-Status /MIT/202609/ts
+  - Shows in a Paseo Worktee the current GIT status of the branch and worktree
+
+## dev-pattern
+
+- https://github.com/obetomuniz/auto-mode-for-paseo /MIT/202609/ts
+  - plugin that routes each message to a persona on Codex, Claude, OpenCode, or any other installed provider.
+
+- https://github.com/hypermemetic-ai/qq-workflows /202609
+  - plugin for planning software changes with you, then researching, implementing, reviewing, and merging them.
+  - Ticket-driven planning, in-session teaching, and deliberate delegation. One Architect, one worker runtime.
+
+- https://github.com/denny64/paseo-github-kanban /MIT/202609/ts
+  - Kanban board for Paseo backed by GitHub issues, with one-click agents per card.
+
+- https://github.com/frailbongat/paseo-ship-check /202609/ts
+  - Ship readiness for Paseo: the daemon checks the tree when a turn ends and drops a verdict card in the agent timeline, with a one-tap ship
 
 ## ui-plugin
 
@@ -165,6 +198,9 @@ modified: 2026-09-17T14:19:32.208Z
 
 - https://github.com/ABorakati/beautiful-chat /MIT/202609/ts
   - plugin that redraws the Oh My Pi (OMP) chat stream: tool calls, reasoning, prompts, approvals, and checklists. It replaces the host rendering of OMP timeline items with typed, syntax-aware cards that follow the active Paseo theme.
+
+- https://github.com/q5m-ai/beautiful-pi /202609/ts
+  - A compact, polished timeline renderer for Pi agents in Paseo.
 
 - https://github.com/AStox/paseo-chat-links /202609/ts
   - Paseo plugin that shows Linear tickets and GitHub PRs mentioned in a chat
@@ -217,17 +253,49 @@ modified: 2026-09-17T14:19:32.208Z
 - https://github.com/feixqemn/paseo-smooth-ui /202609/ts
   - A focused Paseo UI fork: inline reasoning, compact tool activity, Markdown messages and configurable file opening
   - It keeps the official Paseo 0.8.0 foundation and focuses on small, direct UI changes: predictable file opening, a compact reasoning and tool timeline, and Markdown that reads like Markdown.
-# examples
 
-# utils
+- https://github.com/thisjrodriguez/paseo-plugin-clusters /202609/ts
+  - plugin that groups your projects into clusters and puts them as circles above the workspace list, Discord-style.
+  - Circles in the sidebar. A row above "New workspace". 
+
+- https://github.com/frailbongat/paseo-composer-pills /202609/ts
+  - Status pills in the Paseo agent composer track bar.
+
+- https://github.com/midodimori/paseo-tool-ui-plugin /202609/js
+  - Automatically expands Paseo's native Edit and Write tool cards on desktop and web, so their existing file details and diffs are visible.
+  - Paseo provides all tool rendering, diffs, paths, and actions. This plugin only clicks the existing expansion controls; it does not create diffs or read or write your files. Reads, searches, shell commands, and other tools keep their usual behavior.
+
+## prompt
+
+- https://github.com/hungcuong9125/paseo-prompt-kit /MIT/202609/ts
+  - PromptKit is a Paseo plugin that rewrites the prompt in your Composer before you send it. It adds a PromptKit pill to the Composer and a `/rewrite <prompt>` slash command. The rewrite replaces the Composer text in your own voice — first person, speaking to the agent — and keeps your language and every protected literal (URLs, absolute paths, shell commands, code blocks, model and tool names).
+  - The rewrite runs one of three ways, chosen in Settings: the agent's own provider CLI with the model the Composer shows (the default), a provider CLI with a model you pick, or a direct request to an API you configure 
 
 - https://github.com/yannelli/paseo-prompt-manager /MIT/202609/ts
   - Markdown prompt library for Paseo. Create, edit, search, and reuse prompts across agents, with local version history and optional Git sync.
-  - https://github.com/custyhs/paseo-drafts
-    - Durable prompt drafts for Paseo, delivered as a plugin: write, plan, send, and search drafts that outlive every session
-  - https://github.com/AmaneRX01/paseo-plugin-prompt-studio
-    - plaintext-first Paseo plugin for drafting, organizing, versioning, and safely dispatching prompts to agents.
+- https://github.com/custyhs/paseo-drafts
+  - Durable prompt drafts for Paseo, delivered as a plugin: write, plan, send, and search drafts that outlive every session
+- https://github.com/AmaneRX01/paseo-plugin-prompt-studio
+  - plaintext-first Paseo plugin for drafting, organizing, versioning, and safely dispatching prompts to agents.
 
+## more-plugins
+
+- https://github.com/AStox/paseo-model-bench /202609/ts
+  - Paseo plugin. It turns the model picker into a score vs cost chart, so you can see what you're actually paying for before you switch models.
+# examples
+
+# providers
+
+- https://github.com/itsjustanks/paseo-plugin-ai-router /MIT/202609/ts
+  - route your agents through one AI router (OmniRoute) — providers, accounts, usage, settings, one provider with every model.
+  - Routes the agents a Paseo daemon launches through one OmniRoute endpoint. It keeps an "AI Router" provider in Paseo with every model of your connected accounts
+
+- https://github.com/xuruiye/paseo-cliproxyapi-providers /202609/ts
+  - a Paseo direct Provider Plugin. It discovers Claude-compatible models from CLIProxyAPI and launches the local Claude Code CLI with the selected cloaked model ID.
+
+- https://github.com/RUIIIOVO/paseo-usage-sidebar /202609/ts
+  - provider plan usage as a sidebar surface, read from Paseo's own usage data
+# utils
 - https://github.com/lyhu/paseo-plugin-tunnel /202609/ts
   - Connect an HTTP or HTTPS service you manage to another trusted Paseo host through the Paseo Relay and end-to-end encryption. 
   - Manage each connection from the HTTP Tunnel entry in Paseo's sidebar.
@@ -255,6 +323,17 @@ modified: 2026-09-17T14:19:32.208Z
   - Every run does the same thing: fetch upstream, recreate the integration branch from the base commit, merge each manifest branch in order, install, build, verify, and print what you got.
   - Why merge, not cherry-pick: A merge resolves once against a whole topic. Cherry-pick replays a branch commit by commit, so a branch that builds on itself conflicts with itself 
   - The first time a conflict appears, something has to resolve it. After that, git's `rerere` replays the same resolution on every rebuild, and most rebuilds spend no thought at all.
+# devops
+- https://github.com/Costben/paseo-statusbar-builds /202609/js
+  - Automated CI that rebuilds getpaseo/paseo Android Universal (4-ABI: armeabi-v7a, arm64-v8a, x86, x86_64) APK from the latest non-draft upstream release with the edge-to-edge status bar fix applied, and publishes them to this repo's Releases.
+  - This is a standalone build repo, not a fork. It stores only the workflow and the patch script. At build time it checks out an upstream tag, injects the patch, and compiles — it never stores or merges upstream source, so there are no merge conflicts to maintain.
+
+- https://github.com/khoawatt/paseo-workflow-starter-guide /js
+  - Small static website that teaches a new developer how to start using paseo-workflow.
+
+- https://github.com/manziman/paseo-gateway /202609/ts
+  - Independent Paseo-compatible Kubernetes gateway: isolated agent workspaces, schedules and headless automation.
+  - Run isolated Paseo workspaces on Kubernetes and expose them as one host to an unchanged Paseo client. One TypeScript service contains the gateway and workspace controller. Workspace pods run the version-pinned upstream Paseo daemon.
 # integrations
 - https://github.com/wangfh5/paseo-feishu-seance /MIT/202609/ts
   - The bot is a remote prompt channel into your machine. Anyone whose messages reach the bot can drive the channeled agent with the agent's own permissions.

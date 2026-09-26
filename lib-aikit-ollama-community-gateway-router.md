@@ -1506,7 +1506,18 @@ starryblu
 
 - ## 
 
-- ## 
+- ## 👀 [Kiro渠道的Claude质量如何 - LINUX DO _202609](https://linux.do/t/topic/2866275)
+- 之前用过 kiro 的 claude 模型跟 cursor 对比过，很明细是阉割过的，但是他量大管饱，但是 codex 后面用起来之后，就感觉 kiro 差点意思了，就取消订阅了。
+
+- kiro 的 claude 是没思考的模型
+能思考其实是 kiro 的 agent 能力
+
+- kiro 的也不是掺水和降智
+他就没智力，他接的是不思考的 api，下面这个和我当初用的体验一致
+
+- [kiro claude 好难用，答非所问 - LINUX DO _202608](https://linux.do/t/topic/2830417/2)
+- kiro 的 claude 是不带思考的模型
+kiro 上有思考是他自己的 skill（也就是假思考）
 
 - ## [已测几家 deepseek4.1flash 的 ttl - LINUX DO _202609](https://linux.do/t/topic/2890952)
   - 4.1flash 的缓存读是输入的 1/50，ttl 过期的代价就是全量输入，单次 40 倍以上的消耗，如果你的日常里，会经常用 4.1 当做主控模型（纯 subagent 场景 ttl 基本可以无视），那么这个代价其实是相当大的。
