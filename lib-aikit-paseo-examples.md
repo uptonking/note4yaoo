@@ -86,11 +86,13 @@ modified: 2026-09-17T14:19:32.208Z
   - agents-history — every workspace and agent the daemon has ever had, including archived ones
   - schedule-runs — one feed of every schedule run: status, workspace, agent, archived state, and the agent's final response
   - session-usage — token, cache, cost, and activity stats for Claude, Codex, OpenCode, Kilo, and Devin CLI from local transcripts and session stores
+  - vscode-open-remote — a composer Editor pill that opens the agent's working directory in VS Code
 
 - https://github.com/gpambrozio/paseo-plugins /MIT/202609/ts
   - github-board	A sidebar board of open issues, draft PRs, open PRs, and discussions
   - launchd-jobs	Schedules shell commands through launchd on the daemon's Mac 
   - herald	A sidebar panel of every agent waiting on you 
+  - skills	Lists the agent skills available to a session, shows where each comes from, renders its SKILL.md
 
 - https://github.com/koinzhang/paseo-plugins /202609/ts
   - activity	Local usage analytics and workspace agent ops (Explorer fleet list, live attention, terminals)
@@ -163,7 +165,7 @@ modified: 2026-09-17T14:19:32.208Z
 - https://github.com/ImAnOwl/Paseo-Worktree-Status /MIT/202609/ts
   - Shows in a Paseo Worktee the current GIT status of the branch and worktree
 
-## dev-pattern
+## dev-pattern/orchestration
 
 - https://github.com/obetomuniz/auto-mode-for-paseo /MIT/202609/ts
   - plugin that routes each message to a persona on Codex, Claude, OpenCode, or any other installed provider.
@@ -177,6 +179,19 @@ modified: 2026-09-17T14:19:32.208Z
 
 - https://github.com/frailbongat/paseo-ship-check /202609/ts
   - Ship readiness for Paseo: the daemon checks the tree when a turn ends and drops a verdict card in the agent timeline, with a one-tap ship
+
+### multi-agents
+
+- https://github.com/capcdk/paseo-agent-kit /MIT/202609/ts
+  - plugin for managing MCP servers and skills across coding-agent harnesses from one place, at user, project and session scope.
+  - Each harness keeps MCP and skill config in its own files with its own format and loading rules. Agent Kit keeps one store of MCP servers and skills and syncs them into each harness's native locations. It also checks what each harness actually loads.
+  - 🐛 似乎缺少搜索和安装外部skills的功能
+  - One catalog of MCP servers and skills, seeded from what every supported harness already has (see Import).
+  - Global or per-project
+  - Load probe: runs each harness's own CLI (agent mcp list, kiro-cli mcp list, qodercli mcp list) in the project directory and shows the result per harness.
+  - Safe writes: before each write it makes a .agent-kit.bak backup and replaces the file atomically. 
+  - Session injection: MCP servers can be injected into every Paseo agent through the agent.create hook.
+  - Supported harness: kiro, qoder, cursor
 
 ## ui-plugin
 
@@ -211,6 +226,13 @@ modified: 2026-09-17T14:19:32.208Z
 
 - https://github.com/opsb/paseo-markdown-viewer /MIT/202609/ts
   - plugin that adds a read-only Markdown panel to every workspace. Open any markdown file in a tab, watch it update the moment it changes on disk, and let the panel follow the files your agents write.
+  - Tabbed viewer. Each file has its own tab. Headings, lists, task boxes, tables all render with React Native primitives, so the panel works on desktop, in the browser and on phones, in every Paseo theme.
+  - Live updates. The daemon watches each open file with the operating system's file events 
+  - Follow mode. When an agent writes or edits a markdown file, that file gets a tab.
+  - Show in Finder. Reveals the current file in the daemon machine's file manager.
+  - new tab后在单独的markdown tab显示操作界面
+  - 🐛
+    - 似乎不支持从文件树拖动文件到markdown tab
 
 - https://github.com/dutchakdev/paseo-plugin-mermaid /MIT/202609/ts
   - Render Mermaid diagrams inside the Paseo chat timeline
@@ -237,6 +259,7 @@ modified: 2026-09-17T14:19:32.208Z
   - plugins/top/ — Live host system resource monitor, timeline telemetry
   - plugins/mcp-tools/ — MCP server fleet management and diagnostic plugin.
   - packages/paseo-plugin-helper/ — Shared runtime library for Paseo plugins (UI components, server utilities, RPC contracts, settings schema, and testing harness).
+  - plugins/plugin-updates/ — Git-source update monitor and updater for installed plugins.
 
 - https://github.com/custyhs/paseo-advanced-markdown /apache2/202609/ts
   - Renders math formulas and Mermaid diagrams inside assistant messages in Paseo 0.8.0

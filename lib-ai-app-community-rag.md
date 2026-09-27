@@ -1096,6 +1096,23 @@ RAG适合有明确知识库、答案可追溯的场景。如果你的需求是�
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## it looks like cursor has stopped using vector-based code retrieval and moved away from turbopuffer _202609
+- https://x.com/jobergum/status/2103875979307262115
+  - even Cursor moved away from server-side RAG index and into Grep-like agent tool calls for code search
+  - "we’re no longer computing embeddings of your code or storing them on our servers for search." — Jul 20
+
+- they still do r in rag but via local indexes/grep.
+
+- Yes, for agent codebase search. Cursor dropped server-side embeddings and now uses local Instant Grep plus file reads. The Turbopuffer part is inferred, but the vector-retrieval change is confirmed by Cursor staff.
+
 - ## [Fast regex search: indexing text for agent tools · Cursor _202603](https://cursor.com/blog/fast-regex-search)
 - https://x.com/chenchengpro/status/2036362113543970818
   - Cursor 最新的技术博客揭示了一个被忽视的瓶颈：不是模型不够聪明，而是 grep 不够快。

@@ -18,6 +18,7 @@ modified: 2026-09-05T00:27:42.212Z
   - existing coding agents, use it  on your own device
   - providers: Bring your own
   - plugins: add server-side functionality, modify the client with custom components
+    - 支持从多种来源安装plugin: github, npm
   - parallel work with optional git worktree: Per-worktree services. Each worktree gets allocated ports for dev servers and databases, 
   - automation: cli, mcp
   - browser tools
@@ -88,9 +89,9 @@ modified: 2026-09-05T00:27:42.212Z
   - mobile远程控制pc
   - 远程控制时使用pc上的computer-use
 
-- agent-base
-  - built-in agent: 这样移动端可以直接执行agent，而不依赖桌面端或外部agent
-  - external: deepseek-harness, cursor-cli, commandcode
+- chat view 
+  - 更符合主流产品的体验
+  - 可与现有的workspace view切换
 
 - 与im平台的集成，类似openclaw
   - telegram
@@ -131,6 +132,10 @@ modified: 2026-09-05T00:27:42.212Z
 - version-history for non-git folder
   - like git panel
 
+- easy skills
+  - 目前skills需要手动安装在project或agent-harness, 查看不方便/agent使用也不方便
+
+- 
 - 
 - 
 - 
@@ -154,20 +159,29 @@ modified: 2026-09-05T00:27:42.212Z
 - 
 - 
 - 
+- 
+- 
 
-## plugin
+## built-in agent 👾
 
-- tips/xp
-  - github上的plugin安装后能立即生效
+- agent-providers
+  - external: deepseek-harness, cursor-cli, commandcode
 
-- plugin-list 界面不支持对单个plugin进行设置
+- built-in agent: 移动端可以直接执行agent，而不依赖桌面端或外部agent
+  - 需要支持已有的 agent profile 配置
+  - orchestration skills: profile notes explain when to choose those settings for delegated work.
+  - 💡 可基于profile实现 auto mode
+  - 要支持让移动端使用built-in agent执行
 
-## remote-control
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
-- 远程控制的交互不够自然
-  - 可参考 zcode, uu远程
-
-## mobile-agent
+## mobile-features/agent 📱
 
 - features-mobile
   - built-in agent without external coding agent
@@ -176,7 +190,8 @@ modified: 2026-09-05T00:27:42.212Z
   - sharing
 
 - mobile agent xp
-  - 桌面版的agent过于复杂
+  - 桌面版的agent支持的ux过于复杂
+  - 桌面版agent可直接使用所在设备的环境, mobile/web需要云端环境
 
 - code
   - mobile端如何执行代码
@@ -200,10 +215,42 @@ modified: 2026-09-05T00:27:42.212Z
 - 
 - 
 
-## documents/pdf/docx
+## plugin
+
+- tips/xp
+  - github上的plugin安装后能立即生效
+
+- roadmap
+  - skills-hub: 方便安装skills到project
+
+- plugin-list 界面不支持对单个plugin进行设置
+
+## server
+
+- 方便部署为 saas 的server
+
+## remote-control
+
+- 远程控制的交互不够自然
+  - 可参考 zcode, uu远程
 
 - 
 - 
+- 
+- 
+- 
+- 
+
+## documents/pdf/docx 📄
+
+- markdown
+- 
+- 
+
+- pdf
+- 
+- 
+
 - 
 - 
 - 
@@ -397,6 +444,13 @@ modified: 2026-09-05T00:27:42.212Z
 - 
 
 # dev-xp
+
+- 
+- 
+- 
+- 
+- 
+
 - use webapp to control native app
   - 如果要通过webapp控制本地的paseo app, 需要手动修改配置 daemon.cors.allowedOrigins
   - ws://localhost:6767/ws means the browser is talking to the daemon on your Mac directly.  JavaScript running in Chrome opened a WebSocket directly to the Paseo daemon listening on your Mac.
@@ -502,6 +556,9 @@ modified: 2026-09-05T00:27:42.212Z
 - When a workspace is backed by a git worktree, Paseo creates a separate directory on a separate branch so parallel agents never step on each other.
 
 - A provider is the contract between Paseo and one external agent CLI: how to launch it, how to stream its output, how to send input back, what modes it supports. The actual binary lives on your machine and runs as a normal subprocess.
+
+- Agent profiles
+  - Save the settings you use together as a named profile. Choose UI work, Planning, or Review when creating an agent instead of selecting its model, thinking level, and mode each time.
 
 - Paseo ships a bundled adapter for the major agents (Claude Code, Codex, OpenCode, pi). Auto-discovered when the underlying CLI is installed, with mode metadata and voice support where applicable.
 - any agent speaking the Agent Client Protocol is supported through a generic adapter. Paseo ships a curated catalog of one-click installs 

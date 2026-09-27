@@ -233,6 +233,13 @@ modified: 2026-06-30T17:32:43.131Z
 
 ## draft-pdf
 
+- ee features
+  - batch
+  - scaling/gpu
+  - parse-engines
+  - formats
+  - integration
+
 - auto-toc
 
 ## draft-office/documents

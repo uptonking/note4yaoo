@@ -351,10 +351,11 @@ modified: 2026-06-20T15:49:57.019Z
     - [LD士多 - LDC积分商城](https://ldst0re.qzz.io/)
 
 - token-news
-  - [Atria Dawn Preview — Model API _202609](https://api.atria-asi.ai/console)
   - https://chatapi.weixin.qq.com/
     - 微信开发大赛, 免费使用Deepseek和GLM
     - 白嫖微信的v4flash 1Btoken 约合35块钱
+  - https://discovery.intern-ai.org.cn/token-plan/points
+    - [免费DeepSeek模型，大概5亿token - LINUX DO _202609](https://linux.do/t/topic/2959166)
   - [Atria Dawn Preview — Model API _202609](https://api.atria-asi.ai/)
   - [Mirasim — One Agent IDE ](https://mirasim.ai/)
   - [商汤送免费的glm5.2了 - LINUX DO _202607](https://linux.do/t/topic/2504080)

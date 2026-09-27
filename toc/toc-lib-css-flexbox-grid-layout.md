@@ -55,6 +55,10 @@ modified: 2021-01-28T21:31:18.697Z
   - https://github.com/coryrylan/blueprint-css
   - https://blueprintcss.dev/
   - a modern responsive CSS layout library & grid built on top of CSS Grid and Flexbox
+
+- https://github.com/DanFessler/trellis /NC/202609/ts
+  - https://trellisui.com/
+  - Fractal layouts for web apps: nest panels to any depth, zoom to the part you need, and keep every view alive.
 # css-grid-layout
 - styled-css-grid /MIT/501Star/201905
   - https://github.com/azz/styled-css-grid

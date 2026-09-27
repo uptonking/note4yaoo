@@ -14,4 +14,7 @@ modified: 2026-08-14T21:43:14.088Z
 
 # dev-xp
 
+# changelog
+- [pico v2 ](https://github.com/earendil-works/pi/blob/main/packages/agent/docs/pico2.md)
+  - This document is the design under review, not an implementation claim
 # more

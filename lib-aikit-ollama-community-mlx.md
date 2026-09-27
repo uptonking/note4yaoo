@@ -459,6 +459,34 @@ modified: 2026-01-14T18:59:01.949Z
 
 - ## 
 
+- ## 
+
+- ## @PrismML 's Ternary Bonsai 2 27B now runs 6x faster on a Mac.
+- https://x.com/pratikg/status/2104262730404495581
+  - https://www.yukon.org/mlxfast
+  - That's 503.2% over a frozen baseline on http://mlx.fast at @YukonResearch 
+  - 237.4 tokens per second decode, up from about 59 at baseline, on a compressed 27B that fits on a 16GB Mac.
+
+- 237.4 tokens per second means little without sustained thermal tests, what speed remains after ten minutes
+
+- ## TensorFold v0.3.4 is up! Enabling lanes on M1–M4 more than doubled Qwen3.8-27B code decode on M3 Ultra to 141–158 tok/s.
+- https://x.com/ashxhart/status/2103982856024510525
+  - Lane batching is coming next, with concurrency already showing early gains.
+
+- 45tps on M4Pro. New record. Prefill still horrible though
+
+- How about prefill caching ?
+
+- tried TensorFold on a Mac mini M4 16GB.
+
+your own recipe wants 32GB+ (16.1GB + 3.8GB drafter), so that's out. went for the 2-bit Qwen3.8-27B build instead — 8.4GB, actually fits.
+
+but the lane kernels are hardcoded to 4-bit group-64, so a 2-bit checkpoint can't use them.
+
+I was able to get 20.7 tps max with n-gram spec. any chance lane path could take 2-bit?
+
+- 我测试下来decode速度是很快，但prifll 速度慢了很多，是mlx server 的四分之一，这正常么？还是我测试不对
+
 - ## Meet Husky: a Model-Specific Inference (MSI) engine up to 4.5× faster than Apple's MLX 
 - https://x.com/0xSigil/status/2102165862065328538
   - Underdog's Pareto frontier model, now runs up to 730 tokens/sec on a MacBook  
