@@ -19,6 +19,7 @@ modified: 2026-09-05T00:27:42.212Z
   - providers: Bring your own
   - plugins: add server-side functionality, modify the client with custom components
     - 支持从多种来源安装plugin: github, npm
+    - 🐛 plugin的依赖关系不支持
   - parallel work with optional git worktree: Per-worktree services. Each worktree gets allocated ports for dev servers and databases, 
   - automation: cli, mcp
   - browser tools
@@ -162,7 +163,7 @@ modified: 2026-09-05T00:27:42.212Z
 - 
 - 
 
-## built-in agent 👾
+## built-in agent
 
 - agent-providers
   - external: deepseek-harness, cursor-cli, commandcode
@@ -228,6 +229,12 @@ modified: 2026-09-05T00:27:42.212Z
 ## server
 
 - 方便部署为 saas 的server
+- paseo daemon 现有架构不适合scaling
+
+- 
+- 
+- 
+- 
 
 ## remote-control
 
@@ -252,6 +259,12 @@ modified: 2026-09-05T00:27:42.212Z
 - 
 
 - 
+- 
+- 
+- 
+
+## ocr 👓
+
 - 
 - 
 - 

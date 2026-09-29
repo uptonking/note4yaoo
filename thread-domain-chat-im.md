@@ -1822,6 +1822,40 @@ WhatsApp 无法收到短信验证码，但是可以收到语音验证码
 - ## [分享几个短信接码平台 - LINUX DO _202605](https://linux.do/t/topic/2202877)
   - 号码类型查询 https://www.freecarrierlookup.com
 
+# discuss-accounts-us
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [A Comprehensive Guide to Tax-Free Shopping in Portland | Portland _202601](https://webpromo.com/blog/jammybear/3/en)
+- Oregon has no sales tax, so you pay the exact price listed on the tag at checkout.
+
+- Portland's shopping destinations can be broadly categorized into malls, department stores, outdoor outlets, and farmers markets, each with its own distinct appeal.
+
+- The most historic indoor shopping mall in Portland is Lloyd Center.
+Opened in 1960, this mall was one of the largest in the U. S. at the time and features an indoor ice rink, making it especially popular with families.
+Located in the Lloyd District in East Portland, it hosts a variety of brand stores ranging from Mexicos to casual fashion.
+It's a great space to casually stroll and compare various brands in one place.
+The ice rink inside operates year-round and offers skate rentals, serving as a recreational space for local residents.
+
+Located in the heart of downtown, Nike Town is a symbolic shopping destination given that Nike's headquarters is nearby in Beaverton. You can experience Nike's entire lineup firsthand, and limited edition collections are frequently released, making it a must-visit for sneaker enthusiasts.
+
+Pioneer Place, also in downtown, is a representative shopping mall of Portland, featuring an Apple Store and high-end brand shops. The mall connects various stores and a food court from the basement level to the fourth floor, allowing for a comfortable shopping experience even on bad weather days.
+
+- When talking about outdoor shopping in Portland, the REI flagship store cannot be overlooked. Given that Portland has a strong hiking and biking culture, the REI store is quite large. You can purchase everything from camping gear to hiking boots and bike accessories in one stop, and most of the staff are outdoor enthusiasts, making it easy to seek advice.
+
+Additionally, Portland is home to the headquarters of Columbia Sportswear, and the flagship store located downtown holds seasonal sales.
+
+- The standout farmers markets in Portland are undoubtedly the Portland Saturday Market and the PSU Farmers Market. The Portland Saturday Market, which started in 1974, is one of the oldest outdoor craft markets in the U. S., held every Saturday and Sunday near the downtown waterfront.
+You can purchase various handmade items, jewelry, textiles, and prints from local artists, making it a perfect spot for travel souvenirs. It operates from March to December, especially busy during the holiday market period.
+
+The PSU Farmers Market takes place every Saturday morning near Portland State University's Park Blocks. It operates seasonally from May to October, selling fresh produce, cheese, meat, jams, bread, and flowers directly from Oregon farms. It is one of the markets that represents Portland's food culture, and local restaurant chefs are known to come here to buy ingredients. There are also many booths selling freshly prepared food, allowing you to enjoy breakfast while shopping.
+
+- If you're planning to shop in Portland, it's worth keeping an eye on seasonal sales events. With a tax-free environment and additional discounts during Black Friday or the holiday season, you can save significantly.
 # discuss-google-accounts
 - ## 
 

@@ -1481,21 +1481,25 @@ modified: 2026-06-20T15:49:57.019Z
   - 可用模型：minimax-2.5（其他模型陆续上线）
 # paid-api 💰
 - models
-  - best-pricing
+  - cost-auto
     - 2609: luna, mimo, deepseek-v4.1-flash, gemini-3.8-flash, grok-4.6, composer-2.5, devin-swe2
-  - intelligence
+  - intelligence-auto
     - 2609: gpt-5.6-sol, claude-opus-5, glm-5.3, kimi-k3
 
 - ai-coding-plan
   - codex - gateway -- ¥50
   - claude - opencode + antigravity  -- ¥40
+    - cursor的claude可超限，可以应急用
+    - antigravity提供旧版 claude-opus-4-6
+    - anyrouter做备用
   - cursor - composer/auto  -- ¥30
   - kiro - claude  -- ¥50: 会降智, 低缓存
     - kiro 的 claude 是没思考的模型, 能思考其实是 kiro 的 agent 能力
-  - token choices: gpt, kiro-claude, gemini, grok, composer, deepseek
+  - swe - 反代devin可能会有低倍率, 如jinny
+  - token choices: gpt, kiro-claude, gemini, grok, composer, devin-swe, deepseek
   - 厂商类: gpt, claude, gemini, grok, glm
   - ide类: cursor, devin/windsurf, kiro, antigravity
-  - coding/插件类: opencode, cline, kilo
+  - coding/插件类: opencode, cline, kilo, commandcode
   - opencode go: 性价比降低
   - commandcode go: 价格战阶段性价比高
     - 1刀的go没有api, 10 刀可以用 api，我挂 cpa 上没问题
@@ -1505,6 +1509,7 @@ modified: 2026-06-20T15:49:57.019Z
   - evot
 
 - tips
+  - 不要执着于免费/超低价模型, 可用模型/rpm/tpd/pricing/speed 不可能满足多项
   - 有时api请求慢, 可能不是卖家/服务器的问题, 换个ip看看
   - 重度开发时间，优先买天卡(10元/天) 或 速刷号 ， 按量太贵
     - 不要花过多时间比价, 一般1亿token在2-4元就已经是业内非常划算的了, 节省时间去做研发
@@ -2362,9 +2367,11 @@ modified: 2026-06-20T15:49:57.019Z
 - tips
   - 主要因素: 缓存 > 倍率
   - 很多中转站带有峰值倍率和闲时倍率, 夜间多用闲时倍率, 白天可用半公益站
+  - 不要执着于免费/超低价模型, 可用模型/rpm/tpd/pricing/speed 不可能满足多项
   - hub.linux.do深夜福利的cc倍率也能达到0.02, 而付费的cc普遍在0.3, 所以可以适当留好余额在hub用cc
   - 少数中转站会用非常短暂的低倍率吸引充值, 充完后取消低倍率只剩高倍率, 所以不要充多了
   - 厂商风控加强后, gpt/grok都降智了， 候选模型可用 kiro/composer/gemini/deepseek/glm
+  - 贵的claude不如高级国模
 
 - resources
   - [LinuxDo商家评价平台](https://rate.linux.do/)
@@ -2391,6 +2398,8 @@ modified: 2026-06-20T15:49:57.019Z
   - https://api.liusq.icu /0.1x
     - team  现在就这个分组了
     - free分组只能跑luna和5.5
+  - https://www.rightapi.ai/models  /0.4x/10rpm
+    - 支持外接，支持非流式调用
   - https://codeapx.com/models/pricing /0.2x/0.35x
     - Api可以不用开梯子
   - https://jinnyapi.com/keys  /0.2x
@@ -2398,8 +2407,7 @@ modified: 2026-06-20T15:49:57.019Z
   - https://www.acsgw.top/app/usage /0.35x
     - [ACS Gateway 主打长期稳定可靠 gpt-5.6-luna模型依旧开放   _202608](https://linux.do/t/topic/2806212)
     - pro 号池 倍率 0.35 codex plus 倍率 0.15 Claude 倍率 1.25
-  - https://dddai.dev/pricing  /1.3x/作者加入L站时间短
-    - [【富可敌国】Claude Fable 5 / Gemini 3.7 / Grok 4.6 都能用，gpt-5.6-luna 不限制 _202608](https://linux.do/t/topic/2737252)
+  - https://dddai.dev/pricing  /1.3x/作者加入L站时间短/2609大涨价
     - 闲时倍率为 0.2x0.98(=0.196×), 还有日卡/月卡, 注意月卡混合号池的倍率是 1x
     - Luna 在 default 分组已开启，若不可用就是额度不足临时关闭, 资源紧张时会关luna
     - default分组包含sol/terra/luna, 倍率都是 0.2x
@@ -2417,7 +2425,6 @@ modified: 2026-06-20T15:49:57.019Z
   - https://1yuanapi.com/pricing /0.3x
     - 运营活动花哨复杂
   - removed
-    - https://www.rightapi.ai/models  /0.4x--0.08--0.008/10rpm
     - https://codexapis.com/pricing   /0.085--0.0085
     - [熊出没API /sub2api](https://us.xcmapi.com/model-plaza)
       - 0.13x-pro分组
@@ -2427,8 +2434,9 @@ modified: 2026-06-20T15:49:57.019Z
   - https://us.xcmapi.com/model-plaza  /0.08x
   - https://api.x5m5x.com/monitor  /0.15x
   - https://ai.max66.xyz/keys, 只做自部署的deepseek  /0.125x
+  - https://tntapi.com/keys  /0.1x/用户多
   - https://fuck-everyone.bbroot.com/model-plaza  /0.18x
-  - https://tntapi.com/keys  /0.1x
+  - [创想AI ](https://vapi.chuangxiangai.asia/model-plaza)
   - https://www.jiji.cc/model-list  /0.2x/注意缓存
     - 国模组的差一些 deepseek组的就是好很多，至于满血，基本来说都是满血，但是我看了好像除了官方的，其它的包括国内阿里火山那些都有点拉胯，佬自己测一下，站内的要质量好些的就选  deepseek 0.7那个, 便宜的国模的就是 0.19
   - https://zzshu.cc/pricing /0.2x
@@ -2460,6 +2468,41 @@ modified: 2026-06-20T15:49:57.019Z
     - 0.45-1.8-0.045
   - [HOHAI ](https://api.hohai.eu.org/pricing), 会自动删除账号
     - 0.2x, 0.2-0.8-0.004
+
+- claude
+  - [zzshu /NewAPI ](https://zzshu.cc/pricing) 
+    - cc-max--1x
+    - cc-max-sales--0.8x
+    - cc-max-promo--0.6x: 0注入，有思维链，真模型高智商，纯血claude，0.6一刀, 某大厂渠道，可接受任意形式测试
+    - Claude-顶级华强北--0.4x
+  - [TNTAPI ](https://tntapi.com/keys), 用户多
+    - cc-max--0.65x, 非官网订阅，满血高智商高缓，有防封提示词
+  - [LingShu AI ](https://api.strategyhub.cc/keys)
+    - cursor-claude--0.4x
+    - ccmax--0.7, 混池 并发不大
+  - [智元API ](https://pool.chaozhiyuanai.com/keys)
+    - ccmax--0.8x
+  - [JinnyAPI ](https://jinnyapi.com/keys)
+    - ccmax--0.85x
+  - https://vip.muling.store/pricing
+    - 反重力claude--0.33x
+  - [aiwble ](https://aiwble.com/pricing), 长期运营, 只做gemini
+    - 反重力claude--0.4x
+  - [PackyAPI ](https://www.packyapi.com/pricing)
+    - aws-q--0.3x, AWS 逆向, Kiro 反向, 最便宜,200K 上下文命中率高
+    - cc-sale-0.8x, 此分组无最新模型, 逆向特价,Claude Code 可用,可"养龙虾",缓存偶发异常; 开源/支持第三方接入,Grok 模型主承载
+    - cc--2.5x, Claude Code 专用,首选稳定,资源紧张时排队, 403拒绝第三方客户端
+  - [Right Code - 企业级 AI Agent 中转平台 ](https://www.rightapi.ai/models)
+    - aws-q--0.6x
+    - claude--2x
+  - [IKunCode ](https://api.ikuncode.cc/pricing)
+    - cc-max--1.8x
+  - [帅API ](https://api.shuaiapi.com/pricing)
+    - 自营--1.15x, 非自营--0.9x+
+  - https://us.xcmapi.com/model-plaza
+    - cc-cursor--0.6x
+  - more
+    - [创想AI ](https://vapi.chuangxiangai.asia/model-plaza)
 
 - [zzshu /NewAPI ](https://zzshu.cc/pricing)  , 长期运营
   - [吱吱鼠AI的小店 - 云猫寄售 ](https://catfk.com/shop/SXS913NA)
@@ -2517,6 +2560,11 @@ modified: 2026-06-20T15:49:57.019Z
 - [聪明AI /sub2api](https://sub2.congmingai.com/keys)
   - 充值改为u充值了，最低充值500r。小额充值点左边的小铺链接。
   - 中等价格
+  - 偶尔有claude
+
+- [LingShu AI ](https://api.strategyhub.cc/keys), 用户多, 长期运营
+  - cursor-claude--0.4x
+  - ccmax--0.7
 
 - [熊出没API /sub2api](https://us.xcmapi.com/model-plaza), 已充值, 群聊活跃
   - [分组监控页&AI降智监控中心 ](https://www.xcmapi.com/jk/)
@@ -2551,10 +2599,27 @@ modified: 2026-06-20T15:49:57.019Z
 - [TNTAPI ](https://tntapi.com/keys), 用户多
   - 国模-0.1x
   - 支持luna
+  - cc-max--0.65x, 非官网订阅，满血高智商高缓，有防封提示词
 
 - [北洛AI ](https://beiluoxi.top/keys), 用户少
   - 换了两台物理机 随便上量 随便蹬 luna
   - 国模-0.039x, 包括 deepseek
+
+- [智叶API ](https://us.ziyelian.site/pricing)
+  - 国模低至 0.08 倍率起
+  - ccmax--0.9x
+
+- [wanyiyun - Sub2API ](https://wanyiyun.top/keys)
+  - 新增国模组！！0.15倍率
+  - 低价国模--0.03x
+  - claude满分--0.5x
+
+- [aiwble ](https://aiwble.com/pricing), 只做gemini/反重力, 无用户群, 运营时间长
+  - 反重力claude--0.4x
+
+- [muling /New API ](https://vip.muling.store/pricing), 无用户群
+  - 反重力claude--0.33x
+  - ccmax--0.95x
 
 - [FoxRouter ](https://foxrouter.org/pricing)， 低价
   - 分组实际倍率与文字不同
@@ -2577,6 +2642,18 @@ modified: 2026-06-20T15:49:57.019Z
     - glm5.3flash输入0.8输出2.8缓存0.23，无峰谷每日价都是一样
   - 可用性很低
   - 商家感觉没有自营号池，渠道分组混乱
+
+- [创想AI ](https://vapi.chuangxiangai.asia/model-plaza)
+  - kiro--0.05x/0.15x
+  - 国模--0.07x+
+  - gemini反重力--0.11x
+  - ccmax--0.8x, cctest满分，可蒸
+
+- [LargeChestnut ](https://largechestnut.com/model-plaza), kiro
+  - 高缓存90（cctest测试大概3x） kp（无写入稳90缓存）以及kiro低写入（90缓存左右）0.08 
+  - kiro分组 （cctest测试大概2x）正常缓存 正常写入 60缓存左右0.08 
+  - 标准缓存分组 真实缓存90 （cctest测试1x）0.1
+  - 0缓存分组 0.05倍
 
 - [HOHAI ](https://api.hohai.eu.org/pricing)
   - 有公益， 有付费
@@ -2603,6 +2680,10 @@ modified: 2026-06-20T15:49:57.019Z
   - [muskqq ](https://sub2api.muskqq.com/keys)
     - 新站临时
 
+- [aiigo Stable AI ](https://api.aiigo.cloud/keys), 人很少
+  - gpt--0.06x
+  - glm--0.15x
+
 - 咩咩的中转 [MAX API ](https://maxapi.hanyue.xyz/pricing), 未开放注册
   - [ₒ⦁⩊⦁ₒ - 千寻寄售服务平台 ](https://www.qianxun1688.com/details/D5A18D58)
 
@@ -2621,6 +2702,10 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [yier-lukyface](https://api.lukyface.com/pricing)
   - 顶级 OVH 服务器, 10G 独享大带宽, 稳抗上万 RPM
+
+- [DawCode ](https://dawclaudecode.com/pricing)
+  - 最低充值30r
+  - proMax--0.65x
 
 - [aimi-api /NewAPI](https://api.58aimi.cn/keys), 已充值
   - [ai资源库的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/89LBYJ36)
@@ -2702,6 +2787,25 @@ modified: 2026-06-20T15:49:57.019Z
 - [Duomi ](https://3aa.ai/keys)
   - https://pay.ldxp.cn/shop/ECS3HUD5
   - 50起充
+
+- [Poixe AI ](https://poixe.com/pricing), 充值是美元， 提供每日限量的免费模型
+  - https://poixe.com/products/free
+    - claude:free - 200 rpd,  100,000 tpm, 2M tpd
+    - codex:free - 1,000 rpd, 200,000 tpm, 10M tpd
+    - free模型只有sonnet-4, sonnet-5不是free
+  - cc2api--0.5x 再乘以美元汇率 7
+  - gpt--0.7x 再乘以美元汇率 7
+  - claude--0.8x 再乘以美元汇率 7
+  - 在用户 Level 层面设置了不同的免费容量，Level 0（未付费用户）和 Level 1-3（付费用户）。用户只需任意一笔充值即可升级为付费用户，享受更高的免费容量。
+  - Cli2API 类型的免费模型是指通过 Claude Code / Codex 等 CLI 终端转出来的模型资源
+  - PoixeAI 内置风控系统，会自动检测异常请求或滥用行为。若发现滥用行为（如多帐户、模拟并发攻击、异常流量等），平台有权暂停或限制相关账号的调用权限。
+  - 为所有用户提供免费模型调用，分为大杯和小杯两个组，各组配额独立，每日自动刷新，可用于测试与接入验证
+    - 在调用免费模型时，只需在模型名称后加上 `:free` 后缀，例如 `gpt-4.1:free` 
+    - 大杯模型通常是性能更强的模型（如 Gemini 2.5、Claude 3.7），因此免费额度较低；小杯模型则覆盖如 DeepSeek 等轻量模型，拥有更高的免费调用频率。两者容量独立，互不影响
+  - [cli2api 模型上线，每日最高 100 万 Tokens 免费用 _202604](https://community.poixe.com/t/topic/201)
+    - cli2api 免费模型需通过对应的 messages / responses 协议调用，不支持 completions 协议。
+    - cli2api 同时也是付费模型，调用免费版本请确保添加 :free 后缀。
+    - 请勿滥用，多账号注册、利用漏洞等违规行为将被清退。
 
 - [御海自用API ](https://www.zzczzc.top/keys)
   - 中等价格

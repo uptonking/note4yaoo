@@ -11,6 +11,42 @@ modified: 2026-06-17T05:51:04.215Z
 
 - tips
   - 临时的需求可以用LDC在 ldstore 买一些proxy/vps
+# myip
+- [IPLark - 查看本机IP地址 - IP查询](https://iplark.com/)
+  - 能看到代理前的出口ip, 也能看到厂商
+  - 能看到关联域名, 可能有过期的域名
+- [IPPure - IP地址信息和纯净度检测](https://ippure.com/)
+  - 能看到机房如colocrossing
+
+- [ifconfig.me ](https://ifconfig.me/)
+  - 表格信息
+- [GeoIP Lookup — Free IP Geolocation Lookup & API | GeoIPLookup.io ](https://geoiplookup.io/)
+  - ASN Organization: HostPapa
+  - ASN Number: 36352
+- [What is My IP Address? - IP Geo Location & Security Lookup ](https://ipgeolocation.io/what-is-my-ip)
+
+- [IP-API.com - Geolocation API ](https://ip-api.com/)
+  - map
+- [whatismyip ? See Your Current Public IP ](https://www.whatismyip.com/)
+  - map
+- [IPinfo ](https://ipinfo.io/what-is-my-ip)
+  - map
+- [Geolocate the Location of an IP Address | Geolocation ](https://www.geolocation.com/)
+  - map
+  - 不准确
+- [Geo IP Address View - View GEO IP address information and locate IP on map ](https://www.geoipview.com/)
+  - map
+  - 不准确
+
+- 
+- 
+
+- [查 IP 信息哪个网站最好? _202609](https://www.nodeseek.com/post-954179-1)
+  - https://ippure.com 最强大准确，功能全面，如果只推荐一个，用这个
+  - https://ipsuper.com  越来越喜欢用，最好用的多个数据库并行查询
+  - https://iplark.com  想看下c段有没有丧心病狂的邻居时查一下
+  - [从夯到拉，常见ip风险系数测试网站排名，基于风险系数动态变化进行测试 _202601](https://www.nodeseek.com/post-568684-1)
+  - [IP测评类网站评价、历史、汇总 _202608](https://www.nodeseek.com/post-850667-1)
 # DNS
 - [网易DNS检测工具 ](https://nstool.netease.com/)
 - [阿里昆仑用户诊断工具 ](https://cdn.dns-detect.alicdn.com/)
@@ -642,7 +678,13 @@ webshare/ip2world 等系列
 
 - ## 
 
-- ## 
+- ## i am running https://github.com/MetaCubeX/ClashX.Meta on my macbook, in settting there is a alpha meta core, should i turn it on to use it?
+- unnecessary
+
+- using verge.aichorage.de added the overhead of dns.  do you think it is a good idea to use the direct IP ?
+- the DNS "overhead" argument is weaker than it looks — and the domain carries a real operational benefit in this repo.
+  - mihomo resolves the proxy server's domain once (via proxy-server-nameserver, bypassing fake-ip) and caches it. Hysteria2 then keeps one persistent QUIC connection and multiplexes every new TCP/UDP stream over it — DNS is not in the per-request path. You pay one UDP lookup (~10–50ms) at core startup and occasionally on redial. So switching to the IP won't make browsing faster in any measurable way.
+  - `use-hosts: true` is already in the DNS block, and mihomo consults the hosts map when dialing the proxy server too — so you get zero DNS queries, the config still documents the domain, sni and cert validation stay exactly as they are, and if verge ever migrates you just update (or delete) that one line instead of touching the proxy entry. Going fully direct with server: ip + sni: verge.aichorage.de also works, but saves you nothing over the hosts: pin.
 
 - ## [问一下大佬们 安卓现在最好用的代理软件和模式是什么 _202511](https://www.nodeseek.com/post-514353-1)
 - 一类

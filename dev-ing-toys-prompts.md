@@ -1320,7 +1320,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 ## codex
 
 # llm-hub-lite/vps 🚧
-- i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cursorapi/relaichor1, worker_2 node deploys librechat/wapdf/aichor/relaichor/searx, worker_3 deploys flowy/aichor3, worker_4 deploys wabase/verge.
+- i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cursorapi/relaichor1, worker_2 node deploys librechat/wapdf/aichor/relaichor/searx/verge2, worker_3 deploys flowy/aichor3, worker_4 deploys wabase/verge.
   - all services are running well on my 5 vps.
   - Most requests should go to leader node first, then proxying to follower/worker nodes.
   - the current architecture of Foundation apps/services and Consumer apps/services is good.
@@ -1524,11 +1524,17 @@ in a multi-nodes high-availability architecture
 
 - continue to improve the architecture that supports to deploy a new docker service to any follower node, using aichorouter/cpapi as example, making the architecture correct, robust, extensible.
 
-- please design a solution/architecture to support to deploy a new docker service to any follower node by new environment variables or new interactive shell scripts, so that requests always go to the follower node directly without leader node, just like a orphan service. a orphan service is intentionally single-node; high availability is out of scope.
-- use hysteria as a example use case of this architecture/solution.
+- a architecture has been implemented to support to deploy a new docker service to any follower node by new environment variables or new interactive shell scripts, so that requests always go to the follower node directly without leader node, just like a orphan service. verge service is an example. a orphan service is intentionally single-node; high availability is out of scope.
+- use hysteria/verge as a example use case of this architecture/solution.
 
-- please design the solution to deploy a hysteria service called `verge` to any follower node user specified. deploy it to worker_4 node by default. in cloudflare i have configured verge.aichorage.de to worker_4 node ip .
+- please design a solution to deploy a hysteria service called `verge2` to any follower node user specified. deploy it to worker_2 node by default. in cloudflare i have configured verge2.aichorage.de to worker_2 node ip .
+  - verge2 and verge have the same features and use the same docker image, but they are 2 unrelated services as 2 orphan service without high availability.
   - source code for verge(hysteria) has been cloned at folder `../all-vpn-proxy/hysteria` for reference if you want.
+  - source code for clashx meta has been cloned at folder `../all-vpn-proxy/ClashX.Meta` for reference if you want.
+
+- you might refer to how wabase/verge are configured on worker_4 node. requests to wabase still go to leader node first, but requests to verge goes directly to worker_4 node.
+  - similarly, on worker_2 node, only requests to verge2 should go directly to worker_2 node, all other requests to services like librechat/wapdf/aichor/relaichor/searx should still go to leader node first. 
+  - you might improve the config/architecture to make orphan service and consumer service correct and consistent.
 
 - optimize verge for single-node, minimal cpu/ram resources. 
 
@@ -1537,10 +1543,10 @@ in a multi-nodes high-availability architecture
   - the current design of copying config/secrets from leader to follower nodes is good.
   - bootstrap scripts `ops/bootstrap-vps.sh` should be correct and robust for both first deployment and manual re-deployment.
 
-- you might reuse existing utils/scripts if it hepls. 
+- you might reuse existing utils/scripts if it helps. 
 - if this feature is very different from existing services, you might design it as a standalone feature with standalone scripts.
 
-- review exising code/implementation, make single-node consumer services, multi-nodes consumer services, orphan-node services all work correctly, make a comprehensive plan to implement/improve verge.
+- review exising code/implementation, make single-node consumer services, multi-nodes consumer services, orphan-node services all work correctly, make a comprehensive plan to implement/improve verge2.
 
 - 
 - 

@@ -902,7 +902,21 @@ openclaw/herness
 
 - ## 
 
-- ## 
+- ## [Clash Verge怎么用yml文件配置Hysteria 2？求教程 - LINUX DO _202505](https://linux.do/t/topic/641154)
+- 
+- 
+
+```yaml
+- name: JP
+    server: xxxxx
+    port: 3121
+    sni: bing.com
+    up: 0
+    down: 0
+    skip-cert-verify: true
+    type: hysteria2
+    password: xxxxxx
+```
 
 - ## [国外vps被封？使用Cloudflare + Nginx + V2Ray，代理服务搭建 - 教程 - IDC Flare _202609](https://idcflare.com/t/topic/127101)
   - 本文记录一套使用 Cloudflare 橙云代理、Nginx 和 V2Ray 的部署方法：客户端通过域名访问 Cloudflare，由 Cloudflare 通过 HTTPS 回源到 VPS，再由 Nginx 将 WebSocket 请求转交给本机 V2Ray。
