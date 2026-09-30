@@ -357,6 +357,7 @@ modified: 2026-06-20T15:49:57.019Z
   - https://discovery.intern-ai.org.cn/token-plan/points
     - [免费DeepSeek模型，大概5亿token - LINUX DO _202609](https://linux.do/t/topic/2959166)
   - [Atria Dawn Preview — Model API _202609](https://api.atria-asi.ai/)
+    - 基于 Glm5.2 训练的模型 Atria preview，它是上海人工智能实验室出品
   - [Mirasim — One Agent IDE ](https://mirasim.ai/)
   - [商汤送免费的glm5.2了 - LINUX DO _202607](https://linux.do/t/topic/2504080)
 
@@ -2371,7 +2372,9 @@ modified: 2026-06-20T15:49:57.019Z
   - hub.linux.do深夜福利的cc倍率也能达到0.02, 而付费的cc普遍在0.3, 所以可以适当留好余额在hub用cc
   - 少数中转站会用非常短暂的低倍率吸引充值, 充完后取消低倍率只剩高倍率, 所以不要充多了
   - 厂商风控加强后, gpt/grok都降智了， 候选模型可用 kiro/composer/gemini/deepseek/glm
-  - 贵的claude不如高级国模
+  - 🆚 贵的claude不如高级国模
+    - 0.05的kiro用opus/fable vs 0.8的ccmax用sonnet
+    - 可以用kiro的 max/xhigh/high/medium 来代替 opus/sonnet
 
 - resources
   - [LinuxDo商家评价平台](https://rate.linux.do/)
@@ -2480,13 +2483,16 @@ modified: 2026-06-20T15:49:57.019Z
   - [LingShu AI ](https://api.strategyhub.cc/keys)
     - cursor-claude--0.4x
     - ccmax--0.7, 混池 并发不大
+  - https://tkapi.cc.cd/keys
+    - ccmax--0.6x
   - [智元API ](https://pool.chaozhiyuanai.com/keys)
     - ccmax--0.8x
   - [JinnyAPI ](https://jinnyapi.com/keys)
     - ccmax--0.85x
+    - kiro华强北--0.4x
   - https://vip.muling.store/pricing
     - 反重力claude--0.33x
-  - [aiwble ](https://aiwble.com/pricing), 长期运营, 只做gemini
+  - [aiwble ](https://aiwble.com/pricing), 长期运营, 只做gemini, 线下充值
     - 反重力claude--0.4x
   - [PackyAPI ](https://www.packyapi.com/pricing)
     - aws-q--0.3x, AWS 逆向, Kiro 反向, 最便宜,200K 上下文命中率高
@@ -2616,6 +2622,12 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [aiwble ](https://aiwble.com/pricing), 只做gemini/反重力, 无用户群, 运营时间长
   - 反重力claude--0.4x
+  - 没有在线充值, 需要qq联系后手动充值
+
+- [aixcks ](https://aixcks.com/pricing), 像是aiwble的下游渠道
+  - 反重力claude--0.5x
+  - 可找客服沟通赠金$5
+  - 没有在线充值, 需要qq联系后手动充值
 
 - [muling /New API ](https://vip.muling.store/pricing), 无用户群
   - 反重力claude--0.33x
@@ -3044,6 +3056,27 @@ modified: 2026-06-20T15:49:57.019Z
 - [AI中转导航 ](https://ai2api.vip/)
 
 - [BeeAPI. AI — The AI API Marketplace · 多模型聚合的 AI API 集市 ](https://beeapi.dev/marketplace)
+
+## ai-sharing
+
+- [ccAiHub | 1元起用，最低 ¥99/月畅享 Claude ](https://ccaihub.com/pricing)
+
+- [Claude Carpool   ](https://aa.claudechn.com/)
+  - 官方原版界面，全系列模型可用。按天、周、月灵活续期，兑换码即时生效，随时上车。
+  - 非api， 类似镜像站
+  - [Claude Carpool ](https://cld.hopeai.cc/)
+
+- [AI公益车站 ](https://station.aiporters.com/)
+  - [Claude Pro 拼车 ](https://home.aiporters.com/productivity/plus.html)
+
+- [GPT ](https://sorryios.ai/pastel/#/login)
+
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## payment-card
 

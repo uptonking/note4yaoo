@@ -107,7 +107,20 @@ modified: 2026-01-14T18:58:32.523Z
 
 - ## 
 
-- ## 
+- ## [LM Studio launches Bionic, a standalone agent app for open models : r/LocalLLM _202607](https://www.reddit.com/r/LocalLLM/comments/1uyspke/lm_studio_launches_bionic_a_standalone_agent_app/)
+- Tried it. It is basically the old LM Studio app with different UI layout by making the chat function more pronounced and the server/model management pushed away a tad bit. Also, much accessible options to more easily purchase Kimi and Deepseek models for $. I do not see anything that bionic can do that LM Studio app cannot do. I do not see anything bionic can do that hermes or openclaw cannot do better.
+
+- it seems that the original LM Studio is supposed to be used alongside with Bionic.
+  - No you can’t run them side by side. If one is open, the other won’t open.
+
+- [Introducing LM Studio Bionic : r/LocalLLaMA _202607](https://www.reddit.com/r/LocalLLaMA/comments/1uyl5xv/introducing_lm_studio_bionic/)
+- Reminder: LM Studio and this new agent are closed source
+
+- Isn’t LM Studio just a UI layer over llama.cpp and hugging face?
+  - Its a turnkey solution for browsing, downloading, and running models, managing parameters and prompts, as well as chat with RAG and tool use, plus you can run models on a remove machine without needing to expose it to the internet.
+  - I'm not aware of any other software that provides all of that in one package. But sure, call it "just" a UI layer if you want.
+
+- It uses voxtral for voice transcription The model is 9GB in size Lol
 
 - ## 1.8.5 KV Cache on disk added to LM Studio _202606
 - https://x.com/ivanfioravanti/status/2063139918902100469

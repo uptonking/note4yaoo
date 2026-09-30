@@ -771,7 +771,24 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [sonnet5.5佬们用着效果如何，热度不高的样子 - LINUX DO _202609](https://linux.do/t/topic/2965339)
+- 价格太高了，消耗的 token 还比 opus 高
+
+- 简单任务比 opus 便宜，但是简单任务国模也能搞定
+
+复杂任务比 opus 慢比 opus 贵，完全被 opus 斩杀
+
+所以，定位比较尴尬
+
+适合只使用 claude 没有国模订阅，但是纯用 opus 又额度不够的人用
+
+- 整体不如 opus 降一档，opus high 比 sonnet xhigh 便宜好用，opus medium 比 sonnet high 便宜好用
+
+- 有点类似 terra 和 sol 的定位，很尴尬，就卡在那里
+
+- 降的价省的钱，比不上遇到复杂场景就雷霆大思考烧掉的钱
+
+- opus high 单任务花费比 sonnetxhigh 还低，那我肯定用 opus 啊
 
 - ## [Sol vs Terra vs Luna: What Actually Worked for Me : r/codex _202607](https://www.reddit.com/r/codex/comments/1uz7pua/sol_vs_terra_vs_luna_what_actually_worked_for_me/)
 - I tested GPT-5.6 Sol, Terra, and Luna across real tasks in a large TypeScript monorepo with a frontend, backend, desktop and mobile apps, CI/CD, release tooling, and thousands of source files.

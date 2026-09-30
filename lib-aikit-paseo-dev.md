@@ -174,7 +174,14 @@ modified: 2026-09-05T00:27:42.212Z
   - 💡 可基于profile实现 auto mode
   - 要支持让移动端使用built-in agent执行
 
-- 
+- doc skills hub
+  - install skills to workspace
+  - skills with example docs
+  - 甚至可为其他本地app开发集成: obsidian, office
+  - later
+    - 类似workbuddy的skills， 快速接入本地数据和工作流: 专家skills, 灵感同款html
+    - skills usage statistics: 作者发布的skills支持 optional telemetry
+
 - 
 - 
 - 

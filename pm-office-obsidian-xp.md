@@ -166,6 +166,9 @@ modified: 2026-06-30T17:32:43.131Z
 
 ## draft-ocr
 
+- pm
+  - 解决模型量化多且本地难复现的问题, 可将chat的内容和本地模型配置一起导出
+
 - image
   - paste image as image file or inside doc
 
@@ -179,9 +182,11 @@ modified: 2026-06-30T17:32:43.131Z
 ## draft-ai
 
 - features
-  - bases-kanban for ai
+  - doc skills hub with versioning/usecases
   - apple foundation model
   - cpu friendly
+  - later
+    - bases-kanban for ai
 
 - ai-doc
   - 多次生成
