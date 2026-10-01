@@ -896,11 +896,96 @@ openclaw/herness
 
 - nube.sh/invite/897602750V27SC 我最近用这家还可以，1cpu 2gRAM 3usd左右，关键是AMD 服务器zen3 CPU，现在VPS市场5usd以下套餐基本都是用10年前的inter服务器 CPU
 # discuss-vps-vpn
+- tips
+  - 2种方案: 
+    - 高质量小鸡 dmit/bw
+    - 便宜小鸡 + 落地家宽, 在小鸡上开全局代理
+  - 成本过高时要考虑替代: 订阅费 + 网络费
+
+- ## 
+
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [大妈环境注册的Claude被封好几次了，有啥IP推荐 _202603](https://www.nodeseek.com/post-644910-1)
+- 大妈套个落地就解决ip质量问题了
+
+- x 上看到有家宽也被封的，可能是彻底的玄学
+
+- ## [【求推荐】找一台 IP 干净的 VPS，用来搭 Claude Code 中转 - 求助 - IDC Flare _202603](https://idcflare.com/t/topic/66645/4)
+- 存粹玄学，我个人是 zgo 落地用 claude pro 好几个月了比较稳定
+有的群友用搬瓦工的机器也没问题，也有用 racknerd 的
+个人经验就是固定 ip+apple pay
+
+- ## [想用claude，求vps推荐 _202606](https://www.nodeseek.com/post-778226-1)
+- 我用免费的甲骨文新加坡，v2rayn打开系统代理就可以用了。我通常是开全局模式。
+
+- 我现在就在跑claude。建议：帮瓦工和大妈，完全没问题。问题得独享。
+
+- 感觉这一套下来使用成本比Codex贵太多了
+
+- ## [求推荐使用claude的vps，在vps上使用  - LINUX DO _202608](https://linux.do/t/topic/2798476)
+- 我第二个被封的号就是这么做的。
+我是独立的 mini 主机，6 核，32GB，sing-box 代理开全局 tun，走的美国家宽 sixtynet。
+就是我第二个被封的号，找人代开，1 小时被封。
+
+我完全独立的主机，放在家里，和你一样。
+但昨天 1 小时就被封
+
+- 我用非常纯净的家宽订阅，仍然被封了。没什么用。
+你就直接 vps 用 cc 就是了，然后 ssh 隧道过去，但是这个方案用来开发还是挺麻烦的，vps 性能本来就弱，测试结果全是盲盒全靠 ai 一张嘴自己说，你自己上手测试又得配其他工作。
+
+- 有没有可能封号不是 IP 问题，而是充值渠道或账号问题？
+我节点也是万人骑，甚至美国、日本开会切。
+Claude 账号用了好几年，升级 pro 也 3 个多月了。自己用 Google Pay 支付。
+
+- 还有个主要原因，同一账号不要多个设备同时使用。使用设备越少越好
+
+- 目前跑在 Ovh 上，感觉挺丝滑的。月 18.9 欧。
+我账号是 ca 区，用的法国 ip 的机子。
+我觉得这个不用非得美国 ip，因为美国人远程开发也不一定用本国的机子。
+
+必须在服务器上跑哈。
+因为这个防封原理就是，随便让 cc 拿本地数据，反正服务器是合法境外机器。
+拿来搭梯子是没有意义的。
+
+- 我全程在美国 vps 上使用 + 美国时区 + 极度纯净的美国家宽 IP（开了 Tun 并覆写了 DNS） + 没订阅过 claude 的美国实体信用卡 + 全程英文对话。
+试了几个测试项目对话并观察了一天也没出问题。但跑自己的项目两轮对话后秒封，也就 20 几分钟。
+
+- 最低配置 2c4g, 4c8g 才比较流畅。但是 vps ip 会被风控，比如稳定要 kyc。所以还需要处理 ip 问题
+
+- ## [【纯测评/晚高峰实测】自用近一年的RN黑五老神机：RackNerd 洛杉矶 DC02 2核/2.5G/近6T流量 性能与 22:30 晚高峰实测 _202608](https://www.nodeseek.com/post-902453-2)
+- 我的IP突然就被送中了，害得损失了一个Claude账号。
+
+- ## [想问一下各位能用claude不封号的大神，都买的什么VPS？ _202607](https://www.nodeseek.com/post-842944-1)
+- 我一直都中文沟通，机场vps都用过也换ip登录过，正常分流 电脑环境也都是中文环境。用到现在一直没问题。充过几次pro和max。搞不懂a/的封号逻辑
+
+- 甲骨文
+
+- 我主用的vmrack，有时候vmr挂了就用racknerd，有时候用esim 换来换去也没封号
+可能用的时间不长，有次vmr炸了换racknerd用了一两个小时差不多
+
+- ## using domain like verge.aichorage.de added the overhead of dns.  do you think it is a good idea to use the direct IP 198.46.xx.xx?
+- Hysteria 2 operates over QUIC (UDP). Once the initial UDP connection is established:
+  - Clash Meta caches DNS in memory, so repeated DNS queries do not occur for every request.
+  - All proxied HTTP/TCP streams are multiplexed inside the single established QUIC tunnel.
+  - Therefore, throughput, bandwidth, and streaming performance are identical, but cold-start connection handshake is ~15–20 ms faster with Direct IP.
+- Where Direct IP is More Reliable:
+  - No DNS Query Exposure: Your local ISP won't see DNS queries looking up
+- Where Domain is More Reliable:
+  - Resilience to VPS Migration / IP Changes
+
+- Why they can't meaningfully differ: both variants dial the exact same server, port, password, and SNI — the QUIC connection that carries all your traffic is byte-for-byte identical. The only difference is at connect/redial time: the domain variant does one DNS lookup (cached afterward, served by fast domestic resolvers 119.29.29.29/223.5.5.5), the IP variant skips it. That saves a few milliseconds once per connection establishment, on a persistent multiplexed connection — invisible in real use.
+- Neither is more private: both still send `sni: verge*.aichorage.de` in the QUIC handshake, so the domain is on the wire either way.
+  - SNI = Server Name Indication — a field in the TLS handshake where the client announces, in plaintext, which hostname it's trying to reach, before any encryption is negotiated.
+  - Why it exists: TLS encrypts the connection, but the handshake has a chicken-and-egg problem: the server must present its certificate before encryption exists, and a single server hosting many sites (one IP, many domains) owns many certificates. SNI is how the client says "I want verge.aichorage.de" so the server picks the right cert to present. Without it, every HTTPS site would need its own IP address.
+  - Hysteria2 runs over QUIC, which is TLS 1.3 inside UDP. QUIC encrypts handshake frames after the ClientHello, but the ClientHello itself — SNI included — is still visible on the wire. That's what I meant: whether your config says server: verge.aichorage.de or server: 198.46.182.199, the packet going out contains the same string verge.aichorage.de in the ClientHello, because your config sets sni: verge.aichorage.de and the client needs it to validate the Let's Encrypt cert. The IP variant only removes the DNS query leak (see previous discussion), not the SNI one.
+  - Encrypted Client Hello (ECH) is a newer TLS extension that encrypts the sensitive part of the ClientHello — SNI included — using a public key the client fetches from the site's DNS records. Cloudflare supports it for normal HTTPS browsing. Hysteria2/mihomo don't use ECH for proxy handshakes
 
 - ## [Clash Verge怎么用yml文件配置Hysteria 2？求教程 - LINUX DO _202505](https://linux.do/t/topic/641154)
 - 

@@ -9,6 +9,9 @@ modified: 2026-01-14T18:59:01.949Z
 
 # guide
 
+- mlx-engines
+  - [Which MLX engines do you use? ](https://poll.devocracy.it/mlxengines/)
+    - omlx(55%) > mlx-serve(37.9%) > lmstudio(31.9%)  (784 ballots)
 # draft
 
 # xp-mlx

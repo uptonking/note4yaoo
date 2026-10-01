@@ -17,6 +17,12 @@ modified: 2026-06-17T05:51:04.215Z
   - 能看到关联域名, 可能有过期的域名
 - [IPPure - IP地址信息和纯净度检测](https://ippure.com/)
   - 能看到机房如colocrossing
+- [IPSuper - IP风险信息聚合查询 ](https://ipsuper.com/)
+  - 多源IP风险
+  - [IPSuper，一眼看透IP纯净度、IP风险、原生与家宽、VPN与恶意流量识别 _202607](https://www.nodeseek.com/post-824558-1)
+  - IPSuper有两种运行模式，简易模式和专业模式
+  - 如果你是高级用户，有更专业全面的检测需求，可以考虑通过安装浏览器扩展启用更多的功能，比如流媒体解锁测试等
+  - 开发这个网站前，是IPQuality脚本、IPPure、IPLark的忠实用户，认真研究并参考了几位前辈的优秀作品，如有雷同，责任在我。
 
 - [ifconfig.me ](https://ifconfig.me/)
   - 表格信息
@@ -60,6 +66,9 @@ modified: 2026-06-17T05:51:04.215Z
   - 很多域名不支持
 
 - [Dig（DNS 查询） ](https://toolbox.googleapps.com/apps/dig/?lang=zh-CN#A/)
+
+- utils-ip
+  - [【分享】几个检测IP的网站，检测结果的准确性可靠性 _202405](https://www.nodeseek.com/post-107402-1)
 # utils
 - https://github.com/foru17/neko-master /2.8kStar/MIT/202607/ts
   - A modern and elegant dashboard for network traffic visualization and analysis.
@@ -602,7 +611,7 @@ https://dlercloud.com/user/shop
   - 青云梯：96/年，60G/月
   - 肥猫云：72/年，60G/月
   - HK-BEUP:69/年（兑换码优惠），100G/月
-# discuss-家宽
+# discuss-家宽/住宅ip
 - ## 
 
 - ## 
@@ -610,6 +619,71 @@ https://dlercloud.com/user/shop
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [ai要不要买家宽的真实体验 _202609](https://www.nodeseek.com/post-921568-1)
+个人经历，只供参考
+chatgpt claude grok gemini 等主流ai都使用，codex claude 是高频 半年使用机房原生ip vmiss demit 没有任何影响
+但确实 网页版chatgpt 最高档pro 从来没成功过
+后来需要网页版chatgpt最高档pro，拼了家宽，最后一点拼图就完成了
+
+家宽每月费用增加30-40元，如果不是用网页版pro，干净的机房ip足够用
+
+- 楼主总结得挺对 看用途严不严
+codex claude api这些松的 干净机房ip完全够 上家宽纯浪费 就网页版chatgpt pro这种严的注册风控卡机房 才值得上住宅
+楼上说得对 机房ip不是没被标记 是标了风险值高 只是那服务现在没严格针对你 一旦收紧或换个严的服务就卡 现在能用不等于永远稳
+别一刀切说ai必须家宽或者家宽智商税 严场景住宅刚需 松场景机房够用
+
+- AI我感觉的没必要上家宽，一直一个原生IP，没有发现降智也没被封，用那些什么测试IP的网站测试IP，都说风险值高
+
+- 家宽主要是情绪价值
+
+- IP不是太差就问题不大
+
+- 那种测IP网站给的风险值别太当真，IDC段本身就算扣分项。真卡人的是出口IP在公开滥用库里有没有记录、同段有没有批量注册史，买之前要个试用IP自己查一遍
+
+- 网页版chatgpt 最高档pro。我用大妈，瓦工，zouter还有各种小鸡，从来没有出过问题。除了个别送中的。
+
+- ## [claude的家宽IP一般都是按量还是按月 _202609](https://www.nodeseek.com/post-951970-1)
+- pro没那么严格，家宽该封还是封，很多机房IP用着都没事的，没必要非上家宽，心理作用而已，只要ip感觉，足够稳定就行
+
+- 我是AWS日本机房数据中心的，自建，scamalytics.com欺诈评分0
+
+- aaitr性价比最高，自测claude稳定。
+
+- 我用机房IP已经3个月了，Max 5x毫无问题
+
+- ## [开Claude 推荐用什么家宽好 _202610](https://www.nodeseek.com/post-958000-1)
+- pro无所谓 风控都说不严
+
+- 我用的六六云，55每月，5X没封过。可能人家cloude看不上
+
+- 我之前搬瓦工开了几个月都没事，用的是iOS美区礼品卡订阅的，现在没开了
+
+- ## [请教大家用Claude是什么线路 _202605](https://www.nodeseek.com/post-730553-1)
+- 我个人认为 Claude 完全没必要用家宽，我用的是 rfc jp，max 5x 用了三十多天还活着，已经续上了
+
+- 新人第一课别买lisa，性价比极低，论坛口碑差
+
+- 试试乌龟壳，sg的乌龟壳，跑5个200$。半年了，屁事没有。
+
+- 日本确实不便宜，独享的性价比如boil的家宽，日本的大概98美金一个月起步。所以那些便宜的很多可能分出来N个人用，也可以找找boil日本家宽的车，或者找个台湾的家宽车，毕竟日本到台湾也就30ms，还行
+- 你美国家宽成本200人民币一个月共享还是独享？这个价格足以买台湾seednet的独享家宽了，动态IP，那是最干净的
+
+- ## [佬们，推荐一下，有没有适合中转claude的小鸡 _202604](https://www.nodeseek.com/post-685730-1)
+  - claude的封号太厉害了，想自建一个，有没有干净一点的小鸡？
+  - 我的号已经被封了，一直都是家里和公司自用。估计还是和万人骑机场有关
+
+- 不看IP的，主要是自用不要分享出去，不要接第三方客户端
+
+- 不要登两台电脑 也有概率封
+
+- 支付有问题都是当场封的，第一时间不封就是使用环境有问题
+
+- 我是直接用的中转，用了很长时间，很稳定
 
 - ## [常见各种家宽ipVPS的推荐和碎碎念 - LINUX DO _202504](https://linux.do/t/topic/585764)
 US

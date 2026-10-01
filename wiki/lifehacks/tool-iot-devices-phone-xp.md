@@ -13,6 +13,7 @@ modified: 2024-09-25T15:20:00.070Z
   - 海外有锁版
   - 屏幕维修过
   - 维修过
+  - apple intelligence 国行不支持满血版
 # mobile
 - 小米mix alpha环绕屏的使用场景(官方未给出)
   - 应用演示
@@ -345,6 +346,30 @@ kind of feels like pixel peaked their and really hasn't changed significantly si
 - Maybe PureOS from the company behind the Librem 5 phone. I have no idea if it's actually stable on phones yet tbh but they've been at it for years now.
 
 - PostmarketOS with Gnome Mobile is fine but a Pinephone (non-pro) isn't fast enough
+# discuss-apple-intelligence
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [外版 iPhone 在内地怎样使用 apple 智能？ - V2EX _202602](https://www.v2ex.com/t/1191748)
+- 大部分的美国 AI 不支持香港 IP ，不想挂代理就只能换其它地区的 eSIM 。当然也不是说一定得全局代理，做好分流用大陆 SIM 也行。
+
+- 不需要关定位，shadowrocket 做好分流就行。
+
+- ## [跑香港给老人买台港版 iPhone 17/Pro 国内用， Apple Intelligence 大陆物理位置能不能用？听说抖音 / TikTok 有区域锁，在用 Apple Intelligence 的情况下，双 ID 能不能用抖音？ - V2EX _202603](https://v2ex.com/t/1197837)
+- 港版+港 id+系统英语+siri 英语，目前可用
+
+- ai 跟 App Store ID ，不跟 iCloud ID ，大陆需要 vpn 分流才能用，不看物理位置
+
+- 非国行 ID 且需要 VPN 分流
+
+- Apple ai 没啥用，你不如开个 GPT Gemini 之类会员，不限制语言。
+
+- 香港区域根本就没有 tiktok 业务
 # discuss-iphone 🍎
 - ## 
 
@@ -354,9 +379,16 @@ kind of feels like pixel peaked their and really hasn't changed significantly si
 
 - ## 
 
-- ## 
+- ## [港版 iPhone 最佳入手姿势是什么？ - V2EX _202609](https://v2ex.com/t/1244768)
+  - 人在内地，想要 apple intelligence ，所以最佳机型貌似是港版。
 
-- ## 
+- 闲鱼二手一大堆
+
+- 入了国行，毕竟双卡是刚需，不过下个月也是要去香港溜达下的
+
+- 有朋友去让带是最好的，不行就等吧，只要不缺货了，正常加价 500 就能代购，毕竟没有税，现在的话绝对贵
+
+- 京东国际就有，但是有几百元税，好像比亲自在 hk 买要贵很多，正常比国行要便宜才对
 
 - ## [打算买个二手苹果手机，什么平台靠谱呀？搞tiktok用 - LINUX DO _202605](https://linux.do/t/topic/2133151)
 - 我一般是在京东那个爱回收里买，主要是能无理由退货，七天用用没问题再留着
@@ -524,6 +556,16 @@ ASIS=无保官翻机=资源机
 
 真正的黑机，盗抢机，查询保修日期，会显示 1985 年 1 月 1 日激活。 这是乔布斯被赶出 Apple 的年份。
 
+- ## [做了个 iPhone 各个销售地区的版本对比工具-哪版 - V2EX _202609](https://v2ex.com/t/1241605)
+  - 如果你最近也在考虑买 iPhone ，不过还在纠结国行、港版或其他地区版本明，可以试试我的这个工具。
+  - 可以在同一个页面里对比同一款 iPhone 、在不同销售地区的差异。
+  - [iPhone 地区版本比较 · 哪版 ](https://naban.barrybarrywu.com/)
+
+- 大陆可以禁止 app 联网，海外版本均不行
+
+- 关于 eSIM 有一点没提到诶，大陆国行的 eSIM 的支持是电子围栏，就是在中国大陆地区只能安装中国大陆的 eSIM ， 出国就可以安装国外的 eSIM ，比如去香港就可以安装香港的 eSIM
+
+- 国行只有两个 eSIM 保存位置，还有国行 magsafe 用外版充电器也能到 25W ，这些在对应的视频里有讲解。
 # discuss-ios/appleid
 - ## 
 

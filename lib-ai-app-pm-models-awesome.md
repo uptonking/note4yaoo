@@ -2392,15 +2392,16 @@ modified: 2026-06-20T15:49:57.019Z
     - luna的话1块钱=1个亿, 现在5毛一个亿
     - [【富可敌国】几块钱能蹬一天的luna大家都停了，我们继续 _202608](https://linux.do/t/topic/2758706)
     - [【富可敌国】想钱想疯了，佬们一起来做个中转站 - LINUX DO _202607](https://linux.do/t/topic/2587271)
+  - https://tntapi.com/keys, /0.1x
+    - Luna我都开了，一天几块钱
   - https://beiluoxi.top/keys  /0.15x
     - 换了两台物理机 随便上量 随便蹬 luna
     - 企业补号了 然后后台有很多人说要luna6 所以开了
     - luna有蒸馏组和非蒸馏组随便打随便上量
-  - https://tntapi.com/keys, /0.1x
-    - Luna我都开了，一天几块钱
   - https://api.liusq.icu /0.1x
     - team  现在就这个分组了
     - free分组只能跑luna和5.5
+    - 提供5.6-luna模型，设置有低消, 倍率0.1以下低消0.001, 倍率0.1以上低消0.002
   - https://www.rightapi.ai/models  /0.4x/10rpm
     - 支持外接，支持非流式调用
   - https://codeapx.com/models/pricing /0.2x/0.35x
@@ -2439,7 +2440,7 @@ modified: 2026-06-20T15:49:57.019Z
   - https://ai.max66.xyz/keys, 只做自部署的deepseek  /0.125x
   - https://tntapi.com/keys  /0.1x/用户多
   - https://fuck-everyone.bbroot.com/model-plaza  /0.18x
-  - [创想AI ](https://vapi.chuangxiangai.asia/model-plaza)
+  - [创想AI ](https://vapi.chuangxiangai.asia/model-plaza)  /0.1x
   - https://www.jiji.cc/model-list  /0.2x/注意缓存
     - 国模组的差一些 deepseek组的就是好很多，至于满血，基本来说都是满血，但是我看了好像除了官方的，其它的包括国内阿里火山那些都有点拉胯，佬自己测一下，站内的要质量好些的就选  deepseek 0.7那个, 便宜的国模的就是 0.19
   - https://zzshu.cc/pricing /0.2x
@@ -2485,6 +2486,8 @@ modified: 2026-06-20T15:49:57.019Z
     - ccmax--0.7, 混池 并发不大
   - https://tkapi.cc.cd/keys
     - ccmax--0.6x
+  - [joeapi ](https://api.joealot.com/keys)
+    - cc带审查--0.5x
   - [智元API ](https://pool.chaozhiyuanai.com/keys)
     - ccmax--0.8x
   - [JinnyAPI ](https://jinnyapi.com/keys)
@@ -2607,12 +2610,32 @@ modified: 2026-06-20T15:49:57.019Z
   - 支持luna
   - cc-max--0.65x, 非官网订阅，满血高智商高缓，有防封提示词
 
+- [joeapi ](https://api.joealot.com/keys), 作者来自台湾, 长期运营
+  - https://api.joealot.com/model-plaza  /不是最新模型
+  - [goodneo - LINUX DO ](https://linux.do/u/goodneo/summary)
+  - cc带审查--0.5x, 倍率 0.5 市面上最低了應該 不是 kiro 什麼有的沒的 就是 cc, 无fable
+  - 不限制蒸餾， 充值倍率: 1 rmb 等於 站內1 刀
+  - 源頭說明
+    - Claude： claude code反代
+    - Gpt：codex反代
+    - Glm：cf反代
+    - Grok：grok build 反代
+    - Cfp: cf free帳號號池
+    - Cursor:自研發cursor反代
+  - 速刷： 較為不穩定 較為便宜 開頭是速刷的分組就是速刷 其他則為穩定, 暫時不上審查 未來如果上了 就是發現上了可以刷更久所以上
+  - 邀請碼喔！獲取方式有兩種：
+    - 免費領取：私訊機器人 @smallchastdarlinbot , 一個 TG 帳號限領一次，有效期 30 天
+    - 向站長購買：也可以花 10 RMB 直接找站長購買
+  - 帳號90天不使用會自動刪除（只要調用api就算用使用）請自行注意, 本群也是90天審核一次活躍狀態 前80天會通知 如果在清單中只要任意發言就沒事 踢出一次是直接ban (有會員則不受此規則限制）
+  - 儲值唯一渠道就是轉帳給我，轉帳完成之後 截圖傳給我 確認之後發額度 ，如果不是單純儲值請說明來意。 也可以使用紅包 但是大於400不建議用紅包
+  - 關於退款：會刪除帳號，邀請碼10r可再次獲得，並且處理有10r手續費，故餘額低於10r不得退款
+
 - [北洛AI ](https://beiluoxi.top/keys), 用户少
   - 换了两台物理机 随便上量 随便蹬 luna
   - 国模-0.039x, 包括 deepseek
 
 - [智叶API ](https://us.ziyelian.site/pricing)
-  - 国模低至 0.08 倍率起
+  - 国模--0.12x+
   - ccmax--0.9x
 
 - [wanyiyun - Sub2API ](https://wanyiyun.top/keys)
@@ -2714,6 +2737,7 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [yier-lukyface](https://api.lukyface.com/pricing)
   - 顶级 OVH 服务器, 10G 独享大带宽, 稳抗上万 RPM
+  - 用gpt突然会中文thinking和回复， model被路由了
 
 - [DawCode ](https://dawclaudecode.com/pricing)
   - 最低充值30r
@@ -3360,3 +3384,10 @@ modified: 2026-06-20T15:49:57.019Z
   - [公益免费单机游戏站 ](https://linux.do/t/topic/1561998)
   - 免登录享受 4000 款单机游戏
   - 支持国内全主流网盘：百度，夸克，迅雷，123，天翼。天翼盘是可以做到免费不限速，真正不花一分钱。
+# used
+
+## apple
+
+- [苹果团 | 购买苹果产品的完美之地 ](https://appletuan.com/)
+  - [现在苹果团没做了吗？ | 苹果团 _202601](https://appletuan.com/molecules/8)
+  - 没活跃，没人气

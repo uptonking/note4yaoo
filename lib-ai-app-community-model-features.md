@@ -330,10 +330,32 @@ modified: 2025-11-05T19:04:50.350Z
 
 - ## [Instead of predicting one token at a time, CALM (Continuous Autoregressive Language Models) predicts continuous vectors that represent multiple tokens at once : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1opabzi/instead_of_predicting_one_token_at_a_time_calm/)
 
-# discuss-models-translation
+# discuss-translation
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [B站开源 Index-Translate 多语言翻译模型家族，文本模型支持 150 种语言 - LINUX DO _202610](https://linux.do/t/topic/2972827)
+  - Index-Translate 是基于 Qwen3.5 构建的多语言翻译模型家族。文本模型覆盖包括中文、英文在内的 150 种语言，支持术语、格式、保留内容等翻译指令，并将共同的多语基础扩展到语音、音节可控翻译和长文档翻译。
+  - Index-Translate：翻译文本、结构化内容与社区表达。
+  - Index-Echo：生成目标语言字幕或配音，配音时参考源语音的说话人声音特征。
+  - Index-Homura：根据指定的目标音节数调整译文。
+  - Index-NativeLong：输入完整文档，利用上下文维持前后联系。
+- https://github.com/bilibili/Index-Translate /apache2/202610/python
+  - https://index-translate.bilibili.com/
+  - https://huggingface.co/collections/IndexTeam/index-translate
+
+- 之前 B 站的 Index-TTS 也不错 
+
+- 测了一下最高档位的，感觉这种科技论坛的交流，还是腾讯那个翻译得更好一点
 
 - ## [Solid alternatives to AYA expanse 32b LLM for translation? : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1ipq391/solid_alternatives_to_aya_expanse_32b_llm_for/)
 - My idea is that for asian languages like chinese and japanese the better local model always was QWEN.

@@ -259,7 +259,7 @@ mineru paddleocr site:github.com -inurl:"github.com/opendatalab/" -inurl:"github
   - Hacker News: Developed by Y Combinator, it’s a free platform but not open source​.
 # reddit
 - 修改一个帖子内的评论排序 best/top/new 会导致其他帖子的排序也会变化, 也就是修改是全局的
-# google
+# google 📌
 - resources
   - [谷歌账号管理常用网址 - LINUX DO](https://linux.do/t/topic/1567759)
 
@@ -279,6 +279,7 @@ mineru paddleocr site:github.com -inurl:"github.com/opendatalab/" -inurl:"github
 
 - To ensure a 'Payments profile' is the same 'COUNTRY/REGION' as the family manager who invited you:
   - https://policies.google.com/country-association-form
+  - https://policies.google.com/terms
 
 - Ensure the 'COUNTRY/REGION' shown in the 'Payments profile' matches those of the family manager (parent account).
   - https://payments.google.com/settings

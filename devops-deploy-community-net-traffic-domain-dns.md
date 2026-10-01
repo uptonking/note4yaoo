@@ -24,6 +24,9 @@ modified: 2026-06-17T07:27:04.608Z
 
 - [DNSHE ](https://my.dnshe.com)
   - datalking.de5.net
+# tools
+- https://crt.name/v1/search?apex=clacky.ai
+  - 把网站子域名全查出来
 # discuss-stars
 - ## 
 
