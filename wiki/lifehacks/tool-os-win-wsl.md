@@ -50,6 +50,26 @@ modified: 2020-12-22T12:41:57.687Z
   - /etc/sudoers
     - 将 %sudo ALL=(ALL:ALL)ALL 修改为  %sudo ALL=(ALL:ALL)NOPASSWD:ALL
 - [在win10的WSL中设置前端开发环境](https://juejin.cn/post/6844903892564574222)
+# discuss-news-wsl
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## WSL containers is now generally available. _202610
+- https://x.com/msdev/status/2105797241026056326
+  - Build, run and deploy Linux containers directly on Windows with the WSL containers CLI and API 
+  - `wslc.exe` to directly build, run and deploy Linux containers on Windows, or use its built-in alias container.exe to run the same familiar container commands
+- Funny that for developers Windows containers in Windows can't be run without docker, in Windows 10/11 Pro, but Linux containers can be run.
+  - Windows containers are VMs. Use HyperV.
+
+- Doesn’t survive reboots. It’s a hard pass for me.
+  - It's for running containers period. Like Leon said, just leave out the -rm.
 # discuss-win-bash/shell
 - ## 
 

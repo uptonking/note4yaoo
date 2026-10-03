@@ -49,11 +49,22 @@ modified: 2020-12-08T14:45:31.008Z
   - 蘅芜院 All-spice Court; Alpinia Park
   - 潇湘馆 Naiad’s House; Bamboo Lodge
   - 秋爽斋 Autumn Studio; Studio of Autumn Freshness
+    - 海棠诗社成立之处
   - 稻香村 Sweet-rice Village; Paddy-Sweet Cottage
   - 栊翠庵 Green Bower Hermitage; Green Lattice Nunnery
   - 绛云轩
   - 梨香苑 Pear Tree Court; Pear Fragrance Court
   - 梦坡斋 Su Dong-po Rooms; Mengpo Studio
+    - 贾政内书房
+  - 藕香榭 The Lotus Pavilion; 
+    - 史湘云曾在此设螃蟹宴、开菊花诗社
+    - 贾母也曾在此听戏
+  - 芦雪庵 Snowy Rushes Retreat; 
+    - 赏雪联诗、烤鹿肉的绝佳场所
+    - 脂粉香娃割腥啖膻
+    - 芦雪庵争联即景诗
+  - 凹晶馆 Concave Pavilion; 
+    - 中秋夜黛玉与湘云联诗
   - 柳叶渚 Willow Walk
 
 - 《红楼梦》里的"海棠诗社"，在英语世界主要有两种译法，分别来自两大权威译本：

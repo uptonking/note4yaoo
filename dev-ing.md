@@ -345,6 +345,74 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1002
+
+- the final goal is that user just install autumn-studio plugin and do their task using the bundled pi agent without feeling the existence of the bundled pi agent or installing external pi agent manually.
+  - i have an idea for embedding pi agent that might be better than the custom build solution.
+  - Instead of trying to squeeze Pi into Paseo's in-memory eval sandbox, Autumn Studio spawns its own bundled copy of Pi in RPC mode (pi --mode rpc) as a private child process communicating over stdio (JSON lines).  like the built-in pi provider, The built-in Pi provider uses these RPCs — all available in `pi --mode rpc` may be we can use similar approach in autumn-studio plugin.
+
+- The daemon's probe fails while curl succeeds — a Node-specific network failure.
+  - Two smoking guns: the host resolves to 198.18.0.7 — a fake-IP range used by local proxy/VPN tools (Clash/Surge-style TUN), and Node's fetch gets ECONNRESET through it while curl passes. Your network path is flaky for Node specifically, so discovery results vary per attempt. 
+  - Confirmed — the settings doc has no manual models, and the cache file was overwritten: a probe "succeeded" through your flaky proxy (fake-IP TUN) returning just gpt-5.6-sol
+
+- i have tested the bundled pi agent in autumn studio, it works. please continue to improve.
+  - in settings page of autumn studio, the "Default reasoning budget" should show as default reasoning effort in main chat box model picker, but user can choose other reasoning effort in main chat box model picker.
+  - for crud of LLM API Providers, please refactor the ux of creating/editing a llm provider to a separate page, so only LLM API Providers list show in settings page of autumn studio. when use clicks a LLM API Provider item, show a separate page for creating/editing with a go back icon at the top left.
+  - How do you like my idea? Is it correct, extensible? If my idea is good, you might improve my idea, then make a plan to implement it
+
+- in settings page of autumn studio, continue to improve the LLM API Providers xp.
+  - since autumn studio is built on pi coding agent. if there is external pi agent already installed and llm providers already configured for external pi, autumn studio should be able to reuse it. please add a auto detected llm providers section similar to existing "LLM API Providers" just below it if there is valid external pi llm providers configured and detected. auto detected llm providers list ux should behave like existing "LLM API Providers", but it is read-only, when use clicks a LLM API Provider item, show a separate page for view, you might reuse existing ux, but no "Save"/"Delete" .
+  - in the main chat box, auto detected external pi models might be used like the manually configured models, but model is used with autumn-studio instead of external pi agent.
+
+## 1001
+
+- 🤔 paseo supports existing agents like claude-code/codex/pi, but it doesn't ship with the built-in agent. So it can't be used as a standalone app out of the box. 
+  - The latest paseo supports plugin architecture, I want to build a paseo plugin named `autumn-studio` at folder `../autumn-studio` with a bundled pi coding agent, so that when user installs autumn-studio plugin, user can use the bundled pi agent out of the box without external agents. you can embed Pi in-process as the previous discussion.
+  - please also design a `Autumn Studio` sidebar menu item below existing sidebar menu items like "History"/"Search"/"Schedules". when it's clicked, a settings page for autumn-studio should show. there are several setting sections. for the "General" settings, there should exist a toggle setting to enable/disable this feature. for the "LLM API Providers" settings, user can add multiple llm providers url/key and use one in the main chat box later. you might design more settings if you want.
+  - in the main chatbox, for the default "Chat", use can choose model from autumn-studio that is configured in the autumn studio settings page, almost all the existing chat ux might be reused, but the bundled pi agent is used for agentic chat/tasks, no external agent is used. you should try to make web-ux/desktop-ux of bundled pi agent consistent with external agents so that user feels seamless and intuitive, cli related features of bundled pi agent is not required.
+  - How do you like my idea? If my idea is good, you might improve my idea, then make a comprehensive plan to implement it
+  - How to integrate my docai plugin with the existing chat ux? 
+  - analyze related code/features, then explain to me whether it is a good idea. should i develop the bundled agent as a plugin or implement custom ux with paseo sdk?
+  - source code for pi agent has been cloned at folder `~/Documents/repos/ai-ml-llm/all-agi-harness/pi` for reference if you want.
+  - a plugin settings page might be designed for docai plugin to configure custom url for bundled pi agent(not external pi).
+  - pi coding agent is embeddable, is it possible to improve my docai plugin to use the embedded pi agent by default?
+  - all the autumn-studio features should be implemented as plugihn at `../autumn-studio`, mostly no code is changed in current paseo repo.
+- Yes, you can embed Pi in-process. It's the ideal approach for your DocAI plugin.
+  - The event mapping is the real work: Pi's session.subscribe() emits message_update (text_delta, thinking_delta), tool_execution_start/end, agent_settled, etc. — you translate those into Paseo's timeline.item, session.turn, and session.prompt_result events.
+
+- i have made a plan at /Users/yaoo/.gemini/antigravity/brain/cf9938a6-282e-4c16-9d54-a3e887796601/autumn-studio-plan.md and make a draft implementation at folder `../autumn-studio` that implemented the plan partly.
+  - how do you like the plan? you might improve the plan, then improve the implementation at folder `../autumn-studio`.
+
+- 🤔 clash.meta/verge.yaml works for a while, but now all connection to ip/doamin is timeout. why does it happen?
+  - 6 OK / 9 FAIL on consecutive delay tests — the tunnel works in bursts, then dies in stretches. Classic lossy-path behavior.
+  - Your current line is 广东广电 (124.240.xx.xx), and it's now 20:25 Beijing time — international prime-time congestion(阻塞; 拥挤) window.
+  - Let me measure the actual path quality with direct pings between the Mac and both VPSes, and large-packet pings from the server back to your IP. 10–15% packet loss with big jitter on direct pings to both VPSes from your 广电 line — and my SSH just timed out because it's routed through the very tunnel we restored (MATCH,Verge). One final decisive test: capture packets on worker-4 while firing delay tests, to see which direction drops. Firstly set Verge→DIRECT again so that SSH can work.
+- Nothing is wrong with your config, your servers, or DNS. The problem is the network path between your ISP (广东广电， CGNAT) and the two US VPSes: UDP packets to them get dropped in multi-minute bursts, especially during evening peak hours. Hysteria2 runs entirely over QUIC/UDP, so when the burst hits, every handshake fails → all connections to IP and domain variants time out at once. TCP (SSH) and ICMP mostly survive the same windows, which is why everything else on your Mac still works and it "worked for a while" before.
+  - The path is lossy right now: direct pings from your Mac to the three VPSes show 5–15% packet loss with 100ms jitter — at 20:25–20:46 Beijing time, prime-time congestion on the 广电 → US West transit (RackNerd / ColoCrossing budget routes are notoriously congested at peak).
+  - UDP specifically dies, TCP lives: during failing windows, QUIC delay tests all time out while SSH (TCP) to all three VPSes works — you confirmed this yourself.
+
+- The key evidence is in the server log at 21:46 CST: the client address is now 172.23.0.1 (the docker bridge gateway) instead of a real client IP — that means your QUIC handshakes arrive via the new port-hopping path (REDIRECT → docker-proxy → container). Port hopping fixed the uplink: requests for chatgpt/github/etc. are being relayed.
+  - But the relays still stall with readfrom ... timeout: no recent network activity — the server→client (downlink) UDP is collapsing. Evening-peak congestion into China kills the return leg even though the uplink gets through. That's why it "works for a while" then dies.
+  - So two improvements now: (a) switch Hysteria2 from BBR to hysteria2's brutal congestion control by pinning bandwidth on the client (keeps throughput under heavy loss), and (b) the TCP fallback I proposed — VLESS+Reality nodes on both VPSes, wired into 故障转移, since TCP survives these UDP blackouts. Let me study the repo's app/secret/image patterns to build the fallback apps properly.
+- The diagnosis stands: uplink via hopping arrives, but the downlink collapses under evening-peak loss because without pinned bandwidth, hysteria2 uses BBR, which stalls under heavy loss. Hysteria2's answer to exactly this is its brutal congestion control, activated when the client declares its bandwidth. 
+  - Brutal congestion control via bandwidth pinning — the decisive change. Verified in the hysteria source you cloned (core/server/server.go): when the client declares its download bandwidth, the server switches from BBR to brutal CC at that rate for the downlink — it holds the flow steady under heavy loss instead of stalling.
+- TCP:22 connects to all three VPSes and ICMP works — yet SSH fails and the tunnel is dead. That's the signature of a size-based drop: small packets (TCP handshake, ICMP) pass, but larger packets die. SSH dies when it sends its ~1–2KB key-exchange packet; QUIC dies because every packet is 1280 bytes. Domestic traffic is unaffected (different route). 
+
+- verge and verge2 are 2 unrelated and standalone proxy service,  verge/worker_4 is in LA, verge2/worker_2 is in Texas, why do they fail at the same time?
+  - The shared segment is on the China side, and it comes first. Your traffic to both servers takes this path:
+  - windows/mac → 广电 access/CGNAT (124.240.x, 203.132.x exits) → provincial core → international gateway (China-side) → [routes diverge here] → LA vs Texas
+  - Both tunnels funnel through the same access network, same CGNAT egress pool, and the same international gateway — and evening-peak congestion/policing happens there, before the path ever splits toward LA or Texas.
+- Why UDP specifically is the casualty: when the gateway congests, it drops preferentially by class — high-volume long-lived UDP flows (exactly what a QUIC tunnel looks like) get policed far harder than TCP. That's why your SSH died mid-key-exchange last night (small SYN passed, the ~2KB KEX packet stalled) while domestic browsing never noticed: baidu stayed at 0.19s throughout every outage.
+  - Traceroute and mid/large ICMP are permanently filtered on 广电 (all DF pings ≥1000B die even while tunnels are healthy; fragmented pings die) — so the path can't be mapped or probed with ICMP. The tunnel's own delay test is the only honest probe.
+
+- if the problem is my china network, why does other proxy config like ~/.config/clash.meta/宝可梦-outllo2508.yaml can reach google.com with the same china network?
+  - DNS resolution shows the whole fleet funnels into AWS Singapore and Tokyo: 美国01/02 V6 Trojan	ptxlv6-01 → aws-sg02v6.poke-mon.xyz (AWS SG)
+  - So when you browse Google through 宝可梦， your traffic typically rides 广电 → AWS Singapore/Tokyo → AWS backbone → exit — a short, well-peered China→Asia segment that your 广电 line handles fine even at peak, then premium AWS transit onward. 
+  - Your verge servers instead ride the direct China→US public path — the segment that congests and polices UDP every evening.
+  - 2. Transport class differs on the relayed nodes. Those entry nodes are Vless/Trojan = TCP+TLS — indistinguishable from ordinary HTTPS to a congested gateway. Your verge tunnel is raw UDP/QUIC, the traffic class that gets policed first when the direct path congests.
+
+# dev-09
+
 ## 0925-🧊
 
 - 🧊📌 there are so many sandboxing related solutions for agent, like https://github.com/anthropic-experimental/sandbox-runtime, https://github.com/openai/codex/tree/main/codex-rs/windows-sandbox-rs, https://github.com/alibaba/OpenSandbox, https://github.com/TencentCloud/CubeSandbox, https://github.com/earendil-works/gondolin ... 

@@ -187,6 +187,8 @@ modified: 2026-06-30T17:32:43.131Z
   - cpu friendly
   - later
     - bases-kanban for ai
+    - [AI正在让办公室里全是垃圾：微软自己人都受不了了 ](https://www.bilibili.com/video/BV1PUYk6jEZX )
+      - ai验证数据/结论/报告
 
 - ai-doc
   - 多次生成

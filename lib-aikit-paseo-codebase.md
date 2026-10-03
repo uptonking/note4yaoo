@@ -135,6 +135,17 @@ modified: 2026-09-05T00:28:18.805Z
 - 
 
 # client-web/electron
+- What the web/desktop UI is built from (packages/app)
+  - One React Native codebase — the web UI and Electron desktop UI are the same Expo app rendered via react-native-web; mobile is native RN.
+  - react-native-unistyles (v3) for styling and theming — this is the closest thing to a "UI library" in the stack.
+  - Plain RN primitives (View/Text/Pressable) plus supporting libs: @gorhom/bottom-sheet, @floating-ui/react-native, @dnd-kit, lucide-react-native icons, @tanstack/react-query, zustand, reanimated.
+
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## mac
 

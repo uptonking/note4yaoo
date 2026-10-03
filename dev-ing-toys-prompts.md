@@ -1529,7 +1529,7 @@ in a multi-nodes high-availability architecture
 
 - please design a solution to deploy a hysteria service called `verge2` to any follower node user specified. deploy it to worker_2 node by default. in cloudflare i have configured verge2.aichorage.de to worker_2 node ip .
   - verge2 and verge have the same features and use the same docker image, but they are 2 unrelated services as 2 orphan service without high availability.
-  - source code for verge(hysteria) has been cloned at folder `../all-vpn-proxy/hysteria` for reference if you want.
+  - source code for verge/verge2(hysteria) has been cloned at folder `../all-vpn-proxy/hysteria` for reference if you want.
   - source code for clashx meta has been cloned at folder `../all-vpn-proxy/ClashX.Meta` for reference if you want.
 
 - you might refer to how wabase/verge are configured on worker_4 node. requests to wabase still go to leader node first, but requests to verge goes directly to worker_4 node.

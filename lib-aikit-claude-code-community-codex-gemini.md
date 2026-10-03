@@ -18,7 +18,7 @@ modified: 2025-12-18T12:27:14.982Z
   - 隐藏左右侧边栏 加上 chat在editor区域打开后， 使用自定义模型api, 就可作为一个通用AI前端
   - 甚至可用 codex-app-server 替换kilo的后端
   - 甚至可用 opencode-desktop 替换codex-cli的前端
-# codex-cli-xp
+# harness-codex
 - codex-cli
   - 使用过程中不能切换base-url, 若手动改了config.toml，需要停止cli再重新启动， 不够灵活
 
@@ -38,6 +38,11 @@ codex --yolo resume --last
 - hotkeys
   - ctrl + u: 清空一行
     - This is a standard Unix/Mac terminal shortcut that deletes everything from your cursor to the beginning of the line. 
+# harness-antigravity
+
+## issues
+
+- subagent 不支持设置其他模型
 # issues
 - 在使用CPA时，若全部账户处理cooling down状态，codex有时会不停reconnecting，浪费超多网络代理流量
 # discuss-stars

@@ -163,7 +163,7 @@ modified: 2026-09-05T00:27:42.212Z
 - 
 - 
 
-## built-in agent
+## autumn-studio(built-in agent)
 
 - agent-providers
   - external: deepseek-harness, cursor-cli, commandcode
@@ -171,8 +171,11 @@ modified: 2026-09-05T00:27:42.212Z
 - built-in agent: 移动端可以直接执行agent，而不依赖桌面端或外部agent
   - 需要支持已有的 agent profile 配置
   - orchestration skills: profile notes explain when to choose those settings for delegated work.
+  - reuse 已有的pi配置
+  - reuse/manage pi plugins
   - 💡 可基于profile实现 auto mode
   - 要支持让移动端使用built-in agent执行
+  - without project/folder
 
 - doc skills hub
   - install skills to workspace
@@ -232,6 +235,34 @@ modified: 2026-09-05T00:27:42.212Z
   - skills-hub: 方便安装skills到project
 
 - plugin-list 界面不支持对单个plugin进行设置
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- Paseo plugins are directory-based (not npm packages). A plugin is a folder containing a plugin.json manifest plus optional subprocess code. 
+  - Plugins run as managed subprocesses of the daemon, communicating over IPC (not HTTP).
+- Plugins are discovered from configured plugin directories in daemon config
+- Key Limitations
+  - No agent provider registration via plugins — The plugin system currently does not have a dedicated surface for registering new agent providers. Providers are built-in to the server package in agent/providers/.
+  - Subprocess-based — Plugins run as separate Node.js processes, not in-process
+  - Surface rendering — Plugin surfaces are rendered via webviews/iframes, not native React Native components
+  - No direct database access — Plugins interact through the PaseoApi, same as any client
+- The current plugin system does not have a mechanism for registering new agent providers. The provider registry is internal to the server package.
+  - workarounds: 
+  - ACP (Agent Control Protocol) providers offer a somewhat generic adapter. If an agent implements ACP, it can be used through the generic ACP provider without modifying Paseo's core. Copilot and Cursor use this path.
+  - A plugin could use the PaseoApi to programmatically create and manage agents using an existing provider, but it can't register a new provider type.
+
+- Paseo's plugin system has no dependency mechanism: plugin B cannot declare a dependency on plugin A. There is no auto-install of any kind between plugins.
+
+- Best practice for a big multi-plugin feature
+  - Build one plugin. That's what the platform is designed for, and a single installation can register every contribution type the system has: RPCs, agent providers, lifecycle hooks, surfaces/sidebar items, workspace panels, slash commands, header buttons/composer pills, attachment sources, themes, settings screens, and timeline transformers/renderers
+  - If you want the feature split into independently installable pieces (e.g., a "core" and an optional add-on), don't link them as plugins — link them as npm packages. Publish the shared core (RPC contracts, server logic, client components in their shared/server/client layers) as a regular npm library, and have each plugin depend on it and inline it. 
 
 ## server
 

@@ -342,6 +342,9 @@ modified: 2025-03-22T16:10:24.856Z
     - 另一种思路是通过类似jupyter的重代码工具去实现
     - 可以兼容comfyui的导出json，直接在aichorage打开
 
+- cloud-agent
+  - 可选云端claude-code/codex/kimi-code, 仅需支付token费用
+
 - chat-ai
   - 主流ai的web-chat结果能快速对比
 

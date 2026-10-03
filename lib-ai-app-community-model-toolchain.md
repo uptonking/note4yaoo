@@ -780,6 +780,20 @@ iPhone 17 Pro GPU: 25 TPS
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Please stop using MLX 4bit affine quants. They are fast but not good enough, especially in larger contexts. 
+- https://x.com/ivanfioravanti/status/2105925557112443104
+  - I learned the lesson the hard way using them
+  - issues are just with 4bit affine that treats all layers the same way.
+- Gguf 4 bit is sweet spot, mlx 6 bit is sweet spot
+
+- same lesson here: eval at the context length you actually serve. curious which broke first for you at long context, recall or tool calls?
+  - Tool calls, wrong long file edits and agent looping multiple times to fix errors.
+- makes sense, those fail quietly. counting retries and loops per task might be the cheapest quant test there is.  
+
 - ## [Has anyone tried NVFP4 on mlx? : r/LocalLLaMA _202604](https://www.reddit.com/r/LocalLLaMA/comments/1ry5gm3/has_anyone_tried_nvfp4_on_mlx/)
 - NVFP4 is only supported on Blackwell gpu right ? So I assume that if you run those models on Mac (mlx), it would just revert back to FP4 ?
   - yeah Blackwell gpus have a specific chip for NVFP4 but im pretty sure mlx just converts it to `fp16` on the fly for inference, so even tho you arent getting the speeds like blackwell does it would still be useful to use it since its similar to fp16/fp8.

@@ -619,6 +619,8 @@ modified: 2023-09-02T09:17:22.992Z
     - It is built on top of OpenVMM and runs Linux as a guest.
     - NVX was jointly developed by the MSR Systems Research Group and Azure Research - Systems, building on research results from the Nanvix system.
     - 似乎不支持mac
+    - https://x.com/gerhart_x/status/2105949899179073655
+    - It looks like it works with Windows Hypervisor Platform (WHVP/WHP) and Linux MSHV.
   - https://github.com/microsoft/litebox /MIT/202609/rust
     - a sandboxing library OS that drastically cuts down the interface to the host, thereby reducing attack surface. It focuses on easy interop of various "North" shims and "South" platforms. LiteBox is designed for usage in both kernel and non-kernel scenarios.
 
