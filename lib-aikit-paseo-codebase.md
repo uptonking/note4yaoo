@@ -140,6 +140,72 @@ modified: 2026-09-05T00:28:18.805Z
   - react-native-unistyles (v3) for styling and theming — this is the closest thing to a "UI library" in the stack.
   - Plain RN primitives (View/Text/Pressable) plus supporting libs: @gorhom/bottom-sheet, @floating-ui/react-native, @dnd-kit, lucide-react-native icons, @tanstack/react-query, zustand, reanimated.
 
+- if the web-ui/desktop-ui is all built with react-native, how can it be bundled to a desktop app?
+  - the trick is that the desktop app doesn't run React Native at all. It loads the web build of the React Native app inside a Chromium window.
+  - React Native is compiled to a web SPA by Metro/react-native-web, and Electron is a Node-capable Chromium wrapper that hosts that SPA — dev against Metro, packaged against a static paseo:// protocol.
+  - packages/app includes react-native-web (~0.21) and react-dom, and app.config.js declares a web: { output: "single" }
+  - react-native-web implements RN primitives (View, Text, Pressable, …) as DOM elements, so the same component tree that renders natively on iOS/Android renders to HTML in a browser. 
+  - Metro (Expo's bundler) exports a static web bundle. 
+  - Electron is just a Chromium shell around that bundle. In packages/desktop/electron-builder.yml, the web export is shipped as `extraResources`
+- How platform-specific code still works
+  - Since one codebase serves iOS, Android, browser, and desktop, the desktop-specific pieces are split out mechanically rather than with if statements
+  - Build time: PASEO_WEB_PLATFORM=electron, When bundling for web, Metro first tries to resolve local imports as foo.electron.ts(x) before falling back to foo.web.ts(x) and plain files. That's how desktop-only modules (e.g. the Electron `<webview>` browser pane) get into the desktop bundle while the plain browser build gets index.web.tsx and native gets index.tsx — the other variants are never bundled.
+  - Runtime: a sandboxed preload script exposes window.paseoDesktop via contextBridge — an IPC bridge for window controls, file dialogs, notifications, deep links, and the auto-updater. App code checks getIsElectron() before touching it
+  - Main process side: the Electron main owns everything the web page can't do — window management/chrome, native menus, notifications, spawning and supervising the local daemon
+
+- You cannot render ProseMirror/Tiptap inside a plugin surface today — plugin UI is deliberately locked to host-provided React Native components with no DOM access. 
+  - A plugin's index.client.tsx is compiled by the daemon's esbuild compiler and runs inside the Paseo app's React Native tree — react-native-web on browser/Electron desktop, real RN (Hermes) on iOS/Android.
+  - The SDK gives you exactly this render surface. No WebView, no iframe, no HTML elements. 
+  - compiler rejects Node builtins and server-only modules in client bundles and enforces the SDK boundary.
+- One important nuance: the compiler does allow bundling arbitrary npm libraries into the client bundle (only host modules and boundary rules are special-cased), so shipping tiptap/prosemirror-* code is fine. 
+  - The blocker is purely that there's no DOM surface to mount them on.
+- Paseo's plugin client bundle may only import host modules — I confirmed the exact external list in the Paseo compiler. 
+  - So no pdf.js, no canvas, no viewer library, no gesture library on the client. 
+- When Paseo compiles a plugin via packages/server/src/server/plugins/compiler.ts, esbuild bundles all npm dependencies into the client bundle except those marked external like react/react-native/tanstack
+  - When the bundle executes inside Paseo, the host provides only those external modules via runtimeRequire. Notice that react-dom is NOT in that list.
+  - If you use @tiptap/react, it imports react-dom. Because react-dom is not provided by the plugin runtime, it will throw: Module "react-dom" is not available 
+  - The Solution: Use vanilla ProseMirror or @tiptap/core. Because they are pure DOM/JS libraries with no React dependencies, esbuild will bundle them completely into your plugin bundle. You then wrap it in a lightweight React component with `useRef<HTMLDivElement>` and useEffect, exactly like Paseo does for CodeMirror.
+- By default, Paseo plugin scaffolds omit "DOM" from tsconfig.json to encourage mobile compatibility.
+  - For desktop/web-specific code, you can enable "DOM" in your plugin's tsconfig.json lib, gate with layout.platform === "web" from PluginHostProps, and render a standard `<div ref={hostRef} style={{ flex: 1 }} />`.
+
+- The perception that react-native-web prevents using rich web React components or DOM editors is a common misconception. Nothing prevents mounting DOM-based editors. In fact, Paseo already does this across several core features
+  - Paseo mounts CodeMirror 6 (with Vim emulation, search/replace, and syntax highlighting) directly into a `<div ref={hostRef} />`.
+  - Terminal: Runs xterm.js inside a DOM container on web.
+  - Embedded Browser: Uses Electron `<webview>` elements.
+  - HTML Preview: Uses an `<iframe>`.
+- 
+- 
+- 
+- 
+- The app's own answer to "react-native-web can't do X"
+  - The repo itself hits this wall constantly and its pattern is: prebuild a web bundle and mount it in a WebView (native) / iframe (web), bridged with postMessage
+  - The xterm terminal
+  - Mermaid diagrams
+  - HTML file preview
+  - This machinery exists in the app but is not exposed to plugins.
+- Option A — workspace browser tab.
+  - The plugin server side (index.server.ts) runs unsandboxed Node on the daemon host: it can bind a localhost HTTP port, serve a Tiptap page, and expose read/write endpoints for the markdown file 
+- Option B — contribute the renderer to the app (upstream PR, best UX). 
+  - Add a file-pane renderer following the mermaid/terminal pattern: filePreviewRenderKind
+  - a prebuilt Tiptap webview bundle would fit the existing architecture exactly. 
+  - but the plugin system could eventually grow a registerFileRenderer contribution, which would be the feature to propose.
+- Option C — imperative DOM mount (hacky, web-only). 
+  - On web, react-native-web Views are real DOM elements, so a plugin could grab a View ref (a div), gate it with Platform. OS === "web", and mount ProseMirror into it imperatively.
+  - It would work on desktop Electron/browser and be a no-op on iOS/Android, but it fights React Native's reconciler (node replacement, keyboard/IME/selection conflicts), violates the documented cross-platform contract, and will break unpredictably across RN-web versions. 
+
+- https://github.com/dbhq-uk/paseo-file-viewer
+  - it doesn't fight react-native-web's constraints at all. It pushes all heavy lifting into the daemon and ships the client only PNG images or plain JSON, which stock RN components can render.
+  - The plugin's answer: the daemon does all parsing and rasterising, the client renders React Native primitives. 
+  - rasterise (PDF, images): ship a PNG
+  - parse (docx, xlsx): ship structured JSON, 
+    - This was a deliberate, benchmarked decision (DESIGN.md): converting a 33-sheet workbook to PDF takes LibreOffice 8.7s and produces 169 anonymous A4 pages, while exceljs parses it in 0.4s into 33 named sheets.
+    - .docx: mammoth converts to HTML, and node-html-parser (on the daemon) flattens it into a small block union 
+    - .xlsx: exceljs returns sheet metadata (doc.open), then doc.rows streams row windows; SheetReader has a horizontal sheet-picker bar and a paged FlatList. Any sheet over 500 rows breaks. PAGE_SIZE limit
+  - This plugin confirms the constraint is real and shows the "work with it" strategy: anything expressible as images or JSON can be rendered beautifully from a plugin on all four platforms. 
+    - But it also shows the boundary — this is a read-only viewer. 
+- A hybrid is also plausible: this plugin's panel pattern for browsing/listing, plus openBrowser for the editing surface.
+
+- 
 - 
 - 
 - 

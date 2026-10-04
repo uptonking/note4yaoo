@@ -3349,6 +3349,7 @@ modified: 2026-06-20T15:49:57.019Z
   - 300GB/月 - 100LDC
 # video/movie
 - [OmniBox - 在线观影](https://omnibox.wangchao.uno/)
+  - [ℤ𝕊𝔽𝕒𝕟的影视站 ](https://zsfan888.cc.cd/)
   - [MoonTVPlus](https://moontv.wangchao.uno/)
   - [MoonTVPlus](https://moontv.662778.xyz/)
   - [𝔔𝔦𝔫𝔤 𝔖𝔥𝔢𝔫𝔤 -公益MoonTVPlus - LINUX DO _202605](https://linux.do/t/topic/2126755)

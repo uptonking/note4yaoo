@@ -363,6 +363,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - why-gui-app
   - 用类似 claude-design 的思路来实现 ui/编辑器 类型的产品
+  - 方便查看 webpage, image, video
   - too many options: 
     - models/quants, cloud api, 处理速度不同
     - model thinking: 需要会话级、模型级的快速开关
@@ -371,6 +372,9 @@ modified: 2025-03-22T16:10:24.856Z
     - vlm, pipeline, 识别方法不同
     - versions/comparison
     - citation or not
+  - cli-cons
+    - view chat history
+    - 切换session/context
 
 - unify doc-editing with browser-use
   - 参考类似claude-design/browser-use的ux, 优化 ai editing 的能力和ux

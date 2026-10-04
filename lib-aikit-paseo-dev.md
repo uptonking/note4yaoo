@@ -66,6 +66,10 @@ modified: 2026-09-05T00:27:42.212Z
 
 - 在paseo的web-terminal(xtermjs)中执行 `git pull` 会出现异常，但ssh到vps的repo目录执行pull可以成功
 
+- In Paseo’s current plugin SDK
+  - does not currently expose an API to inject custom items into the built-in chat link right-click menu
+
+- 
 - 
 - 
 - 
@@ -74,7 +78,7 @@ modified: 2026-09-05T00:27:42.212Z
 - 是否支持daemon主机上的port forwarding, 比如运行webapp然后直接暴露
   - https://github.com/itsjustanks/paseo-plugin-daemon  /cf-tunnel/relay/ssh-forward
   - Open a remote project's dev server from Paseo in one press.
-# aichor
+# autumn-studio
 - aichor as paseo bundle
   - paseo + custom-agent + ocr-skills + ui
 
@@ -105,6 +109,9 @@ modified: 2026-09-05T00:27:42.212Z
   - qmd
 
 - local folder as project/workspace
+
+- filetree
+  - hide . DS_Store
 
 - sandbox
   - 移动端的sandbox如何处理

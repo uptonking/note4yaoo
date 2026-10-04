@@ -33,11 +33,50 @@ modified: 2026-09-08T04:45:17.635Z
 
 - ## 
 
-- ## 
+- ## Why does "build" script not exist in package.json? how to build this plugin and install to paseo mac app. source code for paseo is at folder ../paseo
+- plugins are authored directly in source TypeScript and do not produce an ahead-of-time dist/ bundle on disk
+- Paseo is the Compiler Host: When Paseo installs or runs a plugin, Paseo’s daemon discovers index.server.ts and index.client.tsx, and compiles them in-memory using its internal esbuild compiler
+  - Preparation is defined in paseo-plugin.json
 
-- ## 
+- ## does web-app/desktop-app use tailwindcss? can i use tailwindcss to build custom plugin?
+- Neither the web app nor the desktop app uses Tailwind CSS. They are built on React Native / Expo and use react-native-unistyles (v3) for styling.
+- Electron shell: It does not maintain an independent frontend or styling system; it launches the exported Expo web build from packages/app inside an Electron BrowserWindow
+- Cross-Platform UI Contract (No HTML, No className)
+- The Plugin Compilation Pipeline Has No CSS Extraction
+  - Plugins are built by the daemon using esbuild
+  - There is no PostCSS, Tailwind CLI, or CSS bundler in this pipeline, nor is there any mechanism to emit, transport, or inject .css files into the host app.
+- Paseo supports multiple host themes (adaptive light/dark, user custom themes, Catppuccin, etc.). Hardcoded CSS utility classes (such as bg-slate-900 text-white) do not adapt to Paseo's theme tokens, resulting in unreadable text or broken contrast when the user switches themes.
 
-- ## 
+- The Plugin Compiler Discards Separate CSS Files
+  - Paseo explicitly supports a "build" step in paseo-plugin.json. Before Paseo compiles your code, it executes declared commands. This gives you the exact lifecycle hook needed to extract and compile Tailwind CSS before installation.
+- The Big Trap: Tailwind Preflight Breaks Paseo's Host UI: Paseo's UI is built on React Native Web and Unistyles. 
+  - If you inject standard Tailwind CSS into document.head, Tailwind's Preflight reset (* { box-sizing: border-box; margin: 0; padding: 0 }, button resets, border resets) will pollute the entire app: buttons will lose backgrounds, SVG icons will shift, and form inputs will break. 
+  - You must isolate Tailwind from the host.
+- Workaround 1: Scoped Tailwind with Preflight Disabled (Recommended)
+  - disable Preflight and scope all Tailwind utility classes strictly to your editor's root container.
+  - Because the styles are scoped to #markdown-editor-root and preflight is disabled, you can inject it cleanly into markdown-editor-root
+- Workaround 2: Shadow DOM (100% Complete Style Isolation)
+  - If you want Tailwind Preflight and the official @tailwindcss/typography plugin (prose classes like .prose h1, .prose ul, etc.) for rich text rendering, use Shadow DOM.
+  - ProseMirror and TipTap natively support Shadow Roots.
+
+- ## what's the relationship/differences between autumn-studio-plugin's pi embedding and paseo's built-in pi provider? 
+- Both are pi-embedding clients speaking the same wire protocol — autumn-studio's RPC layer is a scaled-down sibling of Paseo's built-in pi client — but they sit at different boundaries of the system, source their pi binary differently, and make opposite trade-offs on fidelity vs. isolation.
+- Both spawn `pi --mode rpc` as a child process and speak newline-delimited JSON over stdio
+- Autumn-studio's server/rpc-process.ts is structurally a mini JsonlRpcProcess (same framing, stderr tail in errors, SIGTERM→SIGKILL teardown). the built-in's mapper was the reference implementation for Autumn-studio.
+
+- differences
+- Contract and process location. The built-in pi provider is a daemon-internal `AgentClient` factory, implementing Paseo's older in-process agent boundary directly inside the daemon. 
+  - Autumn-studio implements the newer plugin provider contract (`ProviderRegistration/ProviderConnection`) and runs inside a forked plugin child — everything it emits crosses an IPC bridge, gets zod-revalidated, and is capability-negotiated before the daemon sees it.
+- The built-in spawns PI_COMMAND ?? "pi" from the user's PATH , with the user's real ~/.pi/agent config. 
+  - Autumn-studio spawns pi from its own `node_modules` via `server/pi-runner.mjs` — version-pinned by the plugin's dependency, zero user setup. 
+- The built-in passes user-owned config through: real auth.json/models.json, real settings.json, real extensions and skills, MCP via a --mcp-config tmpfile
+  - Autumn-studio generates a per-session agent dir, and runs with --no-approve so project-local .pi leakage can't happen.
+  - The user's external dir is never pointed at directly — OAuth rotations come back through a guarded write-back instead. Built-in = full fidelity to the user's environment; autumn-studio = isolated config the plugin owns and regenerates.
+- The built-in is ~4, 000 lines because it exposes everything pi can do: session listing/import, conversation rewind via the extension bridge, compaction triggering, usage polling, model cycling, fork/tree navigation, extension-UI dialogs mapped to Paseo permission prompts, --mcp-config injection. 
+  - 🐛 Autumn-studio is ~1, 200 lines covering a deliberate subset: prompts, steers, tool/compaction/retry timeline items, usage, session resume via --session + get_entries replay, and native skills as session.commands. 
+  - It auto-cancels extension dialogs rather than mapping them to permissions, and doesn't do listing, rewind, or compaction control. 
+  - It has things the built-in doesn't by design: bundled pi (no install), /v1/models discovery with a persisted known-good cache, self-healing root discovery
+- here's an agent that works out of the box, " with its own keys, its own config, and its own crash domain (a pi bug kills the session's child process, not the daemon). 
 
 - ## paseo daemon is bundled in the desktop app so that the desktop app can be used out of the box. can the daemon also be bundled in a mobile app so that mobile app can be used out of the box without server?
 - Node.js runtime vs. Mobile React Native engine

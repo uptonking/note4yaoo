@@ -345,6 +345,38 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1003
+
+- [求助，antigravity 登录报错是为什么？There was an unexpected issue setting up your account.An error occurred. - LINUX DO _202606](https://linux.do/t/topic/2285357/2)
+  - 👷: ip问题， 换到自建节点就能正常使用了
+
+- 🤔 i want to Build as a Custom Plugin to create a rich text markdown editor ux. 
+  - analyze related code, explain to me more details about how to build a custom plugin with prosemirror-view, prosemirror-state, prosemirror-model ... using dom without react.
+  - the ux might be like,  when user chats with paseo agent in main chatbox and mentions a markdown file, user can right click the file path and show a context menu with menu items to open the markdown editor in sidebar panel or new tab, or any better ux ...
+  - How do you like my idea? If it is okay, you might improve it,  then exmplain to me step by step how to implement it
+- "Sidebar panel or new tab" maps perfectly to the existing API — openPanel("editor", { location: "explorer" }) for the sidebar, { location: "workspace" } for a workspace tab (panels use one persisted plugin workspace-tab target, so it survives reload).
+- Dynamic import, never static. The bundle is one file evaluated on every platform
+  - Gated await import() compiles to a lazy require — the module body only runs when the web branch executes.
+
+- 🤔 Is there any possible solution or workaround to use react-dom or other dom libs/utils in my custom plugin while making the plugin compiling well and works well with the paseo app?
+- Route 1 — Don't use react-dom; bundle DOM libs that don't need React
+- Route 2 — Bundle react-dom as a self-contained "island"
+  - I compiled react-dom + react-dom/client with the plugin compiler's settings. Result: it compiles cleanly 
+  - Ship a process shim, imported first. react-dom/index.js is a runtime branch on process.env.NODE_ENV
+  - Dynamic-import it behind the web gate. Otherwise every phone evaluates 1.4 MiB at plugin load 
+  - Mount your own root into a container div you own — never render into, or take ownership of, a node the host React tree renders.
+  - React context does not cross roots. Context objects come from the shared react, but the provider stack is per-root, so the island sees only defaults. 
+  - Two event systems. React 17+ attaches listeners at each root container, so a click inside the island also bubbles to the host root's listeners. Avoid putting handlers on both sides of the same gesture.
+- Route 3 — The host patch: make react-dom a first-class host module (best long-term)
+- Route 4 — Skip the plugin bundler completely: iframe a real web app
+
+- 🤔 in paseo right sidebar, the "Files" tab show a file tree of workspace folder. but only .md markdown file is supported to read/edit. Most popular files like .pdf/.docx/.xlsx/... all shows "Binary preview unavailable".  the current "Files" related features are too simple and limited.
+  - plugin paseo-file-viewer (at folder `../paseo-plugins/paseo-file-viewer`) provides a alternative file viewer that can be used as a new "Viewer" tab like "Files" tab, but it shows all files as flat list, no nested folders like native file system.
+  - the goal is to implement a new "File Explorer" feature that reimplement most features of paseo-file-viewer, but support to show file tree just like native nested file system. but i want to make the architecture of File Explorer" different from paseo-file-viewer. core file tree of "File Explorer" feature should be built with react componnet with react-dom, designed for web/desktop only, not for mobile. the final goal is to implement file editor for all popular files, but currently focus on file viewer(no editor) and pdf file. "File Explorer" should be built with react components and tailwindcss. `react-dom` might be bundled in this plugin so you might use it for any ui in the file tree or viewer if you want. a "build" step in paseo-plugin.json might be added to extract/compile tailwindcss before plugin execution. i do not want you to build file tree and file viewer from scratch, but might use extend-ui(based on shadcn/base-ui, at folder `~/Documents/repos/ai-ml-llm/all-docai/extend-ui`) by referring to the code/example like /Users/yaoo/Documents/repos/ai-ml-llm/all-docai/extend-ui/apps/v4/components/extend/file-system.tsx , /Users/yaoo/Documents/repos/ai-ml-llm/all-docai/extend-ui/apps/v4/components/extend/pdf-viewer.tsx . support to view .pdf first, other file viewer/editor might be planned but implemented later.
+
+- Reuse extend-ui via Direct File Copy (Vendor)
+  - Can strip Next.js-specific code ("use client" directives)
+
 ## 1002
 
 - the final goal is that user just install autumn-studio plugin and do their task using the bundled pi agent without feeling the existence of the bundled pi agent or installing external pi agent manually.

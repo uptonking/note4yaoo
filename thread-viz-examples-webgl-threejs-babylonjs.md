@@ -21,6 +21,20 @@ modified: 2021-08-07T16:44:32.377Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 我相信通用游戏引擎会被 ThreeJS 淘汰。现在日常刷屏的酷炫 web 游戏 demo，正是 AGI 时代内容创作的起点。
+- https://x.com/ewind_dev/status/2106531299817324871
+  - 通用引擎是软件产能匮乏时代的产物：定制太贵，只能将能力不断堆进一个大而全的系统。AI 正在让垂直引擎和专用渲染管线变得廉价，很多所谓引擎能力拆开看，无非是可以按需重建的 pipeline。
+- 你这是都不怎么玩3A游戏的人吧。V8虽然可以全JIT执行，但js动态类型等特质就注定了它不可能和C#在同一个性能纬度上，尤其是对渲染管线至关重要的多线程能力。
+- 执行效率还是低
+
+- 真正可能被淘汰的不是游戏引擎，而是“先造一个通用引擎，再让所有人适配它”的生产方式。AI把定制成本打下来后，未来可能是需求出现了，专用引擎才随之生成。
+
+- 可是threejs也不是最优解，还可以再拆分。我觉得最终是围绕WebGPU协议的可组合工具形成的生态。
+
 - ## to discover that something was made with pmndrs libraries, fiber in this case, still gives me thrills. whoever did this site is a beast.
 - https://twitter.com/0xca0a/status/1743029701520642318
   - [KidSuper World - landing.love](https://www.landing.love/sites/kidsuper/)
