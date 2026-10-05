@@ -16,7 +16,7 @@ modified: 2026-09-05T00:28:18.805Z
 # server
 
 # agent
-- Native（原生内置）Provider 绝大部分不是通过 ACP Adapter 实现的，而是各自针对该 CLI 的私有协议、官方 SDK 或专有 IPC 单独实现的；唯一的例外是 GitHub Copilot。
+- Native（内置）Provider 绝大部分不是通过 ACP Adapter 实现的，而是各自针对该 CLI 的私有协议、官方 SDK 或专有 IPC 单独实现的；唯一的例外是 GitHub Copilot。
   - native providers are not supported through ACP adapters. With the single exception of GitHub Copilot, native providers are implemented separately and differently, using bespoke transports, proprietary SDKs, and custom IPC channels.
 
 - The shared contract: where "native" and "external" meet

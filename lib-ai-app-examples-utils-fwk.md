@@ -701,7 +701,9 @@ modified: 2025-02-21T18:20:42.624Z
   - 多维度导入: 支持单条 Token 录入、JSON 批量导入（如来自其他工具的备份），以及从 V1 旧版本数据库自动热迁移。
   - 全协议适配 (Multi-Sink): openai, anthropic, gemini
   - 多模态与 Imagen 3 支持: 超强 Body 支持, 后端支持高达 100MB (可配置) 的 Payload，处理 4K 高清图识别绰绰有余。
-  - 
+  - 🍴 forks
+  - https://github.com/anglee0323/antigravity-tools-lite /CC-BY-NC
+    - This fork focuses on local accounts, quotas and usage, with its own CLI, settings and quick dashboard
 
 ## router-cn
 
@@ -1083,6 +1085,8 @@ modified: 2025-02-21T18:20:42.624Z
     - Since version 6.0.19, the WebUI ships with the main program; access it via `/management.html` on the API url
   - https://github.com/seakee/CPA-Manager-Plus /MIT
     - self-hosted CPA / CLIProxyAPI management panel and AI gateway observability dashboard for requests, usage, cost, quota, failures, and account health.
+    - Full Mode: adds Manager Server for request history, cost analytics, server-side inspection, backups, and automation.
+    - CPAMP does not forward model requests by itself.
   - https://github.com/seakee/CPA-Manager /MIT
     - [解决 CPA 移除使用统计方法：CPA-Manager - LINUX DO _202605](https://linux.do/t/topic/2103420)
   - https://github.com/router-for-me/CLIProxyAPIPlus /MIT/202512/go

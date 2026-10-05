@@ -1339,6 +1339,10 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - code/docs for woodpecker has been cloned at `../all-cicd/woodpecker` for reference if you want.
 - code/docs for aichorouter(new-api) has been cloned at `~/Documents/repos/ai-ml-llm/all-router-token/new-api` for reference if you want.
 - code/docs for cpapi(CLIProxyAPI) has been cloned at `~/Documents/repos/ai-ml-llm/all-router-token/CLIProxyAPI` and `~/Documents/repos/ai-ml-llm/all-router-token/Cli-Proxy-API-Management-Center` for reference if you want.
+  - source code for cpamp(CPA-Manager-Plus) is cloned at `~/Documents/repos/ai-ml-llm/all-router-token/CPA-Manager-Plus` for reference if you want.
+  - but the default Cli-Proxy-API-Management-Center is not good enough.
+  - the current goal is to keep the existing Cli-Proxy-API-Management-Center still work and deploy a new management panel CPA-Manager-Plus in Full Mode to worker_1 node at https://cpamp.aichorage.de/management.html . in cloudflare, i have already configured cpamp.aichorage.de to leader node.
+  - since cpamp is an alternative to cpapi, you might use similar config/patterns.
 - code/docs for observer(openobserve) has been cloned at `../all-logging/openobserve` for reference if you want.
 - code/docs for librechat has been cloned at `~/Documents/repos/ai-ml-llm/LibreChat` for reference if you want.
 

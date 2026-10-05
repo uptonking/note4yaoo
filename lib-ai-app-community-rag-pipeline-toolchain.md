@@ -116,6 +116,19 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Web Search API is now in beta. Ground your AI responses in live web data with zero data retention through AI Gateway.
+- https://x.com/CFchangelog/status/2106738828472136121
+  - [Introducing Web Search API · Changelog _202610](https://developers.cloudflare.com/changelog/post/2026-10-02-introducing-web-search-api/)
+  - At launch, you can choose between three search providers: Ceramic.ai, Exa, and Linkup. All three support Zero Data Retention for requests made through Cloudflare, and all have committed to Cloudflare's verified bot crawling standards.
+  - Web Search API runs through AI Gateway, so search requests appear in your gateway logs and are billed to your AI Gateway credits at each provider's list API price, with no additional markup. 
+  - You can also bring your own provider API key.
+
+- Is this a Parallels and Exa competitor?
+
 - ## [How are people using Pi for web research outside of coding? : r/PiCodingAgent _202608](https://www.reddit.com/r/PiCodingAgent/comments/1vc2039/how_are_people_using_pi_for_web_research_outside/)
 - Now that GPT-Luna is so cheap, I just built a simple extension to expose a web-research tool that sends off a prompt to the codex cli with Luna on low reasoning, using the codex web search tool. 
 

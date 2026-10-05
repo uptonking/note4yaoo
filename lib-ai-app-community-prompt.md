@@ -188,6 +188,22 @@ modified: 2024-09-08T18:57:12.231Z
 - ## [My go-to prompt for analyzing stocks. Share yours! : r/PromptEngineering](https://www.reddit.com/r/PromptEngineering/comments/1oqa30m/my_goto_prompt_for_analyzing_stocks_share_yours/)
 - Act as a senior equity research analyst. Your task is to compile a comprehensive investment analysis report on [Company Name] (Ticker: [Ticker Symbol]). The report should be detailed, objective, and data-driven, using financial data from the last five full fiscal years and the most recent trailing twelve months (TTM).
 
+# discuss-prompt-nsfw
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [【更新V2】自用的一个NSFW提示词，适合在Google的反重力或者国模api使用（帖子内容可能引人不适） - LINUX DO _202610](https://linux.do/t/topic/2541496)
+  - 反重力2.0其实也有对话审查，所以请对话说生成到文档，这样就不会触发审查截断
+  - 提示词在反重力2.0表现良好，无外审的国模api也可以，网页就不用想了，全都有系统提示词和外置审查，生成了也会被截断
+  - 注意，如果使用gemini模型，你提示词有比较大尺度或较多的禁忌词，也建议写入一个文档，让他去读文档，否则可能一直卡Working没输出但一直消耗额度
+
 # discuss-prompt-abliterated/uncensored
 - ## 
 

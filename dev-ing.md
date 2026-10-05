@@ -115,7 +115,7 @@ HOST=0.0.0.0 PORT=8080 react-scripts start
 next dev -H 0.0.0.0 -p 3000
 
 npm i -g npm yarn pnpm corepack serve @dotenvx/dotenvx opencode-ai @openai/codex @kimuson/claude-code-viewer   @deepseek-ai/dsh @github/copilot
-npm up -g skills @getpaseo/cli @earendil-works/pi-coding-agent @openai/codex
+npm up -g skills @getpaseo/cli @earendil-works/pi-coding-agent  
 ```
 
 - dev-goals 不能在产品中检验的技术不玩，注意产品化
@@ -344,6 +344,15 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - ?
 - dev-log
   - ?
+
+## 1004
+
+- [fix(xai): bump pinned grok client version to 1.0.44 for chat-proxy by ggbdpq · Pull Request · router-for-me/CLIProxyAPI _202610](https://github.com/router-for-me/CLIProxyAPI/pull/6252)
+  - Confirming this fix on v8.0.4 (Windows). Same HTTP 426 "Your Grok CLI version (0.2.120) is outdated" on every xAI OAuth chat request through cli-chat-proxy.
+  - As a stopgap until this merges, I set "headers": {"x-grok-client-version": "1.0.44", "User-Agent": "xai-grok-workspace/1.0.44"} in the xAI auth JSON. applyXAIChatHeaders applies auth-file headers after the pinned ones, and inference works again, so 1.0.44 is accepted by the server.
+- 👷: 实测的修复方法, 让agent找到cpa grok oauth 的json, 将内容中相关的版本升级，即可正常使用grok模型了
+- [请教一下，grok+cpa+ccsswitch报客户端版本低，搞不定了 - LINUX DO _202610](https://linux.do/t/topic/2973418)
+  - 你在凭证加一下请求头就行
 
 ## 1003
 
