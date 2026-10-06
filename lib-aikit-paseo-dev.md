@@ -46,8 +46,6 @@ modified: 2026-09-05T00:27:42.212Z
   - 不方便使用多账号, 这是设计目标的取舍
   - local隔离模式下, 不支持历史记录
   - 在paseo的web-terminal(xtermjs)中执行 `git pull` 会出现异常，但ssh到vps的repo目录执行pull可以成功
-  - ux
-    - webapp不支持很多桌面端的快捷键
 
 - [features](https://paseo.sh/docs/why)
   - clients: The native mobile app has full feature parity with desktop.
@@ -112,6 +110,10 @@ modified: 2026-09-05T00:27:42.212Z
 
 - filetree
   - hide . DS_Store
+
+- ux
+  - webapp不支持很多桌面端的快捷键
+  - 
 
 - sandbox
   - 移动端的sandbox如何处理

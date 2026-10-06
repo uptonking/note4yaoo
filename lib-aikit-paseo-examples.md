@@ -162,6 +162,12 @@ modified: 2026-09-17T14:19:32.208Z
   - AI processing	Select the Agent of the current workspace and process all saved comments for the project in one batch
   - default diff layout (Auto / Unified / Split)
 
+- https://github.com/MACscr/paseo-github-desktop /MIT/202610/ts
+  - A GitHub Desktop-style Git panel for Paseo workspaces: browse uncommitted changes and commit history, read diffs, and leave line comments for your agent, without leaving Paseo.
+  - Changes: every uncommitted file (modified, added, deleted, renamed, untracked) with its diff against HEAD, refreshed every couple of seconds.
+  - History: the branch's commits, paged, marked when they are unpushed or not yet on the base branch. Select a commit to see its files and per-file diffs.
+  - Built for large repositories: virtualized lists and diffs, diffs over 1 MB or 5, 000 lines load only on request, and the Changes list caps at 2, 000 files while still showing the real total.
+
 - https://github.com/ImAnOwl/Paseo-Worktree-Status /MIT/202609/ts
   - Shows in a Paseo Worktee the current GIT status of the branch and worktree
 

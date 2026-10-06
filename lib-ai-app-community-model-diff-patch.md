@@ -533,9 +533,33 @@ file.py
 
 # discuss-ai-editing
 - ## 
+
 - ## 
+
 - ## 
-- ## 
+
+- ## apply_patch和edit tool可以说是名存实亡了。
+- https://x.com/yifanxu_ephai/status/2106960305490387390
+  - 在Codex上写了7个文件，只有一个上通过apply_patch写的。其他全是exec_command + python script。
+  - 昨天在Claude Code上面发现，Opus 5.5也基本都在调用bash + python script 去改写文件。
+- 之前apply_patch这个工具在我的电脑上经常失败，一度觉得这玩意儿在浪费我token
+
+- 如果所有工具通过bash/codemode + Python script调用，那harness设计会变得很简单
+  - 不，会变得复杂，因为不好分析当前意图
+
+- 我的gpt喜欢字符串替换导致一个文件里有相同的时总是改错行
+
+- 但不用apply_patch改的文件好像codex不会在最后给你展示统计，你不能一览到底改了什么吧
+  - 最大的问题就是这个，其他的都不是问题
+
+- 模型越来越强大以后 现在做harness也要适当的做一些减法了 codemode一把梭 6.1sol和astra都是这样的
+
+- 自用的codex web ui就发现没几个edit 工具，全是脚本，懒得兼容了。同样也说明了对agent 来说，什么 tool call ，mcp，都不如cli /sdk 程序化执行
+
+- 你应该试试在pi的codemode，其实codex也有，这是gpt后期训练的工具，gpt模型非常习惯于这个来编辑。有了codemode就不会经常用Python了。
+
+- 深有同感，Codex 里我七成改文件也靠 bash 拼脚本，apply_patch 经常卡在格式边界
+
 - ## [feat: Introduce Patch tool for applying unified diffs · Pull Request · google-gemini/gemini-cli _202509](https://github.com/google-gemini/gemini-cli/pull/7642)
   - For LLM-generated code to converge on large projects, the model must make focused changes rather than attempting full rewrites. This patch-based approach is key to iterative refinement.
   - the existing `replace` tool is fundamentally brittle from an engineering perspective. It forces the LLM to simultaneously manage two distinct concerns: the complex syntax of the code itself (like Python indentation) and the formatting characters of the string literal (like `\n` ) when composing a single, multi-line string.

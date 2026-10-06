@@ -33,6 +33,23 @@ modified: 2026-09-08T04:45:17.635Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## for thinking effort , there is only off/low/medium/high, is there any way to add a xhigh thinking effort? 
+- the picker's option list is not defined in the app at all — the daemon ships a per-model thinkingOptions list, and the app just renders it. Whether you can get xhigh depends entirely on which agent/model that picker belongs to, and for Claude it's mostly already implemented.
+  - Each provider in the daemon produces `AgentModelDefinition.thinkingOptions` (an AgentSelectOption[]) in its provider snapshot.
+- Where the list comes from, per provider
+  - Pi — hardcoded PI_THINKING_OPTIONS which already includes xhigh, filtered per model by model.thinkingLevelMap
+
+- configuring thinkingLevelMap for models one by one is verbose , is there any way to configure it for all  and let users choose it if they want?
+  - Pi has no provider-level or global thinkingLevelMap
+  - The models.json schema (ProviderConfigSchema) only supports per-model thinkingLevelMap.
+  - This is deliberate, not an oversight. Pi's source of truth is getSupportedThinkingLevels(model): for a reasoning model, off/low/medium/high are always offered, but xhigh/max only appear if the map explicitly lists them 
+
 - ## Why does "build" script not exist in package.json? how to build this plugin and install to paseo mac app. source code for paseo is at folder ../paseo
 - plugins are authored directly in source TypeScript and do not produce an ahead-of-time dist/ bundle on disk
 - Paseo is the Compiler Host: When Paseo installs or runs a plugin, Paseo’s daemon discovers index.server.ts and index.client.tsx, and compiles them in-memory using its internal esbuild compiler

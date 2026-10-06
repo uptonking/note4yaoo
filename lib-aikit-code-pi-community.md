@@ -40,6 +40,85 @@ modified: 2026-08-14T21:43:42.546Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Pi v0.99.0 is out! _20260930
+- https://x.com/PiChangelog/status/2104986274730029265
+  - Codemode runs model-written JavaScript in a QuickJS sandbox that calls pi's tools in parallel; MCP servers are now built-in via mcp.json or pi.registerMcpServer().
+  - Codemode runs model-written JavaScript in a QuickJS sandbox that calls pi's tools; enable with defaultTools or --tools, configure with codemode.mode and codemode.inlineBudget. tool_search finds undeclared tools and declares them on demand.
+  - MCP servers over stdio or streamable HTTP with OAuth come from mcp.json (global or per-project once trusted) or pi.registerMcpServer(); managed with /mcp and pi mcp add|remove|list|login|logout.
+  - Sign in with ChatGPT is now available in /login 
+
+- ### Pi 1.0 shipped with codemode _202610
+- https://x.com/lucataco/status/2105829482741301696
+  - Instead of 50 tool calls dumping raw output into context, the agent writes one script that does the work and returns only the answer
+  - it's off by default, update settings to always have it or call it directly for one offs:  "pi --tools read, bash, edit, write, codemode"
+
+- https://x.com/mitsuhiko/status/2105005860673954272
+  - mcp and codemode are just shipped extensions. If you turn off tools, they are gone and you can disable those with "pi config" btw.
+
+- https://x.com/chasen_liao/status/2105137326938878198
+  - 新版本 Pi 如何开启 code mode
+  - 在 ~/.pi/agent/settings.json 加一行就行：  "defaultTools": ["+codemode"]
+  - 单次临时开：  pi --tools read, bash, edit, write, codemode
+
+- [Code Mode: the better way to use MCP | Cloudflare Blog _202509](https://blog.cloudflare.com/code-mode/)
+
+- ### Pi 新东西MCP + Codemode，一分钟给你讲清楚
+- https://x.com/xiaomovps/status/2105919712727367821
+  - MCP 负责告诉 Pi“我有哪些工具”，Codemode 负责决定“这些工具怎么一起干活”。
+1、最直接影响的是上下文
+
+以前一个 MCP 有几十个 Tool，Tool Schema 很可能从第一轮就全部塞给模型。
+
+现在 Pi 默认不会这么干了。
+
+模型只知道这里有 GitHub、Linear 这些能力，真正需要的时候再通过 Tool Search 去找具体工具。
+
+也就是说：
+
+工具可以越来越多，但 Context 不需要跟着一起变胖。
+
+2、多个 Tool 可以一次一起跑
+
+比如查 20 个 Issue，再筛出最严重的 5 个。
+
+以前可能是：
+
+调用 Tool → 返回结果 → 模型继续想 → 再调用下一个 Tool。
+
+Codemode 则可以直接写一段 JS，在里面并行调多个 Tool、过滤结果，最后只把真正需要的内容交给模型。
+
+中间那些几十 KB 的原始数据甚至不用全部进入 Context。
+
+3、 PI 的 token 和响应速度
+
+MCP 装得越多，以前越容易出现：
+
+Prompt 越来越大、Cache 容易变化、每轮都带一堆根本用不到的 Tool。
+
+现在更像按需加载。
+
+你装 5 个、10 个 MCP，不代表每一轮模型都要背着它们一起跑。
+
+这其实又回到了 Pi 一直在做的事情：
+
+不是限制 Agent 能力，而是让它只在需要的时候看到需要的东西。
+
+但是我具体测试下来的话 会有一些影响，还不是很稳定，所以在使用 MCP 的时候 我会默认把这个模式关掉
+
+现在这个模式是 MCP 的默认模式，等后续官方的调整，不然你在正常使用的时候会出现一些问题
+
+- Claude Code 现在也这样，工具先只有名字，用到再拉 schema。我一个会话里几十个工具都是这么挂着的
+
 - ## Pi's New Approval System _202606
 - https://x.com/mitsuhiko/article/2064060467975520341
   - Pi does not have a command approval feature, so what it runs, it runs. We still think that approvals that come up all the time are not a great idea, because you get fatigue. 

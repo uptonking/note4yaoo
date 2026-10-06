@@ -1320,7 +1320,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 ## codex
 
 # llm-hub-lite/vps 🚧
-- i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cursorapi/relaichor1, worker_2 node deploys librechat/wapdf/aichor/relaichor/searx/verge2, worker_3 deploys flowy/aichor3, worker_4 deploys wabase/verge.
+- i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cpamp/cursorapi/relaichor1, worker_2 node deploys librechat/wapdf/aichor/relaichor/searx/verge2, worker_3 deploys flowy/aichor3, worker_4 deploys wabase/verge.
   - all services are running well on my 5 vps.
   - Most requests should go to leader node first, then proxying to follower/worker nodes.
   - the current architecture of Foundation apps/services and Consumer apps/services is good.

@@ -280,6 +280,9 @@ modified: 2025-03-22T16:10:24.856Z
 
 - usecases(有特色不代表有需求): work/doc, code, design
   - 使用频率: markdown > editor > ocr, citation > pdf-editing > bases > ocr
+- 模型
+  - 综合能力: 高级/top > 甜品/flash > 快速/lite/mini
+  - 使用频率: 甜品 > 快速 > 高级
 - 能帮用户盈利的工具更值得做(最好是需求大到付费都难有好的体验)
   - ai, doc
   - coding工具

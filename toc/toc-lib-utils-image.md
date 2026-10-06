@@ -694,6 +694,16 @@ modified: 2023-04-04T22:39:45.442Z
   - Pro currently unlocks:
     - Automatic1111 integration (send prompts/settings back and forth)
 
+- https://github.com/Inginnng/EditHere /MIT/202610/cpp
+  - EditHere — 截图、写下意见、直接调整布局，把修改意图一次交给 AI。
+  - 你圈出区域、写下意见，或者直接把组件拖到想要的位置；EditHere 把原图、批注坐标和布局变化打包成一份 JSON，交给 Codex、Claude Code、WorkBuddy、Qcode 等任何 AI 工具。
+  - [【开源自荐】EditHere--帮助你准确修改AI生图、前端、游戏、视频的超级万金油工具 - LINUX DO _202610](https://linux.do/t/topic/2983115)
+    - 而现在的一些批注工具，例如 Agentation，他是只能用于批注 Html 这种已经组件化的结构的，是属于：人有想法，工具先读懂组件，再将修改意见表达给 AI，但是这种方式不能用于一些无法直接得到结构的前端上，局限性实在是太大。
+    - 所以我做出了这个 EditHere，直接对画面进行截图，然后对画面进行批注，再将批注结果转为 JSON，直接交给 AI，变成：人用工具表达想法，AI 自己读懂组件和修改意见。完美适用于所有前端页面，甚至可以拓展使用到 AI 生图，甚至视频制作上！！
+    - 这是一个完全万金油的工具，适用于所有 Agent，所有页面修改，不是 Agent，只是作为你和 Agent 交互的接口工具
+    - AI 生图示例（现在 GPT 的批注工具无法同时批注多个，同时无法表达位置关系的变化，这个工具可以一次性表达多个修改需求，修改的次数越少，原图细节保存越多）
+    - 如果完全不能读图的话，建议是先交给便宜的读图模型（例如 deepseek4.1flash）来进行解析，不过现在已经基本上没有不能读图的模型了，所以没有专门适配
+
 ## img-metadata
 
 - https://github.com/863401402/image-provenance /MIT/202605/js

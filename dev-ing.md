@@ -115,6 +115,7 @@ HOST=0.0.0.0 PORT=8080 react-scripts start
 next dev -H 0.0.0.0 -p 3000
 
 npm i -g npm yarn pnpm corepack serve @dotenvx/dotenvx opencode-ai @openai/codex @kimuson/claude-code-viewer   @deepseek-ai/dsh @github/copilot
+@ooxml-dev/cli
 npm up -g skills @getpaseo/cli @earendil-works/pi-coding-agent  
 ```
 
@@ -344,6 +345,25 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - ?
 - dev-log
   - ?
+
+## 1005
+
+- 👷: 实测同一模型的不同thinking effort对tool calling的理解和使用不同， step-3.7-flash 的high 能快速理解paseo的browser tools, 但medium程度的思考有时找不到browser tools
+  - 实测启用pi最新的codemode后 grok-4.7 xhigh 极少概率能找到并使用 browser tools, 大多数时候都找不到tools; 不启用 codemode 时一直找不到
+  - gpt-6-luna/gemini-3.6-flash一直能轻松找到
+
+- ⚠️ fix dartnode mining
+  - this is XMRig cryptominer malware, not a memory leak. It mines Monero to pool.supportxmr.com — the 2.28 GB RSS is exactly the RandomX dataset size. 
+  - The miner was launched from SSH session 7311, RemoteHost 104.28.205.21 at 2026-10-04 15:49:46. 
+  - Second malware component found: /tmp/bp_2161.sh — a Bitping botnet dropper (Russian comments, hides containers as kworker-poll/systemd-update with --restart=always, wipes bash history). 
+  - 22 successful root password logins from 5 attacker IPs (185.121.108.3, 104.28.237.x, 104.28.205.21, 108.165.12.55)
+  - SSH hardening verified: new key sessions work, password auth refused. 
+- [怀疑 DartNode 服务商侧初始密码泄露——我的两台 VPS 被挖矿了 _20260930](https://www.nodeseek.com/post-955971-1)
+  - 入侵来源 IP：
+  - 185.121.108.3（乌克兰，AS43815 Nash Prostir LLC）
+  - 103.29.127.12（孟加拉，AS38067 Radiant Communications）
+  - 108.165.12.55（与受害机同机房的内网段）
+  - 104.28.205.19 / 104.28.237.19（Cloudflare WARP 共享出口，仅作参考）
 
 ## 1004
 

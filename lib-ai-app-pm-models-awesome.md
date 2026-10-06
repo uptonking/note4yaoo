@@ -1481,6 +1481,10 @@ modified: 2026-06-20T15:49:57.019Z
   - 刚刚发现暂时只可用oai协议
   - 可用模型：minimax-2.5（其他模型陆续上线）
 # paid-api 💰
+- 模型
+  - 综合能力: 高级/top > 甜品/flash > 快速/lite/mini
+  - 使用频率: 甜品 > 快速 > 高级
+
 - models
   - cost-auto
     - 2609: luna, mimo, deepseek-v4.1-flash, gemini-3.8-flash, grok-4.6, composer-2.5, devin-swe2
@@ -2484,10 +2488,13 @@ modified: 2026-06-20T15:49:57.019Z
   - [LingShu AI ](https://api.strategyhub.cc/keys)
     - cursor-claude--0.4x
     - ccmax--0.7, 混池 并发不大
-  - https://tkapi.cc.cd/keys
-    - ccmax--0.6x
   - [joeapi ](https://api.joealot.com/keys)
     - cc带审查--0.5x
+    - 反代自 claude-code cli
+  - [君の星辰 ](https://ai.centos.hk/pricing)
+    - CCMAX特惠--0.6x, 限制在Claude code 中使用
+  - https://tkapi.cc.cd/keys
+    - ccmax--0.6x
   - [智元API ](https://pool.chaozhiyuanai.com/keys)
     - ccmax--0.8x
   - [JinnyAPI ](https://jinnyapi.com/keys)
