@@ -2922,6 +2922,9 @@ modified: 2026-06-20T15:49:57.019Z
   - 并发才给5, 不然给人刷吗
   - gpt, kiro
 
+- [野菜API ](https://yeschoy.com/)
+  - 一个客户端，完成应用接入、模型选择与价格查看。
+
 - [PackyAPI](https://www.packyapi.com/pricing)
   - [Packy - 模型健康面板](https://check.linux.do/group/Packy)
   - [PackyAPI 使用文档](https://docs.packyapi.com/)
@@ -3185,6 +3188,24 @@ modified: 2026-06-20T15:49:57.019Z
 - [Smz - 数字商品自动发卡平台 ](https://shop.smz6.com/)
   - pp-¥1.6
 
+## esim
+
+- [Jetpac App – Your All-in-One eSIM for Global Travel ](https://www.jetpacglobal.com/eterna)
+  - [分享一个全球终身免费旅行eSIM _202610](https://www.nodeseek.com/post-968222-1)
+  - 这个平台宣传的是全球首款终身免费旅行eSIM
+  - 每年最多可获得4次每次100MB的免费流量
+  - 国家记得选美国才行
+  - 测了IP是新加坡的（这种旅行卡怎么都是新加坡IP）
+  - 有需要的可以当个备用
+  - 🐛 需要先用美区号码接码，然后才能领esim
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 ## email 📧
 
 - email-providers
@@ -3256,6 +3277,10 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [极速的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/jishu)
   - Gmail母号 邮箱，正规账号，单账号独立注册。 可用opus4.6  4.7
+
+- [edu邮箱 - 16688 ](https://www.16688.com.cn/shop/S975721)
+  - 蒙特克莱尔州立大学校友邮箱
+  - 达尔豪斯大学邮箱 后缀@dal.ca 
 
 ### outlook-manager
 

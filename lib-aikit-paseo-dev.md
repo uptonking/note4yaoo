@@ -99,6 +99,7 @@ modified: 2026-09-05T00:27:42.212Z
 - 与im平台的集成，类似openclaw
   - telegram
   - qq
+  - codebuddy/workbuddy
 
 - cowork/workbuddy-like
   - implement integrations for google-docs/msoffice/lark like github/gitea
@@ -176,6 +177,7 @@ modified: 2026-09-05T00:27:42.212Z
 
 - agent-providers
   - external: deepseek-harness, cursor-cli, commandcode
+  - codebuddy/workbuddy
 
 - built-in agent: 移动端可以直接执行agent，而不依赖桌面端或外部agent
   - 需要支持已有的 agent profile 配置

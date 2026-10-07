@@ -17,6 +17,11 @@ modified: 2022-11-07T10:25:12.034Z
     - Providence Park: 1844 SW Morrison Street, Portland, OR 97205
       - +15035535400
       - G8C5+J7 Portland, Oregon
+    - Spring Street Park: 428 S Spring Street, Los Angeles, CA 90013
+      - BUZZ wine beer bottleshop & bar
+      - 460 S Spring Street, Los Angeles, CA 90013
+      - +12136222222
+      - 2QX2+27 Los Angeles, California
     - West Hollywood Park: 647 N San Vicente Blvd, West Hollywood, CA 90069
       - +1 3238486534
       - West Hollywood is a city in Los Angeles County, California, United States
@@ -300,6 +305,20 @@ mineru paddleocr site:github.com -inurl:"github.com/opendatalab/" -inurl:"github
 
 - [Morphe App for YouTube and Reddit ](https://morphe.software/)
   - Morphe is an open-source Android app created by former ReVanced developers who left due to internal conflicts. Like ReVanced, it patches the official YouTube app to remove ads, enable background playback, and unlock Premium features — but with more transparent governance and welcoming contribution policies.
+
+- ## 💡 [【教程】成功把送中的ip拉回日本，只用了一周时间 _202511](https://www.nodeseek.com/post-503481-1)
+  - 前段时间绿云多个ip段被集体送中，我是其中之一，虽然是集体送中，但也拉回来了，下面是方法。
+  - 第一，先去向谷歌报告IP问题
+  - 第二，用插件改定位， 安装Location Guard https://github.com/mrfanii/Location-Guard-V3
+  - 打开Location Guard插件，选择Fixed Location，在地图上点击你IP想要拉回去的位置，比如我的原本是日本，就找到日本东京，点击一下地图上的位置。
+  - 来到Options选项，Default level默认设置改为Use fixed location
+  - 打开Google地图 https://www.google.com/maps 点击右下角获取定位，此时就会定位到你刚才在插件里所点击的位置，说明成功了
+  - Google随便搜索一下，滑到底部，点击 update location 来更新位置。
+  - 之后每天用一下Google搜索和YouTube就行了，我是用了一周就成功了，集体送中的话，最好是人多力量大，发个贴让你那个ip段的人一起参与进来。
+
+- https://github.com/anthonysgro/geospoof 
+  - https://geospoof.com/
+  - Browser extension and iOS app that spoofs your gps, geolocation & timezone, and auto-syncs to your VPN. Firefox, Chrome, Edge, Brave & Safari.
 # twitter/x
 - search
   - [How to use advanced search – find posts, hashtags, and more](https://help.x.com/en/using-x/x-advanced-search)

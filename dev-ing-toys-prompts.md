@@ -1331,6 +1331,8 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 
 - you can login and control the vps by running `ssh root@166.88.` as root user if you want.
 
+- this repo should be a reproducible apps/services stack using docker. 
+
 - ssh should only be used for the first deployment, later devops should not use ssh, daily devops should work with workflow like `github push > woodpecker update` .
 
 - please review existing apps/services architecture/implementation, analyze all the services/docs/code if you want, then make a comprehensive plan to improve the docker architecture/servces in a single vps, making all the services correct, robust, extensible in the long term. 
@@ -1348,8 +1350,6 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 
 - caddy/beszel/woodpecker are the foundation of the whole docker stack, they should be correct and robust for bootstrapping and restarting. other apps/services should be extensible to add/disable/enable, for example, new-api and cliproxyapi should be enabled by default, but they should support to be disabled by environment variables like `APP_NEWAPI_DISABLE=true` or `APP_CLIPROXYAPI_DISABLE=true`. 
 - please design a extensible architecture to support to add/disable/enable new apps/services in the future. docker/config for foundational caddy/beszel/woodpecker should not be coupled to other apps/services.
-
-- this repo should be a reproducible apps/services stack using docker. 
 
 - please improve the bootstrap/restart related scripts for the use case of restarting vps so that when vps is restarted, all the services including baszel can restore correctly and quickly, without data loss. 
 
@@ -1535,6 +1535,7 @@ in a multi-nodes high-availability architecture
   - verge2 and verge have the same features and use the same docker image, but they are 2 unrelated services as 2 orphan service without high availability.
   - source code for verge/verge2(hysteria) has been cloned at folder `../all-vpn-proxy/hysteria` for reference if you want.
   - source code for clashx meta has been cloned at folder `../all-vpn-proxy/ClashX.Meta` for reference if you want.
+  - source code for FlClash has been cloned at folder `../all-vpn-proxy/FlClash` for reference if you want.
 
 - you might refer to how wabase/verge are configured on worker_4 node. requests to wabase still go to leader node first, but requests to verge goes directly to worker_4 node.
   - similarly, on worker_2 node, only requests to verge2 should go directly to worker_2 node, all other requests to services like librechat/wapdf/aichor/relaichor/searx should still go to leader node first. 
@@ -1625,6 +1626,42 @@ in a multi-nodes high-availability architecture
 ## 🐛 issues
 
 - 配置其他域名如 https://datalking.dpdns.org 重定向到 https://wabase.aichorage.de 时，提示 SSL handshake failed
+# verges/raw-ip-vps
+- this repo should be a reproducible apps/consumer-services stack using docker. 
+- for daily deployment, after code changes are pushed to github, changes will be git pulled to vps, then user can run restart scripts to restart services.
+
+- please refactor/improve this project to be able to automate devops on a single vps node, with environment variables or interactive shell scripts for automation.
+
+- caddy service should be the foundation of all other services . 
+  - All requests should go to caddy first, then proxying to other consumer services.
+
+- please design a solution to deploy a hysteria consumer service called `verges`. it is enabled by default. in cloudflare, i have already configured `verges.aichorage.de` to the vps node ip.
+  - source code for verges(hysteria) has been cloned at folder `../all-vpn-proxy/hysteria` for reference if you want.
+- more service might be added later.
+
+- all services/apps except caddy should support to be enabled/disabled by configuration or environment variables, caddy is always enabled. if user wants to disable a service, configuration changes should be pushed to github . Is this a good idea? 
+
+- please make it configurable/extensible/flexible to change which vps ip, so that vps ip can updated easily. data loss when changing ip is allowed, user might migrate data manually.
+  - the architecture should be extensible to add new consumer apps/services later.
+
+- please also improve the bootstrap/restart related scripts for the use case of restarting vps so that when vps is restarted, all the services can restore correctly and quickly, with the same data/config. 
+
+- please review existing apps/services, analyze all the services/docs/code if you want, then make a comprehensive plan to refactor/improve for a single-node docker services architecture, making all the services correct, robust, extensible in the long term. 
+
+- 
+- 
+
+- you might do multi-stage implementation to deploy the code if it helps, 
+- you might run `ssh root@137.175.62.131` as the vps node and do whatever you want.
+
+- 
+- 
+- 
+- 
+- 
+
+- this repo is still beta software.
+- legacy/unused code might be refactored or removed. compatibility layer is not required. just using the latest code/logic is ok.
 # more
 - When a task requires deleting, moving, or renaming more than one file, stop and present a clear list of affected files. Do not execute the command until the user provides approval or confirmation. 
 
