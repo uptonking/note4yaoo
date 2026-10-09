@@ -1367,7 +1367,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - analyze related code/config, find the reason, then fix the issue, 
 
 - you might do multi-stage implementation to deploy the code if it helps, 
-- you might run `ssh root@23.254.182.254` as leader node and do whatever you want.
+- you might run `ssh root@107.150.7.138` as leader node and do whatever you want.
 - you might run `ssh root@107.175.66.2` as worker_1 node and do whatever you want.
 - you might run `ssh root@166.88.160.139` as worker_2 node and do whatever you want.
 - you might run `ssh root@192.3.91.103` as worker_3 node and do whatever you want.
@@ -1581,6 +1581,16 @@ in a multi-nodes high-availability architecture
 - add a option to disable restic backup for migration, it should be off by default, but turn it on for worker_3 because 192.3.9xx.xxx has very little disk size.
 - finally explain to me step by step how to migrate worker_3 node.
 
+- I want to change vps ip of worker_4 node from current ip 198.46.xx.xx to a new vps with ip 23.94.xx.xx.
+  - root permission is given on both vps and target-ip vps is a new vps. dns has already been updated in cloudflare.
+  - there is a helper script at ops/change-vps-for-consumer-node.sh, it can receive source-ip and target-ip, then `scp` existing config/secrets/sqlite/pglite/data from source-ip to current mac/linux at `~/backup-vps` as temporary backup(local restic backup should be ignored, logs or data loss is allowed), then `scp` temporary backup at `~/backup-vps` to target-ip with the same location. then run `scp ops/bootstrap-vps.sh "root@targetIp:/root/llm-hub-lite-bootstrap.sh"`, then run bootstrap script on target-ip vps to bootstrap with the `node-id` from source-ip to start the services. finally remind user to manually clean up `~/backup-vps` and run`ops/clean-vps.sh` on source-ip vps.
+  - after changing ip, all vps should still work, all services  on worker_4 node should still work.
+  - How do you like my idea? If it is okay, you might improve it. then make a comprehensive plan to implement it.
+
+- you might run `ssh root@198.46.xx.xx`  or  `ssh root@23.94.xx.xx` and do whatever you want.
+
+- 
+- 
 - 
 - 
 

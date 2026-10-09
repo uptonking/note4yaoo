@@ -2493,48 +2493,6 @@ dedirock配置1c2.5g 15gb 6.45$/year
 - DediOne是不是最便宜12.99刀一年？dedirock好像我看着一年$9
   - 差不多，dedirock我黑五买的$7, 现在应该也是差不多$10，一个月还是断过两次，一个小时都能恢复，不过考虑这个价格也就还好
 
-- ## [dedirock 是灵车吗 - IDC Flare _202511](https://idcflare.com/t/topic/37735)
-- 他们家客服做的很好，去这个贴子下留言还能流量翻倍+IPv6
-- IP烂完了，但是好在速度可以，7刀只希望能用的久点跑得晚点 
-
-- 这家去年就在了，至少开了一年了吧，应该不是灵车……（就7-8刀要什么自行车……
-
-- 老板在LET上高频互动, 工单回复也比较及时. 但是他的这个后台不显示IPv6, VNC无法连接, 工单一顿回最后也没解决, 无所谓了, 小玩具.
-
-- 用一年不亏，两年血赚，三年他还不跑的话可以考虑传家了
-
-- 问一下这种机器一般用来做什么？
-  - 探针
-
-- 他家的 IP 质量很一般， IP 风险完全看运气开出来的。
-
-- ## [DediRock的稳定性怎么样？ _202601](https://www.nodeseek.com/post-599346-1)
-- 灵车要啥稳定性， 一个月大半夜重启两次，每次半小时
-
-- 非常差，我大盘都停了3次了 都是数据清零
-
-- 我是美东水牛城的机房，感觉还可以啊。缺点是延迟高，客服一般吧。优点是稳定而且几乎0丢包。晚高峰体验比rn dc2好。
-
-- ## [问一下ccs dedirock cloudnium _202608](https://www.nodeseek.com/post-885585-1)
-- 机房一样线路一样 机器配置定价不同
-
-- ## [盘一下cloudnium，mjj参考一下 _202607](https://www.nodeseek.com/post-804064-1)
-  - cloudnium曾经是nextarray合伙人，nextarray有达拉斯自有机房，但是老板生了个病死掉了，合伙人接收就叫cloudnium了。早期nextarray机器迁移到了breezehost（就是杜甫盲盒那一家）
-  - cloudnium开始就是做杜甫和托管生意的，从San Angelo的frontier机房起家，后来逐步拓展业务的
-  - 后来frontier机房不作为，杜甫全迁移到了达拉斯，我就溢价把传家宝卖了。
-  - 他家效率非常低，机器是不知道从哪儿淘来的硬件，迁移杜甫换了两台都没法装系统，都是硬件有毛病
-  - 今天的活动款其实把老用户背刺得连裤衩子都不剩了，之前一直有1刀的配置，现在0.54刀
-  - 目前cloudnium 达拉斯在tier.net机房，和曾经的nextarray没有关联，应该不属于左手倒右手
-
-- 刚刚好这个价格就差不多是IP成本
-
-- [cloudnium咋样？ _202312](https://www.nodeseek.com/post-50924-1)
-- 成立時間太短，不建議放重要的數據。
-
-- 无限流量真的挺好的 
-
-- 偶尔给你失联两三天，目前是吃灰
-- 平均每月断网一天。
 # discuss-vendor-lightlayer
 - ## 
 
@@ -2565,7 +2523,10 @@ dedirock配置1c2.5g 15gb 6.45$/year
 
 - ## 
 
-- ## 
+- ## [【已出】breadcloud 面包云 jp, 12刀/年, 满血GSL, 移动快乐鸡 _202605](https://www.nodeseek.com/post-724910-1)
+- 移动晚高峰也快乐吗
+  - 我HY2用的没有感觉，蛮快乐
+- 联通感觉还好吧
 
 - ## [【面包云5折放货了】Breadcloud US 5折 12刀 有货了 _202607](https://www.nodeseek.com/post-815348-1)
 - 前阵子被D了，涨价到了2刀/月。这是5折 12刀年付。
@@ -3080,7 +3041,7 @@ Gemini、Reddit 被拉黑；
 
 - [racknerd快讯，dc02 所有机器将物理迁移到 dc03 _202605](https://www.nodeseek.com/post-736588-1)
 - dc2机房是属于mc的，mc被ec收购了，ec也收购了cc，现在cc和dc2都是一家，rn估计没续约找借口
-# discuss-vendor-dartnode
+# discuss-vendor-cloudnium/dedirock/dartnode
 - cons
   - backup restore 慢到不能忍
 
@@ -3091,6 +3052,150 @@ Gemini、Reddit 被拉黑；
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [cloudnium的小鸡，CPU不同机房的怎么不一样啊？ _202607](https://www.nodeseek.com/post-831791-1)
+Intel(R) Xeon(R) Platinum 8168 CPU @ 2.70GHz
+Intel(R) Xeon(R) CPU E5-2699 v4 @ 2.20GH
+这是怎么回事啊
+0.54小鸡 和 后来9刀年付小鸡
+
+- Intel(R) Xeon(R) Platinum 8168 CPU @ 2.70GHz是LA才有的
+水牛城就是Intel(R) Xeon(R) CPU E5-2699 v4 @ 2.20GH
+这是商品页写明白的
+
+- 超售极其严重，CPU型号也就图一乐
+
+- ## [Cloudnium LA-2测试留档+一些小声bb _202608](https://www.nodeseek.com/post-879490-1)
+- E5-2699 v4 最垃圾的U，能给我换哪去？
+- 纽约就是E5-2699 v4, 这没问题, 商品页写的
+
+- ## [cloudnium 和 dedirock 都是一个机房的机器吗？ _202609](https://www.nodeseek.com/post-913663-1)
+  - cloudnium 和 dedirock 都是一个机房的机器吗？ 都是 ccs 的？
+- 是的，我手里就是
+
+- 机房有重叠
+
+- ## [cloudnium实际用下来没有dedirock稳，有时候有点搞不懂mjj _202610](https://www.nodeseek.com/post-971844-1)
+两台我都有
+dedirock炸都是大盘鸡，其他的机器是很稳的
+但是cloudnium爱重启一点不好用
+有时候有点搞不懂mjj
+到处听风就是雨
+
+- dedirock 至少没有动不动自动重启的毛病
+
+- ## [灵车对比体验，dedirock VS cloudnium _202608](https://www.nodeseek.com/post-896311-1)
+  - 这两个我主要是吃灰挂探针，偶尔跑个NS，平时都丢给盆友用了
+  - 网络方面：根据我朋友的反馈，dedirock体验更好一些，不过移动容易炸上天
+  - 性能方面：cloudnium 更好，毕竟多一个核心，单核也更好
+  - 稳定性方面：cloudnium拉了，不知道为什么隔几天就重启
+  - 总体来看dedirock更佳
+
+- dedirock 不算灵车, 只能是廉价车性价比
+- dedirock收了一台，目前用了1个月了很稳定的
+
+- dedirock广东电信很优秀。其他电信就不清楚了
+
+- 我的达拉斯cloudnium，稳定的一B
+
+- ## [Dedirock流量用尽会怎么样 _202608](https://www.nodeseek.com/post-890650-1)
+  - 最近在大量下载国外项目的数据，需要十几T的流量，Dedirock的7$翻倍机流量用尽后会怎么样，？关机还是限速...
+  - 确认了流量用完后Network Suspended，拔线。
+  - 但VNC可以控制。 网络拔线。VNC可用
+
+- 8月1号工单回复的: Once the monthly bandwidth limit is exceeded, the server's Network is suspended until the bandwidth allocation is reset at the start of the next billing cycle or additional bandwidth is purchased.
+
+- 用完了吗，还能不能登陆ssh
+
+- [【收】DediRock $5.8，已流量翻倍 & IPV6 _202605](https://www.nodeseek.com/post-747918-1)
+- 超量没人管的 
+- 确实是流量超了还能正常用。亲测有效。上个月我29日流量用完了。29-30日依然正常可用。官网面板统计也是超了。
+
+- ## [我觉得cloudnium 0.54/month 现今比 dedirock 6.45刀/year更有性价比。。。 _202607](https://www.nodeseek.com/post-844717-1)
+  - cloudnium配置2c2g 20gb 6.48$/year
+  - dedirock配置1c2.5g 15gb 6.45$/year
+  - 我这里电信两者测速白天也能跑到400m左右，晚高峰在200m左右
+  - 价格差不多但是性能方面却有差，且现在dedirock push或者改邮需要5刀，cloudnium随便改邮
+  - 虽然价格都比较灵，但是两者都挺稳的，没有宕机过啥的
+
+- 如果不考虑灵车属性，就这几块钱，也没啥差距其实
+
+- 流量吧，dedirock有4t，另一个只有一半
+- 但是这家用超了也不关机的
+- 我用超了也没有关机的
+
+- 不上CF，我这一点速度都没
+
+- 如果确定cpu是8168不会换就好了，重启有概率换cpu还是不太敢买
+
+- 别忘了，dedirock的tos是有对资源使用限制的，我记得是25%以上cpu使用率不得超过90秒。现在是不管，说不定什么时候就要用这个条款来杀鸡了
+
+- ## [已出完 cloudnium 0.54刀 6152 _202607](https://www.nodeseek.com/post-840640-1)
+  - 一台8168，已重启过多次。
+  - 三台Gold 6152
+  - 都是LA的
+  - 8月3号到期，剩余流量有的已超。超的限速在七八十M。
+  - 支付宝买U被风控不收不付，所以只能微信交易了
+
+- ## [cloudnium 0.54的小鸡，流量超过后，是给暂停机器，还是生成账单需要再支付？ _202608](https://www.nodeseek.com/post-851638-1)
+- 翻了一下历史帖 好像是限速
+
+- 你能用超？我上次买了，测速，被限速几十，去vps上wget也是几十M
+
+- 这个ip段怎么和RN的一样呢
+ip有没有被gemini送中
+
+- ## [【已出】Cloudnium 0.49刀/月 洛杉矶 _202607](https://www.nodeseek.com/post-805009-1)
+  - 2C/2G/20G/2T
+
+- 需要信用卡付款（低于0.5用不了支付宝），原来是8168重启变成6152了，应该可以工单改年付
+
+ ## [dedirock 是灵车吗 - IDC Flare _202511](https://idcflare.com/t/topic/37735)
+- 他们家客服做的很好，去这个贴子下留言还能流量翻倍+IPv6
+- IP烂完了，但是好在速度可以，7刀只希望能用的久点跑得晚点 
+
+- 这家去年就在了，至少开了一年了吧，应该不是灵车……（就7-8刀要什么自行车……
+
+- 老板在LET上高频互动, 工单回复也比较及时. 但是他的这个后台不显示IPv6, VNC无法连接, 工单一顿回最后也没解决, 无所谓了, 小玩具.
+
+- 用一年不亏，两年血赚，三年他还不跑的话可以考虑传家了
+
+- 问一下这种机器一般用来做什么？
+  - 探针
+
+- 他家的 IP 质量很一般， IP 风险完全看运气开出来的。
+
+- ## [DediRock的稳定性怎么样？ _202601](https://www.nodeseek.com/post-599346-1)
+- 灵车要啥稳定性， 一个月大半夜重启两次，每次半小时
+
+- 非常差，我大盘都停了3次了 都是数据清零
+
+- 我是美东水牛城的机房，感觉还可以啊。缺点是延迟高，客服一般吧。优点是稳定而且几乎0丢包。晚高峰体验比rn dc2好。
+
+- ## [问一下ccs dedirock cloudnium _202608](https://www.nodeseek.com/post-885585-1)
+- 机房一样线路一样 机器配置定价不同
+
+- ## 📌 [盘一下cloudnium，mjj参考一下 _202607](https://www.nodeseek.com/post-804064-1)
+  - cloudnium曾经是nextarray合伙人，nextarray有达拉斯自有机房，但是老板生了个病死掉了，合伙人接收就叫cloudnium了。早期nextarray机器迁移到了breezehost（就是杜甫盲盒那一家）
+  - cloudnium开始就是做杜甫和托管生意的，从San Angelo的frontier机房起家，后来逐步拓展业务的
+  - 后来frontier机房不作为，杜甫全迁移到了达拉斯，我就溢价把传家宝卖了。
+  - 他家效率非常低，机器是不知道从哪儿淘来的硬件，迁移杜甫换了两台都没法装系统，都是硬件有毛病
+  - 今天的活动款其实把老用户背刺得连裤衩子都不剩了，之前一直有1刀的配置，现在0.54刀
+  - 目前cloudnium 达拉斯在tier.net机房，和曾经的nextarray没有关联，应该不属于左手倒右手
+
+- 刚刚好这个价格就差不多是IP成本
+
+- [cloudnium咋样？ _202312](https://www.nodeseek.com/post-50924-1)
+- 成立時間太短，不建議放重要的數據。
+
+- 无限流量真的挺好的 
+
+- 偶尔给你失联两三天，目前是吃灰
+- 平均每月断网一天。
 
 - ## [怀疑 DartNode 服务商侧初始密码泄露——我的两台 VPS 被挖矿了 _20260930](https://www.nodeseek.com/post-955971-1)
   - 我在 DartNode 两台美国的小鸡，一台 2 核 4G 拿来跑点服务，一台 1 核 1G 当落地出口，都是 Debian 12。前天开始，那台 1G 的面板 CPU 一直顶在 100%。
@@ -4066,6 +4171,47 @@ DMIT AMD 配置
 - 你怎么证明这个机器是你的
 
 - free 根本不耐打，多 ip 打你跟没有一样， 除非设置严格的速率限制 WAF
+# discuss-os-linux
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [关于ubuntu和debian，大家觉得哪个好用 _202508](https://www.nodeseek.com/post-411487-1)
+- ubuntu强推他的snap包，很多人恶心这个
+
+- 纯看自己喜好。两者对普通人没啥区别。只是听说ubuntu默认安装的东西比debian多，如果想要轻量，debian可能好点。整体占用量可能低些。如果配置不是太低，两者可能没啥区别。
+默认都是桌面Ubuntu，服务器debian，实际随便自己咋玩。
+debian安装占用硬盘比ubuntu好像小。所有很多小鸡都是用debian。
+
+- ubuntu 私货太多，如果是台式机 笔记本的话会因为驱动的问题选ubuntu，云服务器的话直接debian不考虑
+
+- debian更轻量更保守。ubuntu是更激进和臃肿，比较适合新型硬件的物理机，能有更好的适配和兼容性。
+
+- debian，轻量一点，如果是桌面版部署还是ubuntu方便
+
+- 服务器我用Debian11，因为我的都是小小鸡，能省一点是一点
+桌面端我用Debian12，因为不用snap，更新慢出事少，轻量顺手
+
+- ## [debian和Ubuntu的选择，找点资料分享下。 _202503](https://www.nodeseek.com/post-300260-1)
+- 其实没这么麻烦, 小配置无脑debian
+
+- 对我来说就是，要用显卡驱动的首选Ubuntu，他们显卡驱动弄的比较好；除此之外，都是上Debian
+
+- reality协议最低需要debian多少版本。ubantu最低需要多少版本
+
+- 一般海外机子纯做节点的都直接用alpine加上docker，不整奇奇怪怪的
+ubuntu附加的屎太多
+debian用的libc太大
+alpine刚刚好
+
 # discuss-tips
 - ## 
 
