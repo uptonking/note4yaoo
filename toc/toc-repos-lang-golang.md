@@ -122,6 +122,10 @@ modified: 2025-04-17T08:17:04.770Z
     - I think LaTeX makes more sense in the python ecosystem at the moment. It is also already used by things like matplotlib, which also can natively output to LaTeX. I also think a lot of people who would want to use formulas in something like this are likely to be familiar with LaTeX since it's often used for scientific reporting.
     - I think the familiarity outweighs the simplification of switching to Typst right now.
 
+- https://github.com/NodePassProject/NodePassDash /BSD/202609/go/ts
+  - a modern web dashboard for managing NodePass endpoints, tunnels, and services. 
+  - It ships as a single Go binary (Gin + GORM + SQLite/PostgreSQL) with an embedded React (Vite + TypeScript + HeroUI) frontend, and provides real-time telemetry via SSE/WebSocket.
+
 - https://github.com/appleboy/gorush /8.6kStar/MIT/202509/go
   - A push notification micro server using Gin framework written in Go (Golang) and see the demo app.
   - Support Firebase Cloud Messaging using go-fcm library for Android.

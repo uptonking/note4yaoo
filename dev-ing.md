@@ -346,6 +346,37 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1008
+
+- vless vs reality
+  - These two aren’t alternatives. VLESS is a proxy protocol, and REALITY is a security layer that VLESS runs on top of. The real comparison is VLESS + TLS vs VLESS + REALITY.
+  - VLESS is the lightweight proxy protocol in Xray-core (also supported by sing-box). It handles UUID authentication and relays traffic, but it does no encryption itself, so it relies on whatever transport or security layer wraps it. VLESS with xtls-rprx-vision flow also avoids the “TLS-in-TLS” pattern, which is a known fingerprint.
+  - REALITY replaces normal TLS on the server side. Instead of presenting your own certificate, the server impersonates a real third-party site (the dest/SNI you configure, e.g. a big TLS 1.3 + H2 site). Clients that authenticate with your x25519 key and shortId get the proxy. Anyone else, including an active prober, gets transparently forwarded to the real site and sees its genuine certificate. Together with uTLS (mimicking a browser’s ClientHello), this makes the connection look like ordinary HTTPS to that site.
+- Rule of thumb:
+  - Direct VPS, no CDN: VLESS + Vision + REALITY is the common default.
+  - Need to hide the IP or survive IP-level blocking: VLESS + TLS over a CDN (WS/XHTTP).
+  - If TCP is heavily throttled, UDP/QUIC-based options like Hysteria2 or TUIC are worth a look, though they have their own detection tradeoffs.
+
+- xray-core 26.9.30 (bundled with 3x-ui 3.9.0) pins xtls/reality commit 8cdf7bf (2026-09-08), which hard-rejects any ClientHello that doesn't offer X25519MLKEM768 as the first key share. mihomo 1.19.30's chrome parrot doesn't send the ML-KEM hybrid → REALITY authentication failed. (sing-box 1.14.2 fails for the same reason.)
+- xray-core version gates: 
+  - ≥26.7.11 rejects mihomo/sing-box via a minClientVer default of 26.3.27, a
+  - ≥26.9.x (bundled with 3x-ui 3.9.0) requires ML-KEM-first ClientHellos, which mihomo doesn't send. Pinned xray v26.6.27; 
+  - deploy.sh now re-installs the pin after any panel update (XRAY_VERSION in indigenous-node/config.env).
+  - Known limitation: xray-core ≥26.9 clients (and possibly very new sing-box) can't connect to the pinned 26.6.27 server — mihomo is the supported client for now.
+
+- 🐛 Measurement summary so far: edge nodes have the best RTT from your Mac (169-176ms vs 205-220ms for the other proxies), but VLESS+Reality pays ~3 RTTs per connection (TCP + TLS 1.3 + request ≈ 3×176 ≈ 530-580ms), while your hysteria2 proxies pay ~1 RTT (~180-190ms). 
+  - mihomo has no client mux for VLESS, so the fix is a QUIC transport for the edge path: add a standalone hysteria2 server on indigenous (443/udp direct, plus gost UDP relay for relay mode), keeping VLESS+Reality as TCP fallback.
+  - mihomo has no client-side multiplexing for VLESS, so every connection pays 3 round trips. VLESS+Reality was kept untouched as the TCP fallback
+
+- 🤔 since indigenous node runs vless+reality, is it possible to support both primary node proxy forwarding mode and standalone no-forwarding proxying mode so that user can choose to use the mode they want?
+  - the current single inbound already serves both modes — gost is a transparent byte-pipe, so a client can already use edge-direct.aichorage.de:443 (direct) or edge.aichorage.de:8443 (via primary) with the same UUID/keys.
+  - What is missing is making the modes first-class and independently switchable (including "relay-only").
+  - Improvement: split into two inbounds sharing the same UUID/keys/shortIds
+
+- How should primary know where to forward to, and how should client entry be named?
+  - edge.aichorage.de → primary IP (client entry for the VLESS relay), edge-direct.aichorage.de → indigenous IP (used by gost as forward target + optional direct fallback). No IPs stored in git; matches the repo's 'DNS is source of truth' philosophy.
+  - Why two records: edge decouples the client entry from the primary IP, and edge-direct decouples the indigenous IP from the forward target. This matches the repo convention that "DNS is the source of truth" and makes it possible to reuse the indigenous-node scripts on another VPS simply by changing NODE_HOST in config.env.
+
 ## 1007
 
 - i want to deploy caddy and hysteria2-proxy/other-consumer-services on the same vps. caddy service should be the foundation of all other services . All requests should go to caddy first, then proxying to other consumer services.

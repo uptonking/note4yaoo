@@ -193,6 +193,120 @@ format-on-save - Automatically runs linters and prettier formatting hooks immedi
   - send agents to investigate, the where and the how
   - do smart fetching stop bloating context window with css and meta data, just content
   - And ponytail is a nice addition to keep changes under control. Do the bare minimum that meets the criteria.
+# discuss-pi-alternatives
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [DeepSeek Harness developer preview | Hacker News _202608](https://news.ycombinator.com/item?id=49285244)
+- How is that different from what Pi already does?
+  - Pi can only log what the model shows it. Many models keep their thinking traces hidden and only provide a hash or something to recover it on subsequent resumes. DeepSeek shows CoT traces, and is maybe the best model that does so, I think? Kimi stopped providing CoT traces a little while ago in their subscription service via Kimi Code, I believe. I haven't checked GLM or Qwen 3.8 Max, though I guess if you're hosting the open models yourself or using an alternative inference provider there's probably got to be some way to get at that data.
+  - Anyway, this particular harness isn't doing anything unique, but the combination of an official agent intentionally keeping the data and making it accessible to the user and a model API that provides all the information is unusual and worth calling out. It used to be common, most APIs and models and agents showed the reasoning, or could be configured to do so. Most no longer offer it.
+- pi also happily shows and stores deepseek CoT traces.
+
+- I have read the underlying paper, and found it may be useful, but not that useful.
+For those who want to know what it achieves: it adds hot-reload and dynamic enable/dispose capabilities to a plugin system, like the one in Pi agents, though they push the boundaries further, to the UI components and so on.
+
+- 👷(pi): just read the paper, and there aee definitely some interesting ideas in it.
+a plugin's registrations returning individual cleanup handlers is nice. in pi, you clean up all registrations in one go in the session-shutdown handler.
+
+i also like the use of generator to to clean up partial registrations nicely.
+
+the cross-plugin dependency injection and resolution i'm not so sure about. it comes with a lot of footguns and limitations as pointed out in the paper.
+
+works ok within a single compilation unit, i.e. a plugin with many modules. does not help with typing of cross-plugin dependencies.
+
+most plugins do not have dependencies on each other, so this more complex system doesn't win you much, e.g. with load order and conflicting registrations (i.e. two plugins registering the same tool).
+
+being able to reload a single plugin on change while letting the others not in its dependents list jug along is neat. but that also only works if plugins actually declare dependencies (see last paragraph), and also has a lot of limitations. and the simple case, a plugin with no dependencies or dependents, which i'd say is the 90% case, does 't need that complexity either.
+
+definitely cool stuff tho! remains to be seen how well it works in a real plugin ecosystem.
+
+> they push the boundaries further, to the UI components
+
+can you elaborate on this? pi extensions support contributions to the UI. in pi v1, they are limited to in-process UI. v2 splits server and client, and with that UI.
+
+- If you run the `dsh`, you can go to the Settings -> Plugins, and you can find that they just write all UI components as plugins(maybe not all, I don't check). Also, you may ask the harness to write a UI plugin for you, I just read some neat examples somewhere.
+  - ah. you can also ask pi to write a ui plugin for you. internals haven't migrated to plugin architecture yet tho.
+
+- Based on what I've read today, DeepSeek Harness seems to be similar to Pi Coding Agent in design. Both are barebones to start out and rely heavily on plugins. However, 3 things make DSH stand out. 
+  - 1. Plugins in DSH are required to have cleanup handlers, so I guess you could clean up plugins that are no longer used mid-session and prevent it from interfering with the current task? (unsure about this) 
+  - 2. DeepSeek V4 models are post-trained on DSH. Given how cheap DS V4 is compared to OpenAI and Anthropic models, running DS V4 in DSH could be much more cost-effective while barely losing performance. 
+  - 3. It's utilized and maintained by a large lab dedicated to open source AI. It's always nice to get new open source tools from large labs so that we are not always relying on small teams doing the heavy lifting.
+
+- ## [DeepSeek Harness vs Pi Agent are they converging on the same philosophy? : r/PiCodingAgent _202608](https://www.reddit.com/r/PiCodingAgent/comments/1vnzn48/deepseek_harness_vs_pi_agent_are_they_converging/)
+  - Looking at it alongside Pi, it feels like there’s a similar philosophy:
+  - keep the core/harness small, and make capabilities composable at the session/plugin level.
+  - Pi has extensions, skills, tools, prompts, etc., while DeepSeek Harness takes the plugin approach even further.
+  - Is this essentially the same architectural direction?
+
+- Pi's killer feature is that you can request it to extend itself. It knows where its documentation is.
+  - there's a "creator mode" that works similarly to pi where you can ask the coding harness itself to create plugins for dsh
+
+- I just checked and looks like One of its dependency was pi. I guess it is built on top of it.
+  - It is not built on top of it, it can be integrated with it
+- I think you are correct. its not built on top of it, just using pi as one of its llm adapters
+
+- They seem similar to me with an interesting distinction regarding how they manage the extensions/plugins. The deepseek harness is built on a framework extended from earlier chatbot work where loading and unloading of plugins is done in a rigorously controlled way so that it can be done live within the session. Pi sidesteps this altogether by making session reload trivial to do. 
+  - For single user environments, the rapid reload seems like the cleanest fix to me but there might be reasons why hot swapping plugins has material benefit. 
+- Yeah, that’s a good distinction. I also wonder whether Pi’s trivial session reload is the simpler abstraction, unless true hot-swapping provides a meaningful benefit for long-running agents.
+
+- This is definitely the direction as extra harness kind of get in the way as model capability increases. So you need to adjust external harness by model you use, which requires a pluggable/extensible architecture.
+
+- It's code is very bloated. Seems vibecoded as hell
+
+- They have a paper, of which I understand nothing!
+  - True!!  From what I understood The paper is about making software components “Lego-like.” Instead of restarting an agent whenever you change its capabilities, let it safely reconfigure its own runtime while it's running and be able to roll those changes back.
+
+- ## DSH（DeepSeek Harness）和 Pi Agent，架构哲学其实是两条相反的路，越看越觉得值得拆开聊聊。
+- https://x.com/limbopeng/status/2087932451243041142
+- Pi 的哲学是做减法。Mario Zechner 做 Pi 就是烦透了 Claude Code 这类工具越堆越重，于是把核心砍到只剩 read/write/edit/bash 四个工具，系统提示词不到一千 token，没有 plan mode、没有 subagent、没有 MCP，甚至默认不做权限校验。这是一种克制的极简主义——核心足够薄，剩下的全交给外部扩展去做，让你自己决定要不要加回这些复杂度。
+- DSH 的哲学是做加法后再拆碎。它不是精简出一个薄核心，而是把整个 agent 系统的每一层——模型、工具、文件系统、Shell、沙箱、会话存储、Subagent，甚至 Agent Loop 本身——全部做成可替换的插件。官方那套 Coding Agent 只是 “用这些插件拼出来的一个默认答案”，不是唯一答案。这个模块化的颗粒度比 Pi 深了一层：Pi 是核心不变、外围可插拔，DSH 是没有不可替换的核心。
+- 再往底层看，两者对 “谁该拥有系统控制权” 的答案也完全不同。Pi 的答案是开发者：极简是为了让你把每一步都看得清楚、改得动，它信任的是写代码的人，而不是运行时的 agent 本身——所以宁可不做的事就不做，也不让核心替你做决定。
+- DSH 的答案更像是把控制权逐步下放给运行时本身：连 Agent Loop 这种最核心的调度逻辑都能被换掉，意味着系统本身没有预设 “应该怎么跑” 的立场，一切规则都可以在运行时被重新定义。这其实是两种对复杂度截然不同的态度：Pi 认为复杂度是负担，要主动砍掉；DSH 认为复杂度应该被结构化、装进插件里，而不是消灭，因为消灭了就没法长出新东西。
+- 真正拉开差距的是自进化这件事。
+  - DSH 已经能让 agent 在运行时检查自己的能力边界，现场写一个插件挂载上去，然后在后续任务里直接调用这个刚获得的能力——虽然现在还很实验性，动态插件只存在内存里，重启就没了，也不能自动沉淀成永久插件，但这个方向已经打开了。
+  - Pi 的扩展机制目前还是人写 TypeScript 扩展、显式安装，是静态的，agent 自己不会在任务执行中主动发现能力缺口然后现场造工具再用上。这也呼应了架构哲学上的分野：Pi 把 “谁来扩展系统” 这件事留给人，DSH 在尝试把这件事也交还给 agent 自己。
+
+- pi can extend itself.just fine when it finds a gap. i know of no single extension that was written by a human.
+  - I can attest to this. Previously for an experiment I swapped out pi's edit tool, AI writing the glue. So even 1 of Pi's "core 4" can be replaced.
+
+- 我记得 Pi 也是支持动态扩展的，不过确实应该是人来指定触发，而不是自我进化出来的。
+  - 感谢纠正，是的，Pi 是有运行时动态注册能力。
+- pi也想让模型自己写扩展自进化，自带这方面skill，x上宣传过这方面的能力。但是具体还是要看模型本身能力的适配才行。
+
+- 不是简单的“可以加载插件”，而是把动态装卸后的依赖传播、资源撤销、局部隔离和失败回滚一起纳入内核
+
+Agent 发现能力缺口
+  → 生成/安装新插件
+  → 在隔离 Context 中挂载
+  → 运行评测或 shadow traffic
+  → 通过则提升为正式 provider
+  → 失败则卸载并恢复旧 provider
+
+- 其实两者没有什么根本性的区别，都是以插件为中心，让用户去自由组装，每个人可以按照自己的品味打造专属Agent！
+
+- ## [和 PI Agent 什么区别？ · deepseek-ai/deepseek-harness _202608](https://github.com/deepseek-ai/deepseek-harness/discussions/888)
+- 我认为是比pi更自由，但是开发起来也会更复杂一些
+
+- 不是简单的“DeepSeek Harness 比 Pi 更好”，两者的抽象层级不同：
+
+Pi 的扩展 API 更直接：extension 注册 tools、commands、prompts、skills、hooks，开发和复用成本低。
+DeepSeek Harness 把模型、工具、session、subprocess、credentials、MCP 等拆成 Cordis service/provider，宿主组合边界更细。
+现在两者已经可以直接连接：pi2dsh 把 Pi 的公共扩展面实现成一套通用 Host ABI，Pi 包不需要改源码，也不需要先生成转换 bundle
+
 # discuss
 - ## 
 

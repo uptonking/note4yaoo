@@ -48,11 +48,11 @@ modified: 2021-01-01T22:26:57.773Z
 uname -a 
 
 ssh root@ip
-ssh -p 222 root@port
+# ssh -p 222 root@port
 
 sudo apt update -y && sudo apt upgrade -y
 apt update && apt upgrade -y && apt dist-upgrade -y && apt full-upgrade -y 
-sudo apt install -y vim ufw fail2ban btop htop git 
+sudo apt install -y vim ufw fail2ban git btop htop 
 
 sudo apt autoremove -y
 

@@ -1535,6 +1535,7 @@ in a multi-nodes high-availability architecture
   - verge2 and verge have the same features and use the same docker image, but they are 2 unrelated services as 2 orphan service without high availability.
   - source code for verge/verge2(hysteria) has been cloned at folder `../all-vpn-proxy/hysteria` for reference if you want.
   - source code for clashx meta has been cloned at folder `../all-vpn-proxy/ClashX.Meta` for reference if you want.
+  - source code for ClashMetaForAndroid has been cloned at folder `../all-vpn-proxy/ClashMetaForAndroid` for reference if you want.
   - source code for FlClash has been cloned at folder `../all-vpn-proxy/FlClash` for reference if you want.
 
 - you might refer to how wabase/verge are configured on worker_4 node. requests to wabase still go to leader node first, but requests to verge goes directly to worker_4 node.
@@ -1630,6 +1631,9 @@ in a multi-nodes high-availability architecture
 - this repo should be a reproducible apps/consumer-services stack using docker. 
 - for daily deployment, after code changes are pushed to github, changes will be git pulled to vps, then user can run restart scripts to restart services.
 
+- services in this repo are mostly deployed to a standalone vps node called primary node(ubuntu 26.04). currently it serves caddy/hysteria2/gost. all services works well.
+  - code/services in `./indigenous-node` are deployed to another vps node called indigenous node (debian 13). services from indigenous node support to work with or without services from primary node.
+
 - please refactor/improve this project to be able to automate devops on a single vps node, with environment variables or interactive shell scripts for automation.
 
 - caddy service should be the foundation of all other services . 
@@ -1662,6 +1666,45 @@ in a multi-nodes high-availability architecture
 
 - this repo is still beta software.
 - legacy/unused code might be refactored or removed. compatibility layer is not required. just using the latest code/logic is ok.
+
+## forwarding/chaining
+
+- services in this repo are mostly deployed to a standalone vps node called primary node(ubuntu 26.04). currently it serves caddy/hysteria2/gost. all services works well.
+  - code/services in `./indigenous-node` are deployed to another vps node called indigenous node (debian 13). services from indigenous node support to work with or without services from primary node.
+  - the verges service from primary node can be accessed as verges.aichorage.de. the proxy service related to indigenous node and primary node can be accessed as edge-direct.aichorage.de or edge.aichorage.de .
+  - the vless+reality proxy of indigenous node uses 3x-ui without docker.
+  - a client can use edge-direct.aichorage.de:443 (direct) or edge.aichorage.de:8443 (via primary).
+
+- but the ip/network quality of primary node is not good, gemini/claude might reject service. 
+
+- i just bought a new vps node called indigenous node (debian 13), which has good ip/network quality. 
+- please keep the existing primary node services including verges still work and deisgn a solution to deploy a proxy forwarding service using primary node and indigenous node. 
+  - my idea is like that: when user visit google.com, request first goes to primary node, and it just directly forwards to indigenous node, and the indigenous node uses vless+reality to proxying access to google.com with good ip. so finally it looks like that user visits google.com using the indigenous ip. how do you like my idea? you might improve it.
+- the network forwarding of primary node might use gost with docker.
+- the vless+reality proxy of indigenous node might use 3x-ui without docker, you might write some script at folder `./indigenous-node` and git cloned to the indigenous node to run the start/devops related script. please design a good architecture to automate devops on indigenous node just like on primary mode, with environment variables or interactive shell scripts for automation. please also improve the bootstrap/restart related scripts for the use case of restarting indigenous vps so that when vps is restarted, all the services can restore correctly and quickly, with the same data/config. the verges service can be accessed as verges.aichorage.de, you might also design similar config for proxying service like `edge.aichorage.de` on indigenous node if you want. i have not configured related dns/domain on cloudflare.
+  - indigenous node vps has only 1 cpu, 512mb ram, 3gb disk space in total, please optimize the configurations of vless+reality for minimal system resources usage.
+  - source code for gost has been cloned at folder `../all-vpn-proxy/gost` for reference if you want.
+  - source code for 3x-ui has been cloned at folder `../all-vpn-proxy/3x-ui` for reference if you want.
+  - source code for Xray has been cloned at folder `../all-vpn-proxy/Xray-core` for reference if you want.
+  - source code for REALITY has been cloned at folder `../all-vpn-proxy/REALITY` for reference if you want.
+
+- since indigenous node runs vless+reality, is it possible to support both primary node proxy forwarding mode and standalone no-forwarding proxying mode so that user can choose to use the mode they want? it would be even better if user can switch different config from the 3x-ui webapp or run some scripts to update config from vps cli.
+
+- please review existing apps/services, analyze all the services/docs/code if you want, then make a comprehensive plan to refactor/improve for a good proxy forwarding architecture, making all the services correct, robust, extensible in the long term. 
+
+- make it configurable/extensible/flexible to support to run indigenous related scripts/services on other vps, so that vps can updated easily. Also make it configurable/extensible/flexible to support other forwarding service so that primary node might be easily replaced with other vps. data loss when changing ip is allowed, user might migrate data manually. user might update related config in cloudflare manually.
+
+- sensitive data like auth-token/ip should not be git committed, they might exist in git ignored files like .env.
+
+- you might run `ssh root@137.175.62.131` as the primary node and do whatever you want.
+- you might run `ssh root@76.9.111.231` as the indigenous node and do whatever you want.
+
+- 
+- 
+- 
+- 
+- 
+
 # more
 - When a task requires deleting, moving, or renaming more than one file, stop and present a clear list of affected files. Do not execute the command until the user provides approval or confirmation. 
 
