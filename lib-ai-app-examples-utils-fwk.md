@@ -1170,6 +1170,15 @@ modified: 2025-02-21T18:20:42.624Z
   - https://x.com/geekbb/status/2002235372345122842
     - 服务是中午部署的，号是下午封的
 
+- https://github.com/dofastted/vm2api /202610/go/ts
+  - 完全隔离的虚拟机级 AI 订阅转 API 生产网关
+  - 摒弃传统的简单 HTTP 逆向与易被封禁的公用代理方案，采用全隔离虚拟机/容器环境 + 官方真实客户端进程常驻 + 真实硬件指纹拟真 + 单槽单独立网络出口 + 进槽前封控拦截，实现真正稳定、长效、高并发的订阅转 API 基础设施。
+  - 支持平台：全面支持 Anthropic (Claude Pro / Team / Enterprise / Max) 以及 OpenAI (ChatGPT / Codex) 订阅转标准 API。
+  - 真实载体：Anthropic 采用官方客户端在隔离 VM / 容器内运行真实系统进程，而非第三方伪造 HTTP 模拟。
+  - 全链路拟真：从物理机硬件指纹（SMBIOS、MAC、Machine-ID）到独立 SOCKS5 / 本地网络出口，全方位还原真实开发者电脑环境。
+  - 极简集成：向上游输出标准 OpenAI /v1/chat/completions、/v1/responses 与 Anthropic /v1/messages 兼容接口，任何支持标准 API 的前端、Agent 或应用均可无缝接入。
+  - 官方原版二进制常驻守护：每一个 VM / 容器槽位内部均运行 Anthropic 原版 Claude Code 二进制程序，通过内核级 Unix Domain Socket 与协议路由总线通信，完全继承官方客户端签名与合规信誉，杜绝第三方逆向 HTTP 模拟带来的指纹泄露与封禁风险。
+
 - https://github.com/axibayuit-a11y/2apifare /CC-NC/202512/python
   - 将 GeminiCLI 转换为 OpenAI 和 GEMINI API 接口
   - 多种认证方式：支持 Authorization Bearer、x-goog-api-key 头部、URL 参数等

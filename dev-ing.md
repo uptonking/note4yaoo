@@ -346,6 +346,38 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1010
+
+- Setting aichorouter.aichorage.de to Deny under Stay → Edit Websites… didn't stop the block because Stay actually installs 7 separate extensions in Safari:
+  - The rule blocking /api/log?... lives inside 2. Privacy, which is not controlled by Stay's "Edit Websites…" button.
+  - Open Safari → Settings… → Websites 
+  - click Content Blockers, Find aichorouter.aichorage.de and switch it to Off, then reload the page.
+
+## 1009
+
+- [Telegram gateway: DNS resolution failure for api.telegram.org not recovered cleanly; reconnect leaves gateway replying with transient-agent-failure canned responses · Issue · NousResearch/hermes-agent _202607](https://github.com/NousResearch/hermes-agent/issues/75416)
+  - The Telegram platform adapter fails to reach api.telegram.org with DNS resolution errors ([Errno 8] nodename nor servname provided, or not known) and only recovers via fallback IPs (149.154.166.110) after multiple 5-40s backoff attempts. During the degraded window the gateway stays "alive" but cannot poll, and when the agent model calls also fail, users only get canned "transient agent failure" responses with no indication the channel is degraded.
+
+- 🤔 this repo IP-Sentinel is deployed on my 2 vps. it was running well yesterday, i could get the overall report of agent node in telegram bot. but now i cannot get the report of agent node, no valid response in telegram bot, it just responded "司令部指令下达：正在召唤所有哨兵回传简报...", but no valid data.
+  - Agent 节点无法向 Telegram API 推送战报（核心断点）
+  - 上游 DNS 严重丢包/超时：Agent 节点系统原配置上游 DNS 为 8.8.8.8。在该机房网络环境下，到 8.8.8.8 的 UDP 53 报文存在严重丢包乃至超时（5000ms 超时），导致 tg_report.sh 内调用 curl 请求 api.telegram.org 时频繁因域名解析超时而失败，日志中留下大量 ❌ 战报发送失败！API 响应:。
+  - IPv6 路由缺失导致 Happy Eyeballs 悬挂：Agent 节点的公网网卡仅分配了本地链路 fe80:: 地址，并无公网 IPv6 路由。当 curl 尝试连接解析到的 Telegram IPv6 地址（2001:67c:4e8:f004::9）时发生静默挂起，耗尽了连接超时时间。
+  - Agent 端的 Python Webhook 服务采用默认的 TCP 连接队列（request_queue_size = 5），公网端口受到背景扫描时连接队列易打满，导致偶发性连接丢弃（内核计数器 TcpExtListenDrops 增长）。
+- Agent 节点网络与解析加固
+  - 在 Agent 节点的 /etc/hosts 中固化了 149.154.166.110 api.telegram.org 映射，彻底免疫 DNS 丢包与解析延迟。
+  - 优化 /etc/systemd/resolved.conf 与 Netplan 配置，改用高可靠的 Cloudflare DoT（DNS-over-TLS 853 端口）及 1.0.0.1。
+  - 优化 core/agent_daemon.sh：将 Webhook 的 Socket 监听队列扩展至 request_queue_size = 128，消除高频背景流量造成的握手排队丢弃。
+- is there any risk to use the fixed the dns with "149.154.166.110 api.telegram.org" ?
+  - Telegram 在全球拥有多个数据中心（DC1 迈阿密、DC4 阿姆斯特丹、DC5 新加坡等）并发布了多个 BGP Anycast IP 段（如 149.154.160.0/20、91.108.4.0/22 等）。
+  - 如果 Telegram 对 149.154.166.110 对应的节点进行割接、机房维护或路由变更，或者该特定 IP 遭遇国际网络链路中断，Agent 无法自动故障转移（Failover） 到其他健康的 IP（例如 149.154.167.220）。
+  - 更优雅、稳健的方案应当从系统解析协议与应用通信逻辑两层切入，保留动态 DNS 的同时彻底杜绝丢包与超时
+  - 系统底层：启用 DNS-over-TLS (DoT) + 本地缓存（彻底替代传统明文 UDP 53）
+  - 问题根源：该 VPS 机房（PEG TECH INC）对公网 8.8.8.8:53（UDP）有高丢包/丢弃现象。
+  - 在 Agent 的 systemd-resolved 中配置 DNS-over-TLS（通过 TCP 853 端口连接 Cloudflare 1.1.1.1 和 1.0.0.1）： TCP 853 隧道全程加密，零丢包、防阻断、抗污染。 systemd-resolved 开启本地缓存后，动态解析耗时仅 1.2 ms，且能随着 Telegram 官方的 DNS 变更自动平滑更新。
+  - 在脚本的推送请求中增加 -4（或 --ipv4），直接跳过无路由的 IPv6 握手阶段，实现毫秒级建立连接。
+- 已在 Agent 节点上彻底移除了 /etc/hosts 的硬编码记录
+  - resolvectl query -4 api.telegram.org
+
 ## 1008
 
 - vless vs reality

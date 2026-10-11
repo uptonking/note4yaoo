@@ -609,6 +609,25 @@ Since then I always assume a server is being scanned immediately after it gets a
 - 新手小白建议使用 Ubuntu 系统，默认配置比较完全，软件包更新也还算及时，只要你的 VPS 配置不至于比 1C1G（1 个虚拟核心，1GB 内存）还低，如果再低就换 Debian 吧，如果 Debian 还卡那就得用 Alpine 了，不过这个大多数人不太用得来，它太精简了
 
 - fail2ban 不太推荐用默认的 ufw 来屏蔽恶意扫描，IP 太多了影响 ufw 自己，推荐用 iptables+ipset 的方式（nftables 我就不清楚了，不会用）
+# discuss-vps-use-traffic
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [有哪些无限流量服务器推荐？超量限速 100Mbps+ 的 _202603](https://www.nodeseek.com/post-663849-1)
+NetCup 他家好像都是超量限速，1o 感觉性价比最高
+DMIT T1 系列，不同区域和等级限速不同，HK、JP 50Mbps+，LAX 100Mbps+
+WAP US (目前暂时超量限速10Mbps了，希望后期能调整回 100Mbps)
+
+- BuyVM 10Gbps不限，UpCloud 超fair use限100Mbps
+
+- c-server限速200M 
+
+- 不介意SLA差一点的话可以收个CCS 330T的
 # discuss-vps-usecase 🌰
 - ## 
 
@@ -1633,7 +1652,22 @@ Claude 账号用了好几年，升级 pro 也 3 个多月了。自己用 Google 
 
 - ## 
 
-- ## 
+- ## [为什么很多人交易采用支付宝口令红包？ _202503](https://www.nodeseek.com/post-297209-1)
+  - 这种的是更安全吗还是，有时候我说微信支付也不允许
+
+- 方便 不用加好友
+
+- 方便，直接领就行，收款码还要传图床麻烦
+
+- 我习惯用收款码。口令红包有概率出现不能领取的情况
+
+- 快捷方便
+这问题都快成月经贴了
+
+- 方便，相对匿名，不过查账单能查到
+- 不匿名，收款方能看到付款方的姓名
+
+- 和收款码差不多，点开领取人也能看到对方是谁；就是方便，发个数字，不用找图床上传
 
 - ## [VPS交易避坑指南：原油、改邮、PUSH与交易所模式深度解析 (含搬瓦工/DMIT/NetCup实战) _202601](https://www.nodeseek.com/post-577764-1)
 本文将为您详细拆解这四种模式（原邮、改邮、官方 PUSH、交易所），并结合 搬瓦工、DMIT、NetCup、RackNerd 等代表性商家进行分析。
@@ -2521,7 +2555,14 @@ dedirock配置1c2.5g 15gb 6.45$/year
 
 - ## 
 
-- ## 
+- ## [快讯 BreadCloud面包云涨价（传家宝涨幅超50%，包含续费） _202606](https://www.nodeseek.com/post-798590-1)
+Crumb系列
+US从0.6刀/月涨价到1刀/月
+JP从0.8刀每月涨价到1.1刀/月
+流量翻倍
+毁了，历史订单 续费 全部涨价
+
+- 流量翻倍算个安慰奖吧，但老用户续费也涨确实有点伤人。
 
 - ## [【已出】breadcloud 面包云 jp, 12刀/年, 满血GSL, 移动快乐鸡 _202605](https://www.nodeseek.com/post-724910-1)
 - 移动晚高峰也快乐吗
@@ -2876,6 +2917,39 @@ yysy，4837口子真的大，轻松跑满本地
 - 卧槽。三哥这个国家不行。老是被黑进去。还能安全点吗。
 
 - 小鸡访问不了了，得亏我昨天部署了一个tolaria 做了一套总结同步
+# discuss-vendor-ccs/colocrossing
+- resources
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [ccs 独服流量用完是限速还是停机啊 _202508](https://www.nodeseek.com/post-425502-1)
+- 用完继续可以用。然后下个月扣你钱
+
+- 不限，可以继续用，超出后 1 刀 1t 好像
+
+- 是直接扣钱 而不通知你
+
+- ## [问：CCS小鸡有cpu限制不 _202609](https://www.nodeseek.com/post-941103-1)
+  - 非杜甫
+- 连金牌U你到手就是单核300还不算限吗
+
+- 主要是流量多，并不是性能机
+
+- [Colocrossing有CPU等资源限制(购买需谨慎) _202503](https://www.nodeseek.com/post-282744-1)
+  - Customer’s Service cannot burst to 95-100% usage for more than fifteen (15) minutes and cannot average higher than 50% usage within any two (2) hour period. 330000 is your monthly bandwidth limit, and it resets every month. This is a very high limit and is nearly impossible to exhaust under normal usage.
+  - 另外需要提醒的是: Colocrossing撤销机器并不会自动退款，需提交工单，并且流程繁琐，还不一定能100%收到退款，或者即使收到退款也只能退到账户余额，而不是原路退回。
 # discuss-vendor-racknerd
 - resources
   - [RackNerd | VPS Specials](https://www.racknerd.com/specials/)
@@ -3055,7 +3129,8 @@ Gemini、Reddit 被拉黑；
 
 - ## 
 
-- ## 
+- ## [Dedirock改ip如何收费 _202610](https://www.nodeseek.com/post-963286-1)
+- 不收费，问题是越换越烂，并且只能在你目前255.255.255.0的段里换，换别的段就是给你迁移了，一般情况越换越烂，除非你被墙了
 
 - ## [cloudnium的小鸡，CPU不同机房的怎么不一样啊？ _202607](https://www.nodeseek.com/post-831791-1)
 Intel(R) Xeon(R) Platinum 8168 CPU @ 2.70GHz

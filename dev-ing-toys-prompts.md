@@ -1400,7 +1400,14 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - after your update, you should push to github to trigger auto deployment with woodpecker, then inspect ci status by `woodpecker-cli`, fix issue if it exists.
   - when you finish the update, all services should still running well, and features in aichorouter and cpapi should still work well without data/config loss.
 
-- 
+- ### ip-sentinel
+- this repo IP-Sentinel is deployed on my 2 vps, Master node is deployed on 166.88.160.139, agent node is deployed on 137.175.xx.xx. Integrated telegram bot token is `8960900708:AAFXB_7kD6r21yPjwzxUPth9zBK1YnhoVjg`, user id is 5016592311 .
+  - master node is installed by `bash -c "$(curl -fsSL https://raw.githubusercontent.com/hotyue/IP-Sentinel/main/master/install_master.sh)"` .
+  - agent node is installed by`bash -c "$(curl -fsSL https://raw.githubusercontent.com/hotyue/IP-Sentinel/main/install.sh)"` .
+  - it was running well yesterday, i could get the overall report of agent node in telegram bot. but now i cannot get the report of agent node, no valid response in telegram bot, it just responded "司令部指令下达：正在召唤所有哨兵回传简报...", but no valid data.
+  - please analyze related code/config, find the reason, then fix it, making telegram bot working well.
+  - you might run `ssh root@166.88.160.139`  or  `ssh root@137.175.xx.xx` and do whatever you want.
+
 - 
 - 
 - 
@@ -1666,7 +1673,7 @@ in a multi-nodes high-availability architecture
 - 
 
 - you might do multi-stage implementation to deploy the code if it helps, 
-- you might run `ssh root@137.175.62.131` as the vps node and do whatever you want.
+- you might run `ssh root@137.175.xx.xx` as the vps node and do whatever you want.
 
 - 
 - 
@@ -1706,8 +1713,8 @@ in a multi-nodes high-availability architecture
 
 - sensitive data like auth-token/ip should not be git committed, they might exist in git ignored files like .env.
 
-- you might run `ssh root@137.175.62.131` as the primary node and do whatever you want.
-- you might run `ssh root@76.9.111.231` as the indigenous node and do whatever you want.
+- you might run `ssh root@137.175.xx.xx` as the primary node and do whatever you want.
+- you might run `ssh root@76.9.xx.xx` as the indigenous node and do whatever you want.
 
 - 
 - 

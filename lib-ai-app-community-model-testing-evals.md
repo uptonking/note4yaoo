@@ -58,7 +58,14 @@ modified: 2026-01-12T10:04:03.442Z
 
 - ## 
 
-- ## 
+- ## [做了个 AI 降智观察站：鹈鹕测试榜 - LINUX DO _202610](https://linux.do/t/topic/3001446)
+  - https://tihu.app
+  - 最近总看到有人说某某模型「降智」了，但又说不清到底变了没有。我就想了个笨办法：每天给它们同一句提示词，让它们画同一张图，画完都存下来，过一段时间回头翻一翻，变没变一眼就能看出来。
+  - Generate an SVG of a pelican riding a bicycle
+  - 现在收录的模型有 GPT、Grok、Claude、Gemini、Kimi、GLM、Composer 等系列模型，支持的模型会分别跑低、中、高几档推理强度。GPT 和 Grok 系列模型每天都会更新，其他模型每周日跑一次。
+
+- 这个原始的 prompt 其实对现在的大模型来说基本没有挑战，也看不出多少区别
+所以现在大家都让 llm 生成 svg 2d 动画，而非静态 svg
 
 - ## [满血AI ](https://manxue.ai/)
   - 糖果测试

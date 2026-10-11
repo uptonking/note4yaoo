@@ -15,6 +15,20 @@ modified: 2026-09-05T00:40:32.289Z
 - 
 - 
 - 
+- 
+
+- v0.11.0 - 2026-10-07
+  - v0.11 comes with an official plugin registry https://paseo.sh/plugins
+    - If you have submitted a plugin to the Paseo Cafe, it should already be available in the registry.
+  - paseo plugin add owner/repo now installs from the registry, so use github:owner/repo to install straight from GitHub and ./path for a local directory.
+  - Added Muse Code as a provider
+  - Added Antigravity as a provider that drives the installed agy CLI, always in Full access 
+
+- v0.10.0 - 2026-09-28
+  - Added OpenCode v2 support
+  - Added task lists from rpiv-todo, pi-goal-x, and Pi's example todo extension to Pi chats
+  - Added subagent runs from pi-subagents, Tintinweb pi-subagents, and Gotgenes pi-subagents to the Subagents track 
+  - Changed the CLI and desktop app to connect to a password-protected daemon on the same machine without asking for the password
 
 - v0.9.0 - 2026-09-22
   - Added plugin installation from npm, including scoped packages, versions

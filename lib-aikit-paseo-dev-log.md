@@ -16,6 +16,35 @@ modified: 2026-09-08T04:45:17.635Z
 - Browser connection succeeds using host aichor.aichorage.de, port 443, SSL enabled.
 # dev-xp
 - 初版 autumn-studio 采用custom build的方式embed pi
+# autumn-studio
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## git repo `../paseo-plugins/paseo-file-explorer` is paseo plugin that supports to show file tree just like native nested file system. core file tree of "File Explorer" feature should be built with react componnet with react-dom, designed for web/desktop only, not for mobile. the final goal is to implement file editor for all popular files, but current focus is file viewer(no editor) and pdf file. please support to view .pdf first, other file viewer/editor might be planned but implemented later.
+  - "File Explorer" should be built with react components and tailwindcss. `react-dom` might be bundled in this plugin so that react might be used for any ui in the file tree or viewer if you want. a "build" step in paseo-plugin.json might be added to extract/compile tailwindcss before plugin execution. 
+  - i do not want you to build file tree and file viewer from scratch, but might use extend-ui(based on shadcn/base-ui, at folder `~/Documents/repos/ai-ml-llm/all-docai/extend-ui` ) by referring to the code/example like ~/Documents/repos/ai-ml-llm/all-docai/extend-ui/apps/v4/components/extend/file-system.tsx , ~/Documents/repos/ai-ml-llm/all-docai/extend-ui/apps/v4/components/extend/pdf-viewer.tsx . 
+  - you have implemented part of the goal in paseo-file-explorer plugin repo, please continue to improve it. 
+  - please design a `File Explorer` sidebar menu item below existing sidebar menu items like "History"/"Search"/"Schedules". when it's clicked, a settings page for paseo-file-explorer should show. there are several setting sections in the settings page. for the "General" settings section, there should exist a toggle setting to enable/disable this feature, please also design a file open mode for controlling how file is opened for this plugin, current behavior is opening in a popup dialog, the default behavior should be open a file viewer in place of file tree ui with a go back icon to go back to file tree, a third option for file open model should be open file in a new tab. Three File Open Modes (in-place, dialog, new-tab): when a file is clicked from paseo-file-explorer file tree ui, the default is to open file in-place, and in the top-right menu icon of more actions, please add "open file in dialog" and "open file in new tab" so that user can still choose other mode to open the file manually. for the "PDF" settings section, please support to configure whether to show the side panel of thumbnails for pdf by default, you might design more settings if you want. please design a extensible architecture to support to add more settings sections for other file formats/viewer/editor later.
+  - latest paseo plugin architecture has changed a little, please improve this plugin with the latest paseo plugin architecture. 
+  - Please review existing file explorer features/code, then make a comprehensive plan to improve paseo-file-explorer.
+
+- paseo-file-explorer is still beta software. legacy/unused code might be refactored or removed. compatibility layer is not required. just using the latest code/logic is ok.
+
+- ## paseo-file-explorer is paseo plugin that supports to show file tree just like native nested file system. core file tree of "File Explorer" feature should be built with react componnet with react-dom, designed for web/desktop only, not for mobile. the final goal is to implement file editor for all popular files, but current focus is file viewer(no editor) and pdf file. please support to view .pdf first, other file viewer/editor might be planned but implemented later.
+  - "File Explorer" should be built with react components and tailwindcss. `react-dom` might be bundled in this plugin so that react might be used for any ui in the file tree or viewer if you want. a "build" step in paseo-plugin.json might be added to extract/compile tailwindcss before plugin execution. 
+  - i do not want you to build file tree and file viewer from scratch, but might use extend-ui(based on shadcn/base-ui, at folder `~/Documents/repos/ai-ml-llm/all-docai/extend-ui` ) by referring to the code/example like ~/Documents/repos/ai-ml-llm/all-docai/extend-ui/apps/v4/components/extend/file-system.tsx , ~/Documents/repos/ai-ml-llm/all-docai/extend-ui/apps/v4/components/extend/pdf-viewer.tsx . 
+  - you have implemented part of the goal in this plugin repo, please continue to improve it. 
+  - please design a `File Explorer` sidebar menu item below existing sidebar menu items like "History"/"Search"/"Schedules". when it's clicked, a settings page for paseo-file-explorer should show. there are several setting sections in the settings page. for the "General" settings section, there should exist a toggle setting to enable/disable this feature, please also design a file open mode for controlling how file is opened for this plugin, current behavior is opening in a popup dialog, the default behavior should be open a file viewer in place of file tree ui with a go back icon to go back to file tree, a third option for file open model should be open file in a new tab. for the "PDF" settings section, please support to configure whether to show the side panel of thumbnails for pdf by default, you might design more settings if you want. please design a extensible architecture to support to add more settings sections for other file formats/viewer/editor later.
+  - latest paseo plugin architecture has changed a little, please improve this plugin with the latest paseo plugin architecture. source code for paseo has been cloned at folder `~/Documents/repos/ai-ml-llm/all-agi-harness/paseo` for reference if you want.
+  - Please review existing file explorer features/code, then make a comprehensive plan to improve it.
+
 # discuss-stars
 - ## 
 
@@ -37,7 +66,11 @@ modified: 2026-09-08T04:45:17.635Z
 
 - ## 
 
-- ## 
+- ## in main chat box, i choose model A from pi agent to start a task. After the model A responded, then can I choose model B to continue the chat?
+- Within Pi, yes: You can freely switch between any models available under your Pi configuration 
+  - After Model A finishes responding (or even while the session is idle between turns), you can select Model B from the model picker in the chat box toolbar and continue the conversation with Model B.
+- Across providers, no: You cannot change the agent provider itself (e.g. from pi to claude-code) inside the same session, because the process runtime and history format are provider-specific.
+- Session resume is preserved: If the session is paused or resumed later, the Pi CLI is launched with `--session <file> --model <ModelB>` , keeping your model selection across restarts.
 
 - ## for thinking effort , there is only off/low/medium/high, is there any way to add a xhigh thinking effort? 
 - the picker's option list is not defined in the app at all — the daemon ships a per-model thinkingOptions list, and the app just renders it. Whether you can get xhigh depends entirely on which agent/model that picker belongs to, and for Claude it's mostly already implemented.

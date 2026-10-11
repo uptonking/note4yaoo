@@ -21,6 +21,11 @@ modified: 2026-10-08T05:05:56.528Z
   - 极速部署 
     - 模式 A：私有独立模式 (全自主、强烈推荐), 找一台 VPS 作为司令部（仅需部署一台,可以与Agent装在同一台VPS）, 部署 Agent (边缘哨兵)：在需要养护的机器上执行 Agent 脚本，安装时选择私有独立中枢
     - 模式 B：官方公共模式 (最简体验)， 适合不想折腾、只想快速体验养护效果的用户。 采用官方BOT，您将失去 OTA 远程静默升级 权限
+  - 🛝
+    - 巡逻 (Patrol): Every 20 minutes 72 times / day, Runs at minute :00, :20, and :40 of every hour (OnCalendar=* :0/20).
+    - Google 纠偏: Driven by Patrol, 70%, ~50 times / day
+    - 信用净化: Driven by Patrol, 30%, ~22 times / day
+    - Both "触发google纠偏" and "触发信用净化" can also be executed immediately at any time by clicking the corresponding buttons in the Telegram Bot
   - [智控全局：IP-Sentinel Master (控制中枢) 部署指南 - System Architect _202604](https://blog.iot-architect.com/engineering-practice/ip-sentinel-master-deployment-guide/)
   - [分布式边缘哨兵：IP-Sentinel 节点安装与平滑升级全攻略 - System Architect _202604](https://blog.iot-architect.com/engineering-practice/ip-sentinel-installation-and-upgrade-guide/)
 # more

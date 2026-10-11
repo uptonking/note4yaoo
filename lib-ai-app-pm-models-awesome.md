@@ -2110,6 +2110,8 @@ modified: 2026-06-20T15:49:57.019Z
 👉 https://spacexcard.com/register?invite=2S5CVDH3
 *注：排名不分先后，理性消费。
 
+### cursor
+
 - [AIFF · AI IDE 智能分发平台 ](https://aiff.chat/)
   - [Aiff agent · 新手指南 ](https://portal.aiff.chat/guide)
   - win, mac
@@ -2212,6 +2214,8 @@ modified: 2026-06-20T15:49:57.019Z
 - [ai gaga的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/EEY89GS3)
   - 品类多
 
+### kiro
+
 - [AI小铺的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/XWTVY86A)
   - kiro
 - [AI服务站的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/ikun666)
@@ -2226,6 +2230,8 @@ modified: 2026-06-20T15:49:57.019Z
 - [kiro源头的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/1XZXKYZB)
   - 企业kiro 10000积分 power
   - Kiro的apikey格式，无法在kiro软件使用, 推荐用 kiro.rs
+
+### antigravity/gemini
 
 - [Gemini Pixel 设备认证 ](https://autopixel.qzz.io/blackcat)
   - 品类多
@@ -2273,6 +2279,11 @@ modified: 2026-06-20T15:49:57.019Z
     - 方法一：用手机原相机扫码, 小米、OPPO、一加这类品牌的，可以直接用原相机里面的「扫一扫」
     - 方法二：用 Google 应用扫码, 如果你的手机找不到相机自带的扫一扫，可以用 Google 官方应用来扫码。
 
+### devin/windsurf
+
+- [AI源头-oak的小店 - 链动小铺 ](https://wzyp.cn/shop/oak)
+  - 【天卡】Devin SWE2.0系列模型无限额度权益包
+
 - [Windsurf专卖4988的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/3FR7Y3PY)
   - 谷歌母号, 不质保，只保拍下立马登录满配额。有效期10天左右。
 - [Pine12345的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/PY91LPJ0)
@@ -2289,6 +2300,8 @@ modified: 2026-06-20T15:49:57.019Z
   - 顶部售后群有切号软，可导入账号一键切号查看额度等 
 - [Windsurf专卖4988的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/3FR7Y3PY)
   - 送免魔法登录插件
+
+### grok
 
 - [AI万能工具箱的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/grok)
   - grok品类多
@@ -2519,6 +2532,10 @@ modified: 2026-06-20T15:49:57.019Z
     - cc-cursor--0.6x
   - more
     - [创想AI ](https://vapi.chuangxiangai.asia/model-plaza)
+
+- [睿动AI · 私有模型 · 公有模型 · 一套规则管到底 ](https://iruidong.com/)
+  - [x 动 ai 的 glm 套餐5 小时应该是 1 亿 token - LINUX DO _202609](https://linux.do/t/topic/2914411)
+  - 目前国模没有想推荐的，非要买，可以买软通动力那个 glm v2 厂商套餐，季付期，159 多一个月.
 
 - [zzshu /NewAPI ](https://zzshu.cc/pricing)  , 长期运营
   - [吱吱鼠AI的小店 - 云猫寄售 ](https://catfk.com/shop/SXS913NA)
@@ -3209,7 +3226,7 @@ modified: 2026-06-20T15:49:57.019Z
 ## email 📧
 
 - email-providers
-  - seek.li: 方便转移邮箱，为mjj设计
+  - nodeseek/seek.li: 方便转移邮箱，为mjj设计
 
 - gmail-tools
   - antigravity需要google账号支持gcp: 美区邮箱 + gcp/agy + 12个月套餐

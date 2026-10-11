@@ -11,6 +11,9 @@ modified: 2026-09-17T14:19:32.208Z
 
 - fans-paseo
   - https://github.com/q5m-ai/beautiful-pi
+
+- resources
+  -  https://paseo.sh/plugins
 # popular
 - https://github.com/getpaseo/paseo /13.4kStar/MIT > AGPL > apache2/202608/ts
   - https://paseo.sh/
@@ -64,6 +67,11 @@ modified: 2026-09-17T14:19:32.208Z
 - 
 
 # plugins
+- https://github.com/getpaseo/plugins /MIT/202610/ts
+  - https://paseo.sh/plugins
+  - The reviewed plugin registry behind paseo.sh/plugins. Each record pins an npm artifact or a Git commit. 
+  - The open registry protocol is the client contract. Companies can host an internal registry by serving the same static JSON documents.
+
 - https://github.com/paseo-cafe/paseo-cafe /apache2/202609/ts
   - https://paseo.cafe/
   - community driven directory of paseo.sh plugins
