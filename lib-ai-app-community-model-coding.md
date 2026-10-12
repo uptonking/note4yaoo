@@ -72,7 +72,33 @@ modified: 2025-09-16T13:29:11.327Z
 
 - ## 
 
-- ## 
+- ## [Gemini4 Argon（路由）对比Gemini3.8 Flash，十几个对比图看明白Gemini4 Argon的前端能力 _202610](https://linux.do/t/topic/3006711)
+- 制作一个透明玻璃微型生态缸：水草摇曳、鱼群游动、气泡上升、水面折射。点击投食后鱼群追逐食物，拖动光源改变照明，可调节水流并切换昼夜。要求运动自然、玻璃有体积感，控制面板精致且不抢主体，避免用 emoji 代替生物。落盘可直接运行的单文件 HTML，CSS/JS 内联。不要解释，不用外部图片或现成 UI 模板。所有按钮和交互必须真实有效。
+
+- Build a beautiful, full-screen interactive koi pond using Three.js + WebGL. Use a top-down view with clear turquoise water, sunlight, animated caustics on the pond floor, and a convincing sense of depth.
+
+Place an elegant translucent selection panel at the bottom with four koi varieties: Kohaku, Showa, Golden Ogon, and Platinum. Clicking a card releases that fish into the pond. Dragging a fish from its card lets the user choose exactly where to drop it.
+
+Make each landing feel satisfying: a splash with droplets, a brief depression in the water surface, and expanding ripples. The fish should then dive beneath the surface. Use refraction and depth cues so the koi clearly look submerged.
+
+Create detailed 3D koi with eyes, scales, fins, and flowing tails. Animate their bodies, tails, and fins together. Each fish should independently change direction and speed, turn smoothly near boundaries, and avoid other fish.
+
+Let users touch and drag across the water to create ripples. Add rain and a movable whirlpool whose current affects the fish. Include Calm, Clear pond, and a control to hide the interface for screen recording.
+
+Use Web Audio to create landing splashes, soft musical droplets, gentle swimming water sounds, rain, and a whirlpool sound. Enable audio through a Sound button, fade it smoothly when muted, and pause it when the browser tab is hidden.
+
+Keep all labels and buttons in English. Make the layout responsive for mobile. Optimize rendering and animation for smooth performance with several dozen fish.
+
+Deliver a complete, working website with polished visuals and functional interactions.
+
+- 原始提示词：在当前目录创建 “当前模型名字 - 当前会话推理等级 - 植物大战僵尸.html”。用代码精致复刻《植物大战僵尸》经典白天草坪的热闹战局截图，包含标志性植物、僵尸与游戏界面，尽可能还原原版美术与细节。
+只做静态画面，无需实际游玩，16:9 首屏完整呈现；单文件、全部内联、离线可运行，不依赖外部资源，其余自由发挥。
+
+- 原始提示词：在当前目录创建 “当前模型名字 - 当前会话推理等级 - 雨夜末班车.html”。用代码绘制一幅电影级雨夜街景：复古电车穿过繁华旧街，雨水、玻璃、灯光与路面倒影细腻逼真，构图惊艳，空间深邃。
+只做静态视觉作品，16:9 首屏完整呈现，不要介绍页；单文件、全部内联、离线可运行，不依赖外部资源，其余自由发挥。
+
+- 原始提示词：在当前目录创建 “当前模型名字 - 当前会话推理等级 - 千里江山.html”。用代码绘制一幅博物馆级青绿山水长卷，群峰叠翠、江河蜿蜒，楼阁舟桥藏于山水之间，矿物颜料与绢本质感细腻，气象恢宏。
+只做静态视觉作品，16:9 首屏完整呈现，不要介绍页；单文件、全部内联、离线可运行，不依赖外部资源，其余自由发挥。
 
 - ## [测试了快2年，第一次有模型能答对 - LINUX DO _202610](https://linux.do/t/topic/2988539)
   - 问题：根据这张图片分析位置

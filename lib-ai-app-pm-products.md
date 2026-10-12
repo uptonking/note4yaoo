@@ -291,6 +291,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 发展平稳期
     - 手机网络4G 升级 5G, 体验提升不大
     - 安兔兔跑分在性能足够好时意义不大
+  - linux desktop + ai: ai更熟悉linux, 体验可以做到比win更好
 
 - cheap features
   - cpu: ocr

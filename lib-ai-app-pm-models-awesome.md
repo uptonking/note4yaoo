@@ -360,6 +360,8 @@ modified: 2026-06-20T15:49:57.019Z
     - 基于 Glm5.2 训练的模型 Atria preview，它是上海人工智能实验室出品
   - [Mirasim — One Agent IDE ](https://mirasim.ai/)
   - [商汤送免费的glm5.2了 - LINUX DO _202607](https://linux.do/t/topic/2504080)
+  - [【奇遇API试营业】评论留 ID送鸡蛋 $20  - LINUX DO _202610](https://linux.do/t/topic/3004277)
+    - https://www.superqiyu.org/dashboard
 
 - claude-news
   - [Ollama v0.14.0 and later are now compatible with the Anthropic Messages API _202601](https://ollama.com/blog/claude)
