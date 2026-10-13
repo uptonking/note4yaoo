@@ -114,8 +114,9 @@ serve -p 9000 --cors
 HOST=0.0.0.0 PORT=8080 react-scripts start
 next dev -H 0.0.0.0 -p 3000
 
-npm i -g npm yarn pnpm corepack serve @dotenvx/dotenvx opencode-ai @openai/codex @kimuson/claude-code-viewer   @deepseek-ai/dsh @github/copilot
+npm i -g npm yarn pnpm corepack serve @dotenvx/dotenvx opencode-ai @kimuson/claude-code-viewer  @github/copilot
 @ooxml-dev/cli
+@openai/codex @deepseek-ai/dsh
 npm up -g skills @getpaseo/cli @earendil-works/pi-coding-agent  
 ```
 
@@ -345,6 +346,11 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - ?
 - dev-log
   - ?
+
+## 1012
+
+- mineru provides free document parsing/ocr api at https://mineru.net/apiManage/docs. is there any other similar services that provides free document parsing/ocr service? does docling/marker provide free service? 
+  - please deep research related solutions/projects/ideas, if you found any smilar and free srevices, provide overview/url/website/free-quota for each.
 
 ## 1010
 

@@ -177,7 +177,9 @@ modified: 2026-09-05T00:27:42.212Z
 
 - agent-providers
   - external: deepseek-harness, cursor-cli, commandcode
+  - zcode-cli
   - codebuddy/workbuddy
+  - auto router
 
 - built-in agent: 移动端可以直接执行agent，而不依赖桌面端或外部agent
   - 需要支持已有的 agent profile 配置
@@ -510,8 +512,13 @@ modified: 2026-09-05T00:27:42.212Z
 - 
 - 
 - 
-- 
-- 
+
+- skills 会默认安装到 ~/.agents/skills 目录
+  - Since Paseo orchestrates standard agent runtimes, agents discover skills directly from standard filesystem locations ~/.agents/skills
+- `npx skills add <owner/repo>`
+  - downloads community or custom skills from GitHub directly into ~/.agents/skills
+  - If you run `npx skills add <owner/repo`> inside a repo folder without `-g`, it installs the skill only in that specific project's directory 
+  - By default, npx skills add inspects your environment and may only install to the single agent it detects in the current shell. To ensure it writes to the directories for Claude Code, Codex, OpenCode, and Pi simultaneously, install with `npx skills add <owner/repo> -g -a '*' -y`
 
 - use webapp to control native app
   - 如果要通过webapp控制本地的paseo app, 需要手动修改配置 daemon.cors.allowedOrigins

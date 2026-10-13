@@ -93,6 +93,8 @@ sudo ufw allow http
 sudo ufw allow https
 
 sudo ufw allow ssh
+# sudo ufw delete allow ssh
+# sudo ufw delete allow 22/tcp
 # 如果你改了 SSH 端口 (例如 2233)
 # sudo ufw allow 2233/tcp
 

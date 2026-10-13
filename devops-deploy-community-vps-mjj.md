@@ -2618,6 +2618,9 @@ JP从0.8刀每月涨价到1.1刀/月
 - 还有比Breadcloud JP CPU 内存 硬盘更猛的鸡吗？IP还干净，国际互联跑满5Gbps，这种落地机堪称完美啊。 拿家宽比的，最起码家宽速度比不过，硬件配置差。
 
 # discuss-vendor-raksmart
+- resources
+  - https://cn.raksmart.com/cps/9063  /大陆优化
+  - 线路资源：中国联通 CU4837、中国电信 CT、中国移动 CMI、Telia、TATA、PCCW、Cloudflare、IX等多家 Tier 1 网络资源。
 - ## 
 
 - ## 
@@ -3286,15 +3289,9 @@ ip有没有被gemini送中
 
 - 离谱，挖矿还偷偷挂机，系统直接重装得了
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+- ### [建议立即检查dartnode的小鸡是否被植入挖矿程序 _202610](https://www.nodeseek.com/post-966530-1)
+  - 我两个dartnode的小鸡都被植入了挖矿程序，其他都正常
+  - codex 帮我查出来的
 
 - ## [My Disappointing Experience with DartNode VPS: A Cautionary Tale — LowEndTalk _202510](https://lowendtalk.com/discussion/210302/my-disappointing-experience-with-dartnode-vps-a-cautionary-tale)
   - When I attempted to restore from backup, I discovered that none of my backups were functioning properly. Despite having three different backup points available, not a single one would boot successfully after restoration. The restore process would complete, but whatever was being restored simply wouldn't start.

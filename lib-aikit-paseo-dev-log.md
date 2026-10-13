@@ -23,11 +23,60 @@ modified: 2026-09-08T04:45:17.635Z
 
 - ## 
 
-- ## 
+- ## Can an agent profile be selected automatically right now?
+- In the main chat box (per-prompt or mid-session): No. Currently, agent profiles are applied manually by the user in the composer/chat box.
+- In multi-agent / orchestration mode: Partially yes! Paseo already ships with a dedicated MCP tool called list_profiles. When an orchestrating parent agent is running, it can call list_profiles to inspect all configured profiles and read their notes (e.g. "Use for UI work", "Use for deep planning"). The orchestrator can then use those exact values to call create_agent and spin up specialized subagents.
+  - AgentProfile already includes a notes field designed specifically for LLM context. You can write instructions in the profile notes 
 
-- ## 
+- Route via Subagents rather than Mid-Thread Model Swapping
 
-- ## 
+- Approach A: The "Auto-Routing Launcher" (Server Lifecycle Hook)
+  - Whenever a new agent is started, the plugin intercepts the creation request before the session starts, analyzes the prompt, and automatically applies the matching profile.
+- Approach B: Client Slash Command (`/auto <task>`) or Composer Pill
+  - The plugin evaluates `<prompt>`, queries the daemon for agentProfiles, picks the best profile, and launches the task with that configuration.
+
+- 
+- 
+- 
+- 
+
+- ## current git repo(paseo-file-explorer) is paseo plugin that supports to show file tree just like native nested file system and provide some file viewers/editors. core features of "File Explorer" should be built with react component with react-dom, designed for web/desktop only, not for mobile. the final goal is to implement file editors for all popular files, but current focus is .md/.pdf/.xlsx. 
+- the current goal is to design a "AI Text Mode" feature for files like .pdf/.docx: "AI Text Mode" is a button that show on the toolbar of paseo-file-explorer viewer/editors, you might put the button next to existing "Viewer"/"Editor", when user clicks it for the first time, document parser/ocr tools and agent/model will be used to get the text of the .pdf/.docx/html, the text files are put in a folder named `.autumn/` in workspace root. in settings page for paseo-file-explorer, please add a "AI Text Mode" sidebar menu, it should support to configure toggle on/off for this feature, if it is off, the button will not show in toolbar. when doc parsing finishes, open the text file as a split view of the original file on the right, so that original file show on the left, text file content show on the right. if splits view is showing , the "AI Text Mode" button should change to "AI text again" so that user can reparse and get multiple text files for a orignal file, please make it easy to switch the text file in the right split view for the orignal file. you might design a good architecture for storing multiple text files for a single original file. also store some metadata about how the text file is get.
+- it should support to configure the default agent for "AI Text Mode", using pi by default, supports to use other agents that user has configured/auto-detected . agent will use vlm-models or ocr-services for getting text of documents. please design a section for text parsing options, that uses free mineru by default, other api like LlamaParse/Azure Document Intelligence/Datalab might be added and supported later. free mineru provides api(https://mineru.net/apiManage/docs) and cli(https://mineru.net/ecosystem?tab=cli), you might choose which fits better for this plugin.
+- focus on pdf first, more file formats will be supported later, please design a extensible architecture for "AI Text Mode".
+- How do you like my idea? If it is okay, you might improve it.
+- Analyze this feature and related code/config, make a comprehensive plan for "AI Text Mode" feature
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- ## for paseo-file-explorer, if i set File open mode to be "new-tab", it seems that all file tabs are opened as sub-tabs under a "File Viewer" parent tab. why is it designed this way? since paseo provides native tabs, why is paseo-file-explorer tabs not using it? Is it a good idea to refactor paseo-file-explorer tabs to use paseo tabs instead of using sub-tabs under a paseo parent tab?
+- paseo-file-explorer uses sub-tabs inside a single "File Viewer" workspace tab because Paseo's Plugin SDK models workspace panels as static, parameterless singleton targets per (pluginId, panelId, workspaceId), and does not expose Paseo's internal useWorkspaceLayoutStore or parameterized tab targets to plugins.
+  - Given the constraint that the paseo host repository must not be modified, keeping the sub-tab architecture inside the File Viewer panel is the right design. 
+  - Plugin workspace panels have no per-instance parameters or dynamic titles
+  - Attempting to simulate per-file native Paseo tabs via dynamic addWorkspacePanel() calls would pollute Paseo's + New Tab launcher menu, break across reloads, and leak zombie registrations when tabs are closed.
+
+- Paseo's built-in `kind: "file"` tab is hardwired to Paseo's internal `<FilePane />`.
+  - Paseo does have a native { kind: "file", path } workspace tab target, which is what Paseo's built-in Files tree opens.
+  - but Plugins cannot open { kind: "file", path } tabs 
+  - Even if a plugin could open { kind: "file", path }, that tab renders Paseo's built-in `<FilePane />`, not paseo-file-explorer's PDF viewer/editor 
+
+- Is It a Good Idea to Refactor to Native Paseo Tabs?
+  - The only way a plugin can create multiple distinct native tabs without modifying Paseo is to call client.addWorkspacePanel({ id: "file-...", title: fileName, ... }) dynamically at runtime for every opened file. 
+  - Pollutes Paseo's + New Tab launcher menu across all workspaces
+  - No close lifecycle callback from Paseo tabs, dynamically registered panel would remain in plugin.workspacePanels (and in the + menu) until plugin teardown.
+  - Breaks tab persistence on app reload: Paseo persists open workspace tabs in AsyncStorage (WorkspaceLayoutPersistedStateSchema) and restores them immediately on app startup 
+
+- Advantages of the current File Viewer sub-tab container:
+  - Allows FileViewerContent to manage shared per-workspace blob URL caches, hover preloading across file tabs, and a "Close all tabs" action without cluttering Paseo's top-level Agent/Terminal tab bar.
+  - Keeps all opened files grouped cleanly under one Paseo workspace tab (which you can still dock in a right split pane alongside an Agent or Terminal tab using Paseo's native split layout).
 
 - ## The current file editing system seems to have a lot of issues, especially for file content syncing. please design/improve for a extensible file editing system that supports to edit .md/.pdf/.xlsx first, more file formats later. when user edits in paseo-file-explorer, edits can be saved to filesystem. when a file is edited in filesystem, opening the file in paseo-file-explorer can show the latest content. 
   - analyze related code, improve the architecture for paseo-file-explorer, make it correct, robust, extensible.
@@ -45,7 +94,7 @@ modified: 2026-09-08T04:45:17.635Z
 - Paseo compiles plugins with esbuild (bundle: true, format: "cjs").
 When esbuild encounters a dynamic import("./heavy-module.js"), it wraps that module and its exclusive dependency tree inside a lazy __esm({ ... }) initializer closure.
 
-- ## git repo `../paseo-plugins/paseo-file-explorer` is paseo plugin that supports to show file tree just like native nested file system. core file tree of "File Explorer" feature should be built with react componnet with react-dom, designed for web/desktop only, not for mobile. the final goal is to implement file editor for all popular files, but current focus is file viewer(no editor) and pdf file. please support to view .pdf first, other file viewer/editor might be planned but implemented later.
+- ## git repo `../paseo-plugins/paseo-file-explorer` is paseo plugin that supports to show file tree just like native nested file system. core file tree of "File Explorer" feature should be built with react component with react-dom, designed for web/desktop only, not for mobile. the final goal is to implement file editor for all popular files, but current focus is file viewer(no editor) and pdf file. please support to view .pdf first, other file viewer/editor might be planned but implemented later.
   - "File Explorer" should be built with react components and tailwindcss. `react-dom` might be bundled in this plugin so that react might be used for any ui in the file tree or viewer if you want. a "build" step in paseo-plugin.json might be added to extract/compile tailwindcss before plugin execution. 
   - i do not want you to build file tree and file viewer from scratch, but might use extend-ui(based on shadcn/base-ui, at folder `~/Documents/repos/ai-ml-llm/all-docai/extend-ui` ) by referring to the code/example like ~/Documents/repos/ai-ml-llm/all-docai/extend-ui/apps/v4/components/extend/file-system.tsx , ~/Documents/repos/ai-ml-llm/all-docai/extend-ui/apps/v4/components/extend/pdf-viewer.tsx . 
   - you have implemented part of the goal in paseo-file-explorer plugin repo, please continue to improve it. 
@@ -55,7 +104,7 @@ When esbuild encounters a dynamic import("./heavy-module.js"), it wraps that mod
 
 - paseo-file-explorer is still beta software. legacy/unused code might be refactored or removed. compatibility layer is not required. just using the latest code/logic is ok.
 
-- ## paseo-file-explorer is paseo plugin that supports to show file tree just like native nested file system. core file tree of "File Explorer" feature should be built with react componnet with react-dom, designed for web/desktop only, not for mobile. the final goal is to implement file editor for all popular files, but current focus is file viewer(no editor) and pdf file. please support to view .pdf first, other file viewer/editor might be planned but implemented later.
+- ## paseo-file-explorer is paseo plugin that supports to show file tree just like native nested file system. core file tree of "File Explorer" feature should be built with react component with react-dom, designed for web/desktop only, not for mobile. the final goal is to implement file editor for all popular files, but current focus is file viewer(no editor) and pdf file. please support to view .pdf first, other file viewer/editor might be planned but implemented later.
   - "File Explorer" should be built with react components and tailwindcss. `react-dom` might be bundled in this plugin so that react might be used for any ui in the file tree or viewer if you want. a "build" step in paseo-plugin.json might be added to extract/compile tailwindcss before plugin execution. 
   - i do not want you to build file tree and file viewer from scratch, but might use extend-ui(based on shadcn/base-ui, at folder `~/Documents/repos/ai-ml-llm/all-docai/extend-ui` ) by referring to the code/example like ~/Documents/repos/ai-ml-llm/all-docai/extend-ui/apps/v4/components/extend/file-system.tsx , ~/Documents/repos/ai-ml-llm/all-docai/extend-ui/apps/v4/components/extend/pdf-viewer.tsx . 
   - you have implemented part of the goal in this plugin repo, please continue to improve it. 

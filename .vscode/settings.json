@@ -1,6 +1,12 @@
 {
   "outline.collapseItems": "alwaysExpand",
-  "search.useIgnoreFiles": false,
+  "search.useIgnoreFiles": true,
+  "search.exclude": {
+    ".kilo": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/coverage": true
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

@@ -1666,6 +1666,23 @@ ChatGPT 解锁
 - 网上搜一下动态IP代理池应该都是吧，一般用隧道代理比较多，安全
 
 - 免费的很早之前都没了，现在国内代理都得实名才行
+# discuss-vpn-checking
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [youtube和google被送中有哪些问题和解决办法 _202502](https://www.nodeseek.com/post-272343-1)
+- 鉴别IP是否被送中方法：
+（1）直接打开www.youtobe.com/red，若提示 有图比 Premium在您所在的国家/地区尚未推出, 则IP被送中。
+（2）在vps上使用流媒体检测脚本:bash <(curl -L -s check.unlock.media) 选择 跨国媒体检测 如检测结果为：有图比 Premium: No(Region: CN)则IP被送中。
+
+- 
+- 
+
 # discuss-vpn-ip
 - ## 
 
@@ -1803,6 +1820,23 @@ ChatGPT 解锁
 - Since then, the original ClashX quit and ClashX Meta restarted (its logs show restarts at 03:55–03:57); it's now listening on 7890/9090 as root (my earlier lsof checks missed it because non-root lsof can't see root-owned sockets), and system proxy is back to 7890.
   - Quit and ideally remove the old original ClashX app (and consider cleaning up the leftover ClashX Pro / Clash Verge Rev services too — I saw a verge service daemon still registered with ports 7897-7899/9097). Running several proxy apps means whichever launches last rewrites the system proxy port, and anything hardcoded to another port (like git was) breaks silently.
 
+# discuss-cdn-cn
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [好像 EdgeOne 的国际链接也很差，回源 DediRock 洛杉矶的 IP 网页都打不开 _202610](https://www.nodeseek.com/post-975539-1)
+  - 好像 EdgeOne 的国际链接也很差，回源 DediRock 洛杉矶的 IP 网页都打不开, 网页访问速度甚至不如 Cloudflare
+- EdgeOne走Tier-1的，CF有国内运营商私有Peering，比不了
+DediRock到EdgeOne回程也是Tier-1
+
+- 只能亚太用用
+
+- 国际 CDN 只认准 Cloudflare
 # discuss
 - ## 
 
