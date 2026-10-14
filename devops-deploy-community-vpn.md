@@ -802,7 +802,25 @@ webshare/ip2world 等系列
 
 - ## 
 
-- ## 
+- ## [佬们。我研究了一晚上也没想明白为什么有人用reality偷自己 _202610](https://www.nodeseek.com/post-981759-1)
+既然自己已经有域名有证书，直接tls+fallback不就行了，这样起到的作用是一致的呀。
+
+另外，reality的最佳实践是偷邻居大厂对吗，但这样如果对方用了cdn，为了防止被作为跳板，要用nginx做sni分流，但这样分流回落一下似乎又会增加特征。（这里解法似乎就是尽量找没用cdn的，或者直接target他源站，但这种站似乎不好找）。
+
+所以我的问题就是：
+1，reality的作用除了假装访问大厂、省的自己配证书和域名等以外，还有别的妙处吗？
+2，为什么有人会用reality偷自己的证书，带来了什么好处。
+
+- 就是为了不想用自己证书才去偷啊 
+- 大家都在偷的时候，你不偷特征是不是太明显了。偷自己的也是偷
+- REALITY的最佳实践是用大厂云藏木于林，而不是用大妈瓦工去偷什么亚麻、CF，还有AMD、苹果、微软这种用全球甚至包含国内节点CDN的
+
+- 方便，而且域名掌握在自己手里
+- reality 可以 vision，tls 的好像就没有了。vision 后不用再次二次加密，CPU 占用低很多，测速也能拉很高
+
+- 查你的时候，各项指标完全对的上。
+偷大厂有小概率被薅
+偷邻居要防邻居突然跑路
 
 - ## i am running https://github.com/MetaCubeX/ClashX.Meta on my macbook, in settting there is a alpha meta core, should i turn it on to use it?
 - unnecessary
@@ -1667,6 +1685,18 @@ ChatGPT 解锁
 
 - 免费的很早之前都没了，现在国内代理都得实名才行
 # discuss-vpn-checking
+- https://github.com/xykt/IPQuality
+  - bash <(curl -Ls https://IP.Check.Place)
+    - 直接检测默认项目
+  - bash <(curl -Ls https://Check.Place) -I
+    - 交互式检测， 先选择项目， 再检测
+  - 支持OS/Platform：Ubuntu | Debian | Linux Mint | Fedora | Red Hat Enterprise Linux (RHEL) | CentOS | Arch Linux | Manjaro | Alpine Linux | AlmaLinux | Rocky Linux | macOS | Anolis OS | Alibaba Cloud Linux | SUSE Linux | openSUSE | Void Linux | Windows (via Docker)
+
+- https://github.com/lmc999/RegionRestrictionCheck
+  - bash <(curl -L -s check.unlock.media)
+  - 纯 bash shell 实现的流媒体检测功能，可免 ROOT 执行，支持多个平台。可用于批量测试多个地区的流媒体网站解锁情况。
+  - 带有 bash 环境的任意 Unix 或类 Unix 操作系统。 例如：Ubuntu 16+, Debian 10+, RHEL 7+, Arch Linux, Alpine Linux, FreeBSD, MacOS 10.13+, Android (Termux), iOS (iSH), Windows (MinGW/Cygwin), OpenWRT 23+ 等等。
+
 - ## 
 
 - ## 

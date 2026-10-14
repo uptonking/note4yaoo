@@ -347,6 +347,90 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1013
+
+- 🤔 i see port 68(udp), 3389(tcp), -1(icmp), 1(tcp and udp) are in current security group, why are they in it? can i remove them?
+  - 3389 (TCP): default port for Windows Remote Desktop Protocol (RDP). Cloud providers bundle it into default security group templates so Windows instances don't get locked out upon creation.
+  - 68 (UDP):  DHCP Client port (DHCP servers send IP address lease information from port 67 to port 68).
+  - -1 (ICMP):  In cloud security groups, -1 represents ALL ICMP types and codes (e.g. ping, traceroute, and error notifications).  Keep it. While it allows ping diagnostics, its most critical job is Path MTU (PMTU) Discovery (ICMP Type 3 "Fragmentation Needed"). If ICMP is blocked, large TCP packets (like downloading files or loading web pages) can get silently dropped along the route (known as an MTU black hole), causing connections to stall.
+  - 1 (TCP and UDP): Port 1 is an obsolete protocol called TCPMUX from the 1980s. In many VPS control panels, this usually appears by accident if someone started entering a port range (like 1-65535) and only saved the 1. Can you remove it? Yes, delete it. Modern systems do not use port 1, and none of your proxy or system services need it.
+
+- 🤔 there are so many oidc auth/account related solutions, like keycloack/authentik... is there any popular open source or self-hostable oidc/auth solutions... please deep research related solutions/projects/ideas, if you found any self hostable products or inspiration projects, provide overview/github-url/website for each.
+- Full-stack IAM platforms (OIDC + SAML + LDAP + MFA, “replace Okta/Auth0” tier)
+  - Keycloak
+  - Authentik
+  - Zitadel
+  - Ory stack (Kratos + Hydra + Keto + Oathkeeper)
+  - Casdoor
+  - Logto
+- Lighter, more focused self-hosted OIDC providers (great for homelabs / small infra)
+  - Authelia
+  - Pocket ID
+  - Kanidm
+  - SuperTokens
+
+- 
+- 
+
+- 🚧 worker_5 node and ladocs service
+i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cpamp/cursorapi/aichor1/relaichor1, worker_2 node deploys librechat/wapdf/aichor/relaichor/searx/verge2, worker_3 deploys flowy/verge3, worker_4 deploys wabase/verge.
+  - all services are running well on my 5 vps.
+  - Most requests should go to leader node first, then proxying to follower/worker nodes.
+  - the current architecture of Foundation apps/services and Consumer apps/services is good.
+
+- I just get a new vps(with ip 137.175.62.131) as worker_5 node, the current goal is to deploy and connect it to the exisiting services like beszel/woodpecker/observer, then deploy verge5(hysteria2) orphan service on it, then deploy gost service on it and make it work work well with verge3 service, then deploy ladocs consumer service on it.
+
+- task A: analyze exisiting services/config, deploy and connect it to beszel/woodpecker/observer foundational services.
+
+- task B: please design a solution to deploy a orphan hysteria service called `verge5` to any follower node user specified. deploy it to worker_5 node by default. in cloudflare i have configured verge5.aichorage.de to worker_5 node ip . 
+  - verge5 and verge/verge2 have the same features and use the same docker image, but they are unrelated services as orphan service without high availability.
+  - source code for verge/verge2/verge5(hysteria) has been cloned at folder `~/Documents/repos/devops/all-vpn-proxy/hysteria` for reference if you want.
+
+- task C: please design a solution to deploy a gost service to worker_5 node and make it work well with verge3 service. you might refactor/improve verge3 to make it work as a standalone hysteria2 service, please also design a verge-relay service on worker_5 node that make requests go to worker_5 node first then forwarded with gost to verge3(hysteria2). verge3 does not have to be like verge/verge2/verge5, you might refactor/improve verge3. `~/Documents/repos/devops/verges` provides a good example for this forwarding architectre, for example, indigenous node can serve hysteria2 alone, and it could also serve it with being forwarded from primary node. for current task, worker_5 node is like primary node, verge3(worker_3 node) is like indigenous node.
+  - source code for gost has been cloned at folder `../all-vpn-proxy/gost` for reference if you want.
+  - in cloudflare i have configured verge-relay.aichorage.de to worker_5 node ip .
+
+- task D: please design a solution to deploy a lasuite-docs service called `ladocs` to any follower node user specified, also design sensible configurations to make it work well on a single vps. please deploy it to worker_5 node by default, just like aichorouter/flowy/wabase. in cloudflare, i have configured ladocs.aichorage.de to leader ip and worker5-ladocs-origin.aichorage.de to worker_5 ip .
+  - source code for ladocs(lasuite-docs) has been cloned at folder `~/Documents/repos/saas/lasuite-docs` for reference if you want.
+  - `~/Documents/repos/saas/lasuite-docs/documentation/installation/compose.md` and `~/Documents/repos/saas/lasuite-docs/documentation/examples/compose` are the core doc and examples for docker deployment, you might use self-hosted redis/postgresql/minio for ladocs on worker_5 node. for OIDC, please self host authelia docker service with name `auther` on worker_1 node and make it work well with `ladocs`.  in cloudflare, i have configured auther.aichorage.de to leader ip and worker1-auther-origin.aichorage.de to worker_1 ip . configure auther/authelia to make it extensible/flexisible so that it can be used with other services in the future. source code for auther(authelia) has been cloned at folder `~/Documents/repos/saas/authelia` for reference if you want.
+  - ladocs is a little complicated, please design sensible configurations and make it take low system resources to fit most of the docker services on a single budget vps with 3GB ram.
+
+- at the end of the plan,  please push to github to trigger auto deployment with woodpecker ci, then inspect ci status by `woodpecker-cli`, fix issue if it exists.
+
+- all the services on worker_5 node bootstraps successfully, but it does not mean they are working well. please analyze related code/config and run some tests to check if core services really works,, please also check if ladocs works well with auther service, you might test user-registration/login/doc-creation/... to recheck if core features work. you might refactor/improve worker_5 node services to make it correct/robust in the long term.
+- this repo is still beta software. legacy/unused code might be refactored or removed. compatibility layer is not required. just using the latest code/logic is ok.
+
+- you might run `ssh root@107.150.7.138` as leader node and do whatever you want.
+- you might run `ssh root@107.175.66.2` as worker_1 node and do whatever you want.
+- you might run `ssh root@166.88.160.139` as worker_2 node and do whatever you want.
+- you might run `ssh root@192.3.91.103` as worker_3 node and do whatever you want.
+- you might run `ssh root@137.175.62.131` as worker_5 node and do whatever you want.
+
+- 🐛 verge3 direct works perfectly. The relay connects and even got HTTP 200 in the verbose test, but responses are intermittent — QUIC-over-UDP-relay is fragile. The tcpdump reveals the problem: docker-proxy only sends 24-byte packets back to the client, while gost logs show 2560+ bytes going back. Docker's UDP proxy isn't forwarding gost's responses properly. Let me confirm by testing gost with network_mode: host (bypassing docker-proxy entirely). Host-network gost also connects but can't transfer data — so the issue is gost's udp:// handler itself, not docker-proxy. Let me test raw iptables DNAT to confirm UDP relaying works at the kernel level without gost.
+  - Direct worker-5 → worker-3 connection works perfectly . The issue is specifically gost's udp:// handler — it creates short-lived sessions (19-33ms) that break QUIC's connection continuity. 
+  - The fix: add kernel-level iptables DNAT that bypasses gost entirely, forwarding UDP 2053 + hop range directly to verge3. The gost container stays as a health-check placeholder. 
+- 🤔 为什么 verges vps 能通过 gost 正确转发， 而verge3的gost转发存在大量丢包? 
+
+- The problem is clear: iptables-nft (the nf_tables backend on this kernel) does NOT resolve hostnames — it only accepts raw IP addresses. I need to resolve the hostname to an IP before passing it to iptables. Let me fix configure-firewall.sh.
+
+- The auther container runs as the image's default user (empty = root), so it can read mode-600 files. The ladocs-frontend runs as user 101 (nginx-unprivileged), which can't read mode-600 files. The platformctl umask 077 causes all deployed files to be mode 600/700.
+  - The fix: don't bind-mount the nginx template from the host filesystem. Instead, use a Docker volume or a config-based approach. But the simplest robust fix that matches the platform's existing pattern: use volumes_from or mount with a tmpfs — actually, the simplest fix is to copy the template into an init container that sets proper permissions. But that's over-engineering.
+  - The cleanest fix: change the frontend service to run as root (like auther does), or use user: "0:0" and let nginx drop privileges itself.
+  - The nginx-unprivileged image can run as root; it just defaults to non-root for security.
+- Platform umask 077 makes deployed files mode 600; frontend ran as user 101 and couldn't read the bind-mounted nginx template
+
+- can the nginx-unprivileged docker image run as root?
+  - Yes — technically it can. The USER nginx (or similar) directive baked into the nginx-unprivileged image is just a default, not an enforced restriction. Docker and Kubernetes both let you override it
+  - The risk is entirely about why you’d be undoing the point of the image. nginx-unprivileged exists specifically so nginx can run without root privileges — e.g., in Kubernetes clusters enforcing the “restricted” Pod Security Standard, in hardened multi-tenant environments, or just to minimize blast radius.
+  - The vanilla nginx image already works fine for root use cases (it drops privileges for worker processes internally anyway). If you’re running nginx-unprivileged as root, you’re carrying its quirks (port 8080 default, non-standard paths) with none of the security benefit.
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 ## 1012
 
 - mineru provides free document parsing/ocr api at https://mineru.net/apiManage/docs. is there any other similar services that provides free document parsing/ocr service? does docling/marker provide free service? 
