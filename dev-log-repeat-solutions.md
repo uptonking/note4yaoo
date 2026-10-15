@@ -186,6 +186,20 @@ modified: 2021-07-20T13:50:23.433Z
 
 ## solutions: inter(re)active knowledgebase/wiki
 
+- usecases
+  - editor/docs
+  - excel/data-platform
+  - pdf/ocr
+  - automation/workflow/bots
+  - cloud-drive
+  - agent-platform/chat
+  - bases: 
+    - git, beszel, woodpecker, openobserve
+    - redis, pg/mysql, minio
+  - toys:
+    - onlyoffice
+    - immich
+
 - ✨ cms(content-mgmt)
   - 👉 suite-docs  (MIT/django+blocknote)
   - 👉🏻 strapi      (MIT/knex+slate)

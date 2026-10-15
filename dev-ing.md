@@ -347,6 +347,21 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1015
+
+- vps cpu:
+Intel Core Processor (Broadwell, IBRS）步进2（6代）32/64-bit
+vs
+ntel Xeon Processor (Skylake, IBRS) 步进4 (6代) 32/64-bit
+
+- 在 VPS 环境中，Intel Xeon Processor (Skylake, IBRS) 整体优于 Intel Core Processor (Broadwell, IBRS)。这两串字符并不是物理 CPU 的真实出厂型号，而是 KVM/QEMU 虚拟化层向虚拟机暴露的“虚拟 CPU 模板”（Virtual CPU Model），用来屏蔽底层硬件差异并方便宿主机热迁移。
+- 为什么一个叫 Core、一个叫 Xeon？
+  - 这只是 QEMU 源码对不同代际模板的默认命名习惯。在 QEMU 中，Broadwell 的通用虚拟模板统一被命名为 Intel Core Processor (Broadwell...)，即便宿主机实际使用的是服务器级的 Xeon E5-2680 v4，开出来的 VPS 也会显示为 Intel Core Processor。
+  - 而到了 Skylake 时代，QEMU 将桌面端（Skylake-Client）与服务器端（Skylake-Server）模板拆分开来，后者专门命名为 Intel Xeon Processor。
+  - 这里的“6代”不是指第六代酷睿，而是面板或检测脚本将 CPUID 中的 Family 6（第 6 家族） 直接翻译成了“6代”。自 1995 年的 Pentium Pro 以来，Intel 绝大多数主流 x86 处理器（从老旧的酷睿 2 到如今的至强铂金）的 Family 编号全部是 6。
+
+- Skylake, IBRS 支持 AVX-512 指令集（包含 avx512f、avx512dq、avx512bw、avx512vl 等）。在运行高强度加密解密、音视频转码（FFmpeg）、科学计算或本地轻量级 AI 推理（如 llama.cpp 纯 CPU 推理）时，Skylake 的吞吐量明显快于仅支持 AVX2 的 Broadwell。
+
 ## 1014
 
 - [Document AI pricing | Google Cloud  ](https://cloud.google.com/products/document-ai/pricing)

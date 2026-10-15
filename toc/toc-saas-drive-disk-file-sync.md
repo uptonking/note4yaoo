@@ -216,6 +216,9 @@ modified: 2024-03-31T17:45:16.789Z
     - This is perfect for multi-container setups 🛠️ (e.g., FileBrowser Quantum + Radicale), ensuring centralized and consistent authentication without duplicating user management. Centralizes authentication across containers
     - PS: Bolt DB will soon be deprecated and this will need refactoring
   - [allow tagging files for search _202407](https://github.com/gtsteffaniak/filebrowser/issues/143)
+  - https://github.com/jmlcas/filebrowser-office
+    - https://github.com/jmlcas/filebrowser
+    - [Filebrowser Quantum x OnlyOffice : r/selfhosted _202601](https://www.reddit.com/r/selfhosted/comments/1qdofrp/filebrowser_quantum_x_onlyoffice/)
 
 - https://github.com/filebrowser/filebrowser /31.1kStar/apache2/202509/go/ts/vue
   - https://filebrowser.org/

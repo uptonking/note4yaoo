@@ -101,6 +101,9 @@ modified: 2022-11-07T10:25:12.034Z
 
 - [奶昔论坛 ](https://forum.naixi.net/)
   - 电话卡、 银行卡
+
+- forums-incubating
+  - [LowSeek - 低价资源源头社区 ](https://lowseek.ai/)
 # vps-dns-domain
 - sites
   - [IDC Flare - 域名、主机等信息集散地](https://idcflare.com/about)

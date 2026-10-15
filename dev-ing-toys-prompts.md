@@ -1320,6 +1320,18 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 ## codex
 
 # llm-hub-lite/vps 🚧
+- leader: foundational services like git/woodpecker/beszel/openobserve
+- worker_1: ai like new-api/cpapi/librechat
+- worker_2: large traffic/disk - minio, searx, drive/filebrowser/opencloud, paperless
+- worker_3: activepieces
+- worker_4: grist, outline
+- worker_5: la suite - docs, drive, people
+- worker_6: 
+  - onlyoffice
+  - odoo, directus
+  - zulip
+  - immich
+
 - i have deployed this repo to my 6 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/auther/aichorouter/cpapi/cpamp/cursorapi/aichor1/relaichor1, worker_2 node deploys librechat/wapdf/searx/aichor/relaichor/verge2, worker_3 deploys flowy/verge3, worker_4 deploys wabase/verge4, worker_5 deploys ladocs/verge5.
   - all services are running well on the vps cluster.
   - Most requests should go to leader node first, then proxying to follower/worker nodes.
@@ -1402,7 +1414,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
   - when you finish the update, all services should still running well, and features in aichorouter and cpapi should still work well without data/config loss.
 
 - ### ip-sentinel
-- this repo IP-Sentinel is deployed on my 2 vps, Master node is deployed on 166.88.160.139, agent node is deployed on 137.175.xx.xx. Integrated telegram bot token is `8960900708:AAFXB_7kD6r21yPjwzxUPth9zBK1YnhoVjg`, user id is 5016592311 .
+- this repo IP-Sentinel is deployed on my 2 vps, Master node is deployed on 166.88.160.139, agent node is deployed on 137.175.xx.xx. Integrated telegram bot token is `8960900708:AAFXB_xxxx`, user id is 501659xxxx .
   - master node is installed by `bash -c "$(curl -fsSL https://raw.githubusercontent.com/hotyue/IP-Sentinel/main/master/install_master.sh)"` .
   - agent node is installed by`bash -c "$(curl -fsSL https://raw.githubusercontent.com/hotyue/IP-Sentinel/main/install.sh)"` .
   - it was running well yesterday, i could get the overall report of agent node in telegram bot. but now i cannot get the report of agent node, no valid response in telegram bot, it just responded "司令部指令下达：正在召唤所有哨兵回传简报...", but no valid data.
@@ -1473,6 +1485,10 @@ in a multi-nodes high-availability architecture
 
 - a solution has been implemented to support to deploy a new docker service to any follower node by new environment variables or new interactive shell scripts, so that requests still go to leader node then proxied to follower node. for services that high-availability is not required, these services can be deployed to a single server.
 - continue to improve the architecture that supports to deploy a new docker service to any follower node, using aichorouter/cpapi as example, making the architecture correct, robust, extensible.
+
+- please design a solution to deploy a paperless-ngx service called `paperlex` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/aichor. in cloudflare, i have configured paperlex.aichorage.de to leader ip and worker2-paperlex-origin.aichorage.de to worker_2 ip .
+  - source code for paperlex(paperless-ngx) has been cloned at folder `~/Documents/repos/saas/paperless-ngx` for reference if you want.
+  - optimize paperlex to take minimal system resources by default, for example, use sqlite, disable Tika, disable AI.
 
 - please design a solution to deploy a lasuite-docs service called `ladocs` to any follower node user specified, also design sensible configurations to make it work well on a single vps. please deploy it to worker_5 node by default, just like aichorouter/flowy/wabase. in cloudflare, i have configured ladocs.aichorage.de to leader ip and worker5-ladocs-origin.aichorage.de to worker_5 ip .
   - source code for ladocs(lasuite-docs) has been cloned at folder `~/Documents/repos/saas/lasuite-docs` for reference if you want.

@@ -2656,13 +2656,82 @@ JP从0.8刀每月涨价到1.1刀/月
 - resources
   - https://cn.raksmart.com/cps/9063  /大陆优化
   - 线路资源：中国联通 CU4837、中国电信 CT、中国移动 CMI、Telia、TATA、PCCW、Cloudflare、IX等多家 Tier 1 网络资源。
-- ## 
+
+- NQ
+  - 137.175.x.x, 分数正常, Intel Core Processor (Broadwell, IBRS) 步进2 (6代) 32/64-bit
+    - [【NQ】RakSmart 2H4G50G 1.99/M 4837直连 137段 _202610](https://www.nodeseek.com/post-980206-1)
+      - Intel Xeon Processor (Skylake, IBRS) 步进4 (6代) 32/64-bit
+    - [[只测不评] raksmart SV硅谷 1.99USD 月付 _202610](https://www.nodeseek.com/post-979905-1)
+      - Intel Xeon Processor (Skylake, IBRS) 步进4 (6代) 32/64-bit
+    - [【NQ】RakSmart 2H4G 大陆优化4837 5G共享带宽/1T 1.99$/m _202609](https://www.nodeseek.com/post-940523-1)
+    - [【NQ+TQ优化前】Raksmart 圣何塞 2C4G 1.99刀 三网4837 _202609](https://www.nodeseek.com/post-954692-1)
+    - [[NQ+TQ] Raksmart 4837 1.99USD/mo _202609](https://www.nodeseek.com/post-953000-1)
+      - 3.3g
+    - [【NQ】raksmart 4837 2C4G 1.99USD 另外请问一下内网组网方案 _202609](https://www.nodeseek.com/post-952730-1)
+    - [[NQ][TQ]raksmart大陆三网优化月付1.99刀留档测试 _202608](https://www.nodeseek.com/post-892289-1)
+    - [【NQ】RakSmart 2H4G 5G共享带宽/1T 1.99$/m _202609](https://www.nodeseek.com/post-923728-1)
+    - [「NTQ留档」RakSmart CN2 3.99/4837 1.99/国际BGP 1.99 晚高峰测试 _202609](https://www.nodeseek.com/post-947306-1)
+      - 1c1g
+  - 137.175.x.x， 分数低
+    - 🆚 [【NQ】raksmart 1.99刀/mo 2c4g 1T线路优化款 对比10T国际BGD款 _202607](https://www.nodeseek.com/post-844328-1)
+    - [[nodequality]raksmart 4837 硅谷 2v4g50G 1T 1.99刀/月 _202609](https://www.nodeseek.com/post-919159-1)
+    - [［NQ］RAKsmart 2c4g $1.99/m _202607](https://www.nodeseek.com/post-838391-1)
+    - [[NQ]RakSmart SV 2H4G50G(Shared) 1T (11.11 0元购款) _202607](https://www.nodeseek.com/post-841387-1)
+  - 198.200.x.x， 分数正常
+    - [【NQ】Raksmart SJC 4837 2C4G _202609](https://www.nodeseek.com/post-929609-1)
+    - [【NQ】RakSmart SV （硅谷）VPS 1.99$ _202609](https://www.nodeseek.com/post-924270-1)
+    - [【NQ】RakSmart 硅谷VPS 2C4G·50G HDD·大陆优化VIP 5G1T 月付1.99USD _202609](https://www.nodeseek.com/post-917328-1)
+    - [【NQ】RakSmart 1.99 2C4G 大陆优化 _202609](https://www.nodeseek.com/post-909652-1)
+  - 198.200.x.x， 分数低
+    - [【NQ】RakSmart 2H4G 大陆优化4837 5G共享带宽/1T 1.99$/m _202609](https://www.nodeseek.com/post-940456-1)
+      - cpu, ram, disk-io 分低
+    - [【NQ】RakSmart SanJose 4837 2C4G _202608](https://www.nodeseek.com/post-862332-1)
+  - 198.2.x.x, 分数正常
+    - [【测试留档】RakSmart SV（硅谷）2C4G50G 1T 三网4837 1.99$/月 _202610](https://www.nodeseek.com/post-985329-1)
+      - 2c4g
+      - [[NQ留档] Raksmart 4837 2c4g 1.99刀 _202610](https://www.nodeseek.com/post-980270-1)
+      - 同一机器不同用户的测试
+    - [raksmart 1.99$ 晚高峰 _202609](https://www.nodeseek.com/post-917029-1)
+      - 1c1g
+    - [［NQ］Raksmart 中国大陆优化 $1.99/m _202608](https://www.nodeseek.com/post-894193-1)
+      - 1c1g
 
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [DMIT对比RAKSMART12小时延迟图 _202609](https://www.nodeseek.com/post-908676-1)
+  - 有个疑问圣何塞延迟整体要比洛杉矶高吗
+
+- 看看sj是不是la接过去的，比如搬瓦工的sj就是la接过去的，白多走一段路，la挂了sj也得挂 起不到互备的作用
+
+- 物理距离啊, 洛杉矶更近
+
+- ## [raksmart sjc 4837的上游是哪家？ _202609](https://www.nodeseek.com/post-915148-1)
+- 自己家 就是技术纯菜
+也不知道四向计费解决没
+
+- 还没解决。 加个内网都解决不了，必须重新买。 更不用说解决内网流量统计了
+
+- 自家线路，四向没好
+
+- ## [matrixidc 圣何塞 4837上游似乎是raksmart? _202609](https://www.nodeseek.com/post-916932-1)
+  - 我看联通有走raksmart AS54600
+
+- 哪就不如raksmart了呀，流量口子都更大，不过raksmart超的也多
+
+- ## 💰 [RakSmart 退款咨询 _202609](https://www.nodeseek.com/post-929123-3)
+  - 这家机器可以退款吗，我下工单说只能退到账户，不能退回原支付渠道，比ccs都难用，受不了了，两个月的钱，8刀54元了，用不了了快，不如163用着也难受，测测速直接死机了
+- PayPal付的，直接可以原路退回，收5%渠道手续费， 是的，我是先取消服务器，然后工单申请的退款
+  - 他和你说退款要3-5个工作日的时候，要回他一下，不然当成你没确认，我傻等了一周，昨天上午又发了个工单，确认了一下，退款很快
+
+- 可以原路退回，扣5%
+
+- 我甚至都新开了台机器，还是这样
 
 - ## [【慢讯】raksmart 已添加对 breadcloud 的线路支持 _202609](https://www.nodeseek.com/post-915034-1)
 Bread → Raksmart	Bread → GTT/nLayer → PCCW → Raksmart
@@ -2891,6 +2960,32 @@ yysy，4837口子真的大，轻松跑满本地
 
 - 2026.9.29工单 官方已经明确修复 内网流量统计问题了
 至于流量统计更新还在优化中 依旧24小时更新
+
+- ### [raksmart的arp泛洪问题已解决 用量统计还是有问题 _202609](https://www.nodeseek.com/post-913146-1)
+- 我看了我的sv还是有广播泛洪
+  - 哪个段的 我原先是137段的 没这个问题，后来要组内网重新买了 198段的就有这个问题。 今天客服帮忙解决了
+- 198.200，迁移过来的老机器
+- 嗯整个198段都有 广播泛洪问题，包括198.2 和198.200 . 我的暂时是解决了 至于商家怎么解决的 我也不清楚。 商家说他们那做了调整。。。
+我本来是想换到137段的 可惜商家说137段的ip已耗尽了
+
+- 他家sv的都有泛洪问题 只是相对某些段流量较少
+
+- 所以ARP泛洪是单机解决还是整段解决了？我还需要找客服吗？
+  - 不知道 你查一下你的机器每秒收到的arp包 正常情况下每秒最多也就几个。
+我之前每秒1000个包
+
+- 之前没注意，我在4837和CN2两台机器上都跑了一下
+30s都是1-2个包
+好像我这没有ARP问题
+
+- 我在想，我是否可以借鉴你的方法：
+我有一台10T的国际线路的圣何塞的机器，然后再整一台cn2优化线路的机器。作为内网
+不过，我一直不明白，这样做的好处是什么?
+线路不卡，还是只是单纯解决流量多寡的问题
+- 同一区域 同一账号 开机的时候勾选内网自然可以。
+不过现在还是有问题 内网还是在计费的。
+和线路卡不卡没关系 就是为了CN2流量翻倍（虽然不翻倍也根本用不完）
+但是MJJ是这样的
 
 - ## [【NodeSeek福利】SV（硅谷）2核心，4G内存 大陆优化 VIP 秒杀$1.99，限量20台/周，抢完即止！ _202609](https://www.nodeseek.com/post-943813-1)
   - 经典款（每周一更新库存） SV（硅谷）2核心，4G内存，50G HDD，大陆优化 VIP，带宽5G，1T流量；续费同价，秒杀价：$1.99 
@@ -3163,7 +3258,11 @@ Gemini、Reddit 被拉黑；
 
 - ## 
 
-- ## 
+- ## [这个Dedirock 年付$7小鸡居然开了25端口… _202508](https://www.nodeseek.com/post-434538-1)
+- 正常，CCS就是这样。
+TOS明说了默认关闭25，但是你买了鸡之后开机说不定会开。
+
+- ccs巨好说话，随便编个理由发个工单就给开25
 
 - ## [牛马云 dedirock这种机能干啥用？ _202610](https://www.nodeseek.com/post-981162-1)
   - 有个dedirock，ip质量有点垃圾，距离也远，不能落地也不能线路，可以做什么用啊？
