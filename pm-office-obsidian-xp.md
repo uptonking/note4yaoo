@@ -181,6 +181,9 @@ modified: 2026-06-30T17:32:43.131Z
 
 ## draft-ai
 
+- pm
+  - 弱化chat/群聊相关功能, 不要花费过多精力在随处都有的chat上
+
 - features
   - doc skills hub with versioning/usecases
   - apple foundation model

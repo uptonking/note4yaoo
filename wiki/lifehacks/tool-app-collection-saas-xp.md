@@ -88,10 +88,19 @@ modified: 2022-11-07T10:25:12.034Z
   - curl https://linux.do/cdn-cgi/trace
     - 看 colo 是哪里接入的，有些 IP 段绕 sjc 去了
 
+- [V2EX ](https://www.v2ex.com/?tab=hot)
+  - 站长在调整方向: 邀请码, 发币
+
 - [NodeSeek](https://www.nodeseek.com/)
   - [NodeSeek 邮箱 ](https://seek.li/)
   - [Nodeimage 图床](https://www.nodeimage.com/)
   - [NodeSeek-管理记录 ](https://www.nodeseek.com/ruling)
+
+- [NodeLoc - 自由、平等、友好、开放、有趣的交流社区 ](https://www.nodeloc.com/)
+  - [Professional enterprise and personal mailboxes — Smailr ](https://smailr.com/)
+
+- [奶昔论坛 ](https://forum.naixi.net/)
+  - 电话卡、 银行卡
 # vps-dns-domain
 - sites
   - [IDC Flare - 域名、主机等信息集散地](https://idcflare.com/about)

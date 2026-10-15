@@ -1320,8 +1320,8 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 ## codex
 
 # llm-hub-lite/vps 🚧
-- i have deployed this repo to my 5 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/aichorouter/cpapi/cpamp/cursorapi/aichor1/relaichor1, worker_2 node deploys librechat/wapdf/aichor/relaichor/searx/verge2, worker_3 deploys flowy/verge3, worker_4 deploys wabase/verge.
-  - all services are running well on my 5 vps.
+- i have deployed this repo to my 6 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/auther/aichorouter/cpapi/cpamp/cursorapi/aichor1/relaichor1, worker_2 node deploys librechat/wapdf/searx/aichor/relaichor/verge2, worker_3 deploys flowy/verge3, worker_4 deploys wabase/verge4, worker_5 deploys ladocs/verge5.
+  - all services are running well on the vps cluster.
   - Most requests should go to leader node first, then proxying to follower/worker nodes.
   - the current architecture of Foundation apps/services and Consumer apps/services is good.
 
@@ -1329,7 +1329,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 
 - analyze the core architecture/docs/scripts/code, then explain to me step by step how to deploy this repo from scratch to my vps 
 
-- I just get a new vps(with ip 137.175.62.131) as worker_5 node, the current goal is to deploy a ladocs service to worker_5 node.
+- I just get a new vps(with ip 137.175.xx.xx) as worker_5 node, the current goal is to deploy a ladocs service to worker_5 node.
 
 - this repo should be a reproducible apps/services stack using docker. 
 
@@ -1371,6 +1371,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - you might run `ssh root@107.175.66.2` as worker_1 node and do whatever you want.
 - you might run `ssh root@166.88.160.139` as worker_2 node and do whatever you want.
 - you might run `ssh root@192.3.91.103` as worker_3 node and do whatever you want.
+- you might run `ssh root@137.175.62.131` as worker_5 node and do whatever you want.
 
 - at the end of the plan, 
 - after you finish the improvements/fixes, please push to github to trigger auto deployment with woodpecker ci, then inspect ci status by `woodpecker-cli`, fix issue if it exists.

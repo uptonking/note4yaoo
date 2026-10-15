@@ -648,6 +648,71 @@ https://dlercloud.com/user/shop
 
 - ## 
 
+- ## [LayerOne：佛州 1C1G20G，$14.4/年，WOW 商宽 IP _202608](https://www.nodeseek.com/post-871673-1)
+  - https://layeronecloud.com/let-promo/
+  - 这家也算是老商家了，之前叫 ReviveHost、Pulsar67，最近又改了名，从 2020 年成立到现在。但是一直不温不火，
+  - 我之前也短期买过一个月，稳定性还不错，还支持 alipay 对国人挺友好的。
+  - 这台机器最大的优势是 IP。不过并不是所有数据库都一致认可的“纯家宽”：IP2Location 仍将其识别为机房 IP，部分数据库也存在滥用标记。因此，更准确的说法是 WOW 商宽 IP，但多数数据库识别为家宽，如果对 IP 质量要求极高建议还是加钱去买真家宽，如果你不太在意延迟且预算有限那这机器还是不错的。
+  - 佛罗里达州距离美西较远，美西访问延迟约 70ms
+  - 对延迟不敏感的话，比较适合用作美国落地、流媒体解锁或轻量代理
+
+
+- ## [性价比最高的🇺🇸家宽和伪家宽推荐一下 _202609](https://www.nodeseek.com/post-923003-1)
+  - 最好稍微带点优化，实在没有也可以
+
+- 看你怎么定义伪家宽了，这个概念就很魔幻，双ISP非家宽？
+
+- 家宽正常情况下都没有优化的，也不推荐直连。
+  - 性价比最高的现在就是诺联家的cox了吧，要求必须是AT&T的话就是aaitr了。
+
+- aaitr: 149/月
+
+- 伪家宽一般都是回程9929优化，反正我觉得只能当个干净的解锁落地机。
+
+另外建议最好也了解一下自己有没有需求，真家宽价格都不便宜。
+
+- 买个代理IP使用链式代理就行了
+
+- 云悠的GTT伪家宽
+
+- Cloudleadinno 伪家宽 3刀一个月 挺好的
+
+- 其实只要不影响流媒体 TK AI 社媒这些使用就行了
+
+- 如果不介意延迟可以看看这家，机器在佛州，现在 let 有活动 15 刀一年 https://layeronecloud.com
+
+- ## [有什么性价比高的us伪家宽 _202609](https://www.nodeseek.com/post-937775-1)
+  - 1个月20以内的，真家宽用不起，买个us伪家宽凑活用用
+- 诺联 云悠 zoro
+- NovixLink的cg20一个月挺绿的
+- 我也推荐NovixLink，我自己买的就是这个，20一个月 
+- NovixLink（诺联） - LAX-BGP Lite 轻量版
+• 1 vCPU 核心
+• 768 MB DDR4 内存
+• 10 GB RAID10 SSD 硬盘
+• 500 Mbps 峰值上行带宽
+• 500 Mbps 峰值下行带宽
+• 1000 GB 每月双向流量
+• 1x 独享美国双ISP原生住宅IPv4
+• 测试IP：38.58.108.2
+• ☁️ 全球 Tier-1 骨干网络
+• ⚠️ 无中国大陆连接优化
+
+ℹ️ 美国 Cogent 双 ISP 住宅 IP 国际带宽 VPS（伪家宽落地）
+
+💰 价格：$4.99 CAD 每月
+
+- 25以内一个月的ntt家宽 怎么样？
+LAX ISP Nano
+CPU 1核 ｜ 内存 1024 M
+硬盘 10 GB ｜ 带宽 1000M
+2048G/月 ｜ 超出限速共享 1 Mbps
+重置流量 $4.99
+IPv4 1个 ｜ IPv6 0个
+$71.88/年
+USISP-NANO-60 6折优惠码 3.6刀一个月 有测试ip啥的。
+下单链接：https://panstar.ai/servers
+
 - ## [ai要不要买家宽的真实体验 _202609](https://www.nodeseek.com/post-921568-1)
 个人经历，只供参考
 chatgpt claude grok gemini 等主流ai都使用，codex claude 是高频 半年使用机房原生ip vmiss demit 没有任何影响

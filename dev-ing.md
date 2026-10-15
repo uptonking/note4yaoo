@@ -347,6 +347,25 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1014
+
+- [Document AI pricing | Google Cloud  ](https://cloud.google.com/products/document-ai/pricing)
+  - Enterprise Document OCR Processor: First 1,000 pages per month are $0.00
+  - All Other Processors (Form, Layout, Custom, Pretrained): 0 free pages per month; standard pay-as-you-go rates
+
+- it seems that  https://ladocs.aichorage.de (from worker_5 node) supports to login  with https://auther.aichorage.de (from worker_1 node). but i can not find how to register new user at https://auther.aichorage.de . so what is the normal workflow to register and use https://ladocs.aichorage.de?
+  - source code for ladocs(lasuite-docs) has been cloned at folder `~/Documents/repos/saas/lasuite-docs` for reference if you want.
+  - source code for auther(authelia) has been cloned at folder `~/Documents/repos/saas/authelia` for reference if you want.
+  - Analyze related code/config, then explain to me step by step how to register and use ladocs
+- Authelia is designed as a secure identity provider and reverse-proxy authentication server. Authelia deliberately does not provide a public self-registration/sign-up form. User accounts must be provisioned administratively via its authentication backend.
+  - Auther is configured to use Authelia's file authentication backend
+  - In apps/auther/entrypoint.sh, Auther automatically provisions the bootstrap admin and collaborator accounts into `/config/users_database.yml`
+  - To create a new user, Append the new user to  auther/users_database.yml
+- Ladocs uses Just-In-Time (JIT) provisioning. Once an account exists in Auther, logging in through OIDC automatically creates and synchronizes the user profile in Ladocs' database (impress_user). If no matching record exists in the impress_user table, it automatically instantiates a new user with their OIDC sub, email, and full_name.
+  - Users never have to register in Ladocs directly.
+
+- i want to use verge3/verge5/verge-relay with clashx meta on my mac. the clashx config file is at `~/.config/clash.meta/verge2609.yaml`. verge3/verge5 works well, but verge-relay does not seem to work.
+
 ## 1013
 
 - 🤔 i see port 68(udp), 3389(tcp), -1(icmp), 1(tcp and udp) are in current security group, why are they in it? can i remove them?
@@ -400,12 +419,6 @@ i have deployed this repo to my 5 vps, leader node deploys beszel-controller/bes
 - all the services on worker_5 node bootstraps successfully, but it does not mean they are working well. please analyze related code/config and run some tests to check if core services really works,, please also check if ladocs works well with auther service, you might test user-registration/login/doc-creation/... to recheck if core features work. you might refactor/improve worker_5 node services to make it correct/robust in the long term.
 - this repo is still beta software. legacy/unused code might be refactored or removed. compatibility layer is not required. just using the latest code/logic is ok.
 
-- you might run `ssh root@107.150.7.138` as leader node and do whatever you want.
-- you might run `ssh root@107.175.66.2` as worker_1 node and do whatever you want.
-- you might run `ssh root@166.88.160.139` as worker_2 node and do whatever you want.
-- you might run `ssh root@192.3.91.103` as worker_3 node and do whatever you want.
-- you might run `ssh root@137.175.62.131` as worker_5 node and do whatever you want.
-
 - 🐛 verge3 direct works perfectly. The relay connects and even got HTTP 200 in the verbose test, but responses are intermittent — QUIC-over-UDP-relay is fragile. The tcpdump reveals the problem: docker-proxy only sends 24-byte packets back to the client, while gost logs show 2560+ bytes going back. Docker's UDP proxy isn't forwarding gost's responses properly. Let me confirm by testing gost with network_mode: host (bypassing docker-proxy entirely). Host-network gost also connects but can't transfer data — so the issue is gost's udp:// handler itself, not docker-proxy. Let me test raw iptables DNAT to confirm UDP relaying works at the kernel level without gost.
   - Direct worker-5 → worker-3 connection works perfectly . The issue is specifically gost's udp:// handler — it creates short-lived sessions (19-33ms) that break QUIC's connection continuity. 
   - The fix: add kernel-level iptables DNAT that bypasses gost entirely, forwarding UDP 2053 + hop range directly to verge3. The gost container stays as a health-check placeholder. 
@@ -424,10 +437,6 @@ i have deployed this repo to my 5 vps, leader node deploys beszel-controller/bes
   - The risk is entirely about why you’d be undoing the point of the image. nginx-unprivileged exists specifically so nginx can run without root privileges — e.g., in Kubernetes clusters enforcing the “restricted” Pod Security Standard, in hardened multi-tenant environments, or just to minimize blast radius.
   - The vanilla nginx image already works fine for root use cases (it drops privileges for worker processes internally anyway). If you’re running nginx-unprivileged as root, you’re carrying its quirks (port 8080 default, non-standard paths) with none of the security benefit.
 
-- 
-- 
-- 
-- 
 - 
 - 
 

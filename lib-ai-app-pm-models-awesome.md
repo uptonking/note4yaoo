@@ -2385,7 +2385,7 @@ modified: 2026-06-20T15:49:57.019Z
 ## 中转站/router
 
 - tips
-  - 主要因素: 缓存 > 倍率
+  - 主要因素: 缓存 > 倍率, 很多2api需要专门的优化才能提升缓存倍率
   - 很多中转站带有峰值倍率和闲时倍率, 夜间多用闲时倍率, 白天可用半公益站
   - 不要执着于免费/超低价模型, 可用模型/rpm/tpd/pricing/speed 不可能满足多项
   - hub.linux.do深夜福利的cc倍率也能达到0.02, 而付费的cc普遍在0.3, 所以可以适当留好余额在hub用cc
@@ -2500,25 +2500,33 @@ modified: 2026-06-20T15:49:57.019Z
     - Claude-顶级华强北--0.4x
   - [TNTAPI ](https://tntapi.com/keys), 用户多
     - cc-max--0.65x, 非官网订阅，满血高智商高缓，有防封提示词
-  - [LingShu AI ](https://api.strategyhub.cc/keys)
+  - [LingShu AI ](https://api.strategyhub.cc/monitor)
     - cursor-claude--0.4x
     - ccmax--0.7, 混池 并发不大
   - [joeapi ](https://api.joealot.com/keys)
-    - cc带审查--0.5x
+    - cc带审查--0.8x
     - 反代自 claude-code cli
   - [君の星辰 ](https://ai.centos.hk/pricing)
     - CCMAX特惠--0.6x, 限制在Claude code 中使用
   - https://tkapi.cc.cd/keys
     - ccmax--0.6x
+  - https://kedaya.ai/model-plaza?embedded=1
+    - 多个分组， 支持 外接、蒸馏
+    - ccpro--0.8x
   - [智元API ](https://pool.chaozhiyuanai.com/keys)
     - ccmax--0.8x
   - [JinnyAPI ](https://jinnyapi.com/keys)
     - ccmax--0.85x
     - kiro华强北--0.4x
-  - https://vip.muling.store/pricing
+  - https://vip.muling.store/pricing, 自动封禁不活跃的账号
     - 反重力claude--0.33x
   - [aiwble ](https://aiwble.com/pricing), 长期运营, 只做gemini, 线下充值
     - 反重力claude--0.4x
+  - [帅API ](https://api.shuaiapi.com/pricing)
+    - 自营--1.15x, 非自营--0.9x+
+    - 📌 提供了丰富的分组价格参考
+  - [鸡出没API ](https://us.xcmapi.com/model-plaza)
+    - cc-cursor--0.6x
   - [PackyAPI ](https://www.packyapi.com/pricing)
     - aws-q--0.3x, AWS 逆向, Kiro 反向, 最便宜,200K 上下文命中率高
     - cc-sale-0.8x, 此分组无最新模型, 逆向特价,Claude Code 可用,可"养龙虾",缓存偶发异常; 开源/支持第三方接入,Grok 模型主承载
@@ -2528,12 +2536,41 @@ modified: 2026-06-20T15:49:57.019Z
     - claude--2x
   - [IKunCode ](https://api.ikuncode.cc/pricing)
     - cc-max--1.8x
-  - [帅API ](https://api.shuaiapi.com/pricing)
-    - 自营--1.15x, 非自营--0.9x+
-  - https://us.xcmapi.com/model-plaza
-    - cc-cursor--0.6x
-  - more
-    - [创想AI ](https://vapi.chuangxiangai.asia/model-plaza)
+  - [创想AI ](https://vapi.chuangxiangai.asia/model-plaza)
+    - ccmax--0.75x
+
+- gemini--注意缓存
+  - [AIapi算力中心 ](https://aiapi.c0c.cc/custom/4fddf83543f2fd4d)  /0.2x
+    - 价格与官方标价一致输入2输出10缓存0.1
+    - 目前在官方价格优惠期，如果恢复正常标价会通知
+    - gemini-4-argon还不太稳定，暂时随缘用吧
+  - https://nikoapi.xyz/pricing  /0.23x
+    - gcp分组--0.1x
+    - 不稳定
+  - [LingShu AI ](https://api.strategyhub.cc/monitor)  /0.3x
+    - ultra 号池
+  - https://us.xcmapi.com/price  /0.25x
+    - gemini4--0.25x, 单独gemini分组
+    - gemini的缓存一直都很低 别人都是跑酒馆的 我是直接反代映射的 自己的ui号
+    - ultra一个号一个月就200刀额度，拉满跑不了1-2个小时  跑完就自动切号，首字波动会正常因为会切号  会慢慢加号优化  
+    - 提供的模型包含 -high/-low 后缀
+  - https://kedaya.ai  /0.32x
+    - ultra分组
+  - https://aiwble.com/pricing  /0.25x
+    - gemini4可用性极低
+    - 也提供按次，太贵
+  - [创想AI ](https://vapi.chuangxiangai.asia/model-plaza)  /0.35x
+    - 在Gemini-ultra分组里，价格跟的是官方的
+    - 不稳定
+  - [吱吱鼠AI ](https://zzshu.cc/pricing)
+    - 新开【Gemini-ultra】分组  倍率0.33x
+    - 提供的模型包含 -high/-low 后缀
+  - https://tntapi.com/model-plaza  /0.35x
+    - 2 10
+  - [顺达API ](https://www.apiloop.top/pricing)  /0.15x
+    - 企业分组--0.15x
+    - gemini4在按次分组， 有点贵
+    - 来源是反重力pro
 
 - [睿动AI · 私有模型 · 公有模型 · 一套规则管到底 ](https://iruidong.com/)
   - [x 动 ai 的 glm 套餐5 小时应该是 1 亿 token - LINUX DO _202609](https://linux.do/t/topic/2914411)
@@ -2563,7 +2600,7 @@ modified: 2026-06-20T15:49:57.019Z
   - [疯狂蛋挞的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/9G8TUUQM)
   - kiro-no-cache--0.01
   - kiro-cache--0.02
-- [如梦AI _202607](https://api.rumeng-ai.com/keys)
+- [如梦AI _202607](https://api.rumeng-ai.com/keys)， 硝
   - [如梦科技的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/rumeng)
   - 0.03元/次，注册送1元
   - 45一天不限量，但限制并发
@@ -2636,6 +2673,12 @@ modified: 2026-06-20T15:49:57.019Z
   - 支持luna
   - cc-max--0.65x, 非官网订阅，满血高智商高缓，有防封提示词
 
+- [顺达API ](https://www.apiloop.top/pricing)
+  - https://wzyp.cn/shop/F739R4P0
+  - 企鹅群 1044626898
+  - 群内签到每日领额度（随机 0.01~1 元）
+  - gemini--0.15x
+
 - [joeapi ](https://api.joealot.com/keys), 作者来自台湾, 长期运营
   - https://api.joealot.com/model-plaza  /不是最新模型
   - [goodneo - LINUX DO ](https://linux.do/u/goodneo/summary)
@@ -2668,13 +2711,26 @@ modified: 2026-06-20T15:49:57.019Z
   - 新增国模组！！0.15倍率
   - 低价国模--0.03x
   - claude满分--0.5x
+  - 充值活动多， 但用户少
+
+- [听风API · AI API 网关 ](https://freeapi.tingfengai.art/pricing)
+  - 全程按次计费，不管你用多少token，都是按次计费
+  - deepseek--¥0.00042/次
+  - 提供的都是轻量级模型: deepseek-v4.1-flash, glm-5.3-flash, gpt-6-luna, step-5-preview
+  - 由于免费模型可能会有空回复，这属于正常行为，请知悉。
+  - 仅支持 nodeloc 登录 ?
+
+- [Acode ](https://ai.anna.tf/model-list)
+  - DeepSeekv4.1, glm5.3Flash, Claude haiku5.5, 80无限一个月，并发10个 不限量 tokens
 
 - [aiwble ](https://aiwble.com/pricing), 只做gemini/反重力, 无用户群, 运营时间长
   - 反重力claude--0.4x
+  - gemini--0.25x
   - 没有在线充值, 需要qq联系后手动充值
 
 - [aixcks ](https://aixcks.com/pricing), 像是aiwble的下游渠道
   - 反重力claude--0.5x
+  - gemini--0.25x
   - 可找客服沟通赠金$5
   - 没有在线充值, 需要qq联系后手动充值
 
@@ -3100,6 +3156,12 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [subgo /sub2api](https://code.subgo.qzz.io/)
 
+### 中转-free-quota
+
+- [Token Harbor ](https://tokenharbor.ai/pricing), 美刀
+  - https://tokenharbor.ai/models?category=free
+  - Free allowance on a rolling 7-day period
+
 ### 中转的中转
 
 - https://openrouter.ai/deepseek/deepseek-v4.1-flash
@@ -3228,7 +3290,7 @@ modified: 2026-06-20T15:49:57.019Z
 ## email 📧
 
 - email-providers
-  - nodeseek/seek.li: 方便转移邮箱，为mjj设计
+  - nodeseek/seek.li: 方便转移邮箱，为mjj设计, 类似还有 smailr.com
 
 - gmail-tools
   - antigravity需要google账号支持gcp: 美区邮箱 + gcp/agy + 12个月套餐
@@ -3300,6 +3362,11 @@ modified: 2026-06-20T15:49:57.019Z
 - [edu邮箱 - 16688 ](https://www.16688.com.cn/shop/S975721)
   - 蒙特克莱尔州立大学校友邮箱
   - 达尔豪斯大学邮箱 后缀@dal.ca 
+
+- [Smailr Mail ](https://smailr.com/app/)
+  - @nodeloc.cc , @mail.nodeloc.cc 这两个后缀的邮箱是之前为了白嫖 GPT Team 临时创建的邮箱，非长期支持邮箱，我们预计 2026年9月1日左右将从系统中移除，如果您正在使用这些邮箱，请注意及时迁移数据。 
+  - 目前建议大家使用主邮箱 @smailr.com ， @loc.cc ，这两个域名我们会长期支持（10年以上）。
+  - paywall: mailbox transfer, tg通知
 
 ### outlook-manager
 
@@ -3387,6 +3454,12 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [静态IP的小店 - 链动小铺 ](https://pay.ldxp.cn/shop/HLT0XHF9)
   - 共享ip 或 单人
+# hosting
+- [Botkeep ](https://botkeep.cloud/app)
+  - [云托管平台创始人免费计划 - NodeLoc _202610](https://www.nodeloc.com/t/topic/113909)
+  - 5 个 Slot 及 2 GB 共享资源；活动结束后新注册用户将恢复为仅 1 个 Slot、512 MB 内存的标准免费版。
+  - 24/7 持续运行，无自动休眠机制（No Idle Sleep），无需像其他免费平台那样定期去后台手动签到续期。
+  - 每个服务支持 2 份备份，保留 14 天。
 # vpn/networking
 - [helloProxy ](https://proxy.nihaox.cc.cd/user/dashboard)
   - [【HelloProxy】Hello旗下全新公益机场 - LINUX DO _202608](https://linux.do/t/topic/2709964)
