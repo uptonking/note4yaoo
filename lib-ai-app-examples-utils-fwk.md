@@ -1304,6 +1304,19 @@ modified: 2025-02-21T18:20:42.624Z
   - Data Designer is an orchestration framework for generating high-quality synthetic data. Y
   - ou provide LLM endpoints (NVIDIA, OpenAI, vLLM, etc.), and Data Designer handles batching, parallelism, validation, and more.
   - Configure columns and models → Preview samples and iterate → Create your full dataset at scale.
+# modelscope/huggingface-platform
+- https://github.com/modelscope/modelscope /9.2kStar/apache2/202610/python
+  - https://www.modelscope.cn/
+  - ModelScope is built upon the notion of “Model-as-a-Service” (MaaS).
+  - The core ModelScope library open-sourced in this repository provides the interfaces and implementations that allow developers to perform model inference, training and evaluation.
+  - ModelScope library offers unified experience to explore state-of-the-art models spanning across domains such as CV, NLP, Speech, Multi-Modality, and Scientific-computation.
+
+- https://github.com/OpenCSGs/csghub /4.1kStar/apache2/202609/go/js/vue
+  - https://opencsg.com
+  - open-source platform designed for managing Large Language Models (LLM) assets, offering an efficient way to handle the entire LLM and their assets such as datasets, spaces and codes etc. 
+  - It allows users to upload, download, store, verify, and distribute LLM assets like DeepSeek, Llama etc.via a web interface, git command line, a natural language Chatbot, or CSGHub SDK.
+  - CSGHub features microservice submodules and standardized OpenAPIs for seamless integration with existing systems.
+  - It aims to provide a user-friendly management platform specifically for LLM, which can be deployed On-Premise for secure, offline operation. Essentially, CSGHub serves as a private, on-premise version of Huggingface.
 # more
 - https://github.com/beuaaa/pywinauto_recorder /MIT/202411/python
   - https://pywinauto-recorder.readthedocs.io/

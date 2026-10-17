@@ -351,6 +351,8 @@ modified: 2026-06-20T15:49:57.019Z
     - [LD士多 - LDC积分商城](https://ldst0re.qzz.io/)
 
 - token-news
+  - [华为云免费7个月羊毛 - LINUX DO _202610](https://linux.do/t/topic/3034545)
+  - [OpenCSG (开放传神) | Hybrid Huggingface+ ｜大模型开源社区与企业AI平台 | AgenticOps 大模型平台 ](https://opencsg.com/models)
   - https://chatapi.weixin.qq.com/
     - 微信开发大赛, 免费使用Deepseek和GLM
     - 白嫖微信的v4flash 1Btoken 约合35块钱
@@ -1503,6 +1505,7 @@ modified: 2026-06-20T15:49:57.019Z
   - kiro - claude  -- ¥50: 会降智, 低缓存
     - kiro 的 claude 是没思考的模型, 能思考其实是 kiro 的 agent 能力
   - swe - 反代devin可能会有低倍率, 如jinny
+  - glm: 可以在闲鱼买周末免费的1亿token， 大概5元
   - token choices: gpt, kiro-claude, gemini, grok, composer, devin-swe, deepseek
   - 厂商类: gpt, claude, gemini, grok, glm
   - ide类: cursor, devin/windsurf, kiro, antigravity

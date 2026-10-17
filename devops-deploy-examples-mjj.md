@@ -28,4 +28,15 @@ modified: 2026-10-08T05:05:56.528Z
     - Both "触发google纠偏" and "触发信用净化" can also be executed immediately at any time by clicking the corresponding buttons in the Telegram Bot
   - [智控全局：IP-Sentinel Master (控制中枢) 部署指南 - System Architect _202604](https://blog.iot-architect.com/engineering-practice/ip-sentinel-master-deployment-guide/)
   - [分布式边缘哨兵：IP-Sentinel 节点安装与平滑升级全攻略 - System Architect _202604](https://blog.iot-architect.com/engineering-practice/ip-sentinel-installation-and-upgrade-guide/)
+# server-monitor/探针
+- https://github.com/huilang-me/CF-Server-Monitor /2.5kStar/MIT/202610/js/vue
+  - https://demo.huilang.me/
+  - 基于 Cloudflare Workers、D1 和 Durable Objects 的轻量级多服务器监控面板。
+  - 服务器端安装 Agent 后会单向上报指标到 Worker，数据写入 D1，并通过 Durable Objects + WebSocket 推送到前端，实现免费托管、低维护的实时监控。
+  - 支持主流 Linux 发行版、Alpine Linux、OpenWrt、macOS、群晖 DSM、飞牛 fnOS、Windows 等系统，并提供 Docker 镜像部署方式。
+  - 高安全性：Agent 仅单向上报指标，不提供 WebSSH、远程命令下发或主控通道；支持非 root 运行
+  - 前置要求: Cloudflare 账户, GitHub 账户, 一个足够复杂的 API_SECRET，同时作为 Agent 上报密钥和初始后台密码
+  - 进入 /admin#/admin。 点击添加服务器。选择目标系统和 Agent 版本。在目标服务器上执行复制出的安装命令。
+    - V2.8.3 起默认使用独立项目 cfsm-agent，安装后服务名为 cf-probe。新增服务器后建议直接从管理后台复制安装命令，后台会按目标系统、服务器 ID、Worker 地址和当前参数生成完整命令。
+  - [[开源自荐] CF-Server-Monitor 部署在Cloudflare Workers的免费探针 - LINUX DO _202606](https://linux.do/t/topic/2391991)
 # more

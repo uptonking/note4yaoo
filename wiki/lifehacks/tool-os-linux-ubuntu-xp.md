@@ -143,6 +143,14 @@ sudo fail2ban-client status sshd
 sudo timedatectl set-timezone Asia/Shanghai
 timedatectl
 
+# disable kdump-tools/linux-crashdump
+vi /etc/default/grub.d/kdump-tools.cfg
+# comment out the `GRUB_CMDLINE_LINUX_DEFAULT` line
+
+sudo apt purge -y kdump-tools linux-crashdump kexec-tools makedumpfile
+update-grub
+reboot
+
 ```
 
 

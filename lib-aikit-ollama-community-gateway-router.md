@@ -651,7 +651,9 @@ claude的max我接触过的对外底价就是0.6:1，站里面富可敌国基本
 
 - ## 
 
-- ## 
+- ## [反重力每次都需要开tunel，有没有方便的方式进去 - LINUX DO _202610](https://linux.do/t/topic/2884522)
+- gemini 系分流规则
+  - https://github.com/MetaCubeX/meta-rules-dat/blob/refs/heads/meta/geo/geosite/classical/google-gemini.yaml
 
 - ## [GLM 在 ZCODE 调好还是 CC 或者 CX 中好 - LINUX DO _202609](https://linux.do/t/topic/2917255/10)
 - zcode 里不是有 1.5 倍额度么
@@ -672,7 +674,7 @@ claude的max我接触过的对外底价就是0.6:1，站里面富可敌国基本
 
 - ## 💡 [AI 中转站大起底：什么是中转站，倍率是什么（科普贴） - LINUX DO _202607](https://linux.do/t/topic/2504277)
 - 便宜渠道的风险
-01.       缓存额外价格
+01.         缓存额外价格
 因为你可能现在发了一堆消息给 A 号，然后在下一次对话的时候是 B 号承接。
 
 如果 A 号被封了，就会导致缓存无法继续命中，实际成本提高。

@@ -9,6 +9,8 @@ modified: 2023-08-02T10:32:34.380Z
 
 # guide
 
+- pm
+  - table 视图在mobile场景很不友好， card 更适合
 # views
 - flexible-tabs
   - 当水平菜单项太多时，挤在一起无意义，参考过多的浏览器标签页

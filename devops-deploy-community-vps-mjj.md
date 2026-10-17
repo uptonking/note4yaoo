@@ -2658,6 +2658,7 @@ JP从0.8刀每月涨价到1.1刀/月
   - 线路资源：中国联通 CU4837、中国电信 CT、中国移动 CMI、Telia、TATA、PCCW、Cloudflare、IX等多家 Tier 1 网络资源。
 
 - NQ
+  - 2c4g的内存显示 3.3GB 的原因: ubuntu的kdump/crashdump保留了部分ram用在boot memory
   - 137.175.x.x, 分数正常, Intel Core Processor (Broadwell, IBRS) 步进2 (6代) 32/64-bit
     - [【NQ】RakSmart 2H4G50G 1.99/M 4837直连 137段 _202610](https://www.nodeseek.com/post-980206-1)
       - Intel Xeon Processor (Skylake, IBRS) 步进4 (6代) 32/64-bit

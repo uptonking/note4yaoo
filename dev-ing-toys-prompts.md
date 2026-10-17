@@ -1180,6 +1180,7 @@ please recheck migrated features and implementations for possible licensing issu
 
 document what you have migrated from which commit id for future migration reference at file `doc/devlog-migrations.md` . you can also add some concise(less than 120 lines) migration guide/steps/tips in it to make it easy to do migrations later.
 
+- review core implementation/config/deployment, run some tests for core features, continue to improve
 # tests 🧪
 - run the full tests and fix the bugs
 
@@ -1321,18 +1322,19 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 
 # llm-hub-lite/vps 🚧
 - leader: foundational services like git/woodpecker/beszel/openobserve
-- worker_1: ai like new-api/cpapi/librechat
+- worker_1: ai like new-api/cpapi/librechat, auther
 - worker_2: large traffic/disk - minio, searx, drive/filebrowser/opencloud, paperless
-- worker_3: activepieces
-- worker_4: grist, outline
+- worker_3: activepieces/flowy
+- worker_4: grist/wabase, outline
 - worker_5: la suite - docs, drive, people
 - worker_6: 
-  - onlyoffice
+  - onlyoffice, Collabora Online
+  - gitea
   - odoo, directus
   - zulip
   - immich
 
-- i have deployed this repo to my 6 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys librechat/auther/aichorouter/cpapi/cpamp/cursorapi/aichor1/relaichor1, worker_2 node deploys librechat/wapdf/searx/aichor/relaichor/verge2, worker_3 deploys flowy/verge3, worker_4 deploys wabase/verge4, worker_5 deploys ladocs/verge5.
+- i have deployed this repo to my 6 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys auther/librechat/aichorouter/cpapi/cpamp/cursorapi/aichor1/relaichor1, worker_2 node deploys filer/opencloud/paperlex/librechat/wapdf/searx/aichor/relaichor/verge2, worker_3 deploys flowy/verge3, worker_4 deploys wabase/outline/verge4, worker_5 deploys ladocs/verge5.
   - all services are running well on the vps cluster.
   - Most requests should go to leader node first, then proxying to follower/worker nodes.
   - the current architecture of Foundation apps/services and Consumer apps/services is good.
@@ -1383,7 +1385,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - you might run `ssh root@107.175.66.2` as worker_1 node and do whatever you want.
 - you might run `ssh root@166.88.160.139` as worker_2 node and do whatever you want.
 - you might run `ssh root@192.3.91.103` as worker_3 node and do whatever you want.
-- you might run `ssh root@137.175.62.131` as worker_5 node and do whatever you want.
+- you might run `ssh root@198.200.49.185` as worker_5 node and do whatever you want.
 
 - at the end of the plan, 
 - after you finish the improvements/fixes, please push to github to trigger auto deployment with woodpecker ci, then inspect ci status by `woodpecker-cli`, fix issue if it exists.
@@ -1486,9 +1488,40 @@ in a multi-nodes high-availability architecture
 - a solution has been implemented to support to deploy a new docker service to any follower node by new environment variables or new interactive shell scripts, so that requests still go to leader node then proxied to follower node. for services that high-availability is not required, these services can be deployed to a single server.
 - continue to improve the architecture that supports to deploy a new docker service to any follower node, using aichorouter/cpapi as example, making the architecture correct, robust, extensible.
 
+- please design a solution to deploy a gitea service called `gtea` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/aichor/wabase. in cloudflare, i have configured gtea.aichorage.de to leader ip and worker2-gtea-origin.aichorage.de to worker_2 ip .
+  - use the docker image docker.gitea.com/gitea 
+  - make gtea work well with fail2ban on worker_2 node.
+  - Enable recording Audit Log.
+  - optimize gtea to take minimal system resources by default for a single node, for example, use sqlite, disable LFS support, disable Repository indexer.
+  - source code for gtea(gitea) has been cloned at folder `~/Documents/repos/saas/all-devops/gitea` for reference if you want.
+
+- please design a solution to deploy a outline wiki service called `outline` to any follower node user specified. deploy it to worker_4 node by default, just like aichorouter/aichor/wabase. in cloudflare, i have configured outline.aichorage.de to leader ip and worker4-outline-origin.aichorage.de to worker_4 ip .
+  - the default Authentication should use auther.aichorage.de from worker_1 node, you might refer to related code/config .
+  - store file uploads on the same server that Outline is running. When running in docker, files are stored inside the container by default. please configure files to be persisted to the host file system.
+  - optimize outline to take minimal system resources by default for a single node, for example, use sqlite, disable Tika, disable AI.
+  - source code for outline has been cloned at folder `~/Documents/repos/saas/outline` for reference if you want.
+  - source code for auther(authelia) has been cloned at folder `~/Documents/repos/saas/authelia` for reference if you want.
+
+- please design a solution to deploy a opencloud service called `openclouds` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/aichor/filer/...  you might refer to `~/Documents/repos/saas/all-storage/opencloud-compose` and `~/Documents/repos/saas/all-storage/opencloud-docs`, you might use it directly or use custom config and make openclouds easy to follow official updates in the future. in cloudflare, i have configured openclouds.aichorage.de to leader ip and worker2-openclouds-origin.aichorage.de to worker_2 ip .
+  - support oidc with existing auther.aichorage.de service from worker_1 node. 
+  - Use PosixFS regular filesystem as the openclouds storage backend
+  - mount persistent local directories for configuration and data.
+  - Set Default Quota per User Role with 5GB.
+  - optimize openclouds to take minimal system resources by default for a single node, for example, disable Collabora office integration, disable frontend update check.
+  - source code for openclouds(opencloud) has been cloned at folder `~/Documents/repos/saas/all-storage/opencloud` and `~/Documents/repos/saas/all-storage/opencloud-compose` for reference if you want.
+  - source code for auther(authelia) has been cloned at folder `~/Documents/repos/saas/authelia` for reference if you want.
+
+- please design a solution to deploy a filebrowser service called `filer` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/aichor. in cloudflare, i have configured filer.aichorage.de to leader ip and worker2-filer-origin.aichorage.de to worker_2 ip .
+  - support simple Password authentication, no oidc for now. disable signup by default.
+  - support User Directory Auto-Creation, and  Shared + Personal directories
+  - support Storage quotas(folder, per-user scope, and share caps) 
+  - support to use SQLite as its indexing backend
+  - optimize filer to take minimal system resources by default for a single node, for example, use sqlite, disable FFmpeg, disable onlyoffice integration.
+  - source code for filer(filebrowser) has been cloned at folder `~/Documents/repos/saas/filebrowser` for reference if you want.
+
 - please design a solution to deploy a paperless-ngx service called `paperlex` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/aichor. in cloudflare, i have configured paperlex.aichorage.de to leader ip and worker2-paperlex-origin.aichorage.de to worker_2 ip .
   - source code for paperlex(paperless-ngx) has been cloned at folder `~/Documents/repos/saas/paperless-ngx` for reference if you want.
-  - optimize paperlex to take minimal system resources by default, for example, use sqlite, disable Tika, disable AI.
+  - optimize paperlex to take minimal system resources by default for a single node, for example, use sqlite, disable Tika, disable AI.
 
 - please design a solution to deploy a lasuite-docs service called `ladocs` to any follower node user specified, also design sensible configurations to make it work well on a single vps. please deploy it to worker_5 node by default, just like aichorouter/flowy/wabase. in cloudflare, i have configured ladocs.aichorage.de to leader ip and worker5-ladocs-origin.aichorage.de to worker_5 ip .
   - source code for ladocs(lasuite-docs) has been cloned at folder `~/Documents/repos/saas/lasuite-docs` for reference if you want.
