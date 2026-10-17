@@ -26,6 +26,7 @@ modified: 2025-09-22T12:32:49.473Z
   - oidc的配置很复杂, keycloak使用了外部ldap-server, authentik未提供官方支持
   - 本地开发运行的问题太多, 配置TLS/oidc/ldap, 官方文档几乎不支持本地运行, docker也不支持localhost
   - 未实现文件树
+  - office的集成， 因为Russia的政治原因而停止支持 onlyoffice
 
 - features
   - Seamless File Synchronization: Access your files across all devices
@@ -77,6 +78,8 @@ make -C opencloud build-debug
 dotenvx run -- ./opencloud/bin/opencloud-debug server
 
 ```
+
+
 
 ```sh
 # use local minio

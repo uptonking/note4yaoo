@@ -133,15 +133,26 @@ modified: 2023-03-09T13:47:07.317Z
   - https://github.com/xwiki-labs/netflux-spec2
 
 - CollaboraOnline /1kStar/MPLv2/202401/cpp/js/ts/LibreOffice
+  - https://github.com/CollaboraOnline/online.mirror
+    - A read-only mirror
+    - Collabora Online and Collabora Office are developed on our Gerrit instance at https://gerrit.collaboraoffice.com
+  - https://gerrit.collaboraoffice.com/plugins/gitiles/online  /gitweb
+  - https://gerrit.collaboraoffice.com/admin/repos/online  /all-repos
   - https://github.com/CollaboraOnline/online
-  - https://www.collaboraoffice.com/
+  - https://www.collaboraonline.com/code
+  - https://sdk.collaboraonline.com/docs/architecture.html
   - https://www.collaboraonline.com/
+  - https://www.collaboraoffice.com/
   - Collabora Online is a collaborative online office suite based on LibreOffice
   - This is also the source for the Collabora Office apps for iOS and Android.
   - Collaborative editing features
   - [Collabora Office: The enterprise-ready edition of LibreOffice](https://news.ycombinator.com/item?id=26614654)
   - [Based on LibreOffice - Collabora Online and Collabora Office](https://www.collaboraonline.com/based-on-libreoffice/)
     - Our flagship products, Collabora Online and Collabora Office, are 100% Open Source
+  - API
+    - Conversion API
+    - Extract/Transform Document Structure API
+    - Linking API: extract list of objects inside document you can link to
 
 - https://github.com/CasualOffice/docs /apache2/202609/ts
   - http://docs.casualoffice.org/

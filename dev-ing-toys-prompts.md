@@ -1334,7 +1334,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
   - zulip
   - immich
 
-- i have deployed this repo to my 6 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys auther/librechat/aichorouter/cpapi/cpamp/cursorapi/aichor1/relaichor1, worker_2 node deploys filer/opencloud/paperlex/librechat/wapdf/searx/aichor/relaichor/verge2, worker_3 deploys flowy/verge3, worker_4 deploys wabase/outline/verge4, worker_5 deploys ladocs/verge5.
+- i have deployed this repo to my 6 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys auther/librechat/aichorouter/cpapi/cpamp/cursorapi/aichor1/relaichor1/onoffice, worker_2 node deploys filer/openclouds/paperlex/librechat/wapdf/searx/aichor/relaichor/verge2, worker_3 deploys flowy/verge3, worker_4 deploys wabase/outline/verge4, worker_5 deploys ladocs/verge5.
   - all services are running well on the vps cluster.
   - Most requests should go to leader node first, then proxying to follower/worker nodes.
   - the current architecture of Foundation apps/services and Consumer apps/services is good.
@@ -1487,6 +1487,29 @@ in a multi-nodes high-availability architecture
 
 - a solution has been implemented to support to deploy a new docker service to any follower node by new environment variables or new interactive shell scripts, so that requests still go to leader node then proxied to follower node. for services that high-availability is not required, these services can be deployed to a single server.
 - continue to improve the architecture that supports to deploy a new docker service to any follower node, using aichorouter/cpapi as example, making the architecture correct, robust, extensible.
+
+- please design a solution to deploy a onlyoffice service called `onoffice` to any follower node user specified. deploy it to worker_1 node by default, just like aichorouter/aichor/wabase. in cloudflare, i have configured onoffice.aichorage.de to leader ip and worker1-onoffice-origin.aichorage.de to worker_1 ip .
+  - with WOPI, please make onoffice works well with filer(https://filer.aichorage.de) service that is deployed on worker_2 node. 
+  - you might use the latest Docker image  https://hub.docker.com/r/onlyoffice/documentserver , and the code for the docker image is at  `~/Documents/repos/office/all-office/onlyoffice/Docker-DocumentServer` for reference .  
+  - store the data outside the Docker containers on the host machine as it allows to easily update
+  - Enable WOPI by default
+  - enable Collaborative editing (review & track changes, comments, chat)
+  - enable AI assistant by default
+  - enable test example, Persist the /example/ files across container updates. secure the  POST api xxx/example/upload , add basic_auth to caddy to protect file upload.
+  - optimize onoffice to take minimal system resources by default for a single node, for example, disable Spell-checking.
+  - source code for onoffice has been cloned at folder `~/Documents/repos/office/all-office/onlyoffice` for reference if you want. `~/Documents/repos/office/all-office/onlyoffice/watoffice` is a experimental project that is unrelated to onlyoffice and it can be ignored.
+  - source code for filer(filebrowser) has been cloned at folder `~/Documents/repos/saas/filebrowser` for reference if you want.
+- [Installing ONLYOFFICE Docs on a local server using Docker ](https://helpcenter.onlyoffice.com/docs/installation/docs-community-install-docker.aspx)
+  - ONLYOFFICE Docs is a part of ONLYOFFICE Workspace that comprises also ONLYOFFICE Community Server, ONLYOFFICE Control Panel and ONLYOFFICE Mail. 
+
+- please design a solution to deploy a collabora office service called `collabora` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/aichor/wabase. in cloudflare, i have configured collabora.aichorage.de to leader ip and worker2-collabora-origin.aichorage.de to worker_2 ip .
+  - with WOPI, please make collabora works well with openclouds(https://openclouds.aichorage.de) service that is also deployed on worker_2 node. 
+  - you might use the latest distroless Docker image  https://hub.docker.com/r/collabora/code , and the code for the docker image is at  `~/Documents/repos/saas/all-office/online.mirror/docker` for reference . The image already ships a health check that uses the built-in probe `["CMD", "/usr/bin/coolwsd", "--probe"]`.
+  - enable built-in AI assistant by default
+  - Enable settings iframe 
+  - optimize collabora to take minimal system resources by default for a single node, for example, disable grammar checking using LanguageTool, disable Translation like deepL.
+  - source code for collabora has been cloned at folder `~/Documents/repos/saas/all-office/online.mirror` for reference if you want.
+  - source code for openclouds(opencloud) has been cloned at folder `~/Documents/repos/saas/all-storage/opencloud` and `~/Documents/repos/saas/all-storage/opencloud-compose` for reference if you want.
 
 - please design a solution to deploy a gitea service called `gtea` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/aichor/wabase. in cloudflare, i have configured gtea.aichorage.de to leader ip and worker2-gtea-origin.aichorage.de to worker_2 ip .
   - use the docker image docker.gitea.com/gitea 

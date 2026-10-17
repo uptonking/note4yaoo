@@ -119,6 +119,8 @@ modified: 2024-03-31T17:45:16.789Z
     - OpenCloud can be set up with the so called DecomposedS3 storage driver, which uses S3 as storage for the binary blobs, in addition to a little bit of Posix storage for the metadata storage, that references to the S3.
     - I think it should be possible to also encrypt the S3 buckets, independently from OpenCloud, as a feature of the storage
     - OpenCloud however does not yet support client side S3 encryption.
+  - [OnlyOffice as an alternative to collabora _202603](https://github.com/opencloud-eu/opencloud/issues/266)
+    - We dropped onlyoffice intentionally because of its background and insecurity due to the war situation. 
 
 - https://github.com/zmeyer44/Locker /MIT/202604/ts
   - https://locker.dev/
@@ -219,6 +221,7 @@ modified: 2024-03-31T17:45:16.789Z
   - https://github.com/jmlcas/filebrowser-office
     - https://github.com/jmlcas/filebrowser
     - [Filebrowser Quantum x OnlyOffice : r/selfhosted _202601](https://www.reddit.com/r/selfhosted/comments/1qdofrp/filebrowser_quantum_x_onlyoffice/)
+  - [feat: edit office files in Collabora Online through WOPI   _202610](https://github.com/gtsteffaniak/filebrowser/pull/3108)
 
 - https://github.com/filebrowser/filebrowser /31.1kStar/apache2/202509/go/ts/vue
   - https://filebrowser.org/

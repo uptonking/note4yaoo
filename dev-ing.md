@@ -347,6 +347,31 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1017
+
+- running ops/tests/run-all.sh full is very very slow. analyze related code, find the reason, then design a good solution to improve running full test and fast test, make it correct/robust/performant in the long term.
+
+- 🤔 What is the best practice to self-host onlyoffice? 
+  - DocumentServer is the source code (build tooling, sdkjs, web-apps, etc.). You’d only use it to compile your own build, not to deploy.
+  - Docker-DocumentServer is the one you want. It packages the free Community edition as a container image. Starting from version 6.0 the product is called ONLYOFFICE Docs, and this image installs the free Community version. 
+  - CommunityServer is the older all-in-one portal (documents, CRM, projects, mail). You don’t need it. OpenCloud takes its place, and you only need the editors (Document Server). It duplicates what OpenCloud already does and requires 8 GB to 16 GB of RAM on its own.
+
+- ONLYOFFICE Document Server is designed purely as a headless editing engine (comparable to Collabora CODE or Microsoft Office Online Server). It provides the canvas/editor UI and collaboration protocols (WOPI, JavaScript API, conversion services), expecting a separate host application to handle user accounts, folder hierarchies, and file storage.
+
+- 🤔 can self-hostable https://hub.docker.com/r/collabora/code/ , https://github.com/CollaboraOnline/online.mirror be used as a standalone web app? or is it requiired to be used with external services like nextcloud/opencloud/seafile?
+  - No, the collabora/code Docker container cannot be used as a standalone end-user web application on its own
+  - It is designed strictly as an editing engine and backend service, not a full document management system
+  - Collabora Online (CODE) is an editing engine, not a standalone web app. It has no file storage, no user accounts, no file browser, and no login. 
+  - If you open its root URL in a browser, you’ll just get a plain “OK” message. The only UI it ships is the admin console at /browser/dist/admin/admin.html.
+  - It works by acting as a WOPI client. Some other application (the WOPI host) stores the files, authenticates users, and embeds Collabora in an iframe. The host exposes the WOPI endpoints (CheckFileInfo, GetFile, PutFile) and hands Collabora an access token for each document. Collabora then pulls the file, renders the editing UI, and saves changes back.
+  - It doesn’t have to be Nextcloud, OpenCloud, or Seafile, though. Any WOPI host works, and those three are just the most common.
+  - Collabora Online needs its own backend server running in the background, and the Nextcloud side only needs a connector pointed at it. The same pattern applies to the others.
+
+- gpt [现在dot的虚拟机还会一两天就重置一次吗？ - LINUX DO _202610](https://linux.do/t/topic/3035415/4)
+  - 不是重置额度，是更换实例，dot 每个一段时间会更换一次
+  - 我现在基本上每天都会清空一次，感觉你只要用量高了就会给你请空。 这两天我发现 github cli 还登录不了了，非常麻烦
+  - 用下来，发现 dot 的虚拟机的网络访问限制非常严重，浏览器能打开一些网页，虚拟机的命令行几乎不能访问网络，聊天有另外一套命令行工具，有动态代理，能访问一部分网页。 总之就是，openai 限制的很死，搞得很难用。 网络权限限制的很死，要想不通过它虚拟机的浏览器访问一些网络资源，基本只能自己建 mcp，很难用。。。如果不放开网络访问，dot 就是个垃圾产品
+
 ## 1016
 
 - https://github.com/ONLYOFFICE/CommunityServer vs https://github.com/ONLYOFFICE/DocumentServer

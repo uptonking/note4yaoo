@@ -2847,6 +2847,12 @@ modified: 2026-06-20T15:49:57.019Z
 - [Conpera ](https://code.conpera.ai/), 已充值
   - 仅支持google登录
 
+- [AIAPI ](https://cn.aiapi.bot/dashboard/model-prices)
+  - [关于我开了1个月不到的商业中转站，但是亏损了接近3-4万？ - LINUX DO _202610](https://linux.do/t/topic/3035608)
+  - 新用户注册领 10 元体验金，这个是常驻活动
+  - gpt--0.3x
+  - claude--1.5x
+
 - [DataCodex ](https://api.datacodex.net/keys), 已充值
   - 中等价格
 
