@@ -3013,8 +3013,13 @@ modified: 2026-06-20T15:49:57.019Z
   - 并发才给5, 不然给人刷吗
   - gpt, kiro
 
-- [野菜API ](https://yeschoy.com/)
+- [野菜API ](https://yeschoy.com/pricing)
+  - https://www.goofish.com/personal?spm=a21ybx.item.itemHeader.1.70ea3da6B1PGIa&userId=2223072180598
+    - 站长在闲鱼卖cline
   - 一个客户端，完成应用接入、模型选择与价格查看。
+
+- [万川智能 ](https://chuanapi.com/pricing)
+  - [【富可敌国】万川API｜注册/回帖/进群共送10刀｜GPT 0.08起、Grok 0.085、国模 0.2、Gemini 0.3、Claude 0.25｜GPT-ultrafast、独立蒸馏分组｜1元=1刀，可开票可对公 - LINUX DO _202610](https://linux.do/t/topic/3040232)
 
 - [PackyAPI](https://www.packyapi.com/pricing)
   - [Packy - 模型健康面板](https://check.linux.do/group/Packy)

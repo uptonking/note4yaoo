@@ -1674,7 +1674,9 @@ in a multi-nodes high-availability architecture
 
 - you might run `ssh root@198.46.xx.xx`  or  `ssh root@23.94.xx.xx` and do whatever you want.
 
-- 
+- the current goal is to swap ip of verges node and worker_5 node and make all the services still work well. you should migrate all services/data/config of current verges node to worker_5 node, migrate all services/data/config of current worker_5 node to verges node. after you finish the goal, all the services should still work well.
+  - you might backup data to another vps(137.175.xx.xx) before transferring data if you want . or you might design better ideas for swapping vps .
+
 - 
 - 
 - 
@@ -1778,6 +1780,7 @@ in a multi-nodes high-availability architecture
 - the network forwarding of primary node might use gost with docker.
 - the vless+reality proxy of indigenous node might use 3x-ui without docker, you might write some script at folder `./indigenous-node` and git cloned to the indigenous node to run the start/devops related script. please design a good architecture to automate devops on indigenous node just like on primary mode, with environment variables or interactive shell scripts for automation. please also improve the bootstrap/restart related scripts for the use case of restarting indigenous vps so that when vps is restarted, all the services can restore correctly and quickly, with the same data/config. the verges service can be accessed as verges.aichorage.de, you might also design similar config for proxying service like `edge.aichorage.de` on indigenous node if you want. i have not configured related dns/domain on cloudflare.
   - indigenous node vps has only 1 cpu, 512mb ram, 3gb disk space in total, please optimize the configurations of vless+reality for minimal system resources usage.
+  - source code for verge/verge2(hysteria2) has been cloned at folder `~/Documents/repos/devops/all-vpn-proxy/hysteria` for reference if you want.
   - source code for gost has been cloned at folder `../all-vpn-proxy/gost` for reference if you want.
   - source code for 3x-ui has been cloned at folder `../all-vpn-proxy/3x-ui` for reference if you want.
   - source code for Xray has been cloned at folder `../all-vpn-proxy/Xray-core` for reference if you want.

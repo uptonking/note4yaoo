@@ -116,8 +116,8 @@ next dev -H 0.0.0.0 -p 3000
 
 npm i -g npm yarn pnpm corepack serve @dotenvx/dotenvx opencode-ai @kimuson/claude-code-viewer  @github/copilot
 @ooxml-dev/cli
-@openai/codex @deepseek-ai/dsh
-npm up -g skills @getpaseo/cli @earendil-works/pi-coding-agent  
+@openai/codex 
+npm up -g skills @getpaseo/cli @earendil-works/pi-coding-agent @deepseek-ai/dsh 
 ```
 
 - dev-goals 不能在产品中检验的技术不玩，注意产品化
@@ -346,6 +346,34 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - ?
 - dev-log
   - ?
+
+## 1018
+
+- how to to make hysteria2/vless faster?
+  - What it improves drastically (Throughput & Bandwidth): It prevents bandwidth from stalling or collapsing when downloading, streaming 4K video, or browsing on high-latency transpacific / cross-border links.
+  - What it improves moderately (Connection Setup): Saves 1 Round-Trip Time (~150–250 ms) on new connections via TCP Fast Open.
+  - What it cannot change (Physical Ping): It cannot alter the speed of light in fiber optics (a 180 ms physical route will remain ~180 ms).
+- net.ipv4.tcp_congestion_control = bbr & net.core.default_qdisc = fq
+  - Impact on VLESS: Massive.
+  - Traditional Linux congestion control (CUBIC) assumes that any packet loss means the network is congested and cuts your transfer speed in half (by 50%). On cross-border international routes, random packet loss of 2%–5% is normal. Under CUBIC, a 500 Mbps connection often degrades to less than 10 Mbps.
+  - BBR measures bottleneck bandwidth and round-trip time independently of packet drops. It maintains high transmission rates (100–300+ Mbps) even on lossy international paths.
+  - default_qdisc = fq (Fair Queueing) is required by BBR for hardware/driver-level packet pacing. Without fq, BBR drops back to coarse software timers, causing microbursts and packet drops.
+- Hysteria's tunnel runs over UDP with its own userland BBR/Brutal controller. However, when Hysteria's server retrieves data from origin websites (YouTube, GitHub, etc.), it opens outbound TCP sockets using the VPS kernel. BBR ensures the server pulls origin content at full speed.
+
+- net.core.rmem_max = 67108864 & wmem_max = 67108864 (64 MB Buffers)
+  - Impact on Hysteria 2 (UDP/QUIC): Critical.
+  - The Linux default UDP receive buffer (net.core.rmem_max) is often only 212 KB.
+  - Under heavy UDP traffic (e.g., 100–500 Mbps download), if userland quic-go cannot read incoming UDP datagrams within a few milliseconds, the kernel socket buffer overflows and drops UDP packets instantly.
+  - Hysteria explicitly requests larger UDP socket buffers from the kernel. Setting rmem_max = 64 MB allows Hysteria to hold incoming packet bursts without kernel drops.
+- Impact on VLESS (TCP): Directly unlocks the Bandwidth-Delay Product (BDP).
+  - Setting max buffers to 64 MB eliminates the artificial single-stream throughput ceiling.
+
+- from your Live ClashX Meta Stability Verification, why is Verge5-Hy2(198) always faster than Verges-Hy2(137)?   Verges-Hy2 node and worker_5 node is almost the same, only ip differs, why is the test latency so different?
+  - 都在美国加州圣何塞的同一个机房（AS54600 PEG TECH INC），且两台机器之间的局域网内网延迟仅为 0.36 ms
+  - 跨太平洋跨国光缆登陆与骨干网分流路径完全不同（主要原因，贡献 ~25–28 ms）
+  - verge5-198: 联通圣何塞出口, 联通骨干跨太平洋登陆网关(122ms) - 上海直达海缆, 移动接入网(158ms)。 该 IP 网段分配到了直连我国上海海底光缆 landing station 的低跳数高速直达信道，到达中国联通骨干上海登陆点的耗时仅 122 ms，最终到达客户端总 RTT 为 ~167–170 ms。
+  - verges-137: 联通圣何塞出口, 联通跨洋海缆经停网关(177ms), 跨洋海缆节点, 移动接入网(192ms)。该 IP 经由上游 PEG TECH 的不同 BGP Peer/光纤通道分流，被送往了另一条经停中继的跨洋海缆节点（跨洋跳段在到达国内核心机房时就已经达到 177 ms，比 198 段多了整整 55 ms 的跨洋波导延迟）。
+  - 底层物理定律：跨太平洋海底光缆一旦由上游运营商 BGP Anycast/出口策略分派到不同线路（例如 NCP/FASTER 直达 vs 早期 TPE 绕行线路），物理光波传输与中继站延迟差异就是 25–30 ms。这是光缆物理路径决定的下限。
 
 ## 1017
 
