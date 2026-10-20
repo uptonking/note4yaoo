@@ -114,9 +114,9 @@ serve -p 9000 --cors
 HOST=0.0.0.0 PORT=8080 react-scripts start
 next dev -H 0.0.0.0 -p 3000
 
-npm i -g npm yarn pnpm corepack serve @dotenvx/dotenvx opencode-ai @kimuson/claude-code-viewer  @github/copilot
+npm i -g npm yarn pnpm corepack serve @dotenvx/dotenvx  @kimuson/claude-code-viewer  @github/copilot
 @ooxml-dev/cli
-@openai/codex 
+@openai/codex @opencode/cli command-code
 npm up -g skills @getpaseo/cli @earendil-works/pi-coding-agent @deepseek-ai/dsh 
 ```
 
@@ -346,6 +346,39 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
   - ?
 - dev-log
   - ?
+
+## 1019
+
+- Packet-sizing probes revealed that the international path between China Unicom (203.132.60.184) and Colocrossing Los Angeles (198.46.xx.xx) enforces an exact maximum UDP payload ceiling of 1204 bytes (1232-byte IP packet with 20-byte IP + 8-byte UDP headers).
+  - ≥1205 bytes was 100% silently discarded without ICMP Packet Too Big generation.
+  - Hysteria 2's default dynamic PMTU discovery (DPLPMTUD) ramped QUIC frame sizes up to standard 1280–1472 bytes, entering an unrecoverable black hole.
+  - Fix: Configured `disablePathMTUDiscovery: true` in hysteria2.yaml, pinning QUIC payload frames to a safe 1200-byte boundary.
+  - `disablePathMTUDiscovery: true`: Tells QUIC to never probe or exceed the base 1200-byte payload (1200 bytes payload + 8 UDP + 20 IP = 1228-byte IP packet). Since 1204 payload / 1232 IP packet exceeds 1228, packets never get dropped.
+- why do other services like verge2/verge3/verge4/verge5 not use  disablePathMTUDiscovery and have no problem ? why is only Edge-Direct-Hy2 required to use it? 是否和vless协议有关， 其他正常的proxy都用的是hysteria2
+  - Verge5 peers directly with China Unicom (219.158.33.77) in Los Angeles at Hop 5. Because this is direct native BGP cross-connect, there are no intermediate transit tunnels, MPLS labels, or GRE encapsulations. The path maintains a clean, native 1500-byte MTU end-to-end.
+  - for Edge-Direct (198.46.xx.xx, ColoCrossing, Los Angeles): Traffic does not enter China Unicom directly; it traverses Cogent (AS174) domestic transit. Budget inter-carrier transit links frequently use MPLS/GRE tunneling or cross-connect VLAN encapsulation. This reduces the effective maximum UDP payload to 1204 bytes. Any UDP packet larger than 1204 bytes is silently dropped with no ICMP Packet Too Big notification.
+  - On Verge5 (and Verge2/3/4): Because the path supports native 1500 MTU, the 1280-byte and 1472-byte probe packets reach the client and receive ACKs. The connection raises its frame size to 1472 bytes.
+  - On Edge-Direct: Because the transit path hard-caps UDP at 1204 bytes, all 1280+ byte probe packets are silently dropped. When probe drops coincide with data packets or cross-border packet loss, the MTU search state machine causes transmission stalls, congestion window collapse, and timeout: no recent network activity fatal disconnects.
+- `tx-udp-segmentation`: UDP Segmentation Offload (USO / GSO). Allows the application (quic-go) to pass multi-kilobyte UDP super-frames (e.g. 3948 bytes) via sendmsg / UDP_SEGMENT, delegating packet slicing to the network interface.
+  - Problem: On KVM virtual machines with buggy virtio_net drivers (specifically ColoCrossing Los Angeles), the hypervisor drops or corrupts these super-frames.
+  - Impact of turning off: Eliminates VirtIO driver packet corruption and timeout: no recent network activity stream aborts. Software packetization incurs negligible CPU cost (<1% on 100Mbps VPS traffic).
+  - Safe and recommended for all nodes. Nodes on RackNerd/Multacom already have it off [fixed] by the hypervisor; adding ethtool -K "$PUBLIC_INTERFACE" tx-udp-segmentation off to configure-firewall.sh ensures any node with a togglable or buggy driver is permanently protected.
+- `QUIC_GO_DISABLE_GSO` (Hysteria 2 / quic-go Runtime Flag)
+  - An environment variable read by quic-go. When true, quic-go disables batch segmentation via UDP_SEGMENT and writes individual UDP packets using standard socket calls.
+  - Impact: Provides container-level defense-in-depth against GSO corruption even if container networking or host ethtool offloads are altered.
+  - Safe and recommended for all Hysteria 2 containers (verge2, verge3, verge4, verge5, verge6, and verges). Nodes not running Hysteria (leader, worker-1) do not need it.
+- `disablePathMTUDiscovery`
+  - false (default): DPLPMTUD (RFC 8899) dynamically probes packet sizes up to 1472 bytes (standard 1500 Ethernet MTU).
+  - true: Disables discovery and permanently clamps all QUIC frames to 1200 bytes (1228-byte IP packet).
+  - Is it a good idea to enforce disablePathMTUDiscovery: true for all? NO. Enforcing it globally is counter-productive
+  - Throughput & CPU penalty: Clamping frames to 1200 bytes requires ~23% more packets, kernel syscalls, and network interrupts to move the same volume of data compared to 1472 bytes, capping top-end throughput on fast connections (e.g. 4K streaming or bulk transfers).
+  - DPLPMTUD is safe by design: RFC 8899 probes are non-destructive. If a probe is lost, QUIC simply stays at 1200 bytes.
+  - Fleet Applicability: Targeted ONLY to indigenous_node. All other nodes (verge2–verge6 and verges) should keep disablePathMTUDiscovery omitted (false) to leverage the full 1472-byte frame capacity.
+
+- 
+- 
+- 
+- 
 
 ## 1018
 

@@ -92,6 +92,7 @@ sudo ufw default allow outgoing
 sudo ufw allow http
 sudo ufw allow https
 
+# 先 allow 22 再 enable ufw，不然启用瞬间 SSH 就断了
 sudo ufw allow ssh
 # sudo ufw delete allow ssh
 # sudo ufw delete allow 22/tcp

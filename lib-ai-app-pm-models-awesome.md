@@ -1517,6 +1517,8 @@ modified: 2026-06-20T15:49:57.019Z
     - deepseek有峰谷的，他家有 token 计算器，佬友可以根据用量自己算一下，5 小时额度是 14 刀
   - charm-hyper-crush
   - evot
+  - token-related-plan
+    - opendesign
 
 - tips
   - 不要执着于免费/超低价模型, 可用模型/rpm/tpd/pricing/speed 不可能满足多项
@@ -2458,6 +2460,8 @@ modified: 2026-06-20T15:49:57.019Z
 
 - deepseek/国模-注意缓存价格
   - https://us.xcmapi.com/model-plaza  /0.08x
+    - 0.8-1.6元/1亿token  高峰期用量大 会有缓存浮动
+    - 新增分组：【官转版本】Deepseek模型-官转高缓存版-官key兜底-缓存95%以上, 0.12x
   - https://api.x5m5x.com/monitor  /0.15x
   - https://ai.max66.xyz/keys, 只做自部署的deepseek  /0.125x
   - https://tntapi.com/keys  /0.1x/用户多
@@ -2741,6 +2745,9 @@ modified: 2026-06-20T15:49:57.019Z
   - gemini--0.25x
   - 可找客服沟通赠金$5
   - 没有在线充值, 需要qq联系后手动充值
+
+- [极光中转站 | Boreara ](https://api.boreara.com/pricing), 主做deepseek, 用户少
+  - [【极光中转站 | Boreara】上架 deepseek-v4.1-flash-1017 模型！新增福利分组 x0.04 倍率！ _202610](https://www.nodeseek.com/post-993878-1#4)
 
 - [muling /New API ](https://vip.muling.store/pricing), 无用户群
   - 反重力claude--0.33x

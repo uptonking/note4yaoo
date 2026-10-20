@@ -256,6 +256,44 @@ modified: 2026-01-21T04:22:29.956Z
 
 - [AI_APICallError: `max_tokens` must be less than or equal to `16384` · Issue · anomalyco/opencode](https://github.com/anomalyco/opencode/issues/1000)
   - It looks like groq currently only supports a max of 16384 output tokens. I can't seem to go higher in their playground. 
+# discuss-new-api-xp
+- ## 
+
+- ## 
+
+- ## 
+
+- ## i am using self hosted new-api project to manage multiple coding-plan/llm-api-providers so that i can use all models with a single api. 
+i have a channel provider pA that has rpm limit to 3, it provides deepseek-v4.1-flash, deepseek-v4-flash.
+i have a channel provider pB that has rpm limit to 20, it provides deepseek-v4.1-flash.
+pA and pB both have deepseek v4.1 flash model, i want to use pA as many as possible because the pA provider is cheaper, when pA reaches rpm limit, then use pB, then when pA rpm limit is gone, use pA again. the general goal is to use pA first.
+Is it possible to achieve it?  do i need to disable request Affinity for provider channel?
+Analyze related code/config, then explain to me the possibility and then tell me step-by-step step how to do it in the webapp of new-api.
+
+- new-api natively supports this behavior through its Priority-based Routing combined with its Automatic 429 Retry mechanism.
+
+- When pA reaches its 3 RPM limit, upstream responds with HTTP 429 Too Many Requests.
+  - If RetryTimes >= 1, new-api catches the 429, increments the retry counter (retry = 1), and queries the next priority tier (sortedUniquePriorities[1]), which is pB. The request is seamlessly handled by pB without returning an error to your client.
+  - Every new request received from a client starts with retry = 0.
+  - The next request will attempt pA first. If pA’s 1-minute window has reset, pA succeeds. If pA is still returning 429, it retries to pB again.
+
+- Do You Need to Disable Request Affinity?
+  - yes
+  - when session/channel affinity is active, any successful upstream response records the channel ID into cache for that session.
+  - If Request Affinity is enabled and matches your requests: when pA fails with 429 and falls back to pB (which succeeds), RecordChannelAffinity saves pB as the preferred channel for that session.
+  - Subsequent requests will check GetPreferredChannelByAffinity at retry = 0 and lock directly to pB, bypassing pA completely until the cache TTL (default 1 hour) expires.
+
+- Disable Auto-Ban on pA
+  - By default, channels have Auto Ban enabled. If upstream returns an error body containing keywords like "quota" or if 429 is treated as fatal, pA could be automatically disabled
+  - turn OFF "Auto Ban" for channel pA, ensuring it stays permanently active to handle requests as soon as its RPM window reopens.
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 # discuss-new-api-issues
 - ## 
 

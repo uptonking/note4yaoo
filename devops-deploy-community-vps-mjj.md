@@ -87,6 +87,15 @@ modified: 2026-06-19T06:15:35.007Z
   - text search
 # vps-vendors
 
+## navigation-vps
+
+- [LowSeek 优惠雷达 ](https://vps.lowseek.ai/)
+  - https://github.com/lowseekai/let-deals-radar /MIT/202610/python
+  - 自动聚合 LowEndTalk / LowEndBox 的 VPS 优惠活动，标注折扣力度与库存状态（含商家回帖证据）
+  - 自动抓取 LowEndTalk Offers 与 LowEndBox 的 VPS 优惠，抽取规格、价格、 折扣力度与库存状态，生成可部署的静态站。
+  - 零运行时依赖（仅 Python 标准库），产物是纯静态文件。
+  - [开源分享：自己做了一个 VPS 优惠雷达，现在把源码开放了，想搭建主机优惠站的朋友可以直接拿去折腾  _202610](https://www.nodeloc.com/t/topic/114532)
+
 ## colocrossing
 
 - [Can I change the location of my VPS? - ColoCrossing Cloud ](https://cloud.colocrossing.com/index.php?rp=/knowledgebase/2/Can-I-change-the-location-of-my-VPS.html)

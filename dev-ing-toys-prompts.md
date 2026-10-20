@@ -1335,7 +1335,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
   - immich
 
 - i have deployed this repo to my 6 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys auther/librechat/aichorouter/cpapi/cpamp/cursorapi/aichor1/relaichor1/onoffice, worker_2 node deploys filer/openclouds/paperlex/librechat/wapdf/searx/aichor/relaichor/verge2, worker_3 deploys flowy/verge3, worker_4 deploys wabase/outline/verge4, worker_5 deploys ladocs/verge5.
-  - all services are running well on the vps cluster.
+  - all services are running well as a cluster.
   - Most requests should go to leader node first, then proxying to follower/worker nodes.
   - the current architecture of Foundation apps/services and Consumer apps/services is good.
 
@@ -1413,7 +1413,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 
 - please update aichorouter and cpapi by upgrading new-api and cli-proxy-api to the latest docker image that is offcially published, you might do some database migration if necessary. legacy `./apps/newapi` service should stay unchanged because it's unrelated to this upgrade.
 - after your update, you should push to github to trigger auto deployment with woodpecker, then inspect ci status by `woodpecker-cli`, fix issue if it exists.
-  - when you finish the update, all services should still running well, and features in aichorouter and cpapi should still work well without data/config loss.
+  - when you finish the update, all services should still running well, and features in aichorouter/cpapi/cpamp should still work well without data/config loss.
 
 - ### ip-sentinel
 - this repo IP-Sentinel is deployed on my 2 vps, Master node is deployed on 166.88.160.139, agent node is deployed on 137.175.xx.xx. Integrated telegram bot token is `8960900708:AAFXB_xxxx`, user id is 501659xxxx .

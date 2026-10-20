@@ -74,6 +74,7 @@ modified: 2026-06-30T17:32:43.131Z
   - collab with agent
   - 支持只作为ui使用， 支持自定义server
   - file-in, text-out
+  - 🤔 逐步支持更多格式， 不支持的可先通过外部编辑器来操作
 
 - goals
   - publish/site: github for obsidian bases
