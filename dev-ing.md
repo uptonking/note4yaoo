@@ -347,6 +347,55 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1020
+
+- why do i feel it lower when i visit sites? previously, the web page loads fast .  but now , i feel it becomes much slower before page content shows
+  - Root cause: Caddy runs with mem_limit: 64m, and it was pinned against that ceiling
+  - When a cgroup is full, the kernel reclaims synchronously inside the allocating thread — so Caddy's request and TLS-handshake threads were being stalled by the kernel on every allocation. 
+  - the pressure spiked when access logging began, because each request now allocates a log entry and JSON buffer. So: a pre-existing mis-sizing that my change turned into a visible stall. 
+- fixes Applied on all 7 nodes (limit raised live, runtime env key written so it survives container recreation), and committed so future nodes get it 
+  - CADDY_MEMORY_LIMIT=192m 
+- Correct: a cgroup limit is a cap, not a reservation. 
+  - Incorrect: it does not "allow larger traffic." The fleet refutes that directly
+  - Caddy's footprint tracks its route table and log volume, not traffic — so the limit is not a throughput dial. It is a stall-avoidance threshold: below the working set the kernel reclaims synchronously inside the allocating threads (today's bug); above it, nothing about capacity changes.
+- The health probe mattered more than its size suggests: a stalled probe fails the all-containers-healthy gate and can block a deployment.
+
+- 
+- 
+- 
+- 
+
+- Close the origin bypass on the Leader: today every public hostname can be reached without Cloudflare's WAF, rate limiting, or bot protection.
+  - After this change the Leader's Caddy accepts HTTPS/HTTP3 only from Cloudflare's published ranges plus a reviewed direct-client allowlist, while Woodpecker gRPC, Observer ingest, ACME, and SSH keep working.
+- Two-layer allowlist
+  - Layer 1 — committed, CI-deployed: Cloudflare ranges. The 22 reviewed Cloudflare CIDRs go into config/cluster/policy.env as EDGE_INGRESS_CLOUDFLARE_RANGES
+  - Layer 2 — runtime-only, never committed: direct clients. The node and operator addresses live in /etc/llm-hub-lite/edge-ingress-sources.env (root-only, mode 600, gitignored), following the repo's existing pattern for node.env, shared-secrets.env, restic-r2.env, and beszel-enrollment.env. EDGE_INGRESS_DIRECT_SOURCES
+  - Always added by the script, independent of the file: LEADER_PUBLIC_IP (the Leader's own agent and collector connect to its public address) and 172.16.0.0/12 (container-originated traffic to the Leader's own public address — the Woodpecker deployer and health probes; RFC1918 is not reachable from the internet).
+- If edge-ingress-sources.env is missing or empty, the script keeps the current unrestricted policy and logs a warning naming the file. 
+- Add edge-ingress-sources.env under the "Root-only runtime configuration" block so the discipline is documented in-repo.
+
+- coolwsd offers no host allowlist (proven: allowed_hosts does not exist), so the control moves to the kernel, where it also covers the document-data-source path.
+  - Enforcement — a dedicated chain in ops/configure-firewall.sh, reconciled role-independently (before the Leader early-return, exactly like reconcile_app_fail2ban), built for every app that is enabled, placed on this node, and declares a profile
+- The egress profile is a new platform capability, not a Collabora special case. 
+  - llm-client is the first profile; gitea, openclouds, fider-style content-handling apps can adopt it later by adding one policy line.
+
+- [Introducing cf: the agentic CLI for the entire Cloudflare API | Cloudflare Blog _202609](https://blog.cloudflare.com/cloudflare-cf-cli-launch)
+  - [Get started · Cloudflare CLI docs ](https://developers.cloudflare.com/cf/get-started/)
+  - Agents love CLIs. But Wrangler only provides commands for around 280 operations, and Cloudflare offers thousands.
+  - Earlier in the year we teased how we were planning to solve this and today, we’re enabling agents to use every Cloudflare product by introducing a new CLI: cf.
+  - Wrangler was hand-built with each product team contributing and taking their own approach to their command developer experience.
+  - We had inconsistent terminology across d1 info, hyperdrive get, workflows describe as each team came up with their own practices at different times.
+  - Forge — Cloudflare’s new unified API generation pipeline — enabled us to do this, building on the idea of generating our CLI commands directly from the API schema that powers our API documentation and SDK generation. Everything we provide has an OpenAPI schema, and if we annotate this with just a little more information, we can use it as the source for Forge to make a CLI.
+  - This enables us to expand cf from the ~280 functions that Wrangler had built up over time, to cover the entirety of the Cloudflare API surface of over 3,000 operations.
+  - Agents need to filter JSON, not look at tables
+  - With 3,000 possible routes through a CLI, how can your agent find the right operation it needs quickly without bloating your context? For this reason we have also added `cf cli search`.
+  - cf does not support the Global API Key.
+
+- [Introducing Forge: the open source pipeline for generating SDKs, CLIs, docs, and more | Cloudflare Blog _202609](https://blog.cloudflare.com/forge-open-source-generation-pipeline)
+  - Forge, a fresh approach to generating SDKs, CLIs, docs, and libraries.
+  - We built Forge because we needed it ourselves in order to treat agents as our customers. Now, we’re open sourcing it because we think everyone should be able to generate all the surfaces that agents need.
+  - https://github.com/cloudflare/forge
+
 ## 1019
 
 - Packet-sizing probes revealed that the international path between China Unicom (203.132.60.184) and Colocrossing Los Angeles (198.46.xx.xx) enforces an exact maximum UDP payload ceiling of 1204 bytes (1232-byte IP packet with 20-byte IP + 8-byte UDP headers).

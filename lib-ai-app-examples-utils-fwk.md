@@ -1298,6 +1298,22 @@ modified: 2025-02-21T18:20:42.624Z
     - 可多图和语音输入、无限爽用。
     - 官方建议电脑16g、安卓12g。我的性能比他好一点、他要运行在chrome框架上、我破解出来直接运行在google内置的ml上了、至少建议12g可以试试。btw这个模型只有3g多所以我的选择和google一样不要脸部署到用户电脑里、没计划上服务器哈哈哈。
   - GOOGLE内置本地多模态模型，可以语音和文本，就是pixel手机和chrome上在用的那款。简单任务、能效还不错、我准备内置到我的应用里给用户用，没成本。
+# model-chat-mirror
+- https://github.com/xyhelper/chatgpt-share-server-deploy /NonOpen/docker-only
+  - https://xyhelper.cn
+  - 基于官网UI的账号共享方案, 支持会话隔离
+
+- https://github.com/jurieo/chatgpt-share-web /NonOpen
+  - https://aiok.me/
+  - chatgpt、claude、midjourney，grok和gemini官网完整还原，以及Claude Code和Codex完整镜像，包含其官网的全部功能。具有完善的用户体系和流量变现体系。
+  - Claude2Api和Codex支持2种模式，一种是2api，用于第三方网关，一种是用户模式，用于终端cli。和其他镜像站一样，用户配置即用。
+  - vibe coding重写了UI
+
+- https://github.com/JingxuanKang/GPT-Pro-Cloud /MIT/202610/js
+  - [【开源推广】GPT-Pro Cloud，团队共享GPT-Pro，一个账号多个人使用的原生解决方案 - LINUX DO _202608](https://linux.do/t/topic/2779513)
+  - GPT-Pro 模型各方面远强于其他任何模型，但是只在网页端提供，很多人为了使用 Pro 模型单独开一个账号。一个 20x 的 Pro 账号一天最多能请求 150 次，单人使用是完全消耗不完的。
+  - 因此我一直在思考如何能多个人共同使用 Pro 模型且稳定不被封控，之前研究的 Web2API 或者 computer use 的方案随着页面频繁更新时刻要追着上游跑，且自动化操作很容易被封控。
+  - GPT-Pro Cloud 把已登录的 ChatGPT 跑在你自己的 Docker 机器上，不用装客户端，打开就能用。一个账号一个 Chromium，profile 持久化。网关负责登录、选账号、团队权限和远程桌面。支持复制粘贴，问完问题有答案后一键拿到分享链接，完整上下文。
 # data-synthetic
 - https://github.com/NVIDIA-NeMo/DataDesigner /apache2/202605/python
   - https://nvidia-nemo.github.io/DataDesigner/

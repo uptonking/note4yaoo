@@ -2266,6 +2266,39 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
   - Export with torch.export, run on Metal.
 - This is pretty cool - write PyTorch and export and run  with MLX on Apple silicon
 
+# discuss-model-deploy-cases 🌰
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Deepseek even opensourced their revenue per GPU per hour : r/DeepSeek _202610](https://www.reddit.com/r/DeepSeek/comments/1xanexq/deepseek_even_opensourced_their_revenue_per_gpu/)
+  - [ DeepSeek V4.1 Flash 大规模推理部署实践 - 知乎 _202610](https://zhuanlan.zhihu.com/p/2095560295930508953)
+  - DeepInfer 基于这一框架，我们已实现 DeepSeek V4.1 Flash 的高吞吐、低延迟大规模推理服务。目前单一集群的服务吞吐是 155 万亿 Tokens/天，整体收入是每卡每小时 38 美金（按谷价）。
+- When they mean "Per" GPU, it's like per GPU like one silicon chip = 1 GPU or One rack / One server = One "GPU" ? EDIT : i ask this question because This mean +300k$ per years at 35$ Profit (38 - electricity - maintenance) per GPU.
+  - 当他们说“每 GPU”时，到底是指字面意义上的“一块硅芯片/单张显卡 = 1 GPU”，还是把“一整个机柜（Rack）/ 一整台服务器（Server）”统称为一个“GPU”了？ 一张卡（1 GPU）和一台标准服务器（通常包含 8 张 GPU 卡，如一台 HGX/DGX 节点）或一个机柜（包含数十张卡，如 NVL72）的规模相差数倍到数十倍。
+  - 如果按每张卡每小时 38 美元的收入计算，扣除电费和运维成本（假设每小时约 3 美元）后，每张卡每小时净赚 35 美元，这意味着单张显卡一年的净利润超过 30 万美元。
+  - $35×24×365 = $306, 600
+  - 如果花 3 万多美元买一张显卡，一年能净赚 30 万美元，意味着不到 1.5 个月就能把买显卡的硬件钱完全赚回来，年化投资回报率高达 800% 至 1000%。
+  - 这种回报率属于天方夜谭，因此这位外国网友第一反应是怀疑中译英时出现了单位混淆（怀疑是不是把一台 8 卡服务器甚至一整个机柜的收入算到了一张卡头上）。
+
+- that's with their crazy low prices. Imagine how much American labs are making. Those CAPEX investments ROI will be insane.
+  - They dont make as much, because costs of american salaries and paying of dozens of politicians and detractors
+
+- 155T tokens per day?
+The whole OpenRouter does ~160T per week now. I did not expect them to be 7x bigger than the whole OpenRouter traffic.
+If their revenue is $38 per gpu per hours and others can replicate it, won't that mean that GPU rentals should match the price of the revenue they can generate?
+
+- ## [Deepseek released DeepInfer - Open Source high-performance, large-scale inference framework for DeepSeek models! : r/LocalLLaMA _202610](https://www.reddit.com/r/LocalLLaMA/comments/1xanm55/deepseek_released_deepinfer_open_source/)
+- Supported hardware:
+NVIDIA SM100 GPUs
+Huawei Ascend 950 NPUs
+
+- https://github.com/deepseek-ai/DeepInfer: High-performance, large-scale inference framework for DeepSeek models.
+- https://github.com/deepseek-ai/deepseek-recipe: Protocol conversion and model output parsing libraries (written in Rust with Python bindings) to connect an inference backend to various API formats (such as Chat Completions, Messages, and Responses).
 # discuss
 - ## 
 

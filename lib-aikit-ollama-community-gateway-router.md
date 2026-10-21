@@ -394,12 +394,53 @@ RAG 检索
 - /v1/models 通常用于列出可用模型或查询模型详情。
 
 - 流式输出也不是统一格式
+# discuss-chat-mirror
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [请问最近还有什么在维护的 ChatGPT 网页端共享/镜像方案么？ - V2EX _202607](https://v2ex.com/t/1227501)
+  - 家里四五个人的多台设备都会用 ChatGPT ，多设备登录担心封号。
+  - 想要隔离不同人的对话记录。
+- 初步调研了几个方案：
+01. 开源方案 chatgpt-web-share PandoraNext chatgpt-next-share 都是多年未更新
+02. PandoraHelper 的 wiki 页面注明 “目前 ChatGPT 相关功能不可用”
+03. 闭源方案 xyhelper/chatgpt-share-server-deploy 和 jurieo/chatgpt-share-web 镜像在更新，但都需要付费使用
+04. xyhelper 推荐“流量小或者小团队自用的，可使用蟑螂 v1”，但 cockroachai/cockroachai docker 镜像部署中的 xyhelper/cockroachai 镜像也已经两年未更新
+05. chat2api 之类的 web2api 多处看到反馈说容易封号/降智
+
 # discuss-2api-devops
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [【警告】不要随便分享你的 cline 官key - LINUX DO _202610](https://linux.do/t/topic/3045794)
+  - 昨天想起 cline pass 订阅很难跑完就分享了一下 key，昨晚看的时候还是正常的，今天上 cline 一看积分超额了。
+  - 新弄了一个 key，让 DeepSeek 查了一下有坏人跑非 cline pass 模型
+  - 注意了，直接分享你的 cline 可以基本可以控制你的账号，以下是排查出来的能力
+  - 我已经删号了。积分超额还能删号，能接受。
+
+- 群众里面有坏人啊，看来要分享还得是套一层 newapi 或 sub2api
+
+- 是的，所以 OpenRouter 好像近期才把 API Key 的限权限设置管理起来
+
+- 不是有 hub 站么…
 
 - ## [[已失效]基于X-Codex-Turn-State绕过429与降智(CPA插件) - LINUX DO _202609](https://linux.do/t/topic/2919611)
 
@@ -488,12 +529,12 @@ v6封不完
 据笔者的使用体验来看，不会，但是会限速。如果您的CODEX被降智，那更多可能是普遍的bug问题而不是您的账户风险。就像Android端，桌面端，CODEX都是分开的风控体系，但也有一定的关联性。CODEX的限速表现在首字token和整体速度下降，但很难完全跟本地网络质量和服务器高载的影响因素脱离，本身这种情况也并不多见。
 
 - 逐点剖析————行为特征
-01.             单次复杂度过高：
+01.               单次复杂度过高：
 Pro Extend Thinking的复杂对话中，具体是5.4超过2小时，5.5超过1小时的高负载任务。其实具体分为两个部分：一个是思考时长[反映的是思考token耗费]，一个是输入输出内容。为什么5.5是1小时，5.4是2小时呢？其实business的限制可以放更长一些。因为Pro订阅的模型token速度更快，business速度要慢，以及5.5的算力平台较新，token速度脱离套餐本身就更快。
-01.             新注册账号：
+01.               新注册账号：
 新注册账号是典型的高风险场景。新注册帐号建议至少7天后再开付费套餐或您的背景特征较优秀，也是完全没问题，但对背景特征(如IP)的要求就较高。
 
-01.             支付方式与地区：
+01.               支付方式与地区：
 低价区也是风控的高峰，但这里，OPENAI对于支付地区的权重远比支付方式要高得多。Anthropic对于支付方式和支付地区抓的都严[如果想要听后续可以出Anthropic版本]。OPENAI对于低价区的风控水平明显高于其他地区，比如土区、菲区，误杀也会显著增加。
 
 - 逐点剖析————背景特征

@@ -1297,6 +1297,10 @@ current code is under active development. please review and refactor code if you
   - update typescript to latest v7 and update related toolchain/scripts.
 # devops-workflow
 - at the end of the plan, you should push to github, then inspect ci status by woodpecker-cli, fix issue if it exists.
+
+## cloudflare
+
+- you might use `cf` cli to query cloudflare info if you want.
 # backups
 - services-to-backup
   - newapi
@@ -1504,11 +1508,11 @@ in a multi-nodes high-availability architecture
 
 - please design a solution to deploy a collabora office service called `collabora` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/aichor/wabase. in cloudflare, i have configured collabora.aichorage.de to leader ip and worker2-collabora-origin.aichorage.de to worker_2 ip .
   - with WOPI, please make collabora works well with openclouds(https://openclouds.aichorage.de) service that is also deployed on worker_2 node. 
-  - you might use the latest distroless Docker image  https://hub.docker.com/r/collabora/code , and the code for the docker image is at  `~/Documents/repos/saas/all-office/online.mirror/docker` for reference . The image already ships a health check that uses the built-in probe `["CMD", "/usr/bin/coolwsd", "--probe"]`.
+  - you might use the latest distroless Docker image  https://hub.docker.com/r/collabora/code , and the code for the docker image is at  `~/Documents/repos/saas/all-office/collabora-online.mirror/docker` for reference . The image already ships a health check that uses the built-in probe `["CMD", "/usr/bin/coolwsd", "--probe"]`.
   - enable built-in AI assistant by default
   - Enable settings iframe 
   - optimize collabora to take minimal system resources by default for a single node, for example, disable grammar checking using LanguageTool, disable Translation like deepL.
-  - source code for collabora has been cloned at folder `~/Documents/repos/saas/all-office/online.mirror` for reference if you want.
+  - source code for collabora has been cloned at folder `~/Documents/repos/saas/all-office/collabora-online.mirror` for reference if you want.
   - source code for openclouds(opencloud) has been cloned at folder `~/Documents/repos/saas/all-storage/opencloud` and `~/Documents/repos/saas/all-storage/opencloud-compose` for reference if you want.
 
 - please design a solution to deploy a gitea service called `gtea` to any follower node user specified. deploy it to worker_2 node by default, just like aichorouter/aichor/wabase. in cloudflare, i have configured gtea.aichorage.de to leader ip and worker2-gtea-origin.aichorage.de to worker_2 ip .

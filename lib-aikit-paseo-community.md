@@ -30,7 +30,8 @@ modified: 2026-09-05T00:28:04.965Z
 
 - ## 
 
-- ## 
+- ## [Add Remote SSH hosts on Android · Pull Request · getpaseo/paseo _202610](https://github.com/getpaseo/paseo/pull/6395)
+  - pr被关了
 
 - ## [Workflow: preview PPTX/PDF/XLSX inside the file pane (remote daemon) _202608](https://github.com/getpaseo/paseo/discussions/3109)
 - A file-renderer contribution point would shrink that plugin to about thirty lines and take PDF preview off your plate entirely - and the same hook covers pptx, video and whatever else people ask for, without any of it being yours to build or maintain.

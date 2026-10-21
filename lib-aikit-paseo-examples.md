@@ -225,6 +225,9 @@ modified: 2026-09-17T14:19:32.208Z
     - 文本类pdf中的文字无法选中， 渲染效果是图片， 很模糊
     - docx不显示 分页、多栏布局 
     - 扁平化显示所有文件， 不显示文件夹结构
+- https://github.com/nkwib/paseo-doc-viewer
+  - starting from @dbhq-uk's paseo-file-viewer. It renders PDF, docx, xlsx, pptx, images (HEIC, TIFF, WebP) in a workspace panel on desktop, web, iOS and Android, plus video on desktop and web, with no system binaries (PDFium and libheif in WASM). Files are rendered on the daemon, so it also works over relay. PDFs page with zoom and pinch, sheets are paged so large workbooks stay usable on a phone.
+  - The one thing a plugin can't do is open from a click in the Files tree. 
 
 - https://github.com/q5m-ai/beautiful-pi /202609/ts
   - A compact, polished timeline renderer for Pi agents in Paseo.

@@ -3135,6 +3135,14 @@ modified: 2026-06-20T15:49:57.019Z
     - utral 是反重力
     - 只有几种渠道 1、官转 2、aws 3、kiro/cursor/antigravity
 
+- [KKSJ AI模型中转API ](https://api.kksj.org/pricing)
+  - claude--0.9x
+  - [从 23 年末做起的中转，稳定性见首页监控， ccmax 风控下，依旧坚挺 - V2EX _202603](https://www.v2ex.com/t/1200030)
+
+- [RouterApi ](https://routerapi.net/pricing), 不活跃, 作者的v站帖子都是引流广告
+  - ccmax--0.7x
+  - [新增了一批自建的 ccmax 池中转站， 专注于 claude 满血 ccmax 倍率 0.59 倍！ 缓存命中 95%+ 留 ID 送$5 约 claude 官方$8 的额度 - V2EX _202607](https://www.v2ex.com/t/1227905)
+
 - [Tiger API](https://tiger.bookapi.cc/pricing)
   - opus, in-¥1/M, out-¥5/M
   - [【低倍率&耐用王Tiger】春节炸场福利！Claude 4.6 Opus ，Codex 5.3首发 ](https://linux.do/t/topic/1572928)

@@ -1899,7 +1899,30 @@ Q8（8 位）	    16GB+	   接近原始版本
   - Using their sample code, it's 65 GB VRAM, and it's not working very well. 
 
 - Inpainting does not undo previous changes, I don't know why you keep insisting that it does. Inpainting also has way, way less artifacts than this model when removing things, this model produces absolute horrid blurs, what are you talking about? Either Comfy screwed something up (I doubt it), or the model is so undertrained it will even sometimes have leftover noise, which is even worse for usability. Edit: This likely happens when it tries to separate out a vignette effect. Good effort, terrible result.
+# discuss-examples-video-code 🌰
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [用deepseek尝试做了下mv感觉还行（加入了6.1-sol, 跟opus5.5对比） - LINUX DO _202610](https://linux.do/t/topic/3041267)
+  - 给歌曲那天下雨了 制作一个mv 代码的mg动画 自由发挥 需要按照歌词来 风格你来定 但是一定要精致，分镜连贯。
+- opus5.5 直接碾压全场了属于是
+
 # discuss-video
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 
