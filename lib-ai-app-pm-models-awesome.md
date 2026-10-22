@@ -3327,6 +3327,7 @@ modified: 2026-06-20T15:49:57.019Z
 
 - email-providers
   - nodeseek/seek.li: 方便转移邮箱，为mjj设计, 类似还有 smailr.com
+  - 自建域名邮箱经常会被国外主流邮箱服务商如gmail/outlook屏蔽, 有的服务商支持申请解封
 
 - gmail-tools
   - antigravity需要google账号支持gcp: 美区邮箱 + gcp/agy + 12个月套餐

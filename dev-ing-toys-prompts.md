@@ -1332,11 +1332,13 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - worker_4: grist/wabase, outline
 - worker_5: la suite - docs, drive, people
 - worker_6: 
-  - onlyoffice, Collabora Online
-  - gitea
-  - odoo, directus
-  - zulip
-  - immich
+  - email: server-25, clients/providers-aggregator
+  - im/forum: zulip
+  - 图床
+  - office: onlyoffice, Collabora Online
+  - devops: gitea(可放敏感信息)
+  - cms: odoo, directus
+  - media: immich
 
 - i have deployed this repo to my 6 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys auther/librechat/aichorouter/cpapi/cpamp/cursorapi/aichor1/relaichor1/onoffice, worker_2 node deploys filer/openclouds/paperlex/librechat/wapdf/searx/aichor/relaichor/verge2, worker_3 deploys flowy/verge3, worker_4 deploys wabase/outline/verge4, worker_5 deploys ladocs/verge5.
   - all services are running well as a cluster.
@@ -1389,7 +1391,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - you might run `ssh root@107.175.66.2` as worker_1 node and do whatever you want.
 - you might run `ssh root@166.88.160.139` as worker_2 node and do whatever you want.
 - you might run `ssh root@192.3.91.103` as worker_3 node and do whatever you want.
-- you might run `ssh root@198.200.49.185` as worker_5 node and do whatever you want.
+- you might run `ssh root@137.175.100.182` as worker_5 node and do whatever you want.
 
 - at the end of the plan, 
 - after you finish the improvements/fixes, please push to github to trigger auto deployment with woodpecker ci, then inspect ci status by `woodpecker-cli`, fix issue if it exists.
@@ -1491,6 +1493,17 @@ in a multi-nodes high-availability architecture
 
 - a solution has been implemented to support to deploy a new docker service to any follower node by new environment variables or new interactive shell scripts, so that requests still go to leader node then proxied to follower node. for services that high-availability is not required, these services can be deployed to a single server.
 - continue to improve the architecture that supports to deploy a new docker service to any follower node, using aichorouter/cpapi as example, making the architecture correct, robust, extensible.
+
+- please design a solution to deploy a apache-answer service called `club` to any follower node user specified. deploy it to worker_1 node by default, just like aichorouter/aichor/flowy. in cloudflare, i have configured club.aichorage.de to leader ip and worker1-club-origin.aichorage.de to worker_1 ip .
+  - use the docker image https://hub.docker.com/r/apache/answer
+  - source code for club(apache-answer) has been cloned at folder `~/Documents/repos/saas/all-msg-forum-team/answer` for reference if you want.
+  - optimize club to take minimal system resources by default for a single node, for example, use sqlite.
+
+- please design a solution to deploy a stalwart service called `mailer` to any follower node user specified. deploy it to worker_3 node by default, just like aichorouter/aichor/flowy. in cloudflare, mail related dns records have been configured .
+  - use the docker image  
+  - source code for mailer(stalwart) has been cloned at folder `~/Documents/repos/devops/msg-forum-email/stalwart` for reference if you want.
+  - optimize mailer to take minimal system resources by default for a single node, for example, use RocksDB, disable External Antivirus (ClamAV), Lower Max Concurrent Connections to 300.
+- ipv4 is enough, ipv6 is not required.
 
 - please design a solution to deploy a onlyoffice service called `onoffice` to any follower node user specified. deploy it to worker_1 node by default, just like aichorouter/aichor/wabase. in cloudflare, i have configured onoffice.aichorage.de to leader ip and worker1-onoffice-origin.aichorage.de to worker_1 ip .
   - with WOPI, please make onoffice works well with filer(https://filer.aichorage.de) service that is deployed on worker_2 node. 

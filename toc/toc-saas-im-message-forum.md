@@ -10,7 +10,7 @@ modified: 2021-05-14T15:04:15.333Z
 # guide
 
 - tips-chat sdk
-  - usecase: 聊天消息、多人协作
+  - usecase: 聊天消息、多人协作, General-purpose forum, Link Aggregators(Reddit/HN-style), Q&A and feedback, Comment, Chat-first community
   - 🧐💡 聊天社交应用通常具有巨大的先发优势，特别是数据格式和导入导出，主流参考zulip/mattermost
   - 主流im应用倾向于在chat流程中embed和操作其他平台的内容
   - 在chat-room内操作 doc/code
@@ -19,8 +19,9 @@ modified: 2021-05-14T15:04:15.333Z
 - tips-forum
   - forum的核心也是ugc内容，所以和blog功能相似度高
   - 💡 cms中的内容评论也可以作为forum
-  - 商城app-store类产品的开发和imdb类似，偏向搜索
   - 许多产品都提供forum功能，类似工单/gitea/文档评论也是, 区别在于article/comments的产品设计和重要程度
+  - github/gitea/sqlite-fossil的 issue 就可以提供简单forum的功能, 但运营相关功能很弱
+  - 商城app-store类产品的开发和imdb类似，偏向搜索
 
 - 论坛选型参考
   - 尽量选择开源产品，方便自定义
@@ -58,10 +59,17 @@ modified: 2021-05-14T15:04:15.333Z
   - https://forem.com/
   - the platform that powers dev.to
   - We run on a Rails backend, and we are currently transitioning to a Preact-first frontend.
+- https://github.com/lobsters/lobsters /BSD/202610/ruby
+  - https://lobste.rs/
+  - Computing-focused community centered around link aggregation and discussion
 - https://github.com/withspectrum/spectrum /js/archived
   - 依赖express、graphql、apollo、draft-js、redux、rethinkdb
   - Spectrum aims to be the best platform to build any kind of community online by combining the best of forums and real-time chat apps.
   - RethinkDB: Data storage
+- [bbs1：一个极简 PHP 论坛。一键轻松部署，欢迎安装使用 _202607](https://bbs1.org/topic/21)
+  - 一个极简 PHP 论坛。由一个仅100多KB大小的PHP文件构建。纯原生、无框架、无依赖，支持 SQLite、MySQL 和 PostgreSQL。适合社区站点、低成本部署和 AI 二次开发。
+  - 纯原生 PHP，单核心代码文件，无框架和 Composer 依赖，部署与维护简单
+  - 支持 SQLite、MySQL 和 PostgreSQL，数据库结构和搜索能力保持跨引擎兼容
 
 - https://github.com/apache/answer /15kStar/apache2/202509/go/ts
   - https://answer.apache.org/
@@ -70,9 +78,27 @@ modified: 2021-05-14T15:04:15.333Z
   - Plugins: redis/es/algolia
   - 依赖注入使用 wire
   - 依赖gin、xorm
+  - Go plugins compiled into the binary 
+  - OAuth2 connectors + external User Center plugin 
+  - 1 Q + N answers, flat; comments 1 level
+  - no nested tags: tags + reserved tags only
+  - native "rank" + badges + leaderboard + history
+  - badges bronze/silver/gold, event rules 
+  - AI chat, MCP server, collections, review queue
   - [Elasticsearch is a good candidate for the underlying database? _202210](https://github.com/apache/answer/issues/29)
     - In Answer project, we use XORM to be the abstraction layer of database, so all data operations are designed for relational database. 
     - If you want to use ElasticSearch, you need to write your own data access layer. 
+- https://github.com/Southclaws/storyden /MPL/202610/go/ts
+  - https://www.storyden.org/
+  - https://makeroom.club   /demo
+  - modern, secure and extensible platform for building communities.
+  - a modern forum, wiki and community hub. Like the internet forums of the past, but with a fresh coat of paint and modern security, deployment and intelligence features. A discussion forum, a Notion workspace and your own Reddit platform all rolled into one. 
+  - most forums are decades old, insecure, abandoned or just not pretty. Storyden aims to solve all of that with a modern language
+  - go + nextjs, 依赖注入使用 uber-go/fx
+  - plugin uses Out-of-process JSON-RPC in any language; cannot touch UI or DB 
+  - OAuth2 server + OIDC provider
+  - Real threads, pinnable, post → nested replies, categories, tags, reacts
+  - No points, balance, only reacts (emoji), no scoring
 - https://github.com/rocboss/paopao-ce /4.5kStar/MIT/202604/go/vue
   - https://paopao-demo.vercel.app/
   - scalable social community platform powered by Gin backend and modern TypeScript/Vue frontend
@@ -923,10 +949,27 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/happyfox-dot/Msg2Computer /NC/202606/kotlin/js
   - 一个跨设备验证码与消息同步工具。它由 Android 手机端和 Windows 桌面端组成，用于把手机收到的验证码短信、普通短信、App 通知，以及本机保存的 TOTP 动态验证码，同步到你授权的设备节点。
   - [[开源分享] 验证码流转工具，将消息推送给多个电脑/手机，避免每次打开手机看验证码 - LINUX DO _202606](https://linux.do/t/topic/2376521/6)
-# email
-- https://github.com/LanQin996/LanQin-Email /MIT/202606/go/ts
+# email-hosting
+- https://github.com/LanQin996/LanQin-Email /MIT > GPL/202606/go/ts
   - 自建邮箱 Webmail 全栈方案：前端使用 React + TypeScript + shadcn/ui，后端使用 Go + SQLite，部署时可用单容器集成 API、Web、Nginx、Postfix、Dovecot、Rspamd。
   - 多域名/多邮箱：域名管理、DKIM 密钥生成、DNS 记录展示与检测、邮箱账号、别名转发、无人收件开关。
   - 邮件服务栈：Postfix 投递、Dovecot IMAP/POP3、Rspamd 反垃圾与 DKIM 签名、Maildir 到 SQLite 同步。
   - [【开源】LanQin Email：一个可收发件、可管理、开箱即用的开源邮箱系统 - LINUX DO _202606](https://linux.do/t/topic/2467989)
+  - [【开源】LanQin Email：一个可自建、可管理、开箱即用的开源邮箱系统 _202606](https://www.nodeseek.com/post-786238-1)
+
+- https://github.com/stalwartlabs/stalwart /AGPL+EE/202610/rust
+  - https://stalw.art/
+  - All-in-one Mail & Collaboration server. Secure, scalable and fluent in every protocol (IMAP, JMAP, SMTP, CalDAV, CardDAV, WebDAV).
+  - Stalwart supports a wide range of protocols including JMAP, IMAP4, POP3, SMTP, CalDAV, CardDAV, and WebDAV, covering email, calendars, contacts, and file storage.
+  - designed to be secure, fast, reliable, and scalable, and is capable of running everything from small personal mail servers to large, distributed enterprise deployments.
+  - a directory refers to the authentication backend responsible for managing user identities and access credentials. 
+  - In simple or single-node setups, it is entirely feasible to consolidate these roles into a single storage backend. 
+    - The Data Store is responsible for storing structured metadata such as email headers, folder hierarchies, calendar, contacts, user settings
+    - The Blob Store is where large binary files 
+    - the In-memory Store handles ephemeral key-value data used by security, clustering, and anti-spam components
+
+- https://github.com/simple-login/app /7.1kStar/AGPL/202610/python/js
+  - https://simplelogin.io/
+  - The SimpleLogin back-end and web app
+  - With email aliases, you can be anonymous online and protect your inbox against spams and phishing. 
 # more

@@ -486,7 +486,24 @@ ldc 升值有利于广大持有 ldc 的佬友，为什么要强行引入干预�
 
 - ## 
 
-- ## 
+- ## [saily - 大家对这个5美元一年的美国手机号意见都这么大吗 - eSIM 奶昔论坛 _202610](https://forum.naixi.net/thread-16052-1-1.html)
+- 不支持携号转网，也就是说这号码不是你的，只是“租给你用”的
+我问过客服，明确说后期也不会支持
+另外就是平台有些号码是voip，以及这平台有点野鸡
+
+- 主要是定位有些上不去下不来
+如果你是要弄ITIN、美卡，你肯定不会用这个而是会去找个真正的美国运营商
+如果你只是接码，那其实并没有什么非要美国手机号的理由，香港和欧洲的卡保号便宜多了
+当然客观上来说，在google voice关门、talkatone收验证码要开会员的背景下，saily可能真是目前保号最便宜的美国手机号，喜欢收集手机号的可以玩玩
+
+- 首先，我开了好几个都是虚拟号，其次，接码基本什么都接不到，最后，就没有最后了
+- 谷歌都接不到码
+- 按照这么推广的话，马上就是下一个 gg
+
+- 如果你不在乎VOIP，开个talkatone不好么？还不要钱，就一个月发条信息就保号了
+  - 以前挺好，现在被冲烂了
+
+- 能接到码就行，他们说银行券商不认，所以才推 Tello，Ultra Mobile Paygo。
 
 - ## [分享一个全球终身免费旅行eSIM _202610](https://www.nodeseek.com/post-968222-1)
   - https://www.jetpacglobal.com/eterna
@@ -506,10 +523,6 @@ ldc 升值有利于广大持有 ldc 的佬友，为什么要强行引入干预�
 
 - 一般号称免费流量的都是没号码的, 想要既要在这里不太可能发生 
 
-- 
-- 
-- 
-- 
 - 
 
 # discuss-sms/sim 📱
@@ -2355,6 +2368,277 @@ Play 商店地区	• 决定商店应用及定价 • 家庭组判定依据	• 
   - Since you are already logged in on the device you took the screenshot from, go to your Google Account settings and click on the Security tab. Scroll down to 2-Step Verification. Add your new phone number there and verify it. Once the new number is set up for 2-Step Verification, you will be able to remove the old one from that list. Also check the Recovery phone section under the Security tab to make sure your new number is updated there too.
   - After you completely remove the old number from the security and recovery settings, the trash can icon will finally appear on the page in your screenshot so you can delete it for good.
 
+# discuss-email-hosting
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [问下各位关于25端口的问题 _202610](https://www.nodeseek.com/post-966645-1)
+是不是一般25端口入站vps都是放开的，不会特意屏蔽
+
+但是出站的要求明显更严格
+
+但是25端口出站+rdns组合只有少数vps服务商才会提供
+比如我所知的dartnode
+
+- 绿云全开，但有部分在黑名单列表里。
+
+- 绿云开 25 出站这点确实少见，不过 IP 段在黑名单里等于白开。想自己发信的话建议先用 mxtoolbox 查一下 IP 段的信誉，很多商家的段早被 Spamhaus 列过。真要稳，发信走 SES 或 Resend 的中继，VPS 只收信，比养 IP 省事得多
+
+- ## [[闲聊]现在都有哪家廉价的VPS服务商支持自建邮箱？ _202607](https://www.nodeseek.com/post-839395-1)
+cloudnium（可发，不能收）
+DediRock
+cc
+RN
+CCS
+delux
+netcup
+
+- cloudnium啊~3块多一个月~
+出站 25，是通的
+入站 25，不通
+❓ 实测都能收
+
+- 25端口开的就行，没rdns进垃圾箱的概率会高一些
+
+- ## [有佬知道dedirock支持rDNS _202604](https://www.nodeseek.com/post-687338-1)
+- 支持，但是面板配置不会生效，工单申请
+
+- ## 💡 [DediRock RDNS 要多久啊 _202604](https://www.nodeseek.com/post-703882-1)
+  - 有没有兄弟工单申请了，DediRock 的 RDNS，要多久啊
+  - 通过了
+  - 他们家不需要理由，我工单写的： `请帮我修改xx.xx.xx.xx的rDNS指向，xx.xx.xx.xx to mail.aaa.com` ，你的域名首先要正向解析过去，然后他才会给你添加反向解析。
+
+- 我看了下似乎可以直接添加？
+  - 可以加，但是不生效，要工单加才行。
+
+- 好奇问一问如果做邮件服务器的话，使用mail.xx.xx作为发信域名，是不是也要用mail.xx.xx来做rdns呀？
+  - 是的，至少我用的是iRedMail，是需要rDNS mail. 域名的
+
+- ## [杜甫都开25端口吗 _202512](https://www.nodeseek.com/post-533971-1)
+- 有些商家不给开，有些要发工单开
+
+- ccs的25端口和rdns都是支持的，不过后者要发工单申请
+
+- 怕碰见滥用，滥用会导致单个IP或者整个asn会被拉黑名单，要交钱才给删黑名单，应该是怕这个
+据说4000多人民币
+
+- ## [折腾了一晚上自建邮局，最后还是选择托管 _202602](https://www.nodeseek.com/post-608741-1)
+  - 整了一晚上Stalwart，搭在RN上，mailtest 9.1分，实际只有QQ邮箱能收，gmail进垃圾箱，outlook根本就是拒收，最后还是甲骨文托管邮局了。
+
+- 进垃圾箱其实跟用什么邮局无关
+  - 配置正确是基本条件，IP，域名信誉，邮件内容都有影响
+
+- stalwart为了秀肌肉，实际根本不是给人用的东西。
+见过最烂的文档没有之一。
+如果你有机会，可以试试Mox，配置简单，且遵循RFC标准，目前拿所有支持的测试都是10分。
+
+普通的邮件交流目前投递Gmail和Outlook都没进垃圾箱
+
+- 甲骨文做邮局好弄吗
+  - 免费龟龟里面的，每天200封，每分钟限速10封，够用。
+
+- 之前用阿里企业邮箱，满分，不进垃圾邮件
+
+- 哈哈太真实了，自建邮局就是这样，技术上能跑通但实际送达率是玄学。大厂对小IP的信誉度要求太苛刻了，花时间养IP还不如直接托管省心。
+
+- 已经在mox禁用ipv6了。
+
+我第一次发信测试qq、outlook 进垃圾箱了，查看发信ip、mox的dmarc列表，才知道用了ipv6，spf校验没过~
+
+- 建议还是把v6发信关闭吧 只有坏处没有好处
+
+- 企业邮箱服务是要多点部署，防止单点故障，stalwart支持分布式部署，承载百万甚至千万级别的发件量
+
+stalwart是企业邮箱方案，个人使用确实过于复杂，也不必全部否定
+
+- ## [使用 Stalwart 自托管邮局服务 | Dejavu's Blog _202601](https://blog.dejavu.moe/posts/hosting-mail-and-collaboration-server-with-stalwart/)
+- Rust 编写的高性能邮件与协作服务器，兼顾了极致的运行效率与从个人到企业级的扩展灵活性。
+- 空闲状态下 RAM 占用约 100MB，是资源受限系统的理想选择。
+- 并发处理：系统默认设置为全协议共 8192 个连接，更高并发场景下，也支持多节点负载均衡部署。
+
+- 选择 25 端口开放、支持 rDNS 解析 的云服务提供商，这是自托管邮件服务器的基本门槛。
+  - Netcup 全系产品原生开放 25 端口，无需提交工单申请。若是新购买的 G12 代产品，只需登录 SCP 控制台手动删除默认的防火墙策略即可。
+  - 在 Netcup 客户面板，设置 rDNS 记录
+
+- 本文以 mail.via.moe 作为测试邮件域名，我们将获得类似 helo@mail.via.moe 的邮箱。
+- 在设置服务器的 rDNS 解析之前，先完成域名到服务器 IP 的解析。
+  - 请勿开启任何 CDN 来代理此流量，DNS 记录全球同步需要一些时间，趁着这段解析空档，我们继续下一步。
+
+- Stalwart 遵循「安全即默认」原则，系统内部已集成了针对暴力破解、账户枚举、漏洞扫描及 SYN 泛洪攻击的防护机制。
+- 我们将采用官方推荐的 二进制安装 方式（而非 Docker）。通过官方提供的 Shell 脚本，可以快速完成部署。后续升级只需手动替换单个二进制可执行文件，维护压力极小。
+
+- 在 Cloudflare 控制台 新建一个用户 API 令牌，这将用于 acme.sh 用于 DNS 验证
+
+- 官方文档逻辑混乱，Web Admin 控制台操作反直觉、用户交互体验差、维护和更新困难，我认为它远未达到生产级别的可用水平。
+
+- 👥 
+
+- 现在用的是cloudflare提供的域名邮箱，后面接的是自己的微软邮箱，体验上不错，对外展示是自己的域名，后台可以随意切换实际收信邮箱
+  - 不能发信，只能收信
+
+- ## 🌰 [邮件服务器系列教程 - 香菇肥牛的博客 _2025](https://qing.su/mailservers)
+  - [Stalwart Mail 邮件服务器的单服务器部署 - 香菇肥牛的博客 _202501](https://qing.su/article/stalwart-mail-single-server-nginx.html)
+
+- ## [关于自建邮箱 - LINUX DO _202501](https://linux.do/t/topic/378090/2)
+- 自建容易但是收发信极容易被拉黑的，因为你的域名和 ip 之间只有 mx 解析没有反解。建议还是用第三方吧，量不大的话腾讯企微就可以了
+
+- 个人搭建的话，如果不是很熟悉自建邮箱，比较推荐 mailinabox.email, 这是一个成熟的一体化套件，所有东西都给你装好安排好了，包括备份、文件储存、日历、DNS，等等，很适合新手。
+
+如果想要体验新的功能，这里必须得推荐用 Rust 写的 Stalwart mail, 可以进行极其精细的自定义，而且超级轻量，速度还快。Stalwart 应该是去年以来国外最火的自建邮箱解决方案了。我现在也已经从 mailinabox 搬到 stalwart 了。不过这个东西配置的时候坑特别多，不建议新手用。
+
+普遍意义上的域名邮箱主要有三个部分，1 是 MTA （可以理解为 SMTP 服务器），2 是 MUA （可以理解为 IMAP/POP3 服务器），3 是客户端软件（比如基于本地的 Thunderbird, EM Client, Foxmail，基于网页的 Roundcube, Snappy, SquirrelMail 等等）。
+
+技术层面，除了一些商用闭源软件外，市面上用得多的 MTA 主要是 Postfix 和 Exim, (Mailinabox, Poste, iRedMail 等等用的都是 Postfix)，这是二十多年前 C 语言写的程序，现在还是主流。最近几年发展起来的比较新的 MTA 有用 Java 写的 Apache James 和用 Rust 写的 Stalwart.
+
+市面上用得最多的 MUA 是 Dovecot, 和 Postfix 一样，这也是二十多年前 C 语言写的程序，现在依旧是主流。最近几年发展起来的比较新的 MTA 有用 Java 写的 Apache James 和用 Rust 写的 Stalwart.
+
+客户端软件就有很多了，用得最多的开源网页邮件客户端还得是 Roundcube, 用 PHP 写的。个人更推荐的是轻量的 Snappymail 或者功能更丰富的 SOGo.
+
+- Serv00 个性邮局打造过程（调试详细步骤）
+lark
+自建 找开放 25 端口的小鸡
+买别人的服务 比如 mxroute
+
+- ## [【分享】Mailu&Poste.io自建邮局的比较及避坑指南 _202503](https://www.nodeseek.com/post-296754-1)
+  - 为了充分利用闲置的Vps，用Mailu和Poste.io分别自建了一次邮局，其中也踩了一些坑，特分享一下。
+  - 推荐支持设置rDNS（一般是找提供主机或VPS的厂商设置，部分厂商在控制台也可以自行设置）
+  - 顶级域名（TLD）推荐使用 .com、.net或各国缩写的后缀，不容易被列入不可信的TLD名单中，此项主要影响发出邮件后产生的垃圾邮件评分
+- 推荐使用Cloudflare等比较大型的DNS解析商配置，会比较清楚，Cloudflare还提供了针对Email配置的DMARC Management，帮助你检查DNS的配置情况。
+- Mailu和Poste.io的比较
+Mailu是开源全免费的，Poste.io也是免费使用但部分功能需要专业版解锁
+Mailu支持自动根据Let's Encrypt证书生成TLSA记录，Poste.io需要自行生成，当然TLSA生效的前提是域名需要支持DNSSEC
+两家都支持反病毒和反垃圾邮件的功能，其中反垃圾邮件Mailu支持对收、发的邮件都进行扫描，Poste.io对发的邮件进行扫描是专业版服务，如果你的邮箱不止你一人使用，想避免被滥用发送垃圾邮件可能需要关注
+Mailu支持用户直接注册，Poste.io的免费版本不支持，只能帮助创建用户，用户登录后自行修改密码
+两家都支持管理后台，Poste.io的管理后台颜值更加高一些
+- 一些坑点
+在配置DNS的MX记录的时候，name可以使用@代表你的域名，一些比较正常的解析商如果你输入yourdomain.com在name里也没问题，但一些比较蠢的DNS解析商会帮你解析为 yourdomain.com.yourdomain.com，导致一直解析不对
+如果用Cloudflare做解析，记得与Mail相关的解析记录都不能开代理，包括Mail对应的那条A记录、CNAME记录等
+部分域名解析商的DNSSEC是收费服务，免费版本无法开启
+如果使用的主机或者VPS内存比较少，可以开一下Swap，也是可以跑起来的
+完成后记得用mail-tester之类的工具测试一下发送邮件的得分，如果一切正常应该会得到如下结果
+
+- 补充下：我是用的netcup1o鸡部署的，域名也是用的de的域名，都是没问题的（之前用过top的，会被扣分）
+我自己最后留的是poste.io，主要原因是2个，一个是我一台机器先后部署的不高兴动了，二是poste.io的后台管理端颜值确实高点
+
+- 还有一条重要提醒：1个月以内的新域名不能用来发信，不然直接黑名单。
+
+- 有什么其他便宜稳定主机推荐自建邮局吗？
+  - 主要是需要放开25端口，有放开的一般都可以的，查了下RN、OVH之类的都行
+  - 常见的有nc、rn、cc这些吧
+- 哪个更适合低配置vps
+  - 2个占用都不高的，不开扫病毒就行，我的netcup1o鸡内存占用60%，swap用了300m，cpu更是只有个位数占用
+
+- 最好把邮局和网站分开，因为你网站可以套个CF开小黄云保护源站，但是邮局开不了小黄云，这样会暴露源站ip
+  - 我现在就是网站之类的web服务一台VPS，邮局专门弄了netcup的1o鸡，解析的时候在一个主域名下分开
+
+- 前几天我也在1o上部署了poste.io，用的是nginxproxymanager做的反向代理，需要把.well-known同时挂载给poste.io容器才行，不然smtp这些端口申请不到证书。
+虽然写在博客里了，但是还是贴一下配置吧，需要使用docker volume create well-known先创建卷。
+
+- 测试了下，当https都由nginx反代提供的情况下，poste使用nginx的反代很方便，mailu非常麻烦，webmail那边总是502。
+
+- ## [分享一个，和论坛邮箱类似功能的，来自simplelogin，我也是最近学习到的 _202607](https://www.nodeseek.com/post-805996-1)
+  - 能注册，能push，但是只能10个别名
+  - Proton 家族背书： 2022 年被大名鼎鼎的隐私邮箱巨头 Proton 收购了。现在和 Proton 体系深度整合，稳定性有绝对保障，不用担心小厂跑路。
+  - 100% 开源 + 支持自建 (Self-host)： 它的代码完全开源
+  - 支持自定义域名 (Custom Domains)： 这是高级版最香的功能。你可以绑定自己的域名，开启泛解析（Catch-all），配合它的目录（Directory）功能，实现无限后缀别名。
+  - 支持 PGP 加密： 极客福音。它可以把收到的邮件用你的 PGP 公钥加密后再转发，这样即使是你的主邮箱提供商也看不到邮件的具体内容。
+
+- 论坛有个佬自建了simplelogin，很多人交易都用的 https://app.yuanyou.de/auth/login
+  - 我试过了 他是把创建的别名邮箱收到的邮件转发到你的注册邮箱里 逻辑跟seek.li不一样
+
+- ## 🌰🌰 [教程：使用 mailu 搭建LINUX DO Mail同款域名邮箱服务器 - LINUX DO _202502](https://linux.do/t/topic/453502)
+  - Mailu.io 是著名的基于 Docker 的邮件服务器管理系统，它的前身是著名的 Poste.io 系统。与 Poste 相比，Mailu 的功能更加丰富，在服务器集群部署的环境中也有较好的可拓展性，但资源占用较高，且部署起来没有 Poste 那么直观。相对来说，Poste 更适合小团队，而 Mailu 可以用于较大规模的团队和社区的部署。
+- 本篇教程总共包括下面的几个部分
+搭建开始前的准备
+域名 DNS 的设置（第一部分）
+Reverse DNS 的设置
+生成 Mailu 服务器配置文件
+安装 Mailu
+域名 DNS 的设置（第二部分）
+添加用户与其他域名
+测试邮件收发
+配置 MTA-STS (可选)
+设置 SMTP Relay (可选)
+
+- 用下面的命令判断 25 端口是否被阻断。
+  - 如果收到类似 220 smtp.mail.yahoo.com ESMTP ready 的回复，说明 25 端口正常，可以发信。
+  - 如果超时，且防火墙没有禁止 25 端口，则说明 25 端口被阻断。 示例信息 telnet: Unable to connect to remote host: No route to host
+- 如果您使用第三方 SMTP 中继服务来进行发信（比如 Linux.do 使用了 MXRoute 作为中继），那么 25 端口的开放就不是必须的。
+
+```sh
+
+telnet smtp.aol.com 25
+```
+
+- 给服务器设置一个单独的子域名，作为邮箱服务器的服务器名，这里将假设为 mx.linux.do.
+- 如果您使用 Cloudflare 作为您的 DNS 服务器，请关闭上述 A 记录的 CF Proxy 功能（把解析记录边上的小云朵关掉），否则会导致收不到邮件。
+
+- Reverse DNS (rDNS) 是邮件服务器必不可少的配置。
+- Reverse DNS (rDNS) 的作用是将 IP 地址指定为一个子域名。如果您的发信 IP 地址没有设置 rDNS，发送的邮件将会被很多邮件服务器拒收。
+  - rDNS 需要在您的服务器的主机商处设置。几乎所有的国外主机商都提供了自助设置 rDNS 的服务，您需要在您的服务器后台设置，一般会出现在 "Network" 或者 "IP Address" 等地方。如果您找不到相关的设置，请发工单给主机商，他们会帮你设置好或者告诉你在哪里可以自助设置。
+  - 当然，如果您使用第三方 SMTP 中继服务作为发信节点，那么就不需要给你自己的服务器设置 rDNS 了。
+
+- 之前，我们已经设置好了邮件服务器需要的大部分 DNS，包括 MX, SPF, DMARC 等。搭建好邮件服务器之后，我们还需要根据系统生成的 DKIM 密钥来配置 DKIM 记录。
+  - 进入服务器后台 https://mx.linux.do/ , 点击左侧 Mail Domains，可以看到如下图的域名管理界面。
+  - 生成 DKIM key 记录。您需要添加这条 TXT 记录进您的域名的 DNS，用来 DKIM 签名。注意不要把 DKIM 的内容复制错了，如果复制粘贴出错了，会导致 DKIM 验证失败，导致发送的邮件被拒收。
+如果您需要支持各种客户端的自动配置，也可以按照页面的提示设置好 SRV 记录（不必须）。
+如果您的域名支持 DNSSEC, 那么也可以按照页面提示设置 TLSA 记录（不必须）
+
+- 全部设置完毕后，我们来添加用户。也可以添加其他的域名。
+  - 进入域名管理界面。在 Manage 模块中找到 User, 可以新建邮箱用户
+
+- Mailu.io 支持配置 MTA-STS. 启用 MTA-STS 可以硬性要求发件方往你的邮件服务器发送邮件时使用 TLS 安全链接，这样可以在一定程度上提升邮箱的安全性，防止中间人攻击。
+
+- 
+- 
+
+- ## 🌰 [自建邮局 | Poste.io邮箱服务搭建教程 _202308](https://www.nodeseek.com/post-20417-1)
+- [Poste.io邮箱服务器搭建教程 _202410](https://www.nodeseek.com/post-169958-1)
+  - 无ptr/rdns
+
+- [【教程】使用Docker快速搭建邮件服务器 _202501](https://www.nodeseek.com/post-253926-1)
+
+- ## [想自建邮件 有哪家服务商能帮助配ptr吗 _202606](https://www.nodeseek.com/post-767798-1)
+- ccs独立服务器，日本樱花，德国netcup这三家能做ptr
+
+- aws ec2 可以prt
+
+- ## [迷上了自建邮局，请问服务器选哪个好？ _202609](https://www.nodeseek.com/post-919365-1)
+  - 要求开25端口
+- DediRock(CCS系) 或者 NetCup 或者 正价瓦工 或者 EuGameHost的 UK
+
+- 自建推荐加1或2个备用邮局服务器 这样主mx炸了也不会丢件
+
+- 我用的cloud mail，直接CF works+resend，收发信都没问题
+  - 没办法imap smtp
+
+- cloudnium的服务器默认开25端口而且控制台就能设置反向dns，我搭了3个stalwart
+
+- RN的都可以开25端口，支持工单改PTR解析
+你觉得哪款便宜配置够就用哪款
+
+- ## [最近已经把邮箱全迁到自建邮箱了 _202406](https://www.nodeseek.com/post-125892-1)
+- 第一是，总会在后期想换更好的域名，就会变更邮箱，巨麻烦。
+第二是，有时候你从未想过出售或者放弃，但是人就是很奇怪，想把这个域名扔掉，但是你发现很多地方绑定的这个邮箱，你会记不住，最后发现登录不上去某个站，损失惨重。
+第三是，域名邮箱和专业的邮箱服务、功能、各方面差距实在是太大了，折腾来折腾去，我最后还不如用专业的邮箱服务。
+所以最后又全都折腾回去了，现在我的域名邮箱仅仅用来收些特殊的邮件。
+
+- 去年我和你做了一样的事，把所有邮箱全部变成自建，然鹅，上个月把所有域名邮箱全部改回了outlook。。。。这给我累的。
+
+- 域名邮箱我都用来注册各种盗版网站
+
+- rn, ccs, naranja都不限制（我印象）
+
+- 對公用域名郵箱，對私用 outlook or Gmail
+
+- qq上面最多能添加3个邮箱
 # discuss-email
 - ## 
 

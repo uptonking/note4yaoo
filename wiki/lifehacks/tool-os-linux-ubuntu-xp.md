@@ -52,7 +52,7 @@ ssh root@ip
 
 sudo apt update -y && sudo apt upgrade -y
 apt update && apt upgrade -y && apt dist-upgrade -y && apt full-upgrade -y 
-sudo apt install -y vim ufw fail2ban git btop htop 
+sudo apt install -y vim ufw fail2ban git btop htop telnet 
 
 sudo apt autoremove -y
 

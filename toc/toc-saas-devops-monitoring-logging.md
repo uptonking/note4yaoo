@@ -166,9 +166,6 @@ modified: 2024-02-11T15:11:31.598Z
   - It can use either a local mount point or object storage (S3/compatible stores) for data storage.
   - For comparison, Parseable consumes up to ~80% lower memory and ~50% lower CPU than `Elastic` for similar ingestion throughput. 
 
-- https://github.com/spiritLHLS/ecs /shell
-  - VPS融合怪服务器测评脚本(VPS Fusion Monster Server Test Script)(尽量做最全能测试服务器的脚本)
-
 - https://github.com/M-cheng-web/web-tracing /ts
   - 为前端项目提供【 埋点、行为、性能、异常、请求、资源、路由、曝光、录屏 】监控手段
 
