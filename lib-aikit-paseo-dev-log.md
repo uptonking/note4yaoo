@@ -16,12 +16,38 @@ modified: 2026-09-08T04:45:17.635Z
 - Browser connection succeeds using host aichor.aichorage.de, port 443, SSL enabled.
 # dev-xp
 - 初版 autumn-studio 采用custom build的方式embed pi
+# prompts
+- source code for @extend-ai/react-xlsx is cloned at `~/Documents/repos/ai-ml-llm/all-docai/extend-react-xlsx` for reference if you want. 
+- source code for mineru is cloned at `~/Documents/repos/ai-ml-llm/all-doctools/MinerU` for reference if you want. 
+- source code for docling is cloned at `~/Documents/repos/ai-ml-llm/all-doctools/docling` for reference if you want. 
 # autumn-studio
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## ai text mode - Layout Blocks view
+  - MinerU routing — auto prefers ready local Kit models, then a reachable local API, then token cloud, then free cloud. Explicit modes stay available: local-cli, local-api, cloud-token, cloud-free. 
+  - The MinerU mode default is still cloud-free; choose Auto to prefer an installed local setup. 
+  - Storage — `.autumn/<doc-slug>/<versionId>.layout.json` and `<versionId>.assets/images/….` Asset paths are sanitized, capped at 20 MB per file, 64 MB per layout, 512 MB per extraction, and deleted with the version.
+  - Model repair is reactive (failure → Download models → auto-retry), not a pre-parse blocking dialog.
+  - Existing .autumn versions without layout open Text-only until re-parsed.
+
+- use local-cli with the standard tier. 
+  - local-api produces the same layout output if you already run the daemon, 
+  - and cloud-token works if you do not want local models. 
+  - cloud-free cannot produce Layout Blocks at all.
+- Blocks needs MinerU's middle_json.json, which contains the per-block bounding boxes. Only three paths request that zip and persist layout geometry
+
+- MinerU OCR mode is the OCR control: Auto uses the text layer when present, Force OCR handles scans with a broken or missing text layer.
+  - Formula and table recognition run as part of MinerU’s layout pipeline. There is no separate local switch for them.
 
 - ## Can an agent profile be selected automatically right now?
 - In the main chat box (per-prompt or mid-session): No. Currently, agent profiles are applied manually by the user in the composer/chat box.
@@ -46,16 +72,6 @@ modified: 2026-09-08T04:45:17.635Z
 - focus on pdf first, more file formats will be supported later, please design a extensible architecture for "AI Text Mode".
 - How do you like my idea? If it is okay, you might improve it.
 - Analyze this feature and related code/config, make a comprehensive plan for "AI Text Mode" feature
-
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 
 - ## for paseo-file-explorer, if i set File open mode to be "new-tab", it seems that all file tabs are opened as sub-tabs under a "File Viewer" parent tab. why is it designed this way? since paseo provides native tabs, why is paseo-file-explorer tabs not using it? Is it a good idea to refactor paseo-file-explorer tabs to use paseo tabs instead of using sub-tabs under a paseo parent tab?
 - paseo-file-explorer uses sub-tabs inside a single "File Viewer" workspace tab because Paseo's Plugin SDK models workspace panels as static, parameterless singleton targets per (pluginId, panelId, workspaceId), and does not expose Paseo's internal useWorkspaceLayoutStore or parameterized tab targets to plugins.
