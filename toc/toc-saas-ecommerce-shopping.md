@@ -14,12 +14,8 @@ modified: 2023-06-07T14:19:18.719Z
 
 # cards/codes/redeem
 
-- https://github.com/lizhipay/acg-faka /4.9kStar/MIT/202605/php
-  - http://162.14.111.118:91/
-  - 个人发卡源码，发卡系统，二次元发卡系统，二次元发卡源码
-  - 很多 异次元店铺 都是用的这套系统
-  - cases 🌰
-    - https://shop.kedaya.xyz/
+- resources
+  - [求好看又简单的发卡网 _202501](https://www.nodeseek.com/post-245248-1)
 
 - https://github.com/dujiao-next/dujiao-next /520Star/GPL/202605/go
   - https://dujiao-next.com/
@@ -29,6 +25,33 @@ modified: 2023-06-07T14:19:18.719Z
     - Vue, Pinia
   - cases 🌰 
     - http://faka.jnmtk.com/
+  - legacy
+    - https://github.com/Julyssn/dujiaoka  /php
+
+- https://github.com/lizhipay/mcy-shop /MIT/202610/php/异次元v4
+  - https://ai.arm.moe
+  - GPT / Claude / Gemini / Grok Token 服务平台，超低倍率、余额长期有效并支持无理由退款
+- https://github.com/lizhipay/acg-faka /4.9kStar/MIT/202605/php/异次元v3
+  - http://162.14.111.118:91
+  - 个人发卡源码，发卡系统，二次元发卡系统，二次元发卡源码
+  - 很多 异次元店铺 都是用的这套系统
+  - cases 🌰
+    - https://shop.kedaya.xyz/
+
+- https://github.com/Tai7sy/card-system /MIT/202607/php/风铃发卡
+  - 一款高效安全的发卡平台。
+
+- https://github.com/kungec/kunfaka /MIT/202610/php
+  - 坤发卡 · 全自动发卡系统(发卡端) — PHP+MySQL, 宝塔3分钟部署, 6大支付通道(含USDT-TRC20免挂机/Visa/Mastercard), 应用商店+5套主题, 秒级自动发货
+  - cases 🌰
+    - https://www.ngmay.com/
+
+- https://github.com/34892002/edgeKey /MIT/202608/ts/vue
+  - https://shop.v50.app/
+  - 完全开源的发卡系统，一键部署到 Cloudflare Workers
+  - vike框架开发，可直接部署到 Cloudflare 的一体化全栈卡密商城系统：同一套代码同时包含前端页面、SSR 渲染、后端 API / 数据变更入口，并由 Cloudflare Workers 运行。
+  - [该省省该花花，免费一键部署的发卡站开源项目你可曾见过? - LINUX DO _202604](https://linux.do/t/topic/2067193)
+    - 其实支付宝的新产品 智能付 是可以个人申请的，上限：单笔 50，日 1000，缺点就是支付太麻烦了，得使用龙虾或者是 mcp 发起购买
 # starter
 - https://github.com/hicmtrex/TypeShop-Backend /202212/ts
   - https://github.com/hicmtrex/TypeShop-Frontend

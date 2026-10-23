@@ -967,6 +967,10 @@ modified: 2021-05-14T15:04:15.333Z
     - The Data Store is responsible for storing structured metadata such as email headers, folder hierarchies, calendar, contacts, user settings
     - The Blob Store is where large binary files 
     - the In-memory Store handles ephemeral key-value data used by security, clustering, and anti-spam components
+  - 🛝
+    - 发件被拒收的: @yahoo.com, @aol.com, @icloud.com
+    - 实测能发件到: gmail, qq
+    - 发件到outlook需要申请解封ip
 
 - https://github.com/simple-login/app /7.1kStar/AGPL/202610/python/js
   - https://simplelogin.io/

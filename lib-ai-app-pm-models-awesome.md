@@ -3198,6 +3198,14 @@ modified: 2026-06-20T15:49:57.019Z
   - https://tokenharbor.ai/models?category=free
   - Free allowance on a rolling 7-day period
 
+### 中转自部署
+
+- [Yeta Platform ](https://platform.yeta.ai/)  /美元计价
+  - [【富可敌国】7折破甲Deepseek 4.1 Flash！！新店开业注册送$30 - LINUX DO _202610](https://linux.do/t/topic/3061347)
+  - 基于国产卡算力（910C + M890P），大客户可以开通国内专属私有端点。
+  - 纯自营破甲 Deepseek 4.1 flash, 缓存价格高 0.01, 流量太大有一定概率会回退到第三方供应商
+  - 模型不多 ds, glm-5.3-flash
+
 ### 中转的中转
 
 - https://openrouter.ai/deepseek/deepseek-v4.1-flash

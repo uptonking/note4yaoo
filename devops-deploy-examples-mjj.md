@@ -9,6 +9,9 @@ modified: 2026-10-08T05:05:56.528Z
 
 # guide
 
+- clash
+  - 针对已搭建的节点, 快速生成订阅链接, 用户体验后可以更快交易
+    - 伪需求?
 # popular
 
 # bootstrap

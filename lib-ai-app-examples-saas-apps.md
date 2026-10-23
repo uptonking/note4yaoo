@@ -1032,6 +1032,10 @@ modified: 2025-02-21T17:17:42.225Z
 - https://github.com/thetahealth/mirobody /apache2/202609/python
   - https://mirobody.ai/
   - The AI-native health data engine — collect, translate, and reason with AI Agents over labs results, wearables & genomics.
+# mobile-agent
+- https://github.com/Mangi-11/Eta /2.2kStar/NC/202610/kotlin
+  - Android 系统级 AI Agent——越过沙盒，让模型访问底层API、屏幕、终端与你的数据
+  - [Eta 手机 Agent，2k Stars 了，感谢大家的认可和喜欢  - LINUX DO _202610](https://linux.do/t/topic/3047148)
 # devops
 - https://github.com/liangdabiao/GEO-Content-Optimizer-Skill /MIT/202605/python
   - GEO（Generative Engine Optimization）是面向 AI 搜索引擎的内容优化方法论。就像 SEO 优化 Google 排名，GEO 优化你的内容在 ChatGPT、Perplexity、Gemini、Google AI Overview 等 AI 引擎中的引用率。 本项目提供两个 Claude Code Skill，覆盖 GEO 全流程

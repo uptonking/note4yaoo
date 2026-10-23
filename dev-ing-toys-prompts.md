@@ -1332,6 +1332,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - worker_4: grist/wabase, outline
 - worker_5: la suite - docs, drive, people
 - worker_6: 
+  - shop: dujiao-next, 
   - email: server-25, clients/providers-aggregator
   - im/forum: zulip
   - 图床

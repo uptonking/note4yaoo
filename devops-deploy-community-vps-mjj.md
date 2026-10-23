@@ -23,6 +23,12 @@ modified: 2026-06-19T06:15:35.007Z
 - mjj-options
   - 偏线路? 偏性能?
   - ip能访问、 未送中, 打开google访问的不是 google.com.hk
+  - 线路鸡: dmit, bandwagon, vmiss, 白丝云cloudsilk, 咸鱼云
+  - 建站鸡: netcup, oracle, ccs, racknerd, cloudcone, hostdzire
+  - 小拉鸡: cloudnium, dedirock, raksmart, dartnode
+  - 性能鸡: bero, ovh, 独服
+  - 落地鸡: lightlayer, legendvps, bagevm, panstar, 面包云, zouter, wawo, vp.s
+    - bagevm的de
 
 - vps-vpn/落地
   - 可考虑 普通线路 + 优质落地 的组合， 就是要折腾下
@@ -42,6 +48,8 @@ modified: 2026-06-19T06:15:35.007Z
   - [PoorVPS - VPS 导航 ](https://poorvps.com/)
     - [HostDzire CN | HostDzire Deals Monitor ](https://hostdzire.cn/)
     - [RackNerd Plus | RackNerd Deals Monitor ](https://racknerd.plus/)
+  - [VPS 套餐对比：价格、库存与评价 | 找VPS就上VPSIUM ](https://vpsium.com/zh-CN/)
+    - [VPS 服务商名录：48 家对比评价与套餐 ](https://vpsium.com/zh-CN/providers)
 
 - resources
   - https://github.com/cloudcommunity/Cloud-Free-Tier-Comparison
@@ -618,6 +626,9 @@ Since then I always assume a server is being scanned immediately after it gets a
 - 新手小白建议使用 Ubuntu 系统，默认配置比较完全，软件包更新也还算及时，只要你的 VPS 配置不至于比 1C1G（1 个虚拟核心，1GB 内存）还低，如果再低就换 Debian 吧，如果 Debian 还卡那就得用 Alpine 了，不过这个大多数人不太用得来，它太精简了
 
 - fail2ban 不太推荐用默认的 ufw 来屏蔽恶意扫描，IP 太多了影响 ufw 自己，推荐用 iptables+ipset 的方式（nftables 我就不清楚了，不会用）
+
+- ## [关于VPS的一些自我见解和入门基础知识总结！！写的不好佬们轻点呀... _202609](https://www.nodeseek.com/post-954237-1)
+
 # discuss-vps-use-traffic
 - ## 
 
@@ -1067,6 +1078,12 @@ legendvps，胜在便宜的灵车。2.5 刀月付（现在 25 刀年付）的那
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [【转载】VPS线路/AS自治系统详解 _202412](https://www.nodeseek.com/post-223687-1)
+  - 目前国内有三大运营商，电信、联通、移动，电信有2大骨干网——163和CN2，联通有2大骨干网——169和A网，移动只有1个骨干网CMNET，一共有5大骨干网，这些骨干网都有自己的独立国际出口，和国外运营商可以直接连接。
+  - 另外有用于科研和教育用途的2个小型骨干网，CERNET（教育网，主用于高校）和CSTNET（科技网），这2个骨干网也有自己的独立国际出口，但是总体规模远小于电信、联通、移动，故能承载的出国带宽有限。
 
 - ## [问一下大家，广播IP 的原生IP 有啥区别？ _202610](https://www.nodeseek.com/post-969120-1)
   - 哪个好点，刚看了面包云日本的IP是广播其他的哪里都好，在纠结呢，要不要下手呢
@@ -2701,6 +2718,7 @@ JP从0.8刀每月涨价到1.1刀/月
       - 2c4g
       - [[NQ留档] Raksmart 4837 2c4g 1.99刀 _202610](https://www.nodeseek.com/post-980270-1)
       - 同一机器不同用户的测试
+    - [【NQ】raksmart 2C4G 三网4837 1.99刀款 _202610](https://www.nodeseek.com/post-1002432-1)
     - [raksmart 1.99$ 晚高峰 _202609](https://www.nodeseek.com/post-917029-1)
       - 1c1g
     - [［NQ］Raksmart 中国大陆优化 $1.99/m _202608](https://www.nodeseek.com/post-894193-1)
@@ -3093,6 +3111,98 @@ yysy，4837口子真的大，轻松跑满本地
 - [Colocrossing有CPU等资源限制(购买需谨慎) _202503](https://www.nodeseek.com/post-282744-1)
   - Customer’s Service cannot burst to 95-100% usage for more than fifteen (15) minutes and cannot average higher than 50% usage within any two (2) hour period. 330000 is your monthly bandwidth limit, and it resets every month. This is a very high limit and is nearly impossible to exhaust under normal usage.
   - 另外需要提醒的是: Colocrossing撤销机器并不会自动退款，需提交工单，并且流程繁琐，还不一定能100%收到退款，或者即使收到退款也只能退到账户余额，而不是原路退回。
+# discuss-vendor-cloudcone
+- resources
+  - 黑五充值活动可用于续费，能降低价格， 但不规律的活动也可能取消， 长期续费不稳定
+  - 14刀的 2c2g 也许不如 bero 12o的 1c2g 
+
+- cons
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [cloudcone的IP段哪些好一些？ _202609](https://www.nodeseek.com/post-936708-1)
+我申请换cloudcone的IP，之前的IP大概率被claude给标记了，所以想换IP，等了1个月终于联系我了，客服终于联系了
+
+但是cloudcone的客服说不能给我测试IP质量，只能随机，给了我下面这些IP段，让我选。。想请教下大佬，这个怎么选比较好。。还是纯粹看脸？
+
+103.7.x.x
+103.232.x.x
+103.233.x.x
+113.20.x.x
+117.55.x.x
+163.47.x.x
+182.255.x.x
+203.24.x.x
+203.31.x.x
+203.88.x.x
+
+- 目前只找到117.55.x.x和66.154.x.x的
+117.55的好一些
+
+- ## [【已出】+120慢出CloudCone-SC2-2C2G60G 免费备份/年付19.55刀 _202610](https://www.nodeseek.com/post-960990-1)
+  - CloudCone - CNewYear-3
+  - CPU:2C /内存：2G /硬盘：60G /流量：8T（可能流量无限）
+  - 备份、快照功能免费！
+  - PS：不是线路鸡，特点是免费备份，25端口开放，自助rDNS功能；我用来跑各种docker，包括邮件服务器；
+- 他家的备份最近正常吗？我那个自动备份的任务老失败。
+  - 正常的，如果失败就工单让后台调下；上次抽风后有的鸡需要后台处理下，不然task全是失败。
+
+- 前两天收到6C4G款, 你收到的这款续费多少啊
+  - 年付42.68刀
+
+- ## [15刀年付的cloudcone 这配置的机有必要留吗 _202610](https://www.nodeseek.com/post-974448-1)
+  - 2c2g120g3tbw
+- 用不上的一律处理了，不要想着留着升值啥的，你赚的那点钱还不一定有这些年续费花的钱多
+
+- ## [【已出】CloudCone 2c2g40g 16.52刀 _202610](https://www.nodeseek.com/post-957236-1)
+  - 每个月流量5T
+
+- ## [（秒出）出个快到期的 cloudcone 2C2G27G 13.49 _202610](https://www.nodeseek.com/post-992839-1)
+
+- [【已出】Ccloudcone 2C2G KVM 年付低价机 _202610](https://www.nodeseek.com/post-966832-1)
+
+- [出2台cc小鸡 _202608](https://www.nodeseek.com/post-891306-1)
+
+- ## [都说cloudcone拉了，结果交易区都是秒出，还有溢价，到底有啥吸引力？ _202610](https://www.nodeseek.com/post-992161-1)
+  - 主要是今年连续炸了两次，年初被勒索病毒，年中搬迁机房
+
+- 续费送2个月，补偿说还在讨论中，没结果呢，我也有一个要出，可能是今年cc的机器太拉了把
+
+- ## 💰 [cloudcone 充$5.10送$2.55，不限次数 _202610](https://www.nodeseek.com/post-1002250-1)
+  - 支付宝充值的时候 选择人民币比美元少1块，核对下
+  - 我是充值来续费的。
+
+- 目前没有任何cc的机器值得购买，可以先充值，等黑五闪购，不过闪购是脚本哥的天下
+
+- cc也学会了，先让一波人冲余额，有余额了自然就和商家绑定了，后面再出鸡。
+
+- CC 的客服真的是一言难尽，一个月前的就提交工单，到现在问题还没有解决，还没有回复。不过机器稳定性还算行，中规中矩，中等偏下水平。
+
+- [Cloudcone 的每充 $5.10 赠 $2.55 又开始了 _202610](https://www.nodeseek.com/post-1002009-1)
+  - 去年的测试1：是每充 $5.10 送 $2.55 == 小鸡 6.7折；
+  - 多于 $5.10 不送，仅 $5.10 有效；
+- cc ，它家应该是最便宜的机之一，每充 5 送 2 等于循环 6.7 折，再活动白领 3 。
+相对稳定，对得起价格，虽然线路烂，性能一般。
+我的 2核 1G 35G盘 4T/月 $8.79，-3 再 6.7 折就是 $4/年，当下载机和 plex 还是不错的。
+
+- 去年的余额还没有花出去。。。
+
+- 这家以前有mc机房的时候还凑合，现在没了线路很烂，而且还是三哥搞的
+
+- ## [提问：为什么论坛上cloudcone的鸡总能秒出，明显比RN受欢迎 _202610](https://www.nodeseek.com/post-1002399-1)
+- 后台随时生成转移码，不通过官方人工操作。
+
+- 因为mjj持有量第一，而且转移免费
+RN连一个自助转移都没，转移还得区分闪购和非闪购
+闪购机还得8刀转移费
+
+- CC其实富强还挺好用的，IPV6大多数都能解锁
 # discuss-vendor-racknerd
 - resources
   - [RackNerd | VPS Specials](https://www.racknerd.com/specials/)
@@ -3106,9 +3216,20 @@ yysy，4837口子真的大，轻松跑满本地
 
 - ## 
 
-- ## 
+- ## [RN除了洛杉矶还有什么地区稍微好一点 _202610](https://www.nodeseek.com/post-991021-1)
+- 要看地区和宽带的
 
-- ## 
+- 圣何塞, 法兰克福
+
+这里有RN所有机房的测试IP和测速文件, 可以试一下
+
+https://vpsium.com/zh-CN/provider/racknerd/datacenter
+
+- ## [【出鸡】RN2024第八波闪购 2C.2G.31G.16TB.$13.88/y _202610](https://www.nodeseek.com/post-1002319-1)
+  - [【已出】rn 2c2g 150出 ns邮箱转 _202609](https://www.nodeseek.com/post-908265-1)
+- [【已收】收一台RN 2023黑五 LA DC02：2G KVM，年付13.55刀 _202610](https://www.nodeseek.com/post-992309-1)
+
+- [「秒了」出RN 2023黑五闪购-第11波 _202610](https://www.nodeseek.com/post-978223-1)
 
 - ## [对比一下 RackNerd DC02 / DC03 / SJC | 晚高峰测速 | 国际互联 | 洛杉矶 / 圣何塞 | RN 详测 _202511](https://www.nodeseek.com/post-499338-1)
 - CC家的DC1就跟RN的DC2一样.. 基本是一样的
@@ -3259,8 +3380,9 @@ Gemini、Reddit 被拉黑；
 - [racknerd快讯，dc02 所有机器将物理迁移到 dc03 _202605](https://www.nodeseek.com/post-736588-1)
 - dc2机房是属于mc的，mc被ec收购了，ec也收购了cc，现在cc和dc2都是一家，rn估计没续约找借口
 # discuss-vendor-cloudnium/dedirock/dartnode
-- cons
+- dartnode
   - backup restore 慢到不能忍
+  - backup 免费提供3个备份
 
 - ## 
 

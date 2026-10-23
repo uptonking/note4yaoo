@@ -347,6 +347,20 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1022
+
+- Stop automated scanning at the edge in cloudflare
+  - Cloudflare has NO firewall rules at all ✗ — no IP rules, no UA rules, no lockdowns ✓. So the edge is doing nothing ✗ — everything passes to the origin ✓ where Caddy 400s the malicious paths ✓.
+  - no edge filtering ✗: the scan hits the origin ~2,300×/day ✓, consuming bandwidth, conntrack, and Caddy CPU ✓ — and it's pure noise
+  - they're actively probing for secrets (.env, .aws/credentials, .git) ✓ — the 400s are Caddy refusing (path traversal / bad method) ✓ but the defence is incidental ✓ not deliberate 
+  - fix: User-agent block — block TLM-Audit-Scanner, CensysInspect, InternetMeasurement, zgrab, ivre-masscan, and metabase-cve-* with a contains match 
+- Caddy has no rate-limiting handler — caddy list-modules shows no http.handlers.rate_limit. Origin-level per-host throttling is impossible without a custom image build.
+
+- [Photo --> SVG comparison: DeepSeek v4.1 Flash vs GLM 5.3 Flash : r/opencode _202610](https://www.reddit.com/r/opencode/comments/1xcj4km/photo_svg_comparison_deepseek_v41_flash_vs_glm_53/)
+  - 任务: 根据实景照片生成svg复刻版
+  - The only interesting thing I noticed in the results concerns DeepSeek 4.1 Max Thinking. While it's true that it gives an overall feel closest to the original photo, it also starts making up certain details (like the buildings in the background).
+- Appreciate the test but LLM is not the appropriate tool for this task 
+
 ## 1021
 
 - 🤔 for colocrossing vps s1, i have set mail related dns records in cloudflare, and i have update ptr/rdns with 192.3.x.x to mail.aichorage.de.

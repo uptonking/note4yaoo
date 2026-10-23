@@ -243,6 +243,19 @@ modified: 2022-11-07T10:58:24.512Z
 - 带有空格的空行格式化时会单独占一行，浪费空间
 - 格式化多个连续的转义字符时，斜杠会混乱
 - 会自动在点号后，大写英文字母前加空格，这会破坏代码中的调用，如React. Component
+# vps/mjj 🐤 
+- vps类似记账的工具
+  - 提供类似计算器的功能
+  - 提供现有价值的总和、分布
+  - 提供最新小鸡的资讯
+  - 提供商家wiki、评分
+  - 总结最新nodequality
+# vpn
+- 一次性租借流量, 解决不常用但有时碰到的需要用干净ip的场景
+
+- clash
+  - 针对已搭建的节点, 快速生成订阅链接, 用户体验后可以更快交易
+    - 伪需求?
 # personal
 - google export data analysis
 - twitter/x export data analysis
