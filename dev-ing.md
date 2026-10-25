@@ -347,6 +347,11 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1024
+
+- Flowy's supervisor poll (~9-12% of the node, pure waste) — Activepieces' stock entrypoint babysits its two node processes with while kill -0 ...; do sleep 1; done, forking a fresh process every second forever. 
+  - Replaced with a bind-mounted entrypoint using an interruptible wait -n supervisor (verified inside the running image: 2 children spawn, exit-on-child-death, TERM reaps both) and given full parity with upstream 0.88.3's APP/WORKER modes. Zero process churn now.
+
 ## 1022
 
 - Stop automated scanning at the edge in cloudflare

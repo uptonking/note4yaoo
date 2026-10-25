@@ -11,7 +11,7 @@ modified: 2026-02-06T15:48:09.172Z
 - when deleting files/folders, always perfer to move them to the system trash bin if possible instead of deleting them permanently immediately.
 
 - System Configuration Changes Require Approval: When a task requires adding, updating, or deleting operating system configurations or system files, you must stop and present a clear list of all affected configurations/files before execution. Wait for explicit user approval before proceeding with any commands.
-- For home directory or root directory, DO NOT run risky deletion commands like `rm -rf /` or `rm -rf ~/`.
+- For home directory or root directory, DO NOT run risky deletion commands like `rm -rf ~/` or `rm -rf /`.
 # markdown
 - always prefer github-flavored markdown syntax.
 - when writing markdown list, always perfer using `-` as list item symbol for top level list item. 

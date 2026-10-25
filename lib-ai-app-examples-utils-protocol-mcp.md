@@ -140,7 +140,7 @@ modified: 2026-01-19T05:01:00.055Z
     - A streamlined coding agent that drives real browsers through unconstrained CDP.
     - https://x.com/Alezander907/status/2054237667328676121
     - The agent writes unconstrained CDP to drive your real chrome, all locally
-    - Browser benchmarks are useful, but the production pain is handoff to the real browser: logged in sessions, visible actions, owned tabs, and review before risky clicks. That is where FSB is focused  /https://github.com/LakshmanTurlapati/FSB  /BSL
+    - Browser benchmarks are useful, but the production pain is handoff to the real browser: logged in sessions, visible actions, owned tabs, and review before risky clicks. That is where FSB is focused  /https://github.com/LakshmanTurlapati/FSB  /BSL > MIT
 - https://github.com/browser-use/browser-harness /10.2kStar/MIT/202605/python
   - https://browser-harness.com/
   - Connect an LLM directly to your real browser with a thin, editable CDP harness. 
@@ -155,6 +155,12 @@ modified: 2026-01-19T05:01:00.055Z
   - Can I give your browser use tool to my agents that are running on a vps?
     - yes! we even offer exactly that - called bux! you get a computer in the cloud only for you and you can ping it from telegram. If you already have one, you can just tell your agent to add browser-harness.
   - browser harness is the easy half. the failure mode hits the second a flow bounces into a native auth sheet or a desktop app, the harness has nothing to grab there. accessibility tree on the OS layer is what holds up past that boundary.
+
+- https://github.com/fullselfbrowsing/FSB /BSL > MIT/202610/js
+  - https://full-selfbrowsing.com/
+  - open source Chrome extension for AI powered browser automation. Describe a task in plain English; FSB reads the live DOM, builds a plan, executes browser actions, verifies results, and reports progress through the popup, side panel, or MCP.
+  - DOM-first AI browser automation for Chrome and MCP clients.
+  - Why DOM First: Project Mariner, Claude Computer Use, and OpenAI Operator rely heavily on visual page understanding. FSB uses page structure directly.
 
 - https://github.com/briqt/my-agent-browser /202606/js
   - [chrome-devtools-mcp增强包装，共享实例+故障自愈+自动化指纹降低 - LINUX DO _202606](https://linux.do/t/topic/2451355)

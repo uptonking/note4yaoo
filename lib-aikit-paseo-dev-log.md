@@ -33,6 +33,26 @@ modified: 2026-09-08T04:45:17.635Z
 
 - ## 
 
+- ## 
+
+- ## in paseo right sidebar, the "Files" tab show a file tree of workspace folder. but only .md markdown file is supported to read/edit. Most popular files like .pdf/.docx/.xlsx/... all shows "Binary preview unavailable".  the current "Files" related features are too simple and limited.
+  - this autumn-studio-paseo-plugin provides alternative file viewers/editors that supports .pdf/.xlsx .
+  - the goal is to extend the file viewer/editor features to support .docx.  core feature for .docx should be built with react componnet with react-dom, designed for web/desktop only, not for mobile, just like existing .pdf/.xlsx viewer/editor. the final goal is to implement file editor for all popular files, but currently focus on .docx.
+  - .docx viewer/editor should use `BegoniaBrowserEditor` from `@datalking/begonia-react/v1` , begonia editor package `@datalking/begonia-react` is published to npm. for docx viewer/editor, add a paginated option at the top actions buttons, because begonia editor supports both normal editor and paginated editor. 
+  - source code for begonia editor is at `~/Documents/repos/ai-ml-llm/all-docai/begonia` for reference if you want. when you use begonia editor and find some issues, you might fix the issues directly in begonia source code, i will publish the code later.
+  - source code for paseo is at `~/Documents/repos/ai-ml-llm/all-agi-harness/paseo` for reference if you want.
+  - in settings page of autumn-studio-paseo-plugin, please add a new "Docx/Doc" sidebar menu item above existing "Excel", you might add some common settings for the editor, you might refer to settings for excel/pdf. set to use editor by default, not read only reader.
+How do you like my idea? Analyze related code, if my idea is okay, you might improve it. then make a comprehensive plan to implement it
+
+- ## i just renamed and moved the original paseo-file-explorer plugin to folder `~/Documents/repos/ai-ml-llm/all-agi-harness/autumn-studio-paseo-plugin` .
+- For the first time that paseo-file-explorer-plugin/autumn-studio-paseo-plugin was designed, paseo does not provide extension point like "preview files with these extensions" or "open with", and openPanel doesn't take a file path.
+- just now, paseo plugin supports to claim extensions and render inside the file tab you already opened. `~/Documents/repos/ai-ml-llm/all-agi-harness/paseo/plugin-examples/pdf-panel` is an example.
+- source code for paseo is at `~/Documents/repos/ai-ml-llm/all-agi-harness/paseo` .
+- current autumn-studio-paseo-plugin file panel supports splittable layout blocks view and shows in parent "File Viewer" paseo tab. i want to know whether it is possible to open a native paseo tab and show current splittable layout blocks view in it. splittable layout blocks view should still be react-dom first and support desktop/web only, mobile support is not required. 
+- analyze related code/config, then explain to me whether it is possible to implement file panel of autumn-studio-paseo-plugin as the native paseo file panel, and whether existing features in current autumn-studio-paseo-plugin would be broken.
+
+- Non-goals: no changes to the workspace panel surface's read/save behavior; no persisted tab.state (split layout stays per-mount, same as today); no mobile rendering (RN "desktop/web only" fallback message, existing pattern); no programmatic opening of native tabs from the plugin's tree (Paseo has no API — future upstream ask).
+
 - ## ai text mode - Layout Blocks view
   - MinerU routing — auto prefers ready local Kit models, then a reachable local API, then token cloud, then free cloud. Explicit modes stay available: local-cli, local-api, cloud-token, cloud-free. 
   - The MinerU mode default is still cloud-free; choose Auto to prefer an installed local setup. 

@@ -1341,9 +1341,10 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
   - cms: odoo, directus
   - media: immich
 
-- i have deployed this repo to my 6 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys auther/librechat/aichorouter/cpapi/cpamp/cursorapi/aichor1/relaichor1/onoffice, worker_2 node deploys filer/openclouds/paperlex/librechat/wapdf/searx/aichor/relaichor/verge2, worker_3 deploys flowy/verge3, worker_4 deploys wabase/outline/verge4, worker_5 deploys ladocs/verge5.
-  - all services are running well as a cluster.
+- i have deployed this repo to my 6 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys auther/club/librechat/aichorouter/cpapi/cpamp/cursorapi/aichor1/relaichor1/onoffice, worker_2 node deploys filer/openclouds/paperlex/librechat/wapdf/searx/aichor/relaichor/verge2, worker_3 deploys flowy/verge3, worker_4 deploys wabase/outline/verge4, worker_5 deploys ladocs/verge5.
   - Most requests should go to leader node first, then proxying to follower/worker nodes.
+  - all services are running well as a cluster.
+  - current vps cluster is mostly used by only one user, me.
   - the current architecture of Foundation apps/services and Consumer apps/services is good.
 
 - analyze related architecture/scripts/code, then 
@@ -1381,7 +1382,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - you might refactor/reorganize/improve the architecture/logic if it helps to make it correct, robust, extensible in the long term.
 
 - this repo is still beta software/stack, you might merge/squash the db schema migrations, only use the latest schema is ok, db related compatibility is not required for now. 
-- legacy/unused code might be refactored or removed. compatibility layer is not required.
+- legacy/unused code might be refactored or removed. compatibility layer is not required. using only the latest code is ok.
 
 - you might refactor/reorganize/improve the architecture/logic if it helps to make it correct, robust, extensible in the long term. only if there are obvious bugs or design defects, then you might propose big refactor or huge change. if there is only subtle bugs, just propose to improve the existing architecture.
 
@@ -1398,6 +1399,8 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - after you finish the improvements/fixes, please push to github to trigger auto deployment with woodpecker ci, then inspect ci status by `woodpecker-cli`, fix issue if it exists.
   - after the success of re-deployment, you might do some tests to recheck 
   - you might run `ssh root@107.175.66.2` as worker_1 node(or `ssh root@ip` for other vps node) and do whatever you want. 
+
+- you might use `cf` cli to query cloudflare info if you want. there are several security rules in cloudflare.
 
 ## bootstrap
 
@@ -1444,6 +1447,15 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
   - legacy or old or unused files might be removed from worker_3 node.
   - after your cleanup/improvements, all services on worker_3 node should still work well.
   - you might run `ssh root@192.3.91.103` as worker_3 node and do whatever you want.
+
+- idle cpu usage on all worker nodes mostly take up less than 8%, but worker_3 node and worker_5 node often take up more than 18%, sometimes even more than 30%. 
+
+- recheck healthcheck related code/scripts/cpu-usage, recheck ram swap 
+
+- 
+- 
+- 
+- 
 
 - ❓
 - when only updating app service, how to make foundational caddy/beszel stable without restarting/offline?

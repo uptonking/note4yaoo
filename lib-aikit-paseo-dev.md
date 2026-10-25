@@ -96,6 +96,7 @@ modified: 2026-09-05T00:27:42.212Z
   - 更符合主流产品的体验
   - 可与现有的workspace view切换
   - 可参考 zcode 的chat, 可切换 timeline 和 project 视图
+  - ❓ sidebar 是否可被替换
 
 - 与im平台的集成，类似openclaw
   - telegram

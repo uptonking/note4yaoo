@@ -37,6 +37,8 @@ modified: 2026-09-05T00:28:04.965Z
 - A file-renderer contribution point would shrink that plugin to about thirty lines and take PDF preview off your plate entirely - and the same hook covers pptx, video and whatever else people ask for, without any of it being yours to build or maintain.
 - there is no contribution point like "preview files with these extensions" or "open with", and openPanel doesn't take a file path. So even with a working renderer, a plugin can't make clicking a file in the tree open it.
 
+- 已合并 [feat(plugins): file panels _202610](https://github.com/getpaseo/paseo/pull/7411)
+
 - [feat: preview video and PDF files in the file explorer _202608](https://github.com/getpaseo/paseo/issues/3720)
 # discuss-tips
 - ## 
