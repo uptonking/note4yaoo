@@ -347,6 +347,60 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1026
+
+- 🤔 if Hysteria2 protocol is so fast for vpn , why do popular vpn vendors like justmysocks not provide vpn nodes that use Hysteria2?
+  - While Hysteria2 is exceptionally fast for individual, self-hosted deployments, commercial proxy providers ("airports") like JustMySocks avoid it because its core mechanism—aggressive UDP transmission via QUIC and the Brutal congestion control algorithm—creates severe operational, financial, and stability hazards when deployed at multi-tenant scale.
+  - Instead, providers like JustMySocks have standardized on VLESS + XTLS-Reality over TCP.
+  - Because Hysteria2 runs strictly over UDP (QUIC), it is heavily targeted by domestic ISP Quality of Service (QoS) policies and firewalls: Major residential ISPs (China Telecom, Unicom, Mobile) routinely throttle sustained, high-volume UDP streams to single IP addresses, assuming they are either DDoS attacks, BitTorrent swarms, or unauthorized QUIC tunnels.
+    - On a self-hosted VPS, you bypass ISP UDP throttling by configuring iptables or nftables port hopping (e.g., forwarding UDP ports 20000:50000 to your Hysteria2 port). A large commercial provider cannot easily allocate 30,000 UDP ports per server across dozens of load-balanced nodes without breaking their port-allocation architecture, firewall rules, and DDoS mitigation appliances.
+  - Shared Node Collapse: On a personal VPS, you are the only user, so blasting UDP packets only affects your own bandwidth cap. On a shared commercial node with 500 concurrent users, if 50 users enable Brutal during peak evening congestion, they will saturate the server's NIC and upstream port instantly, causing catastrophic packet loss for everyone else on the node.
+  - Commercial providers pay for premium transit (such as CN2 GIA, CUII, or CMI) by bandwidth or 95th-percentile commit. Because Hysteria2 wastes massive amounts of raw traffic through redundant UDP transmissions on lossy lines, either the user burns through their monthly data cap 30–50% faster (leading to customer complaints) or the provider absorbs the wasted transit costs.
+  - Hysteria2 was designed to turn cheap, high-loss, congested routes (like standard 163 backbone or budget US West VPS lines) into usable connections.
+  - Providers like JustMySocks (backed by IT7 / BandwagonHost) already own and operate Tier-1 enterprise routes (CN2 GIA, SoftBank, AS9929) where packet loss is near zero even during peak hours.
+
+## 1025
+
+- begonia editor: "in-place editing on the paged surface" requires an architectural addition, because today begonia's second editor is by design a read-only paint layer, not an editor. I verified this live in both apps and in the source.
+  - BrowserEditorWorkspace: the real editor. A single continuous ProseMirror contenteditable (ProseMirror ald-editor). Editing works, but it's one flowing document — the only page-ish UI is a dashed "Page break" marker node in the flow
+  - BrowserPaginatedPreview: the one that looks like Word. I inspected the live DOM: it's 2 painted page frames with 0 contenteditable elements. Every paragraph is decomposed into absolutely-positioned `<span>` words/lines painted from a LayoutProjection computed by begonia's clean-room layout engine
+  - This is a deliberate design, documented in docs/architecture.md : one canonical layout session, with paginated and non-paginated views as consumers of the same projection. The preview already syncs the other way — clicks/drag-selections on it can be mapped back to ProseMirror positions
+- Superdoc's paged mode ("Layout Engine: ON, Flow: PAGINATED") is a fundamentally different architecture — a canvas-style editor
+  - The only contenteditable ProseMirror doc sits at x = −10083px, fully off-screen (624×13735px, the unpaginated flow).
+
+- layout.json (The Spatial Map): Contains bounding-box coordinates for each block
+  - This file is a static snapshot created during extraction. Autumn Studio never modifies or writes to layout.json.
+- mineru-local-kit.md (The Editable Document): Contains pure, human-readable Markdown
+
+- What Happens on First Open (Before Any Edits)
+  - Because it is a fresh, unedited extraction, the app builds the editor directly from layout.json (layoutToDocumentBlocks).
+  - Each block is tagged with its layout ID: Paragraph 1 → → sourceId: "p1-b2"
+  - When you click inside Paragraph 1, the editor looks up p1-b2, finds bbox: [0.089, 0.105, 0.87, 0.143], and highlights the PDF section in amber. Everything works!
+
+- What Happens When You Edit and Click "Save"
+  - In Begonia ("Text Pages View"), you fix a typo in the text and click Save.
+  - Begonia converts the editor back to Markdown and saves it into ...mineru-local-kit.md.
+  - it writes `<!-- page-break -->` markers between pages into the Markdown file.
+  - Crucial point: The save operation only writes the .md file. It does not update layout.json.
+
+- after edits, Next time you open Autumn Studio and load this document:
+  - Could it load layout.json? No! If it loaded layout.json, all of the text edits you just saved would be erased, because layout.json still holds the original unedited text.
+  - Therefore, it must load the edited ...mineru-local-kit.md file!
+  - Consequently, every paragraph block is created with sourceId: undefined.
+  - The Result: Page-level scrolling still works: The editor sees `<!-- page-break -->`, so as you scroll to Page 2, the PDF scrolls to Page 2.
+    - Block-level highlight does not work: When you click Paragraph 1, the editor has no sourceId, so it cannot ask the PDF viewer to draw the amber rectangle.
+
+- why didn't the code just match the Markdown paragraphs back to the blocks in layout.json?"
+  - Text Drift & Structure Changes: If a user rewrites a sentence, deletes a paragraph, merges two paragraphs into one, or splits one paragraph into three, exact 1:1 text matching between the edited Markdown and the original layout.json blocks fails or becomes ambiguous.
+  - intentionally kept the saved .md file as clean, standard Markdown (without injecting custom HTML metadata like `<p data-block="p1-b2">` or comment anchors
+
+- Can we fix this? Yes! If we want section highlighting to survive saves and reopens
+  - Anchor Comments: When Begonia serializes to Markdown, output lightweight comment tags like `<!-- block:p1-b2 -->` above each paragraph, and parse them in markdownToDocumentBlocks.
+  - Positional/Fuzzy Alignment: When reopening, if layout.json exists alongside the .md file, sequentially map paragraphs on page N N to the layout blocks on page N N.
+
+- 
+- 
+
 ## 1024
 
 - Flowy's supervisor poll (~9-12% of the node, pure waste) — Activepieces' stock entrypoint babysits its two node processes with while kill -0 ...; do sleep 1; done, forking a fresh process every second forever. 
@@ -1985,12 +2039,6 @@ npm install quill-v2@npm:quill@2
   - WordprocessingML
   - Typst AST
 
-- 
-- 
-- 
-- 
-- 
-- 
 - 
 
 ## 0808

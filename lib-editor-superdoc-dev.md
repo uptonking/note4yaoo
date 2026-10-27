@@ -139,7 +139,12 @@ pnpm dev:docs
 - resources
   - [SuperDoc - Changelog](https://www.superdoc.dev/changelog)
 
-- [v1.0.0_202512](https://www.superdoc.dev/changelog/2025-12-25-superdoc-v1-0)
+- [v2.10.0 _20260829](https://discord.com/channels/1299087524056010902/1299434847701434421/1542975545174921366)
+  - [Migrate from v1 ](https://docs.superdoc.dev/editor/migrate-from-v1/overview/)
+  - 2.10.0 expands the public APIs around the editor and document runtime. The V2 source is now available in the public repository.
+  - V2 collaboration rooms use a different document format and require a separate migration. Do not connect a v2 editor directly to an existing v1 collaboration room.
+
+- [v1.0.0 _202512](https://www.superdoc.dev/changelog/2025-12-25-superdoc-v1-0)
   - The v0 rendering pipeline relied on CSS for pagination. It was clever, but it hit a wall: table layouts broke across pages, images shifted unpredictably, and multi-column sections were impossible to get right. Every edge case required another CSS hack. The more complex the document, the more it fell apart.
   - v0 was also JavaScript-only. No typed commands or events, and
   - v1 replaces the CSS pagination layer with a purpose-built layout engine. It computes page geometry, measures content, and paints the result — the same approach Word and Google Docs use internally.

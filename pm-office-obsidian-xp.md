@@ -199,6 +199,7 @@ modified: 2026-06-30T17:32:43.131Z
 
 - ai-doc
   - 多次生成
+  - 自动生成 toc
 
 - extends familiar agent xp
   - select files

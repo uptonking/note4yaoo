@@ -107,7 +107,7 @@ modified: 2026-04-20T00:36:02.064Z
   - The only production projection into layout is the v1 layout-adapter.
   - Layout-engine packages must not import that adapter; they only see FlowBlock[] and contracts.
 - The important detail is that ProseMirror owns state but does not necessarily own the visible document DOM. 
-  - In the paginated semantic-layout path, PresentationEditor wraps a hidden ProseMirror editor. DomPainter renders the visible pages, while the presentation layer bridges pointer input, selection, IME, navigation, secondary stories, and layout invalidation back to the hidden editor.
+  - In the paginated semantic-layout path,  `PresentationEditor` wraps a hidden ProseMirror editor. DomPainter renders the visible pages, while the presentation layer bridges pointer input, selection, IME, navigation, secondary stories, and layout invalidation back to the hidden editor.
 - v1 also retains a conventional ProseMirrorRenderer path. This contributes to the size and complexity of Editor: it supports legacy/contenteditable and semantic/paginated rendering modes while preserving a single ProseMirror state model.
 - A v1 editor accepts a URL, path-like source, File, Blob, buffer, or blank document. It loads and unzips the package, initializes SuperConverter, parses OOXML into ProseMirror-compatible JSON, builds the schema and plugins, creates the state/view, and then configures document mode, comments, protection, and collaboration.
 - SuperConverter retains more than the visible text tree. It tracks converted XML, relationships, media, fonts, numbering, styles, comments, headers/footers, notes, and other package parts needed for round-trip export. Export serializes the current ProseMirror document while merging it with preserved and updated OOXML parts.
@@ -117,8 +117,8 @@ modified: 2026-04-20T00:36:02.064Z
 - v1 extensions are part of the editor implementation. This is powerful because extensions can participate at every layer. It also means they are coupled to the ProseMirror schema, transaction semantics, and often the current rendering mode.
 - Tracked changes are represented through ProseMirror marks/nodes plus transaction rewriting and an OOXML-aware review model. Comments and review decisions are integrated into editor plugins, package parts, selection logic, and the presentation layer.
 
-- v1 is a ProseMirror-centric DOCX editor: OOXML is converted into a PM document; editing is PM transactions + extensions; export converts back. A parallel PresentationEditor path already paints Word-like pages via the layout-engine while keeping PM as the source of truth (often hidden).
-- v2 is a package/story-centric DOCX engine: the live authority is an OPC ZIP package opened as an SDDocumentSession, organized into stories (body, header/footer, notes, textbox) with blockIds and package/story revisions. Mutations are planned and applied against package/story XML, return receipts, and are exposed through the Document API. Rendering uses DomPainter; editing can run inline or in a Web Worker. 
+- v1 is a ProseMirror-centric DOCX editor: OOXML is converted into a PM document; editing is PM transactions + extensions; export converts back. A parallel `PresentationEditor` path already paints Word-like pages via the layout-engine while keeping PM as the source of truth (often hidden).
+- v2 is a package/story-centric DOCX engine: the live authority is an OPC ZIP package opened as an `SDDocumentSession`, organized into stories (body, header/footer, notes, textbox) with blockIds and package/story revisions. Mutations are planned and applied against package/story XML, return receipts, and are exposed through the Document API. Rendering uses DomPainter; editing can run inline or in a Web Worker. 
 
 - 📌 SuperDoc v2 is a new editor architecture, not a compatible implementation of the v1 Editor API.
 
@@ -380,15 +380,15 @@ User keystroke / toolbar / agent
   - PM doc is always hidden (left: -9999px) — never shown to user
   - Body has ONE hidden EditorView. Each header/footer rId gets its own hidden EditorView (via HiddenHeaderFooterPMs.tsx)
 - superdoc — Class-based editor + pm-adapter
-  - PM is wrapped behind Editor, PresentationEditor, Document API, collaboration/Yjs, history coordination, and multiple story/header-footer sessions 
+  - PM is wrapped behind Editor,  `PresentationEditor`, Document API, collaboration/Yjs, history coordination, and multiple story/header-footer sessions 
     - superdoc also still has a ProseMirrorRenderer path for non-layout-engine/fallback rendering
   - SuperConverter (OOXML→PM) → Editor (PM state) → pm-adapter (PM→FlowBlocks) → layout/paint
   - Editor class (in editors/v1/core/Editor.ts) extends EventEmitter, wraps a PM EditorState
   - Extensions loaded via PM's native extension system (not a custom ExtensionManager)
   - PM schema is separate from the layout schema — the pm-adapter reads PM state and resolves styles at render time. 
     - style resolution is deferred to render time, not baked during import. The converter stores raw OOXML. This preserves document intent for round-trip fidelity.
-  - PM doc is also hidden — PresentationEditor bridges PM events into layout/paint state
-  - PresentationEditor wraps a hidden ProseMirror editor.
+  - PM doc is also hidden — `PresentationEditor` bridges PM events into layout/paint state
+  - `PresentationEditor` wraps a hidden ProseMirror editor.
 - SuperDoc's pm-adapter + deferred style resolution is architecturally superior for round-trip fidelity — baking styles during import loses document intent (e.g., a paragraph inheriting style from its parent vs. having inline formatting). 
   - docx-editor's approach is simpler but risks overwriting style references with resolved values. 
   - SuperDoc's document-api contract-first pattern for export operations is also more maintainable than docx-editor's direct fromProseDoc.

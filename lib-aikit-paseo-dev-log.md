@@ -17,6 +17,13 @@ modified: 2026-09-08T04:45:17.635Z
 # dev-xp
 - 初版 autumn-studio 采用custom build的方式embed pi
 # prompts
+- this repo is still beta software, legacy/unused code might be refactored or removed. compatibility layer is not required. using only the latest code is ok.
+
+- source code for begonia editor is at `~/Documents/repos/ai-ml-llm/all-docai/begonia` for reference if you want. 
+  - when you use begonia editor and find some issues, you might fix the issues directly in begonia source code, i will publish the code later.
+- source code for superdoc is at `~/Documents/repos/ai-ml-llm/all-docai/superdoc` for reference if you want.
+- source code for paseo is at `~/Documents/repos/ai-ml-llm/all-agi-harness/paseo` for reference if you want.
+
 - source code for @extend-ai/react-xlsx is cloned at `~/Documents/repos/ai-ml-llm/all-docai/extend-react-xlsx` for reference if you want. 
 - source code for mineru is cloned at `~/Documents/repos/ai-ml-llm/all-doctools/MinerU` for reference if you want. 
 - source code for docling is cloned at `~/Documents/repos/ai-ml-llm/all-doctools/docling` for reference if you want. 
@@ -34,6 +41,25 @@ modified: 2026-09-08T04:45:17.635Z
 - ## 
 
 - ## 
+
+- ## for "AI Text Mode" split view, you just implemented "Paginated Text Doc" view , it provides better ux than the left-sided pdf viewer. 
+  - "Paginated Text Doc" is a bad name, please rename it to "Text Pages View".
+  - for "AI Text Mode" split view, there is also a Layout Blocks view that supports to highlight left-sided pdf section when cursor is focused in a layout block.
+  - it would be better if this pdf section highlighting feature can be implemented in "Paginated Text Doc"/"Text Pages View" with begonia editor. the ux is just like when user clicks in "Text Pages View" begonia editor, the corresponding left-sided pdf section . in AI Text Mode settings page "General" tab, "Auto-scroll PDF to follow the AI text view" should work for both layout blocks view and text pages view.
+  - since Layout Blocks view is already implemented, you might refactor related code and share some logic with "Text Pages View" editor.
+  - source code for begonia editor is at `~/Documents/repos/ai-ml-llm/all-docai/begonia` for reference if you want. you might directly edits the begonia source code if it is good architectre, you might extend its api for the impelementation of this pdf highlighting feature, if this feature is too complicated, you might design a sub package for it, then i will publish it to npm.
+  - How do you like my idea? If it is OK, you might improve it.
+  - analyze related code/config, then make a comprehensive plan to implement/improve PDF highlighting feature for "AI Text Mode".
+
+- 
+- 
+
+- ## File is too large to edit
+
+- ## you just implemented docx editor for autumn studio paseo plugin.  please update the `@datalking/begonia-react` package to the latest published version. Improve the docx editor to show paginated editor by default. 
+  - improve the docx editor in paseo native tab by add a three dots more menu at the top-right corner of page (at the right of View/Editor), then add a "Open Editor Settings" menu item in it, when this menu item is clicked, navigate to the settings page of "Docx/Doc" format.
+- paginated begonia editor is so useful that it can make "AI Text Mode" better. please create a new AI Text viewer named "Paginated Text Doc" just like exiting Layout Blocks viewer and Text viewer, users might select the viewer they like in the settings page of "AI Text Mode" "General" tab, or users might switch between Text-Preivew/Blocks/Source in ai text split view with the top header actions buttons.
+  - in ai text split view, Paginated Text Doc shows the pdf text as paginated content just like the left-sided original pdf viewer with pages. one page of content from original pdf viewer should have 1 page of content in Paginated Text Doc viewer with begonia editor, because begonia editor supports pagination.
 
 - ## in paseo right sidebar, the "Files" tab show a file tree of workspace folder. but only .md markdown file is supported to read/edit. Most popular files like .pdf/.docx/.xlsx/... all shows "Binary preview unavailable".  the current "Files" related features are too simple and limited.
   - this autumn-studio-paseo-plugin provides alternative file viewers/editors that supports .pdf/.xlsx .

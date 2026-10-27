@@ -861,6 +861,19 @@ modified: 2025-03-22T16:10:24.856Z
   - 🔡 尝试用code generation的思路来实现ai ppt
   - 🎞️ 基于演讲视频生成视频中的ppt, 还原ppt内容
 
+- workbuddy-features
+  - research: 查资料, 对信息源交叉验证, 给结论
+  - 办公/docs: Word、Excel、PPT、PDF
+  - 开发/code: 网页、工具、本地应用
+  - design: 海报、网页原型、数据仪表盘、活动长图， video
+  - 打通腾讯生态: 可集成到微信的IM助理, IM、文档、邮箱、会议、知识库
+  - 专家/skills
+  - 定时任务
+  - 资料库容量
+  - 30个应用: 将AI创建的产物托管到云端，提供给他人访问
+  - Enterprise: 协作、知识、设计、安全一次配齐
+  - 隐私与安全: 传输与存储全程 TLS/AES-256 加密, 基于角色的多级权限体系与操作审计日志, 通过 ISO 27001、SOC 2 与等保三级认证，数据存储符合本地化合规要求
+
 - workbuddy-xp
   - 长文档或报告直接输出html, 可在app内打开，也可在浏览器打开, ux体验丰富
     - 静态html文件, 不方便修改

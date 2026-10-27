@@ -72,6 +72,9 @@ project `superdoc` (at folder `../superdoc` ) implements reads, renders, edits, 
 - the final goal is to implement a framework-agnostic, modular, extensible, headless ai docx editing solution named `begonia` similar to `superdoc` in current folder to avoid the licensing issues.
 - begonia should be implemented in a modular and extensible architecture, with functional programming style.
 
+- 
+- 
+
 - feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
 - in your implementation, you can also improve the code logic for features and make your implementation correct and extensible. tests are not necessary for your implementation.
 - the most important feature to implement at first step is ai editing with track change support, other features can be implemented later progressively. a runnable ai editing example with track change should be provided.
@@ -123,7 +126,7 @@ you have worked on this problem several times but features are still lacking. Th
 - research and make a good design, then implement/improve begonia to match major features of superdoc, or even better than superdoc, without licensing issues.
 
 - begonia is still beta software, you might merge/squash the db schema migrations, only use the latest schema is ok, db related compatibility is not required for now. 
-- legacy/unused code might be refactored or removed. compatibility layer is not required.
+- legacy/unused code might be refactored or removed. compatibility layer is not required. using only the latest code is ok.
 
 - `./superdoc2` is a experimental toy that might be a reference for begonia in the future, just ignore all files at `./superdoc2` for now.
 
@@ -133,7 +136,7 @@ you have worked on this problem several times but features are still lacking. Th
 - you may reference how superdoc implements/solves it, then do a similar or better implementation in begonia without licensing issue.
 
 - superdoc's overall architecture is good enough to follow. Mostly begonia should use similar architecture like superdoc.
-- you may analyze related architecture/code and borrow good deisgn from upstream superdoc(source code at folder `../superdoc`) and rewrite it in functional-programming style for begonia to avoid licensing issues.
+- you might analyze related architecture/code and borrow good deisgn from upstream superdoc(source code at folder `../superdoc`) and rewrite it in functional-programming style for begonia to avoid licensing issues.
 - it is unnecessary to search the web for superdoc details, just analyze the source code at folder `../superdoc`.
 
 - please recheck migrated features and improve the implementation in begonia. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support, API, SDK, CLI, Agent..., 
@@ -179,6 +182,32 @@ compare the implementation logic/code of begonia with logic/code of superdoc to 
 - try to improve/refactor the full tests to make it faster so that full tests running within 1.5 minutes.
 - improve the slow/complicated/heavy parts of tests, 
 you might refactor/reorganize the tests architecture/logic to make it correct, fast, robust, maintainable in the long term.
+
+### begonia-internals
+
+- BrowserEditorWorkspace vs. BrowserPaginatedEditorWorkspace
+  - Identical Engine Hook: Both invoke useBrowserEditorController with identical document configuration
+  - Identical Toolbar Core: Both hook up an EditorToolbar wired to the editor's command host.
+
+- BrowserEditorWorkspace
+  - Direct mounting: attaches hostRef to div 
+  - Browser handles layout and line breaking. No page gaps.
+  - Real ProseMirror contenteditable nodes.
+  - Native browser selection and blinking cursor.
+  - native keyboard/mouse events hit the contenteditable element.
+
+- BrowserPaginatedEditorWorkspace
+  - Off-screen mounting: attaches hostRef to PaginatedEditingHost
+  - Mathematical layout projection
+  - Pure read-only DOM layout spans and blocks produced by the layout renderer.
+  - calculates coordinate boxes and paints custom SVG/HTML cursor and selection rects.
+  - pointer clicks hit-test document coordinates and dispatch tr.setSelection to the off-screen host, while PaginatedInputBridge routes focus and keystrokes. 
+
+- 
+- 
+- 
+- 
+- 
 
 ### superdoc v2
 
@@ -1381,7 +1410,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 
 - you might refactor/reorganize/improve the architecture/logic if it helps to make it correct, robust, extensible in the long term.
 
-- this repo is still beta software/stack, you might merge/squash the db schema migrations, only use the latest schema is ok, db related compatibility is not required for now. 
+- this repo is still beta software, you might merge/squash the db schema migrations, only use the latest schema is ok, db related compatibility is not required for now. 
 - legacy/unused code might be refactored or removed. compatibility layer is not required. using only the latest code is ok.
 
 - you might refactor/reorganize/improve the architecture/logic if it helps to make it correct, robust, extensible in the long term. only if there are obvious bugs or design defects, then you might propose big refactor or huge change. if there is only subtle bugs, just propose to improve the existing architecture.

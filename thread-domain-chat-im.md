@@ -1926,6 +1926,45 @@ The PSU Farmers Market takes place every Saturday morning near Portland State Un
 
 - ## 
 
+- ## 
+
+- ## [关于gmail防封以及被封后申诉问题（分享） _202404](https://www.nodeseek.com/post-88578-1)
+近期看到很多mjj因为gmail的封停烦恼，作为一个号商来说，简单分享一点防封技巧和被封后申诉技巧
+
+首先，谷歌近期对于不活跃账号和批量注册打击很频繁，封号逻辑大致就下面几个
+新号不活跃，或者IP不干净（机场为例），一个IP注册多号被关联，频繁切换设备
+防封技巧，多号话，PC端用指纹浏览器，比特或者HUB等等免费的就可以，批量新建环境，可以一个静态IP配置3-5个账号使用
+或者使用那些动态住宅IP。（核心技巧，动态住宅IP范围一定要圈定在某一个国家的某个城市，养号期间，每次登录可以变换IP但是范围不要改变太大）
+操作上，定期登录gmail邮箱，固定养号一段时间就可以活下来。
+
+移动端：如果有安卓设备最好，没有的话，用模拟器，批量新建环境，IP同上，模拟器手机型号可以随便改。养设备
+模拟器里安装上谷歌PLAY，把号都登录上去，可以批量操作随机下一点app，新号初注册，每两三天登陆一次谷歌PLAY
+
+防封主要就是一个IP和活跃度问题，下面说说申诉技巧。
+
+一般批量关联的号都是IP导致，用统一话术申诉就行。（自行翻译成英文）
+你好，我的帐户是xxxxx@gmail.com .
+我位于china，我必须使用VPN代理才能访问谷歌产品。由于VPN的不稳定和频繁切换，我的帐户可能已被暂停。这个账户对我来说非常重要，我使用它来进行工作和生活，我希望你能帮助我解决这个问题。非常感谢。
+话术很老套，但是很管用。
+申诉一般24-48小时内就回收到回复。如果没有，间隔几天继续申诉，话术不变，换一种文本翻译就行。不要用简中。
+
+- 应该是人机，谷歌这么大体量，人工搞不过来。
+不过我测试过用脚本批量申诉，用这个文案成功率高点。
+人机审核的应该，我用批量申诉脚本测试过，欧美这些地区语言成功率相对高的多。
+
+- 简体中文申诉也可以通过的
+
+- ## [谷歌账号被停用，该怎么申诉？附申诉小作文 _202409](https://www.nodeseek.com/post-156129-1)
+  - ~~谷歌账号被停用，只有两次申诉机会。~~ 
+
+- I must use a vpn proxy to use Google products. The account may be abnormally disabled due to vpn instability and frequent switching. This account is very important to me. I hope you can help me solve it. Thank you very much.
+
+- I reside in an area with restricted internet access, and due to unstable VPN connections and the need to switch frequently, I’m confident that I haven’t violated any Google policies. Could you assist me in restoring my account? Thank you very much!
+
+- I live in a region where internet access is limited, and I often have to switch servers due to VPN connectivity issues. I am certain that I have not breached any of Google’s rules. Could you please help me reinstate my account? Thank you!
+
+- 
+
 - ## [反重力登录 CPA 问题 - LINUX DO _202610](https://linux.do/t/topic/2969943)
   - 提示这个是什么问题啊，目前只能卖家给的 RT 在反重力能用。
 

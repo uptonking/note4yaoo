@@ -103,7 +103,7 @@ modified: 2026-09-05T00:27:42.212Z
   - qq
   - codebuddy/workbuddy
 
-- cowork/workbuddy-like
+- cowork/workbuddy-like - office
   - implement integrations for google-docs/msoffice/lark like github/gitea
 
 - rag
@@ -179,7 +179,7 @@ modified: 2026-09-05T00:27:42.212Z
 
 - agent-providers
   - external: deepseek-harness, cursor-cli, commandcode
-  - zcode-cli
+  - zcode-cli: 需要手动打包发布
   - codebuddy/workbuddy
   - auto router
 
