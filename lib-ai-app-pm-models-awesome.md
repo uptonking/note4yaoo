@@ -3216,6 +3216,13 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [BeeAPI. AI — The AI API Marketplace · 多模型聚合的 AI API 集市 ](https://beeapi.dev/marketplace)
 
+## deepseek
+
+- [SLongan - LINUX DO ](https://linux.do/u/slongan/activity/topics)
+  - [DSKey Search ](https://delay.up.railway.app/deepseek-key-query)
+  - QQ群: 474500237
+  - [(最后2个)60R=100元deepseek额度, 官方apikey交付; 支持查询用量 _202610](https://linux.do/t/topic/3082197)
+
 ## ai-sharing
 
 - [ccAiHub | 1元起用，最低 ¥99/月畅享 Claude ](https://ccaihub.com/pricing)
@@ -3262,6 +3269,7 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [Overseas SIM Cards | UK, US & Japan Mobile Numbers | SIM Panda ](https://simpanda.cc/)
   - [爱屋及乌的用户空间 ](https://www.nodeseek.com/space/1872#/discussions)
+  - onenz--¥99
 
 - [V2EX › lyzh130 ](https://v2ex.com/member/lyzh130)
   - 长期卖 one nz, skinny

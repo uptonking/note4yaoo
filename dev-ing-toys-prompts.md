@@ -72,6 +72,8 @@ project `superdoc` (at folder `../superdoc` ) implements reads, renders, edits, 
 - the final goal is to implement a framework-agnostic, modular, extensible, headless ai docx editing solution named `begonia` similar to `superdoc` in current folder to avoid the licensing issues.
 - begonia should be implemented in a modular and extensible architecture, with functional programming style.
 
+- you have migrated/reimplemented some features from superdoc to begonia.
+
 - 
 - 
 
@@ -98,8 +100,6 @@ please continue to migrate features related to ooxml editing with ai agent progr
 you have worked on this problem several times but features are still lacking. They are the most important features at this moment, please migrate and improve it. make a plan and implement it to match major features of upstream without licensing issues.
 
 - to achieve major feature parity with superdoc, help me choose the best option for long-term.
-
-- you have migrated/reimplemented some features from superdoc to begonia.
 
 - please recheck logic parity detail by detail for every major feature, the goal is to achieve major feature parity(ux can differ) like superdoc for major features.
 
@@ -139,6 +139,8 @@ you have worked on this problem several times but features are still lacking. Th
 - you might analyze related architecture/code and borrow good deisgn from upstream superdoc(source code at folder `../superdoc`) and rewrite it in functional-programming style for begonia to avoid licensing issues.
 - it is unnecessary to search the web for superdoc details, just analyze the source code at folder `../superdoc`.
 
+- the current goal is to improve the begonia paginated editor to have core features like superdoc editor to support good editor data model, correct caret/selection/range, powerful layout engine, flexible pagination, virtualized-render, multi-column layout, track-change. please also improve the architecture of begonia to be extensible/modular/headless like superdoc so that it will be easy to implement a v2 editor without prosemirror in the future. existing begonia v1 editor with prosemirror should become one backend implementation. core type definitions in begonia should be prosemirror agnostic.
+
 - please recheck migrated features and improve the implementation in begonia. Analyze core data flow and implementation logic details for every major feature like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, virtualized-render, zoom, track-change/diff, comment, OOXML-support, API, SDK, CLI, Agent..., 
 compare the implementation logic/code of begonia with logic/code of superdoc to recheck and enhance the correctness of architecture and logic of begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
 - core implementation for major features should be framework-agnostic without react, ui wrappers/bindings should be sub packages, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
@@ -165,7 +167,7 @@ compare the implementation logic/code of begonia with logic/code of superdoc to 
 - The current TASK is to refactor/improve the architecture of begonia to be more extensible/modular/headless like superdoc, so that it will be easy to implement a v2 editor without prosemirror in the future. 
   - Superdoc’s headless toolbar/UI already depend on a narrow host contract plus doc access, and the UI controller also uses a structural editor-like contract. These features of superdoc should be a good reference for how to improve begonia.
 - a similar contract has been implemented in begonia, but not robust. 
-  - existing begonia v1 editor with prosemirror should become one backend implementation instead of the assumed core. core type definitions in begonia should be prosemirror agnostic, a contract api like superdoc should be implemented.
+  - existing begonia v1 editor with prosemirror should become one backend implementation. core type definitions in begonia should be prosemirror agnostic, a contract api like superdoc should be implemented.
   - related architecture/data-flow/logic should be migrated to use the new contract api, legacy architecture or code might be removed, related tests should be updated.
 - For current TASK, you should focus more on refactoring/improving the functional extensible architecture/data-flow for begonia. after you finish the goal, major features of begonia should still work, full tests should still pass.
 
