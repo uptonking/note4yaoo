@@ -2571,12 +2571,6 @@ dedirock配置1c2.5g 15gb 6.45$/year
   - When you submit a support ticket, they hardly ever respond. They’re extremely lazy.
 
 - I can't reach them from anywhere right now. If any of you know them, please help me find them. My server has been unreachable for several days, and there is very important data on it. This damn server is disrupting my work. I’ll say it again, I don’t want to damage their reputation, but if they see my post, please contact me as soon as possible.
-
-- ## [佬们，有没有便宜的服务器链式代理webshare家宽 - LINUX DO _202606](https://linux.do/t/topic/2406011)
-- 我现在用的dedirock，感觉现在便宜机器基本要被dedirock dedione两个替代了，我就是用的dedirock链式的webshare
-- DediOne是不是最便宜12.99刀一年？dedirock好像我看着一年$9
-  - 差不多，dedirock我黑五买的$7, 现在应该也是差不多$10，一个月还是断过两次，一个小时都能恢复，不过考虑这个价格也就还好
-
 # discuss-vendor-lightlayer
 - ## 
 
@@ -2753,6 +2747,26 @@ JP从0.8刀每月涨价到1.1刀/月
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [RakSmart 换IP要20美金 _202610](https://www.nodeseek.com/post-1015064-1)
+ip被墙的话、换IP要5刀、这个就不说啥了
+ip正常的情况下 换IP要20美金
+刚问过
+
+- 确实，第一次买他家的2.99刀服务器，第二天就墙了，也是5刀换IP
+- 你把他弄墙了再去换不就是5美元了
+
+- 这家不是挺便宜的嘛，被墙直接丢不就是了 
+
+- lightlayer家还不能换，只能每个月3刀加一个IP呢，一年就是36刀
+
+- 我25号买的，买完发现送中的ip工单立刻就给换免费换了一个
 
 - ## [raksmart 这商家增加IPV6这么贵的吗 _202610](https://www.nodeseek.com/post-1014263-1)
   - 这两天机器坠机，想要增加一个IPV6，raksmart这商家IPV6居然是按月收费10刀一个月，有这么离谱吗
