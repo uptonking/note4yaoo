@@ -404,6 +404,25 @@ redis-cli shutdown
 - https://x.com/ClassicII_MrMac/status/2064877464443064718
 - They added Core Audio taps in Sonoma 14.2, so it would’ve been trivial for them to add system audio to screen recording. It’s actually insane that it took this long!
 
+# discuss-ios-apps/tools
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [大佬们在iOS上用的什么第三方Telegram客户端 _202502](https://www.nodeseek.com/post-260709-1)
+- 注重于去广告就 turrir
+注重于 ui 就 swiftgram
+
+- swiftgram 免费自动翻译还不错
+- 虽然我有会员，但我还是用swiftgram，为了回车发送消息
+
+- 我怕封号，只敢用官方原版
 # discuss-macos-apps/tools
 - ## 
 
@@ -823,6 +842,32 @@ CREATE DATABASE mydatabase;
   - 而且下方的地址/手机号完全可以随便填
 - 是切换到哪个地区，就需要开哪里的节点吗
   - 跟节点没有关系，随便哪一个，我经常用台湾、美国的换到尼、土
+
+# discuss-apple-payment
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## for apple, i want to recharge some balance by redeeming with gift card, is the balance shared by iphone app store and mac app store? can i use the balance on both iphone and mac?
+- Yes, the balance is shared across both your iPhone and Mac. When you redeem an Apple Gift Card, the funds are added to your central Apple Account balance (formerly Apple ID balance), rather than being tied to a specific device or store.
+  - When you redeem a gift card, it’s added to your “Apple Account Balance” (tied to your Apple ID) and can be used across the App Store and iTunes Store, including iOS and Mac.
+  - The balance also works for other Apple purchases, such as iCloud+, Apple Music, Apple TV+ and Apple Books. Purchases through the App Store, iTunes Store and subscriptions use your Apple Account Balance first, before charging the card on file.
+
+- iPhone: Open the App Store, tap your profile picture, choose Redeem Gift Card or Code, then scan the code with the camera or type it in.
+- Mac: Open the App Store, click your name or the sign-in button in the sidebar, then click Redeem Gift Card. 
+
+- Apple balance generally doesn’t expire. It can’t be transferred to another Apple Account or withdrawn as cash.
+
+- 
+- 
 
 # discuss-devops
 - ## 

@@ -12,6 +12,9 @@ modified: 2026-06-17T05:51:04.215Z
 - tips
   - 临时的需求可以用LDC在 ldstore 买一些proxy/vps
 
+- ios-clients
+  - 部分功能如wloc只支持付费的 surge/shadowsocks, 不支持开源的clash
+
 - network-choices
   - 价格, 速度, 延迟, 丢包率, 带宽, 流量限制(双向/套餐)
 # myip
@@ -1009,6 +1012,46 @@ webshare/ip2world 等系列
 - DMIT/搬瓦工+小众VPS，日常常规使用，没有啥问题，家宽需求许多都是一些商家刻意制造紧张氛围，好卖他家的货，一般人根本不需要伪加宽需求，该用啥用啥
 
 - 线路一般和解锁以及 ip 质量不兼得，要想体验好一点减少降智的概率还是配一个冷门的落地就可以，vps+落地来应付 ai 和需要 ip 质量的场景，机场应付大流量场景，落地也不太需要家宽，家宽太贵了，nat 家宽不如干净一点的落地
+# discuss-vpn-client-ios 🍎
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [示警想要共享小火箭，需要十分注意安全 - LINUX DO _202610](https://linux.do/t/topic/3071822)
+  - 前面在 X 上看了一个开发:ladder: 的，大概意思是现在有一类专门针对数字资产 / 助记词等做定向偷窃的:ladder:。昨天我刷到佬友一个共享小火箭的帖，因为我晚上刚把一个老手机还原，刚好就去尝试一下这个共享。发现这类 ID 关联的都是虚假的小火箭 App，可能就是 X 上描述那种情况。希望佬友们重视自己的数据安全（佬友，可以自行找论坛里发过共享小火箭的帖子，去验证这个情况）
+
+- 还是得认准正常的小火箭是没有中文的，全英文
+
+- ## 🚀 [【苹果id】分享几个能下载小火箭的苹果id分享网站 - LINUX DO _202511](https://linux.do/t/topic/1117211)
+  - 部分账号无法登录已被锁，或者登录进去才发现没有shadowrocket
+  - 如登录时出现双重认证界面，请点击界面下方「其他选项」-「不升级」。
+  - 结论是不如自己买礼品卡, 能长期使用
+
+- 站里搜一下宝可梦，随便注册个号上去，里面也有共享账号，可用性比公开共享的那些好一点
+
+- [桔子小铺 ](https://juzixp.com/)
+  - [最新小火箭账号/已购Shadowrocket美区共享APPLE ID账号，小火箭美区账号分享 | 果学坊 ](https://docs.applexp.com/free-accounts/Shadowrocket)
+
+- [免费小火箭美区Apple ID 共享站 - 每日24h更新可用 ](https://id.jincaii.com/)
+
+- [2026苹果ID免费共享，免费小火箭账号分享，iOS海外账号共享/Shadowrocket免费账号 - 小火箭账号购买，美区小火箭 ](https://ccbaohe.com/appleID/)
+
+- [Shadowrocket 基础教程 ](https://pg.xxjiajia.com/)
+  - 教程截图详细
+
+- [美区共享苹果 ID | 52ID 苹果共享账号 ](https://52id.org/apple-id-us.html)
+
+- [小火箭共享账号 - 免费Shadowrocket共享账号 | 美区共享Apple账号 ](https://ios.juzixp.com/)
+
+- 
+- 
+
 # discuss-vpn-client/clash/v2ray
 - ## 
 
