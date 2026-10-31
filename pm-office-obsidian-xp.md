@@ -636,6 +636,11 @@ modified: 2026-06-30T17:32:43.131Z
 # usage-tips
 - 文件夹下的与文件夹同名的文件会在点击文件夹时显示, 类似于github的readme
 
+- obsidian-web-clipper 默认copy页面元数据, 需要先选中页面内容才能copy自动转换的markdown内容
+
+- 
+- 
+- 
 - 
 - 
 - 
