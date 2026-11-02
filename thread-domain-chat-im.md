@@ -444,6 +444,90 @@ ldc 升值有利于广大持有 ldc 的佬友，为什么要强行引入干预�
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [关于tg封号和养号，老哥们有什么建议？ _202605](https://www.nodeseek.com/post-731929-1)
+- 什么都不做放一个月
+
+- ## [tg注册养号求助 - LINUX DO _202604](https://linux.do/t/topic/1911531)
+  - 拿美国 + 1 虚拟号成功注册的 tg 之后，手机电脑和网页三端都登录 tg 之后，连中文搜索机器人还没加上就被拿下了。现在注册成功后有什么不容易被封的操作方法？只在一端使用比较好？哪个地方的号码更不容易被封？
+
+- iPhone 注册，注册完什么都不做，先放一阵子（如果是 Android + Google voice 24 小时死的概率极高）
+
+- 注册新号放一周，一周后添加官方机器人发送 start 看正不正常。
+
+- 登网页端干嘛？新号不要登网页端，设置好 2 步验证就可以放着了
+
+- 稳定节点登录后挂机 12 或 24 小时即可，我的号就是这么整的，目前啥问题也没有
+
+- 我都是拿实体手机号先注册，然后换绑虚拟号，这样好像就很稳定
+
+- 注册完 ip 不能乱跳和立刻加一堆群什么的，可能是滥用的太多了，tg 现在风控很严，最近注册了个号，固定 ip + 注册好关注了一两个频道 一个群都没加，等了两三天之后慢慢加群和频道没有触发风控
+
+- 什么都别干，就晾在那，晾一段时间再说。你一来就加群私聊什么的，90% 被 ban
+
+- 注册完之后，在手机上要一直保存着，有时候电脑会掉，只要你创建完别乱订阅频道/私聊别人一般不会封禁
+
+- ## [关于 TG 账号安全与养号，你该知道的都在这里了 - LINUX DO _202604](https://linux.do/t/topic/2015217)
+- 注册未满 7 天：新注册未满 7 天暂时双向，满 7 天后自动解除！
+双向撸毛号：不能主动私聊别人，其他正常，后续可能会解封。
+通讯录限制：无法通过手机号搜索用户，其他功能均正常。
+
+- 无论是自主注册的还是购买的账号一定先绑定邮箱和设置 2FA 密码
+  - 号到手别急着做任何事，改头像换名字改简介改用户名养几天再操作，不要急着加群如果急的话不要短时间内加入很多群，不要一进群就秒发言，不要秒私信别人，几分钟内不要私信很多人，总之号到手不要使劲造，干啥都慢一点。
+
+- 避坑指南
+干净 IP 环境
+干净的设备，彻底清楚 Tg 应用缓存
+无论新老账号，登录安稳养号。
+
+- 
+- 
+
+- ## 📌 [关于TG注册以及权重问题 _202601](https://www.nodeseek.com/post-585334-1)
+- 大部分网友在注册TG的时候时常会遇到SMS FEE或者绑定邮箱（一般情况代表号码差）
+出现这个问题有3个原因，一个是IP，一个是国码，一个是号段
+先说国码
+TG对于注册号码的国家是有一些分层的，等级越高的号码越不容易被风控或要SMS fee
+一般来说高权重国家一般分布在西欧，中东
+西欧有奥地利、比利时、保加利亚、克罗地亚、塞浦路斯共和国、捷克共和国、丹麦、芬兰、法国、德国、希腊、匈牙利、爱尔兰、意大利、拉脱维亚、立陶宛、卢森堡、马耳他、荷兰、波兰、罗马尼亚、斯洛伐克、西班牙、瑞典、冰岛、列支敦士登和挪威等
+东欧有乌克兰，摩尔多瓦，格鲁吉亚等
+亚洲有日本，韩国，新加坡，台湾（需要sms fee)，文莱
+中东有巴林，沙特，卡塔尔，阿联酋等
+大洋洲有澳大利亚，新西兰
+
+普通权重国家有：加拿大，美国（虚拟号段），英国，罗马尼亚，爱沙尼亚，香港，泰国，越南等
+低权重地区有菲律宾，缅甸，哥伦比亚，萨尔瓦多，洪都拉斯，蒙古，南非等
+一般情况下高，中权重地区号码注册无需sms fee（部分因为短信成本原因和号段原因需要）
+低权重地区号码需要sms fee且注册后换设备需要当地IP，否则会封禁，典例菲律宾
+sms fee和号码关系还是大的，比方说南非，什么IP注册都要收费，然后账号稳定性和风控的话，号码属国和号段是最重要的因素 
+
+sms fee出现的另一个原因是号段
+号段差的表现除了出现sms fee的页面有时也表现为不收费但是要绑定邮箱 或 被需要更好的IP
+
+- 最后也是最重要的原因——IP！
+一般情况下当注册IP的风控值大于80%且为机房IP的话会导致所有国家号码的注册行为都会弹出sms fee
+当注册IP风控值小于40%但IP为机房时高权重地区不收费，中权重地区部分不收费
+当注册IP风控值小于35%且为原生住宅IP时，高，中权重地区大部分注册无需付费
+以下国家注册需要本地纯净IP注册才不会要sms fee（概率问题）：爱沙尼亚，罗马尼亚，斯洛文尼亚
+以下国家付费也不发验证码：蒙古
+
+- 如果遇到收费怎么办
+换好一点的IP是个好办法，或者用低版本的telegramX（高版本该注册不了的还是注册不了，报错400）注册从根源解决问题
+养号时尽量不要用多个设备登录一个账号，不要用劣质IP，不要大量私信，不要用同一个IP登录不同账号
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 - ## [TG解封文本 _202605](https://www.nodeseek.com/post-753245-1)
   - 第一步：点击 ：@spambot
   - 第二步：点击：this is a mistake
@@ -499,6 +583,34 @@ You can purchase various handmade items, jewelry, textiles, and prints from loca
 The PSU Farmers Market takes place every Saturday morning near Portland State University's Park Blocks. It operates seasonally from May to October, selling fresh produce, cheese, meat, jams, bread, and flowers directly from Oregon farms. It is one of the markets that represents Portland's food culture, and local restaurant chefs are known to come here to buy ingredients. There are also many booths selling freshly prepared food, allowing you to enjoy breakfast while shopping.
 
 - If you're planning to shop in Portland, it's worth keeping an eye on seasonal sales events. With a tax-free environment and additional discounts during Black Friday or the holiday season, you can save significantly.
+# discuss-apple-accounts
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [无限@icloud.com邮箱 _202607](https://www.nodeseek.com/post-817277-1)
+- 由于注册gpt的邮箱使用域名邮箱容易风控，所以当你有icloud+服务的时候你就有无限邮箱了。
+  - 通过逆向 iCloud Web 接口和 IMAP 邮件协议，实现 Apple iCloud 隐藏邮箱别名的创建、列出和邮件收取功能。
+
+- ## [2026 年使用 邮箱 在 设置 中注册 任意地区 新 Apple ID 保姆级教程，解决注册风控问题 - V2EX _202604](https://www.v2ex.com/t/1207433)
+- 一台 iPhone 或 iPad
+- 注意：注册地区 = 当前装置的系统地区设定，请在注册前先确认装置地区是否正确
+  - 注册期间不要更改装置地区，否则可能导致注册地区与预期不符
+- 前往 设置 → 通用 → 语言与地区 → 地区，语言无需修改，确认地区与你想注册的 Apple ID 地区一致。
+- 使用现有邮箱注册, 输入你的邮箱地址（如 Gmail / Outlook ）
+- 验证手机号码
+
+- 若注册后无法登录 App Store ，检查付款方式是否需要设置为「无」
+
+- 
+- 
+
 # discuss-google-accounts
 - ## 
 
@@ -1266,6 +1378,20 @@ telnet smtp.aol.com 25
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Tuta邮箱感觉比proton还坑啊！ _202402](https://www.nodeseek.com/post-67981-1)
+  - 刚想注册个这个Tuta(Tutanota)邮箱，发现这货6个月不登陆就删号，注册的时候还得勾选只有一个免费账号和不能用于商业用途的选项。
+
+- 所以我收机碰到稀奇古怪的邮箱我都不收
+
+- 这玩意主打隐私，不适合日常使用
+另外proton之前泄露过用户ip，算有前科不太敢用
+
+- 
 
 - ## [我的Google邮箱有点多，辅助邮箱填相同有影响吗 _202501](https://www.nodeseek.com/post-246558-1)
   - Google邮箱添加辅助邮箱，能不能都填一个，或者两三个邮箱填相同的，有没有影响啊？

@@ -50,11 +50,17 @@ uname -a
 ssh root@ip
 # ssh -p 222 root@port
 
+# for nat/lxc, update is not required because default image is optimized for ram/disk
+sudo apt update -y
 sudo apt update -y && sudo apt upgrade -y
 apt update && apt upgrade -y && apt dist-upgrade -y && apt full-upgrade -y 
-sudo apt install -y vim ufw fail2ban git btop htop telnet 
+sudo apt install -y vim git ufw fail2ban btop htop telnet 
 
 sudo apt autoremove -y
+
+# for alpine linux
+apk update
+apk add git vim
 
 reboot
 

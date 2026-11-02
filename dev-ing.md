@@ -347,6 +347,23 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1101
+
+- i want to use port hopping for hysteria2 to make it fast/robust for vpn/proxying. Explain to me what is port hopping. can i just use a few ports like 23115-23119 for it, not a wide range of ports?
+  - Because Hysteria 2 runs over QUIC (which uses UDP), Chinese ISPs (China Telecom, Unicom, Mobile) often detect sustained, high-bandwidth UDP flows on a single port. Even if the ISP cannot decrypt the traffic, their automated QoS equipment frequently throttles throughput or drops packets entirely once a single UDP port transfers data continuously for 30 to 60 seconds.
+  - Single Server Socket, Multiple Entry Ports: Your Debian 13 VPS runs the Hysteria 2 process on a single primary UDP port (for example, 23115), while nftables intercepts incoming UDP packets on the rest of your range (23116-23119) and transparently redirects them (DNAT) to 23115 at the kernel level.
+  - Client: you give it a set of ports instead of one. It picks one at random for the first connection, then periodically switches to another (every 30s by default, minimum 5s).  Every 15 to 30 seconds (hop-interval), ClashX Meta on your Mac randomly picks a new destination port from your list and sends the next UDP packet there.
+  - Server: the server still listens on one real port, and a firewall rule redirects the whole range to it.
+- Can you use just 23115-23119?
+  - Why 5 ports is safe on system resources: A common misconception is that opening 1,000+ ports consumes extra RAM or CPU on your VPS. In reality, Hysteria 2 only binds to one socket, and nftables matches an entire port range (23115-23119 or 20000-50000) using a single kernel rule.
+  - The Collision Risk of 5 Ports: On each hop, the client selects the next port randomly, not in strict sequential order. With only 5 ports (23115-23119), there is a 20% chance on every hop that ClashX Meta selects the exact same port it was just using, or jumps back to a port that the ISP placed in a 3-minute cooldown penalty box.
+  - If your VPS provider restricts the number of ports you can assign, 23115-23119 is still much better than a single static port. However, if you have full root access on a dedicated IPv4 LA VPS, expanding the range to at least 50–500 ports (e.g., 23100-23600) eliminates random repeat collisions at zero extra cost to your server.
+
+- 
+- 
+- 
+# dev-10
+
 ## 1027
 
 - 小姐，很抱歉我的工作还没定下来，所以这次还需要找你借1500作为最后一个月的生活费。 

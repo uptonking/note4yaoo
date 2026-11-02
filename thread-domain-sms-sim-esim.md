@@ -66,7 +66,13 @@ modified: 2026-10-27T15:02:37.816Z
   - 支持转移号码给其他用户
   - 申请新二维码 €1.50
 # tools-sim
+- [Phone Validator ✔️ | Is it a Cell or is it a Landline? Phone Number Checker ](https://www.phonevalidator.com/)
+
 - [VoIP Test - Free VoIP Number Lookup & Carrier Check](https://voiptest.com/tools/carrier-lookup)
+
+- [PhoneCarrier - Free Phone Carrier Lookup: Carrier & Line Type ](https://phonecarrier.com/)
+
+- [Phone Number Validation Tool for Windows — Offline, No Per-Lookup Fee ](https://phonelint.com/)
 # discuss-stars
 - ## 
 
@@ -470,6 +476,20 @@ Pixel IMS + Shizuku
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Saily现在年付套餐最低4.99美金可以买下 - eSIM 奶昔论坛 _202609](https://forum.naixi.net/forum.php?mod=viewthread&tid=15440)
+- 如何查询自己的美国号码是VOIP还是真实号码？
+  - https://voiptest.com/tools/carrier-lookup
+  - 比如我查到Saily的号码信息显示： 项目结果含义Caller Name (CNAM)WIRELESS CALLER系统把它识别为无线移动用户
+  - Line TypeMobile移动号码，不是 VoIP
+
+- 近期如果都是VOIP，那就等一段时间再去买，如果是实体卡，就继续用，退款会退回所有费用的。
+
+- 碰到VOIP，直接申请退款就好了。不要任何犹豫
+
 - ## [请教美区esim Saily 开卡流程以及经验 - LINUX DO _202610](https://linux.do/t/topic/3021647)
 1、美区 appleid 下载安装 Saily
 
@@ -732,9 +752,9 @@ WhatsApp 无法收到短信验证码，但是可以收到语音验证码
   - 目前乌龟卡不用，可以直连，其他的大概率需要
 
 - 有 2 个注意要点
-1. 如果你后续打算买多个号，那就提前预存多一点。不然每次开新号都有手续费的.
-2. 不要写完了就拔卡，需要从配置文件右上角点开有个启用，点击以后才算正经激活.
-3. 开卡后不要第一时间去注册账号。这时候注册不是负载高短信排队就是信道还没准备好。你会收不到短信.
+01. 如果你后续打算买多个号，那就提前预存多一点。不然每次开新号都有手续费的.
+02. 不要写完了就拔卡，需要从配置文件右上角点开有个启用，点击以后才算正经激活.
+03. 开卡后不要第一时间去注册账号。这时候注册不是负载高短信排队就是信道还没准备好。你会收不到短信.
 24 小时以后再去申请注册，不然你连续注册收不到短信，等你收到那一刻直接封号了… 前车之鉴
 - 实际写一张乌龟卡只需要 20KB 左右.
 
@@ -1178,7 +1198,7 @@ VOXI 的最低充值金额 £5 GBP，号码失效的前 90 天会收到短信通
 领取前准备：
 1.eSIM 手机或 9eSIM 等实体 eSIM 卡
 2.edu 教育邮箱（可以淘宝购买一个，注：edu.kg 无法通过验证的）
-3. 一张 Visa/MasterCard 信用卡（验证使用，不扣费，虚拟卡：Bybit，Safepal 测试添加成功）
+03. 一张 Visa/MasterCard 信用卡（验证使用，不扣费，虚拟卡：Bybit，Safepal 测试添加成功）
 
 保号：
 开卡后，不充值，理论可保号 210 天
@@ -1319,15 +1339,15 @@ VOXI 的最低充值金额 £5 GBP，号码失效的前 90 天会收到短信通
 - tos这么写那就是真的，跟gg一样，管的时候就全杀了
 
 - ## [刚购买onenz, 国行手机可用吗？ _202609](https://www.nodeseek.com/post-913652-1)
-1. 国行iphone 可以wificalling吗？
-2. 没有wificalling可以收短信吗？
-3. 这个卡每年必须有消费记录，可发送一条短信解决？
-4. 每年需要最低充值10新币保号？
+01. 国行iphone 可以wificalling吗？
+02. 没有wificalling可以收短信吗？
+03. 这个卡每年必须有消费记录，可发送一条短信解决？
+04. 每年需要最低充值10新币保号？
 
-5. 开启wifi calling有手就行
-6. 应该可以，漫游效果不错，我这甚至有5G信号
-7. 好像没说，充值应该就能保号，不过你要是真1年都用不着一次，直接抛了也不是不行
-8. 是，现在app最低充值就是10NZD
+05. 开启wifi calling有手就行
+06. 应该可以，漫游效果不错，我这甚至有5G信号
+07. 好像没说，充值应该就能保号，不过你要是真1年都用不着一次，直接抛了也不是不行
+08. 是，现在app最低充值就是10NZD
 
 - ## [one nz 新西兰电话卡 · 常见问题与要点 ](https://faq.nbsn.co/)
   - [Kaka Shop - 新西兰手机卡与充值 ](https://kaka-shops.com/)
@@ -1380,13 +1400,13 @@ VOXI 的最低充值金额 £5 GBP，号码失效的前 90 天会收到短信通
 
 - ## 💡 [Skinny WiFi Calling (VoWiFi) | Skinny NZ ](https://www.skinny.co.nz/help/vowifi-calling)
 - To use WiFI Calling on the Skinny Network, you'll need these: 
-1. A VoLTE capable phone & VoLTE provisioned & activated on your phone. 
-2. A phone eligible for WiFi Calling
-3. The latest software to enable WiFi Calling
-4. You must be located in NZ to utilise Skinny WiFi Calling services.
-5. 👀 Skinny WiFi Calling is not compatible with the use of VPN Services. 
-6. To have WiFi Calling enabled in the phone settings. This will be off by default 
-7. Have access to a Fixed or Wireless Broadband connection
+01. A VoLTE capable phone & VoLTE provisioned & activated on your phone. 
+02. A phone eligible for WiFi Calling
+03. The latest software to enable WiFi Calling
+04. You must be located in NZ to utilise Skinny WiFi Calling services.
+05. 👀 Skinny WiFi Calling is not compatible with the use of VPN Services. 
+06. To have WiFi Calling enabled in the phone settings. This will be off by default 
+07. Have access to a Fixed or Wireless Broadband connection
 
 - Can I text using WiFi calling?
 Yes, provided your phone is compatible. Skinny networks are now enabled to be able to send/receive text using WiFi.
@@ -1582,11 +1602,11 @@ Skinny 在国内漫游支持联通和移动，显示任一运营商名称均属�
 
 - ## [克罗地亚A1 eSIM，无需KYC，3欧开卡，2欧保号一年，支持eSIM更换设备，可注册TG - LINUX DO _202604](https://linux.do/t/topic/1884171)
 - eSIM 及漫游情况：
-1. 漫游中国移动 / 中国联通 LTE（推荐选择中国联通）
-2. 不支持 WiFi Calling（预付费不支持，后付套餐费未测试）
-3. 支持 eSIM 换设备，原设备联网并删除后，扫描原来二维码即可添加
-4. 支持 iMessage
-5. +385，9 位数号码
+01. 漫游中国移动 / 中国联通 LTE（推荐选择中国联通）
+02. 不支持 WiFi Calling（预付费不支持，后付套餐费未测试）
+03. 支持 eSIM 换设备，原设备联网并删除后，扫描原来二维码即可添加
+04. 支持 iMessage
+05. +385，9 位数号码
 保号：激活后 450 天内 充值 2 欧，之后每 362 天内充值 2 欧
 
 - 
@@ -1673,7 +1693,8 @@ Better call Saul ！
 
 - 可能是运营商会定期更新数据库
 # discuss-sms-esim-traffic/bandwidth
-- ## 
+- tips
+  - 美国esim很少提供流量
 
 - ## 
 
@@ -1682,6 +1703,174 @@ Better call Saul ！
 - ## 
 
 - ## 
+
+- ## [Firsty 软件免费看广告套餐流量已被下架 - eSIM 奶昔论坛 _202512](https://forum.naixi.net/thread-7660-1-1.html)
+- 一直都說了 要英國/歐洲/美國 號碼
+
+- 我用英国的gg注册有免费套餐，用泰国的AIS注册没有免费套餐，免费套餐和月套餐都是灰色的，不能选中，只有天套餐！
+
+- 有的，只是你需要选择很少的需求，且地区要选对
+
+- 
+
+- ## [一年 Holify新加坡 Esim 流量低至16.5R |Plasma 代K 9U | 地址 _202610](https://www.nodeseek.com/post-962370-1)
+  - Holafly 1天无限流量+一年有效期每月1GB新加坡应急流量
+  - 支持 支付宝口令或 U 付款，购买后请一周内激活，一周后不质保
+  - Holafly eSIM：2.5U / 16.5R
+
+- ## [holafly esim 流量卡 5G使用体验 _202610](https://www.nodeseek.com/post-1018551-1)
+- 最低是3.9美刀 一天不限+每月1G免费流量*12。IP是新加坡，速度很快，5G图标，油管视频秒开。但是gemini用不了，YouTube没有premium，谷歌会显示日本地区。
+发现热点有点问题，用了没有很多，就热点就上不了网了。
+
+- IPdata看IP满分
+
+- ## [免费领取2GB可以开启WiFi-Calling 的住宅IP流量 _202610](https://www.nodeseek.com/post-996455-1)
+  - 一般的住宅IP不支持UPD, 开不了WiFi-Calling。这家支持。
+  - 通过邀请注册, 免费得2G永不过期流量 + 一张85折优惠券，另外每天还可申请 1–20GB 随机永久流量。
+
+- ## [（散了吧没用）USIMS 永久免费全球低速 eSIM（可能要$1） - 败家 / 好物推荐 - 美卡论坛 _202609](https://www.uscardforum.com/t/topic/533185)
+  - Free Essentials Forever 免费计划，不用绑卡/充值/买套餐，免费低速流量覆盖 200+ 国家，看了下美国，内地，香港都在。官方说没到期时间，不过 ToS 保留修改可能
+  - 原生法国 IP，我实测挂自建梯子（IP 回美国）
+  - update (09/23): 注意！楼主的两个手机号都变成了 no service（都是免费注册的） 
+
+- [【慢讯】免费法国家宽 eSIM（usims）领取方法 _202609](https://www.nodeseek.com/post-937238-1)
+
+- ## [ESIM流量漫游合集 4.0 - LINUX DO _202610](https://linux.do/t/topic/2973469)
+- 
+- 
+- 
+
+- [ESIM 流量卡整理2.0 - eSIM 奶昔论坛 _202609](https://forum.naixi.net/forum.php?mod=viewthread&tid=15535)
+- 那些无限流量很多都很坑。比如有些无限流量就给你用 1GB 的高速流量，然后全部就是低速，低速几乎都没法用，有些恶心到就是 48KB好的一点的还比较行，总算你买贵的，贵的的话有些也没良心，就直接几百
+
+- 
+- 
+
+- ## 📌 [ESIM 流量卡 _202609](https://www.nodeseek.com/post-932285-1)
+运营商政策可能会随时变动，我不敢保证你们使用体验和我百分之百一样。这是我的个人体验，以及的话就是我的购买个人的使用感觉以及速率以及 IP。我不敢保证运营商政策不改动，或者说有其他的调整。如果有调整的话，请发在评论区一下，谢谢
+
+stellarsecurity
+这家目前性价比还是挺高的。IP 是香港的，也有新加坡的分流。我记得他们 100G 的只需要 11 点几欧。在国内的话，我的手机是没有漫游图标的，用的时候好像走的是移动的网络。网络还挺不错的，速率也挺快，和本地卡的体验差不多，但是连不上 5G。
+
+esimcc
+这个性价比还是挺不错的，我也买了，但我目前还没体验过，听说比较卡。我记得 IP 是在香港的，等面后我再补这一个。
+
+Cmlink
+这张卡的性价比超级高，7.9 刀 1 年，有 10G 的高速流量，以及一年的无线 512KBPS 的低速流量。有新加坡的分流，落地 IP 是香港的家庭原生 IP，新加坡的分流是广播 IP 加上住宅 IP。拿来用 AI 或者日常备用的话，这张卡还是超级不错的，因为性价比挺高的。
+
+holafly
+这张卡还是拿来备用比较好。买 2 天的话是 21 块，每天无限流量，每个月有 1GB 的紧急流量，还有第一天的微信流量。IP 是新加坡的广播加上机房 IP，质量不是那么好，速率有点不尽人意。上面虽然说是 CMHK，但实际用下来 IP 就是在新加坡。拿来备用的话，性价比还是比较高的。
+
+eskimo
+这个直接是新加坡的原生 IP 加上新加坡的住宅 IP，IP 质量挺高的，但是价格挺贵的。速率我个人用下来挺不错，但是懂的都懂啊，价格太高了。假如追求新加坡的话，这个可以体验体验，有 500MB 的免费流量可以直接试用。
+
+roamless
+当时它免费送了一点余额，我体验了一下，好像落地 IP 在新加坡，是个住宅加上广播 IP。速率的话就是没有测，大家可以自己试试，然后在评论区说。
+
+yoho esim
+当年这个是可以一直免费用香港的流量，看广告就可以用了。现在好像已经没了，不知道以后会不会有。它的性价比只能算中等了吧，当时性价比还是比较高的。但是我也不知道为什么我的是没有限速，听说别人是有限速的。
+
+firsty
+这个我当时用的话，是我是老号，就是老号的话，我记得的话是 30 分钟无限流量，就是速率的话，就是 256 KBPS 的，速率还是挺慢的，但是 IP 的话，就是新加坡的原生住宅 IP，然后现在也可以免费领流量，但是现在的规则改成了，就是看一个广告给 30 MB 的免费流量，还是 20 MB 的免费流量不限速的，但是假如你花钱买的话，还是挺贵的 性价比不是那么很高
+
+9.redteago简称红茶
+这个当时性价比还是挺高的，但是现在性价比不是很高了，而且的话也没法使用中国大陆的付款方式付款。然后的话，当时的 100 MB 三刀，然后有个奥地利的号码，这个也是下架了，感觉没什么亮点。然后现在的话，听说他的 IP 也不是那么干净了，他的 IP 的话，我当年用了一下第一的话感觉挺好的，但是后续的话体验越来越差，后面甚至就是 IP 的话，都是直接打上代理的标签这个的话是落地是香港 IP 也有新加坡的分流
+
+01.        熊猫
+当时的话，就是学生认证就是一刀开，然后我也开了。然后 IP 落地 IP 的话是在美国可以用 5 个 G 还是 10 个 G 的免费流量，然后的话可以无限短信、无线通话用下来的话，还是挺不错的。但是第二个月就挺贵了，只能当个月抛卡。IP 质量之类的还是挺不错因为他的话落地 IP 是美国的 t mobile
+
+01.        CMUK
+这个我个人用下来，流量性价比还是挺高的。就是我这里用，可能是我地区的问题，速率有点慢，就是延迟比较高。
+
+性价比：16.9 刀可以有 150G 的流量，比国内流量还便宜。
+IP 质量：落地是在 UK，而且是原生家庭住宅，可信度比较高，IP 纯净度日常使用还是挺不错的。
+稳定性：还是都挺不错的。
+12.cteuk
+性价比还行吧，最近也要追上 CMLink 了。但是听说后续会限速，不知道真不真实。
+
+落地 IP 和 CMLink 都是差不多的，但稳定性没 CMLink 强。不过，它的开卡成本比 CMLink 低一点，开卡难度也比 CMLink 低。
+
+现在 CTE 的开卡难度还是比较低的，保号的话，还是 CTE 更好一点。
+
+好的 目前就说这些 后续我再继续补充
+
+- 加一个 和 esimcc 差不多 七折常驻 这家的特色是流量不过期
+  - [BNESIM: Global eSIM, Voice & Data Solutions | Zero Roaming ](https://www.bnesim.com/)
+
+- 
+- 
+
+- ## 📌 [薅羊毛：免费esim流量卡清单（本人已验证） _202610](https://www.nodeseek.com/post-965985-1)
+以下 8 家都是我实测过、确认能领到的免费 eSIM 流量，全部无需拉人头。更新于 2026-10-05。
+
+⚠️ 出口 IP 说明：这些旅游 eSIM 大多走 Home Routing 集中出口，出口 IP 常和实际所在国家对不上，而且是全球旅客共享的运营商号段，不是纯净家宽 IP。银行、流媒体区域校验、注册账号这类风控严的业务可能被拦，只当普通上网流量用。
+
+一、长期可薅
+
+Firsty（羊毛之王）
+✅ 实测：eSIM 在 Pixel 上手动安装成功
+福利：看一条短广告 → 解锁 20MB（1Mbps），可叠加，有效期 7 天；广告无限看，流量无限续
+覆盖：170+ 国家（含中国）；免费档限北美 / 欧洲 / APAC 用户
+领取：下载 Firsty App → 安装 eSIM（一次安装，全球通用）→ 看广告解锁
+注意：速度上限 1Mbps，只够微信、地图、邮件、打车；视频和热点就别想了
+
+Holafly Always On（附带）
+✅ 实测：任意 Holafly eSIM 套餐到期后，每月自动获赠 1GB 备用流量（不叠加、不用作废）
+领取：买过任意 Holafly 套餐并保持 eSIM 安装即可，无需操作
+注意：这是"买过之后"的福利
+
+二、一次性试用
+
+Nomad
+✅ 实测：新用户 1GB / 3 天
+覆盖：81 个目的地
+领取：下载 Nomad App → 注册账号 → 领取试用
+注意：领取后 15 天内必须安装 eSIM，否则会自动激活、3 天倒计时直接开始
+
+Gohub
+✅ 实测：300MB / 1 天，免信用卡
+覆盖：12 个亚洲目的地
+领取：gohub.com/claim-free-esim → 注册 → 扫码安装
+注意：1 天有效期从首次使用流量开始算，别提前连上浪费了
+
+GigSky（3天无限）
+✅ 实测：App 内活动是绑 Visa 卡送 3 天无限（7 个地区任选其一）；虚拟 Visa 卡可通过绑卡验证
+福利：注册后绑定 Visa 卡 → 3 天无限流量，7 个地区套餐任选一个免费兑换
+覆盖：7 个 Visa 指定地区（App 内查看具体地区）
+领取：下载 GigSky App → 注册 → 绑定 Visa 卡（Signature / Infinite，App 内验证资格）→ 领取
+注意：绑卡仅验证资格不扣费；无限流量有公平使用政策（单日约 2.5GB 后降速）
+
+Eskimo
+✅ 实测：注册时输入邀请码 KL25629 → 500MB 全球流量免费（免信用卡）；限时 gift code TRIPLE-A → 1GB（至 2026-11-30）
+覆盖：109+ 国家；流量 2 年有效，可囤着慢慢用
+领取：下载 Eskimo App → 注册时填写兑换码
+注意：TRIPLE-A 的 1GB 是限时活动，2026-11-30 截止，建议先领这个
+
+Red Bull MOBILE
+✅ 实测：首 100MB 免费
+覆盖：100+ 国家（含中国）
+领取：下载 Red Bull MOBILE Data App → 注册
+注意：只薅首单免费额度即可，不薅也可，量太少。
+
+Kolet（法航荷航合作）
+✅ 实测：可免费领取1GB；48 小时从落地开始算
+福利：新用户 1GB / 48 小时
+覆盖：190+ 国家
+领取：下载 Kolet App → 注册 → 输入兑换码 AFKLDATA → 安装 eSIM
+注意：48 小时从落地连上当地网络开始算（"Active for 48h after you land"）；可提前装好 eSIM 等落地
+
+注：各家政策随时会变，领之前先看 App 内最新说明。
+
+- 整个eSIM猫池
+- 猫池是什么，单独的设备专门用来装 esim 的吗，类似于那种 5 卡多待的网关类的设备？
+  - 是的 1池500待机
+
+- firsty日限360M。并不是无限。
+  - 是的，有日限额，但可以长期免费使用（政策不变的话）
+
+- Holafly Always On
+这个如果是每个 esim 卡每个月都给 1G，那多整几个卡一个月赠送的部分不就够用了
+不知道会不会有检测设备
 
 - ## [esim 有号码, 也有美国流量的卡有没有这样的卡. _202607](https://www.nodeseek.com/post-812537-1)
 - 有啊。红包卡。每月1g漫游原生流量。100短信 100通话 30u一年。esim卡
@@ -2064,15 +2253,15 @@ payzero 套餐 1 刀 / 月
 - 这个也不太准的样子，我 saily 的号码，在另一个平台查到的是 voip，虚拟号码，但是刚才注册 truth social 居然能收到短信
 
 - ## [每年保号6.6港币、免实名、支持esim的香港csl保号神卡全面介绍：购买+保号+激活+使用 保姆级教程 _202610](https://www.nodeseek.com/post-963123-2)
-1. 运营商：香港第二大电信运营商CSL(旗下的hkmobi）
-2. 类型：香港带号码esim储值卡
-3. 激活门槛：基本没有，大陆可直接激活，漫游信号稳定，esim手机/esim实体卡/小白卡均可写入
-4. 实名：大陆使用无需实名；香港使用需要实名，实名可用双程证/护照
-5. 流量、通话(内地不可用)：本地数据365日30GB+本地通话365日2000分钟
-6. 赠送余额：48港币
-7. 保号：前6年平均每年6.6港币，继clubsim的6元保号陨落后的最低价格
-8. 对比clubsim有这些优点：保号便宜、无需实名
-9. 对比hahasim有这些优点：保号便宜、esim、号码质量高
+01. 运营商：香港第二大电信运营商CSL(旗下的hkmobi）
+02. 类型：香港带号码esim储值卡
+03. 激活门槛：基本没有，大陆可直接激活，漫游信号稳定，esim手机/esim实体卡/小白卡均可写入
+04. 实名：大陆使用无需实名；香港使用需要实名，实名可用双程证/护照
+05. 流量、通话(内地不可用)：本地数据365日30GB+本地通话365日2000分钟
+06. 赠送余额：48港币
+07. 保号：前6年平均每年6.6港币，继clubsim的6元保号陨落后的最低价格
+08. 对比clubsim有这些优点：保号便宜、无需实名
+09. 对比hahasim有这些优点：保号便宜、esim、号码质量高
 免月租，免行政费
 【未实名情况下】
 -在香港使用：全部不可以
@@ -2246,8 +2435,8 @@ skinny 要在新西兰激活，而 one 卡似乎可以在国内激活？
 - ## [关于香港开卡，手机号可以填写 GV， paygo， giffgaff， skinny 等非大陆、香港的手机号吗？ - V2EX _202408](https://fast.v2ex.com/t/1064115)
   - 鉴于最近看到很多人说，+86 手机号接到香港的电话后，会引来反诈电话，民警上门等服务。 那么使用非大陆手机号可以作为银行的联系方式吗？
 
-1. 最好用大陆的手机卡，因为香港银行打电话过来你要是用别的地方电话卡可能借不到电话，银行可能会拒绝你的信用卡等开户申请，有的银行开户需要二次电话确认的
-2. 银行卡可以看看 中银香港和汇丰银行 
+01. 最好用大陆的手机卡，因为香港银行打电话过来你要是用别的地方电话卡可能借不到电话，银行可能会拒绝你的信用卡等开户申请，有的银行开户需要二次电话确认的
+02. 银行卡可以看看 中银香港和汇丰银行 
 
 - 当然可以啊，不过那种不需要香港身份证的预付卡，就 MySIM/ClubSIM 之类的，是有有效期的，到期需要再买新的卡号
   - clubsim 到期前一个月买个 6 元短信套餐就行
@@ -2434,7 +2623,7 @@ hahasim每年最少可充值10hkd 但这个是充值到余额的 可消费 其�
 - 几天前买了esimgg的爱沙尼亚卡，拿来接码有时候都接不到，真是拉完了
 
 - ## 📌 [海外手机卡大汇总，低成本保号神器（验证码、账号绑定必备） - 运营商 奶昔论坛 _202601](https://forum.naixi.net/thread-9305-1-1.html)
-1. 美国卡（兼容性强，适合美区服务如ChatGPT）
+01. 美国卡（兼容性强，适合美区服务如ChatGPT）
 Ultra Mobile PayGo/Purple Card
 
 优势：真实号段，接收验证码无敌（X、TG、Google等）；月租3美元（约21元），包含基本通话/短信；Wi-Fi Calling免费。
@@ -2477,7 +2666,7 @@ Helium Mobile
 
 缺点：可能需梯子。
 
-2. 英国卡（零月租王者，超长保号）
+02. 英国卡（零月租王者，超长保号）
 Giffgaff
 
 优势：零月租，免费收短信；英国O2旗下，稳定接码；一次充值可用20年。
@@ -2488,7 +2677,7 @@ Giffgaff
 
 缺点：最近有封号反馈，建议备用。
 
-3. 新西兰卡（零成本保号，性价比高）
+03. 新西兰卡（零成本保号，性价比高）
 Skinny
 
 优势：零月租，无需实名；第一年无需充值，支持国内信用卡；纯短信稳定。
@@ -2501,7 +2690,7 @@ Skinny
 
 缺点：无eSIM，收不到某些码如WhatsApp。
 
-4. 香港/澳门卡（近距离，便利，部分原生IP）
+04. 香港/澳门卡（近距离，便利，部分原生IP）
 CSL
 
 优势：激活简单，接收短信免费；支持中文APP；附711兑换券。
@@ -2536,7 +2725,7 @@ Club Sim
 
 获取：官网。
 
-5. 欧洲卡（eSIM友好，低成本）
+05. 欧洲卡（eSIM友好，低成本）
 沃丰达 (Vodafone DE)
 
 优势：预付费，无月租；eSIM，支持全球验证码。
@@ -2567,7 +2756,7 @@ Simyo.nl(荷兰)
 
 获取：官网。
 
-6. 其他亚洲/太平洋卡
+06. 其他亚洲/太平洋卡
 马来西亚Celcom Life
 其他网站看到的拿过来分享
 
@@ -2576,7 +2765,7 @@ Simyo.nl(荷兰)
 最近在X上看到很多博主分享海外手机卡的经验，尤其是用于接收验证码、绑定X/TG/ChatGPT账号、降低封号风险的低成本方案。作为AI创作者或出海用户，一个稳定海外号能省不少心。
 
 一、全部海外手机卡汇总大全
-1. 美国卡（兼容性强，适合美区服务如ChatGPT）
+01. 美国卡（兼容性强，适合美区服务如ChatGPT）
 Ultra Mobile PayGo/Purple Card
 
 优势：真实号段，接收验证码无敌（X、TG、Google等）；月租3美元（约21元），包含基本通话/短信；Wi-Fi Calling免费。
@@ -2619,7 +2808,7 @@ Helium Mobile
 
 缺点：可能需梯子。
 
-2. 英国卡（零月租王者，超长保号）
+02. 英国卡（零月租王者，超长保号）
 Giffgaff
 
 优势：零月租，免费收短信；英国O2旗下，稳定接码；一次充值可用20年。
@@ -2630,7 +2819,7 @@ Giffgaff
 
 缺点：最近有封号反馈，建议备用。
 
-3. 新西兰卡（零成本保号，性价比高）
+03. 新西兰卡（零成本保号，性价比高）
 Skinny
 
 优势：零月租，无需实名；第一年无需充值，支持国内信用卡；纯短信稳定。
@@ -2643,7 +2832,7 @@ Skinny
 
 缺点：无eSIM，收不到某些码如WhatsApp。
 
-4. 香港/澳门卡（近距离，便利，部分原生IP）
+04. 香港/澳门卡（近距离，便利，部分原生IP）
 CSL
 
 优势：激活简单，接收短信免费；支持中文APP；附711兑换券。
@@ -2678,7 +2867,7 @@ Club Sim
 
 获取：官网。
 
-5. 欧洲卡（eSIM友好，低成本）
+05. 欧洲卡（eSIM友好，低成本）
 沃丰达 (Vodafone DE)
 
 优势：预付费，无月租；eSIM，支持全球验证码。
@@ -2709,7 +2898,7 @@ Simyo.nl(荷兰)
 
 获取：官网。
 
-6. 其他亚洲/太平洋卡
+06. 其他亚洲/太平洋卡
 马来西亚Celcom Life
 
 优势：每天3G原生流量，超稳如梯子；适合高强度使用。 成
