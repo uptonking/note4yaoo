@@ -347,6 +347,38 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1103
+
+- I just got 2 new NAT/LXC vps from the same ip: stash1(debian12), stash2(debian12). No public port is exposed by default. I added 4 public ports for each vps: 
+  - for stash1: 23110 -> 22/tcp, 23111 -> 443/tcp, 23112 -> 80/tcp/udp.
+  - for stash2: 23120 -> 22/tcp, 23121 -> 443/tcp, 23122 -> 80/tcp/udp.
+- hysteria2 is support on these nat/lxc vps, but not on previous surge1/surge2/surge3.
+- please extend existing architectre and design a automation code/scripts solution that can be deployed to any vps. The solution should support to install vless+reality+vision by default, a optional gost proxying/forwarding service, and a optional hysteria2 serice. stash1 and stash2 should install hysteria2 by default. i have configured stash1.aichorage.de, stash2.aichorage.de in cloudflare. after your implementation and deployment, i want stash1/stash2 work well with clashx meta on my mac, the config file is at `~/.config/clash.meta/verge2609.yaml`.
+- i have a another proxying service verge4.aichorage.de as worker_4 node at folder `~/Documents/repos/devops/llm-hub-lite` .  you might update code in llm-hub-lite if you want.
+- i want to enable gost forwarding on stash1 node, i have configured stash1-relay.aichorage.de in cloudflare, please make it like this: verge4.aichorage.de can be used directly, stash1-relay.aichorage.de can be used as a proxying to verge4.aichorage.de, because stash1-relay is better for peak hours traffic. just like what you did for verge2.aichorage.de and surge1-relay.
+- every NAT/LXC vps has very limited ram/disk-space, optimize it for minimal resource usage.
+- make the deploy automation scripts flexible to support both debian/ubuntu and alpine, so that the optimized config can be auto select and used for the corresponding linux os.
+- also design a solution to auto restart all services on vps restart, so that all services are usable for restart.
+- source code for hysteria2 has been cloned at folder `~/Documents/repos/devops/all-vpn-proxy/hysteria` for reference if you want.
+- source code for Xray has been cloned at folder `../all-vpn-proxy/Xray-core` for reference if you want.
+- source code for REALITY has been cloned at folder `../all-vpn-proxy/REALITY` for reference if you want.
+- source code for gost has been cloned at folder `~/Documents/repos/devops/all-vpn-proxy/gost` for reference if you want.
+
+- how do you like my idea? If it is okay, you might improve it.
+- analyze related code/config/deployment, make a comprehensive plan to implement a solution to deploy to any vps, so that finally surge1 works well with vless/gost and verge2, surge2 works well with vless, surge3 works well with vless, stash1 works well with vless/hysteria2/gost and verge4, stash2 works well with vless/hysteria2.
+- after your implementation, please git push to github, then git clone/pull on each vps and start the services to test it.
+
+- you might run `ssh surge1` as surge1 node and do whatever you want.
+- you might run `ssh stash1` as stash1 node and do whatever you want.
+- you might run `ssh stash2` as stash2 node and do whatever you want.
+- you might run `ssh root@166.88.160.139` as worker_2 node and do whatever you want.
+
+- review your implementation/config, test core deployments, continue to improve, make it correct, robust, extensible.
+
+- for hysteria2 on stash1 and stash2, please improve it to make it fast and robust, for example, you might enable port hopping with only 4 ports on each, i just exposed them on stash1 and stash2:
+- for stash1: 23116 -> 23116/udp, 23117-23119 -> 23117-23119/udp .
+- for stash2: 23126 -> 23126/udp, 23127-23129 -> 23127-23129/udp .
+
 ## 1101
 
 - i want to use port hopping for hysteria2 to make it fast/robust for vpn/proxying. Explain to me what is port hopping. can i just use a few ports like 23115-23119 for it, not a wide range of ports?
