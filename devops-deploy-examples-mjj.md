@@ -22,6 +22,15 @@ modified: 2026-10-08T05:05:56.528Z
   - export noninteractive=true && curl -L https://raw.githubusercontent.com/oneclickvirt/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs -l=en
   - https://github.com/spiritLHLS/ecs /7.3kStar/MIT/202609/shell
     - VPS融合怪服务器测评脚本(VPS Fusion Monster Server Test Script)(尽量做最全能测试服务器的脚本)
+
+- https://github.com/ibsgss/TcpQuality /GPL/202611/shell
+  - TCP 质量检测脚本，默认检测全国三网运营商节点
+  - report
+    - IPv4回程   零丢包: 69    1-20%: 23    >20%:  1
+    - 大包回程 
+    - CERNET-IPv4 教育网
+    - 国际节点TCP互联测试, cdn
+    - 单线程测速
 # ip/network
 - https://github.com/hotyue/IP-Sentinel /AGPL/202610/python/shell
   - 轻量化、模块化的分布式 VPS 资产养护系统，通过地理位置信号锚定与高拟真本土流量注入，精准解决 IP 定位偏移（IP送中）及风控分过高的痛点，并配合 Telegram 实现全球多节点“低功耗、拟真、无人值守”的自动化资产养护。

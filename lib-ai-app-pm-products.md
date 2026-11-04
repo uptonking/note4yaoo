@@ -278,6 +278,11 @@ modified: 2025-03-22T16:10:24.856Z
 
 ## pm-usecase/roadmap
 
+- ai/token行业基本分析
+  - 核心用户: coding, video, image, text
+  - 核心产研: 模型权重、推理硬件、harness、token-plan
+  - 关联行业/供应链: 软件开发、硬件、运营、销售
+
 - usecases(有特色不代表有需求): work/doc, code, design
   - 使用频率: markdown > editor > ocr, citation > pdf-editing > bases > ocr
 - 模型

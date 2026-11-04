@@ -29,6 +29,7 @@ modified: 2026-10-27T15:02:37.816Z
   - 激活限制
   - 保号条件
   - esim的条件: skinny优先封号esim, 实体卡封号较少
+  - 对于同一地区的esim, 可以将不同号码放在不同手机, 方便相互发短信和验证
 
 - pros-us-sim
   - 拨打美区主流业务的客服免费
@@ -79,9 +80,53 @@ modified: 2026-10-27T15:02:37.816Z
 - ## 
 
 - ## 
-# discuss-sms-usecases
-- ## 
 
+- ## 💡 [出售1年以上的 google voice 自带老邮箱，稳定，出售邮箱接码登录TG号（telegram)，代充值TG会员，星星和购买礼物， _202611](https://www.nodeseek.com/post-1030133-1)
+保号方法
+
+1、主动拔打或接收语音电话
+
+两个 Google Voice 号码互相拔打。
+
+2、拔打免费电话
+
+美国之声：(213)493-0288
+
+Apple 客服： (800)275-2273
+
+微软客服：(800) 642-7676
+
+亚马逊客服：(206)266-2992
+
+3、订阅免费短信服务（推荐）
+
+服务商名称 短信号码 发送短信 短信数量（每月）
+AutoZone 67135 AUTO 4
+Staples 555444 SIGNUP 6
+（Google Voice质保48小时）登录24小时后再执行安全操作修改密码等内容
+
+邮箱接码登录TG号的好处包括：
+1，避免手机号失效: 邮箱接码登录可以避免因手机号失效而导致的登录障碍。
+
+2，提高账号安全性: 邮箱接码登录可以提高账号的安全性，防止因手机号被封号或被找回而导致的账号丢失。
+
+3，随时随地登录: 邮箱接码登录可以随时随地登录TG号，不受手机号接码的限制。
+
+4，隐私保护: 邮箱接码登录可以保护用户的隐私，因为不需要使用手机号接码。
+
+5，账号恢复: 邮箱接码登录可以用于账号恢复，即使手机丢失也可以通过邮箱取回账号控制权。
+
+6，通过邮箱接码登录TG号，用户可以享受更稳定和安全的登录体验。（质保30天，拿到号不要一次性加太多好友和群保证所有号码都是实体卡注册）
+
+代充值TG会员 星星，无需上号只需要通过TG用户名官网直接赠送，
+TG会员年会员—235元
+TG会员半年会员—135元
+星星12元—100颗星星
+Google Voice—65
+TG号—45
+
+- https://www.mtcgame.com/zh 分享一个自用的土耳其礼品卡购买网站
+# discuss-sms-usecases
 - ## 
 
 - ## 
@@ -468,7 +513,26 @@ Pixel IMS + Shizuku
 - 
 
 # discuss-sim-vendor-saily
-- ## 
+- numbers-good
+  - 346
+  - 502
+  - 779: t-mobile
+  - 934
+  - 🌹 940
+
+- numbers-voip
+  - 213
+  - 446/447/448
+  - ? 669/663
+  - 820/800
+  - 945
+
+- numbers-more
+  - 346
+  - 883
+
+- numbers-eg
+  - +1 (940) 237-3811
 
 - ## 
 
@@ -479,6 +543,134 @@ Pixel IMS + Shizuku
 - ## 
 
 - ## 
+
+- ## [【快訊】Saily eSIM 美國 +1 首年只要 $6.99 _202609](https://www.nodeseek.com/post-926684-1)
+  - 測試號碼：+1 (940) 237-3811
+- 可以长期漫游吗
+  - 可以，Saily就做旅遊服務eSIM的 
+
+- ## [求教Saily怎么抽卡 _202609](https://www.nodeseek.com/post-948615-1)
+- 不满意 找客服对线 退款 重新注册，while循环， 意义不大，它这个不能换支付方式，如果支付方式挂了 号就凉了
+
+- 客服只有AI呀
+  - 有人工的
+  - you cannot slove my problem, please reach for a human support agent to help me.
+
+- 就算抽中tmobile之类的号段也没用啊，也是虚拟运营商，又不是真原生号码
+
+- 
+
+- ## [【教程】10月05 美区eSIM Saily 非 VoIP 爆率很高。获取 Saily 非 VoIP 号码的踩坑历程 _202610](https://www.nodeseek.com/post-966344-1)
+- 先用 $1.99 月付挑号码
+- 拿到号码先验证
+- 447 / 446 / 213号段(VoIP)
+
+- 挑到满意号码后，先联系客服：
+取消当前月付 → 退款为 Saily Credits → 原号码重新购买年付
+
+- 
+
+- ## [[Saily] 是不是可以这样玩：买到虚拟号段就退款重新开一个 _202610](https://www.nodeseek.com/post-990782-2)
+  - 我找客服退款的时候，他问我同意不同意退款到余额，我拒绝了，并坚持要求退款（别退余额哟，再次开通你就用不了优惠码了，优惠码只能首次购买才能用，退款可以换个邮箱再注册使用）
+- 这个虚拟号不准，GPT收不到短信
+
+- 退余额亏啊，你重新开号码就不能使用别人的优惠码了，退款的话直接注销号码后重新用个邮箱注册又能使用优惠，年付能减5刀呢
+
+- 
+
+- ## [saily今日好像有非voip号码 _202610](https://www.nodeseek.com/post-989810-1)
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- ## [[Saily ] 试了一下夸舔客服：不行！就这样吧 _202610](https://www.nodeseek.com/post-990530-1)
+  - 完全看客服，我这个就是怎么说都不给换
+- 能退啊，不能找客服要求换号而已
+
+- 可以换，当场就能换，实测
+
+- 看客服的，我俩号当场就换成934264
+
+- ## [Saily刚刚抽到了Wireless号段940-617 _202609](https://www.nodeseek.com/post-928988-1)
+- 这个抽奖没抽到能退款吗 退款重新抽 可以吗 
+  - 可能得换号了，因为优惠券只能第一个订单使用
+
+- 抽到了 779-436
+T-Mobile
+
+- 820800可以吗
+  - 常用的都收不到码，是最垃圾的号段
+
+- 
+- 
+- 
+
+- ## [saily当前开出的号段都是VoIP，运营商Telnyx _202610](https://www.nodeseek.com/post-958461-1)
+- 全是 Telnyx 的 VoIP 号段：
+447-400-xxxx 在 400-5xxx 段，属于 Telnyx
+447-348-xxxx 和 447-348-xxxx 都在 348-9xxx 段，也属于 Telnyx
+可见 Saily 是从 Telnyx 批量拿的号，估计得这个家号商的号消耗完，才有可能开到实卡号
+暂时不折腾了，拿了个447-400号段，可以秒接WhatsApp，PayPal可以绑手机号(注册PayPal收不到)，Telegram无法注册，X可以注册。
+折磨，跟客服大战了一天，赚了2美刀的抵扣券，但是不能抵扣全部，最低支付0.6美刀
+
+- 我昨天开的也是447，想注册个PayPal都不可以
+- PayPal还分可以注册的和换绑的嘛，不是voip都不能PayPal嘛
+  - 换绑VoIP都行，没必要mobile号段。
+
+- 早就放生了虚拟号不如gv
+
+- ## [saily今日好像有非voip号码 _202610](https://www.nodeseek.com/post-989810-2)
+  - 16日与17日各买一个，都是voip号码，pp、x、tg这些，除了gpt都能发送和收到。【448、945】
+  - 凌晨两三点发的邮件，刚才睡醒看到已经给分配了新号码了，934号段 非voip，gpt和常用平台都能接收到码。
+  - 总结聊天就是，强制要求换号，然后一个劲儿夸，把客服哄成胚胎
+  - 934264
+
+- ## [Saily 换个了 934 的号码 _202610](https://www.nodeseek.com/post-993567-2)
+  - Saily 换个了 934 的号码，刚开始给了个 voIP ，对线客服换成了 934 的
+  - 没啥特别话术，就是强调我需要一个非 VoIP 的号码用来注册 PayPal
+  - 好像我开的是一个 669 的号码，查了一下是 VoIP ，然后直接找客服强调要更换号码
+  - 我目前用的 https://phonelint.com/lookup ，Line type 那项有 mobile 或者 voip 之类的结果
+
+- 换号码 需要重新扫描二维码吗
+  - 不需要，他们后台直接改
+
+- 我换了个934的，tg都是被人注册了的
+
+- 哎不给我换，说是账号分配都是随机的，鼓励我重新抽奖。
+  - 可能是我遇到的客服好说话吧，我就强调要注册 PayPal ，所以要换非 VoIP 的，立马就给我换了
+
+- 我也换成了934，换了后无法接收短信，离谱
+
+- ## 👷 [saily可以在网页端试试, 进app提示新用户暂不支持, 网页端成功了, 号段448 _202611](https://www.nodeseek.com/post-1031435-1)
+  - 貌似这几天开的都是 +1 (448) 441 号段, 看下面的号码检测结果是开到了 VoIP
+- 可以让他们换，我就是找客服换了
+  - 就是说要注册 chat GPT ，上面显示虚拟号码，然后就把截图发给他。就行了， 客服不同意就换一个
+  - 换成了934，后来我在想换，就回复我
+  - I understand your frustration, however we can only change your number once, in this case, if you wish to have a new number, you can repurchase a new Phone plan subscription and get a new number.
+  - 现在是 934 的，但是 tg 和 GPT 都被人注册了 
+
+- sinch本来就是做voip批发的 
+
+- 346号段是没问题，我测试过，发过帖子
+
+- ## [[美国ESIM]0.99$/月 Saily ESIM开通步骤分享 _202606](https://www.nodeseek.com/post-774047-1)
+  - 截图步骤清晰
+
+- ## [[教程] Saily eSIM | $0.99/月低成本持有美国实体号 | 可过美区PayPal | 支持国行外挂esim卡 _202607](https://www.nodeseek.com/post-847685-1)
+- 国行手机 eSIM 挂载方案（Xesim / 5k卡）
+原生 eSIM 设备：海外版 iPhone / Android 直接在 App 内选择 Install on this device 写入。
+国行设备（无原生 eSIM）：配合 eSIM 外挂卡（如 Xesim）挂载使用：
+1 在 Saily App 点击 Install eSIM ➔ 选择 "On someone else's device"（在其他设备上安装）。
+2 屏幕弹出 eSIM 激活二维码，截图保存。
+3 打开 Xesim / 5k卡 等外挂卡 App，选择“从相册导入二维码”。
+4 识别并写入芯片后，在 App 内开启对应卡槽开关。
+5 手机状态栏显示漫游信号标志（如中国移动/联通漫游）即代表成功入网。
+
+- 
 
 - ## [Saily现在年付套餐最低4.99美金可以买下 - eSIM 奶昔论坛 _202609](https://forum.naixi.net/forum.php?mod=viewthread&tid=15440)
 - 如何查询自己的美国号码是VOIP还是真实号码？
