@@ -782,6 +782,9 @@ Cursor：暂不支持
 - 哈萨克斯坦
   - 无需地址证明
 
+- [Bybit Card 三张卡怎么选？｜台湾卡、格鲁吉亚卡、哈萨克斯坦卡｜申请门槛、费率损耗与功能对比｜无限芝士 - YouTube _202610](https://www.youtube.com/watch?v=tG-S_ma2nLs&t=11s)
+  - 申请流程
+  - 出入金
 - 
 - 
 

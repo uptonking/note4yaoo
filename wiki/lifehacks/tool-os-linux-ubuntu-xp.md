@@ -150,7 +150,7 @@ sudo fail2ban-client status sshd
 sudo timedatectl set-timezone Asia/Shanghai
 timedatectl
 
-# disable kdump-tools/linux-crashdump
+# disable kdump-tools/linux-crashdump to remove ubuntu-preserved ram
 vi /etc/default/grub.d/kdump-tools.cfg
 # comment out the `GRUB_CMDLINE_LINUX_DEFAULT` line
 

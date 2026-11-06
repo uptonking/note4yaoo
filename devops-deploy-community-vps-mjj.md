@@ -2182,6 +2182,167 @@ v6论坛搜索一下，手把手下asn v4 ipxo可以租 或者去看有些出租
 
 - 
 
+# discuss-vps-perf ⚡️
+- tips
+  - bero 12o: 溢价150+
+  - firevps: 帖子少
+  - ~~solidvps~~ : 活动特价鸡, 续费会涨价, 每年5%
+  - 2c2g: racknerd, cloudcone, ccs, LocVPS-HK(线路+性能, 难push, 验手机)
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [溢价30收Linveo亚利桑那25刀/年 2C/2G AMD Ryzen 9 9950X _202508](https://www.nodeseek.com/post-431465-1)
+- 这家要怎么交易呢
+  - 这家可以直接改邮箱的
+
+- linevo快450天没重启了，10G口也巨稳。适合生产环境。
+
+- ## [DeluxHost.net | VPS from €6/year! | AMD EPYC + Xeon Gold | NVMe + Storage | Auto-Freebie | NL/DE 优惠 _202608](https://www.nodeseek.com/post-899584-1)
+位于德国 Frankfurt 的高性价比 AMD EPYC VPS。
+
+CPU: AMD EPYC 7551P
+存储: NVMe SSD
+DDoS 防护: Basic
+
+套餐	vCPU	RAM	NVMe SSD	端口	IPv4	IPv6	年付价格	购买
+D-0	1	512 MB	8 GB	1 Gbps	❌	✅ /64	€6	购买 D-0
+D-1	1	1 GB	20 GB	1 Gbps	✅	✅ /64	€9	购买 D-1
+D-2	1	2 GB	40 GB	1 Gbps	✅	✅ /64	€12	购买 D-2
+D-3	2	4 GB	60 GB	10 Gbps	✅	✅ /64	€14	购买 D-3
+D-4	2	8 GB	80 GB	10 Gbps	✅	✅ /64	€18	购买 D-4
+
+- 都没货的 太块了吧 ，下次建议预热，祝老板发财
+
+- ## [已出LOCVPS HK 1C2G AMD 年付80元 三网CMI(目前电信CN2 GIA) _202608](https://www.nodeseek.com/post-875002-1)
+  - AMD EPYC 7542 32-Core
+  - 2g ram
+100M口子
+600G流量
+三网cmi
+
+- 这家就喜欢时不时改一下线路
+
+- ### [[出]出 LocVPS HK 80/年 到期 2027-09-29 _202610](https://www.nodeseek.com/post-1004663-1)
+  - CPU：1CPU / 内存：2GB / 硬盘：20GB / 端口：100Mbps / 流量：600G
+  - 能改邮，手机号改不了
+
+- [【已出】100 出 LocVPS HK 80/年 到期 2027-09-29 _202610](https://www.nodeseek.com/post-1004482-2)
+- 都知道要涨价了才出的吧，我前两天在隔壁论坛说过，我周一跟老板聊的“80元这个等新CMI价格出来后也会涨价了，目前所有香港能便宜回国的线路全部阵亡” 应该不止100m的会涨，具体涨多少不知道
+
+- 存量用户涨价吗？我不知道哇，他家线路大小包，所以用的比较少，但是性能还可以，价格也不贵。
+主要是用不上，精简下鸡窝
+
+- [收个LocVPS HK 80年付 100M 三网CMI 代价来 _202606](https://www.nodeseek.com/post-768495-1)
+- 这家要实名的 手机号换绑得 
+
+- 这款停稳的，自己手动操作过重装，这次启动已经运行441天了
+
+- 
+
+- ## [[已出]158出年付99的-zouter-hk-2C2G老款-AMD-原生IP _202611](https://www.nodeseek.com/post-1023899-1)
+- 
+
+- ## [solidvps 15和18又补货了 _202611](https://www.nodeseek.com/post-1023126-1)
+- $15/年: 
+  - 2 vCPU（AMD EPYC Rome / Milan，Fair Share）
+  - 2GB RAM
+  - 30GB NVMe RAID 10
+  - 3TB, 10Gbps
+- 每年固定涨价 没必要买吧
+
+- ## [🇺🇸SolidVPS🎃万圣节闪购西雅图$18/yr 4C4G小机测试 _202611](https://www.nodeseek.com/post-1022456-1)
+- 
+
+- ## [（nq留档）solid CA 4c2g50g 续费15.75$/年，kuroit SG 2c2g25g 续费15$/年 _202609](https://www.nodeseek.com/post-905396-1)
+- 
+- 
+
+- ## 🆚 [欧洲小鸡对决 Bero 12o 1C2G20G vs Hostsailor $6 1C1G30G _202610](https://www.nodeseek.com/post-985838-1)
+- Bero还是顶啊，不管是U、内存、还是硬盘。 尤其是硬盘，正常U屌的，硬盘一般会有些拉，但我真没想到Bero给的硬盘也不错。
+  - 12o的硬盘太小了点，不知道用来干啥。
+
+- 可以挂下单核的计算任务？或者需要单核劲霸的项目？ 
+
+- 
+
+- ## [【已出】BeroHost-12o 性能小钢炮｜传家宝｜ AMD 9575F 1C2G ｜20G nvme｜无限流量 5Gbps口子｜UDP看Emby速度飞起 _202610](https://www.nodeseek.com/post-1010343-1)
+
+- ## [【溢价300收】RackNerd 2025第三波闪购13.88$/year 2c2g 7950x _202611](https://www.nodeseek.com/post-1025442-1)
+- RN唯一值得溢价的一款，我400多收的
+- 有台7950x3d年付9刀DC-03洛杉矶1核1.5g内存20g硬盘6t流量
+
+- ## [大佬推荐一下，有没有便宜的美西AMD小鸡 _202507](https://www.nodeseek.com/post-406212-1)
+- 去收firevps的黑五款1C2G，年付大概10多刀
+  - FireVPS: $11.95+/yr 2GB+ Ryzen KVM in US
+
+- ## [想买 1o 机，又看评论说 bero 12o 不错 _202511](https://www.nodeseek.com/post-518298-1)
+- 两台都有，Bero的性能强，NC的延迟好些，看你需求了。
+
+- netcup厂子更大，bero性能强的多
+
+- 这俩都是大厂，bero性能比netcup要更好一点
+- bero性能好的多，但是bero线路烂，有时候还会变，直连三网都处于不怎么可用的状态，网络是每个月差不多10T流量
+
+- ## [已出一台DE 5950x性能鸡 0.83o/m _202610](https://www.nodeseek.com/post-1008626-1)
+  - hostleaf家的 1c1g 1t@1000M 独立ipv4/6。我移动的直连效果不好，需要香港鸡拉，谁想玩可以玩玩。
+
+- ## [Firevps年付6刀鸡测评太爽了 _202603](https://www.nodeseek.com/post-666210-1)
+  - 一核顶多核，除了续费的老板好像没再卖了
+  - NY
+
+- 除了网络质量，其他挺好的。
+- 硬盘也贼顶
+
+- 16c8g10M硬盘好离谱的配置
+
+- ## [「出」Firevps 2024黑五性能机 _202608](https://www.nodeseek.com/post-867166-1)
+- AMD Ryzen 9 7950X 16-Core Processor
+  - 16c2g30g1t
+  - 11.95 美元/年
+
+- 
+
+- ## [出FIREVPS机器（带邮箱） _202611](https://www.nodeseek.com/post-931049-1)
+  - 1C （Intel） + 1G + 20G + 1T , LA
+  - 1C （AMD Ryzen 9 5950X） + 1G + 15G + 1T , NY
+
+- ## 🆚 [洛杉矶小鸡大比拼 FireVPS 2C4G50G3TB $19.95 VS HostDZire 4C6G100G25TB $18.67 _202610](https://www.nodeseek.com/post-980773-1)
+  - FireVPS (Ryzen 9 7950X 平台)
+  - hostdzire (EPYC 平台)
+- 2c干飞4c系列
+
+- 两个都拥有过，fireVPS 内存低，硬盘小，流量少。
+所以我最终选了阿三
+
+- ## [总结一下最近收的几个AMD小钢炮的CPU得分 _202412](https://www.nodeseek.com/post-230974-1)
+
+1、美国linveo原生双IP（AMD2核2G/50GB/7.5TB BW/年$25）
+AMD Ryzen 9 9950X 16-Core Processor @ 4291.916 MHz 单核得分6532，GB6得分2912
+
+2、美国Alphavps原生IP-2GB RAM - 2x Ryzen 3.8GHz+ vCores - 20GB NVMe - 2TB BW- KVM- 29.99 欧元/年
+AMD Ryzen 9 9900X 12-Core Processor @ 4391.728 MHz 单核得分6667，GB6得分2761
+
+3、美国洛杉矶 Firevps-AMD Ryzen KVM VPS - 2GB LET Offer 2024 -年$11.95
+AMD 1核2G/30GB/1TB BW
+AMD Ryzen 9 7950X 16-Core Processor @ 4491.456 MHz 单核得分6292，GB6得分2649
+
+4、德国Bagevm-Germany Servers - TINY-原生双IP，解锁绿（AMD 1C/1G/20GB/4TB BW/年$20）
+AMD Ryzen 9 9950X 16-Core Processor @ 4291.916 MHz 单核得分6427，GB6得分2154
+
+5、德国法兰克福deluxhost-双IP（AMD 1C/2G/30GB/1Gbit/s /Unlimited Traffic/IPV6/年付12欧）
+PletX.net DDoS Protection
+AMD EPYC 7742 64-Core Processor @ 2250.000 MHz ，单核得分1568，GB6得分1095
+
+- 
+
 # discuss-vendors
 - resources
 
@@ -2196,6 +2357,61 @@ v6论坛搜索一下，手把手下asn v4 ipxo可以租 或者去看有些出租
 - ## 
 
 - ## 
+
+- ## [solidvps 14刀闪购款涨价了 _202607](https://www.nodeseek.com/post-801817-1)
+  - 24年黑五款6.95的变成了11.95，25年黑五款14刀的之前不是说每年上涨5% 现在直接变成22刀了，还没发邮件通知
+- 之前只有14刀有标注会涨，现在其他都涨了，有点无语
+
+- 15刀的变成20刀续费了
+
+- 12刀荷兰直接变20刀，感觉这款涨最多，绝了
+
+- WHMCS面板很多都是限制只能提前续费一年，不能提前续费多年的
+
+- ## [【涨价】Solidvps可太6了，悄无声息提高续费价格 _202607](https://www.nodeseek.com/post-801989-1)
+  - 15刀涨价到20刀，涨价后性价比暴跌，准备放生
+- 18刀也涨了
+
+- 闪购机还真涨价了 二十多刀的价位还不如阿三的 4C6G 呢
+
+- ## [【更新ing】【避雷曝光】Linveo 开始恶劣背刺：单方面砍年付改月付（变相暴涨 64%），机房迁移塞脏 IP 换一个还要收 3 刀！ _202611](https://www.nodeseek.com/post-1026921-1)
+
+- ## [[吃瓜总结]HKcloudx 事件 _202611](https://www.nodeseek.com/post-1034161-1)
+  - HKCloudX 最初上架了一款 HK 200M 的机器（下称"老200"）， 卖完后，商家表示 不再做 C 端，并在群里多次强调"不卖了""永远不背刺家人"等话术。
+  - 就在今晚，商家 突然上架了 100 多台新200（AMD 200M 款）。
+- 我老200的4c不如新的1c，4c才1000分
+
+- 
+
+- ## [请问下locvps修改手机号码会触发重新实名么？ _202509](https://www.nodeseek.com/post-456183-1)
+- 不会
+
+- 改邮箱改手机号
+
+- ## [locvps家的机器 怎么转移和push来着 ? _202506](https://www.nodeseek.com/post-365207-1)
+  - locvps家的机器 怎么转移和push来着 ? 另外如何屏蔽实名来着？
+- 这家不能push, 账号实名了只能自己用了
+
+- 不能PUSH
+手机接码的实名有有效期，支付宝实名长期。
+基本就是改手机号改邮箱出了。。
+
+- 改手机号
+不实名无法操作面板
+之前用的时候是这样的，现在还是不是不知道了
+
+- 改手机好像不行吧，机器所在的账号已经是 A 用户实名了，改了手机号 他还是之前的实名的人呀
+
+- 手机可以改，如果旧号码没用了，可以发工单，可以可以操作，实名不知道
+
+- ### [[已出] LOCVPS 香港1c2g + AMD7542 + 600G月流量 + 续费80每年。100M带宽 _202509](https://www.nodeseek.com/post-457529-1)
+- 我也有台，没想到居然能溢价了。这家管得有点严，不仅实名，手机还必须每3个月验证一次，嫌烦就不想续了。
+  - 手机验证有效期就3个月还是2个月忘了，你想用后台就要验证，不上后台的话无所谓。
+
+- ## [[新商家]wawo.wiki月付9.9香港BGP-附测评-VPSMarket _202401](https://www.nodeseek.com/post-54051-1)
+  - 今天VPSMarket收到一家刚成立不久的IDC商家的投稿，wawo.wiki，目前wawo.wiki从产品还刚起步，官网目前就只有两款VPS，月付9.9RMB起步。
+
+- 
 
 - ## [FXTRANSIT为什么叫3折云，商家有什么问题吗？ _202611](https://www.nodeseek.com/post-1029426-1)
   - 看价格很合适啊
@@ -3069,7 +3285,9 @@ https://xiaocaiwen.eu.org
   - [Shlii - 高性价比的VPS平台 ](https://shlii.io/)
   - [超级大大怪的用户空间 ](https://www.nodeseek.com/space/30336#/discussions)
   - 💰 充值手续费 5%
+
     - 提现到面板余额手续费 5%，提现到支付宝/微信手续费 13%，提现到 USDT 手续费 15%
+
   - 从官方公告看， 还未盈利，待观察
 
 - ## 
@@ -3128,8 +3346,10 @@ https://xiaocaiwen.eu.org
 # discuss-nat-lazycat/懒猫云
 - tips
   - 拼小鸡的场景玩到极致，NAT小鸡很多，有的直接就是 megabox/vmiss
+
     - 优点是ip共享的人少， 比机场干净
     - 缺点是ip送中后基本拉不回来
+
   - [懒猫不懒的用户空间 ](https://www.nodeseek.com/space/35839#/discussions)
   - 懒猫平台交易市场上架刚买的小鸡需要等24h，会限制炒鸡和流通，push转移付费2元不用等
   - 懒猫出余额有很多帖子，因为交易市场溢价出鸡，余额提现暂时关闭了
@@ -4285,7 +4505,7 @@ Gemini、Reddit 被拉黑；
 
 - [racknerd快讯，dc02 所有机器将物理迁移到 dc03 _202605](https://www.nodeseek.com/post-736588-1)
 - dc2机房是属于mc的，mc被ec收购了，ec也收购了cc，现在cc和dc2都是一家，rn估计没续约找借口
-# discuss-vendor-cloudnium/dedirock/dartnode
+# discuss-vendor-cloudnium/dedirock/dartnode/delux
 - dartnode
   - backup restore 慢到不能忍
   - backup 免费提供3个备份
@@ -4300,6 +4520,59 @@ Gemini、Reddit 被拉黑；
 
 - ## 
 
+- ## 
+
+- ## [delux大盘太逆天了 _202512](https://www.nodeseek.com/post-525761-1)
+  - 3.0-4.8 mb/s
+- 他家的鸡一段时间就掉性能，找老板反馈还能修一修
+
+- U盘做的
+
+- ## [delux涨价 _202601](https://www.nodeseek.com/post-587439-1)
+  - DeluxHost 宣布，由于运营成本增加以及对服务稳定性、质量和支持方面的投资，将从 2026 年 3 月 1 日起，对促销型 VPS 优惠服务（A–Z 系列、W 系列、M 系列和 2024 年黑色星期五优惠）进行适度的价格调整。
+  - 2024 年黑色星期五优惠：每年增加 €2。
+
+- ## [delux这个7欧鸡能干什么？ _202507](https://www.nodeseek.com/post-406089-1)
+  - IO读写就是石头，cpu老爷车，比RN还离谱，但是有4g内存和40G硬盘，有什么应用不吃IO和CPU，只吃内存和存储的？
+
+- 这个是商家刚开卖没多久时候的7o机 2c4g
+
+- 他这个内存是虚标，你自己测试一下试试就知道了
+
+- 富强
+
+- ## [聊聊delux绕美 _202604](https://www.nodeseek.com/post-687122-1)
+  - 刚才看到delux的广告贴里的battle，荷兰从原来的160延时的联通快乐机绕美了，我也是受害者，快乐变灵车，还总死机出问题
+
+- 非优化鸡，变路由、大陆直连绕路，我觉很正常。
+本来就没承诺过吧，不算商家的锅。 
+
+- 商家如果没宣传过优化线路，感觉无可厚非
+
+- ## [deluxhost 是不是不支持PP了？ _202610](https://www.nodeseek.com/post-961452-1)
+- 你好 是的
+
+- ## [DeluxHost避坑这个VPS提供商 _202610](https://www.nodeseek.com/post-1003084-1)
+  - 只能做测试平台，IP纯净度还可以，基本上能解锁所有媒体和AI服务，但是IO不行，频繁读写，直接死机。
+  - 申请退费，工单不回，还好不贵，就当做交学费了。
+  - 关键看他家网页商品，还有大量的企业服务，这个也太大反差了，连VPS都做不好，谁敢买他的企业服务！早知道来nodeseek，letendtalk查询下口碑资料
+
+- 你这还算好的了。我的工单经过3个月的沟通终于回复答应解决退款了，然后答应了之后继续玩消失，目前的VPS还有12天到期了。
+不给希望就算了，给了希望又特么吊着。
+
+- 这家确实灵 老是宕机然后换ip 我挂个探针老发现访问不了网站了
+- 隔几天直接告诉你ip换了，数据没了？
+
+- ## [Delux 有个ip段上游不再提供了，直接给我把ip给换了 _202609](https://www.nodeseek.com/post-939592-1)
+- 灵车商家没给你整坏你就得感谢了，补偿什么的不存在的。
+
+- ## [出个deluxhost 7o/年的2c4g40g的鸡【无】 _202611](https://www.nodeseek.com/post-1033278-1)
+  - 荷兰鸡 没用过 7o/年 2c4g40g。涨价到9o了，我找客服又掰扯成7o了，2026年11月26日到期
+- 第一次见到掰扯回来的
+  - 因为我没升配置。这鸡想不起来用，我是收到续费邮件才想起来的。所以客服给改回 原价了
+
+- 你换 debian12 就好很多，debian13 的 4k 读写只有 kb 级
+
 - ## [出两台30🔪一年dartnode无限流量 10g口休斯顿 _202611](https://www.nodeseek.com/post-1031100-1)
 之前买了4台 明年6月到期
 自用两台多的出掉 30🔪一年 30刀出
@@ -4309,6 +4582,14 @@ Gemini、Reddit 被拉黑；
 - 是13.99刀/y哪一款吗？
   - 同款 但是价格上去了 10g不限 我自己用不太完
 - 13.99刀基本都是1g 30刀基本10g
+
+- ## [[出鸡] Dedirock 18u一年 1c1.5g 8TB 1.5t硬盘 _202611](https://www.nodeseek.com/post-1036146-1)
+- 这个我摸过 是超级无敌钻石盘写入只有kb级别 而且系统装机械盘上的装个小软件解压都要解压半天 重装系统得半个小时才能重装起来
+  - 18刀 1.5T，还要什么自行车，只能当备份盘，小文件读写别想
+
+- 这性能备份100g的文件要14个小时 1.5t装满光是写入就得花几天 链接还不稳定会断连 有闲工夫拿着个存不如买个百度网盘得了
+
+- 
 
 - ## [这个Dedirock 年付$7小鸡居然开了25端口… _202508](https://www.nodeseek.com/post-434538-1)
 - 正常，CCS就是这样。

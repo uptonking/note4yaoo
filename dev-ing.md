@@ -349,6 +349,55 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 
 ## 1106
 
+- 🤔 i have a very cheap vps that has big ram(8gb) and big disk(100gb), but it has weak cpu and poor disk IO speed. What is the best used cases for this budget VPS? Is there any popular SaaS application that does not require good CPU and disk IO?  please give me some suggestions for using this vps
+  - a very common "storage/memory promo" profile.
+  - most modern self-hosted SaaS applications are RAM-gated, not CPU-gated. Many popular stacks (Node.js, Python, Elixir, Java, or multi-container Docker apps) sit at 1%–3% CPU usage 95% of the time, yet they crash on cheap 1 GB or 2 GB VPSs because of Out-Of-Memory (OOM) kills.
+  - on Linux, unused RAM automatically becomes disk cache (Page Cache).
+- Look for applications that have a high baseline memory footprint (which your 8 GB RAM easily absorbs) or need large storage capacity (100 GB), but primarily wait on network I/O (webhooks, HTTP APIs) or perform client-side processing.
+- n8n / Activepieces / Node-RED: Workflow automation platforms run on Node.js and love eating 500 MB–1.5 GB of RAM to keep workers and execution states in memory. However, their actual work is mostly waiting on external HTTP APIs and webhooks (network-bound, not CPU-bound).
+- LLM API Gateways (New API / One API / LiteLLM): Acting as a unified router/proxy for external AI APIs requires almost zero CPU and negligible disk I/O. Keeping token states and rate-limiting counters in an in-memory Redis instance makes the gateway blazingly fast regardless of how slow the underlying disk is.
+- Authentik is notorious in the self-hosting community for needing 2 GB+ of RAM just to idle (Python workers + PostgreSQL + Redis), making it unusable on small VPSs.  
+- Vaultwarden: Bitwarden clients perform all heavy encryption/decryption (PBKDF2/Argon2) client-side on your phone or laptop. The server just stores small encrypted blobs and serves them from RAM cache.
+- Modern collaborative wikis like Outline require Redis, Postgres, and a Node.js backend—hungry on RAM, very light on CPU and disk for small teams.
+- Linkwarden / Karakeep (formerly Hoarder) / Wallabag: Great use of your 100 GB disk to archive web pages, PDFs, and articles forever, while the 8 GB RAM absorbs the heavy Next.js/Node.js runtime memory requirements. (Tip: Disable headless Chrome full-page screenshot rendering or limit concurrency to 1 worker so you don't spike the weak CPU).
+- Unlike Nextcloud (which runs heavy PHP scripts on every request and thrashes disk I/O), Seafile (C/Python) and OpenCloud (Go) are exceptionally light on CPU. Slow disk I/O will only cap your maximum upload speed during huge bulk transfers; day-to-day incremental file syncing will be completely unaffected.
+- Garage or MinIO (Self-Hosted S3 Object Storage): Turn that 100 GB into a private S3-compatible bucket for Obsidian/Joplin notes sync, database backups, or static assets. Garage (written in Rust) uses almost no CPU and handles slow disks gracefully.
+- Uptime Kuma / Gatus / Beszel: Why it fits: Monitoring external endpoints is purely network-wait time. Keeping the recent metrics buffered in RAM prevents constant disk thrashing.
+
+- Non-SaaS Infrastructure Use Cases
+  - Caddy / Nginx / Traefik as a reverse proxy in front of everything
+  - In-Memory Cache / Message Broker (Redis / Valkey / DragonflyDB)
+  - Redis / Valkey / Dragonfly / Memcached: this is the best use of your RAM. Turn off persistence or use infrequent snapshots.
+  - Encrypted Offsite Backup Target (BorgBackup / Restic / Kopia)
+  - Private Network Coordinator (Headscale / Tailscale DERP / WireGuard)
+
+- What You Should Avoid on This VPS
+  - Media Transcoding (Jellyfin / Plex / Immich ML): Video transcoding and AI facial recognition/CLIP indexing in Immich will peg a weak CPU at 100% and cause thermal/host throttling. (If you run Immich, offload the Machine Learning container to a desktop PC or another server).
+  - CI builders, compilers, seedboxes: CPU and disk IO bound
+  - CI/CD Builders (GitLab Runner / Compiling Rust, Go, or C++): Compiling code and building multi-stage Docker images require both heavy CPU and high random disk IOPS. Build images via GitHub Actions and only docker pull the finished image to this VPS.
+  - High-Concurrency BitTorrent: Torrenting dozens of files simultaneously creates massive random read/write IOPS ( putting the CPU into high iowait) and heavy SHA-1/SHA-256 hashing on the CPU.
+  - Paperless-ngx: OCR is CPU-heavy, though tolerable if you don’t import often
+  - Elasticsearch, ClickHouse (Plausible), Matrix Synapse: heavy random disk IO
+  - Game servers (Minecraft, etc.): need strong single-core performance
+
+- Tricks to make weak hardware feel better
+Use RAM against slow disk. Raise DB buffer sizes (e.g. PostgreSQL shared_buffers), leave free RAM for the Linux page cache, and mount /tmp and cache dirs as tmpfs.
+Prefer SQLite-based apps with WAL mode over ones that need Postgres or MySQL when possible.
+Cut writes. Mount with noatime, set Docker log rotation limits, use volatile journald logs, and relax DB flush settings where data loss is acceptable (e.g. innodb_flush_log_at_trx_commit=2).
+Use zram instead of disk swap. Swap on a slow disk is painful.
+Put a CDN or cache in front of anything public to spare the CPU.
+Run everything in Docker Compose with memory limits so one app can’t starve the others.
+Benchmark first. Run fio and sysbench so you know your real numbers before choosing workloads.
+
+- 
+
+- Migrated TCP Relay from Gost to Native Xray dokodemo-door:
+  - Completely stopped, disabled, and removed gost on both nodes.
+  - Configured native Xray dokodemo-door on port 80 forwarding directly to the upstream nodes (verge2 for surge1, verge4 for stash1) using Linux kernel splice(2) zero-copy stream forwarding.
+  - Process count on stash1 dropped from 3 to 2, and RAM usage dropped to 34.4 MiB total (21.4 MiB Xray + 13.0 MiB Hysteria).
+- 
+- 
+
 ## 1105
 
 - i just bought a lxc/nat vps with lxc debian12 template.

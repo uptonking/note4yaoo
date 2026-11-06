@@ -1681,6 +1681,7 @@ in a multi-nodes high-availability architecture
   - verge2 and verge have the same features and use the same docker image, but they are 2 unrelated services as 2 orphan service without high availability.
   - source code for verge/verge2(hysteria) has been cloned at folder `~/Documents/repos/devops/all-vpn-proxy/hysteria` for reference if you want.
   - source code for clashx meta has been cloned at folder `~/Documents/repos/devops/all-vpn-proxy/ClashX.Meta` for reference if you want.
+  - source code for clashx meta mihomo has been cloned at folder `~/Documents/repos/devops/all-vpn-proxy/mihomo` for reference if you want.
   - source code for ClashMetaForAndroid has been cloned at folder `../all-vpn-proxy/ClashMetaForAndroid` for reference if you want.
   - source code for FlClash has been cloned at folder `../all-vpn-proxy/FlClash` for reference if you want.
 
