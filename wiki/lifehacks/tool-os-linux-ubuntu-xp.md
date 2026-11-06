@@ -54,7 +54,7 @@ ssh root@ip
 sudo apt update -y
 sudo apt update -y && sudo apt upgrade -y
 apt update && apt upgrade -y && apt dist-upgrade -y && apt full-upgrade -y 
-sudo apt install -y vim git ufw fail2ban btop htop telnet 
+sudo apt install -y vim git ufw fail2ban telnet btop htop  
 
 sudo apt autoremove -y
 
@@ -86,7 +86,7 @@ PermitRootLogin prohibit-password
 
 # u 26.04
 # sudo systemctl restart sshd
-# u 24.04
+# u 24.04, debian
 sudo systemctl restart ssh
 
 # UFW (Uncomplicated Firewall) 
@@ -130,7 +130,7 @@ findtime = 300
 # 封禁多少秒，-1是永久封禁（不建议永久封禁）
 bantime = 600
 
-# 对于 debian 要修改backend
+# 👀 对于 debian 要修改backend, 然后注释掉上方距离几行默认的backend配置
 backend = systemd
 
 # 禁用方式

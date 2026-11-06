@@ -357,6 +357,9 @@ modified: 2025-03-22T16:10:24.856Z
 - chat-ai
   - 主流ai的web-chat结果能快速对比
 
+- harness
+  - show thinking by default
+
 - gui(cli is not enough)
   - vision: pdf/image 操作更方便
   - multi process/locations: cli过于混乱，ui操作更清晰

@@ -1871,6 +1871,10 @@ in a multi-nodes high-availability architecture
   - 常用端口 22, 80, 443
   - 代理端口 
 
+- you have deployed this repo to many nat/lxc vps: surge, surge1, surge2, surge3, stash1, stash2.
+  - i want them to work well with clashx meta on my mac, the config file is at `~/.config/clash.meta/verge2609.yaml`.
+  - most of the services are running well.
+
 - I just got 3 NAT/LXC vps: surge1(debian13), surge2(alpine), surge3(alpine). No public port is exposed by default. I added 4 public ports for each vps: 
   - for surge1: 23110 -> 22/tcp, 23111 -> 443/tcp, 23112 -> 80/tcp/udp.
   - for surge2: 23120 -> 22/tcp, 23121 -> 443/tcp, 23122 -> 80/tcp/udp.

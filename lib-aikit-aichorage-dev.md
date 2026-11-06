@@ -54,6 +54,7 @@ modified: 2026-05-28T17:50:54.646Z
     - translation-partial,
     - ai-design/lovable
   - textwork/worktext
+  - show thinking by default
 
 - 📌 non-goals
   - ocr for arbitrary image
