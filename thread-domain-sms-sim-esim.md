@@ -1067,6 +1067,56 @@ WhatsApp 无法收到短信验证码，但是可以收到语音验证码
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [请教：VOXI的英国沃达丰eSIM，开卡后首月赠送的75G流量可以在中国大陆用吗？ 结论：可用 _202602](https://www.nodeseek.com/post-613959-1)
+- 必然不行。。。75G 国际流量是天价。。没有哪家送得起
+
+- 玄学，多弄几个号试试，有的能出来，有的出不来
+- 在首月免费服务即将到期的最后一天，发现在大陆竟然可以用voxi的4G网络，妥妥的伦敦家宽IP，12%极度纯净。
+  - 默认设置啥都没改，网络选择的中国联通
+  - 果子，iphone7p，系统版本15.8.6
+
+- 一直可用
+
+- ## 💡 [【科普】🇬🇧 VOXI 英国 eSIM 科普：数据漫游 ≠ 漫游中国，别为个开关交冤枉钱 _202610](https://www.nodeseek.com/post-1008141-1)
+  - 一句话：人在国外叫漫游，开数据才叫数据漫游。短信电话都不吃流量，别为个开关交冤枉钱。
+  - 卡是英国的，你现在人在中国用，这就叫漫游。这是位置，不是开关，不用你开也不用你关。你人在中国，卡自动就是漫游状态。
+  - 手机设置里那个"数据漫游"开关，意思是：在非本土地区，允许手机用流量上网。这才是开关，才是要钱的东西。
+  - 漫游流量是按 MB 算钱的，1MB 好几块人民币。你开着数据漫游，手机后台自己同步一下：微信、相册、应用更新，一晚上几百 MB 就没了
+- 正确姿势
+数据漫游开关：永远关着 🔒
+要上网：连 WiFi。WiFi Calling 走的也是 WiFi，不耗流量
+真要在外面用流量：买当地流量包或当地卡，别用英国卡的漫游流量
+
+- VOXI 中国漫游资费（官方短信）
+项目	资费
+📞 打电话（主叫）	60p/分钟（£0.60）
+📲 接电话（被叫）	36p/分钟（£0.36）
+📩 发短信	8p/条（£0.08）
+🖼️ 发彩信	66p/条（£0.66）
+🌐 流量	12p/MB（£0.12）
+
+- 限制发到什么国家的号码吗？能不能发给+86 
+  - 可以发+86 只要有余额
+
+- ？流量好像都用不了吧
+  - 肉身英国 或者 欧盟 就可以用了
+
+- 问下一张esim多个voxi会导致封eid吗？上限几
+  - 目前 我的一台 iphone se 共计有 5张
+曾经 使用过 不下 15张
+如果怕封eid 的话 建议使用小白卡
+
+- 放心吧，开着数据漫游开关不会扣钱的。 因为VOXI现在中国数据漫游得额外买漫游流量包的，想用高额话费漫游还没门
+  - 万一充值了有余额, 也是要扣的 
+- 我就是这样试了，用不了漫游流量，也不扣费才这么说的
+- 应该是, 因为 默认voXI的设置里面 APN 上网没有填写
+
+- 
+
 - ## [英国VOXI手机号购买充值卡充值话费教程 _202510](https://www.nodeseek.com/post-481310-1)
 - 第一步骤 在 recharge 购买Vodafone充值卡
   - 选 Vodafone 我选择的是 5 英镑，然后就是支付环节了
@@ -1310,10 +1360,6 @@ CTExcel和cmlink，有回国年套餐，可能会好点
 
 - 官方说明，到期自动转入pay as you go
 
-- [voxi客服说是不用切换 _202602](https://www.nodeseek.com/post-616735-1)
-  - Please keep in mind that your number will remain active for the next 180 days until you add credit to your account and send a standard text or make a call once within the next 90 days. This will be considered your usage with VOXI and will keep your number active (if you do not wish to add any plan unless you're in the UK)
-  - We will disconnect your mobile services and you will forfeit(失去, 放弃) any credit held on your account if you do not do so within 90 days of receiving the text because you have not followed this Agreement or have not used the services for 270 days. When you return to the UK, you can add plan from your online account. This is an ideal process of keeping your number active with VOXI.
-
 - ## [关于VOXI保号的相关条款 _202603](https://www.nodeseek.com/post-662258-1)
 VOXI： 沃达丰旗下的子品牌，更像是青春特惠版，激活时必须选套餐（有优惠券首月免了）。但套餐到期后可以不续订。
 Vodafone PAYG： 标准预付费卡。然后PAYG还分 Simply（即用即付，用多少扣多少）和 PAYG 1（按天计费，当天有消费则扣 £2 封顶，不使用不扣费）。
@@ -1390,7 +1436,7 @@ VOXI 的最低充值金额 £5 GBP，号码失效的前 90 天会收到短信通
 领取前准备：
 1.eSIM 手机或 9eSIM 等实体 eSIM 卡
 2.edu 教育邮箱（可以淘宝购买一个，注：edu.kg 无法通过验证的）
-03. 一张 Visa/MasterCard 信用卡（验证使用，不扣费，虚拟卡：Bybit，Safepal 测试添加成功）
+01.            一张 Visa/MasterCard 信用卡（验证使用，不扣费，虚拟卡：Bybit，Safepal 测试添加成功）
 
 保号：
 开卡后，不充值，理论可保号 210 天
@@ -1411,6 +1457,81 @@ VOXI 的最低充值金额 £5 GBP，号码失效的前 90 天会收到短信通
 
 超低成本：实测漫游短信费用低至 8p/条 (约£0.08)！
 注：相比之下 giffgaff 漫游短信通常要 30p，VOXI 这一点赢麻了。
+
+- ## [voxi首月优惠码到期后如何保号，需要充值吗 _202609](https://www.nodeseek.com/post-926165-1)
+- 180天内发生消费行为即可
+充值也算消费行为，所以你完全可以等需要接码的时候再充值
+
+- 过期后180天内消费
+
+- 180天后再考虑充5磅，180天后还有90天宽限期呢
+
+- 没有转pay as go的也可以么
+  - 到期好像自动转的，我放了1年没充值都可以用，可以去设置把套餐取消
+
+- ## [voxi暂停了套餐后，怎么保号。 _202608](https://www.nodeseek.com/post-902388-1)
+  - voxi 10英镑套餐，一个月快到期了，暂停套餐后，后续多久时间充值，应该怎么正常保号。
+
+- 暂停后就需要立即充值吗，还是过几个月再充值5英镑，然后余额变动保号。
+  - 180天内充值
+
+- [佬们，问一下英国voxi的卡可以搞保号不 _202603](https://www.nodeseek.com/post-658413-1)
+- 首月结束前登录官网去设置里暂停套餐就行了 然后充5镑 以后就是每180天内发个短信就行了
+
+- 保号逻辑
+免单下卡后 有 180天有效期
+90天内充值5英镑 延续180天
+以后 漫游下 半年发一次短信 即可保号
+一条短信 0.08英镑
+理论上 5英镑可保号 30年以上
+
+- 已经提示-11days，现在改还来得及嘛 
+  - 可以 直接充值去 直接 就保号 180天
+  - 以后 每半年发条短信 即可
+
+- [voxi修改保号套餐是在设置里面pause就行了吗 _202608](https://www.nodeseek.com/post-883887-1)
+- 没看到关掉自动续费的选项，只用pause就行了吗
+  - 是的。其实你不暂停也可以，有坛友-270天还能收短信，前提是你绑的那张卡没有余额。
+- 不充值可以使用270天还能接受短信。你绑的那张卡最好余额少一点，你不pause，它会按第一个月的套餐按月扣钱
+
+- [voxi该怎么保号 _202606](https://www.nodeseek.com/post-764720-1)
+- 每180天内至少1次拨打电话或者发送短信操作
+
+- 不是听说能免费用270天
+
+- [voxi暂停套餐快一个月了，需要做什么吗 _202609](https://www.nodeseek.com/post-905030-1)
+- 不是180天内有消费就行吗
+  - 听他们说应该是210天（30+180），感觉可以再等等。万一像giffgaff杀了又亏5英镑
+
+- 在观望两三个月再充值吧，万一不稳还有机会挽回成本
+
+- ## [VOXI这个卡如何用来保号？ - eSIM 奶昔论坛 _202603](https://forum.naixi.net/thread-10841-1-1.html)
+- 首月套餐暂停后180天+30天内有余额变动就可以保号，在180天内没有余额变动会短信提醒你给30天宽恕期。
+
+- 直接给gg发了个短信0.08磅
+
+- [请问刚收到了VOXI的邮件说取消了套餐，这个还有多少有效期？如果不充值的话。 - eSIM 奶昔论坛 _202512](https://forum.naixi.net/thread-7999-1-1.html)
+  - 按照条款实际上270天内保一次号就可以。
+
+- ## [voxi客服说是不用切换 _202602](https://www.nodeseek.com/post-616735-1)
+  - Please keep in mind that your number will remain active for the next 180 days until you add credit to your account and send a standard text or make a call once within the next 90 days. This will be considered your usage with VOXI and will keep your number active (if you do not wish to add any plan unless you're in the UK)
+  - We will disconnect your mobile services and you will forfeit(失去, 放弃) any credit held on your account if you do not do so within 90 days of receiving the text because you have not followed this Agreement or have not used the services for 270 days. When you return to the UK, you can add plan from your online account. This is an ideal process of keeping your number active with VOXI.
+
+- [voxi 怎么搞 pay as you go _202603](https://www.nodeseek.com/post-642158-1)
+- All plans refresh every 30 days – we’ll take payment for the following month and your plan will be refreshed, including your data, calls, and text allowances.
+  - Of course, if you opt out of your plan it won’t refresh – it’ll simply be cancelled at the end of your 30 day period. You can still use VOXI on a Pay as you go basis without being on a 30 day plan, but you won’t get unlimited data on social or our other benefits.
+
+- ## [VOXI保号给谁发短信啊，国内手机收费0.24，能发给自己吗 _202608](https://www.nodeseek.com/post-853278-1)
+- 最好别+86，容易被监测到国外短信，然后96110会问你被骗了没
+- 收到短信，运营商，联通会提示诈骗
+  - 是不是插了张+86的卡
+等96110电话吧
++86不能和国外卡插在一起，插在一起，容易报风险，提示诈骗
+
+- 发到GV或者+44
+
+- 发我 +44 7386366727
+不谢
 
 - ## [【保号最官方手册】VOXI 漫游 90 天必回国？条款翻完了，传言编过头了 _202610](https://www.nodeseek.com/post-1012415-1)
   - 核心就一条：每 180 天内，至少做一次条款认的有效使用。

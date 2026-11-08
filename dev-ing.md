@@ -347,6 +347,28 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1108
+
+- when i run `/agents` in antigravity agy tui, why does global explorer custom subagent ~/.gemini/config/agents/explorer/agent.md does not show?
+  - Your explorer custom subagent is actually discovered and loaded correctly by Antigravity—in fact, it is actively loaded and registered in this session's prompt under Available subagents.
+  - The reason it does not appear when you run /agents in the agy TUI comes down to how Antigravity distinguishes between Main Agents and Subagents
+  - In the Antigravity CLI (agy), the /agents menu (and the `--agent <name>` launch flag) is designed to switch your active conversational persona—the primary orchestrator agent that directly chats with you in the terminal.
+  - mainAgent: false: Tells Antigravity that this agent cannot be used as the interactive chat persona. The TUI's /agents selector filters out any agents where mainAgent is false.
+  - Because mainAgent is set to false, it is intentionally excluded from the /agents switch list
+  - If you want it to be a callable subagent (recommended for explorer): It is already active and working. You don't need to do anything. When you give tasks requiring broad codebase searching or architecture tracing, the main agent will automatically dispatch work to explorer via invoke_subagent.
+
+- 为什么 2.7 - 3.0 Mbps 的带宽， 对应的下载速度是约 340 KB/s？ 这里面的计算逻辑是怎样的
+  - 带宽单位：通常使用 Mbps（Megabits per second，兆比特每秒，小写 b）。
+  - 下载速度单位：软件（如 curl、浏览器、下载器）通常显示为 KB/s（KiloBytes per second，千字节每秒，大写 B）。
+  - 1 Byte (字节)=8 bits (比特)
+  - 网络带宽的标准通常按 十进制（1000 进制） 计算 3.0 Mbps=3,000,000 bits/s
+  - 操作系统和下载工具统计文件大小时，采用 二进制（1024 进制） 计算（ 1 KB = 1024 Bytes 1 KB=1024 Bytes）
+  - 3,000,000 bits/s / 8 /1024 = 366.2 KB/s
+  - 为什么实际测出的带宽是 2.7 Mbps，而物理带宽说明往往是 3.0 Mbps？
+  - 在网络中，传输数据就像快递包裹，真正的“货物”（文件数据）外面需要包装好几层“箱子”（网络协议头）
+  - 协议开销（Overhead）：标准以太网最大传输单元（MTU）通常是 1500 字节，其中真正能装文件数据的有效载荷（MSS）一般只有 1460 字节左右，再加上 TCP ACK 确认包、TLS 握手及握手记录头、HTTP 请求头等，协议封装损耗通常在 5% ~ 10%。
+  - 商家流量塑形（Traffic Shaper）： VPS 宿主机底层的流量控制工具（如 Linux tc / htb）如果配置了 3000 kbps (3.0 Mbps) 的物理上限， 此时 Speedtest 测出的应用层净速率（Goodput）就会恰好显示为 2.6 ~ 2.7 Mbps。
+
 ## 1106
 
 - 🤔 i have a very cheap vps that has big ram(8gb) and big disk(100gb), but it has weak cpu and poor disk IO speed. What is the best used cases for this budget VPS? Is there any popular SaaS application that does not require good CPU and disk IO?  please give me some suggestions for using this vps

@@ -16,10 +16,27 @@ modified: 2026-09-05T00:40:32.289Z
 - 
 - 
 - 
+- 
+
+- v0.15.0 - 2026-11-03
+  - Daemon restarts now keep terminal programs running. Interrupted agents can resume in their existing conversations when you turn on agent recovery.
+  - Mobile terminals have native rendering and draggable text-selection handles.
+  - Worktree setup can copy ignored files and use plugin-defined locations before agents start.
+
+- v 0.14.0 - 2026-10-29
+  - Plugins can now add tools to individual agents and configure their MCP servers when sessions open.
+  - Voice settings now let you configure speech providers and download local models with one tap
+
+- v0.12.0 - 2026-10-19
+  - Added background workspaces, hidden from the sidebar unless Show background is on 
+  - a new Markdown renderer with selection across paragraphs on phones
+  - a reworked phone layout
+  - Added a Send feedback button to the diff pane
 
 - v0.11.0 - 2026-10-07
   - v0.11 comes with an official plugin registry https://paseo.sh/plugins
     - If you have submitted a plugin to the Paseo Cafe, it should already be available in the registry.
+
   - paseo plugin add owner/repo now installs from the registry, so use github:owner/repo to install straight from GitHub and ./path for a local directory.
   - Added Muse Code as a provider
   - Added Antigravity as a provider that drives the installed agy CLI, always in Full access 
