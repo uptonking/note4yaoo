@@ -395,8 +395,8 @@ Benchmark first. Run fio and sysbench so you know your real numbers before choos
   - Completely stopped, disabled, and removed gost on both nodes.
   - Configured native Xray dokodemo-door on port 80 forwarding directly to the upstream nodes (verge2 for surge1, verge4 for stash1) using Linux kernel splice(2) zero-copy stream forwarding.
   - Process count on stash1 dropped from 3 to 2, and RAM usage dropped to 34.4 MiB total (21.4 MiB Xray + 13.0 MiB Hysteria).
-- 
-- 
+
+- Migrated surging from Gost to Xray's native dokodemo-door relay using Linux kernel splice(2) zero-copy forwarding, dropping memory usage to 19.5 MiB RSS.
 
 ## 1105
 

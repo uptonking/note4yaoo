@@ -2389,6 +2389,10 @@ modified: 2026-06-20T15:49:57.019Z
 
 - [7788 | TG账号购买平台|电报账号批发|telegram账号购买 ](https://tg7788.com/)
 
+- [富贵论坛 fglt_net - Powered by Discuz](https://www.fglt.net/)
+  - qq号
+  - 抖音号
+
 ## 拼车/cli
 
 - [Clidex — 原生 Claude & Codex CLI 命令行工具 | 稳定免翻·灵活按量计费 ](https://clidex.dev/)
