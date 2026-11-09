@@ -43,6 +43,8 @@ modified: 2022-11-07T10:25:12.034Z
       - 合力轮胎店 Heli Tire Store
       - 13710198827
       - 广东省 广州市 荔湾区 40 米 邮政编码: 510378
+    - kazakhstan
+      - Muratbaev St 61, Almaty 050000, Kazakhstan
 
 - 提高feed内容流中有效信息的密度
   - 暂停浏览较长时间后，平台recsys推荐流的信息更有效

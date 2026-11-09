@@ -585,7 +585,7 @@ sms fee出现的另一个原因是号段
 
 - 
 
-# discuss-accounts-us
+# discuss-accounts-us/payment
 - ## 
 
 - ## 
@@ -593,6 +593,34 @@ sms fee出现的另一个原因是号段
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 💰 [关于Gemini Pro 会员一年 Pixel 的优惠的购买 小坑 希望各位注意 - LINUX DO _202607](https://linux.do/t/topic/2605544?tl=en)
+最近 用学生认证的几个账号 Gemini pro 会员都掉了，
+然后闲鱼 20 元购买了 2 个 分别找的 2 个商家，Gemini pro 会员 整个认证都比较顺利 先去掉支付，然后开启验证器.
+但有个小坑就是商家用的支付信用卡是 PaysafeCard 英国的，把我的 2 个美区账号都变成了英国支付信息了，也导致了无法加其他的美区账号到家庭组，本来还想自己在加几个号到家庭组进来，结果全都不行！
+算是一点注意事项，分享出来。不知道哪有美区信用卡的商家 一条龙搞定想在买几个
+
+- 你重新转回美区，或者把美区账号转到英区
+  - 转不了美区了，必须要去掉 Gemini Pro 的订阅才能转，订阅没到期不能转 是按照 Google play 商店地区的
+
+- 你把支付资料删掉，重新加一次就行了。其实不加也行，梯子挂美国节点就可以加了。 家庭组是看 Google play 商店地区的
+  - 支付资料不能删，必须去掉订阅才可以删除 转不了美区了，必须要去掉 Gemini Pro 的订阅才能转，订阅没到期或不取消订阅 不能转
+
+- 非常简单，我教你。直接去支付资料中吧地址随便改为一个美国就行了，然后吧家庭组关闭，然后你就可以更改为美国了，然后打开家庭组 就 OK 了！ 哈哈哈我昨晚也是
+  - 听我的，不需要取消订阅 也不需要美国卡！
+  - 受不了了，给你喂到嘴里。来来。首先去 https://payments.google.com/gp/w/u/0/home/settings 点击 国家 / 地区，填入一个美国地址。然后，去家庭哪里，把所有人踢出去，然后关闭共享，然后去 https://play.google.com/settings 这里就可以把地区改为美国了。然后打开家庭共享 拉人 OK
+
+- 感谢 。
+你第一个链接就是我截图的那个页面 点击 笔杆子后就会出现 Create new profile 链接 然后新添加一个美国地址， 在删除家庭组，然后在切换 Play store 的地区， 然后在创建家庭组，然后还有点击 start share 分享 google pro 套餐功能
+注意 切换地区后原来的英区支付信息会删除，而且再次进入支付信息页面需要接短信验证码验证 如果无法接码的要注意一下！
+
+- 两个号都关闭支付资料不就好了，又不会取消订阅，两个号同地区 ip，哪怕国内归属地的账号都能加 
+
+- 可以转，先申请转区再删家庭组再去 play 上改支付资料到美区（需要一张美区信用卡做认证），然后再建家庭组即可
+
+- 其实可以直接取消订阅然后删掉支付资料的，取消订阅不会取消 pro
 
 - ## [A Comprehensive Guide to Tax-Free Shopping in Portland | Portland _202601](https://webpromo.com/blog/jammybear/3/en)
 - Oregon has no sales tax, so you pay the exact price listed on the tag at checkout.

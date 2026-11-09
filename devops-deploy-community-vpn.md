@@ -11,6 +11,8 @@ modified: 2026-06-17T05:51:04.215Z
 
 - tips
   - 临时的需求可以用LDC在 ldstore 买一些proxy/vps
+    - 还可以在类似大大怪/纳泰云的交易市场买个节点， 用完了再卖出去
+    - 论坛市场类似 ldstore 也提供了积分兑换， 可按积分价格排序
 
 - ios-clients
   - 部分功能如wloc只支持付费的 surge/shadowsocks, 不支持开源的clash

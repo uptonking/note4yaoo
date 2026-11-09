@@ -347,6 +347,21 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1109
+
+- can i register a PaysafeCard account without being in europe?  can i use it outside europe?
+  - Local Verification: Registration requires a valid residential address, a local mobile number with matching country code for SMS verification, and a government-issued ID from that supported country.
+
+- i was given a used google account with 2fa key like HTICZUIUOJUNKRIIWZ7NXWBIORRMOMEL , i can go to https://2fa.fun and use the 2fa key to get the 2fa code. it works well. recently i changed the google 2fa to use ente 2fa app, but now i need to give this google account with 2fa key to another colleague. how can i get a 2fa key like HTICZUIUOJUNKRIIWZ7NXWBIORRMOMEL?
+- Option 1: Generate a new key from Google (cleanest)
+  - choose Change authenticator app (or Set up authenticator).
+  - On the QR code screen, click Can’t scan it? Google then shows a text key like abcd efgh ijkl mnop ....
+  - Copy the key and remove the spaces. That is the same kind of key as HTICZUIUOJUNKRIIWZ7NXWBIORRMOMEL.
+  - Setting up a new authenticator replaces the old one. 
+  - So if you want to keep your own Ente Auth working, add the same key to Ente as well. Use “enter a setup key” or “manual entry” in Ente before you finish verifying, and both will generate the same codes.
+- Option 2: Get the key back out of Ente Auth
+  - If the Google account is already set up in Ente, the key is stored there. Open the entry in Ente Auth and look for Edit or Show QR code. The edit screen shows the secret, and the QR code contains it as otpauth://...?secret=XXXX. Copy the secret= part. The exact menu names may differ slightly by app version.
+
 ## 1108
 
 - when i run `/agents` in antigravity agy tui, why does global explorer custom subagent ~/.gemini/config/agents/explorer/agent.md does not show?
