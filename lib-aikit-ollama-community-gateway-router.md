@@ -1883,7 +1883,60 @@ starryblu
 
 - ## 
 
-- ## 
+- ## [cline opencode 和command code 用ds的话哪个好？ _202611](https://www.nodeseek.com/post-1038869-1)
+- open code好，手续费低
+
+- 就开了opencode和opendesign，都还好，opendesign赶上重置几次，大赚，一个月不到（10月13日开的）用了几百亿
+
+- ## [opencode go vs openrouter vs command code goat : r/opencode _202611](https://www.reddit.com/r/opencode/comments/1xqw0qj/opencode_go_vs_openrouter_vs_command_code_goat/)
+- Commandcode goat, the deepseek there is more likely to tell you off for things like ip scans. Also the 5hour rates bit more forgiving, and the models responds faster. I have opencode go and commandcode goat in my hermes
+
+- ## [Opencode vs Command Code vs Deepseek (Deepseek v4.1 Flash) : r/opencode _202610](https://www.reddit.com/r/opencode/comments/1xeer5i/opencode_vs_command_code_vs_deepseek_deepseek_v41/)
+- CommandCode isn’t ZDR by default. If you add ZDR enforce parameter, quota is so low about 15~20 USD a month. OpenCode is ZDR by default
+
+- I have CommandCode Pro, OpenCode Go Plus $ OpenDesign Plus or Pro. If it’s just deepseek you want, OpenDesign is the best usage but ever so slightly more involved to link its API to various Apps. OpenCode currently is having a crack down on using its free models on other harnesses. CommandCode speed and general usage quality imo is better than OpenCode, less random timeouts, I’d say the speed is sometimes better sometimes the same as OpenCode. For my usage, OoenCode stability just isn’t as good as CommandCode, I have far less random hiccups when using the same model on CommandCode.
+
+- ## [分享一下command go 套餐的用量 - LINUX DO _202611](https://linux.do/t/topic/3148221)
+  - 1刀, 6.8亿token, 3300次请求
+- 人民币支持银联和支付宝，美元支持微信
+
+- 我这个号充了好几个月的 go，才出来的5刀升级goat优惠
+
+- 13亿token 80% 用的 fast；20% 用的 非 fast；在只用 fast 的时候，我看初始请求是 we need。。。然后再工作的时候有时候是 let me。。。
+
+- 也就是说用 fast 一个月才 10 亿左右 token？
+  - 看样子是的，量相比之前少 而且偶尔还触发到量化上
+
+- ## [［快问快答］ OpenCodeGo和Command Code Goat选谁比较合适 - LINUX DO _202611](https://linux.do/t/topic/3147105)
+  - ds4.1f1017 的时候就经常会 429，我代理也切换过好几个了排查下来估计不是我网络问题
+  - 求问两个订阅计划（OCG 和 CommandCode goat）都用过的佬说一说目前 Command Code 会不会较少地出现这种 429 的情况呢？
+
+- CommandCode 供应商混乱，之前有 429，现在偶尔会出现速度慢智商低的奇怪 ds，但 429 少了
+
+- 现在国模自部署成本比较低了有些大点的站会直接自部署，像 OCG 的 ds 就是自部署和官池混用，所以有时候会发现 TPS（Token per second）没有官方的那么快速，不过单从经济角度上确实是有性价比的，宣称是 10USD 订阅有 100USD 的额度
+
+- ## [commandcode的10刀套餐ds4.1f 感觉很划算啊 - LINUX DO _202611](https://linux.do/t/topic/3150690)
+- fast 是官网直连，普通版是量化版
+- fast 的缓存倍率太高了，普通的又智商不太行，尴尬，我现在也不知道订阅哪个好了
+  - 前期用高阶模型，规划得好的话，我居然用着还行，没人告诉我 fast 才是官方，我居然体验不出来
+
+- 觉得不如 opencode ，commandcode 还要多收手续费，合 70 多买 10 刀
+
+- ## [弃暗投明，有无划算 DeepSeek 订阅 - LINUX DO _202611](https://linux.do/t/topic/3141298/1)
+- 我只能说是杭州补贴的老 glm max 套餐，240 一个月的 max，杭州补贴咸鱼 90 随便买
+  - 接下来登场的就是 opencode 了，cline 什么的都不能让你安安心心的随便用
+  - 要纯血的话论坛评论最好的应该是 Ollama，不过这就是价格和用量之间的博弈了，opencode 的 ds 可以用 100 刀出去
+
+- Opencode 可以蹬个爽，但是推理很慢很慢。。
+  - 冲了个 ollama 的 pro，感觉速度快了很多，据说是因为在 N 卡推理的，比 ds 官方和 Opencode 都快很多
+- ollama 的是自己部署的 + 量化版的 无限接近于官方的，好处就是他们的峰是拆那的夜晚，白天上班都是谷，加上速度常态基本都是 250+ 所以体验确实好上不少
+- ollama 还有个优势，他的低峰期对应国内上班时间，所以算下来比 workbuddy 是要便宜的。
+
+- 我开了一个 opencode go，然后两个 commandcode goat，根据上次 ds 服务器崩溃的情况来看，opencode go 和 commandcode goat 套餐里的 deepseek v4 flash 都是第三方的，但是 commandcode goat 里面的 deepseek v4-flash-fast 这个模型是 ds 官方的。
+所以如果想用套餐里的便宜 ds，要考虑好其他问题，我个人感觉无论是 opencode 还是 command 都会慢一点，但是 commandcode goat 里面的 deepseek v4-flash-fast 因为是正价，所以快且贵，这就自己取舍了，用 commandcode goat 的，有正价也有第三方自建的 API，可选性比较强，反正我一个月三个套餐再加一个 kimi 159 的，基本都用完，还得额外再用一些 ds 的官方 api。
+
+其实用下来，我个人认为，不能指望第三方服务商能带来多大收益，而是对比你自己手上的任务，能否略微退而求其次，就是关键的地方用好的，然后不用那么强模型能力的地方，就稍微放宽要求，用第三方的。
+就像别人做规划用 claude，然后执行换弱一些的模型一样，哪些部分用什么自己掂量着来吧，反正即使是 commandcode goat 里的 dsv4flash fast，我自己算下来成本跟官方价没啥差别。
 
 - ## [Gemini pro 💲8.99每个月，美区，划不划算，有没有合适的选择？ - LINUX DO _202610](https://linux.do/t/topic/3070316)
 - 用日区 720 日元的啊，除了 YouTube 权益有区别，AI 方面是一样的
@@ -3051,13 +3104,13 @@ Cloudflare → 安全性 → WAF → 自定义规则 → 创建规则。
   - 国内直连、高稳定、多模型 AI API 中转，支持 GPT-4o/Claude Opus 满血，企业级技术支持。
 - 另外确定目标用户：
 
-01.                                                                                                                                                                                                                                                                                 个人开发者：
+01.                                                                                                                                                                                                                                                                                                 个人开发者：
 特别厉害的个人开发者其实自己也可以解决我刚刚写的那些东西，所以我就不跟这些人卷了，我去闲鱼上找了很多代写项目，毕业设计，软件开发的开发者，这部分人一般懒得折腾，不懂如何配置号池。
 
-01.                                                                                                                                                                                                                                                                                 ai套壳创业者：
+01.                                                                                                                                                                                                                                                                                                 ai套壳创业者：
 他们需要稳定的api，高并发，子账号，针对这部分用户定制了一些企业级的面板和技术支持，然后去三四线城市的boss直聘/转转找各种ai创作视频，装修，ai做本地服务的小团队小企业，跟他们聊合作。
 
-01.                                                                                                                                                                                                                                                                                  中小企业/传统行业/实验室
+01.                                                                                                                                                                                                                                                                                                  中小企业/传统行业/实验室
 他们需要合规，开发票，私有路由，所以我在国内开了个公司，给他们走合规公司签单。
 
 其次就是做seo，小红书，抖音，比如我这篇文章就是一篇seo，seo的核心就是why what how 通过教别人如何搞中转站，如何使用claude code获取流量，当然你也可以发布在知乎掘金csdn个人博客V2EX、NodeSeek、SegmentFault、Linuxo

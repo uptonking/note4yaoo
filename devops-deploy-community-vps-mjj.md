@@ -26,6 +26,10 @@ modified: 2026-06-19T06:15:35.007Z
   - 很多oneman老板喜欢改规则, 现有套餐续费/升年付的价格也可能会变化
   - 买鸡不需要等双十一/黑五, 传家宝/性价比机型本身限量, 碰到合适的就先收
 
+- vps-industry
+  - 高等级的vip其实也是厂商的销售, 因为返现/手续费/push/交易市场等各种优惠
+  - 有的人专门收藏传家宝类型的小鸡， 然后挂到独角鲸/大大怪类似的nat平台回血， 自己用一部分，也租给别人用一部分
+
 - mjj-options
   - 偏线路? 偏性能?
   - ip能访问、 未送中, 打开google访问的不是 google.com.hk
@@ -33,8 +37,10 @@ modified: 2026-06-19T06:15:35.007Z
   - 建站鸡: netcup, oracle, ccs, racknerd, cloudcone, hostdzire
   - 小拉鸡: cloudnium, dedirock, raksmart, dartnode
   - 性能鸡: bero, ovh, 独服
+    - 性能鸡适合做高并发计算、数据库服务器
   - 落地鸡: lightlayer, legendvps, bagevm, panstar, 面包云, zouter, wawo, vp.s
     - bagevm的de
+  - 大盘鸡: 大文件存储, 小文件存储
 
 - vps-vpn/落地
   - 可考虑 普通线路 + 优质落地 的组合， 就是要折腾下
@@ -2341,6 +2347,23 @@ PletX.net DDoS Protection
 AMD EPYC 7742 64-Core Processor @ 2250.000 MHz ，单核得分1568，GB6得分1095
 
 - 
+
+# discuss-vps-marks
+- resources
+
+- cons
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [出一台 BreezeHost 的去年黑五 50 刀 AMD 盲盒 _202611](https://www.nodeseek.com/post-1044677-1)
+出一台 BreezeHost 的去年黑五 50 刀 AMD 盲盒，机器在洛杉矶，1Gbps，具体配置为
+双路 AMD EPYC 7401 24-Core Processor ，48 核 96 线程
+256G DDR4 内存，4X2T SSD，带硬件阵列卡，当前做的是 RAID 10
+机器带 IPMI ，续费 50 刀，5000+剩余价值出
 
 # discuss-vendors
 - resources
