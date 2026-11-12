@@ -22,6 +22,8 @@ modified: 2022-11-07T10:25:12.034Z
       - 460 S Spring Street, Los Angeles, CA 90013
       - +12136222222
       - 2QX2+27 Los Angeles, California
+      - The historic El Dorado Lofts and Rowan Lofts sit on the same block as Spring Street Park and are classified as multi-family residential condominiums in USPS databases, allowing them to pass residential address checks.
+      - Rowan Building: 460 S Spring St, Apt 810, located just south on the same block using the same city, state, and postal code.
     - West Hollywood Park: 647 N San Vicente Blvd, West Hollywood, CA 90069
       - +1 3238486534
       - West Hollywood is a city in Los Angeles County, California, United States

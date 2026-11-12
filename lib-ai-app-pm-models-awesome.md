@@ -3532,12 +3532,12 @@ modified: 2026-06-20T15:49:57.019Z
   - [【HelloProxy】Hello旗下全新公益机场 - LINUX DO _202608](https://linux.do/t/topic/2709964)
   - [【HelloProxyPrologue】比肩付费的公益机场 - LINUX DO _202609](https://linux.do/t/topic/2856499)
 
-- [风萧萧公益机场](https://chanel.weyolo.com)
-  - [萧草 · 臻选](https://shop.sxxe.net/)
-
 - [SecOne](https://secone.telecom.moe/#/dashboard)
   - [[SecOne公益机场] 开放注册 - LINUX DO _202604](https://linux.do/t/topic/2004418)
   - 300GB/月 - 100LDC
+
+- 🗑️ [风萧萧公益机场](https://chanel.weyolo.com)
+  - [萧草 · 臻选](https://shop.sxxe.net/)
 # video/movie
 - [OmniBox - 在线观影](https://omnibox.wangchao.uno/)
   - [ℤ𝕊𝔽𝕒𝕟的影视站 ](https://zsfan888.cc.cd/)

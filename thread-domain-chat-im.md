@@ -676,7 +676,8 @@ The PSU Farmers Market takes place every Saturday morning near Portland State Un
 - 
 
 # discuss-google-accounts
-- ## 
+- tips
+  - 接码和发短信验证会风控同一手机设备的扫码次数和同一手机号的接码次数，最好准备多个设备和多个号码轮流验证, 多次尝试了还是可能失败
 
 - ## 
 
@@ -685,6 +686,50 @@ The PSU Farmers Market takes place every Saturday morning near Portland State Un
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Stuck in Google Anti-Bot QR / MO-SMS Verification Loop on PC ("Device used too many times") when authenticating Google Antigravity / Gemini Code Assist : r/googlecloud _202609](https://www.reddit.com/r/googlecloud/comments/1wr91td/stuck_in_google_antibot_qr_mosms_verification/)
+  - sceenshot the qr code and send the photo to family to scan it .. that worked for me
+- Worked for me too! Thanks 
+
+- ## [Goole 验证二维码【放弃】 _202610](https://www.nodeseek.com/post-985556-1)
+  - The device you used to scan the QR code was used too many times for verification
+  - 设备：苹果 小米
+  - 网络：家宽 搬瓦工
+  - 我tello 成功过一次 后面在验证就不行了 操蛋
+
+- 让你换设备就是IP脏了，换一个节点吧！
+  - 一个sixtynet家宽 一个搬瓦工 
+- 我这里瓦工的IP，一直就是设备不支持提示，连找回密码操作都不可以做。换了个莫名其妙的节点，就好了。
+
+- ## [谷歌账号弹扫码 _202611](https://www.nodeseek.com/post-1023541-1)
+  - 对方号码是 244444， 96831 这些，发不出去
+
+- 用 hk 节点登录，手机扫码的也是同 ip，就会发短信到+852， 国内或者香港手机号都可以发
+
+- ## [现在在国内还有办法注册 Google 账号吗？ - V2EX _202606](https://www.v2ex.com/t/1218362?p=2)
+- 美国节点扫码会让发短信到 96831 ，这时用 giffgaff 发不出去。节点切换到香港节点，会让发短信到 85264522353 ，这时候在号码前面加 00 ，即：0085264522353 ，就可以发出短信了。
+  - 感谢。我这边中国的+86 ，切香港节点后成功了
+
+- 之前用美国节点短信接收方是000590104，96831，244444，这种发送不了
+
+- ## [谷歌账户要验证手机，这步怎么过跟各位求教 - LINUX DO _202610](https://linux.do/t/topic/3026673)
+  - 绑了 2FA，也能输密码过验证，但就是最后登陆之前，它要我做验证。
+  - 国内手机我用了，发短信到 //96831？是什么鬼，我发了，但没效果。求佬友支招  
+  - 点了试试其他方式，仅此一种方式，点了还是这个页面，还是手机扫码。
+
+- 用手机 /ipad 下载 Google app，打开手机设置里的谷歌服务选项，在 Google app 里登录一个
+正常的谷歌账号，用 google app 内部的扫码功能扫码即可
+
+- 这个我前些天刚过了。我的操作是：
+手机开全局的美国加宽梯子；
+下载谷歌（注意，这是谷歌，不是 Chrome）；
+用谷歌这个软件扫就行了，就不会让你发验证码了。
+
+- mobile 端下载 google app (非 chrome) 以及 youtube
+用 google app 扫码
+跳转后然后点击确认登录地址即可
 
 - ## [关于gmail防封以及被封后申诉问题（分享） _202404](https://www.nodeseek.com/post-88578-1)
 近期看到很多mjj因为gmail的封停烦恼，作为一个号商来说，简单分享一点防封技巧和被封后申诉技巧

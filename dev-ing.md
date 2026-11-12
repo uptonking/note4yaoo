@@ -347,6 +347,13 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1111
+
+- [腾讯全新搜索产品“元宝搜索”正式上线 - LINUX DO _202611](https://linux.do/t/topic/3156531)
+  - [元宝搜索-腾讯旗下新一代AI搜索 ](https://so.qq.com/)
+  - 需要微信/qq登录后使用
+  - 提供了公众号内容搜索和访问
+
 ## 1109
 
 - can i register a PaysafeCard account without being in europe?  can i use it outside europe?
