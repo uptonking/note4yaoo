@@ -3313,6 +3313,7 @@ https://xiaocaiwen.eu.org
 - tips
   - [Shlii - 高性价比的VPS平台 ](https://shlii.io/)
   - [超级大大怪的用户空间 ](https://www.nodeseek.com/space/30336#/discussions)
+  - [SHLII 库存状态 ](https://wdqgn.eu.org/)
   - 💰 充值手续费 5%
 
     - 提现到面板余额手续费 5%，提现到支付宝/微信手续费 13%，提现到 USDT 手续费 15%

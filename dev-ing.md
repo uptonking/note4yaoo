@@ -347,6 +347,15 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1112
+
+- One thing I deliberately did not claim
+Collaborative undo looked broken too: a probe returned true while leaving the text unchanged. But sharedUndo produced no transaction at all in that probe, which may just mean the Yjs undo scope was empty for a directly dispatched edit — so that is not evidence of a product bug. The plan treats collab as a hypothesis to settle with a real test after fix #1, rather than pre-emptively touching yUndoPlugin.
+
+- [[恢复了]ClinePass的Deepseek咋突然用不了了 - LINUX DO _202611](https://linux.do/t/topic/3160660)
+  - failed to generate stream from Vercel: failed to invoke model 'vmc/cw-deepseek-v41-flash-1017-fallbacks' with streaming: request failed with status 400: {"error":{"message":"user message must have content","type":"invalid_request_error","param":"messages.334.content","code":"invalid_request_error"}}
+- 💡 新开对话就可以用了
+
 ## 1111
 
 - [腾讯全新搜索产品“元宝搜索”正式上线 - LINUX DO _202611](https://linux.do/t/topic/3156531)
