@@ -347,6 +347,24 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1113
+
+- Both BrowserEditorWorkspace.tsx:36 and BrowserPaginatedEditorWorkspace.tsx:62 call the same hook with the same props
+  - Each workspace gets its own controller and its own document 
+  - RichEditorDemo.tsx:139-144 documents why they can't share one LocalRoom yet (two ProseMirror views echoing the same Y.Doc update deadlock the microtask queue — a known collab-layer bug, so the demo keeps documents independent).
+- BrowserEditorWorkspace: native flow editing
+  - ProseMirror's real contenteditable DOM is mounted. Editing is native: the browser handles caret, typing, IME, selection directly in ProseMirror.
+  - There is no pagination rendering at all — one continuous scrolling document
+  - the DOM stays a single flow. In web mode the flow estimator even fakes a 1,000,000px-tall page with zeroed top/bottom margins so layout math treats it as endless web flow
+- BrowserPaginatedEditorWorkspace: off-screen host + painted pages
+  - Hidden host: it can't be display:none: it must stay focusable for keyboard input, IME composition, and clipboard; overflow:hidden confines caret-reveal scrolling.
+  - Editing bridge — createPaginatedEditingSession binds pointer/keyboard listeners to the painted pages, maps positions through line geometry back into document offsets
+- the toolbar's Web/Vertical/Horizontal/Book toggle drives both editors, but for editor 1 it only changes viewport metadata/zoom (it never grows page gaps), while for editor 2 it genuinely re-lays-out pages — that asymmetry is inherent to the two front-ends, not a bug in your run.
+
+- Goal: Make the paginated editor caret behave like the plain editor caret: it blinks while the editor owns focus, disappears when focus genuinely leaves, survives a trip to the toolbar, and never regresses selection/range painting.
+  - Not ported, deliberately: FocusWatchdog periodic auto-refocus
+  - Out of scope: word-select/double-click normalization and pointer-drag range selection; shadow-DOM focus retargeting; window-blur handling
+
 ## 1112
 
 - One thing I deliberately did not claim

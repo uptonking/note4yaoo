@@ -135,7 +135,7 @@ you have worked on this problem several times but features are still lacking. Th
 - yes, continue to improve.
 - you may reference how superdoc implements/solves it, then do a similar or better implementation in begonia without licensing issue.
 
-- superdoc's overall architecture is good enough to follow. Mostly begonia should use similar architecture like superdoc.
+- superdoc's overall architecture is good enough to follow. Mostly begonia should use similar architecture like superdoc. you might improve the architecture/solution for begonia.
 - you might analyze related architecture/code and borrow good deisgn from upstream superdoc(source code at folder `../superdoc`) and rewrite it in functional-programming style for begonia to avoid licensing issues.
 - it is unnecessary to search the web for superdoc details, just analyze the source code at folder `../superdoc`.
 
@@ -154,7 +154,7 @@ compare the implementation logic/code of begonia with logic/code of superdoc to 
 - please recheck migrated features and improve the implementation in begonia. Analyze core data flow and implementation logic details for every major feature like , compare the implementation logic/code of begonia with logic/code of superdoc to recheck and enhance the correctness of architecture and logic in begonia, find possible bugs in code and fix them, refactor code if you need, make sure major features implementations in begonia are correct, modular, extensible for long-term maintenance. 
 - recheck and improve major features/architecture in begonia, make them correct and robust without guessing, the fewer bugs, the better.
 
-- prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret, document viewport/layout-engine(supports multi-column), toggling pagination, layout modes support vertical/horizontal/book like superdoc, multi-column layout supports unequal column widths like superdoc, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container like superdoc, zoom in/out, Canvas-based text measurement, performant line-breaking like superdoc, editing with undo/redo support, track-change/diff, overlap handling in track change like superdoc, comment, OOXML-support, API, SDK, CLI, Agent.
+- prioritize and recheck/improve major features like editor-data-model/rich-formatting, selection range/offset/caret/focus, document viewport/layout-engine(supports multi-column), toggling pagination, layout modes support vertical/horizontal/book like superdoc, multi-column layout supports unequal column widths like superdoc, virtualized-rendering should use scroll event listeners + spacer-based approach and have good support for horizontal-layout/external-container like superdoc, zoom in/out, Canvas-based text measurement, performant line-breaking like superdoc, editing with undo/redo support, track-change/diff, overlap handling in track change like superdoc, comment, OOXML-support, API, SDK, CLI, Agent.
 
 - you may deep research, and reference the upstream superdoc code, you may use similar dependencies, and implement similar logic, but you should rewrite it in functional programming style without licensing issues. 
 - core implementation in begonia for major features should be framework-agnostic without react, react should be used very sparingly. please improve and enhance the modular, extensible, headless core editor to be framework-agnostic, correct, robust.
@@ -1248,6 +1248,8 @@ finally make sure all tests run and pass locally with npm. you can update/fix te
 ## testing-mac/linux
 
 - running tests is slow on my mac, please refactor/improve to make it fast, also make it correct and fast in ci .github/workflows/validate.yml .
+# warning
+- the command/scripts/tests you just run might have a memory leak, it is eating up ram and disk space on my mac. 
 # rafactor
 - all code is beta software, legacy/unused code might be refactored or removed. compatibility layer is not required.
 
@@ -1337,6 +1339,8 @@ current code is under active development. please review and refactor code if you
 # libs
 - you should use npm package @embedpdf/viewer-react@3.0.0-next.1 to implement the pdf viewer, source code is at git repo `../embed-pdf-viewer` , you might refer to the api/docs/examples at the git repo.
 # harness
+- if you have almost the core info and enough understanding, please create the plan for implementation.
+
 - DO NOT use codex browser-use or computer-use skills, just focus on tests.
 
 - DO NOT use parallel subagents, just explore code directly.
@@ -1354,6 +1358,11 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 
 ## codex
 
+## eval/testing
+
+- Without using web search or any external sources, what’s  the latest prime minister in japan from your internal knowledge?
+
+- Without using web search or any external sources, what is your latest knowledge cutoff date?
 # llm-hub-lite/vps 🚧
 - leader: foundational services like git/woodpecker/beszel/openobserve
 - worker_1: ai like new-api/cpapi/librechat, auther

@@ -179,6 +179,8 @@ modified: 2021-05-06T09:39:53.522Z
 - search
   - 🤔 旧的产品交互逻辑在旧的时代都需要调整, 用户大多不想手动搜索, 直接在聊天框里输入指令，将搜索+后续工作一起执行
 
+- lazy-loading
+
 - 兼容obsidian extension
 
 - devtools

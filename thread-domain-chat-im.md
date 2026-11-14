@@ -689,6 +689,17 @@ The PSU Farmers Market takes place every Saturday morning near Portland State Un
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [谷歌提示设备验证次数过多怎么解 - LINUX DO _202611](https://linux.do/t/topic/3119610)
+  - 在网上看到其他解决方案，已经用上了：ios 登录 google one 和 YouTube，使用同一个谷歌账号，然后反重力提示扫码用 Google one 扫码，跳转 YouTube 直接认证登录！
+
+- 换设备扫码验证就行，不用发短信，他这个会验证扫码手机的 sim 卡，或者你可以把卡先换一下再扫
+
 - ## [Stuck in Google Anti-Bot QR / MO-SMS Verification Loop on PC ("Device used too many times") when authenticating Google Antigravity / Gemini Code Assist : r/googlecloud _202609](https://www.reddit.com/r/googlecloud/comments/1wr91td/stuck_in_google_antibot_qr_mosms_verification/)
   - sceenshot the qr code and send the photo to family to scan it .. that worked for me
 - Worked for me too! Thanks 

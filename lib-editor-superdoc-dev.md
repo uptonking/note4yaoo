@@ -90,6 +90,8 @@ modified: 2026-04-20T00:35:08.788Z
 - spec/format
   - bridge typst to superdoc
 
+- lazy-loading
+
 - 类似word的多种视图: print/web/outline/draft
 - multi-column布局示例
 

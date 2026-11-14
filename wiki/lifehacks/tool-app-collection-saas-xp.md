@@ -47,6 +47,15 @@ modified: 2022-11-07T10:25:12.034Z
       - 广东省 广州市 荔湾区 40 米 邮政编码: 510378
     - kazakhstan
       - Muratbaev St 61, Almaty 050000, Kazakhstan
+    - The residential tower La Tour Shibuya (ラ・トゥール渋谷) in Shibuya Ward passes Japan Post postal-code lookup (150-0011)
+      - Address Line 1: 1-2-20 Higashi
+      - Address Line 2: La Tour Shibuya #1503 (floors 12 to 25 are residential, so any unit like 1305, 1503, or 1608 works)
+      - Postal Code: 150-0011
+      - City / Ward: Shibuya-ku
+      - Prefecture / State: Tokyo
+      - Alternative Address (Shibuya 3-Chome)
+        - BPR Residence Shibuya #502, 3-13-5 Shibuya, Shibuya-ku, Tokyo 150-0002
+        - 〒150-0002 東京都渋谷区渋谷3-13-5 BPRレジデンス渋谷 502
 
 - 提高feed内容流中有效信息的密度
   - 暂停浏览较长时间后，平台recsys推荐流的信息更有效

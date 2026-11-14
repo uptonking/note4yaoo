@@ -1236,6 +1236,7 @@ modified: 2026-06-20T15:49:57.019Z
 - 📌 [AMD Radeon Cloud ](https://developer.amd.com.cn/radeon/tokenfactory)
   - Daily budget: $1
   - rpm: 30
+  - [AMD AI Notebooks ](https://notebooks.amd.com/tokenlab)
 
 - [Groq Rate Limits - Docs](https://console.groq.com/docs/rate-limits)
   - tldr: tpd-100k~500k
