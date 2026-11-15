@@ -614,7 +614,8 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## Kitesurf, CloudFlare stateless browser for AI agents is now open source _202611
+- https://x.com/ivanfioravanti/status/2121898499281154374
 
 - ## Three Ways Codex Can Use a Computer
 - https://x.com/jxnlco/status/2066970432855581052

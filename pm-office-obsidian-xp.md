@@ -183,8 +183,13 @@ modified: 2026-06-30T17:32:43.131Z
 ## draft-ai
 
 - pm
+  - pdf editing
+  - use citation for less hallucination
+  - multi-pass ocr
+  - local agent
   - 弱化chat/群聊相关功能, 不要花费过多精力在随处都有的chat上
   - bring your own agent, like paseo
+  - markdown office
 
 - features
   - doc skills hub with versioning/usecases

@@ -2394,6 +2394,28 @@ modified: 2026-06-20T15:49:57.019Z
   - qq号
   - 抖音号
 
+- [竑予 AI直通车 ](https://ai.hongyuhub.com/)
+  - https://x.com/Hongyu_XAi
+  - ¥26--Gemini正规充值 pro1 个月美区成品账号
+    - 质保20天订阅。（因为账号可能会少几天订阅时长）
+    - 本产品100%gcp 未封禁，gcp 若封禁账号是一定无法使用反重力的
+    - 只保证账号1个月会员不掉线，不承诺你一定能使用上antigravity，谷歌授权登录反重力有可能会导致风控，需要等待几天。
+  - ¥250--5x 成品
+
+- [Shop - 哪吒AI商城 ](https://realcaigu.com/)
+  - https://x.com/realCaigu
+  - ¥250--5x 成品
+
+- [赵赵ai小窝让Ai改变生活 ](https://zzaibox.cn/)
+  - ChatGPT、Claude、Gemini、Grok 等 AI 会员这里都有，价格实在，售后有人
+
+- [Kaede's Store ](https://store.akinokaede.com/)
+  - https://x.com/AkinoNya
+  - gpt
+  - https://x.com/AkinoNya/status/2121793350743503139
+    - 低价区也就15.61刀 你这会员价格就比15.61刀贵2元cny也太夸张了
+      - 对的，赚的就这两块钱
+
 ## 拼车/cli
 
 - [Clidex — 原生 Claude & Codex CLI 命令行工具 | 稳定免翻·灵活按量计费 ](https://clidex.dev/)

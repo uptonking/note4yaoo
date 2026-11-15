@@ -1250,7 +1250,9 @@ finally make sure all tests run and pass locally with npm. you can update/fix te
 
 - running tests is slow on my mac, please refactor/improve to make it fast, also make it correct and fast in ci .github/workflows/validate.yml .
 # warning
-- the command/scripts/tests you just run might have a memory leak, it is eating up ram and disk space on my mac. 
+- the command/scripts/tests you just run might have memory leaks, it is eating up ram and disk space on my mac. 
+fix it, then continue your task
+
 # rafactor
 - all code is beta software, legacy/unused code might be refactored or removed. compatibility layer is not required.
 
