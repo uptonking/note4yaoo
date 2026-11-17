@@ -90,28 +90,6 @@ curl -s "https://crt.sh/?q=%.example.com&output=json" | jq .
 - ## 
 
 - ## 
-
-- ## [深度分析各地区App Store 订阅价格 - LINUX DO _202604](https://linux.do/t/topic/1947655)
-  - 土耳其以 1400 条拿下榜首，而且相对美区均值仅 32.9%（深度折扣）——既量大又便宜，典型"货币贬值红利"地区。
-  - 尼日利亚 38.2%、印度 37.0% 并列最凶猛折扣梯队，但印度上榜的 app 总量少（138 个）。
-  - 巴基斯坦、加拿大、韩国 虽然上榜次数也接近千条，但相对美区均值都在 85% 左右——往往是"并列最低价"（多国按同一美元价定价）造成的统计增量，折扣深度有限。
-  - 想省钱，土耳其区（TR）最值得开小号——量最多、折扣最深。其次是尼日利亚（NG）
-
-- ## [App Store 各区 App 订阅价格速查对比在线表格 自动更新 - V2EX _202505](https://global.v2ex.co/t/1132573)
-  - 之前因为付款方式限制的原因，很多应用/服务都需要本地付款方式，导致目前有不少都迁移到了 App Store 内购（ IAP ）的方式，主要在美国、土耳其、印度等区域。用 Google Sheets 建了一个在线的价格动态表格，一方面方便跟踪（因为定价经常会变，汇率一直变，订阅套餐不时也会调整），方便查看（过滤、排序等），协同而且可以自动更新，也方便共享给需要的人。
-  - Apple 不提供能查询 App 内购项目和价格的公开 API ，这里是通过 IMPORTXML 加 XPath 从网页抓取数据。按照 Google 的文档，刷新时间应该是 1 小时
-  - App Store 区域代码按照 ISO 3166 ，区域货币代码按照 ISO 4217 ，通过区域正式英文名查询，数据来自 https://datahub.io/core/country-codes
-  - https://docs.google.com/spreadsheets/d/1G6HGCfYW6CBAQmf6UC0EVBD6l79EyLWcIvNbkTsXEAo/edit?hl=en_US&pli=1&gid=1144211665#gid=1144211665
-
-- 这应用也太少了，能不能把怎么搭建的分享出来，我们自己搭建呢？
-  - 有需要的应用可以列出来我加在这个表里，或者你也可以利用里面的公式另外做个表抓数据。不用搭建什么，所有东西都在 Google Sheets 里面，也都是可以看到的，“重用及增强”和“内部实现”里面也有说明。
-
-- ## [账号，除了美区、土区，还有哪些区值得持有 _202408](https://www.nodeseek.com/post-151409-1)
-- google one 2T最便宜就是土区和埃及，土区399首年/499续费，埃及一样。不过土区和埃及都锁卡了，走apple土区内购599。
-  - 剩下便宜的区域就是印度、菲律宾、乌克兰；记得尼区和奈区比印度贵点。
-  - 另外ytb和one 各区价格不是成正比的。
-
-- 土记得涨了啊，看看尼日利亚吧
 # discuss-payment
 - ## 
 
@@ -457,6 +435,26 @@ curl -s "https://crt.sh/?q=%.example.com&output=json" | jq .
 
 - [263个仍可注册的便宜2字母域名  _202511](https://idcflare.com/t/topic/37658)
   - aj.uy
+# discuss-domain-hot-com/net/org
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [通过 Google Workspace 实现 14 人民币每年购买 com net 等顶级域名（续费同价） - LINUX DO _202606](https://linux.do/t/topic/2291068)
+  - 一直以来，com 域名的价格都在 70 + 左右，有时候即使首年很便宜，但是续费却仍然需要 70 + 的价格，而现在有一个方案可以实现首年只需要 14 元人民币就可以购买到一个 com net 等顶级域名，续费也是 75 里拉，约人民币 11 块。
+  - 核心：利用土耳其的低价进行购买
+  - 一张实体信用卡 （虚拟卡会触发风控，要求上传照片
+
+- 我的 bybit 不行
+
+- 现在手机验证扫二维码，提示我此设备用于验证太多，不让我过
+  - 碰到了google的常规风控
+
+- 这个 workspace 的谷歌号是可以去用反重力 free，创 aistudio 的 key，但是千万不要点 https://console.cloud.google.com 然后同意条款 ，不然就变成付费账户，创的 key 也不是免费层级了
 # discuss-cn-traffic/dns
 - ## 
 

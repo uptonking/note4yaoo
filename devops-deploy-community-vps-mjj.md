@@ -33,12 +33,12 @@ modified: 2026-06-19T06:15:35.007Z
 - mjj-options
   - 偏线路? 偏性能?
   - ip能访问、 未送中, 打开google访问的不是 google.com.hk
-  - 线路鸡: dmit, bandwagon, vmiss, 白丝云cloudsilk, 咸鱼云
+  - 线路鸡: dmit, bandwagon, vmiss, 白丝云cloudsilk, 咸鱼云, 4837, 9929, 三网各自优化
   - 建站鸡: netcup, oracle, ccs, racknerd, cloudcone, hostdzire
   - 小拉鸡: cloudnium, dedirock, raksmart, dartnode
   - 性能鸡: bero, ovh, 独服
     - 性能鸡适合做高并发计算、数据库服务器
-  - 落地鸡: lightlayer, legendvps, bagevm, panstar, 面包云, zouter, wawo, vp.s
+  - 落地鸡: lightlayer, legendvps, bagevm, panstar, zouter, wawo, vp.s
     - bagevm的de
   - 大盘鸡: 大文件存储, 小文件存储
 

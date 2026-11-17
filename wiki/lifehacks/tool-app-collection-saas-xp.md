@@ -14,7 +14,7 @@ modified: 2022-11-07T10:25:12.034Z
     - surname: king
   - [names.org - The Meaning Of Names](https://www.names.org/)
   - address
-    - Providence Park: 1844 SW Morrison Street, Portland, OR 97205
+    - 🇺🇸 Providence Park: 1844 SW Morrison Street, Portland, OR 97205
       - +15035535400
       - G8C5+J7 Portland, Oregon
     - Spring Street Park: 428 S Spring Street, Los Angeles, CA 90013
@@ -28,10 +28,6 @@ modified: 2022-11-07T10:25:12.034Z
       - +1 3238486534
       - West Hollywood is a city in Los Angeles County, California, United States
       - more:  90069-0009
-    - 佛山市顺德区
-      - 528311
-      - 广教地铁站C出口美的小区
-      - 3栋6楼
     - dartnode help contact
       - 3723 Greenville Ave, STE 41038, Dallas, Texas 75206
       - +1 8449963278
@@ -39,15 +35,21 @@ modified: 2022-11-07T10:25:12.034Z
         - Lindsley Park
         - 7115 Lindsley Ave, Dallas, TX 75223
         - R756+4H Dallas, Texas
-    - guangzhou fengchi
+    - 🇨🇳 guangzhou fengchi
       - Longxi Bus Baoyangchang
       - No.5 Yuhai Road Longxi Street, Liwan District, Guangzhou, Guangdong Province, China, 510378
       - 合力轮胎店 Heli Tire Store
       - 13710198827
       - 广东省 广州市 荔湾区 40 米 邮政编码: 510378
-    - kazakhstan
-      - Muratbaev St 61, Almaty 050000, Kazakhstan
-    - The residential tower La Tour Shibuya (ラ・トゥール渋谷) in Shibuya Ward passes Japan Post postal-code lookup (150-0011)
+    - 佛山市顺德区
+      - 528311
+      - 广教地铁站C出口美的小区
+      - 3栋6楼
+    - 🇰🇿 kazakhstan
+      - Muratbaeva Street 61, Apt 18
+      - City / Region: Almaty, Almaly District
+      - Postal Code: 050026
+    - 🇯🇵 The residential tower La Tour Shibuya (ラ・トゥール渋谷) in Shibuya Ward passes Japan Post postal-code lookup (150-0011)
       - Address Line 1: 1-2-20 Higashi
       - Address Line 2: La Tour Shibuya #1503 (floors 12 to 25 are residential, so any unit like 1305, 1503, or 1608 works)
       - Postal Code: 150-0011
@@ -56,6 +58,15 @@ modified: 2022-11-07T10:25:12.034Z
       - Alternative Address (Shibuya 3-Chome)
         - BPR Residence Shibuya #502, 3-13-5 Shibuya, Shibuya-ku, Tokyo 150-0002
         - 〒150-0002 東京都渋谷区渋谷3-13-5 BPRレジデンス渋谷 502
+    - 🇹🇷 turkey/turkiye
+      - Anthill Residence is one of the largest multi-unit residential complexes in central Şişli, making it easy to locate in automated UAVT dropdown menus.
+      - Cumhuriyet Mah., Incirlidede Cad., No: 6, Daire: 42, 34380 Sisli / Istanbul
+      - Turkish Format: Cumhuriyet Mahallesi, İncirlidede Caddesi, Anthill Residence No: 6, İç Kapı No: 42, 34380 Şişli / İstanbul
+      - (Province) & İlçe (District): İstanbul, Şişli
+      - Cadde / Sokak (Street): İncirlidede Caddesi
+      - Mahalle (Neighborhood): Cumhuriyet Mahallesi
+      - Bina No (Building) & Daire No (Unit): Bina No: 6 (or 6/2), Daire / İç Kapı No: 42
+      - Posta Kodu (Postal Code): 34380
 
 - 提高feed内容流中有效信息的密度
   - 暂停浏览较长时间后，平台recsys推荐流的信息更有效

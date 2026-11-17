@@ -347,6 +347,14 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1117
+
+- how to put cursor at end of table
+
+## 1116
+
+- The thing that would actually speed up mid-document typing is page-prefix incremental pagination — reuse pages before the dirty one, repaginate from there — not projection patching. It is the design ../superdoc effectively uses, and it needs care with footnotes, section balancing and page-number fields. A smaller provable slice first: allow the reuse when the block's line count changes but it is the last placement on its page and the following blocks have slack, so no page break can move. Say the word and I will take that on; it is scoped enough to verify with the same three smokes.
+
 ## 1113
 
 - Both BrowserEditorWorkspace.tsx:36 and BrowserPaginatedEditorWorkspace.tsx:62 call the same hook with the same props

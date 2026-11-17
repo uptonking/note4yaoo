@@ -647,7 +647,12 @@ You can purchase various handmade items, jewelry, textiles, and prints from loca
 The PSU Farmers Market takes place every Saturday morning near Portland State University's Park Blocks. It operates seasonally from May to October, selling fresh produce, cheese, meat, jams, bread, and flowers directly from Oregon farms. It is one of the markets that represents Portland's food culture, and local restaurant chefs are known to come here to buy ingredients. There are also many booths selling freshly prepared food, allowing you to enjoy breakfast while shopping.
 
 - If you're planning to shop in Portland, it's worth keeping an eye on seasonal sales events. With a tax-free environment and additional discounts during Black Friday or the holiday season, you can save significantly.
-# discuss-apple-accounts
+# discuss-apple-accounts 🍎
+
+- cheaper
+  - 土耳其, 尼日利亚, 埃及, 巴基斯坦
+  - 菲律宾, 印度
+  - 巴西, 日本, 加拿大
 - ## 
 
 - ## 
@@ -657,6 +662,57 @@ The PSU Farmers Market takes place every Saturday morning near Portland State Un
 - ## 
 
 - ## 
+
+- ## [欧洲appleid注册问题 - LINUX DO _202601](https://linux.do/t/topic/1494273)
+我想下载欧盟的 bybit app.
+本来去官网注册选择德国，最后 + 86 手机号接验证码，无法通过.
+
+于是换了个骚操作，去德国 apple music 的网站上，注册了一个账号，成功注册.
+
+去 appleid 官网登录，也是要邮箱验证码然后是手机号 +86 的手机号接收验证码后还是无法继续.
+
+再之后我就去手机 appstore 登录，输入完邮箱验证码后，也是登录不上去.
+
+太难了，是必须德国手机号么？还是再有什么其他的骚操作？求教
+
+- 现在开始都得当地手机号了。
+不过印象中虚拟号可以。
+
+- ## [我可以使用巴基斯坦apple store订阅台湾claude吗？ _202610](https://www.nodeseek.com/post-1003391-1)
+  - 用台湾IP注册账户，用巴基斯坦的苹果账号续费，这样可行吗？这样账号算什么区的？
+- 巴基斯坦应该没有礼品卡，小众地方都没有
+  - 开虚拟卡绑Apple或者开电话卡绑Apple还有买苹果礼品卡开美区，低价不太存在了，巴基斯坦埃及水很深，日本可以礼品卡
+
+- 可以，但是苹果要当地卡，sadapay这种都是一年体验卡，不如老老实实充钱，我的评价是
+
+- ## [如何开埃及 巴基斯坦奈飞 _202609](https://www.nodeseek.com/post-941033-1)
+- 当地节点加礼品卡
+
+- 需要当地卡。
+
+- ## [已解决！美区和国区 Apple ID 都无法创建，是 +86 手机号的问题吗？ _202610](https://www.nodeseek.com/post-1003943-1)
+  - 想注册一个新的 Apple ID，选择美区并填写 +86 手机号时，提示： Your account cannot be created at this time.
+  - 后来尝试注册国区账号，也出现同样的问题。这个手机号之前用于注册过另一个 Apple ID。
+  - 打了客服电话 貌似邮箱风控了
+
+- 直连现注册国区，再改外区，或者换手机号试试
+
+- [If you can’t create an Apple Account or see “your account cannot be created at this time” - Apple Support ](https://support.apple.com/en-us/120636)
+  - If you’re trying to create an Apple Account and see a message that says the email address or phone number is unavailable or can’t be used, then an Apple Account already exists that uses it. Try a different email address or phone number, or reset your password for that account.
+
+- ## [注册Apple ID提示“此时无法创建你的账户”或“your account cannot be created at this time”解决方法 - LINUX DO _202503](https://linux.do/t/topic/465862)
+  - 出现这种情况是 Apple 的风控策略导致的，这时候你可以直接去找苹果客服解决问题。
+开始跟客服 battle，描述你遇到的问题，如：
+hi, i have a problem that i can’t create my apple account, please help me.
+when i enter the verification code, it tell me that your account cannot be created at this time.
+之后他会帮你把你的邮箱加到白名单里，这时候重新注册就可以了。
+
+- 👷20261117: 实测更换为gmail/手机号后， 可以成功注册
+
+- ## [是尼日利亚区的apple id买东西便宜还是土耳其区的。 _202603](https://www.nodeseek.com/post-656927-1)
+- 我尼区三个土区一个印区一个具体看你买什么软件
+
+- 
 
 - ## [无限@icloud.com邮箱 _202607](https://www.nodeseek.com/post-817277-1)
 - 由于注册gpt的邮箱使用域名邮箱容易风控，所以当你有icloud+服务的时候你就有无限邮箱了。
@@ -675,6 +731,84 @@ The PSU Farmers Market takes place every Saturday morning near Portland State Un
 - 
 - 
 
+- ## [【干货】注册和维护各国Apple ID _202605](https://www.nodeseek.com/post-712121-1)
+一、注册
+注册方法：
+1、先注册国区ID（这里是指你自己所在的国家地区，比如你是卢旺达人，你就注册卢旺达的账号），这个是最便捷的方法，毕竟就算要手机号认证，也方便获取到。
+2、登陆Apple ID官网，把ID地址修改成你要的国家，比如，美国，土耳其，刚果金等，这样，你就得到了一个外区的ID啦。
+3、记得登陆App Store，随便下载一个免费软件，点几个同意协议之后，就算是激活这个ID了，不需要登陆iCloud。
+理论上你可以获取到全球的Apple ID，但有些地方风控严格或者你网络问题，转换地址的时候如果碰到要绑定信息卡等支付方式时，可以先不用管，ID放个一周左右，你再转换试试。
+我个人是分别注册到了美国、日本、瑞士、土耳其、香港等ID，使用上完全没有问题，都是先注册国区再转的。
+小技巧：如果用电脑或手机登陆官网注册不成功，你可以下载Apple Music这个软件，通过这个软件来注册账号，会免掉一些风控问题，更容易注册成功。
+
+充值方法：
+各国的苹果官网，都可以购买电子Gift Card（礼品卡），这个是最安全便捷的，购买后，收到卡密，直接打开App Store，输入密码充值立即到账。缺点就是，起充价格较高，比如美区的10美刀起，国区的貌似是150人民币？
+
+在上一步你购买礼品卡充值之后，你可能会发现，只能支付订阅和购买App，但在App内购时，会弹出错误无法内购。这个是正常的，苹果风控的手段。风控时间大概会在7天-15天不等，建议直接放着不动，保持ID登陆在App Store，不用找客服，也不要每天都是尝试内购，就直接等，等到7天了试一下，不行就10天了试一下，再不行就15天、一个月，一个字，等。
+使用绑定支付方式的，比如PayPal等，也内购不了，这个也是苹果风控，绑定之后，大概48个小时后，就能正常使用了。这里还要考虑一下PayPal自己的风控，比如你PayPal绑了银行卡，可能也是得等几天才能被苹果内购使用。
+多设备切换。在不同设备登陆ID的话，也是不能立即内购的，登陆后大概也是需要48小时后才能内购使用，但购买App和订阅是不会有影响，可以立即支付。
+不需要用专门的节点养号，你平时该怎么用就怎么用。
+
+- 白嫖
+1、是的，白嫖。不想自己注册ID，也不想花钱购买ID，那能不能白嫖到外区ID呢？能的，老铁，能的。网上很多共享的ID，随便找一个，只要能登陆到App Store的就行，切记不要登陆到手机的iCloud。
+2、共享ID如果能正常登陆到App Store，说明这个ID没有被风控，也没有双重认证。那么，骚操作来了，你打开网页Apple ID官网，用这个共享ID登陆看看，能不能正常登陆。能登陆，那很好，登陆后，开启双重认证，然后，输入你的手机号码绑定，OK，这个ID是你的了，重新设置密码和密保就行啦。
+3、共享ID不能正常登陆Apple ID官网怎么办？骚操作来了，你点密码重置，看看会不会弹出密保，如果有密保，看有没有重置密保的地方，反正就是来回点，很有可能也会有弹出的提示，让你升级双重认证，这样，你直接开双重认证，这ID就是你的啦。
+
+- 开启双重认证 如果你进不去原油 那么还是会被取消，一般这种共享ID的项目都有后端在维护 你绑了二验就会被程序自动取消掉，然后号被风控毁号 损人不利己不说 你自己的电话号也有概率被风控无法绑定苹果ID或者注册账号 各位不要乱试
+  - 亲测，不会。
+- 亲测发生过
+
+- 所以apple ID可以不用新注册，只要将已有的apple ID在官网修改国家/地区，就可以将其变为对应的国家ID，就能下载对应国家/地区才能下载的APP？ 有修改次数限制吗？
+  - 不知道有没有修改次数限制，但不建议来回修改切换，说不定会被风控。而且，如果有余额的话，貌似不能切换或者切换后余额清零。
+
+- 风控可以联系苹果客服恢复
+
+- ## [账号，除了美区、土区，还有哪些区值得持有 _202408](https://www.nodeseek.com/post-151409-1)
+- google one 2T最便宜就是土区和埃及，土区399首年/499续费，埃及一样。不过土区和埃及都锁卡了，走apple土区内购599。
+剩下便宜的区域就是印度、菲律宾、乌克兰；记得尼区和奈区比印度贵点。
+另外ytb和one 各区价格不是成正比的。
+
+- 水果的话
+国区 美区 港区 日本 新加坡 英国 爱尔兰
+看需求 这些搞齐基本上够了
+
+- ## [建议提前备几个低价区apple id（内含注册流程） _202605](https://www.nodeseek.com/post-730919-1)
+  - 众所周知，apple id新号会经历风控期，限制内购，找客服解封有概率被直接封号，所以最好的办法还是提前注册好先放着，等到用的时候已经成为老号，目前apple id注册比较简单，不需要对应区ip就能注册，真心建议趁还没关门的时候早点注册。
+
+土耳其：老牌apple低价区，gpt plus、google one、infuse、termuis等
+
+尼日利亚：claude，spotify、netflix、surge等
+
+菲律宾：gpt pro
+
+埃及：gemini
+
+印度：grok
+
+巴基斯坦：netflix
+
+大部分app订阅最低价都在以上6个地区当中产生
+
+- 实测注册一年的老号还是会风控，找客服申诉结果彻底封号
+
+- ## [深度分析各地区App Store 订阅价格 - LINUX DO _202604](https://linux.do/t/topic/1947655)
+  - 土耳其以 1400 条拿下榜首，而且相对美区均值仅 32.9%（深度折扣）——既量大又便宜，典型"货币贬值红利"地区。
+  - 尼日利亚 38.2%、印度 37.0% 并列最凶猛折扣梯队，但印度上榜的 app 总量少（138 个）。
+  - 巴基斯坦、加拿大、韩国 虽然上榜次数也接近千条，但相对美区均值都在 85% 左右——往往是"并列最低价"（多国按同一美元价定价）造成的统计增量，折扣深度有限。
+  - 想省钱，土耳其区（TR）最值得开小号——量最多、折扣最深。其次是尼日利亚（NG）
+
+- [App Store Price - 发现全球 App Store 最低价 ](https://appstoreprice.org/zh)
+
+- 
+
+- ## [App Store 各区 App 订阅价格速查对比在线表格 自动更新 - V2EX _202505](https://global.v2ex.co/t/1132573)
+  - 之前因为付款方式限制的原因，很多应用/服务都需要本地付款方式，导致目前有不少都迁移到了 App Store 内购（ IAP ）的方式，主要在美国、土耳其、印度等区域。用 Google Sheets 建了一个在线的价格动态表格，一方面方便跟踪（因为定价经常会变，汇率一直变，订阅套餐不时也会调整），方便查看（过滤、排序等），协同而且可以自动更新，也方便共享给需要的人。
+  - Apple 不提供能查询 App 内购项目和价格的公开 API ，这里是通过 IMPORTXML 加 XPath 从网页抓取数据。按照 Google 的文档，刷新时间应该是 1 小时
+  - App Store 区域代码按照 ISO 3166 ，区域货币代码按照 ISO 4217 ，通过区域正式英文名查询，数据来自 https://datahub.io/core/country-codes
+  - https://docs.google.com/spreadsheets/d/1G6HGCfYW6CBAQmf6UC0EVBD6l79EyLWcIvNbkTsXEAo/edit?hl=en_US&pli=1&gid=1144211665#gid=1144211665
+
+- 这应用也太少了，能不能把怎么搭建的分享出来，我们自己搭建呢？
+  - 有需要的应用可以列出来我加在这个表里，或者你也可以利用里面的公式另外做个表抓数据。不用搭建什么，所有东西都在 Google Sheets 里面，也都是可以看到的，“重用及增强”和“内部实现”里面也有说明。
 # discuss-google-accounts
 - tips
   - 接码和发短信验证会风控同一手机设备的扫码次数和同一手机号的接码次数，最好准备多个设备和多个号码轮流验证, 多次尝试了还是可能失败
@@ -691,7 +825,87 @@ The PSU Farmers Market takes place every Saturday morning near Portland State Un
 
 - ## 
 
-- ## 
+- ## 🇹🇷📌 [我是土耳其人：支付宝 ¥280 元开通Google AI Ultra 实测 _202611](https://x.com/0xbawan/status/2121820741088002479)
+  - 先说结论：这条路我完整跑通了，而且 280 元买到的不是一个单品，是 Google One 的全家桶打包。
+  - Google AI Ultra 5X，美区 $99.99/月，土耳其区苹果内购只要 ₺1, 989.99/月，折合人民币 280 元上下，不到美区的四折。
+  - 注册一个土耳其区 Apple ID → 在 SEAGM 买土耳其区礼品卡充值 → 在 iPhone 上用「Google」App 先订最便宜的 Lite → 再升级到 Ultra。
+- 为什么偏偏是土耳其？四个理由：
+  - 价格是全球第一梯队的低。 Ultra 5X 土区官网价 ₺1, 479.99/月，苹果内购价 ₺1, 989.99/月（约 ¥264–280，按下单时汇率和礼品卡溢价浮动）。美区同档 $99.99/月，约 ¥710。一个月省 400 多，一年就是小五千。
+  - 不用土耳其银行卡。 这是最关键的一点。很多低价区便宜归便宜，付款要当地银行卡，直接卡死。土区可以用礼品卡绕开：卡在国内平台就能买，支付宝就能付。
+  - 礼品卡渠道成熟。 SEAGM、G2A 等平台常年有土耳其区 iTunes 礼品卡现货，面额从 ₺10 到 ₺2, 000 都有，即时发卡，不用找代充、不用把账号密码交给任何人。
+  - 对 Google 账号没要求。 你的 Google 账号是美区、中国区还是新区都行，不用转区、不用新注册。前提只有一个：这个 Google 账号当前没有生效中的 Google One 订阅，否则会和苹果内购冲突。
+- 对比一下几个热门区你就懂了：巴基斯坦、埃及的标价更低，但当地礼品卡难买、付款方式难搞；印度、菲律宾的 Ultra 价格明显高于土区。
+  - 土区是「便宜」和「好搞」之间最好的平衡点，没有之一。
+
+- 为什么官网付不了，苹果内购却可以
+  - 很多人第一反应是去 Google One 官网订阅，或者打开 Google Play。实测结论：这两条路都走不通。
+  - 官网和 Google Play 走的是同一套 Google Pay 结算，它会同时核对三样东西：Google 账号付款资料的国家、支付方式的发卡国家、订阅的定价国家，三者必须一致。你的付款资料不是土耳其的、又没有土耳其银行卡，就会直接报「国家/地区不匹配」。挂土耳其节点也没用，节点只能改 IP，改不了付款资料和卡的归属国。
+  - 苹果内购能成，逻辑完全不同：钱是苹果收的。苹果只看两件事——你的 Apple ID 是不是土耳其区、账户余额够不够。Google 那边只负责给你的账号开通权益，不核对你是怎么付的钱。
+  - 所以整条路线的核心就一句：把付款这件事，从 Google 手里挪到苹果手里。
+
+- 准备清单：先备齐这 5 样
+  - 一台 iPhone 或 iPad。没有苹果设备，这条路走不了，安卓和网页都不行。
+  - 一个没注册过 Apple ID 的邮箱，用来注册土耳其区新号。别拿主力 Apple ID 转区，老号转区牵扯订阅、余额、家庭共享，坑太多，新注册一个最干净。
+  - 一个能收短信的手机号。大陆 +86 号码亲测可用，不需要土耳其号码。
+  - 一个没有生效中 Google One 订阅的 Google 账号，哪个区都行。
+  - 支付宝，用来在 SEAGM 买礼品卡。
+
+- 提前说：
+Lite 跳板：₺37.99（防风控）
+Ultra 升级：按全价 ₺1, 989.99 扣款，不补差价
+两笔合计：₺2, 027.98
+也就是说，只充 ₺2, 000，订完 Lite 后余额只剩 ₺1, 962.01，升 Ultra 时差 ₺27.98，直接弹余额不足。我最后又补了一张 ₺100 的卡才过。
+
+- 第一步：注册土耳其区 Apple ID（网页版，最稳）
+  - 网页注册土耳其 Apple ID：国家选 Türkiye，大陆手机号验证，付款方式 None。
+  - 别在 iPhone 设置里直接注册，容易被带到当前地区的流程里。用电脑或手机浏览器打开苹果账户官网，进「Create Your Apple Account / 创建你的 Apple 账户」页面，按下面填。
+  - Country/Region 必须选 Türkiye（土耳其）。 截图里默认显示的是 United States，那是默认值，一定要手动改成 Türkiye。
+  - 电话。 Country Options 选 +86 (China)，填大陆手机号。苹果会用它做双重认证，注册过程中会发短信验证码。
+  - 在 iPhone 的「设置 → 顶部账户 → 媒体与购买项目」或 App Store 里，用新号登录一次。 确认账户的国家/地区显示 Türkiye。 付款方式保持 None 就行，不用也不能绑国内银行卡——我们的钱走礼品卡余额。
+- 注册全程不需要土耳其 IP，也不需要土耳其手机号，这两点是最多人问的。
+- 一个手机号能绑的 Apple ID 有上限，如果验证时提示号码不可用，换一个自己名下的号码重试，别连续狂点。
+
+- 第二步：在 SEAGM 买土耳其区礼品卡（详细流程）
+  - 买卡渠道我选 SEAGM，理由很简单：支持支付宝、即时发卡、土区卡库存稳定。淘宝/闲鱼可能便宜几块钱，但黑卡、盗刷卡、卖家事后退款的风险都在，Apple ID 一旦被牵连封号，省的那点钱不够赔的。
+  - 划重点：去 App Store 兑换的是 16 位的 PIN，不是 Serial。 Serial 只是订单凭证，留着对账用。
+
+- 第三步：兑换礼品卡，再补土耳其账单地址
+  - 在 iPhone 上确认 App Store 登录的是土耳其新号，点右上角头像 →「兑换礼品卡或代码」→ 手动输入 16 位 PIN。两张卡就兑换两次，余额应该到 ₺2, 100。
+  - 接着大概率会遇到账单地址这一关。 第一次点订阅时，系统可能弹 Invalid Address，提示你登录后更新地址
+  - 遇到这个弹窗点 Continue，它会带你去苹果的账单信息页。注意，这补的是 Apple ID 的账单地址，地区就是 Türkiye，填土耳其地址即可，和你的 Google 账号是哪个区没关系，别填到 Google 那边去。
+- 照着这张实拍填（这是可公开的示例地址，街道、邮编、城市要互相匹配）：
+Street：İstiklal Caddesi No: 111
+Postcode：34433
+City：İstanbul
+Country/Region：Türkiye（灰色不可改，显示这个就对了）
+Phone：必填，别漏。 图里这栏当时就是因为空着被标红提示「This field is required」。区号选 +86，填你自己的手机号即可。
+姓名栏填 Apple ID 注册时的姓名。保存后回到 Google App 重新点订阅，这个弹窗就不会再出现了。
+
+- 第四步：先订 Lite 当跳板，再升级 Ultra
+  - 这是全程最容易点错的一步，慢慢来，主要是为了防风控。
+  - 下对 App。 在 App Store 下载名字就叫 Google 的搜索 App，认准四色 G 图标。它不是 Google One，也不是 Gemini——只有在这个 App 里走的内购，才能按土区价格开通。
+  - 为什么不直接订 Ultra？因为在 App 里直接点高档位，入口和价格组经常不完整；先订 Lite 能把苹果内购通道激活，之后再从订阅管理里升档，是实测最稳的走法。Lite 这 ₺37.99 也不白花，升档后剩余价值通常会按规则处理（见文末退款说明）。
+  - 升级 Ultra。 回到 Google App 的方案页往下滑，找到 Google AI Ultra：页面上会写清 AI 用量是 Pro 的 5 倍、存储 20 TB、₺1, 989.99/月，福利列表里包含 20 TB 存储、Gemini 更高用量限额、Google Flow、Notebook 更高权限和 YouTube Premium 个人版。核对无误，点它右边的「升级」。
+  - 如果弹余额不足，别绑卡，补一张小卡就行。 弹窗长这样，写着 Insufficient Store Credit Remaining。 处理方法：点 Cancel 退出（Continue 是让你补付款信息绑卡的，国内卡基本过不了，没必要试），回 SEAGM 再买一张 ₺100 的土区卡（约 ¥14），兑换进 Apple ID，再回来点一次「升级」即可。这正是我前面说预算要备 ₺2, 100 的原因——照 ₺2, 100 备的人，不会遇到这个弹窗。
+  - 还有一个小插曲说一下：刚订完 Lite 的头几分钟，iOS 订阅页里的「查看所有方案」可能还没同步出来，找不到升级入口时等几分钟再进，或者直接用上面 App 内方案页的「升级」按钮，效果一样。
+
+- 第五步：核对结果，账要对得上
+
+- 先订的 Lite 那 ₺37.99 会退吗？ 从普通档升到 AI 档，Lite 的剩余价值通常会退，退的是 Apple ID 余额，不是原路退回支付宝。到账时间不固定，可能几小时到一两天，也可能不退——金额就 5 块钱左右，别指望它，更别为了它去找客服拉扯。
+
+- 没有 iPhone 怎么办？ 借一台也行，注册、充值、开通都在那台设备上完成，之后在任何设备上登录 Google 账号都能用 Ultra。闲鱼代订要把账号交给陌生人，不推荐。
+
+- Purchase Not Completed 这个怎么回事啊，要怎么处理，账单地址填了也没用
+  - 这是苹果的风控审核。
+点 Not Now，别急着提交审核，也别反复点升级硬试，反复试反而会延长风控。等 24–72 小时再试一次，很多这种拦截自己就解了。这段时间正常用用这个号，比如下个免费 App，显得像真人在用。
+
+如果等过之后还是弹，再点 Continue 提交给苹果审核。苹果可能会要购买凭证，把 SEAGM 的订单收据留好，证明卡是正规渠道买的，审核一般几天内有结果。
+
+- 苹果新号封控 3 天
+- App Store 订阅不需要土区 IP，但是要注意新号风控
+
+- 我用谷歌新号买，结果lite升ultra 谷歌直接给我风控了，谷歌应用直接强制退出登不上，谷歌账号忘绑手机号了，发短信国内手机号又发不过去
+  - 尽量不要用新号
 
 - ## [佬们求谷歌号注册新方法 - LINUX DO _202608](https://linux.do/t/topic/2835435)
   - mac，梯子挺好的之前在手机上能注册成功，电脑上想注册个新号一直不可以，要么是让我拿手机扫码，要么是手机验证过不了
