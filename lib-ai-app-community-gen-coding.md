@@ -919,6 +919,22 @@ It amazes me how people default to LLM calls when you can do it in a simple, fre
 - I do not use any IDE/editor's AI feature for coding. They feel pretty much useless even with full context. My personal opinion is, a developer should fully understand their code before committing, AI powered editors destroys this habit
 
 - I’ve had much better luck with keeping the AI open in a browser and chatting with it, then manually editing the code in an IDE. 
+# discuss-gen-video/animation
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 开源 OpenMotion🚀！还原度超95%！无需 Fable 5.2 也能复刻爆款视频！
+- https://x.com/tuturetom/status/2122633782654370068
+  - 全网首个全栈式的剪映+Claude Motion的开源最佳平替，浓缩和逆向了最近 Opus 5.5 和 Fable 5.2 做Motion动效视频所有最佳实践， apache 2.0协议，支持导出 MP4、MOV（ProRes）、WebM、GIF等多种格式。
+  - 历时 14 天47w 行代码，支持 100+ 顶尖公司的产品宣传片、300+ 动效版 DESIGN.md，152+设计系统，支持Codex/CC/DSH 等20+AI agent
+
 # discuss-gen-video-by-coding
 - ## 
 

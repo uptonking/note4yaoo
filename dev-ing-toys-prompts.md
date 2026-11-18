@@ -80,7 +80,7 @@ project `superdoc` (at folder `../superdoc` ) implements reads, renders, edits, 
 - feature-by-feature file map may have licensing risk. you can do it, but please use similar file/folder names instead of the same file/folder names as the original. you can also use similar implementation logic for features, but MUST not use the same function/variable names as the original. please make sure your feature implementation correct and extensible, without licensing issues.
 - in your implementation, you can also improve the code logic for features and make your implementation correct and extensible. tests are not necessary for your implementation.
 - the most important feature to implement at first step is ai editing with track change support, other features can be implemented later progressively. a runnable ai editing example with track change should be provided.
-- you may implement code architecture and structure similar to superdoc, but rewrite from scractch to avoid licensing issue. `EditorAdapter` is a good design, you should implement similar architecture. OOXML → ProseMirror handlers is powerful, you should implement your converter and handler by refrencing superdoc, but remember to avoid licensing issues. collaboration with yjs should be implemented. encryption/signing can be skipped now. you can reference as many superdoc code as possible, but remember to rewrite it to avoid license issue.
+- you may implement code architecture and structure similar to superdoc, but rewrite it in functional programming style to avoid licensing issue. `EditorAdapter` is a good design, you might implement similar architecture. OOXML → ProseMirror handlers is powerful, you should implement your converter and handler by refrencing superdoc, but remember to avoid licensing issues. collaboration with yjs should be implemented. encryption/signing can be skipped now. you can reference as many superdoc code as possible, but remember to rewrite it to avoid license issue.
 - please analyze related code and architecture, make a plan and implement your begonia project.
 
 - please analyze git repo and code if you need, then explain to me what major features are in superdoc but missing in begonia.
@@ -1249,7 +1249,7 @@ finally make sure all tests run and pass locally with npm. you can update/fix te
 ## testing-mac/linux
 
 - running tests is slow on my mac, please refactor/improve to make it fast, also make it correct and fast in ci .github/workflows/validate.yml .
-# warning
+# warning ⚠️
 - the command/scripts/tests you just run might have memory leaks, it is eating up ram and disk space on my mac. 
 fix it, then continue your task
 

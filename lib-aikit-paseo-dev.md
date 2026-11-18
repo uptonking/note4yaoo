@@ -59,6 +59,9 @@ modified: 2026-09-05T00:27:42.212Z
 
 - tips
   - paseo放在docker容器运行时注意设置最大cpu/ram, 会影响多agent和subagent并发运行, 有些agent可能占用较多ram如claude-code
+
+- paseo-xp
+  - paseo近期的更新似乎在兼容不同agent的 subagent/background-task/permission/pause-resume-recovery
 # issues
 - 不同vps上的同一git仓库，似乎会覆盖/合并为一个， 不能同时使用
 

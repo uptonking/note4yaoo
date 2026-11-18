@@ -36,7 +36,7 @@ modified: 2026-06-19T06:15:35.007Z
   - 线路鸡: dmit, bandwagon, vmiss, 白丝云cloudsilk, 咸鱼云, 4837, 9929, 三网各自优化
   - 建站鸡: netcup, oracle, ccs, racknerd, cloudcone, hostdzire
   - 小拉鸡: cloudnium, dedirock, raksmart, dartnode
-  - 性能鸡: bero, ovh, 独服
+  - 性能鸡: bero, ovh, 独服, amd
     - 性能鸡适合做高并发计算、数据库服务器
   - 落地鸡: lightlayer, legendvps, bagevm, panstar, zouter, wawo, vp.s
     - bagevm的de
@@ -2412,7 +2412,8 @@ AMD EPYC 7742 64-Core Processor @ 2250.000 MHz ，单核得分1568，GB6得分10
 机器带 IPMI ，续费 50 刀，5000+剩余价值出
 
 # discuss-vendors
-- resources
+- vendors
+  - 常见上游: netlab, kurun, kirino
 
 - cons
 
@@ -2423,6 +2424,66 @@ AMD EPYC 7742 64-Core Processor @ 2250.000 MHz ，单核得分1568，GB6得分10
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [美国优化kurun和netlab推荐哪个？ _202607](https://www.nodeseek.com/post-814545-1)
+  - 不要说推荐瓦工dmit，我不知道好吗？贵呀，正价流量又太多了，netlab想着vmiss 9929款，kurun我看了bytevirt的elite，不知道推荐哪款？广东移动用
+
+- netlab吧，连狗妈咪美国都是，vmiss也不错
+
+- 推荐与Kurun毫无关系的Kirino，这俩翻墙用应该避雷
+
+- Kirino的美西跟欧洲都还不错，
+saltyfish
+cloudsilk
+akko cloud
+moe
+这些在卖
+
+- ## 💡 [netlab 有什么说法吗？ _202611](https://www.nodeseek.com/post-1054568-1)
+  - 不少上游是netlab的机器便宜，线路也不错 但貌似大家都不怎么喜欢
+
+- 传统大小包线路不一样
+
+- 小包顶级 大包普通 高峰期烧心
+
+- 就是大包会路由到普通线路，不过对于绝大多数人来说，netlab完全够用了，基本上大多数的人就是看看网页和视频，完全没问题。
+
+- 便宜的netlab就是一坨，贵的netlab还可以，比如某妈的lax就是netlab
+
+- 用下来其实刷视频还好
+- 视频没有问题，视频都是预下载，顺序观看没有任何问题，快进的时候会比顶级线路慢一点点，可能就是零点几秒，几乎没什么影响
+
+- [关于 netlab 的问题 _202611](https://www.nodeseek.com/post-1043639-1)
+- 混路由 大小包
+基本上netlab vpsquan cloudie mega看到这几个asn就快跑
+
+- 如果下游不超售的话，netlab用起来很爽的，但是。。。
+
+- 补充一个ASN401701
+  - 对，差点忘了cognet，灰产最爱了
+
+- ## [现在Netlab和Kurun哪个更好？ _202611](https://www.nodeseek.com/post-1061688-1)
+  - 大妈瓦工以及Xtom太贵了，那就只剩下K系和VMR可用了 
+- 不炸的时候netlab比kurun好，炸的时候kurun 更好
+
+- 两个精品都不如三网4873
+
+- vmr移动已经拉稀了 我跑了已经
+移动就是拉了 我不相信vmr会修 所以跑了
+看看顶级
+Saltyfish · 移动单线程
+
+格式：回程 / 去程速度｜回程重传
+
+北京移动：550.6 / 114.1 Mbps｜0%
+上海移动：595.3 / 99.4 Mbps｜0%
+广东移动：474.9 / 251.6 Mbps｜0%
+
+- vmr 换IP才1刀，push免费，就是每次炸完没有补偿
+
+- 都还行吧 主要自己找个靠谱的商家 我的kurun美国 除了挨打被波及没出过啥网络问题 快一年了还可以
 
 - ## [ty云是哪家，他家怎么样 _202608](https://www.nodeseek.com/post-903549-1)
   - 我看有个80m不限流量的，这机子推荐么 感觉部署sub2api完美啊

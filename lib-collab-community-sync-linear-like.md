@@ -102,7 +102,7 @@ modified: 2023-12-08T16:02:26.515Z
 - delta-sync(27:51)
   - if we do a full bootstrap, we load all the data from server and then connects to websocket
   - changes may happen between load and websocket
-  - **client will take the last syncId(like 3000) from local db, send it to the sync server**
+  - **client will take the last syncId(like 3000) from local db, send it to the sync server** 
   - the sync server will send all server's changes like(3000-5000) to client, query server db, send big blob of data to client
   - client receives sync updates, and do the rest
 
@@ -115,14 +115,14 @@ modified: 2023-12-08T16:02:26.515Z
   - client requests delta sync to graphql api 
 - when a client connects, 
   - client will load all data from backend as a full bootstrap, then connects to sync server using websocket
-  - client receives sync actions, but **queue them in memory before applying**, just keep adding to local queue
+  - client receives sync actions, but **queue them in memory before applying** , just keep adding to local queue
   - while that happening, client makes another requests to graphql api with last syncId, 
   - client receive from graphql api, apply to local db, then flush queue to local db, now client is realtime sync
 - this diagram is for the first year, but linear is growing
 
 - 🤔 bootstrap is taking a long time on the client
   - if your org is big, the data is big
-- **partial bootstrap**
+- **partial bootstrap** 
   - comments are not shown until u navigate to screen
   - client dynamically load model objects
   - lazy collection
@@ -243,6 +243,33 @@ modified: 2023-12-08T16:02:26.515Z
   - While OT excels at synchronizing edits, preserving user intent, and handling conflicts, its complexity often makes it overkill for simpler use cases—such as managing user information or file metadata—where a straightforward last-writer-wins approach might suffice.
   - CRDTs often introduce metadata overhead and become challenging to manage in scenarios involving partial syncing or permission controls—such as when users can only access a subset of files.
   - I decided to reverse-engineer its frontend code to understand how it works. 
+# discuss-linear/author 👷
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## IndexDB isn't cutting it anymore. We've been working on a new client-side database written in Rust using OPFS for our next sync engine in @linear .
+- https://x.com/artman/status/2122606254132494494
+  - It indexes everything. As a drop-in, API-compatible replacement it's faster than IndexDB (which is surprising!), but it absolutely DESTROYS it when you do complex, multi-key queries. And while IndexDB queries slow down linearly as row count increases, our new database stays almost flat. It's like 600x faster with usage we see in Linear, more if you got to large workspaces.
+  - We do want to open-source it, but we can't before we decide on the name. We've got two strong candidates:
+- postindex
+- sub-linear
+
+- Did you benchmark it against sqlite(opfs) ?
+  - We maintain an active benchmark against SQLite. Currently SQLite is 100x slower on batch writes, and 10-20x slower on reads.
+- Which SQLite opfs FS used in benchmarks?
+
+- Have you compared against using indexeddb with your own custom indexes? I suspect it'd be about the same performance considering you wouldn't need to cross the JS-WASM boundary
+  - Yes. 600x holds for complex queries with ordering.
+
+- sublinear is great without the hyphen. Also, why not pglite?
+  - Its not relational.
+
+- Is it modular? Do you separate the storage engine from the querying payer?
 # discuss-sync-figma-like
 - ## 
 
@@ -359,7 +386,7 @@ modified: 2023-12-08T16:02:26.515Z
 - Our gut feeling was that real-time updates were required from a modern tool like Linear. Who wants to refresh to see the latest data? But how often do you find yourself in a situation where multiple people update data simultaneously in a project management tool?
   - Not that often, it turned out. Aside from special cases where your team gets together to operate on data - like planning your next cycle - edits are made across the entire dataset, with the same data being touched at the same time relatively infrequently.
   - 👉🏻 Don’t get me wrong, we still believe that real-time sync is essential, 
-  - but there are two more valuable things we got out of real-time sync that we did not appropriately anticipate: **App speed** and **Ship speed**.
+  - but there are two more valuable things we got out of real-time sync that we did not appropriately anticipate: **App speed** and **Ship speed** .
 - Amen! Noticed the same while working on http://syncedstore.org and yjs; being forced to really separate the data layer for sync comes with many additional benefits (local first, pluggable storage, dev speed etc)
 
 - 👉🏻 The most straightforward way to implement real-time sync is to load the entire app state and then keep it up-to-date with real-time changes. 
@@ -397,6 +424,14 @@ modified: 2023-12-08T16:02:26.515Z
   - Haha there are also a lot of other options: replicache, http://convex.dev, http://clientdb.dev, a new one called aphrodite
 - No wonder! Sync is hard, but having it simplifies a lot!
 # discuss-sync
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

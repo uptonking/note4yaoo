@@ -19,14 +19,23 @@ modified: 2026-09-08T04:45:17.635Z
 # prompts
 - this repo is still beta software, legacy/unused code might be refactored or removed. compatibility layer is not required. using only the latest code is ok.
 
+- when you use begonia editor and find some issues, you might fix the issues directly in begonia source code, i will publish the code later.
+
 - source code for begonia editor is at `~/Documents/repos/ai-ml-llm/all-docai/begonia` for reference if you want. 
-  - when you use begonia editor and find some issues, you might fix the issues directly in begonia source code, i will publish the code later.
 - source code for superdoc is at `~/Documents/repos/ai-ml-llm/all-docai/superdoc` for reference if you want.
 - source code for paseo is at `~/Documents/repos/ai-ml-llm/all-agi-harness/paseo` for reference if you want.
 
 - source code for @extend-ai/react-xlsx is cloned at `~/Documents/repos/ai-ml-llm/all-docai/extend-react-xlsx` for reference if you want. 
 - source code for mineru is cloned at `~/Documents/repos/ai-ml-llm/all-doctools/MinerU` for reference if you want. 
 - source code for docling is cloned at `~/Documents/repos/ai-ml-llm/all-doctools/docling` for reference if you want. 
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 # autumn-studio
 - ## 
 
@@ -38,9 +47,25 @@ modified: 2026-09-08T04:45:17.635Z
 
 - ## 
 
-- ## 
+- ## current ai text format is too coupled to mineru markdown format, please improve the architecture to support parsed text from different parsing-engines or llm APIs. currently support MinerU/LlamaParse first, more parsing-engines or llm APIs will be supported later.
 
-- ## 
+- ## 📌 current repo autumn-studio-paseo-plugin provides file-explorer and file viewers/editors with "AI Text Mode" features for paseo agent.
+  - when autumn-studio-paseo-plugin was designed, paseo does not provide plugin extension points like "preview files with these extensions" or "open with" features. but paseo plugin provides related APIs now. so file-explorer from this plugin might be deprecated in the future, it is just kept for legacy usage. 
+  - this plugin also provides a "Autumn Studio" sidebar menu in homepage for plugin settings. this plugin is designed in a extensible architecture to support to view/edit different file formats with different viewers/editors, which can be configured in plugin settings page.
+  - current autumn-studio-paseo-plugin file tab supports splittable layout blocks view and shows in parent "File Viewer" paseo tab.  splittable layout blocks view is designed to be react-dom first(without react-native) and support desktop-app/web-app only. 
+  - "AI Text Mode" is a button that shows on the toolbar of plugin viewers/editors, when user clicks it for the first time, document parser/ocr tools and agent/model will be used to get the text of the .pdf/.docx/html, the text files are put in a folder named `.autumn/` in workspace root by defualt. it currently only supports .pdf. when pdf parsing is finished, original file shows on the left, text file content shows on the right. this feature is also flexible and extensible, different parser/api can be configured in plugin settings page. A original file can be parsed multiple times to get multiple versions of AI text. 
+  - for "AI Text Mode" split view, there is also a Layout Blocks view that supports to highlight left-sided pdf section when cursor is focused in the right-sided layout block view. 
+  - this plugin extends the paseo file viewer/editor features to support .docx/.pdf file formats. core features for .docx/.pdf should be built with react componnet with react-dom, designed for web/desktop only, just like existing .pdf/.xlsx viewer/editor. the final goal is to implement file editor for all popular files, but currently focus on .docx/.pdf. .docx viewer/editor is built with `BegoniaBrowserEditor` from `@datalking/begonia-react/v1` . for docx viewer/editor, both normal editor and paginated editor are supported by begonia with a pagination toggle option at the top actions buttons.
+  - in ai text split view, Paginated Text Doc shows the pdf text as paginated content just like the left-sided original pdf viewer with pages. one page of content from original pdf viewer should have 1 page of content in Paginated Text Doc viewer with begonia editor, because begonia editor supports pagination.
+
+- the current task is to refactor and improve project architecture to be modular, extensible. Paseo plugin APIs has improved a lot recently, you might refactor/improve code in this repo to use the latest paseo api and best practice. I want different file viewers/editors to be extracted and refactored to be reusable components so that they can be used in other projects or published to npm later, they might also be replaced new viewers/editors later.
+
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## for "AI Text Mode" split view, you just implemented "Paginated Text Doc" view , it provides better ux than the left-sided pdf viewer. 
   - "Paginated Text Doc" is a bad name, please rename it to "Text Pages View".
@@ -56,7 +81,7 @@ modified: 2026-09-08T04:45:17.635Z
 
 - ## File is too large to edit
 
-- ## you just implemented docx editor for autumn studio paseo plugin.  please update the `@datalking/begonia-react` package to the latest published version. Improve the docx editor to show paginated editor by default. 
+- ## ⏰ you just implemented docx editor for autumn studio paseo plugin.  please update the `@datalking/begonia-react` package to the latest published version. Improve the docx editor to show paginated editor by default. 
   - improve the docx editor in paseo native tab by add a three dots more menu at the top-right corner of page (at the right of View/Editor), then add a "Open Editor Settings" menu item in it, when this menu item is clicked, navigate to the settings page of "Docx/Doc" format.
 - paginated begonia editor is so useful that it can make "AI Text Mode" better. please create a new AI Text viewer named "Paginated Text Doc" just like exiting Layout Blocks viewer and Text viewer, users might select the viewer they like in the settings page of "AI Text Mode" "General" tab, or users might switch between Text-Preivew/Blocks/Source in ai text split view with the top header actions buttons.
   - in ai text split view, Paginated Text Doc shows the pdf text as paginated content just like the left-sided original pdf viewer with pages. one page of content from original pdf viewer should have 1 page of content in Paginated Text Doc viewer with begonia editor, because begonia editor supports pagination.
@@ -71,7 +96,7 @@ modified: 2026-09-08T04:45:17.635Z
 How do you like my idea? Analyze related code, if my idea is okay, you might improve it. then make a comprehensive plan to implement it
 
 - ## i just renamed and moved the original paseo-file-explorer plugin to folder `~/Documents/repos/ai-ml-llm/all-agi-harness/autumn-studio-paseo-plugin` .
-- For the first time that paseo-file-explorer-plugin/autumn-studio-paseo-plugin was designed, paseo does not provide extension point like "preview files with these extensions" or "open with", and openPanel doesn't take a file path.
+- For the first time that paseo-file-explorer-plugin/autumn-studio-paseo-plugin was designed, paseo does not provide plugin extension point like "preview files with these extensions" or "open with", and openPanel doesn't take a file path.
 - just now, paseo plugin supports to claim extensions and render inside the file tab you already opened. `~/Documents/repos/ai-ml-llm/all-agi-harness/paseo/plugin-examples/pdf-panel` is an example.
 - source code for paseo is at `~/Documents/repos/ai-ml-llm/all-agi-harness/paseo` .
 - current autumn-studio-paseo-plugin file panel supports splittable layout blocks view and shows in parent "File Viewer" paseo tab. i want to know whether it is possible to open a native paseo tab and show current splittable layout blocks view in it. splittable layout blocks view should still be react-dom first and support desktop/web only, mobile support is not required. 
@@ -108,11 +133,8 @@ How do you like my idea? Analyze related code, if my idea is okay, you might imp
   - The plugin evaluates `<prompt>`, queries the daemon for agentProfiles, picks the best profile, and launches the task with that configuration.
 
 - 
-- 
-- 
-- 
 
-- ## current git repo(paseo-file-explorer) is paseo plugin that supports to show file tree just like native nested file system and provide some file viewers/editors. core features of "File Explorer" should be built with react component with react-dom, designed for web/desktop only, not for mobile. the final goal is to implement file editors for all popular files, but current focus is .md/.pdf/.xlsx. 
+- ## 👾 current git repo(paseo-file-explorer) is paseo plugin that supports to show file tree just like native nested file system and provide some file viewers/editors. core features of "File Explorer" should be built with react component with react-dom, designed for web/desktop only, not for mobile. the final goal is to implement file editors for all popular files, but current focus is .md/.pdf/.xlsx. 
 - the current goal is to design a "AI Text Mode" feature for files like .pdf/.docx: "AI Text Mode" is a button that show on the toolbar of paseo-file-explorer viewer/editors, you might put the button next to existing "Viewer"/"Editor", when user clicks it for the first time, document parser/ocr tools and agent/model will be used to get the text of the .pdf/.docx/html, the text files are put in a folder named `.autumn/` in workspace root. in settings page for paseo-file-explorer, please add a "AI Text Mode" sidebar menu, it should support to configure toggle on/off for this feature, if it is off, the button will not show in toolbar. when doc parsing finishes, open the text file as a split view of the original file on the right, so that original file show on the left, text file content show on the right. if splits view is showing , the "AI Text Mode" button should change to "AI text again" so that user can reparse and get multiple text files for a orignal file, please make it easy to switch the text file in the right split view for the orignal file. you might design a good architecture for storing multiple text files for a single original file. also store some metadata about how the text file is get.
 - it should support to configure the default agent for "AI Text Mode", using pi by default, supports to use other agents that user has configured/auto-detected . agent will use vlm-models or ocr-services for getting text of documents. please design a section for text parsing options, that uses free mineru by default, other api like LlamaParse/Azure Document Intelligence/Datalab might be added and supported later. free mineru provides api(https://mineru.net/apiManage/docs) and cli(https://mineru.net/ecosystem?tab=cli), you might choose which fits better for this plugin.
 - focus on pdf first, more file formats will be supported later, please design a extensible architecture for "AI Text Mode".
