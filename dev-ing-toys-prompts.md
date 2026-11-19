@@ -1373,7 +1373,7 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
 - worker_3: activepieces/flowy
 - worker_4: grist/wabase, outline
 - worker_5: la suite - docs, drive, people
-- worker_6: 
+- worker_more: solleader, terraleader, lunaleader
   - shop: dujiao-next, 
   - email: server-25, clients/providers-aggregator
   - im/forum: zulip
@@ -1382,6 +1382,8 @@ DO NOT edit code in plan mode, you should only edit code after showing me the pl
   - devops: gitea(可放敏感信息)
   - cms: odoo, directus
   - media: immich
+  - db: pg, pgvector, mongo, redis, search
+  - ocr, parsing, embedding
 
 - i have deployed this repo to my 6 vps, leader node deploys beszel-controller/beszel-worker/woodpecker-controller/observer, worker_1 node deploys auther/club/librechat/aichorouter/cpapi/cpamp/cursorapi/aichor1/relaichor1/onoffice, worker_2 node deploys filer/openclouds/paperlex/librechat/wapdf/searx/aichor/relaichor/verge2, worker_3 deploys flowy/verge3, worker_4 deploys wabase/outline/verge4, worker_5 deploys ladocs/verge5.
   - Most requests should go to leader node first, then proxying to follower/worker nodes.

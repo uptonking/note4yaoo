@@ -2248,6 +2248,29 @@ v6论坛搜索一下，手把手下asn v4 ipxo可以租 或者去看有些出租
 
 - ## 
 
+- ## 
+
+- ## [【Yabs】RackNerd 1.5 GB Ryzen 7950X 性能小钢炮 $9/年 _202611](https://www.nodeseek.com/post-1060067-1)
+- [【YABS】RN 闪购 1.5G AMD _202511](https://www.nodeseek.com/post-523615-1)
+
+- [【已出】RackNerd洛杉矶DC03锐龙7950X3D年付9刀 _202611](https://www.nodeseek.com/post-1064439-1)
+
+- [【已出】出RackNerd 1.5 GB Ryzen 7950X VPS (Black Friday 2023)性能小钢炮 _202610](https://www.nodeseek.com/post-966723-1)
+  - RN: 圣何塞机房、年付：19刀 、 1.5 GB Ryzen 7950X VPS（2023年黑色星期五）
+  - 1C/1.5G/30G/4.88T/1Gbps
+
+- [【测试留档】RackNerd - 1.5 GB Ryzen 7950X VPS (BF2023)，19美元年付 _202605](https://www.nodeseek.com/post-724119-1)
+
+- ## [【NQ】Bero 12o 1c2G 小鸡，单核直逼 1800 分！ _202604](https://www.nodeseek.com/post-670279-1)
+  - 终于知道论坛里大家为什么更多地讨论netcup 1o而不是bero 12o了，看线路好像是绕英，直连延迟比netcup高一大截，属于是三网每一个能双用的，回头搭个节点试试，不行套CF照样是条好汉。
+  - 但是这个配置还是很顶哇，CPU 1核顶3核，2G内存也非常大方，硬盘还是NVME的，3个异机备份，有点东西。
+
+- [Bero-host 单核性能只有1800了，令人唏嘘 _202610](https://www.nodeseek.com/post-967298-1)
+- 去年的机器就是这个水平
+- 稳定1700-1800最后，就是这个水平了开始2000+是因为没开卖，新母鸡跑分当然高
+
+- [测评 bero再超兽要到1500的单核了 _202610](https://www.nodeseek.com/post-964717-1)
+
 - ## [【NQ存档】 FireVPS LXC 1C (5950X) + 1G + 15G + 1T $6.99 USD / Annually _202611](https://www.nodeseek.com/post-1041757-1)
 
 - ## [溢价30收Linveo亚利桑那25刀/年 2C/2G AMD Ryzen 9 9950X _202508](https://www.nodeseek.com/post-431465-1)
@@ -2426,6 +2449,34 @@ AMD EPYC 7742 64-Core Processor @ 2250.000 MHz ，单核得分1568，GB6得分10
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [hostodo 这家的vps质量怎么样? _202607](https://www.nodeseek.com/post-820067-1)
+  - 今天发现了这家有个2核2g的vps 不知道他家质量怎么样，有用过的友吗？
+
+- 几年前可以。一年多前开始自动驾驶，最近老板开发了个什么新的系统，又开始在let上推广了。
+
+- 曾经和 rn 并列，后来管理比较混乱，到期后扔了就没再关注。rn 反而越来越稳
+
+- ## [【已解决】Hostodo 这家怎么样？ _202511](https://www.nodeseek.com/post-523400-1)
+14年的老商家 但是看论坛评论不一
+主要是看见1c1.5G 12$/yr
+
+- 主要是地理位置不太好吧？好像都是比较冷门的城市
+  - 拉斯维加斯和底特律来着 拉斯维加斯是听说200ms 但是听论坛内说线路又不太好
+
+- 挺稳的，就是工单服务以前不尽人意。机器还算可以
+
+- 去年的LV的NQ，稳定性没注意，因为一直吃灰，其他的看着倒还行
 
 - ## [美国优化kurun和netlab推荐哪个？ _202607](https://www.nodeseek.com/post-814545-1)
   - 不要说推荐瓦工dmit，我不知道好吗？贵呀，正价流量又太多了，netlab想着vmiss 9929款，kurun我看了bytevirt的elite，不知道推荐哪款？广东移动用
@@ -3954,7 +4005,10 @@ JP从0.8刀每月涨价到1.1刀/月
 
 - ## 
 
-- ## 
+- ## [RakSmart这家可以通过工单push机器吗 _202611](https://www.nodeseek.com/post-1064278-1)
+- 我工单问过的，明确说不可以
+
+- 别说push了 同一个账号的两台机器要是购买的时候没勾选内网 就不会有内网 除非你重新买两个
 
 - ## [RakSmart 换IP要20美金 _202610](https://www.nodeseek.com/post-1015064-1)
 ip被墙的话、换IP要5刀、这个就不说啥了
@@ -4647,6 +4701,27 @@ Gemini、Reddit 被拉黑；
 
 - [racknerd快讯，dc02 所有机器将物理迁移到 dc03 _202605](https://www.nodeseek.com/post-736588-1)
 - dc2机房是属于mc的，mc被ec收购了，ec也收购了cc，现在cc和dc2都是一家，rn估计没续约找借口
+
+- ## [RN性价比最高的是哪个 _202410](https://www.nodeseek.com/post-170007-1)
+- 按c和内存算的话，这几款性价比比较高
+1c1g /5刀
+2c2g 9.95刀
+2c3g 14.88刀
+3c5g60g14t/20.21刀
+
+- 闪购
+
+- ## [🔥Racknerd在售套餐购买指引--含4大机房测评（测速），开启BBR+TCP加速，高性价比部署CPA Openclaw龙虾 【下单后回复或私聊订单号，可代为申请流量翻倍（长期有效）】 _202603](https://www.nodeseek.com/post-655249-1)
+Racknerd的机器都是没有优化的普通机器，重要事情说三遍，没有优化 没有优化 没有优化
+这也就解释了为什么在ai需求拉爆硬件的今天，它还能保持低价的原因。
+IP质量，这里需要说明的是，如果不满意IP，在3天内可以提工单免费更换的，这次开的机器IP质量中奖了，爆绿了（解锁各类流媒体及ai，另外25端口是打开的，可以自己搭建邮件服务器
+对于Racknerd，默认系统是没有开启BBR和tcp调优的，这里附上开源的一键开启bbr加速及tcp调优
+
+- 这个dc03怎么样
+  - 上游ccs
+
+- dc2 dc3 这俩哪个更好
+  - 这两个测速上看都差不多，目前dc2有优势的是它有IPv6. DC3目前还没配IPv6
 # discuss-vendor-cloudnium/dedirock/dartnode/delux
 - dartnode
   - backup restore 慢到不能忍
@@ -5941,6 +6016,22 @@ ubuntu附加的屎太多
 debian用的libc太大
 alpine刚刚好
 
+# discuss-vps-devops
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [🚀一键开启BBR+TCP调优，傻瓜式加速您的VPS _202604](https://www.nodeseek.com/post-671676-1)
+
+- [✅Racknerd使用大全集合|①开启BBR+TCP加速|②一键Warp解决谷歌送中困扰|③4大机房测评|④有货无货看板|⑤在售套餐购买指引 【下单后回复或私聊订单号，可代为申请流量翻倍（长期有效）】 _202604](https://www.nodeseek.com/post-689467-1)
 # discuss-tips
 - ## 
 

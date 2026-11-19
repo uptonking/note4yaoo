@@ -90,7 +90,19 @@ modified: 2023-11-10T08:05:25.474Z
 
 - ## 
 
-- ## 
+- ## @ChromeDevTools ships the @TC39 Stage 3 Scopes proposal in Chrome 158 Stable _202611
+- https://x.com/robpalmer2/status/2122772019641004436
+  - The first new standard feature for source maps in over 15 years
+  - It lets you see accurate stack traces, lexical scopes, & original expressions when debugging 
+  - https://github.com/tc39/ecma426/blob/main/proposals/scopes.md
+- which bundlers emit the scope data today?
+  - None yet to my knowledge.
+
+It is a chicken &egg problem. When debuggers can't handle scopes, there's no incentive for bundlers to emit them into the source map.
+
+Chrome has broken that cycle & is now providing the incentive.
+
+Once bundlers emit, post-mortem (Sentry) benefits.
 
 - ## Source maps are Recently standardized! (one year ago)
 - https://x.com/robpalmer2/status/2039247787376681464

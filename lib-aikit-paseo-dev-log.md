@@ -47,7 +47,7 @@ modified: 2026-09-08T04:45:17.635Z
 
 - ## 
 
-- ## current ai text format is too coupled to mineru markdown format, please improve the architecture to support parsed text from different parsing-engines or llm APIs. currently support MinerU/LlamaParse first, more parsing-engines or llm APIs will be supported later.
+- ## current ai text format is too coupled to mineru markdown format, please improve the architecture to support parsed text from different parsing-engines or llm APIs. currently please support MinerU/LlamaParse first, more parsing-engines or llm APIs will be supported later.
 
 - ## 📌 current repo autumn-studio-paseo-plugin provides file-explorer and file viewers/editors with "AI Text Mode" features for paseo agent.
   - when autumn-studio-paseo-plugin was designed, paseo does not provide plugin extension points like "preview files with these extensions" or "open with" features. but paseo plugin provides related APIs now. so file-explorer from this plugin might be deprecated in the future, it is just kept for legacy usage. 

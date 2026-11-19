@@ -220,6 +220,53 @@ jobs:
 - https://github.com/iamsyc/VoidDisplay  创建一个虚拟显示器开启 hidpi 的
 
 - 一直有这个问题（或者叫特性）。没接显示器的mini在使用在线会议共享屏幕时，对方看到的是白屏。接一次显示器比如hdmi输出，然后再拔掉就一切正常了。
+# discuss-vps-configure
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Do I need both Terraform and Ansible? : r/devops _202306](https://www.reddit.com/r/devops/comments/13zzd62/do_i_need_both_terraform_and_ansible/)
+- > "Provision with Terraform. Configure with Ansible."  I see this everywhere.
+  - at the end of the day, terraform is using the Go SDK in the form of terraform providers while ansible is using the Python SDK in the form of the ansible collections. the approaches are not very different. i would still say the “idempotent” approach of ansible is theoretically cleaner than terraform state. but i use cloudformation for infra. and i dont do any remote configuration management with ansible, chef, puppet, saltstack, anything. just AMIs and userdata.
+
+- Currently using both in our environment. Terraform for infrastructure and ansible for configuration. Ansible can stand up infrastructure, but it doesn’t do it well. For our environment, we are an AWS shop. You’ll need to know what to build first before the next (yaml file is read top down in Ansible). With terraform, the logic is already there and I don’t need to worry about having things in the correct order. For ssh enable, user creation, etc. you just write playbooks and run those after you stand up the infrastructure. Anything that you would do manually after terraform would be done using ansible.
+
+- I would advise the use of Terraform for resources orchestration and Ansible for configuration management. But if you really want to use only one to the the work of both then choose Ansible.
+
+I have witness the use of Ansible for diverse use cases from orchestration of cloud resources, execution of standalone scripts(python, shell), creation of resources in kubernetes, interaction with a ton of services mostly APIs, etc. and to be honest Ansible did it really well.
+
+Ansible is really good for configuration management I seriously doubt Terraform can come close to it in CM.
+
+- Terraform spins up your infrastructure. Ansible configures it.
+When integrating with your CI/CD pipelines you need to figure out a pattern and use it across all projects I like having my pipeline invoke both the terraform and the ansible
+
+- Provision: Terraform or Cloud Specific tool(Some give you indications of drift)
+
+Configure: Ansible or Agentless Saltstack(Just learned of it recently...)
+
+What I care most is idempotence(running repeatably without differences in outcomes of is being applied from initial run) and reporting what has changed, been applied etc
+
+- Both. Though Terraform is mainly purposed for a seemless multi-cloud hybrid environment. Ansible will have all of the module you need for reaching out to your VMs and doing health/state checks.
+
+- This also depends on what your tech stack looks like. If you are in the cloud, or running things in managed k8s clusters than you probably don't need traditional configuration management.
+If you are managing vms and the software on them then you do.
+
+- I don't see how to use terraform for configuration management, it is mostly a provisioning tool. For configuration management in servers you will use configuration management tools like puppet, ansible and chef. 
+  - Think about terraform as a tool working in a higher abstraction layer, provisioning the infrastructure like VMs and some of its higher level configuration like size, network interface, storage, etc. 
+  - If you need to go at the lower level of installing software, configuring files in the server, managing users, applications, etc, then you need a configuration management tool.
+
+- I prefer terraform for the infrastructure and Ansible for configuration. We also however keep zero data locally, so it’s easy to just terminate and replace
+
+- Cloudinit can take care oft some oft these task (especialy SSH and key setup)
+  - This, and can be combined with Ansible and Chef
 # discuss-vps-cicd 👾
 - ## 
 
@@ -228,6 +275,28 @@ jobs:
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How do you manage more than 5 VPS from one place? : r/SelfHosting _202610](https://www.reddit.com/r/SelfHosting/comments/1xa6qkv/how_do_you_manage_more_than_5_vps_from_one_place/)
+- I would suggest ansible. It's quite a popular self-hosted solution. It is "agentless, " meaning you don't need to install any software on the destination servers; it works entirely over standard SSH. You write simple automated scripts (Playbooks) in YAML to manage everything at once.
+  - Claude and Codex make using Ansible a no brainer imho. All I do is create a dedicated Ansible user with an SSH key and password-less sudo. You can use cloud-init at most big VPS providers to automate those steps too. I even deploy Docker images with Ansible.
+
+- I'd probably try and consolidate them into a single or fewer VPS into docker containers and use Caddy or traefik to reverse proxy them.
+In terms of mgt, there's several options life Ansible you can look into.
+
+- Ansible for internal os, I run everything in kubernetes so use gitops for deployment of apps. And if possible opentofu for building the vps if there is a provider
+
+- Kubernetes, you don't dealing with machines any more, you dealing with single cluster.
+
+- tailscale. ssh to all from one place
+
+- If you use docker for your projects then dockhand has a free edge client you can install on the VPS and manage from one dashboard.
+Otherwise good old SSH using keys only and no password
 
 - ## [How do you set up automatic deployment from GitHub to a Hetzner server? : r/hetzner _202512](https://www.reddit.com/r/hetzner/comments/1ps0itc/how_do_you_set_up_automatic_deployment_from/)
 - Build image on GitHub actions, rsync into the server, run docker command

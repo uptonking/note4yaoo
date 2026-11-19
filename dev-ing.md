@@ -347,6 +347,40 @@ npx -y @tencent-weixin/openclaw-weixin-cli install
 - dev-log
   - ?
 
+## 1118
+
+- 🤔 for "Feature matrix" table, typing and cursor  has some issues.  when I click in a table cell , the cursor can show at the right character,  then i type a character, sometimes the character shows before the cursor character.  It  seems that typing in cells that are after the empty cell can reproduce this issue.  
+  - the painted offset and the editing offset are computed by two different code paths, and they only agree by construction when the geometry is simple.
+
+- 🤔 I have a budget VPS with a very good AMD 7950 cpu. What services are better to deploy on this amd vps?  I want to deploy a librechat saas , a postgresql db service, a caddy reverse proxy service on multiple vps, which services are best for this AMD vps?
+  - In general, a budget 7950X VPS shines at bursty, single-thread-sensitive, or low-latency compute workloads
+  - Single-threaded web runtimes & API gateways: Node.js, Bun, Deno, Python (FastAPI/Django), Ruby, and PHP apps—especially Next.js/Nuxt SSR apps or LLM API routers/proxies that do heavy JSON/stream processing.
+  - Search & Vector Engines: Meilisearch, Typesense, Qdrant, or PostgreSQL + pgvector (benefits from Zen 4 + AVX-512 + fast NVMe).
+  - File parsing and local embedding generation are CPU-heavy, and Zen 4’s AVX-512 support and core count help here, as long as your plan gives you enough dedicated threads.
+  - Remote Dev & CI/CD Runners: Self-hosted GitHub Actions/Forgejo runners, code-server, Docker builds, or Rust/Go/TypeScript compilation (cuts build times dramatically).
+  - Game Servers: Minecraft, Terraria, Factorio, Palworld, etc. (notoriously bottlenecked by single-thread tick speed).
+  - Lightweight CPU AI / Document Processing: Running small local embedding models, Whisper transcription, or document/OCR parsers (e.g., for your LibreChat RAG pipeline) using AVX-512.
+- The 7950X’s strength is very high single-thread speed (about 5.5 GHz+ boost) with fast DDR5. That helps query latency, index lookups, sorting, and vacuum work. 
+  - Keep the DB in the same datacenter or region as the app servers. Cross-region latency will cancel out any CPU advantage.
+- What to Avoid on a Budget 7950X VPS
+  - CPU Intensive Tasks: Heavy FFmpeg/Jellyfin video transcoding, continuous AI training/large LLM inference, or aggressive scraping. Budget Ryzen hosts almost always enforce strict fair-share CPU policies and will throttle or suspend containers/VMs that peg vCPUs continuously.
+  - Pure Network/Storage Roles: Standalone reverse proxies, pure VPN/proxy relays, or large cold-file storage—you are overpaying for compute you won't use.
+
+- 🤔 Is there any good suffix and prefix that can be added to word "leader" or "worker" to express some meaning?
+  - co-
+  - ex-
+  - sub-
+  - non-
+  - pro- / anti-
+  - -like
+  - -ly: Showing qualities expected of an effective leader (formal; workerly is rare)
+  - -ism: An ideology centered on a single leader (leaderism) or the working class (workerism)
+  - hood / -dom: Rare/literary terms for the collective identity or realm of workers
+- If a prefix or suffix feels clunky, English usually handles the nuance in one of two ways instead:
+  - Drop -er and modify the root: Words like workaholic, workable, overworked, and misleading attach cleanly to the base verb rather than the noun.
+  - Use a compound modifier: Terms like ringleader (instigator of a scheme), thought leader, fieldworker, caseworker, and gig worker carry sharper, more idiomatic meaning than forced affixes.
+  - solleader, terraleader, lunaleader
+
 ## 1117
 
 - improve the begonia editor architectre to be headless, modular, extensible.
